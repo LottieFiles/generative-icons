@@ -1,0 +1,694 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 60,
+  "nativeTransformNodes": 706,
+  "nativeTransformMaxCoordinateError": 0.000006000000002615025,
+  "checks": [
+    {
+      "name": "boolean-union",
+      "fixedParts": [
+        "boolean-union-result-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "boolean-union-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "boolean-union-strong",
+      "fixedParts": [
+        "boolean-union-result-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "boolean-union-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "boolean-subtract",
+      "fixedParts": [
+        "boolean-subtract-result-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "boolean-subtract-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "boolean-subtract-strong",
+      "fixedParts": [
+        "boolean-subtract-result-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "boolean-subtract-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "boolean-intersect",
+      "fixedParts": [
+        "boolean-intersect-result-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "boolean-intersect-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "boolean-intersect-strong",
+      "fixedParts": [
+        "boolean-intersect-result-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "boolean-intersect-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "boolean-exclude",
+      "fixedParts": [
+        "boolean-exclude-result-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "boolean-exclude-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "boolean-exclude-strong",
+      "fixedParts": [
+        "boolean-exclude-result-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "boolean-exclude-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "outline-stroke",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "outline-stroke-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "offset-path",
+      "fixedParts": [
+        "offset-path-source-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "offset-path-source-frame"
+        }
+      ]
+    },
+    {
+      "name": "offset-path-strong",
+      "fixedParts": [
+        "offset-path-source-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "offset-path-source-frame"
+        }
+      ]
+    },
+    {
+      "name": "join-paths",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "join-paths-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "simplify-path",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "simplify-path-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "stroke-dash",
+      "fixedParts": [
+        "stroke-dash-swatch-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "stroke-dash-swatch-frame"
+        }
+      ]
+    },
+    {
+      "name": "stroke-dash-strong",
+      "fixedParts": [
+        "stroke-dash-swatch-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "stroke-dash-swatch-frame"
+        }
+      ]
+    },
+    {
+      "name": "auto-layout",
+      "fixedParts": [
+        "auto-layout-container-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "auto-layout-container-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-layout-child-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-layout-child-1-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-layout-child-2-frame"
+        }
+      ]
+    },
+    {
+      "name": "auto-layout-strong",
+      "fixedParts": [
+        "auto-layout-container-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "auto-layout-container-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-layout-child-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-layout-child-1-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-layout-child-2-frame"
+        }
+      ]
+    },
+    {
+      "name": "component-instance",
+      "fixedParts": [
+        "component-instance-source-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "component-instance-source-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "component-instance-instance-frame"
+        }
+      ]
+    },
+    {
+      "name": "component-instance-strong",
+      "fixedParts": [
+        "component-instance-source-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "component-instance-source-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "component-instance-instance-frame"
+        }
+      ]
+    },
+    {
+      "name": "detach-instance",
+      "fixedParts": [
+        "detach-instance-source-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "detach-instance-source-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "detach-instance-instance-frame"
+        }
+      ]
+    },
+    {
+      "name": "detach-instance-strong",
+      "fixedParts": [
+        "detach-instance-source-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "detach-instance-source-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "detach-instance-instance-frame"
+        }
+      ]
+    },
+    {
+      "name": "pin-constraints",
+      "fixedParts": [
+        "pin-constraints-child-frame",
+        "pin-constraints-pin-top",
+        "pin-constraints-pin-left"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pin-constraints-child-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "pin-constraints-pin-top"
+        },
+        {
+          "type": "fixed",
+          "part": "pin-constraints-pin-left"
+        }
+      ]
+    },
+    {
+      "name": "pin-constraints-strong",
+      "fixedParts": [
+        "pin-constraints-child-frame",
+        "pin-constraints-pin-top",
+        "pin-constraints-pin-left"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pin-constraints-child-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "pin-constraints-pin-top"
+        },
+        {
+          "type": "fixed",
+          "part": "pin-constraints-pin-left"
+        }
+      ]
+    },
+    {
+      "name": "artboard-frame",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "artboard-frame-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "export-slice",
+      "fixedParts": [
+        "export-slice-region-0",
+        "export-slice-arrow",
+        "export-slice-arrow-head"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "export-slice-region-0"
+        },
+        {
+          "type": "fixed",
+          "part": "export-slice-arrow"
+        },
+        {
+          "type": "fixed",
+          "part": "export-slice-arrow-head"
+        },
+        {
+          "type": "rigid",
+          "part": "export-slice-slice-frame"
+        }
+      ]
+    },
+    {
+      "name": "export-slice-strong",
+      "fixedParts": [
+        "export-slice-region-0",
+        "export-slice-arrow",
+        "export-slice-arrow-head"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "export-slice-region-0"
+        },
+        {
+          "type": "fixed",
+          "part": "export-slice-arrow"
+        },
+        {
+          "type": "fixed",
+          "part": "export-slice-arrow-head"
+        },
+        {
+          "type": "rigid",
+          "part": "export-slice-slice-frame"
+        }
+      ]
+    },
+    {
+      "name": "vectorize-image",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "vectorize-image-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "blend-steps",
+      "fixedParts": [
+        "blend-steps-circle-frame",
+        "blend-steps-square-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "blend-steps-circle-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "blend-steps-square-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "blend-steps-intermediate-frame"
+        }
+      ]
+    },
+    {
+      "name": "blend-steps-strong",
+      "fixedParts": [
+        "blend-steps-circle-frame",
+        "blend-steps-square-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "blend-steps-circle-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "blend-steps-square-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "blend-steps-intermediate-frame"
+        }
+      ]
+    },
+    {
+      "name": "gradient-stops",
+      "fixedParts": [
+        "gradient-stops-ramp-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "gradient-stops-ramp-frame"
+        }
+      ]
+    },
+    {
+      "name": "gradient-stops-strong",
+      "fixedParts": [
+        "gradient-stops-ramp-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "gradient-stops-ramp-frame"
+        }
+      ]
+    },
+    {
+      "name": "convert-to-curves",
+      "fixedParts": [
+        "convert-to-curves-letter"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "convert-to-curves-letter"
+        }
+      ]
+    },
+    {
+      "name": "convert-to-curves-strong",
+      "fixedParts": [
+        "convert-to-curves-letter"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "convert-to-curves-letter"
+        }
+      ]
+    },
+    {
+      "name": "path-direction",
+      "fixedParts": [
+        "path-direction-path-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "path-direction-path-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "path-direction-arrow"
+        }
+      ]
+    },
+    {
+      "name": "path-direction-strong",
+      "fixedParts": [
+        "path-direction-path-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "path-direction-path-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "path-direction-arrow"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

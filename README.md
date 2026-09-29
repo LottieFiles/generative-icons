@@ -8,7 +8,7 @@ An open family of native Lottie icons with Light and Strong motion, Outline, Sol
 
 ## What's included
 
-- **965 icons in 56 sets**, from essentials and arrows to AI, commerce, weather and smart home.
+- **985 icons in 57 sets**, from essentials and arrows to AI, commerce, weather and smart home.
 - **Light and Strong motion** for every icon, with explicit reverse or reset actions for stateful icons.
 - **Outline, Solid and Duotone styles**, three outline weights (1.5, 2, 2.5), light and dark themes, and a recolorable primary slot.
 - **Native dotLottie and Lottie JSON** on a 32 × 32 grid at 60 fps.
