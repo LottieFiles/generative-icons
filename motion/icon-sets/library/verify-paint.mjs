@@ -1,4 +1,5 @@
 import {verifyFilledEllipsis} from './verify-filled-ellipsis.mjs';
+import {STROKE_WIDTH_TOKEN,REGULAR_WEIGHT} from './paint-tokens.mjs';
 // Audit the actual exported paint contract across the current catalog.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,6 +19,8 @@ for(const ref of JSON.parse(fs.readFileSync(path.join(base,'catalog.json'))).set
   for(const action of icon.animations||icon.motions){
    const bytes=fs.readFileSync(path.join(folder,action.name+'.json')),data=JSON.parse(bytes);
    assert.equal(data.w,32);assert.equal(data.h,32);
+   assert.equal(data.slots?.[STROKE_WIDTH_TOKEN]?.p?.k,REGULAR_WEIGHT,action.name+' stroke-width token slot');
+   for(const theme of ['dark','light']){const rules=JSON.parse(fs.readFileSync(path.join(folder,`${action.name}.theme-${theme}.json`))).rules;assert.ok(rules.some(r=>r.id===STROKE_WIDTH_TOKEN&&r.type==='Scalar'&&r.value===REGULAR_WEIGHT),action.name+' '+theme+' theme stroke-width rule');}
    let tint=0;const found=new Set();
    function shapes(items){for(const s of items||[]){
     if(s.ty==='gr')shapes(s.it);
@@ -26,6 +29,8 @@ for(const ref of JSON.parse(fs.readFileSync(path.join(base,'catalog.json'))).set
     if(s.ty!=='st'||!s.o?.sid?.startsWith('style.outline.'))continue;
     const preset=s.o.sid.split('.').at(-1);assert.ok(preset in weights);
     for(const v of values(s.w))assert.equal(Array.isArray(v)?v[0]:v,weights[preset],action.name+' '+preset+' stroke');
+    // Regular strokes carry the stroke-width token so the runtime can render any weight; the authored Light/Bold layers stay fixed.
+    assert.equal(s.w.sid,preset==='regular'?STROKE_WIDTH_TOKEN:undefined,action.name+' '+preset+' stroke-width token');
     assert.equal(s.lc,2,action.name+' round cap');assert.equal(s.lj,2,action.name+' round join');
     strokePaints++;found.add(preset);
    }}
@@ -40,7 +45,7 @@ for(const ref of JSON.parse(fs.readFileSync(path.join(base,'catalog.json'))).set
   }
  }
 }
-const report={result:'PASS',icons:new Set(records.map(r=>r.icon)).size,actions:records.length,strokePaints,weights,units:'32-unit icon grid',openIcons:[...openIcons],records};
+const report={result:'PASS',icons:new Set(records.map(r=>r.icon)).size,actions:records.length,strokePaints,weights,strokeWidthToken:STROKE_WIDTH_TOKEN,units:'32-unit icon grid',openIcons:[...openIcons],records};
 fs.mkdirSync(path.join(here,'evidence'),{recursive:true});
 fs.writeFileSync(path.join(here,'evidence/paint-verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(`PASS ${report.icons} icons / ${report.actions} actions: ${strokePaints} constant outline stroke paints; no scaled layers/groups; open icons have no tint.`);

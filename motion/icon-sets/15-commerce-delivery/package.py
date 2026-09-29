@@ -20,7 +20,8 @@ extras += [p for p in (root.parent/'library/design-reviews/return-package-v2').r
 strength=root.parent/'library/design-reviews/strong-motion-audit'
 extras += [p for p in strength.rglob('*') if p.is_file() and 'before-commerce' not in p.parts and p.suffix in {'.md','.json','.py','.png'} and p.name!='archive-verification.json']
 extras += [project/'prototype/icons/15/strength-review.html']
-extras += [strength/'before-commerce/assets'/ (name+'-strong-poses.png') for name in json.loads((strength/'changed-icons.json').read_text()) if name!='delivery-truck']
+# Historical review evidence is optional; the bundle only lists what is present.
+extras += [strength/'before-commerce/assets'/ (name+'-strong-poses.png') for name in (json.loads((strength/'changed-icons.json').read_text()) if (strength/'changed-icons.json').exists() else []) if name!='delivery-truck']
 with ZipFile(manifest.parent/'15-commerce-delivery.zip','a') as archive:
  existing=set(archive.namelist())
  for source in extras:

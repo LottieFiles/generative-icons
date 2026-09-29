@@ -64,7 +64,7 @@ vector:
     naming: "<group>.<token>"
     types: [color]
     themes: [light, dark]
-    required: [color.primary, style.outline.light, style.outline.regular, style.outline.bold, style.solid, style.tint]
+    required: [color.primary, style.outline.light, style.outline.regular, style.outline.bold, style.solid, style.tint, style.outline.width]
   features:
     allow: [shape-layers, path-morph, markers, rounded-corners]
     deny: [expressions, effects, masks, mattes, image-layers, text-layers, 3d, audio, precomps, gradients-animated, time-remap, motion-blur]
@@ -120,7 +120,7 @@ The Engine exporter writes motion as sampled path keyframes joined by straight l
 - **Frame rate 60, canvas 32 × 32, 144 frames** for every shipped animation.
 - **Markers:** `action` covers the icon's active motion, `rest` is one frame on the final pose, and `showcase` covers the whole timeline for the gallery preview loop. These are the only marker names allowed.
 - **Profiles:** each `.lottie` holds a Light animation (`<name>`) and a Strong one (`<name>-strong`), with `dark` and `light` themes.
-- **Slots:** `color.primary` plus the five style slots (`style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`), which switch weight and style at runtime.
+- **Slots:** `color.primary` plus the five style slots (`style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`) and the `style.outline.width` stroke-width token bound to every Regular outline stroke, which switch weight and style at runtime.
 - **Features:** shape layers and path animation only. No expressions, effects, masks, mattes, precomps, image or text layers.
 - **Authoring:** don't hand-write Lottie JSON. Author the set's `definitions.mjs`, build it with the Engine exporter and run the set's verification (see [creating icons](docs/creating-icons.md)).
 

@@ -4,7 +4,7 @@ All four packages share one version and are released together. Schema version 1 
 
 | Surface | Contract |
 | --- | --- |
-| Icon descriptor | Stable `id`; readable `label` and `intent`; family and category; start and end state; Light/Strong actions and optional authored reverse; supported styles and weights; native asset path, bytes and SHA-256 |
+| Icon descriptor | Stable `id`; readable `label` and `intent`; family and category; start and end state; Light/Strong actions and optional authored reverse; supported styles and authored weights (any weight from 1 to 3 renders through the `style.outline.width` token); native asset path, bytes and SHA-256 |
 | Catalog | `schemaVersion`, package `version`, categories and the complete descriptor list |
 | Project (`lottie-icons.json`) | `schemaVersion`, detected framework and package manager, relative asset and descriptor folders, public URL base and default appearance |
 | Lock (`.lottie-icons/lock.json`) | Selected IDs and versions, installed paths and hashes of managed files; local edits block replacement |

@@ -456,21 +456,55 @@ Read the current authoring helper signatures before using options such as pose o
 {
   "version": 1,
   "grid": 32,
-  "outlineWeights": { "light": 1.5, "regular": 2, "bold": 2.5 },
+  "outlineWeights": {
+    "light": 1.5,
+    "regular": 2,
+    "bold": 2.5
+  },
   "defaultOutlineWeight": "regular",
-  "sourceStyles": ["outline", "solid", "tint"],
-  "presentationStyles": ["outline", "solid", "duotone"],
+  "outlineWeightRange": [
+    1,
+    3
+  ],
+  "strokeWidthToken": "style.outline.width",
+  "sourceStyles": [
+    "outline",
+    "solid",
+    "tint"
+  ],
+  "presentationStyles": [
+    "outline",
+    "solid",
+    "duotone"
+  ],
   "duotoneOpacity": 0.18,
   "roundCapsAndJoins": true,
-  "profiles": ["light", "strong"],
+  "profiles": [
+    "light",
+    "strong"
+  ],
   "defaultMotion": "strong",
   "fps": 60,
   "durationSeconds": 2.4,
   "review": {
-    "requiredSizes": [24, 32, 48, 192],
-    "contextStressSizes": [16, 20],
-    "controlSizes": [32, 36],
-    "themes": ["dark", "light"],
+    "requiredSizes": [
+      24,
+      32,
+      48,
+      192
+    ],
+    "contextStressSizes": [
+      16,
+      20
+    ],
+    "controlSizes": [
+      32,
+      36
+    ],
+    "themes": [
+      "dark",
+      "light"
+    ],
     "compareAtEqualElapsedTime": true
   },
   "scope": "Current native icon family. Source preflight and design prompts consume this file. Existing exporters retain their versioned constants; export/paint checks must still confirm agreement. Do not quantize animated coordinates, enforce a competitor's grid, or infer visual approval from these values."
@@ -550,7 +584,7 @@ Components that handle events in Next.js need `'use client'`. The adapter loads 
 | Size | CSS pixels, default `32` |
 | Color | Six-digit hex; resolve theme tokens before passing them |
 | Style | `outline`, `solid`, `duotone` (React prop: `variant`) |
-| Weight | `1.5`, `2`, `2.5` (outline only) |
+| Weight | Any value from `1` to `3` (outline only). `1.5`, `2` and `2.5` are the authored Light, Regular and Bold layers; other values render the Regular geometry through the `style.outline.width` stroke-width token, which needs a player that supports stroke-width tokens |
 | Motion | `light`, `strong` |
 | Theme | `light`, `dark` |
 | Reduced motion | Follows the OS preference; override with a boolean |
@@ -580,7 +614,7 @@ All four packages share one version and are released together. Schema version 1 
 
 | Surface | Contract |
 | --- | --- |
-| Icon descriptor | Stable `id`; readable `label` and `intent`; family and category; start and end state; Light/Strong actions and optional authored reverse; supported styles and weights; native asset path, bytes and SHA-256 |
+| Icon descriptor | Stable `id`; readable `label` and `intent`; family and category; start and end state; Light/Strong actions and optional authored reverse; supported styles and authored weights (any weight from 1 to 3 renders through the `style.outline.width` token); native asset path, bytes and SHA-256 |
 | Catalog | `schemaVersion`, package `version`, categories and the complete descriptor list |
 | Project (`lottie-icons.json`) | `schemaVersion`, detected framework and package manager, relative asset and descriptor folders, public URL base and default appearance |
 | Lock (`.lottie-icons/lock.json`) | Selected IDs and versions, installed paths and hashes of managed files; local edits block replacement |

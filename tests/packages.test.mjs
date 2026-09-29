@@ -124,3 +124,16 @@ test('release.json status reflects source provenance; dirty builds are never pac
     assert.notEqual(result.status, 0); assert.match(result.stderr, /uncommitted/); assert.equal(fs.existsSync(output), false);
   } finally { fs.rmSync(path.dirname(output), { recursive: true, force: true }); }
 });
+
+test('any weight from 1 to 3 paints: authored layers at their stops, the stroke-width token in between', () => {
+  const player = new Player();
+  const handle = connectIcon(stateful, player, { weight: 2.3 });
+  assert.equal(player.slots['style.outline.regular'], 100); assert.equal(player.slots['style.outline.bold'], 0);
+  assert.equal(player.slots['style.outline.width'], 2.3);
+  handle.update({ weight: 2.5 });
+  assert.equal(player.slots['style.outline.bold'], 100); assert.equal(player.slots['style.outline.regular'], 0);
+  assert.equal(player.slots['style.outline.width'], 2);
+  handle.update({ style: 'solid', weight: 1.2 });
+  assert.equal(player.slots['style.outline.regular'], 0); assert.equal(player.slots['style.solid'], 100);
+  for (const weight of [0.5, 3.5, NaN, '2']) assert.throws(() => handle.update({ weight }), /weight must be a number from 1 to 3/);
+});

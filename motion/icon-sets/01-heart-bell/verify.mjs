@@ -140,7 +140,8 @@ for (const icon of set.icons) {
 }
 
 // The current whole-library Strong revision supersedes the old Heart protection.
-// Light geometry/motion remains byte-identical; family archives also contain Strong.
+// Light geometry/motion is pinned by hash (baseline refreshed when the paint
+// contract gained the stroke-width token); family archives also contain Strong.
 const baseline=JSON.parse(fs.readFileSync(path.join(root,'evidence/light-baseline.json')));
 for(const name of ['heart','bell']){
  const rel=`prototype/icons/01/assets/${name}.json`;

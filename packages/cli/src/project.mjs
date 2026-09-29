@@ -62,6 +62,6 @@ export function readConfig(root) {
   for (const key of ['assets', 'descriptors']) inside(root, value[key]);
   if (!/^\/[a-zA-Z0-9_/-]+$/.test(value.publicPath) || value.publicPath.includes('..')) throw Error('publicPath must be a local URL path');
   const defaults = value.defaults;
-  if (!defaults || !/^#[0-9a-f]{6}$/i.test(defaults.color) || !['outline', 'solid', 'duotone'].includes(defaults.style) || ![1.5, 2, 2.5].includes(defaults.weight) || !['light', 'strong'].includes(defaults.motion)) throw Error('Invalid project defaults');
+  if (!defaults || !/^#[0-9a-f]{6}$/i.test(defaults.color) || !['outline', 'solid', 'duotone'].includes(defaults.style) || !(Number.isFinite(defaults.weight) && defaults.weight >= 1 && defaults.weight <= 3) || !['light', 'strong'].includes(defaults.motion)) throw Error('Invalid project defaults');
   return value;
 }

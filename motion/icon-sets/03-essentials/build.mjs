@@ -6,6 +6,7 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import svgpath from "svgpath";
+import { bindPaint } from "../library/paint-tokens.mjs";
 import { icons as definitions } from "./definitions.mjs";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -145,30 +146,7 @@ for (const base of definitions) for (const motionId of ['light','strong']) for (
   const rgb = (hex) =>
     [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
   native.nm = `Motion / Set 03 / ${icon.label}`;
-  native.slots = Object.fromEntries(
-    Object.entries(palettes.dark).map(([id, hex]) => [
-      id,
-      { p: { a: 0, k: rgb(hex) } },
-    ]),
-  );
-  Object.assign(native.slots, {
-    "style.outline.light": { p: { a: 0, k: 0 } },
-    "style.outline.regular": { p: { a: 0, k: 100 } },
-    "style.outline.bold": { p: { a: 0, k: 0 } },
-    "style.solid": { p: { a: 0, k: 0 } },
-    "style.tint": { p: { a: 0, k: 0 } },
-  });
-  for (const layer of native.layers) {
-    const [name, slot, style] = layer.nm.split("__");
-    if (!slot || !palettes.dark[slot] || !Object.hasOwn(native.slots, `style.${style}`))
-      throw new Error(`Missing paint contract: ${layer.nm}`);
-    for (const shape of layer.shapes || []) {
-      if (!["fl", "st"].includes(shape.ty)) continue;
-      shape.c.sid = slot;
-      shape.o.sid = `style.${style}`;
-    }
-    layer.nm = name;
-  }
+  bindPaint(native, palettes);
   native.markers = [
     { cm: "action", tm: 0, dr: icon.active * fps },
     { cm: "rest", tm: icon.rest * fps, dr: 1 },

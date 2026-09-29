@@ -2,7 +2,7 @@
 
 ## Shared construction
 
-Use a 32 × 32 vector coordinate system. Outline weights are 1.5, 2 and 2.5 units; Regular is 2. Keep caps, joins and useful corners rounded. Sharp geometry is appropriate when required for recognition or a supplied brand shape.
+Use a 32 × 32 vector coordinate system. Outline weights are 1.5, 2 and 2.5 units; Regular is 2. The three weights share one geometry, and every Regular stroke also carries the `style.outline.width` token, so a runtime can render any weight from 1 to 3 without new artwork. Keep caps, joins and useful corners rounded. Sharp geometry is appropriate when required for recognition or a supplied brand shape.
 
 The numeric source of truth is [family-contract.json](https://github.com/LottieFiles/lottie-generative-icons/blob/main/motion/icon-sets/library/family-contract.json). Do not scale a whole group to simulate weight or quantize animated coordinates to the grid. Matching numbers do not guarantee equal visual weight.
 

@@ -27,3 +27,6 @@ screenshots/
 .local/
 # Explicit public-site output; never deploy prototype/ directly.
 dist/
+
+# Per-run report written by the verification server; the PASS proof is browser-verification.json.
+motion/icon-sets/*/evidence/directed-browser-progress*.json

@@ -2,7 +2,11 @@ import { IconController } from './controller.mjs';
 
 export const schemaVersion = 1;
 const styles = ['outline', 'solid', 'duotone'];
-const weights = [1.5, 2, 2.5];
+// Authored outline layers. Any other weight in WEIGHT_RANGE renders the Regular
+// geometry through the style.outline.width stroke-width token.
+const authoredWeights = [1.5, 2, 2.5];
+const WEIGHT_RANGE = [1, 3];
+const STROKE_WIDTH_TOKEN = 'style.outline.width';
 
 export function validateIcon(icon) {
   if (icon?.schemaVersion !== schemaVersion || !/^[a-z][a-z0-9-]*$/.test(icon.id)) throw Error('Unsupported icon descriptor');
@@ -19,7 +23,8 @@ export function validateIcon(icon) {
 function settings(options, previous = {}) {
   const result = { color: '#008c76', theme: 'light', style: 'outline', weight: 2, motion: 'light', speed: 1, ...previous, ...options };
   if (!/^#[0-9a-f]{6}$/i.test(result.color)) throw Error('color must be a six-digit hex value; resolve your theme token before passing it');
-  if (!styles.includes(result.style) || !weights.includes(result.weight)) throw Error('Unsupported style or weight');
+  if (!styles.includes(result.style)) throw Error('Unsupported style');
+  if (!Number.isFinite(result.weight) || result.weight < WEIGHT_RANGE[0] || result.weight > WEIGHT_RANGE[1]) throw Error(`weight must be a number from ${WEIGHT_RANGE[0]} to ${WEIGHT_RANGE[1]}`);
   if (!['light', 'dark'].includes(result.theme) || !['light', 'strong'].includes(result.motion)) throw Error('Unsupported theme or motion');
   if (!Number.isFinite(result.speed) || result.speed <= 0 || result.speed > 4) throw Error('speed must be greater than 0 and at most 4');
   if (result.reducedMotion !== undefined && typeof result.reducedMotion !== 'boolean') throw Error('reducedMotion must be boolean');
@@ -30,7 +35,10 @@ export function paintIcon(player, options) {
   const value = settings(options);
   player.setTheme(value.theme);
   player.setColorSlot('color.primary', [1, 3, 5].map(i => parseInt(value.color.slice(i, i + 2), 16) / 255).concat(1));
-  for (const [name, weight] of [['light', 1.5], ['regular', 2], ['bold', 2.5]]) player.setScalarSlot(`style.outline.${name}`, value.style !== 'solid' && value.weight === weight ? 100 : 0);
+  const authored = authoredWeights.includes(value.weight);
+  for (const [name, weight] of [['light', 1.5], ['regular', 2], ['bold', 2.5]]) player.setScalarSlot(`style.outline.${name}`, value.style !== 'solid' && (authored ? value.weight === weight : name === 'regular') ? 100 : 0);
+  // Players without stroke-width token support show the Regular weight for in-between values.
+  player.setScalarSlot(STROKE_WIDTH_TOKEN, authored ? 2 : value.weight);
   player.setScalarSlot('style.solid', value.style === 'solid' ? 100 : 0);
   player.setScalarSlot('style.tint', value.style === 'duotone' ? 18 : 0);
 }
