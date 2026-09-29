@@ -1,0 +1,673 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 72,
+  "nativeTransformNodes": 372,
+  "nativeTransformMaxCoordinateError": 0.00001000000000139778,
+  "checks": [
+    {
+      "name": "storefront",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "storefront-header"
+        },
+        {
+          "type": "fixed",
+          "part": "storefront-facade"
+        }
+      ]
+    },
+    {
+      "name": "storefront-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "storefront-header"
+        },
+        {
+          "type": "fixed",
+          "part": "storefront-facade"
+        }
+      ]
+    },
+    {
+      "name": "shopping-bag",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "shopping-bag-body"
+        }
+      ]
+    },
+    {
+      "name": "shopping-bag-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "shopping-bag-body"
+        }
+      ]
+    },
+    {
+      "name": "basket",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "basket-body"
+        },
+        {
+          "type": "fixed",
+          "part": "basket-rim"
+        }
+      ]
+    },
+    {
+      "name": "basket-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "basket-body"
+        },
+        {
+          "type": "fixed",
+          "part": "basket-rim"
+        }
+      ]
+    },
+    {
+      "name": "product-tag",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "product-tag-tag"
+        }
+      ]
+    },
+    {
+      "name": "product-tag-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "product-tag-tag"
+        }
+      ]
+    },
+    {
+      "name": "product-variants",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "product-variants-swatch-one"
+        },
+        {
+          "type": "rigid",
+          "part": "product-variants-swatch-two"
+        }
+      ]
+    },
+    {
+      "name": "product-variants-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "product-variants-swatch-one"
+        },
+        {
+          "type": "rigid",
+          "part": "product-variants-swatch-two"
+        }
+      ]
+    },
+    {
+      "name": "discount",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "discount-badge"
+        }
+      ]
+    },
+    {
+      "name": "discount-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "discount-badge"
+        }
+      ]
+    },
+    {
+      "name": "coupon",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "coupon-body"
+        },
+        {
+          "type": "rigid",
+          "part": "coupon-stub"
+        }
+      ]
+    },
+    {
+      "name": "coupon-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "coupon-body"
+        },
+        {
+          "type": "rigid",
+          "part": "coupon-stub"
+        }
+      ]
+    },
+    {
+      "name": "loyalty-points",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "loyalty-points-card"
+        },
+        {
+          "type": "rigid",
+          "part": "loyalty-points-stamp-foot"
+        }
+      ]
+    },
+    {
+      "name": "loyalty-points-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "loyalty-points-card"
+        },
+        {
+          "type": "rigid",
+          "part": "loyalty-points-stamp-foot"
+        }
+      ]
+    },
+    {
+      "name": "gift-card",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "gift-card-card"
+        },
+        {
+          "type": "rigid",
+          "part": "gift-card-loop-left"
+        }
+      ]
+    },
+    {
+      "name": "gift-card-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "gift-card-card"
+        },
+        {
+          "type": "rigid",
+          "part": "gift-card-loop-left"
+        }
+      ]
+    },
+    {
+      "name": "subscription-box",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "subscription-box-body"
+        },
+        {
+          "type": "rigid",
+          "part": "subscription-box-hand"
+        }
+      ]
+    },
+    {
+      "name": "subscription-box-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "subscription-box-body"
+        },
+        {
+          "type": "rigid",
+          "part": "subscription-box-hand"
+        }
+      ]
+    },
+    {
+      "name": "checkout",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "checkout-console"
+        },
+        {
+          "type": "rigid",
+          "part": "checkout-drawer"
+        }
+      ]
+    },
+    {
+      "name": "checkout-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "checkout-console"
+        },
+        {
+          "type": "rigid",
+          "part": "checkout-drawer"
+        }
+      ]
+    },
+    {
+      "name": "order-confirmed",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "order-confirmed-sheet"
+        }
+      ]
+    },
+    {
+      "name": "order-confirmed-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "order-confirmed-sheet"
+        }
+      ]
+    },
+    {
+      "name": "open-package",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "open-package-box"
+        },
+        {
+          "type": "rigid",
+          "part": "open-package-flap-left"
+        },
+        {
+          "type": "rigid",
+          "part": "open-package-flap-right"
+        }
+      ]
+    },
+    {
+      "name": "open-package-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "open-package-box"
+        },
+        {
+          "type": "rigid",
+          "part": "open-package-flap-left"
+        },
+        {
+          "type": "rigid",
+          "part": "open-package-flap-right"
+        }
+      ]
+    },
+    {
+      "name": "packing-tape",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "packing-tape-rim"
+        }
+      ]
+    },
+    {
+      "name": "packing-tape-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "packing-tape-rim"
+        }
+      ]
+    },
+    {
+      "name": "return-package",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "return-package-parcel"
+        },
+        {
+          "type": "opaque",
+          "part": "return-package-parcel"
+        }
+      ]
+    },
+    {
+      "name": "return-package-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "return-package-parcel"
+        },
+        {
+          "type": "opaque",
+          "part": "return-package-parcel"
+        }
+      ]
+    },
+    {
+      "name": "delivery-truck",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "delivery-truck-cargo"
+        },
+        {
+          "type": "rigid",
+          "part": "delivery-truck-wheel-left"
+        }
+      ]
+    },
+    {
+      "name": "delivery-truck-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "delivery-truck-cargo"
+        },
+        {
+          "type": "rigid",
+          "part": "delivery-truck-wheel-left"
+        }
+      ]
+    },
+    {
+      "name": "order-tracking",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "order-tracking-stop-one"
+        },
+        {
+          "type": "rigid",
+          "part": "order-tracking-pin"
+        }
+      ]
+    },
+    {
+      "name": "order-tracking-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "order-tracking-stop-one"
+        },
+        {
+          "type": "rigid",
+          "part": "order-tracking-pin"
+        }
+      ]
+    },
+    {
+      "name": "pickup-locker",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pickup-locker-frame-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "pickup-locker-door"
+        },
+        {
+          "type": "rigid",
+          "part": "pickup-locker-handle"
+        }
+      ]
+    },
+    {
+      "name": "pickup-locker-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pickup-locker-frame-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "pickup-locker-door"
+        },
+        {
+          "type": "rigid",
+          "part": "pickup-locker-handle"
+        }
+      ]
+    },
+    {
+      "name": "warehouse",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "warehouse-building"
+        },
+        {
+          "type": "fixed",
+          "part": "warehouse-jambs"
+        }
+      ]
+    },
+    {
+      "name": "warehouse-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "warehouse-building"
+        },
+        {
+          "type": "fixed",
+          "part": "warehouse-jambs"
+        }
+      ]
+    },
+    {
+      "name": "inventory",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "inventory-box-left"
+        },
+        {
+          "type": "fixed",
+          "part": "inventory-box-right"
+        },
+        {
+          "type": "rigid",
+          "part": "inventory-moving-box"
+        }
+      ]
+    },
+    {
+      "name": "inventory-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "inventory-box-left"
+        },
+        {
+          "type": "fixed",
+          "part": "inventory-box-right"
+        },
+        {
+          "type": "rigid",
+          "part": "inventory-moving-box"
+        }
+      ]
+    }
+  ]
+}

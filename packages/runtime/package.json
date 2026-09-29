@@ -1,0 +1,50 @@
+{
+  "name": "@lottiefiles/generative-icons-runtime",
+  "version": "0.1.0",
+  "description": "Generative Animated Icons runtime: playback, state and paint for dotLottie icons",
+  "keywords": [
+    "lottie",
+    "dotlottie",
+    "animated-icons",
+    "icons",
+    "runtime",
+    "generative-animated-icons"
+  ],
+  "homepage": "https://github.com/LottieFiles/lottie-generative-icons#readme",
+  "bugs": {
+    "url": "https://github.com/LottieFiles/lottie-generative-icons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LottieFiles/lottie-generative-icons.git",
+    "directory": "packages/runtime"
+  },
+  "author": "LottieFiles",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist/index.mjs",
+    "dist/index.d.ts",
+    "dist/controller.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./controller": "./dist/controller.mjs"
+  },
+  "dependencies": {
+    "@lottiefiles/dotlottie-web": "0.80.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

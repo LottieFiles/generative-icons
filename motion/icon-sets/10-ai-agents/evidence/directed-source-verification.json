@@ -1,0 +1,817 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 76,
+  "nativeTransformNodes": 386,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "checks": [
+    {
+      "name": "ai-agent",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "ai-agent-body"
+        },
+        {
+          "type": "rigid",
+          "part": "ai-agent-stalk"
+        },
+        {
+          "type": "rigid",
+          "part": "ai-agent-tip"
+        },
+        {
+          "type": "rigid",
+          "part": "ai-agent-lens"
+        }
+      ]
+    },
+    {
+      "name": "ai-agent-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "ai-agent-body"
+        },
+        {
+          "type": "rigid",
+          "part": "ai-agent-stalk"
+        },
+        {
+          "type": "rigid",
+          "part": "ai-agent-tip"
+        },
+        {
+          "type": "rigid",
+          "part": "ai-agent-lens"
+        }
+      ]
+    },
+    {
+      "name": "agent-team",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "agent-team-peerL"
+        },
+        {
+          "type": "fixed",
+          "part": "agent-team-peerR"
+        },
+        {
+          "type": "fixed",
+          "part": "agent-team-lead-frame"
+        }
+      ]
+    },
+    {
+      "name": "agent-team-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "agent-team-peerL"
+        },
+        {
+          "type": "fixed",
+          "part": "agent-team-peerR"
+        },
+        {
+          "type": "fixed",
+          "part": "agent-team-lead-frame"
+        }
+      ]
+    },
+    {
+      "name": "tool-call",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "tool-call-wrench"
+        },
+        {
+          "type": "rigid",
+          "part": "tool-call-nut"
+        }
+      ]
+    },
+    {
+      "name": "tool-call-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "tool-call-wrench"
+        },
+        {
+          "type": "rigid",
+          "part": "tool-call-nut"
+        }
+      ]
+    },
+    {
+      "name": "agent-workflow",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "agent-workflow-nodeA-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "agent-workflow-nodeB-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "agent-workflow-linkB"
+        },
+        {
+          "type": "rigid",
+          "part": "agent-workflow-packet"
+        }
+      ]
+    },
+    {
+      "name": "agent-workflow-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "agent-workflow-nodeA-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "agent-workflow-nodeB-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "agent-workflow-linkB"
+        },
+        {
+          "type": "rigid",
+          "part": "agent-workflow-packet"
+        }
+      ]
+    },
+    {
+      "name": "task-plan",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "task-plan-step1-frame"
+        },
+        {
+          "type": "monotonic",
+          "part": "task-plan-step2-frame",
+          "measure": "width"
+        },
+        {
+          "type": "monotonic",
+          "part": "task-plan-step3-frame",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "task-plan-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "task-plan-step1-frame"
+        },
+        {
+          "type": "monotonic",
+          "part": "task-plan-step2-frame",
+          "measure": "width"
+        },
+        {
+          "type": "monotonic",
+          "part": "task-plan-step3-frame",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "agent-handoff",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "agent-handoff-a-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "agent-handoff-b-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "agent-handoff-bead"
+        }
+      ]
+    },
+    {
+      "name": "agent-handoff-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "agent-handoff-a-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "agent-handoff-b-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "agent-handoff-bead"
+        }
+      ]
+    },
+    {
+      "name": "approval-step",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "approval-step-beam"
+        },
+        {
+          "type": "rigid",
+          "part": "approval-step-token-frame"
+        }
+      ]
+    },
+    {
+      "name": "approval-step-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "approval-step-beam"
+        },
+        {
+          "type": "rigid",
+          "part": "approval-step-token-frame"
+        }
+      ]
+    },
+    {
+      "name": "guardrails",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "guardrails-lane-top"
+        },
+        {
+          "type": "rigid",
+          "part": "guardrails-disc-frame"
+        }
+      ]
+    },
+    {
+      "name": "guardrails-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "guardrails-lane-top"
+        },
+        {
+          "type": "rigid",
+          "part": "guardrails-disc-frame"
+        }
+      ]
+    },
+    {
+      "name": "model-router",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "model-router-hub-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "model-router-port-top"
+        },
+        {
+          "type": "rigid",
+          "part": "model-router-arm"
+        }
+      ]
+    },
+    {
+      "name": "model-router-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "model-router-hub-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "model-router-port-top"
+        },
+        {
+          "type": "rigid",
+          "part": "model-router-arm"
+        }
+      ]
+    },
+    {
+      "name": "model-training",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "model-training-bowl"
+        },
+        {
+          "type": "rigid",
+          "part": "model-training-ball"
+        }
+      ]
+    },
+    {
+      "name": "model-training-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "model-training-bowl"
+        },
+        {
+          "type": "rigid",
+          "part": "model-training-ball"
+        }
+      ]
+    },
+    {
+      "name": "fine-tune",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fine-tune-stem"
+        }
+      ]
+    },
+    {
+      "name": "fine-tune-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fine-tune-stem"
+        }
+      ]
+    },
+    {
+      "name": "model-evaluation",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "model-evaluation-post"
+        },
+        {
+          "type": "fixed",
+          "part": "model-evaluation-base"
+        },
+        {
+          "type": "rigid",
+          "part": "model-evaluation-beam"
+        },
+        {
+          "type": "rigid",
+          "part": "model-evaluation-left-pan-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-evaluation-right-pan-frame"
+        }
+      ]
+    },
+    {
+      "name": "model-evaluation-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "model-evaluation-post"
+        },
+        {
+          "type": "fixed",
+          "part": "model-evaluation-base"
+        },
+        {
+          "type": "rigid",
+          "part": "model-evaluation-beam"
+        },
+        {
+          "type": "rigid",
+          "part": "model-evaluation-left-pan-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-evaluation-right-pan-frame"
+        }
+      ]
+    },
+    {
+      "name": "confidence-score",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "confidence-score-estimate-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "confidence-score-axis"
+        },
+        {
+          "type": "rigid",
+          "part": "confidence-score-cap-l"
+        },
+        {
+          "type": "rigid",
+          "part": "confidence-score-cap-r"
+        }
+      ]
+    },
+    {
+      "name": "confidence-score-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "confidence-score-estimate-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "confidence-score-axis"
+        },
+        {
+          "type": "rigid",
+          "part": "confidence-score-cap-l"
+        },
+        {
+          "type": "rigid",
+          "part": "confidence-score-cap-r"
+        }
+      ]
+    },
+    {
+      "name": "inference",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "inference-in-mid",
+          "measure": "width",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "name": "inference-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "inference-in-mid",
+          "measure": "width",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "name": "batch-inference",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "batch-inference-collector"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-inference-card-1-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-inference-card-3-frame"
+        }
+      ]
+    },
+    {
+      "name": "batch-inference-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "batch-inference-collector"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-inference-card-1-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-inference-card-3-frame"
+        }
+      ]
+    },
+    {
+      "name": "local-model",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "local-model-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "local-model-core"
+        },
+        {
+          "type": "rigid",
+          "part": "local-model-pin-t1"
+        }
+      ]
+    },
+    {
+      "name": "local-model-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "local-model-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "local-model-core"
+        },
+        {
+          "type": "rigid",
+          "part": "local-model-pin-t1"
+        }
+      ]
+    },
+    {
+      "name": "model-deploy",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "model-deploy-model-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-deploy-dock"
+        }
+      ]
+    },
+    {
+      "name": "model-deploy-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "model-deploy-model-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-deploy-dock"
+        }
+      ]
+    },
+    {
+      "name": "model-version",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "model-version-trunk"
+        },
+        {
+          "type": "fixed",
+          "part": "model-version-v2-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "model-version-v1-frame"
+        }
+      ]
+    },
+    {
+      "name": "model-version-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "model-version-trunk"
+        },
+        {
+          "type": "fixed",
+          "part": "model-version-v2-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "model-version-v1-frame"
+        }
+      ]
+    },
+    {
+      "name": "usage-meter",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "usage-meter-dial"
+        },
+        {
+          "type": "fixed",
+          "part": "usage-meter-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "usage-meter-needle"
+        }
+      ]
+    },
+    {
+      "name": "usage-meter-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "usage-meter-dial"
+        },
+        {
+          "type": "fixed",
+          "part": "usage-meter-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "usage-meter-needle"
+        }
+      ]
+    },
+    {
+      "name": "ai-connection",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ai-connection-node-a-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "ai-connection-node-b-frame"
+        }
+      ]
+    },
+    {
+      "name": "ai-connection-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ai-connection-node-a-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "ai-connection-node-b-frame"
+        }
+      ]
+    }
+  ]
+}

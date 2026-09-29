@@ -1,0 +1,522 @@
+{
+  "result": "PASS",
+  "icons": 10,
+  "actions": 40,
+  "nativeTransformNodes": 236,
+  "nativeTransformMaxCoordinateError": 0.000006000000002615025,
+  "checks": [
+    {
+      "name": "file-upload",
+      "fixedParts": [
+        "file-upload-page-frame",
+        "file-upload-fold"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-upload-page-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "file-upload-fold"
+        },
+        {
+          "type": "rigid",
+          "part": "file-upload-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "file-upload-head"
+        }
+      ]
+    },
+    {
+      "name": "file-upload-strong",
+      "fixedParts": [
+        "file-upload-page-frame",
+        "file-upload-fold"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-upload-page-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "file-upload-fold"
+        },
+        {
+          "type": "rigid",
+          "part": "file-upload-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "file-upload-head"
+        }
+      ]
+    },
+    {
+      "name": "file-download",
+      "fixedParts": [
+        "file-download-page-frame",
+        "file-download-fold"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-download-page-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "file-download-fold"
+        },
+        {
+          "type": "rigid",
+          "part": "file-download-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "file-download-head"
+        }
+      ]
+    },
+    {
+      "name": "file-download-strong",
+      "fixedParts": [
+        "file-download-page-frame",
+        "file-download-fold"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-download-page-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "file-download-fold"
+        },
+        {
+          "type": "rigid",
+          "part": "file-download-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "file-download-head"
+        }
+      ]
+    },
+    {
+      "name": "attach-file",
+      "fixedParts": [
+        "attach-file-page"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "attach-file-page"
+        },
+        {
+          "type": "rigid",
+          "part": "attach-file-clip"
+        }
+      ]
+    },
+    {
+      "name": "attach-file-strong",
+      "fixedParts": [
+        "attach-file-page"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "attach-file-page"
+        },
+        {
+          "type": "rigid",
+          "part": "attach-file-clip"
+        }
+      ]
+    },
+    {
+      "name": "detach-file",
+      "fixedParts": [
+        "detach-file-page"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "detach-file-page"
+        },
+        {
+          "type": "rigid",
+          "part": "detach-file-clip"
+        }
+      ]
+    },
+    {
+      "name": "detach-file-strong",
+      "fixedParts": [
+        "detach-file-page"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "detach-file-page"
+        },
+        {
+          "type": "rigid",
+          "part": "detach-file-clip"
+        }
+      ]
+    },
+    {
+      "name": "cloud-upload",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cloud-upload-cloud"
+        },
+        {
+          "type": "rigid",
+          "part": "cloud-upload-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "cloud-upload-head"
+        }
+      ]
+    },
+    {
+      "name": "cloud-upload-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cloud-upload-cloud"
+        },
+        {
+          "type": "rigid",
+          "part": "cloud-upload-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "cloud-upload-head"
+        }
+      ]
+    },
+    {
+      "name": "cloud-download",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cloud-download-cloud"
+        },
+        {
+          "type": "rigid",
+          "part": "cloud-download-head"
+        }
+      ]
+    },
+    {
+      "name": "cloud-download-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cloud-download-cloud"
+        },
+        {
+          "type": "rigid",
+          "part": "cloud-download-head"
+        }
+      ]
+    },
+    {
+      "name": "drag-and-drop",
+      "fixedParts": [
+        "drag-and-drop-tray"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "drag-and-drop-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "drag-and-drop-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "drag-and-drop-strong",
+      "fixedParts": [
+        "drag-and-drop-tray"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "drag-and-drop-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "drag-and-drop-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "batch-upload",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "batch-upload-shaft0"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-head0"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-shaft1"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-head1"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-shaft2"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-head2"
+        }
+      ]
+    },
+    {
+      "name": "batch-upload-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "batch-upload-shaft0"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-head0"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-shaft1"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-head1"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-shaft2"
+        },
+        {
+          "type": "rigid",
+          "part": "batch-upload-head2"
+        }
+      ]
+    },
+    {
+      "name": "compress-files",
+      "fixedParts": [
+        "compress-files-box"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "compress-files-box"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-plate"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-handle"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-sheet-1"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-sheet-2"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-sheet-3"
+        }
+      ]
+    },
+    {
+      "name": "compress-files-strong",
+      "fixedParts": [
+        "compress-files-box"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "compress-files-box"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-plate"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-handle"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-sheet-1"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-sheet-2"
+        },
+        {
+          "type": "rigid",
+          "part": "compress-files-sheet-3"
+        }
+      ]
+    },
+    {
+      "name": "extract-files",
+      "fixedParts": [
+        "extract-files-box"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "extract-files-box"
+        },
+        {
+          "type": "rigid",
+          "part": "extract-files-flap-left"
+        },
+        {
+          "type": "rigid",
+          "part": "extract-files-flap-right"
+        },
+        {
+          "type": "rigid",
+          "part": "extract-files-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "extract-files-strong",
+      "fixedParts": [
+        "extract-files-box"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "extract-files-box"
+        },
+        {
+          "type": "rigid",
+          "part": "extract-files-flap-left"
+        },
+        {
+          "type": "rigid",
+          "part": "extract-files-flap-right"
+        },
+        {
+          "type": "rigid",
+          "part": "extract-files-card-frame"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

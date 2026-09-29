@@ -1,0 +1,7 @@
+import {icons as access} from './batches/access.mjs';
+import {icons as privacy} from './batches/privacy.mjs';
+const all=new Map([...access,...privacy].map(i=>[i.name,i]));
+const order=["sign-in-out", "switch-account", "id-card", "password", "passkey", "fingerprint", "face-authentication", "two-factor-code", "recovery-codes", "private-browsing", "cookie-preferences", "block-user"];
+const fixed={"sign-in-out": ["doorway"], "password": ["field-frame", "dot-1"], "face-authentication": ["eye-l", "eye-r", "mouth"], "recovery-codes": ["sleeve"]};
+const rigid={"sign-in-out": ["shaft", "head"], "switch-account": ["personal-head-frame", "personal-shoulders", "work-head-frame", "work-shoulders", "marker"], "id-card": ["card-frame", "photo"], "password": ["dot-2", "dot-3", "dot-4"], "passkey": ["head-frame", "shoulders", "ring", "shaft", "tooth"], "fingerprint": ["ridge-1", "ridge-2", "ridge-3"], "face-authentication": ["bracket-tl", "bracket-tr", "bracket-br", "bracket-bl"], "two-factor-code": ["cell-0-frame", "cell-1-frame"], "recovery-codes": ["sheet-frame", "code-1", "code-2", "code-3"], "private-browsing": ["lens-l-frame", "lens-r-frame", "bridge", "temple-l", "temple-r"], "cookie-preferences": ["rim", "chip-0"], "block-user": ["head-frame", "shoulders", "ring"]};
+export const icons=order.map((id,index)=>{const icon=all.get(id);if(!icon)throw Error(id);return {...icon,number:417+index,constraints:[...(fixed[id]||[]).map(p=>({type:'fixed',part:id+'-'+p})),...(rigid[id]||[]).map(p=>({type:'rigid',part:id+'-'+p}))]};});

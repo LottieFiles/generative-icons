@@ -1,0 +1,30 @@
+# Twenty interface actions — briefs
+
+All twenty use the current family: original rounded 32-unit vectors, 24/32/48 px review, three native outline weights, a related Solid master, 18% Duotone, and shared theme slots. The gallery repeats complete gestures while hovered or keyboard focused; touch previews once. These twenty demonstrate or acknowledge controls, with the same state at both ends. Actual product status is separate. Reduced motion shows the complete resting drawing.
+
+Each selected concept was compared with a simpler alternative below before drawing. Exact timing and pose samples are canonical in definitions.mjs. Strong changes the useful action range; it is not a speed or stroke-weight setting. Keep prompt response, readable peaks, gentle settling, no gratuitous decoration, and stable painted gaps.
+
+| Icon | Action and role | Rejected alternative | Driver, fixed parts, and Light / Strong distinction |
+| --- | --- | --- | --- |
+| Home | The door opens slightly, then closes: return-home control acknowledgement. | A whole-house bounce loses the door mechanism. | The house stays fixed; the door folds toward its left attachment. Strong opens farther. |
+| Calendar | The current day marker advances and returns: browse dates. | A fluttering calendar sheet adds small unreadable detail. | Frame and binding rings stay still; one date tile moves horizontally, with greater Strong travel. |
+| Clock | The hands advance briefly and recover: time control acknowledgement. | An indefinite spin implies actual loading. | Fixed rim and center pin; minute hand leads, hour hand follows with a smaller angle. Strong advances farther. |
+| Camera | The shutter presses and the lens closes briefly: preview capture. | A flash burst adds noise and can imply a saved photo. | Fixed camera body, button press before lens closure; Strong closes the aperture farther. |
+| Image | The landscape shifts within its frame: browse image content. | Scaling the whole picture would not demonstrate its contents. | Fixed frame; hills move as a bounded path while the sun remains clear. Strong gives a wider composition change. |
+| Mail | The flap opens and closes: preview an envelope. | Sending it offscreen overlaps the existing Send icon. | Fixed body; flap pivots about its top edge with greater Strong opening. |
+| Message | Three dots answer in a short sequence: conversation acknowledgement. | Shaking the whole bubble does not express a reply. | Fixed rounded bubble and tail; ordered dots lift with 45 ms spacing. Strong lift is greater. |
+| Phone | The handset lifts and settles: call control acknowledgement. | Decorative ringing marks duplicate Bell's motion language. | One rigid handset; rotation around its lower grip with a short upward arc. Strong lifts farther. |
+| Microphone | The capsule leans toward a speaker and returns: input control acknowledgement. | A waveform would claim ongoing audio input. | Fixed cradle and stand; rigid capsule tilts at its lower attachment. Strong tilt is wider. |
+| Volume | Signal arcs travel outward and return: audio control preview. | A speaker pulse would obscure which part conveys sound. | Fixed speaker; arcs move with a brief stagger. Strong travel is greater, without extra rings. |
+| Wi-Fi | Signal bands contract toward the source, then open outward: connectivity control preview. | Blinking all bands equally looks like an error. | Fixed source dot; concentric bands change radius with short delays, preserving spacing. Strong changes the radius farther. |
+| Cloud | The upper contour gathers and releases: cloud control acknowledgement. | An upload arrow would duplicate Upload. | Fixed baseline; upper lobes respond with a short overlap. Strong gives a clearer contour change. |
+| Sun | Rays turn around a fixed disc and return: light-theme control acknowledgement. | A whole-symbol scale pulse has no distinct anatomy. | Fixed center; rays remain rigid and connected to their orbit. Strong turns and extends farther. |
+| Moon | The crescent rises through a short arc and settles: dark-theme control acknowledgement. | Orbiting stars would add decoration at small sizes. | Rigid crescent with protected tips; Strong uses a wider rise and turn. |
+| Location | The pin lowers toward its point, then returns: location control acknowledgement. | Repeated bouncing would imply imprecise placement. | Lower point anchored; body gathers and releases along the vertical axis. Strong changes the silhouette more. |
+| Compass | The needle finds a bearing and settles: direction control acknowledgement. | Rotating the outer ring would move the reference. | Fixed ring; rigid needle rotates at center. Strong starts with a larger offset and resolves cleanly. |
+| Link | Two links draw together and return: link control acknowledgement. | Pulling disconnected halves apart would read as unlink. | Two rigid loops stay visibly joined; Strong changes spacing farther without breaking their overlap. |
+| Shield | The shield braces about its lower point, then settles: protection control acknowledgement. | Forming a new check would falsely claim verification. | Shield and its inner mark remain one rigid assembly. Strong has a wider brace; the lower point stays fixed. |
+| Cart | The basket advances as the wheels roll, then returns: cart control acknowledgement. | Adding an item would claim a cart mutation. | Basket and axles move together; wheel markings rotate from travel. Strong moves farther. |
+| Settings | A gear makes a short deliberate adjustment and returns: settings control acknowledgement. | A continuous spin would imply processing. | Six rounded teeth rotate rigidly around a fixed center; Strong turns farther. No rubber teeth or changing hole size. |
+
+Review a rigid mechanism (Clock), a flexible contour (Cloud), and a layered control (Camera) first, beside the existing Menu state transition. Continue through all styles, widths, themes, meaningful poses, full playback, and loop boundaries. Keep all twenty on the single cumulative icons page; technical renderer harnesses are verification tools only.

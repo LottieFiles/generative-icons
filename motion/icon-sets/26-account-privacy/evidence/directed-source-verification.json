@@ -1,0 +1,648 @@
+{
+  "result": "PASS",
+  "icons": 12,
+  "actions": 38,
+  "nativeTransformNodes": 350,
+  "nativeTransformMaxCoordinateError": 0.000011130544120163677,
+  "checks": [
+    {
+      "name": "sign-in-out",
+      "fixedParts": [
+        "sign-in-out-doorway"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sign-in-out-doorway"
+        },
+        {
+          "type": "rigid",
+          "part": "sign-in-out-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "sign-in-out-head"
+        }
+      ]
+    },
+    {
+      "name": "sign-in-out-strong",
+      "fixedParts": [
+        "sign-in-out-doorway"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sign-in-out-doorway"
+        },
+        {
+          "type": "rigid",
+          "part": "sign-in-out-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "sign-in-out-head"
+        }
+      ]
+    },
+    {
+      "name": "switch-account",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "switch-account-personal-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-account-personal-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-account-work-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-account-work-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-account-marker"
+        }
+      ]
+    },
+    {
+      "name": "switch-account-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "switch-account-personal-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-account-personal-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-account-work-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-account-work-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-account-marker"
+        }
+      ]
+    },
+    {
+      "name": "id-card",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "id-card-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "id-card-photo"
+        }
+      ]
+    },
+    {
+      "name": "id-card-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "id-card-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "id-card-photo"
+        }
+      ]
+    },
+    {
+      "name": "password",
+      "fixedParts": [
+        "password-field-frame",
+        "password-dot-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "password-field-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "password-dot-1"
+        },
+        {
+          "type": "rigid",
+          "part": "password-dot-2"
+        },
+        {
+          "type": "rigid",
+          "part": "password-dot-3"
+        },
+        {
+          "type": "rigid",
+          "part": "password-dot-4"
+        }
+      ]
+    },
+    {
+      "name": "password-strong",
+      "fixedParts": [
+        "password-field-frame",
+        "password-dot-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "password-field-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "password-dot-1"
+        },
+        {
+          "type": "rigid",
+          "part": "password-dot-2"
+        },
+        {
+          "type": "rigid",
+          "part": "password-dot-3"
+        },
+        {
+          "type": "rigid",
+          "part": "password-dot-4"
+        }
+      ]
+    },
+    {
+      "name": "passkey",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "passkey-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "passkey-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "passkey-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "passkey-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "passkey-tooth"
+        }
+      ]
+    },
+    {
+      "name": "passkey-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "passkey-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "passkey-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "passkey-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "passkey-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "passkey-tooth"
+        }
+      ]
+    },
+    {
+      "name": "fingerprint",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fingerprint-ridge-1"
+        },
+        {
+          "type": "rigid",
+          "part": "fingerprint-ridge-2"
+        },
+        {
+          "type": "rigid",
+          "part": "fingerprint-ridge-3"
+        }
+      ]
+    },
+    {
+      "name": "fingerprint-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fingerprint-ridge-1"
+        },
+        {
+          "type": "rigid",
+          "part": "fingerprint-ridge-2"
+        },
+        {
+          "type": "rigid",
+          "part": "fingerprint-ridge-3"
+        }
+      ]
+    },
+    {
+      "name": "face-authentication",
+      "fixedParts": [
+        "face-authentication-eye-l",
+        "face-authentication-eye-r",
+        "face-authentication-mouth"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "face-authentication-eye-l"
+        },
+        {
+          "type": "fixed",
+          "part": "face-authentication-eye-r"
+        },
+        {
+          "type": "fixed",
+          "part": "face-authentication-mouth"
+        },
+        {
+          "type": "rigid",
+          "part": "face-authentication-bracket-tl"
+        },
+        {
+          "type": "rigid",
+          "part": "face-authentication-bracket-tr"
+        },
+        {
+          "type": "rigid",
+          "part": "face-authentication-bracket-br"
+        },
+        {
+          "type": "rigid",
+          "part": "face-authentication-bracket-bl"
+        }
+      ]
+    },
+    {
+      "name": "face-authentication-strong",
+      "fixedParts": [
+        "face-authentication-eye-l",
+        "face-authentication-eye-r",
+        "face-authentication-mouth"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "face-authentication-eye-l"
+        },
+        {
+          "type": "fixed",
+          "part": "face-authentication-eye-r"
+        },
+        {
+          "type": "fixed",
+          "part": "face-authentication-mouth"
+        },
+        {
+          "type": "rigid",
+          "part": "face-authentication-bracket-tl"
+        },
+        {
+          "type": "rigid",
+          "part": "face-authentication-bracket-tr"
+        },
+        {
+          "type": "rigid",
+          "part": "face-authentication-bracket-br"
+        },
+        {
+          "type": "rigid",
+          "part": "face-authentication-bracket-bl"
+        }
+      ]
+    },
+    {
+      "name": "two-factor-code",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "two-factor-code-cell-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "two-factor-code-cell-1-frame"
+        }
+      ]
+    },
+    {
+      "name": "two-factor-code-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "two-factor-code-cell-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "two-factor-code-cell-1-frame"
+        }
+      ]
+    },
+    {
+      "name": "recovery-codes",
+      "fixedParts": [
+        "recovery-codes-sleeve"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "recovery-codes-sleeve"
+        },
+        {
+          "type": "rigid",
+          "part": "recovery-codes-sheet-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "recovery-codes-code-1"
+        },
+        {
+          "type": "rigid",
+          "part": "recovery-codes-code-2"
+        },
+        {
+          "type": "rigid",
+          "part": "recovery-codes-code-3"
+        }
+      ]
+    },
+    {
+      "name": "recovery-codes-strong",
+      "fixedParts": [
+        "recovery-codes-sleeve"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "recovery-codes-sleeve"
+        },
+        {
+          "type": "rigid",
+          "part": "recovery-codes-sheet-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "recovery-codes-code-1"
+        },
+        {
+          "type": "rigid",
+          "part": "recovery-codes-code-2"
+        },
+        {
+          "type": "rigid",
+          "part": "recovery-codes-code-3"
+        }
+      ]
+    },
+    {
+      "name": "private-browsing",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "private-browsing-lens-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "private-browsing-lens-r-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "private-browsing-bridge"
+        },
+        {
+          "type": "rigid",
+          "part": "private-browsing-temple-l"
+        },
+        {
+          "type": "rigid",
+          "part": "private-browsing-temple-r"
+        }
+      ]
+    },
+    {
+      "name": "private-browsing-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "private-browsing-lens-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "private-browsing-lens-r-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "private-browsing-bridge"
+        },
+        {
+          "type": "rigid",
+          "part": "private-browsing-temple-l"
+        },
+        {
+          "type": "rigid",
+          "part": "private-browsing-temple-r"
+        }
+      ]
+    },
+    {
+      "name": "cookie-preferences",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cookie-preferences-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "cookie-preferences-chip-0"
+        }
+      ]
+    },
+    {
+      "name": "cookie-preferences-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cookie-preferences-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "cookie-preferences-chip-0"
+        }
+      ]
+    },
+    {
+      "name": "block-user",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "block-user-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "block-user-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "block-user-ring"
+        }
+      ]
+    },
+    {
+      "name": "block-user-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "block-user-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "block-user-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "block-user-ring"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

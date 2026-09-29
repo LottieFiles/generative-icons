@@ -1,0 +1,790 @@
+{
+  "version": 1,
+  "scope": "Full exported painted geometry; independent supervisor gap contracts",
+  "icons": {
+    "checkbox": [
+      {
+        "kind": "gap",
+        "a": "mark",
+        "b": "box-frame",
+        "min": 1,
+        "label": "mark / box-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "mark-solid",
+        "b": "box-solid",
+        "min": 1,
+        "label": "mark-solid / box-solid"
+      }
+    ],
+    "radio-button": [
+      {
+        "kind": "gap",
+        "a": "dot",
+        "b": "ring-frame",
+        "min": 1,
+        "label": "dot / ring-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-solid",
+        "b": "ring-solid",
+        "min": 1,
+        "label": "dot-solid / ring-solid"
+      }
+    ],
+    "toggle-switch": [
+      {
+        "kind": "gap",
+        "a": "knob",
+        "b": "track-frame",
+        "min": 1,
+        "label": "knob / track-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "knob-solid",
+        "b": "track-solid",
+        "min": 1,
+        "label": "knob-solid / track-solid"
+      }
+    ],
+    "text-field": [
+      {
+        "kind": "gap",
+        "a": "text",
+        "b": "caret",
+        "min": 1,
+        "label": "text / caret"
+      },
+      {
+        "kind": "gap",
+        "a": "text",
+        "b": "field-frame",
+        "min": 1,
+        "label": "text / field-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "caret",
+        "b": "field-frame",
+        "min": 1,
+        "label": "caret / field-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "text-solid",
+        "b": "caret-solid",
+        "min": 1,
+        "label": "text-solid / caret-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "text-solid",
+        "b": "field-solid",
+        "min": 1,
+        "label": "text-solid / field-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "caret-solid",
+        "b": "field-solid",
+        "min": 1,
+        "label": "caret-solid / field-solid"
+      }
+    ],
+    "number-field": [
+      {
+        "kind": "gap",
+        "a": "value",
+        "b": "field-frame",
+        "min": 1,
+        "label": "value / field-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "step-up",
+        "b": "field-frame",
+        "min": 1,
+        "label": "step-up / field-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "step-down",
+        "b": "field-frame",
+        "min": 1,
+        "label": "step-down / field-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "step-up",
+        "b": "step-down",
+        "min": 1,
+        "label": "step-up / step-down"
+      },
+      {
+        "kind": "gap",
+        "a": "value-solid",
+        "b": "field-solid",
+        "min": 1,
+        "label": "value-solid / field-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "step-up-solid",
+        "b": "field-solid",
+        "min": 1,
+        "label": "step-up-solid / field-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "step-down-solid",
+        "b": "field-solid",
+        "min": 1,
+        "label": "step-down-solid / field-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "step-up-solid",
+        "b": "step-down-solid",
+        "min": 1,
+        "label": "step-up-solid / step-down-solid"
+      }
+    ],
+    "select-field": [
+      {
+        "kind": "gap",
+        "a": "field",
+        "b": "panel",
+        "min": 1,
+        "label": "field / panel"
+      },
+      {
+        "kind": "gap",
+        "a": "value",
+        "b": "field",
+        "min": 1,
+        "label": "value / field"
+      },
+      {
+        "kind": "gap",
+        "a": "value",
+        "b": "chevron",
+        "min": 1,
+        "label": "value / chevron"
+      },
+      {
+        "kind": "gap",
+        "a": "chevron",
+        "b": "field",
+        "min": 1,
+        "label": "chevron / field"
+      },
+      {
+        "kind": "gap",
+        "a": "option",
+        "b": "panel",
+        "min": 1,
+        "label": "option / panel"
+      },
+      {
+        "kind": "gap",
+        "a": "field-solid",
+        "b": "panel-solid",
+        "min": 1,
+        "label": "field-solid / panel-solid"
+      }
+    ],
+    "multiple-choice": [
+      {
+        "kind": "gap",
+        "a": "box-1",
+        "b": "box-2",
+        "min": 1,
+        "label": "box-1 / box-2"
+      },
+      {
+        "kind": "gap",
+        "a": "check-1",
+        "b": "box-1",
+        "min": 1,
+        "label": "check-1 / box-1"
+      },
+      {
+        "kind": "gap",
+        "a": "check-2",
+        "b": "box-2",
+        "min": 1,
+        "label": "check-2 / box-2"
+      },
+      {
+        "kind": "gap",
+        "a": "box-1",
+        "b": "label-1",
+        "min": 1,
+        "label": "box-1 / label-1"
+      },
+      {
+        "kind": "gap",
+        "a": "box-2",
+        "b": "label-2",
+        "min": 1,
+        "label": "box-2 / label-2"
+      },
+      {
+        "kind": "gap",
+        "a": "check-1",
+        "b": "label-1",
+        "min": 1,
+        "label": "check-1 / label-1"
+      },
+      {
+        "kind": "gap",
+        "a": "check-2",
+        "b": "label-2",
+        "min": 1,
+        "label": "check-2 / label-2"
+      },
+      {
+        "kind": "gap",
+        "a": "box-1-solid",
+        "b": "box-2-solid",
+        "min": 1,
+        "label": "box-1-solid / box-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "box-1-solid",
+        "b": "label-1-solid",
+        "min": 1,
+        "label": "box-1-solid / label-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "box-2-solid",
+        "b": "label-2-solid",
+        "min": 1,
+        "label": "box-2-solid / label-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "check-1-solid",
+        "b": "box-1-solid",
+        "min": 1,
+        "label": "check-1-solid / box-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "check-2-solid",
+        "b": "box-2-solid",
+        "min": 1,
+        "label": "check-2-solid / box-2-solid"
+      }
+    ],
+    "signature": [
+      {
+        "kind": "gap",
+        "a": "ink",
+        "b": "baseline",
+        "min": 1,
+        "label": "ink / baseline"
+      },
+      {
+        "kind": "gap",
+        "a": "ink-solid",
+        "b": "baseline-solid",
+        "min": 1,
+        "label": "ink-solid / baseline-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "pen",
+        "b": "baseline",
+        "min": 1,
+        "label": "pen / baseline"
+      },
+      {
+        "kind": "gap",
+        "a": "pen-solid",
+        "b": "baseline-solid",
+        "min": 1,
+        "label": "pen-solid / baseline-solid"
+      }
+    ],
+    "form-builder": [
+      {
+        "kind": "gap",
+        "a": "text-field",
+        "b": "sheet",
+        "min": 1,
+        "label": "text-field / sheet"
+      },
+      {
+        "kind": "gap",
+        "a": "radio",
+        "b": "sheet",
+        "min": 1,
+        "label": "radio / sheet"
+      },
+      {
+        "kind": "gap",
+        "a": "radio-label",
+        "b": "sheet",
+        "min": 1,
+        "label": "radio-label / sheet"
+      },
+      {
+        "kind": "gap",
+        "a": "added",
+        "b": "sheet",
+        "min": 1,
+        "label": "added / sheet"
+      },
+      {
+        "kind": "gap",
+        "a": "radio",
+        "b": "radio-label",
+        "min": 1,
+        "label": "radio / radio-label"
+      },
+      {
+        "kind": "gap",
+        "a": "radio-label",
+        "b": "added",
+        "min": 1,
+        "label": "radio-label / added"
+      },
+      {
+        "kind": "gap",
+        "a": "radio",
+        "b": "added",
+        "min": 1,
+        "label": "radio / added"
+      },
+      {
+        "kind": "gap",
+        "a": "text-field",
+        "b": "radio",
+        "min": 1,
+        "label": "text-field / radio"
+      }
+    ],
+    "qr-code": [
+      {
+        "kind": "gap",
+        "a": "finder-0-dot",
+        "b": "finder-0",
+        "min": 1,
+        "label": "finder-0-dot / finder-0"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0-dot-solid",
+        "b": "finder-0-solid",
+        "min": 1,
+        "label": "finder-0-dot-solid / finder-0-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0",
+        "b": "finder-1",
+        "min": 1,
+        "label": "finder-0 / finder-1"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0-solid",
+        "b": "finder-1-solid",
+        "min": 1,
+        "label": "finder-0-solid / finder-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0",
+        "b": "finder-2",
+        "min": 1,
+        "label": "finder-0 / finder-2"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0-solid",
+        "b": "finder-2-solid",
+        "min": 1,
+        "label": "finder-0-solid / finder-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0",
+        "b": "static-0",
+        "min": 1,
+        "label": "finder-0 / static-0"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0-solid",
+        "b": "static-0-solid",
+        "min": 1,
+        "label": "finder-0-solid / static-0-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0",
+        "b": "static-1",
+        "min": 1,
+        "label": "finder-0 / static-1"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0-solid",
+        "b": "static-1-solid",
+        "min": 1,
+        "label": "finder-0-solid / static-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0",
+        "b": "module-0",
+        "min": 1,
+        "label": "finder-0 / module-0"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0-solid",
+        "b": "module-0-solid",
+        "min": 1,
+        "label": "finder-0-solid / module-0-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0",
+        "b": "module-1",
+        "min": 1,
+        "label": "finder-0 / module-1"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-0-solid",
+        "b": "module-1-solid",
+        "min": 1,
+        "label": "finder-0-solid / module-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1-dot",
+        "b": "finder-1",
+        "min": 1,
+        "label": "finder-1-dot / finder-1"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1-dot-solid",
+        "b": "finder-1-solid",
+        "min": 1,
+        "label": "finder-1-dot-solid / finder-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1",
+        "b": "finder-2",
+        "min": 1,
+        "label": "finder-1 / finder-2"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1-solid",
+        "b": "finder-2-solid",
+        "min": 1,
+        "label": "finder-1-solid / finder-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1",
+        "b": "static-0",
+        "min": 1,
+        "label": "finder-1 / static-0"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1-solid",
+        "b": "static-0-solid",
+        "min": 1,
+        "label": "finder-1-solid / static-0-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1",
+        "b": "static-1",
+        "min": 1,
+        "label": "finder-1 / static-1"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1-solid",
+        "b": "static-1-solid",
+        "min": 1,
+        "label": "finder-1-solid / static-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1",
+        "b": "module-0",
+        "min": 1,
+        "label": "finder-1 / module-0"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1-solid",
+        "b": "module-0-solid",
+        "min": 1,
+        "label": "finder-1-solid / module-0-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1",
+        "b": "module-1",
+        "min": 1,
+        "label": "finder-1 / module-1"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-1-solid",
+        "b": "module-1-solid",
+        "min": 1,
+        "label": "finder-1-solid / module-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2-dot",
+        "b": "finder-2",
+        "min": 1,
+        "label": "finder-2-dot / finder-2"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2-dot-solid",
+        "b": "finder-2-solid",
+        "min": 1,
+        "label": "finder-2-dot-solid / finder-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2",
+        "b": "static-0",
+        "min": 1,
+        "label": "finder-2 / static-0"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2-solid",
+        "b": "static-0-solid",
+        "min": 1,
+        "label": "finder-2-solid / static-0-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2",
+        "b": "static-1",
+        "min": 1,
+        "label": "finder-2 / static-1"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2-solid",
+        "b": "static-1-solid",
+        "min": 1,
+        "label": "finder-2-solid / static-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2",
+        "b": "module-0",
+        "min": 1,
+        "label": "finder-2 / module-0"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2-solid",
+        "b": "module-0-solid",
+        "min": 1,
+        "label": "finder-2-solid / module-0-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2",
+        "b": "module-1",
+        "min": 1,
+        "label": "finder-2 / module-1"
+      },
+      {
+        "kind": "gap",
+        "a": "finder-2-solid",
+        "b": "module-1-solid",
+        "min": 1,
+        "label": "finder-2-solid / module-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "static-0",
+        "b": "static-1",
+        "min": 1,
+        "label": "static-0 / static-1"
+      },
+      {
+        "kind": "gap",
+        "a": "static-0-solid",
+        "b": "static-1-solid",
+        "min": 1,
+        "label": "static-0-solid / static-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "static-0",
+        "b": "module-0",
+        "min": 1,
+        "label": "static-0 / module-0"
+      },
+      {
+        "kind": "gap",
+        "a": "static-0-solid",
+        "b": "module-0-solid",
+        "min": 1,
+        "label": "static-0-solid / module-0-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "static-0",
+        "b": "module-1",
+        "min": 1,
+        "label": "static-0 / module-1"
+      },
+      {
+        "kind": "gap",
+        "a": "static-0-solid",
+        "b": "module-1-solid",
+        "min": 1,
+        "label": "static-0-solid / module-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "static-1",
+        "b": "module-0",
+        "min": 1,
+        "label": "static-1 / module-0"
+      },
+      {
+        "kind": "gap",
+        "a": "static-1-solid",
+        "b": "module-0-solid",
+        "min": 1,
+        "label": "static-1-solid / module-0-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "static-1",
+        "b": "module-1",
+        "min": 1,
+        "label": "static-1 / module-1"
+      },
+      {
+        "kind": "gap",
+        "a": "static-1-solid",
+        "b": "module-1-solid",
+        "min": 1,
+        "label": "static-1-solid / module-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "module-0",
+        "b": "module-1",
+        "min": 1,
+        "label": "module-0 / module-1"
+      },
+      {
+        "kind": "gap",
+        "a": "module-0-solid",
+        "b": "module-1-solid",
+        "min": 1,
+        "label": "module-0-solid / module-1-solid"
+      }
+    ],
+    "barcode": [
+      {
+        "kind": "gap",
+        "a": "bar-0",
+        "b": "bar-1",
+        "min": 1,
+        "label": "bar-0 / bar-1"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-0-solid",
+        "b": "bar-1-solid",
+        "min": 1,
+        "label": "bar-0-solid / bar-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-1",
+        "b": "bar-2",
+        "min": 1,
+        "label": "bar-1 / bar-2"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-1-solid",
+        "b": "bar-2-solid",
+        "min": 1,
+        "label": "bar-1-solid / bar-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-2",
+        "b": "bar-wide",
+        "min": 1,
+        "label": "bar-2 / bar-wide"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-2-solid",
+        "b": "bar-wide-solid",
+        "min": 1,
+        "label": "bar-2-solid / bar-wide-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-wide",
+        "b": "bar-3",
+        "min": 1,
+        "label": "bar-wide / bar-3"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-wide-solid",
+        "b": "bar-3-solid",
+        "min": 1,
+        "label": "bar-wide-solid / bar-3-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-3",
+        "b": "bar-4",
+        "min": 1,
+        "label": "bar-3 / bar-4"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-3-solid",
+        "b": "bar-4-solid",
+        "min": 1,
+        "label": "bar-3-solid / bar-4-solid"
+      }
+    ]
+  },
+  "exceptions": {
+    "checkbox": "The two check segments intentionally share a joint.",
+    "multiple-choice": "Each check is one connected path; no gap required at its bend.",
+    "signature": "Pen tip meets the drawn ink during writing; no pen/ink gap at contact.",
+    "barcode": "The scanner intentionally crosses the barcode bars. The wide filled bar is a semantic code element, not a stroke width override."
+  }
+}

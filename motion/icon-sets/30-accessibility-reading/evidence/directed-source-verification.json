@@ -1,0 +1,506 @@
+{
+  "result": "PASS",
+  "icons": 10,
+  "actions": 28,
+  "nativeTransformNodes": 148,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "checks": [
+    {
+      "name": "accessibility",
+      "fixedParts": [
+        "accessibility-ring-frame",
+        "accessibility-head",
+        "accessibility-torso",
+        "accessibility-leg"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "accessibility-ring-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "accessibility-head"
+        },
+        {
+          "type": "fixed",
+          "part": "accessibility-torso"
+        },
+        {
+          "type": "fixed",
+          "part": "accessibility-leg"
+        },
+        {
+          "type": "rigid",
+          "part": "accessibility-arm-left"
+        },
+        {
+          "type": "rigid",
+          "part": "accessibility-arm-right"
+        }
+      ]
+    },
+    {
+      "name": "accessibility-strong",
+      "fixedParts": [
+        "accessibility-ring-frame",
+        "accessibility-head",
+        "accessibility-torso",
+        "accessibility-leg"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "accessibility-ring-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "accessibility-head"
+        },
+        {
+          "type": "fixed",
+          "part": "accessibility-torso"
+        },
+        {
+          "type": "fixed",
+          "part": "accessibility-leg"
+        },
+        {
+          "type": "rigid",
+          "part": "accessibility-arm-left"
+        },
+        {
+          "type": "rigid",
+          "part": "accessibility-arm-right"
+        }
+      ]
+    },
+    {
+      "name": "wheelchair-access",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "wheelchair-access-head"
+        },
+        {
+          "type": "rigid",
+          "part": "wheelchair-access-body"
+        },
+        {
+          "type": "rigid",
+          "part": "wheelchair-access-wheel-frame"
+        }
+      ]
+    },
+    {
+      "name": "wheelchair-access-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "wheelchair-access-head"
+        },
+        {
+          "type": "rigid",
+          "part": "wheelchair-access-body"
+        },
+        {
+          "type": "rigid",
+          "part": "wheelchair-access-wheel-frame"
+        }
+      ]
+    },
+    {
+      "name": "hearing-assistance",
+      "fixedParts": [
+        "hearing-assistance-helix",
+        "hearing-assistance-fold"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "hearing-assistance-helix"
+        },
+        {
+          "type": "fixed",
+          "part": "hearing-assistance-fold"
+        },
+        {
+          "type": "rigid",
+          "part": "hearing-assistance-arc-small"
+        },
+        {
+          "type": "rigid",
+          "part": "hearing-assistance-arc-large"
+        }
+      ]
+    },
+    {
+      "name": "hearing-assistance-strong",
+      "fixedParts": [
+        "hearing-assistance-helix",
+        "hearing-assistance-fold"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "hearing-assistance-helix"
+        },
+        {
+          "type": "fixed",
+          "part": "hearing-assistance-fold"
+        },
+        {
+          "type": "rigid",
+          "part": "hearing-assistance-arc-small"
+        },
+        {
+          "type": "rigid",
+          "part": "hearing-assistance-arc-large"
+        }
+      ]
+    },
+    {
+      "name": "high-contrast",
+      "fixedParts": [
+        "high-contrast-ring-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "high-contrast-ring-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "high-contrast-half"
+        }
+      ]
+    },
+    {
+      "name": "high-contrast-strong",
+      "fixedParts": [
+        "high-contrast-ring-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "high-contrast-ring-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "high-contrast-half"
+        }
+      ]
+    },
+    {
+      "name": "reduced-motion",
+      "fixedParts": [
+        "reduced-motion-ball-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reduced-motion-ball-frame"
+        }
+      ]
+    },
+    {
+      "name": "reduced-motion-strong",
+      "fixedParts": [
+        "reduced-motion-ball-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reduced-motion-ball-frame"
+        }
+      ]
+    },
+    {
+      "name": "text-size",
+      "fixedParts": [
+        "text-size-rule"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-size-rule"
+        }
+      ]
+    },
+    {
+      "name": "text-size-strong",
+      "fixedParts": [
+        "text-size-rule"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-size-rule"
+        }
+      ]
+    },
+    {
+      "name": "keyboard",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "keyboard-body"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-key1"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-key2"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-key3"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-space"
+        }
+      ]
+    },
+    {
+      "name": "keyboard-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "keyboard-body"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-key1"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-key2"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-key3"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-space"
+        }
+      ]
+    },
+    {
+      "name": "keyboard-shortcuts",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "keyboard-shortcuts-mod-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-shortcuts-mod-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-shortcuts-key-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-shortcuts-key-mark"
+        }
+      ]
+    },
+    {
+      "name": "keyboard-shortcuts-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "keyboard-shortcuts-mod-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-shortcuts-mod-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-shortcuts-key-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "keyboard-shortcuts-key-mark"
+        }
+      ]
+    },
+    {
+      "name": "focus-indicator",
+      "fixedParts": [
+        "focus-indicator-item-a",
+        "focus-indicator-item-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "focus-indicator-item-a"
+        },
+        {
+          "type": "fixed",
+          "part": "focus-indicator-item-b"
+        },
+        {
+          "type": "rigid",
+          "part": "focus-indicator-bracket-l"
+        },
+        {
+          "type": "rigid",
+          "part": "focus-indicator-bracket-r"
+        }
+      ]
+    },
+    {
+      "name": "focus-indicator-strong",
+      "fixedParts": [
+        "focus-indicator-item-a",
+        "focus-indicator-item-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "focus-indicator-item-a"
+        },
+        {
+          "type": "fixed",
+          "part": "focus-indicator-item-b"
+        },
+        {
+          "type": "rigid",
+          "part": "focus-indicator-bracket-l"
+        },
+        {
+          "type": "rigid",
+          "part": "focus-indicator-bracket-r"
+        }
+      ]
+    },
+    {
+      "name": "reading-mode",
+      "fixedParts": [
+        "reading-mode-page",
+        "reading-mode-title"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reading-mode-page"
+        },
+        {
+          "type": "fixed",
+          "part": "reading-mode-title"
+        }
+      ]
+    },
+    {
+      "name": "reading-mode-strong",
+      "fixedParts": [
+        "reading-mode-page",
+        "reading-mode-title"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reading-mode-page"
+        },
+        {
+          "type": "fixed",
+          "part": "reading-mode-title"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

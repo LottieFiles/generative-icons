@@ -1,0 +1,972 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 68,
+  "nativeTransformNodes": 250,
+  "nativeTransformMaxCoordinateError": 0.000009999999999621423,
+  "checks": [
+    {
+      "name": "bold",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "bold-glyph"
+        }
+      ]
+    },
+    {
+      "name": "bold-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "bold-glyph"
+        }
+      ]
+    },
+    {
+      "name": "italic",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "italic-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "underline",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "underline-glyph"
+        }
+      ]
+    },
+    {
+      "name": "underline-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "underline-glyph"
+        }
+      ]
+    },
+    {
+      "name": "strikethrough",
+      "fixedParts": [
+        "strikethrough-glyph"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "strikethrough-glyph"
+        }
+      ]
+    },
+    {
+      "name": "strikethrough-strong",
+      "fixedParts": [
+        "strikethrough-glyph"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "strikethrough-glyph"
+        }
+      ]
+    },
+    {
+      "name": "heading",
+      "fixedParts": [
+        "heading-level"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "heading-level"
+        },
+        {
+          "type": "rigid",
+          "part": "heading-glyph"
+        }
+      ]
+    },
+    {
+      "name": "heading-strong",
+      "fixedParts": [
+        "heading-level"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "heading-level"
+        },
+        {
+          "type": "rigid",
+          "part": "heading-glyph"
+        }
+      ]
+    },
+    {
+      "name": "paragraph",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "paragraph-bowl"
+        },
+        {
+          "type": "rigid",
+          "part": "paragraph-stem-a"
+        },
+        {
+          "type": "rigid",
+          "part": "paragraph-stem-b"
+        }
+      ]
+    },
+    {
+      "name": "paragraph-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "paragraph-bowl"
+        },
+        {
+          "type": "rigid",
+          "part": "paragraph-stem-a"
+        },
+        {
+          "type": "rigid",
+          "part": "paragraph-stem-b"
+        }
+      ]
+    },
+    {
+      "name": "text-alignment",
+      "fixedParts": [
+        "text-alignment-full-a",
+        "text-alignment-full-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-alignment-full-a"
+        },
+        {
+          "type": "fixed",
+          "part": "text-alignment-full-b"
+        },
+        {
+          "type": "rigid",
+          "part": "text-alignment-short-a"
+        },
+        {
+          "type": "rigid",
+          "part": "text-alignment-short-b"
+        }
+      ]
+    },
+    {
+      "name": "text-alignment-strong",
+      "fixedParts": [
+        "text-alignment-full-a",
+        "text-alignment-full-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-alignment-full-a"
+        },
+        {
+          "type": "fixed",
+          "part": "text-alignment-full-b"
+        },
+        {
+          "type": "rigid",
+          "part": "text-alignment-short-a"
+        },
+        {
+          "type": "rigid",
+          "part": "text-alignment-short-b"
+        }
+      ]
+    },
+    {
+      "name": "bulleted-list",
+      "fixedParts": [
+        "bulleted-list-line-a",
+        "bulleted-list-line-b",
+        "bulleted-list-line-c"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bulleted-list-line-a"
+        },
+        {
+          "type": "fixed",
+          "part": "bulleted-list-line-b"
+        },
+        {
+          "type": "fixed",
+          "part": "bulleted-list-line-c"
+        },
+        {
+          "type": "rigid",
+          "part": "bulleted-list-dot-a"
+        },
+        {
+          "type": "rigid",
+          "part": "bulleted-list-dot-b"
+        },
+        {
+          "type": "rigid",
+          "part": "bulleted-list-dot-c"
+        }
+      ]
+    },
+    {
+      "name": "bulleted-list-strong",
+      "fixedParts": [
+        "bulleted-list-line-a",
+        "bulleted-list-line-b",
+        "bulleted-list-line-c"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bulleted-list-line-a"
+        },
+        {
+          "type": "fixed",
+          "part": "bulleted-list-line-b"
+        },
+        {
+          "type": "fixed",
+          "part": "bulleted-list-line-c"
+        },
+        {
+          "type": "rigid",
+          "part": "bulleted-list-dot-a"
+        },
+        {
+          "type": "rigid",
+          "part": "bulleted-list-dot-b"
+        },
+        {
+          "type": "rigid",
+          "part": "bulleted-list-dot-c"
+        }
+      ]
+    },
+    {
+      "name": "numbered-list",
+      "fixedParts": [
+        "numbered-list-line-a",
+        "numbered-list-line-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "numbered-list-line-a"
+        },
+        {
+          "type": "fixed",
+          "part": "numbered-list-line-b"
+        },
+        {
+          "type": "rigid",
+          "part": "numbered-list-one"
+        },
+        {
+          "type": "rigid",
+          "part": "numbered-list-two"
+        }
+      ]
+    },
+    {
+      "name": "numbered-list-strong",
+      "fixedParts": [
+        "numbered-list-line-a",
+        "numbered-list-line-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "numbered-list-line-a"
+        },
+        {
+          "type": "fixed",
+          "part": "numbered-list-line-b"
+        },
+        {
+          "type": "rigid",
+          "part": "numbered-list-one"
+        },
+        {
+          "type": "rigid",
+          "part": "numbered-list-two"
+        }
+      ]
+    },
+    {
+      "name": "indent-outdent",
+      "fixedParts": [
+        "indent-outdent-full-a",
+        "indent-outdent-full-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "indent-outdent-full-a"
+        },
+        {
+          "type": "fixed",
+          "part": "indent-outdent-full-b"
+        },
+        {
+          "type": "rigid",
+          "part": "indent-outdent-arrow-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "indent-outdent-arrow-head"
+        },
+        {
+          "type": "rigid",
+          "part": "indent-outdent-short-a"
+        },
+        {
+          "type": "rigid",
+          "part": "indent-outdent-short-b"
+        }
+      ]
+    },
+    {
+      "name": "indent-outdent-strong",
+      "fixedParts": [
+        "indent-outdent-full-a",
+        "indent-outdent-full-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "indent-outdent-full-a"
+        },
+        {
+          "type": "fixed",
+          "part": "indent-outdent-full-b"
+        },
+        {
+          "type": "rigid",
+          "part": "indent-outdent-arrow-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "indent-outdent-arrow-head"
+        },
+        {
+          "type": "rigid",
+          "part": "indent-outdent-short-a"
+        },
+        {
+          "type": "rigid",
+          "part": "indent-outdent-short-b"
+        }
+      ]
+    },
+    {
+      "name": "horizontal-rule",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "horizontal-rule-top-1"
+        },
+        {
+          "type": "rigid",
+          "part": "horizontal-rule-top-2"
+        },
+        {
+          "type": "rigid",
+          "part": "horizontal-rule-bottom-1"
+        },
+        {
+          "type": "rigid",
+          "part": "horizontal-rule-bottom-2"
+        }
+      ]
+    },
+    {
+      "name": "horizontal-rule-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "horizontal-rule-top-1"
+        },
+        {
+          "type": "rigid",
+          "part": "horizontal-rule-top-2"
+        },
+        {
+          "type": "rigid",
+          "part": "horizontal-rule-bottom-1"
+        },
+        {
+          "type": "rigid",
+          "part": "horizontal-rule-bottom-2"
+        }
+      ]
+    },
+    {
+      "name": "text-color",
+      "fixedParts": [
+        "text-color-legs",
+        "text-color-crossbar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-color-legs"
+        },
+        {
+          "type": "fixed",
+          "part": "text-color-crossbar"
+        },
+        {
+          "type": "rigid",
+          "part": "text-color-swatch-frame"
+        }
+      ]
+    },
+    {
+      "name": "text-color-strong",
+      "fixedParts": [
+        "text-color-legs",
+        "text-color-crossbar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-color-legs"
+        },
+        {
+          "type": "fixed",
+          "part": "text-color-crossbar"
+        },
+        {
+          "type": "rigid",
+          "part": "text-color-swatch-frame"
+        }
+      ]
+    },
+    {
+      "name": "text-highlight",
+      "fixedParts": [
+        "text-highlight-line-1",
+        "text-highlight-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-highlight-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "text-highlight-line-2"
+        },
+        {
+          "type": "rigid",
+          "part": "text-highlight-marker"
+        }
+      ]
+    },
+    {
+      "name": "text-highlight-strong",
+      "fixedParts": [
+        "text-highlight-line-1",
+        "text-highlight-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-highlight-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "text-highlight-line-2"
+        },
+        {
+          "type": "rigid",
+          "part": "text-highlight-marker"
+        }
+      ]
+    },
+    {
+      "name": "clear-formatting",
+      "fixedParts": [
+        "clear-formatting-stem",
+        "clear-formatting-crossbar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "clear-formatting-stem"
+        },
+        {
+          "type": "fixed",
+          "part": "clear-formatting-crossbar"
+        },
+        {
+          "type": "rigid",
+          "part": "clear-formatting-badge-a"
+        },
+        {
+          "type": "rigid",
+          "part": "clear-formatting-badge-b"
+        }
+      ]
+    },
+    {
+      "name": "clear-formatting-strong",
+      "fixedParts": [
+        "clear-formatting-stem",
+        "clear-formatting-crossbar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "clear-formatting-stem"
+        },
+        {
+          "type": "fixed",
+          "part": "clear-formatting-crossbar"
+        },
+        {
+          "type": "rigid",
+          "part": "clear-formatting-badge-a"
+        },
+        {
+          "type": "rigid",
+          "part": "clear-formatting-badge-b"
+        }
+      ]
+    },
+    {
+      "name": "spell-check",
+      "fixedParts": [
+        "spell-check-line-1",
+        "spell-check-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "spell-check-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "spell-check-line-2"
+        }
+      ]
+    },
+    {
+      "name": "spell-check-strong",
+      "fixedParts": [
+        "spell-check-line-1",
+        "spell-check-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "spell-check-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "spell-check-line-2"
+        }
+      ]
+    },
+    {
+      "name": "find-and-replace",
+      "fixedParts": [
+        "find-and-replace-row",
+        "find-and-replace-stub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "find-and-replace-row"
+        },
+        {
+          "type": "fixed",
+          "part": "find-and-replace-stub"
+        },
+        {
+          "type": "rigid",
+          "part": "find-and-replace-match"
+        },
+        {
+          "type": "rigid",
+          "part": "find-and-replace-replacement"
+        }
+      ]
+    },
+    {
+      "name": "find-and-replace-strong",
+      "fixedParts": [
+        "find-and-replace-row",
+        "find-and-replace-stub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "find-and-replace-row"
+        },
+        {
+          "type": "fixed",
+          "part": "find-and-replace-stub"
+        },
+        {
+          "type": "rigid",
+          "part": "find-and-replace-match"
+        },
+        {
+          "type": "rigid",
+          "part": "find-and-replace-replacement"
+        }
+      ]
+    },
+    {
+      "name": "page-break",
+      "fixedParts": [
+        "page-break-page-frame",
+        "page-break-text-1",
+        "page-break-text-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "page-break-page-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "page-break-text-1"
+        },
+        {
+          "type": "fixed",
+          "part": "page-break-text-2"
+        },
+        {
+          "type": "rigid",
+          "part": "page-break-next-line"
+        }
+      ]
+    },
+    {
+      "name": "page-break-strong",
+      "fixedParts": [
+        "page-break-page-frame",
+        "page-break-text-1",
+        "page-break-text-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "page-break-page-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "page-break-text-1"
+        },
+        {
+          "type": "fixed",
+          "part": "page-break-text-2"
+        },
+        {
+          "type": "rigid",
+          "part": "page-break-next-line"
+        }
+      ]
+    },
+    {
+      "name": "word-wrap",
+      "fixedParts": [
+        "word-wrap-row-1",
+        "word-wrap-row-2",
+        "word-wrap-row-3"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "word-wrap-row-1"
+        },
+        {
+          "type": "fixed",
+          "part": "word-wrap-row-2"
+        },
+        {
+          "type": "fixed",
+          "part": "word-wrap-row-3"
+        },
+        {
+          "type": "rigid",
+          "part": "word-wrap-arrow"
+        }
+      ]
+    },
+    {
+      "name": "word-wrap-strong",
+      "fixedParts": [
+        "word-wrap-row-1",
+        "word-wrap-row-2",
+        "word-wrap-row-3"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "word-wrap-row-1"
+        },
+        {
+          "type": "fixed",
+          "part": "word-wrap-row-2"
+        },
+        {
+          "type": "fixed",
+          "part": "word-wrap-row-3"
+        },
+        {
+          "type": "rigid",
+          "part": "word-wrap-arrow"
+        }
+      ]
+    },
+    {
+      "name": "letter-case",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "letter-case-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "line-spacing",
+      "fixedParts": [
+        "line-spacing-arrow",
+        "line-spacing-row-mid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "line-spacing-arrow"
+        },
+        {
+          "type": "fixed",
+          "part": "line-spacing-row-mid"
+        },
+        {
+          "type": "rigid",
+          "part": "line-spacing-row-top"
+        },
+        {
+          "type": "rigid",
+          "part": "line-spacing-row-bottom"
+        }
+      ]
+    },
+    {
+      "name": "line-spacing-strong",
+      "fixedParts": [
+        "line-spacing-arrow",
+        "line-spacing-row-mid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "line-spacing-arrow"
+        },
+        {
+          "type": "fixed",
+          "part": "line-spacing-row-mid"
+        },
+        {
+          "type": "rigid",
+          "part": "line-spacing-row-top"
+        },
+        {
+          "type": "rigid",
+          "part": "line-spacing-row-bottom"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

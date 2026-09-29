@@ -1,0 +1,2 @@
+const brief=document.querySelector('#brief'),status=document.querySelector('#copy-status');
+document.querySelector('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(brief.value);status.textContent='Task brief copied. Attach the full AI guide and provide repository access.';}catch{brief.focus();brief.select();status.textContent='Select and copy the highlighted brief. Clipboard access is unavailable.';}});

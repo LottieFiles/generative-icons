@@ -1,0 +1,2080 @@
+[
+  {
+    "name": "heart",
+    "label": "Heart",
+    "set": "01",
+    "currentIntent": "The heart gives one short acknowledgement beat and returns to its anchored resting pose.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "heart",
+        "active": 0.42,
+        "rest": 27,
+        "sha256": "86037c0191949008f3edc46472a5eeb64340b5c213acf68b90f4f2640ca2b02d",
+        "path": "01/assets/heart.lottie",
+        "poses": "01/assets/heart-poses.png",
+        "poseSha256": "ead814b7359f99df1e46d560cbd973acd539a74df7b9fec49273b3761819974d",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "heart-strong",
+        "active": 0.72,
+        "rest": 45,
+        "sha256": "fe06ffb69622f5872e17fd601df2d9243349db245d310d4f242d4a582bc80841",
+        "path": "01/assets/heart-strong.lottie",
+        "poses": "01/assets/heart-strong-poses.png",
+        "poseSha256": "c9c82d8f99e0c657f1363e316f129e49b58333614a97935eabb57b08578686c5",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "bell",
+    "label": "Bell",
+    "set": "01",
+    "currentIntent": "The bell rings from its top mount while the clapper trails and settles.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "bell",
+        "active": 1,
+        "rest": 63,
+        "sha256": "e4a8287c82367067310c4783b04d974252a6b37d633e0e2f38bc0e12aa476747",
+        "path": "01/assets/bell.lottie",
+        "poses": "01/assets/bell-poses.png",
+        "poseSha256": "5c612599120544babc16a544817f680144dcfd9e71aa670dcad806b6d1b6f759",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "bell-strong",
+        "active": 1.18,
+        "rest": 72,
+        "sha256": "dce83bf2a4aa6b795ad68053ed44e398f45f052628d069595c8938bdba45a551",
+        "path": "01/assets/bell-strong.lottie",
+        "poses": "01/assets/bell-strong-poses.png",
+        "poseSha256": "31477f8df46e2d1861f31406ead3248d252a8d0718c7157c2ab275b7e888d3a9",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "search",
+    "label": "Search",
+    "set": "02",
+    "currentIntent": "The magnifier makes one short left-to-right sweep, then returns to its resting pose.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "search",
+        "active": 0.46,
+        "rest": 30,
+        "sha256": "db8046764f2f4298f6ce755aa51408c34bc3fed23f840200af59ce59b7766616",
+        "path": "02/assets/search.lottie",
+        "poses": "02/assets/search-poses.png",
+        "poseSha256": "597f6f71494cb5c13870569ad93b274ec346d8c88becd295bdf4a709582be13c",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "search-strong",
+        "active": 0.72,
+        "rest": 45,
+        "sha256": "8af0d2d54ae25c9c74dfeb107c2323e07f6b1b7b1733b00ea9ac47cc83804d88",
+        "path": "02/assets/search-strong.lottie",
+        "poses": "02/assets/search-strong-poses.png",
+        "poseSha256": "a191a461e6f7f7d8582935031fc9703b0a676f9b9939680f07b10c7397023fcf",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "star",
+    "label": "Star",
+    "set": "03",
+    "currentIntent": "Acknowledgement of a featured item; no favorite state is changed.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "star",
+        "active": 0.46,
+        "rest": 30,
+        "sha256": "2c2e47e33c99cc602c2b41811b56355e36a27a30666e38694f7066db3f3fe564",
+        "path": "03/assets/star.lottie",
+        "poses": "03/assets/star-poses.png",
+        "poseSha256": "927a6b4fdfae65fe2753dae61e560b76976d9b9f77190a10b64d190132814949",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "star-strong",
+        "active": 0.76,
+        "rest": 48,
+        "sha256": "6d28fb08d327b86236feb4bde46cbae6f2dc424690f1d2f211586307dd428e03",
+        "path": "03/assets/star-strong.lottie",
+        "poses": "03/assets/star-strong-poses.png",
+        "poseSha256": "441d96f9dfa9025fac6eea3d1e8810157447c77aff409aa9e3a5448bd52cfe8f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "check",
+    "label": "Check",
+    "set": "03",
+    "currentIntent": "An explicit completion transition; the result remains until Reset is selected.",
+    "stateful": true,
+    "motions": [
+      {
+        "name": "check",
+        "active": 0.36,
+        "rest": 24,
+        "sha256": "de54a75d50f0031078cbe0fca1765013f473d68cd76f1704ed71be7b4ab0191e",
+        "path": "03/assets/check.lottie",
+        "poses": "03/assets/check-poses.png",
+        "poseSha256": "82215b94e6a9a8d2df5bfb59c1707f3f9bd0070d167163a85a29ef55aa29515e",
+        "startState": "pending",
+        "endState": "complete",
+        "reverse": "check-reset",
+        "reverseMeta": {
+          "name": "check-reset",
+          "active": 0.28,
+          "rest": 20,
+          "path": "03/assets/check-reset.lottie",
+          "poses": "03/assets/check-reset-poses.png",
+          "sha256": "29b49592242169d92b8f162642da4391fb5bb0ccaff0e828646728b5b9ccc617",
+          "poseSha256": "91aa26b8b7b99a8b65d4af9e8e9843b9edcca32811bbb4224ec1844117ab217f"
+        }
+      },
+      {
+        "name": "check-strong",
+        "active": 0.6,
+        "rest": 39,
+        "sha256": "4b685c12fa8e4b348a6c33058a7292bee5e84331ecff416450795bb876918e2c",
+        "path": "03/assets/check-strong.lottie",
+        "poses": "03/assets/check-strong-poses.png",
+        "poseSha256": "b0a9a8534c4e711cb18e5b1d54a254716a22ccbef20226acb9bcc76b2a7e3303",
+        "startState": "pending",
+        "endState": "complete",
+        "reverse": "check-reset-strong",
+        "reverseMeta": {
+          "name": "check-reset-strong",
+          "active": 0.34,
+          "rest": 23,
+          "path": "03/assets/check-reset-strong.lottie",
+          "poses": "03/assets/check-reset-strong-poses.png",
+          "sha256": "9bd71f350b7ff08e10201e040d0b4b4ebbd96ada45a445c00a99dd6146e58581",
+          "poseSha256": "1984a3c9f8380a90b70e867c06ecc1f79371a67509d4e8354cceaf6464db09b7"
+        }
+      }
+    ]
+  },
+  {
+    "name": "sliders",
+    "label": "Sliders",
+    "set": "03",
+    "currentIntent": "A demonstration of adjustment controls, not actual stored setting values.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "sliders",
+        "active": 0.46,
+        "rest": 30,
+        "sha256": "a8f09488afdebf1eb323ff85f9efe62c16e8f6c7351c4280cf341e59922c9db4",
+        "path": "03/assets/sliders.lottie",
+        "poses": "03/assets/sliders-poses.png",
+        "poseSha256": "1f85da733393ea4162dcba425abfefe2034d59ddaf66dc3cae2ce4628ad36748",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "sliders-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "6b4eb2d8c2cab3105ebf4cf7a193938d2f711d48d34c4509105ba7b8bc907831",
+        "path": "03/assets/sliders-strong.lottie",
+        "poses": "03/assets/sliders-strong-poses.png",
+        "poseSha256": "07d0588d0adbeb22498221a40660fbaa94938c46a33339954cfa76b5e4e4e415",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "lock",
+    "label": "Lock",
+    "set": "03",
+    "currentIntent": "A connected padlock closes and retains its state; Unlock is an explicit reverse.",
+    "stateful": true,
+    "motions": [
+      {
+        "name": "lock",
+        "active": 0.42,
+        "rest": 27,
+        "sha256": "1c8bec8b1a5babdeeec55bceab2a3abd08ed6b70b25e5cea5ec26c4f4c1e1576",
+        "path": "03/assets/lock.lottie",
+        "poses": "03/assets/lock-poses.png",
+        "poseSha256": "dbe1fdcf9b96ded79d685a6f9f7a87120bff047dbc1fd67551f36133d4944e4d",
+        "startState": "open",
+        "endState": "locked",
+        "reverse": "lock-unlock",
+        "reverseMeta": {
+          "name": "lock-unlock",
+          "active": 0.4,
+          "rest": 27,
+          "path": "03/assets/lock-unlock.lottie",
+          "poses": "03/assets/lock-unlock-poses.png",
+          "sha256": "30c7cfe6710b3ff4dbbbbade9c4329976bee56516366402f6daf068eaea1a03a",
+          "poseSha256": "88738880d3400de0495cd2784f0edcaa0d521b649424a0bd516025ba0923ab41"
+        }
+      },
+      {
+        "name": "lock-strong",
+        "active": 0.68,
+        "rest": 44,
+        "sha256": "80c4694f47c71710bab447498e80352f98366a980160855e27a1feba455c03d6",
+        "path": "03/assets/lock-strong.lottie",
+        "poses": "03/assets/lock-strong-poses.png",
+        "poseSha256": "508715d2f3333e7ccf8bd613588c22f003b4c05f0f009ce83e3e2c0f5d600583",
+        "startState": "open",
+        "endState": "locked",
+        "reverse": "lock-unlock-strong",
+        "reverseMeta": {
+          "name": "lock-unlock-strong",
+          "active": 0.64,
+          "rest": 41,
+          "path": "03/assets/lock-unlock-strong.lottie",
+          "poses": "03/assets/lock-unlock-strong-poses.png",
+          "sha256": "ed1c8728e58c16affa662e22e81643dc5a942773db94a4cda3ba5c19395d3008",
+          "poseSha256": "e5203d4ad380f1afd94e4e72264153e6f3f63cb5b348cc33cebde681f417b891"
+        }
+      }
+    ]
+  },
+  {
+    "name": "folder",
+    "label": "Folder",
+    "set": "03",
+    "currentIntent": "A folder-opening preview; it returns to the closed rest pose after the demonstration.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "folder",
+        "active": 0.48,
+        "rest": 32,
+        "sha256": "9d4baa292377f2c3f7b2dea9b5fc75cd603fee5c9834f6879f856a0da93119ac",
+        "path": "03/assets/folder.lottie",
+        "poses": "03/assets/folder-poses.png",
+        "poseSha256": "8403bda5ef6301978f342ef3215bc20d4940ecb11d0e3c3cbc99a8293957b158",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "folder-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "a40ba116617113c80fafaf3eb72b2727dd535c979206950835a47ab47d1b4d9b",
+        "path": "03/assets/folder-strong.lottie",
+        "poses": "03/assets/folder-strong-poses.png",
+        "poseSha256": "851bfeaaa1b6eb3bcb932d1fcd234951c337ac8a052a122492ed895b67623bf6",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "download",
+    "label": "Download",
+    "set": "04",
+    "currentIntent": "An arrow approaches a receiving tray and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "download",
+        "active": 0.48,
+        "rest": 32,
+        "sha256": "420ebc785572b42090e524f096026132c502faa410fff041e013f1fbe175764d",
+        "path": "04/assets/download.lottie",
+        "poses": "04/assets/download-poses.png",
+        "poseSha256": "50352c7269ae105b36e40506ba1f7def59067d9f06e407d0dcbf8121ae4d12e2",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "download-strong",
+        "active": 0.74,
+        "rest": 47,
+        "sha256": "df04399313f67015404a02d4950d7eb791426360f77f220b715d83da2817ee6a",
+        "path": "04/assets/download-strong.lottie",
+        "poses": "04/assets/download-strong-poses.png",
+        "poseSha256": "7511c62c4028d91071d5847458c9b207e1d21c40fe465c51dcf09192b94b7cdf",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "upload",
+    "label": "Upload",
+    "set": "04",
+    "currentIntent": "An arrow lifts away from its tray and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "upload",
+        "active": 0.48,
+        "rest": 32,
+        "sha256": "9e1390fb2701899ba0a17e1c60467029c31c57863bcd1a09228c86c7f70e8f2c",
+        "path": "04/assets/upload.lottie",
+        "poses": "04/assets/upload-poses.png",
+        "poseSha256": "978def0f850dea57d4b1457d084508e1569d8fac4eaa78d051a1588763f210b1",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "upload-strong",
+        "active": 0.74,
+        "rest": 47,
+        "sha256": "03a35a2a3b5c22363eaf36c4ccaa61cddab7f1863cf4f98e0d24052ce5d4cde0",
+        "path": "04/assets/upload-strong.lottie",
+        "poses": "04/assets/upload-strong-poses.png",
+        "poseSha256": "2eab9cd3ebf02a474df870ad02128e88f1a2e9e2b3e1afab3ab9da51ad75cd1b",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "copy",
+    "label": "Copy",
+    "set": "04",
+    "currentIntent": "The front sheet separates from its source, then aligns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "copy",
+        "active": 0.5,
+        "rest": 33,
+        "sha256": "c12c59fce28259af83ae03067a82330f064784f85d4b6474de611ce322d8de24",
+        "path": "04/assets/copy.lottie",
+        "poses": "04/assets/copy-poses.png",
+        "poseSha256": "e2f42000919a12bde60ff0748ba44facb4ed64589bc0e904846a73a877f9274f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "copy-strong",
+        "active": 0.78,
+        "rest": 50,
+        "sha256": "5c1d82437a8e16748952b664650de3f2f3e742034b5ddddbdefbb9bf19b4b78f",
+        "path": "04/assets/copy-strong.lottie",
+        "poses": "04/assets/copy-strong-poses.png",
+        "poseSha256": "97476a9ab894d78990da396018c560afa42ac1254bea673a8aa86c07a985a412",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "trash",
+    "label": "Trash",
+    "set": "04",
+    "currentIntent": "The lid opens about its right contact and closes.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "trash",
+        "active": 0.48,
+        "rest": 32,
+        "sha256": "997451448efa2cd1800fe34d5e69d8443f2ff50614d9137f7342e0e409312902",
+        "path": "04/assets/trash.lottie",
+        "poses": "04/assets/trash-poses.png",
+        "poseSha256": "65e83a55c73a78696229c60e4e48185e013486bd5337d1c91131d9772dadc694",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "trash-strong",
+        "active": 0.78,
+        "rest": 50,
+        "sha256": "9a7c72bf9730c34efc509a9bb562a9f14af3394bc5b1c937020453d0dbc27c9f",
+        "path": "04/assets/trash-strong.lottie",
+        "poses": "04/assets/trash-strong-poses.png",
+        "poseSha256": "4bcbbef363d740114402f85071447b82312529aad189acb203d386ff083214ad",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "edit",
+    "label": "Edit",
+    "set": "04",
+    "currentIntent": "The pencil lowers, writes to the right, lifts, and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "edit",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "33e4d5d663cfad04ca972f2b32529f2cec450fa130294e74fc381de7526b06f4",
+        "path": "04/assets/edit.lottie",
+        "poses": "04/assets/edit-poses.png",
+        "poseSha256": "cc91cd66696a35a218fc8f4ab60c457904d872d50cd03a613710f905ab838ea7",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "edit-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "beaa5bb275d581ea811d1d592062c6371f380a678c2f10e7f1a079d4a939bb09",
+        "path": "04/assets/edit-strong.lottie",
+        "poses": "04/assets/edit-strong-poses.png",
+        "poseSha256": "aed01b48bd572a7f5f1e7a8a49e38febee3eda9ef5d8e0cc61e8a4e4393a7385",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "send",
+    "label": "Send",
+    "set": "04",
+    "currentIntent": "The plane advances along its direction and returns on a short arc.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "send",
+        "active": 0.53,
+        "rest": 35,
+        "sha256": "e1d0f597c9eb3d6b64bd8ec292b2f7662d5569d4ecb8c8ae961199d2274fca00",
+        "path": "04/assets/send.lottie",
+        "poses": "04/assets/send-poses.png",
+        "poseSha256": "95fa6e15f72bcc132dff18e49aeeaa4fbfef1a22ea1d2b99ae8d1e5081c0744f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "send-strong",
+        "active": 0.78,
+        "rest": 50,
+        "sha256": "ac5a71fa12f1f6b78a0e75d1c98d0bc22111edfb2352cdb70e0d21b8e5c845b0",
+        "path": "04/assets/send-strong.lottie",
+        "poses": "04/assets/send-strong-poses.png",
+        "poseSha256": "0c3a28050a3f942cf327d460733d022b137b165a1b309f2784430a04c7e0467c",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "bookmark",
+    "label": "Bookmark",
+    "set": "04",
+    "currentIntent": "The attached ribbon gathers upward and releases.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "bookmark",
+        "active": 0.5,
+        "rest": 33,
+        "sha256": "3b08917f88daa71a0b7bf94ae8e9abbbfd776921b38d148fe33cb2ae0d26c3d7",
+        "path": "04/assets/bookmark.lottie",
+        "poses": "04/assets/bookmark-poses.png",
+        "poseSha256": "ccbaac5337884b526813ca3da9c45f271d41f492782a083fe177f78df9258445",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "bookmark-strong",
+        "active": 0.76,
+        "rest": 48,
+        "sha256": "852dfbde9ac0d0883ce3b21a2250547a4d48b04a846daafd386ad9be9010cb62",
+        "path": "04/assets/bookmark-strong.lottie",
+        "poses": "04/assets/bookmark-strong-poses.png",
+        "poseSha256": "86777af33b3bfa7b683da34c4ea51c7686e772642398eb543eb7910deb1c9945",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "refresh",
+    "label": "Refresh",
+    "set": "04",
+    "currentIntent": "Two arrow assemblies turn clockwise once and settle.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "refresh",
+        "active": 0.62,
+        "rest": 40,
+        "sha256": "218377b719ad9049e9ce1ea0ff67316d67ec54804c5dd557ed513c2865d7bd9f",
+        "path": "04/assets/refresh.lottie",
+        "poses": "04/assets/refresh-poses.png",
+        "poseSha256": "4a94f5c37e8cc2d90e1d6b5c0672de4f29e95de0aa11f3d6ecd188f7ed39f544",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "refresh-strong",
+        "active": 0.86,
+        "rest": 54,
+        "sha256": "a5ebb5de22ae06e78f65f1c446f1146acfd2e1462e20ccd26e66dedd49dc29a4",
+        "path": "04/assets/refresh-strong.lottie",
+        "poses": "04/assets/refresh-strong-poses.png",
+        "poseSha256": "ddb8cfd382cc5a3b73f4d848291de91ae9f965dee66c2db80462a8437240ebcf",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "eye",
+    "label": "Eye",
+    "set": "04",
+    "currentIntent": "The eyelids close and reopen around a protected pupil.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "eye",
+        "active": 0.44,
+        "rest": 29,
+        "sha256": "a2debc04e00b052e4ee2b35b9fab98e6ed9bea34f0399eab8333eb7e714daa05",
+        "path": "04/assets/eye.lottie",
+        "poses": "04/assets/eye-poses.png",
+        "poseSha256": "4d731bb7d046d48da2405b88716ea928f122f7e6d526fdb1eb788a2d62c72a4f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "eye-strong",
+        "active": 0.56,
+        "rest": 37,
+        "sha256": "39ca28afd7071d451a1d36f208cf9684d14364896761c971bfc473dcbec81fd5",
+        "path": "04/assets/eye-strong.lottie",
+        "poses": "04/assets/eye-strong-poses.png",
+        "poseSha256": "01a7e4aef6333fc85bc291b90a8d17ea404581ac9d84fdb085f2f496d1d99172",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "menu",
+    "label": "Menu",
+    "set": "04",
+    "currentIntent": "Three bars become an X; the reverse restores the collapsed menu.",
+    "stateful": true,
+    "motions": [
+      {
+        "name": "menu",
+        "active": 0.34,
+        "rest": 23,
+        "sha256": "ec9f75dff4bd90f156676f5191b129524727df29239f257c22dc4cb905736428",
+        "path": "04/assets/menu.lottie",
+        "poses": "04/assets/menu-poses.png",
+        "poseSha256": "01e0672f2bc7ff3d843fa057df5a9ca15c2a455fb2ba5da58a0a7f7bca665a07",
+        "startState": "expanded",
+        "endState": "collapsed",
+        "reverse": "menu-open",
+        "reverseMeta": {
+          "name": "menu-open",
+          "active": 0.34,
+          "rest": 23,
+          "path": "04/assets/menu-open.lottie",
+          "poses": "04/assets/menu-open-poses.png",
+          "sha256": "ea0cbe9edadeff6ca7f8d8adaf8cd4bb3d0226089f086fa597bd91b6b4e1b33d",
+          "poseSha256": "589404e0b6a83af2d394e221313ab440fe53c9e09515db3de6199a7a5d5bbc07"
+        }
+      },
+      {
+        "name": "menu-strong",
+        "active": 0.62,
+        "rest": 40,
+        "sha256": "9cb05c24c8601afad4ff6ee8f72d27006e6e789877f962b0b23b9cd3b10b5ccb",
+        "path": "04/assets/menu-strong.lottie",
+        "poses": "04/assets/menu-strong-poses.png",
+        "poseSha256": "650ee37b507fdc98679f4671fd22f548c3b6bbb7e040f5e95ca96e1450850dbf",
+        "startState": "expanded",
+        "endState": "collapsed",
+        "reverse": "menu-open-strong",
+        "reverseMeta": {
+          "name": "menu-open-strong",
+          "active": 0.62,
+          "rest": 40,
+          "path": "04/assets/menu-open-strong.lottie",
+          "poses": "04/assets/menu-open-strong-poses.png",
+          "sha256": "8f5433b8f6d55aa8baf194e27f5fdf3c3608c41fdc1eefabc3e719a9bce0a085",
+          "poseSha256": "e20310fde8a8512b544536e34f086779d1b373f34015967a7fafb49bd0e451b8"
+        }
+      }
+    ]
+  },
+  {
+    "name": "home",
+    "label": "Home",
+    "set": "05",
+    "currentIntent": "The door folds toward its fixed hinge, then closes.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "home",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "a8456dbdddb002b78caa49755926392e922b4f061ff19c07e3e7760b85710e95",
+        "path": "05/assets/home.lottie",
+        "poses": "05/assets/home-poses.png",
+        "poseSha256": "d1ef96667795b13a5b670df28fbad75967764d716e2bb98c51442bf6de26a813",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "home-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "d12858e1daff9542979c742425a66c267b3891e338509ed5c9b0ad68ac1ad23e",
+        "path": "05/assets/home-strong.lottie",
+        "poses": "05/assets/home-strong-poses.png",
+        "poseSha256": "2f37ef5bb3c7a42f33b28672d98a02385d7c77d63c1e5477d42809e2168c3789",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "calendar",
+    "label": "Calendar",
+    "set": "05",
+    "currentIntent": "The current day tile moves across the fixed calendar and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "calendar",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "b37833e394740fc714db04cc70afae215ea8d19f5cb25cad76329550f8700f51",
+        "path": "05/assets/calendar.lottie",
+        "poses": "05/assets/calendar-poses.png",
+        "poseSha256": "a63a33c3be5f1ca63db8ff9e4233892c0bf16fbf8158e19a178d4818e613c61b",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "calendar-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "843cc055269ae2a507feb59380ccbec449bedecf66c586e53f62f13dd6221c41",
+        "path": "05/assets/calendar-strong.lottie",
+        "poses": "05/assets/calendar-strong-poses.png",
+        "poseSha256": "b11b834bb2f093c02fc057c5ca6e0cb8636a52bdcae3716dcd119812a8edc3f3",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "clock",
+    "label": "Clock",
+    "set": "05",
+    "currentIntent": "The minute hand advances; the hour hand follows.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "clock",
+        "active": 0.56,
+        "rest": 37,
+        "sha256": "aab2a854805ab2c3334989e8b815aeaae02fd1209bb21086fc69fe6e7bdf3fa9",
+        "path": "05/assets/clock.lottie",
+        "poses": "05/assets/clock-poses.png",
+        "poseSha256": "686feb2c7f1e46f155173a8e075f1a67a25337f3c4385aa2c822bac10fcb901c",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "clock-strong",
+        "active": 0.84,
+        "rest": 53,
+        "sha256": "3aa76ed56773ed8a01547badf410ff08998c6726a555d6ea0c1a9f42c0b719c3",
+        "path": "05/assets/clock-strong.lottie",
+        "poses": "05/assets/clock-strong-poses.png",
+        "poseSha256": "c15df45ff76a7ce7998b5ca3766886ee43d2551d8c870f167495229e4efc63f4",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "camera",
+    "label": "Camera",
+    "set": "05",
+    "currentIntent": "The button presses before the aperture closes and opens.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "camera",
+        "active": 0.58,
+        "rest": 38,
+        "sha256": "a41a1226c7baab9068cc46fcfd91b87a4bb3b317e3c60e30640c70f9d64af8a5",
+        "path": "05/assets/camera.lottie",
+        "poses": "05/assets/camera-poses.png",
+        "poseSha256": "25caa0b76227ca932f3c42176249c25bd2f7b063c9255ed40d577dfae2d8bf81",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "camera-strong",
+        "active": 0.86,
+        "rest": 54,
+        "sha256": "58c3602ad68ba8fd6b1ddb3c7b021613b24691e067c838a86f41cd3b312bd033",
+        "path": "05/assets/camera-strong.lottie",
+        "poses": "05/assets/camera-strong-poses.png",
+        "poseSha256": "bd926dde8c20e2b89e6b8d0d1a9fc1408f61f4a4fc3573bf4553dda2586692cd",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "image",
+    "label": "Image",
+    "set": "05",
+    "currentIntent": "A bounded landscape shifts inside a fixed frame.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "image",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "ddc14ba8423192be846488acdac944008448743ab9a72fcfb91c0c2edb01c8f8",
+        "path": "05/assets/image.lottie",
+        "poses": "05/assets/image-poses.png",
+        "poseSha256": "50849cd791a3015108d7b0763f28fa7076d6d4dd1d669ac6f944c619ca402038",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "image-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "b4e362486d52bc1bebefcb8098daa8275d6ec41f35602a72c3a384d1bf4d06d5",
+        "path": "05/assets/image-strong.lottie",
+        "poses": "05/assets/image-strong-poses.png",
+        "poseSha256": "ed850eeb3bb8124e04a4efb105bcc81d98e214cd0fcc2e8f578180f04c83e3cd",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "mail",
+    "label": "Mail",
+    "set": "05",
+    "currentIntent": "The envelope flap opens toward its top seam, then closes.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "mail",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "73f565868c0a4b2811094cd567af99cf27745c9e880ca84626d13eb37a37a40c",
+        "path": "05/assets/mail.lottie",
+        "poses": "05/assets/mail-poses.png",
+        "poseSha256": "6a69caf43dc9ace7fd521c6d848a48aefec3542f8776f85776a735b7f1b69c44",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "mail-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "b026623c1fe470585ce8d623f0b7154cdf2b8e83db21ff2898e45463f7f77ffe",
+        "path": "05/assets/mail-strong.lottie",
+        "poses": "05/assets/mail-strong-poses.png",
+        "poseSha256": "88395f95afc445ddc9b8f7872bd3863e1fa64970a08bd98bc0079941f7945d0a",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "message",
+    "label": "Message",
+    "set": "05",
+    "currentIntent": "Three dots reply in a short ordered sequence.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "message",
+        "active": 0.6,
+        "rest": 39,
+        "sha256": "34a691378d9ebcab6d5d6243cbd1b66b535fda125471a69ab1afaeb8d9e83ebc",
+        "path": "05/assets/message.lottie",
+        "poses": "05/assets/message-poses.png",
+        "poseSha256": "ed04d98e3e992de89bb8f929fc90ca7f6014257bc2eb0ea6932cda44b54fee16",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "message-strong",
+        "active": 0.88,
+        "rest": 56,
+        "sha256": "967d6f03039f46cfc96653a3535f658d2839487502cf8bf07302cacace200652",
+        "path": "05/assets/message-strong.lottie",
+        "poses": "05/assets/message-strong-poses.png",
+        "poseSha256": "a0c9c1c49659b4dc791f8deec558d703c35ca175023c6db68e50d82c6c568be1",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "phone",
+    "label": "Phone",
+    "set": "05",
+    "currentIntent": "The rigid handset lifts through a short arc and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "phone",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "aaf9c4aec1bb7b9cd5e7ce8c325cfd4350260bd85494c58bb246ffa80a3e9dca",
+        "path": "05/assets/phone.lottie",
+        "poses": "05/assets/phone-poses.png",
+        "poseSha256": "4f0f42b83ef337663bda9d60b01e62973cad78172b81ae7e28f5777c31783da1",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "phone-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "c8661df6830257e0444eadbe06945b1c16547d69f540bb47e95aa8058ecf8e6c",
+        "path": "05/assets/phone-strong.lottie",
+        "poses": "05/assets/phone-strong-poses.png",
+        "poseSha256": "a32d82850a46f54a5399c4cddc5666aa9641bdeb5762a3fa806b2c2818cf37c4",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "microphone",
+    "label": "Microphone",
+    "set": "05",
+    "currentIntent": "The capsule leans toward the speaker within its fixed cradle.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "microphone",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "ed6dc4879895aba451746287473840e79fa07ceba288320c58851f52128924dd",
+        "path": "05/assets/microphone.lottie",
+        "poses": "05/assets/microphone-poses.png",
+        "poseSha256": "82841242c6f0b7b926cb8b1e36cb2f45e527236f64837aef33e4cfac14423ad2",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "microphone-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "9e38d67bc16af6684ebe2bb95896e2ce658764bdf775157a519c14d5b03cf623",
+        "path": "05/assets/microphone-strong.lottie",
+        "poses": "05/assets/microphone-strong-poses.png",
+        "poseSha256": "57421f19ddd8406092c763a2b19e1a2a919778e840d893b5e1895ec68a602dfd",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "volume",
+    "label": "Volume",
+    "set": "05",
+    "currentIntent": "Two sound arcs move away from the stationary speaker.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "volume",
+        "active": 0.56,
+        "rest": 37,
+        "sha256": "8fe6db3166085bebca5ebc8914a337f1776d557981c988108f18105c15ee61fe",
+        "path": "05/assets/volume.lottie",
+        "poses": "05/assets/volume-poses.png",
+        "poseSha256": "bab98ebe213f407f253edb15beaa0388e76c2ad35e596c89c5bd585e4af49ea3",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "volume-strong",
+        "active": 0.84,
+        "rest": 53,
+        "sha256": "c19a16ef2d69fd8ebcc5c3b51a62a26b9f9da4da914da6c72d508254b64ace02",
+        "path": "05/assets/volume-strong.lottie",
+        "poses": "05/assets/volume-strong-poses.png",
+        "poseSha256": "ebf8eef2dfe0e6a3c9abf1d72200d2f8904cd0083b2a615b125ec5751ade102e",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "wifi",
+    "label": "Wi-Fi",
+    "set": "05",
+    "currentIntent": "Concentric signal bands gather and reopen from a fixed source.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "wifi",
+        "active": 0.6,
+        "rest": 39,
+        "sha256": "4a1f674b333b0edbcd3c27180c13ce4ba5590c5735217ec6f7b06dc1b9b8800e",
+        "path": "05/assets/wifi.lottie",
+        "poses": "05/assets/wifi-poses.png",
+        "poseSha256": "471f3721bc092d1546bb057f296ded59c35bc9575a1cf9520ab7d82a3a2a8f3b",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "wifi-strong",
+        "active": 0.88,
+        "rest": 56,
+        "sha256": "0f72ca3a52f015c165e4cd20e15fd6c516d89b0e6fc7cf5eb680129217a2d246",
+        "path": "05/assets/wifi-strong.lottie",
+        "poses": "05/assets/wifi-strong-poses.png",
+        "poseSha256": "38f46564c97d06c0f98807fb7b7097a776db10098bbd2b750ffa232cbd6b25de",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "cloud",
+    "label": "Cloud",
+    "set": "05",
+    "currentIntent": "The upper cloud lobes gather and release above a fixed baseline.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "cloud",
+        "active": 0.56,
+        "rest": 37,
+        "sha256": "3b13490d5b39c2b153f0fe613a7e0e8428d57d0b36ac52e06fccb2efb5d92405",
+        "path": "05/assets/cloud.lottie",
+        "poses": "05/assets/cloud-poses.png",
+        "poseSha256": "e051d91f66e07f2ef3715f6555ca008476aea3ff216eac0d2ea12507f5cc8ccf",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "cloud-strong",
+        "active": 0.84,
+        "rest": 53,
+        "sha256": "08992fb052b370c4df2ca7f5927b43db97181faea879baa5bc4c376020f736d3",
+        "path": "05/assets/cloud-strong.lottie",
+        "poses": "05/assets/cloud-strong-poses.png",
+        "poseSha256": "0ed1420aa30523ba3cbc6d133c5ea28e2335360f78c1ec1815125a3526a12b69",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "sun",
+    "label": "Sun",
+    "set": "05",
+    "currentIntent": "Rigid rays turn and extend around a fixed disc.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "sun",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "41db1e8ee0eb73cd4b7b315d45b96669a56387aee493d777a9ab2b01e445a65c",
+        "path": "05/assets/sun.lottie",
+        "poses": "05/assets/sun-poses.png",
+        "poseSha256": "80ee416090ff436f6accad4a32b029eaacc6b306e2d847298f97cd0f0438f4d0",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "sun-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "0813d1c9a7b4271083d99b3ae93c922450da02d86844fe7330c92a3b90a6da83",
+        "path": "05/assets/sun-strong.lottie",
+        "poses": "05/assets/sun-strong-poses.png",
+        "poseSha256": "20459cfc75164d9d2671eaa7fb93cf8f4a5bcc6ad3257e1bdc69de005849615c",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "moon",
+    "label": "Moon",
+    "set": "05",
+    "currentIntent": "The crescent rises through a short rigid arc and settles.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "moon",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "279f28404c5090440a73a7d01bb0030907e494426d4de8754a117eef8dfde804",
+        "path": "05/assets/moon.lottie",
+        "poses": "05/assets/moon-poses.png",
+        "poseSha256": "5f99cd20e239b95a6531c6f2919cd22cd3bff15278a75ad91d673ce0dca987ba",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "moon-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "804957f8b07a2feb46cf2c3701c23e73ba500ad19d72514a2a435840134816df",
+        "path": "05/assets/moon-strong.lottie",
+        "poses": "05/assets/moon-strong-poses.png",
+        "poseSha256": "9c1f011117a9afa257e913e53c5b2f7d4e220cf0c19d857d53b95967142569fc",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "location",
+    "label": "Location",
+    "set": "05",
+    "currentIntent": "The marker gathers toward its anchored lower point.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "location",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "3c51ff5b9a25ebc7de182dde0be15ae274e5489fe2418f99f4758bdf954637a1",
+        "path": "05/assets/location.lottie",
+        "poses": "05/assets/location-poses.png",
+        "poseSha256": "8eb4a8646c0f3acac8aa891421166051fd24adcdb8ae5161c6e18387684f8373",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "location-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "22f953923397fb96899d8dc00b615720f89225e09681d2fe6b20c3d5082eb45a",
+        "path": "05/assets/location-strong.lottie",
+        "poses": "05/assets/location-strong-poses.png",
+        "poseSha256": "0ad23e9718087c952519e5568a52e1e893728a1a66cdc828d85a6af954d015f1",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "compass",
+    "label": "Compass",
+    "set": "05",
+    "currentIntent": "The needle finds its bearing inside a fixed reference ring.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "compass",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "05623659921de25ebcf1a14910b2072eb8f06191104818af4b1039062db4e6bd",
+        "path": "05/assets/compass.lottie",
+        "poses": "05/assets/compass-poses.png",
+        "poseSha256": "377446dce72b6a8017d94b381ff688172139d44dfbfccef92140876c8b1b661f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "compass-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "bebb820a4125da8c1db5a9bc4e1cb9c5d63effd31698703ac4860d7d0e7f4fa7",
+        "path": "05/assets/compass-strong.lottie",
+        "poses": "05/assets/compass-strong-poses.png",
+        "poseSha256": "33a150a8733ec6ab9b6fa2f3e57a0b5f871abba30fe5c93ec8364273072fd892",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "link",
+    "label": "Link",
+    "set": "05",
+    "currentIntent": "Two rigid loops draw together while remaining visibly joined.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "link",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "b1d29eb0005e68b101ee6fa7a186545b12d8108a0e8367135163292f2e2eca73",
+        "path": "05/assets/link.lottie",
+        "poses": "05/assets/link-poses.png",
+        "poseSha256": "94b0a98502417fd2fa9a4262282ca6731b88c997ce8d07b2ec11c6de21f5d18b",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "link-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "67f99beed5b370c18ca157ad30666a4da3993720709086e4e391d91724a66136",
+        "path": "05/assets/link-strong.lottie",
+        "poses": "05/assets/link-strong-poses.png",
+        "poseSha256": "da8c1433624cb5c1e3baae88203916056e379b9d34c3f6ffd6836e33c42a42b0",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "shield",
+    "label": "Shield",
+    "set": "05",
+    "currentIntent": "The shield braces about its lower point, with its mark attached.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "shield",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "e612d83bf55240fdd121da837d227e299dc587f397553945b8e27e09c5c245bd",
+        "path": "05/assets/shield.lottie",
+        "poses": "05/assets/shield-poses.png",
+        "poseSha256": "170d8ca142ff76193fd982c499bb9c7cfb92b5c4d9892510ee986d4af4fce61f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "shield-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "ec69ee75c79a5035f45f54073ac15b99f3d5353e8423f4318e810414116cbe7b",
+        "path": "05/assets/shield-strong.lottie",
+        "poses": "05/assets/shield-strong-poses.png",
+        "poseSha256": "9d2858934849b84310564f2f2ee609108bd76054df5f40e48af3ef5b0d343eeb",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "cart",
+    "label": "Cart",
+    "set": "05",
+    "currentIntent": "The basket advances with rolling wheels and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "cart",
+        "active": 0.56,
+        "rest": 37,
+        "sha256": "9d61237d52135842c2a095db6c95df8d51de1dc60e3cdfce51841f1ea2bad5fa",
+        "path": "05/assets/cart.lottie",
+        "poses": "05/assets/cart-poses.png",
+        "poseSha256": "de0c3a39cdcc912c48beeda3a5318075168bb752fc1c463effb05a2b78780caf",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "cart-strong",
+        "active": 0.84,
+        "rest": 53,
+        "sha256": "7277369c129b06b39ab475c3a5be80a55d2c6a7003dc31ac25788482ddafe53f",
+        "path": "05/assets/cart-strong.lottie",
+        "poses": "05/assets/cart-strong-poses.png",
+        "poseSha256": "31c917a8077a5f8a4e491490e8e09b6397821bf13f8db09536f96cc343e8ae9f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "settings",
+    "label": "Settings",
+    "set": "05",
+    "currentIntent": "A rigid rounded gear makes one deliberate adjustment.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "settings",
+        "active": 0.52,
+        "rest": 34,
+        "sha256": "43ce6465f6972eb2d50c8d57a38a25d10523d5c32af1f56ba3ae953ce87c3743",
+        "path": "05/assets/settings.lottie",
+        "poses": "05/assets/settings-poses.png",
+        "poseSha256": "c81a5b8b51ca850cb4bee249bf211df41526555dfc9c6589f961949ff57b7a5b",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "settings-strong",
+        "active": 0.8,
+        "rest": 51,
+        "sha256": "b7a237a28fab70cbc49ffd0bd59652249adc8fdd6d49e5030354bc7d0e7d4928",
+        "path": "05/assets/settings-strong.lottie",
+        "poses": "05/assets/settings-strong-poses.png",
+        "poseSha256": "81107fa1e4602ffe548bba8c07c0ce7f4d0714c33db997c723c3870467c6e1fa",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "user",
+    "label": "User",
+    "set": "06",
+    "currentIntent": "The head inclines while the shoulders stay still.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "user",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "cd3c45bd99f784ad8f0792388f81513006d9de347a88155375e3c02a84a1c54e",
+        "path": "06/assets/user.lottie",
+        "poses": "06/assets/user-poses.png",
+        "poseSha256": "3bcfb1f6f14e21f3e4f62fa6525e229757c747d224c352ca101748f3e996736a",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "user-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "5037d70df6aa4b698d86f66ca5f3b95385defa16d9c637bf5f80530eb9f67bcc",
+        "path": "06/assets/user-strong.lottie",
+        "poses": "06/assets/user-strong-poses.png",
+        "poseSha256": "16f92304dd67d92d2b350a768c9de69b9547fd53a421c2030787541a5a710e28",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "users",
+    "label": "Users",
+    "set": "06",
+    "currentIntent": "The second member steps forward beside a fixed foreground profile.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "users",
+        "active": 0.58,
+        "rest": 38,
+        "sha256": "a35e139adc18326ee22978b6a659afc8f4bd40701d8316599c28ab72dffae97e",
+        "path": "06/assets/users.lottie",
+        "poses": "06/assets/users-poses.png",
+        "poseSha256": "9f0529f899a4dd72f1cfc139348edb1f584432ca7f84bd17aedcd7e367a55117",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "users-strong",
+        "active": 0.86,
+        "rest": 54,
+        "sha256": "b238ca46e3bc940c9ba28db30e4cc1b9ae94bc9df6da77ff9445464d6df99a81",
+        "path": "06/assets/users-strong.lottie",
+        "poses": "06/assets/users-strong-poses.png",
+        "poseSha256": "968b411efc6e3ce4a8f20e25c5111e59ca94d5e6d8997999973717fba7f5d4f7",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "key",
+    "label": "Key",
+    "set": "06",
+    "currentIntent": "The complete key turns at its bow and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "key",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "de0395540dd2df3e4f5af735c90f23fbf4148608cd1892b97aeb69b951b35c64",
+        "path": "06/assets/key.lottie",
+        "poses": "06/assets/key-poses.png",
+        "poseSha256": "bd6c9e903a5b747a332057ebc4dbfc436486bc8283dc9a693ed6640b317b5590",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "key-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "e17c544e65280d3da430acaaee9045b9c28d9e7f6bec36e1ce8251fa565a6c09",
+        "path": "06/assets/key-strong.lottie",
+        "poses": "06/assets/key-strong-poses.png",
+        "poseSha256": "374e94dc4496f7f175392028c7368848dfc18dc0d0bf3173cce9f0965cd058e8",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "scan",
+    "label": "Scan",
+    "set": "06",
+    "currentIntent": "A scan bar travels inside fixed focus brackets.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "scan",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "c3e3c01f4d0804d15f5046d750689e7e5dac13ecacdaa92f23b01be687043ef7",
+        "path": "06/assets/scan.lottie",
+        "poses": "06/assets/scan-poses.png",
+        "poseSha256": "c385bd91b57c39158c2b3dbeebe0d2c65fa7cf09f3ff79155ce0874a7a12aedc",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "scan-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "b607fbc31fccfd0f000a416bbae4e2b9a6d83200b1089d4ae0eaa263a4ac8f1c",
+        "path": "06/assets/scan-strong.lottie",
+        "poses": "06/assets/scan-strong-poses.png",
+        "poseSha256": "e755b2c6010b87cf5b042b23efc87509236ef46996c0be03681355a84c041385",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "battery",
+    "label": "Battery",
+    "set": "06",
+    "currentIntent": "The charge region expands inside a fixed cell and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "battery",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "2b825effe22f65b219c1970197fb04ab9564cd40fb729a293058681e9b1306a2",
+        "path": "06/assets/battery.lottie",
+        "poses": "06/assets/battery-poses.png",
+        "poseSha256": "3c14b52ad33af7f46ff53ae715c8517e24b1711eb4fbfac73ee1351221711e7f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "battery-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "ea6762cc34c8feb86ab6946937599a9f038764fa35330fd924a6df47ec40e62e",
+        "path": "06/assets/battery-strong.lottie",
+        "poses": "06/assets/battery-strong-poses.png",
+        "poseSha256": "ae99777d3ec3bac12d946a09ceae35ef346e976bf2dac812469813e4a07fba13",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "plug",
+    "label": "Plug",
+    "set": "06",
+    "currentIntent": "The rigid plug seats toward its cable attachment and releases.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "plug",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "a45352ab4d5e0eb4319697fc9786c506e6635f6a6d6c0531beca2d7170d45c08",
+        "path": "06/assets/plug.lottie",
+        "poses": "06/assets/plug-poses.png",
+        "poseSha256": "d983060fd137bfe089f6f19362ec7c9a450673f8d87634e5a893fbd9b5a341e9",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "plug-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "7f22c8d5938c14fac45551c284359a840f82ff9586e691558baf3a4586f9e7cc",
+        "path": "06/assets/plug-strong.lottie",
+        "poses": "06/assets/plug-strong-poses.png",
+        "poseSha256": "19e8013c3143a0377e5f6b10406a53d6e00d16c353179c088d65b2ee2f7086ef",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "bluetooth",
+    "label": "Bluetooth",
+    "set": "06",
+    "currentIntent": "The two signal facets open around a fixed spine.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "bluetooth",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "3c9a8c4c0c4f1562b0a6b1c052a7b0685507b8cbd0ee53a4c306ab4b71fb5dfd",
+        "path": "06/assets/bluetooth.lottie",
+        "poses": "06/assets/bluetooth-poses.png",
+        "poseSha256": "230e4b2afe9553fc7d35f830b6e2860b33fbc69b639e05b58e3a447a1ac94087",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "bluetooth-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "f930da4efba652ad6722e4aaac97f496583d81717a313cf7b00a94e734960193",
+        "path": "06/assets/bluetooth-strong.lottie",
+        "poses": "06/assets/bluetooth-strong-poses.png",
+        "poseSha256": "67b673c75b5d2c1f45339046b4fcf0dc4954c9a49d5f4eef1ae1b4059c16839f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "monitor",
+    "label": "Monitor",
+    "set": "06",
+    "currentIntent": "The screen tilts at its fixed stand and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "monitor",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "01bbbee842475290f2f4e38f2cc1d8d74714e2fca788886c1bb8ae69c9dadfb2",
+        "path": "06/assets/monitor.lottie",
+        "poses": "06/assets/monitor-poses.png",
+        "poseSha256": "103159830109a5333c92e2d278b2c013f7006375c2a66270f12fb8aab99db73f",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "monitor-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "258e9b6cc08e53bbbb1a3ee5d14e89d7a0b8886b9657c58cc4324e7b055f9641",
+        "path": "06/assets/monitor-strong.lottie",
+        "poses": "06/assets/monitor-strong-poses.png",
+        "poseSha256": "ff09b078513ec635fba860be39d1d904c0f99c7588e4580c815155edbd087e15",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "smartphone",
+    "label": "Smartphone",
+    "set": "06",
+    "currentIntent": "A content tile scrolls within the stationary phone.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "smartphone",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "9f522dbe0b611a7757428fb8802e1b30f4826ef9609a1d4cb609e97f492c9366",
+        "path": "06/assets/smartphone.lottie",
+        "poses": "06/assets/smartphone-poses.png",
+        "poseSha256": "eb65a8741e5698f3036b68872250875a36ae8144b981fd8ed37c46270203e8b0",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "smartphone-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "cc53c6b473c9ec85996a61a45a0046629d83f3212aade21e59c3e3a0b566c551",
+        "path": "06/assets/smartphone-strong.lottie",
+        "poses": "06/assets/smartphone-strong-poses.png",
+        "poseSha256": "49eb719f1e1c9b32d08b1a1a453ce124a620072c716d7167c1fbb6b87140620c",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "laptop",
+    "label": "Laptop",
+    "set": "06",
+    "currentIntent": "The display folds toward its lower hinge and reopens.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "laptop",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "09b7f71eea2a2d15320ad29e952e9eed33f63415f04dbc8b5a9f970ffe19a881",
+        "path": "06/assets/laptop.lottie",
+        "poses": "06/assets/laptop-poses.png",
+        "poseSha256": "f2c10066c88ee49fbf638b5563da22fc92ef01ec156971f3f1003a46c7454218",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "laptop-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "335cc73ba823568cc13fdcbc9ca95734dd4b788d3bb259fcdc2d3f7cd8835f98",
+        "path": "06/assets/laptop-strong.lottie",
+        "poses": "06/assets/laptop-strong-poses.png",
+        "poseSha256": "56c987f5af12d39bec6fa1c33adea7ab77c885c2a148d551d78dade256ef55f2",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "printer",
+    "label": "Printer",
+    "set": "06",
+    "currentIntent": "Paper advances from a fixed output slot and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "printer",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "b363e315c82af49004e2018672247e725334c3faef9085c48c9b738bc893f498",
+        "path": "06/assets/printer.lottie",
+        "poses": "06/assets/printer-poses.png",
+        "poseSha256": "07b8410c6fa375392b59c3a81726712f71f551db7d6bb754fd1d748dbe8aa238",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "printer-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "8c10381798448c6e3efce033d999d15d351e57ef7d87bd98cd92c1ecec99c9d5",
+        "path": "06/assets/printer-strong.lottie",
+        "poses": "06/assets/printer-strong-poses.png",
+        "poseSha256": "b3df3b76e91513df802ae4fb0ec41f2bb9d13db337bc10af8da101510a41caac",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "document",
+    "label": "Document",
+    "set": "06",
+    "currentIntent": "Two lines compose in order inside the fixed page.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "document",
+        "active": 0.6,
+        "rest": 39,
+        "sha256": "230dafea37aaa25a01ee6566455fb8526469a11919222a38cc5dd96679366a9c",
+        "path": "06/assets/document.lottie",
+        "poses": "06/assets/document-poses.png",
+        "poseSha256": "0ff2243c5d73bb876a67a71f25354321f3d4674a8024953275d1489519512ec2",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "document-strong",
+        "active": 0.88,
+        "rest": 56,
+        "sha256": "6445912ccef9c4c78ec403c367d8b0a32e4f7797299e5082a8e33529a9d84581",
+        "path": "06/assets/document-strong.lottie",
+        "poses": "06/assets/document-strong-poses.png",
+        "poseSha256": "15667de00701cf843d4427a58a3f3f3e601a2542f0ac83eb6e8b6fcde5bc4ef8",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "clipboard",
+    "label": "Clipboard",
+    "set": "06",
+    "currentIntent": "The clip presses toward its attachment and releases.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "clipboard",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "df8db4d04875fad37d8d685b2bdf40c72d75fe992e2f8cfb3bc26afb253f3899",
+        "path": "06/assets/clipboard.lottie",
+        "poses": "06/assets/clipboard-poses.png",
+        "poseSha256": "a5cb8a11c89a04a43a1d6084ddfda3d036554d2779a15a8d88b248b499701717",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "clipboard-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "c3663a29e5c58e91411580aefff606561f6ac2c50c90bbda1a60e64d75443afb",
+        "path": "06/assets/clipboard-strong.lottie",
+        "poses": "06/assets/clipboard-strong-poses.png",
+        "poseSha256": "9c7ba4b222980b37fe85eb81d0b67599e72dc46bdf1a778b992f8869d88d6a45",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "book",
+    "label": "Book",
+    "set": "06",
+    "currentIntent": "The right leaf turns toward the fixed spine and opens again.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "book",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "54bec700e27839de3b92e6c0c05293ebe2500d308d86de742f356c1d38b3bd1e",
+        "path": "06/assets/book.lottie",
+        "poses": "06/assets/book-poses.png",
+        "poseSha256": "ba50b2a7e7f96098c3a55f62a5abd6b40374e9172945b8adb9074a0cec22abad",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "book-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "bb9567fce948c9697233d05179434f2bbd3c7272f0905974a0e36c44f2b17524",
+        "path": "06/assets/book-strong.lottie",
+        "poses": "06/assets/book-strong-poses.png",
+        "poseSha256": "a02dadd4c8223fd960d72f32d8387caa29a2c45fffc161d10faf1a85b1e47049",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "credit-card",
+    "label": "Credit card",
+    "set": "06",
+    "currentIntent": "The rigid payment card makes one straight swipe and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "credit-card",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "4bf4ab09ab70d8e3e5e51146e8df2155d72b00c20e5f341f497175563b00e3a7",
+        "path": "06/assets/credit-card.lottie",
+        "poses": "06/assets/credit-card-poses.png",
+        "poseSha256": "a9716c8b070e24141ae94d19dd9036f426c7b66ccd778dd2e1e12531929cd1fd",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "credit-card-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "9b2bf8779d59f0c21aa04e7db7860e7e186748a5cdc40f16c5c2f2d51547a1a5",
+        "path": "06/assets/credit-card-strong.lottie",
+        "poses": "06/assets/credit-card-strong-poses.png",
+        "poseSha256": "2f0a23ead2255a0f1565d21f9d5fea5542eecde9a4c69fee53e632961e5f5062",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "wallet",
+    "label": "Wallet",
+    "set": "06",
+    "currentIntent": "The clasped flap opens from its fixed right edge and returns.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "wallet",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "8c650dceeed39f4a7d82206faaf455b3e7804b26eefc50de7e86491d09011354",
+        "path": "06/assets/wallet.lottie",
+        "poses": "06/assets/wallet-poses.png",
+        "poseSha256": "adf5002c4ebee22a942d82a3067a9d330e449e8c0467b321c5db8f97dadc3c96",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "wallet-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "39f90de3563745e96f9e3b32830c131d0b1363ce2d209f923459fe9892fb24cd",
+        "path": "06/assets/wallet-strong.lottie",
+        "poses": "06/assets/wallet-strong-poses.png",
+        "poseSha256": "369e2d8ca03640c6b63078a045e5bcab80b7763a9f36237124d320618a4338b1",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "gift",
+    "label": "Gift",
+    "set": "06",
+    "currentIntent": "The lid and bow lift; the box sides and ribbon follow while the base stays fixed.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "gift",
+        "active": 0.54,
+        "rest": 35,
+        "sha256": "03f50045db2df0e31bc37c1a8de8479e881b03d5661710cec76345ddce7f2be1",
+        "path": "06/assets/gift.lottie",
+        "poses": "06/assets/gift-poses.png",
+        "poseSha256": "39a37f369d34801d4cb2247cc8ddc7204a36c6f28b9b29f1dbe46da2b67cf02b",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "gift-strong",
+        "active": 0.82,
+        "rest": 52,
+        "sha256": "eaa04570d0f2dac8e29585ca6e6fe2f54a38e475133113db4b3ebf7fcdc9362c",
+        "path": "06/assets/gift-strong.lottie",
+        "poses": "06/assets/gift-strong-poses.png",
+        "poseSha256": "dbf4fda0368c21a2ff57d50fd0a9a2cbc34d227382b100cd7f7a8e9b55178f0d",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "flag",
+    "label": "Flag",
+    "set": "06",
+    "currentIntent": "One cloth wave travels toward the free edge while the pole stays fixed.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "flag",
+        "active": 0.6,
+        "rest": 39,
+        "sha256": "1080987c8b6ce39fcd829b41e4b4afddf5bab3ee6449df2c8d0cbdacce54e29f",
+        "path": "06/assets/flag.lottie",
+        "poses": "06/assets/flag-poses.png",
+        "poseSha256": "adffd3e5cc38cc5d4b7fab30d23c36f754ca32c86f5284d3254f517f858f58bc",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "flag-strong",
+        "active": 0.9,
+        "rest": 57,
+        "sha256": "343e54b7dd879f1a6175e3c32e21393ec97360f09385e1a2617052588c2bd043",
+        "path": "06/assets/flag-strong.lottie",
+        "poses": "06/assets/flag-strong-poses.png",
+        "poseSha256": "848d3e161e9282cd043fe5ee55262050ff27df3d5d9dc1f74c69dca920831299",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "chart",
+    "label": "Chart",
+    "set": "06",
+    "currentIntent": "Three bars grow in order from one fixed baseline.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "chart",
+        "active": 0.64,
+        "rest": 41,
+        "sha256": "1a4d33e7f5a6476dd2bc6de4517c7dac67f6c2db81840990ebe6ed507932ff3b",
+        "path": "06/assets/chart.lottie",
+        "poses": "06/assets/chart-poses.png",
+        "poseSha256": "91ff3de244ab90330cb4d53253fab841d01d5aea31dfeea1377a4e3cf4530420",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "chart-strong",
+        "active": 0.92,
+        "rest": 58,
+        "sha256": "f8ab980c6a673462cd500e15bb36c220b181c14910ab9dfbaf8480fd249a641b",
+        "path": "06/assets/chart-strong.lottie",
+        "poses": "06/assets/chart-strong-poses.png",
+        "poseSha256": "779b63cc25998af2e2233491e677fe137e8a2a23af7ee55b89c248a8bf83437b",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  },
+  {
+    "name": "filter",
+    "label": "Filter",
+    "set": "06",
+    "currentIntent": "The lower tiers narrow in order below the fixed top line.",
+    "stateful": false,
+    "motions": [
+      {
+        "name": "filter",
+        "active": 0.6,
+        "rest": 39,
+        "sha256": "3be3c0991c72487754c43007416c9b505ac96988581e9119ac8cc51b2f4e6197",
+        "path": "06/assets/filter.lottie",
+        "poses": "06/assets/filter-poses.png",
+        "poseSha256": "2d5388704aee8d115b5bb5be5ae67aaf6f361b1f92363b89c77c9a1c3ddeb97a",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      },
+      {
+        "name": "filter-strong",
+        "active": 0.88,
+        "rest": 56,
+        "sha256": "098d8240f7fe2cfe368b2e891a678700401caa6c393c0b2b3e55be8193c02cbb",
+        "path": "06/assets/filter-strong.lottie",
+        "poses": "06/assets/filter-strong-poses.png",
+        "poseSha256": "318560fe71bcf9edf054d0fef762aac6cae13f9df97b72c82e57038ac6fb2144",
+        "startState": "rest",
+        "endState": "rest",
+        "reverse": null,
+        "reverseMeta": null
+      }
+    ]
+  }
+]

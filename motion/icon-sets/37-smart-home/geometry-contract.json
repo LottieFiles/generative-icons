@@ -1,0 +1,753 @@
+{
+ "version": 1,
+ "exceptions": {},
+ "icons": {
+  "smart-bulb": [
+   {
+    "kind": "gap",
+    "a": "ray-0",
+    "b": "glass-frame",
+    "min": 1,
+    "label": "ray-0 / glass-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-1",
+    "b": "glass-frame",
+    "min": 1,
+    "label": "ray-1 / glass-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-2",
+    "b": "glass-frame",
+    "min": 1,
+    "label": "ray-2 / glass-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-3",
+    "b": "glass-frame",
+    "min": 1,
+    "label": "ray-3 / glass-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "thread-0",
+    "b": "glass-frame",
+    "min": 1,
+    "label": "thread-0 / glass-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "thread-0",
+    "b": "thread-1",
+    "min": 1,
+    "label": "thread-0 / thread-1"
+   }
+  ],
+  "thermostat": [
+   {
+    "kind": "gap",
+    "a": "setpoint",
+    "b": "ring-frame",
+    "min": 1,
+    "label": "setpoint / ring-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "knob",
+    "b": "ring-frame",
+    "min": 1,
+    "label": "knob / ring-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "knob",
+    "b": "hub",
+    "min": 1,
+    "label": "knob / hub"
+   },
+   {
+    "kind": "gap",
+    "a": "setpoint",
+    "b": "hub",
+    "min": 1,
+    "label": "setpoint / hub"
+   }
+  ],
+  "smart-lock": [
+   {
+    "kind": "gap",
+    "a": "key-0",
+    "b": "key-1",
+    "min": 1,
+    "label": "key-0 / key-1"
+   },
+   {
+    "kind": "gap",
+    "a": "key-0",
+    "b": "key-2",
+    "min": 1,
+    "label": "key-0 / key-2"
+   },
+   {
+    "kind": "gap",
+    "a": "key-0",
+    "b": "plate-frame",
+    "min": 1,
+    "label": "key-0 / plate-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "key-2",
+    "b": "rose-frame",
+    "min": 1,
+    "label": "key-2 / rose-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "rose-frame",
+    "b": "plate-frame",
+    "min": 1,
+    "label": "rose-frame / plate-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "status",
+    "b": "key-0",
+    "min": 1,
+    "label": "status / key-0"
+   },
+   {
+    "kind": "gap",
+    "a": "status",
+    "b": "plate-frame",
+    "min": 0.9,
+    "label": "status / plate-frame"
+   }
+  ],
+  "door-sensor": [
+   {
+    "kind": "gap",
+    "a": "magnet-frame",
+    "b": "sensor-frame",
+    "min": 1,
+    "label": "magnet-frame / sensor-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "alert-0",
+    "b": "sensor-frame",
+    "min": 1,
+    "label": "alert-0 / sensor-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "alert-0",
+    "b": "alert-1",
+    "min": 1,
+    "label": "alert-0 / alert-1"
+   },
+   {
+    "kind": "gap",
+    "a": "led",
+    "b": "sensor-frame",
+    "min": 1,
+    "label": "led / sensor-frame"
+   }
+  ],
+  "garage-door": [
+   {
+    "kind": "gap",
+    "a": "panel-0",
+    "b": "opening",
+    "min": 0.5,
+    "label": "panel-0 / opening"
+   },
+   {
+    "kind": "gap",
+    "a": "panel-1",
+    "b": "opening",
+    "min": 0.5,
+    "label": "panel-1 / opening"
+   },
+   {
+    "kind": "gap",
+    "a": "panel-2",
+    "b": "opening",
+    "min": 0.5,
+    "label": "panel-2 / opening"
+   },
+   {
+    "kind": "gap",
+    "a": "panel-0",
+    "b": "panel-1",
+    "min": 1,
+    "label": "panel-0 / panel-1"
+   },
+   {
+    "kind": "gap",
+    "a": "panel-1",
+    "b": "panel-2",
+    "min": 1,
+    "label": "panel-1 / panel-2"
+   },
+   {
+    "kind": "gap",
+    "a": "opening",
+    "b": "house",
+    "min": 1,
+    "label": "opening / house"
+   }
+  ],
+  "ceiling-fan": [
+   {
+    "kind": "gap",
+    "a": "blade-l",
+    "b": "bowl-frame",
+    "min": 1,
+    "label": "blade-l / bowl-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "blade-r",
+    "b": "bowl-frame",
+    "min": 1,
+    "label": "blade-r / bowl-frame"
+   }
+  ],
+  "air-conditioner": [
+   {
+    "kind": "gap",
+    "a": "vent",
+    "b": "unit-frame",
+    "min": 1,
+    "label": "vent / unit-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "flow-0",
+    "b": "unit-frame",
+    "min": 1,
+    "label": "flow-0 / unit-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "flow-1",
+    "b": "unit-frame",
+    "min": 1,
+    "label": "flow-1 / unit-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "flow-2",
+    "b": "unit-frame",
+    "min": 1,
+    "label": "flow-2 / unit-frame"
+   }
+  ],
+  "smart-speaker": [
+   {
+    "kind": "gap",
+    "a": "arc-0",
+    "b": "ring",
+    "min": 1,
+    "label": "arc-0 / ring"
+   },
+   {
+    "kind": "gap",
+    "a": "arc-0",
+    "b": "arc-1",
+    "min": 1,
+    "label": "arc-0 / arc-1"
+   }
+  ],
+  "video-doorbell": [
+   {
+    "kind": "gap",
+    "a": "lens",
+    "b": "body-frame",
+    "min": 0.5,
+    "label": "lens / body-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "pupil",
+    "b": "lens",
+    "min": 0.5,
+    "label": "pupil / lens"
+   },
+   {
+    "kind": "gap",
+    "a": "button-frame",
+    "b": "body-frame",
+    "min": 0.5,
+    "label": "button-frame / body-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "lens",
+    "b": "button-frame",
+    "min": 1,
+    "label": "lens / button-frame"
+   }
+  ],
+  "security-camera": [
+   {
+    "kind": "gap",
+    "a": "lens",
+    "b": "body-frame",
+    "min": 0.9,
+    "label": "lens / body-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "body-frame",
+    "b": "plate",
+    "min": 1,
+    "label": "body-frame / plate"
+   }
+  ],
+  "window-blinds": [
+   {
+    "kind": "gap",
+    "a": "slat-0",
+    "b": "rail",
+    "min": 0.25,
+    "label": "slat-0 / rail"
+   },
+   {
+    "kind": "gap",
+    "a": "slat-1",
+    "b": "rail",
+    "min": 0.25,
+    "label": "slat-1 / rail"
+   },
+   {
+    "kind": "gap",
+    "a": "slat-2",
+    "b": "rail",
+    "min": 0.25,
+    "label": "slat-2 / rail"
+   },
+   {
+    "kind": "gap",
+    "a": "slat-3",
+    "b": "rail",
+    "min": 0.25,
+    "label": "slat-3 / rail"
+   },
+   {
+    "kind": "gap",
+    "a": "slat-4",
+    "b": "rail",
+    "min": 0.25,
+    "label": "slat-4 / rail"
+   },
+   {
+    "kind": "gap",
+    "a": "slat-1",
+    "b": "slat-2",
+    "min": 1,
+    "label": "slat-1 / slat-2"
+   },
+   {
+    "kind": "gap",
+    "a": "slat-3",
+    "b": "slat-4",
+    "min": 1,
+    "label": "slat-3 / slat-4"
+   },
+   {
+    "kind": "gap",
+    "a": "cord",
+    "b": "slat-0",
+    "min": 1,
+    "label": "cord / slat-0"
+   },
+   {
+    "kind": "gap",
+    "a": "cord",
+    "b": "slat-1",
+    "min": 1,
+    "label": "cord / slat-1"
+   },
+   {
+    "kind": "gap",
+    "a": "cord",
+    "b": "slat-2",
+    "min": 1,
+    "label": "cord / slat-2"
+   },
+   {
+    "kind": "gap",
+    "a": "cord",
+    "b": "slat-3",
+    "min": 1,
+    "label": "cord / slat-3"
+   },
+   {
+    "kind": "gap",
+    "a": "cord",
+    "b": "slat-4",
+    "min": 1,
+    "label": "cord / slat-4"
+   },
+   {
+    "kind": "gap",
+    "a": "tassel",
+    "b": "slat-2",
+    "min": 1,
+    "label": "tassel / slat-2"
+   },
+   {
+    "kind": "gap",
+    "a": "tassel",
+    "b": "slat-3",
+    "min": 1,
+    "label": "tassel / slat-3"
+   },
+   {
+    "kind": "gap",
+    "a": "tassel",
+    "b": "slat-4",
+    "min": 1,
+    "label": "tassel / slat-4"
+   }
+  ],
+  "robot-vacuum": [
+   {
+    "kind": "gap",
+    "a": "lidar",
+    "b": "disc-frame",
+    "min": 1,
+    "label": "lidar / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "lidar",
+    "b": "bumper",
+    "min": 1,
+    "label": "lidar / bumper"
+   },
+   {
+    "kind": "gap",
+    "a": "dust-0",
+    "b": "disc-frame",
+    "min": 0.5,
+    "label": "dust-0 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "dust-1",
+    "b": "disc-frame",
+    "min": 0.5,
+    "label": "dust-1 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "dust-2",
+    "b": "disc-frame",
+    "min": 0.5,
+    "label": "dust-2 / disc-frame"
+   }
+  ],
+  "washing-machine": [
+   {
+    "kind": "gap",
+    "a": "swirl",
+    "b": "door-frame",
+    "min": 1,
+    "label": "swirl / door-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "door-frame",
+    "b": "body-frame",
+    "min": 1,
+    "label": "door-frame / body-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "panel",
+    "b": "door-frame",
+    "min": 1,
+    "label": "panel / door-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "knob",
+    "b": "body-frame",
+    "min": 1,
+    "label": "knob / body-frame"
+   }
+  ],
+  "refrigerator": [
+   {
+    "kind": "gap",
+    "a": "shelf-0",
+    "b": "door-frame",
+    "min": 1,
+    "label": "shelf-0 / door-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "shelf-1",
+    "b": "door-frame",
+    "min": 1,
+    "label": "shelf-1 / door-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "shelf-0",
+    "b": "cabinet",
+    "min": 1,
+    "label": "shelf-0 / cabinet"
+   },
+   {
+    "kind": "gap",
+    "a": "handle",
+    "b": "door-frame",
+    "min": 0.9,
+    "label": "handle / door-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "handle",
+    "b": "divider",
+    "min": 1,
+    "label": "handle / divider"
+   },
+   {
+    "kind": "gap",
+    "a": "handle-top",
+    "b": "divider",
+    "min": 1,
+    "label": "handle-top / divider"
+   },
+   {
+    "kind": "gap",
+    "a": "handle-top",
+    "b": "cabinet",
+    "min": 1,
+    "label": "handle-top / cabinet"
+   }
+  ],
+  "oven": [
+   {
+    "kind": "gap",
+    "a": "display",
+    "b": "knob-2",
+    "min": 1,
+    "label": "display / knob-2"
+   },
+   {
+    "kind": "gap",
+    "a": "heat-0",
+    "b": "window-frame",
+    "min": 1,
+    "label": "heat-0 / window-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "heat-1",
+    "b": "window-frame",
+    "min": 1,
+    "label": "heat-1 / window-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "heat-0",
+    "b": "heat-1",
+    "min": 1,
+    "label": "heat-0 / heat-1"
+   },
+   {
+    "kind": "gap",
+    "a": "window-frame",
+    "b": "body-frame",
+    "min": 1,
+    "label": "window-frame / body-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "knob-0",
+    "b": "window-frame",
+    "min": 1,
+    "label": "knob-0 / window-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "display",
+    "b": "body-frame",
+    "min": 1,
+    "label": "display / body-frame"
+   }
+  ],
+  "smoke-alarm": [
+   {
+    "kind": "gap",
+    "a": "puck-frame",
+    "b": "ceiling",
+    "min": 1,
+    "label": "puck-frame / ceiling"
+   },
+   {
+    "kind": "gap",
+    "a": "arc-0",
+    "b": "puck-frame",
+    "min": 1,
+    "label": "arc-0 / puck-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "arc-0",
+    "b": "arc-1",
+    "min": 1,
+    "label": "arc-0 / arc-1"
+   },
+   {
+    "kind": "gap",
+    "a": "led",
+    "b": "puck-frame",
+    "min": 1,
+    "label": "led / puck-frame"
+   }
+  ],
+  "water-leak": [
+   {
+    "kind": "gap",
+    "a": "drop-frame",
+    "b": "coupling-frame",
+    "min": 0.5,
+    "label": "drop-frame / coupling-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "puddle",
+    "b": "pipe-l",
+    "min": 1,
+    "label": "puddle / pipe-l"
+   }
+  ],
+  "power-outlet": [
+   {
+    "kind": "gap",
+    "a": "button",
+    "b": "plate-frame",
+    "min": 1,
+    "label": "button / plate-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "button",
+    "b": "socket-frame",
+    "min": 1,
+    "label": "button / socket-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "led",
+    "b": "plate-frame",
+    "min": 1,
+    "label": "led / plate-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "led",
+    "b": "button",
+    "min": 1,
+    "label": "led / button"
+   },
+   {
+    "kind": "gap",
+    "a": "slot-l",
+    "b": "socket-frame",
+    "min": 1,
+    "label": "slot-l / socket-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "slot-r",
+    "b": "socket-frame",
+    "min": 1,
+    "label": "slot-r / socket-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "slot-l",
+    "b": "slot-r",
+    "min": 1,
+    "label": "slot-l / slot-r"
+   }
+  ],
+  "energy-usage": [
+   {
+    "kind": "gap",
+    "a": "bar-0",
+    "b": "bar-1",
+    "min": 1,
+    "label": "bar-0 / bar-1"
+   },
+   {
+    "kind": "gap",
+    "a": "bar-1",
+    "b": "bar-2",
+    "min": 1,
+    "label": "bar-1 / bar-2"
+   },
+   {
+    "kind": "gap",
+    "a": "bar-2",
+    "b": "bar-3",
+    "min": 1,
+    "label": "bar-2 / bar-3"
+   },
+   {
+    "kind": "gap",
+    "a": "bolt",
+    "b": "bar-0",
+    "min": 1,
+    "label": "bolt / bar-0"
+   }
+  ],
+  "motion-sensor": [
+   {
+    "kind": "gap",
+    "a": "beam-0",
+    "b": "dome-frame",
+    "min": 1,
+    "label": "beam-0 / dome-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "beam-0",
+    "b": "beam-1",
+    "min": 1,
+    "label": "beam-0 / beam-1"
+   },
+   {
+    "kind": "gap",
+    "a": "shoulders",
+    "b": "beam-1",
+    "min": 1,
+    "label": "shoulders / beam-1"
+   },
+   {
+    "kind": "gap",
+    "a": "head",
+    "b": "beam-1",
+    "min": 1,
+    "label": "head / beam-1"
+   },
+   {
+    "kind": "gap",
+    "a": "head",
+    "b": "shoulders",
+    "min": 1,
+    "label": "head / shoulders"
+   }
+  ]
+ }
+}

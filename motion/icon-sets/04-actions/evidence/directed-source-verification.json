@@ -1,0 +1,175 @@
+{
+  "result": "PASS",
+  "icons": 10,
+  "actions": 32,
+  "nativeTransformNodes": 122,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "checks": [
+    {
+      "name": "download",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "download-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "upload",
+      "fixedParts": [
+        "upload-tray"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "upload-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "copy",
+      "fixedParts": [
+        "copy-source"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "copy-strong",
+      "fixedParts": [
+        "copy-source"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "trash",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "trash-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "edit",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "edit-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "send",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "send-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "bookmark",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "bookmark-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "refresh",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "refresh-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "eye",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "eye-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "menu",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "menu-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    }
+  ]
+}

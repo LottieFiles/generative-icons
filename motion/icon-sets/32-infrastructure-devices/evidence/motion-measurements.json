@@ -1,0 +1,357 @@
+{
+  "scope": "Source geometry and rigid transforms at 60fps; grid units and seconds. RMS includes curve control points. Native normal-speed review required.",
+  "definitionsSha256": "6f1e5b24de218340f450551bdc421410c49a933f44b75a496c628048d6f2d288",
+  "icons": 10,
+  "records": [
+    {
+      "icon": "server",
+      "mainPart": "server-unit-top-frame",
+      "intent": "The top rack unit slides out to expose the host, then seats back. Light: quiet 1.6-unit pull. Strong: short push-in, fast 3.9-unit pull with a seated rebound and hold.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 1,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 1.6000000000000008,
+          "travelRms": 3.200000000000001,
+          "peakRmsSpeed": 7.036207793382659,
+          "visibleTravelRms": 3.200000000000001,
+          "visiblePeakRmsSpeed": 7.036207793382659,
+          "first10To90Seconds": 0.21666666666666665,
+          "rotationRange": 0,
+          "horizontalRange": 1.6,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 1.2,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.2901620370370366,
+          "travelRms": 7.777597736625514,
+          "peakRmsSpeed": 26.48509892311553,
+          "visibleTravelRms": 7.777597736625514,
+          "visiblePeakRmsSpeed": 26.48509892311553,
+          "first10To90Seconds": 0.25,
+          "rotationRange": 0,
+          "horizontalRange": 3.8887988683127572,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.7641155151819086,
+      "strongToLightTravel": 2.430499292695472
+    },
+    {
+      "icon": "database",
+      "mainPart": "database-band",
+      "intent": "A write band drops through the cylinder and returns. Light: 2-unit settle. Strong: lift, 4.4-unit fast drop with a bounded rebound, hold, return.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 1,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 2,
+          "travelRms": 3.9999999999999996,
+          "peakRmsSpeed": 8.09209501685757,
+          "visibleTravelRms": 3.9999999999999996,
+          "visiblePeakRmsSpeed": 8.09209501685757,
+          "first10To90Seconds": 0.2166666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 2
+        },
+        "strong": {
+          "activeSeconds": 1.2,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.757649999999998,
+          "travelRms": 8.694222362595832,
+          "peakRmsSpeed": 34.37622222222217,
+          "visibleTravelRms": 8.694222362595832,
+          "visiblePeakRmsSpeed": 34.37622222222217,
+          "first10To90Seconds": 0.2833333333333333,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 4.347111181297916
+        }
+      },
+      "strongToLightPeakSpeed": 4.248123897533225,
+      "strongToLightTravel": 2.1735555906489585
+    },
+    {
+      "icon": "processor",
+      "mainPart": "processor-core",
+      "intent": "The core locks with a quarter-turn. Light: quiet 20° twist and release. Strong: 12° wind-up, one 112° snap that overruns to 100°, drops back to the 90° index and holds.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 1,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 0.98357571748926,
+          "travelRms": 1.977145094249037,
+          "peakRmsSpeed": 3.9997780002626735,
+          "visibleTravelRms": 1.977145094249037,
+          "visiblePeakRmsSpeed": 3.9997780002626735,
+          "first10To90Seconds": 0.2166666666666667,
+          "rotationRange": 20,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 1,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 4.339018830445804,
+          "travelRms": 6.601121273019893,
+          "peakRmsSpeed": 51.31336937562325,
+          "visibleTravelRms": 6.601121273019893,
+          "visiblePeakRmsSpeed": 51.31336937562325,
+          "first10To90Seconds": 0.16666666666666663,
+          "rotationRange": 111.92095885973437,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 12.829054355580086,
+      "strongToLightTravel": 3.338713629172038
+    },
+    {
+      "icon": "memory-chip",
+      "mainPart": "memory-chip-module-frame",
+      "intent": "The RAM module presses toward its slot and lifts clear. Light: 1.2-unit press. Strong: 1-unit lift, 4.5-unit drive to a seated contact, small rebound, release.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.95,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 1.199999999999999,
+          "travelRms": 2.3999999999999977,
+          "peakRmsSpeed": 5.619303385416659,
+          "visibleTravelRms": 2.3999999999999977,
+          "visiblePeakRmsSpeed": 5.619303385416659,
+          "first10To90Seconds": 0.19999999999999998,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.2
+        },
+        "strong": {
+          "activeSeconds": 1.15,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.4406518518518516,
+          "travelRms": 8.868130180326094,
+          "peakRmsSpeed": 39.20438957475994,
+          "visibleTravelRms": 8.868130180326094,
+          "visiblePeakRmsSpeed": 39.20438957475994,
+          "first10To90Seconds": 0.25,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 4.434065090163049
+        }
+      },
+      "strongToLightPeakSpeed": 6.976734816721952,
+      "strongToLightTravel": 3.6950542418025427
+    },
+    {
+      "icon": "hard-drive",
+      "mainPart": "hard-drive-platter",
+      "intent": "The platter spins one turn and stops. Light: one smooth revolution. Strong: short reverse wind, a fast full turn that overruns and settles back to the same index.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 1.05,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 8.48900987691578,
+          "travelRms": 26.6499149809614,
+          "peakRmsSpeed": 41.18522961698059,
+          "visibleTravelRms": 26.6499149809614,
+          "visiblePeakRmsSpeed": 41.18522961698059,
+          "first10To90Seconds": 0.2833333333333333,
+          "rotationRange": 360,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.95,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 8.489086685924361,
+          "travelRms": 31.930349559376168,
+          "peakRmsSpeed": 127.24158647911904,
+          "visibleTravelRms": 31.930349559376168,
+          "visiblePeakRmsSpeed": 127.24158647911904,
+          "first10To90Seconds": 0.21666666666666667,
+          "rotationRange": 396.83533095777995,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.089495619241554,
+      "strongToLightTravel": 1.198140766384699
+    },
+    {
+      "icon": "ethernet",
+      "mainPart": "ethernet-plug-frame",
+      "intent": "The plug pushes up into its port; Light seats gently, Strong dips back then drives home with a decisive click.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.5,
+          "travelRms": 3.0000000000000004,
+          "peakRmsSpeed": 8.986666666666707,
+          "visibleTravelRms": 3.0000000000000004,
+          "visiblePeakRmsSpeed": 8.986666666666707,
+          "first10To90Seconds": 0.16666666666666669,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.5
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4,
+          "travelRms": 9.9954561042524,
+          "peakRmsSpeed": 43.83478128334103,
+          "visibleTravelRms": 9.9954561042524,
+          "visiblePeakRmsSpeed": 43.83478128334103,
+          "first10To90Seconds": 0.23333333333333334,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 4.997728052126201
+        }
+      },
+      "strongToLightPeakSpeed": 4.877757561202615,
+      "strongToLightTravel": 3.331818701417466
+    },
+    {
+      "icon": "router",
+      "mainPart": "router-antenna-l",
+      "intent": "Both antennas hinge outward from the gateway box and settle back; Strong preps inward and swings 24 degrees.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 0.9865055123226473,
+          "travelRms": 1.9746086900757025,
+          "peakRmsSpeed": 4.916194127641811,
+          "visibleTravelRms": 1.9746086900757025,
+          "visiblePeakRmsSpeed": 4.916194127641811,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 8,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.937430363727922,
+          "travelRms": 8.13589237330445,
+          "peakRmsSpeed": 26.70876411672833,
+          "visibleTravelRms": 8.13589237330445,
+          "visiblePeakRmsSpeed": 26.70876411672833,
+          "first10To90Seconds": 0.23333333333333334,
+          "rotationRange": 28.964742112482845,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 5.432813152465957,
+      "strongToLightTravel": 4.120255529206922
+    },
+    {
+      "icon": "load-balancer",
+      "mainPart": "load-balancer-packet",
+      "intent": "The hub dispatches a packet down the shared trunk and left branch into a server slot; Strong lifts it briefly, fires it faster, and the receiving server absorbs the hit with the packet seated.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.9,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 17.46424919657298,
+          "travelRms": 18.99503254964803,
+          "peakRmsSpeed": 39.6847400391333,
+          "visibleTravelRms": 18.99503254964803,
+          "visiblePeakRmsSpeed": 39.6847400391333,
+          "first10To90Seconds": 0.44999999999999996,
+          "rotationRange": 0,
+          "horizontalRange": 7,
+          "verticalRange": 16
+        },
+        "strong": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 17.80932428562923,
+          "travelRms": 19.85797998863204,
+          "peakRmsSpeed": 130.66198164433783,
+          "visibleTravelRms": 19.85797998863204,
+          "visiblePeakRmsSpeed": 130.66198164433783,
+          "first10To90Seconds": 0.13333333333333333,
+          "rotationRange": 0,
+          "horizontalRange": 7,
+          "verticalRange": 16.517088479623236
+        }
+      },
+      "strongToLightPeakSpeed": 3.2924993716852233,
+      "strongToLightTravel": 1.0454301637403616
+    },
+    {
+      "icon": "firewall",
+      "mainPart": "firewall-arrow-head",
+      "intent": "Incoming traffic pushes at the wall and is turned back; Strong winds up, strikes the boundary hard and rebounds.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.65,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.1997095707833474,
+          "travelRms": 2.3994191415666943,
+          "peakRmsSpeed": 6.420068027210881,
+          "visibleTravelRms": 2.3994191415666943,
+          "visiblePeakRmsSpeed": 6.420068027210881,
+          "first10To90Seconds": 0.16666666666666669,
+          "rotationRange": 0,
+          "horizontalRange": 1.1997095707833472,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.252502357681756,
+          "travelRms": 5.7022783779149515,
+          "peakRmsSpeed": 31.602202785876234,
+          "visibleTravelRms": 5.7022783779149515,
+          "visiblePeakRmsSpeed": 31.602202785876234,
+          "first10To90Seconds": 0.21666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 2.8511391889574758,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 4.922409334594764,
+      "strongToLightTravel": 2.3765245009221956
+    },
+    {
+      "icon": "usb-drive",
+      "mainPart": "usb-drive-drive-frame",
+      "intent": "The flash drive is tugged out of its port and slides back; Strong seats inward first then pulls a full 3 units.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.1999999999999993,
+          "travelRms": 2.399999999999999,
+          "peakRmsSpeed": 5.975308641975352,
+          "visibleTravelRms": 2.399999999999999,
+          "visiblePeakRmsSpeed": 5.975308641975352,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 0,
+          "horizontalRange": 1.2,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.68,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.9981079603909464,
+          "travelRms": 7.789705504115228,
+          "peakRmsSpeed": 33.261718750000014,
+          "visibleTravelRms": 7.789705504115228,
+          "visiblePeakRmsSpeed": 33.261718750000014,
+          "first10To90Seconds": 0.2,
+          "rotationRange": 0,
+          "horizontalRange": 3.5967447916666666,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 5.5665273114669045,
+      "strongToLightTravel": 3.2457106267146796
+    }
+  ]
+}

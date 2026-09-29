@@ -1,0 +1,596 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 52,
+  "nativeTransformNodes": 170,
+  "nativeTransformMaxCoordinateError": 0.000010057876746571992,
+  "checks": [
+    {
+      "name": "heart-rate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "heart-rate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "step-counter",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "step-counter-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "dumbbell",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "dumbbell-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "dumbbell-plate-li"
+        }
+      ]
+    },
+    {
+      "name": "dumbbell-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "dumbbell-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "dumbbell-plate-li"
+        }
+      ]
+    },
+    {
+      "name": "running",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "running-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "water-intake",
+      "fixedParts": [
+        "water-intake-glass"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "water-intake-glass"
+        }
+      ]
+    },
+    {
+      "name": "water-intake-strong",
+      "fixedParts": [
+        "water-intake-glass"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "water-intake-glass"
+        }
+      ]
+    },
+    {
+      "name": "sleep-tracking",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "sleep-tracking-moon-frame"
+        }
+      ]
+    },
+    {
+      "name": "sleep-tracking-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "sleep-tracking-moon-frame"
+        }
+      ]
+    },
+    {
+      "name": "calories",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "calories-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "stethoscope",
+      "fixedParts": [
+        "stethoscope-binaural"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "stethoscope-binaural"
+        },
+        {
+          "type": "rigid",
+          "part": "stethoscope-chest-frame"
+        }
+      ]
+    },
+    {
+      "name": "stethoscope-strong",
+      "fixedParts": [
+        "stethoscope-binaural"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "stethoscope-binaural"
+        },
+        {
+          "type": "rigid",
+          "part": "stethoscope-chest-frame"
+        }
+      ]
+    },
+    {
+      "name": "pill",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "pill-half-a"
+        },
+        {
+          "type": "rigid",
+          "part": "pill-half-b"
+        }
+      ]
+    },
+    {
+      "name": "pill-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "pill-half-a"
+        },
+        {
+          "type": "rigid",
+          "part": "pill-half-b"
+        }
+      ]
+    },
+    {
+      "name": "syringe",
+      "fixedParts": [
+        "syringe-barrel",
+        "syringe-needle",
+        "syringe-flange"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "syringe-barrel"
+        },
+        {
+          "type": "fixed",
+          "part": "syringe-needle"
+        },
+        {
+          "type": "fixed",
+          "part": "syringe-flange"
+        },
+        {
+          "type": "rigid",
+          "part": "syringe-rod"
+        },
+        {
+          "type": "rigid",
+          "part": "syringe-thumb"
+        }
+      ]
+    },
+    {
+      "name": "syringe-strong",
+      "fixedParts": [
+        "syringe-barrel",
+        "syringe-needle",
+        "syringe-flange"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "syringe-barrel"
+        },
+        {
+          "type": "fixed",
+          "part": "syringe-needle"
+        },
+        {
+          "type": "fixed",
+          "part": "syringe-flange"
+        },
+        {
+          "type": "rigid",
+          "part": "syringe-rod"
+        },
+        {
+          "type": "rigid",
+          "part": "syringe-thumb"
+        }
+      ]
+    },
+    {
+      "name": "first-aid-kit",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "first-aid-kit-case"
+        },
+        {
+          "type": "rigid",
+          "part": "first-aid-kit-handle"
+        }
+      ]
+    },
+    {
+      "name": "first-aid-kit-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "first-aid-kit-case"
+        },
+        {
+          "type": "rigid",
+          "part": "first-aid-kit-handle"
+        }
+      ]
+    },
+    {
+      "name": "bandage",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "bandage-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "weight-scale",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "weight-scale-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "blood-pressure",
+      "fixedParts": [
+        "blood-pressure-dial-frame",
+        "blood-pressure-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "blood-pressure-dial-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "blood-pressure-hub"
+        }
+      ]
+    },
+    {
+      "name": "blood-pressure-strong",
+      "fixedParts": [
+        "blood-pressure-dial-frame",
+        "blood-pressure-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "blood-pressure-dial-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "blood-pressure-hub"
+        }
+      ]
+    },
+    {
+      "name": "yoga",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "yoga-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "meditation",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "meditation-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "nutrition",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "nutrition-apple-frame"
+        }
+      ]
+    },
+    {
+      "name": "nutrition-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "nutrition-apple-frame"
+        }
+      ]
+    },
+    {
+      "name": "jump-rope",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "jump-rope-handle-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "jump-rope-handle-r-frame"
+        }
+      ]
+    },
+    {
+      "name": "jump-rope-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "jump-rope-handle-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "jump-rope-handle-r-frame"
+        }
+      ]
+    },
+    {
+      "name": "hospital",
+      "fixedParts": [
+        "hospital-building",
+        "hospital-doorway"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "hospital-building"
+        },
+        {
+          "type": "fixed",
+          "part": "hospital-doorway"
+        }
+      ]
+    },
+    {
+      "name": "hospital-strong",
+      "fixedParts": [
+        "hospital-building",
+        "hospital-doorway"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "hospital-building"
+        },
+        {
+          "type": "fixed",
+          "part": "hospital-doorway"
+        }
+      ]
+    },
+    {
+      "name": "dna",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "dna-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    }
+  ],
+  "loopChecks": []
+}

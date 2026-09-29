@@ -1,0 +1,168 @@
+{
+  "icons": {
+    "support-agent": [
+      {
+        "kind": "gap",
+        "a": "head-frame",
+        "b": "band",
+        "label": "head inside headset",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "head-frame",
+        "b": "ear-left",
+        "label": "head beside left earpiece",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "head-frame",
+        "b": "ear-right",
+        "label": "head beside right earpiece",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "boom-solid",
+        "b": "shoulders-solid",
+        "label": "boom above shoulders",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "boom-solid",
+        "b": "head-frame",
+        "label": "boom beside head",
+        "min": 1
+      }
+    ],
+    "help-center": [
+      {
+        "kind": "gap",
+        "a": "outer",
+        "b": "inner",
+        "label": "lifebuoy ring width",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "sector-0-solid",
+        "b": "sector-1-solid",
+        "label": "adjacent Solid index slots",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "grip-n",
+        "label": "opaque radial grip joint"
+      }
+    ],
+    "support-ticket": [
+      {
+        "kind": "gap",
+        "a": "body-frame",
+        "b": "line-1",
+        "label": "text inside record",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "line-1",
+        "b": "line-2",
+        "label": "record text rows",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "stub-frame",
+        "label": "moving complete stub rim"
+      }
+    ],
+    "live-support": [
+      {
+        "kind": "gap",
+        "a": "customer-frame",
+        "b": "agent-frame",
+        "label": "facing bubble separation",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "customer-solid",
+        "b": "agent-solid",
+        "label": "Solid facing bubble separation",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "customer-frame",
+        "b": "customer-line",
+        "label": "customer message line",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "dot-0",
+        "b": "dot-1",
+        "label": "typing dot separation",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1",
+        "b": "dot-2",
+        "label": "typing dot separation right",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "agent-frame",
+        "b": "dot-0",
+        "label": "left typing dot inside bubble",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "agent-frame",
+        "b": "dot-2",
+        "label": "right typing dot inside bubble",
+        "min": 1
+      }
+    ],
+    "callback": [
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "handset-frame",
+        "label": "return head above receiver",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "stem-solid",
+        "b": "handset-frame",
+        "label": "return route above receiver",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "handset-frame",
+        "label": "receiver remains visible"
+      },
+      {
+        "kind": "arrow-curve-gap",
+        "a": "head-solid",
+        "b": "stem-solid",
+        "curveCommands": 3,
+        "label": "full inner barb clear of curved stem",
+        "min": 1
+      }
+    ]
+  },
+  "exceptions": {
+    "support-ticket": "Body and stub share a closed seam at the source, open during tear and close during preview reset. These intentionally adjoining parts are not treated as unrelated gap pairs. Both rims must remain complete and fully opaque.",
+    "help-center": "Rigid 90-degree symmetry; equivalent aggregate endpoints require current native raster proof.",
+    "support-agent": "Band/earpiece and boom/hinge intentionally share opaque endpoints."
+  }
+}

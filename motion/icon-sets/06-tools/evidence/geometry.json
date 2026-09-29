@@ -1,0 +1,566 @@
+{
+  "result": "PASS",
+  "grid": 32,
+  "fps": 60,
+  "actions": 40,
+  "checks": [
+    {
+      "motion": "light",
+      "fixedReferences": true,
+      "plugCableAttachment": true,
+      "screenHinges": true,
+      "printerOutputSlot": true,
+      "writingOrder": true,
+      "clipAttachment": true,
+      "bookSpine": true,
+      "walletHinge": true,
+      "bowLidAttachment": true,
+      "giftLidJunctions": true,
+      "giftFixedBase": true,
+      "flagHoist": true,
+      "chartBaseline": true,
+      "minBatterySolidGap": 7.400000000000002
+    },
+    {
+      "motion": "strong",
+      "fixedReferences": true,
+      "plugCableAttachment": true,
+      "screenHinges": true,
+      "printerOutputSlot": true,
+      "writingOrder": true,
+      "clipAttachment": true,
+      "bookSpine": true,
+      "walletHinge": true,
+      "bowLidAttachment": true,
+      "giftLidJunctions": true,
+      "giftFixedBase": true,
+      "flagHoist": true,
+      "chartBaseline": true,
+      "minBatterySolidGap": 1.6000000000000014
+    }
+  ],
+  "nativeTransformNodes": 146,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "paintBounds": [
+    {
+      "name": "user",
+      "sha256": "cd3c45bd99f784ad8f0792388f81513006d9de347a88155375e3c02a84a1c54e",
+      "clearance": 3.75,
+      "bounds": [
+        5.75,
+        16.75,
+        26.25,
+        28.25
+      ],
+      "node": "user-shoulders-frame-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "user-strong",
+      "sha256": "5037d70df6aa4b698d86f66ca5f3b95385defa16d9c637bf5f80530eb9f67bcc",
+      "clearance": 3.75,
+      "bounds": [
+        5.75,
+        16.75,
+        26.25,
+        28.25
+      ],
+      "node": "user-shoulders-frame-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "users",
+      "sha256": "a35e139adc18326ee22978b6a659afc8f4bd40701d8316599c28ab72dffae97e",
+      "clearance": 3.5,
+      "bounds": [
+        21.9,
+        14.149999999999999,
+        28.5,
+        24.25
+      ],
+      "node": "users-rear-shoulder-solid__color.primary__solid",
+      "time": 0.21666666666666667
+    },
+    {
+      "name": "users-strong",
+      "sha256": "b238ca46e3bc940c9ba28db30e4cc1b9ae94bc9df6da77ff9445464d6df99a81",
+      "clearance": 2.75,
+      "bounds": [
+        19.4,
+        2.75,
+        27.9,
+        11.25
+      ],
+      "node": "users-rear-head-frame-bold__color.primary__outline.bold",
+      "time": 0.3
+    },
+    {
+      "name": "key",
+      "sha256": "de0395540dd2df3e4f5af735c90f23fbf4148608cd1892b97aeb69b951b35c64",
+      "clearance": 3.499636635126468,
+      "bounds": [
+        3.499636635126468,
+        4.9996366351264685,
+        15.500363364873534,
+        17.000363364873536
+      ],
+      "node": "key-bow-solid__color.primary__solid",
+      "time": 0.16666666666666666
+    },
+    {
+      "name": "key-strong",
+      "sha256": "e17c544e65280d3da430acaaee9045b9c28d9e7f6bec36e1ce8251fa565a6c09",
+      "clearance": 2.4555000000000007,
+      "bounds": [
+        12.358239999999999,
+        11.818729999999999,
+        29.5445,
+        20.96753
+      ],
+      "node": "key-shaft-solid__color.primary__solid",
+      "time": 0.25
+    },
+    {
+      "name": "scan",
+      "sha256": "c3e3c01f4d0804d15f5046d750689e7e5dac13ecacdaa92f23b01be687043ef7",
+      "clearance": 4.699999999999999,
+      "bounds": [
+        18.7,
+        4.7,
+        27.3,
+        13.3
+      ],
+      "node": "scan-corner-tr-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "scan-strong",
+      "sha256": "b607fbc31fccfd0f000a416bbae4e2b9a6d83200b1089d4ae0eaa263a4ac8f1c",
+      "clearance": 4.699999999999999,
+      "bounds": [
+        18.7,
+        4.7,
+        27.3,
+        13.3
+      ],
+      "node": "scan-corner-tr-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "battery",
+      "sha256": "2b825effe22f65b219c1970197fb04ab9564cd40fb729a293058681e9b1306a2",
+      "clearance": 2.6999999999999993,
+      "bounds": [
+        26.7,
+        12.7,
+        29.3,
+        19.3
+      ],
+      "node": "battery-terminal-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "battery-strong",
+      "sha256": "ea6762cc34c8feb86ab6946937599a9f038764fa35330fd924a6df47ec40e62e",
+      "clearance": 2.6999999999999993,
+      "bounds": [
+        26.7,
+        12.7,
+        29.3,
+        19.3
+      ],
+      "node": "battery-terminal-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "plug",
+      "sha256": "a45352ab4d5e0eb4319697fc9786c506e6635f6a6d6c0531beca2d7170d45c08",
+      "clearance": 3.6999999999999993,
+      "bounds": [
+        14.7,
+        20.7,
+        17.3,
+        28.3
+      ],
+      "node": "plug-cable-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "plug-strong",
+      "sha256": "7f22c8d5938c14fac45551c284359a840f82ff9586e691558baf3a4586f9e7cc",
+      "clearance": 3.6999999999999993,
+      "bounds": [
+        14.7,
+        20.7,
+        17.3,
+        28.3
+      ],
+      "node": "plug-cable-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "bluetooth",
+      "sha256": "3c9a8c4c0c4f1562b0a6b1c052a7b0685507b8cbd0ee53a4c306ab4b71fb5dfd",
+      "clearance": 4.699999999999999,
+      "bounds": [
+        8.7,
+        4.7,
+        23.3,
+        27.3
+      ],
+      "node": "bluetooth-rune-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "bluetooth-strong",
+      "sha256": "f930da4efba652ad6722e4aaac97f496583d81717a313cf7b00a94e734960193",
+      "clearance": 4.699999999999999,
+      "bounds": [
+        8.7,
+        4.7,
+        23.3,
+        27.3
+      ],
+      "node": "bluetooth-rune-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "monitor",
+      "sha256": "01bbbee842475290f2f4e38f2cc1d8d74714e2fca788886c1bb8ae69c9dadfb2",
+      "clearance": 3.144716473998738,
+      "bounds": [
+        3.877457350649454,
+        4.844886500671924,
+        28.855283526001262,
+        23.173022649350546
+      ],
+      "node": "monitor-screen-frame-bold__color.primary__outline.bold",
+      "time": 0.16666666666666666
+    },
+    {
+      "name": "monitor-strong",
+      "sha256": "258e9b6cc08e53bbbb1a3ee5d14e89d7a0b8886b9657c58cc4324e7b055f9641",
+      "clearance": 1.8844947391911973,
+      "bounds": [
+        4.231014739191201,
+        4.05948236536413,
+        30.115505260808803,
+        24.125195260808795
+      ],
+      "node": "monitor-screen-frame-bold__color.primary__outline.bold",
+      "time": 0.25
+    },
+    {
+      "name": "smartphone",
+      "sha256": "9f522dbe0b611a7757428fb8802e1b30f4826ef9609a1d4cb609e97f492c9366",
+      "clearance": 3.25,
+      "bounds": [
+        8.75,
+        3.25,
+        23.25,
+        28.75
+      ],
+      "node": "smartphone-frame-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "smartphone-strong",
+      "sha256": "cc53c6b473c9ec85996a61a45a0046629d83f3212aade21e59c3e3a0b566c551",
+      "clearance": 3.25,
+      "bounds": [
+        8.75,
+        3.25,
+        23.25,
+        28.75
+      ],
+      "node": "smartphone-frame-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "laptop",
+      "sha256": "09b7f71eea2a2d15320ad29e952e9eed33f63415f04dbc8b5a9f970ffe19a881",
+      "clearance": 3.1999999999999993,
+      "bounds": [
+        3.2,
+        23.2,
+        28.8,
+        27.8
+      ],
+      "node": "laptop-base-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "laptop-strong",
+      "sha256": "335cc73ba823568cc13fdcbc9ca95734dd4b788d3bb259fcdc2d3f7cd8835f98",
+      "clearance": 3.1999999999999993,
+      "bounds": [
+        3.2,
+        23.2,
+        28.8,
+        27.8
+      ],
+      "node": "laptop-base-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "printer",
+      "sha256": "b363e315c82af49004e2018672247e725334c3faef9085c48c9b738bc893f498",
+      "clearance": 4.199999999999999,
+      "bounds": [
+        4.2,
+        11.2,
+        27.8,
+        23.3
+      ],
+      "node": "printer-housing-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "printer-strong",
+      "sha256": "8c10381798448c6e3efce033d999d15d351e57ef7d87bd98cd92c1ecec99c9d5",
+      "clearance": 3.75,
+      "bounds": [
+        9.75,
+        16.75,
+        22.25,
+        28.25
+      ],
+      "node": "printer-sheet-bold__color.primary__outline.bold",
+      "time": 0.25
+    },
+    {
+      "name": "document",
+      "sha256": "230dafea37aaa25a01ee6566455fb8526469a11919222a38cc5dd96679366a9c",
+      "clearance": 4.25,
+      "bounds": [
+        6.75,
+        4.25,
+        25.25,
+        27.75
+      ],
+      "node": "document-page-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "document-strong",
+      "sha256": "6445912ccef9c4c78ec403c367d8b0a32e4f7797299e5082a8e33529a9d84581",
+      "clearance": 4.25,
+      "bounds": [
+        6.75,
+        4.25,
+        25.25,
+        27.75
+      ],
+      "node": "document-page-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "clipboard",
+      "sha256": "df8db4d04875fad37d8d685b2bdf40c72d75fe992e2f8cfb3bc26afb253f3899",
+      "clearance": 4.25,
+      "bounds": [
+        6.75,
+        7.25,
+        25.25,
+        27.75
+      ],
+      "node": "clipboard-board-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "clipboard-strong",
+      "sha256": "c3663a29e5c58e91411580aefff606561f6ac2c50c90bbda1a60e64d75443afb",
+      "clearance": 4.25,
+      "bounds": [
+        6.75,
+        7.25,
+        25.25,
+        27.75
+      ],
+      "node": "clipboard-board-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "book",
+      "sha256": "54bec700e27839de3b92e6c0c05293ebe2500d308d86de742f356c1d38b3bd1e",
+      "clearance": 4.25,
+      "bounds": [
+        4.25,
+        4.541509517947686,
+        17.25,
+        27.25
+      ],
+      "node": "book-left-page-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "book-strong",
+      "sha256": "bb9567fce948c9697233d05179434f2bbd3c7272f0905974a0e36c44f2b17524",
+      "clearance": 4.25,
+      "bounds": [
+        4.25,
+        4.541509517947686,
+        17.25,
+        27.25
+      ],
+      "node": "book-left-page-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "credit-card",
+      "sha256": "4bf4ab09ab70d8e3e5e51146e8df2155d72b00c20e5f341f497175563b00e3a7",
+      "clearance": 4,
+      "bounds": [
+        5.5,
+        7.25,
+        28,
+        25.25
+      ],
+      "node": "credit-card-frame-bold__color.primary__outline.bold",
+      "time": 0.16666666666666666
+    },
+    {
+      "name": "credit-card-strong",
+      "sha256": "9b2bf8779d59f0c21aa04e7db7860e7e186748a5cdc40f16c5c2f2d51547a1a5",
+      "clearance": 2.3500000000000014,
+      "bounds": [
+        7.15,
+        7.25,
+        29.65,
+        25.25
+      ],
+      "node": "credit-card-frame-bold__color.primary__outline.bold",
+      "time": 0.25
+    },
+    {
+      "name": "wallet",
+      "sha256": "8c650dceeed39f4a7d82206faaf455b3e7804b26eefc50de7e86491d09011354",
+      "clearance": 3.75,
+      "bounds": [
+        18.75,
+        12.25,
+        28.25,
+        21.75
+      ],
+      "node": "wallet-flap-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "wallet-strong",
+      "sha256": "39f90de3563745e96f9e3b32830c131d0b1363ce2d209f923459fe9892fb24cd",
+      "clearance": 3.75,
+      "bounds": [
+        18.75,
+        12.25,
+        28.25,
+        21.75
+      ],
+      "node": "wallet-flap-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "gift",
+      "sha256": "03f50045db2df0e31bc37c1a8de8479e881b03d5661710cec76345ddce7f2be1",
+      "clearance": 3.75,
+      "bounds": [
+        5.75,
+        14.25,
+        26.25,
+        28.25
+      ],
+      "node": "gift-box-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "gift-strong",
+      "sha256": "eaa04570d0f2dac8e29585ca6e6fe2f54a38e475133113db4b3ebf7fcdc9362c",
+      "clearance": 3.006062449969976,
+      "bounds": [
+        7.908005805801964,
+        3.006062449969976,
+        17.3,
+        9.600000000000001
+      ],
+      "node": "gift-bow-left-solid__color.primary__solid",
+      "time": 0.25
+    },
+    {
+      "name": "flag",
+      "sha256": "1080987c8b6ce39fcd829b41e4b4afddf5bab3ee6449df2c8d0cbdacce54e29f",
+      "clearance": 3.6999999999999993,
+      "bounds": [
+        6.7,
+        3.7,
+        9.3,
+        28.3
+      ],
+      "node": "flag-pole-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "flag-strong",
+      "sha256": "343e54b7dd879f1a6175e3c32e21393ec97360f09385e1a2617052588c2bd043",
+      "clearance": 2.55,
+      "bounds": [
+        6.75,
+        2.55,
+        26.85,
+        18.25
+      ],
+      "node": "flag-cloth-frame-bold__color.primary__outline.bold",
+      "time": 0.31666666666666665
+    },
+    {
+      "name": "chart",
+      "sha256": "1a4d33e7f5a6476dd2bc6de4517c7dac67f6c2db81840990ebe6ed507932ff3b",
+      "clearance": 4.75,
+      "bounds": [
+        4.75,
+        16.75,
+        11.25,
+        27.25
+      ],
+      "node": "chart-bar-0-frame-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "chart-strong",
+      "sha256": "f8ab980c6a673462cd500e15bb36c220b181c14910ab9dfbaf8480fd249a641b",
+      "clearance": 4.75,
+      "bounds": [
+        4.75,
+        16.75,
+        11.25,
+        27.25
+      ],
+      "node": "chart-bar-0-frame-bold__color.primary__outline.bold",
+      "time": 0
+    },
+    {
+      "name": "filter",
+      "sha256": "3be3c0991c72487754c43007416c9b505ac96988581e9119ac8cc51b2f4e6197",
+      "clearance": 4.699999999999999,
+      "bounds": [
+        4.7,
+        6.7,
+        27.3,
+        9.3
+      ],
+      "node": "filter-tier-0-solid__color.primary__solid",
+      "time": 0
+    },
+    {
+      "name": "filter-strong",
+      "sha256": "098d8240f7fe2cfe368b2e891a678700401caa6c393c0b2b3e55be8193c02cbb",
+      "clearance": 4.699999999999999,
+      "bounds": [
+        4.7,
+        6.7,
+        27.3,
+        9.3
+      ],
+      "node": "filter-tier-0-solid__color.primary__solid",
+      "time": 0
+    }
+  ]
+}

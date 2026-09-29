@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Generative icon descriptor v1",
+  "type": "object",
+  "required": ["schemaVersion", "id", "label", "stateful", "startState", "endState", "motions", "asset", "styles", "weights"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+    "label": {"type": "string", "minLength": 1},
+    "stateful": {"type": "boolean"},
+    "startState": {"type": "string"},
+    "endState": {"type": "string"},
+    "styles": {"type": "array", "items": {"enum": ["outline", "solid", "duotone"]}},
+    "weights": {"type": "array", "items": {"enum": [1.5, 2, 2.5]}},
+    "motions": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/action"}},
+    "asset": {"type": "object", "required": ["path", "sha256", "bytes"], "properties": {"path": {"type": "string", "pattern": "^assets/[a-z][a-z0-9-]*\\.lottie$"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "bytes": {"type": "integer", "minimum": 1}}}
+  },
+  "$defs": {"action": {"type": "object", "required": ["name", "motionId", "fps", "frames", "active", "rest", "startState", "endState"], "properties": {"name": {"type": "string"}, "motionId": {"enum": ["light", "strong"]}, "fps": {"type": "number", "exclusiveMinimum": 0}, "frames": {"type": "integer", "minimum": 1}, "active": {"type": "number", "minimum": 0}, "rest": {"type": "number", "minimum": 0}, "startState": {"type": "string"}, "endState": {"type": "string"}, "reverse": {"$ref": "#/$defs/action"}}}}
+}

@@ -1,0 +1,288 @@
+{
+  "result": "PASS",
+  "icons": 5,
+  "actions": 14,
+  "nativeTransformNodes": 136,
+  "nativeTransformMaxCoordinateError": 0.000012960968094333225,
+  "checks": [
+    {
+      "name": "support-agent",
+      "fixedParts": [
+        "support-agent-shoulders"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "support-agent-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-band"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-ear-left"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-ear-right"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-boom"
+        }
+      ]
+    },
+    {
+      "name": "support-agent-strong",
+      "fixedParts": [
+        "support-agent-shoulders"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "support-agent-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-band"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-ear-left"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-ear-right"
+        },
+        {
+          "type": "rigid",
+          "part": "support-agent-boom"
+        }
+      ]
+    },
+    {
+      "name": "help-center",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "help-center-outer"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-inner"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-grip-n"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-grip-s"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-grip-w"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-grip-e"
+        }
+      ]
+    },
+    {
+      "name": "help-center-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "help-center-outer"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-inner"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-grip-n"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-grip-s"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-grip-w"
+        },
+        {
+          "type": "rigid",
+          "part": "help-center-grip-e"
+        }
+      ]
+    },
+    {
+      "name": "support-ticket",
+      "fixedParts": [
+        "support-ticket-body-frame",
+        "support-ticket-line-1",
+        "support-ticket-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "support-ticket-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "support-ticket-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "support-ticket-line-2"
+        },
+        {
+          "type": "rigid",
+          "part": "support-ticket-stub-frame"
+        }
+      ]
+    },
+    {
+      "name": "support-ticket-strong",
+      "fixedParts": [
+        "support-ticket-body-frame",
+        "support-ticket-line-1",
+        "support-ticket-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "support-ticket-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "support-ticket-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "support-ticket-line-2"
+        },
+        {
+          "type": "rigid",
+          "part": "support-ticket-stub-frame"
+        }
+      ]
+    },
+    {
+      "name": "live-support",
+      "fixedParts": [
+        "live-support-customer-frame",
+        "live-support-customer-line"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "live-support-customer-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "live-support-customer-line"
+        },
+        {
+          "type": "rigid",
+          "part": "live-support-agent-frame"
+        }
+      ]
+    },
+    {
+      "name": "live-support-strong",
+      "fixedParts": [
+        "live-support-customer-frame",
+        "live-support-customer-line"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "live-support-customer-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "live-support-customer-line"
+        },
+        {
+          "type": "rigid",
+          "part": "live-support-agent-frame"
+        }
+      ]
+    },
+    {
+      "name": "callback",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "callback-handset-frame"
+        }
+      ]
+    },
+    {
+      "name": "callback-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "callback-handset-frame"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

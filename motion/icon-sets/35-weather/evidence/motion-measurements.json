@@ -1,0 +1,659 @@
+{
+  "scope": "Source geometry and rigid transforms at 60fps; grid units and seconds. RMS includes curve control points. Native normal-speed review required.",
+  "definitionsSha256": "06981ed2dd1d48bf372588a01386fb1d40dd5a989bf261b920dbc28c26884b8a",
+  "icons": 20,
+  "records": [
+    {
+      "icon": "partly-cloudy",
+      "mainPart": "partly-cloudy-cloud-frame",
+      "intent": "Light: the rays brighten outward while the cloud drifts slightly toward the sun and back. Strong: the ray crown flares 0.8 units and turns 16° with one return while the cloud edges in and settles.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.46,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 0.19961946980917492,
+          "travelRms": 0.3992389396183498,
+          "peakRmsSpeed": 2.5948033366166845,
+          "visibleTravelRms": 0.3992389396183498,
+          "visiblePeakRmsSpeed": 2.5948033366166845,
+          "first10To90Seconds": 0.06666666666666668,
+          "rotationRange": 0,
+          "horizontalRange": 0.19961946980917455,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.39904994157394647,
+          "travelRms": 1.1657640122916142,
+          "peakRmsSpeed": 4.326322206980724,
+          "visibleTravelRms": 1.1657640122916142,
+          "visiblePeakRmsSpeed": 4.326322206980724,
+          "first10To90Seconds": 0.16666666666666669,
+          "rotationRange": 0,
+          "horizontalRange": 0.48354068231468783,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 1.6673025450251404,
+      "strongToLightTravel": 2.9199657062660767
+    },
+    {
+      "icon": "rain",
+      "mainPart": "rain-streak-0",
+      "intent": "Light: three streaks fall 2.6 units in a short stagger and fade, then reappear under the cloud. Strong: the cloud lifts as it wrings, the streaks shoot 4.4 units in a tight burst, and the cloud settles back.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 2.754650613054223,
+          "travelRms": 5.509301226108446,
+          "peakRmsSpeed": 165.2790367832534,
+          "visibleTravelRms": 2.754650613054223,
+          "visiblePeakRmsSpeed": 25.131892462495202,
+          "first10To90Seconds": 0.15,
+          "rotationRange": 0,
+          "horizontalRange": 0.9099999999999999,
+          "verticalRange": 2.6
+        },
+        "strong": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.13333333333333333,
+          "peakRmsDisplacement": 4.661716422091759,
+          "travelRms": 9.323432844183518,
+          "peakRmsSpeed": 279.70298532550555,
+          "visibleTravelRms": 4.661716422091757,
+          "visiblePeakRmsSpeed": 64.26046595730665,
+          "first10To90Seconds": 0.09999999999999998,
+          "rotationRange": 0,
+          "horizontalRange": 1.54,
+          "verticalRange": 4.4
+        }
+      },
+      "strongToLightPeakSpeed": 2.556929051530988,
+      "strongToLightTravel": 1.6923076923076905
+    },
+    {
+      "icon": "snow",
+      "mainPart": "snow-flake-0",
+      "intent": "Light: five flakes drift 2.2 units down with a small sway, fade and reappear under the cloud. Strong: they fall farther (3.2 units) with a wider, faster sway.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.9,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.2166339341977865,
+          "travelRms": 5.511943828674149,
+          "peakRmsSpeed": 132.6147781862729,
+          "visibleTravelRms": 3.2432277944669226,
+          "visiblePeakRmsSpeed": 13.133240487473582,
+          "first10To90Seconds": 0.45,
+          "rotationRange": 0,
+          "horizontalRange": 1.0143103203435702,
+          "verticalRange": 2.2
+        },
+        "strong": {
+          "activeSeconds": 0.88,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 3.0094943499055486,
+          "travelRms": 8.900609407282149,
+          "peakRmsSpeed": 180.5696609943329,
+          "visibleTravelRms": 5.704474623165238,
+          "visiblePeakRmsSpeed": 22.59314844466416,
+          "first10To90Seconds": 0.38333333333333336,
+          "rotationRange": 0,
+          "horizontalRange": 2.037397478017323,
+          "verticalRange": 3
+        }
+      },
+      "strongToLightPeakSpeed": 1.7203026523586002,
+      "strongToLightTravel": 1.7588880537152838
+    },
+    {
+      "icon": "hail",
+      "mainPart": "hail-pellet-0",
+      "intent": "Light: three pellets drop to the ground line, rebound one unit, fade and reappear under the cloud. Strong: a harder drop in 0.14 s and a 2.7-unit rebound.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 3.292421124828532,
+          "travelRms": 8.184807956104256,
+          "peakRmsSpeed": 195,
+          "visibleTravelRms": 4.9348079561042555,
+          "visiblePeakRmsSpeed": 34.40534440904251,
+          "first10To90Seconds": 0.11666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 3.2924211248285316
+        },
+        "strong": {
+          "activeSeconds": 0.76,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 3.261698250728863,
+          "travelRms": 11.523323615160352,
+          "peakRmsSpeed": 129.99999999999966,
+          "visibleTravelRms": 8.27332361516035,
+          "visiblePeakRmsSpeed": 52.90391156462575,
+          "first10To90Seconds": 0.06666666666666665,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 3.261698250728864
+        }
+      },
+      "strongToLightPeakSpeed": 1.5376655131149157,
+      "strongToLightTravel": 1.6765239273245518
+    },
+    {
+      "icon": "thunderstorm",
+      "mainPart": "thunderstorm-bolt",
+      "intent": "Light: the bolt flickers twice and dips half a unit. Strong: the bolt strikes down 1.1 units with a hard double flash while the cloud recoils upward, then both settle.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.4,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.5,
+          "travelRms": 1,
+          "peakRmsSpeed": 7.222222222222214,
+          "visibleTravelRms": 1,
+          "visiblePeakRmsSpeed": 7.222222222222214,
+          "first10To90Seconds": 0.049999999999999996,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0.5
+        },
+        "strong": {
+          "activeSeconds": 0.44,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.0566032718910492,
+          "travelRms": 2.686632469708023,
+          "peakRmsSpeed": 25.87326388888883,
+          "visibleTravelRms": 2.686632469708023,
+          "visiblePeakRmsSpeed": 25.87326388888883,
+          "first10To90Seconds": 0.11666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.343316234854013
+        }
+      },
+      "strongToLightPeakSpeed": 3.5824519230769187,
+      "strongToLightTravel": 2.686632469708023
+    },
+    {
+      "icon": "snowflake",
+      "mainPart": "snowflake-arm-0",
+      "intent": "Light: the rigid flake turns 60° to its next equivalent pose. Strong: it winds back 10°, spins through 126° and settles on the 120° pose with one short return.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 10.5,
+          "travelRms": 10.994641073295629,
+          "peakRmsSpeed": 34.32819875472948,
+          "visibleTravelRms": 10.994641073295629,
+          "visiblePeakRmsSpeed": 34.32819875472948,
+          "first10To90Seconds": 0.2833333333333333,
+          "rotationRange": 60,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 18.707695708131144,
+          "travelRms": 27.759871866930464,
+          "peakRmsSpeed": 112.99317764429901,
+          "visibleTravelRms": 27.759871866930464,
+          "visiblePeakRmsSpeed": 112.99317764429901,
+          "first10To90Seconds": 0.16666666666666666,
+          "rotationRange": 135.80217170934674,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.291555681427406,
+      "strongToLightTravel": 2.524854761685229
+    },
+    {
+      "icon": "wind",
+      "mainPart": "wind-gust-1",
+      "intent": "Light: the three gust lines push 1.1 units right in a short stagger and return. Strong: each line draws back 0.6, is driven 3 units right with one damped return.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 1.09790708395046,
+          "travelRms": 2.19581416790092,
+          "peakRmsSpeed": 7.169829646064798,
+          "visibleTravelRms": 2.19581416790092,
+          "visiblePeakRmsSpeed": 7.169829646064798,
+          "first10To90Seconds": 0.15,
+          "rotationRange": 0,
+          "horizontalRange": 1.09790708395046,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.76,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 2.9986066666666664,
+          "travelRms": 7.153028040168448,
+          "peakRmsSpeed": 27.75400000000002,
+          "visibleTravelRms": 7.153028040168448,
+          "visiblePeakRmsSpeed": 27.75400000000002,
+          "first10To90Seconds": 0.18333333333333332,
+          "rotationRange": 0,
+          "horizontalRange": 3.5765140200842236,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.870942737842169,
+      "strongToLightTravel": 3.257574408952082
+    },
+    {
+      "icon": "fog",
+      "mainPart": "fog-layer-0",
+      "intent": "Light: the three fog layers drift 0.8 units in alternating directions and return. Strong: each layer is pulled back, slides 2 units in its direction and eases home.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.64,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 0.798832373113854,
+          "travelRms": 1.597664746227708,
+          "peakRmsSpeed": 4.816253303212115,
+          "visibleTravelRms": 1.597664746227708,
+          "visiblePeakRmsSpeed": 4.816253303212115,
+          "first10To90Seconds": 0.15000000000000002,
+          "rotationRange": 0,
+          "horizontalRange": 0.7988323731138547,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.74,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.9996438315562521,
+          "travelRms": 4.590722848297687,
+          "peakRmsSpeed": 16.73386760163619,
+          "visibleTravelRms": 4.590722848297687,
+          "visiblePeakRmsSpeed": 16.73386760163619,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 0,
+          "horizontalRange": 2.2953614241488447,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.4744575395309534,
+      "strongToLightTravel": 2.8733955976289605
+    },
+    {
+      "icon": "tornado",
+      "mainPart": "tornado-band-4",
+      "intent": "Light: one sway travels down the funnel, the tip moving 1 unit. Strong: a wider wave with a second half-swing travels down; the tip swings 2.5 units before settling.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.18333333333333332,
+          "peakRmsDisplacement": 0.6854131376658934,
+          "travelRms": 2.7411185107749887,
+          "peakRmsSpeed": 12.013184387999285,
+          "visibleTravelRms": 2.7411185107749887,
+          "visiblePeakRmsSpeed": 12.013184387999285,
+          "first10To90Seconds": 0.08333333333333331,
+          "rotationRange": 0,
+          "horizontalRange": 1.3705592553874943,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.9,
+          "firstChangeSeconds": 0.25,
+          "peakRmsDisplacement": 2.5199999999999996,
+          "travelRms": 10.69888573480579,
+          "peakRmsSpeed": 34.59214282963843,
+          "visibleTravelRms": 10.69888573480579,
+          "visiblePeakRmsSpeed": 34.59214282963843,
+          "first10To90Seconds": 0.25,
+          "rotationRange": 0,
+          "horizontalRange": 3.9347214337014487,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.8795148490515694,
+      "strongToLightTravel": 3.903109512686091
+    },
+    {
+      "icon": "hurricane",
+      "mainPart": "hurricane-arm-0",
+      "intent": "Light: the storm makes a calm counterclockwise half turn to its next equivalent pose. Strong: it winds 14° the other way, whips through a full counterclockwise turn and settles.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 15.122100161040292,
+          "travelRms": 23.746099730075642,
+          "peakRmsSpeed": 48.109965041337034,
+          "visibleTravelRms": 23.746099730075642,
+          "visiblePeakRmsSpeed": 48.109965041337034,
+          "first10To90Seconds": 0.3666666666666667,
+          "rotationRange": 180,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.76,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 15.116221371980696,
+          "travelRms": 54.1645815243518,
+          "peakRmsSpeed": 165.02912360733228,
+          "visibleTravelRms": 54.1645815243518,
+          "visiblePeakRmsSpeed": 165.02912360733228,
+          "first10To90Seconds": 0.21666666666666667,
+          "rotationRange": 385.96088888888886,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.4302482545047788,
+      "strongToLightTravel": 2.280988547173901
+    },
+    {
+      "icon": "rainbow",
+      "mainPart": "rainbow-band-0",
+      "intent": "Light: three arcs draw over the horizon from the left base, outer first, in a calm stagger. Strong: they sweep over in a tight burst and the finished bands pop outward half a unit and settle. The rainbow is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.54,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 16.57763885372148,
+          "travelRms": 21.585396627459787,
+          "peakRmsSpeed": 107.62509374491445,
+          "visibleTravelRms": 21.52614458942198,
+          "visiblePeakRmsSpeed": 107.62509374491445,
+          "first10To90Seconds": 0.16666666666666666
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 16.99643102161009,
+          "travelRms": 22.98288097493365,
+          "peakRmsSpeed": 200.33399012473944,
+          "visibleTravelRms": 22.98288097493365,
+          "visiblePeakRmsSpeed": 200.33399012473944,
+          "first10To90Seconds": 0.08333333333333331
+        }
+      },
+      "strongToLightPeakSpeed": 1.8614059524032305,
+      "strongToLightTravel": 1.067672888633644
+    },
+    {
+      "icon": "sunrise",
+      "mainPart": "sunrise-sun-frame",
+      "intent": "Light: the sun rises from below the horizon to a half disc and its rays grow in a stagger; the up chevron nudges up. Strong: the sun overshoots 1.1 units above the half position and settles, and the rays flare past full length and settle. Result retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 6.079252771641793,
+          "travelRms": 6.4940801399526995,
+          "peakRmsSpeed": 20.41271374119843,
+          "visibleTravelRms": 5.418631691652675,
+          "visiblePeakRmsSpeed": 19.681293476425736,
+          "first10To90Seconds": 0.30000000000000004
+        },
+        "strong": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 6.73295146138262,
+          "travelRms": 8.322612227695902,
+          "peakRmsSpeed": 44.04217404144492,
+          "visibleTravelRms": 7.506526742031851,
+          "visiblePeakRmsSpeed": 43.24553116591374,
+          "first10To90Seconds": 0.15
+        }
+      },
+      "strongToLightPeakSpeed": 2.19729110882439,
+      "strongToLightTravel": 1.3853177645558654
+    },
+    {
+      "icon": "sunset",
+      "mainPart": "sunset-sun-frame",
+      "intent": "Light: the sun sinks from high in the sky to a half disc on the horizon while its long rays shorten; the down chevron nudges down. Strong: the sun lifts slightly first, drops 0.9 units past the half disc and settles. Result retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 2.727130142147096,
+          "travelRms": 2.780748404268232,
+          "peakRmsSpeed": 8.201566985990256,
+          "visibleTravelRms": 2.780748404268232,
+          "visiblePeakRmsSpeed": 8.201566985990256,
+          "first10To90Seconds": 0.30000000000000004
+        },
+        "strong": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.35444637589618,
+          "travelRms": 4.5839104026140625,
+          "peakRmsSpeed": 21.81381622044859,
+          "visibleTravelRms": 4.5839104026140625,
+          "visiblePeakRmsSpeed": 21.81381622044859,
+          "first10To90Seconds": 0.15
+        }
+      },
+      "strongToLightPeakSpeed": 2.6597132301315702,
+      "strongToLightTravel": 1.6484448559165283
+    },
+    {
+      "icon": "moon-phase",
+      "mainPart": "moon-phase-terminator",
+      "intent": "Light: the terminator sweeps from a waxing crescent through the half moon to a waxing gibbous. Strong: the moon tips back, the terminator sweeps in 0.28 s as the moon swings through 9° and settles. The phase is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.64,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 7.163441700787932,
+          "travelRms": 7.163441700787933,
+          "peakRmsSpeed": 18.505745378981448,
+          "visibleTravelRms": 7.163441700787933,
+          "visiblePeakRmsSpeed": 18.505745378981448,
+          "first10To90Seconds": 0.35,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 7.265171908057749,
+          "travelRms": 10.504834435274368,
+          "peakRmsSpeed": 39.50707661854708,
+          "visibleTravelRms": 10.504834435274368,
+          "visiblePeakRmsSpeed": 39.50707661854708,
+          "first10To90Seconds": 0.16666666666666666,
+          "rotationRange": 12.979812864368999,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.1348546524053353,
+      "strongToLightTravel": 1.4664507472879835
+    },
+    {
+      "icon": "temperature",
+      "mainPart": "temperature-column",
+      "intent": "Light: the mercury column rises steadily from low to high and holds. Strong: the bulb swells first, then the column shoots up in a quarter second and stops at the same reading. The reading is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 5.966376375893793,
+          "travelRms": 5.966376375893791,
+          "peakRmsSpeed": 15.976080449552702,
+          "visibleTravelRms": 5.966376375893791,
+          "visiblePeakRmsSpeed": 15.976080449552702,
+          "first10To90Seconds": 0.33333333333333337
+        },
+        "strong": {
+          "activeSeconds": 0.4,
+          "firstChangeSeconds": 0.16666666666666666,
+          "peakRmsDisplacement": 5.966376375893793,
+          "travelRms": 5.966376375893794,
+          "peakRmsSpeed": 37.16516920104885,
+          "visibleTravelRms": 5.966376375893794,
+          "visiblePeakRmsSpeed": 37.16516920104885,
+          "first10To90Seconds": 0.14999999999999997
+        }
+      },
+      "strongToLightPeakSpeed": 2.3263008294433942,
+      "strongToLightTravel": 1.0000000000000004
+    },
+    {
+      "icon": "humidity",
+      "mainPart": "humidity-surface",
+      "intent": "Light: the water level inside the drop rises from low to just above the middle with a small slosh. Strong: it rises in 0.34 s and the surface sloshes harder before settling level. The level is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 5.96461060164222,
+          "travelRms": 6.212788939509852,
+          "peakRmsSpeed": 14.889451661075416,
+          "visibleTravelRms": 6.212788939509852,
+          "visiblePeakRmsSpeed": 14.889451661075416,
+          "first10To90Seconds": 0.3833333333333334
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 5.964731011290802,
+          "travelRms": 6.712514013713511,
+          "peakRmsSpeed": 27.1819363325013,
+          "visibleTravelRms": 6.712514013713511,
+          "visiblePeakRmsSpeed": 27.1819363325013,
+          "first10To90Seconds": 0.2333333333333333
+        }
+      },
+      "strongToLightPeakSpeed": 1.8255834365990373,
+      "strongToLightTravel": 1.0804349027577111
+    },
+    {
+      "icon": "uv-index",
+      "mainPart": "uv-index-dash-0",
+      "intent": "Light: the three meter dashes fill left to right while the sun's rays lengthen with the reading. Strong: the sun pulses first, the dashes fill in a quick sequence and the rays flare past their final length and settle. The reading is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 2.863782463805518,
+          "travelRms": 2.863782463805518,
+          "peakRmsSpeed": 26.871246938030215,
+          "visibleTravelRms": 2.863782463805518,
+          "visiblePeakRmsSpeed": 26.871246938030215,
+          "first10To90Seconds": 0.1
+        },
+        "strong": {
+          "activeSeconds": 0.76,
+          "firstChangeSeconds": 0.15,
+          "peakRmsDisplacement": 2.863782463805518,
+          "travelRms": 2.8637824638055176,
+          "peakRmsSpeed": 46.36436978504373,
+          "visibleTravelRms": 2.8637824638055176,
+          "visiblePeakRmsSpeed": 46.36436978504373,
+          "first10To90Seconds": 0.05000000000000002
+        }
+      },
+      "strongToLightPeakSpeed": 1.7254268062798892,
+      "strongToLightTravel": 0.9999999999999999
+    },
+    {
+      "icon": "umbrella",
+      "mainPart": "umbrella-canopy-frame",
+      "intent": "Light: the canopy flexes in as rain lands and springs back. Strong: it half closes, its edges drooping, then snaps open 6% wider and settles; the shaft stays attached to the hem.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.44,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.805130747595167,
+          "travelRms": 1.9325134123668664,
+          "peakRmsSpeed": 10.465692310824014,
+          "visibleTravelRms": 1.9325134123668664,
+          "visiblePeakRmsSpeed": 10.465692310824014,
+          "first10To90Seconds": 0.06666666666666668
+        },
+        "strong": {
+          "activeSeconds": 0.48,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.0451384999556286,
+          "travelRms": 7.438218662008494,
+          "peakRmsSpeed": 53.602746576672985,
+          "visibleTravelRms": 7.438218662008494,
+          "visiblePeakRmsSpeed": 53.602746576672985,
+          "first10To90Seconds": 0.08333333333333334
+        }
+      },
+      "strongToLightPeakSpeed": 5.121758311319262,
+      "strongToLightTravel": 3.84898682431314
+    },
+    {
+      "icon": "windsock",
+      "mainPart": "windsock-sock-frame",
+      "intent": "Light: a gust lifts the drooping sock 12° with a small ripple and lets it sag back. Strong: the sock sags, is blown out to horizontal with a travelling ripple, and falls back through a short lift to its droop.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.397318087629342,
+          "travelRms": 4.97307369218258,
+          "peakRmsSpeed": 31.675696508049224,
+          "visibleTravelRms": 4.97307369218258,
+          "visiblePeakRmsSpeed": 31.675696508049224,
+          "first10To90Seconds": 0.06666666666666668
+        },
+        "strong": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 5.207000683048595,
+          "travelRms": 12.396080381235333,
+          "peakRmsSpeed": 40.61006311462956,
+          "visibleTravelRms": 12.396080381235333,
+          "visiblePeakRmsSpeed": 40.61006311462956,
+          "first10To90Seconds": 0.18333333333333335
+        }
+      },
+      "strongToLightPeakSpeed": 1.2820574633397561,
+      "strongToLightTravel": 2.4926395924358298
+    },
+    {
+      "icon": "weather-radar",
+      "mainPart": "weather-radar-arm",
+      "intent": "Light: the sweep makes one clockwise turn and a storm cell appears as the arm passes it. Strong: the arm kicks back, sweeps faster with a small overrun, and the cell pops in with a ripple ring. The cell is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.92,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 10.46351325644625,
+          "travelRms": 32.84742614493333,
+          "peakRmsSpeed": 55.95265833424619,
+          "visibleTravelRms": 32.84742614493333,
+          "visiblePeakRmsSpeed": 55.95265833424619,
+          "first10To90Seconds": 0.25,
+          "rotationRange": 360,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 10.464511970269038,
+          "travelRms": 35.97961117501805,
+          "peakRmsSpeed": 116.88308331017454,
+          "visibleTravelRms": 35.97961117501805,
+          "visiblePeakRmsSpeed": 116.88308331017454,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 377.74229902329074,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.088963898943752,
+      "strongToLightTravel": 1.0953555696042825
+    }
+  ]
+}

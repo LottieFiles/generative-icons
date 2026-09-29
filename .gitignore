@@ -1,0 +1,29 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+# Rebuildable intermediate scenes and native output; distributed assets are tracked.
+# Scoped to set roots on purpose: research-review/before/scenes/ baselines are read by verify.mjs.
+motion/icon-sets/*/scenes/
+motion/icon-sets/*/native/
+# Per-developer review captures, screenshots and recordings are kept locally.
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.mov
+*.webm
+screenshots/
+# npm pack output
+*.tgz
+# Local planning and unreleased product experiments. Never publish this directory.
+.local/
+# Explicit public-site output; never deploy prototype/ directly.
+dist/

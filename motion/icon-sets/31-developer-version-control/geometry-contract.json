@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "icons": {
+    "git-commit": [
+      {
+        "kind": "gap",
+        "a": "point",
+        "b": "ring",
+        "min": 1,
+        "label": "point / ring"
+      },
+      {
+        "kind": "gap",
+        "a": "point-solid",
+        "b": "ring-solid",
+        "min": 1,
+        "label": "point-solid / ring-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "point",
+        "b": "lane-left",
+        "min": 1,
+        "label": "point / lane-left"
+      },
+      {
+        "kind": "gap",
+        "a": "point-solid",
+        "b": "lane-left-solid",
+        "min": 1,
+        "label": "point-solid / lane-left-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "point",
+        "b": "lane-right",
+        "min": 1,
+        "label": "point / lane-right"
+      },
+      {
+        "kind": "gap",
+        "a": "point-solid",
+        "b": "lane-right-solid",
+        "min": 1,
+        "label": "point-solid / lane-right-solid"
+      }
+    ],
+    "pull-request": [
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "trunk",
+        "min": 1,
+        "label": "head / trunk"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "trunk-solid",
+        "min": 1,
+        "label": "head-solid / trunk-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "root",
+        "min": 1,
+        "label": "head / root"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "root-solid",
+        "min": 1,
+        "label": "head-solid / root-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "base",
+        "min": 1,
+        "label": "head / base"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "base-solid",
+        "min": 1,
+        "label": "head-solid / base-solid"
+      },
+      {
+        "kind": "arrow-curve-gap",
+        "a": "head",
+        "b": "tail",
+        "curveCommands": 3,
+        "min": 1,
+        "label": "barb / curve "
+      },
+      {
+        "kind": "arrow-curve-gap",
+        "a": "head-solid",
+        "b": "tail-solid",
+        "curveCommands": 3,
+        "min": 1,
+        "label": "barb / curve -solid"
+      }
+    ],
+    "repository-fork": [
+      {
+        "kind": "gap",
+        "a": "copy-left",
+        "b": "copy-right",
+        "min": 1,
+        "label": "copy-left / copy-right"
+      },
+      {
+        "kind": "gap",
+        "a": "copy-left-solid",
+        "b": "copy-right-solid",
+        "min": 1,
+        "label": "copy-left-solid / copy-right-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "copy-left",
+        "b": "source",
+        "min": 1,
+        "label": "copy-left / source"
+      },
+      {
+        "kind": "gap",
+        "a": "copy-left-solid",
+        "b": "source-solid",
+        "min": 1,
+        "label": "copy-left-solid / source-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "copy-right",
+        "b": "source",
+        "min": 1,
+        "label": "copy-right / source"
+      },
+      {
+        "kind": "gap",
+        "a": "copy-right-solid",
+        "b": "source-solid",
+        "min": 1,
+        "label": "copy-right-solid / source-solid"
+      }
+    ],
+    "merge-conflict": [
+      {
+        "kind": "gap",
+        "a": "mark",
+        "b": "junction",
+        "min": 1,
+        "label": "mark / junction"
+      },
+      {
+        "kind": "gap",
+        "a": "mark-solid",
+        "b": "junction-solid",
+        "min": 1,
+        "label": "mark-solid / junction-solid"
+      }
+    ],
+    "repository": [
+      {
+        "kind": "gap",
+        "a": "mark",
+        "b": "spine",
+        "min": 1,
+        "label": "mark / spine"
+      },
+      {
+        "kind": "gap",
+        "a": "mark-solid",
+        "b": "spine-solid",
+        "min": 1,
+        "label": "mark-solid / spine-solid"
+      },
+      {
+        "kind": "opaque",
+        "a": "cover",
+        "label": "cover remains opaque"
+      },
+      {
+        "kind": "opaque",
+        "a": "cover-solid",
+        "label": "cover-solid remains opaque"
+      }
+    ],
+    "git-branch": [
+      {
+        "kind": "gap",
+        "a": "root",
+        "b": "base",
+        "min": 1,
+        "label": "root / base"
+      },
+      {
+        "kind": "gap",
+        "a": "root-solid",
+        "b": "base-solid",
+        "min": 1,
+        "label": "root-solid / base-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "root",
+        "b": "tip",
+        "min": 1,
+        "label": "root / tip"
+      },
+      {
+        "kind": "gap",
+        "a": "root-solid",
+        "b": "tip-solid",
+        "min": 1,
+        "label": "root-solid / tip-solid"
+      },
+      {
+        "kind": "opaque",
+        "a": "trunk",
+        "label": "trunk remains opaque"
+      }
+    ],
+    "git-merge": [
+      {
+        "kind": "gap",
+        "a": "left",
+        "b": "right",
+        "min": 1,
+        "label": "left / right"
+      },
+      {
+        "kind": "gap",
+        "a": "left-solid",
+        "b": "right-solid",
+        "min": 1,
+        "label": "left-solid / right-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "target",
+        "b": "left",
+        "min": 1,
+        "label": "target / left"
+      },
+      {
+        "kind": "gap",
+        "a": "target-solid",
+        "b": "left-solid",
+        "min": 1,
+        "label": "target-solid / left-solid"
+      },
+      {
+        "kind": "opaque",
+        "a": "lane-left",
+        "label": "lane-left remains opaque"
+      },
+      {
+        "kind": "opaque",
+        "a": "trunk",
+        "label": "trunk remains opaque"
+      }
+    ],
+    "git-stash": [
+      {
+        "kind": "gap",
+        "a": "card-frame",
+        "b": "tray",
+        "min": 1,
+        "label": "card-frame / tray"
+      },
+      {
+        "kind": "gap",
+        "a": "card-solid",
+        "b": "tray-solid",
+        "min": 1,
+        "label": "card-solid / tray-solid"
+      }
+    ],
+    "debug": [
+      {
+        "kind": "gap",
+        "a": "seam",
+        "b": "body-frame",
+        "min": 1,
+        "label": "seam / body-frame"
+      },
+      {
+        "kind": "opaque",
+        "a": "body-frame",
+        "label": "body-frame remains opaque"
+      },
+      {
+        "kind": "opaque",
+        "a": "body-solid",
+        "label": "body-solid remains opaque"
+      }
+    ],
+    "breakpoint": [
+      {
+        "kind": "gap",
+        "a": "dot",
+        "b": "line-1",
+        "min": 1,
+        "label": "dot / line-1"
+      },
+      {
+        "kind": "gap",
+        "a": "dot",
+        "b": "line-2",
+        "min": 1,
+        "label": "dot / line-2"
+      },
+      {
+        "kind": "gap",
+        "a": "dot",
+        "b": "line-3",
+        "min": 1,
+        "label": "dot / line-3"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-solid",
+        "b": "line-1-solid",
+        "min": 1,
+        "label": "dot-solid / line-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-solid",
+        "b": "line-2-solid",
+        "min": 1,
+        "label": "dot-solid / line-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-solid",
+        "b": "line-3-solid",
+        "min": 1,
+        "label": "dot-solid / line-3-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "line-1",
+        "b": "line-2",
+        "min": 1,
+        "label": "line-1 / line-2"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2",
+        "b": "line-3",
+        "min": 1,
+        "label": "line-2 / line-3"
+      }
+    ],
+    "debug-step": [
+      {
+        "kind": "gap",
+        "a": "pointer",
+        "b": "line-1",
+        "min": 1,
+        "label": "pointer / line-1"
+      },
+      {
+        "kind": "gap",
+        "a": "pointer",
+        "b": "line-2",
+        "min": 1,
+        "label": "pointer / line-2"
+      },
+      {
+        "kind": "gap",
+        "a": "pointer",
+        "b": "line-3",
+        "min": 1,
+        "label": "pointer / line-3"
+      },
+      {
+        "kind": "gap",
+        "a": "pointer-solid",
+        "b": "line-1-solid",
+        "min": 1,
+        "label": "pointer-solid / line-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "pointer-solid",
+        "b": "line-2-solid",
+        "min": 1,
+        "label": "pointer-solid / line-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "pointer-solid",
+        "b": "line-3-solid",
+        "min": 1,
+        "label": "pointer-solid / line-3-solid"
+      }
+    ],
+    "regular-expression": [
+      {
+        "kind": "gap",
+        "a": "dot",
+        "b": "arm-a",
+        "min": 1,
+        "label": "dot / arm-a"
+      },
+      {
+        "kind": "gap",
+        "a": "dot",
+        "b": "arm-b",
+        "min": 1,
+        "label": "dot / arm-b"
+      },
+      {
+        "kind": "gap",
+        "a": "dot",
+        "b": "arm-c",
+        "min": 1,
+        "label": "dot / arm-c"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-solid",
+        "b": "arm-a-solid",
+        "min": 1,
+        "label": "dot-solid / arm-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-solid",
+        "b": "arm-b-solid",
+        "min": 1,
+        "label": "dot-solid / arm-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-solid",
+        "b": "arm-c-solid",
+        "min": 1,
+        "label": "dot-solid / arm-c-solid"
+      }
+    ],
+    "webhook": [
+      {
+        "kind": "opaque",
+        "a": "hook",
+        "label": "hook remains opaque"
+      },
+      {
+        "kind": "opaque",
+        "a": "hook-solid",
+        "label": "hook-solid remains opaque"
+      },
+      {
+        "kind": "opaque",
+        "a": "source",
+        "label": "source remains opaque"
+      },
+      {
+        "kind": "opaque",
+        "a": "payload",
+        "label": "payload remains opaque"
+      }
+    ]
+  },
+  "exceptions": {
+    "repository": "Bookmark passes through the book edge intentionally. Spine joins the cover.",
+    "git-branch": "Source lanes join root and base rings. The new ring draws after the lane reaches its edge.",
+    "git-commit": "Rails meet the ring perimeter. Center point has separate protected ring clearance.",
+    "git-merge": "Two inbound lanes converge at the trunk. All three rings connect at their perimeter.",
+    "pull-request": "Arrowhead tip and tail endpoint share a point. The barb stays clear of the preceding curve.",
+    "repository-fork": "Arm pivots coincide at the trunk junction and target rings remain attached.",
+    "merge-conflict": "Inbound lanes meet the junction ring. The changing mark is separated.",
+    "git-stash": "The tray is open and has no tint. Card interior is an actual surface.",
+    "debug": "Leg caps attach to the body perimeter; seam is internal and separate.",
+    "breakpoint": "The stop dot intentionally covers the gutter; code bars stay separated.",
+    "regular-expression": "Asterisk arms join at their shared center; the dot stays separate. Aggregate 120-degree symmetry requires native proof.",
+    "webhook": "The payload follows and contacts its hook route. At rest it is fully inside the source. The route starts at the source boundary."
+  }
+}

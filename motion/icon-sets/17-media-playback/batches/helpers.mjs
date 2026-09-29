@@ -1,0 +1,20 @@
+// Common assembly for the reviewed Claude media drawings. No shared artwork edits.
+export * from '../../library/ai-authoring.mjs';
+import {make,timePair,drive} from '../../library/ai-authoring.mjs';
+export const TAU=Math.PI*2,cycle=t=>t/2.4,mod=x=>((x%1)+1)%1;
+export function continuous(name,label,intent,parts,duotoneFill=false){
+ const i=make(name,label,intent,parts,2.4,2.4);
+ return {...i,continuous:true,stateful:false,duotoneFill,timings:Object.fromEntries(['light','strong'].map(m=>[m,{active:2.4,rest:0,keyPoses:[0,.2,.4,.7,1.1,1.5,1.9,2.3]}]))};
+}
+export function toggle(name,label,intent,parts,light,strong,initialState,finalState,reverseLight=light,reverseStrong=strong){
+ return {...make(name,label,intent,parts,light,strong),stateful:true,initialState,finalState,reverseSuffix:'-reverse',forwardLabel:finalState,reverseLabel:initialState,reverseTimings:timePair(reverseLight,reverseStrong)};
+}
+export const curve=(t,s,l,h)=>drive(t,s,l,h);
+export const field=(x,baseline,height)=>`M${x} ${baseline} L${x} ${baseline-height}`;
+// A true closed envelope around a circular arc, including round end caps.
+// Used for transparent counters in filled surfaces, never background patches.
+import {arc as circularArc} from '../../library/drawing.mjs';
+export function arcTube(cx,cy,r,a,b,width){
+ const h=width/2,sign=Math.sign(b-a)||1,p=deg=>[cx+r*Math.cos(deg*Math.PI/180),cy+r*Math.sin(deg*Math.PI/180)],start=p(a),end=p(b);
+ return circularArc(cx,cy,r+h,a,b)+circularArc(...end,h,b,b+sign*180).replace(/^M/,'L')+circularArc(cx,cy,r-h,b,a).replace(/^M/,'L')+circularArc(...start,h,a+sign*180,a+sign*360).replace(/^M/,'L')+' Z';
+}

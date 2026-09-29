@@ -1,0 +1,93 @@
+{
+  "result": "PASS",
+  "actions": [
+    {
+      "name": "support-agent",
+      "frames": 145
+    },
+    {
+      "name": "support-agent-strong",
+      "frames": 145
+    },
+    {
+      "name": "help-center",
+      "frames": 145
+    },
+    {
+      "name": "help-center-strong",
+      "frames": 145
+    },
+    {
+      "name": "support-ticket",
+      "frames": 145
+    },
+    {
+      "name": "support-ticket-reset",
+      "frames": 145
+    },
+    {
+      "name": "support-ticket-strong",
+      "frames": 145
+    },
+    {
+      "name": "support-ticket-reset-strong",
+      "frames": 145
+    },
+    {
+      "name": "live-support",
+      "frames": 145
+    },
+    {
+      "name": "live-support-strong",
+      "frames": 145
+    },
+    {
+      "name": "callback",
+      "frames": 145
+    },
+    {
+      "name": "callback-reset",
+      "frames": 145
+    },
+    {
+      "name": "callback-strong",
+      "frames": 145
+    },
+    {
+      "name": "callback-reset-strong",
+      "frames": 145
+    }
+  ],
+  "minimumPaintedMargin": 2.108989333496094,
+  "gaps": {
+    "support-agent head inside headset": 1.4988005674533778,
+    "support-agent head beside left earpiece": 1.2999920718219982,
+    "support-agent head beside right earpiece": 1.2999917220737318,
+    "support-agent boom above shoulders": 1.3283378813890514,
+    "support-agent boom beside head": 1.399804954846124,
+    "help-center lifebuoy ring width": 3.9994723760797797,
+    "help-center adjacent Solid index slots": 1.7999907283369465,
+    "help-center opaque radial grip joint": 1,
+    "support-ticket text inside record": 1,
+    "support-ticket record text rows": 1.5,
+    "support-ticket moving complete stub rim": 1,
+    "live-support facing bubble separation": 1.5,
+    "live-support Solid facing bubble separation": 1.3999999999999986,
+    "live-support customer message line": 1.1999999999999993,
+    "live-support typing dot separation": 1.0600000000000023,
+    "live-support typing dot separation right": 1.0600000000000023,
+    "live-support left typing dot inside bubble": 1.0300000000000011,
+    "live-support right typing dot inside bubble": 1.0300000000000011,
+    "callback receiver remains visible": 1,
+    "callback return route above receiver": 1.683003403386639,
+    "callback return head above receiver": 1.7369849655375669,
+    "callback full inner barb clear of curved stem": 1.3197242606081359
+  },
+  "checks": 21916,
+  "errors": [],
+  "exceptions": {
+    "support-ticket": "Body and stub share a closed seam at the source, open during tear and close during preview reset. These intentionally adjoining parts are not treated as unrelated gap pairs. Both rims must remain complete and fully opaque.",
+    "help-center": "Rigid 90-degree symmetry; equivalent aggregate endpoints require current native raster proof.",
+    "support-agent": "Band/earpiece and boom/hinge intentionally share opaque endpoints."
+  }
+}

@@ -1,0 +1,541 @@
+{
+  "version": 1,
+  "scope": "All-frame painted gaps, with intended human and keycap joints kept explicit.",
+  "icons": {
+    "accessibility": [
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "torso",
+        "min": 1,
+        "label": "head / torso"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "torso-solid",
+        "min": 1,
+        "label": "head-solid / torso-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "arm-left",
+        "min": 1,
+        "label": "head / arm-left"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "arm-left-solid",
+        "min": 1,
+        "label": "head-solid / arm-left-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "arm-right",
+        "min": 1,
+        "label": "head / arm-right"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "arm-right-solid",
+        "min": 1,
+        "label": "head-solid / arm-right-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "ring-frame",
+        "min": 1,
+        "label": "head / ring-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "ring-solid",
+        "min": 1,
+        "label": "head-solid / ring-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "torso",
+        "b": "ring-frame",
+        "min": 1,
+        "label": "torso / ring-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "torso-solid",
+        "b": "ring-solid",
+        "min": 1,
+        "label": "torso-solid / ring-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "leg",
+        "b": "ring-frame",
+        "min": 1,
+        "label": "leg / ring-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "leg-solid",
+        "b": "ring-solid",
+        "min": 1,
+        "label": "leg-solid / ring-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arm-left",
+        "b": "ring-frame",
+        "min": 1,
+        "label": "arm-left / ring-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "arm-left-solid",
+        "b": "ring-solid",
+        "min": 1,
+        "label": "arm-left-solid / ring-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arm-right",
+        "b": "ring-frame",
+        "min": 1,
+        "label": "arm-right / ring-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "arm-right-solid",
+        "b": "ring-solid",
+        "min": 1,
+        "label": "arm-right-solid / ring-solid"
+      }
+    ],
+    "wheelchair-access": [
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "body",
+        "min": 1,
+        "label": "head / body"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "body-solid",
+        "min": 1,
+        "label": "head-solid / body-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "wheel-frame",
+        "min": 1,
+        "label": "head / wheel-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "wheel-solid",
+        "min": 1,
+        "label": "head-solid / wheel-solid"
+      }
+    ],
+    "hearing-assistance": [
+      {
+        "kind": "gap",
+        "a": "arc-small",
+        "b": "arc-large",
+        "min": 1,
+        "label": "arc-small / arc-large"
+      },
+      {
+        "kind": "gap",
+        "a": "arc-small-solid",
+        "b": "arc-large-solid",
+        "min": 1,
+        "label": "arc-small-solid / arc-large-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arc-large",
+        "b": "helix",
+        "min": 1,
+        "label": "arc-large / helix"
+      },
+      {
+        "kind": "gap",
+        "a": "arc-large-solid",
+        "b": "helix-solid",
+        "min": 1,
+        "label": "arc-large-solid / helix-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arc-small",
+        "b": "helix",
+        "min": 1,
+        "label": "arc-small / helix"
+      },
+      {
+        "kind": "gap",
+        "a": "arc-small-solid",
+        "b": "helix-solid",
+        "min": 1,
+        "label": "arc-small-solid / helix-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "fold",
+        "b": "helix",
+        "min": 1,
+        "label": "fold / helix"
+      },
+      {
+        "kind": "gap",
+        "a": "fold-solid",
+        "b": "helix-solid",
+        "min": 1,
+        "label": "fold-solid / helix-solid"
+      }
+    ],
+    "reduced-motion": [
+      {
+        "kind": "gap",
+        "a": "trail-top",
+        "b": "ball-frame",
+        "min": 1,
+        "label": "trail-top / ball-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "trail-top-solid",
+        "b": "ball-solid",
+        "min": 1,
+        "label": "trail-top-solid / ball-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "trail-mid",
+        "b": "ball-frame",
+        "min": 1,
+        "label": "trail-mid / ball-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "trail-mid-solid",
+        "b": "ball-solid",
+        "min": 1,
+        "label": "trail-mid-solid / ball-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "trail-bottom",
+        "b": "ball-frame",
+        "min": 1,
+        "label": "trail-bottom / ball-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "trail-bottom-solid",
+        "b": "ball-solid",
+        "min": 1,
+        "label": "trail-bottom-solid / ball-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "trail-top",
+        "b": "trail-mid",
+        "min": 1,
+        "label": "trail-top / trail-mid"
+      },
+      {
+        "kind": "gap",
+        "a": "trail-top-solid",
+        "b": "trail-mid-solid",
+        "min": 1,
+        "label": "trail-top-solid / trail-mid-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "trail-mid",
+        "b": "trail-bottom",
+        "min": 1,
+        "label": "trail-mid / trail-bottom"
+      },
+      {
+        "kind": "gap",
+        "a": "trail-mid-solid",
+        "b": "trail-bottom-solid",
+        "min": 1,
+        "label": "trail-mid-solid / trail-bottom-solid"
+      }
+    ],
+    "text-size": [
+      {
+        "kind": "gap",
+        "a": "legs",
+        "b": "rule",
+        "min": 1,
+        "label": "legs / rule"
+      },
+      {
+        "kind": "gap",
+        "a": "legs-solid",
+        "b": "rule-solid",
+        "min": 1,
+        "label": "legs-solid / rule-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bar",
+        "b": "rule",
+        "min": 1,
+        "label": "bar / rule"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-solid",
+        "b": "rule-solid",
+        "min": 1,
+        "label": "bar-solid / rule-solid"
+      }
+    ],
+    "keyboard": [
+      {
+        "kind": "gap",
+        "a": "key1",
+        "b": "body",
+        "min": 1,
+        "label": "key1 / body"
+      },
+      {
+        "kind": "gap",
+        "a": "key2",
+        "b": "body",
+        "min": 1,
+        "label": "key2 / body"
+      },
+      {
+        "kind": "gap",
+        "a": "key3",
+        "b": "body",
+        "min": 1,
+        "label": "key3 / body"
+      },
+      {
+        "kind": "gap",
+        "a": "space",
+        "b": "body",
+        "min": 1,
+        "label": "space / body"
+      },
+      {
+        "kind": "gap",
+        "a": "key1",
+        "b": "key2",
+        "min": 1,
+        "label": "key1 / key2"
+      },
+      {
+        "kind": "gap",
+        "a": "key2",
+        "b": "key3",
+        "min": 1,
+        "label": "key2 / key3"
+      },
+      {
+        "kind": "gap",
+        "a": "key1",
+        "b": "space",
+        "min": 1,
+        "label": "key1 / space"
+      },
+      {
+        "kind": "gap",
+        "a": "key2",
+        "b": "space",
+        "min": 1,
+        "label": "key2 / space"
+      },
+      {
+        "kind": "gap",
+        "a": "key3",
+        "b": "space",
+        "min": 1,
+        "label": "key3 / space"
+      }
+    ],
+    "keyboard-shortcuts": [
+      {
+        "kind": "gap",
+        "a": "mod-bar",
+        "b": "mod-frame",
+        "min": 1,
+        "label": "mod-bar / mod-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "key-mark",
+        "b": "key-frame",
+        "min": 1,
+        "label": "key-mark / key-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "mod-frame",
+        "b": "key-frame",
+        "min": 1,
+        "label": "mod-frame / key-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "mod-solid",
+        "b": "key-solid",
+        "min": 1,
+        "label": "Solid keycaps stay separate"
+      }
+    ],
+    "focus-indicator": [
+      {
+        "kind": "gap",
+        "a": "bracket-l",
+        "b": "item-a",
+        "min": 1,
+        "label": "bracket-l / item-a"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-l-solid",
+        "b": "item-a-solid",
+        "min": 1,
+        "label": "bracket-l-solid / item-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-l",
+        "b": "item-b",
+        "min": 1,
+        "label": "bracket-l / item-b"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-l-solid",
+        "b": "item-b-solid",
+        "min": 1,
+        "label": "bracket-l-solid / item-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-r",
+        "b": "item-a",
+        "min": 1,
+        "label": "bracket-r / item-a"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-r-solid",
+        "b": "item-a-solid",
+        "min": 1,
+        "label": "bracket-r-solid / item-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-r",
+        "b": "item-b",
+        "min": 1,
+        "label": "bracket-r / item-b"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-r-solid",
+        "b": "item-b-solid",
+        "min": 1,
+        "label": "bracket-r-solid / item-b-solid"
+      }
+    ],
+    "reading-mode": [
+      {
+        "kind": "gap",
+        "a": "title",
+        "b": "page",
+        "min": 1,
+        "label": "title / page"
+      },
+      {
+        "kind": "gap",
+        "a": "l1",
+        "b": "page",
+        "min": 1,
+        "label": "l1 / page"
+      },
+      {
+        "kind": "gap",
+        "a": "l2",
+        "b": "page",
+        "min": 1,
+        "label": "l2 / page"
+      },
+      {
+        "kind": "gap",
+        "a": "l3",
+        "b": "page",
+        "min": 1,
+        "label": "l3 / page"
+      },
+      {
+        "kind": "gap",
+        "a": "title",
+        "b": "l1",
+        "min": 1,
+        "label": "title / l1"
+      },
+      {
+        "kind": "gap",
+        "a": "l1",
+        "b": "l2",
+        "min": 1,
+        "label": "l1 / l2"
+      },
+      {
+        "kind": "gap",
+        "a": "l2",
+        "b": "l3",
+        "min": 1,
+        "label": "l2 / l3"
+      }
+    ],
+    "high-contrast": [
+      {
+        "kind": "opaque",
+        "a": "ring-frame",
+        "label": "ring-frame stays opaque at intentional half/ring overlap"
+      },
+      {
+        "kind": "opaque",
+        "a": "ring-solid",
+        "label": "ring-solid stays opaque at intentional half/ring overlap"
+      },
+      {
+        "kind": "opaque",
+        "a": "half",
+        "label": "half stays opaque at intentional half/ring overlap"
+      },
+      {
+        "kind": "opaque",
+        "a": "half-solid",
+        "label": "half-solid stays opaque at intentional half/ring overlap"
+      }
+    ]
+  },
+  "exceptions": {
+    "high-contrast": "The half disk deliberately overlaps the ring. Both stay opaque; native checks require the other half to remain open.",
+    "accessibility": "Arm, torso and leg strokes meet as one figure.",
+    "wheelchair-access": "Seat/post and wheel band meet as the familiar wheelchair symbol."
+  }
+}

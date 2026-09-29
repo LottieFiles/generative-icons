@@ -1,0 +1,635 @@
+{
+  "scope": "Source geometry and rigid transforms at 60fps; grid units and seconds. RMS includes curve control points. Native normal-speed review required.",
+  "definitionsSha256": "6358981491fa93d7fde5da5fd38e144f6a157413433cd1bd080da18db2398449",
+  "icons": 20,
+  "records": [
+    {
+      "icon": "coffee-cup",
+      "mainPart": "coffee-cup-wisp-0",
+      "intent": "Light: two steam wisps drift up 1.6 units, fade and reform above the mug. Strong: the wisps shoot up 2.4 units in 0.3 s and lean as they rise before reforming.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 1.5999999999999996,
+          "travelRms": 3.199999999999999,
+          "peakRmsSpeed": 95.99999999999997,
+          "visibleTravelRms": 1.5999999999999994,
+          "visiblePeakRmsSpeed": 9.283555555555516,
+          "first10To90Seconds": 0.25
+        },
+        "strong": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 2.6001681892716095,
+          "travelRms": 5.676106816839172,
+          "peakRmsSpeed": 95.99999999999977,
+          "visibleTravelRms": 2.7951405360573576,
+          "visiblePeakRmsSpeed": 21.686783512605874,
+          "first10To90Seconds": 0.18333333333333332
+        }
+      },
+      "strongToLightPeakSpeed": 2.336042842941566,
+      "strongToLightTravel": 1.746962835035849
+    },
+    {
+      "icon": "tea-cup",
+      "mainPart": "tea-cup-spoon",
+      "intent": "Light: the spoon stirs one loop, its foot sliding along the rim. Strong: it stirs two quick loops after a short backstroke and the cup jiggles on its saucer.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.76,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 5.261523685724148,
+          "travelRms": 11.296226706097913,
+          "peakRmsSpeed": 33.06937412882286,
+          "visibleTravelRms": 11.296226706097913,
+          "visiblePeakRmsSpeed": 33.06937412882286,
+          "first10To90Seconds": 0.16666666666666669,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.78,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 5.1626892665484885,
+          "travelRms": 22.260628121403403,
+          "peakRmsSpeed": 73.28969591270663,
+          "visibleTravelRms": 22.260628121403403,
+          "visiblePeakRmsSpeed": 73.28969591270663,
+          "first10To90Seconds": 0.08333333333333334,
+          "rotationRange": 0,
+          "horizontalRange": 0.9437425763956377,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.216240792075597,
+      "strongToLightTravel": 1.9706251211642825
+    },
+    {
+      "icon": "wine-glass",
+      "mainPart": "wine-glass-surface",
+      "intent": "Light: a stream pours in and the wine level rises to the bowl's widest part with a small slosh. Strong: it fills in 0.28 s, the glass dips half a unit on the pour and the surface sloshes harder before settling. The filled glass is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 5.2861187275394625,
+          "travelRms": 5.482473617219992,
+          "peakRmsSpeed": 14.097745003435394,
+          "visibleTravelRms": 5.482473617219992,
+          "visiblePeakRmsSpeed": 14.097745003435394,
+          "first10To90Seconds": 0.3500000000000001,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.74,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 5.377029567419643,
+          "travelRms": 6.000765202310034,
+          "peakRmsSpeed": 27.231550238868316,
+          "visibleTravelRms": 6.000765202310034,
+          "visiblePeakRmsSpeed": 27.231550238868316,
+          "first10To90Seconds": 0.2333333333333333,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0.5793291025203966
+        }
+      },
+      "strongToLightPeakSpeed": 1.931624542239374,
+      "strongToLightTravel": 1.094536083760099
+    },
+    {
+      "icon": "beer-mug",
+      "mainPart": "beer-mug-foam",
+      "intent": "Light: the foam head swells up 14% and settles back. Strong: the mug is raised 6° in a toast, the head surges 16% and settles as the mug comes back down.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.42,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.6287594622123733,
+          "travelRms": 1.2575189244247469,
+          "peakRmsSpeed": 6.995652471368211,
+          "visibleTravelRms": 1.2575189244247469,
+          "visiblePeakRmsSpeed": 6.995652471368211,
+          "first10To90Seconds": 0.08333333333333334
+        },
+        "strong": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.503446411741359,
+          "travelRms": 6.420903115849408,
+          "peakRmsSpeed": 23.220221329824696,
+          "visibleTravelRms": 6.420903115849408,
+          "visiblePeakRmsSpeed": 23.220221329824696,
+          "first10To90Seconds": 0.2
+        }
+      },
+      "strongToLightPeakSpeed": 3.319235971892595,
+      "strongToLightTravel": 5.10600913523958
+    },
+    {
+      "icon": "cocktail",
+      "mainPart": "cocktail-surface",
+      "intent": "Light: the glass tips 6° in a toast while the drink stays level. Strong: it draws back, tips 14° with a hard stop and the drink sloshes against the wall before both settle.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.46,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.3575115881241058,
+          "travelRms": 2.759050803069916,
+          "peakRmsSpeed": 14.425852890092033,
+          "visibleTravelRms": 2.759050803069916,
+          "visiblePeakRmsSpeed": 14.425852890092033,
+          "first10To90Seconds": 0.1
+        },
+        "strong": {
+          "activeSeconds": 0.68,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.536727284274094,
+          "travelRms": 11.735637727286962,
+          "peakRmsSpeed": 49.913281084667375,
+          "visibleTravelRms": 11.735637727286962,
+          "visiblePeakRmsSpeed": 49.913281084667375,
+          "first10To90Seconds": 0.21666666666666667
+        }
+      },
+      "strongToLightPeakSpeed": 3.4599882214901014,
+      "strongToLightTravel": 4.253505486100168
+    },
+    {
+      "icon": "cooking-pot",
+      "mainPart": "cooking-pot-lid-frame",
+      "intent": "Light: the lid bumps up 0.9 units, tips 4° and drops back. Strong: it jumps 2.2 units, tips 8°, lands hard, rattles once more and the pot shivers on the impact.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.26,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.0687803254109685,
+          "travelRms": 2.137678093868332,
+          "peakRmsSpeed": 27.030136550887843,
+          "visibleTravelRms": 2.137678093868332,
+          "visiblePeakRmsSpeed": 27.030136550887843,
+          "first10To90Seconds": 0.049999999999999996,
+          "rotationRange": 4,
+          "horizontalRange": 0,
+          "verticalRange": 0.9
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.481343177692299,
+          "travelRms": 8.020690619191488,
+          "peakRmsSpeed": 38.64615645616863,
+          "visibleTravelRms": 8.020690619191488,
+          "visiblePeakRmsSpeed": 38.64615645616863,
+          "first10To90Seconds": 0.049999999999999996,
+          "rotationRange": 13,
+          "horizontalRange": 0.7377695473251029,
+          "verticalRange": 2.2
+        }
+      },
+      "strongToLightPeakSpeed": 1.4297432935054575,
+      "strongToLightTravel": 3.7520572635317997
+    },
+    {
+      "icon": "frying-pan",
+      "mainPart": "frying-pan-pancake-frame",
+      "intent": "Light: the pancake is tossed 4.6 units and turns over once in the air before landing. Strong: the pan dips and flicks, the pancake flies 7.2 units high, turns over twice and lands hard with a small bounce.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.54,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 7.905661456136661,
+          "travelRms": 29.524906133506207,
+          "peakRmsSpeed": 122.98430853868616,
+          "visibleTravelRms": 29.524906133506207,
+          "visiblePeakRmsSpeed": 122.98430853868616,
+          "first10To90Seconds": 0.18333333333333335
+        },
+        "strong": {
+          "activeSeconds": 0.74,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 9.131437592898607,
+          "travelRms": 53.215373103832725,
+          "peakRmsSpeed": 199.2125154571494,
+          "visibleTravelRms": 53.215373103832725,
+          "visiblePeakRmsSpeed": 199.2125154571494,
+          "first10To90Seconds": 0.13333333333333333
+        }
+      },
+      "strongToLightPeakSpeed": 1.619820591945555,
+      "strongToLightTravel": 1.8023892392139225
+    },
+    {
+      "icon": "kettle",
+      "mainPart": "kettle-steam",
+      "intent": "Light: a wisp of steam rises 1.8 units from the spout, fades and reforms. Strong: the kettle rocks on its base as it boils and the steam jets up 3.2 units before reforming.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 1.8000000000000003,
+          "travelRms": 3.6,
+          "peakRmsSpeed": 108.00000000000001,
+          "visibleTravelRms": 1.8,
+          "visiblePeakRmsSpeed": 10.444000000000022,
+          "first10To90Seconds": 0.25
+        },
+        "strong": {
+          "activeSeconds": 0.54,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.423173065054423,
+          "travelRms": 10.429401357325277,
+          "peakRmsSpeed": 194.59705622311313,
+          "visibleTravelRms": 7.073781430296521,
+          "visiblePeakRmsSpeed": 34.37512256929706,
+          "first10To90Seconds": 0.35000000000000003
+        }
+      },
+      "strongToLightPeakSpeed": 3.291375198132611,
+      "strongToLightTravel": 3.929878572386956
+    },
+    {
+      "icon": "toaster",
+      "mainPart": "toaster-toast-0",
+      "intent": "Light: two slices rise smoothly out of the slots and the lever springs up. Strong: the toaster jolts, the slices pop 1.8 units past their rest, drop back with one small bounce and hold. Toast is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.44,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 4.938735780653901,
+          "travelRms": 4.9387357806539,
+          "peakRmsSpeed": 39.8255869188187,
+          "visibleTravelRms": 4.9387357806539,
+          "visiblePeakRmsSpeed": 39.8255869188187,
+          "first10To90Seconds": 0.16666666666666669
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 6.526186567292656,
+          "travelRms": 10.295543013813617,
+          "peakRmsSpeed": 54.21081663122238,
+          "visibleTravelRms": 10.295543013813617,
+          "visiblePeakRmsSpeed": 54.21081663122238,
+          "first10To90Seconds": 0.2
+        }
+      },
+      "strongToLightPeakSpeed": 1.36120571786492,
+      "strongToLightTravel": 2.0846515122642306
+    },
+    {
+      "icon": "blender",
+      "mainPart": "blender-blade-a",
+      "intent": "Light: the cross blade spins two turns and pulls the drink into a shallow vortex that relaxes. Strong: it spins four turns, the vortex deepens and the whole blender buzzes before settling.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.84,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4.399767884715481,
+          "travelRms": 19.212714553227215,
+          "peakRmsSpeed": 51.607078353828975,
+          "visibleTravelRms": 19.212714553227215,
+          "visiblePeakRmsSpeed": 51.607078353828975,
+          "first10To90Seconds": 0.1,
+          "rotationRange": 0,
+          "horizontalRange": 0.3784630839461965,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4.404343792608736,
+          "travelRms": 39.23148521229978,
+          "peakRmsSpeed": 106.57801604782833,
+          "visibleTravelRms": 39.23148521229978,
+          "visiblePeakRmsSpeed": 106.57801604782833,
+          "first10To90Seconds": 0.11666666666666668,
+          "rotationRange": 0,
+          "horizontalRange": 1.0391488587322764,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.065182130968683,
+      "strongToLightTravel": 2.041954306020226
+    },
+    {
+      "icon": "chef-hat",
+      "mainPart": "chef-hat-hat-frame",
+      "intent": "Light: the hat tips 4° off its lower corner and settles back. Strong: it winds back, hops 1.8 units while tipping 9°, lands with a small squash and one little rock.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.44,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.2698379891536797,
+          "travelRms": 2.5401841225980757,
+          "peakRmsSpeed": 12.374434238908364,
+          "visibleTravelRms": 2.5401841225980757,
+          "visiblePeakRmsSpeed": 12.374434238908364,
+          "first10To90Seconds": 0.1
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.678854537830906,
+          "travelRms": 8.52643407465162,
+          "peakRmsSpeed": 29.411168075953547,
+          "visibleTravelRms": 8.52643407465162,
+          "visiblePeakRmsSpeed": 29.411168075953547,
+          "first10To90Seconds": 0.16666666666666669
+        }
+      },
+      "strongToLightPeakSpeed": 2.376768707815131,
+      "strongToLightTravel": 3.356620490144181
+    },
+    {
+      "icon": "cutlery",
+      "mainPart": "cutlery-fork",
+      "intent": "Light: fork and knife tip 3.5° toward each other and back. Strong: they spread apart, swing in and clink at the tips, then rebound and settle.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.44,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.9485458155776884,
+          "travelRms": 1.8973822332912333,
+          "peakRmsSpeed": 9.243049717351166,
+          "visibleTravelRms": 1.8973822332912333,
+          "visiblePeakRmsSpeed": 9.243049717351166,
+          "first10To90Seconds": 0.1,
+          "rotationRange": 3.4941421012849583,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.3165952798875038,
+          "travelRms": 5.969001823626865,
+          "peakRmsSpeed": 27.777555494001184,
+          "visibleTravelRms": 5.969001823626865,
+          "visiblePeakRmsSpeed": 27.777555494001184,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 8.843364647446279,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.0052370530753305,
+      "strongToLightTravel": 3.145914259602256
+    },
+    {
+      "icon": "pizza",
+      "mainPart": "pizza-slice-frame",
+      "intent": "Light: the slice's tip sags 1.2 units and springs back. Strong: the slice is lifted 2 units, its tip droops 3 units, rebounds once and settles.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.48,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.8661569637132027,
+          "travelRms": 1.7323139274264059,
+          "peakRmsSpeed": 9.625456900106178,
+          "visibleTravelRms": 1.7323139274264059,
+          "visiblePeakRmsSpeed": 9.625456900106178,
+          "first10To90Seconds": 0.08333333333333334
+        },
+        "strong": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.6382058175076493,
+          "travelRms": 6.088367433585213,
+          "peakRmsSpeed": 21.657513543587523,
+          "visibleTravelRms": 6.088367433585213,
+          "visiblePeakRmsSpeed": 21.657513543587523,
+          "first10To90Seconds": 0.18333333333333335
+        }
+      },
+      "strongToLightPeakSpeed": 2.2500244682773056,
+      "strongToLightTravel": 3.5145866676892292
+    },
+    {
+      "icon": "burger",
+      "mainPart": "burger-top-bun-frame",
+      "intent": "Light: the top bun hops 1.1 units and lands back on the stack. Strong: it lifts 1.6 units and slams down; the patty squashes to 82% and widens, then the stack rebounds and settles.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.4,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.09790708395046,
+          "travelRms": 2.19581416790092,
+          "peakRmsSpeed": 14.271418351391855,
+          "visibleTravelRms": 2.19581416790092,
+          "visiblePeakRmsSpeed": 14.271418351391855,
+          "first10To90Seconds": 0.06666666666666668,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.09790708395046
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.5963648834019206,
+          "travelRms": 4.000441766803842,
+          "peakRmsSpeed": 19.855967078189313,
+          "visibleTravelRms": 4.000441766803842,
+          "visiblePeakRmsSpeed": 19.855967078189313,
+          "first10To90Seconds": 0.06666666666666668,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.753406068587106
+        }
+      },
+      "strongToLightPeakSpeed": 1.3913100008208232,
+      "strongToLightTravel": 1.8218489639439974
+    },
+    {
+      "icon": "cake",
+      "mainPart": "cake-flame",
+      "intent": "Light: a flame grows from the candle's wick and flickers once. Strong: it catches with a flare to 120%, sways, and settles into a steady flame. The lit candle is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 3.4957520807602966,
+          "travelRms": 3.8131680371435133,
+          "peakRmsSpeed": 15.367460210349256,
+          "visibleTravelRms": 3.6831436998506257,
+          "visiblePeakRmsSpeed": 15.367460210349256,
+          "first10To90Seconds": 0.21666666666666665
+        },
+        "strong": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 4.183962536874123,
+          "travelRms": 7.137044339370034,
+          "peakRmsSpeed": 44.41910722243767,
+          "visibleTravelRms": 7.112955168066425,
+          "visiblePeakRmsSpeed": 44.41910722243767,
+          "first10To90Seconds": 0.08333333333333331
+        }
+      },
+      "strongToLightPeakSpeed": 2.8904650875571165,
+      "strongToLightTravel": 1.9312184773987775
+    },
+    {
+      "icon": "ice-cream",
+      "mainPart": "ice-cream-scoop-frame",
+      "intent": "Light: the scoop stretches up, squashes and settles on the cone. Strong: it crouches, stretches up 10% with a small hop, lands squashed to 84% and wobbles to rest; its volume stays constant.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.42,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.29405094875441007,
+          "travelRms": 1.0841483561691119,
+          "peakRmsSpeed": 6.0631700933276305,
+          "visibleTravelRms": 1.0841483561691119,
+          "visiblePeakRmsSpeed": 6.0631700933276305,
+          "first10To90Seconds": 0.06666666666666668
+        },
+        "strong": {
+          "activeSeconds": 0.64,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.8325562178737116,
+          "travelRms": 4.758691426152506,
+          "peakRmsSpeed": 16.443865120994268,
+          "visibleTravelRms": 4.758691426152506,
+          "visiblePeakRmsSpeed": 16.443865120994268,
+          "first10To90Seconds": 0.16666666666666669
+        }
+      },
+      "strongToLightPeakSpeed": 2.7120903533764187,
+      "strongToLightTravel": 4.3893360157530115
+    },
+    {
+      "icon": "noodle-bowl",
+      "mainPart": "noodle-bowl-stick-0",
+      "intent": "Light: the chopsticks lift 1.6 units and the two noodles stretch up from the rim to the pinch, then lower. Strong: they dip, pull 2.6 units, bob once and lower.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 1.596955758473396,
+          "travelRms": 3.1939115169467915,
+          "peakRmsSpeed": 10.428843121548788,
+          "visibleTravelRms": 3.1939115169467915,
+          "visiblePeakRmsSpeed": 10.428843121548788,
+          "first10To90Seconds": 0.15,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.5969557584733964
+        },
+        "strong": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.597190468932581,
+          "travelRms": 6.557400764619216,
+          "peakRmsSpeed": 22.441666666666656,
+          "visibleTravelRms": 6.557400764619216,
+          "visiblePeakRmsSpeed": 22.441666666666656,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 2.9874126911548036
+        }
+      },
+      "strongToLightPeakSpeed": 2.151884576755801,
+      "strongToLightTravel": 2.0530940603162797
+    },
+    {
+      "icon": "bread",
+      "mainPart": "bread-loaf-frame",
+      "intent": "Light: the dough rises from a low mound into a domed loaf. Strong: it springs up past full height by 10% and settles. The risen loaf is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 4.447470056360383,
+          "travelRms": 4.447470056360384,
+          "peakRmsSpeed": 11.11547223036645,
+          "visibleTravelRms": 4.447470056360384,
+          "visiblePeakRmsSpeed": 11.11547223036645,
+          "first10To90Seconds": 0.3666666666666667
+        },
+        "strong": {
+          "activeSeconds": 0.58,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 5.556150150182785,
+          "travelRms": 7.326002490038188,
+          "peakRmsSpeed": 34.52244250683233,
+          "visibleTravelRms": 7.326002490038188,
+          "visiblePeakRmsSpeed": 34.52244250683233,
+          "first10To90Seconds": 0.15
+        }
+      },
+      "strongToLightPeakSpeed": 3.1058007965257817,
+      "strongToLightTravel": 1.6472291881001375
+    },
+    {
+      "icon": "recipe-book",
+      "mainPart": "recipe-book-ribbon",
+      "intent": "Light: the cookbook taps down and its ribbon swings 14° from the seam. Strong: it hops 1.4 units, lands and the ribbon swings 30° with a damped back-and-forth.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.68,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.5478287245979103,
+          "travelRms": 2.7258357270847786,
+          "peakRmsSpeed": 8.48578427121479,
+          "visibleTravelRms": 2.7258357270847786,
+          "visiblePeakRmsSpeed": 8.48578427121479,
+          "first10To90Seconds": 0.06666666666666668,
+          "rotationRange": 21.882341630736555,
+          "horizontalRange": 0,
+          "verticalRange": 0.5
+        },
+        "strong": {
+          "activeSeconds": 0.84,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.396819272976682,
+          "travelRms": 7.721829955749405,
+          "peakRmsSpeed": 21.52332189467473,
+          "visibleTravelRms": 7.721829955749405,
+          "visiblePeakRmsSpeed": 21.52332189467473,
+          "first10To90Seconds": 0.06666666666666668,
+          "rotationRange": 49.6504874271137,
+          "horizontalRange": 0,
+          "verticalRange": 1.3968192729766804
+        }
+      },
+      "strongToLightPeakSpeed": 2.5363974862860306,
+      "strongToLightTravel": 2.8328302689053575
+    },
+    {
+      "icon": "restaurant-menu",
+      "mainPart": "restaurant-menu-cover-frame",
+      "intent": "Light: the menu's cover swings open about its centre fold, revealing items on both pages. Strong: it lifts, swings past flat by 8% and settles open. The open menu is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 13.716024196365876,
+          "travelRms": 13.716024196365872,
+          "peakRmsSpeed": 64.5341378103246,
+          "visibleTravelRms": 13.716024196365872,
+          "visiblePeakRmsSpeed": 64.5341378103246,
+          "first10To90Seconds": 0.2
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 14.134169803575258,
+          "travelRms": 14.688080560555262,
+          "peakRmsSpeed": 127.57656903884627,
+          "visibleTravelRms": 14.688080560555262,
+          "visiblePeakRmsSpeed": 127.57656903884627,
+          "first10To90Seconds": 0.11666666666666667
+        }
+      },
+      "strongToLightPeakSpeed": 1.9768850002120233,
+      "strongToLightTravel": 1.0708701260855855
+    }
+  ]
+}

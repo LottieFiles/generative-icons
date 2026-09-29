@@ -1,0 +1,56 @@
+{
+  "name": "@lottiefiles/generative-icons",
+  "version": "0.1.0",
+  "description": "Generative Animated Icons: native Lottie icon assets, per-icon descriptors and catalog",
+  "keywords": [
+    "lottie",
+    "dotlottie",
+    "animated-icons",
+    "icons",
+    "animation",
+    "generative-animated-icons"
+  ],
+  "homepage": "https://github.com/LottieFiles/lottie-generative-icons#readme",
+  "bugs": {
+    "url": "https://github.com/LottieFiles/lottie-generative-icons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LottieFiles/lottie-generative-icons.git",
+    "directory": "packages/icons"
+  },
+  "author": "LottieFiles",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist/icons/*.mjs",
+    "dist/icons/*.d.ts",
+    "dist/assets/*.lottie",
+    "dist/catalog.json",
+    "dist/release.json",
+    "dist/docs/*.md",
+    "dist/schemas/*.json",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "exports": {
+    "./icons/*": {
+      "types": "./dist/icons/*.d.ts",
+      "import": "./dist/icons/*.mjs"
+    },
+    "./assets/*": "./dist/assets/*",
+    "./catalog.json": "./dist/catalog.json",
+    "./release.json": "./dist/release.json",
+    "./docs/*": "./dist/docs/*",
+    "./schemas/*": "./dist/schemas/*"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

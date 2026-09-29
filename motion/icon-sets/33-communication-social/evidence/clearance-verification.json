@@ -1,0 +1,150 @@
+{
+  "result": "PASS",
+  "actions": [
+    {
+      "name": "inbox",
+      "frames": 145
+    },
+    {
+      "name": "inbox-reset",
+      "frames": 145
+    },
+    {
+      "name": "inbox-strong",
+      "frames": 145
+    },
+    {
+      "name": "inbox-reset-strong",
+      "frames": 145
+    },
+    {
+      "name": "address-book",
+      "frames": 145
+    },
+    {
+      "name": "address-book-strong",
+      "frames": 145
+    },
+    {
+      "name": "voicemail",
+      "frames": 145
+    },
+    {
+      "name": "voicemail-strong",
+      "frames": 145
+    },
+    {
+      "name": "transfer-call",
+      "frames": 145
+    },
+    {
+      "name": "transfer-call-strong",
+      "frames": 145
+    },
+    {
+      "name": "dial-pad",
+      "frames": 145
+    },
+    {
+      "name": "dial-pad-strong",
+      "frames": 145
+    },
+    {
+      "name": "emoji-picker",
+      "frames": 145
+    },
+    {
+      "name": "emoji-picker-strong",
+      "frames": 145
+    },
+    {
+      "name": "thumbs-up-down",
+      "frames": 145
+    },
+    {
+      "name": "thumbs-up-down-reverse",
+      "frames": 145
+    },
+    {
+      "name": "thumbs-up-down-strong",
+      "frames": 145
+    },
+    {
+      "name": "thumbs-up-down-reverse-strong",
+      "frames": 145
+    },
+    {
+      "name": "rss-feed",
+      "frames": 145
+    },
+    {
+      "name": "rss-feed-strong",
+      "frames": 145
+    },
+    {
+      "name": "announcement",
+      "frames": 145
+    },
+    {
+      "name": "announcement-strong",
+      "frames": 145
+    }
+  ],
+  "minimumPaintedMargin": 2.101090000000003,
+  "gaps": {
+    "inbox card-frame / walls": 2,
+    "inbox card-frame / shelf": 1.1159212415432243,
+    "inbox card-solid / walls": 1.9499999999999993,
+    "inbox card-solid / shelf": 1.0658803636395482,
+    "address-book head / cover-frame": 2.4348399999999994,
+    "address-book shoulders / cover-frame": 2,
+    "address-book head / shoulders": 1.1999999999999975,
+    "address-book head-solid / shoulders-solid": 2.0999999999999988,
+    "voicemail reel-left-rim / reel-right-rim": 2.497560231321163,
+    "voicemail reel-left-rim-solid / reel-right-rim-solid": 2.397560231321163,
+    "transfer-call mouth / head": 1.5335415294134478,
+    "transfer-call mouth / route": 3.6408699999999996,
+    "transfer-call mouth-solid / head": 1.483541529413448,
+    "transfer-call mouth-solid / route": 3.59087,
+    "transfer-call bowl / head": 1.557081336194777,
+    "transfer-call bowl / route": 4.966419999999999,
+    "transfer-call bowl-solid / head": 1.5070813361947772,
+    "transfer-call bowl-solid / route": 4.91642,
+    "dial-pad ripple / key-0-1": 1.4554299999999998,
+    "dial-pad ripple-solid / key-0-1-solid": 1.1531600000000004,
+    "dial-pad ripple / key-2-1": 1.4539599999999986,
+    "dial-pad ripple-solid / key-2-1-solid": 1.1523100000000006,
+    "dial-pad ripple / key-1-1": 1.4619199999999992,
+    "dial-pad ripple-solid / key-1-1-solid": 1.156949999999999,
+    "dial-pad ripple / key-3-1": 1.4619199999999992,
+    "dial-pad ripple-solid / key-3-1-solid": 1.156949999999999,
+    "emoji-picker eye-l / face-frame": 3.1344662730266117,
+    "emoji-picker eye-r / face-frame": 3.134464698856707,
+    "emoji-picker mouth / face-frame": 1.5514150092242858,
+    "emoji-picker eye-l / mouth": 2.5928341686269536,
+    "emoji-picker eye-r / mouth": 2.59283694986842,
+    "thumbs-up-down cuff / hand-frame": 1.599989994235342,
+    "thumbs-up-down cuff-solid / hand-solid": 1.4999902351202523,
+    "rss-feed dot / arc-inner": 3.7518695535072784,
+    "rss-feed arc-inner / arc-outer": 1.9303753060480924,
+    "rss-feed dot-solid / arc-inner-solid": 3.7018695535072785,
+    "rss-feed arc-inner-solid / arc-outer-solid": 1.8303753060480923,
+    "announcement wave-inner / horn-frame": 1.143801227542748,
+    "announcement wave-inner-solid / horn-solid": 1.0438046206110092,
+    "announcement wave-inner / wave-outer": 1.2998121954241522,
+    "announcement wave-inner-solid / wave-outer-solid": 1.199812195424152
+  },
+  "checks": 39690,
+  "errors": [],
+  "exceptions": {
+    "inbox": "Card flap joins the card top; received card stays above the shelf. Walls and shelf are one tray.",
+    "address-book": "Binding rings intentionally cross the cover edge; contact stays in the real window.",
+    "voicemail": "Each index joins its reel; tape meets each reel at its bottom.",
+    "transfer-call": "Payload rides the route and reaches the exact arrow tip. Invisible endpoint geometry needs native aggregate proof.",
+    "dial-pad": "Ripple surrounds the pressed key; only neighboring keys require clearance. Hidden ripple recycling needs native proof.",
+    "emoji-picker": "Solid face has three genuine cutout contours.",
+    "thumbs-up-down": "Hand and cuff move rigidly together; cuff remains separate.",
+    "rss-feed": "Open signal arcs have no tint.",
+    "announcement": "Handle attaches to the horn. Sound waves remain separate."
+  }
+}

@@ -1,0 +1,991 @@
+{
+  "version": 1,
+  "icons": {
+    "underline": [
+      {
+        "kind": "gap",
+        "a": "glyph",
+        "b": "rule",
+        "min": 1,
+        "label": "glyph / rule"
+      },
+      {
+        "kind": "gap",
+        "a": "glyph-solid",
+        "b": "rule-solid",
+        "min": 1,
+        "label": "glyph-solid / rule-solid"
+      }
+    ],
+    "heading": [
+      {
+        "kind": "gap",
+        "a": "glyph",
+        "b": "level",
+        "min": 1,
+        "label": "glyph / level"
+      },
+      {
+        "kind": "gap",
+        "a": "glyph-solid",
+        "b": "level-solid",
+        "min": 1,
+        "label": "glyph-solid / level-solid"
+      }
+    ],
+    "paragraph": [
+      {
+        "kind": "gap",
+        "a": "stem-a",
+        "b": "stem-b",
+        "min": 1,
+        "label": "stem-a / stem-b"
+      },
+      {
+        "kind": "gap",
+        "a": "stem-a-solid",
+        "b": "stem-b-solid",
+        "min": 1,
+        "label": "stem-a-solid / stem-b-solid"
+      }
+    ],
+    "text-alignment": [
+      {
+        "kind": "gap",
+        "a": "full-a",
+        "b": "short-a",
+        "min": 1,
+        "label": "full-a / short-a"
+      },
+      {
+        "kind": "gap",
+        "a": "full-a-solid",
+        "b": "short-a-solid",
+        "min": 1,
+        "label": "full-a-solid / short-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "short-a",
+        "b": "full-b",
+        "min": 1,
+        "label": "short-a / full-b"
+      },
+      {
+        "kind": "gap",
+        "a": "short-a-solid",
+        "b": "full-b-solid",
+        "min": 1,
+        "label": "short-a-solid / full-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "full-b",
+        "b": "short-b",
+        "min": 1,
+        "label": "full-b / short-b"
+      },
+      {
+        "kind": "gap",
+        "a": "full-b-solid",
+        "b": "short-b-solid",
+        "min": 1,
+        "label": "full-b-solid / short-b-solid"
+      }
+    ],
+    "bulleted-list": [
+      {
+        "kind": "gap",
+        "a": "dot-a",
+        "b": "line-a",
+        "min": 1,
+        "label": "dot-a / line-a"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-a-solid",
+        "b": "line-a-solid",
+        "min": 1,
+        "label": "dot-a-solid / line-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-b",
+        "b": "line-b",
+        "min": 1,
+        "label": "dot-b / line-b"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-b-solid",
+        "b": "line-b-solid",
+        "min": 1,
+        "label": "dot-b-solid / line-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-c",
+        "b": "line-c",
+        "min": 1,
+        "label": "dot-c / line-c"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-c-solid",
+        "b": "line-c-solid",
+        "min": 1,
+        "label": "dot-c-solid / line-c-solid"
+      }
+    ],
+    "numbered-list": [
+      {
+        "kind": "gap",
+        "a": "one",
+        "b": "two",
+        "min": 1,
+        "label": "one / two"
+      },
+      {
+        "kind": "gap",
+        "a": "one-solid",
+        "b": "two-solid",
+        "min": 1,
+        "label": "one-solid / two-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "one",
+        "b": "line-a",
+        "min": 1,
+        "label": "one / line-a"
+      },
+      {
+        "kind": "gap",
+        "a": "one-solid",
+        "b": "line-a-solid",
+        "min": 1,
+        "label": "one-solid / line-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "two",
+        "b": "line-b",
+        "min": 1,
+        "label": "two / line-b"
+      },
+      {
+        "kind": "gap",
+        "a": "two-solid",
+        "b": "line-b-solid",
+        "min": 1,
+        "label": "two-solid / line-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "line-a",
+        "b": "line-b",
+        "min": 1,
+        "label": "line-a / line-b"
+      },
+      {
+        "kind": "gap",
+        "a": "line-a-solid",
+        "b": "line-b-solid",
+        "min": 1,
+        "label": "line-a-solid / line-b-solid"
+      }
+    ],
+    "indent-outdent": [
+      {
+        "kind": "gap",
+        "a": "arrow-shaft",
+        "b": "full-a",
+        "min": 1,
+        "label": "arrow-shaft / full-a"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-shaft-solid",
+        "b": "full-a-solid",
+        "min": 1,
+        "label": "arrow-shaft-solid / full-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-shaft",
+        "b": "full-b",
+        "min": 1,
+        "label": "arrow-shaft / full-b"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-shaft-solid",
+        "b": "full-b-solid",
+        "min": 1,
+        "label": "arrow-shaft-solid / full-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-shaft",
+        "b": "short-a",
+        "min": 1,
+        "label": "arrow-shaft / short-a"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-shaft-solid",
+        "b": "short-a-solid",
+        "min": 1,
+        "label": "arrow-shaft-solid / short-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-shaft",
+        "b": "short-b",
+        "min": 1,
+        "label": "arrow-shaft / short-b"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-shaft-solid",
+        "b": "short-b-solid",
+        "min": 1,
+        "label": "arrow-shaft-solid / short-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head",
+        "b": "full-a",
+        "min": 1,
+        "label": "arrow-head / full-a"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "full-a-solid",
+        "min": 1,
+        "label": "arrow-head-solid / full-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head",
+        "b": "full-b",
+        "min": 1,
+        "label": "arrow-head / full-b"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "full-b-solid",
+        "min": 1,
+        "label": "arrow-head-solid / full-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head",
+        "b": "short-a",
+        "min": 1,
+        "label": "arrow-head / short-a"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "short-a-solid",
+        "min": 1,
+        "label": "arrow-head-solid / short-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head",
+        "b": "short-b",
+        "min": 1,
+        "label": "arrow-head / short-b"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "short-b-solid",
+        "min": 1,
+        "label": "arrow-head-solid / short-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "short-a",
+        "b": "short-b",
+        "min": 1,
+        "label": "short-a / short-b"
+      },
+      {
+        "kind": "gap",
+        "a": "short-a-solid",
+        "b": "short-b-solid",
+        "min": 1,
+        "label": "short-a-solid / short-b-solid"
+      }
+    ],
+    "horizontal-rule": [
+      {
+        "kind": "gap",
+        "a": "top-1",
+        "b": "top-2",
+        "min": 1,
+        "label": "top-1 / top-2"
+      },
+      {
+        "kind": "gap",
+        "a": "top-1-solid",
+        "b": "top-2-solid",
+        "min": 1,
+        "label": "top-1-solid / top-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "top-2",
+        "b": "rule",
+        "min": 1,
+        "label": "top-2 / rule"
+      },
+      {
+        "kind": "gap",
+        "a": "top-2-solid",
+        "b": "rule-solid",
+        "min": 1,
+        "label": "top-2-solid / rule-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "rule",
+        "b": "bottom-1",
+        "min": 1,
+        "label": "rule / bottom-1"
+      },
+      {
+        "kind": "gap",
+        "a": "rule-solid",
+        "b": "bottom-1-solid",
+        "min": 1,
+        "label": "rule-solid / bottom-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bottom-1",
+        "b": "bottom-2",
+        "min": 1,
+        "label": "bottom-1 / bottom-2"
+      },
+      {
+        "kind": "gap",
+        "a": "bottom-1-solid",
+        "b": "bottom-2-solid",
+        "min": 1,
+        "label": "bottom-1-solid / bottom-2-solid"
+      }
+    ],
+    "text-color": [
+      {
+        "kind": "gap",
+        "a": "legs",
+        "b": "swatch-frame",
+        "min": 1,
+        "label": "legs / swatch-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "legs-solid",
+        "b": "swatch-solid",
+        "min": 1,
+        "label": "legs-solid / swatch-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "crossbar",
+        "b": "swatch-frame",
+        "min": 1,
+        "label": "crossbar / swatch-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "crossbar-solid",
+        "b": "swatch-solid",
+        "min": 1,
+        "label": "crossbar-solid / swatch-solid"
+      }
+    ],
+    "text-highlight": [
+      {
+        "kind": "gap",
+        "a": "line-1",
+        "b": "line-2",
+        "min": 1,
+        "label": "line-1 / line-2"
+      },
+      {
+        "kind": "gap",
+        "a": "line-1-solid",
+        "b": "line-2-solid",
+        "min": 1,
+        "label": "line-1-solid / line-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2",
+        "b": "marker",
+        "min": 1,
+        "label": "line-2 / marker"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2-solid",
+        "b": "marker-solid",
+        "min": 1,
+        "label": "line-2-solid / marker-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2",
+        "b": "band",
+        "min": 1,
+        "label": "line-2 / band"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2-solid",
+        "b": "band-solid",
+        "min": 1,
+        "label": "line-2-solid / band-solid"
+      }
+    ],
+    "clear-formatting": [
+      {
+        "kind": "gap",
+        "a": "stem",
+        "b": "underline",
+        "min": 1,
+        "label": "stem / underline"
+      },
+      {
+        "kind": "gap",
+        "a": "stem-solid",
+        "b": "underline-solid",
+        "min": 1,
+        "label": "stem-solid / underline-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "underline",
+        "b": "badge-a",
+        "min": 1,
+        "label": "underline / badge-a"
+      },
+      {
+        "kind": "gap",
+        "a": "underline-solid",
+        "b": "badge-a-solid",
+        "min": 1,
+        "label": "underline-solid / badge-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "underline",
+        "b": "badge-b",
+        "min": 1,
+        "label": "underline / badge-b"
+      },
+      {
+        "kind": "gap",
+        "a": "underline-solid",
+        "b": "badge-b-solid",
+        "min": 1,
+        "label": "underline-solid / badge-b-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "stem",
+        "b": "badge-a",
+        "min": 1,
+        "label": "stem / badge-a"
+      },
+      {
+        "kind": "gap",
+        "a": "stem-solid",
+        "b": "badge-a-solid",
+        "min": 1,
+        "label": "stem-solid / badge-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "stem",
+        "b": "badge-b",
+        "min": 1,
+        "label": "stem / badge-b"
+      },
+      {
+        "kind": "gap",
+        "a": "stem-solid",
+        "b": "badge-b-solid",
+        "min": 1,
+        "label": "stem-solid / badge-b-solid"
+      }
+    ],
+    "spell-check": [
+      {
+        "kind": "gap",
+        "a": "line-1",
+        "b": "line-2",
+        "min": 1,
+        "label": "line-1 / line-2"
+      },
+      {
+        "kind": "gap",
+        "a": "line-1-solid",
+        "b": "line-2-solid",
+        "min": 1,
+        "label": "line-1-solid / line-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2",
+        "b": "squiggle",
+        "min": 1,
+        "label": "line-2 / squiggle"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2-solid",
+        "b": "squiggle-solid",
+        "min": 1,
+        "label": "line-2-solid / squiggle-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2",
+        "b": "check",
+        "min": 1,
+        "label": "line-2 / check"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2-solid",
+        "b": "check-solid",
+        "min": 1,
+        "label": "line-2-solid / check-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "squiggle",
+        "b": "check",
+        "min": 1,
+        "label": "squiggle / check"
+      },
+      {
+        "kind": "gap",
+        "a": "squiggle-solid",
+        "b": "check-solid",
+        "min": 1,
+        "label": "squiggle-solid / check-solid"
+      }
+    ],
+    "find-and-replace": [
+      {
+        "kind": "gap",
+        "a": "stub",
+        "b": "match",
+        "min": 1,
+        "label": "stub / match"
+      },
+      {
+        "kind": "gap",
+        "a": "stub-solid",
+        "b": "match-solid",
+        "min": 1,
+        "label": "stub-solid / match-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "stub",
+        "b": "replacement",
+        "min": 1,
+        "label": "stub / replacement"
+      },
+      {
+        "kind": "gap",
+        "a": "stub-solid",
+        "b": "replacement-solid",
+        "min": 1,
+        "label": "stub-solid / replacement-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "match",
+        "b": "replacement",
+        "min": 1,
+        "label": "match / replacement"
+      },
+      {
+        "kind": "gap",
+        "a": "match-solid",
+        "b": "replacement-solid",
+        "min": 1,
+        "label": "match-solid / replacement-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "row",
+        "b": "replacement",
+        "min": 1,
+        "label": "row / replacement"
+      },
+      {
+        "kind": "gap",
+        "a": "row-solid",
+        "b": "replacement-solid",
+        "min": 1,
+        "label": "row-solid / replacement-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "row",
+        "b": "match",
+        "min": 1,
+        "label": "row / match"
+      },
+      {
+        "kind": "gap",
+        "a": "row-solid",
+        "b": "match-solid",
+        "min": 1,
+        "label": "row-solid / match-solid"
+      }
+    ],
+    "page-break": [
+      {
+        "kind": "gap",
+        "a": "text-1",
+        "b": "text-2",
+        "min": 1,
+        "label": "text-1 / text-2"
+      },
+      {
+        "kind": "gap",
+        "a": "text-1-solid",
+        "b": "text-2-solid",
+        "min": 1,
+        "label": "text-1-solid / text-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "text-2",
+        "b": "next-line",
+        "min": 1,
+        "label": "text-2 / next-line"
+      },
+      {
+        "kind": "gap",
+        "a": "text-2-solid",
+        "b": "next-line-solid",
+        "min": 1,
+        "label": "text-2-solid / next-line-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "next-line",
+        "b": "dash-l",
+        "min": 1,
+        "label": "next-line / dash-l"
+      },
+      {
+        "kind": "gap",
+        "a": "next-line-solid",
+        "b": "dash-l-solid",
+        "min": 1,
+        "label": "next-line-solid / dash-l-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "next-line",
+        "b": "dash-r",
+        "min": 1,
+        "label": "next-line / dash-r"
+      },
+      {
+        "kind": "gap",
+        "a": "next-line-solid",
+        "b": "dash-r-solid",
+        "min": 1,
+        "label": "next-line-solid / dash-r-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dash-l",
+        "b": "dash-r",
+        "min": 1,
+        "label": "dash-l / dash-r"
+      },
+      {
+        "kind": "gap",
+        "a": "dash-l-solid",
+        "b": "dash-r-solid",
+        "min": 1,
+        "label": "dash-l-solid / dash-r-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "text-1",
+        "b": "page-frame",
+        "min": 1,
+        "label": "text-1 / page-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "text-1-solid",
+        "b": "page-solid",
+        "min": 1,
+        "label": "text-1-solid / page-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "text-2",
+        "b": "page-frame",
+        "min": 1,
+        "label": "text-2 / page-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "text-2-solid",
+        "b": "page-solid",
+        "min": 1,
+        "label": "text-2-solid / page-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "next-line",
+        "b": "page-frame",
+        "min": 1,
+        "label": "next-line / page-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "next-line-solid",
+        "b": "page-solid",
+        "min": 1,
+        "label": "next-line-solid / page-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dash-l",
+        "b": "page-frame",
+        "min": 1,
+        "label": "dash-l / page-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "dash-l-solid",
+        "b": "page-solid",
+        "min": 1,
+        "label": "dash-l-solid / page-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dash-r",
+        "b": "page-frame",
+        "min": 1,
+        "label": "dash-r / page-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "dash-r-solid",
+        "b": "page-solid",
+        "min": 1,
+        "label": "dash-r-solid / page-solid"
+      }
+    ],
+    "word-wrap": [
+      {
+        "kind": "gap",
+        "a": "arrow",
+        "b": "row-1",
+        "min": 1,
+        "label": "arrow / row-1"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-solid",
+        "b": "row-1-solid",
+        "min": 1,
+        "label": "arrow-solid / row-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow",
+        "b": "row-2",
+        "min": 1,
+        "label": "arrow / row-2"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-solid",
+        "b": "row-2-solid",
+        "min": 1,
+        "label": "arrow-solid / row-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow",
+        "b": "row-3",
+        "min": 1,
+        "label": "arrow / row-3"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-solid",
+        "b": "row-3-solid",
+        "min": 1,
+        "label": "arrow-solid / row-3-solid"
+      },
+      {
+        "kind": "self-gap",
+        "a": "arrow",
+        "b": "arrow",
+        "ai": 4,
+        "bi": 2,
+        "min": 1,
+        "label": "arrow barb / bend"
+      },
+      {
+        "kind": "self-gap",
+        "a": "arrow-solid",
+        "b": "arrow-solid",
+        "ai": 4,
+        "bi": 2,
+        "min": 1,
+        "label": "arrow-solid barb / bend"
+      }
+    ],
+    "line-spacing": [
+      {
+        "kind": "gap",
+        "a": "arrow",
+        "b": "row-top",
+        "min": 1,
+        "label": "arrow / row-top"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-solid",
+        "b": "row-top-solid",
+        "min": 1,
+        "label": "arrow-solid / row-top-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow",
+        "b": "row-mid",
+        "min": 1,
+        "label": "arrow / row-mid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-solid",
+        "b": "row-mid-solid",
+        "min": 1,
+        "label": "arrow-solid / row-mid-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow",
+        "b": "row-bottom",
+        "min": 1,
+        "label": "arrow / row-bottom"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-solid",
+        "b": "row-bottom-solid",
+        "min": 1,
+        "label": "arrow-solid / row-bottom-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "row-top",
+        "b": "row-mid",
+        "min": 1,
+        "label": "row-top / row-mid"
+      },
+      {
+        "kind": "gap",
+        "a": "row-top-solid",
+        "b": "row-mid-solid",
+        "min": 1,
+        "label": "row-top-solid / row-mid-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "row-mid",
+        "b": "row-bottom",
+        "min": 1,
+        "label": "row-mid / row-bottom"
+      },
+      {
+        "kind": "gap",
+        "a": "row-mid-solid",
+        "b": "row-bottom-solid",
+        "min": 1,
+        "label": "row-mid-solid / row-bottom-solid"
+      }
+    ],
+    "bold": [
+      {
+        "kind": "opaque",
+        "a": "glyph",
+        "label": "glyph stays opaque at joined glyph strokes"
+      },
+      {
+        "kind": "opaque",
+        "a": "glyph-solid",
+        "label": "glyph-solid stays opaque at joined glyph strokes"
+      }
+    ],
+    "italic": [
+      {
+        "kind": "opaque",
+        "a": "glyph",
+        "label": "glyph stays opaque at joined glyph strokes"
+      },
+      {
+        "kind": "opaque",
+        "a": "glyph-solid",
+        "label": "glyph-solid stays opaque at joined glyph strokes"
+      }
+    ],
+    "strikethrough": [
+      {
+        "kind": "opaque",
+        "a": "glyph",
+        "label": "glyph stays opaque at joined glyph strokes"
+      },
+      {
+        "kind": "opaque",
+        "a": "glyph-solid",
+        "label": "glyph-solid stays opaque at joined glyph strokes"
+      }
+    ],
+    "letter-case": [
+      {
+        "kind": "opaque",
+        "a": "glyph",
+        "label": "glyph stays opaque at joined glyph strokes"
+      },
+      {
+        "kind": "opaque",
+        "a": "glyph-solid",
+        "label": "glyph-solid stays opaque at joined glyph strokes"
+      }
+    ]
+  },
+  "scope": "All-frame exported painted gaps and intentional typographic joins.",
+  "exceptions": {
+    "glyphs": "Legs, crossbars and bowls intentionally join within the glyph. Counters remain open; native all-frame counter checks cover Bold, Paragraph, Text color and Letter case.",
+    "strikethrough": "The drawn rule intentionally crosses the glyph.",
+    "text-highlight": "The opaque marker tip meets the current ink endpoint; the Strong finish lifts after the band is complete."
+  }
+}

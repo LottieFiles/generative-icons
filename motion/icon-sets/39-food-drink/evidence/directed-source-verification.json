@@ -1,0 +1,602 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 50,
+  "nativeTransformNodes": 288,
+  "nativeTransformMaxCoordinateError": 0.00001000000000139778,
+  "checks": [
+    {
+      "name": "coffee-cup",
+      "fixedParts": [
+        "coffee-cup-body-frame",
+        "coffee-cup-handle"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "coffee-cup-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "coffee-cup-handle"
+        }
+      ]
+    },
+    {
+      "name": "coffee-cup-strong",
+      "fixedParts": [
+        "coffee-cup-body-frame",
+        "coffee-cup-handle"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "coffee-cup-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "coffee-cup-handle"
+        }
+      ]
+    },
+    {
+      "name": "tea-cup",
+      "fixedParts": [
+        "tea-cup-saucer"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "tea-cup-saucer"
+        }
+      ]
+    },
+    {
+      "name": "tea-cup-strong",
+      "fixedParts": [
+        "tea-cup-saucer"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "tea-cup-saucer"
+        }
+      ]
+    },
+    {
+      "name": "wine-glass",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "wine-glass-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "beer-mug",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "beer-mug-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "cocktail",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "cocktail-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "cooking-pot",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cooking-pot-lid-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "cooking-pot-knob"
+        }
+      ]
+    },
+    {
+      "name": "cooking-pot-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cooking-pot-lid-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "cooking-pot-knob"
+        }
+      ]
+    },
+    {
+      "name": "frying-pan",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "frying-pan-pan"
+        },
+        {
+          "type": "rigid",
+          "part": "frying-pan-handle"
+        }
+      ]
+    },
+    {
+      "name": "frying-pan-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "frying-pan-pan"
+        },
+        {
+          "type": "rigid",
+          "part": "frying-pan-handle"
+        }
+      ]
+    },
+    {
+      "name": "kettle",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "kettle-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "kettle-spout"
+        }
+      ]
+    },
+    {
+      "name": "kettle-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "kettle-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "kettle-spout"
+        }
+      ]
+    },
+    {
+      "name": "toaster",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "toaster-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "blender",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "blender-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "chef-hat",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "chef-hat-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "cutlery",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cutlery-fork"
+        },
+        {
+          "type": "rigid",
+          "part": "cutlery-blade-frame"
+        }
+      ]
+    },
+    {
+      "name": "cutlery-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cutlery-fork"
+        },
+        {
+          "type": "rigid",
+          "part": "cutlery-blade-frame"
+        }
+      ]
+    },
+    {
+      "name": "pizza",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "pizza-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "burger",
+      "fixedParts": [
+        "burger-bottom-bun-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "burger-bottom-bun-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "burger-top-bun-frame"
+        }
+      ]
+    },
+    {
+      "name": "burger-strong",
+      "fixedParts": [
+        "burger-bottom-bun-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "burger-bottom-bun-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "burger-top-bun-frame"
+        }
+      ]
+    },
+    {
+      "name": "cake",
+      "fixedParts": [
+        "cake-cake-frame",
+        "cake-candle"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "cake-cake-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "cake-candle"
+        }
+      ]
+    },
+    {
+      "name": "cake-strong",
+      "fixedParts": [
+        "cake-cake-frame",
+        "cake-candle"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "cake-cake-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "cake-candle"
+        }
+      ]
+    },
+    {
+      "name": "ice-cream",
+      "fixedParts": [
+        "ice-cream-cone-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ice-cream-cone-frame"
+        }
+      ]
+    },
+    {
+      "name": "ice-cream-strong",
+      "fixedParts": [
+        "ice-cream-cone-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ice-cream-cone-frame"
+        }
+      ]
+    },
+    {
+      "name": "noodle-bowl",
+      "fixedParts": [
+        "noodle-bowl-bowl-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "noodle-bowl-bowl-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "noodle-bowl-stick-0"
+        },
+        {
+          "type": "rigid",
+          "part": "noodle-bowl-stick-1"
+        }
+      ]
+    },
+    {
+      "name": "noodle-bowl-strong",
+      "fixedParts": [
+        "noodle-bowl-bowl-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "noodle-bowl-bowl-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "noodle-bowl-stick-0"
+        },
+        {
+          "type": "rigid",
+          "part": "noodle-bowl-stick-1"
+        }
+      ]
+    },
+    {
+      "name": "bread",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "bread-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "recipe-book",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "recipe-book-cover-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "recipe-book-ribbon"
+        }
+      ]
+    },
+    {
+      "name": "recipe-book-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "recipe-book-cover-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "recipe-book-ribbon"
+        }
+      ]
+    },
+    {
+      "name": "restaurant-menu",
+      "fixedParts": [
+        "restaurant-menu-page-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "restaurant-menu-page-frame"
+        }
+      ]
+    },
+    {
+      "name": "restaurant-menu-strong",
+      "fixedParts": [
+        "restaurant-menu-page-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "restaurant-menu-page-frame"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

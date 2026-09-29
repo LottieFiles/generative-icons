@@ -1,0 +1,676 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 56,
+  "nativeTransformNodes": 344,
+  "nativeTransformMaxCoordinateError": 0.000012067287915584757,
+  "checks": [
+    {
+      "name": "partly-cloudy",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "partly-cloudy-cloud-frame"
+        }
+      ]
+    },
+    {
+      "name": "partly-cloudy-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "partly-cloudy-cloud-frame"
+        }
+      ]
+    },
+    {
+      "name": "rain",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "rain-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "snow",
+      "fixedParts": [
+        "snow-cloud-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "snow-cloud-frame"
+        }
+      ]
+    },
+    {
+      "name": "snow-strong",
+      "fixedParts": [
+        "snow-cloud-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "snow-cloud-frame"
+        }
+      ]
+    },
+    {
+      "name": "hail",
+      "fixedParts": [
+        "hail-cloud-frame",
+        "hail-ground"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "hail-cloud-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "hail-ground"
+        }
+      ]
+    },
+    {
+      "name": "hail-strong",
+      "fixedParts": [
+        "hail-cloud-frame",
+        "hail-ground"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "hail-cloud-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "hail-ground"
+        }
+      ]
+    },
+    {
+      "name": "thunderstorm",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "thunderstorm-bolt"
+        }
+      ]
+    },
+    {
+      "name": "thunderstorm-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "thunderstorm-bolt"
+        }
+      ]
+    },
+    {
+      "name": "snowflake",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "snowflake-arm-0"
+        },
+        {
+          "type": "rigid",
+          "part": "snowflake-arm-1"
+        },
+        {
+          "type": "rigid",
+          "part": "snowflake-arm-2"
+        }
+      ]
+    },
+    {
+      "name": "snowflake-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "snowflake-arm-0"
+        },
+        {
+          "type": "rigid",
+          "part": "snowflake-arm-1"
+        },
+        {
+          "type": "rigid",
+          "part": "snowflake-arm-2"
+        }
+      ]
+    },
+    {
+      "name": "wind",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "wind-gust-0"
+        },
+        {
+          "type": "rigid",
+          "part": "wind-gust-1"
+        },
+        {
+          "type": "rigid",
+          "part": "wind-gust-2"
+        }
+      ]
+    },
+    {
+      "name": "wind-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "wind-gust-0"
+        },
+        {
+          "type": "rigid",
+          "part": "wind-gust-1"
+        },
+        {
+          "type": "rigid",
+          "part": "wind-gust-2"
+        }
+      ]
+    },
+    {
+      "name": "fog",
+      "fixedParts": [
+        "fog-cloud-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "fog-cloud-frame"
+        }
+      ]
+    },
+    {
+      "name": "fog-strong",
+      "fixedParts": [
+        "fog-cloud-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "fog-cloud-frame"
+        }
+      ]
+    },
+    {
+      "name": "tornado",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "tornado-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "hurricane",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "hurricane-arm-0"
+        },
+        {
+          "type": "rigid",
+          "part": "hurricane-arm-1"
+        },
+        {
+          "type": "rigid",
+          "part": "hurricane-eye-frame"
+        }
+      ]
+    },
+    {
+      "name": "hurricane-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "hurricane-arm-0"
+        },
+        {
+          "type": "rigid",
+          "part": "hurricane-arm-1"
+        },
+        {
+          "type": "rigid",
+          "part": "hurricane-eye-frame"
+        }
+      ]
+    },
+    {
+      "name": "rainbow",
+      "fixedParts": [
+        "rainbow-horizon"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rainbow-horizon"
+        }
+      ]
+    },
+    {
+      "name": "rainbow-strong",
+      "fixedParts": [
+        "rainbow-horizon"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rainbow-horizon"
+        }
+      ]
+    },
+    {
+      "name": "sunrise",
+      "fixedParts": [
+        "sunrise-horizon"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sunrise-horizon"
+        }
+      ]
+    },
+    {
+      "name": "sunrise-strong",
+      "fixedParts": [
+        "sunrise-horizon"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sunrise-horizon"
+        }
+      ]
+    },
+    {
+      "name": "sunset",
+      "fixedParts": [
+        "sunset-horizon"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sunset-horizon"
+        }
+      ]
+    },
+    {
+      "name": "sunset-strong",
+      "fixedParts": [
+        "sunset-horizon"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sunset-horizon"
+        }
+      ]
+    },
+    {
+      "name": "moon-phase",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "moon-phase-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "temperature",
+      "fixedParts": [
+        "temperature-body-frame",
+        "temperature-tick-0",
+        "temperature-tick-1",
+        "temperature-tick-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "temperature-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "temperature-tick-0"
+        },
+        {
+          "type": "fixed",
+          "part": "temperature-tick-1"
+        },
+        {
+          "type": "fixed",
+          "part": "temperature-tick-2"
+        }
+      ]
+    },
+    {
+      "name": "temperature-strong",
+      "fixedParts": [
+        "temperature-body-frame",
+        "temperature-tick-0",
+        "temperature-tick-1",
+        "temperature-tick-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "temperature-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "temperature-tick-0"
+        },
+        {
+          "type": "fixed",
+          "part": "temperature-tick-1"
+        },
+        {
+          "type": "fixed",
+          "part": "temperature-tick-2"
+        }
+      ]
+    },
+    {
+      "name": "humidity",
+      "fixedParts": [
+        "humidity-drop"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "humidity-drop"
+        }
+      ]
+    },
+    {
+      "name": "humidity-strong",
+      "fixedParts": [
+        "humidity-drop"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "humidity-drop"
+        }
+      ]
+    },
+    {
+      "name": "uv-index",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "uv-index-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "umbrella",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "umbrella-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "windsock",
+      "fixedParts": [
+        "windsock-pole",
+        "windsock-foot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "windsock-pole"
+        },
+        {
+          "type": "fixed",
+          "part": "windsock-foot"
+        }
+      ]
+    },
+    {
+      "name": "windsock-strong",
+      "fixedParts": [
+        "windsock-pole",
+        "windsock-foot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "windsock-pole"
+        },
+        {
+          "type": "fixed",
+          "part": "windsock-foot"
+        }
+      ]
+    },
+    {
+      "name": "weather-radar",
+      "fixedParts": [
+        "weather-radar-scope-frame",
+        "weather-radar-range"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "weather-radar-scope-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "weather-radar-range"
+        },
+        {
+          "type": "rigid",
+          "part": "weather-radar-arm"
+        }
+      ]
+    },
+    {
+      "name": "weather-radar-strong",
+      "fixedParts": [
+        "weather-radar-scope-frame",
+        "weather-radar-range"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "weather-radar-scope-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "weather-radar-range"
+        },
+        {
+          "type": "rigid",
+          "part": "weather-radar-arm"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Icon project configuration v1",
+  "type": "object",
+  "required": ["schemaVersion", "assets", "descriptors", "publicPath", "defaults"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "assets": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?(?:/|$))[^\\\\]+$"},
+    "descriptors": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?(?:/|$))[^\\\\]+$"},
+    "publicPath": {"type": "string", "pattern": "^/[a-zA-Z0-9_/-]+$"},
+    "framework": {"type": "string"},
+    "packageManager": {"type": "string"},
+    "defaults": {"type": "object", "properties": {"color": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"}, "style": {"enum": ["outline", "solid", "duotone"]}, "weight": {"enum": [1.5, 2, 2.5]}, "motion": {"enum": ["light", "strong"]}}}
+  }
+}

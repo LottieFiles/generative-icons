@@ -1,0 +1,48 @@
+name: Bug report
+description: Something renders, plays or installs incorrectly.
+labels: [bug]
+body:
+  - type: input
+    id: icon
+    attributes:
+      label: Icon ID
+      description: Leave empty if the bug is not specific to an icon.
+      placeholder: heart
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Icon artwork or motion
+        - Runtime package
+        - React package
+        - CLI
+        - Local gallery
+        - Authoring tools
+        - Documentation
+    validations:
+      required: true
+  - type: input
+    id: variant
+    attributes:
+      label: Variant
+      description: Motion profile, style, weight, theme and size.
+      placeholder: Strong, Outline 2, dark, 24 px
+  - type: input
+    id: version
+    attributes:
+      label: Package version or commit
+      placeholder: 0.1.0
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include your environment (browser, framework, Node version) and a screenshot or recording if you can.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

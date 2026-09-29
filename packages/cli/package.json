@@ -1,0 +1,46 @@
+{
+  "name": "@lottiefiles/generative-icons-cli",
+  "version": "0.1.0",
+  "description": "Generative Animated Icons CLI: search, add and set up animated icons in your project",
+  "keywords": [
+    "lottie",
+    "dotlottie",
+    "animated-icons",
+    "icons",
+    "cli",
+    "generative-animated-icons"
+  ],
+  "homepage": "https://github.com/LottieFiles/lottie-generative-icons#readme",
+  "bugs": {
+    "url": "https://github.com/LottieFiles/lottie-generative-icons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LottieFiles/lottie-generative-icons.git",
+    "directory": "packages/cli"
+  },
+  "author": "LottieFiles",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "lottie-icons": "dist/cli.mjs"
+  },
+  "files": [
+    "dist/cli.mjs",
+    "dist/project.mjs",
+    "dist/skill/SKILL.md",
+    "dist/skill/references/*.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@lottiefiles/generative-icons": "0.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

@@ -1,0 +1,609 @@
+{
+ "version": 1,
+ "icons": {
+  "partly-cloudy": [
+   {
+    "kind": "gap",
+    "a": "ray-0",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "ray-0 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-1",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "ray-1 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-2",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "ray-2 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-3",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "ray-3 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-4",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "ray-4 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "sun-frame",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "sun-frame / cloud-frame"
+   }
+  ],
+  "rain": [
+   {
+    "kind": "gap",
+    "a": "streak-0",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "streak-0 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "streak-1",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "streak-1 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "streak-2",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "streak-2 / cloud-frame"
+   }
+  ],
+  "snow": [
+   {
+    "kind": "gap",
+    "a": "flake-0",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "flake-0 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "flake-1",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "flake-1 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "flake-2",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "flake-2 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "flake-3",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "flake-3 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "flake-4",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "flake-4 / cloud-frame"
+   }
+  ],
+  "hail": [
+   {
+    "kind": "gap",
+    "a": "pellet-0",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "pellet-0 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "pellet-1",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "pellet-1 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "pellet-2",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "pellet-2 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "pellet-0",
+    "b": "ground",
+    "min": -0.05,
+    "label": "pellet-0 / ground"
+   },
+   {
+    "kind": "gap",
+    "a": "pellet-1",
+    "b": "ground",
+    "min": -0.05,
+    "label": "pellet-1 / ground"
+   },
+   {
+    "kind": "gap",
+    "a": "pellet-2",
+    "b": "ground",
+    "min": -0.05,
+    "label": "pellet-2 / ground"
+   }
+  ],
+  "thunderstorm": [
+   {
+    "kind": "gap",
+    "a": "bolt",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "bolt / cloud-frame"
+   }
+  ],
+  "snowflake": [
+   {
+    "kind": "gap",
+    "a": "branch-0",
+    "b": "branch-1",
+    "min": 1,
+    "label": "branch-0 / branch-1"
+   },
+   {
+    "kind": "gap",
+    "a": "branch-1",
+    "b": "branch-2",
+    "min": 1,
+    "label": "branch-1 / branch-2"
+   },
+   {
+    "kind": "gap",
+    "a": "branch-2",
+    "b": "branch-3",
+    "min": 1,
+    "label": "branch-2 / branch-3"
+   },
+   {
+    "kind": "gap",
+    "a": "branch-3",
+    "b": "branch-4",
+    "min": 1,
+    "label": "branch-3 / branch-4"
+   },
+   {
+    "kind": "gap",
+    "a": "branch-4",
+    "b": "branch-5",
+    "min": 1,
+    "label": "branch-4 / branch-5"
+   },
+   {
+    "kind": "gap",
+    "a": "branch-5",
+    "b": "branch-0",
+    "min": 1,
+    "label": "branch-5 / branch-0"
+   }
+  ],
+  "wind": [
+   {
+    "kind": "gap",
+    "a": "gust-0",
+    "b": "gust-1",
+    "min": 1,
+    "label": "gust-0 / gust-1"
+   },
+   {
+    "kind": "gap",
+    "a": "gust-1",
+    "b": "gust-2",
+    "min": 1,
+    "label": "gust-1 / gust-2"
+   }
+  ],
+  "fog": [
+   {
+    "kind": "gap",
+    "a": "layer-0",
+    "b": "cloud-frame",
+    "min": 1,
+    "label": "layer-0 / cloud-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "layer-0",
+    "b": "layer-1",
+    "min": 1,
+    "label": "layer-0 / layer-1"
+   },
+   {
+    "kind": "gap",
+    "a": "layer-1",
+    "b": "layer-2",
+    "min": 1,
+    "label": "layer-1 / layer-2"
+   }
+  ],
+  "tornado": [
+   {
+    "kind": "gap",
+    "a": "band-0",
+    "b": "band-1",
+    "min": 1,
+    "label": "band-0 / band-1"
+   },
+   {
+    "kind": "gap",
+    "a": "band-1",
+    "b": "band-2",
+    "min": 1,
+    "label": "band-1 / band-2"
+   },
+   {
+    "kind": "gap",
+    "a": "band-2",
+    "b": "band-3",
+    "min": 1,
+    "label": "band-2 / band-3"
+   },
+   {
+    "kind": "gap",
+    "a": "band-3",
+    "b": "band-4",
+    "min": 1,
+    "label": "band-3 / band-4"
+   }
+  ],
+  "hurricane": [
+   {
+    "kind": "gap",
+    "a": "arm-0",
+    "b": "arm-1",
+    "min": 1,
+    "label": "arm-0 / arm-1"
+   }
+  ],
+  "rainbow": [
+   {
+    "kind": "gap",
+    "a": "band-0",
+    "b": "band-1",
+    "min": 1,
+    "label": "band-0 / band-1"
+   },
+   {
+    "kind": "gap",
+    "a": "band-1",
+    "b": "band-2",
+    "min": 1,
+    "label": "band-1 / band-2"
+   },
+   {
+    "kind": "gap",
+    "a": "band-0",
+    "b": "horizon",
+    "min": 1,
+    "label": "band-0 / horizon"
+   }
+  ],
+  "sunrise": [
+   {
+    "kind": "gap",
+    "a": "chevron",
+    "b": "horizon",
+    "min": 1,
+    "label": "chevron / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-0",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-0 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-1",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-1 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-2",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-2 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-3",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-3 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-4",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-4 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-0",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-0 / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-1",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-1 / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-2",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-2 / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-3",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-3 / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-4",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-4 / horizon"
+   }
+  ],
+  "sunset": [
+   {
+    "kind": "gap",
+    "a": "chevron",
+    "b": "horizon",
+    "min": 1,
+    "label": "chevron / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-0",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-0 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-1",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-1 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-2",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-2 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-3",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-3 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-4",
+    "b": "sun-frame",
+    "min": 1,
+    "label": "ray-4 / sun-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-0",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-0 / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-1",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-1 / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-2",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-2 / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-3",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-3 / horizon"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-4",
+    "b": "horizon",
+    "min": 1,
+    "label": "ray-4 / horizon"
+   }
+  ],
+  "moon-phase": [],
+  "temperature": [
+   {
+    "kind": "gap",
+    "a": "column",
+    "b": "body-frame",
+    "min": 1,
+    "label": "column / body-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "bulb",
+    "b": "body-frame",
+    "min": 0.6,
+    "label": "bulb / body-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "tick-0",
+    "b": "body-frame",
+    "min": 1,
+    "label": "tick-0 / body-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "tick-1",
+    "b": "body-frame",
+    "min": 1,
+    "label": "tick-1 / body-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "tick-2",
+    "b": "body-frame",
+    "min": 1,
+    "label": "tick-2 / body-frame"
+   }
+  ],
+  "humidity": [],
+  "uv-index": [
+   {
+    "kind": "gap",
+    "a": "ray-0",
+    "b": "disc-frame",
+    "min": 1,
+    "label": "ray-0 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-1",
+    "b": "disc-frame",
+    "min": 1,
+    "label": "ray-1 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-2",
+    "b": "disc-frame",
+    "min": 1,
+    "label": "ray-2 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-3",
+    "b": "disc-frame",
+    "min": 1,
+    "label": "ray-3 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-4",
+    "b": "disc-frame",
+    "min": 1,
+    "label": "ray-4 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-5",
+    "b": "disc-frame",
+    "min": 1,
+    "label": "ray-5 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-6",
+    "b": "disc-frame",
+    "min": 1,
+    "label": "ray-6 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-7",
+    "b": "disc-frame",
+    "min": 1,
+    "label": "ray-7 / disc-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "dash-0",
+    "b": "dash-1",
+    "min": 1,
+    "label": "dash-0 / dash-1"
+   },
+   {
+    "kind": "gap",
+    "a": "dash-1",
+    "b": "dash-2",
+    "min": 1,
+    "label": "dash-1 / dash-2"
+   },
+   {
+    "kind": "gap",
+    "a": "ray-2",
+    "b": "dash-1",
+    "min": 1,
+    "label": "ray-2 / dash-1"
+   }
+  ],
+  "umbrella": [],
+  "windsock": [],
+  "weather-radar": [
+   {
+    "kind": "gap",
+    "a": "arm",
+    "b": "scope-frame",
+    "min": 1,
+    "label": "arm / scope-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "cell",
+    "b": "scope-frame",
+    "min": 1,
+    "label": "cell / scope-frame"
+   },
+   {
+    "kind": "gap",
+    "a": "range",
+    "b": "scope-frame",
+    "min": 1,
+    "label": "range / scope-frame"
+   }
+  ]
+ },
+ "exceptions": {}
+}

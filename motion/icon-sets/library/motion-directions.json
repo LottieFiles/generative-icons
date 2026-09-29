@@ -1,0 +1,3012 @@
+{
+  "version": "2.2",
+  "date": "2026-09-08",
+  "status": "Existing motion and paint revision preserved. Keyframes added through the Claude Code design and Codex review workflow.",
+  "reviewer": "Codex motion-design review; no independent human motion director was engaged",
+  "scope": {
+    "icons": 59,
+    "profiles": 118,
+    "additionalReverseActions": 44,
+    "nativeActions": 162,
+    "newPreviewResetActions": 38
+  },
+  "decisions": {
+    "Keep": 4,
+    "Refine": 24,
+    "Rework": 30,
+    "Add": 1
+  },
+  "icons": [
+    {
+      "name": "heart",
+      "label": "Heart",
+      "decision": "Keep",
+      "status": "preserved",
+      "currentCritique": "The anchored tip, delayed lobes, squeeze, and release already form a clear organic beat. Light is quiet; the accepted Strong has a visible crown expansion. This is one of the few gestures with its own internal rhythm.",
+      "lightDirection": "Retain the short single beat.",
+      "strongDirection": "Retain accepted v4.1. Use its clear preparation and peak as a reference, not its deformation amounts for rigid objects.",
+      "constructionAndTest": "Preserve the approved contour and timings. Keep the notch open at Bold; do not add a second beat, sparkles, or a new favorite state.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "heart": 0.42,
+        "heart-strong": 0.72
+      },
+      "sourceSet": "01",
+      "currentAssetHashes": {
+        "heart": "86037c0191949008f3edc46472a5eeb64340b5c213acf68b90f4f2640ca2b02d",
+        "heart-strong": "fe06ffb69622f5872e17fd601df2d9243349db245d310d4f242d4a582bc80841"
+      },
+      "implementation": {
+        "intent": "The heart gives one short acknowledgement beat and returns to its anchored resting pose.",
+        "activeSeconds": {
+          "light": 0.42,
+          "strong": 0.72
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "heart",
+            "sha256": "86037c0191949008f3edc46472a5eeb64340b5c213acf68b90f4f2640ca2b02d"
+          },
+          {
+            "name": "heart-strong",
+            "sha256": "fe06ffb69622f5872e17fd601df2d9243349db245d310d4f242d4a582bc80841"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "bell",
+      "label": "Bell",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The shell and delayed clapper have convincing cause and effect. The one-second Light ring is long for frequent interaction; Strong is already expressive and does not need a larger swing.",
+      "lightDirection": "Remove the smallest late correction and aim for a complete ring around 650\u2013750 ms.",
+      "strongDirection": "Keep the broader shell swing and clapper delay. Give the main reversal a sharper change of speed, then reduce amplitude smoothly.",
+      "constructionAndTest": "Keep both real pivots and constant shell geometry. The clapper must not cross the mouth. Compare the revised Light against the current ring at 24 px.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "bell": 1,
+        "bell-strong": 1.18
+      },
+      "sourceSet": "01",
+      "currentAssetHashes": {
+        "bell": "3304e9852969fde5b82a3df46d9105eafea90147e50b5a60b67f4ccfb1d7faf3",
+        "bell-strong": "c1542584c8aef65a234344585701e7111ab64568a465930e911d48f153c9cbc5"
+      },
+      "implementation": {
+        "intent": "The bell rings from its top mount while the clapper trails and settles.",
+        "activeSeconds": {
+          "light": 0.65,
+          "strong": 0.91
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "bell",
+            "sha256": "3304e9852969fde5b82a3df46d9105eafea90147e50b5a60b67f4ccfb1d7faf3"
+          },
+          {
+            "name": "bell-strong",
+            "sha256": "c1542584c8aef65a234344585701e7111ab64568a465930e911d48f153c9cbc5"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "search",
+      "label": "Search",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The rigid lens is sound. Both profiles still read mainly as a left-right gesture; the return is almost as prominent as the search. Strong has useful travel and an inspection hold.",
+      "lightDirection": "Aim the lens, make one short scan, and ease into an inspection point. Keep recovery quieter than the scan.",
+      "strongDirection": "Use a short aim, faster scan, 60\u201380 ms inspection, and a soft shallow return. Rotation should follow the path tangent rather than read as a separate wobble.",
+      "constructionAndTest": "Lens and handle stay rigid. Keep the clear lens opening and current frame margins. No result tick or endless searching loop.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "search": 0.46,
+        "search-strong": 0.72
+      },
+      "sourceSet": "02",
+      "currentAssetHashes": {
+        "search": "148ad5fc84e6f84c35f92e45c8827b085c055a2cce23205cdc3c91039449cee1",
+        "search-strong": "c137057478491006c902a93fa73e961cac8d0ecc253b436c7dd5a2d97769f372"
+      },
+      "implementation": {
+        "intent": "The magnifier makes one short left-to-right sweep, then returns to its resting pose.",
+        "activeSeconds": {
+          "light": 0.44,
+          "strong": 0.68
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "search",
+            "sha256": "148ad5fc84e6f84c35f92e45c8827b085c055a2cce23205cdc3c91039449cee1"
+          },
+          {
+            "name": "search-strong",
+            "sha256": "c137057478491006c902a93fa73e961cac8d0ecc253b436c7dd5a2d97769f372"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "star",
+      "label": "Star",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "Strong makes a large turn then unwinds. It attracts attention, but its middle pose loses the familiar upright star and the return cancels the flourish. Light is a small generic tilt.",
+      "lightDirection": "Make one brisk 72-degree clockwise index into the same fivefold silhouette.",
+      "strongDirection": "Preload by only a few degrees, complete the same 72-degree index with a more distinct acceleration, and stop cleanly.",
+      "constructionAndTest": "Exploit true fivefold symmetry for an equal final drawing. Keep the star rigid; do not rotate 360 degrees or add sparkle particles. Check that the turn still reads as emphasis at 24 px.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "star": 0.46,
+        "star-strong": 0.76
+      },
+      "sourceSet": "03",
+      "currentAssetHashes": {
+        "star": "8a75ccc369f15202318c49a53b546d71425350264afcef58c2b8e266f59fa376",
+        "star-strong": "9f2405ec7e6d8eaa891b16e82bb2a5a25e6202e83f5b2e1f230b7b10e74e5579"
+      },
+      "implementation": {
+        "intent": "The five-point star advances exactly one point; Strong adds a brief preparation and a small detent settle.",
+        "activeSeconds": {
+          "light": 0.31,
+          "strong": 0.51
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "star",
+            "sha256": "8a75ccc369f15202318c49a53b546d71425350264afcef58c2b8e266f59fa376"
+          },
+          {
+            "name": "star-strong",
+            "sha256": "9f2405ec7e6d8eaa891b16e82bb2a5a25e6202e83f5b2e1f230b7b10e74e5579"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "check",
+      "label": "Check",
+      "decision": "Keep",
+      "status": "preserved",
+      "currentCritique": "The short arm leads the long arm and completion remains visible. Both profiles communicate a real result. Strong spends more time settling than this message needs.",
+      "lightDirection": "Keep direct stroke formation; make the check readable early.",
+      "strongDirection": "Keep the same confirmation, with the full mark established around 220\u2013280 ms. Any finishing correction must not delay recognition.",
+      "constructionAndTest": "Preserve the fixed circle and corrected inner gap. Reset should retract the mark promptly without a celebratory bounce.",
+      "statePolicy": "Keep explicit pending/complete states and Reset. Real completion must be true before the check is shown.",
+      "currentActiveSeconds": {
+        "check": 0.36,
+        "check-strong": 0.6
+      },
+      "sourceSet": "03",
+      "currentAssetHashes": {
+        "check": "de54a75d50f0031078cbe0fca1765013f473d68cd76f1704ed71be7b4ab0191e",
+        "check-reset": "29b49592242169d92b8f162642da4391fb5bb0ccaff0e828646728b5b9ccc617",
+        "check-strong": "4b685c12fa8e4b348a6c33058a7292bee5e84331ecff416450795bb876918e2c",
+        "check-reset-strong": "9bd71f350b7ff08e10201e040d0b4b4ebbd96ada45a445c00a99dd6146e58581"
+      },
+      "implementation": {
+        "intent": "An explicit completion transition; the result remains until Reset is selected.",
+        "activeSeconds": {
+          "light": 0.36,
+          "strong": 0.6
+        },
+        "stateful": true,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "check",
+            "sha256": "de54a75d50f0031078cbe0fca1765013f473d68cd76f1704ed71be7b4ab0191e"
+          },
+          {
+            "name": "check-reset",
+            "sha256": "29b49592242169d92b8f162642da4391fb5bb0ccaff0e828646728b5b9ccc617"
+          },
+          {
+            "name": "check-strong",
+            "sha256": "4b685c12fa8e4b348a6c33058a7292bee5e84331ecff416450795bb876918e2c"
+          },
+          {
+            "name": "check-reset-strong",
+            "sha256": "9bd71f350b7ff08e10201e040d0b4b4ebbd96ada45a445c00a99dd6146e58581"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "sliders",
+      "label": "Sliders",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The moving handles and fixed rails are right. The two handles largely mirror one another, so Strong reads as a wider exercise rather than a deliberate adjustment.",
+      "lightDirection": "Move the leading handle to a clear detent, then make a small secondary adjustment.",
+      "strongDirection": "Use a coarse first adjustment, a short stop, then a finer second adjustment. Give the two controls different travel distances and stopping times.",
+      "constructionAndTest": "Rails must stay clipped around the moving rings. Review the handle openings at Bold and 24 px. Avoid synchronized mirrored travel.",
+      "statePolicy": "In a product, retain the requested values. The gallery can show an explicit adjustment and reset cycle.",
+      "currentActiveSeconds": {
+        "sliders": 0.46,
+        "sliders-strong": 0.8
+      },
+      "sourceSet": "03",
+      "currentAssetHashes": {
+        "sliders": "2a10083793e842e6082085bfb79826c8008f1dddef2ba2afc12216410d6f8b6a",
+        "sliders-strong": "9b8bf2f7d8ae7585b2ac55c77b0c93ee517a6b7808ff12cdc5a94f480786ed9f"
+      },
+      "implementation": {
+        "intent": "The top handle makes the coarse adjustment; the lower handle follows with a smaller fine correction before both return.",
+        "activeSeconds": {
+          "light": 0.55,
+          "strong": 0.79
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "sliders",
+            "sha256": "2a10083793e842e6082085bfb79826c8008f1dddef2ba2afc12216410d6f8b6a"
+          },
+          {
+            "name": "sliders-strong",
+            "sha256": "9b8bf2f7d8ae7585b2ac55c77b0c93ee517a6b7808ff12cdc5a94f480786ed9f"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "lock",
+      "label": "Lock",
+      "decision": "Keep",
+      "status": "preserved",
+      "currentCritique": "This already has an action, contact, and retained result. Strong body response follows the latch. It is a better model for realism than a whole-icon bounce.",
+      "lightDirection": "Retain the direct latch.",
+      "strongDirection": "Keep the deliberate approach, firm contact, and one small body response. Remove any extra correction if it weakens the locked hold.",
+      "constructionAndTest": "Shackle ends stop at the body surface. Unlock should release the shackle before opening; never expose internal caps or move the body before contact.",
+      "statePolicy": "Keep explicit open/locked states and Unlock; the product must not reopen just to make a loop.",
+      "currentActiveSeconds": {
+        "lock": 0.42,
+        "lock-strong": 0.68
+      },
+      "sourceSet": "03",
+      "currentAssetHashes": {
+        "lock": "1c8bec8b1a5babdeeec55bceab2a3abd08ed6b70b25e5cea5ec26c4f4c1e1576",
+        "lock-unlock": "30c7cfe6710b3ff4dbbbbade9c4329976bee56516366402f6daf068eaea1a03a",
+        "lock-strong": "80c4694f47c71710bab447498e80352f98366a980160855e27a1feba455c03d6",
+        "lock-unlock-strong": "ed1c8728e58c16affa662e22e81643dc5a942773db94a4cda3ba5c19395d3008"
+      },
+      "implementation": {
+        "intent": "A connected padlock closes and retains its state; Unlock is an explicit reverse.",
+        "activeSeconds": {
+          "light": 0.42,
+          "strong": 0.68
+        },
+        "stateful": true,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "lock",
+            "sha256": "1c8bec8b1a5babdeeec55bceab2a3abd08ed6b70b25e5cea5ec26c4f4c1e1576"
+          },
+          {
+            "name": "lock-unlock",
+            "sha256": "30c7cfe6710b3ff4dbbbbade9c4329976bee56516366402f6daf068eaea1a03a"
+          },
+          {
+            "name": "lock-strong",
+            "sha256": "80c4694f47c71710bab447498e80352f98366a980160855e27a1feba455c03d6"
+          },
+          {
+            "name": "lock-unlock-strong",
+            "sha256": "ed1c8728e58c16affa662e22e81643dc5a942773db94a4cda3ba5c19395d3008"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "folder",
+      "label": "Folder",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "Lowering the front edge suggests an opening, but both profiles mainly change panel height. Strong enlarges that change without revealing what is inside.",
+      "lightDirection": "Open the front cover a little around its lower hinge, exposing a complete stationary back panel.",
+      "strongDirection": "Open farther; one simple sheet follows after the cover creates space, then settles behind it. Close in the opposite physical order.",
+      "constructionAndTest": "Draw the occluded back and sheet fully. Use flat vector occlusion and a fixed lower hinge, with no perspective camera. Check the upper panel junctions at peak.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "folder": 0.48,
+        "folder-strong": 0.8
+      },
+      "sourceSet": "03",
+      "currentAssetHashes": {
+        "folder": "dd0c5a1ceb2db1d1cb000a4a8ae85b10fd45aa98c46727ac28db27a850a1529e",
+        "folder-strong": "f7d5534817353ecb3cceb21d41b115c254dc4c10dd3c69c25e4d7667aea87a06"
+      },
+      "implementation": {
+        "intent": "A complete front panel opens from its bottom hinge; one sheet follows with a short delay above the fixed back panel.",
+        "activeSeconds": {
+          "light": 0.52,
+          "strong": 0.74
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "folder",
+            "sha256": "dd0c5a1ceb2db1d1cb000a4a8ae85b10fd45aa98c46727ac28db27a850a1529e"
+          },
+          {
+            "name": "folder-strong",
+            "sha256": "f7d5534817353ecb3cceb21d41b115c254dc4c10dd3c69c25e4d7667aea87a06"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "download",
+      "label": "Download",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The arrow moves in the correct direction, but eases near the tray and floats back. Light and Strong have the same phrase; neither gives arrival much emphasis.",
+      "lightDirection": "Use a quick descent and decisive receiving stop above the tray.",
+      "strongDirection": "Give the arrival a clearer speed change; let the tray make one tiny response after arrival, then hold before the quiet recovery.",
+      "constructionAndTest": "Keep the arrow rigid and preserve its painted separation from the tray. The tray response must follow arrival, not run on the same pulse.",
+      "statePolicy": "This can acknowledge a control. Show a completed-download state only when the transfer actually completes.",
+      "currentActiveSeconds": {
+        "download": 0.48,
+        "download-strong": 0.74
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "download": "a97316d7379d06cdf1da6a0d34bb6e1ff9ac1eb31944eef25ef04dc3c0c746d0",
+        "download-strong": "2a0bf471df00ce87200fd1002ec67ff204543d059e2d966b42feaa25193b1c78"
+      },
+      "implementation": {
+        "intent": "The arrow arrives at the tray and stops; the receiving tray responds after contact, then the preview clears.",
+        "activeSeconds": {
+          "light": 0.49,
+          "strong": 0.68
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "download",
+            "sha256": "a97316d7379d06cdf1da6a0d34bb6e1ff9ac1eb31944eef25ef04dc3c0c746d0"
+          },
+          {
+            "name": "download-strong",
+            "sha256": "2a0bf471df00ce87200fd1002ec67ff204543d059e2d966b42feaa25193b1c78"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": false
+      }
+    },
+    {
+      "name": "upload",
+      "label": "Upload",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "It is a reversed Download gesture with a longer upward displacement. Symmetric easing makes the arrow feel lifted by a tween rather than launched.",
+      "lightDirection": "Start promptly and accelerate upward, with a short hold at the higher pose.",
+      "strongDirection": "Add a brief loading-down motion, then a faster upward release and a quieter reset after the hold.",
+      "constructionAndTest": "Keep the tray stationary. Use acceleration distinct from Download\u2019s arriving stop; protect the top margin and arrowhead.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "upload": 0.48,
+        "upload-strong": 0.74
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "upload": "a973f1c101b25d843dd8c0a0f15d4e0ed18948e60a8fa25a5986817558dd8282",
+        "upload-reset": "cee82db592e2b0ed8833a0726e765b1e63adfc8244c84a9187eea1369300c163",
+        "upload-strong": "9bfd99672bf644aa5fa301a64d29e6a1706f200968c8e133e6d5d39199132fdf",
+        "upload-reset-strong": "cdcbb4e2dbab1d4e7dca3eea29e46f1b1957589babbabae686f4ee7459162950"
+      },
+      "implementation": {
+        "intent": "A short downward preload leads an accelerating upward departure; the arrow stays at its advanced position until preview reset.",
+        "activeSeconds": {
+          "light": 0.29,
+          "strong": 0.38
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "upload",
+            "sha256": "a973f1c101b25d843dd8c0a0f15d4e0ed18948e60a8fa25a5986817558dd8282"
+          },
+          {
+            "name": "upload-reset",
+            "sha256": "cee82db592e2b0ed8833a0726e765b1e63adfc8244c84a9187eea1369300c163"
+          },
+          {
+            "name": "upload-strong",
+            "sha256": "9bfd99672bf644aa5fa301a64d29e6a1706f200968c8e133e6d5d39199132fdf"
+          },
+          {
+            "name": "upload-reset-strong",
+            "sha256": "cdcbb4e2dbab1d4e7dca3eea29e46f1b1957589babbabae686f4ee7459162950"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": false
+      }
+    },
+    {
+      "name": "copy",
+      "label": "Copy",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The sheet separation is meaningful, but both cards feel like rigid plates and the return immediately merges the result. Strong only increases the offset.",
+      "lightDirection": "Separate the front sheet with a crisp diagonal release and a short alignment stop.",
+      "strongDirection": "Lift one leading paper corner slightly, then carry the whole sheet to its offset; let the trailing corner catch up once.",
+      "constructionAndTest": "Keep page thickness and corner radius stable. Fully author the back sheet where separation exposes it; no page-background patches.",
+      "statePolicy": "A copy result should be held. Any merge used to rearm the gallery is a separate demonstration phase.",
+      "currentActiveSeconds": {
+        "copy": 0.5,
+        "copy-strong": 0.78
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "copy": "28f05ee100fbe9992e3ce27eb0adef478ab4ec3b7f4f69092c878d0778a89a5c",
+        "copy-reset": "455a70a6551d3d4933f535fb3504ca2efedd17aefeaa2e2483a3e5273b9b0c21",
+        "copy-strong": "e74c125dccf01238bb4b91b5d9d722b5677ef7653e8110dd2aaaa0d44b0b5a49",
+        "copy-reset-strong": "6f3595576549559e9a1d3fe9c799c8f66ed4372098852f2aac5527443a76b818"
+      },
+      "implementation": {
+        "intent": "A leading corner lifts the duplicate sheet away from its source; the whole page follows and holds separated.",
+        "activeSeconds": {
+          "light": 0.22,
+          "strong": 0.44
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "copy",
+            "sha256": "28f05ee100fbe9992e3ce27eb0adef478ab4ec3b7f4f69092c878d0778a89a5c"
+          },
+          {
+            "name": "copy-reset",
+            "sha256": "455a70a6551d3d4933f535fb3504ca2efedd17aefeaa2e2483a3e5273b9b0c21"
+          },
+          {
+            "name": "copy-strong",
+            "sha256": "e74c125dccf01238bb4b91b5d9d722b5677ef7653e8110dd2aaaa0d44b0b5a49"
+          },
+          {
+            "name": "copy-reset-strong",
+            "sha256": "6f3595576549559e9a1d3fe9c799c8f66ed4372098852f2aac5527443a76b818"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "trash",
+      "label": "Trash",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The hinged lid and contact response are useful. The repeated smooth open/close spacing makes the lid seem weightless, and the exposed mouth needs a deliberate construction.",
+      "lightDirection": "Use a quick small opening and a firmer closing contact.",
+      "strongDirection": "Open briskly, pause at the hinge limit, close with acceleration, then let the body respond once.",
+      "constructionAndTest": "Retain the hinge and lid-handle assembly. Draw a complete exposed mouth or deliberate cutaways. Do not introduce a bounce before contact.",
+      "statePolicy": "Opening the lid demonstrates the control; it must not claim that data has been deleted.",
+      "currentActiveSeconds": {
+        "trash": 0.48,
+        "trash-strong": 0.78
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "trash": "8391dbd5bb94f36fa7c268a402c0d5df8dc990049f245033c0a12b4f056fadcc",
+        "trash-strong": "3eff3a19c76975129dda35aa4b773bbc8ed12c9167cf94e5cae44bf985371100"
+      },
+      "implementation": {
+        "intent": "The rigid lid opens quickly at its hinge, closes with gravity, and the complete bin rim receives a small contact response.",
+        "activeSeconds": {
+          "light": 0.53,
+          "strong": 0.75
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "trash",
+            "sha256": "8391dbd5bb94f36fa7c268a402c0d5df8dc990049f245033c0a12b4f056fadcc"
+          },
+          {
+            "name": "trash-strong",
+            "sha256": "3eff3a19c76975129dda35aa4b773bbc8ed12c9167cf94e5cae44bf985371100"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "edit",
+      "label": "Edit",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The pencil touches and travels, but the rule remains unchanged. The central proof of writing is missing; Strong adds travel without a visible written result.",
+      "lightDirection": "Let the tip reveal one short stroke exactly along its contact path, then lift.",
+      "strongDirection": "Write a longer stroke with one brief pen lift or direction change, then lift and settle. Keep the writing faster than the return.",
+      "constructionAndTest": "Drive the ink endpoint from the same tip trajectory. The ink must stop growing when the tip leaves the surface. Add no detached decorative scribble.",
+      "statePolicy": "Requires an authored writing result and separate preview reset. Do not animate the ink backward as if writing undoes itself.",
+      "currentActiveSeconds": {
+        "edit": 0.54,
+        "edit-strong": 0.82
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "edit": "2a6167a1cf9b65ef353205bfbaaefa0485455144a45b458cd8794a978e52a449",
+        "edit-reset": "127ad0d76eac2cbb45f8f1e2cdda2abfff225e4f81345161d27df4ac52b0e011",
+        "edit-strong": "0e9aedee63cad1f0af9be7bc4f85e75ca6003ae292236a34c9e48a433901fa91",
+        "edit-reset-strong": "3744af472b09de3ecce20fa036e165d2cf879e2775740cfca349825b315316f4"
+      },
+      "implementation": {
+        "intent": "The pencil tip touches down, drives the growing ink endpoint exactly, then lifts; the written mark stays.",
+        "activeSeconds": {
+          "light": 0.41,
+          "strong": 0.57
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "edit",
+            "sha256": "2a6167a1cf9b65ef353205bfbaaefa0485455144a45b458cd8794a978e52a449"
+          },
+          {
+            "name": "edit-reset",
+            "sha256": "127ad0d76eac2cbb45f8f1e2cdda2abfff225e4f81345161d27df4ac52b0e011"
+          },
+          {
+            "name": "edit-strong",
+            "sha256": "0e9aedee63cad1f0af9be7bc4f85e75ca6003ae292236a34c9e48a433901fa91"
+          },
+          {
+            "name": "edit-reset-strong",
+            "sha256": "3744af472b09de3ecce20fa036e165d2cf879e2775740cfca349825b315316f4"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "send",
+      "label": "Send",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The plane advances and then comes back. Strong makes the return more visible, so the action can read as a tethered plane rather than a send.",
+      "lightDirection": "Use a brief directional launch and settle at an advanced pose.",
+      "strongDirection": "Show a short preparation, acceleration along the nose, and a small bank aligned to the flight path. End the send before the preview rearms.",
+      "constructionAndTest": "Keep fold and silhouette rigid. No motion trail is needed. Treat the gallery\u2019s return as staging, not part of the delivery action.",
+      "statePolicy": "Separate launch/result from showcase rearm. Do not show a delivered state until the host confirms it.",
+      "currentActiveSeconds": {
+        "send": 0.53,
+        "send-strong": 0.78
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "send": "6dea0e8470a5793c23fe949a4b6b067a51e60411d856a123930338bb76b30342",
+        "send-reset": "8d6ec06e1221b4169f9cdf1f35bd1baf77f1526ed38652c8afbcfcf91dda1c10",
+        "send-strong": "1ffe5cdb407bec850c90be7ee9fcb2645a390ee31cd64130f866e76bb79dc3c1",
+        "send-reset-strong": "8b717e2c1b73171ae8f56db71302138a77bb3f8f6cf9c67a6146900a0421a736"
+      },
+      "implementation": {
+        "intent": "The plane draws back briefly, then accelerates along its nose direction and stays advanced; a quiet separate reset rearms it.",
+        "activeSeconds": {
+          "light": 0.29,
+          "strong": 0.39
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "send",
+            "sha256": "6dea0e8470a5793c23fe949a4b6b067a51e60411d856a123930338bb76b30342"
+          },
+          {
+            "name": "send-reset",
+            "sha256": "8d6ec06e1221b4169f9cdf1f35bd1baf77f1526ed38652c8afbcfcf91dda1c10"
+          },
+          {
+            "name": "send-strong",
+            "sha256": "1ffe5cdb407bec850c90be7ee9fcb2645a390ee31cd64130f866e76bb79dc3c1"
+          },
+          {
+            "name": "send-reset-strong",
+            "sha256": "8b717e2c1b73171ae8f56db71302138a77bb3f8f6cf9c67a6146900a0421a736"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "bookmark",
+      "label": "Bookmark",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The tail gathers upward while the top stays fixed. It reads as a shortening banner rather than placing a bookmark; Strong exposes the accordion-like construction.",
+      "lightDirection": "Seat the ribbon downward into a clear resting position.",
+      "strongDirection": "Let the tip catch briefly as the body seats, then resolve one small paper bend. Keep the upper part controlled rather than stretching the full ribbon.",
+      "constructionAndTest": "Keep the notch recognizable and the ribbon width stable. A single page-edge reference is allowed only if insertion is unclear at 24 px.",
+      "statePolicy": "A true save toggle needs retained saved/unsaved states. Do not show an automatic unsave as the recovery.",
+      "currentActiveSeconds": {
+        "bookmark": 0.5,
+        "bookmark-strong": 0.76
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "bookmark": "c73ae3c0bfcb858a7687b4e995186e56ee79e46062b9bca7a00ab87fe4c01007",
+        "bookmark-reset": "36cfca4ba0780ec5dbad8c2a7d8d080e2080c55fcaf93e2ab6c27b0c5758ccc3",
+        "bookmark-strong": "05dcbc8f8258f233aed821ab1072890e79e067209065692aa757a9dc8dbd442c",
+        "bookmark-reset-strong": "c555b1322f7c251cbd8cdcaf89b814164392cd6a0bd4e2a02de9d51b39fc0e8e"
+      },
+      "implementation": {
+        "intent": "The bookmark seats downward while its paper tail follows and relaxes; the saved position remains.",
+        "activeSeconds": {
+          "light": 0.31,
+          "strong": 0.46
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "bookmark",
+            "sha256": "c73ae3c0bfcb858a7687b4e995186e56ee79e46062b9bca7a00ab87fe4c01007"
+          },
+          {
+            "name": "bookmark-reset",
+            "sha256": "36cfca4ba0780ec5dbad8c2a7d8d080e2080c55fcaf93e2ab6c27b0c5758ccc3"
+          },
+          {
+            "name": "bookmark-strong",
+            "sha256": "05dcbc8f8258f233aed821ab1072890e79e067209065692aa757a9dc8dbd442c"
+          },
+          {
+            "name": "bookmark-reset-strong",
+            "sha256": "c555b1322f7c251cbd8cdcaf89b814164392cd6a0bd4e2a02de9d51b39fc0e8e"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "refresh",
+      "label": "Refresh",
+      "decision": "Keep",
+      "status": "motion preserved; unbounded Duotone tint removed",
+      "currentCritique": "The clockwise turn communicates refresh and returns naturally through a full revolution. Strong\u2019s extra radial separation is less useful than the rotation and can make the symbol feel loose.",
+      "lightDirection": "Retain one clean clockwise turn.",
+      "strongDirection": "Keep the two arrows on a stable orbit. Add a more distinct start and braking phase rather than spreading the assemblies apart.",
+      "constructionAndTest": "Arrowheads remain attached to their arcs. No reversing overshoot at the end of the turn.",
+      "statePolicy": "One turn can acknowledge refresh. Continuous activity must follow real loading state and stop when it ends.",
+      "currentActiveSeconds": {
+        "refresh": 0.62,
+        "refresh-strong": 0.86
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "refresh": "02fa100e4ee8d081d847cde2033a80ccd802880d67d0cd5fe254422fa3a571b8",
+        "refresh-strong": "b665f00f1ef826165f229409a1b41841e165af61a2ac099e8ce970fd844eff28"
+      },
+      "implementation": {
+        "intent": "Two arrow assemblies turn clockwise once and settle.",
+        "activeSeconds": {
+          "light": 0.62,
+          "strong": 0.86
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "refresh",
+            "sha256": "02fa100e4ee8d081d847cde2033a80ccd802880d67d0cd5fe254422fa3a571b8"
+          },
+          {
+            "name": "refresh-strong",
+            "sha256": "b665f00f1ef826165f229409a1b41841e165af61a2ac099e8ce970fd844eff28"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": false
+      }
+    },
+    {
+      "name": "eye",
+      "label": "Eye",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "Strong is a recognizable blink with a protected pupil. Light closes only partway and can read as a squint. The symmetrical close/open phase is less natural than a fast close and slower opening.",
+      "lightDirection": "Use a quick complete blink with a very short closed hold.",
+      "strongDirection": "Let the pupil glance a small distance, then make one full blink and a slower reopening. Keep the corners fixed.",
+      "constructionAndTest": "Clip the pupil by the aperture in every style; keep a visible closed-lid band. A glance must not detach the pupil or change its shape.",
+      "statePolicy": "This is an acknowledgement blink. Actual hidden/visible content needs a retained state, not an automatic reopen.",
+      "currentActiveSeconds": {
+        "eye": 0.44,
+        "eye-strong": 0.56
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "eye": "fce07c3e1bd3441f9dcc33b1c7b0cecf7eae19dba75130f2bb52325039a53292",
+        "eye-strong": "8cd9f177974784ff1e15ca56e58428ee5b218ce2278e7e5f0d0cd42d21a5c33a"
+      },
+      "implementation": {
+        "intent": "Light makes one full fast blink. Strong glances briefly before the lids close; the pupil remains clipped inside the aperture.",
+        "activeSeconds": {
+          "light": 0.27,
+          "strong": 0.44
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "eye",
+            "sha256": "fce07c3e1bd3441f9dcc33b1c7b0cecf7eae19dba75130f2bb52325039a53292"
+          },
+          {
+            "name": "eye-strong",
+            "sha256": "8cd9f177974784ff1e15ca56e58428ee5b218ce2278e7e5f0d0cd42d21a5c33a"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "menu",
+      "label": "Menu",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The bars and X form a clear state pair. Strong\u2019s spacing change and long transition spend too much time in a fan-like intermediate pose.",
+      "lightDirection": "Retract the middle bar while the outer bars meet and turn directly into the requested state.",
+      "strongDirection": "Give the outer bars a short ordered lead, then resolve the X or parallel bars without a long fan hold.",
+      "constructionAndTest": "Review both directions. Current menu/menu-strong files CLOSE; menu-open variants OPEN. Descriptions must follow the manifest states, not the word forward.",
+      "statePolicy": "Keep explicit collapsed/expanded states. Do not automatically close real navigation after the animation.",
+      "currentActiveSeconds": {
+        "menu": 0.34,
+        "menu-strong": 0.62
+      },
+      "sourceSet": "04",
+      "currentAssetHashes": {
+        "menu": "07e2fe2c7e58481bc697e4cdda8426c119d0adbae6d1b8e710857a3d87f0e170",
+        "menu-open": "70ce510c150412f8c3d78eb1a2a1eb95ec9d12da5f83ed6932b4b69af3920098",
+        "menu-strong": "423975f29e1d9c02485f7b149586cf4e0257c69372b150494f0e06d68e175ef7",
+        "menu-open-strong": "8dac4699c70908ff6552effd4c0b3b2803a4262e322015f200a94a6135733733"
+      },
+      "implementation": {
+        "intent": "The outer bars converge and rotate together while the middle bar clears early; the reverse restores the three-bar menu.",
+        "activeSeconds": {
+          "light": 0.24,
+          "strong": 0.38
+        },
+        "stateful": true,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "menu",
+            "sha256": "07e2fe2c7e58481bc697e4cdda8426c119d0adbae6d1b8e710857a3d87f0e170"
+          },
+          {
+            "name": "menu-open",
+            "sha256": "70ce510c150412f8c3d78eb1a2a1eb95ec9d12da5f83ed6932b4b69af3920098"
+          },
+          {
+            "name": "menu-strong",
+            "sha256": "423975f29e1d9c02485f7b149586cf4e0257c69372b150494f0e06d68e175ef7"
+          },
+          {
+            "name": "menu-open-strong",
+            "sha256": "8dac4699c70908ff6552effd4c0b3b2803a4262e322015f200a94a6135733733"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": false
+      }
+    },
+    {
+      "name": "home",
+      "label": "Home",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The door narrows to a vertical stroke, so opening can look like a width tween. Strong reveals more of this construction instead of a more believable entrance.",
+      "lightDirection": "Show a small hinge-led door opening, retaining a clear door leaf and stationary doorway.",
+      "strongDirection": "Unlatch, open to a readable angle, pause briefly, then close firmly with no house movement.",
+      "constructionAndTest": "Separate leaf and opening. Use a flat projected hinge construction; do not scale the entire doorway or change the house silhouette.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "home": 0.52,
+        "home-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "home": "afa8695170dbad8ec392585f02de829b828e3fd804cb58f1ebcb578ef7a6e6a8",
+        "home-strong": "b41f9d4148a1acbe04ff06f722988a7b410c2508189ff8a40f49fef2285c2b7b"
+      },
+      "implementation": {
+        "intent": "A separate door leaf opens from its left hinge inside a fixed doorway; the wall does not change shape.",
+        "activeSeconds": {
+          "light": 0.54,
+          "strong": 0.75
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "home",
+            "sha256": "afa8695170dbad8ec392585f02de829b828e3fd804cb58f1ebcb578ef7a6e6a8"
+          },
+          {
+            "name": "home-strong",
+            "sha256": "b41f9d4148a1acbe04ff06f722988a7b410c2508189ff8a40f49fef2285c2b7b"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "calendar",
+      "label": "Calendar",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The day square slides across an otherwise empty field and returns. It reads like a slider more than a calendar, especially in Strong.",
+      "lightDirection": "Peel one calendar leaf from the top binding and settle on the next page.",
+      "strongDirection": "Turn the full leaf with a brief paper curve; the day mark moves with the page and the next leaf is exposed.",
+      "constructionAndTest": "Binding stays fixed. The page shape and day mark must remain related through occlusion. Avoid tiny date numerals or a busy grid.",
+      "statePolicy": "A date/page change requires an explicit result. In a product, the displayed date must remain the requested date.",
+      "currentActiveSeconds": {
+        "calendar": 0.52,
+        "calendar-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "calendar": "258d6f99695526370c82fccd561c0dc11aa7cc361c654d30a7e55ff6cfe2f7e8",
+        "calendar-reset": "38f5aa917cf3213d01578d8ec460c4cc9bdff53500c70874b6c9f89e91712bee",
+        "calendar-strong": "1dc233043b8a6b2f968349603f576d5a0d0ec9aca0d7665ae4ea33ce291b09aa",
+        "calendar-reset-strong": "519886f087e7a5dbdc81c62ee5923f3b77feaacfb9b3b2cbc39d82859110cf0f"
+      },
+      "implementation": {
+        "intent": "A complete date leaf turns over the binding line; its date mark stays on the paper and the next page is exposed.",
+        "activeSeconds": {
+          "light": 0.46,
+          "strong": 0.67
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "calendar",
+            "sha256": "258d6f99695526370c82fccd561c0dc11aa7cc361c654d30a7e55ff6cfe2f7e8"
+          },
+          {
+            "name": "calendar-reset",
+            "sha256": "38f5aa917cf3213d01578d8ec460c4cc9bdff53500c70874b6c9f89e91712bee"
+          },
+          {
+            "name": "calendar-strong",
+            "sha256": "1dc233043b8a6b2f968349603f576d5a0d0ec9aca0d7665ae4ea33ce291b09aa"
+          },
+          {
+            "name": "calendar-reset-strong",
+            "sha256": "519886f087e7a5dbdc81c62ee5923f3b77feaacfb9b3b2cbc39d82859110cf0f"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "clock",
+      "label": "Clock",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The hands advance, pause, and run backward. Strong makes the time reversal clear. The hand relationship is authored as an accent rather than clock gearing.",
+      "lightDirection": "Advance one decisive forward minute-hand step with the related hour-hand movement.",
+      "strongDirection": "Show a longer forward advance with a clear final tick. Do not unwind as the action\u2019s finish.",
+      "constructionAndTest": "For elapsed-time motion, use a 12:1 minute/hour angle ratio and a shared center. If the intended role is winding a timer, name and draw that different action.",
+      "statePolicy": "Use explicit time states or a clearly separate showcase reset. Do not suggest that elapsed time reverses.",
+      "currentActiveSeconds": {
+        "clock": 0.56,
+        "clock-strong": 0.84
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "clock": "b87113df176e2325ce1a5dae30c53b7100e51961a1bbbf2a112b4c6cfd621fcb",
+        "clock-reset": "d06c915fdccd8aedc18a8e252012e778f5fb02429f91b0124dde6b9b998d66c8",
+        "clock-strong": "e9632d45d8c1d6b7572405b96053cf8ea76f4487b3c47fe2a4c7904bd96719c8",
+        "clock-reset-strong": "61d2d23d8fd26883ae8ef9c68c30bb207c0aeb63beb5591172408a80aa5839ee"
+      },
+      "implementation": {
+        "intent": "Both hands advance together in a true 12:1 ratio and retain the new time; preview reset is a separate action.",
+        "activeSeconds": {
+          "light": 0.38,
+          "strong": 0.52
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "clock",
+            "sha256": "b87113df176e2325ce1a5dae30c53b7100e51961a1bbbf2a112b4c6cfd621fcb"
+          },
+          {
+            "name": "clock-reset",
+            "sha256": "d06c915fdccd8aedc18a8e252012e778f5fb02429f91b0124dde6b9b998d66c8"
+          },
+          {
+            "name": "clock-strong",
+            "sha256": "e9632d45d8c1d6b7572405b96053cf8ea76f4487b3c47fe2a4c7904bd96719c8"
+          },
+          {
+            "name": "clock-reset-strong",
+            "sha256": "61d2d23d8fd26883ae8ef9c68c30bb207c0aeb63beb5591172408a80aa5839ee"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "camera",
+      "label": "Camera",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "Button-before-lens is a good causal order. Shrinking a circular lens opening reads as zoom or a hole closing; Strong makes this ambiguity larger.",
+      "lightDirection": "Press the button and close/reopen a compact shutter once.",
+      "strongDirection": "Use button travel, a faster iris close, a short closed hold, then a slower reopen and button release.",
+      "constructionAndTest": "Keep the outer lens rigid. Test a simple 3\u20134-part flat shutter construction; retain a legible aperture at 24 px. No full-frame flash or extra rays.",
+      "statePolicy": "A shutter action can preview capture. Do not add a success mark before a photo is actually captured.",
+      "currentActiveSeconds": {
+        "camera": 0.58,
+        "camera-strong": 0.86
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "camera": "b5ff3ae062af1cb2e58f11411e77cb2b6dc9b237b0b7535793dfbd5eae906f77",
+        "camera-strong": "3f2f37b53c643b3945f6a4ca73803a8cdd0a34bb5dde8874cfbd6ab706b211d6"
+      },
+      "implementation": {
+        "intent": "The button presses before four iris facets close and reopen inside a rigid lens.",
+        "activeSeconds": {
+          "light": 0.3,
+          "strong": 0.39
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "camera",
+            "sha256": "b5ff3ae062af1cb2e58f11411e77cb2b6dc9b237b0b7535793dfbd5eae906f77"
+          },
+          {
+            "name": "camera-strong",
+            "sha256": "3f2f37b53c643b3945f6a4ca73803a8cdd0a34bb5dde8874cfbd6ab706b211d6"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "image",
+      "label": "Image",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The hills change shape under a fixed sun. The landscape looks rubbery rather than like image content moving inside a frame. Strong amplifies the deformation.",
+      "lightDirection": "Pan the landscape as one rigid content group inside the frame.",
+      "strongDirection": "Swipe from one simple vector landscape to another, with deceleration into alignment. Keep each landscape internally fixed.",
+      "constructionAndTest": "Use a real vector clipping boundary. The sun travels with its own image, not independently above stretching hills. Keep the frame fixed.",
+      "statePolicy": "If showing an image change, retain the resulting image; repeat only as an explicit gallery demonstration.",
+      "currentActiveSeconds": {
+        "image": 0.52,
+        "image-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "image": "18cb24b8f2eb67ebdcc32d8134432378eebda64351312abf2c59842825aea23a",
+        "image-reset": "5a323d4caa7cc293be5481a9832131a7ca63e0b478b5aa64dbff970644d5c2b0",
+        "image-strong": "9665421164b1aac5a98beba629ac1accdb9bf74031a86fca136ffcbf41e63651",
+        "image-reset-strong": "c895ab39775d146e218d8866d0d87aa49efd85eac16942536ae4c6bd9dbf1655"
+      },
+      "implementation": {
+        "intent": "Landscape and sun pan together into a new crop inside a fixed image frame, then hold.",
+        "activeSeconds": {
+          "light": 0.33,
+          "strong": 0.51
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "image",
+            "sha256": "18cb24b8f2eb67ebdcc32d8134432378eebda64351312abf2c59842825aea23a"
+          },
+          {
+            "name": "image-reset",
+            "sha256": "5a323d4caa7cc293be5481a9832131a7ca63e0b478b5aa64dbff970644d5c2b0"
+          },
+          {
+            "name": "image-strong",
+            "sha256": "9665421164b1aac5a98beba629ac1accdb9bf74031a86fca136ffcbf41e63651"
+          },
+          {
+            "name": "image-reset-strong",
+            "sha256": "c895ab39775d146e218d8866d0d87aa49efd85eac16942536ae4c6bd9dbf1655"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "mail",
+      "label": "Mail",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The triangular flap flattens toward the seam but never establishes a complete open flap. Strong nearly removes its silhouette; there is no clear paper action behind it.",
+      "lightDirection": "Lift the flap around the seam into a clear open shape, then close.",
+      "strongDirection": "Open the flap first; let a single letter edge rise afterward, pause, reseat the letter, then close.",
+      "constructionAndTest": "Draw the full flap, envelope back, and letter before masking overlaps. A paper edge must not move through a still-closed flap.",
+      "statePolicy": "This demonstrates opening mail, not a claim that a message was sent or read.",
+      "currentActiveSeconds": {
+        "mail": 0.52,
+        "mail-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "mail": "e6bc9a09a3119323cafc8fbd38cd73005ccbfdd2ceccc35b4c245094d57af24b",
+        "mail-strong": "e0c603d2f473466f4ddcea74fb623f977045656b36adbb8cce7094ff4e0cb8aa"
+      },
+      "implementation": {
+        "intent": "The full triangular flap opens above its seam, then a letter rises from the pocket; the letter returns before the flap closes.",
+        "activeSeconds": {
+          "light": 0.57,
+          "strong": 0.77
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "mail",
+            "sha256": "e6bc9a09a3119323cafc8fbd38cd73005ccbfdd2ceccc35b4c245094d57af24b"
+          },
+          {
+            "name": "mail-strong",
+            "sha256": "e0c603d2f473466f4ddcea74fb623f977045656b36adbb8cce7094ff4e0cb8aa"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "message",
+      "label": "Message",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "Ordered dots are appropriate, but the long shared rise and hold make them float together. Strong changes height more than conversational rhythm.",
+      "lightDirection": "Use one quick left-to-right cadence with a short lift and a longer fall for each dot.",
+      "strongDirection": "Give the last dot a brief extra pause, then let the sequence settle. Keep the bubble still and avoid a second looping phrase.",
+      "constructionAndTest": "Dots keep their diameter and stay clear of the bubble edge. Short phase offsets must remain legible at 24 px.",
+      "statePolicy": "Typing motion belongs to actual typing state. A one-shot gallery preview must not imply a permanent live reply.",
+      "currentActiveSeconds": {
+        "message": 0.6,
+        "message-strong": 0.88
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "message": "3d1c3dbc8905ef0e7c0e04a64879aa67409e300fa89cb8539dc17965f9611d51",
+        "message-strong": "365db2bf08a7b0507c2fe6b35d5b71d686a8bad835a51005c2b216b2da9d4541"
+      },
+      "implementation": {
+        "intent": "A short typing cadence passes through three dots, one reply at a time, then all three return to rest.",
+        "activeSeconds": {
+          "light": 0.36,
+          "strong": 0.48
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "message",
+            "sha256": "3d1c3dbc8905ef0e7c0e04a64879aa67409e300fa89cb8539dc17965f9611d51"
+          },
+          {
+            "name": "message-strong",
+            "sha256": "365db2bf08a7b0507c2fe6b35d5b71d686a8bad835a51005c2b216b2da9d4541"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "phone",
+      "label": "Phone",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "A rigid handset lift is plausible, but the present up-and-back pulse lacks a pickup and placement moment. Strong mainly widens the same arc.",
+      "lightDirection": "Lead with the earpiece, lift briefly, then place the receiver with a clear stop.",
+      "strongDirection": "Use a quicker pickup, short listening hold, and a slower placement with one small settling correction.",
+      "constructionAndTest": "Preserve the rigid handset and its thick end contours. Do not add Bell\u2019s repeated ringing swings or tiny exterior vibration marks.",
+      "statePolicy": "This can demonstrate answering. Actual active-call state must persist independently.",
+      "currentActiveSeconds": {
+        "phone": 0.52,
+        "phone-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "phone": "ccdeb77d5fff629f6fbd4368d82728a4bca0980ff5f66a508caf0304851e3970",
+        "phone-strong": "32c57c2d8de693ecb9de240fdffd4e4982ae2c7c3120cd4b8f5f67d94dc8c6dd"
+      },
+      "implementation": {
+        "intent": "The receiver lifts into a listening pose, pauses for the call, and returns with a slower placement.",
+        "activeSeconds": {
+          "light": 0.51,
+          "strong": 0.7
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "phone",
+            "sha256": "ccdeb77d5fff629f6fbd4368d82728a4bca0980ff5f66a508caf0304851e3970"
+          },
+          {
+            "name": "phone-strong",
+            "sha256": "32c57c2d8de693ecb9de240fdffd4e4982ae2c7c3120cd4b8f5f67d94dc8c6dd"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "microphone",
+      "label": "Microphone",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The capsule tilts inside a stationary cradle. The mounting relationship is unclear, so Strong looks like a loose capsule rather than a positioned microphone.",
+      "lightDirection": "Tilt the capsule and cradle together around a visible stand joint.",
+      "strongDirection": "Make a deliberate positioning move, stop at the joint limit, then give one small clamp settle.",
+      "constructionAndTest": "Define the supported assembly and fixed stand before keyframing. Keep gaps consistent through the tilt; no rubber capsule.",
+      "statePolicy": "Do not add an audio meter or recording pulse unless the host is actually receiving or recording audio.",
+      "currentActiveSeconds": {
+        "microphone": 0.52,
+        "microphone-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "microphone": "0a59f944f3a8de0568bfb46ff4c20279aef8dd9bb2f21a17bbdeb1c10a991bef",
+        "microphone-strong": "a5eb2adcd96d97fd91257f0803d5ef56878cd6ba08f703a72b4cdf8b8251a625"
+      },
+      "implementation": {
+        "intent": "Capsule and cradle tilt together at the stand joint, hold toward the speaker, then return as one assembly.",
+        "activeSeconds": {
+          "light": 0.51,
+          "strong": 0.69
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "microphone",
+            "sha256": "0a59f944f3a8de0568bfb46ff4c20279aef8dd9bb2f21a17bbdeb1c10a991bef"
+          },
+          {
+            "name": "microphone-strong",
+            "sha256": "a5eb2adcd96d97fd91257f0803d5ef56878cd6ba08f703a72b4cdf8b8251a625"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "volume",
+      "label": "Volume",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The arcs move outward and then return toward the speaker. Strong makes the backward signal travel more obvious. Sound emission needs a consistent outward direction.",
+      "lightDirection": "Send one short accent from the inner arc to the outer arc.",
+      "strongDirection": "Use a clearer outward phase delay and a longer outer-arc release. Keep the speaker still and avoid repeated fountains of arcs.",
+      "constructionAndTest": "Keep a recognizable base symbol while the accent travels. Use trim/paint emphasis on separate arcs rather than translating sound backward.",
+      "statePolicy": "Show real loudness through retained signal levels; a pulse is an interaction or audio-activity treatment, not a volume value.",
+      "currentActiveSeconds": {
+        "volume": 0.56,
+        "volume-strong": 0.84
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "volume": "867a7887188557d59a4f652cc8e7fe281086f15f73b2a3d32d5d8efb8333881a",
+        "volume-strong": "a459e45cee37fa52816f834e12867452f36ca0a5228d84c0b4d567efae802653"
+      },
+      "implementation": {
+        "intent": "Sound emphasis travels from the near arc to the far arc; the speaker and arc geometry stay fixed.",
+        "activeSeconds": {
+          "light": 0.34,
+          "strong": 0.47
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "volume",
+            "sha256": "867a7887188557d59a4f652cc8e7fe281086f15f73b2a3d32d5d8efb8333881a"
+          },
+          {
+            "name": "volume-strong",
+            "sha256": "a459e45cee37fa52816f834e12867452f36ca0a5228d84c0b4d567efae802653"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "wifi",
+      "label": "Wi-Fi",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "Changing all radii gives an accordion effect. Neither profile clearly expresses signal acquisition or strength; Strong is simply a larger contraction.",
+      "lightDirection": "Establish the source and then emphasize the bands from inside outward.",
+      "strongDirection": "Use a distinct source response followed by ordered band acquisition and a short stable full-signal hold.",
+      "constructionAndTest": "Preserve the concentric geometry. Review both stroke and paint sequencing at Bold; do not crush the band gaps.",
+      "statePolicy": "Signal levels and connection completion must follow actual state. Gallery acquisition/reset is a separate demonstration.",
+      "currentActiveSeconds": {
+        "wifi": 0.6,
+        "wifi-strong": 0.88
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "wifi": "8f5686eea44929ecc069c4138b362a91f05ff840351b1ba1d800961544ed87eb",
+        "wifi-reset": "9285f7199fad90ec80bb75fd9184faa7d2c903d6f4f22b50e7d0941aaf43b96f",
+        "wifi-strong": "6218cd26dc69e4fc999259849f61715464393b31ee2eda32810b9a4f6f1ac928",
+        "wifi-reset-strong": "fa65217733c45e7e30397bac3a13710190a277a9595f7739852b30c8d50a306b"
+      },
+      "implementation": {
+        "intent": "Signal acquires from the source outward, with each fixed band locking into a retained connected state.",
+        "activeSeconds": {
+          "light": 0.28,
+          "strong": 0.45
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "wifi",
+            "sha256": "8f5686eea44929ecc069c4138b362a91f05ff840351b1ba1d800961544ed87eb"
+          },
+          {
+            "name": "wifi-reset",
+            "sha256": "9285f7199fad90ec80bb75fd9184faa7d2c903d6f4f22b50e7d0941aaf43b96f"
+          },
+          {
+            "name": "wifi-strong",
+            "sha256": "6218cd26dc69e4fc999259849f61715464393b31ee2eda32810b9a4f6f1ac928"
+          },
+          {
+            "name": "wifi-reset-strong",
+            "sha256": "fa65217733c45e7e30397bac3a13710190a277a9595f7739852b30c8d50a306b"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": false
+      }
+    },
+    {
+      "name": "cloud",
+      "label": "Cloud",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The tall upper lobe inflates above a fixed base. Strong makes the cloud feel like a breathing organ, with little connection to either weather or cloud computing.",
+      "lightDirection": "For a weather/cloud illustration, use one quiet lateral drift with a small contour response.",
+      "strongDirection": "Send a single gust through the lobes while the whole cloud drifts slightly; the front responds before the trailing side.",
+      "constructionAndTest": "Keep approximate visual area and avoid vertical inflation. If this icon means cloud storage instead, use a separately named transfer/sync variant rather than inventing weather behavior.",
+      "statePolicy": "The proposed default is a weather-style acknowledgement. Storage activity requires an explicit product role.",
+      "currentActiveSeconds": {
+        "cloud": 0.56,
+        "cloud-strong": 0.84
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "cloud": "5c4b24e5e1cfebaba5f7b4eaf4b9d397e965403ca4ba817e05901cb699ee3ced",
+        "cloud-strong": "792a647b3f0184a4eb18faf291336f56c5390eba7515af00eb476e5ea1a5f583"
+      },
+      "implementation": {
+        "intent": "A shallow wind drift passes through the cloud with a travelling contour response; its area stays nearly constant.",
+        "activeSeconds": {
+          "light": 0.52,
+          "strong": 0.74
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "cloud",
+            "sha256": "5c4b24e5e1cfebaba5f7b4eaf4b9d397e965403ca4ba817e05901cb699ee3ced"
+          },
+          {
+            "name": "cloud-strong",
+            "sha256": "792a647b3f0184a4eb18faf291336f56c5390eba7515af00eb476e5ea1a5f583"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "sun",
+      "label": "Sun",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "Separating the disc and rays is useful. The shared turn-and-return feels close to Settings, and all rays act together in both modes.",
+      "lightDirection": "Extend the rays outward in one brief wake-up, then settle.",
+      "strongDirection": "Pass the extension clockwise through the rays with a short phase offset while the disc remains calm.",
+      "constructionAndTest": "Keep the disc and ray thickness stable. The sequence should read as radiating light, not a gear or a loading spinner.",
+      "statePolicy": "Theme/brightness state must remain correct. The gesture does not temporarily change the actual theme.",
+      "currentActiveSeconds": {
+        "sun": 0.52,
+        "sun-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "sun": "2d0b7cdfd59670941227deff77ca9a7fd0ae575b3cfdaac11fdddf524c80ab83",
+        "sun-strong": "60409afe089afd977754c02d90a41b7db0e5c092f6d375e2c4fffa4d87221e4a"
+      },
+      "implementation": {
+        "intent": "The rays open outward as a clockwise phase passes around a still disc, ending at the next symmetric ray position.",
+        "activeSeconds": {
+          "light": 0.39,
+          "strong": 0.51
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "sun",
+            "sha256": "2d0b7cdfd59670941227deff77ca9a7fd0ae575b3cfdaac11fdddf524c80ab83"
+          },
+          {
+            "name": "sun-strong",
+            "sha256": "60409afe089afd977754c02d90a41b7db0e5c092f6d375e2c4fffa4d87221e4a"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "moon",
+      "label": "Moon",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The crescent is stable and readable, but the short up-and-back arc can look like a generic rock. More energy is not automatically useful for a night symbol.",
+      "lightDirection": "Use a quiet upward drift with a slow landing and no rocking correction.",
+      "strongDirection": "Use a longer shallow arc and a clear still moment, with a slower release than Sun.",
+      "constructionAndTest": "Keep the crescent rigid and its tips safe. Contrast Moon\u2019s calm timing with Sun\u2019s radiating action instead of adding stars or another pulse.",
+      "statePolicy": "Keep the real dark/light theme state separate from the acknowledgement.",
+      "currentActiveSeconds": {
+        "moon": 0.52,
+        "moon-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "moon": "098f8fc99345c4a5404d3807a3e314818db269d61104ece253236af3bd0a02ed",
+        "moon-strong": "19ccc9998ce5be2a95ffd69ffe76c5f920d8901f144dc3b5b9ec1f333a97d0e8"
+      },
+      "implementation": {
+        "intent": "The crescent follows one quiet, shallow arc with a long soft return and no extra wobble.",
+        "activeSeconds": {
+          "light": 0.55,
+          "strong": 0.74
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "moon",
+            "sha256": "098f8fc99345c4a5404d3807a3e314818db269d61104ece253236af3bd0a02ed"
+          },
+          {
+            "name": "moon-strong",
+            "sha256": "19ccc9998ce5be2a95ffd69ffe76c5f920d8901f144dc3b5b9ec1f333a97d0e8"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "location",
+      "label": "Location",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "Anchoring the tip while changing the body height makes the pin look elastic. Strong magnifies the squeeze instead of showing placement.",
+      "lightDirection": "Move a rigid pin down to a fixed map point and stop.",
+      "strongDirection": "Give it a short approach, clear contact, and one tiny counter-lean about the landed tip.",
+      "constructionAndTest": "Keep the inner counter circular during travel. Only the post-contact response may use the tip as pivot. No repeated bouncing.",
+      "statePolicy": "Retain the located position. Do not automatically lift a successfully placed marker in a product.",
+      "currentActiveSeconds": {
+        "location": 0.52,
+        "location-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "location": "9dcd181b8ec45e06e2968a641292870125c24ca731bba5facc207a5b44f4d9e8",
+        "location-strong": "7da275d826d9f5c1ad71716205aa84d6f9e2b34ba85fcb7ba7cabde69af462c0"
+      },
+      "implementation": {
+        "intent": "The rigid map pin lifts and lands on a fixed point, followed by one small contact response; its circular counter never squashes.",
+        "activeSeconds": {
+          "light": 0.44,
+          "strong": 0.59
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "location",
+            "sha256": "9dcd181b8ec45e06e2968a641292870125c24ca731bba5facc207a5b44f4d9e8"
+          },
+          {
+            "name": "location-strong",
+            "sha256": "7da275d826d9f5c1ad71716205aa84d6f9e2b34ba85fcb7ba7cabde69af462c0"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "compass",
+      "label": "Compass",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The fixed ring and rotating needle are appropriate. The held off-target pose interrupts the feeling of a needle finding north; Strong exposes that pause.",
+      "lightDirection": "Let the needle depart slightly, then resolve directly onto the bearing.",
+      "strongDirection": "Use one larger sweep and one small crossing correction, with no hold on the wrong bearing.",
+      "constructionAndTest": "Keep the ring fixed and the needle rigid at its center. Compare the speed through the center with the slower final approach.",
+      "statePolicy": "For navigation, settle on the real bearing. A north-return acknowledgement must not replace live heading data.",
+      "currentActiveSeconds": {
+        "compass": 0.54,
+        "compass-strong": 0.82
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "compass": "392aad55bb15f2fd717743c0f3a92188becd0b05eb2410804c3d126bc4f4c83c",
+        "compass-strong": "d4ea0337a96e9b9dd153871714158ff04b934dea8c3b8efeedc05e73bb2a2ae6"
+      },
+      "implementation": {
+        "intent": "The needle searches briefly, crosses the correct bearing once, then damps into a clear stable direction.",
+        "activeSeconds": {
+          "light": 0.39,
+          "strong": 0.53
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "compass",
+            "sha256": "392aad55bb15f2fd717743c0f3a92188becd0b05eb2410804c3d126bc4f4c83c"
+          },
+          {
+            "name": "compass-strong",
+            "sha256": "d4ea0337a96e9b9dd153871714158ff04b934dea8c3b8efeedc05e73bb2a2ae6"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "link",
+      "label": "Link",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "Both rigid loops remain connected, but mostly compress together. Strong can read as crowded overlap rather than a chain taking tension.",
+      "lightDirection": "Pull the leading loop a short distance, then let the other take up the slack.",
+      "strongDirection": "Make the slack-to-contact moment clearer; the second loop responds after the first reaches tension. Release in the reverse causal order.",
+      "constructionAndTest": "Preserve rigid loop geometry and the over/under opening. Do not separate the links or depend on a background mask.",
+      "statePolicy": "Link and unlink are different states. A tension acknowledgement must not imply a temporary unlink.",
+      "currentActiveSeconds": {
+        "link": 0.52,
+        "link-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "link": "875c8f6acd41e1d2ef7305eb0915e2533e8ffedf0bcc5def2f1fd7b7c89d3a34",
+        "link-strong": "aa37e724dc3558de8e25aaf941f3e17316abeb9aa0cbfa1e7188a08b2019c6f0"
+      },
+      "implementation": {
+        "intent": "The leading loop takes up slack; the second loop follows after tension reaches the join, and both remain interlocked.",
+        "activeSeconds": {
+          "light": 0.47,
+          "strong": 0.66
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "link",
+            "sha256": "875c8f6acd41e1d2ef7305eb0915e2533e8ffedf0bcc5def2f1fd7b7c89d3a34"
+          },
+          {
+            "name": "link-strong",
+            "sha256": "aa37e724dc3558de8e25aaf941f3e17316abeb9aa0cbfa1e7188a08b2019c6f0"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "shield",
+      "label": "Shield",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The whole shield rocks around its point while the check rides along. There is no visible force or protection event, so Strong reads as an emblem wobble.",
+      "lightDirection": "Use a short controlled brace toward one side with a firm stop.",
+      "strongDirection": "Let one short incoming signal meet the shield edge and redirect around it while the shield makes a small rigid response.",
+      "constructionAndTest": "Keep the check stable as an existing state. Use at most one clear signal stroke; remove it if it makes the 24 px silhouette busy. No shattering or particles.",
+      "statePolicy": "A verified/protected result must already be true. Do not manufacture a successful check as decorative feedback.",
+      "currentActiveSeconds": {
+        "shield": 0.52,
+        "shield-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "shield": "b65d2792a35061f124dd54e511cd8c9e2fc8d64723935435325d8755a062fc6c",
+        "shield-strong": "b344599ca8de485c6c115326e2bf69cba6bc8790bfa4281a62c00e78982515f1"
+      },
+      "implementation": {
+        "intent": "The shield braces at its lower point. Strong redirects one incoming signal at the edge while the attached check stays stable.",
+        "activeSeconds": {
+          "light": 0.39,
+          "strong": 0.51
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "shield",
+            "sha256": "b65d2792a35061f124dd54e511cd8c9e2fc8d64723935435325d8755a062fc6c"
+          },
+          {
+            "name": "shield-strong",
+            "sha256": "b344599ca8de485c6c115326e2bf69cba6bc8790bfa4281a62c00e78982515f1"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "cart",
+      "label": "Cart",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "Rolling-wheel coupling is good, but the back-and-forth travel can look parked on a conveyor. Tiny wheel marks alone do not sell movement at 24 px.",
+      "lightDirection": "Roll forward with a definite braking stop.",
+      "strongDirection": "Start the wheels and basket as one assembly; add a small basket pitch only as braking occurs, then settle.",
+      "constructionAndTest": "Wheel angle must follow travel and wheel radius. Keep axles connected and the basket rigid. The main travel must carry the story even when wheel marks are tiny.",
+      "statePolicy": "Do not add an item or show checkout completion without the related product event.",
+      "currentActiveSeconds": {
+        "cart": 0.56,
+        "cart-strong": 0.84
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "cart": "4c3bb090f5a217fc748342a966327ed35db475024fcba280da114ad11fd7512c",
+        "cart-strong": "c56ced09907705506a4c3911003155c6d474acd3bdf5d68e9ee468a77de1fcc4"
+      },
+      "implementation": {
+        "intent": "The wheels roll with travel, braking causes the basket to tip slightly afterward, and the cart rolls back to rest.",
+        "activeSeconds": {
+          "light": 0.54,
+          "strong": 0.74
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "cart",
+            "sha256": "4c3bb090f5a217fc748342a966327ed35db475024fcba280da114ad11fd7512c"
+          },
+          {
+            "name": "cart-strong",
+            "sha256": "c56ced09907705506a4c3911003155c6d474acd3bdf5d68e9ee468a77de1fcc4"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "settings",
+      "label": "Settings",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "A gear turn fits the object. Turning and then unwinding feels less like a deliberate adjustment than an indexed stop; Strong mainly changes angle.",
+      "lightDirection": "Advance one 60-degree detent so the sixfold silhouette lands in its matching rest shape.",
+      "strongDirection": "Advance two distinct detents with a brief mechanical pause and clean final braking.",
+      "constructionAndTest": "Keep teeth and center hole rigid. Use symmetry to close the loop naturally; no elastic teeth, wide overshoot, or continuous processing spin.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "settings": 0.52,
+        "settings-strong": 0.8
+      },
+      "sourceSet": "05",
+      "currentAssetHashes": {
+        "settings": "d022ab637d0b4d116d6c2df96e96402362df44311c34317668599bf384c5471e",
+        "settings-strong": "4d3923206b04e04e05ddd4eab6b48620e87d1121b324270a6c2d040a3b04080f"
+      },
+      "implementation": {
+        "intent": "The rigid gear advances into one or two deliberate detents without unwinding.",
+        "activeSeconds": {
+          "light": 0.3,
+          "strong": 0.52
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "settings",
+            "sha256": "d022ab637d0b4d116d6c2df96e96402362df44311c34317668599bf384c5471e"
+          },
+          {
+            "name": "settings-strong",
+            "sha256": "4d3923206b04e04e05ddd4eab6b48620e87d1121b324270a6c2d040a3b04080f"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "user",
+      "label": "User",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The circular head moves sideways and down above still shoulders. Because a circle cannot show head rotation, Strong reads as lateral drift rather than a human nod.",
+      "lightDirection": "Make one small vertical nod, preserving the head-to-shoulder gap.",
+      "strongDirection": "Let the head lead a clearer nod; the shoulders answer a little later and settle after the head.",
+      "constructionAndTest": "Keep the head circular. Use very small shoulder movement, no rubber bust or detached head. Review the actual nod at 24 px before adding more amplitude.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "user": 0.54,
+        "user-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "user": "7a5521cf9cb4e4e2d018bb869f74cec6467a81bc475253274ac1c6c64c903079",
+        "user-strong": "b8f994a29e19c39223ce1c2ecc7c0efe1fc3fb90ec7d1715615cad1357c31998"
+      },
+      "implementation": {
+        "intent": "A vertical nod leads a small shoulder response; the round head keeps its shape.",
+        "activeSeconds": {
+          "light": 0.35,
+          "strong": 0.5
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "user",
+            "sha256": "7a5521cf9cb4e4e2d018bb869f74cec6467a81bc475253274ac1c6c64c903079"
+          },
+          {
+            "name": "user-strong",
+            "sha256": "b8f994a29e19c39223ce1c2ecc7c0efe1fc3fb90ec7d1715615cad1357c31998"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "users",
+      "label": "Users",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The rear person moves up and right as a rigid pair, but that can look like withdrawing rather than joining. Strong increases the same ambiguous travel.",
+      "lightDirection": "Move the second profile slightly toward the group and settle.",
+      "strongDirection": "Let the second person enter the shared alignment first; the foreground person gives one small acknowledgement afterward.",
+      "constructionAndTest": "Move each person\u2019s head and shoulders as a coherent assembly. Preserve the intended front/back occlusion and open head gaps.",
+      "statePolicy": "Joining a real group requires a retained membership state; a gallery greeting should not claim that someone was added.",
+      "currentActiveSeconds": {
+        "users": 0.58,
+        "users-strong": 0.86
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "users": "4a77eb918dcaa38bd65b525fcd0e5c5b708f466df324f913f0218b49d0c47c92",
+        "users-strong": "219ff5bb5f6e2121c68ff75adb7c051b9c0ffcb6aa9fffb91c61eefb3a251a82"
+      },
+      "implementation": {
+        "intent": "The second person steps into the group; the foreground person acknowledges the arrival with a delayed nod.",
+        "activeSeconds": {
+          "light": 0.5,
+          "strong": 0.69
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "users",
+            "sha256": "4a77eb918dcaa38bd65b525fcd0e5c5b708f466df324f913f0218b49d0c47c92"
+          },
+          {
+            "name": "users-strong",
+            "sha256": "219ff5bb5f6e2121c68ff75adb7c051b9c0ffcb6aa9fffb91c61eefb3a251a82"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "key",
+      "label": "Key",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The complete key rotates around its bow and returns. The geometry is solid, but it reads like a hanging key swinging instead of a key being used.",
+      "lightDirection": "Lead with a short movement along the shaft, then a precise stop.",
+      "strongDirection": "Use a short insertion, a small controlled turn, and a separate release in the opposite order.",
+      "constructionAndTest": "Keep bow, shaft, and teeth rigid. Treat the planar turn as a stylized key-use gesture; if it still reads as swinging, reduce the angle and emphasize axial travel.",
+      "statePolicy": "A key-use preview does not establish an unlocked or authorized state.",
+      "currentActiveSeconds": {
+        "key": 0.54,
+        "key-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "key": "6d48b0987d6622a3d982c8e397823386dabcf59c673b80c12572cff6f572a90b",
+        "key-strong": "851fab89433bb710c076c1b1d59f5fc3a1c485accfd44b74041586ef0f89504a"
+      },
+      "implementation": {
+        "intent": "The key inserts along its shaft, turns briefly at the inserted tip, then withdraws as one rigid object.",
+        "activeSeconds": {
+          "light": 0.49,
+          "strong": 0.68
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "key",
+            "sha256": "6d48b0987d6622a3d982c8e397823386dabcf59c673b80c12572cff6f572a90b"
+          },
+          {
+            "name": "key-strong",
+            "sha256": "851fab89433bb710c076c1b1d59f5fc3a1c485accfd44b74041586ef0f89504a"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "scan",
+      "label": "Scan",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The bar travels inside useful brackets. Its smooth return makes a single scan look like a pendulum; Strong pauses in the scanned field before reversing.",
+      "lightDirection": "Make one directed pass at near-constant speed through the central field, easing only near the ends.",
+      "strongDirection": "Let the brackets make a brief focus adjustment, then run one longer pass and hold the scan\u2019s end.",
+      "constructionAndTest": "The brackets must not clip the bar. Rearm the bar outside the meaningful scan phase while keeping the focus symbol visible.",
+      "statePolicy": "Scanning activity and successful recognition are separate. Do not add a found marker without an actual result.",
+      "currentActiveSeconds": {
+        "scan": 0.54,
+        "scan-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "scan": "eaafa040637694a42bfbd8274245fd96896b4b4b37e7d3756055110a415e1dcf",
+        "scan-reset": "bc227e01654a1cdea82ad2a9915cbacbe6f723c921c61465474ad55aa3826c12",
+        "scan-strong": "d11050f9e0c56f07f53cb6d411ab0fb2580bd278f861f2e3c464557a1f6ed043",
+        "scan-reset-strong": "3061dd44c26f8c703ad046d3791d184522ef70694b1421c43af8e25ad091e386"
+      },
+      "implementation": {
+        "intent": "The brackets focus first, then one scan crosses at steady speed and stops at the lower edge.",
+        "activeSeconds": {
+          "light": 0.41,
+          "strong": 0.63
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "scan",
+            "sha256": "eaafa040637694a42bfbd8274245fd96896b4b4b37e7d3756055110a415e1dcf"
+          },
+          {
+            "name": "scan-reset",
+            "sha256": "bc227e01654a1cdea82ad2a9915cbacbe6f723c921c61465474ad55aa3826c12"
+          },
+          {
+            "name": "scan-strong",
+            "sha256": "d11050f9e0c56f07f53cb6d411ab0fb2580bd278f861f2e3c464557a1f6ed043"
+          },
+          {
+            "name": "scan-reset-strong",
+            "sha256": "3061dd44c26f8c703ad046d3791d184522ef70694b1421c43af8e25ad091e386"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": false
+      }
+    },
+    {
+      "name": "battery",
+      "label": "Battery",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The fill expands then drains immediately. Light resembles a small level twitch; Strong clearly suggests charge gained and lost in the same gesture.",
+      "lightDirection": "Advance the charge edge by one small level and retain it.",
+      "strongDirection": "Advance it in two clear steps, with a short charge pause before the final level.",
+      "constructionAndTest": "Keep the cell and terminal fixed. Preserve the current painted gap around the Solid charge region. Do not overshoot the actual level.",
+      "statePolicy": "Requires explicit old/new charge levels or a clearly staged charging demonstration; no automatic drain as a finish.",
+      "currentActiveSeconds": {
+        "battery": 0.54,
+        "battery-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "battery": "c158ddd27921b08b1edc68bd8c0200d93813fb421acd3f659c63785f2ebcf93a",
+        "battery-reset": "be678d98d930a4157e5638e66f7cfad56c74e953817433b6adfcba317ae01982",
+        "battery-strong": "f3874d7ed0e5bcf872f7fca99122b3e2c3ae008fee2cbfdadcb93492f0e6556d",
+        "battery-reset-strong": "98257d5fe0df0a28c644cacb296821089b856e6eca7cbc4955e545ca9f3f604b"
+      },
+      "implementation": {
+        "intent": "Charge reaches a retained level in one smooth fill or two distinct charging increments.",
+        "activeSeconds": {
+          "light": 0.36,
+          "strong": 0.55
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "battery",
+            "sha256": "c158ddd27921b08b1edc68bd8c0200d93813fb421acd3f659c63785f2ebcf93a"
+          },
+          {
+            "name": "battery-reset",
+            "sha256": "be678d98d930a4157e5638e66f7cfad56c74e953817433b6adfcba317ae01982"
+          },
+          {
+            "name": "battery-strong",
+            "sha256": "f3874d7ed0e5bcf872f7fca99122b3e2c3ae008fee2cbfdadcb93492f0e6556d"
+          },
+          {
+            "name": "battery-reset-strong",
+            "sha256": "98257d5fe0df0a28c644cacb296821089b856e6eca7cbc4955e545ca9f3f604b"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "plug",
+      "label": "Plug",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The plug moves down toward its own cable. That is the opposite of seating the upward-facing prongs, so Strong exposes a wrong action direction.",
+      "lightDirection": "Seat the rigid plug upward along its prongs.",
+      "strongDirection": "Approach, reach contact, then let the cable bend settle after the body stops. A short socket edge may provide the needed contact reference.",
+      "constructionAndTest": "Keep the cable attached to the moving base and fix its remote endpoint. Draw any socket contact fully; do not compress the prongs into the cable.",
+      "statePolicy": "Connect and disconnect require separate retained states if used as an actual connection control.",
+      "currentActiveSeconds": {
+        "plug": 0.54,
+        "plug-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "plug": "3aa285195ce6b0d52e2055a7b2213c836df5959494299c750ade5f372e0b82d9",
+        "plug-strong": "eb9919d6d65e7a9c36d348018361009422955902701cfd0451a0ed399d088a71"
+      },
+      "implementation": {
+        "intent": "The plug seats upward along its prongs; a connected cable bends after the pull and relaxes on release.",
+        "activeSeconds": {
+          "light": 0.51,
+          "strong": 0.69
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "plug",
+            "sha256": "3aa285195ce6b0d52e2055a7b2213c836df5959494299c750ade5f372e0b82d9"
+          },
+          {
+            "name": "plug-strong",
+            "sha256": "eb9919d6d65e7a9c36d348018361009422955902701cfd0451a0ed399d088a71"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "bluetooth",
+      "label": "Bluetooth",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The rune widens around its spine. It is a recognizable symbol, but treating it as rubber weakens its identity and does not explain wireless pairing.",
+      "lightDirection": "Keep the rune fixed and pass one short emphasis along its existing path.",
+      "strongDirection": "Let an upper-path signal lead a lower-path response, then settle the complete mark.",
+      "constructionAndTest": "Preserve the recognized geometry and crossings. Use separate trim/paint tracks, with no stretching or extra confetti dots.",
+      "statePolicy": "Pairing and connected status must follow the host. This sequence can demonstrate communication without inventing success.",
+      "currentActiveSeconds": {
+        "bluetooth": 0.54,
+        "bluetooth-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "bluetooth": "184cdd1d20549420b6e7bed43fd114021ae29fb496b11083eca49a829d7327a0",
+        "bluetooth-strong": "47c81216aac186d7d426677eabc0ceecd8cfde0c472a59f45e143bf66ae72b53"
+      },
+      "implementation": {
+        "intent": "The Bluetooth rune keeps its geometry while an upper-path signal leads the lower response.",
+        "activeSeconds": {
+          "light": 0.34,
+          "strong": 0.46
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "bluetooth",
+            "sha256": "184cdd1d20549420b6e7bed43fd114021ae29fb496b11083eca49a829d7327a0"
+          },
+          {
+            "name": "bluetooth-strong",
+            "sha256": "47c81216aac186d7d426677eabc0ceecd8cfde0c472a59f45e143bf66ae72b53"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "monitor",
+      "label": "Monitor",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The screen tilts sideways about the stand. It is technically attached, but looks unstable and says little about using a display. Strong is a larger wobble.",
+      "lightDirection": "Wake one simple content pane inside a stationary screen.",
+      "strongDirection": "Expand a pane and arrange a second pane beside it, then settle the layout.",
+      "constructionAndTest": "Keep bezel, stand, and foot rigid and still. Clip content inside the display; do not animate the hardware merely to fill time.",
+      "statePolicy": "Content is a wake/layout demonstration. Any real screen or app state remains under host control.",
+      "currentActiveSeconds": {
+        "monitor": 0.54,
+        "monitor-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "monitor": "fe114d065490020e4a53254a9f18337ce6117d7d8bcd1fad1a49d3a4b122d902",
+        "monitor-reset": "1b2d8bbef0b25ba1b2f8518b4d7c976e5eafde4beb45c5b47ecd99ddd6be6b3f",
+        "monitor-strong": "9fbd187dcae70c422fc4413569f6eb9a986009772fef29fd65aa6a07aec9dd17",
+        "monitor-reset-strong": "20e7e62b2e7b2f18033aa19b331ffe99dbfecb3a326321c86ea75a1d7cfa2ee0"
+      },
+      "implementation": {
+        "intent": "A stationary display wakes its content, then the Strong layout resolves into two panels.",
+        "activeSeconds": {
+          "light": 0.3,
+          "strong": 0.56
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "monitor",
+            "sha256": "fe114d065490020e4a53254a9f18337ce6117d7d8bcd1fad1a49d3a4b122d902"
+          },
+          {
+            "name": "monitor-reset",
+            "sha256": "1b2d8bbef0b25ba1b2f8518b4d7c976e5eafde4beb45c5b47ecd99ddd6be6b3f"
+          },
+          {
+            "name": "monitor-strong",
+            "sha256": "9fbd187dcae70c422fc4413569f6eb9a986009772fef29fd65aa6a07aec9dd17"
+          },
+          {
+            "name": "monitor-reset-strong",
+            "sha256": "20e7e62b2e7b2f18033aa19b331ffe99dbfecb3a326321c86ea75a1d7cfa2ee0"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "smartphone",
+      "label": "Smartphone",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "A lone square moves down and back inside the phone. It resembles a floating tile rather than scrolling content; Strong gives the float more room.",
+      "lightDirection": "Move a short stack of content rows with a small direct swipe.",
+      "strongDirection": "Use a brief drag, release into deceleration, and align the next row or card as it enters.",
+      "constructionAndTest": "Phone shell and speaker stay fixed. Content retains its own dimensions and is clipped by the screen. Avoid a rubber square or an unrelated notification bounce.",
+      "statePolicy": "Retain the resulting scroll position in a product. Gallery reset is separate from the user\u2019s scroll.",
+      "currentActiveSeconds": {
+        "smartphone": 0.54,
+        "smartphone-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "smartphone": "df71f5f9b91c0b75741ca8d8e727e84d4cbb456a964730086da2beb15fa403aa",
+        "smartphone-reset": "6d8767727c23165add0640fcb67b4616553dcd5947d2e9216f6ee81ea5136fb3",
+        "smartphone-strong": "c582734cfad25e6c2f4ea17bf1835fa1e4621d97c92ba826889fbba21d1e5fd5",
+        "smartphone-reset-strong": "82ec8279f02384f43097e97877a4c1389f8134588d2963b92cad3794619fcbff"
+      },
+      "implementation": {
+        "intent": "A clipped content stack scrolls inside a stationary phone; Strong flicks quickly and decelerates into the next item.",
+        "activeSeconds": {
+          "light": 0.32,
+          "strong": 0.48
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "smartphone",
+            "sha256": "df71f5f9b91c0b75741ca8d8e727e84d4cbb456a964730086da2beb15fa403aa"
+          },
+          {
+            "name": "smartphone-reset",
+            "sha256": "6d8767727c23165add0640fcb67b4616553dcd5947d2e9216f6ee81ea5136fb3"
+          },
+          {
+            "name": "smartphone-strong",
+            "sha256": "c582734cfad25e6c2f4ea17bf1835fa1e4621d97c92ba826889fbba21d1e5fd5"
+          },
+          {
+            "name": "smartphone-reset-strong",
+            "sha256": "82ec8279f02384f43097e97877a4c1389f8134588d2963b92cad3794619fcbff"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "laptop",
+      "label": "Laptop",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The screen becomes shorter above a separate base band. It approximates a fold, but the gap and changing silhouette make Strong look like a window shrinking.",
+      "lightDirection": "Use a clear hinge-led opening from a partially closed lid into the resting open display.",
+      "strongDirection": "Give the lid a deliberate opening arc and a short hinge settle at the open stop.",
+      "constructionAndTest": "Author a connected lower hinge and flat projected lid geometry. The apparent height change must follow the hinge angle; keep a consistent rim and no perspective camera.",
+      "statePolicy": "The gallery can stage close/open as separate phases. A real open state must not immediately close itself.",
+      "currentActiveSeconds": {
+        "laptop": 0.54,
+        "laptop-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "laptop": "fb59df43ecb310d13e5769e8f268c043c6eb53b8ff5838e4013ce3ab8856f9e9",
+        "laptop-reset": "2e2d0e2a7968bc5353d5eff3421e7b639f874dd3912dcca22653dec9d83b088d",
+        "laptop-strong": "94da7e48063410af8043a1ff40fa0e2a04b0571193bbea333f5d7895201b0ce7",
+        "laptop-reset-strong": "24b48d4a499e68760bf13502103e220fe074be15bc66e290628470cf4ea20072"
+      },
+      "implementation": {
+        "intent": "A rigid lid opens from the continuous lower hinge and holds at its working angle; the base stays planted.",
+        "activeSeconds": {
+          "light": 0.36,
+          "strong": 0.56
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "laptop",
+            "sha256": "fb59df43ecb310d13e5769e8f268c043c6eb53b8ff5838e4013ce3ab8856f9e9"
+          },
+          {
+            "name": "laptop-reset",
+            "sha256": "2e2d0e2a7968bc5353d5eff3421e7b639f874dd3912dcca22653dec9d83b088d"
+          },
+          {
+            "name": "laptop-strong",
+            "sha256": "94da7e48063410af8043a1ff40fa0e2a04b0571193bbea333f5d7895201b0ce7"
+          },
+          {
+            "name": "laptop-reset-strong",
+            "sha256": "24b48d4a499e68760bf13502103e220fe074be15bc66e290628470cf4ea20072"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "printer",
+      "label": "Printer",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The output page grows while its top is fixed. Its printed line moves by half the feed distance. Strong looks like paper stretching out of the machine and retracting.",
+      "lightDirection": "Feed a fixed-size page through the output slot; the printed line travels with it.",
+      "strongDirection": "Feed in two controlled roller steps, with a short pause and one small trailing-paper response after the main advance.",
+      "constructionAndTest": "Keep paper dimensions and ink-to-paper distances fixed. Move input paper consistently and use true vector occlusion at the slot. Validate masking/export support before authoring the full set.",
+      "statePolicy": "Hold the fed result. Returning the page is a separate preview rearm or explicit retract action, not the normal print finish.",
+      "currentActiveSeconds": {
+        "printer": 0.54,
+        "printer-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "printer": "6d2f729d5d41caf34ed706cef7c774c9c4c86a9064cdda13bc3cbc18e3aadfed",
+        "printer-reset": "bf79c98fd8fdb31954f4a7648e1a3b448c6316434c359a74c8c08d0d0af5aadb",
+        "printer-strong": "c8c6d34a347c5fe6e3f756df14c30d7f9476feea7c0a3ff2d08643ff09dfa161",
+        "printer-reset-strong": "6686746b4248aca3af1627c1bacdb61afd791cb826a91fdcffc4a1e08e3790cd"
+      },
+      "implementation": {
+        "intent": "The rollers feed a fixed-size page; its printed line travels with the paper and the fed result holds.",
+        "activeSeconds": {
+          "light": 0.38,
+          "strong": 0.54
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "printer",
+            "sha256": "6d2f729d5d41caf34ed706cef7c774c9c4c86a9064cdda13bc3cbc18e3aadfed"
+          },
+          {
+            "name": "printer-reset",
+            "sha256": "bf79c98fd8fdb31954f4a7648e1a3b448c6316434c359a74c8c08d0d0af5aadb"
+          },
+          {
+            "name": "printer-strong",
+            "sha256": "c8c6d34a347c5fe6e3f756df14c30d7f9476feea7c0a3ff2d08643ff09dfa161"
+          },
+          {
+            "name": "printer-reset-strong",
+            "sha256": "6686746b4248aca3af1627c1bacdb61afd791cb826a91fdcffc4a1e08e3790cd"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "document",
+      "label": "Document",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The lines grow and shrink inside a fixed page. Strong makes them feel elastic instead of composed; no written result survives.",
+      "lightDirection": "Reveal one content line from left to right and retain it.",
+      "strongDirection": "Compose the first line, pause briefly like a pen lift, then compose the second at a different length and duration.",
+      "constructionAndTest": "Use trim or a true moving reveal boundary; do not scale a line about its middle. Keep page and fold fixed.",
+      "statePolicy": "Requires a composed result and an explicit reset for demonstrations. Do not erase text as the normal completion.",
+      "currentActiveSeconds": {
+        "document": 0.6,
+        "document-strong": 0.88
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "document": "c5206261a1b00a1aa85126f488300dbe44fa0a0415e08fdf75bd42e2d9602588",
+        "document-reset": "470206e3aa2e797950addbc54fea70395c1ccc7da1bb0da7cc0b4d1bf3936c7b",
+        "document-strong": "bc24eb017208ac702f2910bb1874de1fd1207aa5ba809bb4e36df84b83c00bfa",
+        "document-reset-strong": "bd0b244ba07c23459a62012b689bb53fa1e34443ab52714987a2fb869f0f3917"
+      },
+      "implementation": {
+        "intent": "Ink writes left to right, with the second line following the first; the completed document holds.",
+        "activeSeconds": {
+          "light": 0.38,
+          "strong": 0.56
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "document",
+            "sha256": "c5206261a1b00a1aa85126f488300dbe44fa0a0415e08fdf75bd42e2d9602588"
+          },
+          {
+            "name": "document-reset",
+            "sha256": "470206e3aa2e797950addbc54fea70395c1ccc7da1bb0da7cc0b4d1bf3936c7b"
+          },
+          {
+            "name": "document-strong",
+            "sha256": "bc24eb017208ac702f2910bb1874de1fd1207aa5ba809bb4e36df84b83c00bfa"
+          },
+          {
+            "name": "document-reset-strong",
+            "sha256": "bd0b244ba07c23459a62012b689bb53fa1e34443ab52714987a2fb869f0f3917"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "clipboard",
+      "label": "Clipboard",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The clip becomes flatter while its lower edge stays fixed. Strong exposes the shape compression; the hardware does not act like a rigid clamp.",
+      "lightDirection": "Press a rigid clip lever around its hinge and release.",
+      "strongDirection": "Open the lever, seat a paper edge, then close the clip onto it with a clear contact stop.",
+      "constructionAndTest": "Keep metal hardware dimensions stable. Separate board, paper, and lever; no paper travel through a closed clamp.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "clipboard": 0.54,
+        "clipboard-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "clipboard": "b455e4e51438969b7ddf6bac0499399901b2b718e4725c6cd83cbd529b6c2a1b",
+        "clipboard-strong": "d52718b519cd179bb7557a47979c674b51bcf18b89cb02cd7d6c290e2e73362c"
+      },
+      "implementation": {
+        "intent": "A rigid top clip hinges open; Strong lets the paper seat beneath it before the clip closes.",
+        "activeSeconds": {
+          "light": 0.36,
+          "strong": 0.52
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "clipboard",
+            "sha256": "b455e4e51438969b7ddf6bac0499399901b2b718e4725c6cd83cbd529b6c2a1b"
+          },
+          {
+            "name": "clipboard-strong",
+            "sha256": "d52718b519cd179bb7557a47979c674b51bcf18b89cb02cd7d6c290e2e73362c"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "book",
+      "label": "Book",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The right page narrows toward the spine and widens again. Strong is a squeeze of one half of the book, not a page turn.",
+      "lightDirection": "Turn one leaf briskly across the spine with a small curve.",
+      "strongDirection": "Let the page lift at the free corner, bow through the middle, cross the spine, and settle onto the left page with a delayed trailing edge.",
+      "constructionAndTest": "Draw stationary underlying pages and one moving leaf. Keep the spine fixed, manage occlusion, and preserve compatible path topology. Anonymous pages can finish in the same silhouette without reversing time.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "book": 0.54,
+        "book-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "book": "f8ed61f53843ea3cd973afa6202314fbe9a8ea5722702197fb00f3242d600bf7",
+        "book-strong": "be2bbd4d04e0794c6da18f48645fa1429e004af3074f5a62e7a84d9eaa9a4770"
+      },
+      "implementation": {
+        "intent": "One complete leaf bows across a fixed spine, exposes the next page, and settles on the left.",
+        "activeSeconds": {
+          "light": 0.52,
+          "strong": 0.8
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "book",
+            "sha256": "f8ed61f53843ea3cd973afa6202314fbe9a8ea5722702197fb00f3242d600bf7"
+          },
+          {
+            "name": "book-strong",
+            "sha256": "be2bbd4d04e0794c6da18f48645fa1429e004af3074f5a62e7a84d9eaa9a4770"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "credit-card",
+      "label": "Credit card",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "A complete card slides sideways and comes back with no receiving reference. Strong increases travel but still reads as a generic nudge rather than a payment action.",
+      "lightDirection": "Move the card\u2019s leading edge toward a compact fixed reader edge and stop.",
+      "strongDirection": "Approach along a shallow rigid arc, make a brief tap/seat, then withdraw after the contact pause.",
+      "constructionAndTest": "Keep the chip and stripe fixed on the card. Use one readable receiver reference only if it survives at 24 px; preserve the card as the main silhouette.",
+      "statePolicy": "A card gesture does not mean payment approved. Keep authorization and success feedback tied to real state.",
+      "currentActiveSeconds": {
+        "credit-card": 0.54,
+        "credit-card-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "credit-card": "c955841863a2d33539e38bd371e2d3a05d15ff9d862ee89501552ad0520750aa",
+        "credit-card-strong": "960fb09863b08abb844bbfe27072348ff934a64813e30b88de655e1f9360afe4"
+      },
+      "implementation": {
+        "intent": "The whole card approaches a fixed reader, holds for the tap, and withdraws with its chip and stripe attached.",
+        "activeSeconds": {
+          "light": 0.52,
+          "strong": 0.69
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "credit-card",
+            "sha256": "c955841863a2d33539e38bd371e2d3a05d15ff9d862ee89501552ad0520750aa"
+          },
+          {
+            "name": "credit-card-strong",
+            "sha256": "960fb09863b08abb844bbfe27072348ff934a64813e30b88de655e1f9360afe4"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "wallet",
+      "label": "Wallet",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The clasped flap gets wider while its right edge stays fixed. It reads as elastic hardware. Strong exaggerates the expansion without an unfastening moment.",
+      "lightDirection": "Unfasten and pivot the flap around its actual attachment, keeping the clasp round.",
+      "strongDirection": "Open the flap, expose a single card edge, pause, reseat it, and fasten the flap in order.",
+      "constructionAndTest": "Keep clasp and card rigid; allow only the leather hinge region to bend. Draw the revealed wallet opening and avoid painting under the clasp counter.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "wallet": 0.54,
+        "wallet-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "wallet": "512fac1b512bf5c03a16b947eb31bfa05ba51a5d988303a579960468a97eb8ff",
+        "wallet-strong": "19046366a9816551ed71a1bcf82d1664342d04bf37bfa875fa0f8327071131d5"
+      },
+      "implementation": {
+        "intent": "The leather flap pivots from its right seam; its round clasp follows the hinge, Strong exposes and reseats one card edge, then the flap closes.",
+        "activeSeconds": {
+          "light": 0.55,
+          "strong": 0.74
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "wallet",
+            "sha256": "512fac1b512bf5c03a16b947eb31bfa05ba51a5d988303a579960468a97eb8ff"
+          },
+          {
+            "name": "wallet-strong",
+            "sha256": "19046366a9816551ed71a1bcf82d1664342d04bf37bfa875fa0f8327071131d5"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "gift",
+      "label": "Gift",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "The exposed-cap correction now keeps the lid junctions clean in both modes. However, the box grows taller with the lid. It is a clean stretching gesture, not a believable opening; Strong makes that difference clear.",
+      "lightDirection": "Keep the box rigid; make a small lid lift over a fully drawn box rim, then close.",
+      "strongDirection": "Let the lid lead, the bow loops lag briefly, and the box remain planted. Hold the opening, close the lid, then let the bow finish once.",
+      "constructionAndTest": "Draw a complete exposed rim and terminate the center ribbon on it. Author lid, knot, and bow loops separately. Never reveal three loose line caps or use a background patch. The current fix stays until a new opening is built and reviewed.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "gift": 0.54,
+        "gift-strong": 0.82
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "gift": "e9913b9122ec02e090524eb4818453960489e7ff71565ad401f77cd84e594609",
+        "gift-strong": "cffaeb77eebde5b43194d88c932b08207ea8d567b18381dba4a4d747b1fdf991"
+      },
+      "implementation": {
+        "intent": "The rigid lid opens above a complete box rim; the attached bow follows and settles after contact.",
+        "activeSeconds": {
+          "light": 0.54,
+          "strong": 0.76
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "gift",
+            "sha256": "e9913b9122ec02e090524eb4818453960489e7ff71565ad401f77cd84e594609"
+          },
+          {
+            "name": "gift-strong",
+            "sha256": "cffaeb77eebde5b43194d88c932b08207ea8d567b18381dba4a4d747b1fdf991"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "flag",
+      "label": "Flag",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The fixed pole is good. The current delayed upward displacement reads as a lifted free edge more than a wave travelling through cloth. Strong magnifies that lifted corner.",
+      "lightDirection": "Pass one small crest along the cloth from pole to free edge.",
+      "strongDirection": "Use a more visible crest and following trough, with the trailing edge resolving last.",
+      "constructionAndTest": "Advance wave phase in one direction and ease only its envelope. Keep top/bottom phase related and the hoist fixed; no backwards phase during the return.",
+      "statePolicy": "Keep a same-state interaction gesture. Product state remains independent.",
+      "currentActiveSeconds": {
+        "flag": 0.6,
+        "flag-strong": 0.9
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "flag": "50ccc0d94489ae732dbd3aa648af0de989e91094706e7120150cea0795c82ac0",
+        "flag-strong": "dfa4d8727e203fe74f2833aab2a35347ae47d3b82bf522271e71cb1b2ba1a310"
+      },
+      "implementation": {
+        "intent": "A crest and trough travel in one direction toward the free edge; the pole and cloth attachment stay fixed.",
+        "activeSeconds": {
+          "light": 0.57,
+          "strong": 0.85
+        },
+        "stateful": false,
+        "previewReset": false,
+        "actions": [
+          {
+            "name": "flag",
+            "sha256": "50ccc0d94489ae732dbd3aa648af0de989e91094706e7120150cea0795c82ac0"
+          },
+          {
+            "name": "flag-strong",
+            "sha256": "dfa4d8727e203fe74f2833aab2a35347ae47d3b82bf522271e71cb1b2ba1a310"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    },
+    {
+      "name": "chart",
+      "label": "Chart",
+      "decision": "Rework",
+      "status": "implemented",
+      "currentCritique": "Bars grow in order, then shrink to the old values. Strong adds more growth but presents a temporary data change without a lasting result.",
+      "lightDirection": "Reveal the actual target bars from their baseline with a short reading-order stagger.",
+      "strongDirection": "Give each bar its own start and duration; longer bars take longer while earlier bars hold. End on the exact target values.",
+      "constructionAndTest": "Keep the common baseline and constant bar widths. No overshoot that falsifies the values, random heights, or endless breathing.",
+      "statePolicy": "Use explicit data states. A gallery build/reset may repeat, but actual charts must retain the real values.",
+      "currentActiveSeconds": {
+        "chart": 0.64,
+        "chart-strong": 0.92
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "chart": "0863fecbdc27c00272b9e422c61e398dcc78d58629a17526a20dfd4e82f8a6d8",
+        "chart-reset": "ae81f5b9f3bb48383957dac1dea40005c9274aedfb20857259080b82d545d705",
+        "chart-strong": "b4faefe766bd8111ab68627f6ea99c69169acf17ffdc9d09885790d70fb535ba",
+        "chart-reset-strong": "3503adfbee3b357e2188e822513ad6e83953b7784ebbeda5e8509b42ab54b444"
+      },
+      "implementation": {
+        "intent": "Three data bars rise from one baseline into staggered target values and retain the result without overshooting the data.",
+        "activeSeconds": {
+          "light": 0.38,
+          "strong": 0.62
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "chart",
+            "sha256": "0863fecbdc27c00272b9e422c61e398dcc78d58629a17526a20dfd4e82f8a6d8"
+          },
+          {
+            "name": "chart-reset",
+            "sha256": "ae81f5b9f3bb48383957dac1dea40005c9274aedfb20857259080b82d545d705"
+          },
+          {
+            "name": "chart-strong",
+            "sha256": "b4faefe766bd8111ab68627f6ea99c69169acf17ffdc9d09885790d70fb535ba"
+          },
+          {
+            "name": "chart-reset-strong",
+            "sha256": "3503adfbee3b357e2188e822513ad6e83953b7784ebbeda5e8509b42ab54b444"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": false
+      }
+    },
+    {
+      "name": "filter",
+      "label": "Filter",
+      "decision": "Refine",
+      "status": "implemented",
+      "currentCritique": "The lower tiers shorten and return. This hints at narrowing, but the broad common pulse makes it feel like another resize gesture.",
+      "lightDirection": "Narrow the middle tier, then settle the lower result into alignment.",
+      "strongDirection": "Use a clear source \u2192 subset \u2192 result cadence, with different move durations and a longer held output.",
+      "constructionAndTest": "Keep the top source tier stable and the lower tiers centered. Make the sequence distinct from handle travel in Sliders and baseline growth in Chart.",
+      "statePolicy": "Retain the actual filter selection. Clearing the filter is a separate action or gallery rearm, not the automatic result.",
+      "currentActiveSeconds": {
+        "filter": 0.6,
+        "filter-strong": 0.88
+      },
+      "sourceSet": "06",
+      "currentAssetHashes": {
+        "filter": "6bc2f5cfcd45d2903e3661679f8546b6bb9c27a6f4516d5bc6437ecdcc682d7e",
+        "filter-reset": "c239312413369d130ff31eef7c29927ed533ffb2afe39651849c734d0fa7b130",
+        "filter-strong": "4de60610a206fafb5113f760ac6413f97c53f642d76d94cd1fd09451c2188825",
+        "filter-reset-strong": "6be35a9d031383dcb35177ba796a0fb1a2c921f38b6687ddd5d09ddfeb4e8105"
+      },
+      "implementation": {
+        "intent": "The source remains full width while the middle subset and lower result narrow in order and hold.",
+        "activeSeconds": {
+          "light": 0.33,
+          "strong": 0.52
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "filter",
+            "sha256": "6bc2f5cfcd45d2903e3661679f8546b6bb9c27a6f4516d5bc6437ecdcc682d7e"
+          },
+          {
+            "name": "filter-reset",
+            "sha256": "c239312413369d130ff31eef7c29927ed533ffb2afe39651849c734d0fa7b130"
+          },
+          {
+            "name": "filter-strong",
+            "sha256": "4de60610a206fafb5113f760ac6413f97c53f642d76d94cd1fd09451c2188825"
+          },
+          {
+            "name": "filter-reset-strong",
+            "sha256": "6be35a9d031383dcb35177ba796a0fb1a2c921f38b6687ddd5d09ddfeb4e8105"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": false
+      }
+    },
+    {
+      "name": "keyframes",
+      "label": "Keyframes",
+      "decision": "Add",
+      "status": "implemented",
+      "sourceSet": "06",
+      "designer": "Claude Code; text proposals 01, 03, 04; proposal 02 timed out",
+      "supervisor": "Codex; geometry critique, implementation, native and visual checks",
+      "designRecord": "design-reviews/keyframes/",
+      "lightDirection": "A short playhead press stamps a key after the track clears.",
+      "strongDirection": "A 3-unit lift, brief hold, 5-unit press, and smooth release give the stamp a clearer cause.",
+      "constructionAndTest": "Rounded rigid diamonds; shared weights; clear counters; one opacity for the rail junction; separate Solid contour with buried caps.",
+      "statePolicy": "Keep the added key. Explicit 0.30-second preview reset.",
+      "currentAssetHashes": {
+        "keyframes": "2d82244ec3f1478e96fa9c1eecd516339f5d87e5e0fe20ae3451701a48fee444",
+        "keyframes-reset": "a1249758f63874ddf5fcc80f864983ea879c98fb8345e06a843c7f8d96828eb0",
+        "keyframes-strong": "18ce851937ce0b3d244958ac6b1566723c648367c5fcd82494f45471f3bac9c1",
+        "keyframes-reset-strong": "3979b8a2f86035e33393a097c3e6594d8f8041393ccaa19fc53ff033189db9b0"
+      },
+      "implementation": {
+        "intent": "Cause: playhead press. Action: track clears. Response: a rigid diamond appears. Result: two keys remain; the preview resets separately.",
+        "activeSeconds": {
+          "light": 0.55,
+          "strong": 0.9
+        },
+        "stateful": true,
+        "previewReset": true,
+        "actions": [
+          {
+            "name": "keyframes",
+            "sha256": "2d82244ec3f1478e96fa9c1eecd516339f5d87e5e0fe20ae3451701a48fee444"
+          },
+          {
+            "name": "keyframes-reset",
+            "sha256": "a1249758f63874ddf5fcc80f864983ea879c98fb8345e06a843c7f8d96828eb0"
+          },
+          {
+            "name": "keyframes-strong",
+            "sha256": "18ce851937ce0b3d244958ac6b1566723c648367c5fcd82494f45471f3bac9c1"
+          },
+          {
+            "name": "keyframes-reset-strong",
+            "sha256": "3979b8a2f86035e33393a097c3e6594d8f8041393ccaa19fc53ff033189db9b0"
+          }
+        ]
+      },
+      "paintPolicy": {
+        "outlineStrokePresets": [
+          1.5,
+          2,
+          2.5
+        ],
+        "duotoneFill": true
+      }
+    }
+  ]
+}

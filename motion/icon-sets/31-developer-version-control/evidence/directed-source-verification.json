@@ -1,0 +1,766 @@
+{
+  "result": "PASS",
+  "icons": 13,
+  "actions": 42,
+  "nativeTransformNodes": 154,
+  "nativeTransformMaxCoordinateError": 0.000007935560308425238,
+  "checks": [
+    {
+      "name": "repository",
+      "fixedParts": [
+        "repository-cover",
+        "repository-spine"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "repository-cover"
+        },
+        {
+          "type": "fixed",
+          "part": "repository-spine"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-mark"
+        }
+      ]
+    },
+    {
+      "name": "repository-strong",
+      "fixedParts": [
+        "repository-cover",
+        "repository-spine"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "repository-cover"
+        },
+        {
+          "type": "fixed",
+          "part": "repository-spine"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-mark"
+        }
+      ]
+    },
+    {
+      "name": "git-branch",
+      "fixedParts": [
+        "git-branch-root",
+        "git-branch-base",
+        "git-branch-trunk"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "git-branch-root"
+        },
+        {
+          "type": "fixed",
+          "part": "git-branch-base"
+        },
+        {
+          "type": "fixed",
+          "part": "git-branch-trunk"
+        }
+      ]
+    },
+    {
+      "name": "git-branch-strong",
+      "fixedParts": [
+        "git-branch-root",
+        "git-branch-base",
+        "git-branch-trunk"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "git-branch-root"
+        },
+        {
+          "type": "fixed",
+          "part": "git-branch-base"
+        },
+        {
+          "type": "fixed",
+          "part": "git-branch-trunk"
+        }
+      ]
+    },
+    {
+      "name": "git-commit",
+      "fixedParts": [
+        "git-commit-ring",
+        "git-commit-lane-left",
+        "git-commit-lane-right"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "git-commit-ring"
+        },
+        {
+          "type": "fixed",
+          "part": "git-commit-lane-left"
+        },
+        {
+          "type": "fixed",
+          "part": "git-commit-lane-right"
+        }
+      ]
+    },
+    {
+      "name": "git-commit-strong",
+      "fixedParts": [
+        "git-commit-ring",
+        "git-commit-lane-left",
+        "git-commit-lane-right"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "git-commit-ring"
+        },
+        {
+          "type": "fixed",
+          "part": "git-commit-lane-left"
+        },
+        {
+          "type": "fixed",
+          "part": "git-commit-lane-right"
+        }
+      ]
+    },
+    {
+      "name": "git-merge",
+      "fixedParts": [
+        "git-merge-left",
+        "git-merge-right",
+        "git-merge-target",
+        "git-merge-lane-left",
+        "git-merge-trunk"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "git-merge-left"
+        },
+        {
+          "type": "fixed",
+          "part": "git-merge-right"
+        },
+        {
+          "type": "fixed",
+          "part": "git-merge-target"
+        },
+        {
+          "type": "fixed",
+          "part": "git-merge-lane-left"
+        },
+        {
+          "type": "fixed",
+          "part": "git-merge-trunk"
+        }
+      ]
+    },
+    {
+      "name": "git-merge-strong",
+      "fixedParts": [
+        "git-merge-left",
+        "git-merge-right",
+        "git-merge-target",
+        "git-merge-lane-left",
+        "git-merge-trunk"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "git-merge-left"
+        },
+        {
+          "type": "fixed",
+          "part": "git-merge-right"
+        },
+        {
+          "type": "fixed",
+          "part": "git-merge-target"
+        },
+        {
+          "type": "fixed",
+          "part": "git-merge-lane-left"
+        },
+        {
+          "type": "fixed",
+          "part": "git-merge-trunk"
+        }
+      ]
+    },
+    {
+      "name": "pull-request",
+      "fixedParts": [
+        "pull-request-root",
+        "pull-request-base",
+        "pull-request-trunk",
+        "pull-request-branch"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pull-request-root"
+        },
+        {
+          "type": "fixed",
+          "part": "pull-request-base"
+        },
+        {
+          "type": "fixed",
+          "part": "pull-request-trunk"
+        },
+        {
+          "type": "fixed",
+          "part": "pull-request-branch"
+        },
+        {
+          "type": "rigid",
+          "part": "pull-request-head"
+        }
+      ]
+    },
+    {
+      "name": "pull-request-strong",
+      "fixedParts": [
+        "pull-request-root",
+        "pull-request-base",
+        "pull-request-trunk",
+        "pull-request-branch"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pull-request-root"
+        },
+        {
+          "type": "fixed",
+          "part": "pull-request-base"
+        },
+        {
+          "type": "fixed",
+          "part": "pull-request-trunk"
+        },
+        {
+          "type": "fixed",
+          "part": "pull-request-branch"
+        },
+        {
+          "type": "rigid",
+          "part": "pull-request-head"
+        }
+      ]
+    },
+    {
+      "name": "repository-fork",
+      "fixedParts": [
+        "repository-fork-source",
+        "repository-fork-trunk"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "repository-fork-source"
+        },
+        {
+          "type": "fixed",
+          "part": "repository-fork-trunk"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-fork-lane-left"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-fork-copy-left"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-fork-lane-right"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-fork-copy-right"
+        }
+      ]
+    },
+    {
+      "name": "repository-fork-strong",
+      "fixedParts": [
+        "repository-fork-source",
+        "repository-fork-trunk"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "repository-fork-source"
+        },
+        {
+          "type": "fixed",
+          "part": "repository-fork-trunk"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-fork-lane-left"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-fork-copy-left"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-fork-lane-right"
+        },
+        {
+          "type": "rigid",
+          "part": "repository-fork-copy-right"
+        }
+      ]
+    },
+    {
+      "name": "merge-conflict",
+      "fixedParts": [
+        "merge-conflict-lane-left",
+        "merge-conflict-lane-right",
+        "merge-conflict-junction"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "merge-conflict-lane-left"
+        },
+        {
+          "type": "fixed",
+          "part": "merge-conflict-lane-right"
+        },
+        {
+          "type": "fixed",
+          "part": "merge-conflict-junction"
+        }
+      ]
+    },
+    {
+      "name": "merge-conflict-strong",
+      "fixedParts": [
+        "merge-conflict-lane-left",
+        "merge-conflict-lane-right",
+        "merge-conflict-junction"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "merge-conflict-lane-left"
+        },
+        {
+          "type": "fixed",
+          "part": "merge-conflict-lane-right"
+        },
+        {
+          "type": "fixed",
+          "part": "merge-conflict-junction"
+        }
+      ]
+    },
+    {
+      "name": "git-stash",
+      "fixedParts": [
+        "git-stash-tray"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "git-stash-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "git-stash-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "git-stash-strong",
+      "fixedParts": [
+        "git-stash-tray"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "git-stash-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "git-stash-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "debug",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "debug-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-seam"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-leg-lu"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-leg-ll"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-leg-ru"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-leg-rl"
+        }
+      ]
+    },
+    {
+      "name": "debug-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "debug-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-seam"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-leg-lu"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-leg-ll"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-leg-ru"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-leg-rl"
+        }
+      ]
+    },
+    {
+      "name": "breakpoint",
+      "fixedParts": [
+        "breakpoint-gutter",
+        "breakpoint-line-1",
+        "breakpoint-line-2",
+        "breakpoint-line-3"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "breakpoint-gutter"
+        },
+        {
+          "type": "fixed",
+          "part": "breakpoint-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "breakpoint-line-2"
+        },
+        {
+          "type": "fixed",
+          "part": "breakpoint-line-3"
+        }
+      ]
+    },
+    {
+      "name": "breakpoint-strong",
+      "fixedParts": [
+        "breakpoint-gutter",
+        "breakpoint-line-1",
+        "breakpoint-line-2",
+        "breakpoint-line-3"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "breakpoint-gutter"
+        },
+        {
+          "type": "fixed",
+          "part": "breakpoint-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "breakpoint-line-2"
+        },
+        {
+          "type": "fixed",
+          "part": "breakpoint-line-3"
+        }
+      ]
+    },
+    {
+      "name": "debug-step",
+      "fixedParts": [
+        "debug-step-line-1",
+        "debug-step-line-2",
+        "debug-step-line-3"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "debug-step-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "debug-step-line-2"
+        },
+        {
+          "type": "fixed",
+          "part": "debug-step-line-3"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-step-pointer"
+        }
+      ]
+    },
+    {
+      "name": "debug-step-strong",
+      "fixedParts": [
+        "debug-step-line-1",
+        "debug-step-line-2",
+        "debug-step-line-3"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "debug-step-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "debug-step-line-2"
+        },
+        {
+          "type": "fixed",
+          "part": "debug-step-line-3"
+        },
+        {
+          "type": "rigid",
+          "part": "debug-step-pointer"
+        }
+      ]
+    },
+    {
+      "name": "regular-expression",
+      "fixedParts": [
+        "regular-expression-dot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "regular-expression-dot"
+        },
+        {
+          "type": "rigid",
+          "part": "regular-expression-arm-a"
+        },
+        {
+          "type": "rigid",
+          "part": "regular-expression-arm-b"
+        },
+        {
+          "type": "rigid",
+          "part": "regular-expression-arm-c"
+        }
+      ]
+    },
+    {
+      "name": "regular-expression-strong",
+      "fixedParts": [
+        "regular-expression-dot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "regular-expression-dot"
+        },
+        {
+          "type": "rigid",
+          "part": "regular-expression-arm-a"
+        },
+        {
+          "type": "rigid",
+          "part": "regular-expression-arm-b"
+        },
+        {
+          "type": "rigid",
+          "part": "regular-expression-arm-c"
+        }
+      ]
+    },
+    {
+      "name": "webhook",
+      "fixedParts": [
+        "webhook-source"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "webhook-source"
+        },
+        {
+          "type": "rigid",
+          "part": "webhook-hook"
+        },
+        {
+          "type": "rigid",
+          "part": "webhook-payload"
+        }
+      ]
+    },
+    {
+      "name": "webhook-strong",
+      "fixedParts": [
+        "webhook-source"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "webhook-source"
+        },
+        {
+          "type": "rigid",
+          "part": "webhook-hook"
+        },
+        {
+          "type": "rigid",
+          "part": "webhook-payload"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

@@ -1,0 +1,757 @@
+{
+  "version": 1,
+  "scope": "Full exported painted geometry with explicit intentional joints",
+  "icons": {
+    "sign-in-out": [
+      {
+        "kind": "gap",
+        "a": "shaft",
+        "b": "doorway",
+        "min": 1.0,
+        "label": "shaft / doorway False"
+      },
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "doorway",
+        "min": 1.0,
+        "label": "head / doorway False"
+      },
+      {
+        "kind": "gap",
+        "a": "shaft-solid",
+        "b": "doorway-solid",
+        "min": 1.0,
+        "label": "shaft / doorway True"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "doorway-solid",
+        "min": 1.0,
+        "label": "head / doorway True"
+      }
+    ],
+    "switch-account": [
+      {
+        "kind": "gap",
+        "a": "personal-shoulders",
+        "b": "marker",
+        "min": 1.0,
+        "label": "personal / marker False"
+      },
+      {
+        "kind": "gap",
+        "a": "personal-head-frame",
+        "b": "personal-shoulders",
+        "min": 1.0,
+        "label": "personal head / body False"
+      },
+      {
+        "kind": "gap",
+        "a": "work-shoulders",
+        "b": "marker",
+        "min": 1.0,
+        "label": "work / marker False"
+      },
+      {
+        "kind": "gap",
+        "a": "work-head-frame",
+        "b": "work-shoulders",
+        "min": 1.0,
+        "label": "work head / body False"
+      },
+      {
+        "kind": "gap",
+        "a": "personal-shoulders-solid",
+        "b": "marker-solid",
+        "min": 1.0,
+        "label": "personal / marker True"
+      },
+      {
+        "kind": "gap",
+        "a": "personal-head-solid",
+        "b": "personal-shoulders-solid",
+        "min": 1.0,
+        "label": "personal head / body True"
+      },
+      {
+        "kind": "gap",
+        "a": "work-shoulders-solid",
+        "b": "marker-solid",
+        "min": 1.0,
+        "label": "work / marker True"
+      },
+      {
+        "kind": "gap",
+        "a": "work-head-solid",
+        "b": "work-shoulders-solid",
+        "min": 1.0,
+        "label": "work head / body True"
+      }
+    ],
+    "id-card": [
+      {
+        "kind": "gap",
+        "a": "line-1",
+        "b": "card-frame",
+        "min": 1.0,
+        "label": "identity line / card 1"
+      },
+      {
+        "kind": "gap",
+        "a": "line-2",
+        "b": "card-frame",
+        "min": 1.0,
+        "label": "identity line / card 2"
+      }
+    ],
+    "password": [
+      {
+        "kind": "gap",
+        "a": "dot-1",
+        "b": "field-frame",
+        "min": 1.0,
+        "label": "password dot / field 1 False"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2",
+        "b": "field-frame",
+        "min": 1.0,
+        "label": "password dot / field 2 False"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-3",
+        "b": "field-frame",
+        "min": 1.0,
+        "label": "password dot / field 3 False"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-4",
+        "b": "field-frame",
+        "min": 1.0,
+        "label": "password dot / field 4 False"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1",
+        "b": "dot-2",
+        "min": 1.0,
+        "label": "password neighbor dots 1 False"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2",
+        "b": "dot-3",
+        "min": 1.0,
+        "label": "password neighbor dots 2 False"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-3",
+        "b": "dot-4",
+        "min": 1.0,
+        "label": "password neighbor dots 3 False"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1-solid",
+        "b": "field-solid",
+        "min": 1.0,
+        "label": "password dot / field 1 True"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2-solid",
+        "b": "field-solid",
+        "min": 1.0,
+        "label": "password dot / field 2 True"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-3-solid",
+        "b": "field-solid",
+        "min": 1.0,
+        "label": "password dot / field 3 True"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-4-solid",
+        "b": "field-solid",
+        "min": 1.0,
+        "label": "password dot / field 4 True"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1-solid",
+        "b": "dot-2-solid",
+        "min": 1.0,
+        "label": "password neighbor dots 1 True"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2-solid",
+        "b": "dot-3-solid",
+        "min": 1.0,
+        "label": "password neighbor dots 2 True"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-3-solid",
+        "b": "dot-4-solid",
+        "min": 1.0,
+        "label": "password neighbor dots 3 True"
+      }
+    ],
+    "passkey": [
+      {
+        "kind": "gap",
+        "a": "ring",
+        "b": "head-frame",
+        "min": 1.0,
+        "label": "key / head ring False"
+      },
+      {
+        "kind": "gap",
+        "a": "ring",
+        "b": "shoulders",
+        "min": 1.0,
+        "label": "key / shoulders ring False"
+      },
+      {
+        "kind": "gap",
+        "a": "shaft",
+        "b": "head-frame",
+        "min": 1.0,
+        "label": "key / head shaft False"
+      },
+      {
+        "kind": "gap",
+        "a": "shaft",
+        "b": "shoulders",
+        "min": 1.0,
+        "label": "key / shoulders shaft False"
+      },
+      {
+        "kind": "gap",
+        "a": "tooth",
+        "b": "head-frame",
+        "min": 1.0,
+        "label": "key / head tooth False"
+      },
+      {
+        "kind": "gap",
+        "a": "tooth",
+        "b": "shoulders",
+        "min": 1.0,
+        "label": "key / shoulders tooth False"
+      },
+      {
+        "kind": "gap",
+        "a": "head-frame",
+        "b": "shoulders",
+        "min": 1.0,
+        "label": "person head / shoulders False"
+      },
+      {
+        "kind": "gap",
+        "a": "ring-solid",
+        "b": "head-solid",
+        "min": 1.0,
+        "label": "key / head ring True"
+      },
+      {
+        "kind": "gap",
+        "a": "ring-solid",
+        "b": "shoulders-solid",
+        "min": 1.0,
+        "label": "key / shoulders ring True"
+      },
+      {
+        "kind": "gap",
+        "a": "shaft-solid",
+        "b": "head-solid",
+        "min": 1.0,
+        "label": "key / head shaft True"
+      },
+      {
+        "kind": "gap",
+        "a": "shaft-solid",
+        "b": "shoulders-solid",
+        "min": 1.0,
+        "label": "key / shoulders shaft True"
+      },
+      {
+        "kind": "gap",
+        "a": "tooth-solid",
+        "b": "head-solid",
+        "min": 1.0,
+        "label": "key / head tooth True"
+      },
+      {
+        "kind": "gap",
+        "a": "tooth-solid",
+        "b": "shoulders-solid",
+        "min": 1.0,
+        "label": "key / shoulders tooth True"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "shoulders-solid",
+        "min": 1.0,
+        "label": "person head / shoulders True"
+      }
+    ],
+    "fingerprint": [
+      {
+        "kind": "gap",
+        "a": "ridge-1",
+        "b": "ridge-2",
+        "min": 1.0,
+        "label": "ridge 1 / 2 False"
+      },
+      {
+        "kind": "gap",
+        "a": "ridge-1",
+        "b": "ridge-3",
+        "min": 1.0,
+        "label": "ridge 1 / 3 False"
+      },
+      {
+        "kind": "gap",
+        "a": "ridge-2",
+        "b": "ridge-3",
+        "min": 1.0,
+        "label": "ridge 2 / 3 False"
+      },
+      {
+        "kind": "gap",
+        "a": "ridge-1-solid",
+        "b": "ridge-2-solid",
+        "min": 1.0,
+        "label": "ridge 1 / 2 True"
+      },
+      {
+        "kind": "gap",
+        "a": "ridge-1-solid",
+        "b": "ridge-3-solid",
+        "min": 1.0,
+        "label": "ridge 1 / 3 True"
+      },
+      {
+        "kind": "gap",
+        "a": "ridge-2-solid",
+        "b": "ridge-3-solid",
+        "min": 1.0,
+        "label": "ridge 2 / 3 True"
+      }
+    ],
+    "face-authentication": [
+      {
+        "kind": "gap",
+        "a": "bracket-tl",
+        "b": "bracket-tr",
+        "min": 1.0,
+        "label": "face brackets tl/tr False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tr",
+        "b": "bracket-br",
+        "min": 1.0,
+        "label": "face brackets tr/br False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-br",
+        "b": "bracket-bl",
+        "min": 1.0,
+        "label": "face brackets br/bl False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-bl",
+        "b": "bracket-tl",
+        "min": 1.0,
+        "label": "face brackets bl/tl False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tl",
+        "b": "eye-l",
+        "min": 1.0,
+        "label": "face bracket / tl/eye-l False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tl",
+        "b": "eye-r",
+        "min": 1.0,
+        "label": "face bracket / tl/eye-r False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tl",
+        "b": "mouth",
+        "min": 1.0,
+        "label": "face bracket / tl/mouth False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tr",
+        "b": "eye-l",
+        "min": 1.0,
+        "label": "face bracket / tr/eye-l False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tr",
+        "b": "eye-r",
+        "min": 1.0,
+        "label": "face bracket / tr/eye-r False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tr",
+        "b": "mouth",
+        "min": 1.0,
+        "label": "face bracket / tr/mouth False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-br",
+        "b": "eye-l",
+        "min": 1.0,
+        "label": "face bracket / br/eye-l False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-br",
+        "b": "eye-r",
+        "min": 1.0,
+        "label": "face bracket / br/eye-r False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-br",
+        "b": "mouth",
+        "min": 1.0,
+        "label": "face bracket / br/mouth False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-bl",
+        "b": "eye-l",
+        "min": 1.0,
+        "label": "face bracket / bl/eye-l False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-bl",
+        "b": "eye-r",
+        "min": 1.0,
+        "label": "face bracket / bl/eye-r False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-bl",
+        "b": "mouth",
+        "min": 1.0,
+        "label": "face bracket / bl/mouth False"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tl-solid",
+        "b": "bracket-tr-solid",
+        "min": 1.0,
+        "label": "face brackets tl/tr True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tr-solid",
+        "b": "bracket-br-solid",
+        "min": 1.0,
+        "label": "face brackets tr/br True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-br-solid",
+        "b": "bracket-bl-solid",
+        "min": 1.0,
+        "label": "face brackets br/bl True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-bl-solid",
+        "b": "bracket-tl-solid",
+        "min": 1.0,
+        "label": "face brackets bl/tl True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tl-solid",
+        "b": "eye-l-solid",
+        "min": 1.0,
+        "label": "face bracket / tl/eye-l True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tl-solid",
+        "b": "eye-r-solid",
+        "min": 1.0,
+        "label": "face bracket / tl/eye-r True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tl-solid",
+        "b": "mouth-solid",
+        "min": 1.0,
+        "label": "face bracket / tl/mouth True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tr-solid",
+        "b": "eye-l-solid",
+        "min": 1.0,
+        "label": "face bracket / tr/eye-l True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tr-solid",
+        "b": "eye-r-solid",
+        "min": 1.0,
+        "label": "face bracket / tr/eye-r True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-tr-solid",
+        "b": "mouth-solid",
+        "min": 1.0,
+        "label": "face bracket / tr/mouth True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-br-solid",
+        "b": "eye-l-solid",
+        "min": 1.0,
+        "label": "face bracket / br/eye-l True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-br-solid",
+        "b": "eye-r-solid",
+        "min": 1.0,
+        "label": "face bracket / br/eye-r True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-br-solid",
+        "b": "mouth-solid",
+        "min": 1.0,
+        "label": "face bracket / br/mouth True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-bl-solid",
+        "b": "eye-l-solid",
+        "min": 1.0,
+        "label": "face bracket / bl/eye-l True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-bl-solid",
+        "b": "eye-r-solid",
+        "min": 1.0,
+        "label": "face bracket / bl/eye-r True"
+      },
+      {
+        "kind": "gap",
+        "a": "bracket-bl-solid",
+        "b": "mouth-solid",
+        "min": 1.0,
+        "label": "face bracket / bl/mouth True"
+      }
+    ],
+    "two-factor-code": [
+      {
+        "kind": "gap",
+        "a": "cell-0-frame",
+        "b": "cell-1-frame",
+        "min": 1.0,
+        "label": "two factor cells False"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-0-frame",
+        "b": "dot-0",
+        "min": 1.0,
+        "label": "two factor cell / dot 0 False"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-1-frame",
+        "b": "dot-1",
+        "min": 1.0,
+        "label": "two factor cell / dot 1 False"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-0-solid",
+        "b": "cell-1-solid",
+        "min": 1.0,
+        "label": "two factor cells True"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-0-solid",
+        "b": "dot-0-solid",
+        "min": 1.0,
+        "label": "two factor cell / dot 0 True"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-1-solid",
+        "b": "dot-1-solid",
+        "min": 1.0,
+        "label": "two factor cell / dot 1 True"
+      }
+    ],
+    "recovery-codes": [
+      {
+        "kind": "gap",
+        "a": "sheet-frame",
+        "b": "sleeve",
+        "min": 1.0,
+        "label": "recovery sheet / sleeve False"
+      },
+      {
+        "kind": "gap",
+        "a": "sheet-solid",
+        "b": "sleeve-solid",
+        "min": 1.0,
+        "label": "recovery sheet / sleeve True"
+      },
+      {
+        "kind": "gap",
+        "a": "code-1",
+        "b": "sheet-frame",
+        "min": 1.0,
+        "label": "recovery code / sheet 1"
+      },
+      {
+        "kind": "gap",
+        "a": "code-2",
+        "b": "sheet-frame",
+        "min": 1.0,
+        "label": "recovery code / sheet 2"
+      },
+      {
+        "kind": "gap",
+        "a": "code-3",
+        "b": "sheet-frame",
+        "min": 1.0,
+        "label": "recovery code / sheet 3"
+      },
+      {
+        "kind": "gap",
+        "a": "code-1",
+        "b": "code-2",
+        "min": 1.0,
+        "label": "recovery lines 1"
+      },
+      {
+        "kind": "gap",
+        "a": "code-2",
+        "b": "code-3",
+        "min": 1.0,
+        "label": "recovery lines 2"
+      }
+    ],
+    "private-browsing": [
+      {
+        "kind": "gap",
+        "a": "lens-l-frame",
+        "b": "lens-r-frame",
+        "min": 1.0,
+        "label": "glasses lens / lens False"
+      },
+      {
+        "kind": "gap",
+        "a": "lens-l-solid",
+        "b": "lens-r-solid",
+        "min": 1.0,
+        "label": "glasses lens / lens True"
+      }
+    ],
+    "cookie-preferences": [
+      {
+        "kind": "gap",
+        "a": "chip-0",
+        "b": "rim",
+        "min": 1.0,
+        "label": "cookie chip / rim 0"
+      },
+      {
+        "kind": "gap",
+        "a": "chip-1",
+        "b": "rim",
+        "min": 1.0,
+        "label": "cookie chip / rim 1"
+      },
+      {
+        "kind": "gap",
+        "a": "chip-2",
+        "b": "rim",
+        "min": 1.0,
+        "label": "cookie chip / rim 2"
+      },
+      {
+        "kind": "gap",
+        "a": "chip-3",
+        "b": "rim",
+        "min": 1.0,
+        "label": "cookie chip / rim 3"
+      }
+    ],
+    "block-user": [
+      {
+        "kind": "gap",
+        "a": "shoulders",
+        "b": "ring",
+        "min": 1.0,
+        "label": "block badge / shoulder False"
+      },
+      {
+        "kind": "gap",
+        "a": "head-frame",
+        "b": "shoulders",
+        "min": 1.0,
+        "label": "block head / shoulder False"
+      },
+      {
+        "kind": "gap",
+        "a": "shoulders-solid",
+        "b": "ring-solid",
+        "min": 1.0,
+        "label": "block badge / shoulder True"
+      },
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "shoulders-solid",
+        "min": 1.0,
+        "label": "block head / shoulder True"
+      }
+    ]
+  },
+  "exceptions": {
+    "sign-in-out": "Arrow shaft and head overlap intentionally at the apex.",
+    "passkey": "Key shaft attaches to ring and tooth; each set remains rigid.",
+    "private-browsing": "Bridge and temple caps intentionally overlap lens rims.",
+    "block-user": "Prohibition slash intentionally meets its badge ring."
+  }
+}

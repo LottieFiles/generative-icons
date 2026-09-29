@@ -1,0 +1,913 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 78,
+  "nativeTransformNodes": 312,
+  "nativeTransformMaxCoordinateError": 0.000011487360463746654,
+  "checks": [
+    {
+      "name": "ai-assistant",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ai-assistant-body"
+        },
+        {
+          "type": "rigid",
+          "part": "ai-assistant-orbit"
+        }
+      ]
+    },
+    {
+      "name": "ai-assistant-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ai-assistant-body"
+        },
+        {
+          "type": "rigid",
+          "part": "ai-assistant-orbit"
+        }
+      ]
+    },
+    {
+      "name": "prompt",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "prompt-field"
+        },
+        {
+          "type": "rigid",
+          "part": "prompt-cursor"
+        },
+        {
+          "type": "monotonic",
+          "part": "prompt-typed",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "prompt-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "prompt-field"
+        },
+        {
+          "type": "rigid",
+          "part": "prompt-cursor"
+        },
+        {
+          "type": "monotonic",
+          "part": "prompt-typed",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "system-instructions",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "system-instructions-node"
+        },
+        {
+          "type": "fixed",
+          "part": "system-instructions-spine"
+        },
+        {
+          "type": "monotonic",
+          "part": "system-instructions-rule-3",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "system-instructions-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "system-instructions-node"
+        },
+        {
+          "type": "fixed",
+          "part": "system-instructions-spine"
+        },
+        {
+          "type": "monotonic",
+          "part": "system-instructions-rule-3",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "context-window",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "context-window-frame"
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-0-a",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-0-b",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-0-out",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-0-in",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-1-a",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-1-b",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-1-out",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-1-in",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "name": "context-window-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "context-window-frame"
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-0-a",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-0-b",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-0-out",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-0-in",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-1-a",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-1-b",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-1-out",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "context-window-token-1-in",
+          "box": [
+            8,
+            11,
+            24,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "name": "response-stream",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "response-stream-pane"
+        },
+        {
+          "type": "fixed",
+          "part": "response-stream-line-1"
+        },
+        {
+          "type": "monotonic",
+          "part": "response-stream-line-3",
+          "measure": "width"
+        },
+        {
+          "type": "rigid",
+          "part": "response-stream-cursor"
+        }
+      ]
+    },
+    {
+      "name": "response-stream-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "response-stream-pane"
+        },
+        {
+          "type": "fixed",
+          "part": "response-stream-line-1"
+        },
+        {
+          "type": "monotonic",
+          "part": "response-stream-line-3",
+          "measure": "width"
+        },
+        {
+          "type": "rigid",
+          "part": "response-stream-cursor"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "autocomplete-caret"
+        },
+        {
+          "type": "monotonic",
+          "part": "autocomplete-typed-frame",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "autocomplete-caret"
+        },
+        {
+          "type": "monotonic",
+          "part": "autocomplete-typed-frame",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "rewrite",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "inside",
+          "part": "rewrite-bar-frame",
+          "box": [
+            4,
+            20,
+            26,
+            25.5
+          ]
+        },
+        {
+          "type": "hidden",
+          "part": "rewrite-arrow",
+          "profile": "strong",
+          "from": 0.3,
+          "to": 0.34
+        }
+      ]
+    },
+    {
+      "name": "rewrite-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "inside",
+          "part": "rewrite-bar-frame",
+          "box": [
+            4,
+            20,
+            26,
+            25.5
+          ]
+        },
+        {
+          "type": "hidden",
+          "part": "rewrite-arrow",
+          "profile": "strong",
+          "from": 0.3,
+          "to": 0.34
+        }
+      ]
+    },
+    {
+      "name": "summarize",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "summarize-l1",
+          "measure": "width",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "name": "summarize-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "summarize-l1",
+          "measure": "width",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "name": "translate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "translate-a"
+        },
+        {
+          "type": "fixed",
+          "part": "translate-wbar"
+        }
+      ]
+    },
+    {
+      "name": "translate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "translate-a"
+        },
+        {
+          "type": "fixed",
+          "part": "translate-wbar"
+        }
+      ]
+    },
+    {
+      "name": "brainstorm",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "brainstorm-bulb-frame"
+        }
+      ]
+    },
+    {
+      "name": "brainstorm-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "brainstorm-bulb-frame"
+        }
+      ]
+    },
+    {
+      "name": "reasoning",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reasoning-n1-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "reasoning-n2-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "reasoning-t1"
+        },
+        {
+          "type": "rigid",
+          "part": "reasoning-t2"
+        }
+      ]
+    },
+    {
+      "name": "reasoning-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reasoning-n1-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "reasoning-n2-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "reasoning-t1"
+        },
+        {
+          "type": "rigid",
+          "part": "reasoning-t2"
+        }
+      ]
+    },
+    {
+      "name": "conversation-branch",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "conversation-branch-root-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-branch-rl-frame"
+        }
+      ]
+    },
+    {
+      "name": "conversation-branch-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "conversation-branch-root-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-branch-rl-frame"
+        }
+      ]
+    },
+    {
+      "name": "prompt-template",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "prompt-template-top"
+        },
+        {
+          "type": "monotonic",
+          "part": "prompt-template-slot",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "prompt-template-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "prompt-template-top"
+        },
+        {
+          "type": "monotonic",
+          "part": "prompt-template-slot",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "tone-control",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "tone-control-base"
+        },
+        {
+          "type": "rigid",
+          "part": "tone-control-needle"
+        }
+      ]
+    },
+    {
+      "name": "tone-control-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "tone-control-base"
+        },
+        {
+          "type": "rigid",
+          "part": "tone-control-needle"
+        }
+      ]
+    },
+    {
+      "name": "answer-compare",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "answer-compare-lt-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "answer-compare-rt-frame"
+        }
+      ]
+    },
+    {
+      "name": "answer-compare-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "answer-compare-lt-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "answer-compare-rt-frame"
+        }
+      ]
+    },
+    {
+      "name": "follow-up",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "follow-up-bub-frame"
+        }
+      ]
+    },
+    {
+      "name": "follow-up-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "follow-up-bub-frame"
+        }
+      ]
+    },
+    {
+      "name": "intent-detection",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "intent-detection-bub-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "intent-detection-bub-solid"
+        },
+        {
+          "type": "opaque",
+          "part": "intent-detection-bub-solid"
+        }
+      ]
+    },
+    {
+      "name": "intent-detection-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "intent-detection-bub-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "intent-detection-bub-solid"
+        },
+        {
+          "type": "opaque",
+          "part": "intent-detection-bub-solid"
+        }
+      ]
+    },
+    {
+      "name": "response-length",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "response-length-h"
+        },
+        {
+          "type": "monotonic",
+          "part": "response-length-l4",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "response-length-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "response-length-h"
+        },
+        {
+          "type": "monotonic",
+          "part": "response-length-l4",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "conversation-memory",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "conversation-memory-p1-frame"
+        },
+        {
+          "type": "monotonic",
+          "part": "conversation-memory-d1",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "conversation-memory-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "conversation-memory-p1-frame"
+        },
+        {
+          "type": "monotonic",
+          "part": "conversation-memory-d1",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "structured-output",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "structured-output-l1"
+        },
+        {
+          "type": "monotonic",
+          "part": "structured-output-l2",
+          "measure": "width",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "name": "structured-output-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "structured-output-l1"
+        },
+        {
+          "type": "monotonic",
+          "part": "structured-output-l2",
+          "measure": "width",
+          "direction": -1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,612 @@
+{
+  "icons": {
+    "invite-teammate": [
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "shoulders",
+        "label": "head above shoulders",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "envelope",
+        "b": "shoulders",
+        "label": "invitation clear of teammate",
+        "min": 1
+      }
+    ],
+    "join-team": [
+      {
+        "kind": "gap",
+        "a": "seat-new-solid",
+        "b": "table-frame",
+        "label": "seat approaches table",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "seat-top-solid",
+        "b": "seat-new-solid",
+        "label": "adjacent seats",
+        "min": 1
+      }
+    ],
+    "team-directory": [
+      {
+        "kind": "gap",
+        "a": "member",
+        "b": "member-line",
+        "label": "portrait above label",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "back-card-solid",
+        "label": "rear card opaque at rim"
+      }
+    ],
+    "team-roles": [
+      {
+        "kind": "gap",
+        "a": "role",
+        "b": "role-line",
+        "label": "role dot above label",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "strap-left-solid",
+        "label": "lanyard attachment"
+      }
+    ],
+    "team-presence": [
+      {
+        "kind": "gap",
+        "a": "ping-inner-solid",
+        "b": "ping-outer-solid",
+        "label": "presence arc separation",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "shoulders",
+        "label": "presence portrait gap",
+        "min": 1
+      }
+    ],
+    "kanban-board": [
+      {
+        "kind": "gap",
+        "a": "column-1-solid",
+        "b": "column-2-solid",
+        "label": "column header separation",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "card-move",
+        "b": "card-todo-a",
+        "label": "moving card clears first task",
+        "min": 1
+      }
+    ],
+    "sprint-cycle": [
+      {
+        "kind": "gap",
+        "a": "head-1-solid",
+        "b": "goal",
+        "label": "barb clears central goal",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "head-1-solid",
+        "b": "lap-2-solid",
+        "label": "arrow clears next lap",
+        "min": 1
+      }
+    ],
+    "team-roadmap": [
+      {
+        "kind": "opaque",
+        "a": "node-1",
+        "label": "source stop retained"
+      },
+      {
+        "kind": "opaque",
+        "a": "route-solid",
+        "label": "route never partly fades"
+      }
+    ],
+    "milestone": [
+      {
+        "kind": "opaque",
+        "a": "pole-solid",
+        "label": "pole attachment"
+      },
+      {
+        "kind": "opaque",
+        "a": "flag-frame",
+        "label": "cloth opaque at pole"
+      }
+    ],
+    "team-workload": [
+      {
+        "kind": "gap",
+        "a": "member-1",
+        "b": "bar-1",
+        "label": "load clear of member",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "member-1",
+        "b": "member-2",
+        "label": "member rows separated",
+        "min": 1
+      }
+    ],
+    "add-comment": [
+      {
+        "kind": "gap",
+        "a": "body",
+        "b": "stem",
+        "label": "plus stem inside bubble",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "stem",
+        "label": "plus joined at full opacity"
+      }
+    ],
+    "reply-thread": [
+      {
+        "kind": "gap",
+        "a": "card-frame",
+        "b": "arrow-solid",
+        "label": "reply clears parent",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "arrow-solid",
+        "label": "joined arrow opaque"
+      }
+    ],
+    "mention-teammate": [
+      {
+        "kind": "gap",
+        "a": "tail-solid",
+        "b": "shoulders-solid",
+        "label": "mention clear of teammate",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "head",
+        "b": "shoulders-solid",
+        "label": "mentioned head gap",
+        "min": 1
+      }
+    ],
+    "resolve-thread": [
+      {
+        "kind": "gap",
+        "a": "row-2-solid",
+        "b": "check-solid",
+        "label": "resolved check clears content",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "spine-solid",
+        "b": "row-1-solid",
+        "label": "thread rows clear spine",
+        "min": 1
+      }
+    ],
+    "reopen-thread": [
+      {
+        "kind": "gap",
+        "a": "row-1-solid",
+        "b": "head-solid",
+        "label": "return arrow clear of row",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "arrow-solid",
+        "label": "return joins opaque"
+      }
+    ],
+    "request-review": [
+      {
+        "kind": "gap",
+        "a": "sheet-frame",
+        "b": "lid-upper-solid",
+        "label": "reviewer outside sheet",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "pupil",
+        "b": "lid-lower-solid",
+        "label": "pupil clear of opening lid",
+        "min": 1
+      }
+    ],
+    "approve-change": [
+      {
+        "kind": "gap",
+        "a": "card-solid",
+        "b": "check-solid",
+        "label": "approval check inside card",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "stamp-stem-solid",
+        "label": "stamp handle attached"
+      }
+    ],
+    "request-changes": [
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "pencil-body",
+        "label": "return head clear of pencil",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "arrow-solid",
+        "label": "return arrow opaque"
+      }
+    ],
+    "compare-revisions": [
+      {
+        "kind": "gap",
+        "a": "bar-left-solid",
+        "b": "divider-solid",
+        "label": "left content clear of divider",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "bar-right-1-solid",
+        "b": "divider-solid",
+        "label": "right content clear of divider",
+        "min": 1
+      }
+    ],
+    "version-history": [
+      {
+        "kind": "gap",
+        "a": "node-new",
+        "b": "bar-new-solid",
+        "label": "version dot clear of entry",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "bar-mid-solid",
+        "b": "bar-old-solid",
+        "label": "version rows clear",
+        "min": 1
+      }
+    ],
+    "share-workspace": [
+      {
+        "kind": "gap",
+        "a": "panel-frame",
+        "b": "head-solid",
+        "label": "share arrow clear of panel",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "shaft-solid",
+        "label": "share arrow join"
+      }
+    ],
+    "invite-link": [
+      {
+        "kind": "gap",
+        "a": "plus-v-solid",
+        "b": "chain-loop-b",
+        "label": "invite plus clear of chain",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "chain-loop-a",
+        "label": "interlock opaque"
+      }
+    ],
+    "guest-access": [
+      {
+        "kind": "gap",
+        "a": "bar-solid",
+        "b": "visitor",
+        "label": "gate clear of visitor",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "post-frame",
+        "label": "gate root attached"
+      }
+    ],
+    "view-access": [
+      {
+        "kind": "gap",
+        "a": "pupil",
+        "b": "lids-frame",
+        "label": "reading pupil in eye",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "line-a-solid",
+        "b": "line-b-solid",
+        "label": "view content rows",
+        "min": 1
+      }
+    ],
+    "edit-access": [
+      {
+        "kind": "gap",
+        "a": "mark-solid",
+        "b": "rule-solid",
+        "label": "edited line clear of rule",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "pencil-frame",
+        "label": "pencil tip join"
+      }
+    ],
+    "standup": [
+      {
+        "kind": "gap",
+        "a": "left-body-frame",
+        "b": "speaker-body-frame",
+        "label": "standing members separated",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "speaker-body-frame",
+        "b": "floor-solid",
+        "label": "speaker above floor",
+        "min": 1
+      }
+    ],
+    "raise-hand": [
+      {
+        "kind": "gap",
+        "a": "head-frame",
+        "b": "palm",
+        "label": "raised hand clear of head",
+        "min": 1
+      },
+      {
+        "kind": "opaque",
+        "a": "arm-solid",
+        "label": "shoulder attached"
+      }
+    ],
+    "team-poll": [
+      {
+        "kind": "gap",
+        "a": "bullet-a",
+        "b": "bar-a-solid",
+        "label": "vote bullet clear of bar",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "bar-a-solid",
+        "b": "bar-b-solid",
+        "label": "vote rows separated",
+        "min": 1
+      }
+    ],
+    "decision-log": [
+      {
+        "kind": "gap",
+        "a": "mark-solid",
+        "b": "row-b-solid",
+        "label": "decision check clear of baseline",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "base-frame",
+        "b": "row-a-solid",
+        "label": "stamp clear of prior entry",
+        "min": 1
+      }
+    ],
+    "team-celebration": [
+      {
+        "kind": "opaque",
+        "a": "left-stem-solid",
+        "label": "glass stem attached"
+      },
+      {
+        "kind": "opaque",
+        "a": "right-stem-solid",
+        "label": "second stem attached"
+      }
+    ],
+    "assign-task": [
+      {
+        "kind": "gap",
+        "a": "tile-frame",
+        "b": "avatar-shoulders",
+        "label": "assignee beside tile",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "check-solid",
+        "b": "tile-frame",
+        "label": "check clear of frame",
+        "min": 1
+      }
+    ],
+    "delegate-task": [
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "tile-frame",
+        "label": "arrow clear of task",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "avatar-head",
+        "b": "arrow-stem-solid",
+        "label": "owner clear of arrow",
+        "min": 1
+      }
+    ],
+    "task-handoff": [
+      {
+        "kind": "gap",
+        "a": "baton-frame",
+        "b": "giver-solid",
+        "label": "baton clear of giver",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "baton-frame",
+        "b": "receiver-solid",
+        "label": "baton clear of receiver",
+        "min": 1
+      }
+    ],
+    "task-dependency": [
+      {
+        "kind": "gap",
+        "a": "head-solid",
+        "b": "tile-b-frame",
+        "label": "dependency clears task",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "tile-a-frame",
+        "b": "tile-b-frame",
+        "label": "task panels separated",
+        "min": 1
+      }
+    ],
+    "shared-goal": [
+      {
+        "kind": "gap",
+        "a": "ring-frame",
+        "b": "head-l-solid",
+        "label": "left approach to goal",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "ring-frame",
+        "b": "head-r-solid",
+        "label": "right approach to goal",
+        "min": 1
+      }
+    ],
+    "shared-document": [
+      {
+        "kind": "gap",
+        "a": "head-a",
+        "b": "head-b",
+        "label": "collaborator heads separated",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "head-a",
+        "b": "shoulders",
+        "label": "portrait above shoulders",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "head-b",
+        "b": "shoulders",
+        "label": "new portrait above shoulders",
+        "min": 1
+      }
+    ],
+    "co-edit": [
+      {
+        "kind": "gap",
+        "a": "line-a-solid",
+        "b": "caret-a-solid",
+        "label": "first caret ahead of ink",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "line-c-solid",
+        "b": "caret-c-solid",
+        "label": "second caret ahead of ink",
+        "min": 1
+      }
+    ],
+    "live-cursors": [
+      {
+        "kind": "gap",
+        "a": "a-frame",
+        "b": "b-frame",
+        "label": "live cursors separated",
+        "min": 1
+      }
+    ],
+    "follow-collaborator": [
+      {
+        "kind": "gap",
+        "a": "shoulders-solid",
+        "b": "corner-br-solid",
+        "label": "follower frame clear of person",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "head-frame",
+        "b": "shoulders-solid",
+        "label": "followed head above torso",
+        "min": 1
+      }
+    ],
+    "suggested-edit": [
+      {
+        "kind": "gap",
+        "a": "pill-frame",
+        "b": "insert",
+        "label": "insert within suggestion",
+        "min": 1
+      },
+      {
+        "kind": "gap",
+        "a": "stub-solid",
+        "b": "pill-frame",
+        "label": "suggestion clear of text",
+        "min": 1
+      }
+    ]
+  },
+  "exceptions": {
+    "intentionalContacts": "Opaque shared hinges, shafts and heads, lanyard clip, stamp plane, glass rim clink. These contacts need native visual inspection; gap rules cover unrelated parts.",
+    "team-celebration": "One contact pose shared by Light/Strong, <=0.5 painted rim overlap permitted; no deeper Strong penetration."
+  }
+}

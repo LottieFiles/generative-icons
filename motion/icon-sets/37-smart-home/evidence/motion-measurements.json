@@ -1,0 +1,647 @@
+{
+  "scope": "Source geometry and rigid transforms at 60fps; grid units and seconds. RMS includes curve control points. Native normal-speed review required.",
+  "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+  "icons": 20,
+  "records": [
+    {
+      "icon": "smart-bulb",
+      "mainPart": "smart-bulb-ray-0",
+      "intent": "Light: the bulb switches on and four rays grow out in a calm stagger. Strong: the glass swells as the power arrives, the rays burst out past full length and settle. The lit state is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.13333333333333333,
+          "peakRmsDisplacement": 1.1302394790485775,
+          "travelRms": 1.1302394790485775,
+          "peakRmsSpeed": 5.633575013897765,
+          "visibleTravelRms": 1.121283181140808,
+          "visiblePeakRmsSpeed": 5.633575013897765,
+          "first10To90Seconds": 0.18333333333333332
+        },
+        "strong": {
+          "activeSeconds": 0.54,
+          "firstChangeSeconds": 0.18333333333333332,
+          "peakRmsDisplacement": 1.5827878190079683,
+          "travelRms": 2.0353361589673593,
+          "peakRmsSpeed": 32.33631319315029,
+          "visibleTravelRms": 2.0353361589673593,
+          "visiblePeakRmsSpeed": 32.33631319315029,
+          "first10To90Seconds": 0.04999999999999999
+        }
+      },
+      "strongToLightPeakSpeed": 5.739927685950417,
+      "strongToLightTravel": 1.815184775086506
+    },
+    {
+      "icon": "thermostat",
+      "mainPart": "thermostat-setpoint",
+      "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 8.013522386695803,
+          "travelRms": 9.197010403313346,
+          "peakRmsSpeed": 24.604041399304098,
+          "visibleTravelRms": 9.197010403313346,
+          "visiblePeakRmsSpeed": 24.604041399304098,
+          "first10To90Seconds": 0.33333333333333337
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 8.013522386695803,
+          "travelRms": 9.190777390860461,
+          "peakRmsSpeed": 52.770509677495234,
+          "visibleTravelRms": 9.190777390860461,
+          "visiblePeakRmsSpeed": 52.770509677495234,
+          "first10To90Seconds": 0.16666666666666666
+        }
+      },
+      "strongToLightPeakSpeed": 2.1447903139598763,
+      "strongToLightTravel": 0.9993222784166212
+    },
+    {
+      "icon": "smart-lock",
+      "mainPart": "smart-lock-lever",
+      "intent": "Light: the lever handle is pressed 30° down and springs back, and the status light above the keypad comes on. Strong: it is yanked 45° down with a hard hit, rebounds and settles, and the status light pops on. The unlocked state is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.54,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 3.964429248046662,
+          "travelRms": 8.018493738417982,
+          "peakRmsSpeed": 34.60935132709807,
+          "visibleTravelRms": 8.018493738417982,
+          "visiblePeakRmsSpeed": 34.60935132709807,
+          "first10To90Seconds": 0.11666666666666667,
+          "rotationRange": 29.898575366129144,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 5.647681042991094,
+          "travelRms": 14.944372916015434,
+          "peakRmsSpeed": 84.20294329081847,
+          "visibleTravelRms": 14.944372916015434,
+          "visiblePeakRmsSpeed": 84.20294329081847,
+          "first10To90Seconds": 0.13333333333333333,
+          "rotationRange": 49.12212504049239,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.4329535244681146,
+      "strongToLightTravel": 1.8637381787073517
+    },
+    {
+      "icon": "door-sensor",
+      "mainPart": "door-sensor-magnet-frame",
+      "intent": "Light: the magnet slides 4.5 units away from the sensor as the door opens, then two alert arcs appear. Strong: the magnet is yanked 5.5 units and settles while the arcs snap in quickly. The open state is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 4.5,
+          "travelRms": 4.5,
+          "peakRmsSpeed": 18.734996570644682,
+          "visibleTravelRms": 4.5,
+          "visiblePeakRmsSpeed": 18.734996570644682,
+          "first10To90Seconds": 0.21666666666666665,
+          "rotationRange": 0,
+          "horizontalRange": 4.5,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.44,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 5.4907947305906495,
+          "travelRms": 6.870389461181304,
+          "peakRmsSpeed": 57.815030774214485,
+          "visibleTravelRms": 6.870389461181304,
+          "visiblePeakRmsSpeed": 57.815030774214485,
+          "first10To90Seconds": 0.08333333333333334,
+          "rotationRange": 0,
+          "horizontalRange": 5.4907947305906495,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.0859376224708344,
+      "strongToLightTravel": 1.5267532135958453
+    },
+    {
+      "icon": "garage-door",
+      "mainPart": "garage-door-panel-0",
+      "intent": "Light: the three door panels roll up one after another into the header, leaving the doorway open. Strong: the door dips, then rolls up in a third of a second and knocks against its stop. The open state is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 10.5,
+          "travelRms": 10.500000000000002,
+          "peakRmsSpeed": 24.597803751627723,
+          "visibleTravelRms": 0.7777777777777786,
+          "visiblePeakRmsSpeed": 12.795130411783902,
+          "first10To90Seconds": 0.38333333333333336,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 10.5
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 10.71,
+          "travelRms": 11.75280422634549,
+          "peakRmsSpeed": 52.119038899739465,
+          "visibleTravelRms": 1.777560696072051,
+          "visiblePeakRmsSpeed": 32.41872151692718,
+          "first10To90Seconds": 0.18333333333333332,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 11.126402113172745
+        }
+      },
+      "strongToLightPeakSpeed": 2.5336765217391286,
+      "strongToLightTravel": 2.285435180664063
+    },
+    {
+      "icon": "ceiling-fan",
+      "mainPart": "ceiling-fan-blade-l",
+      "intent": "Light: the blades turn half a revolution, foreshortening to edge-on and swinging back out. Strong: they wind back, spin a turn and a half, and the fan wobbles on its downrod as it spins.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 5.655983944747773,
+          "travelRms": 11.311967889495547,
+          "peakRmsSpeed": 42.44353693369233,
+          "visibleTravelRms": 11.311967889495547,
+          "visiblePeakRmsSpeed": 42.44353693369233,
+          "first10To90Seconds": 0.14999999999999997,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.76,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 5.578313460194435,
+          "travelRms": 31.92125419013566,
+          "peakRmsSpeed": 137.05259040692235,
+          "visibleTravelRms": 31.92125419013566,
+          "visiblePeakRmsSpeed": 137.05259040692235,
+          "first10To90Seconds": 0.06666666666666668,
+          "rotationRange": 4.308240454826619,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.2290567730260933,
+      "strongToLightTravel": 2.821901061068091
+    },
+    {
+      "icon": "air-conditioner",
+      "mainPart": "air-conditioner-flow-0",
+      "intent": "Light: three airflow waves drift 2.2 units down from the vent in a stagger, fade and return. Strong: the vent kicks open and the waves blast 3.2 units down in a tight burst.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 2.1999999999999993,
+          "travelRms": 4.399999999999998,
+          "peakRmsSpeed": 131.99999999999994,
+          "visibleTravelRms": 2.199999999999999,
+          "visiblePeakRmsSpeed": 19.153171115451357,
+          "first10To90Seconds": 0.16666666666666666,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 2.2
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 3.1999999999999993,
+          "travelRms": 6.399999999999998,
+          "peakRmsSpeed": 191.99999999999994,
+          "visibleTravelRms": 3.199999999999999,
+          "visiblePeakRmsSpeed": 38.191111111111056,
+          "first10To90Seconds": 0.1,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 3.2
+        }
+      },
+      "strongToLightPeakSpeed": 1.9939837054085159,
+      "strongToLightTravel": 1.4545454545454548
+    },
+    {
+      "icon": "smart-speaker",
+      "mainPart": "smart-speaker-arc-0",
+      "intent": "Light: the light ring on top flickers and the two sound arcs above swell 0.8 units and return. Strong: the speaker squats and springs as it speaks, the ring flashes twice and the arcs push out 1.4 units with a second pulse.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.42,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.8070122664805641,
+          "travelRms": 1.6140245329611278,
+          "peakRmsSpeed": 12.105183997208487,
+          "visibleTravelRms": 1.6140245329611278,
+          "visiblePeakRmsSpeed": 12.105183997208487,
+          "first10To90Seconds": 0.049999999999999996
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.4056269694919286,
+          "travelRms": 3.8177274098308596,
+          "peakRmsSpeed": 13.14043817694657,
+          "visibleTravelRms": 3.8177274098308596,
+          "visiblePeakRmsSpeed": 13.14043817694657,
+          "first10To90Seconds": 0.1
+        }
+      },
+      "strongToLightPeakSpeed": 1.0855215567129601,
+      "strongToLightTravel": 2.365346580467873
+    },
+    {
+      "icon": "video-doorbell",
+      "mainPart": "video-doorbell-button-frame",
+      "intent": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4° on its base as it rings.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.3,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.5576065396177695,
+          "travelRms": 1.115213079235539,
+          "peakRmsSpeed": 10.738500256191871,
+          "visibleTravelRms": 1.115213079235539,
+          "visiblePeakRmsSpeed": 10.738500256191871,
+          "first10To90Seconds": 0.05
+        },
+        "strong": {
+          "activeSeconds": 0.52,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.9698227413626221,
+          "travelRms": 3.793556360532148,
+          "peakRmsSpeed": 15.300133720097358,
+          "visibleTravelRms": 3.793556360532148,
+          "visiblePeakRmsSpeed": 15.300133720097358,
+          "first10To90Seconds": 0.08333333333333333
+        }
+      },
+      "strongToLightPeakSpeed": 1.424792415614576,
+      "strongToLightTravel": 3.4016426377751694
+    },
+    {
+      "icon": "security-camera",
+      "mainPart": "security-camera-body-frame",
+      "intent": "Light: the camera tilts 6° down, scans up 4° and returns. Strong: it dips 10°, holds on the view, sweeps 9° up and settles with one small return.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.0398107975993582,
+          "travelRms": 3.4688733727869456,
+          "peakRmsSpeed": 20.038338140167188,
+          "visibleTravelRms": 3.4688733727869456,
+          "visiblePeakRmsSpeed": 20.038338140167188,
+          "first10To90Seconds": 0.05,
+          "rotationRange": 9.99433669591504,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.78,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.73324481736494,
+          "travelRms": 8.653306948112437,
+          "peakRmsSpeed": 27.31218553949033,
+          "visibleTravelRms": 8.653306948112437,
+          "visiblePeakRmsSpeed": 27.31218553949033,
+          "first10To90Seconds": 0.16666666666666669,
+          "rotationRange": 18.980693999898392,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 1.3629965393558556,
+      "strongToLightTravel": 2.4945583243242573
+    },
+    {
+      "icon": "window-blinds",
+      "mainPart": "window-blinds-slat-3",
+      "intent": "Light: the cord is pulled and the blind rises one slat, its top slat folding into the head rail as the tassel comes down. Strong: it is yanked up past its stop, drops back and settles. The raised state is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 3.5,
+          "travelRms": 3.500000000000001,
+          "peakRmsSpeed": 10.495644444444352,
+          "visibleTravelRms": 3.500000000000001,
+          "visiblePeakRmsSpeed": 10.495644444444352,
+          "first10To90Seconds": 0.30000000000000004,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 3.5
+        },
+        "strong": {
+          "activeSeconds": 0.46,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 3.8396701388888914,
+          "travelRms": 4.5248810185185295,
+          "peakRmsSpeed": 31.716582837982088,
+          "visibleTravelRms": 4.5248810185185295,
+          "visiblePeakRmsSpeed": 31.716582837982088,
+          "first10To90Seconds": 0.11666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 3.8396701388888914
+        }
+      },
+      "strongToLightPeakSpeed": 3.0218804577331686,
+      "strongToLightTravel": 1.292823148148151
+    },
+    {
+      "icon": "robot-vacuum",
+      "mainPart": "robot-vacuum-disc-frame",
+      "intent": "Light: the vacuum drives 2.6 units right, the dust specks ahead of it vanish, and it reverses home. Strong: it backs up, charges 3.6 units into the dust, rebounds off it and reverses. The clean floor is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 2.5973581263018843,
+          "travelRms": 5.1947162526037705,
+          "peakRmsSpeed": 13.594225086918795,
+          "visibleTravelRms": 5.1947162526037705,
+          "visiblePeakRmsSpeed": 13.594225086918795,
+          "first10To90Seconds": 0.16666666666666666,
+          "rotationRange": 0,
+          "horizontalRange": 2.597358126301885,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.4914351851851855,
+          "travelRms": 8.56134370099924,
+          "peakRmsSpeed": 40.061306423611036,
+          "visibleTravelRms": 8.56134370099924,
+          "visiblePeakRmsSpeed": 40.061306423611036,
+          "first10To90Seconds": 0.16666666666666669,
+          "rotationRange": 0,
+          "horizontalRange": 3.981588541666667,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.9469356412349317,
+      "strongToLightTravel": 1.6480868799538377
+    },
+    {
+      "icon": "washing-machine",
+      "mainPart": "washing-machine-swirl",
+      "intent": "Light: the laundry swirl turns half a revolution inside the door. Strong: it rocks back, spins a turn and a half and settles, and the machine shudders during the spin.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 4.465422712353221,
+          "travelRms": 7.01201367106868,
+          "peakRmsSpeed": 14.206448065962801,
+          "visibleTravelRms": 7.01201367106868,
+          "visiblePeakRmsSpeed": 14.206448065962801,
+          "first10To90Seconds": 0.3666666666666667,
+          "rotationRange": 180,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4.475168589382621,
+          "travelRms": 24.50916656633566,
+          "peakRmsSpeed": 61.722081988670034,
+          "visibleTravelRms": 24.50916656633566,
+          "visiblePeakRmsSpeed": 61.722081988670034,
+          "first10To90Seconds": 0.21666666666666667,
+          "rotationRange": 579.6939534742468,
+          "horizontalRange": 0.8505684787228143,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 4.3446526325288755,
+      "strongToLightTravel": 3.49531072186291
+    },
+    {
+      "icon": "refrigerator",
+      "mainPart": "refrigerator-door-frame",
+      "intent": "Light: the lower door swings open past square to hang at the left, showing the shelves inside, then closes. Strong: it is flung open against its stop and bounces, holds, then is slammed shut with a small rebound.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 11.319826714424716,
+          "travelRms": 26.900607697030026,
+          "peakRmsSpeed": 99.5321878554363,
+          "visibleTravelRms": 26.900607697030026,
+          "visiblePeakRmsSpeed": 99.5321878554363,
+          "first10To90Seconds": 0.1
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 11.546611225975942,
+          "travelRms": 31.103525494210086,
+          "peakRmsSpeed": 200.6102428616689,
+          "visibleTravelRms": 31.103525494210086,
+          "visiblePeakRmsSpeed": 200.6102428616689,
+          "first10To90Seconds": 0.06666666666666665
+        }
+      },
+      "strongToLightPeakSpeed": 2.015531328951008,
+      "strongToLightTravel": 1.1562387677079906
+    },
+    {
+      "icon": "oven",
+      "mainPart": "oven-heat-0",
+      "intent": "Light: the display lights and two heat waves rise inside the window in turn. Strong: the display snaps on, the waves shoot up and shimmer before they settle. The heated state is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.23333333333333334,
+          "peakRmsDisplacement": 2.3597949519396813,
+          "travelRms": 2.3597949519396813,
+          "peakRmsSpeed": 9.8572965583916,
+          "visibleTravelRms": 2.3120955822914366,
+          "visiblePeakRmsSpeed": 9.8572965583916,
+          "first10To90Seconds": 0.21666666666666667
+        },
+        "strong": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.13333333333333333,
+          "peakRmsDisplacement": 2.384190696188982,
+          "travelRms": 4.2938076253842405,
+          "peakRmsSpeed": 19.68073863518595,
+          "visibleTravelRms": 4.266210294586615,
+          "visiblePeakRmsSpeed": 19.68073863518595,
+          "first10To90Seconds": 0.1
+        }
+      },
+      "strongToLightPeakSpeed": 1.9965655409273013,
+      "strongToLightTravel": 1.8451703845039675
+    },
+    {
+      "icon": "smoke-alarm",
+      "mainPart": "smoke-alarm-arc-0",
+      "intent": "Light: the LED blinks and the two alarm arcs swell 0.8 units and return. Strong: the puck buzzes on its mount, the LED flashes three times and the arcs push out 1.6 units with a second pulse.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.45,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.8116107417278907,
+          "travelRms": 1.6232214834557817,
+          "peakRmsSpeed": 19.90149602644382,
+          "visibleTravelRms": 1.6232214834557817,
+          "visiblePeakRmsSpeed": 19.90149602644382,
+          "first10To90Seconds": 0.03333333333333334
+        },
+        "strong": {
+          "activeSeconds": 0.58,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.6143673857441667,
+          "travelRms": 4.421723813860484,
+          "peakRmsSpeed": 17.240390831452633,
+          "visibleTravelRms": 4.421723813860484,
+          "visiblePeakRmsSpeed": 17.240390831452633,
+          "first10To90Seconds": 0.08333333333333334
+        }
+      },
+      "strongToLightPeakSpeed": 0.8662861730869236,
+      "strongToLightTravel": 2.7240421956754717
+    },
+    {
+      "icon": "water-leak",
+      "mainPart": "water-leak-drop-frame",
+      "intent": "Light: the hanging drop falls into the puddle, the puddle spreads 1.2 units and a new drop forms. Strong: the drop swells heavy, drops fast, the puddle splashes 2.6 wider and the next drop forms with a small overshoot.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 4.465257505883188,
+          "travelRms": 16.506861647958427,
+          "peakRmsSpeed": 402.496248524514,
+          "visibleTravelRms": 8.465257505883189,
+          "visiblePeakRmsSpeed": 46.608153292181136,
+          "first10To90Seconds": 0.15
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 4.465257505883188,
+          "travelRms": 18.402502050695194,
+          "peakRmsSpeed": 284.322031786244,
+          "visibleTravelRms": 14.402502050695185,
+          "visiblePeakRmsSpeed": 284.322031786244,
+          "first10To90Seconds": 0.18333333333333335
+        }
+      },
+      "strongToLightPeakSpeed": 6.100263831606071,
+      "strongToLightTravel": 1.7013660884722912
+    },
+    {
+      "icon": "power-outlet",
+      "mainPart": "power-outlet-button",
+      "intent": "Light: the button presses 0.6 units and the status light comes on. Strong: a hard 1.2-unit press with a small rebound, and the status light pops on past full size and settles. The on state is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.36,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.5975918305136414,
+          "travelRms": 1.195183661027283,
+          "peakRmsSpeed": 14.69584417236252,
+          "visibleTravelRms": 1.195183661027283,
+          "visiblePeakRmsSpeed": 14.69584417236252,
+          "first10To90Seconds": 0.03333333333333334,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0.5975918305136412
+        },
+        "strong": {
+          "activeSeconds": 0.4,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.1071932870370382,
+          "travelRms": 2.8779869444444444,
+          "peakRmsSpeed": 26.456597222222307,
+          "visibleTravelRms": 2.8779869444444444,
+          "visiblePeakRmsSpeed": 26.456597222222307,
+          "first10To90Seconds": 0.08333333333333334,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.292378472222223
+        }
+      },
+      "strongToLightPeakSpeed": 1.8002774738165392,
+      "strongToLightTravel": 2.4079871891578235
+    },
+    {
+      "icon": "energy-usage",
+      "mainPart": "energy-usage-bar-0",
+      "intent": "Light: the four usage bars rise from the baseline in turn to their readings. Strong: the bolt flashes and jolts, then the bars shoot up in a quick sequence. The readings are retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 3.5213917703090067,
+          "travelRms": 3.521391770309007,
+          "peakRmsSpeed": 22.023202619421024,
+          "visibleTravelRms": 3.521391770309007,
+          "visiblePeakRmsSpeed": 22.023202619421024,
+          "first10To90Seconds": 0.15
+        },
+        "strong": {
+          "activeSeconds": 0.52,
+          "firstChangeSeconds": 0.2,
+          "peakRmsDisplacement": 3.5213917703090067,
+          "travelRms": 3.5213917703090076,
+          "peakRmsSpeed": 43.875903025013926,
+          "visibleTravelRms": 3.5213917703090076,
+          "visiblePeakRmsSpeed": 43.875903025013926,
+          "first10To90Seconds": 0.06666666666666665
+        }
+      },
+      "strongToLightPeakSpeed": 1.9922580645161132,
+      "strongToLightTravel": 1.0000000000000002
+    },
+    {
+      "icon": "motion-sensor",
+      "mainPart": "motion-sensor-beam-0",
+      "intent": "Light: two detection beams open out from the dome in turn and a person appears in range. Strong: the beams flash open in a tight burst and the person rises in fast, overshoots upward and settles. The detection is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 3.470507104650592,
+          "travelRms": 3.508764676564574,
+          "peakRmsSpeed": 20.23395809249101,
+          "visibleTravelRms": 3.4362107731605223,
+          "visiblePeakRmsSpeed": 20.23395809249101,
+          "first10To90Seconds": 0.16666666666666666
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 3.470507104650592,
+          "travelRms": 3.5078764083362772,
+          "peakRmsSpeed": 43.33393245257449,
+          "visibleTravelRms": 3.4836534123344247,
+          "visiblePeakRmsSpeed": 43.33393245257449,
+          "first10To90Seconds": 0.06666666666666665
+        }
+      },
+      "strongToLightPeakSpeed": 2.1416438768179553,
+      "strongToLightTravel": 1.0138066731949233
+    }
+  ]
+}

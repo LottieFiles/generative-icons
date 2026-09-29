@@ -1,0 +1,780 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 62,
+  "nativeTransformNodes": 314,
+  "nativeTransformMaxCoordinateError": 0.000010199061007298837,
+  "checks": [
+    {
+      "name": "smart-bulb",
+      "fixedParts": [
+        "smart-bulb-thread-0",
+        "smart-bulb-thread-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "smart-bulb-thread-0"
+        },
+        {
+          "type": "fixed",
+          "part": "smart-bulb-thread-1"
+        }
+      ]
+    },
+    {
+      "name": "smart-bulb-strong",
+      "fixedParts": [
+        "smart-bulb-thread-0",
+        "smart-bulb-thread-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "smart-bulb-thread-0"
+        },
+        {
+          "type": "fixed",
+          "part": "smart-bulb-thread-1"
+        }
+      ]
+    },
+    {
+      "name": "thermostat",
+      "fixedParts": [
+        "thermostat-ring-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "thermostat-ring-frame"
+        }
+      ]
+    },
+    {
+      "name": "thermostat-strong",
+      "fixedParts": [
+        "thermostat-ring-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "thermostat-ring-frame"
+        }
+      ]
+    },
+    {
+      "name": "smart-lock",
+      "fixedParts": [
+        "smart-lock-plate-frame",
+        "smart-lock-rose-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "smart-lock-plate-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "smart-lock-rose-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "smart-lock-lever"
+        }
+      ]
+    },
+    {
+      "name": "smart-lock-strong",
+      "fixedParts": [
+        "smart-lock-plate-frame",
+        "smart-lock-rose-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "smart-lock-plate-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "smart-lock-rose-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "smart-lock-lever"
+        }
+      ]
+    },
+    {
+      "name": "door-sensor",
+      "fixedParts": [
+        "door-sensor-sensor-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "door-sensor-sensor-frame"
+        }
+      ]
+    },
+    {
+      "name": "door-sensor-strong",
+      "fixedParts": [
+        "door-sensor-sensor-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "door-sensor-sensor-frame"
+        }
+      ]
+    },
+    {
+      "name": "garage-door",
+      "fixedParts": [
+        "garage-door-house",
+        "garage-door-opening"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "garage-door-house"
+        },
+        {
+          "type": "fixed",
+          "part": "garage-door-opening"
+        }
+      ]
+    },
+    {
+      "name": "garage-door-strong",
+      "fixedParts": [
+        "garage-door-house",
+        "garage-door-opening"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "garage-door-house"
+        },
+        {
+          "type": "fixed",
+          "part": "garage-door-opening"
+        }
+      ]
+    },
+    {
+      "name": "ceiling-fan",
+      "fixedParts": [
+        "ceiling-fan-ceiling"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ceiling-fan-ceiling"
+        }
+      ]
+    },
+    {
+      "name": "ceiling-fan-strong",
+      "fixedParts": [
+        "ceiling-fan-ceiling"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ceiling-fan-ceiling"
+        }
+      ]
+    },
+    {
+      "name": "air-conditioner",
+      "fixedParts": [
+        "air-conditioner-unit-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "air-conditioner-unit-frame"
+        }
+      ]
+    },
+    {
+      "name": "air-conditioner-strong",
+      "fixedParts": [
+        "air-conditioner-unit-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "air-conditioner-unit-frame"
+        }
+      ]
+    },
+    {
+      "name": "smart-speaker",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "smart-speaker-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "video-doorbell",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "video-doorbell-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "security-camera",
+      "fixedParts": [
+        "security-camera-plate",
+        "security-camera-arm",
+        "security-camera-joint"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "security-camera-plate"
+        },
+        {
+          "type": "fixed",
+          "part": "security-camera-arm"
+        },
+        {
+          "type": "fixed",
+          "part": "security-camera-joint"
+        },
+        {
+          "type": "rigid",
+          "part": "security-camera-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "security-camera-strong",
+      "fixedParts": [
+        "security-camera-plate",
+        "security-camera-arm",
+        "security-camera-joint"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "security-camera-plate"
+        },
+        {
+          "type": "fixed",
+          "part": "security-camera-arm"
+        },
+        {
+          "type": "fixed",
+          "part": "security-camera-joint"
+        },
+        {
+          "type": "rigid",
+          "part": "security-camera-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "window-blinds",
+      "fixedParts": [
+        "window-blinds-rail"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "window-blinds-rail"
+        }
+      ]
+    },
+    {
+      "name": "window-blinds-strong",
+      "fixedParts": [
+        "window-blinds-rail"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "window-blinds-rail"
+        }
+      ]
+    },
+    {
+      "name": "robot-vacuum",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "robot-vacuum-bumper"
+        },
+        {
+          "type": "rigid",
+          "part": "robot-vacuum-lidar"
+        }
+      ]
+    },
+    {
+      "name": "robot-vacuum-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "robot-vacuum-bumper"
+        },
+        {
+          "type": "rigid",
+          "part": "robot-vacuum-lidar"
+        }
+      ]
+    },
+    {
+      "name": "washing-machine",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "washing-machine-swirl"
+        },
+        {
+          "type": "rigid",
+          "part": "washing-machine-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "washing-machine-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "washing-machine-swirl"
+        },
+        {
+          "type": "rigid",
+          "part": "washing-machine-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "refrigerator",
+      "fixedParts": [
+        "refrigerator-cabinet",
+        "refrigerator-divider",
+        "refrigerator-handle-top"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "refrigerator-cabinet"
+        },
+        {
+          "type": "fixed",
+          "part": "refrigerator-divider"
+        },
+        {
+          "type": "fixed",
+          "part": "refrigerator-handle-top"
+        }
+      ]
+    },
+    {
+      "name": "refrigerator-strong",
+      "fixedParts": [
+        "refrigerator-cabinet",
+        "refrigerator-divider",
+        "refrigerator-handle-top"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "refrigerator-cabinet"
+        },
+        {
+          "type": "fixed",
+          "part": "refrigerator-divider"
+        },
+        {
+          "type": "fixed",
+          "part": "refrigerator-handle-top"
+        }
+      ]
+    },
+    {
+      "name": "oven",
+      "fixedParts": [
+        "oven-body-frame",
+        "oven-window-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "oven-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "oven-window-frame"
+        }
+      ]
+    },
+    {
+      "name": "oven-strong",
+      "fixedParts": [
+        "oven-body-frame",
+        "oven-window-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "oven-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "oven-window-frame"
+        }
+      ]
+    },
+    {
+      "name": "smoke-alarm",
+      "fixedParts": [
+        "smoke-alarm-ceiling"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "smoke-alarm-ceiling"
+        }
+      ]
+    },
+    {
+      "name": "smoke-alarm-strong",
+      "fixedParts": [
+        "smoke-alarm-ceiling"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "smoke-alarm-ceiling"
+        }
+      ]
+    },
+    {
+      "name": "water-leak",
+      "fixedParts": [
+        "water-leak-pipe-l",
+        "water-leak-pipe-r",
+        "water-leak-coupling-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "water-leak-pipe-l"
+        },
+        {
+          "type": "fixed",
+          "part": "water-leak-pipe-r"
+        },
+        {
+          "type": "fixed",
+          "part": "water-leak-coupling-frame"
+        }
+      ]
+    },
+    {
+      "name": "water-leak-strong",
+      "fixedParts": [
+        "water-leak-pipe-l",
+        "water-leak-pipe-r",
+        "water-leak-coupling-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "water-leak-pipe-l"
+        },
+        {
+          "type": "fixed",
+          "part": "water-leak-pipe-r"
+        },
+        {
+          "type": "fixed",
+          "part": "water-leak-coupling-frame"
+        }
+      ]
+    },
+    {
+      "name": "power-outlet",
+      "fixedParts": [
+        "power-outlet-plate-frame",
+        "power-outlet-socket-frame",
+        "power-outlet-slot-l",
+        "power-outlet-slot-r"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "power-outlet-plate-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "power-outlet-socket-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "power-outlet-slot-l"
+        },
+        {
+          "type": "fixed",
+          "part": "power-outlet-slot-r"
+        },
+        {
+          "type": "rigid",
+          "part": "power-outlet-button"
+        }
+      ]
+    },
+    {
+      "name": "power-outlet-strong",
+      "fixedParts": [
+        "power-outlet-plate-frame",
+        "power-outlet-socket-frame",
+        "power-outlet-slot-l",
+        "power-outlet-slot-r"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "power-outlet-plate-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "power-outlet-socket-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "power-outlet-slot-l"
+        },
+        {
+          "type": "fixed",
+          "part": "power-outlet-slot-r"
+        },
+        {
+          "type": "rigid",
+          "part": "power-outlet-button"
+        }
+      ]
+    },
+    {
+      "name": "energy-usage",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "energy-usage-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "motion-sensor",
+      "fixedParts": [
+        "motion-sensor-wall",
+        "motion-sensor-dome-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "motion-sensor-wall"
+        },
+        {
+          "type": "fixed",
+          "part": "motion-sensor-dome-frame"
+        }
+      ]
+    },
+    {
+      "name": "motion-sensor-strong",
+      "fixedParts": [
+        "motion-sensor-wall",
+        "motion-sensor-dome-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "motion-sensor-wall"
+        },
+        {
+          "type": "fixed",
+          "part": "motion-sensor-dome-frame"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

@@ -1,0 +1,9 @@
+import {icons as symbols} from './batches/symbols.mjs';
+import {icons as pointers} from './batches/pointers.mjs';
+import {icons as content} from './batches/content.mjs';
+import {icons as layout} from './batches/layout.mjs';
+const order=["add-remove", "close", "undo-redo", "more-options", "external-link", "share", "cut", "paste", "zoom-in-out", "select-all", "move-tool", "grid-list-view", "sidebar-toggle", "split-view", "tab-switcher", "command-menu", "drag-handle", "archive", "target", "power"];
+const all=new Map([...symbols,...pointers,...content,...layout].map(i=>[i.name,i]));
+const fixed={"add-remove": ["bar-h"], "power": ["ring"], "more-options": ["dot-2"], "external-link": ["frame"], "share": ["hub-frame"], "select-all": ["tile-0-frame", "tile-1-frame", "tile-2-frame", "tile-3-frame"], "drag-handle": ["row-c"], "paste": ["board", "clip-frame"], "archive": ["body-frame", "slot"], "target": ["dot"], "sidebar-toggle": ["frame"], "split-view": ["frame"], "tab-switcher": ["frame", "strip"]};
+const rigid={"undo-redo": ["stem", "head"], "add-remove": ["bar-v"], "close": ["stroke-a", "stroke-b"], "power": ["bar"], "more-options": ["dot-1", "dot-3"], "command-menu": ["key"], "external-link": ["shaft", "head"], "share": ["node-top-frame", "link-top", "node-bottom-frame"], "zoom-in-out": ["lens-frame", "bar-v", "handle"], "move-tool": ["bar-h", "bar-v"], "target": ["ring"], "cut": ["blade-a", "blade-b"], "paste": ["sheet-frame"], "drag-handle": ["bar", "row-b"], "archive": ["lid-frame"], "sidebar-toggle": ["divider", "chevron"], "split-view": ["divider", "grip"], "tab-switcher": ["active"]};
+export const icons=order.map((id,index)=>{const icon=all.get(id);if(!icon)throw Error(id);return {...icon,number:397+index,constraints:[...(fixed[id]||[]).map(p=>({type:'fixed',part:id+'-'+p})),...(rigid[id]||[]).map(p=>({type:'rigid',part:id+'-'+p}))]};});

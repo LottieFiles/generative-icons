@@ -1,0 +1,368 @@
+{
+  "scope": "Source geometry and rigid transforms at 60fps; grid units and seconds. RMS includes curve control points. Native normal-speed review required.",
+  "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+  "icons": 11,
+  "records": [
+    {
+      "icon": "checkbox",
+      "mainPart": "checkbox-mark",
+      "intent": "Box presses, check whips on; toggle retracts the check.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 7.657893531078461,
+          "travelRms": 10.763032895081151,
+          "peakRmsSpeed": 51.427382370888886,
+          "visibleTravelRms": 10.759592007177849,
+          "visiblePeakRmsSpeed": 51.427382370888886,
+          "first10To90Seconds": 0.25,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 7.657893531078461,
+          "travelRms": 11.918308833051745,
+          "peakRmsSpeed": 103.35180045302029,
+          "visibleTravelRms": 10.502763057509394,
+          "visiblePeakRmsSpeed": 103.35180045302029,
+          "first10To90Seconds": 0.21666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.3968192729766804
+        }
+      },
+      "strongToLightPeakSpeed": 2.0096648067299623,
+      "strongToLightTravel": 0.9761302334236167
+    },
+    {
+      "icon": "radio-button",
+      "mainPart": "radio-button-dot",
+      "intent": "A nucleus appears then the dot bursts to size; toggle empties it.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 4.337476654014228,
+          "travelRms": 4.337476654014228,
+          "peakRmsSpeed": 18.149103347450154,
+          "visibleTravelRms": 4.337476654014228,
+          "visiblePeakRmsSpeed": 18.149103347450154,
+          "first10To90Seconds": 0.21666666666666665
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 5.427294908791671,
+          "travelRms": 6.517113163569116,
+          "peakRmsSpeed": 46.1184614427619,
+          "visibleTravelRms": 6.517113163569116,
+          "visiblePeakRmsSpeed": 46.1184614427619,
+          "first10To90Seconds": 0.13333333333333333
+        }
+      },
+      "strongToLightPeakSpeed": 2.541087598646645,
+      "strongToLightTravel": 1.50251256281407
+    },
+    {
+      "icon": "toggle-switch",
+      "mainPart": "toggle-switch-knob",
+      "intent": "Knob pulls back, snaps across the track, and settles; toggle returns it.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 10,
+          "travelRms": 10,
+          "peakRmsSpeed": 35.69328966154356,
+          "visibleTravelRms": 10,
+          "visiblePeakRmsSpeed": 35.69328966154356,
+          "first10To90Seconds": 0.26666666666666666,
+          "rotationRange": 0,
+          "horizontalRange": 10,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 10.682161753590321,
+          "travelRms": 12.742416277591657,
+          "peakRmsSpeed": 130.47185556061282,
+          "visibleTravelRms": 12.742416277591657,
+          "visiblePeakRmsSpeed": 130.47185556061282,
+          "first10To90Seconds": 0.06666666666666668,
+          "rotationRange": 0,
+          "horizontalRange": 11.371208138795831,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.6553609039064,
+      "strongToLightTravel": 1.2742416277591657
+    },
+    {
+      "icon": "text-field",
+      "mainPart": "text-field-caret",
+      "intent": "Caret blinks then advances as a line of text is entered.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 12,
+          "travelRms": 12.000000000000002,
+          "peakRmsSpeed": 32.123117103984455,
+          "visibleTravelRms": 12.000000000000002,
+          "visiblePeakRmsSpeed": 32.123117103984455,
+          "first10To90Seconds": 0.35,
+          "rotationRange": 0,
+          "horizontalRange": 12,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 12,
+          "travelRms": 12.000000000000002,
+          "peakRmsSpeed": 69.03353057199205,
+          "visibleTravelRms": 12.000000000000002,
+          "visiblePeakRmsSpeed": 69.03353057199205,
+          "first10To90Seconds": 0.14999999999999997,
+          "rotationRange": 0,
+          "horizontalRange": 12,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.1490296333486683,
+      "strongToLightTravel": 1
+    },
+    {
+      "icon": "number-field",
+      "mainPart": "number-field-value",
+      "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.15,
+          "peakRmsDisplacement": 1.5720655202630704,
+          "travelRms": 1.57206552026307,
+          "peakRmsSpeed": 6.2010651728314405,
+          "visibleTravelRms": 1.57206552026307,
+          "visiblePeakRmsSpeed": 6.2010651728314405,
+          "first10To90Seconds": 0.23333333333333334,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 1.6051459275235391,
+          "travelRms": 2.7115433273764027,
+          "peakRmsSpeed": 18.225302254082226,
+          "visibleTravelRms": 2.7115433273764027,
+          "visiblePeakRmsSpeed": 18.225302254082226,
+          "first10To90Seconds": 0.08333333333333334,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0.8960648148148148
+        }
+      },
+      "strongToLightPeakSpeed": 2.9390599431098146,
+      "strongToLightTravel": 1.724828445396253
+    },
+    {
+      "icon": "select-field",
+      "mainPart": "select-field-chevron",
+      "intent": "The chevron flips over and the option panel drops open below the field; Strong winds the chevron back, whips it over and lands the panel with one short settle.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.45,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 1.8000000000000007,
+          "travelRms": 1.8000000000000007,
+          "peakRmsSpeed": 6.424792139077944,
+          "visibleTravelRms": 1.8000000000000007,
+          "visiblePeakRmsSpeed": 6.424792139077944,
+          "first10To90Seconds": 0.26666666666666666
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 1.9335887803656409,
+          "travelRms": 2.337177560731282,
+          "peakRmsSpeed": 14.083395942900054,
+          "visibleTravelRms": 2.337177560731282,
+          "visiblePeakRmsSpeed": 14.083395942900054,
+          "first10To90Seconds": 0.11666666666666667
+        }
+      },
+      "strongToLightPeakSpeed": 2.192039156759589,
+      "strongToLightTravel": 1.298431978184045
+    },
+    {
+      "icon": "multiple-choice",
+      "mainPart": "multiple-choice-check-2",
+      "intent": "A second option is selected: its check appears while the first stays checked; Strong presses the box down, stamps the check in at contact, and the box releases with one rebound.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.4,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 1.771063710504698,
+          "travelRms": 1.771063710504698,
+          "peakRmsSpeed": 6.986020208775069,
+          "visibleTravelRms": 1.761141744773549,
+          "visiblePeakRmsSpeed": 6.986020208775069,
+          "first10To90Seconds": 0.23333333333333334,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.46,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.9612920911140879,
+          "travelRms": 3.4838145245078613,
+          "peakRmsSpeed": 21.806861081007625,
+          "visibleTravelRms": 3.1305305502389618,
+          "visiblePeakRmsSpeed": 21.806861081007625,
+          "first10To90Seconds": 0.2,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.3484504913076343
+        }
+      },
+      "strongToLightPeakSpeed": 3.12149985675911,
+      "strongToLightTravel": 1.7775574053191792
+    },
+    {
+      "icon": "signature",
+      "mainPart": "signature-ink",
+      "intent": "The pen lowers, draws the signature stroke, and lifts; Strong taps down, drives the stroke fast, and flicks up before settling.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 1.1,
+          "firstChangeSeconds": 0.2,
+          "peakRmsDisplacement": 11.044229262379517,
+          "travelRms": 22.72406321213739,
+          "peakRmsSpeed": 79.3570697868365,
+          "visibleTravelRms": 22.189059043885393,
+          "visiblePeakRmsSpeed": 79.3570697868365,
+          "first10To90Seconds": 0.3833333333333333
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 11.044229262379517,
+          "travelRms": 22.640187788236243,
+          "peakRmsSpeed": 136.2855883254954,
+          "visibleTravelRms": 22.291465357718987,
+          "visiblePeakRmsSpeed": 136.2855883254954,
+          "first10To90Seconds": 0.21666666666666665
+        }
+      },
+      "strongToLightPeakSpeed": 1.717371731234235,
+      "strongToLightTravel": 1.0046151715415716
+    },
+    {
+      "icon": "form-builder",
+      "mainPart": "form-builder-added",
+      "intent": "A new field is inserted below the existing text field and radio row; Strong shows the cursor, holds, then shoots the field out with one overshoot.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 9.05096679918781,
+          "travelRms": 9.05096679918781,
+          "peakRmsSpeed": 30.627283200364737,
+          "visibleTravelRms": 9.05096679918781,
+          "visiblePeakRmsSpeed": 30.627283200364737,
+          "first10To90Seconds": 0.2666666666666666
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 9.899494936611665,
+          "travelRms": 10.74802307403552,
+          "peakRmsSpeed": 103.52345635155808,
+          "visibleTravelRms": 10.74802307403552,
+          "visiblePeakRmsSpeed": 103.52345635155808,
+          "first10To90Seconds": 0.08333333333333331
+        }
+      },
+      "strongToLightPeakSpeed": 3.380105759766679,
+      "strongToLightTravel": 1.1874999999999996
+    },
+    {
+      "icon": "qr-code",
+      "mainPart": "qr-code-module-0",
+      "intent": "Data modules drop into the code between the fixed finder squares; Strong drops them from higher and each lands with one rebound.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 3.5,
+          "travelRms": 3.5,
+          "peakRmsSpeed": 14.988662131519135,
+          "visibleTravelRms": 3.5,
+          "visiblePeakRmsSpeed": 14.988662131519135,
+          "first10To90Seconds": 0.19999999999999998,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 3.5
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 8.62678326474623,
+          "travelRms": 9.253566529492458,
+          "peakRmsSpeed": 73.61316872427989,
+          "visibleTravelRms": 9.253566529492458,
+          "visiblePeakRmsSpeed": 73.61316872427989,
+          "first10To90Seconds": 0.11666666666666665,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 8.62678326474623
+        }
+      },
+      "strongToLightPeakSpeed": 4.911256793858961,
+      "strongToLightTravel": 2.6438761512835596
+    },
+    {
+      "icon": "barcode",
+      "mainPart": "barcode-laser",
+      "intent": "A scanner line passes down across the bars and fades; Strong lifts, drives to the bottom, and sweeps back up before it clears.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.65,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 16,
+          "travelRms": 32.00000000000001,
+          "peakRmsSpeed": 539.9253354657385,
+          "visibleTravelRms": 16.000000000000007,
+          "visiblePeakRmsSpeed": 39.9588477366256,
+          "first10To90Seconds": 0.35,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 16
+        },
+        "strong": {
+          "activeSeconds": 0.55,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 16.220110888499317,
+          "travelRms": 35.22644325848011,
+          "peakRmsSpeed": 137.22811111111093,
+          "visibleTravelRms": 35.22644325848011,
+          "visiblePeakRmsSpeed": 137.22811111111093,
+          "first10To90Seconds": 0.11666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 17.61322162924006
+        }
+      },
+      "strongToLightPeakSpeed": 3.4342359423274855,
+      "strongToLightTravel": 2.201652703655006
+    }
+  ]
+}

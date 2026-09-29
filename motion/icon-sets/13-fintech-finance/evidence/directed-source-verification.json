@@ -1,0 +1,777 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 64,
+  "nativeTransformNodes": 340,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "checks": [
+    {
+      "name": "bank",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bank-pediment-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "bank-column-left"
+        },
+        {
+          "type": "fixed",
+          "part": "bank-plinth"
+        }
+      ]
+    },
+    {
+      "name": "bank-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bank-pediment-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "bank-column-left"
+        },
+        {
+          "type": "fixed",
+          "part": "bank-plinth"
+        }
+      ]
+    },
+    {
+      "name": "bank-account",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bank-account-ledger-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "bank-account-ledger-solid"
+        },
+        {
+          "type": "monotonic",
+          "part": "bank-account-balance",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "bank-account-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bank-account-ledger-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "bank-account-ledger-solid"
+        },
+        {
+          "type": "monotonic",
+          "part": "bank-account-balance",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "bank-transfer",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bank-transfer-account-left-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "bank-transfer-outgoing"
+        },
+        {
+          "type": "rigid",
+          "part": "bank-transfer-incoming"
+        }
+      ]
+    },
+    {
+      "name": "bank-transfer-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bank-transfer-account-left-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "bank-transfer-outgoing"
+        },
+        {
+          "type": "rigid",
+          "part": "bank-transfer-incoming"
+        }
+      ]
+    },
+    {
+      "name": "currency-exchange",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "currency-exchange-coin-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "currency-exchange-channel-a-arc"
+        }
+      ]
+    },
+    {
+      "name": "currency-exchange-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "currency-exchange-coin-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "currency-exchange-channel-a-arc"
+        }
+      ]
+    },
+    {
+      "name": "savings",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "savings-jar-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "savings-jar-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "savings-coin-new"
+        }
+      ]
+    },
+    {
+      "name": "savings-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "savings-jar-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "savings-jar-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "savings-coin-new"
+        }
+      ]
+    },
+    {
+      "name": "deposit",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "deposit-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "deposit-coin-frame"
+        }
+      ]
+    },
+    {
+      "name": "deposit-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "deposit-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "deposit-coin-frame"
+        }
+      ]
+    },
+    {
+      "name": "withdraw",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "withdraw-slot-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "withdraw-slot-solid"
+        }
+      ]
+    },
+    {
+      "name": "withdraw-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "withdraw-slot-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "withdraw-slot-solid"
+        }
+      ]
+    },
+    {
+      "name": "payment-terminal",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "payment-terminal-housing-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "payment-terminal-housing-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "payment-terminal-key-center"
+        }
+      ]
+    },
+    {
+      "name": "payment-terminal-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "payment-terminal-housing-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "payment-terminal-housing-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "payment-terminal-key-center"
+        }
+      ]
+    },
+    {
+      "name": "contactless-payment",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "contactless-payment-phone-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "contactless-payment-signal-2"
+        }
+      ]
+    },
+    {
+      "name": "contactless-payment-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "contactless-payment-phone-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "contactless-payment-signal-2"
+        }
+      ]
+    },
+    {
+      "name": "recurring-payment",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "recurring-payment-calendar-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "recurring-payment-clock-hand"
+        }
+      ]
+    },
+    {
+      "name": "recurring-payment-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "recurring-payment-calendar-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "recurring-payment-clock-hand"
+        }
+      ]
+    },
+    {
+      "name": "receipt",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "opaque",
+          "part": "receipt-paper-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "receipt-paper"
+        }
+      ]
+    },
+    {
+      "name": "receipt-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "opaque",
+          "part": "receipt-paper-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "receipt-paper"
+        }
+      ]
+    },
+    {
+      "name": "invoice",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "invoice-paper"
+        },
+        {
+          "type": "opaque",
+          "part": "invoice-paper-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "invoice-seal-frame"
+        }
+      ]
+    },
+    {
+      "name": "invoice-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "invoice-paper"
+        },
+        {
+          "type": "opaque",
+          "part": "invoice-paper-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "invoice-seal-frame"
+        }
+      ]
+    },
+    {
+      "name": "refund",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "refund-return"
+        },
+        {
+          "type": "rigid",
+          "part": "refund-coin-frame"
+        }
+      ]
+    },
+    {
+      "name": "refund-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "refund-return"
+        },
+        {
+          "type": "rigid",
+          "part": "refund-coin-frame"
+        }
+      ]
+    },
+    {
+      "name": "bill-payment",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bill-payment-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "bill-payment-bill"
+        }
+      ]
+    },
+    {
+      "name": "bill-payment-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "bill-payment-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "bill-payment-bill"
+        }
+      ]
+    },
+    {
+      "name": "budget",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "budget-committed-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "budget-allocation-frame"
+        }
+      ]
+    },
+    {
+      "name": "budget-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "budget-committed-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "budget-allocation-frame"
+        }
+      ]
+    },
+    {
+      "name": "transaction-history",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "transaction-history-timeline"
+        },
+        {
+          "type": "rigid",
+          "part": "transaction-history-entry-2"
+        },
+        {
+          "type": "monotonic",
+          "part": "transaction-history-entry-2",
+          "measure": "y",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "name": "transaction-history-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "transaction-history-timeline"
+        },
+        {
+          "type": "rigid",
+          "part": "transaction-history-entry-2"
+        },
+        {
+          "type": "monotonic",
+          "part": "transaction-history-entry-2",
+          "measure": "y",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "name": "investment",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "investment-principal-frame"
+        },
+        {
+          "type": "monotonic",
+          "part": "investment-stem",
+          "measure": "height"
+        },
+        {
+          "type": "rigid",
+          "part": "investment-branch-left-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "investment-branch-right-frame"
+        }
+      ]
+    },
+    {
+      "name": "investment-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "investment-principal-frame"
+        },
+        {
+          "type": "monotonic",
+          "part": "investment-stem",
+          "measure": "height"
+        },
+        {
+          "type": "rigid",
+          "part": "investment-branch-left-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "investment-branch-right-frame"
+        }
+      ]
+    },
+    {
+      "name": "portfolio",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "portfolio-case-frame"
+        }
+      ]
+    },
+    {
+      "name": "portfolio-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "portfolio-case-frame"
+        }
+      ]
+    },
+    {
+      "name": "calculator",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "calculator-body-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "calculator-body-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "calculator-key-5"
+        }
+      ]
+    },
+    {
+      "name": "calculator-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "calculator-body-frame"
+        },
+        {
+          "type": "opaque",
+          "part": "calculator-body-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "calculator-key-5"
+        }
+      ]
+    },
+    {
+      "name": "vault",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "vault-door-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "vault-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "vault-spoke-0"
+        }
+      ]
+    },
+    {
+      "name": "vault-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "vault-door-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "vault-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "vault-spoke-0"
+        }
+      ]
+    }
+  ]
+}

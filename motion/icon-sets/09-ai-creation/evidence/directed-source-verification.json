@@ -1,0 +1,713 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 76,
+  "nativeTransformNodes": 184,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "checks": [
+    {
+      "name": "image-generate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "image-generate-canvas-frame"
+        },
+        {
+          "type": "inside",
+          "part": "image-generate-sun",
+          "box": [
+            10,
+            9,
+            22,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "name": "image-generate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "image-generate-canvas-frame"
+        },
+        {
+          "type": "inside",
+          "part": "image-generate-sun",
+          "box": [
+            10,
+            9,
+            22,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "name": "generative-fill",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "generative-fill-photo-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "generative-fill-tile-frame"
+        }
+      ]
+    },
+    {
+      "name": "generative-fill-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "generative-fill-photo-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "generative-fill-tile-frame"
+        }
+      ]
+    },
+    {
+      "name": "background-remove",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "background-remove-subject"
+        },
+        {
+          "type": "rigid",
+          "part": "background-remove-backdrop-left"
+        },
+        {
+          "type": "rigid",
+          "part": "background-remove-backdrop-right"
+        }
+      ]
+    },
+    {
+      "name": "background-remove-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "background-remove-subject"
+        },
+        {
+          "type": "rigid",
+          "part": "background-remove-backdrop-left"
+        },
+        {
+          "type": "rigid",
+          "part": "background-remove-backdrop-right"
+        }
+      ]
+    },
+    {
+      "name": "object-select",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "object-select-object"
+        },
+        {
+          "type": "rigid",
+          "part": "object-select-pointer-frame"
+        }
+      ]
+    },
+    {
+      "name": "object-select-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "object-select-object"
+        },
+        {
+          "type": "rigid",
+          "part": "object-select-pointer-frame"
+        }
+      ]
+    },
+    {
+      "name": "image-upscale",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "image-upscale-original"
+        },
+        {
+          "type": "monotonic",
+          "part": "image-upscale-frame",
+          "measure": "width"
+        },
+        {
+          "type": "rigid",
+          "part": "image-upscale-arrow"
+        }
+      ]
+    },
+    {
+      "name": "image-upscale-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "image-upscale-original"
+        },
+        {
+          "type": "monotonic",
+          "part": "image-upscale-frame",
+          "measure": "width"
+        },
+        {
+          "type": "rigid",
+          "part": "image-upscale-arrow"
+        }
+      ]
+    },
+    {
+      "name": "style-transfer",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "style-transfer-canvas-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "style-transfer-rod"
+        }
+      ]
+    },
+    {
+      "name": "style-transfer-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "style-transfer-canvas-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "style-transfer-rod"
+        }
+      ]
+    },
+    {
+      "name": "smart-crop",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "smart-crop-hill"
+        },
+        {
+          "type": "rigid",
+          "part": "smart-crop-tl"
+        },
+        {
+          "type": "rigid",
+          "part": "smart-crop-br"
+        }
+      ]
+    },
+    {
+      "name": "smart-crop-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "smart-crop-hill"
+        },
+        {
+          "type": "rigid",
+          "part": "smart-crop-tl"
+        },
+        {
+          "type": "rigid",
+          "part": "smart-crop-br"
+        }
+      ]
+    },
+    {
+      "name": "image-caption",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "image-caption-photo-frame"
+        }
+      ]
+    },
+    {
+      "name": "image-caption-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "image-caption-photo-frame"
+        }
+      ]
+    },
+    {
+      "name": "text-to-speech",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-to-speech-glyph"
+        },
+        {
+          "type": "fixed",
+          "part": "text-to-speech-bar"
+        }
+      ]
+    },
+    {
+      "name": "text-to-speech-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-to-speech-glyph"
+        },
+        {
+          "type": "fixed",
+          "part": "text-to-speech-bar"
+        }
+      ]
+    },
+    {
+      "name": "speech-to-text",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "speech-to-text-l1",
+          "measure": "width"
+        },
+        {
+          "type": "monotonic",
+          "part": "speech-to-text-l2",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "speech-to-text-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "speech-to-text-l1",
+          "measure": "width"
+        },
+        {
+          "type": "monotonic",
+          "part": "speech-to-text-l2",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "voice-chat",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-chat-left-shell-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-chat-right-shell-frame"
+        }
+      ]
+    },
+    {
+      "name": "voice-chat-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-chat-left-shell-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-chat-right-shell-frame"
+        }
+      ]
+    },
+    {
+      "name": "audio-generate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "audio-generate-source-frame"
+        }
+      ]
+    },
+    {
+      "name": "audio-generate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "audio-generate-source-frame"
+        }
+      ]
+    },
+    {
+      "name": "audio-clean",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "audio-clean-upper",
+          "measure": "y"
+        },
+        {
+          "type": "monotonic",
+          "part": "audio-clean-lower",
+          "measure": "y",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "name": "audio-clean-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "audio-clean-upper",
+          "measure": "y"
+        },
+        {
+          "type": "monotonic",
+          "part": "audio-clean-lower",
+          "measure": "y",
+          "direction": -1
+        }
+      ]
+    },
+    {
+      "name": "music-generate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "music-generate-head-1-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "music-generate-stem-1"
+        }
+      ]
+    },
+    {
+      "name": "music-generate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "music-generate-head-1-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "music-generate-stem-1"
+        }
+      ]
+    },
+    {
+      "name": "video-generate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "video-generate-board-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "video-generate-slate-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "video-generate-stripe-a"
+        }
+      ]
+    },
+    {
+      "name": "video-generate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "video-generate-board-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "video-generate-slate-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "video-generate-stripe-a"
+        }
+      ]
+    },
+    {
+      "name": "storyboard",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "storyboard-p1-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "storyboard-p4-frame"
+        }
+      ]
+    },
+    {
+      "name": "storyboard-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "storyboard-p1-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "storyboard-p4-frame"
+        }
+      ]
+    },
+    {
+      "name": "motion-generate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "motion-generate-ball"
+        }
+      ]
+    },
+    {
+      "name": "motion-generate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "motion-generate-ball"
+        }
+      ]
+    },
+    {
+      "name": "code-generate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "code-generate-lb"
+        },
+        {
+          "type": "rigid",
+          "part": "code-generate-rb"
+        }
+      ]
+    },
+    {
+      "name": "code-generate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "code-generate-lb"
+        },
+        {
+          "type": "rigid",
+          "part": "code-generate-rb"
+        }
+      ]
+    },
+    {
+      "name": "code-explain",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "code-explain-code"
+        }
+      ]
+    },
+    {
+      "name": "code-explain-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "code-explain-code"
+        }
+      ]
+    },
+    {
+      "name": "code-review",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "code-review-lb"
+        },
+        {
+          "type": "rigid",
+          "part": "code-review-rb"
+        }
+      ]
+    },
+    {
+      "name": "code-review-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "code-review-lb"
+        },
+        {
+          "type": "rigid",
+          "part": "code-review-rb"
+        }
+      ]
+    }
+  ]
+}

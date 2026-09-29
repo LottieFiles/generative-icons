@@ -1,0 +1,574 @@
+{
+  "result": "PASS",
+  "icons": 8,
+  "actions": 30,
+  "nativeTransformNodes": 128,
+  "nativeTransformMaxCoordinateError": 0.000011400813239248464,
+  "checks": [
+    {
+      "name": "date-range",
+      "fixedParts": [
+        "date-range-leaf-frame",
+        "date-range-header",
+        "date-range-peg-l",
+        "date-range-peg-r",
+        "date-range-start"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "date-range-leaf-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "date-range-header"
+        },
+        {
+          "type": "fixed",
+          "part": "date-range-peg-l"
+        },
+        {
+          "type": "fixed",
+          "part": "date-range-peg-r"
+        },
+        {
+          "type": "fixed",
+          "part": "date-range-start"
+        },
+        {
+          "type": "rigid",
+          "part": "date-range-end"
+        }
+      ]
+    },
+    {
+      "name": "date-range-strong",
+      "fixedParts": [
+        "date-range-leaf-frame",
+        "date-range-header",
+        "date-range-peg-l",
+        "date-range-peg-r",
+        "date-range-start"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "date-range-leaf-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "date-range-header"
+        },
+        {
+          "type": "fixed",
+          "part": "date-range-peg-l"
+        },
+        {
+          "type": "fixed",
+          "part": "date-range-peg-r"
+        },
+        {
+          "type": "fixed",
+          "part": "date-range-start"
+        },
+        {
+          "type": "rigid",
+          "part": "date-range-end"
+        }
+      ]
+    },
+    {
+      "name": "calendar-view",
+      "fixedParts": [
+        "calendar-view-leaf-frame",
+        "calendar-view-header",
+        "calendar-view-peg-l",
+        "calendar-view-peg-r"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "calendar-view-leaf-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "calendar-view-header"
+        },
+        {
+          "type": "fixed",
+          "part": "calendar-view-peg-l"
+        },
+        {
+          "type": "fixed",
+          "part": "calendar-view-peg-r"
+        }
+      ]
+    },
+    {
+      "name": "calendar-view-strong",
+      "fixedParts": [
+        "calendar-view-leaf-frame",
+        "calendar-view-header",
+        "calendar-view-peg-l",
+        "calendar-view-peg-r"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "calendar-view-leaf-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "calendar-view-header"
+        },
+        {
+          "type": "fixed",
+          "part": "calendar-view-peg-l"
+        },
+        {
+          "type": "fixed",
+          "part": "calendar-view-peg-r"
+        }
+      ]
+    },
+    {
+      "name": "reschedule",
+      "fixedParts": [
+        "reschedule-leaf-frame",
+        "reschedule-header",
+        "reschedule-peg-l",
+        "reschedule-peg-r",
+        "reschedule-tray",
+        "reschedule-target"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reschedule-leaf-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-header"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-peg-l"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-peg-r"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-tray"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-target"
+        },
+        {
+          "type": "rigid",
+          "part": "reschedule-chip"
+        }
+      ]
+    },
+    {
+      "name": "reschedule-strong",
+      "fixedParts": [
+        "reschedule-leaf-frame",
+        "reschedule-header",
+        "reschedule-peg-l",
+        "reschedule-peg-r",
+        "reschedule-tray",
+        "reschedule-target"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reschedule-leaf-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-header"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-peg-l"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-peg-r"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-tray"
+        },
+        {
+          "type": "fixed",
+          "part": "reschedule-target"
+        },
+        {
+          "type": "rigid",
+          "part": "reschedule-chip"
+        }
+      ]
+    },
+    {
+      "name": "alarm-clock",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "alarm-clock-body"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-minute"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-hour"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-bell-l"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-bell-r"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-leg-l"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-leg-r"
+        }
+      ]
+    },
+    {
+      "name": "alarm-clock-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "alarm-clock-body"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-minute"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-hour"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-bell-l"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-bell-r"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-leg-l"
+        },
+        {
+          "type": "rigid",
+          "part": "alarm-clock-leg-r"
+        }
+      ]
+    },
+    {
+      "name": "stopwatch",
+      "fixedParts": [
+        "stopwatch-case-frame",
+        "stopwatch-tick-3",
+        "stopwatch-tick-6",
+        "stopwatch-tick-9",
+        "stopwatch-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "stopwatch-case-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "stopwatch-tick-3"
+        },
+        {
+          "type": "fixed",
+          "part": "stopwatch-tick-6"
+        },
+        {
+          "type": "fixed",
+          "part": "stopwatch-tick-9"
+        },
+        {
+          "type": "fixed",
+          "part": "stopwatch-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "stopwatch-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "stopwatch-button"
+        },
+        {
+          "type": "rigid",
+          "part": "stopwatch-hand"
+        }
+      ]
+    },
+    {
+      "name": "stopwatch-strong",
+      "fixedParts": [
+        "stopwatch-case-frame",
+        "stopwatch-tick-3",
+        "stopwatch-tick-6",
+        "stopwatch-tick-9",
+        "stopwatch-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "stopwatch-case-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "stopwatch-tick-3"
+        },
+        {
+          "type": "fixed",
+          "part": "stopwatch-tick-6"
+        },
+        {
+          "type": "fixed",
+          "part": "stopwatch-tick-9"
+        },
+        {
+          "type": "fixed",
+          "part": "stopwatch-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "stopwatch-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "stopwatch-button"
+        },
+        {
+          "type": "rigid",
+          "part": "stopwatch-hand"
+        }
+      ]
+    },
+    {
+      "name": "countdown-timer",
+      "fixedParts": [
+        "countdown-timer-dial-frame",
+        "countdown-timer-marker"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "countdown-timer-dial-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "countdown-timer-marker"
+        }
+      ]
+    },
+    {
+      "name": "countdown-timer-strong",
+      "fixedParts": [
+        "countdown-timer-dial-frame",
+        "countdown-timer-marker"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "countdown-timer-dial-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "countdown-timer-marker"
+        }
+      ]
+    },
+    {
+      "name": "world-clock",
+      "fixedParts": [
+        "world-clock-globe-frame",
+        "world-clock-meridian",
+        "world-clock-dial-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "world-clock-globe-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "world-clock-meridian"
+        },
+        {
+          "type": "fixed",
+          "part": "world-clock-dial-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "world-clock-minute"
+        },
+        {
+          "type": "rigid",
+          "part": "world-clock-hour"
+        }
+      ]
+    },
+    {
+      "name": "world-clock-strong",
+      "fixedParts": [
+        "world-clock-globe-frame",
+        "world-clock-meridian",
+        "world-clock-dial-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "world-clock-globe-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "world-clock-meridian"
+        },
+        {
+          "type": "fixed",
+          "part": "world-clock-dial-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "world-clock-minute"
+        },
+        {
+          "type": "rigid",
+          "part": "world-clock-hour"
+        }
+      ]
+    },
+    {
+      "name": "availability",
+      "fixedParts": [
+        "availability-busy-top",
+        "availability-busy-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "availability-busy-top"
+        },
+        {
+          "type": "fixed",
+          "part": "availability-busy-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "availability-free-frame"
+        }
+      ]
+    },
+    {
+      "name": "availability-strong",
+      "fixedParts": [
+        "availability-busy-top",
+        "availability-busy-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "availability-busy-top"
+        },
+        {
+          "type": "fixed",
+          "part": "availability-busy-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "availability-free-frame"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

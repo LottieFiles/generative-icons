@@ -1,0 +1,565 @@
+{
+  "result": "PASS",
+  "icons": 10,
+  "actions": 28,
+  "nativeTransformNodes": 142,
+  "nativeTransformMaxCoordinateError": 0.000007000000001866624,
+  "checks": [
+    {
+      "name": "voice-listening",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": false,
+      "continuous": true,
+      "designConstraints": []
+    },
+    {
+      "name": "voice-listening-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": false,
+      "continuous": true,
+      "designConstraints": []
+    },
+    {
+      "name": "voice-speaking",
+      "fixedParts": [
+        "voice-speaking-bubble-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": false,
+      "continuous": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-speaking-bubble-frame"
+        },
+        {
+          "type": "inside",
+          "part": "voice-speaking-wave",
+          "box": [
+            9,
+            10.3,
+            23,
+            16.7
+          ]
+        }
+      ]
+    },
+    {
+      "name": "voice-speaking-strong",
+      "fixedParts": [
+        "voice-speaking-bubble-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": false,
+      "continuous": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-speaking-bubble-frame"
+        },
+        {
+          "type": "inside",
+          "part": "voice-speaking-wave",
+          "box": [
+            9,
+            10.3,
+            23,
+            16.7
+          ]
+        }
+      ]
+    },
+    {
+      "name": "voice-activity",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": false,
+      "continuous": true,
+      "designConstraints": [
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-0",
+          "box": [
+            6,
+            8,
+            6,
+            25
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-1",
+          "box": [
+            11,
+            8,
+            11,
+            25
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-2",
+          "box": [
+            16,
+            8,
+            16,
+            25
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-3",
+          "box": [
+            21,
+            8,
+            21,
+            25
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-4",
+          "box": [
+            26,
+            8,
+            26,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "name": "voice-activity-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": false,
+      "continuous": true,
+      "designConstraints": [
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-0",
+          "box": [
+            6,
+            8,
+            6,
+            25
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-1",
+          "box": [
+            11,
+            8,
+            11,
+            25
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-2",
+          "box": [
+            16,
+            8,
+            16,
+            25
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-3",
+          "box": [
+            21,
+            8,
+            21,
+            25
+          ]
+        },
+        {
+          "type": "inside",
+          "part": "voice-activity-bar-4",
+          "box": [
+            26,
+            8,
+            26,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "name": "voice-recording",
+      "fixedParts": [
+        "voice-recording-capsule-frame",
+        "voice-recording-cradle",
+        "voice-recording-stem",
+        "voice-recording-foot",
+        "voice-recording-rec-ring"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": false,
+      "continuous": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-recording-capsule-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-recording-cradle"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-recording-stem"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-recording-foot"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-recording-rec-ring"
+        }
+      ]
+    },
+    {
+      "name": "voice-recording-strong",
+      "fixedParts": [
+        "voice-recording-capsule-frame",
+        "voice-recording-cradle",
+        "voice-recording-stem",
+        "voice-recording-foot",
+        "voice-recording-rec-ring"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": false,
+      "continuous": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-recording-capsule-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-recording-cradle"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-recording-stem"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-recording-foot"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-recording-rec-ring"
+        }
+      ]
+    },
+    {
+      "name": "push-to-talk",
+      "fixedParts": [
+        "push-to-talk-key-side"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "push-to-talk-key-side"
+        }
+      ]
+    },
+    {
+      "name": "push-to-talk-strong",
+      "fixedParts": [
+        "push-to-talk-key-side"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "push-to-talk-key-side"
+        }
+      ]
+    },
+    {
+      "name": "microphone-muted",
+      "fixedParts": [
+        "microphone-muted-capsule-frame",
+        "microphone-muted-cradle",
+        "microphone-muted-stem",
+        "microphone-muted-foot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "microphone-muted-capsule-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "microphone-muted-cradle"
+        },
+        {
+          "type": "fixed",
+          "part": "microphone-muted-stem"
+        },
+        {
+          "type": "fixed",
+          "part": "microphone-muted-foot"
+        }
+      ]
+    },
+    {
+      "name": "microphone-muted-strong",
+      "fixedParts": [
+        "microphone-muted-capsule-frame",
+        "microphone-muted-cradle",
+        "microphone-muted-stem",
+        "microphone-muted-foot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "microphone-muted-capsule-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "microphone-muted-cradle"
+        },
+        {
+          "type": "fixed",
+          "part": "microphone-muted-stem"
+        },
+        {
+          "type": "fixed",
+          "part": "microphone-muted-foot"
+        }
+      ]
+    },
+    {
+      "name": "wake-word",
+      "fixedParts": [
+        "wake-word-puck-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "wake-word-puck-frame"
+        }
+      ]
+    },
+    {
+      "name": "wake-word-strong",
+      "fixedParts": [
+        "wake-word-puck-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "wake-word-puck-frame"
+        }
+      ]
+    },
+    {
+      "name": "switch-voice",
+      "fixedParts": [
+        "switch-voice-body-a",
+        "switch-voice-body-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "switch-voice-body-a"
+        },
+        {
+          "type": "fixed",
+          "part": "switch-voice-body-b"
+        }
+      ]
+    },
+    {
+      "name": "switch-voice-strong",
+      "fixedParts": [
+        "switch-voice-body-a",
+        "switch-voice-body-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "switch-voice-body-a"
+        },
+        {
+          "type": "fixed",
+          "part": "switch-voice-body-b"
+        }
+      ]
+    },
+    {
+      "name": "voice-isolation",
+      "fixedParts": [
+        "voice-isolation-voice-l",
+        "voice-isolation-voice-mid",
+        "voice-isolation-voice-r"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-isolation-voice-l"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-isolation-voice-mid"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-isolation-voice-r"
+        }
+      ]
+    },
+    {
+      "name": "voice-isolation-strong",
+      "fixedParts": [
+        "voice-isolation-voice-l",
+        "voice-isolation-voice-mid",
+        "voice-isolation-voice-r"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-isolation-voice-l"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-isolation-voice-mid"
+        },
+        {
+          "type": "fixed",
+          "part": "voice-isolation-voice-r"
+        }
+      ]
+    },
+    {
+      "name": "voice-speed",
+      "fixedParts": [
+        "voice-speed-tick-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-speed-tick-1"
+        }
+      ]
+    },
+    {
+      "name": "voice-speed-strong",
+      "fixedParts": [
+        "voice-speed-tick-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voice-speed-tick-1"
+        }
+      ]
+    }
+  ],
+  "loopChecks": [
+    {
+      "name": "voice-listening",
+      "maxSeamPositionError": 0,
+      "maxVelocityRatio": 0.050473186119871775
+    },
+    {
+      "name": "voice-listening-strong",
+      "maxSeamPositionError": 0,
+      "maxVelocityRatio": 0.08510638297550682
+    },
+    {
+      "name": "voice-speaking",
+      "maxSeamPositionError": 0,
+      "maxVelocityRatio": 0.06951871657727342
+    },
+    {
+      "name": "voice-speaking-strong",
+      "maxSeamPositionError": 0,
+      "maxVelocityRatio": 0.12645461598142063
+    },
+    {
+      "name": "voice-activity",
+      "maxSeamPositionError": 0,
+      "maxVelocityRatio": 0.041544897140570046
+    },
+    {
+      "name": "voice-activity-strong",
+      "maxSeamPositionError": 0,
+      "maxVelocityRatio": 0.08294740703379465
+    },
+    {
+      "name": "voice-recording",
+      "maxSeamPositionError": 0,
+      "maxVelocityRatio": 0.04430863254392841
+    },
+    {
+      "name": "voice-recording-strong",
+      "maxSeamPositionError": 0,
+      "maxVelocityRatio": 0.08760951188986177
+    }
+  ]
+}

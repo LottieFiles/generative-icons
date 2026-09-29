@@ -1,0 +1,690 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 68,
+  "nativeTransformNodes": 272,
+  "nativeTransformMaxCoordinateError": 0.00001000000000139778,
+  "checks": [
+    {
+      "name": "graduation-cap",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "graduation-cap-tassel"
+        }
+      ]
+    },
+    {
+      "name": "graduation-cap-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "graduation-cap-tassel"
+        }
+      ]
+    },
+    {
+      "name": "chalkboard",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "chalkboard-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "flashcards",
+      "fixedParts": [
+        "flashcards-deck"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "flashcards-deck"
+        }
+      ]
+    },
+    {
+      "name": "flashcards-strong",
+      "fixedParts": [
+        "flashcards-deck"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "flashcards-deck"
+        }
+      ]
+    },
+    {
+      "name": "quiz",
+      "fixedParts": [
+        "quiz-card-frame",
+        "quiz-q-hook",
+        "quiz-ring-1",
+        "quiz-row-0",
+        "quiz-row-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "quiz-card-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "quiz-q-hook"
+        },
+        {
+          "type": "fixed",
+          "part": "quiz-ring-1"
+        },
+        {
+          "type": "fixed",
+          "part": "quiz-row-0"
+        },
+        {
+          "type": "fixed",
+          "part": "quiz-row-1"
+        }
+      ]
+    },
+    {
+      "name": "quiz-strong",
+      "fixedParts": [
+        "quiz-card-frame",
+        "quiz-q-hook",
+        "quiz-ring-1",
+        "quiz-row-0",
+        "quiz-row-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "quiz-card-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "quiz-q-hook"
+        },
+        {
+          "type": "fixed",
+          "part": "quiz-ring-1"
+        },
+        {
+          "type": "fixed",
+          "part": "quiz-row-0"
+        },
+        {
+          "type": "fixed",
+          "part": "quiz-row-1"
+        }
+      ]
+    },
+    {
+      "name": "certificate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "certificate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "notebook",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "notebook-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "pencil",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "pencil-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "ruler",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "ruler-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "lab-flask",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "lab-flask-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "microscope",
+      "fixedParts": [
+        "microscope-base",
+        "microscope-arm",
+        "microscope-stage"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "microscope-base"
+        },
+        {
+          "type": "fixed",
+          "part": "microscope-arm"
+        },
+        {
+          "type": "fixed",
+          "part": "microscope-stage"
+        },
+        {
+          "type": "rigid",
+          "part": "microscope-tube-frame"
+        }
+      ]
+    },
+    {
+      "name": "microscope-strong",
+      "fixedParts": [
+        "microscope-base",
+        "microscope-arm",
+        "microscope-stage"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "microscope-base"
+        },
+        {
+          "type": "fixed",
+          "part": "microscope-arm"
+        },
+        {
+          "type": "fixed",
+          "part": "microscope-stage"
+        },
+        {
+          "type": "rigid",
+          "part": "microscope-tube-frame"
+        }
+      ]
+    },
+    {
+      "name": "abacus",
+      "fixedParts": [
+        "abacus-frame-frame",
+        "abacus-rod-0",
+        "abacus-rod-1",
+        "abacus-rod-2",
+        "abacus-bead-0-0",
+        "abacus-bead-1-0",
+        "abacus-bead-2-0"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "abacus-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-rod-0"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-rod-1"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-rod-2"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-bead-0-0"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-bead-1-0"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-bead-2-0"
+        }
+      ]
+    },
+    {
+      "name": "abacus-strong",
+      "fixedParts": [
+        "abacus-frame-frame",
+        "abacus-rod-0",
+        "abacus-rod-1",
+        "abacus-rod-2",
+        "abacus-bead-0-0",
+        "abacus-bead-1-0",
+        "abacus-bead-2-0"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "abacus-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-rod-0"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-rod-1"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-rod-2"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-bead-0-0"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-bead-1-0"
+        },
+        {
+          "type": "fixed",
+          "part": "abacus-bead-2-0"
+        }
+      ]
+    },
+    {
+      "name": "school-bell",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "school-bell-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "school-bell-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "school-bell-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "course-progress",
+      "fixedParts": [
+        "course-progress-card-frame",
+        "course-progress-track"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "course-progress-card-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "course-progress-track"
+        }
+      ]
+    },
+    {
+      "name": "course-progress-strong",
+      "fixedParts": [
+        "course-progress-card-frame",
+        "course-progress-track"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "course-progress-card-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "course-progress-track"
+        }
+      ]
+    },
+    {
+      "name": "lecture",
+      "fixedParts": [
+        "lecture-screen-frame",
+        "lecture-head-frame",
+        "lecture-shoulders"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "lecture-screen-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "lecture-head-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "lecture-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "lecture-pointer"
+        }
+      ]
+    },
+    {
+      "name": "lecture-strong",
+      "fixedParts": [
+        "lecture-screen-frame",
+        "lecture-head-frame",
+        "lecture-shoulders"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "lecture-screen-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "lecture-head-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "lecture-shoulders"
+        },
+        {
+          "type": "rigid",
+          "part": "lecture-pointer"
+        }
+      ]
+    },
+    {
+      "name": "library-shelf",
+      "fixedParts": [
+        "library-shelf-shelf",
+        "library-shelf-book-0-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "library-shelf-shelf"
+        },
+        {
+          "type": "fixed",
+          "part": "library-shelf-book-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "library-shelf-book-1-frame"
+        }
+      ]
+    },
+    {
+      "name": "library-shelf-strong",
+      "fixedParts": [
+        "library-shelf-shelf",
+        "library-shelf-book-0-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "library-shelf-shelf"
+        },
+        {
+          "type": "fixed",
+          "part": "library-shelf-book-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "library-shelf-book-1-frame"
+        }
+      ]
+    },
+    {
+      "name": "language-learning",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "language-learning-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "alphabet-blocks",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "alphabet-blocks-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "homework",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "homework-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "exam-grade",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "exam-grade-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "geometry-compass",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "geometry-compass-needle-leg"
+        },
+        {
+          "type": "rigid",
+          "part": "geometry-compass-pencil-leg"
+        }
+      ]
+    },
+    {
+      "name": "geometry-compass-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "geometry-compass-needle-leg"
+        },
+        {
+          "type": "rigid",
+          "part": "geometry-compass-pencil-leg"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

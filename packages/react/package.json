@@ -1,0 +1,51 @@
+{
+  "name": "@lottiefiles/generative-icons-react",
+  "version": "0.1.0",
+  "description": "Generative Animated Icons for React: lifecycle adapter for the icon runtime",
+  "keywords": [
+    "lottie",
+    "dotlottie",
+    "animated-icons",
+    "icons",
+    "react",
+    "generative-animated-icons"
+  ],
+  "homepage": "https://github.com/LottieFiles/lottie-generative-icons#readme",
+  "bugs": {
+    "url": "https://github.com/LottieFiles/lottie-generative-icons/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LottieFiles/lottie-generative-icons.git",
+    "directory": "packages/react"
+  },
+  "author": "LottieFiles",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist/index.mjs",
+    "dist/index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "dependencies": {
+    "@lottiefiles/generative-icons-runtime": "0.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

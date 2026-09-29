@@ -1,0 +1,531 @@
+{
+  "scope": "Source geometry and rigid transforms at 60fps; grid units and seconds. RMS includes curve control points. Native normal-speed review required.",
+  "definitionsSha256": "fea65f99d627db19120ca58ee89d96da1ad72053638ffcfeaa1d847c9677acc8",
+  "icons": 16,
+  "records": [
+    {
+      "icon": "sort-order",
+      "mainPart": "sort-order-arrow-stem",
+      "intent": "Direction arrow winds up and flips 180° beside the bars while the outer bars trade lengths; ascending and descending are retained states.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 12,
+          "travelRms": 18.83628807317556,
+          "peakRmsSpeed": 56.407030990586264,
+          "visibleTravelRms": 18.83628807317556,
+          "visiblePeakRmsSpeed": 56.407030990586264,
+          "first10To90Seconds": 0.25,
+          "rotationRange": 180,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 12,
+          "travelRms": 25.06387524699983,
+          "peakRmsSpeed": 109.32725976579047,
+          "visibleTravelRms": 25.06387524699983,
+          "visiblePeakRmsSpeed": 109.32725976579047,
+          "first10To90Seconds": 0.21666666666666665,
+          "rotationRange": 209.9508781481481,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 1.93818497172872,
+      "strongToLightTravel": 1.3306164754770806
+    },
+    {
+      "icon": "show-columns",
+      "mainPart": "show-columns-bar-3",
+      "intent": "Existing content shifts over to make room, then the third column boundary and its content wipe down in one stroke; hiding retracts the wipe and the content spreads back.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.45,
+          "firstChangeSeconds": 0.26666666666666666,
+          "peakRmsDisplacement": 8.48528137423857,
+          "travelRms": 8.48528137423857,
+          "peakRmsSpeed": 58.70702289229365,
+          "visibleTravelRms": 8.48528137423857,
+          "visiblePeakRmsSpeed": 58.70702289229365,
+          "first10To90Seconds": 0.13333333333333336
+        },
+        "strong": {
+          "activeSeconds": 0.38,
+          "firstChangeSeconds": 0.18333333333333332,
+          "peakRmsDisplacement": 8.48528137423857,
+          "travelRms": 8.485281374238571,
+          "peakRmsSpeed": 88.10544027130045,
+          "visibleTravelRms": 8.485281374238571,
+          "visiblePeakRmsSpeed": 88.10544027130045,
+          "first10To90Seconds": 0.1
+        }
+      },
+      "strongToLightPeakSpeed": 1.5007649158592553,
+      "strongToLightTravel": 1.0000000000000002
+    },
+    {
+      "icon": "resize-column",
+      "mainPart": "resize-column-divider",
+      "intent": "The column boundary is dragged right along the table, held, then released back; the frame never resizes.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4,
+          "travelRms": 8,
+          "peakRmsSpeed": 17.129899578879133,
+          "visibleTravelRms": 8,
+          "visiblePeakRmsSpeed": 17.129899578879133,
+          "first10To90Seconds": 0.2,
+          "rotationRange": 0,
+          "horizontalRange": 4,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.75,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 6.594818710521189,
+          "travelRms": 15.189637421042375,
+          "peakRmsSpeed": 51.707154186493014,
+          "visibleTravelRms": 15.189637421042375,
+          "visiblePeakRmsSpeed": 51.707154186493014,
+          "first10To90Seconds": 0.21666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 7.5948187105211895,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.0185322423166467,
+      "strongToLightTravel": 1.898704677630297
+    },
+    {
+      "icon": "group-rows",
+      "mainPart": "group-rows-row-1",
+      "intent": "Child rows push right under the header, then a section spine draws down to collect them; ungroup retracts the spine before the rows slide back.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4,
+          "travelRms": 4.000000000000001,
+          "peakRmsSpeed": 18.731011284722232,
+          "visibleTravelRms": 4.000000000000001,
+          "visiblePeakRmsSpeed": 18.731011284722232,
+          "first10To90Seconds": 0.2,
+          "rotationRange": 0,
+          "horizontalRange": 4,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.55,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4.6000000000000005,
+          "travelRms": 6.400000000000002,
+          "peakRmsSpeed": 38.638888888888914,
+          "visibleTravelRms": 6.400000000000002,
+          "visiblePeakRmsSpeed": 38.638888888888914,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 0,
+          "horizontalRange": 5.199999999999999,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.062829833454019,
+      "strongToLightTravel": 1.6
+    },
+    {
+      "icon": "freeze-column",
+      "mainPart": "freeze-column-scroll-bar",
+      "intent": "The scrolling column content slides left against the frozen boundary and springs back; the leading column never moves.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.75,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.5,
+          "travelRms": 5,
+          "peakRmsSpeed": 12.448559670781947,
+          "visibleTravelRms": 5,
+          "visiblePeakRmsSpeed": 12.448559670781947,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 0,
+          "horizontalRange": 2.5,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4,
+          "travelRms": 11.798182441700957,
+          "peakRmsSpeed": 40.86805555555557,
+          "visibleTravelRms": 11.798182441700957,
+          "visiblePeakRmsSpeed": 40.86805555555557,
+          "first10To90Seconds": 0.23333333333333334,
+          "rotationRange": 0,
+          "horizontalRange": 5.5,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.2829545454545324,
+      "strongToLightTravel": 2.3596364883401915
+    },
+    {
+      "icon": "pivot-table",
+      "mainPart": "pivot-table-bar",
+      "intent": "The body value bar winds back and turns a quarter turn from row orientation to column orientation inside the headed table.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4.242640687119285,
+          "travelRms": 4.711559584957072,
+          "peakRmsSpeed": 14.112605845361278,
+          "visibleTravelRms": 4.711559584957072,
+          "visiblePeakRmsSpeed": 14.112605845361278,
+          "first10To90Seconds": 0.30000000000000004,
+          "rotationRange": 90,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4.59289928095853,
+          "travelRms": 6.9664856744843275,
+          "peakRmsSpeed": 31.223042274157912,
+          "visibleTravelRms": 6.9664856744843275,
+          "visiblePeakRmsSpeed": 31.223042274157912,
+          "first10To90Seconds": 0.26666666666666666,
+          "rotationRange": 111.57341820987655,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.2124221859721764,
+      "strongToLightTravel": 1.4785944120767816
+    },
+    {
+      "icon": "formula",
+      "mainPart": "formula-x-a",
+      "intent": "The caret advances from f to the end of the line, then the x is typed into the cleared space behind it. Light: quiet glide, then two unhurried strokes. Strong: brief hold, fast launch with one bounded settle, then two fast strokes.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.36666666666666664,
+          "peakRmsDisplacement": 7.280109889280518,
+          "travelRms": 7.280109889280519,
+          "peakRmsSpeed": 59.97408009687726,
+          "visibleTravelRms": 7.280109889280519,
+          "visiblePeakRmsSpeed": 59.97408009687726,
+          "first10To90Seconds": 0.1166666666666667
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.2833333333333333,
+          "peakRmsDisplacement": 7.280109889280518,
+          "travelRms": 7.280109889280518,
+          "peakRmsSpeed": 132.39435953162067,
+          "visibleTravelRms": 7.280109889280518,
+          "visiblePeakRmsSpeed": 132.39435953162067,
+          "first10To90Seconds": 0.04999999999999999
+        }
+      },
+      "strongToLightPeakSpeed": 2.2075263066605033,
+      "strongToLightTravel": 0.9999999999999999
+    },
+    {
+      "icon": "sum",
+      "mainPart": "sum-sigma",
+      "intent": "The sigma gathers: its apex pinches inward and returns. Light: shallow quiet pinch. Strong: arms open wider first, then snap deep inward with one bounded rebound.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.55,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.2521980673998827,
+          "travelRms": 2.5043961347997654,
+          "peakRmsSpeed": 7.502057754911348,
+          "visibleTravelRms": 2.5043961347997654,
+          "visiblePeakRmsSpeed": 7.502057754911348,
+          "first10To90Seconds": 0.16666666666666669
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.5412348175029384,
+          "travelRms": 7.664535894649766,
+          "peakRmsSpeed": 33.19833059875761,
+          "visibleTravelRms": 7.664535894649766,
+          "visiblePeakRmsSpeed": 33.19833059875761,
+          "first10To90Seconds": 0.23333333333333334
+        }
+      },
+      "strongToLightPeakSpeed": 4.4252299413482605,
+      "strongToLightTravel": 3.060432727932864
+    },
+    {
+      "icon": "percentage",
+      "mainPart": "percentage-slash",
+      "intent": "The percent slash swings like a lever about the centre and returns; the two ring counters stay fixed and open. Light: small quiet swing. Strong: short wind-back, wide decisive swing, one damped return.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.55,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.8854669965669804,
+          "travelRms": 3.775696752438898,
+          "peakRmsSpeed": 11.31024927115017,
+          "visibleTravelRms": 3.775696752438898,
+          "visiblePeakRmsSpeed": 11.31024927115017,
+          "first10To90Seconds": 0.16666666666666669,
+          "rotationRange": 10,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 5.377224491134771,
+          "travelRms": 15.010671723572878,
+          "peakRmsSpeed": 78.12871103074097,
+          "visibleTravelRms": 15.010671723572878,
+          "visiblePeakRmsSpeed": 78.12871103074097,
+          "first10To90Seconds": 0.21666666666666667,
+          "rotationRange": 36.76672885497527,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 6.907779763088798,
+      "strongToLightTravel": 3.975603102626499
+    },
+    {
+      "icon": "line-chart",
+      "mainPart": "line-chart-trend",
+      "intent": "The time-series trend rises from the baseline into its values, left to right, and holds; axes stay fixed. Light: gentle staggered rise. Strong: fast tight-stagger snap to the same values, no overshoot (data).",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.75,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 7.106335201775948,
+          "travelRms": 7.863437902274118,
+          "peakRmsSpeed": 20.133427219403366,
+          "visibleTravelRms": 7.863437902274118,
+          "visiblePeakRmsSpeed": 20.133427219403366,
+          "first10To90Seconds": 0.3833333333333333
+        },
+        "strong": {
+          "activeSeconds": 0.36,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 7.106335201775948,
+          "travelRms": 7.901753554864554,
+          "peakRmsSpeed": 41.696035892728666,
+          "visibleTravelRms": 7.901753554864554,
+          "visiblePeakRmsSpeed": 41.696035892728666,
+          "first10To90Seconds": 0.18333333333333332
+        }
+      },
+      "strongToLightPeakSpeed": 2.07098550278338,
+      "strongToLightTravel": 1.0048726337088967
+    },
+    {
+      "icon": "pie-chart",
+      "mainPart": "pie-chart-wedge-frame",
+      "intent": "The quarter wedge pops out of the pie along its bisector and settles back into its opening; the body stays fixed. Light: small quiet lift. Strong: decisive pop far out, one damped settle.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.65,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.3999865739356223,
+          "travelRms": 2.7999731478712437,
+          "peakRmsSpeed": 6.971126561572474,
+          "visibleTravelRms": 2.7999731478712437,
+          "visiblePeakRmsSpeed": 6.971126561572474,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 0,
+          "horizontalRange": 0.9899399999999998,
+          "verticalRange": 0.9899399999999998
+        },
+        "strong": {
+          "activeSeconds": 0.52,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 4.2422544268247595,
+          "travelRms": 8.48450885364952,
+          "peakRmsSpeed": 48.46082453162318,
+          "visibleTravelRms": 8.48450885364952,
+          "visiblePeakRmsSpeed": 48.46082453162318,
+          "first10To90Seconds": 0.08333333333333331,
+          "rotationRange": 0,
+          "horizontalRange": 2.9997268727264372,
+          "verticalRange": 2.9997268727264372
+        }
+      },
+      "strongToLightPeakSpeed": 6.9516489341561885,
+      "strongToLightTravel": 3.0302107933071074
+    },
+    {
+      "icon": "scatter-plot",
+      "mainPart": "scatter-plot-dot-0",
+      "intent": "Points plot onto fixed x/y axes, each dropping into its own column. Light lowers each point 1.5 units while it fades in. Strong drops each point 5 units with a 0.15 unit pull-up and a decisive landing exactly on its value, 0.1 s stagger, no overshoot. Reset retracts the same columns.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.5,
+          "travelRms": 1.5000000000000002,
+          "peakRmsSpeed": 6.606621887509335,
+          "visibleTravelRms": 1.5000000000000002,
+          "visiblePeakRmsSpeed": 6.606621887509335,
+          "first10To90Seconds": 0.21666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.5
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 5,
+          "travelRms": 5.3,
+          "peakRmsSpeed": 40.69930555555557,
+          "visibleTravelRms": 5.3,
+          "visiblePeakRmsSpeed": 40.69930555555557,
+          "first10To90Seconds": 0.13333333333333336,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 5.15
+        }
+      },
+      "strongToLightPeakSpeed": 6.16038063756953,
+      "strongToLightTravel": 3.5333333333333328
+    },
+    {
+      "icon": "heatmap",
+      "mainPart": "heatmap-hot-11",
+      "intent": "A 3x3 value matrix: hot cells filled at three sizes, cool cells outlined. Light breathes only the hottest centre cell by 0.5 units. Strong runs a diagonal heat wave: each hot cell dips 0.6 then swells 0.6 and settles, 0.09 s apart.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 0.3527501357192413,
+          "travelRms": 0.7055002714384828,
+          "peakRmsSpeed": 2.2023202619421838,
+          "visibleTravelRms": 0.7055002714384828,
+          "visiblePeakRmsSpeed": 2.2023202619421838,
+          "first10To90Seconds": 0.15000000000000002
+        },
+        "strong": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.2,
+          "peakRmsDisplacement": 0.42426406871192707,
+          "travelRms": 1.6964777919646952,
+          "peakRmsSpeed": 10.23314720326155,
+          "visibleTravelRms": 1.6964777919646952,
+          "visiblePeakRmsSpeed": 10.23314720326155,
+          "first10To90Seconds": 0.04999999999999999
+        }
+      },
+      "strongToLightPeakSpeed": 4.64653001659129,
+      "strongToLightTravel": 2.404645130051693
+    },
+    {
+      "icon": "funnel-chart",
+      "mainPart": "funnel-chart-stage-0-frame",
+      "intent": "Three centred stage bars narrow downward. Light: a soft downward pulse travels top to bottom. Strong: the top stage lifts, drives down 1.5 units in 0.1 s, rebounds 0.15 and settles; lower stages follow 30 ms later and smaller.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.6995227759690567,
+          "travelRms": 1.3990455519381135,
+          "peakRmsSpeed": 4.762501043492763,
+          "visibleTravelRms": 1.3990455519381135,
+          "visiblePeakRmsSpeed": 4.762501043492763,
+          "first10To90Seconds": 0.1333333333333333,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0.6995227759690569
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.4971111111111117,
+          "travelRms": 4.0117899530888215,
+          "peakRmsSpeed": 27.266666666666662,
+          "visibleTravelRms": 4.0117899530888215,
+          "visiblePeakRmsSpeed": 27.266666666666662,
+          "first10To90Seconds": 0.09999999999999999,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.8583032069970846
+        }
+      },
+      "strongToLightPeakSpeed": 5.7252830850131655,
+      "strongToLightTravel": 2.867519179437184
+    },
+    {
+      "icon": "radar-chart",
+      "mainPart": "radar-chart-web",
+      "intent": "Three radial axes with an open centre; a closed value triangle sits on them. Light grows the triangle from 65% to full values. Strong pulls it in to 50% then plots each vertex out to its full value with no overshoot.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 2.7651476753813107,
+          "travelRms": 2.8494840375441615,
+          "peakRmsSpeed": 8.20027286463882,
+          "visibleTravelRms": 2.8494840375441615,
+          "visiblePeakRmsSpeed": 8.20027286463882,
+          "first10To90Seconds": 0.31666666666666665
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.7651476753813107,
+          "travelRms": 5.37213347548116,
+          "peakRmsSpeed": 24.034015209587437,
+          "visibleTravelRms": 5.37213347548116,
+          "visiblePeakRmsSpeed": 24.034015209587437,
+          "first10To90Seconds": 0.26666666666666666
+        }
+      },
+      "strongToLightPeakSpeed": 2.930879936108811,
+      "strongToLightTravel": 1.8853004279719192
+    },
+    {
+      "icon": "dashboard",
+      "mainPart": "dashboard-widget-left-frame",
+      "intent": "A wide header widget stays; two data widgets arrive below it. Light: each rises 1.2 units while fading in. Strong: each starts 3.2 units below, dips 0.2 further, rises past by 0.4, and settles; the second widget follows 80 ms later.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.199999999999999,
+          "travelRms": 1.1999999999999993,
+          "peakRmsSpeed": 4.489583333333443,
+          "visibleTravelRms": 1.1999999999999993,
+          "visiblePeakRmsSpeed": 4.489583333333443,
+          "first10To90Seconds": 0.25,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.2
+        },
+        "strong": {
+          "activeSeconds": 0.45,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.583357304826692,
+          "travelRms": 4.350714609653384,
+          "peakRmsSpeed": 45.53810549739531,
+          "visibleTravelRms": 4.350714609653384,
+          "visiblePeakRmsSpeed": 45.53810549739531,
+          "first10To90Seconds": 0.08333333333333333,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 3.775357304826693
+        }
+      },
+      "strongToLightPeakSpeed": 10.143058301043718,
+      "strongToLightTravel": 3.625595508044489
+    }
+  ]
+}

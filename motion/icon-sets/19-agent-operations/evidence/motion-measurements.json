@@ -1,0 +1,565 @@
+{
+  "kind": "source numerical motion evidence",
+  "icons": [
+    {
+      "id": "agent-skills",
+      "part": "cartridge-frame",
+      "channel": "y",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.52,
+          "driveDuration": 0.42,
+          "delta": 3.2,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 211,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.16,
+          "primaryDriveEnd": 0.36,
+          "driveDuration": 0.2,
+          "delta": 3.6,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 132,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "tool-discovery",
+      "part": "lens",
+      "channel": "x",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.08,
+          "primaryDriveEnd": 0.62,
+          "driveDuration": 0.54,
+          "delta": 15,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 271,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.12,
+          "primaryDriveEnd": 0.4,
+          "driveDuration": 0.28,
+          "delta": 15.6,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 171,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "mcp-tools",
+      "part": "plug-frame",
+      "channel": "x",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.55,
+          "driveDuration": 0.45,
+          "delta": 3,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 226,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.14,
+          "primaryDriveEnd": 0.36,
+          "driveDuration": 0.22,
+          "delta": 3.7,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 145,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "browser-agent",
+      "part": "pointer",
+      "channel": "x",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.08,
+          "primaryDriveEnd": 0.55,
+          "driveDuration": 0.47,
+          "delta": 10,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 235,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.12,
+          "primaryDriveEnd": 0.3,
+          "driveDuration": 0.18,
+          "delta": 10,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 109,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "terminal-agent",
+      "part": "command",
+      "channel": "shape",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.52,
+          "driveDuration": 0.42,
+          "delta": 10.5,
+          "deltaUnits": "path-coordinate vector norm; compare this icon only",
+          "tenNinetyMs": 347,
+          "visibleAt10PercentOpacity": 0.112
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.12,
+          "primaryDriveEnd": 0.3,
+          "driveDuration": 0.18,
+          "delta": 10.5,
+          "deltaUnits": "path-coordinate vector norm; compare this icon only",
+          "tenNinetyMs": 139,
+          "visibleAt10PercentOpacity": 0.135
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "agent-sandbox",
+      "part": "chip-frame",
+      "channel": "y",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.05,
+          "primaryDriveEnd": 0.55,
+          "driveDuration": 0.5,
+          "delta": 12.5,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 250,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.14,
+          "primaryDriveEnd": 0.34,
+          "driveDuration": 0.2,
+          "delta": 13.4,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 132,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "agent-permissions",
+      "part": "keyhole",
+      "channel": "angle",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.05,
+          "primaryDriveEnd": 0.75,
+          "driveDuration": 0.7,
+          "delta": 90,
+          "deltaUnits": "degrees",
+          "tenNinetyMs": 413,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.14,
+          "primaryDriveEnd": 0.42,
+          "driveDuration": 0.28,
+          "delta": 107,
+          "deltaUnits": "degrees",
+          "tenNinetyMs": 171,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "human-input",
+      "part": "text",
+      "channel": "shape",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.55,
+          "primaryDriveEnd": 1.15,
+          "driveDuration": 0.6,
+          "delta": 9,
+          "deltaUnits": "path-coordinate vector norm; compare this icon only",
+          "tenNinetyMs": 355,
+          "visibleAt10PercentOpacity": 0.621
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.44,
+          "primaryDriveEnd": 0.66,
+          "driveDuration": 0.22,
+          "delta": 9,
+          "deltaUnits": "path-coordinate vector norm; compare this icon only",
+          "tenNinetyMs": 133,
+          "visibleAt10PercentOpacity": 0.465
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "agent-checkpoint",
+      "part": "flag",
+      "channel": "y",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.05,
+          "primaryDriveEnd": 0.6,
+          "driveDuration": 0.55,
+          "delta": 8,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 325,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.15,
+          "primaryDriveEnd": 0.36,
+          "driveDuration": 0.21,
+          "delta": 8.5,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 127,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "resume-run",
+      "part": "runner",
+      "channel": "x",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.05,
+          "primaryDriveEnd": 0.8,
+          "driveDuration": 0.75,
+          "delta": 13.7,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 443,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.42,
+          "driveDuration": 0.32,
+          "delta": 13.7,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 195,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "retry-step",
+      "part": "loop",
+      "channel": "angle",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0,
+          "primaryDriveEnd": 0.75,
+          "driveDuration": 0.75,
+          "delta": 360,
+          "deltaUnits": "degrees",
+          "tenNinetyMs": 376,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.42,
+          "driveDuration": 0.32,
+          "delta": 392,
+          "deltaUnits": "degrees",
+          "tenNinetyMs": 195,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "execution-trace",
+      "part": "span-2",
+      "channel": "shape",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.55,
+          "primaryDriveEnd": 0.95,
+          "driveDuration": 0.4,
+          "delta": 7,
+          "deltaUnits": "path-coordinate vector norm; compare this icon only",
+          "tenNinetyMs": 201,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.3,
+          "primaryDriveEnd": 0.56,
+          "driveDuration": 0.26,
+          "delta": 7,
+          "deltaUnits": "path-coordinate vector norm; compare this icon only",
+          "tenNinetyMs": 159,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "parallel-tools",
+      "part": "packet-0",
+      "channel": "x",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.05,
+          "primaryDriveEnd": 0.65,
+          "driveDuration": 0.6,
+          "delta": 12.737,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 314,
+          "visibleAt10PercentOpacity": 0.033
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.08,
+          "primaryDriveEnd": 0.36,
+          "driveDuration": 0.28,
+          "delta": 12.737,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 152,
+          "visibleAt10PercentOpacity": 0.012
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "merge-results",
+      "part": "packet-1",
+      "channel": "x",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.05,
+          "primaryDriveEnd": 0.85,
+          "driveDuration": 0.8,
+          "delta": 15.3,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 462,
+          "visibleAt10PercentOpacity": 0.033
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.08,
+          "primaryDriveEnd": 0.5,
+          "driveDuration": 0.42,
+          "delta": 15.3,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 261,
+          "visibleAt10PercentOpacity": 0.012
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "background-run",
+      "part": "front-frame",
+      "channel": "x",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0,
+          "primaryDriveEnd": 0.6,
+          "driveDuration": 0.6,
+          "delta": 1.5,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 355,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.36,
+          "driveDuration": 0.26,
+          "delta": 2.6,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 159,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "scheduled-agent",
+      "part": "hand",
+      "channel": "angle",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.72,
+          "driveDuration": 0.62,
+          "delta": 150,
+          "deltaUnits": "degrees",
+          "tenNinetyMs": 367,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.06,
+          "primaryDriveEnd": 0.36,
+          "driveDuration": 0.3,
+          "delta": 150,
+          "deltaUnits": "degrees",
+          "tenNinetyMs": 175,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "event-trigger",
+      "part": "pulse",
+      "channel": "x",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.08,
+          "primaryDriveEnd": 0.62,
+          "driveDuration": 0.54,
+          "delta": 10.5,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 319,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.06,
+          "primaryDriveEnd": 0.32,
+          "driveDuration": 0.26,
+          "delta": 10.5,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 144,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "context-compaction",
+      "part": "jaw-top",
+      "channel": "y",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.64,
+          "driveDuration": 0.54,
+          "delta": 3.5,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 319,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.12,
+          "primaryDriveEnd": 0.32,
+          "driveDuration": 0.2,
+          "delta": 4.5,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 121,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "agent-artifact",
+      "part": "page-frame",
+      "channel": "y",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.64,
+          "driveDuration": 0.54,
+          "delta": 5.5,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 271,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.3,
+          "driveDuration": 0.2,
+          "delta": 6.6,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 132,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    },
+    {
+      "id": "budget-limit",
+      "part": "token",
+      "channel": "x",
+      "profiles": [
+        {
+          "profile": "light",
+          "primaryDriveStart": 0.1,
+          "primaryDriveEnd": 0.7,
+          "driveDuration": 0.6,
+          "delta": 11.4,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 355,
+          "visibleAt10PercentOpacity": 0
+        },
+        {
+          "profile": "strong",
+          "primaryDriveStart": 0.06,
+          "primaryDriveEnd": 0.34,
+          "driveDuration": 0.28,
+          "delta": 11.4,
+          "deltaUnits": "grid units",
+          "tenNinetyMs": 144,
+          "visibleAt10PercentOpacity": 0
+        }
+      ],
+      "reading": "Measures the directed main drive; preparation, holds and reset are excluded. Native equal-time visual review decides acceptance."
+    }
+  ]
+}

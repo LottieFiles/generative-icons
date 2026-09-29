@@ -1,0 +1,629 @@
+{
+  "scope": "Source geometry and rigid transforms at 60fps; grid units and seconds. RMS includes curve control points. Native normal-speed review required.",
+  "definitionsSha256": "8ff55ab7fd58a16308a66395e93393ef8d05a172678d47efba51c7a2ad8c9d8b",
+  "icons": 20,
+  "records": [
+    {
+      "icon": "heart-rate",
+      "mainPart": "heart-rate-trace",
+      "intent": "Light: the pulse trace draws across in 0.64 s and the heart gives one beat as the pen crosses the spike. Strong: the trace draws in 0.34 s and the heart double-beats (lub-dub) to 114%. The trace is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 13.3043852419669,
+          "travelRms": 19.47491037514232,
+          "peakRmsSpeed": 54.7529516091153,
+          "visibleTravelRms": 19.368630909334758,
+          "visiblePeakRmsSpeed": 54.7529516091153,
+          "first10To90Seconds": 0.4
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 13.3043852419669,
+          "travelRms": 19.396764336178805,
+          "peakRmsSpeed": 102.22287745783932,
+          "visibleTravelRms": 19.365669585971098,
+          "visiblePeakRmsSpeed": 102.22287745783932,
+          "first10To90Seconds": 0.19999999999999998
+        }
+      },
+      "strongToLightPeakSpeed": 1.8669838694288985,
+      "strongToLightTravel": 0.9998471072437942
+    },
+    {
+      "icon": "step-counter",
+      "mainPart": "step-counter-left-sole-frame",
+      "intent": "Light: the back footprint lifts and plants, then the front one, each rising 0.9 units. Strong: each foot pushes off, lifts 1.4 units toward the viewer with a twist and lands with a small contact dip.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.54,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 0.889267707150844,
+          "travelRms": 1.7785438589528646,
+          "peakRmsSpeed": 8.584850597785724,
+          "visibleTravelRms": 1.7785438589528646,
+          "visiblePeakRmsSpeed": 8.584850597785724,
+          "first10To90Seconds": 0.08333333333333333
+        },
+        "strong": {
+          "activeSeconds": 0.64,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 1.4020869056972272,
+          "travelRms": 3.8064598994160526,
+          "peakRmsSpeed": 20.012895508146567,
+          "visibleTravelRms": 3.8064598994160526,
+          "visiblePeakRmsSpeed": 20.012895508146567,
+          "first10To90Seconds": 0.15000000000000002
+        }
+      },
+      "strongToLightPeakSpeed": 2.3311873957723224,
+      "strongToLightTravel": 2.14021143209656
+    },
+    {
+      "icon": "dumbbell",
+      "mainPart": "dumbbell-bar",
+      "intent": "Light: the dumbbell is curled up 1.6 units with a 4° tilt and lowered. Strong: it dips as the lifter braces, is driven up 4 units tilting 8°, counter-swings and is set down.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 1.6630808017185599,
+          "travelRms": 3.39760833848644,
+          "peakRmsSpeed": 11.59500319065157,
+          "visibleTravelRms": 3.39760833848644,
+          "visiblePeakRmsSpeed": 11.59500319065157,
+          "first10To90Seconds": 0.15,
+          "rotationRange": 4,
+          "horizontalRange": 0,
+          "verticalRange": 1.6
+        },
+        "strong": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 4.101505600549305,
+          "travelRms": 10.376859141302818,
+          "peakRmsSpeed": 35.952108027906846,
+          "visibleTravelRms": 10.376859141302818,
+          "visiblePeakRmsSpeed": 35.952108027906846,
+          "first10To90Seconds": 0.2,
+          "rotationRange": 10.984809027777779,
+          "horizontalRange": 0,
+          "verticalRange": 4.8
+        }
+      },
+      "strongToLightPeakSpeed": 3.1006552940747016,
+      "strongToLightTravel": 3.054165785902645
+    },
+    {
+      "icon": "running",
+      "mainPart": "running-leg-f",
+      "intent": "Light: one easy stride. Legs and arms swing through and back while the body bobs 0.5. Strong: the runner leans 6° into two quick strides with a 1-unit bob.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 8.432884341702024,
+          "travelRms": 18.115213519287877,
+          "peakRmsSpeed": 48.777605768789336,
+          "visibleTravelRms": 18.115213519287877,
+          "visiblePeakRmsSpeed": 48.777605768789336,
+          "first10To90Seconds": 0.16666666666666666,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0.49756701718539253
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 8.249428147806896,
+          "travelRms": 38.98759642029161,
+          "peakRmsSpeed": 91.80060104357253,
+          "visibleTravelRms": 38.98759642029161,
+          "visiblePeakRmsSpeed": 91.80060104357253,
+          "first10To90Seconds": 0.16666666666666669,
+          "rotationRange": 6,
+          "horizontalRange": 0,
+          "verticalRange": 0.995986384189402
+        }
+      },
+      "strongToLightPeakSpeed": 1.88202351461686,
+      "strongToLightTravel": 2.152201870476448
+    },
+    {
+      "icon": "water-intake",
+      "mainPart": "water-intake-surface",
+      "intent": "Light: the water in the glass rises from a quarter to near the rim with a small slosh. Strong: a droplet falls in, and on impact the level rises in 0.32 s with a hard slosh that settles. The level is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 11.132726386851514,
+          "travelRms": 11.217274935310183,
+          "peakRmsSpeed": 26.082219705857423,
+          "visibleTravelRms": 11.217274935310183,
+          "visiblePeakRmsSpeed": 26.082219705857423,
+          "first10To90Seconds": 0.38333333333333336
+        },
+        "strong": {
+          "activeSeconds": 0.84,
+          "firstChangeSeconds": 0.25,
+          "peakRmsDisplacement": 11.132991767397737,
+          "travelRms": 11.547499667209397,
+          "peakRmsSpeed": 52.374964035267325,
+          "visibleTravelRms": 11.547499667209397,
+          "visiblePeakRmsSpeed": 52.374964035267325,
+          "first10To90Seconds": 0.2
+        }
+      },
+      "strongToLightPeakSpeed": 2.008071576189706,
+      "strongToLightTravel": 1.0294389442893763
+    },
+    {
+      "icon": "sleep-tracking",
+      "mainPart": "sleep-tracking-z-near",
+      "intent": "Light: the two Z marks shrink and breathe back in sequence beside the moon. Strong: the moon rocks like a cradle while each Z pops out of nothing, overshoots to 116% and settles.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.52,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 1.865489239989854,
+          "travelRms": 3.730978479979707,
+          "peakRmsSpeed": 20.808600789482174,
+          "visibleTravelRms": 3.730978479979707,
+          "visiblePeakRmsSpeed": 20.808600789482174,
+          "first10To90Seconds": 0.08333333333333333
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 3.3941125496954285,
+          "travelRms": 7.874341115293394,
+          "peakRmsSpeed": 61.72452944107566,
+          "visibleTravelRms": 6.634058634469036,
+          "visiblePeakRmsSpeed": 61.72452944107566,
+          "first10To90Seconds": 0.05
+        }
+      },
+      "strongToLightPeakSpeed": 2.9662988908064722,
+      "strongToLightTravel": 1.778101554342152
+    },
+    {
+      "icon": "calories",
+      "mainPart": "calories-flame",
+      "intent": "Light: the flame flickers, its tip swaying about 1 unit as it swells slightly. Strong: it gutters, flares to 112% with a 2-unit lick at the tip and settles.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.7184564359542978,
+          "travelRms": 1.5945611475503456,
+          "peakRmsSpeed": 9.296761341882197,
+          "visibleTravelRms": 1.5945611475503456,
+          "visiblePeakRmsSpeed": 9.296761341882197,
+          "first10To90Seconds": 0.06666666666666668
+        },
+        "strong": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.5710310116517718,
+          "travelRms": 6.553141875522984,
+          "peakRmsSpeed": 24.153728402673316,
+          "visibleTravelRms": 6.553141875522984,
+          "visiblePeakRmsSpeed": 24.153728402673316,
+          "first10To90Seconds": 0.15
+        }
+      },
+      "strongToLightPeakSpeed": 2.5980798596883434,
+      "strongToLightTravel": 4.109683649065631
+    },
+    {
+      "icon": "stethoscope",
+      "mainPart": "stethoscope-chest-frame",
+      "intent": "Light: the chest piece swings 10° on its tubing and returns. Strong: it swings back 6°, then out 18°, and damps through two smaller swings.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 1.580100817522818,
+          "travelRms": 3.1641791761224565,
+          "peakRmsSpeed": 12.357131017374435,
+          "visibleTravelRms": 3.1641791761224565,
+          "visiblePeakRmsSpeed": 12.357131017374435,
+          "first10To90Seconds": 0.11666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 0.93823370035064,
+          "verticalRange": 1.2713914098587509
+        },
+        "strong": {
+          "activeSeconds": 0.68,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.8175000938948793,
+          "travelRms": 10.695486863347753,
+          "peakRmsSpeed": 36.93889523733158,
+          "visibleTravelRms": 10.695486863347753,
+          "visiblePeakRmsSpeed": 36.93889523733158,
+          "first10To90Seconds": 0.2,
+          "rotationRange": 0,
+          "horizontalRange": 2.291403342419553,
+          "verticalRange": 3.157215657519096
+        }
+      },
+      "strongToLightPeakSpeed": 2.989277623211615,
+      "strongToLightTravel": 3.3801773755601725
+    },
+    {
+      "icon": "pill",
+      "mainPart": "pill-half-a",
+      "intent": "Light: the capsule eases open 0.9 units along its axis and closes. Strong: it twists 10° as the halves pull 2 units apart, then snap shut with a small click.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.54,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 0.8995600060688823,
+          "travelRms": 1.799120012137765,
+          "peakRmsSpeed": 7.026686470639072,
+          "visibleTravelRms": 1.799120012137765,
+          "visiblePeakRmsSpeed": 7.026686470639072,
+          "first10To90Seconds": 0.11666666666666667
+        },
+        "strong": {
+          "activeSeconds": 0.52,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.630974564899225,
+          "travelRms": 7.472290057059847,
+          "peakRmsSpeed": 27.259666708454045,
+          "visibleTravelRms": 7.472290057059847,
+          "visiblePeakRmsSpeed": 27.259666708454045,
+          "first10To90Seconds": 0.18333333333333335
+        }
+      },
+      "strongToLightPeakSpeed": 3.8794482751376833,
+      "strongToLightTravel": 4.153302729472205
+    },
+    {
+      "icon": "syringe",
+      "mainPart": "syringe-head",
+      "intent": "Light: the plunger pushes 3 units in and the dose empties. Strong: it draws back slightly, is driven home in 0.16 s with a hit and a small rebound, and a drop leaves the needle. The dose is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 3.0000000000000004,
+          "travelRms": 3,
+          "peakRmsSpeed": 7.754178796451809,
+          "visibleTravelRms": 3,
+          "visiblePeakRmsSpeed": 7.754178796451809,
+          "first10To90Seconds": 0.35000000000000003
+        },
+        "strong": {
+          "activeSeconds": 0.58,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.0000000000000004,
+          "travelRms": 3.974826388888894,
+          "peakRmsSpeed": 32.18777126736094,
+          "visibleTravelRms": 3.974826388888894,
+          "visiblePeakRmsSpeed": 32.18777126736094,
+          "first10To90Seconds": 0.31666666666666665
+        }
+      },
+      "strongToLightPeakSpeed": 4.151022579217487,
+      "strongToLightTravel": 1.3249421296296313
+    },
+    {
+      "icon": "first-aid-kit",
+      "mainPart": "first-aid-kit-case",
+      "intent": "Light: the kit is lifted 1 unit by its handle and swings 2.5°. Strong: it is jerked up 2.2 units and swings −4.5°, 3°, −1.5° before settling.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.52,
+          "firstChangeSeconds": 0.03333333333333333,
+          "peakRmsDisplacement": 1.2711915184180604,
+          "travelRms": 2.641925368192784,
+          "peakRmsSpeed": 9.695567485594715,
+          "visibleTravelRms": 2.641925368192784,
+          "visiblePeakRmsSpeed": 9.695567485594715,
+          "first10To90Seconds": 0.15000000000000002,
+          "rotationRange": 2.4951533235556904,
+          "horizontalRange": 0,
+          "verticalRange": 0.9980613294222762
+        },
+        "strong": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.2219901462216622,
+          "travelRms": 7.963084546295209,
+          "peakRmsSpeed": 25.173774000790388,
+          "visibleTravelRms": 7.963084546295209,
+          "visiblePeakRmsSpeed": 25.173774000790388,
+          "first10To90Seconds": 0.18333333333333335,
+          "rotationRange": 7.4627387828865945,
+          "horizontalRange": 0,
+          "verticalRange": 2.490789779699582
+        }
+      },
+      "strongToLightPeakSpeed": 2.596420894206819,
+      "strongToLightTravel": 3.0141216864662526
+    },
+    {
+      "icon": "bandage",
+      "mainPart": "bandage-strip",
+      "intent": "Light: the strip stretches 4% along its length and relaxes. Strong: it is pinched in, pulled 12% long, snaps back past rest and settles.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 0.36920859937095646,
+          "travelRms": 0.738417198741913,
+          "peakRmsSpeed": 2.8970747201995852,
+          "visibleTravelRms": 0.738417198741913,
+          "visiblePeakRmsSpeed": 2.8970747201995852,
+          "first10To90Seconds": 0.11666666666666667
+        },
+        "strong": {
+          "activeSeconds": 0.54,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.1083662105648493,
+          "travelRms": 3.595417808421878,
+          "peakRmsSpeed": 17.68513156707592,
+          "visibleTravelRms": 3.595417808421878,
+          "visiblePeakRmsSpeed": 17.68513156707592,
+          "first10To90Seconds": 0.16666666666666669
+        }
+      },
+      "strongToLightPeakSpeed": 6.104478922745064,
+      "strongToLightTravel": 4.86908730531685
+    },
+    {
+      "icon": "weight-scale",
+      "mainPart": "weight-scale-needle",
+      "intent": "Light: the needle sweeps from −55° to the reading at 20°. Strong: the scale body compresses 5% as weight lands, then the needle overshoots to 38° and rings down to 20°. The reading is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 2.5827560074612776,
+          "travelRms": 2.776510799818299,
+          "peakRmsSpeed": 7.702365702059013,
+          "visibleTravelRms": 2.776510799818299,
+          "visiblePeakRmsSpeed": 7.702365702059013,
+          "first10To90Seconds": 0.33333333333333337
+        },
+        "strong": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.0775028198502903,
+          "travelRms": 6.138138401049767,
+          "peakRmsSpeed": 28.363973678561123,
+          "visibleTravelRms": 6.138138401049767,
+          "visiblePeakRmsSpeed": 28.363973678561123,
+          "first10To90Seconds": 0.21666666666666667
+        }
+      },
+      "strongToLightPeakSpeed": 3.6825015554609157,
+      "strongToLightTravel": 2.2107381687301415
+    },
+    {
+      "icon": "blood-pressure",
+      "mainPart": "blood-pressure-needle",
+      "intent": "Light: one squeeze of the bulb and the gauge needle rises to the reading. Strong: two hard squeezes step the needle up, then it overshoots 8° and settles. The reading is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.16666666666666666,
+          "peakRmsDisplacement": 5.013822530304135,
+          "travelRms": 7.104323206835817,
+          "peakRmsSpeed": 22.176319614577427,
+          "visibleTravelRms": 7.104323206835817,
+          "visiblePeakRmsSpeed": 22.176319614577427,
+          "first10To90Seconds": 0.25,
+          "rotationRange": 160,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.54,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 5.062684049723994,
+          "travelRms": 7.948097645734895,
+          "peakRmsSpeed": 65.06115575435597,
+          "visibleTravelRms": 7.948097645734895,
+          "visiblePeakRmsSpeed": 65.06115575435597,
+          "first10To90Seconds": 0.18333333333333332,
+          "rotationRange": 167.87259259259258,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.9338121421910124,
+      "strongToLightTravel": 1.1187691514495277
+    },
+    {
+      "icon": "yoga",
+      "mainPart": "yoga-roll-frame",
+      "intent": "Light: the rolled mat travels right, paying out the mat, and settles partly unrolled. Strong: it is drawn back, pushed, rolls out fast past its mark and rocks back once. The unrolled mat is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 10.954991190069526,
+          "travelRms": 10.95546012129334,
+          "peakRmsSpeed": 24.8890434941478,
+          "visibleTravelRms": 10.95546012129334,
+          "visiblePeakRmsSpeed": 24.8890434941478,
+          "first10To90Seconds": 0.39999999999999997
+        },
+        "strong": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 12.051490556527234,
+          "travelRms": 15.376589759219119,
+          "peakRmsSpeed": 71.79118177711975,
+          "visibleTravelRms": 15.376589759219119,
+          "visiblePeakRmsSpeed": 71.79118177711975,
+          "first10To90Seconds": 0.14999999999999997
+        }
+      },
+      "strongToLightPeakSpeed": 2.8844492072987906,
+      "strongToLightTravel": 1.403554902211067
+    },
+    {
+      "icon": "meditation",
+      "mainPart": "meditation-petal-l",
+      "intent": "Light: the lotus breathes; its side petals open 7° about the base as the centre petal lifts, then close. Strong: the petals draw in first, bloom 11° wide with the centre lifting, and settle.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 1.096152159521269,
+          "travelRms": 2.193658773961412,
+          "peakRmsSpeed": 6.141547013495151,
+          "visibleTravelRms": 2.193658773961412,
+          "visiblePeakRmsSpeed": 6.141547013495151,
+          "first10To90Seconds": 0.16666666666666666
+        },
+        "strong": {
+          "activeSeconds": 0.84,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.7494751221474594,
+          "travelRms": 5.2579985400984075,
+          "peakRmsSpeed": 13.915435454917501,
+          "visibleTravelRms": 5.2579985400984075,
+          "visiblePeakRmsSpeed": 13.915435454917501,
+          "first10To90Seconds": 0.26666666666666666
+        }
+      },
+      "strongToLightPeakSpeed": 2.2657866860483797,
+      "strongToLightTravel": 2.396908125598434
+    },
+    {
+      "icon": "nutrition",
+      "mainPart": "nutrition-apple-frame",
+      "intent": "Light: the apple rocks 3° on its base and the leaf flutters 10°. Strong: it rocks −2°, 7°, −4° and settles while the leaf whips 16° and flutters back.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.58,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 0.715102286081159,
+          "travelRms": 1.430365469600521,
+          "peakRmsSpeed": 6.209600715891384,
+          "visibleTravelRms": 1.430365469600521,
+          "visiblePeakRmsSpeed": 6.209600715891384,
+          "first10To90Seconds": 0.1,
+          "rotationRange": 2.993184156378601,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.64,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.6715217098364334,
+          "travelRms": 6.859688047455372,
+          "peakRmsSpeed": 27.882430091140822,
+          "visibleTravelRms": 6.859688047455372,
+          "visiblePeakRmsSpeed": 27.882430091140822,
+          "first10To90Seconds": 0.15,
+          "rotationRange": 10.927545621423173,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 4.490213037335093,
+      "strongToLightTravel": 4.795758981354029
+    },
+    {
+      "icon": "jump-rope",
+      "mainPart": "jump-rope-rope",
+      "intent": "Light: the rope makes one turn, over the top and back under. Strong: it winds back, then whips through two fast turns while the handles jerk with each pass.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 19.892455614502172,
+          "travelRms": 39.784911229004344,
+          "peakRmsSpeed": 126.79935098661784,
+          "visibleTravelRms": 39.784911229004344,
+          "visiblePeakRmsSpeed": 126.79935098661784,
+          "first10To90Seconds": 0.14999999999999997
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 19.933389053684433,
+          "travelRms": 81.14402691312425,
+          "peakRmsSpeed": 280.0624981921088,
+          "visibleTravelRms": 81.14402691312425,
+          "visiblePeakRmsSpeed": 280.0624981921088,
+          "first10To90Seconds": 0.08333333333333334
+        }
+      },
+      "strongToLightPeakSpeed": 2.20870608574066,
+      "strongToLightTravel": 2.0395678765262124
+    },
+    {
+      "icon": "hospital",
+      "mainPart": "hospital-door-l",
+      "intent": "Light: the sliding doors part 0.7 units and close. Strong: they jolt, slide 1.5 units open as the cross sign pulses 18%, hold and close.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.52,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 0.6973852040816322,
+          "travelRms": 1.3947704081632641,
+          "peakRmsSpeed": 6.83794679895982,
+          "visibleTravelRms": 1.3947704081632641,
+          "visiblePeakRmsSpeed": 6.83794679895982,
+          "first10To90Seconds": 0.1,
+          "rotationRange": 0,
+          "horizontalRange": 0.6973852040816326,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.5,
+          "travelRms": 3.2782636864269534,
+          "peakRmsSpeed": 17.50485908649175,
+          "visibleTravelRms": 3.2782636864269534,
+          "visiblePeakRmsSpeed": 17.50485908649175,
+          "first10To90Seconds": 0.08333333333333331,
+          "rotationRange": 0,
+          "horizontalRange": 1.6391318432134758,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.559958361939079,
+      "strongToLightTravel": 2.350396643949459
+    },
+    {
+      "icon": "dna",
+      "mainPart": "dna-strand-a",
+      "intent": "Light: the helix makes one full calm twist; rungs fade out wherever the strands close in. Strong: it winds back 24°, twists through two turns with a short overrun and settles.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.86,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 11.050198926304654,
+          "travelRms": 40.12352339720923,
+          "peakRmsSpeed": 87.93785906663993,
+          "visibleTravelRms": 40.12352339720923,
+          "visiblePeakRmsSpeed": 87.93785906663993,
+          "first10To90Seconds": 0.25
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 11.058417275295387,
+          "travelRms": 88.98661297106968,
+          "peakRmsSpeed": 257.654191209395,
+          "visibleTravelRms": 88.98661297106968,
+          "visiblePeakRmsSpeed": 257.654191209395,
+          "first10To90Seconds": 0.2
+        }
+      },
+      "strongToLightPeakSpeed": 2.929957517093324,
+      "strongToLightTravel": 2.2178165185079206
+    }
+  ]
+}

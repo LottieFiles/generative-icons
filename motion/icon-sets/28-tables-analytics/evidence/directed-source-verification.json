@@ -1,0 +1,836 @@
+{
+  "result": "PASS",
+  "icons": 16,
+  "actions": 50,
+  "nativeTransformNodes": 172,
+  "nativeTransformMaxCoordinateError": 0.000009999999999621423,
+  "checks": [
+    {
+      "name": "sort-order",
+      "fixedParts": [
+        "sort-order-bar-mid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sort-order-bar-mid"
+        },
+        {
+          "type": "rigid",
+          "part": "sort-order-arrow-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "sort-order-arrow-head"
+        }
+      ]
+    },
+    {
+      "name": "sort-order-strong",
+      "fixedParts": [
+        "sort-order-bar-mid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sort-order-bar-mid"
+        },
+        {
+          "type": "rigid",
+          "part": "sort-order-arrow-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "sort-order-arrow-head"
+        }
+      ]
+    },
+    {
+      "name": "show-columns",
+      "fixedParts": [
+        "show-columns-frame-frame",
+        "show-columns-divider-1",
+        "show-columns-bar-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "show-columns-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "show-columns-divider-1"
+        },
+        {
+          "type": "fixed",
+          "part": "show-columns-bar-1"
+        },
+        {
+          "type": "rigid",
+          "part": "show-columns-bar-2"
+        }
+      ]
+    },
+    {
+      "name": "show-columns-strong",
+      "fixedParts": [
+        "show-columns-frame-frame",
+        "show-columns-divider-1",
+        "show-columns-bar-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "show-columns-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "show-columns-divider-1"
+        },
+        {
+          "type": "fixed",
+          "part": "show-columns-bar-1"
+        },
+        {
+          "type": "rigid",
+          "part": "show-columns-bar-2"
+        }
+      ]
+    },
+    {
+      "name": "resize-column",
+      "fixedParts": [
+        "resize-column-frame-frame",
+        "resize-column-arrow-left",
+        "resize-column-arrow-right",
+        "resize-column-arrow-shaft"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "resize-column-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "resize-column-arrow-left"
+        },
+        {
+          "type": "fixed",
+          "part": "resize-column-arrow-right"
+        },
+        {
+          "type": "fixed",
+          "part": "resize-column-arrow-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "resize-column-divider"
+        }
+      ]
+    },
+    {
+      "name": "resize-column-strong",
+      "fixedParts": [
+        "resize-column-frame-frame",
+        "resize-column-arrow-left",
+        "resize-column-arrow-right",
+        "resize-column-arrow-shaft"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "resize-column-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "resize-column-arrow-left"
+        },
+        {
+          "type": "fixed",
+          "part": "resize-column-arrow-right"
+        },
+        {
+          "type": "fixed",
+          "part": "resize-column-arrow-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "resize-column-divider"
+        }
+      ]
+    },
+    {
+      "name": "group-rows",
+      "fixedParts": [
+        "group-rows-header"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "group-rows-header"
+        },
+        {
+          "type": "rigid",
+          "part": "group-rows-row-1"
+        },
+        {
+          "type": "rigid",
+          "part": "group-rows-row-2"
+        }
+      ]
+    },
+    {
+      "name": "group-rows-strong",
+      "fixedParts": [
+        "group-rows-header"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "group-rows-header"
+        },
+        {
+          "type": "rigid",
+          "part": "group-rows-row-1"
+        },
+        {
+          "type": "rigid",
+          "part": "group-rows-row-2"
+        }
+      ]
+    },
+    {
+      "name": "freeze-column",
+      "fixedParts": [
+        "freeze-column-frame-frame",
+        "freeze-column-divider",
+        "freeze-column-frozen-bar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "freeze-column-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "freeze-column-divider"
+        },
+        {
+          "type": "fixed",
+          "part": "freeze-column-frozen-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "freeze-column-scroll-bar"
+        }
+      ]
+    },
+    {
+      "name": "freeze-column-strong",
+      "fixedParts": [
+        "freeze-column-frame-frame",
+        "freeze-column-divider",
+        "freeze-column-frozen-bar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "freeze-column-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "freeze-column-divider"
+        },
+        {
+          "type": "fixed",
+          "part": "freeze-column-frozen-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "freeze-column-scroll-bar"
+        }
+      ]
+    },
+    {
+      "name": "pivot-table",
+      "fixedParts": [
+        "pivot-table-frame-frame",
+        "pivot-table-header",
+        "pivot-table-left"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pivot-table-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "pivot-table-header"
+        },
+        {
+          "type": "fixed",
+          "part": "pivot-table-left"
+        },
+        {
+          "type": "rigid",
+          "part": "pivot-table-bar"
+        }
+      ]
+    },
+    {
+      "name": "pivot-table-strong",
+      "fixedParts": [
+        "pivot-table-frame-frame",
+        "pivot-table-header",
+        "pivot-table-left"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pivot-table-frame-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "pivot-table-header"
+        },
+        {
+          "type": "fixed",
+          "part": "pivot-table-left"
+        },
+        {
+          "type": "rigid",
+          "part": "pivot-table-bar"
+        }
+      ]
+    },
+    {
+      "name": "formula",
+      "fixedParts": [
+        "formula-f-stem",
+        "formula-f-bar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "formula-f-stem"
+        },
+        {
+          "type": "fixed",
+          "part": "formula-f-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "formula-caret"
+        }
+      ]
+    },
+    {
+      "name": "formula-strong",
+      "fixedParts": [
+        "formula-f-stem",
+        "formula-f-bar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "formula-f-stem"
+        },
+        {
+          "type": "fixed",
+          "part": "formula-f-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "formula-caret"
+        }
+      ]
+    },
+    {
+      "name": "sum",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "sum-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "percentage",
+      "fixedParts": [
+        "percentage-ring-a",
+        "percentage-ring-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "percentage-ring-a"
+        },
+        {
+          "type": "fixed",
+          "part": "percentage-ring-b"
+        },
+        {
+          "type": "rigid",
+          "part": "percentage-slash"
+        }
+      ]
+    },
+    {
+      "name": "percentage-strong",
+      "fixedParts": [
+        "percentage-ring-a",
+        "percentage-ring-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "percentage-ring-a"
+        },
+        {
+          "type": "fixed",
+          "part": "percentage-ring-b"
+        },
+        {
+          "type": "rigid",
+          "part": "percentage-slash"
+        }
+      ]
+    },
+    {
+      "name": "line-chart",
+      "fixedParts": [
+        "line-chart-axes"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "line-chart-axes"
+        }
+      ]
+    },
+    {
+      "name": "line-chart-strong",
+      "fixedParts": [
+        "line-chart-axes"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "line-chart-axes"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart",
+      "fixedParts": [
+        "pie-chart-body-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pie-chart-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "pie-chart-wedge-frame"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart-strong",
+      "fixedParts": [
+        "pie-chart-body-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pie-chart-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "pie-chart-wedge-frame"
+        }
+      ]
+    },
+    {
+      "name": "scatter-plot",
+      "fixedParts": [
+        "scatter-plot-axes"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "scatter-plot-axes"
+        },
+        {
+          "type": "rigid",
+          "part": "scatter-plot-dot-0"
+        },
+        {
+          "type": "rigid",
+          "part": "scatter-plot-dot-1"
+        },
+        {
+          "type": "rigid",
+          "part": "scatter-plot-dot-2"
+        },
+        {
+          "type": "rigid",
+          "part": "scatter-plot-dot-3"
+        }
+      ]
+    },
+    {
+      "name": "scatter-plot-strong",
+      "fixedParts": [
+        "scatter-plot-axes"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "scatter-plot-axes"
+        },
+        {
+          "type": "rigid",
+          "part": "scatter-plot-dot-0"
+        },
+        {
+          "type": "rigid",
+          "part": "scatter-plot-dot-1"
+        },
+        {
+          "type": "rigid",
+          "part": "scatter-plot-dot-2"
+        },
+        {
+          "type": "rigid",
+          "part": "scatter-plot-dot-3"
+        }
+      ]
+    },
+    {
+      "name": "heatmap",
+      "fixedParts": [
+        "heatmap-cell-02-frame",
+        "heatmap-cell-10-frame",
+        "heatmap-cell-12-frame",
+        "heatmap-cell-20-frame",
+        "heatmap-cell-21-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-02-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-10-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-12-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-20-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-21-frame"
+        }
+      ]
+    },
+    {
+      "name": "heatmap-strong",
+      "fixedParts": [
+        "heatmap-cell-02-frame",
+        "heatmap-cell-10-frame",
+        "heatmap-cell-12-frame",
+        "heatmap-cell-20-frame",
+        "heatmap-cell-21-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-02-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-10-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-12-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-20-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "heatmap-cell-21-frame"
+        }
+      ]
+    },
+    {
+      "name": "funnel-chart",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "funnel-chart-stage-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "funnel-chart-stage-1-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "funnel-chart-stage-2-frame"
+        }
+      ]
+    },
+    {
+      "name": "funnel-chart-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "funnel-chart-stage-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "funnel-chart-stage-1-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "funnel-chart-stage-2-frame"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart",
+      "fixedParts": [
+        "radar-chart-axis-0",
+        "radar-chart-axis-1",
+        "radar-chart-axis-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "radar-chart-axis-0"
+        },
+        {
+          "type": "fixed",
+          "part": "radar-chart-axis-1"
+        },
+        {
+          "type": "fixed",
+          "part": "radar-chart-axis-2"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart-strong",
+      "fixedParts": [
+        "radar-chart-axis-0",
+        "radar-chart-axis-1",
+        "radar-chart-axis-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "radar-chart-axis-0"
+        },
+        {
+          "type": "fixed",
+          "part": "radar-chart-axis-1"
+        },
+        {
+          "type": "fixed",
+          "part": "radar-chart-axis-2"
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "fixedParts": [
+        "dashboard-header-frame",
+        "dashboard-bar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "dashboard-header-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "dashboard-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "dashboard-widget-left-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "dashboard-widget-right-frame"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-strong",
+      "fixedParts": [
+        "dashboard-header-frame",
+        "dashboard-bar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "dashboard-header-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "dashboard-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "dashboard-widget-left-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "dashboard-widget-right-frame"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

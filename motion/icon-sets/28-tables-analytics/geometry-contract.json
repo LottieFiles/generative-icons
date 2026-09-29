@@ -1,0 +1,885 @@
+{
+  "version": 1,
+  "scope": "Full exported painted geometry and explicit intentional joints",
+  "icons": {
+    "sort-order": [
+      {
+        "kind": "gap",
+        "a": "arrow-stem",
+        "b": "bar-top",
+        "min": 1,
+        "label": "arrow-stem / bar-top"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-stem-solid",
+        "b": "bar-top-solid",
+        "min": 1,
+        "label": "arrow-stem-solid / bar-top-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-stem",
+        "b": "bar-mid",
+        "min": 1,
+        "label": "arrow-stem / bar-mid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-stem-solid",
+        "b": "bar-mid-solid",
+        "min": 1,
+        "label": "arrow-stem-solid / bar-mid-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-stem",
+        "b": "bar-bottom",
+        "min": 1,
+        "label": "arrow-stem / bar-bottom"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-stem-solid",
+        "b": "bar-bottom-solid",
+        "min": 1,
+        "label": "arrow-stem-solid / bar-bottom-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head",
+        "b": "bar-top",
+        "min": 1,
+        "label": "arrow-head / bar-top"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "bar-top-solid",
+        "min": 1,
+        "label": "arrow-head-solid / bar-top-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head",
+        "b": "bar-mid",
+        "min": 1,
+        "label": "arrow-head / bar-mid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "bar-mid-solid",
+        "min": 1,
+        "label": "arrow-head-solid / bar-mid-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head",
+        "b": "bar-bottom",
+        "min": 1,
+        "label": "arrow-head / bar-bottom"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "bar-bottom-solid",
+        "min": 1,
+        "label": "arrow-head-solid / bar-bottom-solid"
+      }
+    ],
+    "show-columns": [
+      {
+        "kind": "gap",
+        "a": "bar-1",
+        "b": "frame-frame",
+        "min": 1,
+        "label": "bar-1 / frame-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-1",
+        "b": "divider-1",
+        "min": 1,
+        "label": "bar-1 / divider-1"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-1",
+        "b": "divider-2",
+        "min": 1,
+        "label": "bar-1 / divider-2"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-1-solid",
+        "b": "frame-solid",
+        "min": 1,
+        "label": "bar-1-solid / frame-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-2",
+        "b": "frame-frame",
+        "min": 1,
+        "label": "bar-2 / frame-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-2",
+        "b": "divider-1",
+        "min": 1,
+        "label": "bar-2 / divider-1"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-2",
+        "b": "divider-2",
+        "min": 1,
+        "label": "bar-2 / divider-2"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-2-solid",
+        "b": "frame-solid",
+        "min": 1,
+        "label": "bar-2-solid / frame-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-3",
+        "b": "frame-frame",
+        "min": 1,
+        "label": "bar-3 / frame-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-3",
+        "b": "divider-1",
+        "min": 1,
+        "label": "bar-3 / divider-1"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-3",
+        "b": "divider-2",
+        "min": 1,
+        "label": "bar-3 / divider-2"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-3-solid",
+        "b": "frame-solid",
+        "min": 1,
+        "label": "bar-3-solid / frame-solid"
+      }
+    ],
+    "resize-column": [
+      {
+        "kind": "gap",
+        "a": "arrow-left",
+        "b": "frame-frame",
+        "min": 1,
+        "label": "arrow-left / frame-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-left-solid",
+        "b": "frame-solid",
+        "min": 1,
+        "label": "arrow-left-solid / frame-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-right",
+        "b": "frame-frame",
+        "min": 1,
+        "label": "arrow-right / frame-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-right-solid",
+        "b": "frame-solid",
+        "min": 1,
+        "label": "arrow-right-solid / frame-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-shaft",
+        "b": "frame-frame",
+        "min": 1,
+        "label": "arrow-shaft / frame-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-shaft-solid",
+        "b": "frame-solid",
+        "min": 1,
+        "label": "arrow-shaft-solid / frame-solid"
+      }
+    ],
+    "group-rows": [
+      {
+        "kind": "gap",
+        "a": "row-1",
+        "b": "header",
+        "min": 1,
+        "label": "row-1 / header"
+      },
+      {
+        "kind": "gap",
+        "a": "row-1-solid",
+        "b": "header-solid",
+        "min": 1,
+        "label": "row-1-solid / header-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "row-1",
+        "b": "spine",
+        "min": 1,
+        "label": "row-1 / spine"
+      },
+      {
+        "kind": "gap",
+        "a": "row-1-solid",
+        "b": "spine-solid",
+        "min": 1,
+        "label": "row-1-solid / spine-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "row-2",
+        "b": "header",
+        "min": 1,
+        "label": "row-2 / header"
+      },
+      {
+        "kind": "gap",
+        "a": "row-2-solid",
+        "b": "header-solid",
+        "min": 1,
+        "label": "row-2-solid / header-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "row-2",
+        "b": "spine",
+        "min": 1,
+        "label": "row-2 / spine"
+      },
+      {
+        "kind": "gap",
+        "a": "row-2-solid",
+        "b": "spine-solid",
+        "min": 1,
+        "label": "row-2-solid / spine-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "header",
+        "b": "spine",
+        "min": 1,
+        "label": "header / spine"
+      },
+      {
+        "kind": "gap",
+        "a": "header-solid",
+        "b": "spine-solid",
+        "min": 1,
+        "label": "header-solid / spine-solid"
+      }
+    ],
+    "freeze-column": [
+      {
+        "kind": "gap",
+        "a": "frozen-bar",
+        "b": "frame-frame",
+        "min": 1,
+        "label": "frozen-bar / frame-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "frozen-bar",
+        "b": "divider",
+        "min": 1,
+        "label": "frozen-bar / divider"
+      },
+      {
+        "kind": "gap",
+        "a": "frozen-bar-solid",
+        "b": "frame-solid",
+        "min": 1,
+        "label": "frozen-bar-solid / frame-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "scroll-bar",
+        "b": "frame-frame",
+        "min": 1,
+        "label": "scroll-bar / frame-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "scroll-bar",
+        "b": "divider",
+        "min": 1,
+        "label": "scroll-bar / divider"
+      },
+      {
+        "kind": "gap",
+        "a": "scroll-bar-solid",
+        "b": "frame-solid",
+        "min": 1,
+        "label": "scroll-bar-solid / frame-solid"
+      }
+    ],
+    "pivot-table": [
+      {
+        "kind": "gap",
+        "a": "bar",
+        "b": "frame-frame",
+        "min": 1,
+        "label": "bar / frame-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "bar",
+        "b": "header",
+        "min": 1,
+        "label": "bar / header"
+      },
+      {
+        "kind": "gap",
+        "a": "bar",
+        "b": "left",
+        "min": 1,
+        "label": "bar / left"
+      },
+      {
+        "kind": "gap",
+        "a": "bar-solid",
+        "b": "frame-solid",
+        "min": 1,
+        "label": "bar-solid / frame-solid"
+      }
+    ],
+    "formula": [
+      {
+        "kind": "gap",
+        "a": "f-stem",
+        "b": "caret",
+        "min": 1,
+        "label": "f-stem / caret"
+      },
+      {
+        "kind": "gap",
+        "a": "f-stem-solid",
+        "b": "caret-solid",
+        "min": 1,
+        "label": "f-stem-solid / caret-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "f-bar",
+        "b": "caret",
+        "min": 1,
+        "label": "f-bar / caret"
+      },
+      {
+        "kind": "gap",
+        "a": "f-bar-solid",
+        "b": "caret-solid",
+        "min": 1,
+        "label": "f-bar-solid / caret-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "x-a",
+        "b": "caret",
+        "min": 1,
+        "label": "x-a / caret"
+      },
+      {
+        "kind": "gap",
+        "a": "x-a-solid",
+        "b": "caret-solid",
+        "min": 1,
+        "label": "x-a-solid / caret-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "x-b",
+        "b": "caret",
+        "min": 1,
+        "label": "x-b / caret"
+      },
+      {
+        "kind": "gap",
+        "a": "x-b-solid",
+        "b": "caret-solid",
+        "min": 1,
+        "label": "x-b-solid / caret-solid"
+      }
+    ],
+    "sum": [],
+    "percentage": [
+      {
+        "kind": "gap",
+        "a": "slash",
+        "b": "ring-a",
+        "min": 1,
+        "label": "slash / ring-a"
+      },
+      {
+        "kind": "gap",
+        "a": "slash-solid",
+        "b": "ring-a-solid",
+        "min": 1,
+        "label": "slash-solid / ring-a-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "slash",
+        "b": "ring-b",
+        "min": 1,
+        "label": "slash / ring-b"
+      },
+      {
+        "kind": "gap",
+        "a": "slash-solid",
+        "b": "ring-b-solid",
+        "min": 1,
+        "label": "slash-solid / ring-b-solid"
+      }
+    ],
+    "line-chart": [
+      {
+        "kind": "gap",
+        "a": "axes",
+        "b": "trend",
+        "min": 1,
+        "label": "axes / trend"
+      },
+      {
+        "kind": "gap",
+        "a": "axes-solid",
+        "b": "trend-solid",
+        "min": 1,
+        "label": "axes-solid / trend-solid"
+      }
+    ],
+    "pie-chart": [
+      {
+        "kind": "gap",
+        "a": "body-frame",
+        "b": "wedge-frame",
+        "min": 1,
+        "label": "body-frame / wedge-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "body-solid",
+        "b": "wedge-solid",
+        "min": 1,
+        "label": "body-solid / wedge-solid"
+      }
+    ],
+    "scatter-plot": [
+      {
+        "kind": "gap",
+        "a": "dot-0",
+        "b": "axes",
+        "min": 1,
+        "label": "dot-0 / axes"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-0-solid",
+        "b": "axes-solid",
+        "min": 1,
+        "label": "dot-0-solid / axes-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-0",
+        "b": "dot-1",
+        "min": 1,
+        "label": "dot-0 / dot-1"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-0-solid",
+        "b": "dot-1-solid",
+        "min": 1,
+        "label": "dot-0-solid / dot-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-0",
+        "b": "dot-2",
+        "min": 1,
+        "label": "dot-0 / dot-2"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-0-solid",
+        "b": "dot-2-solid",
+        "min": 1,
+        "label": "dot-0-solid / dot-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-0",
+        "b": "dot-3",
+        "min": 1,
+        "label": "dot-0 / dot-3"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-0-solid",
+        "b": "dot-3-solid",
+        "min": 1,
+        "label": "dot-0-solid / dot-3-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1",
+        "b": "axes",
+        "min": 1,
+        "label": "dot-1 / axes"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1-solid",
+        "b": "axes-solid",
+        "min": 1,
+        "label": "dot-1-solid / axes-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1",
+        "b": "dot-2",
+        "min": 1,
+        "label": "dot-1 / dot-2"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1-solid",
+        "b": "dot-2-solid",
+        "min": 1,
+        "label": "dot-1-solid / dot-2-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1",
+        "b": "dot-3",
+        "min": 1,
+        "label": "dot-1 / dot-3"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1-solid",
+        "b": "dot-3-solid",
+        "min": 1,
+        "label": "dot-1-solid / dot-3-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2",
+        "b": "axes",
+        "min": 1,
+        "label": "dot-2 / axes"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2-solid",
+        "b": "axes-solid",
+        "min": 1,
+        "label": "dot-2-solid / axes-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2",
+        "b": "dot-3",
+        "min": 1,
+        "label": "dot-2 / dot-3"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2-solid",
+        "b": "dot-3-solid",
+        "min": 1,
+        "label": "dot-2-solid / dot-3-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-3",
+        "b": "axes",
+        "min": 1,
+        "label": "dot-3 / axes"
+      },
+      {
+        "kind": "gap",
+        "a": "dot-3-solid",
+        "b": "axes-solid",
+        "min": 1,
+        "label": "dot-3-solid / axes-solid"
+      }
+    ],
+    "heatmap": [
+      {
+        "kind": "gap",
+        "a": "hot-00",
+        "b": "hot-01",
+        "min": 1,
+        "label": "hot-00 / hot-01"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-00-solid",
+        "b": "hot-01-solid",
+        "min": 1,
+        "label": "hot-00-solid / hot-01-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-00",
+        "b": "cell-10-frame",
+        "min": 1,
+        "label": "hot-00 / cell-10-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-00-solid",
+        "b": "cell-10-solid",
+        "min": 1,
+        "label": "hot-00-solid / cell-10-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-01",
+        "b": "cell-02-frame",
+        "min": 1,
+        "label": "hot-01 / cell-02-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-01-solid",
+        "b": "cell-02-solid",
+        "min": 1,
+        "label": "hot-01-solid / cell-02-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-01",
+        "b": "hot-11",
+        "min": 1,
+        "label": "hot-01 / hot-11"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-01-solid",
+        "b": "hot-11-solid",
+        "min": 1,
+        "label": "hot-01-solid / hot-11-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-02-frame",
+        "b": "cell-12-frame",
+        "min": 1,
+        "label": "cell-02-frame / cell-12-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-02-solid",
+        "b": "cell-12-solid",
+        "min": 1,
+        "label": "cell-02-solid / cell-12-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-10-frame",
+        "b": "hot-11",
+        "min": 1,
+        "label": "cell-10-frame / hot-11"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-10-solid",
+        "b": "hot-11-solid",
+        "min": 1,
+        "label": "cell-10-solid / hot-11-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-10-frame",
+        "b": "cell-20-frame",
+        "min": 1,
+        "label": "cell-10-frame / cell-20-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-10-solid",
+        "b": "cell-20-solid",
+        "min": 1,
+        "label": "cell-10-solid / cell-20-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-11",
+        "b": "cell-12-frame",
+        "min": 1,
+        "label": "hot-11 / cell-12-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-11-solid",
+        "b": "cell-12-solid",
+        "min": 1,
+        "label": "hot-11-solid / cell-12-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-11",
+        "b": "cell-21-frame",
+        "min": 1,
+        "label": "hot-11 / cell-21-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "hot-11-solid",
+        "b": "cell-21-solid",
+        "min": 1,
+        "label": "hot-11-solid / cell-21-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-12-frame",
+        "b": "hot-22",
+        "min": 1,
+        "label": "cell-12-frame / hot-22"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-12-solid",
+        "b": "hot-22-solid",
+        "min": 1,
+        "label": "cell-12-solid / hot-22-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-20-frame",
+        "b": "cell-21-frame",
+        "min": 1,
+        "label": "cell-20-frame / cell-21-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-20-solid",
+        "b": "cell-21-solid",
+        "min": 1,
+        "label": "cell-20-solid / cell-21-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-21-frame",
+        "b": "hot-22",
+        "min": 1,
+        "label": "cell-21-frame / hot-22"
+      },
+      {
+        "kind": "gap",
+        "a": "cell-21-solid",
+        "b": "hot-22-solid",
+        "min": 1,
+        "label": "cell-21-solid / hot-22-solid"
+      }
+    ],
+    "funnel-chart": [
+      {
+        "kind": "gap",
+        "a": "stage-0-frame",
+        "b": "stage-1-frame",
+        "min": 1,
+        "label": "stage-0-frame / stage-1-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "stage-0-solid",
+        "b": "stage-1-solid",
+        "min": 1,
+        "label": "stage-0-solid / stage-1-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "stage-1-frame",
+        "b": "stage-2-frame",
+        "min": 1,
+        "label": "stage-1-frame / stage-2-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "stage-1-solid",
+        "b": "stage-2-solid",
+        "min": 1,
+        "label": "stage-1-solid / stage-2-solid"
+      }
+    ],
+    "radar-chart": [],
+    "dashboard": [
+      {
+        "kind": "gap",
+        "a": "header-frame",
+        "b": "widget-left-frame",
+        "min": 1,
+        "label": "header-frame / widget-left-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "header-frame",
+        "b": "widget-right-frame",
+        "min": 1,
+        "label": "header-frame / widget-right-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "widget-left-frame",
+        "b": "widget-right-frame",
+        "min": 1,
+        "label": "widget-left-frame / widget-right-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "header-solid",
+        "b": "widget-left-solid",
+        "min": 1,
+        "label": "header-solid / widget-left-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "header-solid",
+        "b": "widget-right-solid",
+        "min": 1,
+        "label": "header-solid / widget-right-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "widget-left-solid",
+        "b": "widget-right-solid",
+        "min": 1,
+        "label": "widget-left-solid / widget-right-solid"
+      }
+    ]
+  },
+  "exceptions": {
+    "sort-order": "Arrow head and stem share the same rigid pivot and a painted joint.",
+    "show-columns": "The revealed divider joins the outer frame; its content bar stays separate.",
+    "resize-column": "Divider endpoints meet the frame; resizing changes only the intended internal boundary.",
+    "freeze-column": "Divider endpoints meet the frame.",
+    "pivot-table": "Header and leading boundary form the table frame.",
+    "formula": "The f crossbar joins the stem; the two x strokes join as one glyph and remain fully opaque once drawn.",
+    "radar-chart": "The value polygon intersects its own radial axes intentionally; the centre opening is checked in native renders."
+  }
+}

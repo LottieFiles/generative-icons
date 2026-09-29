@@ -1,0 +1,7 @@
+import {icons as selection} from './batches/selection.mjs';
+import {icons as entry} from './batches/entry.mjs';
+const all=new Map([...selection,...entry].map(i=>[i.name,i]));
+const order=["checkbox", "radio-button", "toggle-switch", "text-field", "number-field", "select-field", "multiple-choice", "signature", "form-builder", "qr-code", "barcode"];
+const fixed={"radio-button": ["ring-frame"], "toggle-switch": ["track-frame"], "text-field": ["field-frame"], "number-field": ["field-frame", "step-down"], "select-field": ["field", "value"], "multiple-choice": ["box-1", "check-1", "label-1", "label-2"], "signature": ["baseline"], "form-builder": ["sheet", "text-field", "radio", "radio-label"], "qr-code": ["finder-0", "finder-1", "finder-2", "finder-0-dot", "finder-1-dot", "finder-2-dot", "static-0", "static-1"], "barcode": ["bar-0", "bar-1", "bar-2", "bar-3", "bar-4", "bar-wide"]};
+const rigid={"checkbox": ["box-frame"], "toggle-switch": ["knob"], "text-field": ["caret"], "number-field": ["step-up"], "select-field": ["panel", "option"], "multiple-choice": ["box-2"], "signature": ["pen"], "qr-code": ["module-0", "module-1"], "barcode": ["laser"]};
+export const icons=order.map((id,index)=>{const icon=all.get(id);if(!icon)throw Error(id);return {...icon,number:429+index,constraints:[...(fixed[id]||[]).map(p=>({type:'fixed',part:id+'-'+p})),...(rigid[id]||[]).map(p=>({type:'rigid',part:id+'-'+p}))]};});

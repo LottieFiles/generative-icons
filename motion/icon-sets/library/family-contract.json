@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "grid": 32,
+  "outlineWeights": { "light": 1.5, "regular": 2, "bold": 2.5 },
+  "defaultOutlineWeight": "regular",
+  "sourceStyles": ["outline", "solid", "tint"],
+  "presentationStyles": ["outline", "solid", "duotone"],
+  "duotoneOpacity": 0.18,
+  "roundCapsAndJoins": true,
+  "profiles": ["light", "strong"],
+  "defaultMotion": "strong",
+  "fps": 60,
+  "durationSeconds": 2.4,
+  "review": {
+    "requiredSizes": [24, 32, 48, 192],
+    "contextStressSizes": [16, 20],
+    "controlSizes": [32, 36],
+    "themes": ["dark", "light"],
+    "compareAtEqualElapsedTime": true
+  },
+  "scope": "Current native icon family. Source preflight and design prompts consume this file. Existing exporters retain their versioned constants; export/paint checks must still confirm agreement. Do not quantize animated coordinates, enforce a competitor's grid, or infer visual approval from these values."
+}

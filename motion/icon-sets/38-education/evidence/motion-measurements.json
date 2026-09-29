@@ -1,0 +1,629 @@
+{
+  "scope": "Source geometry and rigid transforms at 60fps; grid units and seconds. RMS includes curve control points. Native normal-speed review required.",
+  "definitionsSha256": "3e94426f93404059fda0845695855906b41cbb49690379b6ce130543392a155a",
+  "icons": 20,
+  "records": [
+    {
+      "icon": "graduation-cap",
+      "mainPart": "graduation-cap-board-frame",
+      "intent": "Light: the cap lifts 1.4 units with a 4° tilt and the tassel swings behind it. Strong: it dips, is tossed 3.1 units with an 11° tilt, lands with a small bounce, and the tassel swings wide and damps out.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.535340710548597,
+          "travelRms": 3.070781696953391,
+          "peakRmsSpeed": 13.349940457287248,
+          "visibleTravelRms": 3.070781696953391,
+          "visiblePeakRmsSpeed": 13.349940457287248,
+          "first10To90Seconds": 0.09999999999999999
+        },
+        "strong": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.524336538084422,
+          "travelRms": 9.468138953232971,
+          "peakRmsSpeed": 32.74353445670032,
+          "visibleTravelRms": 9.468138953232971,
+          "visiblePeakRmsSpeed": 32.74353445670032,
+          "first10To90Seconds": 0.2
+        }
+      },
+      "strongToLightPeakSpeed": 2.4527101496416646,
+      "strongToLightTravel": 3.083299266315993
+    },
+    {
+      "icon": "chalkboard",
+      "mainPart": "chalkboard-ink",
+      "intent": "Light: chalk writes a wavy line across the board, then underlines it. Strong: the line is written in 0.22 s, the underline snaps in, and the chalk tap jolts the board. The writing is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.8,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 8.273469358977765,
+          "travelRms": 11.524259630072752,
+          "peakRmsSpeed": 35.05491657206768,
+          "visibleTravelRms": 11.47114387578958,
+          "visiblePeakRmsSpeed": 35.05491657206768,
+          "first10To90Seconds": 0.33333333333333337,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 8.742770014326204,
+          "travelRms": 12.933057873923044,
+          "peakRmsSpeed": 81.91733506070125,
+          "visibleTravelRms": 12.933057873923044,
+          "visiblePeakRmsSpeed": 81.91733506070125,
+          "first10To90Seconds": 0.16666666666666666,
+          "rotationRange": 0,
+          "horizontalRange": 0.7547377777777778,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.336828698259527,
+      "strongToLightTravel": 1.1274427392737099
+    },
+    {
+      "icon": "flashcards",
+      "mainPart": "flashcards-card-frame",
+      "intent": "Light: the card turns edge-on and over, from the question mark to the answer. Strong: the card lifts off the deck, flips in a quarter second and lands with a small tap. The answer is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 9.925825608540967,
+          "travelRms": 19.85165121708193,
+          "peakRmsSpeed": 98.3307078652772,
+          "visibleTravelRms": 19.85165121708193,
+          "visiblePeakRmsSpeed": 98.3307078652772,
+          "first10To90Seconds": 0.11666666666666667
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 10.03486950779937,
+          "travelRms": 22.717404230424087,
+          "peakRmsSpeed": 185.27914495035665,
+          "visibleTravelRms": 22.717404230424087,
+          "visiblePeakRmsSpeed": 185.27914495035665,
+          "first10To90Seconds": 0.16666666666666669
+        }
+      },
+      "strongToLightPeakSpeed": 1.8842450031398879,
+      "strongToLightTravel": 1.144358420466114
+    },
+    {
+      "icon": "quiz",
+      "mainPart": "quiz-answer-dot",
+      "intent": "Light: the first answer on the quiz card is selected as a dot grows inside its ring. Strong: the dot snaps in and the whole marker pops 12% and settles. The answer is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.46,
+          "firstChangeSeconds": 0.13333333333333333,
+          "peakRmsDisplacement": 1.6129310170706173,
+          "travelRms": 1.6129310170706177,
+          "peakRmsSpeed": 8.140000544942593,
+          "visibleTravelRms": 1.6129310170706177,
+          "visiblePeakRmsSpeed": 8.140000544942593,
+          "first10To90Seconds": 0.18333333333333332
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.13333333333333333,
+          "peakRmsDisplacement": 1.795133129632005,
+          "travelRms": 2.1064472217460484,
+          "peakRmsSpeed": 30.15447645054772,
+          "visibleTravelRms": 2.1064472217460484,
+          "visiblePeakRmsSpeed": 30.15447645054772,
+          "first10To90Seconds": 0.05000000000000002
+        }
+      },
+      "strongToLightPeakSpeed": 3.7044808884297664,
+      "strongToLightTravel": 1.3059747747747747
+    },
+    {
+      "icon": "certificate",
+      "mainPart": "certificate-seal-frame",
+      "intent": "Light: the seal grows onto the certificate and its ribbon tails unfurl. Strong: the seal slams down from twice its size, the paper jolts, and the tails snap out. The seal is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 3.3446522239119765,
+          "travelRms": 3.344652223911977,
+          "peakRmsSpeed": 15.662179637391633,
+          "visibleTravelRms": 3.3435710307243602,
+          "visiblePeakRmsSpeed": 15.662179637391633,
+          "first10To90Seconds": 0.19999999999999998
+        },
+        "strong": {
+          "activeSeconds": 0.44,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 3.2697587086344475,
+          "travelRms": 4.234631115115937,
+          "peakRmsSpeed": 39.21958217105915,
+          "visibleTravelRms": 4.234631115115937,
+          "visiblePeakRmsSpeed": 39.21958217105915,
+          "first10To90Seconds": 0.08333333333333334
+        }
+      },
+      "strongToLightPeakSpeed": 2.5040947734647965,
+      "strongToLightTravel": 1.2664995228764542
+    },
+    {
+      "icon": "notebook",
+      "mainPart": "notebook-line-0",
+      "intent": "Light: three lines of notes are written one after another. Strong: the notebook is picked up and set down, the lines are dashed off in 0.09 s each, and it taps down when done. The notes are retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 5.574971284230978,
+          "travelRms": 5.574971284230978,
+          "peakRmsSpeed": 41.7874573269707,
+          "visibleTravelRms": 5.567936881215174,
+          "visiblePeakRmsSpeed": 41.7874573269707,
+          "first10To90Seconds": 0.13333333333333333,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 5.595026471424388,
+          "travelRms": 7.752570731181262,
+          "peakRmsSpeed": 91.53214495518728,
+          "visibleTravelRms": 6.584052212662741,
+          "visiblePeakRmsSpeed": 91.53214495518728,
+          "first10To90Seconds": 0.1333333333333333,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.2575629629629632
+        }
+      },
+      "strongToLightPeakSpeed": 2.190421499900882,
+      "strongToLightTravel": 1.1824940463811087
+    },
+    {
+      "icon": "pencil",
+      "mainPart": "pencil-body-frame",
+      "intent": "Light: the pencil writes a wave line, its tip riding the ink as it grows. Strong: the pencil lifts and drops onto the page, writes in 0.3 s and flicks up at the end. The line is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 11.6,
+          "travelRms": 16.357023897572553,
+          "peakRmsSpeed": 45.3087974352021,
+          "visibleTravelRms": 16.357023897572553,
+          "visiblePeakRmsSpeed": 45.3087974352021,
+          "first10To90Seconds": 0.41666666666666663
+        },
+        "strong": {
+          "activeSeconds": 0.64,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 11.642589846155861,
+          "travelRms": 20.49671082223807,
+          "peakRmsSpeed": 96.1650498777574,
+          "visibleTravelRms": 20.49671082223807,
+          "visiblePeakRmsSpeed": 96.1650498777574,
+          "first10To90Seconds": 0.30000000000000004
+        }
+      },
+      "strongToLightPeakSpeed": 2.1224365977774364,
+      "strongToLightTravel": 1.2530831372863533
+    },
+    {
+      "icon": "ruler",
+      "mainPart": "ruler-tick-0",
+      "intent": "Light: a measuring pulse runs along the ticks, each lengthening 0.6 units in turn. Strong: the pulse runs faster and deeper (1.5 units) while the ruler rocks 2.5° and settles.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.05,
+          "peakRmsDisplacement": 0.4242640687119283,
+          "travelRms": 0.8485281374238567,
+          "peakRmsSpeed": 4.093348222536272,
+          "visibleTravelRms": 0.8485281374238567,
+          "visiblePeakRmsSpeed": 4.093348222536272,
+          "first10To90Seconds": 0.09999999999999999,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.9728618959544854,
+          "travelRms": 2.8346598722690812,
+          "peakRmsSpeed": 11.746874947234813,
+          "visibleTravelRms": 2.8346598722690812,
+          "visiblePeakRmsSpeed": 11.746874947234813,
+          "first10To90Seconds": 0.13333333333333333,
+          "rotationRange": 3.990912208504801,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.8697472847683487,
+      "strongToLightTravel": 3.340678696731435
+    },
+    {
+      "icon": "lab-flask",
+      "mainPart": "lab-flask-bubble-0",
+      "intent": "Light: three bubbles rise from the liquid up the neck and fade while the surface ripples. Strong: the flask is swirled 5° either way, the surface sloshes and the bubbles race up in 0.34 s.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.86,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 14.406942770761601,
+          "travelRms": 14.62975712167655,
+          "peakRmsSpeed": 30.039547266894825,
+          "visibleTravelRms": 14.62975712167655,
+          "visiblePeakRmsSpeed": 30.039547266894825,
+          "first10To90Seconds": 0.4
+        },
+        "strong": {
+          "activeSeconds": 0.84,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 14.510976181749447,
+          "travelRms": 15.879662159941603,
+          "peakRmsSpeed": 53.181505866060455,
+          "visibleTravelRms": 15.108030635743143,
+          "visiblePeakRmsSpeed": 53.181505866060455,
+          "first10To90Seconds": 0.2833333333333333
+        }
+      },
+      "strongToLightPeakSpeed": 1.7703830684781756,
+      "strongToLightTravel": 1.0326918287220195
+    },
+    {
+      "icon": "microscope",
+      "mainPart": "microscope-tube-frame",
+      "intent": "Light: the tube racks down 0.4 units toward the slide and back to focus. Strong: it lifts, drives down 0.8 units with a hard stop above the stage, and eases back.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.44,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.3992706217891168,
+          "travelRms": 0.7985412435782334,
+          "peakRmsSpeed": 3.890082448301644,
+          "visibleTravelRms": 0.7985412435782334,
+          "visiblePeakRmsSpeed": 3.890082448301644,
+          "first10To90Seconds": 0.1,
+          "rotationRange": 0,
+          "horizontalRange": 0.15254426087895478,
+          "verticalRange": 0.36898140589569167
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.7847728796599591,
+          "travelRms": 2.767674737952084,
+          "peakRmsSpeed": 13.568059819101789,
+          "visibleTravelRms": 2.767674737952084,
+          "visiblePeakRmsSpeed": 13.568059819101789,
+          "first10To90Seconds": 0.2,
+          "rotationRange": 0,
+          "horizontalRange": 0.5287051866756752,
+          "verticalRange": 1.2788575719589632
+        }
+      },
+      "strongToLightPeakSpeed": 3.4878591904974705,
+      "strongToLightTravel": 3.4659133265931725
+    },
+    {
+      "icon": "abacus",
+      "mainPart": "abacus-bead-0-2",
+      "intent": "Light: four beads slide across their rods one after another to record a count. Strong: each bead is flicked across in 0.1 s and knocks to a stop with a small recoil. The count is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 7.599999999999999,
+          "travelRms": 7.6,
+          "peakRmsSpeed": 51.61198764504554,
+          "visibleTravelRms": 7.6,
+          "visiblePeakRmsSpeed": 51.61198764504554,
+          "first10To90Seconds": 0.13333333333333333
+        },
+        "strong": {
+          "activeSeconds": 0.52,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 7.599999999999999,
+          "travelRms": 8.156981481481484,
+          "peakRmsSpeed": 110.5208888888886,
+          "visibleTravelRms": 8.156981481481484,
+          "visiblePeakRmsSpeed": 110.5208888888886,
+          "first10To90Seconds": 0.06666666666666665
+        }
+      },
+      "strongToLightPeakSpeed": 2.1413802089735636,
+      "strongToLightTravel": 1.0732870370370373
+    },
+    {
+      "icon": "school-bell",
+      "mainPart": "school-bell-body-frame",
+      "intent": "Light: the bell is shaken side to side (8°) from its handle and the clapper swings after it. Strong: a small back-swing, a hard 15° shake either way, and the clapper rings wide before damping out.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.64,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.8749179805731364,
+          "travelRms": 8.418601529667717,
+          "peakRmsSpeed": 34.21903522602546,
+          "visibleTravelRms": 8.418601529667717,
+          "visiblePeakRmsSpeed": 34.21903522602546,
+          "first10To90Seconds": 0.049999999999999996
+        },
+        "strong": {
+          "activeSeconds": 0.84,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.5082895048107323,
+          "travelRms": 19.152877167955065,
+          "peakRmsSpeed": 61.1458584645665,
+          "visibleTravelRms": 19.152877167955065,
+          "visiblePeakRmsSpeed": 61.1458584645665,
+          "first10To90Seconds": 0.16666666666666669
+        }
+      },
+      "strongToLightPeakSpeed": 1.7868960378538583,
+      "strongToLightTravel": 2.275066363511688
+    },
+    {
+      "icon": "course-progress",
+      "mainPart": "course-progress-knob",
+      "intent": "Light: the progress scrubber advances steadily to three quarters of the course. Strong: the play button is pressed in and springs out, then the scrubber drives to the same point in 0.24 s. Progress is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 14,
+          "travelRms": 14.000000000000004,
+          "peakRmsSpeed": 32.782830132378464,
+          "visibleTravelRms": 14.000000000000004,
+          "visiblePeakRmsSpeed": 32.782830132378464,
+          "first10To90Seconds": 0.3833333333333333
+        },
+        "strong": {
+          "activeSeconds": 0.44,
+          "firstChangeSeconds": 0.16666666666666666,
+          "peakRmsDisplacement": 14,
+          "travelRms": 13.999999999999998,
+          "peakRmsSpeed": 87.20743312757222,
+          "visibleTravelRms": 13.999999999999998,
+          "visiblePeakRmsSpeed": 87.20743312757222,
+          "first10To90Seconds": 0.14999999999999997
+        }
+      },
+      "strongToLightPeakSpeed": 2.6601557210108124,
+      "strongToLightTravel": 0.9999999999999997
+    },
+    {
+      "icon": "lecture",
+      "mainPart": "lecture-pointer",
+      "intent": "Light: the presenter raises the pointer to the screen as two bullet lines appear in turn. Strong: two sharp taps of the pointer, each snapping a bullet line onto the screen. The slide is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.13333333333333333,
+          "peakRmsDisplacement": 1.1287839988757313,
+          "travelRms": 1.7313113029974587,
+          "peakRmsSpeed": 9.84697790958684,
+          "visibleTravelRms": 1.7313113029974587,
+          "visiblePeakRmsSpeed": 9.84697790958684,
+          "first10To90Seconds": 0.1,
+          "rotationRange": 17,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.46,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.167514707164846,
+          "travelRms": 3.1835055010961444,
+          "peakRmsSpeed": 21.74300187177168,
+          "visibleTravelRms": 3.1835055010961444,
+          "visiblePeakRmsSpeed": 21.74300187177168,
+          "first10To90Seconds": 0.13333333333333333,
+          "rotationRange": 21.453565740740743,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.208088823942936,
+      "strongToLightTravel": 1.8387828321714694
+    },
+    {
+      "icon": "library-shelf",
+      "mainPart": "library-shelf-book-1-frame",
+      "intent": "Light: the middle book is drawn 2.2 units up off the shelf and slid back. Strong: it is yanked 3.6 units, then pushed home with a knock and a small rebound.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.46,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.1936889648437505,
+          "travelRms": 4.387377929687503,
+          "peakRmsSpeed": 24.38602768782373,
+          "visibleTravelRms": 4.387377929687503,
+          "visiblePeakRmsSpeed": 24.38602768782373,
+          "first10To90Seconds": 0.08333333333333334
+        },
+        "strong": {
+          "activeSeconds": 0.64,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.5993497222522164,
+          "travelRms": 7.839961018578509,
+          "peakRmsSpeed": 29.90397805212625,
+          "visibleTravelRms": 7.839961018578509,
+          "visiblePeakRmsSpeed": 29.90397805212625,
+          "first10To90Seconds": 0.09999999999999999
+        }
+      },
+      "strongToLightPeakSpeed": 1.2262750799326658,
+      "strongToLightTravel": 1.7869354188817104
+    },
+    {
+      "icon": "language-learning",
+      "mainPart": "language-learning-bubble-frame",
+      "intent": "Light: a speech bubble with the letter A grows up out of the open book. Strong: the pages flap as the bubble pops out wide (120%), tilts and settles. The bubble is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 11.042001250880212,
+          "travelRms": 11.439302005721354,
+          "peakRmsSpeed": 50.82457789903803,
+          "visibleTravelRms": 10.78221443411252,
+          "visiblePeakRmsSpeed": 50.82457789903803,
+          "first10To90Seconds": 0.21666666666666665
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.13333333333333333,
+          "peakRmsDisplacement": 11.547627554909134,
+          "travelRms": 13.923777957444193,
+          "peakRmsSpeed": 106.78186380876564,
+          "visibleTravelRms": 13.69665779132909,
+          "visiblePeakRmsSpeed": 106.78186380876564,
+          "first10To90Seconds": 0.08333333333333334
+        }
+      },
+      "strongToLightPeakSpeed": 2.1009886992251188,
+      "strongToLightTravel": 1.2703010012484932
+    },
+    {
+      "icon": "alphabet-blocks",
+      "mainPart": "alphabet-blocks-block-a-frame",
+      "intent": "Light: the A block is lowered onto the two blocks below and settles. Strong: it falls from higher while turning 10°, lands hard with a double bounce, and the blocks below take the thud. The stack is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.58,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 5,
+          "travelRms": 5,
+          "peakRmsSpeed": 18.737847222222186,
+          "visibleTravelRms": 4.557453703703703,
+          "visiblePeakRmsSpeed": 18.737847222222186,
+          "first10To90Seconds": 0.23333333333333336
+        },
+        "strong": {
+          "activeSeconds": 0.58,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 7.115584519835778,
+          "travelRms": 10.418848981879812,
+          "peakRmsSpeed": 53.22952863337779,
+          "visibleTravelRms": 7.393994884618242,
+          "visiblePeakRmsSpeed": 53.22952863337779,
+          "first10To90Seconds": 0.13333333333333333
+        }
+      },
+      "strongToLightPeakSpeed": 2.8407494202562464,
+      "strongToLightTravel": 1.6223960494890752
+    },
+    {
+      "icon": "homework",
+      "mainPart": "homework-tick",
+      "intent": "Light: a tick is drawn across the finished worksheet. Strong: the sheet is slapped down, the tick is struck in 0.14 s and the sheet hops once in approval. The tick is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 5.619602601476771,
+          "travelRms": 7.379561996383639,
+          "peakRmsSpeed": 26.821371721240233,
+          "visibleTravelRms": 7.345095226461711,
+          "visiblePeakRmsSpeed": 26.821371721240233,
+          "first10To90Seconds": 0.2666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.46,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 5.900915025610848,
+          "travelRms": 11.04863033901326,
+          "peakRmsSpeed": 80.08546050412694,
+          "visibleTravelRms": 9.409535688807496,
+          "visiblePeakRmsSpeed": 80.08546050412694,
+          "first10To90Seconds": 0.15,
+          "rotationRange": 0,
+          "horizontalRange": 0,
+          "verticalRange": 1.4540466392318243
+        }
+      },
+      "strongToLightPeakSpeed": 2.985882352941185,
+      "strongToLightTravel": 1.2810638117948907
+    },
+    {
+      "icon": "exam-grade",
+      "mainPart": "exam-grade-ring",
+      "intent": "Light: a hand-drawn ring circles the A+ grade. Strong: the ring is struck round in 0.26 s and the grade pops 6% when circled. The ring is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.08333333333333333,
+          "peakRmsDisplacement": 15.301766085340985,
+          "travelRms": 41.72756647563117,
+          "peakRmsSpeed": 115.83315836148256,
+          "visibleTravelRms": 41.590873953481115,
+          "visiblePeakRmsSpeed": 115.83315836148256,
+          "first10To90Seconds": 0.16666666666666666
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 15.309047151482638,
+          "travelRms": 41.48758961947242,
+          "peakRmsSpeed": 247.2490802033545,
+          "visibleTravelRms": 41.48758961947242,
+          "visiblePeakRmsSpeed": 247.2490802033545,
+          "first10To90Seconds": 0.08333333333333334
+        }
+      },
+      "strongToLightPeakSpeed": 2.1345276577174905,
+      "strongToLightTravel": 0.9975166587236369
+    },
+    {
+      "icon": "geometry-compass",
+      "mainPart": "geometry-compass-pencil-leg",
+      "intent": "Light: the compass swivels 6° on its needle and back while an arc is drawn on the paper beneath it. Strong: it cocks 9°, holds, then snaps upright as the arc is struck in 0.16 s, with a small recoil. The arc is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 1.5000461295252006,
+          "travelRms": 3.001449145604311,
+          "peakRmsSpeed": 9.800387026198381,
+          "visibleTravelRms": 3.001449145604311,
+          "visiblePeakRmsSpeed": 9.800387026198381,
+          "first10To90Seconds": 0.15,
+          "rotationRange": 5.988584094275237,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 2.253066928221088,
+          "travelRms": 5.176675569266124,
+          "peakRmsSpeed": 53.35962893680687,
+          "visibleTravelRms": 5.176675569266124,
+          "visiblePeakRmsSpeed": 53.35962893680687,
+          "first10To90Seconds": 0.03333333333333334,
+          "rotationRange": 9,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 5.44464507311456,
+      "strongToLightTravel": 1.7247253970128
+    }
+  ]
+}

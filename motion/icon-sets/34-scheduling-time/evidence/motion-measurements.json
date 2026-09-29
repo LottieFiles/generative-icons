@@ -1,0 +1,269 @@
+{
+  "scope": "Source geometry and rigid transforms at 60fps; grid units and seconds. RMS includes curve control points. Native normal-speed review required.",
+  "definitionsSha256": "7ba6df733466489ba378f19ba992b917d29ca722668f6f0f93d1104b365a1625",
+  "icons": 8,
+  "records": [
+    {
+      "icon": "date-range",
+      "mainPart": "date-range-bar",
+      "intent": "A range bar sweeps from the fixed start date to the end date and stays. Strong: the end dot backs off, the bar drives fast, knocks it 0.7 past the date, and both settle together.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 8.48528137423857,
+          "travelRms": 8.485281374238571,
+          "peakRmsSpeed": 25.41813176105239,
+          "visibleTravelRms": 8.247693495759892,
+          "visiblePeakRmsSpeed": 25.41813176105239,
+          "first10To90Seconds": 0.31666666666666665
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.06666666666666667,
+          "peakRmsDisplacement": 8.973572277116338,
+          "travelRms": 9.46186317999411,
+          "peakRmsSpeed": 63.204390480619445,
+          "visibleTravelRms": 9.324724171194188,
+          "visiblePeakRmsSpeed": 63.204390480619445,
+          "first10To90Seconds": 0.13333333333333333
+        }
+      },
+      "strongToLightPeakSpeed": 2.48658678280463,
+      "strongToLightTravel": 1.130585681437846
+    },
+    {
+      "icon": "calendar-view",
+      "mainPart": "calendar-view-cell-a",
+      "intent": "Week columns contract into three squares, each already in its own row lane, then slide left and extend into month rows. Strong: a snappier contraction with a slight squash, then a fast extension with a bounded width overshoot. Reverse runs the same route backwards.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.72,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 9.564886764804351,
+          "travelRms": 13.102491904887675,
+          "peakRmsSpeed": 43.89130456489776,
+          "visibleTravelRms": 13.102491904887675,
+          "visiblePeakRmsSpeed": 43.89130456489776,
+          "first10To90Seconds": 0.5
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 9.977260228140644,
+          "travelRms": 14.655789040959442,
+          "peakRmsSpeed": 83.84047758974619,
+          "visibleTravelRms": 14.655789040959442,
+          "visiblePeakRmsSpeed": 83.84047758974619,
+          "first10To90Seconds": 0.2833333333333333
+        }
+      },
+      "strongToLightPeakSpeed": 1.9101842248908212,
+      "strongToLightTravel": 1.118549749722977
+    },
+    {
+      "icon": "reschedule",
+      "mainPart": "reschedule-chip",
+      "intent": "The event chip lifts out of its open tray, crosses to the marked date and lands on it; the empty tray stays behind. Strong: quicker lift, fast drive, one landing hop.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 9.051657306814041,
+          "travelRms": 11.658649346652174,
+          "peakRmsSpeed": 29.794017088207145,
+          "visibleTravelRms": 11.658649346652174,
+          "visiblePeakRmsSpeed": 29.794017088207145,
+          "first10To90Seconds": 0.38333333333333336,
+          "rotationRange": 0,
+          "horizontalRange": 8.9,
+          "verticalRange": 3.3949798583984374
+        },
+        "strong": {
+          "activeSeconds": 0.48,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 9.191563332465982,
+          "travelRms": 13.859166945161105,
+          "peakRmsSpeed": 74.67698834786422,
+          "visibleTravelRms": 13.859166945161105,
+          "visiblePeakRmsSpeed": 74.67698834786422,
+          "first10To90Seconds": 0.21666666666666667,
+          "rotationRange": 0,
+          "horizontalRange": 8.9,
+          "verticalRange": 3.3922753772290815
+        }
+      },
+      "strongToLightPeakSpeed": 2.5064424218720855,
+      "strongToLightTravel": 1.1887454998499305
+    },
+    {
+      "icon": "alarm-clock",
+      "mainPart": "alarm-clock-bell-l",
+      "intent": "Light: one restrained outward strike of both bells. Strong: a small inward wind-up, a hard outward strike, and the whole clock tips 5.5° on its foot with the hit, undershoots once on the other foot and settles while the bells ring down.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.45,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 0.2889841863305842,
+          "travelRms": 0.5782261676723971,
+          "peakRmsSpeed": 4.336620247871854,
+          "visibleTravelRms": 0.5782261676723971,
+          "visiblePeakRmsSpeed": 4.336620247871854,
+          "first10To90Seconds": 0.049999999999999996,
+          "rotationRange": 6,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.7,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 1.4338946022509806,
+          "travelRms": 5.797990918690275,
+          "peakRmsSpeed": 29.49375593659562,
+          "visibleTravelRms": 5.797990918690275,
+          "visiblePeakRmsSpeed": 29.49375593659562,
+          "first10To90Seconds": 0.13333333333333333,
+          "rotationRange": 25.783254531893,
+          "horizontalRange": 1.9643829083900435,
+          "verticalRange": 0.9812231782824341
+        }
+      },
+      "strongToLightPeakSpeed": 6.801092613785895,
+      "strongToLightTravel": 10.027202577201965
+    },
+    {
+      "icon": "stopwatch",
+      "mainPart": "stopwatch-hand",
+      "intent": "Plunger presses down and the sweep hand runs clockwise from 12; Strong presses harder and drives the hand faster with one short settle. Hand time is retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.62,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 5.633826408401307,
+          "travelRms": 6.810289039248799,
+          "peakRmsSpeed": 20.397688484977994,
+          "visibleTravelRms": 6.810289039248799,
+          "visiblePeakRmsSpeed": 20.397688484977994,
+          "first10To90Seconds": 0.2833333333333333,
+          "rotationRange": 120,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.55,
+          "firstChangeSeconds": 0.16666666666666666,
+          "peakRmsDisplacement": 5.795554907917442,
+          "travelRms": 7.474901783013065,
+          "peakRmsSpeed": 53.34128183242816,
+          "visibleTravelRms": 7.474901783013065,
+          "visiblePeakRmsSpeed": 53.34128183242816,
+          "first10To90Seconds": 0.11666666666666664,
+          "rotationRange": 125.96961805555554,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.6150650291434583,
+      "strongToLightTravel": 1.0975895061037784
+    },
+    {
+      "icon": "countdown-timer",
+      "mainPart": "countdown-timer-remaining",
+      "intent": "The remaining-time arc anchored at 12 shrinks as the dial is set; Strong winds up past full first, then drops fast with one bounded catch. Result retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.11666666666666667,
+          "peakRmsDisplacement": 7.3462686327994255,
+          "travelRms": 8.257661807659911,
+          "peakRmsSpeed": 23.792680438378213,
+          "visibleTravelRms": 8.257661807659911,
+          "visiblePeakRmsSpeed": 23.792680438378213,
+          "first10To90Seconds": 0.3166666666666667
+        },
+        "strong": {
+          "activeSeconds": 0.6,
+          "firstChangeSeconds": 0.13333333333333333,
+          "peakRmsDisplacement": 7.512862753752822,
+          "travelRms": 12.401685588039205,
+          "peakRmsSpeed": 72.75557500419724,
+          "visibleTravelRms": 12.401685588039205,
+          "visiblePeakRmsSpeed": 72.75557500419724,
+          "first10To90Seconds": 0.25
+        }
+      },
+      "strongToLightPeakSpeed": 3.0578973727920373,
+      "strongToLightTravel": 1.5018398521159155
+    },
+    {
+      "icon": "world-clock",
+      "mainPart": "world-clock-minute",
+      "intent": "A globe with one curved meridian sits beside a small zone dial; the minute hand jumps half a turn to the other zone while the hour hand follows. Strong winds back slightly then snaps with one settle. Time retained; preview reset rearms.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.66,
+          "firstChangeSeconds": 0.1,
+          "peakRmsDisplacement": 3.394112549695428,
+          "travelRms": 5.328241462524095,
+          "peakRmsSpeed": 14.777799316440243,
+          "visibleTravelRms": 5.328241462524095,
+          "visiblePeakRmsSpeed": 14.777799316440243,
+          "first10To90Seconds": 0.2666666666666667,
+          "rotationRange": 180,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.56,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.394112549695428,
+          "travelRms": 6.14168825072056,
+          "peakRmsSpeed": 32.91132335983286,
+          "visibleTravelRms": 6.14168825072056,
+          "visiblePeakRmsSpeed": 32.91132335983286,
+          "first10To90Seconds": 0.1,
+          "rotationRange": 193.96961805555557,
+          "horizontalRange": 0,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 2.2270787858933194,
+      "strongToLightTravel": 1.1526670279336626
+    },
+    {
+      "icon": "availability",
+      "mainPart": "availability-free-frame",
+      "intent": "Two busy slots stay put; the open slot pulls out to the right and holds as the picker opens. Strong takes a short backswing then drives farther with one bounded settle; the reverse slides it home.",
+      "metrics": {
+        "light": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3,
+          "travelRms": 3,
+          "peakRmsSpeed": 9.99542752629182,
+          "visibleTravelRms": 3,
+          "visiblePeakRmsSpeed": 9.99542752629182,
+          "first10To90Seconds": 0.2666666666666666,
+          "rotationRange": 0,
+          "horizontalRange": 3,
+          "verticalRange": 0
+        },
+        "strong": {
+          "activeSeconds": 0.5,
+          "firstChangeSeconds": 0.016666666666666666,
+          "peakRmsDisplacement": 3.5,
+          "travelRms": 5.200000000000003,
+          "peakRmsSpeed": 30.465277777777903,
+          "visibleTravelRms": 5.200000000000003,
+          "visiblePeakRmsSpeed": 30.465277777777903,
+          "first10To90Seconds": 0.2,
+          "rotationRange": 0,
+          "horizontalRange": 4.1,
+          "verticalRange": 0
+        }
+      },
+      "strongToLightPeakSpeed": 3.0479214318389585,
+      "strongToLightTravel": 1.7333333333333343
+    }
+  ]
+}

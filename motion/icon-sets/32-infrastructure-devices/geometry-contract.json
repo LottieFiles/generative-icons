@@ -1,0 +1,540 @@
+{
+  "version": 1,
+  "icons": {
+    "server": [
+      {
+        "kind": "gap",
+        "a": "unit-top-frame",
+        "b": "unit-bottom-frame",
+        "min": 1,
+        "label": "unit-top-frame / unit-bottom-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "unit-top-bar",
+        "b": "unit-top-frame",
+        "min": 1,
+        "label": "unit-top-bar / unit-top-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "unit-top-led",
+        "b": "unit-top-frame",
+        "min": 1,
+        "label": "unit-top-led / unit-top-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "unit-bottom-bar",
+        "b": "unit-bottom-frame",
+        "min": 1,
+        "label": "unit-bottom-bar / unit-bottom-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "unit-bottom-led",
+        "b": "unit-bottom-frame",
+        "min": 1,
+        "label": "unit-bottom-led / unit-bottom-frame"
+      }
+    ],
+    "database": [
+      {
+        "kind": "gap",
+        "a": "band",
+        "b": "cap",
+        "min": 1,
+        "label": "band / cap"
+      },
+      {
+        "kind": "gap",
+        "a": "tier-upper-solid",
+        "b": "tier-lower-solid",
+        "min": 1,
+        "label": "tier-upper-solid / tier-lower-solid"
+      },
+      {
+        "kind": "self-gap",
+        "a": "band",
+        "b": "drum",
+        "ai": 1,
+        "bi": 2,
+        "min": 1,
+        "label": "band / drum-bottom-1"
+      },
+      {
+        "kind": "self-gap",
+        "a": "band",
+        "b": "drum",
+        "ai": 2,
+        "bi": 3,
+        "min": 1,
+        "label": "band / drum-bottom-2"
+      }
+    ],
+    "processor": [
+      {
+        "kind": "gap",
+        "a": "core",
+        "b": "body-frame",
+        "min": 1,
+        "label": "core / body-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "core-solid",
+        "b": "body-solid",
+        "min": 1,
+        "label": "core-solid / body-solid",
+        "bSegments": [
+          10,
+          19
+        ]
+      }
+    ],
+    "memory-chip": [
+      {
+        "kind": "gap",
+        "a": "contact-0",
+        "b": "slot",
+        "min": 1,
+        "label": "contact-0 / slot"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-0-solid",
+        "b": "slot-solid",
+        "min": 1,
+        "label": "contact-0-solid / slot-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-1",
+        "b": "slot",
+        "min": 1,
+        "label": "contact-1 / slot"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-1-solid",
+        "b": "slot-solid",
+        "min": 1,
+        "label": "contact-1-solid / slot-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-2",
+        "b": "slot",
+        "min": 1,
+        "label": "contact-2 / slot"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-2-solid",
+        "b": "slot-solid",
+        "min": 1,
+        "label": "contact-2-solid / slot-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-3",
+        "b": "slot",
+        "min": 1,
+        "label": "contact-3 / slot"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-3-solid",
+        "b": "slot-solid",
+        "min": 1,
+        "label": "contact-3-solid / slot-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-4",
+        "b": "slot",
+        "min": 1,
+        "label": "contact-4 / slot"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-4-solid",
+        "b": "slot-solid",
+        "min": 1,
+        "label": "contact-4-solid / slot-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "chip-0",
+        "b": "module-frame",
+        "min": 1,
+        "label": "chip-0 / module-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "chip-1",
+        "b": "module-frame",
+        "min": 1,
+        "label": "chip-1 / module-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "chip-2",
+        "b": "module-frame",
+        "min": 1,
+        "label": "chip-2 / module-frame"
+      }
+    ],
+    "hard-drive": [
+      {
+        "kind": "gap",
+        "a": "hub",
+        "b": "platter",
+        "min": 1,
+        "label": "hub / platter"
+      },
+      {
+        "kind": "gap",
+        "a": "hub-solid",
+        "b": "platter-solid",
+        "min": 1,
+        "label": "hub-solid / platter-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "platter",
+        "b": "body-frame",
+        "min": 1,
+        "label": "platter / body-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "platter-solid",
+        "b": "body-solid",
+        "min": 1,
+        "label": "platter-solid / body-solid",
+        "bSegments": [
+          10,
+          15
+        ]
+      },
+      {
+        "kind": "gap",
+        "a": "platter",
+        "b": "status-1",
+        "min": 1,
+        "label": "platter / status-1"
+      },
+      {
+        "kind": "gap",
+        "a": "platter",
+        "b": "status-2",
+        "min": 1,
+        "label": "platter / status-2"
+      },
+      {
+        "kind": "gap",
+        "a": "status-1",
+        "b": "body-frame",
+        "min": 1,
+        "label": "status-1 / body-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "status-2",
+        "b": "body-frame",
+        "min": 1,
+        "label": "status-2 / body-frame"
+      }
+    ],
+    "ethernet": [
+      {
+        "kind": "gap",
+        "a": "contact-a",
+        "b": "plug-frame",
+        "min": 1,
+        "label": "contact-a / plug-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-b",
+        "b": "plug-frame",
+        "min": 1,
+        "label": "contact-b / plug-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-a",
+        "b": "contact-b",
+        "min": 1,
+        "label": "contact-a / contact-b"
+      },
+      {
+        "kind": "opaque",
+        "a": "plug-solid",
+        "label": "plug-solid remains opaque"
+      }
+    ],
+    "router": [
+      {
+        "kind": "gap",
+        "a": "antenna-l",
+        "b": "antenna-r",
+        "min": 1,
+        "label": "antenna-l / antenna-r"
+      },
+      {
+        "kind": "gap",
+        "a": "antenna-l-solid",
+        "b": "antenna-r-solid",
+        "min": 1,
+        "label": "antenna-l-solid / antenna-r-solid"
+      },
+      {
+        "kind": "gap",
+        "a": "status",
+        "b": "body-frame",
+        "min": 1,
+        "label": "status / body-frame"
+      }
+    ],
+    "load-balancer": [
+      {
+        "kind": "gap",
+        "a": "target-l-frame",
+        "b": "target-r-frame",
+        "min": 1,
+        "label": "target-l-frame / target-r-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "target-l-solid",
+        "b": "target-r-solid",
+        "min": 1,
+        "label": "target-l-solid / target-r-solid"
+      },
+      {
+        "kind": "opaque",
+        "a": "packet",
+        "label": "packet remains opaque"
+      },
+      {
+        "kind": "opaque",
+        "a": "packet-solid",
+        "label": "packet-solid remains opaque"
+      },
+      {
+        "kind": "gap",
+        "a": "packet",
+        "b": "hub-frame",
+        "min": 1.15,
+        "label": "packet / source prep light",
+        "profile": "light",
+        "direction": "forward",
+        "to": 0.08
+      },
+      {
+        "kind": "gap",
+        "a": "packet-solid",
+        "b": "hub-solid",
+        "min": 1.15,
+        "label": "packet / source prep light-solid",
+        "profile": "light",
+        "direction": "forward",
+        "to": 0.08,
+        "bSegments": [
+          10,
+          15
+        ]
+      },
+      {
+        "kind": "gap",
+        "a": "packet",
+        "b": "hub-frame",
+        "min": 1.15,
+        "label": "packet / source prep strong",
+        "profile": "strong",
+        "direction": "forward",
+        "to": 0.08
+      },
+      {
+        "kind": "gap",
+        "a": "packet-solid",
+        "b": "hub-solid",
+        "min": 1.15,
+        "label": "packet / source prep strong-solid",
+        "profile": "strong",
+        "direction": "forward",
+        "to": 0.08,
+        "bSegments": [
+          10,
+          15
+        ]
+      },
+      {
+        "kind": "gap",
+        "a": "packet",
+        "b": "target-l-frame",
+        "min": 1.15,
+        "label": "packet / received light",
+        "profile": "light",
+        "direction": "forward",
+        "from": 0.8
+      },
+      {
+        "kind": "gap",
+        "a": "packet-solid",
+        "b": "target-l-solid",
+        "min": 1.15,
+        "label": "packet / received light-solid",
+        "profile": "light",
+        "direction": "forward",
+        "from": 0.8,
+        "bSegments": [
+          10,
+          15
+        ]
+      },
+      {
+        "kind": "gap",
+        "a": "packet",
+        "b": "target-l-frame",
+        "min": 1.15,
+        "label": "packet / received strong",
+        "profile": "strong",
+        "direction": "forward",
+        "from": 0.3
+      },
+      {
+        "kind": "gap",
+        "a": "packet-solid",
+        "b": "target-l-solid",
+        "min": 1.15,
+        "label": "packet / received strong-solid",
+        "profile": "strong",
+        "direction": "forward",
+        "from": 0.3,
+        "bSegments": [
+          10,
+          15
+        ]
+      }
+    ],
+    "firewall": [
+      {
+        "kind": "gap",
+        "a": "arrow-head",
+        "b": "wall-frame",
+        "min": 1,
+        "label": "arrow-head / wall-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "tile-tl",
+        "min": 1,
+        "label": "arrow-head-solid / tile-tl"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "tile-tr",
+        "min": 1,
+        "label": "arrow-head-solid / tile-tr"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "tile-bl",
+        "min": 1,
+        "label": "arrow-head-solid / tile-bl"
+      },
+      {
+        "kind": "gap",
+        "a": "arrow-head-solid",
+        "b": "tile-br",
+        "min": 1,
+        "label": "arrow-head-solid / tile-br"
+      },
+      {
+        "kind": "point-joint",
+        "a": "arrow-shaft",
+        "b": "arrow-head",
+        "ai": 2,
+        "bi": 2,
+        "label": "attached arrow tip"
+      },
+      {
+        "kind": "point-joint",
+        "a": "arrow-shaft-solid",
+        "b": "arrow-head-solid",
+        "ai": 2,
+        "bi": 2,
+        "label": "attached arrow tip-solid"
+      }
+    ],
+    "usb-drive": [
+      {
+        "kind": "gap",
+        "a": "contact-a",
+        "b": "drive-frame",
+        "min": 1,
+        "label": "contact-a / drive-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-b",
+        "b": "drive-frame",
+        "min": 1,
+        "label": "contact-b / drive-frame"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-a",
+        "b": "contact-b",
+        "min": 1,
+        "label": "contact-a / contact-b"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-a",
+        "b": "junction",
+        "min": 1,
+        "label": "contact-a / junction"
+      },
+      {
+        "kind": "gap",
+        "a": "contact-b",
+        "b": "junction",
+        "min": 1,
+        "label": "contact-b / junction"
+      },
+      {
+        "kind": "attachment",
+        "a": "junction",
+        "b": "drive-frame",
+        "end": 0,
+        "label": "divider attached 0"
+      },
+      {
+        "kind": "attachment",
+        "a": "junction",
+        "b": "drive-frame",
+        "end": 1,
+        "label": "divider attached 1"
+      }
+    ]
+  },
+  "exceptions": {
+    "server": "Status holes are inside each actual unit; adjacent units remain separated.",
+    "database": "The band attaches at the cylinder walls. Top/bottom tiers are filled actual surfaces, separated by their data seam.",
+    "processor": "Each pin cap is buried within the frame stroke, so its inward tip is not exposed. Core turns within a real Solid well.",
+    "memory-chip": "Contacts join the module lower frame with buried caps; chips and slot remain separate.",
+    "hard-drive": "Commands10..14 are the actual spindle-well circle. The exporter uses a retraced zero-area seam between holes; that seam is not a painted edge and is excluded from well clearance.",
+    "ethernet": "Cable cap joins the plug base at its centerline; internal contacts have protected frame gaps.",
+    "router": "Antenna pivots coincide with the body edge; status mark is separate.",
+    "load-balancer": "Packet crosses the source floor, shared trunk and target roof during transit. It is separated from the slot boundary during prep and reception, including receiver response. The receiving branch remains embedded through the dip.",
+    "firewall": "Mortar joins its wall frame. The approaching arrow remains separate and shares its own exact head/shaft tip.",
+    "usb-drive": "The divider continues the physical shell step atx12. Its endpoints8.75/23.25 land on straight shell segments. Other contact details stay separated; Solid uses a contained seam cutout."
+  }
+}

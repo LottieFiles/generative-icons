@@ -1,0 +1,735 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 76,
+  "nativeTransformNodes": 366,
+  "nativeTransformMaxCoordinateError": 0.000010012106248069585,
+  "checks": [
+    {
+      "name": "knowledge-base",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "knowledge-base-shelf"
+        },
+        {
+          "type": "rigid",
+          "part": "knowledge-base-volume-1-frame"
+        }
+      ]
+    },
+    {
+      "name": "knowledge-base-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "knowledge-base-shelf"
+        },
+        {
+          "type": "rigid",
+          "part": "knowledge-base-volume-1-frame"
+        }
+      ]
+    },
+    {
+      "name": "semantic-search",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "semantic-search-lens-frame"
+        },
+        {
+          "type": "inside",
+          "part": "semantic-search-meaning",
+          "box": [
+            8,
+            9,
+            19,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "name": "semantic-search-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "semantic-search-lens-frame"
+        },
+        {
+          "type": "inside",
+          "part": "semantic-search-meaning",
+          "box": [
+            8,
+            9,
+            19,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "name": "citations",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "citations-mark-1-ball-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "citations-mark-2-ball-frame"
+        }
+      ]
+    },
+    {
+      "name": "citations-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "citations-mark-1-ball-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "citations-mark-2-ball-frame"
+        }
+      ]
+    },
+    {
+      "name": "embeddings",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "embeddings-axes"
+        },
+        {
+          "type": "fixed",
+          "part": "embeddings-point-1"
+        },
+        {
+          "type": "fixed",
+          "part": "embeddings-vector-1"
+        },
+        {
+          "type": "rigid",
+          "part": "embeddings-token"
+        }
+      ]
+    },
+    {
+      "name": "embeddings-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "embeddings-axes"
+        },
+        {
+          "type": "fixed",
+          "part": "embeddings-point-1"
+        },
+        {
+          "type": "fixed",
+          "part": "embeddings-vector-1"
+        },
+        {
+          "type": "rigid",
+          "part": "embeddings-token"
+        }
+      ]
+    },
+    {
+      "name": "knowledge-graph",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "knowledge-graph-hub-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "knowledge-graph-node-c-frame"
+        }
+      ]
+    },
+    {
+      "name": "knowledge-graph-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "knowledge-graph-hub-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "knowledge-graph-node-c-frame"
+        }
+      ]
+    },
+    {
+      "name": "document-chat",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "document-chat-ink",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "document-chat-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "document-chat-ink",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "source-grounding",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "source-grounding-ground1"
+        },
+        {
+          "type": "fixed",
+          "part": "source-grounding-ground3"
+        },
+        {
+          "type": "rigid",
+          "part": "source-grounding-block-frame"
+        }
+      ]
+    },
+    {
+      "name": "source-grounding-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "source-grounding-ground1"
+        },
+        {
+          "type": "fixed",
+          "part": "source-grounding-ground3"
+        },
+        {
+          "type": "rigid",
+          "part": "source-grounding-block-frame"
+        }
+      ]
+    },
+    {
+      "name": "retrieve-context",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "retrieve-context-slot-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "retrieve-context-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "retrieve-context-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "retrieve-context-slot-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "retrieve-context-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "vector-store",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "vector-store-crate-frame"
+        }
+      ]
+    },
+    {
+      "name": "vector-store-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "vector-store-crate-frame"
+        }
+      ]
+    },
+    {
+      "name": "dataset",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "dataset-table-frame-frame",
+          "measure": "height"
+        }
+      ]
+    },
+    {
+      "name": "dataset-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "monotonic",
+          "part": "dataset-table-frame-frame",
+          "measure": "height"
+        }
+      ]
+    },
+    {
+      "name": "classification",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "classification-bin-l"
+        },
+        {
+          "type": "fixed",
+          "part": "classification-bin-r"
+        },
+        {
+          "type": "rigid",
+          "part": "classification-token"
+        }
+      ]
+    },
+    {
+      "name": "classification-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "classification-bin-l"
+        },
+        {
+          "type": "fixed",
+          "part": "classification-bin-r"
+        },
+        {
+          "type": "rigid",
+          "part": "classification-token"
+        }
+      ]
+    },
+    {
+      "name": "clustering",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "clustering-ring-a-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "clustering-ring-b-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "clustering-s1"
+        }
+      ]
+    },
+    {
+      "name": "clustering-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "clustering-ring-a-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "clustering-ring-b-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "clustering-s1"
+        }
+      ]
+    },
+    {
+      "name": "entity-extraction",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "entity-extraction-l2"
+        },
+        {
+          "type": "fixed",
+          "part": "entity-extraction-l3"
+        },
+        {
+          "type": "rigid",
+          "part": "entity-extraction-pill-frame"
+        }
+      ]
+    },
+    {
+      "name": "entity-extraction-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "entity-extraction-l2"
+        },
+        {
+          "type": "fixed",
+          "part": "entity-extraction-l3"
+        },
+        {
+          "type": "rigid",
+          "part": "entity-extraction-pill-frame"
+        }
+      ]
+    },
+    {
+      "name": "fact-check",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fact-check-stamp-frame"
+        }
+      ]
+    },
+    {
+      "name": "fact-check-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fact-check-stamp-frame"
+        }
+      ]
+    },
+    {
+      "name": "source-rank",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "inside",
+          "part": "source-rank-podium-frame",
+          "box": [
+            4,
+            8,
+            28,
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "name": "source-rank-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "inside",
+          "part": "source-rank-podium-frame",
+          "box": [
+            4,
+            8,
+            28,
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "name": "index-data",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "index-data-divider-frame"
+        },
+        {
+          "type": "monotonic",
+          "part": "index-data-e1",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "index-data-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "index-data-divider-frame"
+        },
+        {
+          "type": "monotonic",
+          "part": "index-data-e1",
+          "measure": "width"
+        }
+      ]
+    },
+    {
+      "name": "deduplicate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "deduplicate-a-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "deduplicate-b-frame"
+        }
+      ]
+    },
+    {
+      "name": "deduplicate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "deduplicate-a-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "deduplicate-b-frame"
+        }
+      ]
+    },
+    {
+      "name": "data-cleaning",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "data-cleaning-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "data-cleaning-handle"
+        }
+      ]
+    },
+    {
+      "name": "data-cleaning-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "data-cleaning-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "data-cleaning-handle"
+        }
+      ]
+    },
+    {
+      "name": "context-attach",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "context-attach-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "context-attach-pin-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "context-attach-pin-needle"
+        }
+      ]
+    },
+    {
+      "name": "context-attach-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "context-attach-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "context-attach-pin-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "context-attach-pin-needle"
+        }
+      ]
+    },
+    {
+      "name": "long-term-memory",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "long-term-memory-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "long-term-memory-dial"
+        }
+      ]
+    },
+    {
+      "name": "long-term-memory-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "long-term-memory-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "long-term-memory-dial"
+        }
+      ]
+    }
+  ]
+}

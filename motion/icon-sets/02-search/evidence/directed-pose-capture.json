@@ -1,0 +1,72 @@
+{
+  "mode": "capture",
+  "batch": "public-wall-clock",
+  "date": "2026-09-09T08:42:44.639Z",
+  "times": [
+    0,
+    0.08,
+    0.16,
+    0.24,
+    0.34,
+    0.46,
+    0.62,
+    0.84,
+    1.1,
+    1.4,
+    2.35
+  ],
+  "assets": [
+    {
+      "name": "heart",
+      "set": "01",
+      "sourcePackage": "heart-strong",
+      "sha256": "506d001cd557d3c74d3542bb143f004d1e37dbf6db2d56d1fea7161e9dfab1f0",
+      "profiles": [
+        {
+          "name": "heart",
+          "sha256": "2121d96c7bed61757d531f39fee2a8c0037cfe5ab3a4652ca5df7fd71bc6f51d"
+        },
+        {
+          "name": "heart-strong",
+          "sha256": "506d001cd557d3c74d3542bb143f004d1e37dbf6db2d56d1fea7161e9dfab1f0"
+        }
+      ],
+      "image": "heart-wall-clock.png"
+    },
+    {
+      "name": "bell",
+      "set": "01",
+      "sourcePackage": "bell-strong",
+      "sha256": "2ad69c306902c661a4b639bdcc574114c6965411f3b3ca3a6d99c8c06192e612",
+      "profiles": [
+        {
+          "name": "bell",
+          "sha256": "8445e461398ceda7a74b8efdbe3b734c3d8e36fd1c32e6ea2009f81d6766af2a"
+        },
+        {
+          "name": "bell-strong",
+          "sha256": "2ad69c306902c661a4b639bdcc574114c6965411f3b3ca3a6d99c8c06192e612"
+        }
+      ],
+      "image": "bell-wall-clock.png"
+    },
+    {
+      "name": "search",
+      "set": "02",
+      "sourcePackage": "search-strong",
+      "sha256": "b5838cb0fe0884b081c0d05bf5fb981a379513e607330232116b85c51b9820cf",
+      "profiles": [
+        {
+          "name": "search",
+          "sha256": "e9f10e9136081689ac29a447f8dfd871da76c98feec2d57355925134f207a892"
+        },
+        {
+          "name": "search-strong",
+          "sha256": "b5838cb0fe0884b081c0d05bf5fb981a379513e607330232116b85c51b9820cf"
+        }
+      ],
+      "image": "search-wall-clock.png"
+    }
+  ],
+  "errors": []
+}

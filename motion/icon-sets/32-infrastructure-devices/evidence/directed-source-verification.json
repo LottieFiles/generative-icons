@@ -1,0 +1,806 @@
+{
+  "result": "PASS",
+  "icons": 10,
+  "actions": 22,
+  "nativeTransformNodes": 220,
+  "nativeTransformMaxCoordinateError": 0.000010788997132138434,
+  "checks": [
+    {
+      "name": "server",
+      "fixedParts": [
+        "server-unit-bottom-frame",
+        "server-unit-bottom-bar",
+        "server-unit-bottom-led"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "server-unit-bottom-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "server-unit-bottom-bar"
+        },
+        {
+          "type": "fixed",
+          "part": "server-unit-bottom-led"
+        },
+        {
+          "type": "rigid",
+          "part": "server-unit-top-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "server-unit-top-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "server-unit-top-led"
+        }
+      ]
+    },
+    {
+      "name": "server-strong",
+      "fixedParts": [
+        "server-unit-bottom-frame",
+        "server-unit-bottom-bar",
+        "server-unit-bottom-led"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "server-unit-bottom-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "server-unit-bottom-bar"
+        },
+        {
+          "type": "fixed",
+          "part": "server-unit-bottom-led"
+        },
+        {
+          "type": "rigid",
+          "part": "server-unit-top-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "server-unit-top-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "server-unit-top-led"
+        }
+      ]
+    },
+    {
+      "name": "database",
+      "fixedParts": [
+        "database-drum",
+        "database-cap"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "database-drum"
+        },
+        {
+          "type": "fixed",
+          "part": "database-cap"
+        },
+        {
+          "type": "rigid",
+          "part": "database-band"
+        }
+      ]
+    },
+    {
+      "name": "database-strong",
+      "fixedParts": [
+        "database-drum",
+        "database-cap"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "database-drum"
+        },
+        {
+          "type": "fixed",
+          "part": "database-cap"
+        },
+        {
+          "type": "rigid",
+          "part": "database-band"
+        }
+      ]
+    },
+    {
+      "name": "processor",
+      "fixedParts": [
+        "processor-body-frame",
+        "processor-pin-left-0",
+        "processor-pin-left-1",
+        "processor-pin-left-2",
+        "processor-pin-right-0",
+        "processor-pin-right-1",
+        "processor-pin-right-2",
+        "processor-pin-top-0",
+        "processor-pin-top-1",
+        "processor-pin-top-2",
+        "processor-pin-bottom-0",
+        "processor-pin-bottom-1",
+        "processor-pin-bottom-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "processor-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-left-0"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-left-1"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-left-2"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-right-0"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-right-1"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-right-2"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-top-0"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-top-1"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-top-2"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-bottom-0"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-bottom-1"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-bottom-2"
+        },
+        {
+          "type": "rigid",
+          "part": "processor-core"
+        }
+      ]
+    },
+    {
+      "name": "processor-strong",
+      "fixedParts": [
+        "processor-body-frame",
+        "processor-pin-left-0",
+        "processor-pin-left-1",
+        "processor-pin-left-2",
+        "processor-pin-right-0",
+        "processor-pin-right-1",
+        "processor-pin-right-2",
+        "processor-pin-top-0",
+        "processor-pin-top-1",
+        "processor-pin-top-2",
+        "processor-pin-bottom-0",
+        "processor-pin-bottom-1",
+        "processor-pin-bottom-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "processor-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-left-0"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-left-1"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-left-2"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-right-0"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-right-1"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-right-2"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-top-0"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-top-1"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-top-2"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-bottom-0"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-bottom-1"
+        },
+        {
+          "type": "fixed",
+          "part": "processor-pin-bottom-2"
+        },
+        {
+          "type": "rigid",
+          "part": "processor-core"
+        }
+      ]
+    },
+    {
+      "name": "memory-chip",
+      "fixedParts": [
+        "memory-chip-slot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "memory-chip-slot"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-module-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-chip-0"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-chip-1"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-chip-2"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-0"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-1"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-2"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-3"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-4"
+        }
+      ]
+    },
+    {
+      "name": "memory-chip-strong",
+      "fixedParts": [
+        "memory-chip-slot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "memory-chip-slot"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-module-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-chip-0"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-chip-1"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-chip-2"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-0"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-1"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-2"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-3"
+        },
+        {
+          "type": "rigid",
+          "part": "memory-chip-contact-4"
+        }
+      ]
+    },
+    {
+      "name": "hard-drive",
+      "fixedParts": [
+        "hard-drive-body-frame",
+        "hard-drive-hub",
+        "hard-drive-status-1",
+        "hard-drive-status-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "hard-drive-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "hard-drive-hub"
+        },
+        {
+          "type": "fixed",
+          "part": "hard-drive-status-1"
+        },
+        {
+          "type": "fixed",
+          "part": "hard-drive-status-2"
+        },
+        {
+          "type": "rigid",
+          "part": "hard-drive-platter"
+        },
+        {
+          "type": "rigid",
+          "part": "hard-drive-platter-solid"
+        }
+      ]
+    },
+    {
+      "name": "hard-drive-strong",
+      "fixedParts": [
+        "hard-drive-body-frame",
+        "hard-drive-hub",
+        "hard-drive-status-1",
+        "hard-drive-status-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "hard-drive-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "hard-drive-hub"
+        },
+        {
+          "type": "fixed",
+          "part": "hard-drive-status-1"
+        },
+        {
+          "type": "fixed",
+          "part": "hard-drive-status-2"
+        },
+        {
+          "type": "rigid",
+          "part": "hard-drive-platter"
+        },
+        {
+          "type": "rigid",
+          "part": "hard-drive-platter-solid"
+        }
+      ]
+    },
+    {
+      "name": "ethernet",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "ethernet-plug-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "ethernet-contact-a"
+        },
+        {
+          "type": "rigid",
+          "part": "ethernet-contact-b"
+        },
+        {
+          "type": "rigid",
+          "part": "ethernet-cable"
+        }
+      ]
+    },
+    {
+      "name": "ethernet-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "ethernet-plug-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "ethernet-contact-a"
+        },
+        {
+          "type": "rigid",
+          "part": "ethernet-contact-b"
+        },
+        {
+          "type": "rigid",
+          "part": "ethernet-cable"
+        }
+      ]
+    },
+    {
+      "name": "router",
+      "fixedParts": [
+        "router-body-frame",
+        "router-status"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "router-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "router-status"
+        },
+        {
+          "type": "rigid",
+          "part": "router-antenna-l"
+        },
+        {
+          "type": "rigid",
+          "part": "router-antenna-r"
+        }
+      ]
+    },
+    {
+      "name": "router-strong",
+      "fixedParts": [
+        "router-body-frame",
+        "router-status"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "router-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "router-status"
+        },
+        {
+          "type": "rigid",
+          "part": "router-antenna-l"
+        },
+        {
+          "type": "rigid",
+          "part": "router-antenna-r"
+        }
+      ]
+    },
+    {
+      "name": "load-balancer",
+      "fixedParts": [
+        "load-balancer-hub-frame",
+        "load-balancer-trunk",
+        "load-balancer-branch-l",
+        "load-balancer-branch-r",
+        "load-balancer-target-r-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "load-balancer-hub-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "load-balancer-trunk"
+        },
+        {
+          "type": "fixed",
+          "part": "load-balancer-branch-l"
+        },
+        {
+          "type": "fixed",
+          "part": "load-balancer-branch-r"
+        },
+        {
+          "type": "fixed",
+          "part": "load-balancer-target-r-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "load-balancer-packet"
+        },
+        {
+          "type": "rigid",
+          "part": "load-balancer-target-l-frame"
+        }
+      ]
+    },
+    {
+      "name": "load-balancer-strong",
+      "fixedParts": [
+        "load-balancer-hub-frame",
+        "load-balancer-trunk",
+        "load-balancer-branch-l",
+        "load-balancer-branch-r",
+        "load-balancer-target-r-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "load-balancer-hub-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "load-balancer-trunk"
+        },
+        {
+          "type": "fixed",
+          "part": "load-balancer-branch-l"
+        },
+        {
+          "type": "fixed",
+          "part": "load-balancer-branch-r"
+        },
+        {
+          "type": "fixed",
+          "part": "load-balancer-target-r-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "load-balancer-packet"
+        },
+        {
+          "type": "rigid",
+          "part": "load-balancer-target-l-frame"
+        }
+      ]
+    },
+    {
+      "name": "firewall",
+      "fixedParts": [
+        "firewall-wall-frame",
+        "firewall-mortar-h",
+        "firewall-mortar-top",
+        "firewall-mortar-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "firewall-wall-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "firewall-mortar-h"
+        },
+        {
+          "type": "fixed",
+          "part": "firewall-mortar-top"
+        },
+        {
+          "type": "fixed",
+          "part": "firewall-mortar-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "firewall-arrow-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "firewall-arrow-head"
+        }
+      ]
+    },
+    {
+      "name": "firewall-strong",
+      "fixedParts": [
+        "firewall-wall-frame",
+        "firewall-mortar-h",
+        "firewall-mortar-top",
+        "firewall-mortar-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "firewall-wall-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "firewall-mortar-h"
+        },
+        {
+          "type": "fixed",
+          "part": "firewall-mortar-top"
+        },
+        {
+          "type": "fixed",
+          "part": "firewall-mortar-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "firewall-arrow-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "firewall-arrow-head"
+        }
+      ]
+    },
+    {
+      "name": "usb-drive",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "usb-drive-drive-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "usb-drive-junction"
+        },
+        {
+          "type": "rigid",
+          "part": "usb-drive-contact-a"
+        },
+        {
+          "type": "rigid",
+          "part": "usb-drive-contact-b"
+        }
+      ]
+    },
+    {
+      "name": "usb-drive-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "usb-drive-drive-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "usb-drive-junction"
+        },
+        {
+          "type": "rigid",
+          "part": "usb-drive-contact-a"
+        },
+        {
+          "type": "rigid",
+          "part": "usb-drive-contact-b"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

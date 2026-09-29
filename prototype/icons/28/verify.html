@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tables & analytics icons — renderer verification</title>
+    <style>
+      body {
+        font: 14px system-ui;
+        background: #0b0f14;
+        color: #f6f8fb;
+        margin: 30px;
+      }
+      button,
+      a {
+        font: inherit;
+        color: #00ddb3;
+      }
+      button {
+        padding: 12px 18px;
+        background: #142b27;
+        border: 1px solid #2c6558;
+        border-radius: 5px;
+      }
+      #stage {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      canvas {
+        display: block;
+      }
+      #images {
+        display: grid;
+        gap: 20px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        background: #10171d;
+      }
+      pre {
+        white-space: pre-wrap;
+        max-height: 500px;
+        overflow: auto;
+        font-size: 11px;
+      }
+      h2 {
+        font-size: 15px;
+      }
+    body.verifying #images, body.verifying #report { display: none; }
+    </style>
+  </head>
+  <body>
+    <h1>Tables & analytics — native Lottie verification</h1>
+    <button id="run">Run verification</button>
+    <p role="status" id="status">Ready</p>
+    <div id="stage"></div>
+    <div id="images"></div>
+    <pre id="report"></pre>
+    <script type="module">
+      import { DotLottie } from "../../vendor/dotlottie-web.js";
+      import {IconController} from "../03/controller.mjs?v=viewport-suspension-1";
+      DotLottie.setWasmUrl(
+        new URL("../../vendor/dotlottie-player.wasm", location.href).href,
+      );
+      let context = "";
+      const check = (test, message) => {
+        if (!test) throw new Error(context + " — " + message);
+      };
+      const hash = (b) => {
+        let n = 2166136261;
+        for (let i = 0; i < b.length; i++) n = Math.imul(n ^ b[i], 16777619);
+        return n >>> 0;
+      };
+      // Symmetric vector rotations can change antialias coverage by a fraction
+      // of a pixel. This exception is only available to declared cyclic shapes.
+      const rasterDifference=(a,b)=>{let sum=0;for(let i=0;i<a.length;i+=4){const aa=a[i+3],ba=b[i+3];sum+=Math.abs(aa-ba);for(let c=0;c<3;c++)sum+=Math.abs(a[i+c]*aa-b[i+c]*ba)/255;}return sum/(255*a.length);};
+      const equivalent=(a,b,cyclic)=>hash(a)===hash(b)||(cyclic&&rasterDifference(a,b)<.002);
+      const yieldFrame = () =>
+        new Promise(resolve=>{const channel=new MessageChannel();channel.port1.onmessage=()=>{channel.port1.close();channel.port2.close();resolve();};channel.port2.postMessage(0);});
+      function pixels(buffer, width) {
+        let n = 0,
+          left = width,
+          top = width,
+          right = -1,
+          bottom = -1;
+        for (let i = 3; i < buffer.length; i += 4)
+          if (buffer[i] > 8) {
+            const p = (i - 3) / 4,
+              x = p % width,
+              y = Math.floor(p / width);
+            n++;
+            left = Math.min(left, x);
+            top = Math.min(top, y);
+            right = Math.max(right, x);
+            bottom = Math.max(bottom, y);
+          }
+        return { n, left, top, right, bottom };
+      }
+      // Count enclosed transparent regions in the actual raster, independently
+      // of the authored paths. This catches a lower layer painting through a hole.
+      function counters(buffer, size, minimumArea = 4) {
+        const seen = new Uint8Array(size * size), queue = new Int32Array(size * size);
+        let total = 0;
+        for (let first = 0; first < seen.length; first++) {
+          if (seen[first] || buffer[first * 4 + 3] >= 32) continue;
+          let head = 0, tail = 1, edge = false;
+          queue[0] = first; seen[first] = 1;
+          while (head < tail) {
+            const p = queue[head++], x = p % size, y = Math.floor(p / size);
+            if (!x || !y || x === size - 1 || y === size - 1) edge = true;
+            for (const next of [x ? p - 1 : -1, x < size - 1 ? p + 1 : -1, y ? p - size : -1, y < size - 1 ? p + size : -1]) {
+              if (next >= 0 && !seen[next] && buffer[next * 4 + 3] < 32) { seen[next] = 1; queue[tail++] = next; }
+            }
+          }
+          if (!edge && tail >= minimumArea) total++;
+        }
+        return total;
+      }
+      function bindStyle(player, style, width = 2) {
+        for (const [name, value] of [["light",1.5],["regular",2],["bold",2.5]])
+          check(player.setScalarSlot(`style.outline.${name}`, style !== "solid" && width === value ? 100 : 0), `Weight paint rejected: ${name}`);
+        check(player.setScalarSlot("style.solid", style === "solid" ? 100 : 0), "Solid slot rejected");
+        check(player.setScalarSlot("style.tint", style === "duotone" ? 18 : 0), "Tint slot rejected");
+      }
+      function download(name, canvas) {
+        const section = document.createElement("section"),
+          title = document.createElement("h2"),
+          img = document.createElement("img"),
+          link = document.createElement("a");
+        title.textContent = name;
+        img.src = canvas.toDataURL();
+        img.alt = name;
+        link.href = img.src;
+        link.download = name;
+        link.textContent = "Download " + name;
+        section.append(title, img, link);
+        document.querySelector("#images").append(section);
+      }
+      async function playerFor(data, size) {
+        const canvas = document.createElement("canvas");
+        canvas.width = size;
+        canvas.height = size;
+        canvas.style.width = size + "px";
+        canvas.style.height = size + "px";
+        document.querySelector("#stage").append(canvas);
+        const player = new DotLottie({
+          canvas,
+          data,
+          autoplay: false,
+          loop: false,
+          useFrameInterpolation: false,
+          renderConfig: {
+            autoResize: false,
+            devicePixelRatio: 1,
+            freezeOnOffscreen: false,
+          },
+        });
+        await new Promise((resolve, reject) => {
+          const timer = setTimeout(
+            () => reject(new Error("Load timeout")),
+            15000,
+          );
+          player.addEventListener("load", () => {
+            clearTimeout(timer);
+            resolve();
+          });
+          player.addEventListener("loadError", () => {
+            clearTimeout(timer);
+            reject(new Error("Load error"));
+          });
+        });
+        check(canvas.width===size && canvas.height===size && canvas.getBoundingClientRect().width===size && canvas.getBoundingClientRect().height===size,"CSS/native size mismatch");
+        return { canvas, player };
+      }
+      
+      async function publicAuditNext() {}
+
+      document.querySelector("#run").addEventListener("click", async () => {
+        const button = document.querySelector("#run"),
+          status = document.querySelector("#status"),
+          display = document.querySelector("#report");
+        button.disabled = true;
+        document.body.classList.add("verifying");
+        const report = {
+          date: new Date().toISOString(),
+          batch: new URLSearchParams(location.search).get("batch")||"",
+          runtime: "@lottiefiles/dotlottie-web@0.80.0",
+          assets: [],
+          errors: [],
+        };
+        try {
+          const set = await fetch("./assets/set.json?v=2", { cache: "no-store" }).then((r) => r.json());
+          const only = new URLSearchParams(location.search).get("icons")?.split(",");
+          const onlyActions = new URLSearchParams(location.search).get("actions")?.split(",");
+          for (const meta of set.icons.filter(icon => !only || only.includes(icon.name)).flatMap(icon => icon.animations).filter(action => !onlyActions || onlyActions.includes(action.name))) {
+            context=meta.name; const livePlayers=[];
+            report.checking=meta.name;
+            if(location.port==="4191")await fetch("/_verification",{method:"POST",body:JSON.stringify({set:"28",report})});
+            try {
+            const data = await fetch("./assets/" + meta.name + ".lottie?v=" + meta.sha256, { cache: "no-store" }).then(
+              (r) => r.arrayBuffer(),
+            );
+            const result = {
+              name: meta.name,
+              sha256: meta.sha256,
+              sizes: [],
+              colorOverrides: [],
+              playback: null,
+              motionId: meta.motionId,
+            };
+            for (const size of [24, 32, 48, 192]) {
+              const { canvas, player } = await playerFor(data, size); livePlayers.push({canvas,player});
+              player.addEventListener("renderError", (error) =>
+                report.errors.push({ name: meta.name, error: String(error) }),
+              );
+              check(player.totalFrames === meta.frames, "Frame count");
+              check(player.activeAnimationId === meta.name, 'Download starts with the selected motion');
+              if (size === 192) {
+                result.motionSwitches = [];
+                const family = set.icons.find(icon => icon.name === meta.icon);
+                for (const theme of ['dark','light']) for (const style of meta.styles) {
+                  const rests = [], actions = [];
+                  for (const variant of family.motions) {
+                    player.loadAnimation(variant.name);
+                    check(player.activeAnimationId === variant.name, 'Motion switch rejected');
+                    check(player.setTheme(theme), 'Variant theme rejected');
+                    bindStyle(player,style);
+                    player.setSegment(0,variant.frames-1);
+                    player.setFrame(variant.rest); rests.push(Uint8Array.from(player.buffer));
+                    const actionFrames=[];
+                    for(let f=0;f<=Math.ceil(Math.max(...family.motions.map(m=>m.active))*meta.fps);f+=3){player.setFrame(f);actionFrames.push(hash(player.buffer));}
+                    actions.push(actionFrames.join('|'));
+                  }
+                  if(!meta.continuous)check(equivalent(rests[0],rests[1],meta.cycleDegrees), 'Motion variants change the rest drawing');
+                  else check(rests.every(b=>pixels(b,192).n>0),'Continuous rest pose is empty');
+                  check(actions[0] !== actions[1], 'Motion variants have identical action pixels');
+                  result.motionSwitches.push({theme,style,sharedRest:!meta.continuous,readableRest:true,restRasterDifference:rasterDifference(rests[0],rests[1]),distinctAction:true});
+                }
+                if(family.stateful){
+                  result.stateContinuity=[];
+                  for(const variant of family.motions)for(const style of meta.styles){
+                    const stateHashes=[];
+                    for(const action of [variant,variant.reverse]){
+                      player.loadAnimation(action.name);player.setTheme('dark');bindStyle(player,style);player.setSegment(0,action.frames-1);
+                      player.setFrame(0);const first=hash(player.buffer);player.setFrame(action.rest);stateHashes.push([first,hash(player.buffer)]);
+                    }
+                    check(stateHashes[0][0]===stateHashes[1][1]&&stateHashes[0][1]===stateHashes[1][0],'Forward and reverse states do not meet');
+                    result.stateContinuity.push({motion:variant.motionId,style,matched:true});
+                  }
+                }
+                player.loadAnimation(meta.name);
+                player.setSegment(0,meta.frames-1);
+              }
+              const sample = { size, themes: [] };
+              const paintSequences=new Map();
+              for (const style of meta.styles) for (const width of style === "solid" ? [2] : [1.5, 2, 2.5]) for (const theme of ["dark", "light"]) {
+                status.textContent = `Checking ${meta.name} / ${style} / ${width} / ${size} px / ${theme}`;
+                report.checking=status.textContent;
+                check(player.setTheme(theme), "Theme rejected");
+                bindStyle(player, style, width);
+                context = `${meta.name} / ${style} / ${width} / ${size} / ${theme}`;
+                const hashes = [],
+                  bounds = [];
+                let firstBuffer,previousBuffer,previousHash,maxAdjacentDifference=0,wrapDifference=0,maxStillRun=0,stillRun=0;
+                for (let frame = 0; frame < meta.frames; frame++) {
+                  player.setFrame(frame);
+                  const buffer = player.buffer;
+                  const currentHash=hash(buffer);stillRun=currentHash===previousHash?stillRun+1:0;maxStillRun=Math.max(maxStillRun,stillRun);previousHash=currentHash;
+                  if(previousBuffer)maxAdjacentDifference=Math.max(maxAdjacentDifference,rasterDifference(previousBuffer,buffer));previousBuffer=Uint8Array.from(buffer);
+                  if(frame===0)firstBuffer=Uint8Array.from(buffer);
+                  check(buffer?.length === size * size * 4, "Buffer size");
+                  if (size >= 32 && size <= 48 && ['percentage','heatmap','radar-chart'].includes(meta.icon) && style !== 'duotone') {
+                    const minimum=meta.icon==='percentage'?2:meta.icon==='heatmap'?5:1;
+                    const count=counters(buffer,size,1);
+                    check(count>=minimum,meta.icon+' loses a native opening at frame '+frame+' / '+size+'px');
+                    result.minimumNativeCounters=Math.min(result.minimumNativeCounters??Infinity,count);
+                  }
+                  if (meta.icon === 'keyframes' && style === 'outline') {
+                    // Test the actual openings, including the rail-clearance
+                    // interval. Alpha at the diamond center must stay low at
+                    // 24 px as well as at review size; no source-width proxy.
+                    const centers = [10.5];
+                    if (meta.direction === 'forward' && frame >= (meta.motionId === 'strong' ? 30 : 14)) centers.push(21.5);
+                    for (const x of centers) {
+                      const alpha = buffer[(Math.floor(20 * size / 32) * size + Math.floor(x * size / 32)) * 4 + 3];
+                      check(alpha < 96, 'Rail or stroke closes a keyframe counter');
+                      result.maximumCounterCenterAlpha = Math.max(result.maximumCounterCenterAlpha ?? 0, alpha);
+                    }
+                    if (size >= 32 && meta.direction === 'forward') {
+                      const settled = frame >= (meta.motionId === 'strong' ? 38 : 21);
+                      // A Bold diamond at 32 px has a real opening smaller than four pixels.
+                      check(counters(buffer, size, size === 32 ? 1 : 4) >= (settled ? 2 : 1), 'Missing enclosed keyframe opening at frame ' + frame);
+                    }
+                  }
+                  if (size === 192 && style === 'solid' && ['credit-card','wallet'].includes(meta.icon)) {
+                    const count = counters(buffer, size);
+                    check(count >= 2, 'An enclosed Solid detail is painted over: ' + meta.name);
+                    result.minimumSolidCounters = Math.min(result.minimumSolidCounters ?? Infinity, count);
+                  }
+                  const b = pixels(buffer, size);
+                  check(b.n > 0 || (meta.previewReset && meta.direction === "reverse"), "Invisible main action");
+                  check(
+                    (b.n === 0 || (b.left > 0 &&
+                      b.top > 0 &&
+                      b.right < size - 1 &&
+                      b.bottom < size - 1)),
+                    "Clipped icon",
+                  );
+                  bounds.push(b);
+                  hashes.push(hash(buffer));
+                  if (frame % 48 === 0) await yieldFrame();
+                }
+                paintSequences.set(`${style}/${width}/${theme}`,hashes);
+                player.setFrame(meta.rest);
+                const restHash = hash(player.buffer);
+                if(meta.continuous){
+                  wrapDifference=rasterDifference(previousBuffer,firstBuffer);
+                  check(wrapDifference<=maxAdjacentDifference*1.5+.0005,'Discontinuous loop boundary');
+                  check(maxStillRun<5,'Continuous media indicator pauses');
+                  check(new Set(hashes).size>=32,'Insufficient continuous motion');
+                } else {
+                check(
+                  hashes.at(-1) === restHash && (meta.stateful ? hashes[0] !== restHash : equivalent(firstBuffer,player.buffer,meta.cycleDegrees)),
+                  "Loop or state boundary is incorrect (premultiplied raster difference: "+rasterDifference(firstBuffer,player.buffer)+")",
+                );
+                check(
+                  new Set(hashes).size >= (meta.previewReset && meta.direction === "reverse" ? 4 : ({"image-caption":12,"code-generate":10}[meta.icon] ?? Math.min(16, Math.max(6,Math.floor(meta.active*meta.fps*.5))))),
+                  "Insufficient animation states: "+new Set(hashes).size,
+                );
+                check(
+                  hashes
+                    .slice(Math.ceil(meta.rest))
+                    .every((value) => value === restHash),
+                  "Hold is not still",
+                );
+                }
+                sample.themes.push({
+                  theme, style, width,
+                  frames: hashes.length,
+                  distinctFrames: new Set(hashes).size,
+                  restHash,
+                  boundaryRasterDifference:rasterDifference(firstBuffer,player.buffer),
+                  restPixels: pixels(player.buffer, size).n,
+                  minimumEdgeClearance: Math.min(
+                    ...bounds.flatMap((b) => [
+                      b.left,
+                      b.top,
+                      size - 1 - b.right,
+                      size - 1 - b.bottom,
+                    ]),
+                  ),
+                  continuous:!!meta.continuous,wrapDifference,maxAdjacentDifference,maxStillRun,
+                  loopBoundaryMatches: !meta.stateful,
+                  finalStateHeld: !meta.continuous,
+                  holdIsStill: !meta.continuous,
+                });
+              }
+              // Compare the entire native action: an enclosed surface can leave the
+              // final frame (for example Background Remove) without becoming an open icon.
+              for(const width of [1.5,2,2.5])for(const theme of ['dark','light']){
+                const a=paintSequences.get(`outline/${width}/${theme}`),b=paintSequences.get(`duotone/${width}/${theme}`);
+                const changed=a.some((h,i)=>h!==b[i]);
+                check(meta.duotoneFill===false?!changed:changed,'Duotone policy disagrees with the full action');
+              }
+              result.duotoneWholeActionChecked=true;
+              result.sizes.push(sample);
+              if (size === 192) {
+                for (const style of meta.styles) for (const theme of ["dark", "light"]) {
+                  player.clearSlots();
+                  player.setTheme(theme);
+                  bindStyle(player, style);
+                  player.setFrame(meta.rest);
+                  const before = hash(player.buffer);
+                  const rgba =
+                    theme === "dark"
+                      ? [0.35, 0.89, 0.91, 1]
+                      : [0.03, 0.49, 0.53, 1];
+                  check(
+                    player.setColorSlot("color.primary", rgba),
+                    "Color override rejected",
+                  );
+                  player.setFrame(meta.rest);
+                  check(
+                    before !== hash(player.buffer),
+                    "Color override has no visible effect",
+                  );
+                  result.colorOverrides.push({ theme, style, changedPixels: true });
+                }
+                player.clearSlots();
+                player.setTheme("dark");
+                bindStyle(player, "outline");
+                player.setFrame(meta.rest);
+                const styleHashes = [];
+                const comparison = document.createElement("canvas");
+                comparison.width = 192 * 5;
+                comparison.height = 224;
+                const compare = comparison.getContext("2d");
+                compare.fillStyle = "#10171d";
+                compare.fillRect(0, 0, comparison.width, comparison.height);
+                compare.font = "12px monospace";
+                compare.textAlign = "center";
+                const views = [["outline",1.5,"Light"],["outline",2,"Regular"],["outline",2.5,"Bold"],["solid",2,"Solid"],["duotone",2,"Duotone"]];
+                // Output resets end at the filled source anchor. Stroke weights
+                // are compared at their complete start drawing; the whole reset
+                // action above is still checked for every style and every frame.
+                const styleProbeFrame = meta.previewReset && meta.direction === 'reverse' ? 0 : meta.rest;
+                for (const [i, [style, width, label]] of views.entries()) {
+                  bindStyle(player, style, width);
+                  player.setFrame(styleProbeFrame);
+                  styleHashes.push(hash(player.buffer));
+                  compare.drawImage(canvas, i * 192, 0);
+                  compare.fillStyle = "#a5b1bc";
+                  compare.fillText(label, i * 192 + 96, 209);
+                }
+                compare.fillStyle = '#10171d'; compare.fillRect(0,192,comparison.width,32);
+                compare.fillStyle = '#a5b1bc'; compare.font = '12px monospace';
+                for (const [i,view] of views.entries()) compare.fillText(view[2],i*192+96,209);
+                check(new Set(styleHashes.slice(0,4)).size === 4, `Style or weight has no visible effect: ${JSON.stringify(views.map((v,i)=>({view:v,hash:styleHashes[i]})))}`);
+                check(meta.duotoneFill !== false || styleHashes[4] === styleHashes[1], 'Open icon has a final-frame tint');
+                result.duotoneFill = meta.duotoneFill !== false;
+                result.styleAndWeightDistinct = true;
+                result.styleProbeFrame = styleProbeFrame;
+                download(meta.name + "-styles.png", comparison);
+                bindStyle(player, "outline");
+                player.setFrame(meta.rest);
+                const rest = document.createElement("canvas");
+                rest.width = 192;
+                rest.height = 192;
+                rest.getContext("2d").drawImage(canvas, 0, 0);
+                download(meta.name + "-rest.png", rest);
+                const strip = document.createElement("canvas");
+                strip.width = meta.keyPoses.length * 128;
+                strip.height = 158;
+                const ctx = strip.getContext("2d");
+                ctx.fillStyle = "#10171d";
+                ctx.fillRect(0, 0, strip.width, strip.height);
+                ctx.font = "11px monospace";
+                ctx.textAlign = "center";
+                for (const [index, time] of meta.keyPoses.entries()) {
+                  player.setFrame(time * 60);
+                  ctx.drawImage(canvas, index * 128, 0, 128, 128);
+                  ctx.fillStyle = "#a5b1bc";
+                  ctx.fillText(time.toFixed(3) + " s", index * 128 + 64, 146);
+                }
+                ctx.fillStyle = '#10171d'; ctx.fillRect(0,128,strip.width,30);
+                ctx.fillStyle = '#a5b1bc'; ctx.font = '11px monospace';
+                for (const [i,time] of meta.keyPoses.entries()) ctx.fillText(time.toFixed(3)+' s',i*128+64,146);
+                download(meta.name + "-poses.png", strip);
+                // Run the actual player clock and measure the observed frame events. This
+                // proves completion behavior, not a refresh-rate or dropped-frame benchmark.
+                const seen = [];
+                const onFrame = (e) => seen.push(e.currentFrame);
+                player.addEventListener("frame", onFrame);
+                let wraps=0;
+                if(meta.continuous){
+
+                const onLoop=()=>wraps++;
+                player.addEventListener('loop',onLoop);
+                const family=set.icons.find(i=>i.name===meta.icon);
+                const controller=new IconController(family,[player],{profile:meta.motionId,paint:p=>{p.setTheme('dark');bindStyle(p,'outline');}});
+                controller.setSpeed(1);
+                let timer;
+                await Promise.race([
+                  controller.play('forward',{repeat:()=>wraps<2}),
+                  new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('Native controller loop timeout')),9000);})
+                ]).finally(()=>clearTimeout(timer));
+                check(!controller.running&&player.currentFrame===0,'Native loader fails to finish at its rest pose');
+                player.removeEventListener('loop',onLoop);
+                controller.cancel();player.setSpeed(1);
+                }else{
+                player.setSegment(0, Math.ceil(meta.active * 60));
+                player.setFrame(0);
+                await new Promise((resolve, reject) => {
+                  const timer = setTimeout(
+                    () => reject(new Error("Playback completion timeout")),
+                    5000,
+                  );
+                  player.addEventListener("complete", () => {
+                    clearTimeout(timer);
+                    resolve();
+                  });
+                  player.play();
+                });
+                }
+                player.removeEventListener("frame", onFrame);
+                player.pause();
+                check(seen.length > 5, "No real playback progression");
+                result.playback = {
+                  completed: true, speed:1, nativeLoopEvents:wraps,
+                  observedFrameEvents: seen.length,
+                  lastFrame: seen.at(-1),
+                };
+              }
+              player.destroy();
+              canvas.remove();
+              livePlayers.splice(livePlayers.findIndex(item=>item.player===player),1);
+            }
+            report.assets.push(result);
+            } catch(error) {report.errors.push({name:meta.name,message:String(error)});}
+            finally {for(const {canvas,player} of livePlayers){player.destroy();canvas.remove();}}
+            display.textContent = JSON.stringify(report, null, 2);
+            if(location.port==="4191")await fetch("/_verification",{method:"POST",body:JSON.stringify({set:"28",report,images:Array.from(document.querySelectorAll("#images img")).map(i=>({name:i.alt,data:i.src}))})});
+          }
+          check(report.errors.length === 0, "Renderer errors");
+          report.result = "PASS";
+          status.textContent =
+            `PASS — ${report.assets.length} actions, all styles, weights, sizes, themes, and native playback`;
+        } catch (error) {
+          report.result = "FAIL";
+          report.errors.push({ message: String(error) });
+          status.textContent = "FAIL — " + error.message;
+        }
+        display.textContent = JSON.stringify(report, null, 2);
+            if(location.port==="4191")await fetch("/_verification",{method:"POST",body:JSON.stringify({set:"28",report,images:Array.from(document.querySelectorAll("#images img")).map(i=>({name:i.alt,data:i.src}))})});
+        document.body.classList.remove("verifying");
+        await publicAuditNext();
+      });
+      if(new URLSearchParams(location.search).get('autostart')==='1')document.querySelector('#run').click();
+    </script>
+  </body>
+</html>

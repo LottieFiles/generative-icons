@@ -1,0 +1,550 @@
+{
+  "result": "PASS",
+  "icons": 9,
+  "actions": 22,
+  "nativeTransformNodes": 158,
+  "nativeTransformMaxCoordinateError": 0.000011377123968259184,
+  "checks": [
+    {
+      "name": "inbox",
+      "fixedParts": [
+        "inbox-walls",
+        "inbox-shelf"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "inbox-walls"
+        },
+        {
+          "type": "fixed",
+          "part": "inbox-shelf"
+        },
+        {
+          "type": "rigid",
+          "part": "inbox-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "inbox-strong",
+      "fixedParts": [
+        "inbox-walls",
+        "inbox-shelf"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "inbox-walls"
+        },
+        {
+          "type": "fixed",
+          "part": "inbox-shelf"
+        },
+        {
+          "type": "rigid",
+          "part": "inbox-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "address-book",
+      "fixedParts": [
+        "address-book-cover-frame",
+        "address-book-ring-top",
+        "address-book-ring-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "address-book-cover-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "address-book-ring-top"
+        },
+        {
+          "type": "fixed",
+          "part": "address-book-ring-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "address-book-head"
+        },
+        {
+          "type": "rigid",
+          "part": "address-book-shoulders"
+        }
+      ]
+    },
+    {
+      "name": "address-book-strong",
+      "fixedParts": [
+        "address-book-cover-frame",
+        "address-book-ring-top",
+        "address-book-ring-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "address-book-cover-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "address-book-ring-top"
+        },
+        {
+          "type": "fixed",
+          "part": "address-book-ring-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "address-book-head"
+        },
+        {
+          "type": "rigid",
+          "part": "address-book-shoulders"
+        }
+      ]
+    },
+    {
+      "name": "voicemail",
+      "fixedParts": [
+        "voicemail-tape"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voicemail-tape"
+        },
+        {
+          "type": "rigid",
+          "part": "voicemail-reel-left-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "voicemail-reel-left-mark"
+        },
+        {
+          "type": "rigid",
+          "part": "voicemail-reel-right-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "voicemail-reel-right-mark"
+        }
+      ]
+    },
+    {
+      "name": "voicemail-strong",
+      "fixedParts": [
+        "voicemail-tape"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voicemail-tape"
+        },
+        {
+          "type": "rigid",
+          "part": "voicemail-reel-left-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "voicemail-reel-left-mark"
+        },
+        {
+          "type": "rigid",
+          "part": "voicemail-reel-right-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "voicemail-reel-right-mark"
+        }
+      ]
+    },
+    {
+      "name": "transfer-call",
+      "fixedParts": [
+        "transfer-call-route",
+        "transfer-call-head"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "transfer-call-route"
+        },
+        {
+          "type": "fixed",
+          "part": "transfer-call-head"
+        },
+        {
+          "type": "rigid",
+          "part": "transfer-call-call"
+        },
+        {
+          "type": "rigid",
+          "part": "transfer-call-bowl"
+        },
+        {
+          "type": "rigid",
+          "part": "transfer-call-mouth"
+        },
+        {
+          "type": "rigid",
+          "part": "transfer-call-ear"
+        }
+      ]
+    },
+    {
+      "name": "transfer-call-strong",
+      "fixedParts": [
+        "transfer-call-route",
+        "transfer-call-head"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "transfer-call-route"
+        },
+        {
+          "type": "fixed",
+          "part": "transfer-call-head"
+        },
+        {
+          "type": "rigid",
+          "part": "transfer-call-call"
+        },
+        {
+          "type": "rigid",
+          "part": "transfer-call-bowl"
+        },
+        {
+          "type": "rigid",
+          "part": "transfer-call-mouth"
+        },
+        {
+          "type": "rigid",
+          "part": "transfer-call-ear"
+        }
+      ]
+    },
+    {
+      "name": "dial-pad",
+      "fixedParts": [
+        "dial-pad-key-0-0",
+        "dial-pad-key-0-1",
+        "dial-pad-key-0-2",
+        "dial-pad-key-1-0",
+        "dial-pad-key-1-2",
+        "dial-pad-key-2-0",
+        "dial-pad-key-2-2",
+        "dial-pad-key-3-0",
+        "dial-pad-key-3-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-0-0"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-0-1"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-0-2"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-1-0"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-1-2"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-2-0"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-2-2"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-3-0"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-3-2"
+        },
+        {
+          "type": "rigid",
+          "part": "dial-pad-key-1-1"
+        },
+        {
+          "type": "rigid",
+          "part": "dial-pad-key-2-1"
+        },
+        {
+          "type": "rigid",
+          "part": "dial-pad-key-3-1"
+        }
+      ]
+    },
+    {
+      "name": "dial-pad-strong",
+      "fixedParts": [
+        "dial-pad-key-0-0",
+        "dial-pad-key-0-1",
+        "dial-pad-key-0-2",
+        "dial-pad-key-1-0",
+        "dial-pad-key-1-2",
+        "dial-pad-key-2-0",
+        "dial-pad-key-2-2",
+        "dial-pad-key-3-0",
+        "dial-pad-key-3-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-0-0"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-0-1"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-0-2"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-1-0"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-1-2"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-2-0"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-2-2"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-3-0"
+        },
+        {
+          "type": "fixed",
+          "part": "dial-pad-key-3-2"
+        },
+        {
+          "type": "rigid",
+          "part": "dial-pad-key-1-1"
+        },
+        {
+          "type": "rigid",
+          "part": "dial-pad-key-2-1"
+        },
+        {
+          "type": "rigid",
+          "part": "dial-pad-key-3-1"
+        }
+      ]
+    },
+    {
+      "name": "emoji-picker",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "emoji-picker-face-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "emoji-picker-eye-l"
+        },
+        {
+          "type": "rigid",
+          "part": "emoji-picker-eye-r"
+        }
+      ]
+    },
+    {
+      "name": "emoji-picker-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "emoji-picker-face-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "emoji-picker-eye-l"
+        },
+        {
+          "type": "rigid",
+          "part": "emoji-picker-eye-r"
+        }
+      ]
+    },
+    {
+      "name": "thumbs-up-down",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "thumbs-up-down-hand-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "thumbs-up-down-cuff"
+        }
+      ]
+    },
+    {
+      "name": "thumbs-up-down-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "thumbs-up-down-hand-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "thumbs-up-down-cuff"
+        }
+      ]
+    },
+    {
+      "name": "rss-feed",
+      "fixedParts": [
+        "rss-feed-dot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rss-feed-dot"
+        }
+      ]
+    },
+    {
+      "name": "rss-feed-strong",
+      "fixedParts": [
+        "rss-feed-dot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rss-feed-dot"
+        }
+      ]
+    },
+    {
+      "name": "announcement",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "announcement-horn-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "announcement-handle"
+        }
+      ]
+    },
+    {
+      "name": "announcement-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "announcement-horn-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "announcement-handle"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

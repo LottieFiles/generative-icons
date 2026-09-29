@@ -1,0 +1,488 @@
+{
+  "version": 1,
+  "scope": "All new everyday-control actions at Bold and Solid paint widths",
+  "icons": {
+    "add-remove": [],
+    "close": [],
+    "undo-redo": [
+      {
+        "kind": "self-gap",
+        "a": "head",
+        "ai": 2,
+        "b": "stem",
+        "bi": 3,
+        "min": 1.15,
+        "label": "inner arrow barb / bend False"
+      },
+      {
+        "kind": "self-gap",
+        "a": "head-solid",
+        "ai": 2,
+        "b": "stem-solid",
+        "bi": 3,
+        "min": 1.15,
+        "label": "inner arrow barb / bend True"
+      }
+    ],
+    "more-options": [
+      {
+        "kind": "gap",
+        "a": "dot-1",
+        "b": "dot-2",
+        "label": "ellipsis 1/2 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2",
+        "b": "dot-3",
+        "label": "ellipsis 2/3 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-1-solid",
+        "b": "dot-2-solid",
+        "label": "ellipsis 1/2 True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-2-solid",
+        "b": "dot-3-solid",
+        "label": "ellipsis 2/3 True",
+        "min": 1.15
+      }
+    ],
+    "external-link": [
+      {
+        "kind": "gap",
+        "a": "frame",
+        "b": "head",
+        "label": "head / frame False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "frame",
+        "b": "shaft",
+        "label": "shaft / frame False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "frame-solid",
+        "b": "head-solid",
+        "label": "head / frame True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "frame-solid",
+        "b": "shaft-solid",
+        "label": "shaft / frame True",
+        "min": 1.15
+      }
+    ],
+    "share": [],
+    "cut": [
+      {
+        "kind": "gap",
+        "a": "blade-a",
+        "b": "blade-b",
+        "label": "scissor ring opening False",
+        "min": 1.15,
+        "aCommands": 5,
+        "bCommands": 5
+      },
+      {
+        "kind": "gap",
+        "a": "blade-a-solid",
+        "b": "blade-b-solid",
+        "label": "scissor ring opening True",
+        "min": 1.15,
+        "aCommands": 5,
+        "bCommands": 5
+      }
+    ],
+    "paste": [
+      {
+        "kind": "gap",
+        "a": "sheet-frame",
+        "b": "board",
+        "label": "sheet / board False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "sheet-frame",
+        "b": "clip-frame",
+        "label": "sheet / clip False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "sheet-solid",
+        "b": "board-solid",
+        "label": "sheet / board True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "sheet-solid",
+        "b": "clip-solid",
+        "label": "sheet / clip True",
+        "min": 1.15
+      }
+    ],
+    "zoom-in-out": [],
+    "select-all": [
+      {
+        "kind": "gap",
+        "a": "tile-0-frame",
+        "b": "marquee",
+        "label": "selection / tile 0 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "tile-1-frame",
+        "b": "marquee",
+        "label": "selection / tile 1 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "tile-2-frame",
+        "b": "marquee",
+        "label": "selection / tile 2 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "tile-3-frame",
+        "b": "marquee",
+        "label": "selection / tile 3 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "tile-0-solid",
+        "b": "marquee-solid",
+        "label": "selection / tile 0 True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "tile-1-solid",
+        "b": "marquee-solid",
+        "label": "selection / tile 1 True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "tile-2-solid",
+        "b": "marquee-solid",
+        "label": "selection / tile 2 True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "tile-3-solid",
+        "b": "marquee-solid",
+        "label": "selection / tile 3 True",
+        "min": 1.15
+      }
+    ],
+    "move-tool": [],
+    "grid-list-view": [
+      {
+        "kind": "gap",
+        "a": "tl-frame",
+        "b": "tr-frame",
+        "min": 1.15,
+        "label": "grid/list tl/tr False"
+      },
+      {
+        "kind": "gap",
+        "a": "tl-frame",
+        "b": "bl-frame",
+        "min": 1.15,
+        "label": "grid/list tl/bl False"
+      },
+      {
+        "kind": "gap",
+        "a": "tl-frame",
+        "b": "br-frame",
+        "min": 1.15,
+        "label": "grid/list tl/br False"
+      },
+      {
+        "kind": "gap",
+        "a": "tr-frame",
+        "b": "bl-frame",
+        "min": 1.15,
+        "label": "grid/list tr/bl False"
+      },
+      {
+        "kind": "gap",
+        "a": "tr-frame",
+        "b": "br-frame",
+        "min": 1.15,
+        "label": "grid/list tr/br False"
+      },
+      {
+        "kind": "gap",
+        "a": "bl-frame",
+        "b": "br-frame",
+        "min": 1.15,
+        "label": "grid/list bl/br False"
+      },
+      {
+        "kind": "gap",
+        "a": "tl-solid",
+        "b": "tr-solid",
+        "min": 1.15,
+        "label": "grid/list tl/tr True"
+      },
+      {
+        "kind": "gap",
+        "a": "tl-solid",
+        "b": "bl-solid",
+        "min": 1.15,
+        "label": "grid/list tl/bl True"
+      },
+      {
+        "kind": "gap",
+        "a": "tl-solid",
+        "b": "br-solid",
+        "min": 1.15,
+        "label": "grid/list tl/br True"
+      },
+      {
+        "kind": "gap",
+        "a": "tr-solid",
+        "b": "bl-solid",
+        "min": 1.15,
+        "label": "grid/list tr/bl True"
+      },
+      {
+        "kind": "gap",
+        "a": "tr-solid",
+        "b": "br-solid",
+        "min": 1.15,
+        "label": "grid/list tr/br True"
+      },
+      {
+        "kind": "gap",
+        "a": "bl-solid",
+        "b": "br-solid",
+        "min": 1.15,
+        "label": "grid/list bl/br True"
+      }
+    ],
+    "sidebar-toggle": [
+      {
+        "kind": "gap",
+        "a": "chevron",
+        "b": "frame",
+        "min": 1.15,
+        "label": "chevron / shell False"
+      },
+      {
+        "kind": "gap",
+        "a": "chevron",
+        "b": "divider",
+        "min": 1.15,
+        "label": "chevron / divider False"
+      },
+      {
+        "kind": "gap",
+        "a": "chevron-solid",
+        "b": "frame-solid",
+        "min": 1.15,
+        "label": "chevron / shell True"
+      },
+      {
+        "kind": "gap",
+        "a": "chevron-solid",
+        "b": "divider-solid",
+        "min": 1.15,
+        "label": "chevron / divider True"
+      }
+    ],
+    "split-view": [
+      {
+        "kind": "gap",
+        "a": "grip",
+        "b": "frame",
+        "min": 1.15,
+        "label": "divider grip / shell False"
+      },
+      {
+        "kind": "gap",
+        "a": "grip-solid",
+        "b": "frame-solid",
+        "min": 1.15,
+        "label": "divider grip / shell True"
+      }
+    ],
+    "tab-switcher": [
+      {
+        "kind": "gap",
+        "a": "active",
+        "b": "frame",
+        "min": 1.15,
+        "label": "active tab / frame False"
+      },
+      {
+        "kind": "gap",
+        "a": "active",
+        "b": "strip",
+        "min": 1.15,
+        "label": "active tab / strip False"
+      },
+      {
+        "kind": "gap",
+        "a": "active-solid",
+        "b": "frame-solid",
+        "min": 1.15,
+        "label": "active tab / frame True"
+      },
+      {
+        "kind": "gap",
+        "a": "active-solid",
+        "b": "strip-solid",
+        "min": 1.15,
+        "label": "active tab / strip True"
+      }
+    ],
+    "command-menu": [],
+    "drag-handle": [
+      {
+        "kind": "gap",
+        "a": "dot-00",
+        "b": "row-b",
+        "label": "grip / passing row 00 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-01",
+        "b": "row-b",
+        "label": "grip / passing row 01 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-10",
+        "b": "row-b",
+        "label": "grip / passing row 10 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-11",
+        "b": "row-b",
+        "label": "grip / passing row 11 False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "bar",
+        "b": "row-b",
+        "label": "moving row / passing row False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "bar",
+        "b": "row-c",
+        "label": "moving row / fixed row False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-00-solid",
+        "b": "row-b-solid",
+        "label": "grip / passing row 00 True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-01-solid",
+        "b": "row-b-solid",
+        "label": "grip / passing row 01 True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-10-solid",
+        "b": "row-b-solid",
+        "label": "grip / passing row 10 True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-11-solid",
+        "b": "row-b-solid",
+        "label": "grip / passing row 11 True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "bar-solid",
+        "b": "row-b-solid",
+        "label": "moving row / passing row True",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "bar-solid",
+        "b": "row-c-solid",
+        "label": "moving row / fixed row True",
+        "min": 1.15
+      }
+    ],
+    "archive": [],
+    "target": [
+      {
+        "kind": "gap",
+        "a": "dot",
+        "b": "ring",
+        "label": "target dot / ring False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "dot-solid",
+        "b": "ring-solid",
+        "label": "target dot / ring True",
+        "min": 1.15
+      }
+    ],
+    "power": [
+      {
+        "kind": "gap",
+        "a": "ring",
+        "b": "bar",
+        "label": "power bar / ring False",
+        "min": 1.15
+      },
+      {
+        "kind": "gap",
+        "a": "ring-solid",
+        "b": "bar-solid",
+        "label": "power bar / ring True",
+        "min": 1.15
+      }
+    ]
+  },
+  "exceptions": {
+    "close": "Quarter-turn aggregate symmetry; requires native end-raster equivalence.",
+    "archive": "The lid intentionally meets and overlaps the complete body rim at contact.",
+    "share": "Branch caps intentionally overlap their closed node surfaces.",
+    "zoom-in-out": "Plus bars intentionally overlap and become one minus stroke in the alternate state.",
+    "add-remove": "The vertical bar intentionally folds onto the horizontal bar."
+  }
+}

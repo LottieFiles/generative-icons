@@ -1,0 +1,40 @@
+name: Icon request
+description: Ask for an icon that isn't in the library yet.
+labels: [icon request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search the gallery first. Want to build it yourself? See [creating icons](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/creating-icons.md) and open a pull request.
+  - type: input
+    id: meaning
+    attributes:
+      label: Meaning
+      description: What the icon represents.
+      placeholder: Return a package
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Product context
+      description: Where it appears and what action or state it communicates.
+    validations:
+      required: true
+  - type: textarea
+    id: states
+    attributes:
+      label: Motion and states
+      description: Initial state, completed state, and whether it needs a reverse or reset.
+      placeholder: Starts closed, opens on click, closes again when toggled off.
+  - type: input
+    id: neighbors
+    attributes:
+      label: Related existing icons
+      placeholder: delivery-truck, return-package
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd like to author this icon myself and open a pull request.

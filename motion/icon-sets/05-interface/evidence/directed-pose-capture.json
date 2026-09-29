@@ -1,0 +1,667 @@
+{
+  "mode": "capture",
+  "batch": "public-wall-clock",
+  "date": "2026-09-09T08:42:44.639Z",
+  "times": [
+    0,
+    0.08,
+    0.16,
+    0.24,
+    0.34,
+    0.46,
+    0.62,
+    0.84,
+    1.1,
+    1.4,
+    2.35
+  ],
+  "assets": [
+    {
+      "name": "heart",
+      "set": "01",
+      "sourcePackage": "heart-strong",
+      "sha256": "506d001cd557d3c74d3542bb143f004d1e37dbf6db2d56d1fea7161e9dfab1f0",
+      "profiles": [
+        {
+          "name": "heart",
+          "sha256": "2121d96c7bed61757d531f39fee2a8c0037cfe5ab3a4652ca5df7fd71bc6f51d"
+        },
+        {
+          "name": "heart-strong",
+          "sha256": "506d001cd557d3c74d3542bb143f004d1e37dbf6db2d56d1fea7161e9dfab1f0"
+        }
+      ],
+      "image": "heart-wall-clock.png"
+    },
+    {
+      "name": "bell",
+      "set": "01",
+      "sourcePackage": "bell-strong",
+      "sha256": "2ad69c306902c661a4b639bdcc574114c6965411f3b3ca3a6d99c8c06192e612",
+      "profiles": [
+        {
+          "name": "bell",
+          "sha256": "8445e461398ceda7a74b8efdbe3b734c3d8e36fd1c32e6ea2009f81d6766af2a"
+        },
+        {
+          "name": "bell-strong",
+          "sha256": "2ad69c306902c661a4b639bdcc574114c6965411f3b3ca3a6d99c8c06192e612"
+        }
+      ],
+      "image": "bell-wall-clock.png"
+    },
+    {
+      "name": "search",
+      "set": "02",
+      "sourcePackage": "search-strong",
+      "sha256": "b5838cb0fe0884b081c0d05bf5fb981a379513e607330232116b85c51b9820cf",
+      "profiles": [
+        {
+          "name": "search",
+          "sha256": "e9f10e9136081689ac29a447f8dfd871da76c98feec2d57355925134f207a892"
+        },
+        {
+          "name": "search-strong",
+          "sha256": "b5838cb0fe0884b081c0d05bf5fb981a379513e607330232116b85c51b9820cf"
+        }
+      ],
+      "image": "search-wall-clock.png"
+    },
+    {
+      "name": "star",
+      "set": "03",
+      "sourcePackage": "star-strong",
+      "sha256": "cc279f2025974d7d4d2d90eede7420308899721f8575865936853079ab54000e",
+      "profiles": [
+        {
+          "name": "star",
+          "sha256": "871e0590e5e0ef14ef63850048d660bf7f8f4c3b9b69b92dc56ca7dccdb0bd12"
+        },
+        {
+          "name": "star-strong",
+          "sha256": "cc279f2025974d7d4d2d90eede7420308899721f8575865936853079ab54000e"
+        }
+      ],
+      "image": "star-wall-clock.png"
+    },
+    {
+      "name": "check",
+      "set": "03",
+      "sourcePackage": "check-strong",
+      "sha256": "a5f71883eeaf69ff24d9d534b9fb7f6c7146ed5fd86523c27d33f75505f0244d",
+      "profiles": [
+        {
+          "name": "check",
+          "sha256": "e62522ec72db161cefe54b4e40cc06e85885c1a338704ff4f9d422271b8c1359"
+        },
+        {
+          "name": "check-strong",
+          "sha256": "a5f71883eeaf69ff24d9d534b9fb7f6c7146ed5fd86523c27d33f75505f0244d"
+        }
+      ],
+      "image": "check-wall-clock.png"
+    },
+    {
+      "name": "sliders",
+      "set": "03",
+      "sourcePackage": "sliders-strong",
+      "sha256": "6ce28d8e0702dcf9514d5203113150b9efb311d16454ceaad03f8002cf330472",
+      "profiles": [
+        {
+          "name": "sliders",
+          "sha256": "30f37d8527b898f375a296b7d52f5608c396abc40b1237536d3df249e5c65e78"
+        },
+        {
+          "name": "sliders-strong",
+          "sha256": "6ce28d8e0702dcf9514d5203113150b9efb311d16454ceaad03f8002cf330472"
+        }
+      ],
+      "image": "sliders-wall-clock.png"
+    },
+    {
+      "name": "lock",
+      "set": "03",
+      "sourcePackage": "lock-strong",
+      "sha256": "67e64376413621c3a026197b6ab3116f77cc307fbacfcba67ec576bfdfa94d06",
+      "profiles": [
+        {
+          "name": "lock",
+          "sha256": "633c83bfb6ff17208f9e77ba64ea2a8c4bc2cc98bdbc8f8e7354fd647396cf08"
+        },
+        {
+          "name": "lock-strong",
+          "sha256": "67e64376413621c3a026197b6ab3116f77cc307fbacfcba67ec576bfdfa94d06"
+        }
+      ],
+      "image": "lock-wall-clock.png"
+    },
+    {
+      "name": "folder",
+      "set": "03",
+      "sourcePackage": "folder-strong",
+      "sha256": "3ec34004e35f5fba069c720df2548bf07206e5a1265ed0851993776a479ef496",
+      "profiles": [
+        {
+          "name": "folder",
+          "sha256": "28d22c6a43e170e9070d9c16c046a0efd5815e99448f449819751e4bb0f1a5db"
+        },
+        {
+          "name": "folder-strong",
+          "sha256": "3ec34004e35f5fba069c720df2548bf07206e5a1265ed0851993776a479ef496"
+        }
+      ],
+      "image": "folder-wall-clock.png"
+    },
+    {
+      "name": "download",
+      "set": "04",
+      "sourcePackage": "download-strong",
+      "sha256": "493f8443a999d50c01939c6118141bfdbb492a45594a4203e16a25f2166e21ea",
+      "profiles": [
+        {
+          "name": "download",
+          "sha256": "c0ecebdcf1b92be563cc622af1a12d63485fc4f714616e1e9bb3ab2126f2c297"
+        },
+        {
+          "name": "download-strong",
+          "sha256": "493f8443a999d50c01939c6118141bfdbb492a45594a4203e16a25f2166e21ea"
+        }
+      ],
+      "image": "download-wall-clock.png"
+    },
+    {
+      "name": "upload",
+      "set": "04",
+      "sourcePackage": "upload-strong",
+      "sha256": "a599e9e8d642119e61ad4ff61bfba9575f971cd2e658be77f174ac04d840bf53",
+      "profiles": [
+        {
+          "name": "upload",
+          "sha256": "b248c294624a329461d6c8e4ee932d33d52c1349429246ac1cd85274bcd400b2"
+        },
+        {
+          "name": "upload-strong",
+          "sha256": "a599e9e8d642119e61ad4ff61bfba9575f971cd2e658be77f174ac04d840bf53"
+        }
+      ],
+      "image": "upload-wall-clock.png"
+    },
+    {
+      "name": "copy",
+      "set": "04",
+      "sourcePackage": "copy-strong",
+      "sha256": "f53ddc5e0d9de68b5d9244dfe25aa2c8c23e874c28c61871109f564c0f2c3e0e",
+      "profiles": [
+        {
+          "name": "copy",
+          "sha256": "250281604b8b3b59d6a4a95c5f90039c92fa4a0833108c6ea0d439f4bd5fffca"
+        },
+        {
+          "name": "copy-strong",
+          "sha256": "f53ddc5e0d9de68b5d9244dfe25aa2c8c23e874c28c61871109f564c0f2c3e0e"
+        }
+      ],
+      "image": "copy-wall-clock.png"
+    },
+    {
+      "name": "trash",
+      "set": "04",
+      "sourcePackage": "trash-strong",
+      "sha256": "eac3a9a11439e797a89ec24e0afa92cbd4ac4ab18e305a157c3c53562fea07cd",
+      "profiles": [
+        {
+          "name": "trash",
+          "sha256": "4b40af202fd4cf8ce1e7e6642fa6309250236ca879a42d6db8ca9b3e2b808400"
+        },
+        {
+          "name": "trash-strong",
+          "sha256": "eac3a9a11439e797a89ec24e0afa92cbd4ac4ab18e305a157c3c53562fea07cd"
+        }
+      ],
+      "image": "trash-wall-clock.png"
+    },
+    {
+      "name": "edit",
+      "set": "04",
+      "sourcePackage": "edit-strong",
+      "sha256": "62eac63eac597f16f5ab028f81439697c37ec9ac119e373e5ef18d5cf6db2b9b",
+      "profiles": [
+        {
+          "name": "edit",
+          "sha256": "d34cfdbd2308e44a4cb3ae3ddbf993cc7a009deef7bfd26a27626321e74167a5"
+        },
+        {
+          "name": "edit-strong",
+          "sha256": "62eac63eac597f16f5ab028f81439697c37ec9ac119e373e5ef18d5cf6db2b9b"
+        }
+      ],
+      "image": "edit-wall-clock.png"
+    },
+    {
+      "name": "send",
+      "set": "04",
+      "sourcePackage": "send-strong",
+      "sha256": "1f49b70323ac7410d1e34bfdc675b49148052754355df08c49a916afd891d4b5",
+      "profiles": [
+        {
+          "name": "send",
+          "sha256": "3e44234e4728bd8601ec2ab6b5b4b5488950f4f28c5fdbebba1838be50a89363"
+        },
+        {
+          "name": "send-strong",
+          "sha256": "1f49b70323ac7410d1e34bfdc675b49148052754355df08c49a916afd891d4b5"
+        }
+      ],
+      "image": "send-wall-clock.png"
+    },
+    {
+      "name": "bookmark",
+      "set": "04",
+      "sourcePackage": "bookmark-strong",
+      "sha256": "e13e79fbdc4aea3dff1d9ca0703c1df99f3698d57faf9cf5e54e7396568ff1a1",
+      "profiles": [
+        {
+          "name": "bookmark",
+          "sha256": "2d0bd4509b8e436c2857a9a8b3c8e35765f926f948cf3dc73892ec9c14ca66e8"
+        },
+        {
+          "name": "bookmark-strong",
+          "sha256": "e13e79fbdc4aea3dff1d9ca0703c1df99f3698d57faf9cf5e54e7396568ff1a1"
+        }
+      ],
+      "image": "bookmark-wall-clock.png"
+    },
+    {
+      "name": "refresh",
+      "set": "04",
+      "sourcePackage": "refresh-strong",
+      "sha256": "ffedabf5a0ba7c04f6ee0ce3b39c69cd8e14862e589f7608f469f1de2e7cb962",
+      "profiles": [
+        {
+          "name": "refresh",
+          "sha256": "534f746abe029fef40a8b548702d1e98311d19fe83f200b3d035c0591c1cf9cc"
+        },
+        {
+          "name": "refresh-strong",
+          "sha256": "ffedabf5a0ba7c04f6ee0ce3b39c69cd8e14862e589f7608f469f1de2e7cb962"
+        }
+      ],
+      "image": "refresh-wall-clock.png"
+    },
+    {
+      "name": "eye",
+      "set": "04",
+      "sourcePackage": "eye-strong",
+      "sha256": "7bde6c18e476a3e4397d37818738ca996bbe240dca20292c6433c571db3fdd3c",
+      "profiles": [
+        {
+          "name": "eye",
+          "sha256": "75005232223cfc2745dee7543d1f74ded2592c43eeb6cd1d24a98c42f301ec15"
+        },
+        {
+          "name": "eye-strong",
+          "sha256": "7bde6c18e476a3e4397d37818738ca996bbe240dca20292c6433c571db3fdd3c"
+        }
+      ],
+      "image": "eye-wall-clock.png"
+    },
+    {
+      "name": "menu",
+      "set": "04",
+      "sourcePackage": "menu-strong",
+      "sha256": "2e6af7876c006559bd386ab9b3bcdd95fa91d59160d2bdb27fcf2fb6bfffd596",
+      "profiles": [
+        {
+          "name": "menu",
+          "sha256": "ab29201f23169dbbc2748686855940d48425a419bd062d3273f40f68eeabf6a6"
+        },
+        {
+          "name": "menu-strong",
+          "sha256": "2e6af7876c006559bd386ab9b3bcdd95fa91d59160d2bdb27fcf2fb6bfffd596"
+        }
+      ],
+      "image": "menu-wall-clock.png"
+    },
+    {
+      "name": "home",
+      "set": "05",
+      "sourcePackage": "home-strong",
+      "sha256": "b164d962b73becf04bdddc440b0ed5327ac584484518ca7634c4b52719d16817",
+      "profiles": [
+        {
+          "name": "home",
+          "sha256": "e6ca7ef56ff11f8958f08942485d2d6bda7c1e5e65effbb1069903b9b30499b0"
+        },
+        {
+          "name": "home-strong",
+          "sha256": "b164d962b73becf04bdddc440b0ed5327ac584484518ca7634c4b52719d16817"
+        }
+      ],
+      "image": "home-wall-clock.png"
+    },
+    {
+      "name": "calendar",
+      "set": "05",
+      "sourcePackage": "calendar-strong",
+      "sha256": "fec16e775f55b69dedf6e269f9d1482ed45740cb11d950c92aa0d4ba397726c5",
+      "profiles": [
+        {
+          "name": "calendar",
+          "sha256": "5edbc8efc0db4fee82b84a2307fe2853a5be0f4c9979ee312143e736c8f54c5d"
+        },
+        {
+          "name": "calendar-strong",
+          "sha256": "fec16e775f55b69dedf6e269f9d1482ed45740cb11d950c92aa0d4ba397726c5"
+        }
+      ],
+      "image": "calendar-wall-clock.png"
+    },
+    {
+      "name": "clock",
+      "set": "05",
+      "sourcePackage": "clock-strong",
+      "sha256": "853b3b6cf030f2a55451cfd837661a930ba8a3e88ac9e3be8b0e1622798ea1f3",
+      "profiles": [
+        {
+          "name": "clock",
+          "sha256": "737b85766f834a1fe4509b3c07c70178b9012af7134064521f1874cd964a0d1f"
+        },
+        {
+          "name": "clock-strong",
+          "sha256": "853b3b6cf030f2a55451cfd837661a930ba8a3e88ac9e3be8b0e1622798ea1f3"
+        }
+      ],
+      "image": "clock-wall-clock.png"
+    },
+    {
+      "name": "camera",
+      "set": "05",
+      "sourcePackage": "camera-strong",
+      "sha256": "a118860336cef26be2b0b4a2fe68629ee104824046dc49591f39c39386e356a8",
+      "profiles": [
+        {
+          "name": "camera",
+          "sha256": "4523d56a3bf624fcb0e6552e06eee7ebedc9b3f4e0c17c04a75346d6e8fafa43"
+        },
+        {
+          "name": "camera-strong",
+          "sha256": "a118860336cef26be2b0b4a2fe68629ee104824046dc49591f39c39386e356a8"
+        }
+      ],
+      "image": "camera-wall-clock.png"
+    },
+    {
+      "name": "image",
+      "set": "05",
+      "sourcePackage": "image-strong",
+      "sha256": "b02f5bf77cdbe7e56763d090efa57b9cf351e6a6c2a5179763d73188e6c7519b",
+      "profiles": [
+        {
+          "name": "image",
+          "sha256": "19334c94fb85c0af1288413ed53f7b585d66cd53b729a4576806deeeaf810e95"
+        },
+        {
+          "name": "image-strong",
+          "sha256": "b02f5bf77cdbe7e56763d090efa57b9cf351e6a6c2a5179763d73188e6c7519b"
+        }
+      ],
+      "image": "image-wall-clock.png"
+    },
+    {
+      "name": "mail",
+      "set": "05",
+      "sourcePackage": "mail-strong",
+      "sha256": "028276a8f41bfc0e7b01a5d2b5d0068f136cdc84ba7d303223df49a099835d2f",
+      "profiles": [
+        {
+          "name": "mail",
+          "sha256": "8c196e5fd0850ff84aa354fb825657510fa5df9b675c2bbde91d52b2db5accc8"
+        },
+        {
+          "name": "mail-strong",
+          "sha256": "028276a8f41bfc0e7b01a5d2b5d0068f136cdc84ba7d303223df49a099835d2f"
+        }
+      ],
+      "image": "mail-wall-clock.png"
+    },
+    {
+      "name": "message",
+      "set": "05",
+      "sourcePackage": "message-strong",
+      "sha256": "701ec3aa413dc8001c259a12f95d372f32bf0905bf83130d5bed873579543a3e",
+      "profiles": [
+        {
+          "name": "message",
+          "sha256": "cf88365664d8560868435d3d5c26bad7f2e8561bc57242282a8b807c8ed4b7ac"
+        },
+        {
+          "name": "message-strong",
+          "sha256": "701ec3aa413dc8001c259a12f95d372f32bf0905bf83130d5bed873579543a3e"
+        }
+      ],
+      "image": "message-wall-clock.png"
+    },
+    {
+      "name": "phone",
+      "set": "05",
+      "sourcePackage": "phone-strong",
+      "sha256": "4571498d6e1e69b21471db0c8a62d5c53e04f66534316863e21faf1128b970f7",
+      "profiles": [
+        {
+          "name": "phone",
+          "sha256": "2e906e9c77a4c244c2b44e55c7576861507af2a0107973eb570525c62a0cfa53"
+        },
+        {
+          "name": "phone-strong",
+          "sha256": "4571498d6e1e69b21471db0c8a62d5c53e04f66534316863e21faf1128b970f7"
+        }
+      ],
+      "image": "phone-wall-clock.png"
+    },
+    {
+      "name": "microphone",
+      "set": "05",
+      "sourcePackage": "microphone-strong",
+      "sha256": "df8c5c4b859443f09adf77c87193628e363eb00aed3260213776bde3e76578b9",
+      "profiles": [
+        {
+          "name": "microphone",
+          "sha256": "c231a8f542db3afd083fad7e2f4b824503f9bd25b5961903036a0f034b2e0f3c"
+        },
+        {
+          "name": "microphone-strong",
+          "sha256": "df8c5c4b859443f09adf77c87193628e363eb00aed3260213776bde3e76578b9"
+        }
+      ],
+      "image": "microphone-wall-clock.png"
+    },
+    {
+      "name": "volume",
+      "set": "05",
+      "sourcePackage": "volume-strong",
+      "sha256": "90717095ee0274a5b2d7f4e3331213f3202ec9ffc559d7b07ead5bed647dfc4a",
+      "profiles": [
+        {
+          "name": "volume",
+          "sha256": "468f3240010c5f1c69bb46f0f540ccfb0afb13d2d565e7c89e9c70cd458fb864"
+        },
+        {
+          "name": "volume-strong",
+          "sha256": "90717095ee0274a5b2d7f4e3331213f3202ec9ffc559d7b07ead5bed647dfc4a"
+        }
+      ],
+      "image": "volume-wall-clock.png"
+    },
+    {
+      "name": "wifi",
+      "set": "05",
+      "sourcePackage": "wifi-strong",
+      "sha256": "03c1464c3ea20a9e026d823379c316935bf1eeb9bb228278b439108c89508f0c",
+      "profiles": [
+        {
+          "name": "wifi",
+          "sha256": "c61eaf347bb019f10c3a871953407b54f1cd4a29559f293455a8a491631c16cb"
+        },
+        {
+          "name": "wifi-strong",
+          "sha256": "03c1464c3ea20a9e026d823379c316935bf1eeb9bb228278b439108c89508f0c"
+        }
+      ],
+      "image": "wifi-wall-clock.png"
+    },
+    {
+      "name": "cloud",
+      "set": "05",
+      "sourcePackage": "cloud-strong",
+      "sha256": "912d60bc764da7c3c87b50f213ba426b7d71230b70df54552a6c0d5103945014",
+      "profiles": [
+        {
+          "name": "cloud",
+          "sha256": "ade86aee537c5e1412bfe6acec170e6fbc879b02ce84a8b5df393dbb5eb25a47"
+        },
+        {
+          "name": "cloud-strong",
+          "sha256": "912d60bc764da7c3c87b50f213ba426b7d71230b70df54552a6c0d5103945014"
+        }
+      ],
+      "image": "cloud-wall-clock.png"
+    },
+    {
+      "name": "sun",
+      "set": "05",
+      "sourcePackage": "sun-strong",
+      "sha256": "d3d6e76bd76fb6e34260ed27fc87992df0a6161002f11522418d8f51c6062b2f",
+      "profiles": [
+        {
+          "name": "sun",
+          "sha256": "26a2af3a7ddcdf6ea4fc52696bdd0e2d33c8b43e743fc8a06b96015ef1820fe0"
+        },
+        {
+          "name": "sun-strong",
+          "sha256": "d3d6e76bd76fb6e34260ed27fc87992df0a6161002f11522418d8f51c6062b2f"
+        }
+      ],
+      "image": "sun-wall-clock.png"
+    },
+    {
+      "name": "moon",
+      "set": "05",
+      "sourcePackage": "moon-strong",
+      "sha256": "8c4d4d9aa01289d3a895fb584ebe2dcb5ec561fd3bc0785a16e146aa5d750095",
+      "profiles": [
+        {
+          "name": "moon",
+          "sha256": "ec92d1989dca8e94988d3940020fcd79600db0a7ded8df88ed61b3e05604e9f4"
+        },
+        {
+          "name": "moon-strong",
+          "sha256": "8c4d4d9aa01289d3a895fb584ebe2dcb5ec561fd3bc0785a16e146aa5d750095"
+        }
+      ],
+      "image": "moon-wall-clock.png"
+    },
+    {
+      "name": "location",
+      "set": "05",
+      "sourcePackage": "location-strong",
+      "sha256": "5929e955c2dfc4857b0b815a8b962311f56a8c87ad23fd2154c152036a217b6d",
+      "profiles": [
+        {
+          "name": "location",
+          "sha256": "d8ac2eaffd6a6f772b9106744bbc7e987038621fb845458c0c1b815cc9eab30f"
+        },
+        {
+          "name": "location-strong",
+          "sha256": "5929e955c2dfc4857b0b815a8b962311f56a8c87ad23fd2154c152036a217b6d"
+        }
+      ],
+      "image": "location-wall-clock.png"
+    },
+    {
+      "name": "compass",
+      "set": "05",
+      "sourcePackage": "compass-strong",
+      "sha256": "5d8a5c17b4e3e194dae828eddd21f9cf7e1cd92cdf920e9c6072fee8171b205e",
+      "profiles": [
+        {
+          "name": "compass",
+          "sha256": "73dda0131c2f0278bdba94d7b284c83f154101028dab5973457e374b607636ac"
+        },
+        {
+          "name": "compass-strong",
+          "sha256": "5d8a5c17b4e3e194dae828eddd21f9cf7e1cd92cdf920e9c6072fee8171b205e"
+        }
+      ],
+      "image": "compass-wall-clock.png"
+    },
+    {
+      "name": "link",
+      "set": "05",
+      "sourcePackage": "link-strong",
+      "sha256": "dce2e034fc74f320257821bee5c43ba4d188fa25efdba9a0a64358064f3910dd",
+      "profiles": [
+        {
+          "name": "link",
+          "sha256": "7df0dc4d4b9ac69fcfe77b9025039804299aade1b133dd4df6f76f4a76171246"
+        },
+        {
+          "name": "link-strong",
+          "sha256": "dce2e034fc74f320257821bee5c43ba4d188fa25efdba9a0a64358064f3910dd"
+        }
+      ],
+      "image": "link-wall-clock.png"
+    },
+    {
+      "name": "shield",
+      "set": "05",
+      "sourcePackage": "shield-strong",
+      "sha256": "5e0702360c62bed3f14368e22156a39f24562bef59aced64ec7aaefcb8f79e70",
+      "profiles": [
+        {
+          "name": "shield",
+          "sha256": "524bc1116d3f9bba641b4af7d2c36fdee4b578964c914f65c3b02dd92798df7f"
+        },
+        {
+          "name": "shield-strong",
+          "sha256": "5e0702360c62bed3f14368e22156a39f24562bef59aced64ec7aaefcb8f79e70"
+        }
+      ],
+      "image": "shield-wall-clock.png"
+    },
+    {
+      "name": "cart",
+      "set": "05",
+      "sourcePackage": "cart-strong",
+      "sha256": "b9c10cd67983ef9b9519914119b36d5da33584004e4028f6b1fe4a20c16c3a33",
+      "profiles": [
+        {
+          "name": "cart",
+          "sha256": "5571f01a07f79c1e90cc72132aef17366d17ccb2ca305be74758139cbf263838"
+        },
+        {
+          "name": "cart-strong",
+          "sha256": "b9c10cd67983ef9b9519914119b36d5da33584004e4028f6b1fe4a20c16c3a33"
+        }
+      ],
+      "image": "cart-wall-clock.png"
+    },
+    {
+      "name": "settings",
+      "set": "05",
+      "sourcePackage": "settings-strong",
+      "sha256": "155692133b8953f2fd556fe17d6a28795f45bcff3ccddb7d9ec0c81828e01dae",
+      "profiles": [
+        {
+          "name": "settings",
+          "sha256": "a930479fa33050ca5e8f406bb27f3e7e1408a978c1f2a9c2f08ef3f0e0f32eb9"
+        },
+        {
+          "name": "settings-strong",
+          "sha256": "155692133b8953f2fd556fe17d6a28795f45bcff3ccddb7d9ec0c81828e01dae"
+        }
+      ],
+      "image": "settings-wall-clock.png"
+    }
+  ],
+  "errors": []
+}

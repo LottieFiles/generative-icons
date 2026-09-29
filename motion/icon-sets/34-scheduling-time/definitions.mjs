@@ -1,0 +1,4 @@
+import {icons as accepted} from './batches/accepted.mjs';
+const fixed={"date-range": ["leaf-frame", "header", "peg-l", "peg-r", "start"], "calendar-view": ["leaf-frame", "header", "peg-l", "peg-r"], "reschedule": ["leaf-frame", "header", "peg-l", "peg-r", "tray", "target"], "stopwatch": ["case-frame", "tick-3", "tick-6", "tick-9", "hub"], "countdown-timer": ["dial-frame", "marker"], "world-clock": ["globe-frame", "meridian", "dial-frame"], "availability": ["busy-top", "busy-bottom"]};
+const rigid={"date-range": ["end"], "reschedule": ["chip"], "alarm-clock": ["body", "minute", "hour", "bell-l", "bell-r", "leg-l", "leg-r"], "stopwatch": ["stem", "button", "hand"], "world-clock": ["minute", "hour"], "availability": ["free-frame"]};
+export const icons=accepted.map((icon,index)=>({...icon,number:518+index,constraints:[...(fixed[icon.name]||[]).map(p=>({type:'fixed',part:icon.name+'-'+p})),...(rigid[icon.name]||[]).map(p=>({type:'rigid',part:icon.name+'-'+p}))]}));

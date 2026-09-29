@@ -1,0 +1,381 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 48,
+  "nativeTransformNodes": 180,
+  "nativeTransformMaxCoordinateError": 0.000011378323002020352,
+  "checks": [
+    {
+      "name": "home",
+      "fixedParts": [
+        "home-shell",
+        "home-doorway"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "home-strong",
+      "fixedParts": [
+        "home-shell",
+        "home-doorway"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "calendar",
+      "fixedParts": [
+        "calendar-frame-frame",
+        "calendar-header"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "calendar-strong",
+      "fixedParts": [
+        "calendar-frame-frame",
+        "calendar-header"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "clock",
+      "fixedParts": [
+        "clock-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "clock-strong",
+      "fixedParts": [
+        "clock-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "camera",
+      "fixedParts": [
+        "camera-body",
+        "camera-lens"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "camera-strong",
+      "fixedParts": [
+        "camera-body",
+        "camera-lens"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "image",
+      "fixedParts": [
+        "image-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "image-strong",
+      "fixedParts": [
+        "image-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "mail",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "mail-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "message",
+      "fixedParts": [
+        "message-body"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "message-strong",
+      "fixedParts": [
+        "message-body"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "phone",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "phone-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "microphone",
+      "fixedParts": [
+        "microphone-stand",
+        "microphone-foot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "microphone-strong",
+      "fixedParts": [
+        "microphone-stand",
+        "microphone-foot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "volume",
+      "fixedParts": [
+        "volume-speaker-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "volume-strong",
+      "fixedParts": [
+        "volume-speaker-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "wifi",
+      "fixedParts": [
+        "wifi-source"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "wifi-strong",
+      "fixedParts": [
+        "wifi-source"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "cloud",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "cloud-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "sun",
+      "fixedParts": [
+        "sun-disc-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "sun-strong",
+      "fixedParts": [
+        "sun-disc-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "moon",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "moon-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "location",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "location-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "compass",
+      "fixedParts": [
+        "compass-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "compass-strong",
+      "fixedParts": [
+        "compass-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "link",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "link-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "shield",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "shield-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "cart",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "cart-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "settings",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    },
+    {
+      "name": "settings-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "designConstraints": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+# Rebuildable intermediate scenes and native output; distributed assets are tracked.
+motion/icon-sets/*/scenes/
+motion/icon-sets/*/native/
+# Per-developer review captures are kept locally.
+*.png
+*.jpg
+*.jpeg
+# Local planning and unreleased product experiments. Never publish this directory.
+.local/
+# Explicit public-site output; never deploy prototype/ directly.
+dist/
+
+# Unreleased feature folders must not enter package archives.
+**/unreleased/
+**/wip/

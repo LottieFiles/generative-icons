@@ -1,0 +1,182 @@
+{
+  "result": "PASS",
+  "actions": [
+    {
+      "name": "date-range",
+      "frames": 145
+    },
+    {
+      "name": "date-range-reset",
+      "frames": 145
+    },
+    {
+      "name": "date-range-strong",
+      "frames": 145
+    },
+    {
+      "name": "date-range-reset-strong",
+      "frames": 145
+    },
+    {
+      "name": "calendar-view",
+      "frames": 145
+    },
+    {
+      "name": "calendar-view-reverse",
+      "frames": 145
+    },
+    {
+      "name": "calendar-view-strong",
+      "frames": 145
+    },
+    {
+      "name": "calendar-view-reverse-strong",
+      "frames": 145
+    },
+    {
+      "name": "reschedule",
+      "frames": 145
+    },
+    {
+      "name": "reschedule-reset",
+      "frames": 145
+    },
+    {
+      "name": "reschedule-strong",
+      "frames": 145
+    },
+    {
+      "name": "reschedule-reset-strong",
+      "frames": 145
+    },
+    {
+      "name": "alarm-clock",
+      "frames": 145
+    },
+    {
+      "name": "alarm-clock-strong",
+      "frames": 145
+    },
+    {
+      "name": "stopwatch",
+      "frames": 145
+    },
+    {
+      "name": "stopwatch-reset",
+      "frames": 145
+    },
+    {
+      "name": "stopwatch-strong",
+      "frames": 145
+    },
+    {
+      "name": "stopwatch-reset-strong",
+      "frames": 145
+    },
+    {
+      "name": "countdown-timer",
+      "frames": 145
+    },
+    {
+      "name": "countdown-timer-reset",
+      "frames": 145
+    },
+    {
+      "name": "countdown-timer-strong",
+      "frames": 145
+    },
+    {
+      "name": "countdown-timer-reset-strong",
+      "frames": 145
+    },
+    {
+      "name": "world-clock",
+      "frames": 145
+    },
+    {
+      "name": "world-clock-reset",
+      "frames": 145
+    },
+    {
+      "name": "world-clock-strong",
+      "frames": 145
+    },
+    {
+      "name": "world-clock-reset-strong",
+      "frames": 145
+    },
+    {
+      "name": "availability",
+      "frames": 145
+    },
+    {
+      "name": "availability-reverse",
+      "frames": 145
+    },
+    {
+      "name": "availability-strong",
+      "frames": 145
+    },
+    {
+      "name": "availability-reverse-strong",
+      "frames": 145
+    }
+  ],
+  "minimumPaintedMargin": 2.0999999999999996,
+  "gaps": {
+    "date-range start / leaf-frame": 1.9499999999999993,
+    "date-range start / header": 4.449999999999999,
+    "date-range end / leaf-frame": 1.259450000000001,
+    "date-range end / header": 4.449999999999999,
+    "calendar-view cell-a / cell-b": 1.1500000000000021,
+    "calendar-view cell-b / cell-c": 1.1500000000000021,
+    "calendar-view cell-a / cell-c": 4.700000000000003,
+    "calendar-view cell-a / leaf-frame": 1.3299999999999983,
+    "calendar-view cell-a / header": 1.75,
+    "calendar-view cell-b / leaf-frame": 1.69632,
+    "calendar-view cell-b / header": 1.75,
+    "calendar-view cell-c / leaf-frame": 1.35651,
+    "calendar-view cell-c / header": 1.75,
+    "reschedule chip / leaf-frame": 1.1999999999999993,
+    "reschedule chip / header": 1.4014799999999994,
+    "reschedule target / leaf-frame": 2.1999999999999993,
+    "reschedule target / header": 3.25,
+    "reschedule tray / leaf-frame": 1.0999999999999996,
+    "reschedule tray / header": 7,
+    "reschedule chip / tray": 1.1083983344698258,
+    "reschedule chip-solid / tray-solid": 1.0583983344698258,
+    "alarm-clock minute / body": 1.4996721776620552,
+    "alarm-clock hour / body": 2.699574753598517,
+    "alarm-clock minute-solid / body-solid": 1.399672177662055,
+    "alarm-clock hour-solid / body-solid": 2.599574753598517,
+    "stopwatch hand / case-frame": 2.3993073938868186,
+    "stopwatch hand / tick-3": 1.3019065453532654,
+    "stopwatch hand / tick-6": 4.305582556989517,
+    "stopwatch hand / tick-9": 5.9,
+    "stopwatch hand-solid / tick-3-solid": 1.2019065453532654,
+    "stopwatch hand-solid / tick-6-solid": 4.205582556989517,
+    "stopwatch hand-solid / tick-9-solid": 5.800000000000001,
+    "countdown-timer remaining / dial-frame": 1.4986136013684255,
+    "countdown-timer remaining-solid / dial-solid": 1.398717670682769,
+    "world-clock globe-frame / dial-frame": 1.451451731723174,
+    "world-clock globe-solid / dial-solid": 1.3516093705338796,
+    "world-clock minute / dial-frame": 1.299499111041634,
+    "world-clock hour / dial-frame": 1.899503186708258,
+    "availability busy-top / free-frame": 1.200000000000001,
+    "availability busy-bottom / free-frame": 1.2000000000000028,
+    "availability busy-top-solid / free-solid": 1.0999999999999996,
+    "availability busy-bottom-solid / free-solid": 1.1000000000000014
+  },
+  "checks": 73698,
+  "errors": [],
+  "exceptions": {
+    "date-range": "Range bar intentionally meets both date discs. Reverse demo must stay inside the received disc.",
+    "calendar-view": "Cells must remain separate in both transition directions.",
+    "reschedule": "Event covers its target disc after receipt. Open tray has no tint; enclosed calendar leaf does.",
+    "alarm-clock": "Bell chords, legs and hands intentionally attach. Bell counters still require native review.",
+    "stopwatch": "Tick outer ends join case rim; plunger attaches to stem.",
+    "countdown-timer": "Marker joins the dial rim; remaining-time arc stays inside.",
+    "world-clock": "Globe meridians join its frame. Separate clock dial and moving hands require protected gaps.",
+    "availability": "Busy bars are filled slots; free slot has a real opening."
+  }
+}

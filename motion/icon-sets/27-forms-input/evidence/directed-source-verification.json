@@ -1,0 +1,638 @@
+{
+  "result": "PASS",
+  "icons": 11,
+  "actions": 42,
+  "nativeTransformNodes": 92,
+  "nativeTransformMaxCoordinateError": 0.000009999999999621423,
+  "checks": [
+    {
+      "name": "checkbox",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "checkbox-box-frame"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "checkbox-box-frame"
+        }
+      ]
+    },
+    {
+      "name": "radio-button",
+      "fixedParts": [
+        "radio-button-ring-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "radio-button-ring-frame"
+        }
+      ]
+    },
+    {
+      "name": "radio-button-strong",
+      "fixedParts": [
+        "radio-button-ring-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "radio-button-ring-frame"
+        }
+      ]
+    },
+    {
+      "name": "toggle-switch",
+      "fixedParts": [
+        "toggle-switch-track-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "toggle-switch-track-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "toggle-switch-knob"
+        }
+      ]
+    },
+    {
+      "name": "toggle-switch-strong",
+      "fixedParts": [
+        "toggle-switch-track-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "toggle-switch-track-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "toggle-switch-knob"
+        }
+      ]
+    },
+    {
+      "name": "text-field",
+      "fixedParts": [
+        "text-field-field-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-field-field-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "text-field-caret"
+        }
+      ]
+    },
+    {
+      "name": "text-field-strong",
+      "fixedParts": [
+        "text-field-field-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "text-field-field-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "text-field-caret"
+        }
+      ]
+    },
+    {
+      "name": "number-field",
+      "fixedParts": [
+        "number-field-field-frame",
+        "number-field-step-down"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "number-field-field-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "number-field-step-down"
+        },
+        {
+          "type": "rigid",
+          "part": "number-field-step-up"
+        }
+      ]
+    },
+    {
+      "name": "number-field-strong",
+      "fixedParts": [
+        "number-field-field-frame",
+        "number-field-step-down"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "number-field-field-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "number-field-step-down"
+        },
+        {
+          "type": "rigid",
+          "part": "number-field-step-up"
+        }
+      ]
+    },
+    {
+      "name": "select-field",
+      "fixedParts": [
+        "select-field-field",
+        "select-field-value"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "select-field-field"
+        },
+        {
+          "type": "fixed",
+          "part": "select-field-value"
+        },
+        {
+          "type": "rigid",
+          "part": "select-field-panel"
+        },
+        {
+          "type": "rigid",
+          "part": "select-field-option"
+        }
+      ]
+    },
+    {
+      "name": "select-field-strong",
+      "fixedParts": [
+        "select-field-field",
+        "select-field-value"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "select-field-field"
+        },
+        {
+          "type": "fixed",
+          "part": "select-field-value"
+        },
+        {
+          "type": "rigid",
+          "part": "select-field-panel"
+        },
+        {
+          "type": "rigid",
+          "part": "select-field-option"
+        }
+      ]
+    },
+    {
+      "name": "multiple-choice",
+      "fixedParts": [
+        "multiple-choice-box-1",
+        "multiple-choice-check-1",
+        "multiple-choice-label-1",
+        "multiple-choice-label-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "multiple-choice-box-1"
+        },
+        {
+          "type": "fixed",
+          "part": "multiple-choice-check-1"
+        },
+        {
+          "type": "fixed",
+          "part": "multiple-choice-label-1"
+        },
+        {
+          "type": "fixed",
+          "part": "multiple-choice-label-2"
+        },
+        {
+          "type": "rigid",
+          "part": "multiple-choice-box-2"
+        }
+      ]
+    },
+    {
+      "name": "multiple-choice-strong",
+      "fixedParts": [
+        "multiple-choice-box-1",
+        "multiple-choice-check-1",
+        "multiple-choice-label-1",
+        "multiple-choice-label-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "multiple-choice-box-1"
+        },
+        {
+          "type": "fixed",
+          "part": "multiple-choice-check-1"
+        },
+        {
+          "type": "fixed",
+          "part": "multiple-choice-label-1"
+        },
+        {
+          "type": "fixed",
+          "part": "multiple-choice-label-2"
+        },
+        {
+          "type": "rigid",
+          "part": "multiple-choice-box-2"
+        }
+      ]
+    },
+    {
+      "name": "signature",
+      "fixedParts": [
+        "signature-baseline"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "signature-baseline"
+        },
+        {
+          "type": "rigid",
+          "part": "signature-pen"
+        }
+      ]
+    },
+    {
+      "name": "signature-strong",
+      "fixedParts": [
+        "signature-baseline"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "signature-baseline"
+        },
+        {
+          "type": "rigid",
+          "part": "signature-pen"
+        }
+      ]
+    },
+    {
+      "name": "form-builder",
+      "fixedParts": [
+        "form-builder-sheet",
+        "form-builder-text-field",
+        "form-builder-radio",
+        "form-builder-radio-label"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "form-builder-sheet"
+        },
+        {
+          "type": "fixed",
+          "part": "form-builder-text-field"
+        },
+        {
+          "type": "fixed",
+          "part": "form-builder-radio"
+        },
+        {
+          "type": "fixed",
+          "part": "form-builder-radio-label"
+        }
+      ]
+    },
+    {
+      "name": "form-builder-strong",
+      "fixedParts": [
+        "form-builder-sheet",
+        "form-builder-text-field",
+        "form-builder-radio",
+        "form-builder-radio-label"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "form-builder-sheet"
+        },
+        {
+          "type": "fixed",
+          "part": "form-builder-text-field"
+        },
+        {
+          "type": "fixed",
+          "part": "form-builder-radio"
+        },
+        {
+          "type": "fixed",
+          "part": "form-builder-radio-label"
+        }
+      ]
+    },
+    {
+      "name": "qr-code",
+      "fixedParts": [
+        "qr-code-finder-0",
+        "qr-code-finder-1",
+        "qr-code-finder-2",
+        "qr-code-finder-0-dot",
+        "qr-code-finder-1-dot",
+        "qr-code-finder-2-dot",
+        "qr-code-static-0",
+        "qr-code-static-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-0"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-1"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-2"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-0-dot"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-1-dot"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-2-dot"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-static-0"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-static-1"
+        },
+        {
+          "type": "rigid",
+          "part": "qr-code-module-0"
+        },
+        {
+          "type": "rigid",
+          "part": "qr-code-module-1"
+        }
+      ]
+    },
+    {
+      "name": "qr-code-strong",
+      "fixedParts": [
+        "qr-code-finder-0",
+        "qr-code-finder-1",
+        "qr-code-finder-2",
+        "qr-code-finder-0-dot",
+        "qr-code-finder-1-dot",
+        "qr-code-finder-2-dot",
+        "qr-code-static-0",
+        "qr-code-static-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-0"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-1"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-2"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-0-dot"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-1-dot"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-finder-2-dot"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-static-0"
+        },
+        {
+          "type": "fixed",
+          "part": "qr-code-static-1"
+        },
+        {
+          "type": "rigid",
+          "part": "qr-code-module-0"
+        },
+        {
+          "type": "rigid",
+          "part": "qr-code-module-1"
+        }
+      ]
+    },
+    {
+      "name": "barcode",
+      "fixedParts": [
+        "barcode-bar-0",
+        "barcode-bar-1",
+        "barcode-bar-2",
+        "barcode-bar-3",
+        "barcode-bar-4",
+        "barcode-bar-wide"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "barcode-bar-0"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-1"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-2"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-3"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-4"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-wide"
+        },
+        {
+          "type": "rigid",
+          "part": "barcode-laser"
+        }
+      ]
+    },
+    {
+      "name": "barcode-strong",
+      "fixedParts": [
+        "barcode-bar-0",
+        "barcode-bar-1",
+        "barcode-bar-2",
+        "barcode-bar-3",
+        "barcode-bar-4",
+        "barcode-bar-wide"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "barcode-bar-0"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-1"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-2"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-3"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-4"
+        },
+        {
+          "type": "fixed",
+          "part": "barcode-bar-wide"
+        },
+        {
+          "type": "rigid",
+          "part": "barcode-laser"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}
