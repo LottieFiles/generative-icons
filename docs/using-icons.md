@@ -23,7 +23,7 @@ Each dotLottie file exposes a `color.primary` slot and these style slots:
 - `style.outline.bold`
 - `style.solid`
 - `style.tint` (Duotone)
-- `style.outline.width` (stroke-width token: sets any weight from 1 to 3 on the Regular outline; needs a player that supports stroke-width tokens)
+- `style.outline.width` (stroke-width token on every Regular outline stroke, for any weight from 1 to 3; the runtime bridges players that do not apply it yet)
 
 Outline weight and motion intensity are independent. Duotone intentionally matches Outline for shapes without an enclosed surface.
 

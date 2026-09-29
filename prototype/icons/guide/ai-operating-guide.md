@@ -584,7 +584,7 @@ Components that handle events in Next.js need `'use client'`. The adapter loads 
 | Size | CSS pixels, default `32` |
 | Color | Six-digit hex; resolve theme tokens before passing them |
 | Style | `outline`, `solid`, `duotone` (React prop: `variant`) |
-| Weight | Any value from `1` to `3` (outline only). `1.5`, `2` and `2.5` are the authored Light, Regular and Bold layers; other values render the Regular geometry through the `style.outline.width` stroke-width token, which needs a player that supports stroke-width tokens |
+| Weight | Any value from `1` to `3` (outline only). `1.5`, `2` and `2.5` are the authored Light, Regular and Bold layers; other values render the Regular geometry at that stroke width. The files carry a `style.outline.width` token for it; until dotLottie players apply stroke-width tokens, the runtime writes the width into the file before loading it |
 | Motion | `light`, `strong` |
 | Theme | `light`, `dark` |
 | Reduced motion | Follows the OS preference; override with a boolean |

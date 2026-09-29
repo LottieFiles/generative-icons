@@ -6,6 +6,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { connectIcon, validateIcon } from '../packages/runtime/dist/index.mjs';
+import { rewriteStrokeWidth, readZip } from '../packages/runtime/dist/weight.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const catalog = JSON.parse(fs.readFileSync(new URL('../packages/icons/dist/catalog.json', import.meta.url)));
@@ -136,4 +137,19 @@ test('any weight from 1 to 3 paints: authored layers at their stops, the stroke-
   handle.update({ style: 'solid', weight: 1.2 });
   assert.equal(player.slots['style.outline.regular'], 0); assert.equal(player.slots['style.solid'], 100);
   for (const weight of [0.5, 3.5, NaN, '2']) assert.throws(() => handle.update({ weight }), /weight must be a number from 1 to 3/);
+});
+
+test('in-between weights are written into the .lottie: every token-bound stroke, slot default and theme rule', async () => {
+  const original = fs.readFileSync(path.join(root, 'packages/icons/dist/assets/heart.lottie'));
+  const before = await readZip(original), after = await readZip(await rewriteStrokeWidth(original, 2.3));
+  assert.deepEqual(after.map(e => e.name), before.map(e => e.name));
+  let bound = 0, untouched = 0;
+  const walk = shapes => { for (const s of shapes || []) { if (s.ty === 'gr') walk(s.it); else if (s.ty === 'st') { if (s.w.sid === 'style.outline.width') { bound++; assert.equal(s.w.k, 2.3); } else { untouched++; assert.notEqual(s.w.k, 2.3); } } } };
+  for (const entry of after) {
+    const json = JSON.parse(new TextDecoder().decode(entry.data));
+    if (entry.name.startsWith('a/')) { for (const layer of json.layers) walk(layer.shapes); assert.equal(json.slots['style.outline.width'].p.k, 2.3); }
+    if (entry.name.startsWith('t/')) assert.equal(json.rules.find(r => r.id === 'style.outline.width').value, 2.3);
+    if (entry.name === 'manifest.json') assert.deepEqual(json, JSON.parse(new TextDecoder().decode(before.find(e => e.name === entry.name).data)));
+  }
+  assert.ok(bound > 0 && untouched > 0, `bound ${bound}, untouched ${untouched}`);
 });
