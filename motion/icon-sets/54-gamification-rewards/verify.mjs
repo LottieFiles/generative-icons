@@ -1,0 +1,249 @@
+import {verifyFilledEllipsis} from '../library/verify-filled-ellipsis.mjs';
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import crypto from "node:crypto";
+import assert from "node:assert/strict";
+const root = path.dirname(fileURLToPath(import.meta.url));
+const out = path.resolve(root, `../../../prototype/icons/${path.basename(root).slice(0,2)}/assets`);
+const hash = (value) => crypto.createHash("sha256").update(value).digest("hex");
+const set = JSON.parse(fs.readFileSync(path.join(out, "set.json")));
+for (const icon of set.icons.flatMap(icon => icon.animations)) {
+  const proof = JSON.parse(
+    fs.readFileSync(
+      path.join(root, `native/${icon.name}.json.provenance.json`),
+    ),
+  );
+  for (const [file, expected] of [
+    [`native/${icon.name}.json`, proof.sha256],
+    [`scenes/${icon.name}.engine.js`, proof.scriptSha256],
+    [`scenes/${icon.name}.scene.json`, proof.sceneSha256],
+  ])
+    assert.equal(hash(fs.readFileSync(path.join(root, file))), expected);
+  assert.equal(
+    hash(fs.readFileSync(path.join(root, "build.mjs"))),
+    icon.sourceSha256,
+  );
+  assert.equal(hash(fs.readFileSync(path.join(root,"definitions.mjs"))),icon.definitionsSha256);
+  assert.equal(hash(fs.readFileSync(path.join(root,"build.mjs"))),icon.setBuilderSha256,"Stale set builder");
+  for(const [name,expected] of Object.entries(icon.authoringSources||{})) assert.equal(hash(fs.readFileSync(path.join(root,name))),expected,"Stale authoring source "+name);
+  assert.equal(
+    hash(fs.readFileSync(path.join(out, `${icon.name}.lottie`))),
+    icon.sha256,
+  );
+  const raw = JSON.parse(
+    fs.readFileSync(path.join(root, `native/${icon.name}.json`)),
+  );
+  const data = JSON.parse(fs.readFileSync(path.join(out, `${icon.name}.json`)));
+  assert.equal(data.w, 32);
+  assert.equal(data.h, 32);
+  assert.equal(data.fr, 60);
+  assert.equal(data.op, 144);
+  assert.ok(data.layers.every((layer) => layer.ty === 4));
+  assert.deepEqual(icon.styles, ["outline", "solid", "duotone"]);
+  assert.deepEqual(icon.strokeWidth.presets, [1.5, 2, 2.5]);
+  const strokeWidths = new Set();
+  for (const layer of data.layers) for (const paint of layer.shapes.filter(s => ["st", "fl"].includes(s.ty))) {
+    assert.ok(data.slots[paint.c.sid], "Unbound color");
+    assert.ok(data.slots[paint.o.sid], "Unbound style");
+    if (paint.ty === "st") { if(paint.o.sid.startsWith("style.outline"))strokeWidths.add(paint.w.k); assert.equal(paint.lc, 2); assert.equal(paint.lj, 2); }
+  }
+  if(icon.icon==='more-options'){assert.equal(strokeWidths.size,0);verifyFilledEllipsis(data,icon.name);}else assert.deepEqual([...strokeWidths].sort(), [1.5, 2, 2.5]);
+  for (const theme of ["dark", "light"]) {
+    const rules = JSON.parse(fs.readFileSync(path.join(out, `${icon.name}.theme-${theme}.json`))).rules;
+    assert.deepEqual(rules.map(r => r.id).sort(), Object.keys(data.slots).sort(), "Theme drops token registry");
+  }
+
+  assert.deepEqual(
+    data.layers.map((layer) => layer.ks),
+    // JSON.stringify canonically writes the exporter's -0 as 0. They are
+    // the same angle; every other field must remain exactly equal.
+    JSON.parse(JSON.stringify(raw.layers.map((layer) => layer.ks))),
+    "Packaging changed motion",
+  );
+  assert.deepEqual(
+    data.layers.map((layer) =>
+      layer.shapes.filter((shape) => shape.ty === "sh"),
+    ),
+    raw.layers.map((layer) =>
+      layer.shapes.filter((shape) => shape.ty === "sh"),
+    ),
+    "Packaging changed path animation",
+  );
+  assert.ok(
+    data.markers.some(
+      (marker) => marker.cm === "rest" && marker.tm === icon.rest,
+    ),
+  );
+  assert.ok(data.markers.some((marker) => marker.cm === "action"));
+  const scene = JSON.parse(
+    fs.readFileSync(path.join(root, `scenes/${icon.name}.scene.json`)),
+  );
+  for (const node of scene.nodes) {
+    const points = node.points;
+    if(!icon.stateful && !icon.cycleDegrees && node.visibility[0][1]>0 && node.visibility.at(-1)[1]>0) assert.deepEqual(points[0][1], points.at(-1)[1], icon.name+": reset changes visible geometry");
+    const restPoints=points.filter(k=>k[0]>=icon.rest/60);
+    if(!icon.continuous && node.visibility.at(-1)[1]>0)for(const k of restPoints)assert.deepEqual(k[1],points.at(-1)[1],icon.name+": moving after rest");
+    if(!icon.continuous)for(const k of node.visibility.filter(k=>k[0]>=icon.rest/60))assert.equal(k[1],node.visibility.at(-1)[1],icon.name+": visibility moving after rest");
+    assert.ok(
+      points.every((point) => point[1].length === points[0][1].length),
+      "Morph topology changed",
+    );
+    for (const [, point] of points)
+      for (const coordinate of point) assert.ok(Number.isFinite(coordinate));
+  }
+  for(const [name,expected]of Object.entries(icon.directionSources||{}))assert.equal(hash(fs.readFileSync(path.join(root,"../library",name))),expected,"Stale direction source "+name);
+}
+
+// Strong and Light share complete start and final states, including visibility.
+const readScene = name => JSON.parse(fs.readFileSync(path.join(root,`scenes/${name}.scene.json`)));
+const ends=scene=>scene.nodes.map(n=>({name:n.name,commands:n.commands,first:n.points[0][1],last:n.points.at(-1)[1],alphaFirst:n.visibility[0][1],alphaLast:n.visibility.at(-1)[1]}));
+for(const icon of set.icons){
+  assert.deepEqual(icon.motions.map(m=>m.motionId),['light','strong']);
+  const [light,strong]=icon.motions.map(m=>readScene(m.name));
+  if(!icon.continuous&&!icon.cycleDegrees)for(let i=0;i<light.nodes.length;i++){const a=ends(light)[i],b=ends(strong)[i];assert.equal(a.alphaFirst,b.alphaFirst,icon.name+' initial visibility');assert.equal(a.alphaLast,b.alphaLast,icon.name+' final visibility');if(a.alphaFirst>0)assert.deepEqual(a.first,b.first,icon.name+' initial drawing');if(a.alphaLast>0)assert.deepEqual(a.last,b.last,icon.name+' final drawing');}
+  for(const motion of icon.motions){
+    const scene=readScene(motion.name);
+    if(icon.stateful){
+      assert.ok(motion.reverse,'Missing explicit reverse');
+      const reverse=readScene(motion.reverse.name);
+      for(let i=0;i<scene.nodes.length;i++){
+        if(scene.nodes[i].visibility[0][1]>0)assert.deepEqual(scene.nodes[i].points[0][1],reverse.nodes[i].points.at(-1)[1],icon.name+' reverse final geometry');
+        if(scene.nodes[i].visibility.at(-1)[1]>0)assert.deepEqual(scene.nodes[i].points.at(-1)[1],reverse.nodes[i].points[0][1],icon.name+' reverse initial geometry');
+        assert.equal(scene.nodes[i].visibility[0][1],reverse.nodes[i].visibility.at(-1)[1],'Reverse visibility mismatch');
+      }
+    }
+  }
+
+}
+
+// Independent constraints use exported world points, not the authored drivers.
+const sample=(keys,t)=>{if(t<=keys[0][0])return keys[0][1];const i=keys.findIndex(k=>k[0]>=t);if(i<0)return keys.at(-1)[1];const[ta,a]=keys[i-1],[tb,b]=keys[i],u=(t-ta)/(tb-ta);return Array.isArray(a)?a.map((v,j)=>v+(b[j]-v)*u):a+(b-a)*u;};
+const close=(a,b,label,tol=3e-5)=>assert.ok(Math.abs(a-b)<tol,`${label}: ${a} != ${b}`);
+const pick=(scene,name)=>{const n=scene.nodes.find(n=>n.name.startsWith(name+'__')||n.name.startsWith(name+'-regular__'));assert.ok(n,'Missing '+scene.name+'/'+name);return n;};
+const xy=(p,axis)=>p.filter((_,i)=>i%2===axis),extent=(p,axis)=>Math.max(...xy(p,axis))-Math.min(...xy(p,axis));
+const still=(sc,name)=>{const n=pick(sc,name);for(const k of n.points)assert.deepEqual(k[1],n.points[0][1],sc.name+' fixed '+name);};
+const increasing=(node,measure,label,sign=1)=>{let previous=-Infinity;for(const[,p]of node.points){const v=sign*measure(p);assert.ok(v>=previous-3e-5,label+' runs backward');previous=v;}};
+const report={result:'PASS',icons:set.icons.length,actions:set.icons.reduce((a,i)=>a+i.animations.length,0),nativeTransformNodes:0,nativeTransformMaxCoordinateError:0,checks:[]};
+for(const meta of set.icons.flatMap(i=>i.motions)){
+ const sc=readScene(meta.name),n=meta.icon;
+ const fixed=(meta.constraints||[]).filter(r=>r.type==='fixed').map(r=>r.part);
+ // The supervisor records design constraints independently of driver code.
+ // New AI sets use these to test fixed shells, rigid pieces, semantic progress,
+ // and clipped content regions on the evaluated native scene data.
+ for(const rule of meta.constraints||[]){
+  if(rule.profile && rule.profile!==meta.motionId)continue;
+  const node=pick(sc,rule.part),label=meta.name+': '+rule.type+' '+rule.part;
+  if(rule.type==='fixed')still(sc,rule.part);
+  else if(rule.type==='opaque'){for(const k of node.visibility)assert.equal(k[1],1,label+' fades');}
+  else if(rule.type==='hidden'){for(let f=0;f<=144;f++){const t=f/60;if(t>=rule.from&&t<=rule.to)assert.equal(sample(node.visibility,t),0,label+' leaves a visible cap');}}
+  else if(rule.type==='rigid'){
+   const base=node.points[0][1],distances=[];
+   for(let i=2;i<base.length;i+=2)distances.push(Math.hypot(base[i]-base[0],base[i+1]-base[1]));
+   for(const[,p]of node.points)for(let i=2;i<p.length;i+=2)close(Math.hypot(p[i]-p[0],p[i+1]-p[1]),distances[i/2-1],label,5e-5);
+  }else if(rule.type==='monotonic'){
+   if(rule.measure==='alpha')increasing({points:node.visibility.map(([t,v])=>[t,[v]])},p=>p[0],label,rule.direction||1);
+   else {const measures={width:p=>extent(p,0),height:p=>extent(p,1),x:p=>xy(p,0).reduce((a,b)=>a+b,0)/(p.length/2),y:p=>xy(p,1).reduce((a,b)=>a+b,0)/(p.length/2)};assert.ok(measures[rule.measure],label+' unknown measure');increasing(node,measures[rule.measure],label,rule.direction||1);}
+  }else if(rule.type==='inside'){
+   for(let f=0;f<=144;f++)if(sample(node.visibility,f/60)>0){const p=sample(node.points,f/60),[left,top,right,bottom]=rule.box;assert.ok(Math.min(...xy(p,0))>=left-3e-5&&Math.max(...xy(p,0))<=right+3e-5&&Math.min(...xy(p,1))>=top-3e-5&&Math.max(...xy(p,1))<=bottom+3e-5,label+' crosses its content region');}
+  }else throw Error('Unknown design constraint '+rule.type);
+ }
+ // Confirm every native rigid transform against independently sampled world points.
+ const data=JSON.parse(fs.readFileSync(path.join(out,meta.name+'.json'))),property=(p,f)=>p.a?sample(p.k.map(k=>[k.t,k.s]),f):p.k,scalar=v=>Array.isArray(v)?v[0]:v;
+ for(const node of sc.nodes.filter(n=>n.transform)){
+  const layer=data.layers.find(l=>l.nm===node.name.split('__')[0]);report.nativeTransformNodes++;
+  assert.ok(layer.shapes.filter(s=>s.ty==='sh').every(s=>s.ks.a===0),'Rigid path was resampled');
+  for(let f=0;f<=144;f++){const r=scalar(property(layer.ks.r,f))*Math.PI/180,pos=property(layer.ks.p,f),anchor=property(layer.ks.a,f),expected=sample(node.points,f/60);for(let i=0;i<node.basePoints.length;i+=2){const x=node.basePoints[i]-anchor[0],y=node.basePoints[i+1]-anchor[1],actual=[pos[0]+x*Math.cos(r)-y*Math.sin(r),pos[1]+x*Math.sin(r)+y*Math.cos(r)];for(let j=0;j<2;j++){report.nativeTransformMaxCoordinateError=Math.max(report.nativeTransformMaxCoordinateError,Math.abs(actual[j]-expected[i+j]));close(actual[j],expected[i+j],'Native world geometry');}}}
+ }
+ report.checks.push({name:meta.name,fixedParts:fixed,topology:true,stateBoundaries:true,hold:!meta.continuous,continuous:!!meta.continuous,designConstraints:meta.constraints||[]});
+}
+// Independently evaluate complete-cycle positions and velocities at the seam.
+report.loopChecks=[];
+for(const meta of set.icons.filter(i=>i.continuous).flatMap(i=>i.animations)){
+ const sc=readScene(meta.name);let maxSeamPositionError=0,maxVelocityRatio=0;
+ for(const n of sc.nodes){
+  for(const keys of [n.points,n.visibility]){
+   // A recycling part may change geometry only inside an explicit invisible
+   // guard interval spanning the wrap. Never exempt its opacity seam.
+   const hiddenSeam=keys===n.points&&[0,1/60,143/60,2.4].every(t=>sample(n.visibility,t)===0);
+   if(hiddenSeam)continue;
+   const vec=v=>Array.isArray(v)?v:[v],samples=Array.from({length:145},(_,f)=>vec(sample(keys,f/60)));
+   for(let c=0;c<samples[0].length;c++){
+    const a=samples[0][c],b=samples[144][c];maxSeamPositionError=Math.max(maxSeamPositionError,Math.abs(a-b));close(a,b,meta.name+' loop position',.00003);
+    const velocities=samples.slice(1).map((p,i)=>p[c]-samples[i][c]);
+    const peak=Math.max(...velocities.map(Math.abs));const mismatch=Math.abs(velocities[0]-velocities.at(-1));
+    const acceleration=Math.max(...velocities.slice(1).map((v,i)=>Math.abs(v-velocities[i])));
+    assert.ok(mismatch<=acceleration*1.06+.0001,meta.name+' loop acceleration spike '+n.name);
+    if(peak>.0001)maxVelocityRatio=Math.max(maxVelocityRatio,mismatch/peak);
+   }
+  }
+ }
+ report.loopChecks.push({name:meta.name,maxSeamPositionError,maxVelocityRatio});
+}
+// Drawing-specific contracts, sampled independently from the exported world paths.
+// Every action (including the authored reverses) is checked at all 145 frame boundaries.
+const curves=(node,t)=>{
+ const p=sample(node.points,t),out=[];let k=0,last,first;
+ for(const cmd of node.commands){
+  if(cmd===0||cmd===1){last=p.slice(k,k+2);k+=2;out.push(last);if(cmd===0)first=last;}
+  else if(cmd===2){const a=last,b=p.slice(k,k+2),c=p.slice(k+2,k+4),d=p.slice(k+4,k+6);k+=6;for(let j=1;j<=64;j++){const u=j/64,v=1-u;out.push([0,1].map(i=>v*v*v*a[i]+3*v*v*u*b[i]+3*v*u*u*c[i]+u*u*u*d[i]));}last=d;}
+  else if(cmd===3){out.push(first);last=first;}
+ }
+ return out;
+};
+const lineDistance=(p,a,b)=>{const dx=b[0]-a[0],dy=b[1]-a[1],u=Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/(dx*dx+dy*dy||1)));return Math.hypot(p[0]-a[0]-u*dx,p[1]-a[1]-u*dy);};
+const curveDistance=(p,curve)=>Math.min(...curve.slice(1).map((b,i)=>lineDistance(p,curve[i],b)));
+const insidePaint=(p,poly)=>{let inside=false;for(let i=0,j=poly.length-1;i<poly.length;j=i++){const a=poly[i],b=poly[j];if((a[1]>p[1])!==(b[1]>p[1])&&p[0]<(b[0]-a[0])*(p[1]-a[1])/(b[1]-a[1])+a[0])inside=!inside;}return inside;};
+const bounds=(n,t)=>{const p=curves(n,t),r=n.type==='stroke'?sample(n.width,t)/2:0;return [Math.min(...p.map(p=>p[0]))-r,Math.min(...p.map(p=>p[1]))-r,Math.max(...p.map(p=>p[0]))+r,Math.max(...p.map(p=>p[1]))+r];};
+const paintedPick=(sc,name)=>sc.nodes.find(n=>n.name.split('__')[0]===name+'-bold')||pick(sc,name);
+report.drawingChecks={frames:0,chestHingeMaxError:0,handHubMaxError:0,xpBarMinimumInset:32,powerBoltMinimumGap:32,questMarkerMinimumGap:32,scoreCrownMinimumGap:32};
+assert.equal(set.icons.length,20,'The reward set must contain exactly 20 icons');
+assert.ok(set.icons.filter(i=>i.stateful).length>=6&&set.icons.filter(i=>i.stateful).length<=10,'Expected 6–10 stateful icons');
+for(const icon of set.icons)for(const meta of icon.animations){
+ const sc=readScene(meta.name);
+ for(let f=0;f<=144;f++){
+  const t=f/60;report.drawingChecks.frames++;
+  if(icon.icon==='treasure-chest'){
+   const lid=pick(sc,'treasure-chest-lid-frame'),p=sample(lid.points,t).slice(0,2),error=Math.hypot(p[0]-7,p[1]-18);
+   report.drawingChecks.chestHingeMaxError=Math.max(report.drawingChecks.chestHingeMaxError,error);
+   assert.ok(error<.00003,meta.name+' lid leaves its fixed rim hinge');
+   assert.ok(curveDistance(p,curves(paintedPick(sc,'treasure-chest-body-frame'),t))<1.2,meta.name+' hinge loses painted Outline contact');
+   assert.ok(insidePaint(p,curves(pick(sc,'treasure-chest-body-solid'),t)),meta.name+' hinge loses Solid rim overlap');
+   for(const name of ['treasure-chest-body-frame','treasure-chest-body-solid'])assert.deepEqual(sample(pick(sc,name).points,t),pick(sc,name).points[0][1],meta.name+' body moves');
+  }
+  if(icon.icon==='round-countdown'){
+   const p=sample(pick(sc,'round-countdown-hand').points,t).slice(0,2),error=Math.hypot(p[0]-16,p[1]-17.5);
+   report.drawingChecks.handHubMaxError=Math.max(report.drawingChecks.handHubMaxError,error);
+   assert.ok(error<.00003,meta.name+' hand leaves the hub');
+   const hand=bounds(paintedPick(sc,'round-countdown-hand'),t);
+   assert.ok(hand[0]>7.5&&hand[1]>9&&hand[2]<24.5&&hand[3]<26,meta.name+' hand touches the case');
+  }
+  if(icon.icon==='xp-gain'){
+   for(const part of ['xp-gain-bar','xp-gain-bar-solid']){
+    const b=bounds(pick(sc,part),t),gap=Math.min(b[0]-5.8,25.4-b[2],b[1]-19.3,24.7-b[3]);
+    report.drawingChecks.xpBarMinimumInset=Math.min(report.drawingChecks.xpBarMinimumInset,gap);
+    assert.ok(gap>=.79,meta.name+' XP bar touches the inner track edge');
+   }
+  }
+  if(icon.icon==='power-up'){
+   const bolt=curves(pick(sc,'power-up-bolt'),t),shell=paintedPick(sc,'power-up-shell'),shellCurve=curves(shell,t),gap=Math.min(...bolt.map(p=>curveDistance(p,shellCurve)))-1.3;
+   report.drawingChecks.powerBoltMinimumGap=Math.min(report.drawingChecks.powerBoltMinimumGap,gap);
+   assert.ok(gap>=1,meta.name+' power bolt loses its one-unit painted clearance');
+  }
+  if(icon.icon==='quest'){
+   const marker=curves(pick(sc,'quest-marker'),t);
+   for(const part of ['map-frame','fold-top','fold-bottom']){
+    const edge=curves(paintedPick(sc,'quest-'+part),t),gap=Math.min(...marker.map(p=>curveDistance(p,edge)))-1.3;
+    report.drawingChecks.questMarkerMinimumGap=Math.min(report.drawingChecks.questMarkerMinimumGap,gap);
+    assert.ok(gap>=1,`${meta.name} quest marker / ${part} frame ${f}: ${gap} < 1`);
+   }
+  }
+  if(icon.icon==='high-score'){
+   const crown=curves(pick(sc,'high-score-crown'),t),panel=curves(paintedPick(sc,'high-score-panel'),t),gap=Math.min(...crown.map(p=>curveDistance(p,panel)))-1.3;
+   report.drawingChecks.scoreCrownMinimumGap=Math.min(report.drawingChecks.scoreCrownMinimumGap,gap);
+   assert.ok(gap>=1.5,meta.name+' crown touches the score panel');
+  }
+ }
+}
+fs.writeFileSync(path.join(root,'evidence/directed-source-verification.json'),JSON.stringify(report,null,2)+'\n');
+console.log(`PASS ${set.id}: ${report.icons} icons, ${report.actions} native actions; provenance, styles, weights, topology, state boundaries, holds and physical constraints.`);

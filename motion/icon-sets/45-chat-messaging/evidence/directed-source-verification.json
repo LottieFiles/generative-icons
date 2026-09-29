@@ -1,0 +1,1738 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 58,
+  "nativeTransformNodes": 620,
+  "nativeTransformMaxCoordinateError": 0.000010000000002285958,
+  "checks": [
+    {
+      "name": "composing-message",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "composing-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-text"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-lower-text"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-lower-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-caret"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-caret-solid"
+        }
+      ]
+    },
+    {
+      "name": "composing-message-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "composing-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-text"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-lower-text"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-lower-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-caret"
+        },
+        {
+          "type": "rigid",
+          "part": "composing-message-caret-solid"
+        }
+      ]
+    },
+    {
+      "name": "message-sent",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "message-sent-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-text"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-check"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-check-solid"
+        }
+      ]
+    },
+    {
+      "name": "message-sent-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "message-sent-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-text"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-check"
+        },
+        {
+          "type": "rigid",
+          "part": "message-sent-check-solid"
+        }
+      ]
+    },
+    {
+      "name": "message-delivered",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "message-delivered-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-text"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-first-check"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-first-check-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-second-check"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-second-check-solid"
+        }
+      ]
+    },
+    {
+      "name": "message-delivered-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "message-delivered-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-text"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-first-check"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-first-check-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-second-check"
+        },
+        {
+          "type": "rigid",
+          "part": "message-delivered-second-check-solid"
+        }
+      ]
+    },
+    {
+      "name": "message-read",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "message-read-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-text"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-pupil"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-pupil-solid"
+        }
+      ]
+    },
+    {
+      "name": "message-read-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "message-read-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-text"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-pupil"
+        },
+        {
+          "type": "rigid",
+          "part": "message-read-pupil-solid"
+        }
+      ]
+    },
+    {
+      "name": "message-reaction",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "message-reaction-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-text"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-heart-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-heart"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-heart-solid"
+        }
+      ]
+    },
+    {
+      "name": "message-reaction-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "message-reaction-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-text"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-heart-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-heart"
+        },
+        {
+          "type": "rigid",
+          "part": "message-reaction-heart-solid"
+        }
+      ]
+    },
+    {
+      "name": "quoted-message",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "quoted-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-left"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-left-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-left-tail"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-left-tail-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-right"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-right-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-right-tail"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-right-tail-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quotation"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quotation-solid"
+        }
+      ]
+    },
+    {
+      "name": "quoted-message-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "quoted-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-left"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-left-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-left-tail"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-left-tail-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-right"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-right-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-right-tail"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quote-right-tail-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quotation"
+        },
+        {
+          "type": "rigid",
+          "part": "quoted-message-quotation-solid"
+        }
+      ]
+    },
+    {
+      "name": "forward-message",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "forward-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-text"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-arrow-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-arrow-shaft-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-arrow-head"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-arrow-head-solid"
+        }
+      ]
+    },
+    {
+      "name": "forward-message-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "forward-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-text"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-arrow-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-arrow-shaft-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-arrow-head"
+        },
+        {
+          "type": "rigid",
+          "part": "forward-message-arrow-head-solid"
+        }
+      ]
+    },
+    {
+      "name": "pin-message",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "pin-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-text"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-pin-head"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-pin-head-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-needle"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-needle-solid"
+        }
+      ]
+    },
+    {
+      "name": "pin-message-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "pin-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-text"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-pin-head"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-pin-head-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-needle"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-message-needle-solid"
+        }
+      ]
+    },
+    {
+      "name": "conversation-history",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "conversation-history-top-message-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-top-message"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-top-message-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-history-rail"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-history-rail-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-older-row"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-older-row-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-oldest-row"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-oldest-row-solid"
+        }
+      ]
+    },
+    {
+      "name": "conversation-history-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "conversation-history-top-message-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-top-message"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-top-message-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-history-rail"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-history-rail-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-older-row"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-older-row-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-oldest-row"
+        },
+        {
+          "type": "rigid",
+          "part": "conversation-history-oldest-row-solid"
+        }
+      ]
+    },
+    {
+      "name": "mute-chat",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "mute-chat-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "mute-chat-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "mute-chat-bubble-solid"
+        }
+      ]
+    },
+    {
+      "name": "mute-chat-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "mute-chat-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "mute-chat-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "mute-chat-bubble-solid"
+        }
+      ]
+    },
+    {
+      "name": "group-chat",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "group-chat-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-member-a"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-member-a-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-shoulders-a"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-shoulders-a-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-member-b"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-member-b-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-shoulders-b"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-shoulders-b-solid"
+        }
+      ]
+    },
+    {
+      "name": "group-chat-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "group-chat-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-member-a"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-member-a-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-shoulders-a"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-shoulders-a-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-member-b"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-member-b-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-shoulders-b"
+        },
+        {
+          "type": "rigid",
+          "part": "group-chat-shoulders-b-solid"
+        }
+      ]
+    },
+    {
+      "name": "voice-note",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "voice-note-clip-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "voice-note-clip"
+        },
+        {
+          "type": "rigid",
+          "part": "voice-note-clip-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "voice-note-play"
+        },
+        {
+          "type": "rigid",
+          "part": "voice-note-play-solid"
+        }
+      ]
+    },
+    {
+      "name": "voice-note-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "voice-note-clip-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "voice-note-clip"
+        },
+        {
+          "type": "rigid",
+          "part": "voice-note-clip-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "voice-note-play"
+        },
+        {
+          "type": "rigid",
+          "part": "voice-note-play-solid"
+        }
+      ]
+    },
+    {
+      "name": "sticker",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "sticker-eye-a"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-eye-a-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-eye-b"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-eye-b-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-smile"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-smile-solid"
+        }
+      ]
+    },
+    {
+      "name": "sticker-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "sticker-eye-a"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-eye-a-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-eye-b"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-eye-b-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-smile"
+        },
+        {
+          "type": "rigid",
+          "part": "sticker-smile-solid"
+        }
+      ]
+    },
+    {
+      "name": "gif-picker",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "gif-picker-stack"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-stack-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-tile-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-tile"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-tile-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-g"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-g-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-i"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-i-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-f"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-f-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-f-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-f-bar-solid"
+        }
+      ]
+    },
+    {
+      "name": "gif-picker-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "gif-picker-stack"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-stack-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-tile-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-tile"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-tile-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-g"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-g-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-i"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-i-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-f"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-f-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-f-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "gif-picker-f-bar-solid"
+        }
+      ]
+    },
+    {
+      "name": "edit-message",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "edit-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-pen"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-pen-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-pen-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-pen-shaft-solid"
+        }
+      ]
+    },
+    {
+      "name": "edit-message-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "edit-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-pen"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-pen-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-pen-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "edit-message-pen-shaft-solid"
+        }
+      ]
+    },
+    {
+      "name": "delete-message",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "delete-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-text-0"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-text-0-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-text-1"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-text-1-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-removed"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-removed-solid"
+        }
+      ]
+    },
+    {
+      "name": "delete-message-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "delete-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-text-0"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-text-0-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-text-1"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-text-1-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-removed"
+        },
+        {
+          "type": "rigid",
+          "part": "delete-message-removed-solid"
+        }
+      ]
+    },
+    {
+      "name": "unread-divider",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "unread-divider-upper-message-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-upper-message"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-upper-message-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-lower-message-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-lower-message"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-lower-message-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-divider-l"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-divider-l-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-unread-dot"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-unread-dot-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-divider-r"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-divider-r-solid"
+        }
+      ]
+    },
+    {
+      "name": "unread-divider-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "unread-divider-upper-message-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-upper-message"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-upper-message-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-lower-message-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-lower-message"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-lower-message-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-divider-l"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-divider-l-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-unread-dot"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-unread-dot-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-divider-r"
+        },
+        {
+          "type": "rigid",
+          "part": "unread-divider-divider-r-solid"
+        }
+      ]
+    },
+    {
+      "name": "archive-chat",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "archive-chat-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "archive-chat-tray-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "archive-chat-message-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "archive-chat-message"
+        },
+        {
+          "type": "rigid",
+          "part": "archive-chat-message-solid"
+        }
+      ]
+    },
+    {
+      "name": "archive-chat-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "archive-chat-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "archive-chat-tray-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "archive-chat-message-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "archive-chat-message"
+        },
+        {
+          "type": "rigid",
+          "part": "archive-chat-message-solid"
+        }
+      ]
+    },
+    {
+      "name": "disappearing-message",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "disappearing-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "disappearing-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "disappearing-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "disappearing-message-timer"
+        },
+        {
+          "type": "rigid",
+          "part": "disappearing-message-timer-solid"
+        }
+      ]
+    },
+    {
+      "name": "disappearing-message-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "disappearing-message-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "disappearing-message-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "disappearing-message-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "disappearing-message-timer"
+        },
+        {
+          "type": "rigid",
+          "part": "disappearing-message-timer-solid"
+        }
+      ]
+    },
+    {
+      "name": "chat-search",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "chat-search-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-text"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-lens-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-lens"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-lens-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-handle"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-handle-solid"
+        }
+      ]
+    },
+    {
+      "name": "chat-search-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "chat-search-bubble-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-bubble"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-bubble-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-text"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-text-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-lens-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-lens"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-lens-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-handle"
+        },
+        {
+          "type": "rigid",
+          "part": "chat-search-handle-solid"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

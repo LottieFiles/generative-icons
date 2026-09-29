@@ -1,0 +1,1169 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 60,
+  "nativeTransformNodes": 816,
+  "nativeTransformMaxCoordinateError": 0.000010495036091739962,
+  "checks": [
+    {
+      "name": "api-key",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "api-key-bow-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "api-key-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "api-key-tooth"
+        },
+        {
+          "type": "rigid",
+          "part": "api-key-code-left"
+        },
+        {
+          "type": "rigid",
+          "part": "api-key-code-right"
+        }
+      ]
+    },
+    {
+      "name": "api-key-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "api-key-bow-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "api-key-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "api-key-tooth"
+        },
+        {
+          "type": "rigid",
+          "part": "api-key-code-left"
+        },
+        {
+          "type": "rigid",
+          "part": "api-key-code-right"
+        }
+      ]
+    },
+    {
+      "name": "endpoint",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "endpoint-socket-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "endpoint-plug-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "endpoint-prong-top"
+        },
+        {
+          "type": "rigid",
+          "part": "endpoint-prong-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "endpoint-lead"
+        }
+      ]
+    },
+    {
+      "name": "endpoint-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "endpoint-socket-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "endpoint-plug-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "endpoint-prong-top"
+        },
+        {
+          "type": "rigid",
+          "part": "endpoint-prong-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "endpoint-lead"
+        }
+      ]
+    },
+    {
+      "name": "rate-limit",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "rate-limit-gate"
+        },
+        {
+          "type": "rigid",
+          "part": "rate-limit-foot-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rate-limit-packet-a-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rate-limit-packet-b-frame"
+        }
+      ]
+    },
+    {
+      "name": "rate-limit-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "rate-limit-gate"
+        },
+        {
+          "type": "rigid",
+          "part": "rate-limit-foot-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rate-limit-packet-a-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rate-limit-packet-b-frame"
+        }
+      ]
+    },
+    {
+      "name": "token-counter",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "token-counter-rail-top"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-rail-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-left-post"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-right-post"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-upper-bead-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-lower-bead-frame"
+        }
+      ]
+    },
+    {
+      "name": "token-counter-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "token-counter-rail-top"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-rail-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-left-post"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-right-post"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-upper-bead-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "token-counter-lower-bead-frame"
+        }
+      ]
+    },
+    {
+      "name": "request-timeout",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "request-timeout-timer-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "request-timeout-hour"
+        },
+        {
+          "type": "rigid",
+          "part": "request-timeout-hand"
+        },
+        {
+          "type": "rigid",
+          "part": "request-timeout-request-path"
+        },
+        {
+          "type": "rigid",
+          "part": "request-timeout-stop"
+        }
+      ]
+    },
+    {
+      "name": "request-timeout-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "request-timeout-timer-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "request-timeout-hour"
+        },
+        {
+          "type": "rigid",
+          "part": "request-timeout-hand"
+        },
+        {
+          "type": "rigid",
+          "part": "request-timeout-request-path"
+        },
+        {
+          "type": "rigid",
+          "part": "request-timeout-stop"
+        }
+      ]
+    },
+    {
+      "name": "model-card",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "model-card-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-card-model-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-card-spec-a"
+        },
+        {
+          "type": "rigid",
+          "part": "model-card-spec-b"
+        }
+      ]
+    },
+    {
+      "name": "model-card-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "model-card-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-card-model-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-card-spec-a"
+        },
+        {
+          "type": "rigid",
+          "part": "model-card-spec-b"
+        }
+      ]
+    },
+    {
+      "name": "open-weights",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "open-weights-weights-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "open-weights-weight-small"
+        },
+        {
+          "type": "rigid",
+          "part": "open-weights-weight-large"
+        },
+        {
+          "type": "rigid",
+          "part": "open-weights-weight-medium"
+        },
+        {
+          "type": "rigid",
+          "part": "open-weights-shackle"
+        }
+      ]
+    },
+    {
+      "name": "open-weights-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "open-weights-weights-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "open-weights-weight-small"
+        },
+        {
+          "type": "rigid",
+          "part": "open-weights-weight-large"
+        },
+        {
+          "type": "rigid",
+          "part": "open-weights-weight-medium"
+        },
+        {
+          "type": "rigid",
+          "part": "open-weights-shackle"
+        }
+      ]
+    },
+    {
+      "name": "model-picker",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "model-picker-option-top-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-picker-option-bottom-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-picker-top-label"
+        },
+        {
+          "type": "rigid",
+          "part": "model-picker-bottom-label"
+        },
+        {
+          "type": "rigid",
+          "part": "model-picker-cursor"
+        }
+      ]
+    },
+    {
+      "name": "model-picker-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "model-picker-option-top-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-picker-option-bottom-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-picker-top-label"
+        },
+        {
+          "type": "rigid",
+          "part": "model-picker-bottom-label"
+        },
+        {
+          "type": "rigid",
+          "part": "model-picker-cursor"
+        }
+      ]
+    },
+    {
+      "name": "provider-switch",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "provider-switch-provider-a-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-provider-b-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-port-a"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-port-b"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-rail"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-lead-a"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-lead-b"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-contact-frame"
+        }
+      ]
+    },
+    {
+      "name": "provider-switch-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "provider-switch-provider-a-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-provider-b-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-port-a"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-port-b"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-rail"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-lead-a"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-lead-b"
+        },
+        {
+          "type": "rigid",
+          "part": "provider-switch-contact-frame"
+        }
+      ]
+    },
+    {
+      "name": "latency-meter",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "latency-meter-source-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-destination-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-outbound"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-outbound-head"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-inbound"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-inbound-head"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-duration"
+        }
+      ]
+    },
+    {
+      "name": "latency-meter-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "latency-meter-source-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-destination-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-outbound"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-outbound-head"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-inbound"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-inbound-head"
+        },
+        {
+          "type": "rigid",
+          "part": "latency-meter-duration"
+        }
+      ]
+    },
+    {
+      "name": "cost-estimate",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cost-estimate-estimate-slip-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "cost-estimate-estimate-a"
+        },
+        {
+          "type": "rigid",
+          "part": "cost-estimate-estimate-b"
+        },
+        {
+          "type": "rigid",
+          "part": "cost-estimate-coin-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "cost-estimate-value"
+        }
+      ]
+    },
+    {
+      "name": "cost-estimate-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "cost-estimate-estimate-slip-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "cost-estimate-estimate-a"
+        },
+        {
+          "type": "rigid",
+          "part": "cost-estimate-estimate-b"
+        },
+        {
+          "type": "rigid",
+          "part": "cost-estimate-coin-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "cost-estimate-value"
+        }
+      ]
+    },
+    {
+      "name": "temperature-dial",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "temperature-dial-knob-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "temperature-dial-indicator"
+        },
+        {
+          "type": "rigid",
+          "part": "temperature-dial-low-mark"
+        },
+        {
+          "type": "rigid",
+          "part": "temperature-dial-mid-mark"
+        },
+        {
+          "type": "rigid",
+          "part": "temperature-dial-high-mark"
+        }
+      ]
+    },
+    {
+      "name": "temperature-dial-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "temperature-dial-knob-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "temperature-dial-indicator"
+        },
+        {
+          "type": "rigid",
+          "part": "temperature-dial-low-mark"
+        },
+        {
+          "type": "rigid",
+          "part": "temperature-dial-mid-mark"
+        },
+        {
+          "type": "rigid",
+          "part": "temperature-dial-high-mark"
+        }
+      ]
+    },
+    {
+      "name": "top-p",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "top-p-density"
+        }
+      ]
+    },
+    {
+      "name": "top-p-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "top-p-density"
+        }
+      ]
+    },
+    {
+      "name": "max-tokens",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "max-tokens-first-token-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "max-tokens-output-second"
+        },
+        {
+          "type": "rigid",
+          "part": "max-tokens-output-third"
+        },
+        {
+          "type": "rigid",
+          "part": "max-tokens-limit"
+        }
+      ]
+    },
+    {
+      "name": "max-tokens-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "max-tokens-first-token-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "max-tokens-output-second"
+        },
+        {
+          "type": "rigid",
+          "part": "max-tokens-output-third"
+        },
+        {
+          "type": "rigid",
+          "part": "max-tokens-limit"
+        }
+      ]
+    },
+    {
+      "name": "seed-lock",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "seed-lock-die-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "seed-lock-pip-0"
+        },
+        {
+          "type": "rigid",
+          "part": "seed-lock-pip-1"
+        },
+        {
+          "type": "rigid",
+          "part": "seed-lock-pip-2"
+        },
+        {
+          "type": "rigid",
+          "part": "seed-lock-shackle"
+        }
+      ]
+    },
+    {
+      "name": "seed-lock-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "seed-lock-die-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "seed-lock-pip-0"
+        },
+        {
+          "type": "rigid",
+          "part": "seed-lock-pip-1"
+        },
+        {
+          "type": "rigid",
+          "part": "seed-lock-pip-2"
+        },
+        {
+          "type": "rigid",
+          "part": "seed-lock-shackle"
+        }
+      ]
+    },
+    {
+      "name": "api-quota",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "api-quota-permit-top-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "api-quota-permit-bottom-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "api-quota-permit-active-frame"
+        }
+      ]
+    },
+    {
+      "name": "api-quota-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "api-quota-permit-top-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "api-quota-permit-bottom-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "api-quota-permit-active-frame"
+        }
+      ]
+    },
+    {
+      "name": "model-status",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "model-status-processor-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-status-status-lead"
+        },
+        {
+          "type": "rigid",
+          "part": "model-status-lamp-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-status-ready-light"
+        }
+      ]
+    },
+    {
+      "name": "model-status-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "model-status-processor-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-status-status-lead"
+        },
+        {
+          "type": "rigid",
+          "part": "model-status-lamp-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "model-status-ready-light"
+        }
+      ]
+    },
+    {
+      "name": "fallback-model",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fallback-model-primary-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "fallback-model-reserve-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "fallback-model-primary-status"
+        },
+        {
+          "type": "rigid",
+          "part": "fallback-model-backup-ready"
+        }
+      ]
+    },
+    {
+      "name": "fallback-model-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fallback-model-primary-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "fallback-model-reserve-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "fallback-model-primary-status"
+        },
+        {
+          "type": "rigid",
+          "part": "fallback-model-backup-ready"
+        }
+      ]
+    },
+    {
+      "name": "prompt-cache-hit",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "prompt-cache-hit-cache-tray-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "prompt-cache-hit-cache-grip"
+        },
+        {
+          "type": "rigid",
+          "part": "prompt-cache-hit-cached-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "prompt-cache-hit-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "prompt-cache-hit-cache-tray-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "prompt-cache-hit-cache-grip"
+        },
+        {
+          "type": "rigid",
+          "part": "prompt-cache-hit-cached-result-frame"
+        }
+      ]
+    },
+    {
+      "name": "multimodal-input",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "multimodal-input-input-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-image-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-landscape"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-audio-left"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-audio-middle"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-audio-right"
+        }
+      ]
+    },
+    {
+      "name": "multimodal-input-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "multimodal-input-input-tray"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-image-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-landscape"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-audio-left"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-audio-middle"
+        },
+        {
+          "type": "rigid",
+          "part": "multimodal-input-audio-right"
+        }
+      ]
+    }
+  ],
+  "loopChecks": [],
+  "drawingChecks": {
+    "samples": 3480,
+    "minimumPickerGap": 1.4,
+    "minimumLimitGap": 1.4029299999999991,
+    "minimumDialGap": 1.1999939724209907,
+    "maximumPlugJointError": 0
+  }
+}

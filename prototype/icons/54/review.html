@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Rewards native drawing review</title>
+<style>body{margin:20px;background:#10171d;color:#e9f3f0;font:14px system-ui}canvas{display:block}a{color:#00ddb3}</style>
+<p id="status">Rendering native review sheet…</p><canvas id="sheet"></canvas>
+<script type="module">
+import {DotLottie} from '../../vendor/dotlottie-web.js';
+DotLottie.setWasmUrl(new URL('../../vendor/dotlottie-player.wasm',location.href).href);
+const params=new URLSearchParams(location.search),motion=params.get('mode')==='motion',theme=params.get('theme')||'dark';
+const set=await fetch('./assets/set.json',{cache:'no-store'}).then(r=>r.json());
+const sheet=document.querySelector('#sheet'),ctx=sheet.getContext('2d'),row=motion?112:82;
+sheet.width=1100;sheet.height=40+set.icons.length*row;
+ctx.fillStyle=theme==='light'?'#ffffff':'#10171d';ctx.fillRect(0,0,sheet.width,sheet.height);
+const ink=theme==='light'?'#243b36':'#ceddd7';ctx.font='12px monospace';ctx.fillStyle=ink;
+const views=motion?[0,.08,.16,.24,.36,.5,.7,1]:['outline','solid','duotone'].flatMap(style=>[24,32,48].map(size=>({style,size})));
+views.forEach((v,i)=>ctx.fillText(motion?v.toFixed(2)+' s':v.style+' '+v.size,180+i*(motion?110:100),25));
+function paint(p,style,width=2.5){p.setTheme(theme);for(const [name,w]of [['light',1.5],['regular',2],['bold',2.5]])p.setScalarSlot('style.outline.'+name,style!=='solid'&&w===width?100:0);p.setScalarSlot('style.solid',style==='solid'?100:0);p.setScalarSlot('style.tint',style==='duotone'?18:0);}
+async function player(meta,size){const canvas=document.createElement('canvas');canvas.width=canvas.height=size;document.body.append(canvas);const data=await fetch('./assets/'+meta.name+'.lottie?v='+meta.sha256).then(r=>r.arrayBuffer());const p=new DotLottie({canvas,data,autoplay:false,loop:false,useFrameInterpolation:false,renderConfig:{autoResize:false,devicePixelRatio:1,freezeOnOffscreen:false}});await new Promise((resolve,reject)=>{p.addEventListener('load',resolve);p.addEventListener('loadError',reject)});return{canvas,p};}
+for(const [index,icon]of set.icons.entries()){
+ const y=40+index*row;ctx.fillStyle=ink;ctx.fillText(icon.icon,4,y+row/2);
+ if(motion){
+  for(const [m,meta]of icon.motions.entries()){
+   const {canvas,p}=await player(meta,48);paint(p,'outline',2);ctx.fillStyle=ink;ctx.fillText(m?'S':'L',158,y+20+m*52);
+   for(const [j,t]of views.entries()){p.setFrame(t*60);ctx.drawImage(canvas,180+j*110,y+m*52)}p.destroy();canvas.remove();
+  }
+ }else{
+  const meta=icon.motions[1];
+  for(const size of [24,32,48]){
+   const {canvas,p}=await player(meta,size);
+   for(const [j,view]of views.entries())if(view.size===size){paint(p,view.style);p.setFrame(params.has('time')?Number(params.get('time'))*60:meta.rest);ctx.drawImage(canvas,180+j*100,y+(row-size)/2)}p.destroy();canvas.remove();
+  }
+ }
+ document.querySelector('#status').textContent='Rendered '+(index+1)+' / '+set.icons.length;
+}
+document.querySelector('#status').textContent='READY — native '+(motion?'Light / Strong equal-time poses':'24 / 32 / 48 px at Bold, Solid and Duotone')+'; '+theme+' theme';
+window.reviewReady=true;
+</script></html>
