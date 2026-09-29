@@ -1,0 +1,612 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 62,
+  "nativeTransformNodes": 508,
+  "nativeTransformMaxCoordinateError": 0.000011088192859887158,
+  "checks": [
+    {
+      "name": "rsvp",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "rsvp-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "event-invite",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "event-invite-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "venue",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "venue-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "seat-map",
+      "fixedParts": [
+        "seat-map-stage-frame",
+        "seat-map-seat-0",
+        "seat-map-seat-11"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "seat-map-stage-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "seat-map-seat-0"
+        },
+        {
+          "type": "fixed",
+          "part": "seat-map-seat-11"
+        }
+      ]
+    },
+    {
+      "name": "seat-map-strong",
+      "fixedParts": [
+        "seat-map-stage-frame",
+        "seat-map-seat-0",
+        "seat-map-seat-11"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "seat-map-stage-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "seat-map-seat-0"
+        },
+        {
+          "type": "fixed",
+          "part": "seat-map-seat-11"
+        }
+      ]
+    },
+    {
+      "name": "agenda",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "agenda-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "event-speaker",
+      "fixedParts": [
+        "event-speaker-column-frame",
+        "event-speaker-desk"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "event-speaker-column-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "event-speaker-desk"
+        }
+      ]
+    },
+    {
+      "name": "event-speaker-strong",
+      "fixedParts": [
+        "event-speaker-column-frame",
+        "event-speaker-desk"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "event-speaker-column-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "event-speaker-desk"
+        }
+      ]
+    },
+    {
+      "name": "event-badge",
+      "fixedParts": [
+        "event-badge-strap-l",
+        "event-badge-strap-r"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "event-badge-strap-l"
+        },
+        {
+          "type": "fixed",
+          "part": "event-badge-strap-r"
+        },
+        {
+          "type": "rigid",
+          "part": "event-badge-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "event-badge-clip"
+        }
+      ]
+    },
+    {
+      "name": "event-badge-strong",
+      "fixedParts": [
+        "event-badge-strap-l",
+        "event-badge-strap-r"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "event-badge-strap-l"
+        },
+        {
+          "type": "fixed",
+          "part": "event-badge-strap-r"
+        },
+        {
+          "type": "rigid",
+          "part": "event-badge-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "event-badge-clip"
+        }
+      ]
+    },
+    {
+      "name": "check-in",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "check-in-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "add-to-calendar",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "add-to-calendar-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "event-reminder",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "event-reminder-bell-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "event-reminder-rim"
+        }
+      ]
+    },
+    {
+      "name": "event-reminder-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "event-reminder-bell-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "event-reminder-rim"
+        }
+      ]
+    },
+    {
+      "name": "ticket-scan",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "ticket-scan-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "ticket-transfer",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "ticket-transfer-ticket-frame"
+        }
+      ]
+    },
+    {
+      "name": "ticket-transfer-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "ticket-transfer-ticket-frame"
+        }
+      ]
+    },
+    {
+      "name": "waitlist",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "waitlist-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "sold-out",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "sold-out-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "early-bird",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "early-bird-bird-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "early-bird-beak"
+        }
+      ]
+    },
+    {
+      "name": "early-bird-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "early-bird-bird-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "early-bird-beak"
+        }
+      ]
+    },
+    {
+      "name": "event-live",
+      "fixedParts": [
+        "event-live-stage-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "event-live-stage-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "event-live-beam-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "event-live-beam-r-frame"
+        }
+      ]
+    },
+    {
+      "name": "event-live-strong",
+      "fixedParts": [
+        "event-live-stage-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "event-live-stage-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "event-live-beam-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "event-live-beam-r-frame"
+        }
+      ]
+    },
+    {
+      "name": "event-replay",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "event-replay-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "event-replay-head"
+        }
+      ]
+    },
+    {
+      "name": "event-replay-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "event-replay-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "event-replay-head"
+        }
+      ]
+    },
+    {
+      "name": "sponsor",
+      "fixedParts": [
+        "sponsor-rod"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sponsor-rod"
+        },
+        {
+          "type": "rigid",
+          "part": "sponsor-banner-frame"
+        }
+      ]
+    },
+    {
+      "name": "sponsor-strong",
+      "fixedParts": [
+        "sponsor-rod"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sponsor-rod"
+        },
+        {
+          "type": "rigid",
+          "part": "sponsor-banner-frame"
+        }
+      ]
+    },
+    {
+      "name": "networking",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "networking-left-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "networking-right-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "networking-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "networking-left-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "networking-right-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "event-map",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "event-map-map-frame"
+        }
+      ]
+    },
+    {
+      "name": "event-map-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "event-map-map-frame"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

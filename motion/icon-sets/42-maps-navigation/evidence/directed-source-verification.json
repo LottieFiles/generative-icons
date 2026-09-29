@@ -1,0 +1,778 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 64,
+  "nativeTransformNodes": 352,
+  "nativeTransformMaxCoordinateError": 0.000010618946987506206,
+  "checks": [
+    {
+      "name": "pin-cluster",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "pin-cluster-pin-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-cluster-side-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-cluster-side-r-frame"
+        }
+      ]
+    },
+    {
+      "name": "pin-cluster-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "pin-cluster-pin-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-cluster-side-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "pin-cluster-side-r-frame"
+        }
+      ]
+    },
+    {
+      "name": "current-location",
+      "fixedParts": [
+        "current-location-ring"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "current-location-ring"
+        }
+      ]
+    },
+    {
+      "name": "current-location-strong",
+      "fixedParts": [
+        "current-location-ring"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "current-location-ring"
+        }
+      ]
+    },
+    {
+      "name": "directions",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "directions-pointer-frame"
+        }
+      ]
+    },
+    {
+      "name": "directions-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "directions-pointer-frame"
+        }
+      ]
+    },
+    {
+      "name": "turn-by-turn",
+      "fixedParts": [
+        "turn-by-turn-outer",
+        "turn-by-turn-inner"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "turn-by-turn-outer"
+        },
+        {
+          "type": "fixed",
+          "part": "turn-by-turn-inner"
+        },
+        {
+          "type": "rigid",
+          "part": "turn-by-turn-pointer-frame"
+        }
+      ]
+    },
+    {
+      "name": "turn-by-turn-strong",
+      "fixedParts": [
+        "turn-by-turn-outer",
+        "turn-by-turn-inner"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "turn-by-turn-outer"
+        },
+        {
+          "type": "fixed",
+          "part": "turn-by-turn-inner"
+        },
+        {
+          "type": "rigid",
+          "part": "turn-by-turn-pointer-frame"
+        }
+      ]
+    },
+    {
+      "name": "route-recalculate",
+      "fixedParts": [
+        "route-recalculate-start"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "route-recalculate-start"
+        }
+      ]
+    },
+    {
+      "name": "route-recalculate-strong",
+      "fixedParts": [
+        "route-recalculate-start"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "route-recalculate-start"
+        }
+      ]
+    },
+    {
+      "name": "traffic-light",
+      "fixedParts": [
+        "traffic-light-housing-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "traffic-light-housing-frame"
+        }
+      ]
+    },
+    {
+      "name": "traffic-light-strong",
+      "fixedParts": [
+        "traffic-light-housing-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "traffic-light-housing-frame"
+        }
+      ]
+    },
+    {
+      "name": "map-layers",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "map-layers-top-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "map-layers-layer-2"
+        }
+      ]
+    },
+    {
+      "name": "map-layers-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "map-layers-top-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "map-layers-layer-2"
+        }
+      ]
+    },
+    {
+      "name": "satellite",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "satellite-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "satellite-panel-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "satellite-signal-1"
+        }
+      ]
+    },
+    {
+      "name": "satellite-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "satellite-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "satellite-panel-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "satellite-signal-1"
+        }
+      ]
+    },
+    {
+      "name": "street-view",
+      "fixedParts": [
+        "street-view-street"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "street-view-street"
+        },
+        {
+          "type": "rigid",
+          "part": "street-view-torso-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "street-view-leg-l"
+        }
+      ]
+    },
+    {
+      "name": "street-view-strong",
+      "fixedParts": [
+        "street-view-street"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "street-view-street"
+        },
+        {
+          "type": "rigid",
+          "part": "street-view-torso-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "street-view-leg-l"
+        }
+      ]
+    },
+    {
+      "name": "geofence",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "geofence-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "distance",
+      "fixedParts": [
+        "distance-pin-l-frame",
+        "distance-tick-l"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "distance-pin-l-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "distance-tick-l"
+        }
+      ]
+    },
+    {
+      "name": "distance-strong",
+      "fixedParts": [
+        "distance-pin-l-frame",
+        "distance-tick-l"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "distance-pin-l-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "distance-tick-l"
+        }
+      ]
+    },
+    {
+      "name": "elevation",
+      "fixedParts": [
+        "elevation-mountain-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "elevation-mountain-frame"
+        }
+      ]
+    },
+    {
+      "name": "elevation-strong",
+      "fixedParts": [
+        "elevation-mountain-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "elevation-mountain-frame"
+        }
+      ]
+    },
+    {
+      "name": "parking",
+      "fixedParts": [
+        "parking-bay"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "parking-bay"
+        },
+        {
+          "type": "rigid",
+          "part": "parking-car-frame"
+        }
+      ]
+    },
+    {
+      "name": "parking-strong",
+      "fixedParts": [
+        "parking-bay"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "parking-bay"
+        },
+        {
+          "type": "rigid",
+          "part": "parking-car-frame"
+        }
+      ]
+    },
+    {
+      "name": "fuel-station",
+      "fixedParts": [
+        "fuel-station-body-frame",
+        "fuel-station-base"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "fuel-station-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "fuel-station-base"
+        },
+        {
+          "type": "rigid",
+          "part": "fuel-station-nozzle"
+        }
+      ]
+    },
+    {
+      "name": "fuel-station-strong",
+      "fixedParts": [
+        "fuel-station-body-frame",
+        "fuel-station-base"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "fuel-station-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "fuel-station-base"
+        },
+        {
+          "type": "rigid",
+          "part": "fuel-station-nozzle"
+        }
+      ]
+    },
+    {
+      "name": "ev-charger",
+      "fixedParts": [
+        "ev-charger-post-frame",
+        "ev-charger-cable"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ev-charger-post-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "ev-charger-cable"
+        }
+      ]
+    },
+    {
+      "name": "ev-charger-strong",
+      "fixedParts": [
+        "ev-charger-post-frame",
+        "ev-charger-cable"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ev-charger-post-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "ev-charger-cable"
+        }
+      ]
+    },
+    {
+      "name": "transit-stop",
+      "fixedParts": [
+        "transit-stop-post",
+        "transit-stop-ground"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "transit-stop-post"
+        },
+        {
+          "type": "fixed",
+          "part": "transit-stop-ground"
+        },
+        {
+          "type": "rigid",
+          "part": "transit-stop-sign-frame"
+        }
+      ]
+    },
+    {
+      "name": "transit-stop-strong",
+      "fixedParts": [
+        "transit-stop-post",
+        "transit-stop-ground"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "transit-stop-post"
+        },
+        {
+          "type": "fixed",
+          "part": "transit-stop-ground"
+        },
+        {
+          "type": "rigid",
+          "part": "transit-stop-sign-frame"
+        }
+      ]
+    },
+    {
+      "name": "walking-route",
+      "fixedParts": [
+        "walking-route-print-0-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "walking-route-print-0-frame"
+        }
+      ]
+    },
+    {
+      "name": "walking-route-strong",
+      "fixedParts": [
+        "walking-route-print-0-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "walking-route-print-0-frame"
+        }
+      ]
+    },
+    {
+      "name": "roundabout",
+      "fixedParts": [
+        "roundabout-island"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "roundabout-island"
+        },
+        {
+          "type": "rigid",
+          "part": "roundabout-head-0"
+        },
+        {
+          "type": "rigid",
+          "part": "roundabout-arc-1"
+        }
+      ]
+    },
+    {
+      "name": "roundabout-strong",
+      "fixedParts": [
+        "roundabout-island"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "roundabout-island"
+        },
+        {
+          "type": "rigid",
+          "part": "roundabout-head-0"
+        },
+        {
+          "type": "rigid",
+          "part": "roundabout-arc-1"
+        }
+      ]
+    },
+    {
+      "name": "offline-map",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "offline-map-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "toll-gate",
+      "fixedParts": [
+        "toll-gate-post-frame",
+        "toll-gate-ground"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "toll-gate-post-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "toll-gate-ground"
+        },
+        {
+          "type": "rigid",
+          "part": "toll-gate-arm"
+        }
+      ]
+    },
+    {
+      "name": "toll-gate-strong",
+      "fixedParts": [
+        "toll-gate-post-frame",
+        "toll-gate-ground"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "toll-gate-post-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "toll-gate-ground"
+        },
+        {
+          "type": "rigid",
+          "part": "toll-gate-arm"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

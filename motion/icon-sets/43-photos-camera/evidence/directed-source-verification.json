@@ -1,0 +1,638 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 64,
+  "nativeTransformNodes": 314,
+  "nativeTransformMaxCoordinateError": 0.000011207512333299974,
+  "checks": [
+    {
+      "name": "flash-toggle",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "flash-toggle-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "self-timer",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "self-timer-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "self-timer-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "self-timer-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "switch-camera",
+      "fixedParts": [
+        "switch-camera-body-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "switch-camera-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-camera-arrow-a"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-camera-head-a"
+        }
+      ]
+    },
+    {
+      "name": "switch-camera-strong",
+      "fixedParts": [
+        "switch-camera-body-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "switch-camera-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-camera-arrow-a"
+        },
+        {
+          "type": "rigid",
+          "part": "switch-camera-head-a"
+        }
+      ]
+    },
+    {
+      "name": "tripod",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "tripod-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "tripod-column"
+        },
+        {
+          "type": "rigid",
+          "part": "tripod-leg-l"
+        }
+      ]
+    },
+    {
+      "name": "tripod-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "tripod-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "tripod-column"
+        },
+        {
+          "type": "rigid",
+          "part": "tripod-leg-l"
+        }
+      ]
+    },
+    {
+      "name": "aperture",
+      "fixedParts": [
+        "aperture-ring-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "aperture-ring-frame"
+        }
+      ]
+    },
+    {
+      "name": "aperture-strong",
+      "fixedParts": [
+        "aperture-ring-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "aperture-ring-frame"
+        }
+      ]
+    },
+    {
+      "name": "portrait-mode",
+      "fixedParts": [
+        "portrait-mode-card-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "portrait-mode-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "portrait-mode-strong",
+      "fixedParts": [
+        "portrait-mode-card-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "portrait-mode-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "live-photo",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "live-photo-dash-0"
+        }
+      ]
+    },
+    {
+      "name": "live-photo-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "live-photo-dash-0"
+        }
+      ]
+    },
+    {
+      "name": "burst-mode",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "burst-mode-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "panorama",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "panorama-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "exposure",
+      "fixedParts": [
+        "exposure-frame",
+        "exposure-plus-h",
+        "exposure-plus-v",
+        "exposure-minus"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "exposure-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "exposure-plus-h"
+        },
+        {
+          "type": "fixed",
+          "part": "exposure-plus-v"
+        },
+        {
+          "type": "fixed",
+          "part": "exposure-minus"
+        }
+      ]
+    },
+    {
+      "name": "exposure-strong",
+      "fixedParts": [
+        "exposure-frame",
+        "exposure-plus-h",
+        "exposure-plus-v",
+        "exposure-minus"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "exposure-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "exposure-plus-h"
+        },
+        {
+          "type": "fixed",
+          "part": "exposure-plus-v"
+        },
+        {
+          "type": "fixed",
+          "part": "exposure-minus"
+        }
+      ]
+    },
+    {
+      "name": "photo-gallery",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "photo-gallery-tile-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "photo-gallery-tile-3-frame"
+        }
+      ]
+    },
+    {
+      "name": "photo-gallery-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "photo-gallery-tile-0-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "photo-gallery-tile-3-frame"
+        }
+      ]
+    },
+    {
+      "name": "photo-album",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "photo-album-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "photo-edit",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "photo-edit-pencil"
+        },
+        {
+          "type": "rigid",
+          "part": "photo-edit-ferrule"
+        }
+      ]
+    },
+    {
+      "name": "photo-edit-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "photo-edit-pencil"
+        },
+        {
+          "type": "rigid",
+          "part": "photo-edit-ferrule"
+        }
+      ]
+    },
+    {
+      "name": "rotate-photo",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "rotate-photo-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rotate-photo-arrow"
+        }
+      ]
+    },
+    {
+      "name": "rotate-photo-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "rotate-photo-card-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rotate-photo-arrow"
+        }
+      ]
+    },
+    {
+      "name": "flip-photo",
+      "fixedParts": [
+        "flip-photo-axis-top",
+        "flip-photo-axis-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "flip-photo-axis-top"
+        },
+        {
+          "type": "fixed",
+          "part": "flip-photo-axis-bottom"
+        }
+      ]
+    },
+    {
+      "name": "flip-photo-strong",
+      "fixedParts": [
+        "flip-photo-axis-top",
+        "flip-photo-axis-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "flip-photo-axis-top"
+        },
+        {
+          "type": "fixed",
+          "part": "flip-photo-axis-bottom"
+        }
+      ]
+    },
+    {
+      "name": "brightness",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "brightness-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "saturation",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "saturation-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "red-eye-fix",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "red-eye-fix-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "photo-delete",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "photo-delete-lid"
+        },
+        {
+          "type": "rigid",
+          "part": "photo-delete-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "photo-delete-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "photo-delete-lid"
+        },
+        {
+          "type": "rigid",
+          "part": "photo-delete-card-frame"
+        }
+      ]
+    },
+    {
+      "name": "photo-favorite",
+      "fixedParts": [
+        "photo-favorite-card-frame",
+        "photo-favorite-sun"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "photo-favorite-card-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "photo-favorite-sun"
+        }
+      ]
+    },
+    {
+      "name": "photo-favorite-strong",
+      "fixedParts": [
+        "photo-favorite-card-frame",
+        "photo-favorite-sun"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "photo-favorite-card-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "photo-favorite-sun"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

@@ -1,0 +1,841 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 58,
+  "nativeTransformNodes": 356,
+  "nativeTransformMaxCoordinateError": 0.000010868541632902406,
+  "checks": [
+    {
+      "name": "language",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "language-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "region",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "region-globe-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "region-meridian"
+        },
+        {
+          "type": "rigid",
+          "part": "region-equator"
+        },
+        {
+          "type": "rigid",
+          "part": "region-pin"
+        }
+      ]
+    },
+    {
+      "name": "region-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "region-globe-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "region-meridian"
+        },
+        {
+          "type": "rigid",
+          "part": "region-equator"
+        },
+        {
+          "type": "rigid",
+          "part": "region-pin"
+        }
+      ]
+    },
+    {
+      "name": "currency",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "currency-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "appearance",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "appearance-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "appearance-handle"
+        }
+      ]
+    },
+    {
+      "name": "appearance-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "appearance-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "appearance-handle"
+        }
+      ]
+    },
+    {
+      "name": "dark-mode",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "dark-mode-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "quiet-hours",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "quiet-hours-bell-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "quiet-hours-clapper"
+        }
+      ]
+    },
+    {
+      "name": "quiet-hours-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "quiet-hours-bell-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "quiet-hours-clapper"
+        }
+      ]
+    },
+    {
+      "name": "privacy-shield",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "privacy-shield-shield-frame"
+        }
+      ]
+    },
+    {
+      "name": "privacy-shield-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "privacy-shield-shield-frame"
+        }
+      ]
+    },
+    {
+      "name": "shortcut-key",
+      "fixedParts": [
+        "shortcut-key-base"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "shortcut-key-base"
+        },
+        {
+          "type": "rigid",
+          "part": "shortcut-key-cap-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "shortcut-key-bolt"
+        }
+      ]
+    },
+    {
+      "name": "shortcut-key-strong",
+      "fixedParts": [
+        "shortcut-key-base"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "shortcut-key-base"
+        },
+        {
+          "type": "rigid",
+          "part": "shortcut-key-cap-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "shortcut-key-bolt"
+        }
+      ]
+    },
+    {
+      "name": "mouse",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "mouse-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "mouse-divider"
+        },
+        {
+          "type": "rigid",
+          "part": "mouse-wheel"
+        }
+      ]
+    },
+    {
+      "name": "mouse-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "mouse-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "mouse-divider"
+        },
+        {
+          "type": "rigid",
+          "part": "mouse-wheel"
+        }
+      ]
+    },
+    {
+      "name": "auto-rotate",
+      "fixedParts": [
+        "auto-rotate-arrow-a",
+        "auto-rotate-head-a",
+        "auto-rotate-arrow-b",
+        "auto-rotate-head-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "auto-rotate-arrow-a"
+        },
+        {
+          "type": "fixed",
+          "part": "auto-rotate-head-a"
+        },
+        {
+          "type": "fixed",
+          "part": "auto-rotate-arrow-b"
+        },
+        {
+          "type": "fixed",
+          "part": "auto-rotate-head-b"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-rotate-phone-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-rotate-speaker"
+        }
+      ]
+    },
+    {
+      "name": "auto-rotate-strong",
+      "fixedParts": [
+        "auto-rotate-arrow-a",
+        "auto-rotate-head-a",
+        "auto-rotate-arrow-b",
+        "auto-rotate-head-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "auto-rotate-arrow-a"
+        },
+        {
+          "type": "fixed",
+          "part": "auto-rotate-head-a"
+        },
+        {
+          "type": "fixed",
+          "part": "auto-rotate-arrow-b"
+        },
+        {
+          "type": "fixed",
+          "part": "auto-rotate-head-b"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-rotate-phone-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-rotate-speaker"
+        }
+      ]
+    },
+    {
+      "name": "sound-toggle",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "sound-toggle-speaker-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "sound-toggle-wave-0"
+        },
+        {
+          "type": "rigid",
+          "part": "sound-toggle-wave-1"
+        }
+      ]
+    },
+    {
+      "name": "sound-toggle-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "sound-toggle-speaker-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "sound-toggle-wave-0"
+        },
+        {
+          "type": "rigid",
+          "part": "sound-toggle-wave-1"
+        }
+      ]
+    },
+    {
+      "name": "battery-saver",
+      "fixedParts": [
+        "battery-saver-body-frame",
+        "battery-saver-stub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "battery-saver-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "battery-saver-stub"
+        }
+      ]
+    },
+    {
+      "name": "battery-saver-strong",
+      "fixedParts": [
+        "battery-saver-body-frame",
+        "battery-saver-stub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "battery-saver-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "battery-saver-stub"
+        }
+      ]
+    },
+    {
+      "name": "mobile-data",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "mobile-data-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "haptic-feedback",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "haptic-feedback-phone-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "haptic-feedback-arc-l"
+        },
+        {
+          "type": "rigid",
+          "part": "haptic-feedback-arc-r"
+        }
+      ]
+    },
+    {
+      "name": "haptic-feedback-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "haptic-feedback-phone-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "haptic-feedback-arc-l"
+        },
+        {
+          "type": "rigid",
+          "part": "haptic-feedback-arc-r"
+        }
+      ]
+    },
+    {
+      "name": "reset-settings",
+      "fixedParts": [
+        "reset-settings-track-0",
+        "reset-settings-track-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reset-settings-track-0"
+        },
+        {
+          "type": "fixed",
+          "part": "reset-settings-track-1"
+        },
+        {
+          "type": "rigid",
+          "part": "reset-settings-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "reset-settings-knob-0"
+        },
+        {
+          "type": "rigid",
+          "part": "reset-settings-knob-1"
+        }
+      ]
+    },
+    {
+      "name": "reset-settings-strong",
+      "fixedParts": [
+        "reset-settings-track-0",
+        "reset-settings-track-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "reset-settings-track-0"
+        },
+        {
+          "type": "fixed",
+          "part": "reset-settings-track-1"
+        },
+        {
+          "type": "rigid",
+          "part": "reset-settings-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "reset-settings-knob-0"
+        },
+        {
+          "type": "rigid",
+          "part": "reset-settings-knob-1"
+        }
+      ]
+    },
+    {
+      "name": "auto-update",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "auto-update-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-update-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-update-head"
+        }
+      ]
+    },
+    {
+      "name": "auto-update-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "auto-update-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-update-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "auto-update-head"
+        }
+      ]
+    },
+    {
+      "name": "startup-apps",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "startup-apps-body"
+        },
+        {
+          "type": "rigid",
+          "part": "startup-apps-fin-l"
+        },
+        {
+          "type": "rigid",
+          "part": "startup-apps-fin-r"
+        }
+      ]
+    },
+    {
+      "name": "startup-apps-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "startup-apps-body"
+        },
+        {
+          "type": "rigid",
+          "part": "startup-apps-fin-l"
+        },
+        {
+          "type": "rigid",
+          "part": "startup-apps-fin-r"
+        }
+      ]
+    },
+    {
+      "name": "pointer-speed",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "pointer-speed-cursor-frame"
+        }
+      ]
+    },
+    {
+      "name": "pointer-speed-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "pointer-speed-cursor-frame"
+        }
+      ]
+    },
+    {
+      "name": "advanced-settings",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "advanced-settings-wrench-frame"
+        }
+      ]
+    },
+    {
+      "name": "advanced-settings-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "advanced-settings-wrench-frame"
+        }
+      ]
+    },
+    {
+      "name": "trackpad",
+      "fixedParts": [
+        "trackpad-pad-frame",
+        "trackpad-divider"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "trackpad-pad-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "trackpad-divider"
+        },
+        {
+          "type": "rigid",
+          "part": "trackpad-finger-0"
+        },
+        {
+          "type": "rigid",
+          "part": "trackpad-finger-1"
+        }
+      ]
+    },
+    {
+      "name": "trackpad-strong",
+      "fixedParts": [
+        "trackpad-pad-frame",
+        "trackpad-divider"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "trackpad-pad-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "trackpad-divider"
+        },
+        {
+          "type": "rigid",
+          "part": "trackpad-finger-0"
+        },
+        {
+          "type": "rigid",
+          "part": "trackpad-finger-1"
+        }
+      ]
+    }
+  ],
+  "loopChecks": [],
+  "clearance": {
+    "rules": 102,
+    "minimums": {
+      "language letter legs / bubble wall": 1.4430800000000001,
+      "language letter bar / bubble wall": 4.720979999999997,
+      "region pin tip seated on the globe rim at rest": 0.041173442953759784,
+      "region pin tip never sinks inside the globe": 7.96144652375637,
+      "appearance handle clear of the band": 3.9700208369308614,
+      "privacy-shield eye clear of the shield wall at Bold": 2.5,
+      "shortcut-key cap never drops below the base skirt": 0.8999999999999986,
+      "shortcut-key bolt clear of the cap wall at Bold": 1.1670741744995112,
+      "mouse wheel / divider": 0.8499999999999996,
+      "mouse wheel inside the top half at Bold": 0.5833300000000001,
+      "auto-rotate phone / arrow-a": 1.6737538908291265,
+      "auto-rotate phone / arrow-b": 1.6318574598326716,
+      "auto-rotate phone / head-a": 1.0792397863323244,
+      "auto-rotate phone / head-b": 1.050985955847683,
+      "sound-toggle wave-0 / wave-1": 1.4989910918381435,
+      "battery-saver leaf clear of the battery wall at Bold": 0.8301801440429699,
+      "battery-saver charge block clear of the battery wall at Bold": 2.1499999999999986,
+      "mobile-data down arrow / bar-0": 1.5,
+      "mobile-data up arrow / down head": 1.9675600000000006,
+      "mobile-data bar-0 / bar-1": 1.5,
+      "haptic-feedback phone / arc-l": 1.1559403528289276,
+      "haptic-feedback phone / arc-r": 1.1719717464116406,
+      "reset-settings knob-0 / ring": 2.245088225241424,
+      "reset-settings knob-1 / ring": 1.8271498264277484,
+      "reset-settings knob-0 / knob-1": 2.3999999999999986,
+      "auto-update arrow head / ring": 1.4980778935167929,
+      "auto-update shaft / ring": 1.4980778935167929,
+      "pointer-speed cursor / trail-0": 1.3076600000000003,
+      "pointer-speed cursor / trail-1": 1.3076600000000003,
+      "pointer-speed cursor / trail-2": 1.3076600000000003,
+      "trackpad finger-0 / finger-1": 1.1999999999999993,
+      "trackpad fingers stay on the pad at Bold": 2.3500000000000014,
+      "trackpad fingers / divider": 2.5500000000000007
+    },
+    "errors": []
+  }
+}

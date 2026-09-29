@@ -1,0 +1,876 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 56,
+  "nativeTransformNodes": 382,
+  "nativeTransformMaxCoordinateError": 0.00001067901091644785,
+  "checks": [
+    {
+      "name": "car",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "car-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "car-wheel-rear"
+        },
+        {
+          "type": "rigid",
+          "part": "car-wheel-front"
+        }
+      ]
+    },
+    {
+      "name": "car-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "car-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "car-wheel-rear"
+        },
+        {
+          "type": "rigid",
+          "part": "car-wheel-front"
+        }
+      ]
+    },
+    {
+      "name": "electric-car",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "electric-car-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "electric-car-wheel-rear"
+        }
+      ]
+    },
+    {
+      "name": "electric-car-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "electric-car-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "electric-car-wheel-rear"
+        }
+      ]
+    },
+    {
+      "name": "fuel-pump",
+      "fixedParts": [
+        "fuel-pump-body-frame",
+        "fuel-pump-window"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "fuel-pump-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "fuel-pump-window"
+        },
+        {
+          "type": "rigid",
+          "part": "fuel-pump-nozzle"
+        }
+      ]
+    },
+    {
+      "name": "fuel-pump-strong",
+      "fixedParts": [
+        "fuel-pump-body-frame",
+        "fuel-pump-window"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "fuel-pump-body-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "fuel-pump-window"
+        },
+        {
+          "type": "rigid",
+          "part": "fuel-pump-nozzle"
+        }
+      ]
+    },
+    {
+      "name": "speedometer",
+      "fixedParts": [
+        "speedometer-dial",
+        "speedometer-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "speedometer-dial"
+        },
+        {
+          "type": "fixed",
+          "part": "speedometer-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "speedometer-needle"
+        }
+      ]
+    },
+    {
+      "name": "speedometer-strong",
+      "fixedParts": [
+        "speedometer-dial",
+        "speedometer-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "speedometer-dial"
+        },
+        {
+          "type": "fixed",
+          "part": "speedometer-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "speedometer-needle"
+        }
+      ]
+    },
+    {
+      "name": "parking-brake",
+      "fixedParts": [
+        "parking-brake-ring",
+        "parking-brake-p"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "parking-brake-ring",
+          "profile": "light"
+        },
+        {
+          "type": "fixed",
+          "part": "parking-brake-p",
+          "profile": "light"
+        }
+      ]
+    },
+    {
+      "name": "parking-brake-strong",
+      "fixedParts": [
+        "parking-brake-ring",
+        "parking-brake-p"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "parking-brake-ring",
+          "profile": "light"
+        },
+        {
+          "type": "fixed",
+          "part": "parking-brake-p",
+          "profile": "light"
+        }
+      ]
+    },
+    {
+      "name": "tire-pressure",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "tire-pressure-mark"
+        },
+        {
+          "type": "rigid",
+          "part": "tire-pressure-dot"
+        }
+      ]
+    },
+    {
+      "name": "tire-pressure-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "tire-pressure-mark"
+        },
+        {
+          "type": "rigid",
+          "part": "tire-pressure-dot"
+        }
+      ]
+    },
+    {
+      "name": "engine",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "engine-block-frame"
+        }
+      ]
+    },
+    {
+      "name": "engine-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "engine-block-frame"
+        }
+      ]
+    },
+    {
+      "name": "seatbelt",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "seatbelt-torso-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "seatbelt-head"
+        }
+      ]
+    },
+    {
+      "name": "seatbelt-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "seatbelt-torso-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "seatbelt-head"
+        }
+      ]
+    },
+    {
+      "name": "headlights",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "headlights-lamp-frame"
+        }
+      ]
+    },
+    {
+      "name": "headlights-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "headlights-lamp-frame"
+        }
+      ]
+    },
+    {
+      "name": "wiper",
+      "fixedParts": [
+        "wiper-shield-frame",
+        "wiper-pivot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "wiper-shield-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "wiper-pivot"
+        },
+        {
+          "type": "rigid",
+          "part": "wiper-arm"
+        }
+      ]
+    },
+    {
+      "name": "wiper-strong",
+      "fixedParts": [
+        "wiper-shield-frame",
+        "wiper-pivot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "wiper-shield-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "wiper-pivot"
+        },
+        {
+          "type": "rigid",
+          "part": "wiper-arm"
+        }
+      ]
+    },
+    {
+      "name": "steering-wheel",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "steering-wheel-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "steering-wheel-spoke-0"
+        },
+        {
+          "type": "rigid",
+          "part": "steering-wheel-hub"
+        }
+      ]
+    },
+    {
+      "name": "steering-wheel-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "steering-wheel-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "steering-wheel-spoke-0"
+        },
+        {
+          "type": "rigid",
+          "part": "steering-wheel-hub"
+        }
+      ]
+    },
+    {
+      "name": "car-key",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "car-key-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "car-key-blade"
+        }
+      ]
+    },
+    {
+      "name": "car-key-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "car-key-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "car-key-blade"
+        }
+      ]
+    },
+    {
+      "name": "car-lock",
+      "fixedParts": [
+        "car-lock-pad"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "car-lock-pad"
+        },
+        {
+          "type": "rigid",
+          "part": "car-lock-shackle"
+        },
+        {
+          "type": "rigid",
+          "part": "car-lock-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "car-lock-strong",
+      "fixedParts": [
+        "car-lock-pad"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "car-lock-pad"
+        },
+        {
+          "type": "rigid",
+          "part": "car-lock-shackle"
+        },
+        {
+          "type": "rigid",
+          "part": "car-lock-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "car-battery",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "car-battery-box-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "car-battery-cap-0"
+        }
+      ]
+    },
+    {
+      "name": "car-battery-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "car-battery-box-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "car-battery-cap-0"
+        }
+      ]
+    },
+    {
+      "name": "gear-shift",
+      "fixedParts": [
+        "gear-shift-slot-0",
+        "gear-shift-slot-1",
+        "gear-shift-bar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "gear-shift-slot-0"
+        },
+        {
+          "type": "fixed",
+          "part": "gear-shift-slot-1"
+        },
+        {
+          "type": "fixed",
+          "part": "gear-shift-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "gear-shift-knob"
+        }
+      ]
+    },
+    {
+      "name": "gear-shift-strong",
+      "fixedParts": [
+        "gear-shift-slot-0",
+        "gear-shift-slot-1",
+        "gear-shift-bar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "gear-shift-slot-0"
+        },
+        {
+          "type": "fixed",
+          "part": "gear-shift-slot-1"
+        },
+        {
+          "type": "fixed",
+          "part": "gear-shift-bar"
+        },
+        {
+          "type": "rigid",
+          "part": "gear-shift-knob"
+        }
+      ]
+    },
+    {
+      "name": "car-navigation",
+      "fixedParts": [
+        "car-navigation-screen-frame",
+        "car-navigation-start"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "car-navigation-screen-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "car-navigation-start"
+        },
+        {
+          "type": "rigid",
+          "part": "car-navigation-pin"
+        },
+        {
+          "type": "inside",
+          "part": "car-navigation-route",
+          "box": [
+            6.4,
+            9.4,
+            25.6,
+            22.6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "car-navigation-strong",
+      "fixedParts": [
+        "car-navigation-screen-frame",
+        "car-navigation-start"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "car-navigation-screen-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "car-navigation-start"
+        },
+        {
+          "type": "rigid",
+          "part": "car-navigation-pin"
+        },
+        {
+          "type": "inside",
+          "part": "car-navigation-route",
+          "box": [
+            6.4,
+            9.4,
+            25.6,
+            22.6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "car-wash",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "car-wash-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "car-wash-roof"
+        }
+      ]
+    },
+    {
+      "name": "car-wash-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "car-wash-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "car-wash-roof"
+        }
+      ]
+    },
+    {
+      "name": "engine-oil",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "engine-oil-can-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "engine-oil-spout"
+        }
+      ]
+    },
+    {
+      "name": "engine-oil-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "engine-oil-can-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "engine-oil-spout"
+        }
+      ]
+    },
+    {
+      "name": "car-window",
+      "fixedParts": [
+        "car-window-door-frame",
+        "car-window-window",
+        "car-window-handle"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "car-window-door-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "car-window-window"
+        },
+        {
+          "type": "fixed",
+          "part": "car-window-handle"
+        }
+      ]
+    },
+    {
+      "name": "car-window-strong",
+      "fixedParts": [
+        "car-window-door-frame",
+        "car-window-window",
+        "car-window-handle"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "car-window-door-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "car-window-window"
+        },
+        {
+          "type": "fixed",
+          "part": "car-window-handle"
+        }
+      ]
+    },
+    {
+      "name": "trunk",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "trunk-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "trunk-lid"
+        },
+        {
+          "type": "rigid",
+          "part": "trunk-wheel-rear"
+        }
+      ]
+    },
+    {
+      "name": "trunk-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "trunk-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "trunk-lid"
+        },
+        {
+          "type": "rigid",
+          "part": "trunk-wheel-rear"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

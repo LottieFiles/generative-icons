@@ -1,0 +1,1192 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 54,
+  "nativeTransformNodes": 168,
+  "nativeTransformMaxCoordinateError": 0.000011017337453012033,
+  "checks": [
+    {
+      "name": "new-folder",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "new-folder-body"
+        },
+        {
+          "type": "rigid",
+          "part": "new-folder-front-edge"
+        }
+      ]
+    },
+    {
+      "name": "new-folder-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "new-folder-body"
+        },
+        {
+          "type": "rigid",
+          "part": "new-folder-front-edge"
+        }
+      ]
+    },
+    {
+      "name": "folder-open",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "folder-open-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "move-file",
+      "fixedParts": [
+        "move-file-mark-a",
+        "move-file-mark-a-solid",
+        "move-file-mark-b",
+        "move-file-mark-b-solid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "move-file-mark-a"
+        },
+        {
+          "type": "fixed",
+          "part": "move-file-mark-a-solid"
+        },
+        {
+          "type": "fixed",
+          "part": "move-file-mark-b"
+        },
+        {
+          "type": "fixed",
+          "part": "move-file-mark-b-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "move-file-sheet"
+        },
+        {
+          "type": "rigid",
+          "part": "move-file-sheet-fold"
+        }
+      ]
+    },
+    {
+      "name": "move-file-strong",
+      "fixedParts": [
+        "move-file-mark-a",
+        "move-file-mark-a-solid",
+        "move-file-mark-b",
+        "move-file-mark-b-solid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "move-file-mark-a"
+        },
+        {
+          "type": "fixed",
+          "part": "move-file-mark-a-solid"
+        },
+        {
+          "type": "fixed",
+          "part": "move-file-mark-b"
+        },
+        {
+          "type": "fixed",
+          "part": "move-file-mark-b-solid"
+        },
+        {
+          "type": "rigid",
+          "part": "move-file-sheet"
+        },
+        {
+          "type": "rigid",
+          "part": "move-file-sheet-fold"
+        }
+      ]
+    },
+    {
+      "name": "rename-file",
+      "fixedParts": [
+        "rename-file-sheet-page",
+        "rename-file-sheet-fold",
+        "rename-file-sheet-interior",
+        "rename-file-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rename-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "rename-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "rename-file-sheet-interior"
+        },
+        {
+          "type": "fixed",
+          "part": "rename-file-line-2"
+        }
+      ]
+    },
+    {
+      "name": "rename-file-strong",
+      "fixedParts": [
+        "rename-file-sheet-page",
+        "rename-file-sheet-fold",
+        "rename-file-sheet-interior",
+        "rename-file-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rename-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "rename-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "rename-file-sheet-interior"
+        },
+        {
+          "type": "fixed",
+          "part": "rename-file-line-2"
+        }
+      ]
+    },
+    {
+      "name": "duplicate-file",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "duplicate-file-copy"
+        },
+        {
+          "type": "rigid",
+          "part": "duplicate-file-copy-fold"
+        }
+      ]
+    },
+    {
+      "name": "duplicate-file-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "duplicate-file-copy"
+        },
+        {
+          "type": "rigid",
+          "part": "duplicate-file-copy-fold"
+        }
+      ]
+    },
+    {
+      "name": "restore-file",
+      "fixedParts": [
+        "restore-file-sheet-page",
+        "restore-file-sheet-fold",
+        "restore-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "restore-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "restore-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "restore-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "restore-file-arrow-arc"
+        },
+        {
+          "type": "rigid",
+          "part": "restore-file-arrow-head"
+        }
+      ]
+    },
+    {
+      "name": "restore-file-strong",
+      "fixedParts": [
+        "restore-file-sheet-page",
+        "restore-file-sheet-fold",
+        "restore-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "restore-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "restore-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "restore-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "restore-file-arrow-arc"
+        },
+        {
+          "type": "rigid",
+          "part": "restore-file-arrow-head"
+        }
+      ]
+    },
+    {
+      "name": "approve-file",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "approve-file-sheet-page"
+        },
+        {
+          "type": "rigid",
+          "part": "approve-file-sheet-fold"
+        }
+      ]
+    },
+    {
+      "name": "approve-file-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "approve-file-sheet-page"
+        },
+        {
+          "type": "rigid",
+          "part": "approve-file-sheet-fold"
+        }
+      ]
+    },
+    {
+      "name": "lock-file",
+      "fixedParts": [
+        "lock-file-sheet-page",
+        "lock-file-sheet-fold",
+        "lock-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "lock-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "lock-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "lock-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "lock-file-body"
+        },
+        {
+          "type": "rigid",
+          "part": "lock-file-shackle"
+        }
+      ]
+    },
+    {
+      "name": "lock-file-strong",
+      "fixedParts": [
+        "lock-file-sheet-page",
+        "lock-file-sheet-fold",
+        "lock-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "lock-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "lock-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "lock-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "lock-file-body"
+        },
+        {
+          "type": "rigid",
+          "part": "lock-file-shackle"
+        }
+      ]
+    },
+    {
+      "name": "file-search",
+      "fixedParts": [
+        "file-search-sheet-page",
+        "file-search-sheet-fold",
+        "file-search-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-search-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-search-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-search-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "file-search-lens"
+        },
+        {
+          "type": "rigid",
+          "part": "file-search-handle"
+        }
+      ]
+    },
+    {
+      "name": "file-search-strong",
+      "fixedParts": [
+        "file-search-sheet-page",
+        "file-search-sheet-fold",
+        "file-search-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-search-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-search-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-search-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "file-search-lens"
+        },
+        {
+          "type": "rigid",
+          "part": "file-search-handle"
+        }
+      ]
+    },
+    {
+      "name": "file-preview",
+      "fixedParts": [
+        "file-preview-sheet-page",
+        "file-preview-sheet-fold",
+        "file-preview-sheet-interior",
+        "file-preview-lower-lid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-preview-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-preview-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-preview-sheet-interior"
+        },
+        {
+          "type": "fixed",
+          "part": "file-preview-lower-lid"
+        }
+      ]
+    },
+    {
+      "name": "file-preview-strong",
+      "fixedParts": [
+        "file-preview-sheet-page",
+        "file-preview-sheet-fold",
+        "file-preview-sheet-interior",
+        "file-preview-lower-lid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-preview-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-preview-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-preview-sheet-interior"
+        },
+        {
+          "type": "fixed",
+          "part": "file-preview-lower-lid"
+        }
+      ]
+    },
+    {
+      "name": "file-tag",
+      "fixedParts": [
+        "file-tag-sheet-page",
+        "file-tag-sheet-fold",
+        "file-tag-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-tag-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-tag-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-tag-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "file-tag-tag"
+        }
+      ]
+    },
+    {
+      "name": "file-tag-strong",
+      "fixedParts": [
+        "file-tag-sheet-page",
+        "file-tag-sheet-fold",
+        "file-tag-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-tag-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-tag-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-tag-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "file-tag-tag"
+        }
+      ]
+    },
+    {
+      "name": "file-star",
+      "fixedParts": [
+        "file-star-sheet-page",
+        "file-star-sheet-fold",
+        "file-star-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-star-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-star-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-star-sheet-interior"
+        }
+      ]
+    },
+    {
+      "name": "file-star-strong",
+      "fixedParts": [
+        "file-star-sheet-page",
+        "file-star-sheet-fold",
+        "file-star-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-star-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-star-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-star-sheet-interior"
+        }
+      ]
+    },
+    {
+      "name": "file-sync",
+      "fixedParts": [
+        "file-sync-sheet-page",
+        "file-sync-sheet-fold",
+        "file-sync-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-sync-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-sync-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-sync-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "file-sync-arrow-a-arc"
+        },
+        {
+          "type": "rigid",
+          "part": "file-sync-arrow-b-arc"
+        }
+      ]
+    },
+    {
+      "name": "file-sync-strong",
+      "fixedParts": [
+        "file-sync-sheet-page",
+        "file-sync-sheet-fold",
+        "file-sync-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "file-sync-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "file-sync-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "file-sync-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "file-sync-arrow-a-arc"
+        },
+        {
+          "type": "rigid",
+          "part": "file-sync-arrow-b-arc"
+        }
+      ]
+    },
+    {
+      "name": "import-file",
+      "fixedParts": [
+        "import-file-sheet",
+        "import-file-sheet-fold",
+        "import-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "import-file-sheet"
+        },
+        {
+          "type": "fixed",
+          "part": "import-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "import-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "import-file-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "import-file-head"
+        }
+      ]
+    },
+    {
+      "name": "import-file-strong",
+      "fixedParts": [
+        "import-file-sheet",
+        "import-file-sheet-fold",
+        "import-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "import-file-sheet"
+        },
+        {
+          "type": "fixed",
+          "part": "import-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "import-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "import-file-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "import-file-head"
+        }
+      ]
+    },
+    {
+      "name": "export-file",
+      "fixedParts": [
+        "export-file-sheet",
+        "export-file-sheet-fold",
+        "export-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "export-file-sheet"
+        },
+        {
+          "type": "fixed",
+          "part": "export-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "export-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "export-file-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "export-file-head"
+        }
+      ]
+    },
+    {
+      "name": "export-file-strong",
+      "fixedParts": [
+        "export-file-sheet",
+        "export-file-sheet-fold",
+        "export-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "export-file-sheet"
+        },
+        {
+          "type": "fixed",
+          "part": "export-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "export-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "export-file-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "export-file-head"
+        }
+      ]
+    },
+    {
+      "name": "image-file",
+      "fixedParts": [
+        "image-file-sheet-page",
+        "image-file-sheet-fold",
+        "image-file-sheet-interior",
+        "image-file-peaks"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "image-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "image-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "image-file-sheet-interior"
+        },
+        {
+          "type": "fixed",
+          "part": "image-file-peaks"
+        },
+        {
+          "type": "rigid",
+          "part": "image-file-sun"
+        }
+      ]
+    },
+    {
+      "name": "image-file-strong",
+      "fixedParts": [
+        "image-file-sheet-page",
+        "image-file-sheet-fold",
+        "image-file-sheet-interior",
+        "image-file-peaks"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "image-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "image-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "image-file-sheet-interior"
+        },
+        {
+          "type": "fixed",
+          "part": "image-file-peaks"
+        },
+        {
+          "type": "rigid",
+          "part": "image-file-sun"
+        }
+      ]
+    },
+    {
+      "name": "code-file",
+      "fixedParts": [
+        "code-file-sheet-page",
+        "code-file-sheet-fold",
+        "code-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "code-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "code-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "code-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "code-file-bracket-l"
+        },
+        {
+          "type": "rigid",
+          "part": "code-file-bracket-r"
+        }
+      ]
+    },
+    {
+      "name": "code-file-strong",
+      "fixedParts": [
+        "code-file-sheet-page",
+        "code-file-sheet-fold",
+        "code-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "code-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "code-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "code-file-sheet-interior"
+        },
+        {
+          "type": "rigid",
+          "part": "code-file-bracket-l"
+        },
+        {
+          "type": "rigid",
+          "part": "code-file-bracket-r"
+        }
+      ]
+    },
+    {
+      "name": "spreadsheet-file",
+      "fixedParts": [
+        "spreadsheet-file-sheet-page",
+        "spreadsheet-file-sheet-fold",
+        "spreadsheet-file-sheet-interior",
+        "spreadsheet-file-table",
+        "spreadsheet-file-column",
+        "spreadsheet-file-row",
+        "spreadsheet-file-dividers-solid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-sheet-interior"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-table"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-column"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-row"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-dividers-solid"
+        }
+      ]
+    },
+    {
+      "name": "spreadsheet-file-strong",
+      "fixedParts": [
+        "spreadsheet-file-sheet-page",
+        "spreadsheet-file-sheet-fold",
+        "spreadsheet-file-sheet-interior",
+        "spreadsheet-file-table",
+        "spreadsheet-file-column",
+        "spreadsheet-file-row",
+        "spreadsheet-file-dividers-solid"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-sheet-interior"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-table"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-column"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-row"
+        },
+        {
+          "type": "fixed",
+          "part": "spreadsheet-file-dividers-solid"
+        }
+      ]
+    },
+    {
+      "name": "audio-file",
+      "fixedParts": [
+        "audio-file-sheet-page",
+        "audio-file-sheet-fold",
+        "audio-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "audio-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "audio-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "audio-file-sheet-interior"
+        }
+      ]
+    },
+    {
+      "name": "audio-file-strong",
+      "fixedParts": [
+        "audio-file-sheet-page",
+        "audio-file-sheet-fold",
+        "audio-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "audio-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "audio-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "audio-file-sheet-interior"
+        }
+      ]
+    },
+    {
+      "name": "video-file",
+      "fixedParts": [
+        "video-file-sheet-page",
+        "video-file-sheet-fold",
+        "video-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "video-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "video-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "video-file-sheet-interior"
+        }
+      ]
+    },
+    {
+      "name": "video-file-strong",
+      "fixedParts": [
+        "video-file-sheet-page",
+        "video-file-sheet-fold",
+        "video-file-sheet-interior"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "video-file-sheet-page"
+        },
+        {
+          "type": "fixed",
+          "part": "video-file-sheet-fold"
+        },
+        {
+          "type": "fixed",
+          "part": "video-file-sheet-interior"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

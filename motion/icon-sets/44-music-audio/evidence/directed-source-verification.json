@@ -1,0 +1,1006 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 52,
+  "nativeTransformNodes": 310,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "checks": [
+    {
+      "name": "music-note",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "music-note-head"
+        },
+        {
+          "type": "rigid",
+          "part": "music-note-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "music-note-flag"
+        }
+      ]
+    },
+    {
+      "name": "music-note-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "music-note-head"
+        },
+        {
+          "type": "rigid",
+          "part": "music-note-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "music-note-flag"
+        }
+      ]
+    },
+    {
+      "name": "vinyl-record",
+      "fixedParts": [
+        "vinyl-record-platter",
+        "vinyl-record-label",
+        "vinyl-record-arm-pivot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "vinyl-record-platter"
+        },
+        {
+          "type": "fixed",
+          "part": "vinyl-record-label"
+        },
+        {
+          "type": "fixed",
+          "part": "vinyl-record-arm-pivot"
+        },
+        {
+          "type": "rigid",
+          "part": "vinyl-record-arm"
+        },
+        {
+          "type": "rigid",
+          "part": "vinyl-record-groove-0"
+        },
+        {
+          "type": "rigid",
+          "part": "vinyl-record-groove-1"
+        }
+      ]
+    },
+    {
+      "name": "vinyl-record-strong",
+      "fixedParts": [
+        "vinyl-record-platter",
+        "vinyl-record-label",
+        "vinyl-record-arm-pivot"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "vinyl-record-platter"
+        },
+        {
+          "type": "fixed",
+          "part": "vinyl-record-label"
+        },
+        {
+          "type": "fixed",
+          "part": "vinyl-record-arm-pivot"
+        },
+        {
+          "type": "rigid",
+          "part": "vinyl-record-arm"
+        },
+        {
+          "type": "rigid",
+          "part": "vinyl-record-groove-0"
+        },
+        {
+          "type": "rigid",
+          "part": "vinyl-record-groove-1"
+        }
+      ]
+    },
+    {
+      "name": "cassette-tape",
+      "fixedParts": [
+        "cassette-tape-shell-frame",
+        "cassette-tape-window"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "cassette-tape-shell-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "cassette-tape-window"
+        },
+        {
+          "type": "rigid",
+          "part": "cassette-tape-reel-0"
+        },
+        {
+          "type": "rigid",
+          "part": "cassette-tape-reel-1"
+        }
+      ]
+    },
+    {
+      "name": "cassette-tape-strong",
+      "fixedParts": [
+        "cassette-tape-shell-frame",
+        "cassette-tape-window"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "cassette-tape-shell-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "cassette-tape-window"
+        },
+        {
+          "type": "rigid",
+          "part": "cassette-tape-reel-0"
+        },
+        {
+          "type": "rigid",
+          "part": "cassette-tape-reel-1"
+        }
+      ]
+    },
+    {
+      "name": "audio-waveform",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "audio-waveform-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "loudspeaker",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "loudspeaker-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "radio",
+      "fixedParts": [
+        "radio-body",
+        "radio-scale"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "radio-body"
+        },
+        {
+          "type": "fixed",
+          "part": "radio-scale"
+        }
+      ]
+    },
+    {
+      "name": "radio-strong",
+      "fixedParts": [
+        "radio-body",
+        "radio-scale"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "radio-body"
+        },
+        {
+          "type": "fixed",
+          "part": "radio-scale"
+        }
+      ]
+    },
+    {
+      "name": "metronome",
+      "fixedParts": [
+        "metronome-body-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "metronome-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "metronome-rod"
+        },
+        {
+          "type": "rigid",
+          "part": "metronome-weight"
+        }
+      ]
+    },
+    {
+      "name": "metronome-strong",
+      "fixedParts": [
+        "metronome-body-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "metronome-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "metronome-rod"
+        },
+        {
+          "type": "rigid",
+          "part": "metronome-weight"
+        }
+      ]
+    },
+    {
+      "name": "tuner",
+      "fixedParts": [
+        "tuner-dial",
+        "tuner-tick-0",
+        "tuner-tick-1",
+        "tuner-tick-2",
+        "tuner-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "tuner-dial"
+        },
+        {
+          "type": "fixed",
+          "part": "tuner-tick-0"
+        },
+        {
+          "type": "fixed",
+          "part": "tuner-tick-1"
+        },
+        {
+          "type": "fixed",
+          "part": "tuner-tick-2"
+        },
+        {
+          "type": "fixed",
+          "part": "tuner-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "tuner-needle"
+        }
+      ]
+    },
+    {
+      "name": "tuner-strong",
+      "fixedParts": [
+        "tuner-dial",
+        "tuner-tick-0",
+        "tuner-tick-1",
+        "tuner-tick-2",
+        "tuner-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "tuner-dial"
+        },
+        {
+          "type": "fixed",
+          "part": "tuner-tick-0"
+        },
+        {
+          "type": "fixed",
+          "part": "tuner-tick-1"
+        },
+        {
+          "type": "fixed",
+          "part": "tuner-tick-2"
+        },
+        {
+          "type": "fixed",
+          "part": "tuner-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "tuner-needle"
+        }
+      ]
+    },
+    {
+      "name": "piano-keys",
+      "fixedParts": [
+        "piano-keys-keyboard-frame",
+        "piano-keys-divider-0",
+        "piano-keys-divider-1",
+        "piano-keys-divider-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "piano-keys-keyboard-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "piano-keys-divider-0"
+        },
+        {
+          "type": "fixed",
+          "part": "piano-keys-divider-1"
+        },
+        {
+          "type": "fixed",
+          "part": "piano-keys-divider-2"
+        },
+        {
+          "type": "rigid",
+          "part": "piano-keys-black-0"
+        },
+        {
+          "type": "rigid",
+          "part": "piano-keys-black-1"
+        },
+        {
+          "type": "rigid",
+          "part": "piano-keys-black-2"
+        }
+      ]
+    },
+    {
+      "name": "piano-keys-strong",
+      "fixedParts": [
+        "piano-keys-keyboard-frame",
+        "piano-keys-divider-0",
+        "piano-keys-divider-1",
+        "piano-keys-divider-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "piano-keys-keyboard-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "piano-keys-divider-0"
+        },
+        {
+          "type": "fixed",
+          "part": "piano-keys-divider-1"
+        },
+        {
+          "type": "fixed",
+          "part": "piano-keys-divider-2"
+        },
+        {
+          "type": "rigid",
+          "part": "piano-keys-black-0"
+        },
+        {
+          "type": "rigid",
+          "part": "piano-keys-black-1"
+        },
+        {
+          "type": "rigid",
+          "part": "piano-keys-black-2"
+        }
+      ]
+    },
+    {
+      "name": "guitar",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "guitar-body"
+        },
+        {
+          "type": "rigid",
+          "part": "guitar-neck"
+        },
+        {
+          "type": "rigid",
+          "part": "guitar-head"
+        }
+      ]
+    },
+    {
+      "name": "guitar-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "guitar-body"
+        },
+        {
+          "type": "rigid",
+          "part": "guitar-neck"
+        },
+        {
+          "type": "rigid",
+          "part": "guitar-head"
+        }
+      ]
+    },
+    {
+      "name": "drum",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "drum-shell"
+        },
+        {
+          "type": "rigid",
+          "part": "drum-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "drum-stick-a"
+        },
+        {
+          "type": "rigid",
+          "part": "drum-stick-b"
+        }
+      ]
+    },
+    {
+      "name": "drum-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "drum-shell"
+        },
+        {
+          "type": "rigid",
+          "part": "drum-rim"
+        },
+        {
+          "type": "rigid",
+          "part": "drum-stick-a"
+        },
+        {
+          "type": "rigid",
+          "part": "drum-stick-b"
+        }
+      ]
+    },
+    {
+      "name": "lyrics",
+      "fixedParts": [
+        "lyrics-line-0",
+        "lyrics-line-1",
+        "lyrics-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "lyrics-line-0"
+        },
+        {
+          "type": "fixed",
+          "part": "lyrics-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "lyrics-line-2"
+        }
+      ]
+    },
+    {
+      "name": "lyrics-strong",
+      "fixedParts": [
+        "lyrics-line-0",
+        "lyrics-line-1",
+        "lyrics-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "lyrics-line-0"
+        },
+        {
+          "type": "fixed",
+          "part": "lyrics-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "lyrics-line-2"
+        }
+      ]
+    },
+    {
+      "name": "music-album",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "music-album-sleeve"
+        }
+      ]
+    },
+    {
+      "name": "music-album-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "music-album-sleeve"
+        }
+      ]
+    },
+    {
+      "name": "earbuds",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "earbuds-bud-a"
+        },
+        {
+          "type": "rigid",
+          "part": "earbuds-bud-a-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "earbuds-bud-b"
+        },
+        {
+          "type": "rigid",
+          "part": "earbuds-bud-b-stem"
+        }
+      ]
+    },
+    {
+      "name": "earbuds-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "earbuds-bud-a"
+        },
+        {
+          "type": "rigid",
+          "part": "earbuds-bud-a-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "earbuds-bud-b"
+        },
+        {
+          "type": "rigid",
+          "part": "earbuds-bud-b-stem"
+        }
+      ]
+    },
+    {
+      "name": "mute-audio",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "mute-audio-speaker"
+        }
+      ]
+    },
+    {
+      "name": "mute-audio-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "mute-audio-speaker"
+        }
+      ]
+    },
+    {
+      "name": "crossfade",
+      "fixedParts": [
+        "crossfade-curve-a",
+        "crossfade-curve-b",
+        "crossfade-track"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "crossfade-curve-a"
+        },
+        {
+          "type": "fixed",
+          "part": "crossfade-curve-b"
+        },
+        {
+          "type": "fixed",
+          "part": "crossfade-track"
+        },
+        {
+          "type": "rigid",
+          "part": "crossfade-knob"
+        }
+      ]
+    },
+    {
+      "name": "crossfade-strong",
+      "fixedParts": [
+        "crossfade-curve-a",
+        "crossfade-curve-b",
+        "crossfade-track"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "crossfade-curve-a"
+        },
+        {
+          "type": "fixed",
+          "part": "crossfade-curve-b"
+        },
+        {
+          "type": "fixed",
+          "part": "crossfade-track"
+        },
+        {
+          "type": "rigid",
+          "part": "crossfade-knob"
+        }
+      ]
+    },
+    {
+      "name": "equalizer-preset",
+      "fixedParts": [
+        "equalizer-preset-track-0",
+        "equalizer-preset-track-1",
+        "equalizer-preset-track-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "equalizer-preset-track-0"
+        },
+        {
+          "type": "fixed",
+          "part": "equalizer-preset-track-1"
+        },
+        {
+          "type": "fixed",
+          "part": "equalizer-preset-track-2"
+        },
+        {
+          "type": "rigid",
+          "part": "equalizer-preset-knob-0"
+        },
+        {
+          "type": "rigid",
+          "part": "equalizer-preset-knob-1"
+        },
+        {
+          "type": "rigid",
+          "part": "equalizer-preset-knob-2"
+        }
+      ]
+    },
+    {
+      "name": "equalizer-preset-strong",
+      "fixedParts": [
+        "equalizer-preset-track-0",
+        "equalizer-preset-track-1",
+        "equalizer-preset-track-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "equalizer-preset-track-0"
+        },
+        {
+          "type": "fixed",
+          "part": "equalizer-preset-track-1"
+        },
+        {
+          "type": "fixed",
+          "part": "equalizer-preset-track-2"
+        },
+        {
+          "type": "rigid",
+          "part": "equalizer-preset-knob-0"
+        },
+        {
+          "type": "rigid",
+          "part": "equalizer-preset-knob-1"
+        },
+        {
+          "type": "rigid",
+          "part": "equalizer-preset-knob-2"
+        }
+      ]
+    },
+    {
+      "name": "audio-jack",
+      "fixedParts": [
+        "audio-jack-socket"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "audio-jack-socket"
+        },
+        {
+          "type": "rigid",
+          "part": "audio-jack-pin"
+        },
+        {
+          "type": "rigid",
+          "part": "audio-jack-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "audio-jack-cable"
+        }
+      ]
+    },
+    {
+      "name": "audio-jack-strong",
+      "fixedParts": [
+        "audio-jack-socket"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "audio-jack-socket"
+        },
+        {
+          "type": "rigid",
+          "part": "audio-jack-pin"
+        },
+        {
+          "type": "rigid",
+          "part": "audio-jack-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "audio-jack-cable"
+        }
+      ]
+    },
+    {
+      "name": "spatial-audio",
+      "fixedParts": [
+        "spatial-audio-head",
+        "spatial-audio-shoulders"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "spatial-audio-head"
+        },
+        {
+          "type": "fixed",
+          "part": "spatial-audio-shoulders"
+        }
+      ]
+    },
+    {
+      "name": "spatial-audio-strong",
+      "fixedParts": [
+        "spatial-audio-head",
+        "spatial-audio-shoulders"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "spatial-audio-head"
+        },
+        {
+          "type": "fixed",
+          "part": "spatial-audio-shoulders"
+        }
+      ]
+    },
+    {
+      "name": "tuning-fork",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "tuning-fork-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "tuning-fork-knob"
+        }
+      ]
+    },
+    {
+      "name": "tuning-fork-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "tuning-fork-stem"
+        },
+        {
+          "type": "rigid",
+          "part": "tuning-fork-knob"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

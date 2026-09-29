@@ -1,0 +1,860 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 60,
+  "nativeTransformNodes": 330,
+  "nativeTransformMaxCoordinateError": 0.000010221319380221416,
+  "checks": [
+    {
+      "name": "gavel",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "gavel-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "gavel-handle"
+        },
+        {
+          "type": "rigid",
+          "part": "gavel-block"
+        }
+      ]
+    },
+    {
+      "name": "gavel-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "gavel-head-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "gavel-handle"
+        },
+        {
+          "type": "rigid",
+          "part": "gavel-block"
+        }
+      ]
+    },
+    {
+      "name": "justice-scale",
+      "fixedParts": [
+        "justice-scale-post",
+        "justice-scale-base"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "justice-scale-post"
+        },
+        {
+          "type": "fixed",
+          "part": "justice-scale-base"
+        },
+        {
+          "type": "rigid",
+          "part": "justice-scale-beam"
+        },
+        {
+          "type": "rigid",
+          "part": "justice-scale-pan-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "justice-scale-pan-r-frame"
+        }
+      ]
+    },
+    {
+      "name": "justice-scale-strong",
+      "fixedParts": [
+        "justice-scale-post",
+        "justice-scale-base"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "justice-scale-post"
+        },
+        {
+          "type": "fixed",
+          "part": "justice-scale-base"
+        },
+        {
+          "type": "rigid",
+          "part": "justice-scale-beam"
+        },
+        {
+          "type": "rigid",
+          "part": "justice-scale-pan-l-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "justice-scale-pan-r-frame"
+        }
+      ]
+    },
+    {
+      "name": "contract",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "contract-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "rubber-stamp",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "rubber-stamp-knob-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rubber-stamp-base-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rubber-stamp-neck"
+        }
+      ]
+    },
+    {
+      "name": "rubber-stamp-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "rubber-stamp-knob-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rubber-stamp-base-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "rubber-stamp-neck"
+        }
+      ]
+    },
+    {
+      "name": "official-seal",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "official-seal-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "courthouse",
+      "fixedParts": [
+        "courthouse-base"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "courthouse-base"
+        },
+        {
+          "type": "rigid",
+          "part": "courthouse-pediment-frame"
+        }
+      ]
+    },
+    {
+      "name": "courthouse-strong",
+      "fixedParts": [
+        "courthouse-base"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "courthouse-base"
+        },
+        {
+          "type": "rigid",
+          "part": "courthouse-pediment-frame"
+        }
+      ]
+    },
+    {
+      "name": "gdpr-shield",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "gdpr-shield-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "audit",
+      "fixedParts": [
+        "audit-sheet-frame",
+        "audit-entry-0",
+        "audit-entry-1",
+        "audit-entry-2",
+        "audit-entry-3"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "audit-sheet-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "audit-entry-0"
+        },
+        {
+          "type": "fixed",
+          "part": "audit-entry-1"
+        },
+        {
+          "type": "fixed",
+          "part": "audit-entry-2"
+        },
+        {
+          "type": "fixed",
+          "part": "audit-entry-3"
+        },
+        {
+          "type": "rigid",
+          "part": "audit-lens-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "audit-grip"
+        }
+      ]
+    },
+    {
+      "name": "audit-strong",
+      "fixedParts": [
+        "audit-sheet-frame",
+        "audit-entry-0",
+        "audit-entry-1",
+        "audit-entry-2",
+        "audit-entry-3"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "audit-sheet-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "audit-entry-0"
+        },
+        {
+          "type": "fixed",
+          "part": "audit-entry-1"
+        },
+        {
+          "type": "fixed",
+          "part": "audit-entry-2"
+        },
+        {
+          "type": "fixed",
+          "part": "audit-entry-3"
+        },
+        {
+          "type": "rigid",
+          "part": "audit-lens-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "audit-grip"
+        }
+      ]
+    },
+    {
+      "name": "policy",
+      "fixedParts": [
+        "policy-roll-top-frame",
+        "policy-clause-0"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "policy-roll-top-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "policy-clause-0"
+        }
+      ]
+    },
+    {
+      "name": "policy-strong",
+      "fixedParts": [
+        "policy-roll-top-frame",
+        "policy-clause-0"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "policy-roll-top-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "policy-clause-0"
+        }
+      ]
+    },
+    {
+      "name": "terms-of-service",
+      "fixedParts": [
+        "terms-of-service-page-frame",
+        "terms-of-service-track",
+        "terms-of-service-clause-0",
+        "terms-of-service-clause-4"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "terms-of-service-page-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "terms-of-service-track"
+        },
+        {
+          "type": "fixed",
+          "part": "terms-of-service-clause-0"
+        },
+        {
+          "type": "fixed",
+          "part": "terms-of-service-clause-4"
+        },
+        {
+          "type": "rigid",
+          "part": "terms-of-service-thumb"
+        }
+      ]
+    },
+    {
+      "name": "terms-of-service-strong",
+      "fixedParts": [
+        "terms-of-service-page-frame",
+        "terms-of-service-track",
+        "terms-of-service-clause-0",
+        "terms-of-service-clause-4"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "terms-of-service-page-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "terms-of-service-track"
+        },
+        {
+          "type": "fixed",
+          "part": "terms-of-service-clause-0"
+        },
+        {
+          "type": "fixed",
+          "part": "terms-of-service-clause-4"
+        },
+        {
+          "type": "rigid",
+          "part": "terms-of-service-thumb"
+        }
+      ]
+    },
+    {
+      "name": "compliance-check",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "compliance-check-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "redact",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "redact-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "consent",
+      "fixedParts": [
+        "consent-statement-0",
+        "consent-statement-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "consent-statement-0"
+        },
+        {
+          "type": "fixed",
+          "part": "consent-statement-1"
+        }
+      ]
+    },
+    {
+      "name": "consent-strong",
+      "fixedParts": [
+        "consent-statement-0",
+        "consent-statement-1"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "consent-statement-0"
+        },
+        {
+          "type": "fixed",
+          "part": "consent-statement-1"
+        }
+      ]
+    },
+    {
+      "name": "cookie-banner",
+      "fixedParts": [
+        "cookie-banner-screen-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "cookie-banner-screen-frame"
+        }
+      ]
+    },
+    {
+      "name": "cookie-banner-strong",
+      "fixedParts": [
+        "cookie-banner-screen-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "cookie-banner-screen-frame"
+        }
+      ]
+    },
+    {
+      "name": "data-retention",
+      "fixedParts": [
+        "data-retention-top",
+        "data-retention-side-l",
+        "data-retention-side-r",
+        "data-retention-band",
+        "data-retention-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "data-retention-top"
+        },
+        {
+          "type": "fixed",
+          "part": "data-retention-side-l"
+        },
+        {
+          "type": "fixed",
+          "part": "data-retention-side-r"
+        },
+        {
+          "type": "fixed",
+          "part": "data-retention-band"
+        },
+        {
+          "type": "fixed",
+          "part": "data-retention-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "data-retention-clock-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "data-retention-hand"
+        }
+      ]
+    },
+    {
+      "name": "data-retention-strong",
+      "fixedParts": [
+        "data-retention-top",
+        "data-retention-side-l",
+        "data-retention-side-r",
+        "data-retention-band",
+        "data-retention-bottom"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "data-retention-top"
+        },
+        {
+          "type": "fixed",
+          "part": "data-retention-side-l"
+        },
+        {
+          "type": "fixed",
+          "part": "data-retention-side-r"
+        },
+        {
+          "type": "fixed",
+          "part": "data-retention-band"
+        },
+        {
+          "type": "fixed",
+          "part": "data-retention-bottom"
+        },
+        {
+          "type": "rigid",
+          "part": "data-retention-clock-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "data-retention-hand"
+        }
+      ]
+    },
+    {
+      "name": "disclaimer",
+      "fixedParts": [
+        "disclaimer-print-0",
+        "disclaimer-print-1",
+        "disclaimer-print-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "disclaimer-print-0"
+        },
+        {
+          "type": "fixed",
+          "part": "disclaimer-print-1"
+        },
+        {
+          "type": "fixed",
+          "part": "disclaimer-print-2"
+        }
+      ]
+    },
+    {
+      "name": "disclaimer-strong",
+      "fixedParts": [
+        "disclaimer-print-0",
+        "disclaimer-print-1",
+        "disclaimer-print-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "disclaimer-print-0"
+        },
+        {
+          "type": "fixed",
+          "part": "disclaimer-print-1"
+        },
+        {
+          "type": "fixed",
+          "part": "disclaimer-print-2"
+        }
+      ]
+    },
+    {
+      "name": "copyright",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "copyright-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "whistleblower",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "whistleblower-whistle-frame"
+        }
+      ]
+    },
+    {
+      "name": "whistleblower-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "whistleblower-whistle-frame"
+        }
+      ]
+    },
+    {
+      "name": "evidence-bag",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "evidence-bag-bag-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "evidence-bag-band"
+        }
+      ]
+    },
+    {
+      "name": "evidence-bag-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "evidence-bag-bag-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "evidence-bag-band"
+        }
+      ]
+    },
+    {
+      "name": "legal-hold",
+      "fixedParts": [
+        "legal-hold-doc-frame",
+        "legal-hold-line-0",
+        "legal-hold-line-1",
+        "legal-hold-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "legal-hold-doc-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "legal-hold-line-0"
+        },
+        {
+          "type": "fixed",
+          "part": "legal-hold-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "legal-hold-line-2"
+        },
+        {
+          "type": "rigid",
+          "part": "legal-hold-body-frame"
+        }
+      ]
+    },
+    {
+      "name": "legal-hold-strong",
+      "fixedParts": [
+        "legal-hold-doc-frame",
+        "legal-hold-line-0",
+        "legal-hold-line-1",
+        "legal-hold-line-2"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "legal-hold-doc-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "legal-hold-line-0"
+        },
+        {
+          "type": "fixed",
+          "part": "legal-hold-line-1"
+        },
+        {
+          "type": "fixed",
+          "part": "legal-hold-line-2"
+        },
+        {
+          "type": "rigid",
+          "part": "legal-hold-body-frame"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

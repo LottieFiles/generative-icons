@@ -1,0 +1,820 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 60,
+  "nativeTransformNodes": 218,
+  "nativeTransformMaxCoordinateError": 0.000010535892222662824,
+  "checks": [
+    {
+      "name": "pen-tool",
+      "fixedParts": [
+        "pen-tool-path",
+        "pen-tool-start",
+        "pen-tool-anchor"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pen-tool-path"
+        },
+        {
+          "type": "fixed",
+          "part": "pen-tool-start"
+        },
+        {
+          "type": "fixed",
+          "part": "pen-tool-anchor"
+        },
+        {
+          "type": "rigid",
+          "part": "pen-tool-nib"
+        },
+        {
+          "type": "rigid",
+          "part": "pen-tool-barrel"
+        }
+      ]
+    },
+    {
+      "name": "pen-tool-strong",
+      "fixedParts": [
+        "pen-tool-path",
+        "pen-tool-start",
+        "pen-tool-anchor"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "pen-tool-path"
+        },
+        {
+          "type": "fixed",
+          "part": "pen-tool-start"
+        },
+        {
+          "type": "fixed",
+          "part": "pen-tool-anchor"
+        },
+        {
+          "type": "rigid",
+          "part": "pen-tool-nib"
+        },
+        {
+          "type": "rigid",
+          "part": "pen-tool-barrel"
+        }
+      ]
+    },
+    {
+      "name": "brush",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "brush-bristles-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "brush-ferrule"
+        },
+        {
+          "type": "rigid",
+          "part": "brush-handle"
+        }
+      ]
+    },
+    {
+      "name": "brush-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "brush-bristles-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "brush-ferrule"
+        },
+        {
+          "type": "rigid",
+          "part": "brush-handle"
+        }
+      ]
+    },
+    {
+      "name": "eraser",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "eraser-block"
+        },
+        {
+          "type": "rigid",
+          "part": "eraser-band"
+        }
+      ]
+    },
+    {
+      "name": "eraser-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "eraser-block"
+        },
+        {
+          "type": "rigid",
+          "part": "eraser-band"
+        }
+      ]
+    },
+    {
+      "name": "corner-radius",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "corner-radius-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "line-tool",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "line-tool-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "rectangle-tool",
+      "fixedParts": [
+        "rectangle-tool-origin"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rectangle-tool-origin"
+        }
+      ]
+    },
+    {
+      "name": "rectangle-tool-strong",
+      "fixedParts": [
+        "rectangle-tool-origin"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rectangle-tool-origin"
+        }
+      ]
+    },
+    {
+      "name": "ellipse-tool",
+      "fixedParts": [
+        "ellipse-tool-anchor"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ellipse-tool-anchor"
+        }
+      ]
+    },
+    {
+      "name": "ellipse-tool-strong",
+      "fixedParts": [
+        "ellipse-tool-anchor"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ellipse-tool-anchor"
+        }
+      ]
+    },
+    {
+      "name": "polygon-tool",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "polygon-tool-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "fill-bucket",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fill-bucket-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "fill-bucket-handle"
+        }
+      ]
+    },
+    {
+      "name": "fill-bucket-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "fill-bucket-body-frame"
+        },
+        {
+          "type": "rigid",
+          "part": "fill-bucket-handle"
+        }
+      ]
+    },
+    {
+      "name": "eyedropper",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "eyedropper-cone"
+        },
+        {
+          "type": "rigid",
+          "part": "eyedropper-tube"
+        },
+        {
+          "type": "rigid",
+          "part": "eyedropper-collar"
+        }
+      ]
+    },
+    {
+      "name": "eyedropper-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "eyedropper-cone"
+        },
+        {
+          "type": "rigid",
+          "part": "eyedropper-tube"
+        },
+        {
+          "type": "rigid",
+          "part": "eyedropper-collar"
+        }
+      ]
+    },
+    {
+      "name": "group-objects",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "group-objects-square"
+        },
+        {
+          "type": "rigid",
+          "part": "group-objects-circle"
+        }
+      ]
+    },
+    {
+      "name": "group-objects-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "group-objects-square"
+        },
+        {
+          "type": "rigid",
+          "part": "group-objects-circle"
+        }
+      ]
+    },
+    {
+      "name": "align-objects",
+      "fixedParts": [
+        "align-objects-guide"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "align-objects-guide"
+        },
+        {
+          "type": "rigid",
+          "part": "align-objects-block-0"
+        },
+        {
+          "type": "rigid",
+          "part": "align-objects-block-1"
+        },
+        {
+          "type": "rigid",
+          "part": "align-objects-block-2"
+        }
+      ]
+    },
+    {
+      "name": "align-objects-strong",
+      "fixedParts": [
+        "align-objects-guide"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "align-objects-guide"
+        },
+        {
+          "type": "rigid",
+          "part": "align-objects-block-0"
+        },
+        {
+          "type": "rigid",
+          "part": "align-objects-block-1"
+        },
+        {
+          "type": "rigid",
+          "part": "align-objects-block-2"
+        }
+      ]
+    },
+    {
+      "name": "magic-wand",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "magic-wand-stick"
+        }
+      ]
+    },
+    {
+      "name": "magic-wand-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "rigid",
+          "part": "magic-wand-stick"
+        }
+      ]
+    },
+    {
+      "name": "lasso-select",
+      "fixedParts": [
+        "lasso-select-object"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "lasso-select-object"
+        }
+      ]
+    },
+    {
+      "name": "lasso-select-strong",
+      "fixedParts": [
+        "lasso-select-object"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "lasso-select-object"
+        }
+      ]
+    },
+    {
+      "name": "transform-tool",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "transform-tool-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "rotate-tool",
+      "fixedParts": [
+        "rotate-tool-arc",
+        "rotate-tool-head"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rotate-tool-arc"
+        },
+        {
+          "type": "fixed",
+          "part": "rotate-tool-head"
+        },
+        {
+          "type": "rigid",
+          "part": "rotate-tool-square-frame"
+        }
+      ]
+    },
+    {
+      "name": "rotate-tool-strong",
+      "fixedParts": [
+        "rotate-tool-arc",
+        "rotate-tool-head"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "rotate-tool-arc"
+        },
+        {
+          "type": "fixed",
+          "part": "rotate-tool-head"
+        },
+        {
+          "type": "rigid",
+          "part": "rotate-tool-square-frame"
+        }
+      ]
+    },
+    {
+      "name": "mirror-tool",
+      "fixedParts": [
+        "mirror-tool-axis-0",
+        "mirror-tool-axis-1",
+        "mirror-tool-axis-2",
+        "mirror-tool-left-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "mirror-tool-axis-0"
+        },
+        {
+          "type": "fixed",
+          "part": "mirror-tool-axis-1"
+        },
+        {
+          "type": "fixed",
+          "part": "mirror-tool-axis-2"
+        },
+        {
+          "type": "fixed",
+          "part": "mirror-tool-left-frame"
+        }
+      ]
+    },
+    {
+      "name": "mirror-tool-strong",
+      "fixedParts": [
+        "mirror-tool-axis-0",
+        "mirror-tool-axis-1",
+        "mirror-tool-axis-2",
+        "mirror-tool-left-frame"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "mirror-tool-axis-0"
+        },
+        {
+          "type": "fixed",
+          "part": "mirror-tool-axis-1"
+        },
+        {
+          "type": "fixed",
+          "part": "mirror-tool-axis-2"
+        },
+        {
+          "type": "fixed",
+          "part": "mirror-tool-left-frame"
+        }
+      ]
+    },
+    {
+      "name": "snap-to-grid",
+      "fixedParts": [
+        "snap-to-grid-dot-7-7",
+        "snap-to-grid-dot-25-25"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "snap-to-grid-dot-7-7"
+        },
+        {
+          "type": "fixed",
+          "part": "snap-to-grid-dot-25-25"
+        },
+        {
+          "type": "rigid",
+          "part": "snap-to-grid-object-frame"
+        }
+      ]
+    },
+    {
+      "name": "snap-to-grid-strong",
+      "fixedParts": [
+        "snap-to-grid-dot-7-7",
+        "snap-to-grid-dot-25-25"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "snap-to-grid-dot-7-7"
+        },
+        {
+          "type": "fixed",
+          "part": "snap-to-grid-dot-25-25"
+        },
+        {
+          "type": "rigid",
+          "part": "snap-to-grid-object-frame"
+        }
+      ]
+    },
+    {
+      "name": "ruler-guides",
+      "fixedParts": [
+        "ruler-guides-ruler-frame",
+        "ruler-guides-tick-t13",
+        "ruler-guides-tick-l13"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ruler-guides-ruler-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "ruler-guides-tick-t13"
+        },
+        {
+          "type": "fixed",
+          "part": "ruler-guides-tick-l13"
+        },
+        {
+          "type": "rigid",
+          "part": "ruler-guides-guide-v"
+        },
+        {
+          "type": "rigid",
+          "part": "ruler-guides-guide-h"
+        }
+      ]
+    },
+    {
+      "name": "ruler-guides-strong",
+      "fixedParts": [
+        "ruler-guides-ruler-frame",
+        "ruler-guides-tick-t13",
+        "ruler-guides-tick-l13"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ruler-guides-ruler-frame"
+        },
+        {
+          "type": "fixed",
+          "part": "ruler-guides-tick-t13"
+        },
+        {
+          "type": "fixed",
+          "part": "ruler-guides-tick-l13"
+        },
+        {
+          "type": "rigid",
+          "part": "ruler-guides-guide-v"
+        },
+        {
+          "type": "rigid",
+          "part": "ruler-guides-guide-h"
+        }
+      ]
+    },
+    {
+      "name": "scissors",
+      "fixedParts": [
+        "scissors-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "scissors-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "scissors-blade-a-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "scissors-blade-a-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "scissors-blade-b-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "scissors-blade-b-ring"
+        }
+      ]
+    },
+    {
+      "name": "scissors-strong",
+      "fixedParts": [
+        "scissors-hub"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "scissors-hub"
+        },
+        {
+          "type": "rigid",
+          "part": "scissors-blade-a-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "scissors-blade-a-ring"
+        },
+        {
+          "type": "rigid",
+          "part": "scissors-blade-b-shaft"
+        },
+        {
+          "type": "rigid",
+          "part": "scissors-blade-b-ring"
+        }
+      ]
+    }
+  ],
+  "loopChecks": []
+}

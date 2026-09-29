@@ -1,6 +1,6 @@
 # @lottiefiles/generative-icons
 
-625 animated icons from Generative Animated Icons by LottieFiles: native dotLottie assets, one descriptor per icon, and the catalog. Light and Strong motion; Outline, Solid and Duotone styles.
+845 animated icons from Generative Animated Icons by LottieFiles: native dotLottie assets, one descriptor per icon, and the catalog. Light and Strong motion; Outline, Solid and Duotone styles.
 
 ## Install
 
