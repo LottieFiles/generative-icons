@@ -1,0 +1,861 @@
+{
+  "result": "PASS",
+  "icons": 20,
+  "actions": 60,
+  "nativeTransformNodes": 840,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "checks": [
+    {
+      "name": "turn-taking",
+      "fixedParts": [
+        "turn-taking-caller",
+        "turn-taking-agent"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "turn-taking-caller"
+        },
+        {
+          "type": "fixed",
+          "part": "turn-taking-agent"
+        }
+      ]
+    },
+    {
+      "name": "turn-taking-strong",
+      "fixedParts": [
+        "turn-taking-caller",
+        "turn-taking-agent"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "turn-taking-caller"
+        },
+        {
+          "type": "fixed",
+          "part": "turn-taking-agent"
+        }
+      ]
+    },
+    {
+      "name": "barge-in",
+      "fixedParts": [
+        "barge-in-agent",
+        "barge-in-caller"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "barge-in-agent"
+        },
+        {
+          "type": "fixed",
+          "part": "barge-in-caller"
+        }
+      ]
+    },
+    {
+      "name": "barge-in-strong",
+      "fixedParts": [
+        "barge-in-agent",
+        "barge-in-caller"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "barge-in-agent"
+        },
+        {
+          "type": "fixed",
+          "part": "barge-in-caller"
+        }
+      ]
+    },
+    {
+      "name": "end-of-turn-detection",
+      "fixedParts": [
+        "end-of-turn-detection-utterance",
+        "end-of-turn-detection-speech-start",
+        "end-of-turn-detection-deadline"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "end-of-turn-detection-utterance"
+        },
+        {
+          "type": "fixed",
+          "part": "end-of-turn-detection-speech-start"
+        },
+        {
+          "type": "fixed",
+          "part": "end-of-turn-detection-deadline"
+        }
+      ]
+    },
+    {
+      "name": "end-of-turn-detection-strong",
+      "fixedParts": [
+        "end-of-turn-detection-utterance",
+        "end-of-turn-detection-speech-start",
+        "end-of-turn-detection-deadline"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "end-of-turn-detection-utterance"
+        },
+        {
+          "type": "fixed",
+          "part": "end-of-turn-detection-speech-start"
+        },
+        {
+          "type": "fixed",
+          "part": "end-of-turn-detection-deadline"
+        }
+      ]
+    },
+    {
+      "name": "backchannel",
+      "fixedParts": [
+        "backchannel-utterance",
+        "backchannel-phrase"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "backchannel-utterance"
+        },
+        {
+          "type": "fixed",
+          "part": "backchannel-phrase"
+        }
+      ]
+    },
+    {
+      "name": "backchannel-strong",
+      "fixedParts": [
+        "backchannel-utterance",
+        "backchannel-phrase"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "backchannel-utterance"
+        },
+        {
+          "type": "fixed",
+          "part": "backchannel-phrase"
+        }
+      ]
+    },
+    {
+      "name": "speaker-diarization",
+      "fixedParts": [
+        "speaker-diarization-lane-a",
+        "speaker-diarization-lane-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "speaker-diarization-lane-a"
+        },
+        {
+          "type": "fixed",
+          "part": "speaker-diarization-lane-b"
+        }
+      ]
+    },
+    {
+      "name": "speaker-diarization-strong",
+      "fixedParts": [
+        "speaker-diarization-lane-a",
+        "speaker-diarization-lane-b"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "speaker-diarization-lane-a"
+        },
+        {
+          "type": "fixed",
+          "part": "speaker-diarization-lane-b"
+        }
+      ]
+    },
+    {
+      "name": "live-transcript",
+      "fixedParts": [
+        "live-transcript-transcript",
+        "live-transcript-line-one",
+        "live-transcript-line-two"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "live-transcript-transcript"
+        },
+        {
+          "type": "fixed",
+          "part": "live-transcript-line-one"
+        },
+        {
+          "type": "fixed",
+          "part": "live-transcript-line-two"
+        }
+      ]
+    },
+    {
+      "name": "live-transcript-strong",
+      "fixedParts": [
+        "live-transcript-transcript",
+        "live-transcript-line-one",
+        "live-transcript-line-two"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "live-transcript-transcript"
+        },
+        {
+          "type": "fixed",
+          "part": "live-transcript-line-one"
+        },
+        {
+          "type": "fixed",
+          "part": "live-transcript-line-two"
+        }
+      ]
+    },
+    {
+      "name": "call-summary",
+      "fixedParts": [
+        "call-summary-utterance-a",
+        "call-summary-utterance-b",
+        "call-summary-branch-a",
+        "call-summary-branch-b",
+        "call-summary-summary"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "call-summary-utterance-a"
+        },
+        {
+          "type": "fixed",
+          "part": "call-summary-utterance-b"
+        },
+        {
+          "type": "fixed",
+          "part": "call-summary-branch-a"
+        },
+        {
+          "type": "fixed",
+          "part": "call-summary-branch-b"
+        },
+        {
+          "type": "fixed",
+          "part": "call-summary-summary"
+        }
+      ]
+    },
+    {
+      "name": "call-summary-strong",
+      "fixedParts": [
+        "call-summary-utterance-a",
+        "call-summary-utterance-b",
+        "call-summary-branch-a",
+        "call-summary-branch-b",
+        "call-summary-summary"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "call-summary-utterance-a"
+        },
+        {
+          "type": "fixed",
+          "part": "call-summary-utterance-b"
+        },
+        {
+          "type": "fixed",
+          "part": "call-summary-branch-a"
+        },
+        {
+          "type": "fixed",
+          "part": "call-summary-branch-b"
+        },
+        {
+          "type": "fixed",
+          "part": "call-summary-summary"
+        }
+      ]
+    },
+    {
+      "name": "sentiment-meter",
+      "fixedParts": [
+        "sentiment-meter-face",
+        "sentiment-meter-sentiment-scale"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sentiment-meter-face"
+        },
+        {
+          "type": "fixed",
+          "part": "sentiment-meter-sentiment-scale"
+        }
+      ]
+    },
+    {
+      "name": "sentiment-meter-strong",
+      "fixedParts": [
+        "sentiment-meter-face",
+        "sentiment-meter-sentiment-scale"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "sentiment-meter-face"
+        },
+        {
+          "type": "fixed",
+          "part": "sentiment-meter-sentiment-scale"
+        }
+      ]
+    },
+    {
+      "name": "intent-confirmation",
+      "fixedParts": [
+        "intent-confirmation-confirmation"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "intent-confirmation-confirmation"
+        }
+      ]
+    },
+    {
+      "name": "intent-confirmation-strong",
+      "fixedParts": [
+        "intent-confirmation-confirmation"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "intent-confirmation-confirmation"
+        }
+      ]
+    },
+    {
+      "name": "language-detection",
+      "fixedParts": [
+        "language-detection-language",
+        "language-detection-letter",
+        "language-detection-letter-crossbar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "language-detection-language"
+        },
+        {
+          "type": "fixed",
+          "part": "language-detection-letter"
+        },
+        {
+          "type": "fixed",
+          "part": "language-detection-letter-crossbar"
+        }
+      ]
+    },
+    {
+      "name": "language-detection-strong",
+      "fixedParts": [
+        "language-detection-language",
+        "language-detection-letter",
+        "language-detection-letter-crossbar"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "language-detection-language"
+        },
+        {
+          "type": "fixed",
+          "part": "language-detection-letter"
+        },
+        {
+          "type": "fixed",
+          "part": "language-detection-letter-crossbar"
+        }
+      ]
+    },
+    {
+      "name": "silence-timeout",
+      "fixedParts": [
+        "silence-timeout-silence",
+        "silence-timeout-quiet",
+        "silence-timeout-clock",
+        "silence-timeout-short-hand"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "silence-timeout-silence"
+        },
+        {
+          "type": "fixed",
+          "part": "silence-timeout-quiet"
+        },
+        {
+          "type": "fixed",
+          "part": "silence-timeout-clock"
+        },
+        {
+          "type": "fixed",
+          "part": "silence-timeout-short-hand"
+        }
+      ]
+    },
+    {
+      "name": "silence-timeout-strong",
+      "fixedParts": [
+        "silence-timeout-silence",
+        "silence-timeout-quiet",
+        "silence-timeout-clock",
+        "silence-timeout-short-hand"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "silence-timeout-silence"
+        },
+        {
+          "type": "fixed",
+          "part": "silence-timeout-quiet"
+        },
+        {
+          "type": "fixed",
+          "part": "silence-timeout-clock"
+        },
+        {
+          "type": "fixed",
+          "part": "silence-timeout-short-hand"
+        }
+      ]
+    },
+    {
+      "name": "dtmf-input",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "dtmf-input-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "on-hold",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "on-hold-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "recording-consent",
+      "fixedParts": [
+        "recording-consent-record-ring",
+        "recording-consent-permission-line"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "recording-consent-record-ring"
+        },
+        {
+          "type": "fixed",
+          "part": "recording-consent-permission-line"
+        }
+      ]
+    },
+    {
+      "name": "recording-consent-strong",
+      "fixedParts": [
+        "recording-consent-record-ring",
+        "recording-consent-permission-line"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "recording-consent-record-ring"
+        },
+        {
+          "type": "fixed",
+          "part": "recording-consent-permission-line"
+        }
+      ]
+    },
+    {
+      "name": "ivr-menu",
+      "fixedParts": [
+        "ivr-menu-trunk",
+        "ivr-menu-left-branch",
+        "ivr-menu-right-branch",
+        "ivr-menu-option-one",
+        "ivr-menu-option-two"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ivr-menu-trunk"
+        },
+        {
+          "type": "fixed",
+          "part": "ivr-menu-left-branch"
+        },
+        {
+          "type": "fixed",
+          "part": "ivr-menu-right-branch"
+        },
+        {
+          "type": "fixed",
+          "part": "ivr-menu-option-one"
+        },
+        {
+          "type": "fixed",
+          "part": "ivr-menu-option-two"
+        }
+      ]
+    },
+    {
+      "name": "ivr-menu-strong",
+      "fixedParts": [
+        "ivr-menu-trunk",
+        "ivr-menu-left-branch",
+        "ivr-menu-right-branch",
+        "ivr-menu-option-one",
+        "ivr-menu-option-two"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "ivr-menu-trunk"
+        },
+        {
+          "type": "fixed",
+          "part": "ivr-menu-left-branch"
+        },
+        {
+          "type": "fixed",
+          "part": "ivr-menu-right-branch"
+        },
+        {
+          "type": "fixed",
+          "part": "ivr-menu-option-one"
+        },
+        {
+          "type": "fixed",
+          "part": "ivr-menu-option-two"
+        }
+      ]
+    },
+    {
+      "name": "speech-buffer",
+      "fixedParts": [
+        "speech-buffer-feed",
+        "speech-buffer-speech-output"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "speech-buffer-feed"
+        },
+        {
+          "type": "fixed",
+          "part": "speech-buffer-speech-output"
+        }
+      ]
+    },
+    {
+      "name": "speech-buffer-strong",
+      "fixedParts": [
+        "speech-buffer-feed",
+        "speech-buffer-speech-output"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "speech-buffer-feed"
+        },
+        {
+          "type": "fixed",
+          "part": "speech-buffer-speech-output"
+        }
+      ]
+    },
+    {
+      "name": "agent-persona",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "agent-persona-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "concurrent-calls",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "concurrent-calls-strong",
+      "fixedParts": [],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": []
+    },
+    {
+      "name": "escalation-flag",
+      "fixedParts": [
+        "escalation-flag-pole",
+        "escalation-flag-call-issue"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "escalation-flag-pole"
+        },
+        {
+          "type": "fixed",
+          "part": "escalation-flag-call-issue"
+        }
+      ]
+    },
+    {
+      "name": "escalation-flag-strong",
+      "fixedParts": [
+        "escalation-flag-pole",
+        "escalation-flag-call-issue"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "escalation-flag-pole"
+        },
+        {
+          "type": "fixed",
+          "part": "escalation-flag-call-issue"
+        }
+      ]
+    },
+    {
+      "name": "voicemail-detection",
+      "fixedParts": [
+        "voicemail-detection-greeting",
+        "voicemail-detection-detection-eye"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voicemail-detection-greeting"
+        },
+        {
+          "type": "fixed",
+          "part": "voicemail-detection-detection-eye"
+        }
+      ]
+    },
+    {
+      "name": "voicemail-detection-strong",
+      "fixedParts": [
+        "voicemail-detection-greeting",
+        "voicemail-detection-detection-eye"
+      ],
+      "topology": true,
+      "stateBoundaries": true,
+      "hold": true,
+      "continuous": false,
+      "designConstraints": [
+        {
+          "type": "fixed",
+          "part": "voicemail-detection-greeting"
+        },
+        {
+          "type": "fixed",
+          "part": "voicemail-detection-detection-eye"
+        }
+      ]
+    }
+  ],
+  "loopChecks": [],
+  "drawingChecks": {
+    "frames": 17400,
+    "contacts": 5800,
+    "clearances": 7682,
+    "minimumTranscriptGap": 0.8999999999999968,
+    "minimumToneGap": 1.3999999999999986
+  }
+}

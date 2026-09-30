@@ -8,7 +8,7 @@ All notable changes to the Generative Animated Icons packages are recorded here.
 
 ### Added
 
-- 985 animated icons in 57 sets, each with Light and Strong motion, Outline (three weights), Solid and Duotone styles, light and dark themes, and a recolorable primary slot.
+- 1,005 animated icons in 58 sets, each with Light and Strong motion, Outline (three weights), Solid and Duotone styles, light and dark themes, and a recolorable primary slot.
 - `@lottiefiles/generative-icons`: per-icon descriptors, native dotLottie assets, catalog, schemas and docs.
 - `@lottiefiles/generative-icons-runtime`: playback, paint, state, reduced motion and lifecycle API.
 - `@lottiefiles/generative-icons-react`: `AnimatedIcon` component for React and Next.js.
