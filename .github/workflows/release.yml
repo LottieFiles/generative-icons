@@ -1,0 +1,492 @@
+name: Release
+# Manual only. Builds the gen-animated-icons binaries, drafts a GitHub release with them,
+# and packs the npm packages as a workflow artifact. Every tarball and npm platform package
+# carries LICENSE, THIRD_PARTY_NOTICES.md and THIRD_PARTY_LICENSES.txt, the license texts of
+# everything its binary links. Nothing is published to npm, and the draft release stays a
+# draft until a maintainer publishes it (docs/maintainers/releasing.md).
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag (default v<workspace version>)
+        required: false
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: release
+  cancel-in-progress: false
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: '0'
+  RUST_TOOLCHAIN: '1.93.1'
+  # ThorVG must not fuse a*b+c into FMAs (see .cargo/config.toml); an environment
+  # CXXFLAGS replaces the config's value, so it carries the flag itself. On x86_64,
+  # vendor/rquickjs-sys/build.rs adds -mfma to V8's math objects only.
+  CXXFLAGS: -ffp-contract=off
+  MACOSX_DEPLOYMENT_TARGET: '11.0'
+  CARGO_ABOUT_VERSION: '0.9.2'
+jobs:
+  version:
+    name: Check versions
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Read the workspace version and check the npm packages against it
+        id: version
+        env:
+          TAG_INPUT: ${{ inputs.tag }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, re, tomllib
+          version = tomllib.load(open('Cargo.toml', 'rb'))['workspace']['package']['version']
+          errors = []
+          wrapper = json.loads(pathlib.Path('npm/gen-animated-icons/package.json').read_text())
+          if wrapper['version'] != version:
+              errors.append(f"npm/gen-animated-icons is {wrapper['version']}")
+          for name, pin in wrapper.get('optionalDependencies', {}).items():
+              if pin != version:
+                  errors.append(f'the wrapper pins {name} at {pin}')
+          platforms = sorted(pathlib.Path('npm/platforms').glob('*/package.json'))
+          names = set()
+          for file in platforms:
+              package = json.loads(file.read_text())
+              names.add(package['name'])
+              if package['version'] != version:
+                  errors.append(f"{file.parent} is {package['version']}")
+          if names != set(wrapper.get('optionalDependencies', {})):
+              errors.append('the wrapper optionalDependencies do not match npm/platforms')
+          if errors:
+              raise SystemExit(f'Versions disagree with the Cargo workspace ({version}): ' + '; '.join(errors))
+          tag = os.environ.get('TAG_INPUT') or f'v{version}'
+          if not re.fullmatch(r'v[0-9A-Za-z.+-]+', tag):
+              raise SystemExit(f'Invalid tag: {tag}')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write(f'version={version}\ntag={tag}\n')
+          print(f'gen-animated-icons {version}, tag {tag}')
+          PY
+
+  licenses:
+    name: List third-party licenses
+    needs: version
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          key: cargo-home-licenses-${{ hashFiles('Cargo.lock') }}
+          restore-keys: |
+            cargo-home-licenses-
+      - name: Install Rust ${{ env.RUST_TOOLCHAIN }} and cargo-about ${{ env.CARGO_ABOUT_VERSION }}
+        run: |
+          rustup toolchain install "$RUST_TOOLCHAIN" --profile minimal
+          rustup default "$RUST_TOOLCHAIN"
+          cargo install cargo-about --version "$CARGO_ABOUT_VERSION" --locked --features cli
+      - name: Generate THIRD_PARTY_LICENSES.txt for each target
+        env:
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          about="$RUNNER_TEMP/about"
+          mkdir -p "$about" dist/licenses
+          # Crates that offer a choice of licenses get the first accepted one. A clarified
+          # crate's license files are listed with their sha256: when one changes, review
+          # the new text, then update its checksum here.
+          cat > "$about/about.toml" <<'TOML'
+          accepted = [
+            "MIT",
+            "Apache-2.0",
+            "Apache-2.0 WITH LLVM-exception",
+            "BSD-3-Clause",
+            "ISC",
+            "Unicode-3.0",
+            "Zlib",
+            "BSL-1.0",
+            "MPL-2.0",
+            "0BSD",
+            "Unlicense",
+          ]
+          ignore-build-dependencies = true
+          ignore-dev-dependencies = true
+          workarounds = ["chrono"]
+
+          # The workspace crates carry the repository's LICENSE.
+          [gai-core.clarify]
+          license = "MIT"
+          [[gai-core.clarify.files]]
+          path = "../../LICENSE"
+          checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
+
+          [gai-build.clarify]
+          license = "MIT"
+          [[gai-build.clarify.files]]
+          path = "../../LICENSE"
+          checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
+
+          [gai-check.clarify]
+          license = "MIT"
+          [[gai-check.clarify.files]]
+          path = "../../LICENSE"
+          checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
+
+          [gai-package.clarify]
+          license = "MIT"
+          [[gai-package.clarify.files]]
+          path = "../../LICENSE"
+          checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
+
+          [gai-engine.clarify]
+          license = "MIT"
+          [[gai-engine.clarify.files]]
+          path = "../../LICENSE"
+          checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
+
+          [gen-animated-icons.clarify]
+          license = "MIT"
+          [[gen-animated-icons.clarify.files]]
+          path = "../../LICENSE"
+          checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
+
+          # gai-js embeds svgpath.
+          [gai-js.clarify]
+          license = "MIT"
+          [[gai-js.clarify.files]]
+          path = "../../LICENSE"
+          checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
+          [[gai-js.clarify.files]]
+          path = "js/LICENSE.svgpath"
+          checksum = "6caa5f5c4e6957535e77e3eb2a4cc8cdf9242040976faaf01dcc8c3934e2ca4f"
+
+          # gai-render embeds a DejaVu Sans Mono subset.
+          [gai-render]
+          accepted = ["Bitstream-Vera"]
+          [gai-render.clarify]
+          license = "MIT AND Bitstream-Vera"
+          [[gai-render.clarify.files]]
+          path = "../../LICENSE"
+          license = "MIT"
+          checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
+          [[gai-render.clarify.files]]
+          path = "fonts/LICENSE-DejaVu.txt"
+          license = "Bitstream-Vera"
+          checksum = "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93"
+
+          # The patched rquickjs-sys (vendor/) compiles QuickJS-NG, V8's ieee754.cc with
+          # fdlibm, and CORE-MATH's pow.
+          [rquickjs-sys]
+          accepted = ["SunPro"]
+          [rquickjs-sys.clarify]
+          license = "MIT AND BSD-3-Clause AND SunPro"
+          [[rquickjs-sys.clarify.files]]
+          path = "LICENSE"
+          license = "MIT"
+          checksum = "0517c7f76916dcc6557b3c0e1c077f14dd05bfe8e0d7d2a2fa298fe0d49a790a"
+          [[rquickjs-sys.clarify.files]]
+          path = "quickjs/LICENSE"
+          license = "MIT"
+          checksum = "f8ff566e562ab34733a732fb8bdbc353652bb7240d8bf45f1516b7c7b698c014"
+          [[rquickjs-sys.clarify.files]]
+          path = "gai/core-math/LICENSE"
+          license = "MIT"
+          checksum = "81830875362f4d477637de58eecd6d458db108cc90c40904fca3694807b86de3"
+          [[rquickjs-sys.clarify.files]]
+          path = "gai/v8/LICENSE"
+          license = "BSD-3-Clause"
+          checksum = "6ab33af8774a0f396ee3aeeb761e3229057682d6f9fa7f572e390c2cb3a6e509"
+          [[rquickjs-sys.clarify.files]]
+          path = "gai/v8/LICENSE.fdlibm"
+          license = "SunPro"
+          checksum = "e7115e18444dae09d17f361ddc365fb1d342640fe500796209c63f7c80dfae10"
+
+          # dotlottie-rs, the pinned renderer, compiles ThorVG with its Lottie loader
+          # (RapidJSON) and expressions (JerryScript). Its own LICENSE is at the repository
+          # root, one level above the crate.
+          [dotlottie-rs.clarify]
+          license = "MIT AND Apache-2.0"
+          [[dotlottie-rs.clarify.files]]
+          path = "../LICENSE"
+          license = "MIT"
+          checksum = "f037776f95580c42ca12cdeb3c8167023b44dbe311f78f34ec67788d7c252e5f"
+          [[dotlottie-rs.clarify.files]]
+          path = "deps/thorvg/LICENSE"
+          license = "MIT"
+          checksum = "74242cdc4ccaebc73fa04fbd52a538429eae2be7a231f9eaf1dbf59d2bedc16b"
+          [[dotlottie-rs.clarify.files]]
+          path = "deps/thorvg/src/loaders/lottie/rapidjson/LICENSE"
+          license = "MIT"
+          checksum = "01b0d15338bb72e2ced401051b4037a5bd4d464d2d8a25728f25ce6b99eb86af"
+          [[dotlottie-rs.clarify.files]]
+          path = "deps/thorvg/src/loaders/lottie/jerryscript/jerry-core/LICENSE"
+          license = "Apache-2.0"
+          checksum = "d0e3ce252a3863ebae8cb1d486464bdddeec8187d2ba67dd732980b08a5f5c46"
+          TOML
+          cat > "$about/licenses.hbs" <<'HBS'
+          Crates
+          ------
+          {{#each crates}}
+          {{{package.name}}} {{{package.version}}}: {{{license}}}
+          {{/each}}
+
+          License texts
+          -------------
+          {{#each licenses}}
+
+          ================================================================================
+          {{{name}}} ({{{id}}})
+          Used by: {{#each used_by}}{{{crate.name}}} {{{crate.version}}}{{#unless @last}}, {{/unless}}{{/each}}
+
+          {{{text}}}
+          {{/each}}
+          HBS
+          for target in aarch64-apple-darwin x86_64-apple-darwin x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu; do
+            log="$about/$target.log"
+            if ! cargo about generate --locked --fail -c "$about/about.toml" \
+                -m crates/gen-animated-icons/Cargo.toml --target "$target" \
+                -o "$about/$target.txt" "$about/licenses.hbs" 2> "$log"; then
+              cat "$log"
+              exit 1
+            fi
+            cat "$log"
+            # cargo-about only warns when a clarification or workaround no longer applies,
+            # and then falls back to guessing; a release must not ship the guess.
+            if grep -E 'failed to validate|unable to apply workaround' "$log"; then
+              echo "A license file listed in about.toml changed for $target; review it and update its checksum."
+              exit 1
+            fi
+            {
+              printf 'Third-party licenses: gen-animated-icons %s for %s\n\n' "$VERSION" "$target"
+              printf '%s\n' \
+                'The gen-animated-icons binary is MIT-licensed (LICENSE). It statically links the' \
+                'Rust crates listed below and the C and C++ code they compile, including QuickJS-NG,' \
+                "V8's ieee754.cc with fdlibm, and CORE-MATH (rquickjs-sys), and ThorVG with RapidJSON" \
+                'and JerryScript (dotlottie-rs). It also embeds svgpath (gai-js) and a subset of' \
+                'DejaVu Sans Mono (gai-render). Each license text below names the crates it covers;' \
+                'THIRD_PARTY_NOTICES.md summarizes the bundled components.' \
+                '' \
+                "Generated from Cargo.lock by cargo-about $CARGO_ABOUT_VERSION." \
+                ''
+              cat "$about/$target.txt"
+            } > "dist/licenses/THIRD_PARTY_LICENSES-$target.txt"
+          done
+          ls -l dist/licenses
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: licenses
+          path: dist/licenses/*.txt
+          if-no-files-found: error
+
+  build:
+    name: Build ${{ matrix.target }}
+    needs: [version, licenses]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: aarch64-apple-darwin
+            os: macos-14
+            native: true
+          # Cross-compiled on Apple silicon; Rosetta has no FMA, so it is not run here.
+          - target: x86_64-apple-darwin
+            os: macos-14
+            native: false
+          # The oldest supported Ubuntu keeps the glibc requirement low.
+          - target: x86_64-unknown-linux-gnu
+            os: ubuntu-22.04
+            native: true
+          # Hosted arm64 Linux runners; a private repository needs them enabled.
+          - target: aarch64-unknown-linux-gnu
+            os: ubuntu-22.04-arm
+            native: true
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Install clang (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends clang libclang-dev
+          # vendor/rquickjs-sys builds V8's ieee754.cc, which must be compiled by clang.
+          echo "CC=clang" >> "$GITHUB_ENV"
+          echo "CXX=clang++" >> "$GITHUB_ENV"
+      - name: Install Rust ${{ env.RUST_TOOLCHAIN }}
+        run: |
+          rustup toolchain install "$RUST_TOOLCHAIN" --profile minimal --target "${{ matrix.target }}"
+          rustup default "$RUST_TOOLCHAIN"
+      - uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          key: cargo-home-${{ runner.os }}-${{ hashFiles('Cargo.lock') }}
+          restore-keys: |
+            cargo-home-${{ runner.os }}-
+      - name: Build
+        run: cargo build --release --locked -p gen-animated-icons --target "${{ matrix.target }}"
+      - name: Check the binary
+        env:
+          TARGET: ${{ matrix.target }}
+          NATIVE: ${{ matrix.native }}
+        run: |
+          bin="target/$TARGET/release/gen-animated-icons"
+          file "$bin"
+          if [ "$NATIVE" != "true" ]; then
+            [ "$(lipo -archs "$bin")" = "x86_64" ]
+            exit 0
+          fi
+          "$bin" --version
+          # doctor's binary, cpu, quickjs and renderer checks prove the V8-exact math and
+          # the browser-identical renderer on this target. The app checks fail here
+          # (there is no app), so read the report rather than the exit code.
+          scratch=$(mktemp -d)
+          (cd "$scratch" && GEN_ANIMATED_ICONS_HOME="$scratch/home" GEN_ANIMATED_ICONS_CACHE_DIR="$scratch/cache" \
+            "$GITHUB_WORKSPACE/$bin" --offline doctor --json > report.json || true)
+          python3 - "$scratch/report.json" <<'PY'
+          import json, sys
+          checks = {c['id']: c for c in json.load(open(sys.argv[1]))['checks']}
+          for id in ['binary', 'cpu', 'quickjs', 'renderer']:
+              print(f"{id}: {checks[id]['status']}: {checks[id]['message']}")
+          if any(checks[id]['status'] != 'pass' for id in ['binary', 'cpu', 'quickjs', 'renderer']):
+              raise SystemExit('doctor found a broken binary')
+          PY
+          if [ "$RUNNER_OS" = "Linux" ]; then ldd "$bin"; else otool -L "$bin"; fi
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: licenses
+          path: licenses
+      - name: Package
+        env:
+          TARGET: ${{ matrix.target }}
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          name="gen-animated-icons-$VERSION-$TARGET"
+          mkdir -p "dist/$name"
+          cp "target/$TARGET/release/gen-animated-icons" LICENSE THIRD_PARTY_NOTICES.md "dist/$name/"
+          cp "licenses/THIRD_PARTY_LICENSES-$TARGET.txt" "dist/$name/THIRD_PARTY_LICENSES.txt"
+          chmod 755 "dist/$name/gen-animated-icons"
+          cd dist || exit 1
+          tar -czf "$name.tar.gz" "$name"
+          shasum -a 256 "$name.tar.gz" > "$name.tar.gz.sha256"
+          cat "$name.tar.gz.sha256"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: binary-${{ matrix.target }}
+          path: |
+            dist/*.tar.gz
+            dist/*.tar.gz.sha256
+          if-no-files-found: error
+
+  draft:
+    name: Draft the GitHub release
+    needs: [version, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          pattern: binary-*
+          merge-multiple: true
+          path: dist
+      - name: Check the checksums
+        working-directory: dist
+        run: |
+          sha256sum -c ./*.sha256
+          cat ./*.sha256 > SHA256SUMS
+          cat SHA256SUMS
+      - name: Create the draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.version.outputs.tag }}
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          # A draft does not create the tag; publishing the release does, at this commit.
+          gh release create "$TAG" --draft --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+            --title "gen-animated-icons $VERSION" \
+            --notes "gen-animated-icons $VERSION. Binaries for macOS (arm64, x64) and Linux with glibc (arm64, x64), with SHA-256 checksums in SHA256SUMS. Each archive carries LICENSE, THIRD_PARTY_NOTICES.md and THIRD_PARTY_LICENSES.txt. See CHANGELOG.md." \
+            dist/*.tar.gz dist/*.sha256 dist/SHA256SUMS
+
+  npm:
+    name: Pack the npm packages
+    needs: [version, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          pattern: binary-*
+          merge-multiple: true
+          path: dist
+      - name: Fill npm/platforms/*/bin
+        env:
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          # Each platform package gets its target's binary and license files from the tarball.
+          fill() {
+            name="gen-animated-icons-$VERSION-$1"
+            tar -xzf "dist/$name.tar.gz" -C dist
+            install -m 755 "dist/$name/gen-animated-icons" "npm/platforms/$2/bin/gen-animated-icons"
+            for file in LICENSE THIRD_PARTY_NOTICES.md THIRD_PARTY_LICENSES.txt; do
+              install -m 644 "dist/$name/$file" "npm/platforms/$2/$file"
+            done
+          }
+          fill aarch64-apple-darwin darwin-arm64
+          fill x86_64-apple-darwin darwin-x64
+          fill aarch64-unknown-linux-gnu linux-arm64-gnu
+          fill x86_64-unknown-linux-gnu linux-x64-gnu
+          # The wrapper holds only the Node shim.
+          cp LICENSE npm/gen-animated-icons/
+      - name: Pack
+        run: |
+          mkdir -p dist/npm
+          for dir in npm/platforms/* npm/gen-animated-icons; do
+            npm pack "./$dir" --pack-destination dist/npm
+          done
+          for tgz in dist/npm/lottiefiles-gen-animated-icons-*.tgz; do
+            mode=$(tar -tvzf "$tgz" package/bin/gen-animated-icons | cut -c1-10)
+            if [ "$mode" != "-rwxr-xr-x" ]; then echo "$tgz: the binary is $mode, not executable"; exit 1; fi
+            for file in LICENSE THIRD_PARTY_NOTICES.md THIRD_PARTY_LICENSES.txt; do
+              if ! tar -tzf "$tgz" "package/$file" > /dev/null; then echo "$tgz: $file is missing"; exit 1; fi
+            done
+          done
+          ls -l dist/npm
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: npm-packages
+          path: dist/npm/*.tgz
+          if-no-files-found: error
+      # Publishing is deliberately manual (docs/maintainers/releasing.md). Never enable this
+      # without the maintainers' go. To automate it later: add a `publish` input, protect an
+      # `npm-publish` environment with required reviewers and an NPM_TOKEN secret, move this
+      # step into its own job with `environment: npm-publish` and `permissions: id-token:
+      # write`, and keep the platform packages ahead of the wrapper:
+      #
+      # - name: Publish to npm
+      #   if: ${{ inputs.publish == 'publish' }}
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   run: |
+      #     for tgz in dist/npm/lottiefiles-gen-animated-icons-*.tgz; do
+      #       npm publish "$tgz" --access public --provenance
+      #     done
+      #     npm publish dist/npm/gen-animated-icons-*.tgz --access public --provenance
