@@ -1,0 +1,43 @@
+--- a/quickjs/quickjs.c
++++ b/quickjs/quickjs.c
+@@ -865,6 +865,9 @@
+     bool eval_has_exception;
+     JSValue eval_exception;
+     JSValue meta_obj; /* for import.meta */
++    /* gen-animated-icons: js_free_module_def() has run, but values still name the
++       module, so its memory is freed with the last of them */
++    bool freed;
+ };
+ 
+ typedef struct JSJobEntry {
+@@ -5694,7 +5697,15 @@
+         }
+         break;
+     case JS_TAG_MODULE:
+-        abort(); /* never freed here */
++        /* gen-animated-icons: the last value naming a module that
++           js_free_module_def() has freed (the callbacks of a module promise that
++           never settled, freed after the context) */
++        {
++            JSModuleDef *m = JS_VALUE_GET_PTR(v);
++            if (!m->freed)
++                abort(); /* never freed here */
++            js_free_rt(rt, m);
++        }
+         break;
+     case JS_TAG_BIG_INT:
+         {
+@@ -26376,6 +26387,13 @@
+     JS_FreeValue(ctx, m->resolving_funcs[0]);
+     JS_FreeValue(ctx, m->resolving_funcs[1]);
+     list_del(&m->link);
++    /* gen-animated-icons: values may still name the module, as when its promise
++       never settled; the last of them frees it (in JS_FreeValueRT), where freeing it
++       here left them pointing at freed memory */
++    if (--m->header.ref_count > 0) {
++        m->freed = true;
++        return;
++    }
+     js_free(ctx, m);
+ }
+ 

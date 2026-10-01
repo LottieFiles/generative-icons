@@ -1,0 +1,301 @@
+--- a/quickjs/libregexp.h
++++ b/quickjs/libregexp.h
+@@ -43,6 +43,10 @@
+ #define LRE_FLAG_NAMED_GROUPS (1 << 7) /* named groups are present in the regexp */
+ #define LRE_FLAG_UNICODE_SETS (1 << 8)
+ 
++/* lre_exec() errors (gen-animated-icons: LRE_RET_TIMEOUT backported from QuickJS) */
++#define LRE_RET_MEMORY_ERROR (-1)
++#define LRE_RET_TIMEOUT      (-2)
++
+ uint8_t *lre_compile(int *plen, char *error_msg, int error_msg_size,
+                      const char *buf, size_t buf_len, int re_flags,
+                      void *opaque);
+@@ -60,6 +64,8 @@
+ 
+ /* must be provided by the user */
+ bool lre_check_stack_overflow(void *opaque, size_t alloca_size);
++/* must be provided by the user: true stops lre_exec() with LRE_RET_TIMEOUT */
++bool lre_check_timeout(void *opaque);
+ void *lre_realloc(void *opaque, void *ptr, size_t size);
+ 
+ /* JS identifier test */
+--- a/quickjs/libregexp.c
++++ b/quickjs/libregexp.c
+@@ -53,6 +53,8 @@
+ 
+ #define CAPTURE_COUNT_MAX 255
+ #define STACK_SIZE_MAX 255
++/* gen-animated-icons: execution steps between lre_check_timeout() calls */
++#define INTERRUPT_COUNTER_INIT 10000
+ 
+ /* unicode code points */
+ #define CP_LS   0x2028
+@@ -1993,6 +1995,7 @@
+     bool ignore_case;
+     bool is_unicode;
+     void *opaque; /* used for stack overflow check */
++    int interrupt_counter;
+ 
+     size_t state_size;
+     uint8_t *state_stack;
+@@ -2038,7 +2041,19 @@
+     return 0;
+ }
+ 
+-/* return 1 if match, 0 if not match or -1 if error. */
++/* gen-animated-icons: lets the embedder stop a runaway execution (backported from
++   QuickJS 2024-01-13). */
++static inline int lre_poll_timeout(REExecContext *s)
++{
++    if (unlikely(--s->interrupt_counter <= 0)) {
++        s->interrupt_counter = INTERRUPT_COUNTER_INIT;
++        if (lre_check_timeout(s->opaque))
++            return LRE_RET_TIMEOUT;
++    }
++    return 0;
++}
++
++/* return 1 if match, 0 if not match or < 0 if error (see LRE_RET_x). */
+ static intptr_t lre_exec_backtrack(REExecContext *s, uint8_t **capture,
+                                    StackInt *stack, int stack_len,
+                                    const uint8_t *pc, const uint8_t *cptr,
+@@ -2069,6 +2084,8 @@
+                 ret = 0;
+             recurse:
+                 for(;;) {
++                    if (lre_poll_timeout(s))
++                        return LRE_RET_TIMEOUT;
+                     if (s->state_stack_len == 0)
+                         return ret;
+                     rs = (REExecState *)(s->state_stack +
+@@ -2180,6 +2197,8 @@
+         case REOP_goto:
+             val = get_u32(pc);
+             pc += 4 + (int)val;
++            if (lre_poll_timeout(s))
++                return LRE_RET_TIMEOUT;
+             break;
+         case REOP_line_start:
+             if (cptr == s->cbuf)
+@@ -2244,6 +2263,8 @@
+             pc += 4;
+             if (--stack[stack_len - 1] != 0) {
+                 pc += (int)val;
++                if (lre_poll_timeout(s))
++                    return LRE_RET_TIMEOUT;
+             }
+             break;
+         case REOP_push_char_pos:
+@@ -2420,7 +2441,7 @@
+                 for(;;) {
+                     res = lre_exec_backtrack(s, capture, stack, stack_len,
+                                              pc1, cptr, true);
+-                    if (res == -1)
++                    if (res == LRE_RET_MEMORY_ERROR || res == LRE_RET_TIMEOUT)
+                         return res;
+                     if (!res)
+                         break;
+@@ -2448,8 +2469,8 @@
+     }
+ }
+ 
+-/* Return 1 if match, 0 if not match or -1 if error. cindex is the
+-   starting position of the match and must be such as 0 <= cindex <=
++/* Return 1 if match, 0 if not match or < 0 if error (see LRE_RET_x). cindex
++   is the starting position of the match and must be such as 0 <= cindex <=
+    clen. */
+ int lre_exec(uint8_t **capture,
+              const uint8_t *bc_buf, const uint8_t *cbuf, int cindex, int clen,
+@@ -2471,6 +2492,7 @@
+     if (s->cbuf_type == 1 && s->is_unicode)
+         s->cbuf_type = 2;
+     s->opaque = opaque;
++    s->interrupt_counter = INTERRUPT_COUNTER_INIT;
+ 
+     s->state_size = sizeof(REExecState) +
+         s->capture_count * sizeof(capture[0]) * 2 +
+@@ -2591,6 +2613,11 @@
+     return false;
+ }
+ 
++bool lre_check_timeout(void *opaque)
++{
++    return false;
++}
++
+ void *lre_realloc(void *opaque, void *ptr, size_t size)
+ {
+     return realloc(ptr, size);
+--- a/quickjs/quickjs.c
++++ b/quickjs/quickjs.c
+@@ -7071,8 +7071,26 @@
+     } else {
+         return 0;
+     }
++}
++
++/* gen-animated-icons: polls after about `cost` interpreter steps of native work, so
++   builtins whose loop steps are expensive still stop at the interrupt handler. */
++static inline __exception int js_poll_interrupts_cost(JSContext *ctx, int64_t cost)
++{
++    if (unlikely(cost >= ctx->interrupt_counter))
++        return __js_poll_interrupts(ctx);
++    ctx->interrupt_counter -= cost;
++    return 0;
+ }
+ 
++/* gen-animated-icons: the error __js_poll_interrupts throws, for native code that asked
++   the interrupt handler itself. */
++static void js_throw_interrupted(JSContext *ctx)
++{
++    JS_ThrowInternalError(ctx, "interrupted");
++    js_set_uncatchable_error(ctx, ctx->rt->current_exception, true);
++}
++
+ /* return -1 (exception) or true/false */
+ static int JS_SetPrototypeInternal(JSContext *ctx, JSValue obj,
+                                    JSValue proto_val,
+@@ -8292,6 +8310,11 @@
+         if (js_get_fast_array_element(ctx, p, idx, pval))
+             return true;
+     }
++    /* gen-animated-icons: builtins loop up to an array-like's length here */
++    if (js_poll_interrupts(ctx)) {
++        *pval = JS_EXCEPTION;
++        return -1;
++    }
+     val = JS_EXCEPTION;
+     present = -1;
+     prop = JS_NewAtomInt64(ctx, idx);
+@@ -8322,6 +8345,9 @@
+         if (js_get_fast_array_element(ctx, p, idx, &val))
+             return val;
+     }
++    /* gen-animated-icons: builtins loop up to an array-like's length here */
++    if (js_poll_interrupts(ctx))
++        return JS_EXCEPTION;
+     prop = JS_NewAtomInt64(ctx, idx);
+     if (prop == JS_ATOM_NULL)
+         return JS_EXCEPTION;
+@@ -9127,6 +9153,11 @@
+     JSAtom prop;
+     int res;
+ 
++    /* gen-animated-icons: builtins loop up to an array-like's length here */
++    if (js_poll_interrupts(ctx)) {
++        JS_FreeValue(ctx, val);
++        return -1;
++    }
+     if ((uint64_t)idx <= INT32_MAX) {
+         /* fast path for fast arrays */
+         return JS_SetPropertyValue(ctx, this_obj, js_int32(idx), val,
+@@ -39803,6 +39834,10 @@
+ 
+     if (psc->exception)
+         return 0;
++
++    /* gen-animated-icons: a default-order sort calls no function that would poll */
++    if (js_poll_interrupts(ctx))
++        goto exception;
+ 
+     if (psc->has_method) {
+         /* custom sort function is specified as returning 0 for identical
+@@ -41771,7 +41806,8 @@
+     return -1;
+ }
+ 
+-static int string_indexof(JSString *p1, JSString *p2, int from)
++/* gen-animated-icons: returns -2 (exception) when the interrupt handler stops it */
++static int string_indexof(JSContext *ctx, JSString *p1, JSString *p2, int from)
+ {
+     /* assuming 0 <= from <= p1->len */
+     int c, i, j, len1 = p1->len, len2 = p2->len;
+@@ -41783,6 +41819,8 @@
+             break;
+         if (!string_cmp(p1, p2, j + 1, 1, len2 - 1))
+             return j;
++        if (js_poll_interrupts_cost(ctx, 1 + (len2 >> 8)))
++            return -2;
+     }
+     return -1;
+ }
+@@ -41927,6 +41965,9 @@
+             }
+             if (i == stop)
+                 break;
++            /* gen-animated-icons: the search is O(len * v_len) */
++            if (js_poll_interrupts_cost(ctx, 1 + (v_len >> 8)))
++                goto fail;
+         }
+     }
+     JS_FreeValue(ctx, str);
+@@ -41993,6 +42034,9 @@
+             }
+             if (i == stop)
+                 break;
++            /* gen-animated-icons: the search is O(len * v_len) */
++            if (js_poll_interrupts_cost(ctx, 1 + (v_len >> 8)))
++                goto fail;
+         }
+     }
+  done:
+@@ -42256,7 +42300,9 @@
+             else
+                 pos = endOfLastMatch + 1;
+         } else {
+-            pos = string_indexof(sp, searchp, endOfLastMatch);
++            pos = string_indexof(ctx, sp, searchp, endOfLastMatch);
++            if (pos == -2)
++                goto exception;
+         }
+         if (pos < 0) {
+             if (is_first) {
+@@ -42367,7 +42413,9 @@
+     }
+     q = p;
+     for (q = p; (q += !r) <= s - r - !r; q = p = e + r) {
+-        e = string_indexof(sp, rp, q);
++        e = string_indexof(ctx, sp, rp, q);
++        if (e == -2)
++            goto exception;
+         if (e < 0)
+             break;
+         T = js_sub_string(ctx, sp, p, e);
+@@ -43954,6 +44002,16 @@
+     return js_check_stack_overflow(ctx->rt, alloca_size);
+ }
+ 
++/* gen-animated-icons: a runaway regexp execution stops at the interrupt handler
++   (backported from QuickJS 2024-01-13). */
++bool lre_check_timeout(void *opaque)
++{
++    JSContext *ctx = opaque;
++    JSRuntime *rt = ctx->rt;
++    return rt->interrupt_handler &&
++        rt->interrupt_handler(rt, rt->interrupt_opaque);
++}
++
+ void *lre_realloc(void *opaque, void *ptr, size_t size)
+ {
+     JSContext *ctx = opaque;
+@@ -44067,6 +44125,9 @@
+                                    js_int32(0)) < 0)
+                     goto fail;
+             }
++        } else if (rc == LRE_RET_TIMEOUT) {
++            js_throw_interrupted(ctx);
++            goto fail;
+         } else {
+             JS_ThrowInternalError(ctx, "out of memory in regexp execution");
+             goto fail;
+@@ -44262,6 +44323,9 @@
+                                        js_int32(0)) < 0)
+                         goto fail;
+                 }
++            } else if (ret == LRE_RET_TIMEOUT) {
++                js_throw_interrupted(ctx);
++                goto fail;
+             } else {
+                 JS_ThrowInternalError(ctx, "out of memory in regexp execution");
+                 goto fail;

@@ -1,0 +1,179 @@
+--- a/quickjs/quickjs.c
++++ b/quickjs/quickjs.c
+@@ -19545,6 +19545,10 @@
+         JS_ThrowStackOverflow(s->ctx);
+         return -1;
+     }
++    /* gen-animated-icons: parsing is quadratic in places (each declaration checks
++       the scope's earlier ones), so it stops at the interrupt handler too */
++    if (js_poll_interrupts(s->ctx))
++        return -1;
+ 
+     free_token(s, &s->token);
+ 
+@@ -30637,6 +30641,11 @@
+     line_num = 0; /* avoid warning */
+     col_num = 0;
+     for (pos = 0; pos < bc_len; pos = pos_next) {
++        /* gen-animated-icons: resolving a name scans the function's variables and
++           closures, so it stops at the interrupt handler too. `fail` copies the
++           rest, this instruction included. */
++        if (js_poll_interrupts(ctx))
++            goto fail;
+         op = bc_buf[pos];
+         len = opcode_info[op].size;
+         pos_next = pos + len;
+@@ -43639,7 +43648,11 @@
+                                   sizeof(error_msg), str, len, re_flags, ctx);
+     JS_FreeCString(ctx, str);
+     if (!re_bytecode_buf) {
+-        JS_ThrowSyntaxError(ctx, "%s", error_msg);
++        /* gen-animated-icons: the interrupt handler stopped the compilation */
++        if (re_bytecode_len == LRE_RET_TIMEOUT)
++            js_throw_interrupted(ctx);
++        else
++            JS_ThrowSyntaxError(ctx, "%s", error_msg);
+         return JS_EXCEPTION;
+     }
+ 
+--- a/quickjs/libregexp.c
++++ b/quickjs/libregexp.c
+@@ -53,7 +53,8 @@
+ 
+ #define CAPTURE_COUNT_MAX 255
+ #define STACK_SIZE_MAX 255
+-/* gen-animated-icons: execution steps between lre_check_timeout() calls */
++/* gen-animated-icons: execution steps (or compilation work units) between
++   lre_check_timeout() calls */
+ #define INTERRUPT_COUNTER_INIT 10000
+ 
+ /* unicode code points */
+@@ -82,6 +83,10 @@
+        re_parse_captures() finds them, scanned once for forward \k<name> */
+     DynBuf capture_names;
+     bool capture_names_scanned;
++    /* gen-animated-icons: work left before the next lre_check_timeout() call, and
++       whether it stopped the compilation */
++    int interrupt_counter;
++    bool interrupted;
+     union {
+         char error_msg[TMP_BUF_SIZE];
+         char tmp_buf[TMP_BUF_SIZE];
+@@ -771,6 +776,24 @@
+     }
+     *pp = p;
+     return c;
++}
++
++/* gen-animated-icons: lets the embedder stop a runaway compilation, as lre_exec()
++   does. `cost` is the work done since the last call, in about 256-byte units. Some
++   loops are quadratic: each alternative moves the disjunction before it, each term
++   of a lookbehind moves the terms before it, and each class atom is merged into the
++   whole class. */
++static int re_poll_timeout(REParseState *s, size_t cost)
++{
++    if (likely(cost < (size_t)s->interrupt_counter)) {
++        s->interrupt_counter -= (int)cost;
++        return 0;
++    }
++    s->interrupt_counter = INTERRUPT_COUNTER_INIT;
++    if (!lre_check_timeout(s->opaque))
++        return 0;
++    s->interrupted = true;
++    return re_parse_error(s, "interrupted");
+ }
+ 
+ static int re_emit_range(REParseState *s, const CharRange *cr)
+@@ -853,6 +876,9 @@
+     for(;;) {
+         if (*p == ']')
+             break;
++        /* gen-animated-icons: merging an atom is linear in the class's size */
++        if (re_poll_timeout(s, 1 + ((size_t)cr->len >> 6)))
++            goto fail;
+         c1 = get_class_atom(s, cr1, &p, true);
+         if ((int)c1 < 0)
+             goto fail;
+@@ -1745,6 +1771,10 @@
+         ret = re_parse_term(s, is_backward_dir);
+         if (ret)
+             return ret;
++        /* gen-animated-icons: a term's bytecode, copies of its atom included */
++        if (re_poll_timeout(s, 1 + ((s->byte_code.size - term_start) >> 8) +
++                            (is_backward_dir ? (s->byte_code.size - start) >> 8 : 0)))
++            return -1;
+         if (is_backward_dir) {
+             /* reverse the order of the terms (XXX: inefficient, but
+                speed is not really critical here) */
+@@ -1781,6 +1811,9 @@
+         if (dbuf_insert(&s->byte_code, start, 5)) {
+             return re_parse_out_of_memory(s);
+         }
++        /* gen-animated-icons: the insertion moved the alternatives before it */
++        if (re_poll_timeout(s, 1 + ((size_t)len >> 8)))
++            return -1;
+         s->byte_code.buf[start] = REOP_split_next_first;
+         put_u32(s->byte_code.buf + start + 1, len + 5);
+ 
+@@ -1867,6 +1900,7 @@
+     s->capture_count = 1;
+     s->total_capture_count = -1;
+     s->has_named_captures = -1;
++    s->interrupt_counter = INTERRUPT_COUNTER_INIT;
+ 
+     dbuf_init2(&s->byte_code, opaque, lre_realloc);
+     dbuf_init2(&s->group_names, opaque, lre_realloc);
+@@ -1894,7 +1928,8 @@
+         dbuf_free(&s->group_names);
+         dbuf_free(&s->capture_names);
+         js__pstrcpy(error_msg, error_msg_size, s->u.error_msg);
+-        *plen = 0;
++        /* gen-animated-icons: the caller tells a timeout from a syntax error */
++        *plen = s->interrupted ? LRE_RET_TIMEOUT : 0;
+         return NULL;
+     }
+ 
+@@ -2120,7 +2155,21 @@
+         s->interrupt_counter = INTERRUPT_COUNTER_INIT;
+         if (lre_check_timeout(s->opaque))
+             return LRE_RET_TIMEOUT;
++    }
++    return 0;
++}
++
++/* gen-animated-icons: lre_poll_timeout() for a step that does about `cost` steps'
++   work */
++static inline int lre_poll_timeout_cost(REExecContext *s, intptr_t cost)
++{
++    if (likely(cost < s->interrupt_counter)) {
++        s->interrupt_counter -= (int)cost;
++        return 0;
+     }
++    s->interrupt_counter = INTERRUPT_COUNTER_INIT;
++    if (lre_check_timeout(s->opaque))
++        return LRE_RET_TIMEOUT;
+     return 0;
+ }
+ 
+@@ -2380,6 +2429,9 @@
+                 cptr1_end = capture[2 * val + 1];
+                 if (!cptr1_start || !cptr1_end)
+                     break;
++                /* gen-animated-icons: the comparison is as long as the capture */
++                if (lre_poll_timeout_cost(s, (cptr1_end - cptr1_start) >> 8))
++                    return LRE_RET_TIMEOUT;
+                 if (opcode == REOP_back_reference) {
+                     cptr1 = cptr1_start;
+                     while (cptr1 < cptr1_end) {
+--- a/quickjs/libregexp.h
++++ b/quickjs/libregexp.h
+@@ -64,7 +64,8 @@
+ 
+ /* must be provided by the user */
+ bool lre_check_stack_overflow(void *opaque, size_t alloca_size);
+-/* must be provided by the user: true stops lre_exec() with LRE_RET_TIMEOUT */
++/* must be provided by the user: true stops lre_exec() with LRE_RET_TIMEOUT, and
++   lre_compile() with a NULL result and *plen == LRE_RET_TIMEOUT */
+ bool lre_check_timeout(void *opaque);
+ void *lre_realloc(void *opaque, void *ptr, size_t size);
+ 

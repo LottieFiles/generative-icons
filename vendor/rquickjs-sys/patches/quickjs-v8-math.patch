@@ -1,0 +1,150 @@
+--- a/quickjs/quickjs.c
++++ b/quickjs/quickjs.c
+@@ -44,6 +44,8 @@
+ #include "cutils.h"
+ #include "list.h"
+ #include "quickjs.h"
++#include "gai_math.h" /* gen-animated-icons: V8-exact Math */
++
+ #include "libregexp.h"
+ #include "libbf.h"
+ 
+@@ -12100,14 +12102,10 @@
+     }
+ }
+ 
++/* gen-animated-icons: Math.pow and the ** operator use V8's pow semantics. */
+ static double js_math_pow(double a, double b)
+ {
+-    if (unlikely(!isfinite(b)) && fabs(a) == 1) {
+-        /* not compatible with IEEE 754 */
+-        return JS_FLOAT64_NAN;
+-    } else {
+-        return pow(a, b);
+-    }
++    return gai_pow(a, b);
+ }
+ 
+ JSValue JS_NewBigInt64(JSContext *ctx, int64_t v)
+@@ -43192,25 +43190,57 @@
+ static JSValue js_math_hypot(JSContext *ctx, JSValue this_val,
+                              int argc, JSValue *argv)
+ {
+-    double r, a;
+-    int i;
++    /* gen-animated-icons: V8's MathHypot (src/builtins/math.tq): convert
++       every argument first, then Kahan-sum the squares normalized by the
++       largest magnitude. The products must stay unfused, as in V8. */
++#if defined(__clang__)
++#pragma STDC FP_CONTRACT OFF
++#endif
++    double abs_vals[64], *av = abs_vals, max = 0, v, n, summand, pre;
++    double sum = 0, comp = 0;
++    int i, has_nan = 0;
+ 
+-    r = 0;
+-    if (argc > 0) {
+-        if (JS_ToFloat64(ctx, &r, argv[0]))
+-            return JS_EXCEPTION;
+-        if (argc == 1) {
+-            r = fabs(r);
++    if (argc == 0)
++        return js_float64(0);
++    if ((size_t)argc > countof(abs_vals)) {
++        av = js_malloc(ctx, sizeof(double) * argc);
++        if (!av)
++            return JS_EXCEPTION;
++    }
++    for (i = 0; i < argc; i++) {
++        if (JS_ToFloat64(ctx, &v, argv[i])) {
++            if (av != abs_vals)
++                js_free(ctx, av);
++            return JS_EXCEPTION;
++        }
++        if (isnan(v)) {
++            has_nan = 1;
++            av[i] = 0;
+         } else {
+-            /* use the built-in function to minimize precision loss */
+-            for (i = 1; i < argc; i++) {
+-                if (JS_ToFloat64(ctx, &a, argv[i]))
+-                    return JS_EXCEPTION;
+-                r = hypot(r, a);
+-            }
++            av[i] = fabs(v);
++            if (av[i] > max)
++                max = av[i];
+         }
+     }
+-    return js_float64(r);
++    if (max == INFINITY) {
++        v = INFINITY;
++    } else if (has_nan) {
++        v = JS_FLOAT64_NAN;
++    } else if (max == 0) {
++        v = 0;
++    } else {
++        for (i = 0; i < argc; i++) {
++            n = av[i] / max;
++            summand = n * n - comp;
++            pre = sum + summand;
++            comp = (pre - sum) - summand;
++            sum = pre;
++        }
++        v = sqrt(sum) * max;
++    }
++    if (av != abs_vals)
++        js_free(ctx, av);
++    return js_float64(v);
+ }
+ 
+ static double js_math_f16round(double a)
+@@ -43350,27 +43380,28 @@
+ static double js_math_floor(double d) { return floor(d); }
+ static double js_math_ceil(double d) { return ceil(d); }
+ static double js_math_sqrt(double d) { return sqrt(d); }
+-static double js_math_acos(double d) { return acos(d); }
+-static double js_math_asin(double d) { return asin(d); }
+-static double js_math_atan(double d) { return atan(d); }
+-static double js_math_atan2(double a, double b) { return atan2(a, b); }
+-static double js_math_cos(double d) { return cos(d); }
+-static double js_math_exp(double d) { return exp(d); }
+-static double js_math_log(double d) { return log(d); }
+-static double js_math_sin(double d) { return sin(d); }
+-static double js_math_tan(double d) { return tan(d); }
++/* gen-animated-icons: V8 fdlibm (gai_math.h) instead of the platform libm. */
++static double js_math_acos(double d) { return gai_acos(d); }
++static double js_math_asin(double d) { return gai_asin(d); }
++static double js_math_atan(double d) { return gai_atan(d); }
++static double js_math_atan2(double a, double b) { return gai_atan2(a, b); }
++static double js_math_cos(double d) { return gai_cos(d); }
++static double js_math_exp(double d) { return gai_exp(d); }
++static double js_math_log(double d) { return gai_log(d); }
++static double js_math_sin(double d) { return gai_sin(d); }
++static double js_math_tan(double d) { return gai_tan(d); }
+ static double js_math_trunc(double d) { return trunc(d); }
+-static double js_math_cosh(double d) { return cosh(d); }
+-static double js_math_sinh(double d) { return sinh(d); }
+-static double js_math_tanh(double d) { return tanh(d); }
+-static double js_math_acosh(double d) { return acosh(d); }
+-static double js_math_asinh(double d) { return asinh(d); }
+-static double js_math_atanh(double d) { return atanh(d); }
+-static double js_math_expm1(double d) { return expm1(d); }
+-static double js_math_log1p(double d) { return log1p(d); }
+-static double js_math_log2(double d) { return log2(d); }
+-static double js_math_log10(double d) { return log10(d); }
+-static double js_math_cbrt(double d) { return cbrt(d); }
++static double js_math_cosh(double d) { return gai_cosh(d); }
++static double js_math_sinh(double d) { return gai_sinh(d); }
++static double js_math_tanh(double d) { return gai_tanh(d); }
++static double js_math_acosh(double d) { return gai_acosh(d); }
++static double js_math_asinh(double d) { return gai_asinh(d); }
++static double js_math_atanh(double d) { return gai_atanh(d); }
++static double js_math_expm1(double d) { return gai_expm1(d); }
++static double js_math_log1p(double d) { return gai_log1p(d); }
++static double js_math_log2(double d) { return gai_log2(d); }
++static double js_math_log10(double d) { return gai_log10(d); }
++static double js_math_cbrt(double d) { return gai_cbrt(d); }
+ 
+ static const JSCFunctionListEntry js_math_funcs[] = {
+     JS_CFUNC_MAGIC_DEF("min", 2, js_math_min_max, 0 ),

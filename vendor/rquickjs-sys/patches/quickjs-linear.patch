@@ -1,0 +1,235 @@
+--- a/quickjs/libregexp.c
++++ b/quickjs/libregexp.c
+@@ -78,6 +78,10 @@
+     int has_named_captures; /* -1 = don't know, 0 = no, 1 = yes */
+     void *opaque;
+     DynBuf group_names;
++    /* gen-animated-icons: the name of every capture in the pattern ("" if none), as
++       re_parse_captures() finds them, scanned once for forward \k<name> */
++    DynBuf capture_names;
++    bool capture_names_scanned;
+     union {
+         char error_msg[TMP_BUF_SIZE];
+         char tmp_buf[TMP_BUF_SIZE];
+@@ -1145,6 +1149,69 @@
+     return s->has_named_captures;
+ }
+ 
++/* gen-animated-icons: re_parse_captures(s, &dummy, capture_name) from one scan of the
++   pattern, where calling it for each forward back reference was quadratic. Return the
++   capture index, -1 if none or -2 if memory error. */
++static int re_find_capture(REParseState *s, const char *capture_name)
++{
++    const uint8_t *p;
++    const char *q, *q_end;
++    int capture_index;
++    char name[TMP_BUF_SIZE];
++
++    if (!s->capture_names_scanned) {
++        s->capture_names_scanned = true;
++        /* the walk of re_parse_captures() when given a name */
++        capture_index = 1;
++        for (p = s->buf_start; p < s->buf_end; p++) {
++            switch (*p) {
++            case '(':
++                if (p[1] == '?') {
++                    if (p[2] == '<' && p[3] != '=' && p[3] != '!') {
++                        p += 3;
++                        /* group names are never empty */
++                        if (re_parse_group_name(name, sizeof(name), &p))
++                            name[0] = '\0';
++                        dbuf_put(&s->capture_names, (const uint8_t *)name,
++                                 strlen(name) + 1);
++                        capture_index++;
++                        if (capture_index >= CAPTURE_COUNT_MAX)
++                            goto done;
++                    }
++                } else {
++                    dbuf_putc(&s->capture_names, '\0');
++                    capture_index++;
++                    if (capture_index >= CAPTURE_COUNT_MAX)
++                        goto done;
++                }
++                break;
++            case '\\':
++                p++;
++                break;
++            case '[':
++                for (p += 1 + (*p == ']'); p < s->buf_end && *p != ']'; p++) {
++                    if (*p == '\\')
++                        p++;
++                }
++                break;
++            }
++        }
++    done: ;
++    }
++    if (dbuf_error(&s->capture_names))
++        return -2;
++    q = (const char *)s->capture_names.buf;
++    if (!q)
++        return -1;
++    q_end = q + s->capture_names.size;
++    for (capture_index = 1; q < q_end; capture_index++) {
++        if (!strcmp(q, capture_name))
++            return capture_index;
++        q += strlen(q) + 1;
++    }
++    return -1;
++}
++
+ static int find_group_name(REParseState *s, const char *name)
+ {
+     const char *p, *buf_end;
+@@ -1320,7 +1387,6 @@
+         case 'k':
+             {
+                 const uint8_t *p1;
+-                int dummy_res;
+ 
+                 p1 = p;
+                 if (p1[2] != '<') {
+@@ -1343,8 +1409,10 @@
+                 c = find_group_name(s, s->u.tmp_buf);
+                 if (c < 0) {
+                     /* no capture name parsed before, try to look
+-                       after (inefficient, but hopefully not common */
+-                    c = re_parse_captures(s, &dummy_res, s->u.tmp_buf);
++                       after (gen-animated-icons: from one scan) */
++                    c = re_find_capture(s, s->u.tmp_buf);
++                    if (c == -2)
++                        return re_parse_out_of_memory(s);
+                     if (c < 0) {
+                         if (s->is_unicode || re_has_named_captures(s))
+                             return re_parse_error(s, "group name not defined");
+@@ -1802,6 +1870,7 @@
+ 
+     dbuf_init2(&s->byte_code, opaque, lre_realloc);
+     dbuf_init2(&s->group_names, opaque, lre_realloc);
++    dbuf_init2(&s->capture_names, opaque, lre_realloc);
+ 
+     dbuf_put_u16(&s->byte_code, re_flags); /* first element is the flags */
+     dbuf_putc(&s->byte_code, 0); /* second element is the number of captures */
+@@ -1823,6 +1892,7 @@
+     error:
+         dbuf_free(&s->byte_code);
+         dbuf_free(&s->group_names);
++        dbuf_free(&s->capture_names);
+         js__pstrcpy(error_msg, error_msg_size, s->u.error_msg);
+         *plen = 0;
+         return NULL;
+@@ -1860,6 +1930,7 @@
+                 LRE_FLAG_NAMED_GROUPS | lre_get_flags(s->byte_code.buf));
+     }
+     dbuf_free(&s->group_names);
++    dbuf_free(&s->capture_names);
+ 
+ #ifdef DUMP_REOP
+     lre_dump_bytecode(s->byte_code.buf, s->byte_code.size);
+--- a/quickjs/libunicode.c
++++ b/quickjs/libunicode.c
+@@ -875,8 +875,51 @@
+     }
+ }
+ 
+-static void sort_cc(int *buf, int len)
++/* gen-animated-icons: sort_cc() sorts runs of combining marks longer than this by
++   counting, since insertion is quadratic in the run's length. Both sorts are stable,
++   so the result is the same. */
++#define SORT_CC_INSERTION_MAX 32
++
++/* gen-animated-icons: stable sort by combining class of the run of combining marks
++   that starts at buf[start], in linear time. Return the end of the run, or -1 if
++   memory error. */
++static int sort_cc_run(int *buf, int start, int len,
++                       void *opaque, DynBufReallocFunc *realloc_func)
+ {
++    int count[256], end, n, k, cc, sum, c;
++    int *marks;
++    uint8_t *ccs;
++
++    end = start;
++    while (end < len && unicode_get_cc(buf[end]) != 0)
++        end++;
++    n = end - start;
++    marks = realloc_func(opaque, NULL, (sizeof(int) + 1) * (size_t)n);
++    if (!marks)
++        return -1;
++    ccs = (uint8_t *)(marks + n);
++    memset(count, 0, sizeof(count));
++    for(k = 0; k < n; k++) {
++        marks[k] = buf[start + k];
++        ccs[k] = unicode_get_cc(marks[k]);
++        count[ccs[k]]++;
++    }
++    sum = 0;
++    for(cc = 0; cc < 256; cc++) {
++        c = count[cc];
++        count[cc] = sum;
++        sum += c;
++    }
++    for(k = 0; k < n; k++)
++        buf[start + count[ccs[k]]++] = marks[k];
++    realloc_func(opaque, marks, 0);
++    return end;
++}
++
++/* return -1 if memory error (gen-animated-icons: was void) */
++static int sort_cc(int *buf, int len,
++                   void *opaque, DynBufReallocFunc *realloc_func)
++{
+     int i, j, k, cc, cc1, start, ch1;
+ 
+     for(i = 0; i < len; i++) {
+@@ -889,6 +932,15 @@
+                 cc1 = unicode_get_cc(ch1);
+                 if (cc1 == 0)
+                     break;
++                /* gen-animated-icons: a long run is sorted whole by counting;
++                   buf[start..j) is already sorted stably, so the result is the
++                   same */
++                if (j - start >= SORT_CC_INSERTION_MAX) {
++                    j = sort_cc_run(buf, start, len, opaque, realloc_func);
++                    if (j < 0)
++                        return -1;
++                    break;
++                }
+                 k = j - 1;
+                 while (k >= start) {
+                     if (unicode_get_cc(buf[k]) <= cc1)
+@@ -902,6 +954,7 @@
+             i = j;
+         }
+     }
++    return 0;
+ }
+ 
+ static void to_nfd_rec(DynBuf *dbuf,
+@@ -978,13 +1031,15 @@
+     to_nfd_rec(dbuf, (const int *)src, src_len, is_compat);
+     if (dbuf_error(dbuf)) {
+     fail:
++        dbuf_free(dbuf); /* gen-animated-icons: was leaked */
+         *pdst = NULL;
+         return -1;
+     }
+     buf = (int *)dbuf->buf;
+     buf_len = dbuf->size / sizeof(int);
+ 
+-    sort_cc(buf, buf_len);
++    if (sort_cc(buf, buf_len, opaque, realloc_func))
++        goto fail;
+ 
+     if (buf_len <= 1 || (n_type & 1) != 0) {
+         /* NFD / NFKD */
+--- a/quickjs/quickjs.c
++++ b/quickjs/quickjs.c
+@@ -42924,7 +42924,7 @@
+                                 ctx->rt, (DynBufReallocFunc *)js_realloc_rt);
+     js_free(ctx, buf);
+     if (out_len < 0)
+-        return JS_EXCEPTION;
++        return JS_ThrowOutOfMemory(ctx); /* gen-animated-icons: js_realloc_rt does not throw */
+     val = JS_NewUTF32String(ctx, out_buf, out_len);
+     js_free(ctx, out_buf);
+     return val;

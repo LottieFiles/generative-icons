@@ -1,0 +1,101 @@
+--- a/quickjs/quickjs.h
++++ b/quickjs/quickjs.h
+@@ -891,6 +891,10 @@
+ /* return != 0 if the JS code needs to be interrupted */
+ typedef int JSInterruptHandler(JSRuntime *rt, void *opaque);
+ JS_EXTERN void JS_SetInterruptHandler(JSRuntime *rt, JSInterruptHandler *cb, void *opaque);
++/* gen-animated-icons: makes the next interrupt poll call the interrupt handler, so code
++   that polls rarely for its run time (a loop of slow builtins, each counted as one step)
++   still stops promptly. Safe to call from any thread while rt is alive. */
++JS_EXTERN void JS_RequestInterrupt(JSRuntime *rt);
+ /* if can_block is true, Atomics.wait() can be used */
+ JS_EXTERN void JS_SetCanBlock(JSRuntime *rt, bool can_block);
+ /* set the [IsHTMLDDA] internal slot */
+--- a/quickjs/quickjs.c
++++ b/quickjs/quickjs.c
+@@ -71,6 +71,20 @@
+ #if !defined(__TINYC__) && !defined(EMSCRIPTEN) && !defined(__wasi__) && !__STDC_NO_ATOMICS__
+ #include "quickjs-c-atomics.h"
+ #define CONFIG_ATOMICS
++#endif
++
++/* gen-animated-icons: the flag JS_RequestInterrupt() sets from another thread. It is
++   only a hint to call the interrupt handler, so relaxed ordering is enough. */
++#if defined(CONFIG_ATOMICS) && !defined(GCC_BUILTIN_ATOMICS)
++#define JS_INTERRUPT_FLAG _Atomic int
++#define js_interrupt_requested(rt) \
++    atomic_load_explicit(&(rt)->interrupt_requested, memory_order_relaxed)
++#define js_set_interrupt_requested(rt, v) \
++    atomic_store_explicit(&(rt)->interrupt_requested, v, memory_order_relaxed)
++#else
++#define JS_INTERRUPT_FLAG volatile int
++#define js_interrupt_requested(rt) ((rt)->interrupt_requested)
++#define js_set_interrupt_requested(rt, v) ((rt)->interrupt_requested = (v))
+ #endif
+ 
+ #ifndef __GNUC__
+@@ -260,6 +274,9 @@
+ 
+     JSInterruptHandler *interrupt_handler;
+     void *interrupt_opaque;
++    /* gen-animated-icons: set by JS_RequestInterrupt(); the next poll calls the
++       interrupt handler */
++    JS_INTERRUPT_FLAG interrupt_requested;
+ 
+     JSHostPromiseRejectionTracker *host_promise_rejection_tracker;
+     void *host_promise_rejection_tracker_opaque;
+@@ -1940,6 +1957,12 @@
+ #define free(p) free_is_forbidden(p)
+ #define realloc(p,s) realloc_is_forbidden(p,s)
+ 
++/* gen-animated-icons: see quickjs.h */
++void JS_RequestInterrupt(JSRuntime *rt)
++{
++    js_set_interrupt_requested(rt, 1);
++}
++
+ void JS_SetInterruptHandler(JSRuntime *rt, JSInterruptHandler *cb, void *opaque)
+ {
+     rt->interrupt_handler = cb;
+@@ -7053,6 +7076,8 @@
+ {
+     JSRuntime *rt = ctx->rt;
+     ctx->interrupt_counter = JS_INTERRUPT_COUNTER_INIT;
++    /* gen-animated-icons: this answers any JS_RequestInterrupt() */
++    js_set_interrupt_requested(rt, 0);
+     if (rt->interrupt_handler) {
+         if (rt->interrupt_handler(rt, rt->interrupt_opaque)) {
+             /* XXX: should set a specific flag to avoid catching */
+@@ -7066,7 +7091,10 @@
+ 
+ static inline __exception int js_poll_interrupts(JSContext *ctx)
+ {
+-    if (unlikely(--ctx->interrupt_counter <= 0)) {
++    /* gen-animated-icons: or at once when JS_RequestInterrupt() asked, since the
++       counter does not see time spent in native code */
++    if (unlikely(--ctx->interrupt_counter <= 0) ||
++        unlikely(js_interrupt_requested(ctx->rt))) {
+         return __js_poll_interrupts(ctx);
+     } else {
+         return 0;
+@@ -7077,7 +7105,8 @@
+    builtins whose loop steps are expensive still stop at the interrupt handler. */
+ static inline __exception int js_poll_interrupts_cost(JSContext *ctx, int64_t cost)
+ {
+-    if (unlikely(cost >= ctx->interrupt_counter))
++    if (unlikely(cost >= ctx->interrupt_counter) ||
++        unlikely(js_interrupt_requested(ctx->rt)))
+         return __js_poll_interrupts(ctx);
+     ctx->interrupt_counter -= cost;
+     return 0;
+@@ -44327,6 +44356,10 @@
+         if (last_index > str->len)
+             break;
+ 
++        /* gen-animated-icons: each execution polls only past 10,000 steps, so many
++           short ones never would */
++        if (js_poll_interrupts(ctx))
++            goto fail;
+         ret = lre_exec(capture, re_bytecode,
+                        str_buf, last_index, str->len, shift, ctx);
+         if (ret != 1) {
