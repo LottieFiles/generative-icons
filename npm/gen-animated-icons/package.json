@@ -1,0 +1,27 @@
+{
+  "name": "gen-animated-icons",
+  "version": "0.1.0",
+  "description": "Find, create and build animated icons for your project with your AI. Generative Animated Icons by LottieFiles.",
+  "license": "MIT",
+  "homepage": "https://gen-animated-icons.lottiefiles.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LottieFiles/gen-animated-icons.git",
+    "directory": "npm/gen-animated-icons"
+  },
+  "bin": {
+    "gen-animated-icons": "bin/gen-animated-icons.js"
+  },
+  "files": [
+    "bin/"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "optionalDependencies": {
+    "@lottiefiles/gen-animated-icons-darwin-arm64": "0.1.0",
+    "@lottiefiles/gen-animated-icons-darwin-x64": "0.1.0",
+    "@lottiefiles/gen-animated-icons-linux-arm64-gnu": "0.1.0",
+    "@lottiefiles/gen-animated-icons-linux-x64-gnu": "0.1.0"
+  }
+}
