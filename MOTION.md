@@ -106,7 +106,7 @@ Action length is authored per icon and recorded as the `action` marker's duratio
 
 ## Easing
 
-The Engine exporter writes motion as sampled path keyframes joined by straight lines, so easing lives in the sampled shapes, not in keyframe tangents. That is why only `linear` is declared. The exporter writes linear as tangents `o(1,1) i(0,0)`, which `easing-map` records. Timing and easing are designed in the authoring helpers (`motion/icon-sets/library/direction.mjs`).
+The engine's Lottie export writes motion as sampled path keyframes joined by straight lines, so easing lives in the sampled shapes, not in keyframe tangents. That is why only `linear` is declared. The export writes linear as tangents `o(1,1) i(0,0)`, which `easing-map` records. Timing and easing are designed in the authoring helpers (`motion/icon-sets/library/direction.mjs`).
 
 ## Roles
 
@@ -122,7 +122,7 @@ The Engine exporter writes motion as sampled path keyframes joined by straight l
 - **Profiles:** each `.lottie` holds a Light animation (`<name>`) and a Strong one (`<name>-strong`), with `dark` and `light` themes.
 - **Slots:** `color.primary` plus the five style slots (`style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`) and the `style.outline.width` stroke-width token bound to every Regular outline stroke, which switch weight and style at runtime.
 - **Features:** shape layers and path animation only. No expressions, effects, masks, mattes, precomps, image or text layers.
-- **Authoring:** don't hand-write Lottie JSON. Author the set's `definitions.mjs`, build it with the Engine exporter and run the set's verification (see [creating icons](docs/creating-icons.md)).
+- **Authoring:** don't hand-write Lottie JSON. Author the icon's source with the authoring kit, build it with `gen-animated-icons` (which exports on LottieFiles' hosted engine) and run its verification (see [creating icons](docs/creating-icons.md)).
 
 ## Accessibility & Reduced Motion
 

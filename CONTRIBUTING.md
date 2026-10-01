@@ -1,40 +1,56 @@
 # Contributing
 
-Thanks for helping grow Generative Animated Icons. Every contribution arrives as a GitHub pull request.
+Thanks for helping grow Generative Animated Icons. Code and library changes arrive as GitHub pull requests; icons made in an app can also arrive through `gen-animated-icons submit`.
 
 ## Before you start
 
-- **Missing icon?** Search the [gallery](README.md#preview-and-download-locally) or run `node motion/icon-sets/library/generation-context.mjs --query "your meaning" --search`. If nothing fits, open an [icon request](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=icon_request.yml) or build it yourself.
-- **Something broken?** Open a [bug report](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=bug_report.yml) with the icon ID, motion profile, style and steps to reproduce.
+- **Missing icon?** Search with `npx gen-animated-icons search "your meaning"`. If nothing fits, create it in your own project (see [creating icons](docs/creating-icons.md)) or open an [icon request](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=icon_request.yml).
+- **Something broken?** Open a [bug report](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=bug_report.yml) with the icon ID, motion profile, style and steps to reproduce, or the CLI command, its output and `gen-animated-icons --version`.
 - Keep unrelated changes in separate pull requests.
 
-## Add or revise an icon
+**Building icons needs a LottieFiles sign-in.** Native export runs on LottieFiles' hosted engine (`gen-animated-icons login`). The hosted engine is internal until launch, so building may not work for your account yet. Authoring, the source checks and the test suites work without it.
 
-1. **Fork and install.** Node 22+ and Python 3.
+## Offer an icon from your app
+
+Create and build the icon in your project, then:
+
+```sh
+gen-animated-icons submit <id> --license MIT --dry-run --output bundle.zip   # inspect what would be sent
+gen-animated-icons submit <id> --license MIT
+```
+
+Only verified builds of the current source are accepted, and every submission is reviewed before it joins the library. The submission service opens at launch.
+
+## Add or revise a library set
+
+1. **Fork and build the CLI.** You need Rust 1.89+, clang, Node 22+ and Python 3; see [development](docs/development.md).
 
    ```sh
    git clone https://github.com/<you>/lottie-generative-icons.git
    cd lottie-generative-icons
-   npm ci && npm run setup
+   cargo build --release -p gen-animated-icons
    ```
 
-2. **Author with your AI.** Follow [creating icons](docs/creating-icons.md). Your coding agent reads [AGENTS.md](AGENTS.md) and the family rules, then writes named geometry and Light/Strong motion in the set's `definitions.mjs`. Preserve existing icon IDs.
+2. **Author with your AI.** Your coding agent reads [AGENTS.md](AGENTS.md) and the family rules, then writes named geometry and Light/Strong motion in the set's `definitions.mjs` and `batches/`. Start a new set with `gen-animated-icons library new-set <slug>`. Preserve existing icon IDs.
 
-3. **Run the source checks.** These work without the native exporter:
+3. **Run the checks.**
 
    ```sh
-   node motion/icon-sets/library/preflight.mjs motion/icon-sets/SET-ID
-   npm test
-   npm run check:source
+   gen-animated-icons library preflight SET-ID
+   gen-animated-icons library build SET-ID          # needs a sign-in
+   gen-animated-icons library verify SET-ID
+   gen-animated-icons library verify-visual SET-ID
    ```
 
-   If you have the Engine exporter, also build and verify the set as described in [creating icons](docs/creating-icons.md#5-build-and-verify).
+   Report any check you could not run.
 
-4. **Open a pull request** using the template. Describe the meaning, product context and states. Attach screenshots or recordings if you have them, and list any checks you could not run.
+4. **Open a pull request** using the template. Describe the meaning, product context and states, attach the preview sheets or recordings, and list the checks you ran.
 
-**Maintainers handle native export.** A maintainer builds the native assets, reviews the rendered output (Light and Strong, every style, reduced motion) and merges. See [governance](docs/maintainers/governance.md).
+A maintainer reviews the rendered output (Light and Strong, every style, reduced motion) and merges. See [governance](docs/maintainers/governance.md).
 
-## Docs and code changes
+## Code and docs changes
+
+The CLI lives in `crates/`; read [crates/README.md](crates/README.md) first. Every change must keep the catalog rebuilding byte for byte: run `cargo clippy --workspace --all-targets -- -D warnings` and `cargo test --workspace`. Tests must never use a real sign-in; see [development](docs/development.md#test).
 
 Update documentation when behavior changes. After editing canonical guides, run `npm run docs:build` and `npm run check:docs`.
 

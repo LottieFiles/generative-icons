@@ -22,7 +22,7 @@ STATIC = (
     'icons/guide/index.html', 'icons/guide/guide.css', 'icons/guide/guide.js',
     'icons/guide/ai-operating-guide.md', 'icons/guide/SKILL.md',
     'icons/guide/polish-review.md', 'icons/guide/generation-harness.md',
-    'icons/guide/production.md', 'icons/guide/claude-design.md',
+    'icons/guide/production.md',
     'icons/guide/family-contract.json', 'icons/guide/sources.json',
     'icons/guide/using-packages.md', 'icons/guide/package-contract.md', 'icons/guide/development.md',
 )

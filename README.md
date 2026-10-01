@@ -2,9 +2,9 @@
 
 **Animated icons. Ready to use. Built to extend.** By [LottieFiles](https://lottiefiles.com).
 
-An open family of native Lottie icons with Light and Strong motion, Outline, Solid and Duotone styles, and editable vector source. Use the icons as they are, or give your coding AI the family rules and reference geometry to create a missing one.
+An open family of native Lottie icons with Light and Strong motion, Outline, Solid and Duotone styles, and editable vector source. Install the icons you need into a web, iOS or Android app, or let your coding AI create a missing one in your own project with the `gen-animated-icons` CLI.
 
-[Use in your app](#use-icons-in-your-app) · [Preview locally](#preview-and-download-locally) · [Create an icon](#create-a-missing-icon-with-your-ai) · [Docs](docs/README.md) · [Contribute](CONTRIBUTING.md)
+[Use icons](#use-icons-in-your-app) · [Create an icon](#create-a-missing-icon-with-your-ai) · [CLI reference](docs/cli.md) · [Docs](docs/README.md) · [Contribute](CONTRIBUTING.md)
 
 ## What's included
 
@@ -12,75 +12,81 @@ An open family of native Lottie icons with Light and Strong motion, Outline, Sol
 - **Light and Strong motion** for every icon, with explicit reverse or reset actions for stateful icons.
 - **Outline, Solid and Duotone styles**, three outline weights (1.5, 2, 2.5), light and dark themes, and a recolorable primary slot.
 - **Native dotLottie and Lottie JSON** on a 32 × 32 grid at 60 fps.
-- **npm packages**: per-icon data, a shared runtime, a React adapter and a CLI.
-- **Editable source**, an AI operating guide, family examples and validation tools.
+- **`gen-animated-icons`**, one binary for macOS and Linux that finds, installs, creates, checks and previews icons, with an agent skill and an MCP server.
+- **npm packages** for the web: per-icon data, a shared runtime and a React adapter.
 
 Light and Strong describe motion intensity. Light, Regular and Bold describe outline weight. The two are independent.
 
 ## Use icons in your app
 
+Run these in your app folder:
+
 ```sh
-npm install @lottiefiles/generative-icons @lottiefiles/generative-icons-runtime @lottiefiles/generative-icons-cli
-npx lottie-icons init
-npx lottie-icons add heart
+npx gen-animated-icons init          # detect the app; write the config, agent skills and the authoring kit
+npx gen-animated-icons search heart  # find icons by meaning
+npx gen-animated-icons add heart     # install the .lottie asset and its descriptor
 ```
+
+`init` detects web apps (`package.json`), iOS apps (an Xcode project or Swift package) and Android apps (a Gradle app module). On the web, render the icon with the runtime or the React component:
 
 ```jsx
 'use client';
 import { AnimatedIcon } from '@lottiefiles/generative-icons-react';
-import icon, { src } from './lottie-icons/heart.mjs';
+import icon, { src } from './gen-animated-icons/heart.mjs';
 
 export const Favorite = () => <AnimatedIcon icon={icon} src={src} size={24} />;
 ```
 
-Add `@lottiefiles/generative-icons-react` for React or Next.js. See [installing the packages](docs/using-packages.md) for vanilla JavaScript, state handling and accessibility.
+iOS and Android apps play the installed `.lottie` files with dotLottie for iOS and Android. See [installing the packages](docs/using-packages.md) for the web and the [CLI reference](docs/cli.md) for every command and platform.
 
-## Preview and download locally
-
-You need Python 3. With Node installed, `npm run dev` starts the gallery; without it, run `python3 scripts/serve.py`.
-
-```sh
-git clone https://github.com/LottieFiles/lottie-generative-icons.git
-cd lottie-generative-icons
-npm run dev
-```
-
-Open **http://127.0.0.1:4189/icons/01/**, pick an icon, style, weight and motion profile, and download its dotLottie file. See [using icons](docs/using-icons.md) to render the files with any dotLottie player.
+`npx` runs the npm wrapper, which installs the prebuilt binary for your machine (macOS or Linux, arm64 or x64). Homebrew and a curl installer are planned.
 
 ## Create a missing icon with your AI
 
-Point your coding agent at [AGENTS.md](AGENTS.md) and the [creation guide](docs/creating-icons.md). It searches the library, picks family neighbors, draws named parts, authors Light and Strong motion, and runs the checks.
+`init` installs a `gen-animated-icons` skill for Claude Code (`.claude/skills/`) and other agents (`.agents/skills/`). Ask your agent for the icon you need; the skill walks it through this loop (prefix each command with `npx` unless the binary is on your `PATH`):
 
 ```sh
-npm ci && npm run setup
-npm run icons:new -- landscaping --name "Landscaping"
+gen-animated-icons context "mailbox: a letter drops in"   # family rules and the nearest references
+gen-animated-icons create mailbox --label "Mailbox"       # scaffold the icon's source in your project
+# the agent draws named parts and authors Light and Strong motion in gen-animated-icons/icons/batches/mailbox.mjs
+gen-animated-icons check mailbox                          # offline source checks
+gen-animated-icons build mailbox                          # export, package, verify, preview and install
+gen-animated-icons preview mailbox                        # contact sheets the agent opens and reviews
 ```
 
-You can author and validate source without the native exporter. Open a pull request and a maintainer runs the native export and rendered review. See [CONTRIBUTING.md](CONTRIBUTING.md).
+**`build` needs a LottieFiles sign-in.** Native Lottie export runs on LottieFiles' hosted engine, so run `gen-animated-icons login` once in your terminal. `build` sends the icon's sampled shapes and motion to the engine; your app's code stays on your machine. The hosted engine is internal until launch, so building may not work for your account yet. Searching, installing, `check` and `preview` need no sign-in.
+
+Icons you create stay in your project. To offer one to the library, `gen-animated-icons submit <id>` sends the verified build for review. See [creating icons](docs/creating-icons.md).
+
+## Before launch
+
+The npm packages, the hosted library behind `search` and `add`, and the submission service go live at launch. Until then, build the CLI from this repository (see [development](docs/development.md)), build the packages in the checkout with `gen-animated-icons library packages`, and point the CLI at it with `--library <checkout>`. Details: [known limitations](docs/limitations.md).
 
 ## Documentation
 
 | Guide | For |
 | --- | --- |
-| [Installing the packages](docs/using-packages.md) | App developers |
+| [CLI reference](docs/cli.md) | Every `gen-animated-icons` command, file and setting |
+| [Installing the packages](docs/using-packages.md) | Web app developers |
 | [Using icons](docs/using-icons.md) | Direct file use, styles and accessibility |
-| [Creating icons](docs/creating-icons.md) | Designers, developers and coding agents |
+| [Creating icons](docs/creating-icons.md) | Developers and coding agents |
 | [Drawing](docs/design-principles.md) and [motion](docs/motion-principles.md) principles | The family rules |
-| [Development](docs/development.md) and [verification](docs/verification.md) | Contributors |
+| [Development](docs/development.md) and [verification](docs/verification.md) | Contributors and maintainers |
 | [All documentation](docs/README.md) | Everything else |
 
 ## Project layout
 
 ```text
-packages/          npm packages: icons, runtime, react, cli
-motion/            Editable icon source, builders and set verification
+crates/            The gen-animated-icons CLI (Rust workspace) and its embedded agent skill
+npm/               npm wrapper and per-platform packages for the CLI binary
+packages/          Web npm packages: icons, runtime, react (and the retired lottie-icons CLI)
+motion/            Editable icon source, family contract and the legacy JS/Python pipeline
 prototype/         Local gallery, native assets and bundled player
-.agents/skills/    AI authoring workflow and review rules
-skills/            Consumer skill installed by the CLI
+.agents/skills/    Maintainer workflow and review rules for this repository
 docs/              Usage, design, development and maintainer guides
-scripts/           Preview, build and repository checks
+scripts/           Gallery, package builds and repository checks
 ```
 
 ## License
 
-Code, documentation and icon artwork are released under the [MIT License](LICENSE). Bundled dependencies keep their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
+Code, documentation and icon artwork are released under the [MIT License](LICENSE). Bundled dependencies keep their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md). Each `gen-animated-icons` release archive and npm platform package also carries `THIRD_PARTY_LICENSES.txt`, the license texts of everything the binary links.

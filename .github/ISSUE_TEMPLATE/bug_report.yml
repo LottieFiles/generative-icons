@@ -1,5 +1,5 @@
 name: Bug report
-description: Something renders, plays or installs incorrectly.
+description: Something renders, plays, installs or builds incorrectly.
 labels: [bug]
 body:
   - type: input
@@ -14,11 +14,10 @@ body:
       label: Area
       options:
         - Icon artwork or motion
+        - gen-animated-icons CLI
         - Runtime package
         - React package
-        - CLI
         - Local gallery
-        - Authoring tools
         - Documentation
     validations:
       required: true
@@ -31,13 +30,14 @@ body:
   - type: input
     id: version
     attributes:
-      label: Package version or commit
+      label: Version or commit
+      description: Package version, or the output of `gen-animated-icons --version`.
       placeholder: 0.1.0
   - type: textarea
     id: steps
     attributes:
       label: Steps to reproduce
-      description: Include your environment (browser, framework, Node version) and a screenshot or recording if you can.
+      description: Include your environment (browser, framework, OS and platform) and a screenshot or recording if you can. For the CLI, include the command and its full output (run it with `--json` to get the error code and hint).
     validations:
       required: true
   - type: textarea

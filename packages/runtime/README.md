@@ -5,15 +5,15 @@ Playback runtime for Generative Animated Icons: paint, Light/Strong motion, stat
 ## Install
 
 ```sh
-npm install @lottiefiles/generative-icons @lottiefiles/generative-icons-runtime @lottiefiles/generative-icons-cli
-npx lottie-icons init && npx lottie-icons add heart
+npm install @lottiefiles/generative-icons-runtime
+npx gen-animated-icons init && npx gen-animated-icons add heart
 ```
 
 ## Usage
 
 ```js
 import { createIcon } from '@lottiefiles/generative-icons-runtime';
-import icon, { src } from './lottie-icons/heart.mjs';
+import icon, { src } from './gen-animated-icons/heart.mjs';
 
 const handle = await createIcon(document.querySelector('canvas'), {
   icon, src, color: '#008c76', style: 'outline', weight: 2, motion: 'light'

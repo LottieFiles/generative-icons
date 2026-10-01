@@ -5,15 +5,17 @@
 ## Install
 
 ```sh
-npm install @lottiefiles/generative-icons @lottiefiles/generative-icons-runtime @lottiefiles/generative-icons-cli
-npx lottie-icons init && npx lottie-icons add heart
+npm install @lottiefiles/generative-icons-runtime
+npx gen-animated-icons init && npx gen-animated-icons add heart
 ```
+
+The `gen-animated-icons` CLI copies only the icons you use into your app. Install this package when you want to import icons straight from `node_modules`; the CLI also reads it as its library when it is installed.
 
 ## Usage
 
 ```js
 import { createIcon } from '@lottiefiles/generative-icons-runtime';
-import icon, { src } from './lottie-icons/heart.mjs'; // written by `lottie-icons add`
+import icon, { src } from './gen-animated-icons/heart.mjs'; // written by `gen-animated-icons add`
 
 const handle = await createIcon(document.querySelector('canvas'), { icon, src, motion: 'strong' });
 handle.play();

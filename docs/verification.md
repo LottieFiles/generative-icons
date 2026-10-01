@@ -1,42 +1,40 @@
 # Verification
 
-## Automated checks
+## Icons in your app
+
+`gen-animated-icons check` runs offline: the source preflight for local icons, the installed descriptors, the config and lock, and the verification of each current build. `build` runs the same source checks before it exports, verifies the native result before it installs anything, and renders preview sheets. See [creating icons](creating-icons.md) for the review loop.
+
+## The library
 
 Run from the repository root:
 
-| Command | Checks | Needs exporter |
+| Command | Checks | Needs sign-in |
 | --- | --- | --- |
-| `npm test` | Controller and catalog behavior, generation harness, exporter setup, set tooling | No |
-| `npm run check:source` | Source definitions across frames and profiles (legacy sets reported separately) | No |
-| `node motion/icon-sets/library/preflight.mjs motion/icon-sets/SET-ID` | Source screening for one set | No |
+| `gen-animated-icons library preflight --all` | Source definitions across frames, profiles, directions and weights (legacy sets reported separately) | No |
+| `gen-animated-icons library verify SET-ID` | Set gates on the native build: provenance, format, paint and slots, holds, Light/Strong and reverse pairing, set-specific geometry and clearance | No |
+| `gen-animated-icons library verify --paint` | The shared native paint contract across the catalog | No |
+| `gen-animated-icons library verify-visual SET-ID` | Every action rendered with the players' dotLottie core at each size, style, weight and theme (the checks the old browser page ran), plus review sheets | No |
+| `gen-animated-icons library build SET-ID` | Preflight, hosted export and packaging | Yes |
+| `cargo test --workspace` | The CLI and its parity with the committed outputs | No |
+| `npm test` | Gallery controller, generation harness and set scaffold | No |
 | `npm run check:assets` | Unique catalog IDs, package hashes, ZIP integrity, loose JSON presence | No |
-| `npm run check:paint` | Shared native paint contract | No |
-| `npm run check:docs` | Relative links, publication hygiene, generated guide hashes | No |
-| `npm run doctor` | Authoring dependencies and a real temporary native export | Yes |
-| Set `verify.mjs` / `verify-clearance.mjs` | Set-specific geometry, state and clearance invariants on the native build | Yes |
+| `npm run check:docs` | Relative links, publication hygiene, retired names, generated guide hashes | No |
 
-CI runs the exporter-free checks plus the package build and consumer tests on every push and pull request.
+CI runs the Rust build, lints and tests on macOS (arm64) and Linux (x64), and the Node and Python checks plus the package build and consumer tests, on every push and pull request. The legacy `npm run check:source` and `npm run check:paint` stay in CI as references for the CLI's parity.
 
-**Automated checks don't replace visual review.** A passing test, a successful export or a nonempty screenshot says nothing about artistic quality. Every icon change needs the rendered review below.
+**Automated checks don't replace visual review.** A passing test, a successful export or a nonempty preview says nothing about artistic quality. Every icon change needs the rendered review below.
 
 ## Rendered review
 
-Start the verification server and open the affected set's renderer page:
-
-```sh
-python3 motion/icon-sets/library/director-revision/serve-verification.py
-# open http://127.0.0.1:4191/icons/NN/verify.html
-```
-
-Use `--port 4194` if 4191 is taken. Newly scaffolded pages accept `?save=1` to collect evidence on any port; legacy pages use 4191. The server writes bounded evidence into the set and keeps each failed aggregate under a timestamped filename before a retry.
+`gen-animated-icons library verify-visual SET-ID` renders every action with the same dotLottie core the players use and writes `evidence/browser-verification.json` with rest, style and pose sheets. `gen-animated-icons preview <id>` renders any icon's motions to contact sheets for a closer look (`--times` puts columns on chosen moments).
 
 Review:
 
-- 24, 32, 48 and 192 px, at measured canvas size
+- 24, 32, 48 and 192 px
 - Outline (all three weights), Solid and Duotone, in light and dark themes
 - Initial, contact, settle and rest states
-- Light and Strong side by side at normal speed and equal elapsed time, next to family neighbors
-- Hover, focus, touch, loop, profile switches and downloads
+- Light and Strong side by side at equal elapsed time, next to family neighbors
+- Hover, focus, touch, loop, profile switches and downloads in the local gallery (`npm run dev`)
 - Reduced motion shows a useful static pose
 
 Existing reports apply only to files with matching hashes. Do not hide findings with baseline waivers. See [known limitations](limitations.md).

@@ -1,33 +1,38 @@
 # Architecture
 
-This repository holds the editable icon source, the authoring toolchain, the local gallery and the npm packages. The website consumes the published packages.
+This repository holds the editable icon source, the `gen-animated-icons` CLI, the local gallery and the npm packages. The website consumes the published packages.
 
 | Location | Responsibility |
 | --- | --- |
+| `crates/` | The `gen-animated-icons` Rust workspace: authoring runtime, builds, checks, rendering, packaging, the hosted-engine client and the CLI. See [crates/README.md](../crates/README.md). |
+| `crates/gen-animated-icons/assets/skill/` | The agent skill the CLI installs into apps (the one source for it) |
+| `npm/` | The `gen-animated-icons` npm wrapper and one binary package per platform |
 | `packages/icons/` | Generated per-icon descriptors, native assets, catalog and bundled docs |
 | `packages/runtime/` | Shared playback, paint, state, reduced motion and lifecycle API |
 | `packages/react/` | Client-side React adapter with controlled state |
-| `packages/cli/` and `skills/lottie-icons/` | Project detection, setup, search, safe asset installation and the consumer agent skill |
+| `packages/cli/` and `skills/lottie-icons/` | The retired `lottie-icons` command and its skill, kept frozen for migration and the legacy package build |
 | `prototype/icons/catalog.json` | Ordered set manifests and browse categories |
 | `prototype/icons/01/` | Cumulative local gallery |
 | `prototype/icons/NN/assets/` | Distributed JSON, dotLottie and set metadata |
 | `prototype/icons/03/controller.mjs` | Shared playback state, loop and interaction behavior |
 | `prototype/vendor/` | Pinned native browser player, WASM and license |
-| `motion/icon-sets/NN-name/` | Editable definitions, builder, packaging, set checks and verification records |
-| `motion/icon-sets/library/` | Family contract, context search, source screening and shared authoring helpers |
-| `motion/src/` | Engine scene bridge and exporter client |
-| `.agents/skills/animated-icon-workflow/` | AI operating guide and review rules |
-| `scripts/` | Local preview, package builds and repository checks |
+| `motion/icon-sets/NN-name/` | Editable definitions, set rules, verification records, and the legacy builder, packaging and set checks |
+| `motion/icon-sets/library/` | Family contract, authoring kit, context search and the legacy source screening |
+| `motion/src/` | The legacy Engine scene template |
+| `.agents/skills/animated-icon-workflow/` | Maintainer workflow and review rules for this repository |
+| `scripts/` | Local gallery, package builds and repository checks |
 
 ## Data flow
 
-Named vector geometry and motion → sampled Engine scenes → native Lottie JSON → themed, slot-enabled dotLottie files → package descriptors and assets.
+Named vector geometry and motion (`definitions.mjs`, run in the CLI's embedded QuickJS) → sampled scenes → native Lottie from the hosted engine → themed, slot-enabled dotLottie files → package descriptors and assets.
 
-The gallery loads catalog manifests and plays the native files. The browser controller owns interaction timing; drawing choreography stays in authoring source. Intermediate `scenes/` and `native/` directories are ignored by Git; final assets are tracked. The aggregate download is regenerated with `npm run package:icons`.
+The gallery loads catalog manifests and plays the native files. The browser controller owns interaction timing; drawing choreography stays in authoring source. Intermediate `scenes/` and `native/` folders are ignored by Git; final assets are tracked. `gen-animated-icons library package --icon-library` regenerates the aggregate download.
+
+The earlier JavaScript and Python pipeline (`motion/`, `scripts/`, each set's `build.mjs`, `verify.mjs` and `package.py`, and the browser `verify.html` pages) is legacy. The CLI reproduces its outputs byte for byte, and its parity tests still run it as a reference.
 
 ## Agent workflow
 
-One coding agent owns creative decisions, authoring, inspection and revision. The harness supplies reference geometry, shared rules, source screening, native build commands and verification; it never calls a model itself. See [creating icons](creating-icons.md).
+One coding agent owns creative decisions, authoring, inspection and revision. The CLI supplies reference geometry, shared rules, source screening, builds and verification; it never calls a model itself. See [creating icons](creating-icons.md).
 
 ## Family contract
 

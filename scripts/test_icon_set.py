@@ -58,10 +58,10 @@ class IconSetTests(unittest.TestCase):
         (self.root / 'prototype/icons/35').mkdir()
         self.assertEqual(self.scaffold(), '36-landscaping')
 
-    def test_source_zip_keeps_empty_batches_and_exporter_dependencies(self):
+    def test_source_zip_keeps_empty_batches_and_shared_dependencies(self):
         set_id = self.scaffold()
         for relative in ['LICENSE', 'THIRD_PARTY_NOTICES.md',
-                         'motion/src/export.mjs', 'motion/src/exporter-config.mjs',
+                         'motion/src/export.mjs',
                          'motion/icon-sets/library/verify-filled-ellipsis.mjs']:
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -76,7 +76,7 @@ class IconSetTests(unittest.TestCase):
         with ZipFile(assets / f'{set_id}.zip') as archive:
             self.assertIsNone(archive.testzip())
             for relative in ['motion/icon-sets/35-landscaping/batches/.gitkeep',
-                             'motion/src/exporter-config.mjs',
+                             'motion/src/export.mjs',
                              'motion/icon-sets/library/verify-filled-ellipsis.mjs', 'LICENSE']:
                 self.assertEqual(archive.read('source/' + relative), (self.root / relative).read_bytes())
             self.assertEqual(archive.read('LICENSE'), (self.root / 'LICENSE').read_bytes())

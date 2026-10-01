@@ -4,33 +4,34 @@
 
 **Set(s) affected:** <!-- e.g. 39-food-drink, or "none" -->
 
-**Type:** <!-- new icon · icon revision · package/runtime · docs · tooling -->
+**Type:** <!-- new icon · icon revision · CLI · package/runtime · docs · tooling -->
 
 ## Checks
 
+- [ ] `cargo clippy --workspace --all-targets -- -D warnings` and `cargo test --workspace` pass (CLI or crate changes)
+- [ ] Set preflight passes: `gen-animated-icons library preflight SET-ID`
+- [ ] Set built and verified: `gen-animated-icons library build SET-ID`, `library verify SET-ID`, `library verify-visual SET-ID`
 - [ ] `npm test` passes
-- [ ] Set preflight passes: `node motion/icon-sets/library/preflight.mjs motion/icon-sets/SET-ID`
-- [ ] `npm run check:source` passes (or failures are listed below)
 - [ ] `npm run docs:build` and `npm run check:docs` pass (if docs or canonical guides changed)
 - [ ] Existing icon IDs preserved; no unrelated assets changed
 
 ## Visual evidence
 
-- [ ] Screenshots or recordings of **Light** and **Strong** motion at normal speed
-- [ ] Outline, Solid and Duotone (if you could render them)
+- [ ] Preview sheets or recordings of **Light** and **Strong** motion at normal speed
+- [ ] Outline, Solid and Duotone, in light and dark themes
 - [ ] Accessibility: reduced-motion pose is useful; stateful icons have a reverse/reset action
 
-<!-- Attach media here. If you do not have the exporter, say so; a maintainer will render it. -->
+<!-- Attach media here. gen-animated-icons preview and library verify-visual write the sheets. -->
 
 ## Checks I could not run
 
-<!-- List anything skipped and why. -->
+<!-- List anything skipped and why, for example a build that needs a LottieFiles sign-in. -->
 
 ---
 
 ### For maintainers
 
-- [ ] Native export built for the complete set; `verify.mjs` passes
-- [ ] Set registered (`npm run icons:register -- SET-ID`) if new
+- [ ] Complete set built; `gen-animated-icons library verify` and `verify-visual` pass on the committed assets
+- [ ] Set registered (`gen-animated-icons library register SET-ID`) if new
 - [ ] Rendered review: Light/Strong, all styles and weights, both themes, 24/32/48 px, reduced motion
-- [ ] `npm run check:assets` and `npm run check:paint` pass on the native build
+- [ ] `gen-animated-icons library verify --paint` and `npm run check:assets` pass

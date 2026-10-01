@@ -37,7 +37,7 @@
     "icons:context": "node icon-sets/library/generation-context.mjs",
     "icons:preflight": "node icon-sets/library/preflight.mjs",
     "build:checked": "node icon-sets/library/build-checked.mjs",
-    "test:harness": "node --test icon-sets/library/generation-harness.test.mjs && python3 -m unittest discover -s ../.agents/skills/animated-icon-workflow/scripts -p test_claude_design.py",
+    "test:harness": "node --test icon-sets/library/generation-harness.test.mjs",
     "build:voice": "node icon-sets/library/build-checked.mjs icon-sets/16-voice",
     "verify:voice": "node icon-sets/16-voice/verify.mjs && node icon-sets/16-voice/verify-clearance.mjs",
     "build:media": "node icon-sets/library/build-checked.mjs icon-sets/17-media-playback",

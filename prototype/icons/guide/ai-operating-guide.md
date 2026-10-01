@@ -6,12 +6,13 @@ Repository: https://github.com/LottieFiles/lottie-generative-icons
 
 ## Quickstart
 
-1. Clone the repository and run `npm run setup`, then `npm run doctor`.
-2. Search existing icons: `node motion/icon-sets/library/generation-context.mjs --query "<meaning>" --search`.
-3. Fill in the task brief below and follow the workflow in the first source section.
-4. Author source, run preflight, build and verify, then open a pull request.
+In an app, `npx gen-animated-icons init` installs the gen-animated-icons agent skill, which covers creating a missing icon in the app itself. This guide is the full family workflow used for the library's own sets; give it to your agent for deeper reference.
 
-Requirements: Node 22+, Python 3 and unzip. Native export also needs the Engine exporter, which is not publicly distributed; without it, author the source, run preflight and open a pull request so a maintainer can run the export.
+1. Search existing icons: `gen-animated-icons search "<meaning>"`, then `gen-animated-icons context "<meaning>"` for the reference packet.
+2. Fill in the task brief below and follow the workflow in the first source section.
+3. In an app: `gen-animated-icons create <id>`, then `check`, `build` and `preview`. In the library repository: `gen-animated-icons library new-set`, `preflight`, `build`, `verify`, `verify-visual` and `register`.
+
+Building exports native Lottie on LottieFiles' hosted engine, so it needs a LottieFiles sign-in (`gen-animated-icons login`). The hosted engine is internal until launch.
 
 ## Task brief
 
@@ -38,19 +39,21 @@ description: Create consistent animated icons with a coding agent, editable vect
 
 ## Quickstart
 
-Run everything from the repository root. Replace `SET-ID` with the set directory, for example `39-food-drink`.
+This skill is for library sets in this repository. In an app, the `gen-animated-icons` skill that `gen-animated-icons init` installs covers the same loop for local icons.
 
-1. **Check tools:** `npm run doctor` (Node 22+, Python 3, unzip, and a test export through the Engine exporter).
-2. **Search:** `node motion/icon-sets/library/generation-context.mjs --query "<meaning>" --search`, then rerun with `--neighbor <id>` (up to four) to get the reference packet.
+Run everything from the repository root with the `gen-animated-icons` CLI (build it with `cargo build --release -p gen-animated-icons`). Replace `SET-ID` with the set directory, for example `39-food-drink`.
+
+1. **Check tools:** `gen-animated-icons doctor`. At the repository root its app checks fail because the repository is not an app; the cpu, quickjs, renderer, sign-in and engine checks are the ones that matter here.
+2. **Search:** `gen-animated-icons context "<meaning>" --search`, then rerun without `--search` and with `--neighbor <id>` (up to four) to get the reference packet.
 3. **Brief:** per icon, write meaning, states, neighbors and a **cause → action → response → final state** plan for Light and Strong. Read [polish-review.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) first.
-4. **Author:** new set: `npm run icons:new -- <slug> --name "Display name"`. Draw and animate in `motion/icon-sets/SET-ID/definitions.mjs`.
-5. **Preflight (no exporter needed):** `node motion/icon-sets/library/preflight.mjs motion/icon-sets/SET-ID`
-6. **Build and verify:** `node motion/icon-sets/library/build-checked.mjs motion/icon-sets/SET-ID`, then `node motion/icon-sets/SET-ID/verify.mjs` (and `verify-clearance.mjs` when present), then `npm --prefix motion run verify:paint`.
-7. **Inspect:** `npm run dev`, open `http://127.0.0.1:4189/icons/01/`, and review native playback; see [production.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md) for renderer checks.
-8. **Register:** `npm run icons:register -- SET-ID` after the first complete build.
+4. **Author:** new set: `gen-animated-icons library new-set <slug> --name "Display name"`. Draw and animate in `motion/icon-sets/SET-ID/definitions.mjs` and its `batches/`.
+5. **Preflight (no sign-in needed):** `gen-animated-icons library preflight SET-ID`
+6. **Build and verify:** `gen-animated-icons library build SET-ID`, then `gen-animated-icons library verify SET-ID` and `gen-animated-icons library verify --paint`.
+7. **Inspect:** `gen-animated-icons library verify-visual SET-ID` renders every action and writes review sheets; `gen-animated-icons preview <id>` renders one icon's motions at chosen times. Review native playback in the local gallery (`npm run dev`, `/icons/01/`); see [production.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md).
+8. **Register:** `gen-animated-icons library register SET-ID` after the first complete build and verification.
 9. **Finish:** `npm test`, then open a pull request.
 
-**No Engine exporter?** The exporter (`CREATOR_MCP_BIN`) is not publicly distributed, so `doctor` and step 6 fail without it. Complete steps 1–5, report the native gates as not run, and open a pull request with the source; a maintainer runs the native export, renders and reviews it.
+**Building needs the user's LottieFiles sign-in.** Export runs on LottieFiles' hosted engine, which is internal until launch. On `NOT_LOGGED_IN` or `SESSION_EXPIRED`, ask the user to run `gen-animated-icons login` in their terminal; never sign in yourself. Meanwhile complete steps 1–5 and report the native gates as not run.
 
 ## Scope and roles
 
@@ -58,17 +61,15 @@ Apply this workflow to the requested scope and complete the authorized work with
 
 **One agent, separate stages.** One developer-chosen coding agent runs the whole loop: retrieve references → design → author → check → render and inspect → correct → deliver. No second model, supervisor or handoff is required; invoke another model only when the developer asks. Self-review is not independent approval, a passing check does not prove artistic quality, and a text-only agent must not claim it inspected an image. This is the canonical statement of these limits; the references do not repeat it.
 
-The [Claude Code adapter](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/claude-design.md) is optional.
-
 ## Where things live
 
-- Gallery: `prototype/icons/01/index.html`, served by `npm run dev` at `http://127.0.0.1:4189/icons/01/`. All icons belong on that page; it starts each icon in **Strong** and Light stays selectable.
+- Gallery: `prototype/icons/01/index.html`, served by `npm run dev` on port 4189 at `/icons/01/`. All icons belong on that page; it starts each icon in **Strong** and Light stays selectable.
 - Sources: `motion/icon-sets/SET-ID/`. Catalog: `prototype/icons/catalog.json`; each set is registered in a named browse category.
 - Rules: [polish-review.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) (rejection criteria and per-icon record), [generation-harness.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/generation-harness.md) (reference retrieval and preflight), [production.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md) (build and evidence), `docs/design-principles.md`, and `motion/icon-sets/library/motion-directions.json` for existing motion intent.
 
 ## 1. Establish the change
 
-`npm run icons:new` creates source, build, packaging and verification files but no artwork, and does not touch the catalog. Register only after a complete build so the catalog never references a missing manifest. Exporter setup is in `docs/development.md`.
+`gen-animated-icons library new-set` creates the set's source, config, README and review record but no artwork, and does not touch the catalog. Register only after a complete build so the catalog never references a missing manifest. Requirements and sign-in are in `docs/development.md`.
 
 - Inspect the catalog, the affected set's definitions and builder, and the current page. Current source and rendered assets decide current behavior, not old critique text.
 - Record which icons, profiles, styles, and states will change. Snapshot affected assets and record hashes before editing. Preserve unrelated work and accepted motion, unless the current request changes it.
@@ -105,7 +106,7 @@ A whole-library review must leave a per-icon ledger: first design proposal, desi
 
 ## 4. Author and review a complete cycle
 
-Read [references/production.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md) for the current build and evidence procedure. Export only through the Engine exporter that the set builders call. Do not claim one tool produced an asset when another did.
+Read [references/production.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md) for the current build and evidence procedure. Export only through `gen-animated-icons library build`, which exports on the hosted engine. Do not claim one tool produced an asset when another did.
 
 Integrate the reviewed design. If a check or render exposes a flaw, record the diagnostic or observed frame, revise the affected geometry or motion, and rerun the affected checks in the same agent session. Stop an unproductive loop when the same failure repeats without new evidence; change the approach or report the unresolved issue. Missing export or visual inspection tools leave those gates incomplete. Keep one writer per production file.
 
@@ -122,8 +123,8 @@ Validate position and velocity at the analytic cycle endpoint, then render the p
 ## 5. Pass the relevant gates
 
 - Source/export: provenance, native vector shapes, finite points, compatible topology, correct pivots and attachments, fixed geometry, state boundaries, and still holds.
-- Paint: `npm --prefix motion run verify:paint`. Check the entire current catalog for shared stroke values, round caps/joins, transform scaling, and the declared Duotone policy. Add a new open icon to the explicit policy check when applicable.
-- Native renderer: every frame of changed actions at 24/32/48/192 px, all three styles, three outline weights, both themes, and actual playback completion. A no-fill Duotone must equal Outline. Keep exact holds; apply a documented small rendered-boundary tolerance only to declared symmetric cycles.
+- Paint: `gen-animated-icons library verify --paint`. Check the entire current catalog for shared stroke values, round caps/joins, transform scaling, and the declared Duotone policy. Add a new open icon to the explicit policy check when applicable.
+- Native renderer: `gen-animated-icons library verify-visual SET-ID` covers every frame of changed actions at 24/32/48/192 px, all three styles, three outline weights, both themes, and actual playback completion. A no-fill Duotone must equal Outline. Keep exact holds; apply a documented small rendered-boundary tolerance only to declared symmetric cycles.
 - Human-facing review: inspect the same gallery, including the reported problem. For weight complaints, compare straight sections at the same size/weight and inspect the small-size result.
 - Interaction: whole-card hover and keyboard focus loop, Light/Strong switching while hovered keeps playback, Loop all covers every icon, touch plays once, leaving finishes the cycle, downloads select the active profile, and reduced motion remains still. Switching reduced motion off must re-enable every preview control without starting playback. Run the existing controller tests when catalog/state behavior changes; do not add tests that merely mirror new wording.
 
@@ -133,7 +134,7 @@ Do not treat a successful export, nonempty frame, or screenshot alone as complet
 
 Update the existing catalog/page and downloads. Match final evidence to current package hashes; source evidence and served pose images must agree. Save concise before/after evidence for visual corrections. Complete the per-icon record from `polish-review.md`; link existing reports instead of duplicating them. Promote verified reusable findings into `docs/design-principles.md` or the polish checklist; keep per-icon findings with the affected source. Correct superseded rules and linked prompts together. Do not invent a new lesson when the existing rule was sufficient.
 
-Finish with the local gallery link, concrete changes, checks that passed or were not run, and any remaining limitation. Contribute through a GitHub pull request; maintainers build native assets where needed, review the rendered output and merge.
+Finish with the gallery location of the changed icons, concrete changes, checks that passed or were not run, and any remaining limitation. Contribute through a GitHub pull request; maintainers review the rendered output and merge.
 
 ### Strong timing acceptance
 
@@ -275,7 +276,7 @@ Use this sequence to retrieve current family geometry and screen editable source
 
 ## Setup before design
 
-Use `npm run doctor` to check tools and a temporary native export. Use `npm run icons:new -- <slug> --name "Display name"` for a new set. It supplies authoring and verification files without choosing geometry or motion. Keep an unbuilt set out of the catalog; use `npm run icons:register -- <SET-ID>` after the first complete build and verification. This preserves retrieval and preflight while the asset manifest does not yet exist.
+Use `gen-animated-icons doctor` to check the binary, its math, the renderer, the sign-in and the engine. Use `gen-animated-icons library new-set <slug> --name "Display name"` for a new set. It supplies the source, config and review record without choosing geometry or motion. Keep an unbuilt set out of the catalog; use `gen-animated-icons library register <SET-ID>` after the first complete build and verification. This preserves retrieval and preflight while the asset manifest does not yet exist.
 
 ## Before the design proposal
 
@@ -284,36 +285,35 @@ Search by shape, meaning and mechanism. Preserve existing public IDs. Decide whe
 From the project root:
 
 ```bash
-node motion/icon-sets/library/generation-context.mjs --query "package return" --search
-node motion/icon-sets/library/generation-context.mjs --query "package return" --neighbor return-package --neighbor delivery-truck
+gen-animated-icons context "package return" --search
+gen-animated-icons context "package return" --neighbor return-package --neighbor delivery-truck
 ```
 
-The second command prints a reference packet. It contains the current family contract, candidate matches, selected icons, Light/Strong metadata, the initial native Outline geometry with its local transforms, and input hashes. It verifies the selected Strong package hash against the catalog and the loose animation against the packaged animation. A missing/stale reference fails rather than silently supplying old geometry. `unzip` must be available. No generated assets are written.
+The second command prints a reference packet. It contains the current family contract, candidate matches, selected icons, Light/Strong metadata, the initial native Outline geometry with its local transforms, and input hashes. It verifies the selected Strong package hash against the catalog and the loose animation against the packaged animation. A missing/stale reference fails rather than silently supplying old geometry. No generated assets are written; `--output <dir>` saves the packet, and `--prompt` prints a design prompt that embeds it.
 
 The context command makes no model call; read the packet directly. Use repeatable `--neighbor ID` arguments to choose up to four relevant examples. Without explicit neighbors, it uses the top two lexical candidates with documented vocabulary expansions. Review the selection; a word match can choose the wrong mechanism. Check an exact existing ID or label before accepting automatic neighbors. Similar labels can rank incorrectly; choose explicit neighbors for ambiguous cases and do not treat directional opposites or modified labels as equivalent. A no-match result is valid and must not be disguised as an established family reference. For a large batch, split briefs by mechanism instead of supplying the entire library.
 
 Read the relevant source excerpts too. The initial path snapshot is not the motion source and may show an incomplete starting state. Save `generation-context.json` and the design review findings beside the proposal.
 
-The numeric contract is [family-contract.json](https://github.com/LottieFiles/lottie-generative-icons/blob/main/motion/icon-sets/library/family-contract.json). The prompt and preflight read the same file. It holds the 32-unit grid, 1.5/2/2.5 Outline weights, 18% eligible Duotone, Strong default, and existing timeline. `test:harness` checks agreement with every current catalog entry. Versioned exporters keep their constants to preserve prior provenance; a future numeric change requires coordinated authoring/export/paint/render validation. This file is not permission to rescale existing artwork.
+The numeric contract is [family-contract.json](https://github.com/LottieFiles/lottie-generative-icons/blob/main/motion/icon-sets/library/family-contract.json). The prompt and preflight read the same file. It holds the 32-unit grid, 1.5/2/2.5 Outline weights, 18% eligible Duotone, Strong default, and existing timeline. The CLI's tests check its agreement with every current catalog entry. Versioned exporters keep their constants to preserve prior provenance; a future numeric change requires coordinated authoring/export/paint/render validation. This file is not permission to rescale existing artwork.
 
 ## Before native export
 
 Integrate the reviewed design into trusted local `definitions.mjs` sources. Then run:
 
 ```bash
-node motion/icon-sets/library/preflight.mjs motion/icon-sets/15-commerce-delivery
-node motion/icon-sets/library/build-checked.mjs motion/icon-sets/15-commerce-delivery
+gen-animated-icons library preflight 15-commerce-delivery
+gen-animated-icons library build 15-commerce-delivery
 ```
 
-The checked build is the preferred entry for new sets and revisions with separate definitions. It completes source screening before calling that set's existing builder. A failing check prevents the builder from running. The screen covers both profiles, forward/reverse actions, all three Outline widths, every frame including the analytic endpoint, authored key poses, active time and rest time.
+`library build` completes source screening before it exports anything. A failing check prevents the export. The screen covers both profiles, forward/reverse actions, all three Outline widths, every frame including the analytic endpoint, authored key poses, active time and rest time.
 
 Hard failures include malformed/nonfinite paths or poses, changing normalized path topology, moving rigid pivots, invalid timing, out-of-range opacity, inconsistent paint/fill declarations, invalid names, and duplicate icon IDs within a set. Diagnostics identify icon, part, profile, direction, weight and first failing time where applicable. Clamp a visibility driver to its valid range in its own authoring logic; do not relax validation because the renderer appears to clamp it. Do not clamp all geometric motion and lose intentional overshoot.
 
 Warnings include ambiguous layer labels and a control-point hull crossing the canvas (the hull can overestimate a cubic's painted bounds; inspect actual swept paint before editing geometry). Missing legacy Duotone declarations and set-specific reverse naming are informational; existing native checks still apply.
 
 ```bash
-npm --prefix motion run icons:preflight -- --all
-npm --prefix motion run test:harness
+gen-animated-icons library preflight --all
 ```
 
 The all-source command discloses inline legacy builders that cannot be screened without executing exports. Heart, Bell and Search currently use that route: retain their existing source/native checks. Do not import an inline `build.mjs` to obtain definitions.
@@ -331,47 +331,13 @@ Preflight is source screening only: painted contacts, closed Duotone surfaces, t
 
 ---
 
-## Source: .agents/skills/animated-icon-workflow/references/claude-design.md
-
-# Optional Claude Code adapter
-
-Skip this unless the developer asks for a separate text proposal from the Claude Code CLI. A normal coding-agent session, including Claude Code itself, follows [SKILL.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/SKILL.md) directly.
-
-The adapter sends one bounded, text-only request through an authenticated `claude` executable. It supplies the skill, the polish checklist, the harness rules and a verified reference packet as text, and saves the proposal. It cannot edit source, export animations or inspect images.
-
-## Run a proposal
-
-Write a brief (meaning or correction, states, protected assets, relevant neighbors) that applies [polish-review.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md). Check `claude --version`, then run from the repository root:
-
-```bash
-python3 .agents/skills/animated-icon-workflow/scripts/claude_design.py \
-  path/to/brief.md \
-  --neighbor keyframes \
-  --context motion/icon-sets/library/drawing.mjs \
-  --context motion/icon-sets/06-tools/definitions.mjs \
-  --output path/to/proposal-01
-```
-
-Choose `--neighbor` and `--context` for the task. Selected references must match current package hashes; a missing reference or an unavailable CLI stops the run before any model call.
-
-The output directory must be new. It receives `design.md`, `prompt.md`, `response.json`, `invocation.json` and `generation-context.json`, with input hashes, CLI version and returned model identifiers. A timeout is recorded as a failure, not retried. The runner keeps the developer's model configuration. Keep prompts and transcripts out of contributions.
-
-## Continue
-
-Review the proposal and save findings in `design-review.md`: what meets the brief, specific faults, and affected parts or times. For a revision, fix it in the current session or write a new brief with the observed failure and run into a new directory.
-
-Then author the design and follow [production.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md). A failed, empty or timed-out response is not a completed design pass; record the actual error.
-
-
----
-
 ## Source: .agents/skills/animated-icon-workflow/references/production.md
 
 # Production and verification
 
-Run commands from the repository root and confirm paths against the checkout. Use [polish-review.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) for acceptance criteria and the per-icon record. Derive the expected icons and forward/reverse/reset actions from the current catalog and set metadata, never from a fixed count.
+Run commands from the repository root with the `gen-animated-icons` CLI and confirm paths against the checkout. Use [polish-review.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) for acceptance criteria and the per-icon record. Derive the expected icons and forward/reverse/reset actions from the current catalog and set metadata, never from a fixed count.
 
-Follow [generation-harness.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/generation-harness.md) before export. For sets with `definitions.mjs`, build with `node motion/icon-sets/library/build-checked.mjs motion/icon-sets/SET-ID`: it runs source preflight, then that set's `build.mjs`. A clean source report does not replace any native or delivery gate.
+Follow [generation-harness.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/generation-harness.md) before export. `gen-animated-icons library build SET-ID` runs source preflight, then exports every action on LottieFiles' hosted engine, post-processes the native files, and packages the set: `.lottie` files, `set.json`, `evidence/build.json` and the set zip. A failing preflight stops it before anything is exported. A clean source report does not replace any native or delivery gate.
 
 ## Source layout
 
@@ -379,50 +345,46 @@ Every set lives in `motion/icon-sets/NN-slug/` and has its own `README.md` with 
 
 | Sets | Authoring | Build / verify |
 | --- | --- | --- |
-| `01-heart-bell`, `02-search` | Geometry inline in the set `build.mjs` (legacy; preflight cannot screen it) | `node motion/icon-sets/SET-ID/build.mjs`, then `verify.mjs` |
-| `03-essentials` to `06-tools` | `definitions.mjs` plus the matching `library/directed-*.mjs` helper | Checked build, then `verify.mjs` |
-| `07` to `10` (AI) | Set `batches/` and `definitions.mjs` with the shared `library/build-set.mjs` | `npm --prefix motion run build:ai` / `verify:ai` |
-| `11` onward | Set `batches/` and `definitions.mjs`, set-owned `build.mjs` | Checked build, then `verify.mjs` and `verify-clearance.mjs` when present |
+| `01-heart-bell`, `02-search` | Geometry inline in the set `build.mjs` (legacy; preflight cannot screen it) | Frozen: never rebuilt; `library verify` checks the committed assets |
+| `03-essentials` to `06-tools` | `definitions.mjs` plus the matching `library/directed-*.mjs` helper | `library build` (built-in legacy profiles), then `library verify` |
+| `07` to `10` (AI) | Set `batches/` and `definitions.mjs` with the shared builder settings | `library build`, then `library verify` |
+| `11` onward | Set `batches/`, `definitions.mjs` and `set-config.json`; set-specific rules in `verify.rules.json` or `geometry-contract.json` where present | `library build`, then `library verify` |
 
-Some sets also have named shortcuts in `motion/package.json` (for example `build:finance` / `verify:finance`); they call the same scripts.
+The per-set `build.mjs`, `verify.mjs`, `verify-clearance.mjs` and `package.py` files, and the `build:*` and `verify:*` scripts in `motion/package.json`, are the legacy pipeline. The CLI reproduces their outputs byte for byte and its parity tests still run them; do not use them for new work.
 
-`library/drawing.mjs` contains contour helpers; `library/direction.mjs` contains timing and result/reset helpers. Builders keep sampled scene points as an independent reference and export rigid parts as native transforms. `motion/src/export.mjs` runs the Engine exporter (`CREATOR_MCP_BIN`) in a separate workspace. If it is unavailable, stop at preflight; never substitute raster animation.
+`library/drawing.mjs` contains contour helpers; `library/direction.mjs` contains timing and result/reset helpers. Builds keep sampled scene points as an independent reference and export rigid parts as native transforms. Export needs the user's LottieFiles sign-in; if it is missing, stop at preflight and report the native gates as not run. Never substitute raster animation.
 
-Use `npm --prefix motion run <command>`. The current set builders regenerate the set manifest and package all its records. **Do not use `ICON_NAMES` for a partial build without merging the full manifest**: it currently writes only selected definitions to `set.json`. Rebuild the complete affected set and confirm unaffected native asset hashes.
+Build complete sets: a set build regenerates the set manifest and packages all its records. Rebuild the complete affected set and confirm that unaffected native asset hashes are unchanged.
 
-Use `npm run icons:new -- <slug> --name "Display name"` to scaffold a new set with its source/build/package/verification files. Supply unique icon names and custom geometry/motion. After a successful complete build, run `npm run icons:register -- <SET-ID>` to verify and register it. The verification server discovers numbered source sets at startup; restart it after scaffolding. Do not hardcode an icon or action count into a new acceptance test.
+Use `gen-animated-icons library new-set <slug> --name "Display name"` to scaffold a new set. Supply unique icon names and custom geometry/motion. After a successful complete build and verification, run `gen-animated-icons library register SET-ID` to check and register it. Do not hardcode an icon or action count into a new acceptance test.
 
 ## Paint and styles
 
-Pinned dotLottie Web is `0.80.0`. The project uses separate native stroke paints for Light/Regular/Bold, selected with opacity slots, because a scalar width override does not change rendered pixels in this player. Preserve the existing style contract unless a replacement is verified in the actual player.
+Players and the CLI's renderer use the dotLottie core that dotLottie Web `0.80.0` ships. The project uses separate native stroke paints for Light/Regular/Bold, selected with opacity slots, because a scalar width override does not change rendered pixels in this player. Preserve the existing style contract unless a replacement is verified in the actual player.
 
 Slots: `color.primary`, `style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`. Themeable colors remain solids. Duotone tint uses 18% only where a real enclosed surface exists. Compare the full action when that surface can leave the final frame; an open icon must match Outline at every frame. Do not add invisible dummy surfaces to satisfy a style-difference test.
 
-For filled Outline marks, the weight is in the geometry. The More options check in `library/verify-filled-ellipsis.mjs` measures the exported dot diameters for each preset; native raster comparisons still must pass. Stroke-based icons retain the constant-width checks.
+For filled Outline marks, the weight is in the geometry. The More options check measures the exported dot diameters for each preset; native raster comparisons still must pass. Stroke-based icons retain the constant-width checks.
 
 ## Verification sequence
 
 1. Snapshot affected current JSON, dotLottie, metadata, and pose images, plus hashes for untouched assets.
-2. Build affected sets, run their `verify:*` scripts, and run `verify:paint` across the catalog. Source checks must compare actual exported geometry/paint with the intended constraints.
-3. Use the available browser skill to inspect the real gallery. Do not control a second browser through an unrelated automation stack. Local technical verification pages are test tools, not additional product galleries.
-4. Start `python3 motion/icon-sets/library/director-revision/serve-verification.py` (default port 4191; choose another with `--port`). It serves the prototype and saves bounded renderer reports and images. Leave the user's gallery server (`npm run dev`, port 4189) running, and stop only processes you started.
-5. Open `http://127.0.0.1:4191/icons/NN/verify.html?icons=name1,name2` and run verification. Newly scaffolded pages need `?save=1` (or `&save=1`) to save evidence; older pages save only on port 4191. Failed reports are kept with a timestamp. Use `&batch=a` for disjoint groups in a harness that supplies `report.batch`; the collector then keeps each report under a separate suffix. Click Run verification and check status. These pages use the native player, save per-action progress, and yield with MessageChannel to avoid background animation-frame throttling. Check results/errors; do not infer completion from time elapsed.
-6. Preserve a complete previous renderer report before a focused run overwrites `browser-verification.json`. `merge-render-evidence.py` currently considers named archived reports in each set's evidence folder. Merge only individually passing results whose package SHA matches the current asset. If coverage is missing, locate matching proof or render the missing actions; do not relabel old proof.
-7. The collector saves pose/style/rest PNGs in both source `evidence/` and served `assets/`. After packaging, confirm both copies match. Optionally rebuild family review sheets with `python3 motion/icon-sets/library/director-revision/build-review-sheets.py` when their inputs change; it needs Pillow (`python3 -m pip install pillow`) and macOS system fonts.
-8. Run `test:library` for catalog/state/controller changes, or a focused live interaction check for an asset-only correction. Keep new visual tests proportional to the actual risk.
-9. Package the affected set after its final render proof, then run `package:library` and the affected category archive command where applicable. Verify ZIP integrity, catalog action coverage, every selected initial animation, embedded sibling JSON, per-action hashes, and actual HTTP download bytes. Include current shared authoring dependencies, instructions and review evidence in source archives.
+2. Build affected sets with `library build`, run `library verify SET-ID` for each, and run `library verify --paint` across the catalog. Source checks must compare actual exported geometry/paint with the intended constraints.
+3. Run `gen-animated-icons library verify-visual SET-ID` (`--icons name1,name2` for a focused run). It renders every action in a child process with the players' renderer and writes `evidence/browser-verification.json` plus rest, style and pose sheets to both the set's `evidence/` and its served `assets/`. A focused run keeps the earlier records of the other icons. Check results and errors; a failed aggregate stays failed.
+4. Use the available browser skill to inspect the real gallery (`npm run dev`, `/icons/01/`). Do not control a second browser through an unrelated automation stack. Leave the user's gallery server running, and stop only processes you started.
+5. Look at the sheets, and at `gen-animated-icons preview <id> --times …` for the moments that matter. Feed observed flaws into the next correction.
+6. Run `npm test` for catalog/state/controller changes, or a focused live interaction check for an asset-only correction. Keep new visual tests proportional to the actual risk.
+7. Package the affected set after its final render proof with `gen-animated-icons library package SET-ID`, then refresh the aggregate download with `gen-animated-icons library package --icon-library`. Verify ZIP integrity, catalog action coverage, every selected initial animation, embedded sibling JSON, per-action hashes, and actual HTTP download bytes. Include current shared authoring dependencies, instructions and review evidence in source archives.
 
 Keep current evidence separate from failed attempts. Report source correctness, all-frame rendering, sampled visual review, live interaction and delivery bytes as separate evidence.
 
 ## Timing review and unchanged-profile proof
 
-Inspect native playback at 1x, then capture Light/Strong at identical elapsed times from the same origin. Sample the meaningful drive and the entire action through its reset; include opacity-driven onset and short actions. A separate normalized strip for each profile can show geometry but cannot compare speed. Use nonuniform samples for symmetric rotating forms, and retain the all-frame checks.
-
-`prototype/icons/01/clock-review.html` is an example equal-time capture page. Adapt its inputs to the current task rather than reusing a fixed icon list.
+Inspect native playback at 1x, then compare Light/Strong at identical elapsed times from the same origin (`preview` puts Light and Strong in the same columns). Sample the meaningful drive and the entire action through its reset; include opacity-driven onset and short actions. A separate normalized strip for each profile can show geometry but cannot compare speed. Use nonuniform samples for symmetric rotating forms, and retain the all-frame checks.
 
 When only Strong changes, compare Light native geometry and active/rest metadata for all Light actions, including reverse/reset. Prefer unchanged animation bytes. A package may change because it embeds Strong; any visible-equivalence exception must state and verify why the changed Light data cannot alter the rendered action. Confirm the authoring helper's profile argument order before integration.
 
-Keep actual-clock completion checks in an active browser tab. A failed aggregate stays failed. A fully completed, error-free individual action can contribute to merged evidence only if its current SHA and all required checks match; an interrupted action must be rerun. Keep expensive report thumbnails out of the frame-sweep layout without removing native assertions.
+A fully completed, error-free individual action can contribute to merged evidence only if its current SHA and all required checks match; an interrupted action must be rerun.
 
 ## Gallery verification
 
@@ -436,17 +398,15 @@ Leave the gallery's minimal cards and category navigation in place. Technical fr
 
 For intentionally discrete typing, verify the authored character states and a matching raster-state minimum. Do not require extra smooth frames or decorative movement. The AI verification has explicit minima for Image Caption and Code Generate, backed by independent source state counts.
 
-The four AI sets build with `npm --prefix motion run build:ai` and verify with `npm --prefix motion run verify:ai`. The scope gate rejects missing or reordered icons. `package:ai` requires complete current native render evidence before it creates the AI-only archive. `prototype/icons/09/family-review.html` renders each AI set at native 24/32/48 px for visual checks; the product gallery stays at `icons/01/`.
+The four AI sets (07–10) also pass an AI-scope gate that rejects missing or reordered icons; `library build` and `library verify` run it.
 
-Set-specific geometric gates live in each set's `verify-clearance.mjs`. Examples: finance checks the Bank door opening, contactless spacing and Portfolio handle attachments against sampled exported cubics expanded by stroke radius; travel compares attachment endpoints with moving housing curves and checks swept cranks and boards; commerce checks roll tangency, wheel counters, drawer and locker clearances and Duotone apertures. Financial values hold after posting; preview resets affect only changing parts. Fabric control points may flex while attachment endpoints stay fixed. Never accept image-estimated dimensions or a designer's arithmetic without checking the actual paths.
-
-Run completion-sensitive browser batches sequentially in an active tab: MessageChannel keeps frame sampling reliable in background tabs, but real playback completion still depends on animation frames. A timeout is a failed attempt until a current rerun completes. Merge only individually completed records whose package hashes match, using `motion/icon-sets/library/director-revision/merge-render-evidence.py`.
+Set-specific geometric gates live in each set's rules (`verify.rules.json`, `geometry-contract.json`) or in the CLI's built-in rules, and `library verify` runs them. Examples: finance checks the Bank door opening, contactless spacing and Portfolio handle attachments against sampled exported cubics expanded by stroke radius; travel compares attachment endpoints with moving housing curves and checks swept cranks and boards; commerce checks roll tangency, wheel counters, drawer and locker clearances and Duotone apertures. Financial values hold after posting; preview resets affect only changing parts. Fabric control points may flex while attachment endpoints stay fixed. Never accept image-estimated dimensions or a designer's arithmetic without checking the actual paths.
 
 When adding a catalog item, run the gallery's duplicate-ID check. UI SVG symbols must use their UI namespace and must not share an ID with an icon card or category anchor. Preserve current public icon anchors when resolving a UI-symbol collision.
 
 ### Native path assembly
 
-Read the current authoring helper signatures before using options such as pose or visibility; a source schema pass does not prove the intended motion reached each part. For the current native Engine exporter, each part has one initial MoveTo. Split disconnected strokes into separately named parts instead of placing multiple MoveTo commands in one path. Use the verified winding helper only for fully contained cutouts. Inspect the source study and run the native export; preserve an observed exporter failure until the corrected representation passes.
+Read the current authoring helper signatures before using options such as pose or visibility; a source schema pass does not prove the intended motion reached each part. For the engine's Lottie export, each part has one initial MoveTo. Split disconnected strokes into separately named parts instead of placing multiple MoveTo commands in one path. Use the verified winding helper only for fully contained cutouts. Inspect the source study and run the native export; preserve an observed export failure until the corrected representation passes.
 
 
 ---
@@ -517,40 +477,40 @@ Read the current authoring helper signatures before using options such as pose o
 
 # Install and use the packages
 
-Add animated icons to any JavaScript app: install the packages, copy the icons you need with the CLI, and render them with the shared runtime or the React component.
+Add animated icons to any JavaScript app: install only the icons you need with the `gen-animated-icons` CLI, and render them with the shared runtime or the React component.
 
 | Package | Purpose |
 | --- | --- |
-| `@lottiefiles/generative-icons` | Per-icon descriptors, native dotLottie assets and catalog |
+| `gen-animated-icons` | The CLI: project setup, search, icon installation, and creating icons your app is missing |
 | `@lottiefiles/generative-icons-runtime` | Playback, paint, state, reduced motion and lifecycle |
 | `@lottiefiles/generative-icons-react` | React and Next.js component |
-| `@lottiefiles/generative-icons-cli` | `lottie-icons` command: project setup, search and asset installation |
+| `@lottiefiles/generative-icons` | Per-icon descriptors, native dotLottie assets and the catalog, for apps that import icons without the CLI |
 
-Keep all four on the same version.
+Keep the `@lottiefiles/generative-icons*` packages on the same version.
 
 ## Install
 
 ```sh
-npm install @lottiefiles/generative-icons @lottiefiles/generative-icons-runtime @lottiefiles/generative-icons-cli
+npm install @lottiefiles/generative-icons-runtime
 # React or Next.js:
 npm install @lottiefiles/generative-icons-react
 
-npx lottie-icons init
-npx lottie-icons search heart
-npx lottie-icons add heart
+npx gen-animated-icons init
+npx gen-animated-icons search heart
+npx gen-animated-icons add heart
 ```
 
 In a monorepo, pass `--cwd apps/web` to target the app.
 
-`init` reads the app's package metadata and creates `lottie-icons.json` plus a local agent skill in `.agents/skills/lottie-icons/`. It does not edit AGENTS.md, global agent settings or components. If your app uses a base URL, include it in `publicPath`.
+`init` reads the app's package metadata and creates `gen-animated-icons.json`, the agent skill in `.claude/skills/gen-animated-icons/` and `.agents/skills/gen-animated-icons/`, and a copy of the authoring kit. It does not edit `AGENTS.md`, global agent settings or components. If your app uses a base URL, include it in `publicPath`.
 
-`add` copies native files to `public/lottie-icons/` and descriptors to `src/lottie-icons/` (or `lottie-icons/` without a `src` folder), and records hashes in `.lottie-icons/lock.json`. Commit the config, assets, descriptors and lock. `diff` reports local changes, and `add` refuses to overwrite modified managed files.
+`add` copies native files to `public/gen-animated-icons/` and descriptors to `src/gen-animated-icons/` (or `gen-animated-icons/` without a `src` folder), and records hashes in `.gen-animated-icons/lock.json`. Commit the config, assets, descriptors and lock. `diff` reports local changes, `add` refuses to overwrite modified managed files, and `remove` uninstalls icons whose files are unedited. A project set up by the earlier `lottie-icons` command moves over with `npx gen-animated-icons init --migrate`.
 
 ## Vanilla JavaScript
 
 ```js
 import { createIcon } from '@lottiefiles/generative-icons-runtime';
-import icon, { src } from './lottie-icons/heart.mjs';
+import icon, { src } from './gen-animated-icons/heart.mjs';
 
 const handle = await createIcon(document.querySelector('canvas'), {
   icon, src, color: '#008c76', style: 'outline', weight: 2, motion: 'light'
@@ -559,14 +519,14 @@ document.querySelector('button').addEventListener('click', () => handle.play());
 // On removal: handle.destroy();
 ```
 
-Without the CLI, import a single descriptor from `@lottiefiles/generative-icons/icons/heart` and resolve `@lottiefiles/generative-icons/assets/heart.lottie` with your bundler. A descriptor import does not load the catalog or any asset bytes.
+Without the CLI, install `@lottiefiles/generative-icons`, import a single descriptor from `@lottiefiles/generative-icons/icons/heart` and resolve `@lottiefiles/generative-icons/assets/heart.lottie` with your bundler. A descriptor import does not load the catalog or any asset bytes.
 
 ## React and Next.js
 
 ```jsx
 'use client';
 import { AnimatedIcon } from '@lottiefiles/generative-icons-react';
-import icon, { src } from './lottie-icons/heart.mjs';
+import icon, { src } from './gen-animated-icons/heart.mjs';
 
 export function Favorite() {
   return <AnimatedIcon icon={icon} src={src} size={24} color="#008c76" />;
@@ -595,13 +555,17 @@ Components that handle events in Next.js need `'use client'`. The adapter loads 
 - `handle.update()` changes paint and motion without reloading. `stop()` returns to the rest pose. Pass an `AbortSignal` while loading and call `destroy()` on cleanup.
 - `wasmUrl` points to a self-hosted WASM file from the pinned dotLottie player.
 
-**Shared defaults:** edit `defaults` in `lottie-icons.json` and run `add` again. Import `defaults` from the generated `lottie-icons/settings.mjs` and spread it into runtime options (map `style` to `variant` in React).
+**Shared defaults:** edit `defaults` in `gen-animated-icons.json` and run `add` again. Import `defaults` from the generated `gen-animated-icons/settings.mjs` and spread it into runtime options (map `style` to `variant` in React).
 
 Runtime color settings are applied at playback and are not baked into the file. Downloaded native files keep their authored themes and style slots.
 
+## iOS and Android
+
+The same commands work in iOS and Android apps: `add` installs the `.lottie` file into the app's assets and a JSON descriptor into `gen-animated-icons/descriptors/`. Play the files with dotLottie for iOS or Android; the installed skill's runtime reference has SwiftUI, Compose and Views examples. Native players show the 1.5, 2 and 2.5 weights; `add --bake-weight <w>` bakes any other weight into the file.
+
 ## Missing an icon?
 
-[Request it](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=icon_request.yml), or create it with your coding AI and open a pull request. See [creating icons](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/creating-icons.md).
+Create it with your coding AI in your own project (`gen-animated-icons create`, then `build`; building needs a LottieFiles sign-in), or [request it](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=icon_request.yml). See [creating icons](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/creating-icons.md).
 
 
 ---
@@ -610,23 +574,25 @@ Runtime color settings are applied at playback and are not baked into the file. 
 
 # Package contract
 
-All four packages share one version and are released together. Schema version 1 is the current contract. Any schema change needs an explicit compatibility decision and a new schema version; matching filenames do not imply compatibility.
+The `@lottiefiles/generative-icons*` packages share one version and are released together. Schema version 1 is the current contract. Any schema change needs an explicit compatibility decision and a new schema version; matching filenames do not imply compatibility.
 
 | Surface | Contract |
 | --- | --- |
 | Icon descriptor | Stable `id`; readable `label` and `intent`; family and category; start and end state; Light/Strong actions and optional authored reverse; supported styles and authored weights (any weight from 1 to 3 renders through the `style.outline.width` token); native asset path, bytes and SHA-256 |
 | Catalog | `schemaVersion`, package `version`, categories and the complete descriptor list |
-| Project (`lottie-icons.json`) | `schemaVersion`, detected framework and package manager, relative asset and descriptor folders, public URL base and default appearance |
-| Lock (`.lottie-icons/lock.json`) | Selected IDs and versions, installed paths and hashes of managed files; local edits block replacement |
-| Release (`release.json`) | Source commit and dirty status, catalog/asset/docs hashes, runtime, CLI and player versions, exporter requirement |
+| Project (`gen-animated-icons.json`, written by the CLI) | `schemaVersion`, platform, detected framework and package manager, relative asset and descriptor folders, public URL base (web), default appearance, agent skill folders and local icon settings. `schemas/project.schema.json` describes only the original web fields; it does not yet cover the newer fields, native configs or weights between 1 and 3. |
+| Lock (`.gen-animated-icons/lock.json`) | Selected IDs and versions, installed paths and hashes of managed files; local edits block replacement |
+| Release (`release.json`) | Source commit and dirty status, catalog/asset/docs hashes, runtime, CLI and player versions, and the `exporter` note (export is needed for authoring only and is not bundled) |
 
 ## How packages are built
 
-`npm run build:packages` builds the catalog and assets from registered source sets. It rejects duplicate IDs, checks source package hashes and confirms the required animation IDs inside each native bundle. Each icon gets its own descriptor module. A Strong bundle contains both Light and Strong actions, plus reverse actions where applicable; the runtime selects the requested action. Native bundles are copied unchanged.
+`gen-animated-icons library packages` builds the catalog and assets from registered source sets. It rejects duplicate IDs, checks source package hashes and confirms the required animation IDs inside each native bundle. Each icon gets its own descriptor module. A Strong bundle contains both Light and Strong actions, plus reverse actions where applicable; the runtime selects the requested action. Native bundles are copied unchanged.
 
 The runtime package ships the gallery's controller as its canonical implementation; the build copies that exact file and parity tests guard it. Apps should use the runtime package rather than copying the controller.
 
-The website consumes the published packages and validates the release hashes when importing the catalog, assets and documentation. The Engine exporter is never included in the packages.
+The website consumes the published packages and validates the release hashes when importing the catalog, assets and documentation. No engine code is included in the packages or the CLI: native export runs on LottieFiles' hosted engine.
+
+Projects set up by the earlier `lottie-icons` command (`lottie-icons.json` and `.lottie-icons/lock.json`) keep working with `gen-animated-icons add`, `info`, `diff` and `remove`, which write the same bytes there; `gen-animated-icons init --migrate` moves them to the current files.
 
 
 ---
@@ -635,54 +601,91 @@ The website consumes the published packages and validates the release hashes whe
 
 # Development
 
+This repository holds the icon library and the `gen-animated-icons` CLI, a Rust workspace in `crates/`. The CLI builds, checks and packages the whole catalog byte for byte the way the earlier JavaScript and Python pipeline did. That pipeline (`motion/`, `scripts/` and each set's `build.mjs`, `verify.mjs` and `package.py`) stays in the repository as legacy: the Rust parity tests run it as a reference, but new work goes through the CLI.
+
 ## Requirements
 
-- Node 22+ and Python 3
-- `unzip`, for verified context packets
-- The Engine exporter, only for native builds (see below)
+- **Rust** 1.89 or newer. CI lints and tests with Rust 1.93.1.
+- **clang** for C and C++. The vendored QuickJS compiles V8's `ieee754.cc`, which must be built by clang; on Linux set `CC=clang CXX=clang++`. The renderer's bindings also need libclang (`libclang-dev` on Debian and Ubuntu).
+- **`CXXFLAGS` with `-ffp-contract=off`.** The renderer must not fuse multiply-adds, or its pixels drift from the browser player's. `.cargo/config.toml` sets it, but a `CXXFLAGS` already in your environment replaces that value, so add the flag to it.
+- **x86_64 needs FMA** (Intel Haswell, AMD Piledriver or newer). On Apple silicon, use the arm64 build: Rosetta has no FMA.
+- **Node 22+ and Python 3** for the local gallery, the web packages and the repository checks, and for the legacy pipeline.
+
+## Build the CLI
 
 ```sh
-npm ci           # workspace packages
-npm run setup    # authoring dependencies under motion/
-npm run dev      # local gallery on http://127.0.0.1:4189/icons/01/
+cargo build --release -p gen-animated-icons
+target/release/gen-animated-icons --version
 ```
 
-The gallery vendors its player and fonts and needs no build step. `npm run dev` serves only the `prototype/` directory on localhost; pass `-- --port 4190` to change the port.
+Put `target/release` on your `PATH`, or set `GEN_ANIMATED_ICONS_BINARY` to the binary so the npm shim runs it (`node npm/gen-animated-icons/bin/gen-animated-icons.js` in this checkout; `npx gen-animated-icons` once the package is published at launch). The [CLI reference](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/cli.md) lists every command.
 
-## Native export
-
-Building native Lottie files needs the **Engine exporter**, an external executable that is not publicly distributed or included in npm dependencies. Maintainers have it. Everyone else can author and validate source without it: open a pull request and a maintainer runs the native export.
-
-To configure it, point `CREATOR_MCP_BIN` at the executable and run the doctor:
+## Test
 
 ```sh
-export CREATOR_MCP_BIN=/path/to/creator-mcp
-npm run doctor
+cargo clippy --workspace --all-targets -- -D warnings
+cargo test --workspace                                       # unit tests, plus the oracle tests whose inputs exist
+cargo test --workspace --release -- --ignored --skip live_   # whole-catalog parity; takes several minutes
 ```
 
-The doctor checks Node, Python, `unzip` and authoring dependencies, then exports a small temporary scene over stdio MCP and cleans up. The pipeline was developed against Engine commit `27a04e8598719d5357af502007ffb66b5d94edbd`; verify compatibility before using another build.
+Oracle tests compare the CLI with committed files, or with the legacy tools run side by side, and skip when an input is missing:
 
-`ENGINE_MCP_ROOT` is a compatibility alias for a checkout containing `target/debug/creator-mcp`. `CREATOR_MCP_BIN` wins if both are set. `.env.example` documents the values but is not loaded automatically.
+- intermediate `motion/icon-sets/*/scenes/` and `native/` folders, which Git ignores;
+- the built `packages/*/dist` folders (`npm run build:packages`);
+- `node` with `motion/node_modules` (`npm ci --prefix motion`), and `python3`, for the side-by-side runs.
 
-## Author and build a set
+Tests never touch your sign-in. They use a temporary `GEN_ANIMATED_ICONS_HOME`, a fake keychain, or `GAI_ENGINE_TOKEN` with a local mock engine. Never run `login` or `logout` from a test or script. Only the two live tests use a real sign-in: `live_exports_match_the_committed_natives_except_path_names` (gai-engine) and `live_build_through_the_hosted_engine` (the CLI). They are ignored by default, and `--skip live_` keeps the whole-catalog run above from starting them. They export on the hosted engine with your session and refresh it, so run them only on purpose, after signing in yourself with `gen-animated-icons login`:
 
-The step-by-step workflow, including every command, is in [creating icons](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/creating-icons.md). A few builder notes:
+```sh
+cargo test --release -p gai-engine --test live -- --ignored live_
+cargo test --release -p gen-animated-icons --test engine -- --ignored live_
+```
 
-- Registration requires a built, nonempty manifest, passing source screening and passing native verification. Registering a missing manifest would stop catalog checks from running.
-- Legacy sets 01 (Heart/Bell) and 02 (Search) use inline builders with their own checks.
-- Builders replace set outputs. Build complete sets and confirm unrelated asset hashes are unchanged. Do not rebuild just to preview existing files.
-- Intermediate `scenes/` and `native/` directories are rebuildable and ignored by Git; final assets under `prototype/icons/NN/assets/` are tracked.
+The repository's other checks still run on Node and Python:
+
+```sh
+npm ci --prefix motion   # dependencies of the legacy pipeline
+npm test                 # gallery controller, generation harness and set scaffold tests
+npm run check:docs       # links, publication hygiene, retired names and guide hashes
+```
+
+## Author and build a library set
+
+New sets go through the CLI. Building exports on the hosted engine, so sign in first with `gen-animated-icons login`; the hosted engine is internal until launch.
+
+```sh
+gen-animated-icons library new-set landscaping --name "Landscaping"
+# draw and animate in motion/icon-sets/NN-landscaping/definitions.mjs and batches/
+gen-animated-icons library preflight NN-landscaping
+gen-animated-icons library build NN-landscaping
+gen-animated-icons library verify NN-landscaping
+gen-animated-icons library verify-visual NN-landscaping
+gen-animated-icons library register NN-landscaping
+gen-animated-icons library package NN-landscaping   # repackage with the final evidence
+gen-animated-icons library package --icon-library   # refresh icon-library.zip and delivery.json
+```
+
+- Registration needs a built, nonempty manifest, a passing preflight and passing verification. Registering a missing manifest would stop the catalog checks from running.
+- Sets 01 (Heart/Bell) and 02 (Search) are frozen: their assets are verified as they are and never rebuilt. Sets 03–06 build through built-in legacy profiles.
+- Builders replace a set's outputs. Build complete sets and confirm that unrelated asset hashes are unchanged. Do not rebuild only to preview existing files: `gen-animated-icons preview <id>` renders any icon.
+- Intermediate `scenes/` and `native/` folders are rebuildable and ignored by Git; final assets under `prototype/icons/NN/assets/` are tracked.
+
+The [creating icons](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/creating-icons.md) guide covers the design loop; [verification](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/verification.md) covers the checks.
+
+## Local gallery
+
+`npm run dev` (or `python3 scripts/serve.py`) serves `prototype/` on port 4189; the gallery is at `/icons/01/`. Pass `-- --port 4190` to change the port. The gallery vendors its player and fonts and needs no build step.
 
 ## Packages
 
 ```sh
-npm run build:packages   # build packages/*/dist from registered sets
-npm run test:packages    # package unit tests
-npm run pack:release     # pack tarballs
-npm run test:consumers   # install tarballs into vanilla, React and Next.js fixtures
+gen-animated-icons library packages    # packages/*/dist and the search sidecar
+npm run test:packages                  # package unit tests
+gen-animated-icons library release --output dist/packages-vX.Y.Z
+npm run test:consumers -- dist/packages-vX.Y.Z   # install the tarballs into vanilla, React and Next.js fixtures
 ```
 
-See the [package contract](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/package-contract.md) and the [release runbook](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/maintainers/releasing.md).
+`npm run build:packages` and `npm run pack:release` are the legacy equivalents. See the [package contract](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/package-contract.md) and the [release runbook](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/maintainers/releasing.md).
 
 ## AI guide
 

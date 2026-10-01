@@ -1,39 +1,39 @@
 # Install and use the packages
 
-Add animated icons to any JavaScript app: install the packages, copy the icons you need with the CLI, and render them with the shared runtime or the React component.
+Add animated icons to any JavaScript app: install only the icons you need with the `gen-animated-icons` CLI, and render them with the shared runtime or the React component.
 
 | Package | Purpose |
 | --- | --- |
-| `@lottiefiles/generative-icons` | Per-icon descriptors, native dotLottie assets and catalog |
+| `gen-animated-icons` | The CLI: project setup, search, icon installation, and creating icons your app is missing |
 | `@lottiefiles/generative-icons-runtime` | Playback, paint, state, reduced motion and lifecycle |
 | `@lottiefiles/generative-icons-react` | React and Next.js component |
-| `@lottiefiles/generative-icons-cli` | `lottie-icons` command: project setup, search and asset installation |
+| `@lottiefiles/generative-icons` | Per-icon descriptors, native dotLottie assets and the catalog, for apps that import icons without the CLI |
 
-Keep all four on the same version.
+Keep the `@lottiefiles/generative-icons*` packages on the same version.
 
 ## Install
 
 ```sh
-npm install @lottiefiles/generative-icons @lottiefiles/generative-icons-runtime @lottiefiles/generative-icons-cli
+npm install @lottiefiles/generative-icons-runtime
 # React or Next.js:
 npm install @lottiefiles/generative-icons-react
 
-npx lottie-icons init
-npx lottie-icons search heart
-npx lottie-icons add heart
+npx gen-animated-icons init
+npx gen-animated-icons search heart
+npx gen-animated-icons add heart
 ```
 
 In a monorepo, pass `--cwd apps/web` to target the app.
 
-`init` reads the app's package metadata and creates `lottie-icons.json` plus a local agent skill in `.agents/skills/lottie-icons/`. It does not edit AGENTS.md, global agent settings or components. If your app uses a base URL, include it in `publicPath`.
+`init` reads the app's package metadata and creates `gen-animated-icons.json`, the agent skill in `.claude/skills/gen-animated-icons/` and `.agents/skills/gen-animated-icons/`, and a copy of the authoring kit. It does not edit `AGENTS.md`, global agent settings or components. If your app uses a base URL, include it in `publicPath`.
 
-`add` copies native files to `public/lottie-icons/` and descriptors to `src/lottie-icons/` (or `lottie-icons/` without a `src` folder), and records hashes in `.lottie-icons/lock.json`. Commit the config, assets, descriptors and lock. `diff` reports local changes, and `add` refuses to overwrite modified managed files.
+`add` copies native files to `public/gen-animated-icons/` and descriptors to `src/gen-animated-icons/` (or `gen-animated-icons/` without a `src` folder), and records hashes in `.gen-animated-icons/lock.json`. Commit the config, assets, descriptors and lock. `diff` reports local changes, `add` refuses to overwrite modified managed files, and `remove` uninstalls icons whose files are unedited. A project set up by the earlier `lottie-icons` command moves over with `npx gen-animated-icons init --migrate`.
 
 ## Vanilla JavaScript
 
 ```js
 import { createIcon } from '@lottiefiles/generative-icons-runtime';
-import icon, { src } from './lottie-icons/heart.mjs';
+import icon, { src } from './gen-animated-icons/heart.mjs';
 
 const handle = await createIcon(document.querySelector('canvas'), {
   icon, src, color: '#008c76', style: 'outline', weight: 2, motion: 'light'
@@ -42,14 +42,14 @@ document.querySelector('button').addEventListener('click', () => handle.play());
 // On removal: handle.destroy();
 ```
 
-Without the CLI, import a single descriptor from `@lottiefiles/generative-icons/icons/heart` and resolve `@lottiefiles/generative-icons/assets/heart.lottie` with your bundler. A descriptor import does not load the catalog or any asset bytes.
+Without the CLI, install `@lottiefiles/generative-icons`, import a single descriptor from `@lottiefiles/generative-icons/icons/heart` and resolve `@lottiefiles/generative-icons/assets/heart.lottie` with your bundler. A descriptor import does not load the catalog or any asset bytes.
 
 ## React and Next.js
 
 ```jsx
 'use client';
 import { AnimatedIcon } from '@lottiefiles/generative-icons-react';
-import icon, { src } from './lottie-icons/heart.mjs';
+import icon, { src } from './gen-animated-icons/heart.mjs';
 
 export function Favorite() {
   return <AnimatedIcon icon={icon} src={src} size={24} color="#008c76" />;
@@ -78,10 +78,14 @@ Components that handle events in Next.js need `'use client'`. The adapter loads 
 - `handle.update()` changes paint and motion without reloading. `stop()` returns to the rest pose. Pass an `AbortSignal` while loading and call `destroy()` on cleanup.
 - `wasmUrl` points to a self-hosted WASM file from the pinned dotLottie player.
 
-**Shared defaults:** edit `defaults` in `lottie-icons.json` and run `add` again. Import `defaults` from the generated `lottie-icons/settings.mjs` and spread it into runtime options (map `style` to `variant` in React).
+**Shared defaults:** edit `defaults` in `gen-animated-icons.json` and run `add` again. Import `defaults` from the generated `gen-animated-icons/settings.mjs` and spread it into runtime options (map `style` to `variant` in React).
 
 Runtime color settings are applied at playback and are not baked into the file. Downloaded native files keep their authored themes and style slots.
 
+## iOS and Android
+
+The same commands work in iOS and Android apps: `add` installs the `.lottie` file into the app's assets and a JSON descriptor into `gen-animated-icons/descriptors/`. Play the files with dotLottie for iOS or Android; the installed skill's runtime reference has SwiftUI, Compose and Views examples. Native players show the 1.5, 2 and 2.5 weights; `add --bake-weight <w>` bakes any other weight into the file.
+
 ## Missing an icon?
 
-[Request it](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=icon_request.yml), or create it with your coding AI and open a pull request. See [creating icons](creating-icons.md).
+Create it with your coding AI in your own project (`gen-animated-icons create`, then `build`; building needs a LottieFiles sign-in), or [request it](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=icon_request.yml). See [creating icons](creating-icons.md).

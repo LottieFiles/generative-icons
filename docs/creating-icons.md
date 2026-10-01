@@ -1,29 +1,25 @@
 # Create an icon
 
-One coding AI can run the whole workflow, or you can author the source yourself. The rules and checks are the same either way.
+When the library has no icon for your meaning, your coding AI can create one in your own project with the `gen-animated-icons` CLI. You can also author the source yourself; the rules and checks are the same either way. The new icon is drawn with the family's authoring kit, exported as native Lottie, verified and installed beside the library icons you use.
 
-You can author and validate source without the exporter. Open a pull request and a maintainer runs the native export (see [contributing](https://github.com/LottieFiles/lottie-generative-icons/blob/main/CONTRIBUTING.md)). The native build and registration steps need the Engine exporter described in [development](development.md#native-export).
+**You need a LottieFiles sign-in to build.** Export runs on LottieFiles' hosted engine. Run `gen-animated-icons login` once in your terminal; agents never sign in for you. The hosted engine is internal until launch, so building may not work for your account yet. Everything up to `build`, and `preview` of library icons, works without signing in.
 
-## 1. Search and choose examples
-
-```sh
-node motion/icon-sets/library/generation-context.mjs --query "package return" --search
-node motion/icon-sets/library/generation-context.mjs --query "package return" --neighbor return-package --neighbor delivery-truck
-```
-
-Inspect the meaning and geometry of each neighbor. Search is lexical: similar names and opposite directions can mean different things. Preserve existing public IDs and avoid duplicate concepts.
-
-## 2. Scaffold a set
-
-For a new set:
+## 1. Set up the project
 
 ```sh
-npm run icons:new -- landscaping --name "Landscaping"
+npx gen-animated-icons init
 ```
 
-This picks the next unused two-digit set number and creates editable source, build and verification scripts, packaging, a download README, a review record and a native renderer test page. It creates no artwork and does not register the set. An empty set intentionally fails source screening until you add icons to `definitions.mjs`.
+`init` installs the agent skill (`.claude/skills/gen-animated-icons/` and `.agents/skills/gen-animated-icons/`) and a read-only copy of the authoring kit in `gen-animated-icons/library/`. Your icons' source lives in `gen-animated-icons/icons/`. The commands below assume `gen-animated-icons` is on your `PATH`; otherwise prefix them with `npx`.
 
-Skip this step when revising an existing set. Read that set's README first.
+## 2. Search and choose references
+
+```sh
+gen-animated-icons search "package return"
+gen-animated-icons context "package return" --neighbor return-package --neighbor delivery-truck
+```
+
+Search ranks by meaning, not just spelling: similar names and opposite directions can mean different things. Use an existing icon when one fits. Otherwise `context` prints the reference packet: the family contract plus the chosen neighbors' timing and initial geometry. Read it for construction and timing; never copy the reference art.
 
 ## 3. Give your AI a complete brief
 
@@ -32,41 +28,42 @@ Create an icon for [meaning] used in [product context].
 Initial state: [...]. Completed state: [...]. Reverse/reset: [...].
 Use these existing neighbors: [...].
 Preserve: [...]. Avoid: [...].
-Read AGENTS.md and the animated-icon-workflow skill.
-Create editable named vector geometry, parts/pivots, and distinct
-Light/Strong timing plans. Identify construction and motion risks.
-Run the source checks, then export and inspect native output if the
-exporter is available. Report any check you could not run.
+Follow the gen-animated-icons skill. Draw editable named parts with pivots,
+and write distinct Light and Strong motion briefs before keyframing.
+Run check, build and preview; open every preview sheet and fix what you see.
+Report any check you could not run.
 ```
 
-Give the agent the actual reference geometry and rules, not only paths it cannot open. The [AI operating guide](https://github.com/LottieFiles/lottie-generative-icons/blob/main/prototype/icons/guide/ai-operating-guide.md) bundles the canonical rules in one file.
+The installed skill carries the authoring kit API, the family rules and the review checklist, so the agent needs no access to this repository.
 
-## 4. Review the plan
-
-Before integrating, check the complete silhouette, exposed surfaces, optical spacing and motion plan against the [drawing](design-principles.md) and [motion](motion-principles.md) principles. Record what meets the brief, what must change and which parts and times are affected. Then integrate the source into the set's `definitions.mjs`.
-
-## 5. Build and verify
-
-Replace `SET-ID` with the set directory, for example `39-food-drink`.
+## 4. Author, check, build and review
 
 ```sh
-node motion/icon-sets/library/preflight.mjs motion/icon-sets/SET-ID    # source screening, no exporter
-node motion/icon-sets/library/build-checked.mjs motion/icon-sets/SET-ID # exporter
-node motion/icon-sets/SET-ID/verify.mjs                                 # checks the native build
+gen-animated-icons create return-box --label "Return box" --intent "The box slides back to the sender" --neighbor return-package
+# draw and animate in gen-animated-icons/icons/batches/return-box.mjs
+gen-animated-icons check return-box     # offline source checks
+gen-animated-icons build return-box     # hosted export, package, verify, preview sheets, install
+gen-animated-icons preview return-box   # re-render the sheets after a change
 ```
 
-Always build the complete set; partial builds can truncate manifests. Then follow [verification](verification.md) for rendered review. Feed failing diagnostics and rendered frames into the next correction. If the same failure repeats without new evidence, change approach or report the blocker.
+- `create --from <library-id>` starts from a library icon's working source instead of a template. It needs a checkout of this repository (`--library <checkout>`), because the hosted library carries no sources.
+- `check` samples every part at every frame, in both directions and at every outline weight, and runs the checks verification applies after export: holds after rest, gestures that end where they start, matching Light and Strong endpoints, and reverse actions that undo their action. Fix every error before building.
+- `build` runs the same source checks first and exports nothing while one fails. It installs only icons that verify, and writes preview sheets to `.gen-animated-icons/previews/<id>/`.
+- Look at every sheet: each style and weight, both themes, and Light against Strong at the same elapsed times. Name each flaw, fix it in the batch file, then check, build and preview again. Stop when a round finds nothing new or the same flaw repeats; report what remains.
 
-## 6. Register
+Review the silhouette, exposed surfaces, optical spacing and motion against the [drawing](design-principles.md) and [motion](motion-principles.md) principles. A passing check proves the file is valid, not that the icon is good.
 
-After a successful complete native build and verification (exporter required):
+## 5. Use it, or offer it to the library
+
+A built icon is installed like a library icon and stays in your project. To offer it to the library:
 
 ```sh
-npm run icons:register -- SET-ID
+gen-animated-icons submit return-box --license MIT --dry-run --output return-box.zip   # inspect the bundle
+gen-animated-icons submit return-box --license MIT                                     # send it for review
 ```
 
-Registration checks the set, then adds it to `prototype/icons/catalog.json` with a named category. It is safe to repeat and leaves the catalog unchanged on failure. After the final rendered review, run the set's `package.py` again so the download includes the current catalog and evidence.
+`submit` accepts only verified builds of the current source, and every submission is reviewed. The submission service goes live at launch.
 
-## Optional: Claude Code adapter
+## Library sets in this repository
 
-If you prefer to generate a text proposal through the Claude Code CLI, see the [Claude design adapter](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/claude-design.md). It is not required.
+Maintainers add whole sets to the library with `gen-animated-icons library new-set`, `build`, `verify`, `verify-visual` and `register`; see [development](development.md#author-and-build-a-library-set). The family workflow for those sets is the [AI operating guide](https://github.com/LottieFiles/lottie-generative-icons/blob/main/prototype/icons/guide/ai-operating-guide.md), which bundles the canonical rules in one file.

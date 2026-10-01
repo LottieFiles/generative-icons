@@ -4,22 +4,27 @@
 
 | Role | Who | Can |
 | --- | --- | --- |
-| Contributor | Anyone | Open issues and pull requests, author icon source, run exporter-free checks |
-| Maintainer | LottieFiles employees, or anyone with maintainer access to this repository | Run native export, review rendered output, approve and merge, tag, publish to npm, deploy the website |
+| Contributor | Anyone | Open issues and pull requests, author icon source, run the checks, and build with `gen-animated-icons` once signed in |
+| Maintainer | LottieFiles employees, or anyone with maintainer access to this repository | Review rendered output, review icon submissions, approve and merge, run the release workflow, tag, publish to npm, deploy the website |
 
 Every change lands through a pull request with at least one maintainer approval. Maintainers do not approve their own release PRs when another maintainer is available.
 
 ## Icon contribution
 
-1. Contributor opens a PR from the template with source changes and exporter-free checks.
+Icons reach the library in two ways: a pull request that adds or revises a set in this repository, or a `gen-animated-icons submit` from an app (the submission service opens at launch). Every one is reviewed.
+
+1. The contributor opens a PR from the template with the set's source, its build and its evidence, or a submission arrives.
 2. CI is green.
-3. A maintainer checks out the branch, builds the complete set natively and runs its `verify.mjs`:
+3. A maintainer checks out the branch and confirms the build and its evidence:
 
    ```sh
-   node motion/icon-sets/library/build-checked.mjs motion/icon-sets/SET-ID
-   node motion/icon-sets/SET-ID/verify.mjs
-   npm run icons:register -- SET-ID   # new sets only
+   gen-animated-icons library preflight SET-ID
+   gen-animated-icons library verify SET-ID
+   gen-animated-icons library verify-visual SET-ID
+   gen-animated-icons library register SET-ID   # new sets only
    ```
+
+   If the PR carries no build yet, build it first with `gen-animated-icons library build SET-ID`.
 
 4. The maintainer reviews rendered output following [verification](../verification.md):
    - [ ] Light and Strong at normal speed, beside family neighbors
@@ -27,13 +32,13 @@ Every change lands through a pull request with at least one maintainer approval.
    - [ ] 24, 32 and 48 px legibility
    - [ ] Reduced-motion pose and any reverse/reset action
    - [ ] Existing IDs and unrelated asset hashes unchanged
-5. The maintainer pushes the native assets to the PR (or asks the contributor for changes), then approves and merges.
+5. The maintainer pushes any rebuilt assets to the PR (or asks the contributor for changes), then approves and merges.
 
 ## Package release
 
-1. Release PR bumps all four package versions and updates `CHANGELOG.md`.
+1. Release PR bumps the package, CLI and npm wrapper versions and updates `CHANGELOG.md`.
 2. A maintainer approves and merges.
-3. A maintainer runs the preflight on the merged commit, tags `vX.Y.Z` and publishes.
+3. A maintainer runs the preflight and the Release workflow on the merged commit, publishes the draft release (which tags `vX.Y.Z`) and publishes to npm.
 
 Full steps: [releasing](releasing.md).
 

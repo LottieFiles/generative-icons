@@ -1,5 +1,7 @@
 # @lottiefiles/generative-icons-cli
 
+> **Superseded by [`gen-animated-icons`](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/cli.md).** Run `npx gen-animated-icons init --migrate` in a project set up by this package; the new CLI also creates icons your app is missing. This package is kept only for projects that already use it.
+
 The `lottie-icons` command: set up Generative Animated Icons in your app, search the library and install only the icons you use.
 
 ## Install
