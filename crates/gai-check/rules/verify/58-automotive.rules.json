@@ -1,0 +1,102 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "58-automotive",
+  "dialect": {"sampler":"ge","flatten":{"cubicSteps":48,"skipDegenerate":true,"close":"first","unknown":"ignore"},"pick":"exact","visible":{"op":">","value":0.05},"slack":0.015,"gapRadius":"sequential","failure":"collect","nanFails":true,"suffixes":["-bold__color.primary__outline.bold","__color.primary__solid"],"partPrefix":"none"},
+  "margin": {"nodes":{"nameEndsWith":["__outline.bold","__solid"]},"visible":{"op":">","value":0.05},"method":"points","min":1.99,"failure":"collect","message":"{action} {node} frame {f}: painted margin {value|fixed3}"},
+  "requireIcon": "{icon} has no drawing contract",
+  "icons": {
+    "car": [
+      {"kind":"contact","label":"contact wheel-rear / body-frame","a":"car-wheel-rear","b":"car-body-frame","max":0.3},
+      {"kind":"contact","label":"contact wheel-front / body-frame","a":"car-wheel-front","b":"car-body-frame","max":0.3}
+    ],
+    "electric-car": [
+      {"kind":"gap","label":"gap bolt / body-frame","a":"electric-car-bolt","b":"electric-car-body-frame","min":0.5}
+    ],
+    "fuel-pump": [
+      {"kind":"joint","label":"joint hose / nozzle","a":"fuel-pump-hose","b":"fuel-pump-nozzle","end":1},
+      {"kind":"gap","label":"gap nozzle / body-frame","a":"fuel-pump-nozzle","b":"fuel-pump-body-frame","min":1},
+      {"kind":"joint","label":"joint hose / body-frame","a":"fuel-pump-hose","b":"fuel-pump-body-frame","end":0}
+    ],
+    "speedometer": [
+      {"kind":"gap","label":"gap needle / dial","a":"speedometer-needle","b":"speedometer-dial","min":1},
+      {"kind":"gap","label":"gap needle / tick-1","a":"speedometer-needle","b":"speedometer-tick-1","min":0.9},
+      {"kind":"gap","label":"gap needle / tick-0","a":"speedometer-needle","b":"speedometer-tick-0","min":0.9},
+      {"kind":"gap","label":"gap needle / tick-2","a":"speedometer-needle","b":"speedometer-tick-2","min":0.9}
+    ],
+    "parking-brake": [
+      {"kind":"gap","label":"gap bracket-0 / ring","a":"parking-brake-bracket-0","b":"parking-brake-ring","min":1},
+      {"kind":"gap","label":"gap bracket-1 / ring","a":"parking-brake-bracket-1","b":"parking-brake-ring","min":1},
+      {"kind":"gap","label":"gap p / ring","a":"parking-brake-p","b":"parking-brake-ring","min":1}
+    ],
+    "tire-pressure": [
+      {"kind":"gap","label":"gap mark / tire","a":"tire-pressure-mark","b":"tire-pressure-tire","min":1},
+      {"kind":"gap","label":"gap dot / tire","a":"tire-pressure-dot","b":"tire-pressure-tire","min":1}
+    ],
+    "engine": [
+      {"kind":"inside-points","label":"inside block-frame","a":"engine-block-frame","box":[3.4,7.4,28.6,25.2]}
+    ],
+    "seatbelt": [
+      {"kind":"gap","label":"gap head / torso-frame","a":"seatbelt-head","b":"seatbelt-torso-frame","min":1}
+    ],
+    "headlights": [
+      {"kind":"gap","label":"gap beam-0 / lamp-frame","a":"headlights-beam-0","b":"headlights-lamp-frame","min":1},
+      {"kind":"gap","label":"gap beam-0 / beam-1","a":"headlights-beam-0","b":"headlights-beam-1","min":1},
+      {"kind":"gap","label":"gap beam-1 / beam-2","a":"headlights-beam-1","b":"headlights-beam-2","min":1}
+    ],
+    "wiper": [
+      {"kind":"gap","label":"gap arm / shield-frame","a":"wiper-arm","b":"wiper-shield-frame","min":1,"trim":"start"},
+      {"kind":"gap","label":"gap arm / shield-solid","a":"wiper-arm","b":"wiper-shield-solid","min":0.8,"trim":"start"}
+    ],
+    "steering-wheel": [
+      {"kind":"contact","label":"contact spoke-0 / rim","a":"steering-wheel-spoke-0","b":"steering-wheel-rim","max":0.01},
+      {"kind":"buried","label":"buried spoke-0 / hub","a":"steering-wheel-spoke-0","b":"steering-wheel-hub","end":0}
+    ],
+    "car-key": [
+      {"kind":"gap","label":"gap signal-0 / head-frame","a":"car-key-signal-0","b":"car-key-head-frame","min":1},
+      {"kind":"gap","label":"gap signal-0 / signal-1","a":"car-key-signal-0","b":"car-key-signal-1","min":1}
+    ],
+    "car-lock": [
+      {"kind":"gap","label":"gap pad / body-frame","a":"car-lock-pad","b":"car-lock-body-frame","min":1},
+      {"kind":"gap","label":"gap shackle / body-frame","a":"car-lock-shackle","b":"car-lock-body-frame","min":1},
+      {"kind":"buried","label":"buried shackle / pad","a":"car-lock-shackle","b":"car-lock-pad","end":1},
+      {"kind":"buried","label":"buried shackle / pad","a":"car-lock-shackle","b":"car-lock-pad","end":0,"at":"complete"}
+    ],
+    "car-battery": [
+      {"kind":"gap","label":"gap plus / box-frame","a":"car-battery-plus","b":"car-battery-box-frame","min":1.2},
+      {"kind":"gap","label":"gap minus / box-frame","a":"car-battery-minus","b":"car-battery-box-frame","min":1.2},
+      {"kind":"gap","label":"gap plus / minus","a":"car-battery-plus","b":"car-battery-minus","min":2}
+    ],
+    "gear-shift": [
+      {"kind":"gap","label":"gap knob / slot-1","a":"gear-shift-knob","b":"gear-shift-slot-1","min":2}
+    ],
+    "car-navigation": [
+      {"kind":"gap","label":"gap route / screen-solid","a":"car-navigation-route","b":"car-navigation-screen-solid","min":0.8},
+      {"kind":"gap","label":"gap route / screen-frame","a":"car-navigation-route","b":"car-navigation-screen-frame","min":1},
+      {"kind":"contact","label":"contact route / pin","a":"car-navigation-route","b":"car-navigation-pin","max":1.2,"at":"complete"}
+    ],
+    "car-wash": [
+      {"kind":"gap","label":"gap drop-0 / roof","a":"car-wash-drop-0","b":"car-wash-roof","min":0.5},
+      {"kind":"gap","label":"gap drop-1 / roof","a":"car-wash-drop-1","b":"car-wash-roof","min":0.5},
+      {"kind":"gap","label":"gap drop-2 / roof","a":"car-wash-drop-2","b":"car-wash-roof","min":0.5}
+    ],
+    "engine-oil": [
+      {"kind":"gap","label":"gap drop / spout","a":"engine-oil-drop","b":"engine-oil-spout","min":0.8},
+      {"kind":"joint","label":"joint handle / can-frame","a":"engine-oil-handle","b":"engine-oil-can-frame","end":0},
+      {"kind":"joint","label":"joint handle / can-frame","a":"engine-oil-handle","b":"engine-oil-can-frame","end":1},
+      {"kind":"joint","label":"joint spout / can-frame","a":"engine-oil-spout","b":"engine-oil-can-frame","end":0}
+    ],
+    "car-window": [
+      {"kind":"gap","label":"gap window / door-frame","a":"car-window-window","b":"car-window-door-frame","min":1},
+      {"kind":"gap","label":"gap handle / window","a":"car-window-handle","b":"car-window-window","min":1},
+      {"kind":"inside-points","label":"inside glass-edge","a":"car-window-glass-edge","box":[7.5,7.4,24.2,18.9]},
+      {"kind":"gap","label":"gap glass-edge / handle","a":"car-window-glass-edge","b":"car-window-handle","min":2}
+    ],
+    "trunk": [
+      {"kind":"joint","label":"joint lid / body-frame","a":"trunk-lid","b":"trunk-body-frame","end":0},
+      {"kind":"joint","label":"joint lid / body-frame","a":"trunk-lid","b":"trunk-body-frame","end":1,"at":"closed"},
+      {"kind":"contact","label":"contact wheel-rear / body-frame","a":"trunk-wheel-rear","b":"trunk-body-frame","max":0.3}
+    ]
+  },
+  "evidence": {"stage":"afterDirected","file":"evidence/clearance-verification.json","fields":[["result",{"status":true}],["minimumPaintedMargin",{"agg":"min","init":32,"source":"margin"}],["checks",{"counter":"checks"}],["gaps",{"map":"rules"}],["errors",{"errors":true}]],"key":"{icon} {label}","message":"{action} {key} frame {f}: {value|fixed3}"}
+}

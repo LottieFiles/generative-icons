@@ -1,0 +1,125 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "44-music-audio",
+  "dialect": {"sampler":"gt","flatten":{"cubicSteps":48,"skipDegenerate":true,"close":"first","unknown":"ignore"},"pick":"bold","visible":{"op":">=","value":0.01},"slack":0.015,"gapRadius":"sequential","failure":"collect"},
+  "margin": {"nodes":{"nameEndsWith":["__outline.bold","__solid"]},"visible":{"op":">=","value":0.01},"method":"box","min":1.99,"failure":"collect","message":"{action} {node} frame {f}: painted margin {value|fixed3}"},
+  "requireIcon": "{icon} has no drawing-specific clearance rules",
+  "icons": {
+    "vinyl-record": [
+      {"kind":"gap","label":"gap groove-0/label","a":"groove-0","b":"label","min":1},
+      {"kind":"gap","label":"gap groove-1/label","a":"groove-1","b":"label","min":1},
+      {"kind":"gap","label":"gap groove-0/platter","a":"groove-0","b":"platter","min":1},
+      {"kind":"gap","label":"gap groove-1/platter","a":"groove-1","b":"platter","min":1},
+      {"kind":"gap","label":"gap arm/groove-0","a":"arm","b":"groove-0","min":0.8},
+      {"kind":"gap","label":"gap arm/groove-1","a":"arm","b":"groove-1","min":0.8},
+      {"kind":"gap","label":"gap arm/label","a":"arm","b":"label","min":1}
+    ],
+    "cassette-tape": [
+      {"kind":"gap","label":"gap reel-0/reel-1","a":"reel-0","b":"reel-1","min":1},
+      {"kind":"gap","label":"gap reel-0/shell-frame","a":"reel-0","b":"shell-frame","min":1},
+      {"kind":"gap","label":"gap reel-1/shell-frame","a":"reel-1","b":"shell-frame","min":1},
+      {"kind":"gap","label":"gap reel-0/window","a":"reel-0","b":"window","min":1},
+      {"kind":"gap","label":"gap reel-1/window","a":"reel-1","b":"window","min":1}
+    ],
+    "audio-waveform": [
+      {"kind":"gap","label":"gap bar-1/bar-2","a":"bar-1","b":"bar-2","min":0.9},
+      {"kind":"gap","label":"gap bar-2/bar-3","a":"bar-2","b":"bar-3","min":0.9},
+      {"kind":"gap","label":"gap bar-3/bar-4","a":"bar-3","b":"bar-4","min":0.9}
+    ],
+    "loudspeaker": [
+      {"kind":"gap","label":"gap woofer/cabinet","a":"woofer","b":"cabinet","min":0.9},
+      {"kind":"gap","label":"gap cap/woofer","a":"cap","b":"woofer","min":1},
+      {"kind":"gap","label":"gap tweeter/woofer","a":"tweeter","b":"woofer","min":1},
+      {"kind":"gap","label":"gap tweeter/cabinet","a":"tweeter","b":"cabinet","min":1}
+    ],
+    "radio": [
+      {"kind":"gap","label":"gap grille/body","a":"grille","b":"body","min":1},
+      {"kind":"gap","label":"gap needle/grille","a":"needle","b":"grille","min":1},
+      {"kind":"gap","label":"gap needle/body","a":"needle","b":"body","min":1},
+      {"kind":"gap","label":"gap scale/body","a":"scale","b":"body","min":1},
+      {"kind":"attach-touch","label":"attach antenna/body","a":"antenna","b":"body","end":0}
+    ],
+    "metronome": [
+      {"kind":"gap","label":"gap weight/body-frame","a":"weight","b":"body-frame","min":1},
+      {"kind":"attach-touch","label":"attach rod/weight","a":"rod","b":"weight","end":1,"through":true}
+    ],
+    "tuner": [
+      {"kind":"gap","label":"gap needle/dial","a":"needle","b":"dial","min":1},
+      {"kind":"gap","label":"gap tick-0/dial","a":"tick-0","b":"dial","min":1},
+      {"kind":"gap","label":"gap tick-1/dial","a":"tick-1","b":"dial","min":1},
+      {"kind":"gap","label":"gap tick-2/dial","a":"tick-2","b":"dial","min":1},
+      {"kind":"attach-touch","label":"attach needle/hub","a":"needle","b":"hub","end":0}
+    ],
+    "piano-keys": [
+      {"kind":"gap","label":"gap black-0/black-1","a":"black-0","b":"black-1","min":1},
+      {"kind":"gap","label":"gap black-1/black-2","a":"black-1","b":"black-2","min":1},
+      {"kind":"inside-box","label":"inside black-1/3.5,5.75,28.5,22.6","a":"black-1","box":[3.5,5.75,28.5,22.6]},
+      {"kind":"inside-box","label":"inside black-2/3.5,5.75,28.5,22.6","a":"black-2","box":[3.5,5.75,28.5,22.6]}
+    ],
+    "guitar": [
+      {"kind":"gap","label":"gap sound-hole/body","a":"sound-hole","b":"body","min":1},
+      {"kind":"attach-touch","label":"attach neck/body","a":"neck","b":"body","end":0},
+      {"kind":"attach-touch","label":"attach neck/head","a":"neck","b":"head","end":1}
+    ],
+    "drum": [
+      {"kind":"gap","label":"gap stick-a/stick-b","a":"stick-a","b":"stick-b","min":1}
+    ],
+    "lyrics": [
+      {"kind":"gap","label":"gap flag/line-0","a":"flag","b":"line-0","min":1},
+      {"kind":"gap","label":"gap flag/line-1","a":"flag","b":"line-1","min":1},
+      {"kind":"gap","label":"gap head/line-2","a":"head","b":"line-2","min":1},
+      {"kind":"gap","label":"gap line-0/line-1","a":"line-0","b":"line-1","min":1}
+    ],
+    "music-album": [
+      {"kind":"gap","label":"gap groove/sleeve","a":"groove","b":"sleeve","min":1},
+      {"kind":"attach-touch","label":"attach disc/sleeve","a":"disc","b":"sleeve","end":0},
+      {"kind":"attach-touch","label":"attach disc/sleeve","a":"disc","b":"sleeve","end":1}
+    ],
+    "earbuds": [
+      {"kind":"gap","label":"gap bud-a/bud-b","a":"bud-a","b":"bud-b","min":1},
+      {"kind":"gap","label":"gap bud-a-stem/bud-b-stem","a":"bud-a-stem","b":"bud-b-stem","min":1},
+      {"kind":"attach-touch","label":"attach bud-a-stem/bud-a","a":"bud-a-stem","b":"bud-a","end":0}
+    ],
+    "mute-audio": [
+      {"kind":"gap","label":"gap wave-0/speaker","a":"wave-0","b":"speaker","min":1},
+      {"kind":"gap","label":"gap wave-0/wave-1","a":"wave-0","b":"wave-1","min":1},
+      {"kind":"gap","label":"gap cross-0/speaker","a":"cross-0","b":"speaker","min":1}
+    ],
+    "crossfade": [
+      {"kind":"gap","label":"gap knob/curve-a","a":"knob","b":"curve-a","min":1},
+      {"kind":"gap","label":"gap knob/curve-b","a":"knob","b":"curve-b","min":1}
+    ],
+    "equalizer-preset": [
+      {"kind":"gap","label":"gap knob-0/track-1","a":"knob-0","b":"track-1","min":1},
+      {"kind":"gap","label":"gap knob-1/track-0","a":"knob-1","b":"track-0","min":1},
+      {"kind":"gap","label":"gap knob-1/track-2","a":"knob-1","b":"track-2","min":1},
+      {"kind":"gap","label":"gap knob-2/track-1","a":"knob-2","b":"track-1","min":1},
+      {"kind":"inside-box","label":"inside knob-0/2,6,30,26","a":"knob-0","box":[2,6,30,26]},
+      {"kind":"inside-box","label":"inside knob-1/2,6,30,26","a":"knob-1","box":[2,6,30,26]},
+      {"kind":"inside-box","label":"inside knob-2/2,6,30,26","a":"knob-2","box":[2,6,30,26]}
+    ],
+    "audio-jack": [
+      {"kind":"gap","label":"gap body-frame/socket","a":"body-frame","b":"socket","min":1},
+      {"kind":"gap","label":"gap pin/socket","a":"pin","b":"socket","min":0.6,"direction":"forward","to":0},
+      {"kind":"attach-touch","label":"attach cable/body-frame","a":"cable","b":"body-frame","end":0}
+    ],
+    "spatial-audio": [
+      {"kind":"gap","label":"gap arc-right/shoulders","a":"arc-right","b":"shoulders","min":1},
+      {"kind":"gap","label":"gap arc-left/shoulders","a":"arc-left","b":"shoulders","min":1},
+      {"kind":"gap","label":"gap arc-top/shoulders","a":"arc-top","b":"shoulders","min":1},
+      {"kind":"gap","label":"gap arc-right/head","a":"arc-right","b":"head","min":1},
+      {"kind":"gap","label":"gap arc-top/head","a":"arc-top","b":"head","min":1},
+      {"kind":"gap","label":"gap head/shoulders","a":"head","b":"shoulders","min":0.9}
+    ],
+    "tuning-fork": [
+      {"kind":"attach-touch","label":"attach stem/prongs","a":"stem","b":"prongs","end":0},
+      {"kind":"attach-touch","label":"attach stem/knob","a":"stem","b":"knob","end":1}
+    ],
+    "music-note": [
+      {"kind":"attach-touch","label":"attach stem/head","a":"stem","b":"head","end":0},
+      {"kind":"attach-touch","label":"attach flag/stem","a":"flag","b":"stem","end":0}
+    ]
+  },
+  "evidence": {"stage":"afterDirected","file":"evidence/clearance-verification.json","fields":[["result",{"status":true}],["checks",{"counter":"checks"}],["minimumPaintedMargin",{"agg":"min","init":32,"source":"margin"}],["gaps",{"map":"rules"}],["errors",{"errors":true}]],"key":"{icon} {label}","message":"{action} {key} frame {f}: {value|fixed3} < {min}"}
+}

@@ -1,0 +1,38 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "62-vector-editing",
+  "dialect": {"sampler":"ge","flatten":{"cubicSteps":40,"skipDegenerate":false,"close":"first","unknown":"throw","cubicPow":true},"pick":"bold","visible":{"op":">=","value":0},"slack":0.0001,"gapRadius":"sequential","failure":"assert"},
+  "icons": {
+    "join-paths": [
+      {"kind":"compare","label":"join endpoint contact","value":{"neg":{"hypot":[{"sub":[{"at":[{"center":{"box":"left-node-frame","of":"flat","paint":false}},0]},{"at":[{"at":[{"flat":"left"},-1]},0]}]},{"sub":[{"at":[{"center":{"box":"left-node-frame","of":"flat","paint":false}},1]},{"at":[{"at":[{"flat":"left"},-1]},1]}]}]}},"op":">=","limit":-0.0001},
+      {"kind":"compare","label":"join endpoint contact","value":{"neg":{"hypot":[{"sub":[{"at":[{"center":{"box":"right-node-frame","of":"flat","paint":false}},0]},{"at":[{"at":[{"flat":"right"},0]},0]}]},{"sub":[{"at":[{"center":{"box":"right-node-frame","of":"flat","paint":false}},1]},{"at":[{"at":[{"flat":"right"},0]},1]}]}]}},"op":">=","limit":-0.0001}
+    ],
+    "offset-path": [
+      {"kind":"compare","label":"offset painted channel","value":{"min":[{"sub":[{"sub":[{"at":[{"box":"source-frame","of":"flat","paint":true},0]},{"at":[{"box":"offset","of":"flat","paint":false},0]}]},1.3]},{"sub":[{"sub":[{"at":[{"box":"source-frame","of":"flat","paint":true},1]},{"at":[{"box":"offset","of":"flat","paint":false},1]}]},1.3]},{"sub":[{"sub":[{"at":[{"box":"offset","of":"flat","paint":false},2]},1.3]},{"at":[{"box":"source-frame","of":"flat","paint":true},2]}]},{"sub":[{"sub":[{"at":[{"box":"offset","of":"flat","paint":false},3]},1.3]},{"at":[{"box":"source-frame","of":"flat","paint":true},3]}]}]},"op":">=","limit":2.5}
+    ],
+    "auto-layout": [
+      {"kind":"compare","label":"layout child padding","value":{"min":[{"sub":[{"at":[{"box":"child-0-frame","of":"flat","paint":true},0]},5.3]},{"sub":[{"at":[{"box":"child-0-frame","of":"flat","paint":true},1]},6.3]},{"sub":[26.7,{"at":[{"box":"child-0-frame","of":"flat","paint":true},2]}]},{"sub":[25.7,{"at":[{"box":"child-0-frame","of":"flat","paint":true},3]}]}]},"op":">=","limit":1},
+      {"kind":"compare","label":"layout child padding","value":{"min":[{"sub":[{"at":[{"box":"child-1-frame","of":"flat","paint":true},0]},5.3]},{"sub":[{"at":[{"box":"child-1-frame","of":"flat","paint":true},1]},6.3]},{"sub":[26.7,{"at":[{"box":"child-1-frame","of":"flat","paint":true},2]}]},{"sub":[25.7,{"at":[{"box":"child-1-frame","of":"flat","paint":true},3]}]}]},"op":">=","limit":1},
+      {"kind":"compare","label":"layout child padding","value":{"min":[{"sub":[{"at":[{"box":"child-2-frame","of":"flat","paint":true},0]},5.3]},{"sub":[{"at":[{"box":"child-2-frame","of":"flat","paint":true},1]},6.3]},{"sub":[26.7,{"at":[{"box":"child-2-frame","of":"flat","paint":true},2]}]},{"sub":[25.7,{"at":[{"box":"child-2-frame","of":"flat","paint":true},3]}]}]},"op":">=","limit":1}
+    ],
+    "component-instance": [
+      {"kind":"compare","label":"instance connector contact","value":{"neg":{"hypot":[{"sub":[{"at":[{"at":[{"flat":"link"},-1]},0]},{"at":[[{"at":[{"box":"instance-frame","of":"flat","paint":false},0]},{"div":[{"add":[{"at":[{"box":"instance-frame","of":"flat","paint":false},1]},{"at":[{"box":"instance-frame","of":"flat","paint":false},3]}]},2]}],0]}]},{"sub":[{"at":[{"at":[{"flat":"link"},-1]},1]},{"at":[[{"at":[{"box":"instance-frame","of":"flat","paint":false},0]},{"div":[{"add":[{"at":[{"box":"instance-frame","of":"flat","paint":false},1]},{"at":[{"box":"instance-frame","of":"flat","paint":false},3]}]},2]}],1]}]}]}},"op":">=","limit":-0.0001}
+    ],
+    "pin-constraints": [
+      {"kind":"compare","label":"top pin contact","value":{"neg":{"abs":{"sub":[{"at":[{"at":[{"flat":"pin-top"},-1]},1]},{"at":[{"box":"child-frame","of":"flat","paint":false},1]}]}}},"op":">=","limit":-0.0001},
+      {"kind":"compare","label":"left pin contact","value":{"neg":{"abs":{"sub":[{"at":[{"at":[{"flat":"pin-left"},-1]},0]},{"at":[{"box":"child-frame","of":"flat","paint":false},0]}]}}},"op":">=","limit":-0.0001}
+    ],
+    "blend-steps": [
+      {"kind":"compare","label":"blend left spacing","value":{"sub":[{"at":[{"box":"intermediate-frame","of":"flat","paint":true},0]},{"at":[{"box":"circle-frame","of":"flat","paint":true},2]}]},"op":">=","limit":1.2},
+      {"kind":"compare","label":"blend right spacing","value":{"sub":[{"at":[{"box":"square-frame","of":"flat","paint":true},0]},{"at":[{"box":"intermediate-frame","of":"flat","paint":true},2]}]},"op":">=","limit":1.2}
+    ],
+    "export-slice": [
+      {"kind":"compare","label":"export arrow clearance","value":{"sub":[{"at":[{"box":"slice-frame","of":"flat","paint":true},1]},{"max":[{"at":[{"box":"arrow","of":"flat","paint":true},3]},{"at":[{"box":"arrow-head","of":"flat","paint":true},3]}]}]},"op":">=","limit":1}
+    ],
+    "gradient-stops": [
+      {"kind":"compare","label":"gradient stop spacing","value":{"min":[{"sub":[{"at":[{"box":"stop-1-frame","of":"flat","paint":true},0]},{"at":[{"box":"stop-0-frame","of":"flat","paint":true},2]}]},{"sub":[{"at":[{"box":"stop-2-frame","of":"flat","paint":true},0]},{"at":[{"box":"stop-1-frame","of":"flat","paint":true},2]}]}]},"op":">=","limit":1}
+    ]
+  },
+  "evidence": {"stage":"beforeDirected","file":"evidence/geometry-verification.json","fields":[["result",{"status":true}],["checks",{"counter":"checks"}],["minima",{"map":"rules"}],["actions",{"perAction":"{action}"}]],"key":"{label}","message":"{label}: {value} < {min}"}
+}

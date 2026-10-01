@@ -1,0 +1,166 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "49-onboarding-tips",
+  "dialect": {"sampler":"gt","flatten":{"cubicSteps":48,"skipDegenerate":true,"close":"first","unknown":"ignore"},"pick":"bold","visible":{"op":">=","value":0.01},"slack":0.015,"gapRadius":"sequential","failure":"collect","singlePointDistance":true},
+  "margin": {"nodes":{"nameEndsWith":["__outline.bold","__solid"]},"visible":{"op":">=","value":0.01},"method":"box","min":1.99,"failure":"collect","message":"{action} {node} frame {f}: painted margin {value|fixed3}"},
+  "requireIcon": "{icon} has no drawing-specific clearance rules",
+  "icons": {
+    "lightbulb": [
+      {"kind":"gap","label":"gap ray-up / glass-frame","a":"ray-up","b":"glass-frame","min":1},
+      {"kind":"gap","label":"gap ray-up-solid / glass-solid","a":"ray-up-solid","b":"glass-solid","min":1},
+      {"kind":"gap","label":"gap ray-left / glass-frame","a":"ray-left","b":"glass-frame","min":1},
+      {"kind":"gap","label":"gap ray-left-solid / glass-solid","a":"ray-left-solid","b":"glass-solid","min":1},
+      {"kind":"gap","label":"gap ray-right / glass-frame","a":"ray-right","b":"glass-frame","min":1},
+      {"kind":"gap","label":"gap ray-right-solid / glass-solid","a":"ray-right-solid","b":"glass-solid","min":1},
+      {"kind":"gap","label":"gap foot / glass-frame","a":"foot","b":"glass-frame","min":1},
+      {"kind":"gap","label":"gap foot-solid / glass-solid","a":"foot-solid","b":"glass-solid","min":1.6}
+    ],
+    "product-tour": [
+      {"kind":"on-route","label":"on-route marker","a":"marker","route":[[7,22],[16,10],[25,22]],"min":-0.05,"profile":"light"},
+      {"kind":"on-route","label":"on-route marker","a":"marker","route":[[7,22],[16,10],[25,22]],"min":-0.05,"at":"settled"},
+      {"kind":"hop","label":"hop marker","a":"marker","route":[[7,22],[16,10],[25,22]],"min":-2.25,"profile":"strong"},
+      {"kind":"gap","label":"gap stop-a / route-ab","a":"stop-a","b":"route-ab","min":1},
+      {"kind":"gap","label":"gap stop-a-solid / route-ab-solid","a":"stop-a-solid","b":"route-ab-solid","min":1},
+      {"kind":"gap","label":"gap stop-b / route-ab","a":"stop-b","b":"route-ab","min":1},
+      {"kind":"gap","label":"gap stop-b-solid / route-ab-solid","a":"stop-b-solid","b":"route-ab-solid","min":1},
+      {"kind":"gap","label":"gap stop-b / route-bc","a":"stop-b","b":"route-bc","min":1},
+      {"kind":"gap","label":"gap stop-b-solid / route-bc-solid","a":"stop-b-solid","b":"route-bc-solid","min":1},
+      {"kind":"gap","label":"gap stop-c / route-bc","a":"stop-c","b":"route-bc","min":1},
+      {"kind":"gap","label":"gap stop-c-solid / route-bc-solid","a":"stop-c-solid","b":"route-bc-solid","min":1}
+    ],
+    "tooltip": [
+      {"kind":"gap","label":"gap target / bubble-frame","a":"target","b":"bubble-frame","min":1},
+      {"kind":"gap","label":"gap target-solid / bubble-solid","a":"target-solid","b":"bubble-solid","min":1},
+      {"kind":"gap","label":"gap line-0 / bubble-frame","a":"line-0","b":"bubble-frame","min":1},
+      {"kind":"gap","label":"gap line-1 / bubble-frame","a":"line-1","b":"bubble-frame","min":1},
+      {"kind":"gap","label":"gap line-0 / line-1","a":"line-0","b":"line-1","min":1}
+    ],
+    "hotspot": [
+      {"kind":"gap","label":"gap dot / ring","a":"dot","b":"ring","min":1},
+      {"kind":"gap","label":"gap dot-solid / ring-solid","a":"dot-solid","b":"ring-solid","min":1}
+    ],
+    "new-badge": [
+      {"kind":"gap","label":"gap star / seal","a":"star","b":"seal","min":0.9}
+    ],
+    "welcome-wave": [
+      {"kind":"gap","label":"gap finger-0 / finger-1","a":"finger-0","b":"finger-1","min":1},
+      {"kind":"gap","label":"gap finger-0-solid / finger-1-solid","a":"finger-0-solid","b":"finger-1-solid","min":1},
+      {"kind":"gap","label":"gap finger-1 / finger-2","a":"finger-1","b":"finger-2","min":1},
+      {"kind":"gap","label":"gap finger-1-solid / finger-2-solid","a":"finger-1-solid","b":"finger-2-solid","min":1},
+      {"kind":"gap","label":"gap finger-2 / finger-3","a":"finger-2","b":"finger-3","min":1},
+      {"kind":"gap","label":"gap finger-2-solid / finger-3-solid","a":"finger-2-solid","b":"finger-3-solid","min":1},
+      {"kind":"gap","label":"gap thumb / finger-0","a":"thumb","b":"finger-0","min":1},
+      {"kind":"gap","label":"gap thumb-solid / finger-0-solid","a":"thumb-solid","b":"finger-0-solid","min":1}
+    ],
+    "progress-checklist": [
+      {"kind":"gap","label":"gap check-0 / row-0","a":"check-0","b":"row-0","min":1},
+      {"kind":"gap","label":"gap check-0-solid / row-0-solid","a":"check-0-solid","b":"row-0-solid","min":1},
+      {"kind":"gap","label":"gap check-0 / card-frame","a":"check-0","b":"card-frame","min":0.9},
+      {"kind":"gap","label":"gap row-0 / card-frame","a":"row-0","b":"card-frame","min":1},
+      {"kind":"gap","label":"gap check-1 / row-1","a":"check-1","b":"row-1","min":1},
+      {"kind":"gap","label":"gap check-1-solid / row-1-solid","a":"check-1-solid","b":"row-1-solid","min":1},
+      {"kind":"gap","label":"gap check-1 / card-frame","a":"check-1","b":"card-frame","min":0.9},
+      {"kind":"gap","label":"gap row-1 / card-frame","a":"row-1","b":"card-frame","min":1},
+      {"kind":"gap","label":"gap check-2 / row-2","a":"check-2","b":"row-2","min":1},
+      {"kind":"gap","label":"gap check-2-solid / row-2-solid","a":"check-2-solid","b":"row-2-solid","min":1},
+      {"kind":"gap","label":"gap check-2 / card-frame","a":"check-2","b":"card-frame","min":0.9},
+      {"kind":"gap","label":"gap row-2 / card-frame","a":"row-2","b":"card-frame","min":1},
+      {"kind":"gap","label":"gap row-0 / row-1","a":"row-0","b":"row-1","min":1},
+      {"kind":"gap","label":"gap row-0-solid / row-1-solid","a":"row-0-solid","b":"row-1-solid","min":1},
+      {"kind":"gap","label":"gap row-1 / row-2","a":"row-1","b":"row-2","min":1},
+      {"kind":"gap","label":"gap row-1-solid / row-2-solid","a":"row-1-solid","b":"row-2-solid","min":1}
+    ],
+    "skip-step": [
+      {"kind":"gap","label":"gap chevron-1 / bar","a":"chevron-1","b":"bar","min":-0.35},
+      {"kind":"gap","label":"gap chevron-1-solid / bar-solid","a":"chevron-1-solid","b":"bar-solid","min":-0.35},
+      {"kind":"gap","label":"gap chevron-0 / chevron-1","a":"chevron-0","b":"chevron-1","min":1},
+      {"kind":"gap","label":"gap chevron-0-solid / chevron-1-solid","a":"chevron-0-solid","b":"chevron-1-solid","min":1},
+      {"kind":"gap","label":"gap chevron-0 / bar","a":"chevron-0","b":"bar","min":1},
+      {"kind":"gap","label":"gap chevron-0-solid / bar-solid","a":"chevron-0-solid","b":"bar-solid","min":1}
+    ],
+    "next-step": [
+      {"kind":"gap","label":"gap stem / button","a":"stem","b":"button","min":1},
+      {"kind":"gap","label":"gap barb / button","a":"barb","b":"button","min":1},
+      {"kind":"gap","label":"gap barb-solid / button-solid","a":"barb-solid","b":"button-solid","min":1}
+    ],
+    "spark-wand": [
+      {"kind":"gap","label":"gap wand / sparkle","a":"wand","b":"sparkle","min":1},
+      {"kind":"gap","label":"gap wand-solid / sparkle-solid","a":"wand-solid","b":"sparkle-solid","min":1},
+      {"kind":"gap","label":"gap spark-0 / wand","a":"spark-0","b":"wand","min":1},
+      {"kind":"gap","label":"gap spark-0-solid / wand-solid","a":"spark-0-solid","b":"wand-solid","min":1},
+      {"kind":"gap","label":"gap spark-1 / wand","a":"spark-1","b":"wand","min":1},
+      {"kind":"gap","label":"gap spark-1-solid / wand-solid","a":"spark-1-solid","b":"wand-solid","min":1},
+      {"kind":"gap","label":"gap spark-1 / sparkle","a":"spark-1","b":"sparkle","min":1},
+      {"kind":"gap","label":"gap spark-0 / sparkle","a":"spark-0","b":"sparkle","min":1}
+    ],
+    "hotkey-hint": [
+      {"kind":"gap","label":"gap face-frame / skirt","a":"face-frame","b":"skirt","min":1},
+      {"kind":"gap","label":"gap face-solid / skirt-solid","a":"face-solid","b":"skirt-solid","min":1},
+      {"kind":"gap","label":"gap legend / face-frame","a":"legend","b":"face-frame","min":1}
+    ],
+    "spotlight": [
+      {"kind":"gap","label":"gap spot / page","a":"spot","b":"page","min":1}
+    ],
+    "coachmark": [
+      {"kind":"gap","label":"gap card-frame / button","a":"card-frame","b":"button","min":1},
+      {"kind":"gap","label":"gap card-solid / button-solid","a":"card-solid","b":"button-solid","min":1},
+      {"kind":"gap","label":"gap line-0 / card-frame","a":"line-0","b":"card-frame","min":1},
+      {"kind":"gap","label":"gap line-1 / card-frame","a":"line-1","b":"card-frame","min":1}
+    ],
+    "getting-started": [
+      {"kind":"gap","label":"gap trail-c / body","a":"trail-c","b":"body","min":1},
+      {"kind":"gap","label":"gap trail-c-solid / body-solid","a":"trail-c-solid","b":"body-solid","min":1},
+      {"kind":"gap","label":"gap trail-l / body","a":"trail-l","b":"body","min":1},
+      {"kind":"gap","label":"gap trail-l-solid / body-solid","a":"trail-l-solid","b":"body-solid","min":1},
+      {"kind":"gap","label":"gap trail-r / body","a":"trail-r","b":"body","min":1},
+      {"kind":"gap","label":"gap trail-r-solid / body-solid","a":"trail-r-solid","b":"body-solid","min":1},
+      {"kind":"gap","label":"gap trail-l / trail-c","a":"trail-l","b":"trail-c","min":1},
+      {"kind":"gap","label":"gap trail-l-solid / trail-c-solid","a":"trail-l-solid","b":"trail-c-solid","min":1},
+      {"kind":"gap","label":"gap trail-c / trail-r","a":"trail-c","b":"trail-r","min":1},
+      {"kind":"gap","label":"gap trail-c-solid / trail-r-solid","a":"trail-c-solid","b":"trail-r-solid","min":1},
+      {"kind":"gap","label":"gap window / body","a":"window","b":"body","min":1}
+    ],
+    "tip-of-the-day": [
+      {"kind":"gap","label":"gap sparkle / header","a":"sparkle","b":"header","min":1},
+      {"kind":"gap","label":"gap sparkle / leaf-frame","a":"sparkle","b":"leaf-frame","min":1},
+      {"kind":"gap","label":"gap sparkle-solid / leaf-solid","a":"sparkle-solid","b":"leaf-solid","min":1}
+    ],
+    "welcome-gift": [
+      {"kind":"gap","label":"gap lid-frame / box","a":"lid-frame","b":"box","min":1,"at":"settled"},
+      {"kind":"gap","label":"gap lid-solid / box-solid","a":"lid-solid","b":"box-solid","min":1,"at":"settled"},
+      {"kind":"gap","label":"gap bow-l / box","a":"bow-l","b":"box","min":1},
+      {"kind":"gap","label":"gap bow-l-solid / box-solid","a":"bow-l-solid","b":"box-solid","min":1},
+      {"kind":"gap","label":"gap bow-r / box","a":"bow-r","b":"box","min":1},
+      {"kind":"gap","label":"gap bow-r-solid / box-solid","a":"bow-r-solid","b":"box-solid","min":1}
+    ],
+    "first-run": [
+      {"kind":"gap","label":"gap pointer / button-frame","a":"pointer","b":"button-frame","min":-0.6},
+      {"kind":"gap","label":"gap pointer-solid / button-solid","a":"pointer-solid","b":"button-solid","min":-0.6},
+      {"kind":"gap","label":"gap label / button-frame","a":"label","b":"button-frame","min":1}
+    ],
+    "dismiss-tip": [
+      {"kind":"gap","label":"gap close-a / card-frame","a":"close-a","b":"card-frame","min":0.8},
+      {"kind":"gap","label":"gap close-b / card-frame","a":"close-b","b":"card-frame","min":0.8},
+      {"kind":"gap","label":"gap line-0 / close-a","a":"line-0","b":"close-a","min":1},
+      {"kind":"gap","label":"gap line-0 / line-1","a":"line-0","b":"line-1","min":1}
+    ],
+    "confetti": [
+      {"kind":"gap","label":"gap strip-2 / dot-1","a":"strip-2","b":"dot-1","min":1,"minVisibility":0.5},
+      {"kind":"gap","label":"gap strip-2-solid / dot-1-solid","a":"strip-2-solid","b":"dot-1-solid","min":1,"minVisibility":0.5},
+      {"kind":"gap","label":"gap ribbon-0 / dot-0","a":"ribbon-0","b":"dot-0","min":1,"minVisibility":0.5},
+      {"kind":"gap","label":"gap ribbon-0-solid / dot-0-solid","a":"ribbon-0-solid","b":"dot-0-solid","min":1,"minVisibility":0.5},
+      {"kind":"gap","label":"gap strip-3 / dot-0","a":"strip-3","b":"dot-0","min":1,"minVisibility":0.5},
+      {"kind":"gap","label":"gap strip-3-solid / dot-0-solid","a":"strip-3-solid","b":"dot-0-solid","min":1,"minVisibility":0.5},
+      {"kind":"gap","label":"gap ribbon-1 / strip-2","a":"ribbon-1","b":"strip-2","min":1,"minVisibility":0.5},
+      {"kind":"gap","label":"gap ribbon-1-solid / strip-2-solid","a":"ribbon-1-solid","b":"strip-2-solid","min":1,"minVisibility":0.5},
+      {"kind":"gap","label":"gap strip-0 / dot-1","a":"strip-0","b":"dot-1","min":1,"minVisibility":0.5},
+      {"kind":"gap","label":"gap strip-0-solid / dot-1-solid","a":"strip-0-solid","b":"dot-1-solid","min":1,"minVisibility":0.5}
+    ],
+    "sparkle": [
+      {"kind":"gap","label":"gap small / big","a":"small","b":"big","min":1},
+      {"kind":"gap","label":"gap small-solid / big-solid","a":"small-solid","b":"big-solid","min":1}
+    ]
+  },
+  "evidence": {"stage":"beforeDirected","file":"evidence/clearance-verification.json","fields":[["result",{"status":true}],["checks",{"counter":"checks"}],["minimumPaintedMargin",{"agg":"min","init":32,"source":"margin"}],["gaps",{"map":"rules"}],["errors",{"errors":true}]],"embed":{"key":"clearance","position":"end"},"key":"{icon} {label}","message":"{action} {key} frame {f}: {value|fixed3} < {min}"}
+}

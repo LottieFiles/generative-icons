@@ -1,0 +1,114 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "43-photos-camera",
+  "dialect": {"sampler":"ge","flatten":{"cubicSteps":48,"skipDegenerate":true,"close":"first","unknown":"throw"},"pick":"bold","visible":{"op":">=","value":0.01},"slack":0.015,"gapRadius":"sequential","failure":"collect"},
+  "margin": {"nodes":{"nameEndsWith":["__outline.bold","__solid"]},"visible":{"op":">=","value":0.01},"method":"box","min":1.99,"failure":"collect","message":"{action} {node} frame {f}: painted margin {value|fixed3}"},
+  "requireIcon": "{icon} has no drawing-specific clearance rules",
+  "icons": {
+    "flash-toggle": [
+      {"kind":"gap","label":"ray-0 / bolt-frame","a":"ray-0","b":"bolt-frame","min":1},
+      {"kind":"gap","label":"ray-1 / bolt-frame","a":"ray-1","b":"bolt-frame","min":1},
+      {"kind":"gap","label":"ray-2 / bolt-frame","a":"ray-2","b":"bolt-frame","min":1},
+      {"kind":"gap","label":"ray-0 / ray-1","a":"ray-0","b":"ray-1","min":1},
+      {"kind":"gap","label":"ray-1 / ray-2","a":"ray-1","b":"ray-2","min":1}
+    ],
+    "self-timer": [
+      {"kind":"gap","label":"ring / dot","a":"ring","b":"dot","min":1},
+      {"kind":"gap","label":"ring / body-frame","a":"ring","b":"body-frame","min":1}
+    ],
+    "switch-camera": [
+      {"kind":"gap","label":"arrow-a / arrow-b","a":"arrow-a","b":"arrow-b","min":1},
+      {"kind":"gap","label":"head-a / arrow-b","a":"head-a","b":"arrow-b","min":1},
+      {"kind":"gap","label":"head-b / arrow-a","a":"head-b","b":"arrow-a","min":1},
+      {"kind":"gap","label":"arrow-a / body-frame","a":"arrow-a","b":"body-frame","min":1},
+      {"kind":"gap","label":"head-a / body-frame","a":"head-a","b":"body-frame","min":1},
+      {"kind":"gap","label":"head-b / body-frame","a":"head-b","b":"body-frame","min":1}
+    ],
+    "tripod": [
+      {"kind":"gap","label":"head-frame / leg-l","a":"head-frame","b":"leg-l","min":1},
+      {"kind":"gap","label":"head-frame / leg-r","a":"head-frame","b":"leg-r","min":1}
+    ],
+    "aperture": [
+      {"kind":"gap","label":"blade-0 / blade-2","a":"blade-0","b":"blade-2","min":1},
+      {"kind":"gap","label":"blade-0 / blade-3","a":"blade-0","b":"blade-3","min":1},
+      {"kind":"gap","label":"blade-1 / blade-4","a":"blade-1","b":"blade-4","min":1}
+    ],
+    "portrait-mode": [
+      {"kind":"gap","label":"head / shoulders","a":"head","b":"shoulders","min":1},
+      {"kind":"gap","label":"bokeh-0 / head","a":"bokeh-0","b":"head","min":1},
+      {"kind":"gap","label":"bokeh-1 / head","a":"bokeh-1","b":"head","min":1},
+      {"kind":"gap","label":"bokeh-0 / card-frame","a":"bokeh-0","b":"card-frame","min":0.9},
+      {"kind":"gap","label":"bokeh-1 / card-frame","a":"bokeh-1","b":"card-frame","min":0.9},
+      {"kind":"gap","label":"shoulders / card-frame","a":"shoulders","b":"card-frame","min":0.9}
+    ],
+    "live-photo": [
+      {"kind":"gap","label":"dot / ring","a":"dot","b":"ring","min":1},
+      {"kind":"gap","label":"ring / dash-0","a":"ring","b":"dash-0","min":1},
+      {"kind":"gap","label":"ring / dash-3","a":"ring","b":"dash-3","min":1},
+      {"kind":"gap","label":"dash-0 / dash-1","a":"dash-0","b":"dash-1","min":1},
+      {"kind":"gap","label":"dash-2 / dash-3","a":"dash-2","b":"dash-3","min":1}
+    ],
+    "burst-mode": [
+      {"kind":"gap","label":"hills / card-frame","a":"hills","b":"card-frame","min":0}
+    ],
+    "panorama": [
+      {"kind":"gap","label":"sun / hills","a":"sun","b":"hills","min":1},
+      {"kind":"gap","label":"hills / frame","a":"hills","b":"frame","min":0.5},
+      {"kind":"gap","label":"sun / frame","a":"sun","b":"frame","min":0.9}
+    ],
+    "exposure": [
+      {"kind":"gap","label":"divider / plus-h","a":"divider","b":"plus-h","min":0.9},
+      {"kind":"gap","label":"divider / plus-v","a":"divider","b":"plus-v","min":0.9},
+      {"kind":"gap","label":"divider / minus","a":"divider","b":"minus","min":1},
+      {"kind":"gap","label":"plus-h / frame","a":"plus-h","b":"frame","min":1},
+      {"kind":"gap","label":"minus / frame","a":"minus","b":"frame","min":1}
+    ],
+    "photo-gallery": [
+      {"kind":"gap","label":"tile-0-frame / tile-1-frame","a":"tile-0-frame","b":"tile-1-frame","min":1},
+      {"kind":"gap","label":"tile-0-frame / tile-2-frame","a":"tile-0-frame","b":"tile-2-frame","min":1},
+      {"kind":"gap","label":"tile-1-frame / tile-3-frame","a":"tile-1-frame","b":"tile-3-frame","min":1}
+    ],
+    "photo-album": [
+      {"kind":"gap","label":"sun / hills","a":"sun","b":"hills","min":1},
+      {"kind":"gap","label":"sun / cover-frame","a":"sun","b":"cover-frame","min":0.9},
+      {"kind":"gap","label":"hills / spine","a":"hills","b":"spine","min":0.8}
+    ],
+    "photo-edit": [
+      {"kind":"gap","label":"pencil / card-frame","a":"pencil","b":"card-frame","min":0.2},
+      {"kind":"gap","label":"sun / hills","a":"sun","b":"hills","min":1}
+    ],
+    "rotate-photo": [
+      {"kind":"gap","label":"card-frame / arrow","a":"card-frame","b":"arrow","min":0.9},
+      {"kind":"gap","label":"card-frame / arrow-head","a":"card-frame","b":"arrow-head","min":0.9}
+    ],
+    "flip-photo": [
+      {"kind":"gap","label":"axis-top / card-frame","a":"axis-top","b":"card-frame","min":0.9},
+      {"kind":"gap","label":"axis-bottom / card-frame","a":"axis-bottom","b":"card-frame","min":0.9},
+      {"kind":"gap","label":"sun / hills","a":"sun","b":"hills","min":1}
+    ],
+    "brightness": [
+      {"kind":"gap","label":"ray-0 / disc","a":"ray-0","b":"disc","min":1},
+      {"kind":"gap","label":"ray-0 / ray-45","a":"ray-0","b":"ray-45","min":1},
+      {"kind":"gap","label":"ray-90 / ray-135","a":"ray-90","b":"ray-135","min":1}
+    ],
+    "red-eye-fix": [
+      {"kind":"gap","label":"pupil / eye","a":"pupil","b":"eye","min":1},
+      {"kind":"gap","label":"sparkle / eye","a":"sparkle","b":"eye","min":0.8}
+    ],
+    "photo-delete": [
+      {"kind":"gap","label":"slot-l / slot-r","a":"slot-l","b":"slot-r","min":1},
+      {"kind":"gap","label":"slot-l / bin","a":"slot-l","b":"bin","min":1},
+      {"kind":"gap","label":"slot-r / bin","a":"slot-r","b":"bin","min":1},
+      {"kind":"gap","label":"card-frame / lid","a":"card-frame","b":"lid","min":0.9}
+    ],
+    "photo-favorite": [
+      {"kind":"gap","label":"heart / card-frame","a":"heart","b":"card-frame","min":0.9},
+      {"kind":"gap","label":"sun / hills","a":"sun","b":"hills","min":1}
+    ],
+    "saturation": [
+      {"kind":"contained-in","label":"level / drop","a":"level","b":"drop","message":"{action} level leaves drop at frame {f}: {value|fixed3}"}
+    ]
+  },
+  "evidence": {"stage":"afterDirected","file":"evidence/clearance-verification.json","fields":[["result",{"status":true}],["minimumPaintedMargin",{"agg":"min","init":32,"source":"margin"}],["gaps",{"map":"rules"}],["checks",{"counter":"checks"}],["errors",{"errors":true}]],"key":"{icon} {label}","message":"{action} {label} frame {f}: gap {value|fixed3} < {min}"}
+}

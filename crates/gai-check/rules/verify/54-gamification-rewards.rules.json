@@ -1,0 +1,36 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "54-gamification-rewards",
+  "setAsserts": [{"kind":"iconCount","eq":20,"message":"The reward set must contain exactly 20 icons"},{"kind":"statefulCount","min":6,"max":10,"message":"Expected 6–10 stateful icons"}],
+  "dialect": {"sampler":"ge","flatten":{"cubicSteps":64,"skipDegenerate":false,"close":"first","unknown":"ignore"},"pick":"prefix","visible":{"op":">=","value":0},"slack":0,"gapRadius":"sequential","failure":"assert"},
+  "icons": {
+    "treasure-chest": [
+      {"kind":"compare","label":"lid leaves its fixed rim hinge","value":{"hypot":[{"sub":[{"at":[{"slice":[{"pts":"lid-frame"},0,2]},0]},7]},{"sub":[{"at":[{"slice":[{"pts":"lid-frame"},0,2]},1]},18]}]},"op":"<","limit":0.00003,"record":"chestHingeMaxError"},
+      {"kind":"compare","label":"hinge loses painted Outline contact","value":{"polydist":[{"slice":[{"pts":"lid-frame"},0,2]},{"flat":{"part":"body-frame","pick":"boldOrPrefix"}}]},"op":"<","limit":1.2,"record":false},
+      {"kind":"compare","label":"hinge loses Solid rim overlap","value":{"inside":[{"slice":[{"pts":"lid-frame"},0,2]},{"flat":"body-solid"}]},"op":">","limit":0,"record":false},
+      {"kind":"frozen","label":"body moves","a":"body-frame"},
+      {"kind":"frozen","label":"body moves","a":"body-solid"}
+    ],
+    "round-countdown": [
+      {"kind":"compare","label":"hand leaves the hub","value":{"hypot":[{"sub":[{"at":[{"slice":[{"pts":"hand"},0,2]},0]},16]},{"sub":[{"at":[{"slice":[{"pts":"hand"},0,2]},1]},17.5]}]},"op":"<","limit":0.00003,"record":"handHubMaxError"},
+      {"kind":"compare","label":"hand touches the case","value":{"and":[{"gt":[{"at":[{"box":{"part":"hand","pick":"boldOrPrefix"},"of":"flat","paint":true},0]},7.5]},{"gt":[{"at":[{"box":{"part":"hand","pick":"boldOrPrefix"},"of":"flat","paint":true},1]},9]},{"lt":[{"at":[{"box":{"part":"hand","pick":"boldOrPrefix"},"of":"flat","paint":true},2]},24.5]},{"lt":[{"at":[{"box":{"part":"hand","pick":"boldOrPrefix"},"of":"flat","paint":true},3]},26]}]},"op":">","limit":0,"record":false}
+    ],
+    "xp-gain": [
+      {"kind":"compare","label":"XP bar touches the inner track edge","value":{"min":[{"sub":[{"at":[{"box":"bar","of":"flat","paint":true},0]},5.8]},{"sub":[25.4,{"at":[{"box":"bar","of":"flat","paint":true},2]}]},{"sub":[{"at":[{"box":"bar","of":"flat","paint":true},1]},19.3]},{"sub":[24.7,{"at":[{"box":"bar","of":"flat","paint":true},3]}]}]},"op":">=","limit":0.79,"record":"xpBarMinimumInset"},
+      {"kind":"compare","label":"XP bar touches the inner track edge","value":{"min":[{"sub":[{"at":[{"box":"bar-solid","of":"flat","paint":true},0]},5.8]},{"sub":[25.4,{"at":[{"box":"bar-solid","of":"flat","paint":true},2]}]},{"sub":[{"at":[{"box":"bar-solid","of":"flat","paint":true},1]},19.3]},{"sub":[24.7,{"at":[{"box":"bar-solid","of":"flat","paint":true},3]}]}]},"op":">=","limit":0.79,"record":"xpBarMinimumInset"}
+    ],
+    "power-up": [
+      {"kind":"compare","label":"power bolt loses its one-unit painted clearance","value":{"sub":[{"mapMin":{"over":{"flat":"bolt"},"expr":{"polydist":[{"$p":null},{"flat":{"part":"shell","pick":"boldOrPrefix"}}]}}},1.3]},"op":">=","limit":1,"record":"powerBoltMinimumGap"}
+    ],
+    "quest": [
+      {"kind":"compare","label":"quest marker / map-frame","value":{"sub":[{"mapMin":{"over":{"flat":"marker"},"expr":{"polydist":[{"$p":null},{"flat":{"part":"map-frame","pick":"boldOrPrefix"}}]}}},1.3]},"op":">=","limit":1,"record":"questMarkerMinimumGap"},
+      {"kind":"compare","label":"quest marker / fold-top","value":{"sub":[{"mapMin":{"over":{"flat":"marker"},"expr":{"polydist":[{"$p":null},{"flat":{"part":"fold-top","pick":"boldOrPrefix"}}]}}},1.3]},"op":">=","limit":1,"record":"questMarkerMinimumGap"},
+      {"kind":"compare","label":"quest marker / fold-bottom","value":{"sub":[{"mapMin":{"over":{"flat":"marker"},"expr":{"polydist":[{"$p":null},{"flat":{"part":"fold-bottom","pick":"boldOrPrefix"}}]}}},1.3]},"op":">=","limit":1,"record":"questMarkerMinimumGap"}
+    ],
+    "high-score": [
+      {"kind":"compare","label":"crown touches the score panel","value":{"sub":[{"mapMin":{"over":{"flat":"crown"},"expr":{"polydist":[{"$p":null},{"flat":{"part":"panel","pick":"boldOrPrefix"}}]}}},1.3]},"op":">=","limit":1.5,"record":"scoreCrownMinimumGap"}
+    ]
+  },
+  "evidence": {"stage":"beforeDirected","fields":[["frames",{"counter":"frames"}],["chestHingeMaxError",{"agg":"max","init":0}],["handHubMaxError",{"agg":"max","init":0}],["xpBarMinimumInset",{"agg":"min","init":32}],["powerBoltMinimumGap",{"agg":"min","init":32}],["questMarkerMinimumGap",{"agg":"min","init":32}],["scoreCrownMinimumGap",{"agg":"min","init":32}]],"embed":{"key":"drawingChecks","position":"end"},"key":"{icon} {label}","message":"{action} {label} at frame {f}: {value} vs {min}"}
+}

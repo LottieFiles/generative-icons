@@ -1,0 +1,102 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "17-media-playback",
+  "dialect": {"sampler":"gt","flatten":{"cubicSteps":20,"skipDegenerate":false,"close":"first","unknown":"throw"},"pick":"bold","visible":{"op":">=","value":0.05},"slack":0.015,"gapRadius":"summed","failure":"collect"},
+  "margin": {"nodes":{"nameEndsWith":["__outline.bold","__solid"]},"visible":{"op":">=","value":0.01},"method":"box","min":1.99,"failure":"assert","message":"{action} {node} frame{f}: margin {value}"},
+  "requireIcon": false,
+  "icons": {
+    "play-pause": [
+      {"kind":"gap","label":"play-bars","a":"tri-bar-frame","b":"bar-right","min":1},
+      {"kind":"gap","label":"play-bars-solid","a":"tri-bar-solid","b":"bar-right-solid","min":1}
+    ],
+    "next-track": [
+      {"kind":"gap","label":"next-track-bar","a":"track-frame","b":"stop-bar","min":1},
+      {"kind":"gap","label":"next-track-bar-solid","a":"track-solid","b":"stop-bar-solid","min":1}
+    ],
+    "previous-track": [
+      {"kind":"gap","label":"previous-track-bar","a":"track-frame","b":"stop-bar","min":1},
+      {"kind":"gap","label":"previous-track-bar-solid","a":"track-solid","b":"stop-bar-solid","min":1}
+    ],
+    "replay-10": [
+      {"kind":"gap","label":"replay-10-digits","a":"digit-one","b":"digit-zero","min":1},
+      {"kind":"gap","label":"replay-10-digit-one","a":"ring-head","b":"digit-one","min":1},
+      {"kind":"gap","label":"replay-10-digit-zero","a":"ring-head","b":"digit-zero","min":1},
+      {"kind":"gap","label":"replay-10-digits-solid","a":"digit-one-solid","b":"digit-zero-solid","min":1},
+      {"kind":"gap","label":"replay-10-digit-one-solid","a":"ring-head-solid","b":"digit-one-solid","min":1},
+      {"kind":"gap","label":"replay-10-digit-zero-solid","a":"ring-head-solid","b":"digit-zero-solid","min":1}
+    ],
+    "forward-10": [
+      {"kind":"gap","label":"forward-10-digits","a":"digit-one","b":"digit-zero","min":1},
+      {"kind":"gap","label":"forward-10-digit-one","a":"ring-head","b":"digit-one","min":1},
+      {"kind":"gap","label":"forward-10-digit-zero","a":"ring-head","b":"digit-zero","min":1},
+      {"kind":"gap","label":"forward-10-digits-solid","a":"digit-one-solid","b":"digit-zero-solid","min":1},
+      {"kind":"gap","label":"forward-10-digit-one-solid","a":"ring-head-solid","b":"digit-one-solid","min":1},
+      {"kind":"gap","label":"forward-10-digit-zero-solid","a":"ring-head-solid","b":"digit-zero-solid","min":1}
+    ],
+    "playlist": [
+      {"kind":"gap","label":"playlist-marker-row","a":"play-marker-frame","b":"row-2","min":1},
+      {"kind":"gap","label":"playlist-marker-top","a":"play-marker-frame","b":"row-1","min":1}
+    ],
+    "add-to-queue": [
+      {"kind":"gap","label":"queue-plus-0-row-1","a":"plus-0","b":"row-1","min":1},
+      {"kind":"gap","label":"queue-plus-0-row-2","a":"plus-0","b":"row-2","min":1},
+      {"kind":"gap","label":"queue-plus-0-new-row","a":"plus-0","b":"new-row","min":1},
+      {"kind":"gap","label":"queue-plus-1-row-1","a":"plus-1","b":"row-1","min":1},
+      {"kind":"gap","label":"queue-plus-1-row-2","a":"plus-1","b":"row-2","min":1},
+      {"kind":"gap","label":"queue-plus-1-new-row","a":"plus-1","b":"new-row","min":1},
+      {"kind":"gap","label":"queue-plus-0-row-1-solid","a":"plus-0-solid","b":"row-1-solid","min":1},
+      {"kind":"gap","label":"queue-plus-0-row-2-solid","a":"plus-0-solid","b":"row-2-solid","min":1},
+      {"kind":"gap","label":"queue-plus-0-new-row-solid","a":"plus-0-solid","b":"new-row-solid","min":1},
+      {"kind":"gap","label":"queue-plus-1-row-1-solid","a":"plus-1-solid","b":"row-1-solid","min":1},
+      {"kind":"gap","label":"queue-plus-1-row-2-solid","a":"plus-1-solid","b":"row-2-solid","min":1},
+      {"kind":"gap","label":"queue-plus-1-new-row-solid","a":"plus-1-solid","b":"new-row-solid","min":1}
+    ],
+    "podcast": [
+      {"kind":"gap","label":"podcast-pitch","a":"ring-0","b":"ring-1","min":1},
+      {"kind":"gap","label":"podcast-stem","a":"ring-0","b":"stem","min":1},
+      {"kind":"gap","label":"podcast-base","a":"ring-1","b":"base","min":1},
+      {"kind":"gap","label":"podcast-dot","a":"ring-0","b":"source","min":1},
+      {"kind":"gap","label":"podcast-pitch-solid","a":"ring-0-solid","b":"ring-1-solid","min":1},
+      {"kind":"gap","label":"podcast-stem-solid","a":"ring-0-solid","b":"stem-solid","min":1},
+      {"kind":"gap","label":"podcast-base-solid","a":"ring-1-solid","b":"base-solid","min":1},
+      {"kind":"gap","label":"podcast-dot-solid","a":"ring-0-solid","b":"source-solid","min":1}
+    ],
+    "live-broadcast": [
+      {"kind":"gap","label":"live-pitch-0","a":"wave-0","b":"wave-2","min":1},
+      {"kind":"gap","label":"live-dot-0","a":"wave-0","b":"source","min":1},
+      {"kind":"gap","label":"live-pitch-1","a":"wave-1","b":"wave-3","min":1},
+      {"kind":"gap","label":"live-dot-1","a":"wave-1","b":"source","min":1},
+      {"kind":"gap","label":"live-pitch-0-solid","a":"wave-0-solid","b":"wave-2-solid","min":1},
+      {"kind":"gap","label":"live-dot-0-solid","a":"wave-0-solid","b":"source-solid","min":1},
+      {"kind":"gap","label":"live-pitch-1-solid","a":"wave-1-solid","b":"wave-3-solid","min":1},
+      {"kind":"gap","label":"live-dot-1-solid","a":"wave-1-solid","b":"source-solid","min":1}
+    ],
+    "cast": [
+      {"kind":"gap","label":"cast-pitch","a":"wave-0","b":"wave-1","min":1},
+      {"kind":"gap","label":"cast-frame-wave","a":"frame","b":"wave-1","min":1},
+      {"kind":"gap","label":"cast-pitch-solid","a":"wave-0-solid","b":"wave-1-solid","min":1},
+      {"kind":"gap","label":"cast-frame-wave-solid","a":"frame-solid","b":"wave-1-solid","min":1},
+      {"kind":"gap","label":"cast-tile-frame","a":"tile-frame","b":"frame","min":1},
+      {"kind":"gap","label":"cast-tile-wave","a":"tile-frame","b":"wave-1","min":1}
+    ],
+    "screen-share": [
+      {"kind":"gap","label":"share-arrow-0","a":"arrow-0","b":"screen-frame","min":1},
+      {"kind":"gap","label":"share-arrow-1","a":"arrow-1","b":"screen-frame","min":1}
+    ],
+    "closed-captions": [
+      {"kind":"gap","label":"captions-letter-0","a":"letter-0","b":"caption","min":1},
+      {"kind":"gap","label":"captions-plate-letter-0","a":"letter-0","b":"plate","min":1},
+      {"kind":"gap","label":"captions-letter-1","a":"letter-1","b":"caption","min":1},
+      {"kind":"gap","label":"captions-plate-letter-1","a":"letter-1","b":"plate","min":1},
+      {"kind":"gap","label":"captions-bar-border","a":"caption","b":"plate","min":1}
+    ],
+    "picture-in-picture": [
+      {"kind":"gap","label":"pip-window-frame","a":"window","b":"frame-frame","min":1}
+    ],
+    "headphones": [
+      {"kind":"gap","label":"headphone-cups","a":"cup-0-frame","b":"cup-1-frame","min":1}
+    ]
+  },
+  "evidence": {"fields":[["result",{"status":true}],["actions",{"perAction":{"name":"{action}","frames":145}}],["minimumPaintedMargin",{"agg":"min","init":32,"source":"margin"}],["gaps",{"map":"rules"}],["checks",{"counter":"checks"}],["errors",{"errors":true}]],"key":"{label}","message":"{action} {key} frame{f}: gap {value}"}
+}

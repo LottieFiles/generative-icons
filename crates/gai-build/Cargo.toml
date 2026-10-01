@@ -1,0 +1,19 @@
+[package]
+name = "gai-build"
+description = "Set builder: sampling, scenes, post-export, records and set.json"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+gai-core.workspace = true
+gai-js = { path = "../gai-js" }
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tempfile.workspace = true
+
+[dev-dependencies]
+gai-package = { path = "../gai-package" }

@@ -1,0 +1,36 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "16-voice",
+  "dialect": {"sampler":"gt","flatten":{"cubicSteps":20,"skipDegenerate":false,"close":"first","unknown":"throw"},"pick":"bold","visible":{"op":">=","value":0.05},"slack":0.015,"gapRadius":"summed","failure":"collect"},
+  "margin": {"nodes":{"nameEndsWith":["__outline.bold","__solid"]},"visible":{"op":">=","value":0.01},"method":"box","min":1.99,"failure":"assert","message":"{action} {node} frame{f}: margin {value}"},
+  "requireIcon": false,
+  "icons": {
+    "voice-listening": [
+      {"kind":"gap","label":"listening arc lanes","a":"arc-near","b":"arc-far","min":0.65},
+      {"kind":"gap","label":"listening receiving gap","a":"arc-near","b":"ear-helix","min":0.65}
+    ],
+    "voice-recording": [
+      {"kind":"gap","label":"recording level hardware","a":"level","b":"cradle","min":0.9},
+      {"kind":"compare","label":"Record ring counter","value":{"sub":[{"sub":[4,1.25]},{"div":[{"sub":[{"at":[{"box":"rec-dot"},2]},{"at":[{"box":"rec-dot"},0]}]},2]}]},"op":">=","limit":1.49,"slack":0,"failure":"assert","record":false,"message":"Record ring counter"}
+    ],
+    "push-to-talk": [
+      {"kind":"gap","label":"talk key clearance","a":"cap-frame","b":"key-side","min":0.85}
+    ],
+    "wake-word": [
+      {"kind":"gap","label":"wake arc dot","a":"arc","b":"dot","min":1}
+    ],
+    "switch-voice": [
+      {"kind":"gap","label":"speaker a opening","a":"head-a-frame","b":"body-a","min":0.95},
+      {"kind":"gap","label":"speaker b opening","a":"head-b-frame","b":"body-b","min":0.95},
+      {"kind":"gap","label":"voice marker a","a":"marker","b":"head-a-frame","min":1},
+      {"kind":"gap","label":"voice marker b","a":"marker","b":"head-b-frame","min":1}
+    ],
+    "voice-speed": [
+      {"kind":"gap","label":"cadence 1-2","a":"tick-1","b":"tick-2","min":1.05},
+      {"kind":"gap","label":"cadence 2-3","a":"tick-2","b":"tick-3","min":1.05},
+      {"kind":"gap","label":"play to cadence","a":"play-frame","b":"tick-1","min":1.05}
+    ]
+  },
+  "evidence": {"fields":[["result",{"status":true}],["actions",{"perAction":{"name":"{action}","frames":145}}],["minimumPaintedMargin",{"agg":"min","init":32,"source":"margin"}],["gaps",{"map":"rules"}],["checks",{"counter":"checks"}],["errors",{"errors":true}]],"key":"{label}","message":"{action} {key} frame{f}: gap {value}"}
+}

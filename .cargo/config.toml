@@ -1,0 +1,7 @@
+# ThorVG (dotlottie-rs, used by gai-render) must not fuse a*b+c into FMAs: the browser
+# evidence came from the WASM player, which cannot. cc passes CXXFLAGS to every C++ build;
+# vendor/rquickjs-sys puts `-ffp-contract=on` back after it for V8's ieee754.cc, which
+# needs contraction. A CXXFLAGS already set in the environment replaces this one, so it
+# must carry the flag too.
+[env]
+CXXFLAGS = "-ffp-contract=off"

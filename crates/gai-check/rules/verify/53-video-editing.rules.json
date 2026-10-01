@@ -1,0 +1,64 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "53-video-editing",
+  "setAsserts": [{"kind":"contractCount","eq":6,"message":"Missing drawing contact or clearance contract"}],
+  "dialect": {"sampler":"ge","flatten":{"cubicSteps":32,"skipDegenerate":false,"close":"first","unknown":"ignore"},"pick":"exact","visible":{"op":">=","value":0},"slack":0,"gapRadius":"sequential","failure":"assert"},
+  "unlisted": "skip",
+  "styles": [{"id":"outline","suffix":"-bold__color.primary__outline.bold"},{"id":"solid","suffix":"-solid__color.primary__solid"}],
+  "icons": {
+    "cut-clip": [
+      {"kind":"compare","label":"blade handle/stem x contact","value":{"div":[{"add":[{"at":[{"pts":"blade-handle"},0]},{"at":[{"pts":"blade-handle"},2]}]},2]},"op":"close","limit":{"at":[{"pts":"blade-stem"},0]},"record":false},
+      {"kind":"compare","label":"blade handle/stem y contact","value":{"at":[{"pts":"blade-handle"},1]},"op":"close","limit":{"at":[{"pts":"blade-stem"},1]},"record":false},
+      {"kind":"compare","label":"blade visibility","value":{"vis":"blade-handle"},"op":"close","limit":{"vis":"blade-stem"},"contract":"cut-clip: blade handle remains joined to stem","record":false}
+    ],
+    "trim-clip": [
+      {"kind":"compare","label":"trim handle on right edge","value":{"at":[{"pts":"handle"},0]},"op":"close","limit":{"maxOf":{"xs":{"pts":{"part":"clip-frame","pick":"prefix"}}}},"record":false,"styles":["outline"]},
+      {"kind":"compare","label":"trim handle vertical","value":{"at":[{"pts":"handle"},2]},"op":"close","limit":{"at":[{"pts":"handle"},0]},"record":false,"styles":["outline"]},
+      {"kind":"compare","label":"trim handle top extension","value":{"sub":[{"minOf":{"ys":{"pts":{"part":"clip-frame","pick":"prefix"}}}},{"at":[{"pts":"handle"},1]}]},"op":">=","limit":{"sub":[3,0.00003]},"record":false,"styles":["outline"]},
+      {"kind":"compare","label":"trim handle bottom extension","value":{"sub":[{"at":[{"pts":"handle"},3]},{"maxOf":{"ys":{"pts":{"part":"clip-frame","pick":"prefix"}}}}]},"op":">=","limit":{"sub":[3,0.00003]},"record":false,"contract":"trim-clip: handle follows the moving clip edge","styles":["outline"]},
+      {"kind":"compare","label":"trim handle on right edge","value":{"at":[{"pts":"handle"},0]},"op":"close","limit":{"maxOf":{"xs":{"pts":{"part":"clip-solid","pick":"prefix"}}}},"record":false,"styles":["solid"]},
+      {"kind":"compare","label":"trim handle vertical","value":{"at":[{"pts":"handle"},2]},"op":"close","limit":{"at":[{"pts":"handle"},0]},"record":false,"styles":["solid"]},
+      {"kind":"compare","label":"trim handle top extension","value":{"sub":[{"minOf":{"ys":{"pts":{"part":"clip-solid","pick":"prefix"}}}},{"at":[{"pts":"handle"},1]}]},"op":">=","limit":{"sub":[3,0.00003]},"record":false,"styles":["solid"]},
+      {"kind":"compare","label":"trim handle bottom extension","value":{"sub":[{"at":[{"pts":"handle"},3]},{"maxOf":{"ys":{"pts":{"part":"clip-solid","pick":"prefix"}}}}]},"op":">=","limit":{"sub":[3,0.00003]},"record":false,"contract":"trim-clip: handle follows the moving clip edge","styles":["solid"]}
+    ],
+    "export-video": [
+      {"kind":"compare","label":"export arrow x contact","value":{"at":[{"pts":"arrow-stem"},2]},"op":"close","limit":{"at":[{"pts":"arrow-head"},2]},"record":false},
+      {"kind":"compare","label":"export arrow y contact","value":{"at":[{"pts":"arrow-stem"},3]},"op":"close","limit":{"at":[{"pts":"arrow-head"},3]},"record":false},
+      {"kind":"compare","label":"export arrow touches clip","value":{"sub":[{"at":[{"box":"clip-frame","of":"pts","paint":true},1]},{"max":[{"at":[{"box":"arrow-stem","of":"pts","paint":true},3]},{"at":[{"box":"arrow-head","of":"pts","paint":true},3]}]}]},"op":">=","limit":1.5,"record":"minimumArrowClipGap","contract":"export-video: arrow joint and 1.5-unit painted clip clearance","styles":["outline"]},
+      {"kind":"compare","label":"export arrow touches clip","value":{"sub":[{"at":[{"box":{"part":"clip-solid","pick":"prefix"},"of":"pts","paint":true},1]},{"max":[{"at":[{"box":"arrow-stem","of":"pts","paint":true},3]},{"at":[{"box":"arrow-head","of":"pts","paint":true},3]}]}]},"op":">=","limit":1.5,"record":"minimumArrowClipGap","contract":"export-video: arrow joint and 1.5-unit painted clip clearance","styles":["solid"]}
+    ],
+    "mute-track": [
+      {"kind":"compare","label":"vertical waveform 0","value":{"at":[{"pts":"bar-0"},0]},"op":"close","limit":{"at":[{"pts":"bar-0"},2]},"record":false},
+      {"kind":"compare","label":"anchored waveform centre 0","value":{"div":[{"add":[{"at":[{"pts":"bar-0"},1]},{"at":[{"pts":"bar-0"},3]}]},2]},"op":"close","limit":16,"record":false},
+      {"kind":"compare","label":"vertical waveform 1","value":{"at":[{"pts":"bar-1"},0]},"op":"close","limit":{"at":[{"pts":"bar-1"},2]},"record":false},
+      {"kind":"compare","label":"anchored waveform centre 1","value":{"div":[{"add":[{"at":[{"pts":"bar-1"},1]},{"at":[{"pts":"bar-1"},3]}]},2]},"op":"close","limit":16,"record":false},
+      {"kind":"compare","label":"waveform bars merge","value":{"sub":[{"at":[{"box":"bar-1","of":"pts","paint":true},0]},{"at":[{"box":"bar-0","of":"pts","paint":true},2]}]},"op":">=","limit":1,"record":"minimumWaveformGap"},
+      {"kind":"compare","label":"vertical waveform 2","value":{"at":[{"pts":"bar-2"},0]},"op":"close","limit":{"at":[{"pts":"bar-2"},2]},"record":false},
+      {"kind":"compare","label":"anchored waveform centre 2","value":{"div":[{"add":[{"at":[{"pts":"bar-2"},1]},{"at":[{"pts":"bar-2"},3]}]},2]},"op":"close","limit":16,"record":false},
+      {"kind":"compare","label":"waveform bars merge","value":{"sub":[{"at":[{"box":"bar-2","of":"pts","paint":true},0]},{"at":[{"box":"bar-1","of":"pts","paint":true},2]}]},"op":">=","limit":1,"record":"minimumWaveformGap"},
+      {"kind":"compare","label":"vertical waveform 3","value":{"at":[{"pts":"bar-3"},0]},"op":"close","limit":{"at":[{"pts":"bar-3"},2]},"record":false},
+      {"kind":"compare","label":"anchored waveform centre 3","value":{"div":[{"add":[{"at":[{"pts":"bar-3"},1]},{"at":[{"pts":"bar-3"},3]}]},2]},"op":"close","limit":16,"record":false},
+      {"kind":"compare","label":"waveform bars merge","value":{"sub":[{"at":[{"box":"bar-3","of":"pts","paint":true},0]},{"at":[{"box":"bar-2","of":"pts","paint":true},2]}]},"op":">=","limit":1,"record":"minimumWaveformGap"},
+      {"kind":"compare","label":"vertical waveform 4","value":{"at":[{"pts":"bar-4"},0]},"op":"close","limit":{"at":[{"pts":"bar-4"},2]},"record":false},
+      {"kind":"compare","label":"anchored waveform centre 4","value":{"div":[{"add":[{"at":[{"pts":"bar-4"},1]},{"at":[{"pts":"bar-4"},3]}]},2]},"op":"close","limit":16,"record":false},
+      {"kind":"compare","label":"waveform bars merge","value":{"sub":[{"at":[{"box":"bar-4","of":"pts","paint":true},0]},{"at":[{"box":"bar-3","of":"pts","paint":true},2]}]},"op":">=","limit":1,"record":"minimumWaveformGap","contract":"mute-track: centred waveform bars with 1-unit painted clearance"}
+    ],
+    "voiceover": [
+      {"kind":"compare","label":"vertical waveform 0","value":{"at":[{"pts":"level-0"},0]},"op":"close","limit":{"at":[{"pts":"level-0"},2]},"record":false},
+      {"kind":"compare","label":"anchored waveform centre 0","value":{"div":[{"add":[{"at":[{"pts":"level-0"},1]},{"at":[{"pts":"level-0"},3]}]},2]},"op":"close","limit":13.5,"record":false},
+      {"kind":"compare","label":"vertical waveform 1","value":{"at":[{"pts":"level-1"},0]},"op":"close","limit":{"at":[{"pts":"level-1"},2]},"record":false},
+      {"kind":"compare","label":"anchored waveform centre 1","value":{"div":[{"add":[{"at":[{"pts":"level-1"},1]},{"at":[{"pts":"level-1"},3]}]},2]},"op":"close","limit":13.5,"record":false},
+      {"kind":"compare","label":"waveform bars merge","value":{"sub":[{"at":[{"box":"level-1","of":"pts","paint":true},0]},{"at":[{"box":"level-0","of":"pts","paint":true},2]}]},"op":">=","limit":1,"record":"minimumWaveformGap"},
+      {"kind":"compare","label":"vertical waveform 2","value":{"at":[{"pts":"level-2"},0]},"op":"close","limit":{"at":[{"pts":"level-2"},2]},"record":false},
+      {"kind":"compare","label":"anchored waveform centre 2","value":{"div":[{"add":[{"at":[{"pts":"level-2"},1]},{"at":[{"pts":"level-2"},3]}]},2]},"op":"close","limit":13.5,"record":false},
+      {"kind":"compare","label":"waveform bars merge","value":{"sub":[{"at":[{"box":"level-2","of":"pts","paint":true},0]},{"at":[{"box":"level-1","of":"pts","paint":true},2]}]},"op":">=","limit":1,"record":"minimumWaveformGap","contract":"voiceover: centred waveform bars with 1-unit painted clearance"}
+    ],
+    "screen-record": [
+      {"kind":"compare","label":"monitor neck/screen contact","value":{"at":[{"pts":"neck"},1]},"op":"close","limit":{"maxOf":{"ys":{"pts":"screen-frame"}}},"record":false},
+      {"kind":"compare","label":"monitor neck/base x contact","value":{"at":[{"pts":"neck"},2]},"op":"close","limit":{"div":[{"add":[{"at":[{"pts":"base"},0]},{"at":[{"pts":"base"},2]}]},2]},"record":false},
+      {"kind":"compare","label":"monitor neck/base y contact","value":{"at":[{"pts":"neck"},3]},"op":"close","limit":{"at":[{"pts":"base"},1]},"contract":"screen-record: monitor stand joins screen and foot","record":false}
+    ]
+  },
+  "evidence": {"stage":"beforeDirected","fields":[["frames",{"counter":"frames"}],["contracts",{"contracts":true}],["minimumArrowClipGap",{"agg":"min"}],["minimumWaveformGap",{"agg":"min"}]],"embed":{"key":"drawingChecks","position":"beforeLoopChecks"},"key":"{icon} {label}","message":"{action} {label} at frame {f}: {value} vs {min}"}
+}

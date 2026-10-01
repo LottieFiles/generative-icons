@@ -1,0 +1,47 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/LottieFiles/gen-animated-icons"
+# The oldest toolchain the whole workspace is checked with (`cargo +1.89.0 check`).
+rust-version = "1.89"
+
+[workspace.dependencies]
+gai-core = { path = "crates/gai-core" }
+anyhow = "1"
+thiserror = "2"
+indexmap = { version = "2", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
+ryu-js = "1"
+sha2 = "0.10"
+walkdir = "2"
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+strip = "symbols"
+
+# Dependencies that dominate test time are optimized in dev builds too: ThorVG renders
+# and zlib deflates (cc follows each package's opt-level), sha2 hashes every input and
+# serde_json parses every committed asset.
+[profile.dev.package.dotlottie-rs]
+opt-level = 3
+
+[profile.dev.package.libz-sys]
+opt-level = 3
+
+[profile.dev.package.sha2]
+opt-level = 3
+
+[profile.dev.package.serde_json]
+opt-level = 3
+
+[patch.crates-io]
+# QuickJS-NG with V8-exact Math (vendor/rquickjs-sys/PATCHED.md).
+rquickjs-sys = { path = "vendor/rquickjs-sys" }

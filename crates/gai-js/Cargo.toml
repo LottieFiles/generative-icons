@@ -1,0 +1,17 @@
+[package]
+name = "gai-js"
+description = "Embedded QuickJS runtime that evaluates icon authoring code (kit, svgpath, definitions)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+gai-core.workspace = true
+# Pinned: the V8-exact Math patch (vendor/rquickjs-sys) is validated for QuickJS-NG 0.8.0 only.
+rquickjs = { version = "=0.9.0", features = ["loader", "array-buffer"] }
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

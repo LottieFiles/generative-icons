@@ -1,0 +1,42 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "63-voice-agents",
+  "dialect": {"sampler":"ge","flatten":{"cubicSteps":32,"skipDegenerate":false,"close":"first","unknown":"ignore"},"pick":"exact","visible":{"op":">=","value":0},"slack":0,"gapRadius":"sequential","failure":"assert"},
+  "styles": [{"id":"bold","suffix":"-bold__color.primary__outline.bold"},{"id":"solid","suffix":"-solid__color.primary__solid"}],
+  "icons": {
+    "live-transcript": [
+      {"kind":"compare","label":"caret collides with committed text","value":{"sub":[{"at":[{"box":"caret","of":"pts","paint":true},0]},{"at":[{"box":"new-line","of":"pts","paint":true},2]}]},"op":">=","limit":0.89,"record":"minimumTranscriptGap","when":{"gt":[{"vis":"new-line"},0.01]},"count":{"clearances":1}},
+      {"kind":"compare","label":"caret crosses transcript rim","value":{"at":[{"box":"caret","of":"pts","paint":true},2]},"op":"<=","limit":25.21,"record":false}
+    ],
+    "dtmf-input": [
+      {"kind":"compare","label":"dual tones touch the pressed key","value":{"sub":[{"min":[{"at":[{"box":"low-tone","of":"pts","paint":true},0]},{"at":[{"box":"high-tone","of":"pts","paint":true},0]}]},{"at":[{"box":"key","of":"pts","paint":true},2]}]},"op":">=","limit":1.39,"record":"minimumToneGap","count":{"clearances":1}}
+    ],
+    "ivr-menu": [
+      {"kind":"compare","label":"routing junction x","value":{"at":[{"pts":"left-branch"},0]},"op":"close","limit":{"at":[{"pts":"trunk"},-2]},"record":false},
+      {"kind":"compare","label":"routing junction y","value":{"at":[{"pts":"left-branch"},1]},"op":"close","limit":{"at":[{"pts":"trunk"},-1]},"record":false},
+      {"kind":"compare","label":"option contact x","value":{"at":[{"pts":"left-branch"},-2]},"op":"close","limit":9,"record":false},
+      {"kind":"compare","label":"branch misses option rim","value":{"at":[{"pts":"left-branch"},-1]},"op":"close","limit":{"minOf":{"ys":{"pts":"option-one"}}},"count":{"contacts":2},"record":false},
+      {"kind":"compare","label":"routing junction x","value":{"at":[{"pts":"right-branch"},0]},"op":"close","limit":{"at":[{"pts":"trunk"},-2]},"record":false},
+      {"kind":"compare","label":"routing junction y","value":{"at":[{"pts":"right-branch"},1]},"op":"close","limit":{"at":[{"pts":"trunk"},-1]},"record":false},
+      {"kind":"compare","label":"option contact x","value":{"at":[{"pts":"right-branch"},-2]},"op":"close","limit":23,"record":false},
+      {"kind":"compare","label":"branch misses option rim","value":{"at":[{"pts":"right-branch"},-1]},"op":"close","limit":{"minOf":{"ys":{"pts":"option-two"}}},"count":{"contacts":2},"record":false}
+    ],
+    "barge-in": [
+      {"kind":"compare","label":"interruption arrow joint x","value":{"at":[{"pts":"incoming"},-2]},"op":"close","limit":{"at":[{"pts":"interrupt-head"},2]},"record":false},
+      {"kind":"compare","label":"interruption arrow joint y","value":{"at":[{"pts":"incoming"},-1]},"op":"close","limit":{"at":[{"pts":"interrupt-head"},3]},"record":false},
+      {"kind":"compare","label":"interruption barb closes against the arrow bend","value":{"sub":[{"sub":[{"at":[{"pts":"incoming"},1]},{"max":[{"at":[{"pts":"interrupt-head"},1]},{"at":[{"pts":"interrupt-head"},5]}]}]},{"div":[{"add":[{"width":"incoming"},{"width":"interrupt-head"}]},2]}]},"op":">=","limit":1.19,"record":false,"count":{"clearances":1}},
+      {"kind":"compare","label":"output touches speaking bubble rim","value":{"and":[{"ge":[{"at":[{"box":"output-0","of":"pts","paint":true},1]},6.8]},{"le":[{"at":[{"box":"output-0","of":"pts","paint":true},3]},15.2]}]},"op":">","limit":0,"record":false,"count":{"clearances":1}},
+      {"kind":"compare","label":"output touches speaking bubble rim","value":{"and":[{"ge":[{"at":[{"box":"output-1","of":"pts","paint":true},1]},6.8]},{"le":[{"at":[{"box":"output-1","of":"pts","paint":true},3]},15.2]}]},"op":">","limit":0,"record":false,"count":{"clearances":1}},
+      {"kind":"compare","label":"output touches speaking bubble rim","value":{"and":[{"ge":[{"at":[{"box":"output-2","of":"pts","paint":true},1]},6.8]},{"le":[{"at":[{"box":"output-2","of":"pts","paint":true},3]},15.2]}]},"op":">","limit":0,"record":false,"count":{"clearances":1,"contacts":1}}
+    ],
+    "sentiment-meter": [
+      {"kind":"compare","label":"mouth touches the enclosing rim","value":{"sub":[{"sub":[{"div":[{"sub":[{"maxOf":{"xs":{"pts":"face"}}},{"minOf":{"xs":{"pts":"face"}}}]},2]},{"mapMax":{"over":{"flat":"mouth"},"expr":{"hypot":[{"sub":[{"$p":0},{"div":[{"add":[{"minOf":{"xs":{"pts":"face"}}},{"maxOf":{"xs":{"pts":"face"}}}]},2]}]},{"sub":[{"$p":1},{"div":[{"add":[{"minOf":{"ys":{"pts":"face"}}},{"maxOf":{"ys":{"pts":"face"}}}]},2]}]}]}}}]},{"add":[{"div":[{"width":"mouth"},2]},{"div":[{"width":"face"},2]}]}]},"op":">=","limit":0.5,"record":false,"count":{"clearances":1}}
+    ],
+    "silence-timeout": [
+      {"kind":"compare","label":"minute-hand touches the enclosing rim","value":{"sub":[{"sub":[{"div":[{"sub":[{"maxOf":{"xs":{"pts":"clock"}}},{"minOf":{"xs":{"pts":"clock"}}}]},2]},{"mapMax":{"over":{"flat":"minute-hand"},"expr":{"hypot":[{"sub":[{"$p":0},{"div":[{"add":[{"minOf":{"xs":{"pts":"clock"}}},{"maxOf":{"xs":{"pts":"clock"}}}]},2]}]},{"sub":[{"$p":1},{"div":[{"add":[{"minOf":{"ys":{"pts":"clock"}}},{"maxOf":{"ys":{"pts":"clock"}}}]},2]}]}]}}}]},{"add":[{"div":[{"width":"minute-hand"},2]},{"div":[{"width":"clock"},2]}]}]},"op":">=","limit":0.79,"record":false,"count":{"clearances":1}},
+      {"kind":"compare","label":"short-hand touches the enclosing rim","value":{"sub":[{"sub":[{"div":[{"sub":[{"maxOf":{"xs":{"pts":"clock"}}},{"minOf":{"xs":{"pts":"clock"}}}]},2]},{"mapMax":{"over":{"flat":"short-hand"},"expr":{"hypot":[{"sub":[{"$p":0},{"div":[{"add":[{"minOf":{"xs":{"pts":"clock"}}},{"maxOf":{"xs":{"pts":"clock"}}}]},2]}]},{"sub":[{"$p":1},{"div":[{"add":[{"minOf":{"ys":{"pts":"clock"}}},{"maxOf":{"ys":{"pts":"clock"}}}]},2]}]}]}}}]},{"add":[{"div":[{"width":"short-hand"},2]},{"div":[{"width":"clock"},2]}]}]},"op":">=","limit":0.79,"record":false,"count":{"clearances":1}}
+    ]
+  },
+  "evidence": {"stage":"beforeDirected","fields":[["frames",{"counter":"frames"}],["contacts",{"counter":"contacts"}],["clearances",{"counter":"clearances"}],["minimumTranscriptGap",{"agg":"min","init":32}],["minimumToneGap",{"agg":"min","init":32}]],"embed":{"key":"drawingChecks","position":"end"},"key":"{icon} {label}","message":"{action} {label} at frame {f}: {value} vs {min}"}
+}

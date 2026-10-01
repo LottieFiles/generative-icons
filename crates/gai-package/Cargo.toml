@@ -1,0 +1,18 @@
+[package]
+name = "gai-package"
+description = "dotLottie packaging, set zips, catalog and npm package builds"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+gai-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tempfile.workspace = true
+# Byte parity with CPython `zipfile` needs classic C zlib. `static` builds the bundled
+# zlib on every OS; `stock-zlib` keeps zlib-ng out even if another crate asks for it.
+flate2 = { version = "1.1", default-features = false, features = ["zlib"] }
+libz-sys = { version = "1.1", default-features = false, features = ["libc", "static", "stock-zlib"] }

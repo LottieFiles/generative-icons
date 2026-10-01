@@ -1,0 +1,20 @@
+[package]
+name = "gai-check"
+description = "Preflight, verification, paint and geometry-contract checks"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+gai-core.workspace = true
+gai-js = { path = "../gai-js" }
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+indexmap.workspace = true
+libm = "0.2.16"
+
+[dev-dependencies]
+tempfile.workspace = true

@@ -1,0 +1,77 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "50-preferences",
+  "dialect": {"sampler":"ge","flatten":{"cubicSteps":32,"skipDegenerate":false,"close":"first","unknown":"ignore"},"pick":"bold","visible":{"op":">","value":0.01},"slack":0.015,"gapRadius":"sequential","failure":"collect","order":"rule-major"},
+  "icons": {
+    "region": [
+      {"kind":"touch","label":"pin tip seated on the globe rim at rest","a":"pin","b":"globe-frame","max":0.05,"at":"start-or-rest","message":"{action} {label} frame {f}: {value|fixed3} > {min}"},
+      {"kind":"outside-circle","label":"pin tip never sinks inside the globe","a":"pin","b":"globe-frame","r":8,"tol":0.05}
+    ],
+    "auto-rotate": [
+      {"kind":"gap","label":"phone / arrow-a","a":"phone-frame","b":"arrow-a","min":1},
+      {"kind":"gap","label":"phone / arrow-b","a":"phone-frame","b":"arrow-b","min":1},
+      {"kind":"gap","label":"phone / head-a","a":"phone-frame","b":"head-a","min":1},
+      {"kind":"gap","label":"phone / head-b","a":"phone-frame","b":"head-b","min":1}
+    ],
+    "mouse": [
+      {"kind":"gap","label":"wheel / divider","a":"wheel","b":"divider","min":0.6},
+      {"kind":"inside-box","label":"wheel inside the top half at Bold","a":"wheel","box":[10.75,5.75,21.25,13.25],"min":0.5}
+    ],
+    "currency": [
+      {"kind":"exclusive","label":"dollar and euro faces never show together","a":"dollar-bar","b":"euro-c","message":"{action} {label} frame {f}: {value|fixed2} and {other|fixed2}"}
+    ],
+    "sound-toggle": [
+      {"kind":"exclusive","label":"waves and cross never fade together","a":"wave-1","b":"cross-0","message":"{action} {label} frame {f}: {value|fixed2} and {other|fixed2}"},
+      {"kind":"gap","label":"wave-0 / wave-1","a":"wave-0","b":"wave-1","min":1}
+    ],
+    "battery-saver": [
+      {"kind":"exclusive","label":"block and leaf never fade together","a":"block","b":"leaf","message":"{action} {label} frame {f}: {value|fixed2} and {other|fixed2}"},
+      {"kind":"inside-box","label":"leaf clear of the battery wall at Bold","a":"leaf","box":[5.25,11.25,23.75,20.75],"min":0.8},
+      {"kind":"inside-box","label":"charge block clear of the battery wall at Bold","a":"block","box":[5.25,11.25,23.75,20.75],"min":1}
+    ],
+    "shortcut-key": [
+      {"kind":"inside-box","label":"cap never drops below the base skirt","a":"cap-frame","box":[0,0,32,26.25],"min":0},
+      {"kind":"inside-box","label":"bolt clear of the cap wall at Bold","a":"bolt","box":[8.25,5.75,23.75,20.25],"min":1}
+    ],
+    "haptic-feedback": [
+      {"kind":"gap","label":"phone / arc-l","a":"phone-frame","b":"arc-l","min":1},
+      {"kind":"gap","label":"phone / arc-r","a":"phone-frame","b":"arc-r","min":1}
+    ],
+    "mobile-data": [
+      {"kind":"gap","label":"down arrow / bar-0","a":"down","b":"bar-0","min":1},
+      {"kind":"gap","label":"up arrow / down head","a":"up","b":"down-head","min":0.8},
+      {"kind":"gap","label":"bar-0 / bar-1","a":"bar-0","b":"bar-1","min":1}
+    ],
+    "pointer-speed": [
+      {"kind":"gap","label":"cursor / trail-0","a":"cursor-frame","b":"trail-0","min":0.8},
+      {"kind":"gap","label":"cursor / trail-1","a":"cursor-frame","b":"trail-1","min":0.8},
+      {"kind":"gap","label":"cursor / trail-2","a":"cursor-frame","b":"trail-2","min":0.8}
+    ],
+    "trackpad": [
+      {"kind":"gap","label":"finger-0 / finger-1","a":"finger-0","b":"finger-1","min":0.8},
+      {"kind":"inside-box","label":"fingers stay on the pad at Bold","a":"finger-1","box":[5.25,8.25,26.75,23.75],"min":1},
+      {"kind":"gap","label":"fingers / divider","a":"finger-0","b":"divider","min":1}
+    ],
+    "reset-settings": [
+      {"kind":"gap","label":"knob-0 / ring","a":"knob-0","b":"ring","min":1},
+      {"kind":"gap","label":"knob-1 / ring","a":"knob-1","b":"ring","min":1},
+      {"kind":"gap","label":"knob-0 / knob-1","a":"knob-0","b":"knob-1","min":1}
+    ],
+    "auto-update": [
+      {"kind":"gap","label":"arrow head / ring","a":"head","b":"ring","min":1},
+      {"kind":"gap","label":"shaft / ring","a":"shaft","b":"ring","min":1}
+    ],
+    "privacy-shield": [
+      {"kind":"inside-box","label":"eye clear of the shield wall at Bold","a":"eye","box":[7.25,5.75,24.75,26.25],"min":1.5}
+    ],
+    "language": [
+      {"kind":"gap","label":"letter legs / bubble wall","a":"legs","b":"bubble-frame","min":1},
+      {"kind":"gap","label":"letter bar / bubble wall","a":"bar","b":"bubble-frame","min":1}
+    ],
+    "appearance": [
+      {"kind":"gap","label":"handle clear of the band","a":"handle","b":"band-frame","min":0.5}
+    ]
+  },
+  "evidence": {"stage":"beforeDirected","fields":[["rules",{"counter":"rules"}],["minimums",{"map":"rules"}],["errors",{"errors":true}]],"embed":{"key":"clearance","position":"end","failDirected":true},"key":"{icon} {label}","message":"{action} {label} frame {f}: {value|fixed3} < {min}"}
+}

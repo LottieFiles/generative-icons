@@ -1,0 +1,21 @@
+[package]
+name = "gai-render"
+description = "Headless rendering and visual checks with dotlottie-rs (ThorVG)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+gai-core.workspace = true
+# The commit dotlottie-web 0.80.0's WASM player was built from; it reproduces the
+# browser evidence bit for bit. No tvg-threads/tvg-simd, like the WASM build.
+dotlottie-rs = { git = "https://github.com/LottieFiles/dotlottie-rs.git", rev = "e112d3f70a5e688e4162dee199eb0531ec6cfcf6", default-features = false, features = ["tvg", "tvg-cpu", "tvg-lottie-expressions", "dotlottie", "theming"] }
+ab_glyph = "0.2.32"
+png = "0.17.16"
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

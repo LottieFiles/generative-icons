@@ -1,0 +1,6 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "45-chat-messaging",
+  "setAsserts": [{"kind":"iconCount","eq":20,"message":"Chat brief requires exactly twenty icons"},{"kind":"category","eq":"Chat & messaging","message":"Chat brief category"},{"kind":"statefulCount","min":6,"max":10,"message":"Chat brief requires 6–10 retained states"}]
+}

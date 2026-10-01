@@ -1,0 +1,39 @@
+{
+  "format": "gai-verify-rules",
+  "version": 2,
+  "set": "60-models-providers",
+  "setAsserts": [{"kind":"iconCount","eq":20,"message":"Models & providers must contain exactly 20 icons"},{"kind":"uniqueIconIds","eq":20,"message":"Duplicate public icon ID"},{"kind":"statefulCount","eq":10,"message":"Ten authored state controls require true reverses"}],
+  "dialect": {"sampler":"ge","flatten":{"cubicSteps":32,"skipDegenerate":false,"close":"first","unknown":"ignore"},"pick":"prefix","visible":{"op":">=","value":0},"slack":0,"gapRadius":"sequential","failure":"assert"},
+  "icons": {
+    "endpoint": [
+      {"kind":"compare","label":"plug/prong joint opens","value":{"abs":{"sub":[{"at":[{"pts":"prong-top"},0]},{"maxOf":{"xs":{"pts":"plug-frame"}}}]}},"op":"<","limit":0.00003,"record":"maximumPlugJointError","count":{"samples":1}},
+      {"kind":"compare","label":"prong crosses socket back","value":{"at":[{"pts":"prong-top"},-2]},"op":"<=","limit":21.00003,"record":false},
+      {"kind":"compare","label":"dock misses socket","value":{"at":[{"pts":"prong-top"},-2]},"op":"close","limit":21,"direction":"forward","when":{"ge":[{"f":1},{"rest":1}]},"record":false},
+      {"kind":"compare","label":"dock misses socket","value":{"at":[{"pts":"prong-top"},-2]},"op":"close","limit":21,"direction":"reverse","to":0,"record":false},
+      {"kind":"compare","label":"plug/prong joint opens","value":{"abs":{"sub":[{"at":[{"pts":"prong-bottom"},0]},{"maxOf":{"xs":{"pts":"plug-frame"}}}]}},"op":"<","limit":0.00003,"record":"maximumPlugJointError"},
+      {"kind":"compare","label":"prong crosses socket back","value":{"at":[{"pts":"prong-bottom"},-2]},"op":"<=","limit":21.00003,"record":false},
+      {"kind":"compare","label":"dock misses socket","value":{"at":[{"pts":"prong-bottom"},-2]},"op":"close","limit":21,"direction":"forward","when":{"ge":[{"f":1},{"rest":1}]},"record":false},
+      {"kind":"compare","label":"dock misses socket","value":{"at":[{"pts":"prong-bottom"},-2]},"op":"close","limit":21,"direction":"reverse","to":0,"record":false}
+    ],
+    "temperature-dial": [
+      {"kind":"compare","label":"Dial pivot x","value":{"at":[{"pts":"indicator"},0]},"op":"close","limit":16,"record":false},
+      {"kind":"compare","label":"Dial pivot y","value":{"at":[{"pts":"indicator"},1]},"op":"close","limit":17,"record":false},
+      {"kind":"compare","label":"dial counter closes","value":{"sub":[{"sub":[{"sub":[8,1.3]},{"hypot":[{"sub":[{"at":[{"pts":"indicator"},-2]},16]},{"sub":[{"at":[{"pts":"indicator"},-1]},17]}]}]},1.3]},"op":">=","limit":1.19,"record":"minimumDialGap","count":{"samples":1}}
+    ],
+    "model-picker": [
+      {"kind":"compare","label":"cursor touches option housing","value":{"sub":[{"sub":[{"minOf":{"xs":{"pts":"option-top-frame"}}},{"maxOf":{"xs":{"pts":"cursor"}}}]},2.6]},"op":">=","limit":1.39,"record":"minimumPickerGap","count":{"samples":1}}
+    ],
+    "max-tokens": [
+      {"kind":"compare","label":"output crosses hard maximum","value":{"sub":[{"sub":[{"at":[{"pts":"limit"},2]},{"maxOf":{"xs":{"pts":"output-second"}}}]},2.6]},"op":">=","limit":1.39,"record":"minimumLimitGap","count":{"samples":1}}
+    ],
+    "fallback-model": [
+      {"kind":"compare","label":"failure slash touches primary card","value":{"sub":[{"min":[{"mapMin":{"over":{"xs":{"pts":"primary-status"}},"expr":{"min":[{"sub":[{"$p":null},5]},{"sub":[18,{"$p":null}]}]}}},{"mapMin":{"over":{"ys":{"pts":"primary-status"}},"expr":{"min":[{"sub":[{"$p":null},5]},{"sub":[15,{"$p":null}]}]}}}]},2.6]},"op":">=","limit":1.12,"record":false,"count":{"samples":1}}
+    ],
+    "seed-lock": [
+      {"kind":"each","label":"seed lock paint crosses safety margin","nodes":{"nameEndsWith":["__outline.bold","__solid"]},"visible":{"op":">","value":0},"value":{"and":[{"ge":[{"sub":[{"minOf":{"pts":"@"}},{"radius":"@"}]},2]},{"le":[{"add":[{"maxOf":{"pts":"@"}},{"radius":"@"}]},30]}]},"op":">","limit":0},
+      {"kind":"compare","label":"lock hinge x","value":{"at":[{"pts":"shackle"},-2]},"op":"close","limit":21,"record":false},
+      {"kind":"compare","label":"lock hinge y","value":{"at":[{"pts":"shackle"},-1]},"op":"close","limit":15,"count":{"samples":1},"record":false}
+    ]
+  },
+  "evidence": {"stage":"beforeDirected","fields":[["samples",{"counter":"samples"}],["minimumPickerGap",{"agg":"min"}],["minimumLimitGap",{"agg":"min"}],["minimumDialGap",{"agg":"min"}],["maximumPlugJointError",{"agg":"max","init":0}]],"embed":{"key":"drawingChecks","position":"end"},"key":"{icon} {label}","message":"{action} {label} at frame {f}: {value} vs {min}"}
+}

@@ -4,7 +4,6 @@ __pycache__/
 .DS_Store
 .env
 .env.*
-!.env.example
 *.log
 *.zip
 # Rebuildable intermediate scenes and native output; distributed assets are tracked.
@@ -30,3 +29,9 @@ dist/
 
 # Per-run report written by the verification server; the PASS proof is browser-verification.json.
 motion/icon-sets/*/evidence/directed-browser-progress*.json
+
+# Rust build output
+/target/
+# Release binaries copied into the npm platform packages
+npm/platforms/*/bin/*
+!npm/platforms/*/bin/.gitkeep
