@@ -1,0 +1,69 @@
+---
+name: gen-animated-icons
+description: Find, install and create animated icons (Generative Animated Icons by LottieFiles) in a web, iOS or Android app with the gen-animated-icons CLI. Use when the user wants an animated icon, asks for one that may not exist yet, or changes icon files this tool manages. Not for general illustration or unrelated animation.
+---
+
+# Animated icons with gen-animated-icons
+
+Run commands in the app folder, or add `--cwd <app-folder>` (monorepos). `gen-animated-icons <command> --help` lists a command's options. Output is JSON when piped; pass `--json` to be sure. On failure, read `error.code`, `error.message`, `error.path` and `error.hint` from stderr and act on the hint. Exit codes: 1 a check failed (the report is on stdout) or the icon source failed to load (`SOURCE_ERROR` on stderr), 2 usage, 3 project or file conflict, 4 sign-in, 5 network or engine, 6 integrity.
+
+Start with `gen-animated-icons info`: it reports the platform, config, library version, managed files, every local icon and the sign-in. `localIcons` includes icons you created but have not built, and `local.icons` gives each one's `batch`, its `build` (`current`, `stale` or `not-built`) and whether it is `installed`, so you can pick up work in progress. `auth.session` is `verified`, `not-verified` (offline, or the engine could not be reached; `auth.reason` says why), `ended` or `signed-out`; on `ended` or `signed-out`, ask the user to sign in before you build. `--offline` never uses the network: `info` and `whoami` report a stored session as `not-verified` without checking it, and `login`, `logout` and `build` fail with `NETWORK`. If there is no `gen-animated-icons.json`, run `gen-animated-icons init`. `gen-animated-icons doctor` checks the whole setup, including whether the library's catalog can be read. Commands use the hosted library unless a checkout or an installed `@lottiefiles/generative-icons` package sits above the app; when the hosted one is unreachable (`NETWORK`, whose message gives the cause), pass `--library <dir>` with a package `dist` folder or a library checkout, or `--offline` to use what is cached. Once you pass `--library`, pass the same one to every later command (or set `GEN_ANIMATED_ICONS_LIBRARY` for the session): `check`, `build` and `submit` compare new ids with that library, and without it they warn that ids were not checked.
+
+## 1. Use an existing icon when one fits
+
+```sh
+gen-animated-icons search "<meaning>"      # ranked matches: id, label, category, stateful
+gen-animated-icons add <id> [<id>...]      # installs the .lottie asset and its descriptor
+gen-animated-icons preview <id>            # look at it first if unsure (PNG sheets)
+```
+
+1. Search the meaning. `search` adds common synonyms itself ("delete" finds `trash`, "envelope" finds `mail`) and leaves out icons that only mention a word in their description when others are named for it. If nothing fits, search other words and the underlying object (`bell` for "alerts").
+2. Pick by label and category. Results come best first: an icon the query names leads, and `score` follows that order. Copy ids exactly; never invent one or guess a file name.
+3. `add` it, then wire it up as [runtime.md](references/runtime.md) shows for the platform.
+4. Tell the user which id you chose and why.
+
+`gen-animated-icons remove <id>` uninstalls an icon; it refuses files someone edited.
+
+## 2. Create an icon when nothing fits
+
+```sh
+gen-animated-icons context "<meaning and motion>"    # contract, nearest references, their geometry and timing
+gen-animated-icons create <id> --label "<Label>" --intent "<what the motion shows>" [--from <library-id>] [--neighbor <id>]
+# draw and animate in gen-animated-icons/icons/batches/<id>.mjs
+gen-animated-icons check <id>              # offline; the source preflight, then (once built) the build's verification
+gen-animated-icons build <id>              # hosted export, package, verify, preview sheets, install
+gen-animated-icons preview <id>            # re-render the sheets; open every PNG it lists
+```
+
+- `context` prints JSON when piped; `--format text` prints a summary (the candidates, and each reference's intent and timing) without the geometry. It picks the two nearest library icons as references; pass `--neighbor <id>` (up to four) to choose them. Read their profiles (timing) and `initialOutlineGeometry` for construction, never to copy art. `create` saves a packet for the new icon in `.gen-animated-icons/context/<id>.json`; pass it the same `--neighbor` ids you chose with `context`. Its output lists the packet's `references`, and `nearest` (the closest library icons) only when you chose none.
+- A new id is kebab-case, not a library id, and not a Windows device name (`con`, `prn`, `aux`, `nul`, `com1` to `com9`, `lpt1` to `lpt9`): `create` refuses those with `USAGE`, since `submit` could never bundle their files.
+- `create --from <library-id>` starts the batch from that icon's working source (drawing and motion) to adapt; its parts and constraints already carry the new id. A stateful reference's state names and action labels (`initialState`, `finalState`, `forwardLabel`, `reverseLabel`) start as the kit's defaults (`prepared`, `result`) in the stub: name them for the new icon, since they ship in its descriptor. It needs a library checkout (`--library <checkout>` or `--library-root <checkout>`); the hosted library has no sources, so without a checkout leave `--from` out. Only icons of sets 07 onward can be references: `search` lists each icon's `set`, and `UNSUPPORTED_REFERENCE` suggests eligible ones in its hint. Without `--from` the batch is a commented template, and `check` reports `ICON_NOT_EXPORTED` until you draw the icon with `make('<id>', …)`.
+- Fix every error `check` lists before building; `build` runs the same source checks and exports nothing while one fails. Besides the drawing rules, they include what verification would reject after the export: a part still moving after rest (`MOVES_AFTER_REST`), a gesture ending away from its first pose (`RESET_MOVED`), Light and Strong starting or ending apart (`LIGHT_STRONG_DIFFER`) and a reverse that does not undo its action (`REVERSE_MISMATCH`). A finding with a `path` names the file to edit, and a `line` where the code threw (QuickJS gives the line its statement starts on, at or before the fault). A `SOURCE_ERROR` message starts with `file:line` for a syntax error, or names the file and the line at or before the throw. Icon code that runs too long stops with `SOURCE_ERROR` too, naming the file and the line it was running where it can.
+- `check` never waits on the network: library ids are compared with `--library` or the cached catalog, and `build` checks them online. Before the first build the native check is skipped (`<id> is not built yet`); after a build it verifies it, and `STALE_BUILD` means a file that icon depends on (its batch, the helpers it imports, `definitions.mjs` or the set's config) changed since, so rebuild it. Then the report's `status` is `STALE` (exit 0), the native check's too, and `stale` lists the icons to build again before you preview or rely on them; a file it depends on that became a symlink, or is no longer a regular file, counts as changed too. Other icons stay current, and `submit` accepts only current builds. A build made by an earlier version of the CLI tracked every source file, so any change makes it stale until it is rebuilt once; its message says so.
+- Helpers may sit in subfolders of `gen-animated-icons/icons/batches/`; a build snapshots every module the source loads. Import each one by a plain string such as `'./shared/h.mjs'`: an `import()` of a computed name or an escape in a specifier hides which modules the icon depends on, so its build depends on every module and `submit` refuses it. `check` and `build` warn `UNTRACED_IMPORTS` before the export, naming the import, its file and line; fix it then. Keep source files regular files, not symlinks. Never add files to the kit folder `gen-animated-icons/library/`.
+- `build` needs a signed-in engine and the network: with `--offline` it exports nothing and fails with `NETWORK`. On `NOT_LOGGED_IN` or `SESSION_EXPIRED`, ask the user to run `gen-animated-icons login` (`--no-browser` over SSH) and wait; never try to sign in yourself. `build` prints the preview paths and installs only icons whose checks pass; when an icon cannot be built, the ones built before it are still installed and the error names them.
+- `preview` options: `--motion light|strong|both|reverse|all` (`reverse` is a stateful icon's reset actions), or `--animation <name>` for the action a verify failure names; `--times 0,0.1,0.2` or `--frames N` (evenly spaced from the start to the rest frame) for up to 64 columns; `--styles`, `--weights`, `--themes` for rows. Light and Strong share columns, and reverse actions get their own over their own timing. Previewing an icon you created but have not built fails with `UNKNOWN_ICON` and a hint to build it.
+
+Iterate until the icon reads well:
+
+1. Open every PNG and look at it. Check each style and weight, both themes, and Light against Strong in the same columns (the same elapsed times).
+2. Name each flaw you see, fix it in the batch file, then rerun `check`, `build` and `preview`.
+3. Stop when a round finds nothing new, or when the same flaw repeats twice; then report what remains.
+
+Authoring rules: [authoring.md](references/authoring.md). What to look for in previews: [review.md](references/review.md).
+
+To offer a finished icon to the library, the user runs `gen-animated-icons submit <id> --license MIT` (`--dry-run --output bundle.zip` writes the bundle without sending). Only verified builds of the current source are accepted. The bundle holds what each build verified, for the submitted icons only: from the build's snapshot, the icon's batch, the modules it imports and the set's config, plus a `definitions.mjs` that imports just those icons. Other icons, unrelated files and later edits stay out. Its preview sheets are the build's review sheets (Light and Strong at `preview`'s defaults), rendered again from the verified build: sheets you rendered with other options, or of an older build, never ship, and a missing or changed review sheet is rewritten in `.gen-animated-icons/previews/<id>/` (`regenerated` lists them). A source file that is or runs through a symlink is refused (`SYMLINK_PATH`), and so is a build of a `definitions.mjs` edited by hand (keep one import per batch, as `create` writes it). When an icon's imports cannot be traced, its bundle would hold every module its build loaded, other icons' batches included, so `submit` refuses it (`CHECK_FAILED`) before writing or sending anything; fix the imports and rebuild, or the user passes `--include-untraced` to send them all. A bundled file whose name holds a backslash, a colon or a control character, or is a Windows device name such as `con` or `nul`, is refused (`INVALID_PATH`); rename it.
+
+## Agents with MCP
+
+`gen-animated-icons mcp` serves the same flow as tools: `search`, `add`, `context`, `create`, `check`, `build`, `preview` (which returns the sheets as images). Arguments must match each tool's input schema exactly: an unknown or misspelled name, a missing one or a wrong type is refused (`invalid_params`) with the names the tool takes. `build`, `check` and `add` take `ids` (a list); `preview` and `create` take `id`. A tool's `cwd` must be a folder inside the server's. Each call runs as a process of its own: icon code that runs too long ends that call with `SOURCE_ERROR` (any call stops after 30 minutes), and the server keeps answering meanwhile. Build one icon per `build` call; with a progress token, each exported action arrives as a progress notification. A server started with `--offline` refuses `build` (`NETWORK`). A line that is not a JSON-RPC message is answered with an error (-32700, or -32600 for JSON that is not a request) and the server keeps serving. Add the server to the agent's MCP settings only when the user asks: `{"mcpServers": {"gen-animated-icons": {"command": "npx", "args": ["gen-animated-icons", "mcp"]}}}`. Until the gen-animated-icons npm package is published, use the binary's absolute path as `command` with `"args": ["mcp"]`; `init` prints that entry as `mcpLocal`.
+
+## Rules
+
+- Never hand-edit generated files: installed `.lottie` assets, descriptors, `settings.*`, `.gen-animated-icons/`, this skill, or the kit in `gen-animated-icons/library/`. Change `gen-animated-icons.json` or your batch source, then rerun the command.
+- `MODIFIED_FILE` means someone edited a managed file. Run `gen-animated-icons diff`, show the user, and let them decide. Never delete or overwrite a file to get past it. An edited kit copy is fixed with `gen-animated-icons init --update-kit`.
+- Colors are six-digit hex; resolve theme tokens first. Styles are `outline`, `solid` or `duotone`. Weight is 1 to 3 (outline only); iOS and Android players show 1.5, 2 or 2.5 unless `add --bake-weight <w>` bakes another.
+- Light and Strong are separate authored motions. Never fake Strong by changing speed.
+- Decorative icons need no label; the control around them carries the accessible name. Respect reduced motion.
+- Report every check you did not run. Never claim you reviewed a preview you did not open.
+- Do not edit `AGENTS.md`, `CLAUDE.md`, MCP settings or global configuration unless the user asks.
