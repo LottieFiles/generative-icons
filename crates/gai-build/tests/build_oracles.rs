@@ -274,5 +274,8 @@ fn every_set_full_with_replayed_exports() {
     let outcomes = check_sets(&sets, true);
     eprintln!("full (replayed exports): {}; wall {:.1?}", summary(&outcomes), started.elapsed());
     assert_eq!(outcomes.len(), 56);
-    assert!(outcomes.iter().all(|(_, outcome)| outcome.tallies["engine.js"].identical == outcome.animations));
+    // A set whose icons are all adopted from specs builds nothing and has no tally.
+    assert!(outcomes
+        .iter()
+        .all(|(_, outcome)| outcome.tallies.get("engine.js").map_or(0, |t| t.identical) == outcome.animations));
 }
