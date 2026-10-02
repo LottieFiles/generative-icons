@@ -49,6 +49,10 @@ fn mirror(id: &str) -> Option<Mirror> {
     if src.join("batches").is_dir() {
         copy_files(&src.join("batches"), &set_dir.join("batches"), |_| true);
     }
+    // Adopted spec icons are verified against their specs.
+    if src.join("specs").is_dir() {
+        copy_files(&src.join("specs"), &set_dir.join("specs"), |_| true);
+    }
     copy_files(&src.join("native"), &set_dir.join("native"), |n| {
         n.ends_with(".json")
     });

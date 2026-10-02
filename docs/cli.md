@@ -109,6 +109,7 @@ The hosted library and the submission service go live at launch. Until then, pas
 | `new-set <slug>` | Scaffolds an empty source set with the next free number |
 | `preflight [<set>] [--all]` | Screens set sources before export |
 | `build [<set>…] [--all]` | Preflights, exports on the hosted engine and packages sets (`--reuse-native` rebuilds from `native/`, `--offline-scenes` writes scenes only) |
+| `adopt <set> <build>…` | Replaces library icons with spec v2 builds (`.gen-animated-icons/build/<id>`): spec, assets and `set.json` entry, then repackages the set |
 | `verify [<set>…] [--all] [--paint]` | Runs the set gates and the paint audit, and writes their evidence |
 | `verify-visual <set>` | Runs the renderer checks and writes `browser-verification.json` and review sheets |
 | `measure [<set>…] [--all]` | Writes `evidence/motion-measurements.json` (sets 22–39) |

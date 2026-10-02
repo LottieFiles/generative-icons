@@ -242,6 +242,10 @@ pub enum BuildError {
     NotInLibrary(PathBuf),
     #[error("no icon named {0}")]
     UnknownIcon(String),
+    #[error("{0} is adopted from specs/{0}.icon.json: build it with `gen-animated-icons build` in a project and run `library adopt`")]
+    Adopted(String),
+    #[error("specs/{0}.icon.json exists, but set.json's entry for {0} was not adopted from it: run `gen-animated-icons library adopt`")]
+    NotAdopted(String),
     #[error("animation name {0:?} cannot be used as a file name")]
     InvalidName(String),
     /// `library/run-ai.mjs`: an AI set must define exactly its scope's icons, in order.
@@ -274,14 +278,26 @@ pub fn build(target: &Target, mode: Mode<'_>, options: &BuildOptions<'_>) -> Res
     let icon = options.icon.as_deref();
     let sample = !matches!(mode, Mode::ReuseNative);
     let (description, scenes) = gai_js::run_on_worker(&options.limits, || evaluate(&source, options, sample))?;
+    // Icons adopted from spec v2 keep their committed outputs; they are rebuilt from the
+    // spec in a project and adopted again, never from the definitions.
+    let committed = committed_assets(layout, profile);
+    let adopted = adopted_entries(layout, committed.as_deref(), &description)?;
     let selected: Vec<usize> = match icon {
-        Some(name) => vec![icon_index(&description, name)?],
+        Some(name) => {
+            let index = icon_index(&description, name)?;
+            if adopted.contains_key(&index) {
+                return Err(BuildError::Adopted(name.to_owned()));
+            }
+            vec![index]
+        }
         None => {
             check_scope(layout, profile, &description)?;
             (0..description.icons.len()).collect()
         }
     };
-    for &index in &selected {
+    let scenes: Vec<Scene> = scenes.into_iter().filter(|scene| !adopted.contains_key(&scene.icon)).collect();
+    let built: Vec<usize> = selected.iter().copied().filter(|index| !adopted.contains_key(index)).collect();
+    for &index in &built {
         for variant in &description.icons[index].variants {
             check_name(&variant.name)?;
         }
@@ -296,6 +312,23 @@ pub fn build(target: &Target, mode: Mode<'_>, options: &BuildOptions<'_>) -> Res
         animations: Vec::new(),
         records: vec![Vec::new(); description.icons.len()],
     };
+    // A build written somewhere other than the set's committed assets carries the adopted
+    // icons' outputs with it, so its folder is a whole set.
+    if let Some(committed) = committed.as_deref().filter(|dir| *dir != layout.out.as_path())
+        && !adopted.is_empty()
+        && !matches!(mode, Mode::OfflineScenes)
+    {
+        run.output.directory(&layout.out)?;
+        for entry in adopted.values() {
+            for name in entry.get("animations").and_then(Value::as_array).into_iter().flatten().filter_map(|a| a.get("name").and_then(Value::as_str)) {
+                for suffix in [".json", ".manifest.json", ".theme-dark.json", ".theme-light.json"] {
+                    let path = committed.join(format!("{name}{suffix}"));
+                    let bytes = fs::read(&path).map_err(|source| BuildError::Read { path, source })?;
+                    run.output.write(layout.out.join(format!("{name}{suffix}")), bytes)?;
+                }
+            }
+        }
+    }
     match mode {
         Mode::OfflineScenes => {
             run.output.directory(&layout.scenes)?;
@@ -307,7 +340,7 @@ pub fn build(target: &Target, mode: Mode<'_>, options: &BuildOptions<'_>) -> Res
         Mode::ReuseNative => {
             run.provenance = Some(Provenance::collect(profile, &layout.root, &layout.library)?);
             run.output.directory(&layout.out)?;
-            for &index in &selected {
+            for &index in &built {
                 for (variant, animation) in description.icons[index].variants.iter().enumerate() {
                     let path = layout.native.join(format!("{}.json", animation.name));
                     let native = fs::read(&path).map_err(|source| BuildError::Read { path: path.clone(), source })?;
@@ -333,7 +366,13 @@ pub fn build(target: &Target, mode: Mode<'_>, options: &BuildOptions<'_>) -> Res
     }
 
     let set_json = run.provenance.is_some().then(|| {
-        let icons = selected.iter().map(|&i| set_json::icon_entry(&description.icons[i], &run.records[i])).collect();
+        let icons = selected
+            .iter()
+            .map(|&i| match adopted.get(&i) {
+                Some(entry) => entry.clone(),
+                None => set_json::icon_entry(&description.icons[i], &run.records[i]),
+            })
+            .collect();
         set_json::assemble(profile, icons)
     });
     if let (Some(set), None) = (&set_json, icon) {
@@ -342,6 +381,46 @@ pub fn build(target: &Target, mode: Mode<'_>, options: &BuildOptions<'_>) -> Res
     let Run { output, animations, .. } = run;
     Ok(BuildReport { set_id: profile.id.clone(), animations, set_json, files: output.commit()? })
 }
+
+/// A library set's committed assets folder (`<repo>/prototype/icons/<NN>/assets`), wherever
+/// this build writes; `None` outside a library checkout.
+fn committed_assets(layout: &Layout, profile: &Profile) -> Option<PathBuf> {
+    Layout::library_set(&layout.root, profile).ok().map(|library| library.out)
+}
+
+/// The committed `set.json` entries of the icons adopted from spec v2: every icon with a
+/// `specs/<name>.icon.json` in a library set, by description index. Projects adopt nothing.
+fn adopted_entries(layout: &Layout, committed: Option<&Path>, description: &Description) -> Result<BTreeMap<usize, Value>, BuildError> {
+    let specs = layout.root.join("specs");
+    let mut out = BTreeMap::new();
+    let named: Vec<(usize, &str)> = description
+        .icons
+        .iter()
+        .enumerate()
+        .map(|(i, icon)| (i, icon.name.as_str()))
+        .filter(|(_, name)| specs.join(format!("{name}.icon.json")).is_file())
+        .collect();
+    if named.is_empty() {
+        return Ok(out);
+    }
+    let path = committed.unwrap_or(&layout.out).join("set.json");
+    let bytes = fs::read(&path).map_err(|source| BuildError::Read { path: path.clone(), source })?;
+    let committed: Value = serde_json::from_slice(&bytes).map_err(|source| BuildError::Json { path, source })?;
+    let icons = committed.get("icons").and_then(Value::as_array);
+    for (index, name) in named {
+        let entry = icons
+            .into_iter()
+            .flatten()
+            .find(|entry| entry.get("icon").and_then(Value::as_str) == Some(name))
+            .filter(|entry| entry.get("source").and_then(Value::as_str) == Some(ADOPTED_SOURCE))
+            .ok_or_else(|| BuildError::NotAdopted(name.to_owned()))?;
+        out.insert(index, entry.clone());
+    }
+    Ok(out)
+}
+
+/// The `source` of records adopted from a spec.
+pub const ADOPTED_SOURCE: &str = "gai-icon/2";
 
 /// Loads and installs the whole set and, when `sample` is set, samples the selected icons.
 /// Runs on a JS worker thread.

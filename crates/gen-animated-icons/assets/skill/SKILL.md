@@ -66,6 +66,7 @@ To offer a finished icon to the library, the user runs `gen-animated-icons submi
 - `MODIFIED_FILE` means someone edited a managed file. Run `gen-animated-icons diff`, show the user, and let them decide. Never delete or overwrite a file to get past it. An edited kit copy is fixed with `gen-animated-icons init --update-kit`.
 - Colors are six-digit hex; resolve theme tokens first. Styles are `outline`, `solid` or `duotone`. Weight is 1 to 3 (outline only); iOS and Android players show 1.5, 2 or 2.5 unless `add --bake-weight <w>` bakes another.
 - Light and Strong are separate authored motions. Never fake Strong by changing speed.
+- Every action needs an event, not a nudge: animate what the object does for the user (a microphone takes sound, send leaves, a bell rings), show the cause briefly with parts hidden at rest (sound, sparks, wind, a trail), draw marks that mean something, and move in beats that get smaller with the parts in order.
 - Decorative icons need no label; the control around them carries the accessible name. Respect reduced motion.
 - Report every check you did not run. Never claim you reviewed a preview you did not open.
 - Do not edit `AGENTS.md`, `CLAUDE.md`, MCP settings or global configuration unless the user asks.

@@ -386,7 +386,7 @@ fn entries(v: Option<&Value>) -> impl Iterator<Item = (&String, &Value)> {
 }
 
 /// §3.2: canvas, frame rate, shape layers, styles and presets.
-fn check_format(data: &Value, a: Record<'_>) -> Result<(), VerifyError> {
+pub(super) fn check_format(data: &Value, a: Record<'_>) -> Result<(), VerifyError> {
     let name = a.name()?;
     for (key, want) in [("w", 32.0), ("h", 32.0), ("fr", 60.0), ("op", 144.0)] {
         ensure(is_number(data.get(key), want), || {
@@ -414,7 +414,7 @@ fn check_format(data: &Value, a: Record<'_>) -> Result<(), VerifyError> {
 }
 
 /// §3.3: every top-level stroke and fill is slot-bound; outline strokes use the three weights.
-fn check_paint(data: &Value, a: Record<'_>, v: &ActionVariant) -> Result<(), VerifyError> {
+pub(super) fn check_paint(data: &Value, a: Record<'_>, v: &ActionVariant) -> Result<(), VerifyError> {
     let name = a.name()?;
     let slots = data.get("slots");
     let bound = |sid: Option<&Value>| -> Result<bool, VerifyError> {
@@ -482,7 +482,7 @@ fn check_paint(data: &Value, a: Record<'_>, v: &ActionVariant) -> Result<(), Ver
 }
 
 /// §3.4: each theme defines exactly the slot registry.
-fn check_themes(set: &SetContext<'_>, data: &Value, name: &str) -> Result<(), VerifyError> {
+pub(super) fn check_themes(set: &SetContext<'_>, data: &Value, name: &str) -> Result<(), VerifyError> {
     let slots = data
         .get("slots")
         .ok_or_else(|| VerifyError::Assertion("Cannot convert undefined to object".into()))?;

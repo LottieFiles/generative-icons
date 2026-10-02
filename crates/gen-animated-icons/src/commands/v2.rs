@@ -769,6 +769,27 @@ pub(crate) fn verify(built: &Built, c: &Compiled) -> Verdict {
         }
     }
     summary.push(format!("player: {rendered} dotlottie-rs frames (first, rest, last of each action)"));
+    // The library's visual check (`library verify-visual`) on every action: every size,
+    // style, weight and theme, clipping, visibility and holds included, so an adoptable
+    // build cannot fail it later.
+    match std::fs::read(built.dir.join("set.json")).ok().and_then(|bytes| gai_render::SetManifest::from_slice(&bytes).ok()) {
+        Some(set) => {
+            let mut checked = 0;
+            for meta in set.all_actions() {
+                let Ok(lottie) = std::fs::read(built.dir.join(format!("{}.lottie", meta.name))) else {
+                    fail(format!("{}: no .lottie to check", meta.name));
+                    continue;
+                };
+                let run = gai_render::verify_action(&set, meta, &lottie, &gai_render::SetRules::CANONICAL, gai_render::ActionOptions { sheets: false });
+                match run.outcome {
+                    gai_render::Outcome::Passed(_) => checked += 1,
+                    gai_render::Outcome::Failed(message) => fail(format!("{}: library visual check: {message}", meta.name)),
+                }
+            }
+            summary.push(format!("visual: {checked} actions pass the library's renderer checks"));
+        }
+        None => fail("set.json cannot be read for the visual check".into()),
+    }
     Verdict { summary, error }
 }
 

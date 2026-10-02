@@ -26,6 +26,7 @@
 //! # Ok::<(), gai_check::verify::VerifyError>(())
 //! ```
 
+pub mod adopted;
 mod generic;
 pub mod geom;
 pub mod js;
@@ -250,6 +251,9 @@ pub(crate) struct SetContext<'a> {
     options: &'a VerifyOptions,
     hashes: Mutex<HashMap<PathBuf, String>>,
     scenes: Mutex<HashMap<String, Arc<Scene>>>,
+    /// Actions of icons adopted from spec v2: they have no scenes, so a stage that names
+    /// one must skip it ([`SetContext::is_adopted`]) rather than read a stale scene.
+    adopted: std::collections::HashSet<String>,
 }
 
 impl<'a> SetContext<'a> {
@@ -260,7 +264,13 @@ impl<'a> SetContext<'a> {
             options,
             hashes: Mutex::default(),
             scenes: Mutex::default(),
+            adopted: Default::default(),
         }
+    }
+
+    /// Whether `name` is an action of an icon adopted from spec v2.
+    pub fn is_adopted(&self, name: &str) -> bool {
+        self.adopted.contains(name)
     }
 
     /// sha256 of a file's raw bytes.
@@ -318,6 +328,9 @@ impl<'a> SetContext<'a> {
 
     /// `readScene(name)`: the parsed scene of an action.
     pub fn scene(&self, name: &str) -> Result<Arc<Scene>, VerifyError> {
+        ensure(!self.is_adopted(name), || {
+            format!("{name} is adopted from a spec and has no scene; the stage that reads it must skip adopted icons")
+        })?;
         if let Some(s) = self
             .scenes
             .lock()
@@ -365,20 +378,42 @@ fn run_stages(
     options: &VerifyOptions,
     run: &mut Verification,
 ) -> Result<(), VerifyError> {
-    let manifest = SetManifest::read(&paths.assets_dir.join("set.json"))?;
-    run.set_id = manifest.id().to_string();
+    let full = SetManifest::read(&paths.assets_dir.join("set.json"))?;
+    run.set_id = full.id().to_string();
     let profile = Profile::for_set(&run.set_id, &paths.set_dir)?;
-    let set = SetContext::new(paths, manifest, options);
+    // Icons adopted from spec v2 have no scenes or legacy natives: the legacy stages
+    // verify the set without them, and the adopted stage checks what they ship.
+    let (manifest, adopted) = adopted::split(&full);
+    let mut set = SetContext::new(paths, manifest, options);
+    set.adopted = adopted
+        .iter()
+        .flat_map(|icon| icon.get("animations").and_then(Value::as_array).into_iter().flatten())
+        .filter_map(|a| a.get("name").and_then(Value::as_str).map(str::to_string))
+        .collect();
     scope::check(&set)?;
     if let Some(tail) = &profile.rules {
-        tail.check_set(&set.manifest)?;
+        tail.check_set(&full)?;
     }
     let Some(mut directed) = generic::run(&set, &profile.generic)? else {
+        ensure(adopted.is_empty(), || {
+            format!("{}: a frozen set cannot hold adopted spec icons", run.set_id)
+        })?;
         // 01/02 write no evidence.
         run.summary
             .push(format!("PASS {}: frozen legacy checks", run.set_id));
         return Ok(());
     };
+    if !adopted.is_empty() {
+        let checked = adopted::check(&set, &adopted)?;
+        directed.icons += adopted.len();
+        directed.actions += adopted
+            .iter()
+            .map(|icon| icon.get("animations").and_then(Value::as_array).map_or(0, Vec::len))
+            .sum::<usize>();
+        directed.extra.push(("adoptedSpecs".into(), checked));
+        run.summary
+            .push(format!("PASS {}: {} adopted spec icons", run.set_id, adopted.len()));
+    }
 
     // Stages placed before the directed write: a failure there leaves it unwritten.
     let mut deferred = None;

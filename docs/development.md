@@ -71,6 +71,24 @@ gen-animated-icons library package --icon-library   # refresh icon-library.zip a
 
 The [creating icons](creating-icons.md) guide covers the design loop; [verification](verification.md) covers the checks.
 
+## Reanimate a library icon with a spec
+
+A library icon can be replaced by a spec v2 icon of the same id. Author and build it in any project, then adopt the build into its set:
+
+```sh
+gen-animated-icons create airplane --spec          # in a scratch project: port the drawing, write the motion
+gen-animated-icons check airplane && gen-animated-icons draft airplane
+gen-animated-icons build airplane --no-install
+gen-animated-icons library adopt 14 path/to/project/.gen-animated-icons/build/airplane
+gen-animated-icons library verify 14
+gen-animated-icons library verify-visual 14
+```
+
+- `adopt` copies the spec to `motion/icon-sets/NN-…/specs/<id>.icon.json` and the actions into the set's assets, replaces the icon's `set.json` entry (keeping its number, category and state labels) and repackages the set. The build must have the icon's actions: the same reverse or reset actions for a stateful icon.
+- The rest pose and, for a stateful icon, the end state must stay the library drawing, so apps that switch versions see no jump.
+- From then on the spec is the icon's source. `library build` keeps adopted icons as they are (their old definitions stay for the legacy checks but no longer export), and `library verify` checks them against their spec: hashes, format, paint, themes and markers. Their motion checks run in `build`, and `verify-visual` renders them like every other action.
+- Frozen sets 01 and 02 cannot adopt.
+
 ## Local gallery
 
 `npm run dev` (or `python3 scripts/serve.py`) serves `prototype/` on port 4189; the gallery is at `/icons/01/`. Pass `-- --port 4190` to change the port. The gallery vendors its player and fonts and needs no build step.

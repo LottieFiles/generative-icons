@@ -59,13 +59,11 @@ fn check(set: &str) -> Outcome {
     if !scenes.is_dir() {
         return Outcome::Skipped;
     }
-    let manifest = SetManifest::read(
-        &root
-            .join("prototype/icons")
-            .join(&set[..2])
-            .join("assets/set.json"),
-    )
-    .unwrap();
+    // As `library verify` runs it: without the icons adopted from spec v2, which have no
+    // scenes and are checked against their specs instead.
+    let bytes = std::fs::read(root.join("prototype/icons").join(&set[..2]).join("assets/set.json")).unwrap();
+    let (legacy, _) = gai_check::verify::adopted::split_doc(&serde_json::from_slice(&bytes).unwrap());
+    let manifest: SetManifest = serde_json::from_value(legacy).unwrap();
     let clearance = Clearance::for_set(&set_dir, &manifest.id)
         .unwrap()
         .unwrap_or_else(|| panic!("{set} has no clearance program"));

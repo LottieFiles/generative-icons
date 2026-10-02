@@ -7,6 +7,7 @@
 //! above the working one that holds `motion/icon-sets`. Sets are named by folder
 //! (`63-voice-agents`), by number (`63`) or by path.
 
+pub mod adopt;
 pub mod measure;
 pub mod new_set;
 pub mod register;
@@ -27,6 +28,7 @@ pub fn run(ctx: &Context, command: &LibraryCommand) -> Result<Report> {
         LibraryCommand::NewSet(args) => new_set::run(&repo, args),
         LibraryCommand::Preflight(args) => sets::preflight(&repo, args),
         LibraryCommand::Build(args) => sets::build(ctx, &repo, args),
+        LibraryCommand::Adopt(args) => adopt::run(&repo, args),
         LibraryCommand::Verify(args) => sets::verify(&repo, args),
         LibraryCommand::VerifyVisual(args) => visual::run(ctx, &repo, args),
         LibraryCommand::Measure(args) => measure::run(&repo, args),

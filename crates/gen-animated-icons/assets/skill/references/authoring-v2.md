@@ -24,6 +24,18 @@ Fix every `check` error before you draft. A draft is about 4 s and stores nothin
 
 The drawing is the rest pose. A gesture ends where it starts; a stateful icon (`state`) ends changed.
 
+## Motion that reads
+
+Give every action an event, not a nudge that comes back:
+
+- Animate what the object does for the user: a microphone takes sound, send leaves, Wi-Fi gains signal, a bell rings, a download lands.
+- Show the cause briefly with parts hidden at rest (`"hidden": true`, then key their `opacity`): sound arcs, sparks, speed lines, a trail, a ripple. Hide them again before the action ends.
+- Draw marks that mean done, created or blocked (`draw`) instead of moving them in.
+- Hit, rebound, settle: two or three beats, each smaller (`hit`, `settle`, `bounce`). Make the return quicker than the action.
+- Move the driver first and followers 60–120 ms later (`follow` with `lag`).
+- Light plays the event once; Strong adds beats or travel. Think 1.5–4 units of travel or 10–40° of turn: a move you cannot see at 24 px does not count.
+- Keep every part at least 1.4 units inside the canvas at Bold in every frame, travel and overshoot included: at 24 px, ink on the outer pixel fails the visual check `build` runs.
+
 ## Parts
 
 ```json

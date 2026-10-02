@@ -197,7 +197,17 @@ fn attachments(set: &SetContext<'_>) -> Result<(Evidence, String), VerifyError> 
     let mut cloud_worst: Option<Value> = None;
     let frames = || (0..=144u32).map(|f| (f, f64::from(f) / 60.0));
     let sample = |node: &SceneNode, t: f64| Sampler::Ge.coords(&node.points, t).into_owned();
+    // Icons adopted from a spec have no scenes; their own build verified them.
+    let mut adopted: Vec<String> = Vec::new();
     for mode in ["", "-strong"] {
+        let skip = |name: String, adopted: &mut Vec<String>| {
+            let skipped = set.is_adopted(&name);
+            if skipped && !adopted.contains(&name) {
+                adopted.push(name);
+            }
+            skipped
+        };
+        if !skip(format!("queued{mode}"), &mut adopted) {
         let queued = set.scene(&format!("queued{mode}"))?;
         let (stop, ticket) = (
             pick_prefix(&queued, "queued-stop")?,
@@ -208,7 +218,11 @@ fn attachments(set: &SetContext<'_>) -> Result<(Evidence, String), VerifyError> 
             queue_gap = min2(queue_gap, gap);
             ensure(gap >= 1.99, || "Ticket and stop merge at Bold".into())?;
         }
+        }
         for direction in ["", "-disconnect"] {
+            if skip(format!("reconnect{direction}{mode}"), &mut adopted) {
+                continue;
+            }
             let sc = set.scene(&format!("reconnect{direction}{mode}"))?;
             for (_, t) in frames() {
                 let at = |n: &str| -> Result<Vec<f64>, VerifyError> {
@@ -239,6 +253,7 @@ fn attachments(set: &SetContext<'_>) -> Result<(Evidence, String), VerifyError> 
                 reconnect_frames += 1;
             }
         }
+        if !skip(format!("offline{mode}"), &mut adopted) {
         let offline = set.scene(&format!("offline{mode}"))?;
         for n in [
             "wave-outer-left",
@@ -253,6 +268,10 @@ fn attachments(set: &SetContext<'_>) -> Result<(Evidence, String), VerifyError> 
                     "Offline arc and slash lack a readable Bold gap".into()
                 })?;
             }
+        }
+        }
+        if skip(format!("cloud-sync{mode}"), &mut adopted) {
+            continue;
         }
         let cloud = set.scene(&format!("cloud-sync{mode}"))?;
         let edge = contour(pick_prefix(&cloud, "cloud-sync-cloud")?, 0.0)?;
@@ -276,10 +295,16 @@ fn attachments(set: &SetContext<'_>) -> Result<(Evidence, String), VerifyError> 
     let mut report = Map::new();
     report.insert("result".into(), json!("PASS"));
     report.insert("outlineWeight".into(), json!(BOLD));
-    report.insert("minimumQueueGap".into(), Value::from(queue_gap));
-    report.insert("minimumOfflineGap".into(), Value::from(offline_gap));
-    report.insert("minimumCloudGap".into(), Value::from(cloud_gap));
+    // A gap whose icon was adopted from a spec is not measured here.
+    for (key, gap) in [("minimumQueueGap", queue_gap), ("minimumOfflineGap", offline_gap), ("minimumCloudGap", cloud_gap)] {
+        if gap.is_finite() || adopted.is_empty() {
+            report.insert(key.into(), Value::from(gap));
+        }
+    }
     report.insert("reconnectFrames".into(), json!(reconnect_frames));
+    if !adopted.is_empty() {
+        report.insert("adoptedSpecs".into(), json!(adopted));
+    }
     if let Some(worst) = cloud_worst {
         report.insert("cloudWorst".into(), worst);
     }

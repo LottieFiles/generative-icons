@@ -95,6 +95,7 @@ Every icon is 32 × 32 at 60 fps on a fixed 2400 ms timeline. Each icon sets its
 - **P5: Loops are only for ongoing activity.** Loading, recording and playback use `loop`; everything else uses `icon-play`.
 - **P6: The rest pose is the reduced-motion pose.** Every asset has a `rest` marker showing the meaningful final state.
 - **P7: Readable at 24 px.** Light and Strong are compared at equal elapsed time and at 24 and 32 px before approval.
+- **P8: Every action has an event.** Animate what the object does for the user, not a generic nudge. Show the cause briefly (sound, sparks, wind, a trail: hidden at rest), draw marks that mean something, and move in decaying beats with parts in order. See [motion principles](docs/motion-principles.md#events-not-nudges).
 
 ## Durations
 
@@ -106,7 +107,7 @@ Action length is authored per icon and recorded as the `action` marker's duratio
 
 ## Easing
 
-The engine's Lottie export writes motion as sampled path keyframes joined by straight lines, so easing lives in the sampled shapes, not in keyframe tangents. That is why only `linear` is declared. The export writes linear as tangents `o(1,1) i(0,0)`, which `easing-map` records. Timing and easing are designed in the authoring helpers (`motion/icon-sets/library/direction.mjs`).
+The engine's Lottie export of the `definitions.mjs` sets writes motion as sampled path keyframes joined by straight lines, so easing lives in the sampled shapes, not in keyframe tangents. That is why only `linear` is declared. Icons adopted from spec v2 (`specs/<id>.icon.json`) are built from eased keyframes instead and keep the curves themselves. The export writes linear as tangents `o(1,1) i(0,0)`, which `easing-map` records. Timing and easing are designed in the authoring helpers (`motion/icon-sets/library/direction.mjs`).
 
 ## Roles
 

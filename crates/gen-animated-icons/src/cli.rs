@@ -472,6 +472,8 @@ pub enum LibraryCommand {
     Preflight(LibraryPreflightArgs),
     /// Preflight, build and package sets
     Build(LibraryBuildArgs),
+    /// Replace library icons with spec v2 builds: spec, assets and set.json entry, then package
+    Adopt(LibraryAdoptArgs),
     /// Run the set gates and write their evidence
     Verify(LibraryVerifyArgs),
     /// Run the renderer checks of verify.html and write the browser evidence
@@ -552,6 +554,17 @@ impl LibraryBuildArgs {
             _ => BuildMode::Full,
         }
     }
+}
+
+/// Arguments of `library adopt`.
+#[derive(Args, Debug)]
+pub struct LibraryAdoptArgs {
+    /// Set folder, number or path
+    #[arg(value_name = "SET")]
+    pub set: String,
+    /// Build folders that `gen-animated-icons build <id>` wrote (`.gen-animated-icons/build/<id>`)
+    #[arg(value_name = "BUILD", required = true)]
+    pub builds: Vec<std::path::PathBuf>,
 }
 
 /// Arguments of `library verify`.
