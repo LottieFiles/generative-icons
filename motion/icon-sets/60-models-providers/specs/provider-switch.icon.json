@@ -1,0 +1,49 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "provider-switch",
+  "label": "Provider switch",
+  "intent": "Switch the active provider. Light: the selector contact runs 16 units along the rail and lands under provider B with a hit and a small rebound; B's lead drops to meet it and B's status light pops on. Strong: the contact backs up first, crosses fast, knocks twice; the lead engages twice and the light blinks twice. The contact stays under B. The reverse runs back to A and A engages the same way. The cabinets never move.",
+  "state": {"from": "provider-a", "to": "provider-b", "labels": ["Switch", "Switch back"], "reverse": "auto"},
+  "parts": {
+    "provider-a": {"shape": {"rect": [5, 6, 8, 9], "r": 2}, "role": "surface", "solid": "ring"},
+    "provider-b": {"shape": {"rect": [19, 6, 8, 9], "r": 2}, "role": "surface", "solid": "ring"},
+    "port-a": {"shape": {"line": [[8.5, 10.5], [9.5, 10.5]]}},
+    "port-b": {"shape": {"line": [[22.5, 10.5], [23.5, 10.5]]}},
+    "rail": {"shape": {"line": [[8, 24], [24, 24]]}},
+    "lead-a": {"shape": {"line": [[9, 15], [9, 18]]}},
+    "lead-b": {"shape": {"line": [[23, 15], [23, 18]]}},
+    "contact": {"shape": {"circle": [[8, 24], 2.8]}, "role": "surface", "solid": "ring"}
+  },
+  "motion": {
+    "contact.x": {
+      "light": [[0, 0], [0.3, 16, "hit"], [0.36, 15.3], [0.42, 16]],
+      "strong": [[0, 0], [0.1, -1, "out"], [0.34, 16, "hit"], [0.4, 14.9], [0.46, 16, "hit"], [0.51, 15.7], [0.56, 16]]
+    },
+    "lead-b.y": {
+      "light": [[0, 0], [0.3, 0], [0.35, 0.8, "out"], [0.44, 0]],
+      "strong": [[0, 0], [0.34, 0], [0.39, 1, "out"], [0.46, 0], [0.5, 0.45, "out"], [0.58, 0]]
+    },
+    "port-b.scale": {
+      "light": [[0, 1], [0.32, 1], [0.38, 2.4, "out"], [0.47, 0.9], [0.53, 1]],
+      "strong": [[0, 1], [0.36, 1], [0.42, 2.6, "out"], [0.5, 0.85], [0.56, 1.8, "out"], [0.63, 0.95], [0.68, 1]]
+    }
+  },
+  "reverse": {
+    "//": "back to provider A: the contact runs back (strong: backs up first) and A's lead and light engage; B stays still",
+    "light": {
+      "contact.x": [[0, 16], [0.3, 0, "hit"], [0.36, 0.7], [0.42, 0]],
+      "lead-a.y": [[0, 0], [0.3, 0], [0.35, 0.8, "out"], [0.44, 0]],
+      "port-a.scale": [[0, 1], [0.32, 1], [0.38, 2.4, "out"], [0.47, 0.9], [0.53, 1]],
+      "lead-b.y": [[0, 0], [0.53, 0]],
+      "port-b.scale": [[0, 1], [0.53, 1]]
+    },
+    "strong": {
+      "contact.x": [[0, 16], [0.1, 17, "out"], [0.34, 0, "hit"], [0.4, 1.1], [0.46, 0, "hit"], [0.51, 0.3], [0.56, 0]],
+      "lead-a.y": [[0, 0], [0.34, 0], [0.39, 1, "out"], [0.46, 0], [0.5, 0.45, "out"], [0.58, 0]],
+      "port-a.scale": [[0, 1], [0.36, 1], [0.42, 2.6, "out"], [0.5, 0.85], [0.56, 1.8, "out"], [0.63, 0.95], [0.68, 1]],
+      "lead-b.y": [[0, 0], [0.68, 0]],
+      "port-b.scale": [[0, 1], [0.68, 1]]
+    }
+  }
+}

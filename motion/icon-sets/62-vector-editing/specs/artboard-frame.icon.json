@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "artboard-frame",
+  "label": "Artboard frame",
+  "intent": "A frame is drawn out from its origin, the way the frame tool makes one. Light: the board snaps down to a small square at its fixed upper-left origin, then is dragged back out to full size, lands a little past it and settles; the frame ticks ride on the moving edges. Strong: it snaps smaller and is flung out further, past its size, then pulls back and settles in two beats. The upper-left ticks never move.",
+  "parts": {
+    "board": {
+      "//": "a morph from the rest board (0) to one 4 units larger from the same origin (1): size -1.5 is a 10-unit board",
+      "shape": {"morph": [{"rect": [8, 8, 16, 16], "r": 0.8}, {"rect": [8, 8, 20, 20], "r": 0.8}], "by": "size"},
+      "role": "surface", "solid": "ring"
+    },
+    "tick-0": {"shape": {"line": [[8, 4.5], [8, 8]]}},
+    "tick-1": {"shape": {"line": [[4.5, 8], [8, 8]]}},
+    "tick-2": {"shape": {"line": [[24, 4.5], [24, 8]]}},
+    "tick-3": {"shape": {"line": [[24, 8], [26, 8]]}},
+    "tick-4": {"shape": {"line": [[8, 24], [4.5, 24]]}},
+    "tick-5": {"shape": {"line": [[8, 24], [8, 26]]}},
+    "tick-6": {"shape": {"line": [[24, 24], [26, 24]]}},
+    "tick-7": {"shape": {"line": [[24, 24], [24, 26]]}}
+  },
+  "rigs": {
+    "right-edge": {"pivot": [24, 8], "carries": ["tick-2", "tick-3"]},
+    "bottom-edge": {"pivot": [8, 24], "carries": ["tick-4", "tick-5"]},
+    "corner": {"pivot": [24, 24], "carries": ["tick-6", "tick-7"]}
+  },
+  "motion": {
+    "size": {
+      "light":  [[0, 0], [0.1, -1.5, "in"], [0.14, -1.5], [0.34, 0.12, "out"], [0.42, -0.03], [0.49, 0]],
+      "strong": [[0, 0], [0.1, -1.75, "in"], [0.14, -1.75], [0.36, 0.55, "out"], [0.45, -0.15], [0.53, 0.05], [0.6, 0]]
+    },
+    "right-edge.x": {"follow": "size", "scale": 4},
+    "bottom-edge.y": {"follow": "size", "scale": 4},
+    "corner.x": {"follow": "size", "scale": 4},
+    "corner.y": {"follow": "size", "scale": 4}
+  }
+}

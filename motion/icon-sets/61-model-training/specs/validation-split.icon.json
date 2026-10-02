@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "validation-split",
+  "label": "Validation split",
+  "intent": "A validation block is held out of the data. Light: the bottom block slides out four units to the right and stops dead, and the two training blocks answer a beat later, shifting two units left in turn. Strong: the held-out block tugs left first, then pulls out past its place and settles back, while the training blocks lean in, then shift left in turn with a hit and a small rebound. The blocks keep their sizes; the partition stays.",
+  "state": {"from": "combined-samples", "to": "held-out-validation", "labels": ["Split data", "Combine data"], "reverse": "auto"},
+  "parts": {
+    "partition-2": {"shape": {"rect": [7, 23, 15, 4], "r": 1.4}, "role": "surface", "solid": "fill"},
+    "partition-1": {"shape": {"rect": [7, 14, 15, 4], "r": 1.4}, "role": "surface", "solid": "fill"},
+    "partition-0": {"shape": {"rect": [7, 5, 15, 4], "r": 1.4}, "role": "surface", "solid": "fill"}
+  },
+  "motion": {
+    "partition-2.x": {
+      "//": "v1's end state: the held-out block 4 right, the training blocks 2 left",
+      "light":  [[0, 0], [0.26, 4, "hit"]],
+      "strong": [[0, 0], [0.12, -0.8, "out"], [0.34, 4.7, "out"], [0.43, 3.85], [0.5, 4]]
+    },
+    "partition-1.x": {
+      "light":  [[0, 0], [0.06, 0], [0.3, -2, "hit"]],
+      "strong": [[0, 0], [0.12, 0.4, "out"], [0.38, -2, "hit"], [0.44, -1.7, "out"], [0.5, -2]]
+    },
+    "partition-0.x": {"follow": "partition-1.x", "lag": 0.06}
+  }
+}

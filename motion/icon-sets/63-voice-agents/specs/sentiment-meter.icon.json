@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "sentiment-meter",
+  "label": "Sentiment meter",
+  "intent": "The caller's sentiment reads positive and the face answers it. Light: the marker slides four units toward positive and stops there (a reading, so no overshoot); a beat later the flat mouth curves into a smile and the face lifts, bounces and settles, then the reading and the face ease back to neutral. Strong: the reading climbs in two steps, and the face smiles a little, then breaks into a wide grin with a happy bounce before both return to neutral.",
+  "parts": {
+    "face": {"shape": {"circle": [[16, 11], 6.4]}, "role": "surface", "solid": "ring"},
+    "eye-left": {"shape": {"circle": [[13.5, 9.8], 0.65]}, "role": "fill", "solid": {"circle": [[13.5, 9.8], 0.8]}},
+    "eye-right": {"shape": {"circle": [[18.5, 9.8], 0.65]}, "role": "fill", "solid": {"circle": [[18.5, 9.8], 0.8]}},
+    "mouth": {
+      "//": "v1's flat mouth, and the smile it curves into",
+      "shape": {"morph": [{"path": "M13.5 13 C14.5 13 17.5 13 18.5 13"}, {"path": "M13.5 12.6 C14.5 14.6 17.5 14.6 18.5 12.6"}], "by": "smile"}
+    },
+    "sentiment-scale": {"shape": {"rect": [5, 22, 22, 5.4], "r": 2.7}, "role": "surface", "solid": "ring"},
+    "sentiment-marker": {"shape": {"circle": [[16, 24.7], 1.05]}, "role": "fill", "solid": {"circle": [[16, 24.7], 1.2]}}
+  },
+  "rigs": {
+    "head": {"//": "the face lifts as it brightens", "carries": ["face", "eye-left", "eye-right", "mouth"]},
+    "marker": {"carries": ["sentiment-marker"]}
+  },
+  "motion": {
+    "marker.x": {
+      "light":  [[0, 0], [0.2, 4, "out"], [0.3, 4], [0.46, 0, "inOut"]],
+      "strong": [[0, 0], [0.13, 2.6, "out"], [0.21, 2.6], [0.35, 6, "out"], [0.47, 6], [0.64, 0, "inOut"]]
+    },
+    "smile": {
+      "light":  [[0, 0], [0.07, 0], [0.2, 1, "out"], [0.27, 0.82], [0.33, 0.95], [0.48, 0]],
+      "strong": [[0, 0], [0.06, 0], [0.18, 0.5, "out"], [0.25, 0.42], [0.39, 1.1, "out"], [0.46, 0.88], [0.52, 1], [0.68, 0]]
+    },
+    "head.y": {"follow": "smile", "scale": -0.9, "lag": 0.03}
+  },
+  "preview": {
+    "light": [0, 0.08, 0.15, 0.2, 0.27, 0.33, 0.42, 0.56],
+    "strong": [0, 0.1, 0.18, 0.25, 0.32, 0.39, 0.46, 0.75]
+  }
+}

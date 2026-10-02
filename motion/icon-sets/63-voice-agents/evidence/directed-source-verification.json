@@ -2,51 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 60,
-  "nativeTransformNodes": 840,
-  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "nativeTransformNodes": 334,
+  "nativeTransformMaxCoordinateError": 0.000009000000000369823,
   "checks": [
-    {
-      "name": "turn-taking",
-      "fixedParts": [
-        "turn-taking-caller",
-        "turn-taking-agent"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "turn-taking-caller"
-        },
-        {
-          "type": "fixed",
-          "part": "turn-taking-agent"
-        }
-      ]
-    },
-    {
-      "name": "turn-taking-strong",
-      "fixedParts": [
-        "turn-taking-caller",
-        "turn-taking-agent"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "turn-taking-caller"
-        },
-        {
-          "type": "fixed",
-          "part": "turn-taking-agent"
-        }
-      ]
-    },
     {
       "name": "barge-in",
       "fixedParts": [
@@ -138,90 +96,6 @@
         {
           "type": "fixed",
           "part": "end-of-turn-detection-deadline"
-        }
-      ]
-    },
-    {
-      "name": "backchannel",
-      "fixedParts": [
-        "backchannel-utterance",
-        "backchannel-phrase"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "backchannel-utterance"
-        },
-        {
-          "type": "fixed",
-          "part": "backchannel-phrase"
-        }
-      ]
-    },
-    {
-      "name": "backchannel-strong",
-      "fixedParts": [
-        "backchannel-utterance",
-        "backchannel-phrase"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "backchannel-utterance"
-        },
-        {
-          "type": "fixed",
-          "part": "backchannel-phrase"
-        }
-      ]
-    },
-    {
-      "name": "speaker-diarization",
-      "fixedParts": [
-        "speaker-diarization-lane-a",
-        "speaker-diarization-lane-b"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "speaker-diarization-lane-a"
-        },
-        {
-          "type": "fixed",
-          "part": "speaker-diarization-lane-b"
-        }
-      ]
-    },
-    {
-      "name": "speaker-diarization-strong",
-      "fixedParts": [
-        "speaker-diarization-lane-a",
-        "speaker-diarization-lane-b"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "speaker-diarization-lane-a"
-        },
-        {
-          "type": "fixed",
-          "part": "speaker-diarization-lane-b"
         }
       ]
     },
@@ -350,48 +224,6 @@
       ]
     },
     {
-      "name": "sentiment-meter",
-      "fixedParts": [
-        "sentiment-meter-face",
-        "sentiment-meter-sentiment-scale"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "sentiment-meter-face"
-        },
-        {
-          "type": "fixed",
-          "part": "sentiment-meter-sentiment-scale"
-        }
-      ]
-    },
-    {
-      "name": "sentiment-meter-strong",
-      "fixedParts": [
-        "sentiment-meter-face",
-        "sentiment-meter-sentiment-scale"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "sentiment-meter-face"
-        },
-        {
-          "type": "fixed",
-          "part": "sentiment-meter-sentiment-scale"
-        }
-      ]
-    },
-    {
       "name": "intent-confirmation",
       "fixedParts": [
         "intent-confirmation-confirmation"
@@ -422,156 +254,6 @@
           "part": "intent-confirmation-confirmation"
         }
       ]
-    },
-    {
-      "name": "language-detection",
-      "fixedParts": [
-        "language-detection-language",
-        "language-detection-letter",
-        "language-detection-letter-crossbar"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "language-detection-language"
-        },
-        {
-          "type": "fixed",
-          "part": "language-detection-letter"
-        },
-        {
-          "type": "fixed",
-          "part": "language-detection-letter-crossbar"
-        }
-      ]
-    },
-    {
-      "name": "language-detection-strong",
-      "fixedParts": [
-        "language-detection-language",
-        "language-detection-letter",
-        "language-detection-letter-crossbar"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "language-detection-language"
-        },
-        {
-          "type": "fixed",
-          "part": "language-detection-letter"
-        },
-        {
-          "type": "fixed",
-          "part": "language-detection-letter-crossbar"
-        }
-      ]
-    },
-    {
-      "name": "silence-timeout",
-      "fixedParts": [
-        "silence-timeout-silence",
-        "silence-timeout-quiet",
-        "silence-timeout-clock",
-        "silence-timeout-short-hand"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "silence-timeout-silence"
-        },
-        {
-          "type": "fixed",
-          "part": "silence-timeout-quiet"
-        },
-        {
-          "type": "fixed",
-          "part": "silence-timeout-clock"
-        },
-        {
-          "type": "fixed",
-          "part": "silence-timeout-short-hand"
-        }
-      ]
-    },
-    {
-      "name": "silence-timeout-strong",
-      "fixedParts": [
-        "silence-timeout-silence",
-        "silence-timeout-quiet",
-        "silence-timeout-clock",
-        "silence-timeout-short-hand"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "silence-timeout-silence"
-        },
-        {
-          "type": "fixed",
-          "part": "silence-timeout-quiet"
-        },
-        {
-          "type": "fixed",
-          "part": "silence-timeout-clock"
-        },
-        {
-          "type": "fixed",
-          "part": "silence-timeout-short-hand"
-        }
-      ]
-    },
-    {
-      "name": "dtmf-input",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "dtmf-input-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "on-hold",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "on-hold-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
     },
     {
       "name": "recording-consent",
@@ -612,78 +294,6 @@
         {
           "type": "fixed",
           "part": "recording-consent-permission-line"
-        }
-      ]
-    },
-    {
-      "name": "ivr-menu",
-      "fixedParts": [
-        "ivr-menu-trunk",
-        "ivr-menu-left-branch",
-        "ivr-menu-right-branch",
-        "ivr-menu-option-one",
-        "ivr-menu-option-two"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "ivr-menu-trunk"
-        },
-        {
-          "type": "fixed",
-          "part": "ivr-menu-left-branch"
-        },
-        {
-          "type": "fixed",
-          "part": "ivr-menu-right-branch"
-        },
-        {
-          "type": "fixed",
-          "part": "ivr-menu-option-one"
-        },
-        {
-          "type": "fixed",
-          "part": "ivr-menu-option-two"
-        }
-      ]
-    },
-    {
-      "name": "ivr-menu-strong",
-      "fixedParts": [
-        "ivr-menu-trunk",
-        "ivr-menu-left-branch",
-        "ivr-menu-right-branch",
-        "ivr-menu-option-one",
-        "ivr-menu-option-two"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "ivr-menu-trunk"
-        },
-        {
-          "type": "fixed",
-          "part": "ivr-menu-left-branch"
-        },
-        {
-          "type": "fixed",
-          "part": "ivr-menu-right-branch"
-        },
-        {
-          "type": "fixed",
-          "part": "ivr-menu-option-one"
-        },
-        {
-          "type": "fixed",
-          "part": "ivr-menu-option-two"
         }
       ]
     },
@@ -730,24 +340,6 @@
       ]
     },
     {
-      "name": "agent-persona",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "agent-persona-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "concurrent-calls",
       "fixedParts": [],
       "topology": true,
@@ -764,98 +356,132 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "escalation-flag",
-      "fixedParts": [
-        "escalation-flag-pole",
-        "escalation-flag-call-issue"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "escalation-flag-pole"
-        },
-        {
-          "type": "fixed",
-          "part": "escalation-flag-call-issue"
-        }
-      ]
-    },
-    {
-      "name": "escalation-flag-strong",
-      "fixedParts": [
-        "escalation-flag-pole",
-        "escalation-flag-call-issue"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "escalation-flag-pole"
-        },
-        {
-          "type": "fixed",
-          "part": "escalation-flag-call-issue"
-        }
-      ]
-    },
-    {
-      "name": "voicemail-detection",
-      "fixedParts": [
-        "voicemail-detection-greeting",
-        "voicemail-detection-detection-eye"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "voicemail-detection-greeting"
-        },
-        {
-          "type": "fixed",
-          "part": "voicemail-detection-detection-eye"
-        }
-      ]
-    },
-    {
-      "name": "voicemail-detection-strong",
-      "fixedParts": [
-        "voicemail-detection-greeting",
-        "voicemail-detection-detection-eye"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "voicemail-detection-greeting"
-        },
-        {
-          "type": "fixed",
-          "part": "voicemail-detection-detection-eye"
-        }
-      ]
     }
   ],
   "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "turn-taking",
+      "spec": "specs/turn-taking.icon.json",
+      "specSha256": "112d4fed962f558b8a67d18821f3dcb8c65925827ff317b062425cb3471e112f",
+      "actions": [
+        "turn-taking",
+        "turn-taking-reverse",
+        "turn-taking-strong",
+        "turn-taking-reverse-strong"
+      ]
+    },
+    {
+      "icon": "backchannel",
+      "spec": "specs/backchannel.icon.json",
+      "specSha256": "d3fcf1b3c5b95255b65d4c6b59c1ba8a47a0d66687555b11f91b8b6f5877923a",
+      "actions": [
+        "backchannel",
+        "backchannel-strong"
+      ]
+    },
+    {
+      "icon": "speaker-diarization",
+      "spec": "specs/speaker-diarization.icon.json",
+      "specSha256": "f14c8c0323eaae65136afd458c9743ced443f1741c4d66815a2226e5bbf8f82f",
+      "actions": [
+        "speaker-diarization",
+        "speaker-diarization-strong"
+      ]
+    },
+    {
+      "icon": "sentiment-meter",
+      "spec": "specs/sentiment-meter.icon.json",
+      "specSha256": "7bf269702cbb24bb1c35593278071e8fc5cba7343bfc787ce9dd55149f117570",
+      "actions": [
+        "sentiment-meter",
+        "sentiment-meter-strong"
+      ]
+    },
+    {
+      "icon": "language-detection",
+      "spec": "specs/language-detection.icon.json",
+      "specSha256": "6a0f424bd8c08181238f3286878f679039d999d6de631266633009e426f1c9df",
+      "actions": [
+        "language-detection",
+        "language-detection-strong"
+      ]
+    },
+    {
+      "icon": "silence-timeout",
+      "spec": "specs/silence-timeout.icon.json",
+      "specSha256": "249e00ca5bf446aa46aa101d4010bfd6003a02d264f870db0165f87865f98645",
+      "actions": [
+        "silence-timeout",
+        "silence-timeout-strong"
+      ]
+    },
+    {
+      "icon": "dtmf-input",
+      "spec": "specs/dtmf-input.icon.json",
+      "specSha256": "bb440110593cdbf7e55420e1cc546e406cdbfc8149d70de889de36082b6c155d",
+      "actions": [
+        "dtmf-input",
+        "dtmf-input-strong"
+      ]
+    },
+    {
+      "icon": "on-hold",
+      "spec": "specs/on-hold.icon.json",
+      "specSha256": "55675140904b51ce5c47275e7cd463559573a8f44d98517c6aa0f6e7ba59ff2d",
+      "actions": [
+        "on-hold",
+        "on-hold-reverse",
+        "on-hold-strong",
+        "on-hold-reverse-strong"
+      ]
+    },
+    {
+      "icon": "ivr-menu",
+      "spec": "specs/ivr-menu.icon.json",
+      "specSha256": "91c56ff5e08dc39af8ba77811090e8e8a3a77fe81bb63b6af8777b93b862c130",
+      "actions": [
+        "ivr-menu",
+        "ivr-menu-reverse",
+        "ivr-menu-strong",
+        "ivr-menu-reverse-strong"
+      ]
+    },
+    {
+      "icon": "agent-persona",
+      "spec": "specs/agent-persona.icon.json",
+      "specSha256": "61bd60350f96200c48a3d6fe26827574e7d465338d41071346ab2189642daf60",
+      "actions": [
+        "agent-persona",
+        "agent-persona-strong"
+      ]
+    },
+    {
+      "icon": "escalation-flag",
+      "spec": "specs/escalation-flag.icon.json",
+      "specSha256": "bc7ec4d16d94fc32174d4f4cc2aaa531b028c3429b970b4508e3b7289256237f",
+      "actions": [
+        "escalation-flag",
+        "escalation-flag-reverse",
+        "escalation-flag-strong",
+        "escalation-flag-reverse-strong"
+      ]
+    },
+    {
+      "icon": "voicemail-detection",
+      "spec": "specs/voicemail-detection.icon.json",
+      "specSha256": "b063c2ec59fb8ecdd26a6cc1b7778a67d2e8417f8b9bb660849ebf8e2291788f",
+      "actions": [
+        "voicemail-detection",
+        "voicemail-detection-strong"
+      ]
+    }
+  ],
   "drawingChecks": {
-    "frames": 17400,
-    "contacts": 5800,
-    "clearances": 7682,
+    "frames": 8120,
+    "contacts": 1160,
+    "clearances": 5362,
     "minimumTranscriptGap": 0.8999999999999968,
-    "minimumToneGap": 1.3999999999999986
+    "minimumToneGap": 32
   }
 }

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "turn-taking",
+  "label": "Turn taking",
+  "intent": "The caller yields the floor and the agent takes it. Light: the floor token hops up inside the caller's bubble, swells and drops out through its bottom, falls on a curve into the agent's bubble, landing with a hit; the agent's bubble pops as it takes the floor and settles. Strong: the token gathers higher, the caller's bubble recoils as it lets go, the token lands with a bounce, and the agent's bubble pops harder. Reverse: the token is tossed back up into the caller's bubble, which pops as it takes the floor again.",
+  "state": {
+    "from": "caller-turn",
+    "to": "agent-turn",
+    "labels": ["Pass to agent", "Pass to caller"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "caller": {
+      "shape": {
+        "path": "M7.667 4.8 L17.333 4.8 C18.8 4.8 20 6 20 7.467 L20 10.133 C20 11.6 18.8 12.8 17.333 12.8 L10 12.8 L7.5 14.8 C7.1 15.1 6.6 14.8 6.6 14.3 L6.6 12.5 C5.6 12.1 5 11.3 5 10.133 L5 7.467 C5 6 6.2 4.8 7.667 4.8 Z"
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "agent": {
+      "shape": {
+        "path": "M14.333 20.2 L24.667 20.2 C25.95 20.2 27 21.25 27 22.533 L27 24.867 C27 26.15 25.95 27.2 24.667 27.2 L17 27.2 L14.5 28.5 C14.1 28.8 13.6 28.5 13.6 28 L13.6 26.9 C12.6 26.5 12 25.7 12 24.867 L12 22.533 C12 21.25 13.05 20.2 14.333 20.2 Z"
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "floor-token": {"shape": {"circle": [[12.5, 8.8], 1.25]}, "role": "fill", "solid": {"circle": [[12.5, 8.8], 1.4]}}
+  },
+  "rigs": {
+    "caller": {"//": "pops about the token's place when it takes the floor back", "pivot": [12.5, 8.8], "carries": ["caller"]},
+    "agent": {"//": "pops about the token's landing place when it takes the floor", "pivot": [19.5, 23.8], "carries": ["agent"]},
+    "token": {"pivot": [12.5, 8.8], "carries": ["floor-token"]}
+  },
+  "reverse": {
+    "//": "written out: the token is tossed back up into the caller's bubble, which pops as it takes the floor again; the agent does not pop",
+    "light": {
+      "token.y": [[0, 15], [0.26, -0.6, "out"], [0.34, 0]],
+      "token.x": [[0, 7], [0.26, 0, "inOut"]],
+      "caller.scale": [[0, 1], [0.27, 1], [0.33, 1.06, "out"], [0.39, 0.98], [0.44, 1]],
+      "caller.y": [[0, 0], [0.44, 0]],
+      "agent.scale": [[0, 1], [0.44, 1]],
+      "token.scale": [[0, 1], [0.05, 1.5, "out"], [0.2, 1.5], [0.26, 1, "out"]]
+    },
+    "strong": {
+      "token.y": [[0, 15], [0.06, 15.4, "out"], [0.28, -0.8, "out"], [0.35, 0.2], [0.4, 0]],
+      "token.x": [[0, 7], [0.06, 7], [0.28, 0, "inOut"]],
+      "caller.scale": [[0, 1], [0.28, 1], [0.34, 1.08, "out"], [0.4, 0.97], [0.45, 1.02], [0.5, 1]],
+      "caller.y": [[0, 0], [0.5, 0]],
+      "agent.scale": [[0, 1], [0.5, 1]],
+      "token.scale": [[0, 1], [0.08, 1.6, "out"], [0.22, 1.6], [0.28, 1, "out"]]
+    }
+  },
+  "motion": {
+    "token.y": {
+      "light": [[0, 0], [0.08, -1.2, "out"], [0.3, 15, "hit"]],
+      "strong": [[0, 0], [0.1, -1.2, "out"], [0.14, -1.2], [0.34, 15, "hit"], [0.4, 14.3], [0.46, 15, "hit"]]
+    },
+    "token.x": {"light": [[0, 0], [0.06, 0], [0.3, 7, "inOut"]], "strong": [[0, 0], [0.14, 0], [0.34, 7, "inOut"]]},
+    "token.scale": {
+      "//": "the token swells in flight so it shows as it crosses the bubble outlines",
+      "light": [[0, 1], [0.08, 1], [0.16, 1.5, "out"], [0.26, 1.5], [0.3, 1, "hit"]],
+      "strong": [[0, 1], [0.14, 1], [0.21, 1.6, "out"], [0.3, 1.6], [0.34, 1, "hit"]]
+    },
+    "caller.y": {"strong": [[0, 0], [0.14, 0], [0.19, -0.8, "out"], [0.26, 0.2], [0.31, 0]]},
+    "agent.scale": {
+      "light": [[0, 1], [0.29, 1], [0.35, 1.08, "out"], [0.41, 0.98], [0.46, 1]],
+      "strong": [[0, 1], [0.33, 1], [0.39, 1.1, "out"], [0.45, 0.97], [0.5, 1.03], [0.55, 1]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.08, 0.14, 0.2, 0.25, 0.3, 0.35, 0.5],
+    "strong": [0, 0.1, 0.19, 0.25, 0.3, 0.34, 0.4, 0.6]
+  }
+}

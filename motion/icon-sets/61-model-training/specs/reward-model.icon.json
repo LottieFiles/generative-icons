@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "reward-model",
+  "label": "Reward model",
+  "intent": "The reward model scores the outputs and rewards the better one. Light: the reward star spins one point and stops with a small overshoot, and the preferred output on the right jumps up and lands with a hit. Strong: the star winds back and spins two points with a settle; the preferred output jumps higher and bounces once while the other output sinks a little and recovers. The star ends on its exact starting angle.",
+  "parts": {
+    "reward": {
+      "shape": {"path": "M15.718 4.586 C15.906 4.195 16.094 4.195 16.282 4.586 L17.746 7.623 C17.934 8.014 18.243 8.238 18.672 8.296 L22.013 8.75 C22.443 8.808 22.501 8.987 22.188 9.286 L19.751 11.617 C19.438 11.916 19.32 12.279 19.397 12.706 L19.999 16.024 C20.076 16.45 19.924 16.56 19.542 16.355 L16.572 14.758 C16.191 14.553 15.809 14.553 15.428 14.758 L12.458 16.355 C12.076 16.56 11.924 16.45 12.001 16.024 L12.603 12.706 C12.68 12.279 12.562 11.916 12.249 11.617 L9.812 9.286 C9.499 8.987 9.557 8.808 9.987 8.75 L13.328 8.296 C13.757 8.238 14.066 8.014 14.254 7.623 L15.718 4.586 Z"},
+      "role": "surface", "solid": "fill"
+    },
+    "candidate-right": {"shape": {"rect": [19, 22, 8, 5], "r": 1.5}, "role": "surface", "solid": "fill"},
+    "candidate-left":  {"shape": {"rect": [5, 22, 8, 5], "r": 1.5}, "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "reward": {"//": "the star is a regular five-point star centred at (16, 11): 72 degrees maps it onto itself", "pivot": [16, 11]}
+  },
+  "motion": {
+    "reward.rotate": {
+      "//": "each spin ends on a symmetric pose, then an invisible step back to 0 so the last frame is the exact rest drawing",
+      "light":  [[0, 0], [0.2, 80, "out"], [0.28, 70], [0.34, 72], [0.36, 0, "step"]],
+      "strong": [[0, 0], [0.1, -14, "out"], [0.32, 152, "out"], [0.4, 141], [0.46, 144], [0.48, 0, "step"]]
+    },
+    "candidate-right.y": {
+      "light":  [[0, 0], [0.16, 0], [0.26, -1.8, "out"], [0.36, 0, "hit"], [0.41, -0.3, "out"], [0.46, 0]],
+      "strong": [[0, 0], [0.26, 0], [0.36, -2.4, "out"], [0.48, 0, "hit"], [0.54, -0.6, "out"], [0.6, 0, "hit"]]
+    },
+    "candidate-left.y": {
+      "//": "Strong only: the other output gets the lower reward",
+      "strong": [[0, 0], [0.3, 0], [0.37, 0.9, "out"], [0.5, 0]]
+    }
+  }
+}

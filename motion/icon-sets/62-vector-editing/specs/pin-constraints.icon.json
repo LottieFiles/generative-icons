@@ -1,0 +1,54 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "pin-constraints",
+  "label": "Pin constraints",
+  "intent": "The child is pinned to the container's left and top edges. Light: both pins pull back into the edges, then shoot out to the child in turn, left then top, and the child clicks into place with a pop when the second pin lands. Strong: the pins lock on faster and the child pops harder, then the container's top-left corner is dragged out and the pinned child rides along with its edges, springs back with it and settles. The container's bottom-right corner never moves.",
+  "preview": {
+    "strong": [0, 0.06, 0.13, 0.21, 0.26, 0.44, 0.53, 0.7]
+  },
+  "parts": {
+    "child": {"shape": {"rect": [11, 11, 8, 8], "r": 1.3}, "role": "surface", "solid": "ring"},
+    "container": {"//": "v1's part `pin-constraints`: the stroked container", "shape": {"rect": [5, 5, 21, 21], "r": 0.8}},
+    "pin-top": {"shape": {"line": [[15, 5], [15, 11]]}},
+    "pin-left": {"shape": {"line": [[5, 15], [11, 15]]}},
+    "pin-top-cap": {"shape": {"line": [[12.8, 5], [17.2, 5]]}},
+    "pin-left-cap": {"shape": {"line": [[5, 12.8], [5, 17.2]]}}
+  },
+  "rigs": {
+    "container": {
+      "//": "scales about the fixed bottom-right corner, so the top-left corner travels",
+      "pivot": [26, 26]
+    },
+    "pinned": {
+      "pivot": [15, 15],
+      "carries": ["child", "pin-top", "pin-left", "pin-top-cap", "pin-left-cap"]
+    },
+    "child": {
+      "pivot": [15, 15]
+    }
+  },
+  "motion": {
+    "pin-left.draw": {
+      "light": [[0, 1], [0.07, 0, "in"], [0.19, 1, "hit"]],
+      "strong": [[0, 1], [0.06, 0, "in"], [0.16, 1, "hit"]]
+    },
+    "pin-top.draw": {
+      "light": [[0, 1], [0.07, 0, "in"], [0.13, 0], [0.25, 1, "hit"]],
+      "strong": [[0, 1], [0.06, 0, "in"], [0.11, 0], [0.21, 1, "hit"]]
+    },
+    "child.scale": {
+      "light": [[0, 1], [0.25, 1], [0.3, 1.22, "out"], [0.38, 0.96], [0.45, 1]],
+      "strong": [[0, 1], [0.21, 1], [0.26, 1.28, "out"], [0.33, 0.94], [0.39, 1]]
+    },
+    "container.scale": {
+      "//": "1 + 2u/21: the top-left corner travels 2u units out along the diagonal",
+      "strong": [[0, 1], [0.3, 1], [0.44, 1.1, "out"], [0.53, 0.988571], [0.62, 1.00381], [0.7, 1]]
+    },
+    "pinned.x": {
+      "//": "-2u: the pinned child and its pins ride exactly with the container's left edge",
+      "strong": [[0, 0], [0.3, 0], [0.44, -2.1, "out"], [0.53, 0.24], [0.62, -0.08], [0.7, 0]]
+    },
+    "pinned.y": {"follow": "pinned.x"}
+  }
+}

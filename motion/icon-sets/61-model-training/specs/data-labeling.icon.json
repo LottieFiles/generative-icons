@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "data-labeling",
+  "label": "Data labeling",
+  "intent": "The label is hung on the selected record. Light: the tag drops nine units down the record's edge to the selected record and stops dead; it hangs from its hook, so it swings on, down and back, and settles. Strong: the tag lifts off its first record, drops harder, swings wider and settles in two swings. The connector stays hooked to the record edge and the tag stays on the selected record.",
+  "state": {"from": "first-record-tagged", "to": "selected-record-tagged", "labels": ["Tag record", "Move tag back"], "reverse": "auto"},
+  "parts": {
+    "tag-hole":      {"shape": {"circle": [[24, 9], 1.1]}, "role": "fill"},
+    "tag": {
+      "shape": {"path": "M18.495 9.495 C18.165 9.165 18.165 8.835 18.495 8.505 L21.505 5.495 C21.835 5.165 22.233 5 22.7 5 L26.3 5 C26.767 5 27 5.233 27 5.7 L27 12.3 C27 12.767 26.767 13 26.3 13 L22.7 13 C22.233 13 21.835 12.835 21.505 12.505 L18.495 9.495 Z"},
+      "role": "surface", "solid": "fill", "knockout": [{"part": "tag-hole", "gap": 0.3}]
+    },
+    "connector":     {"shape": {"line": [[17, 9], [18, 9]]}},
+    "record-third":  {"shape": {"line": [[8.5, 23], [12.5, 23]]}},
+    "record-second": {"shape": {"line": [[8.5, 17], [12.5, 17]]}},
+    "record-first":  {"shape": {"line": [[8.5, 10], [12.5, 10]]}},
+    "record":        {"shape": {"rect": [5, 5, 12, 22], "r": 1.8}, "role": "surface", "solid": "ring"}
+  },
+  "rigs": {
+    "tag": {"//": "the tag hangs from its hook on the record edge; it swings about the hook", "pivot": [17, 9], "carries": ["tag-hole", "connector"]}
+  },
+  "motion": {
+    "tag.y": {
+      "//": "v1's end state: 9 units down",
+      "light":  [[0, 0], [0.28, 9, "hit"]],
+      "strong": [[0, 0], [0.1, -1.2, "out"], [0.3, 9, "hit"], [0.36, 8.5, "out"], [0.42, 9, "hit"]]
+    },
+    "tag.rotate": {
+      "light":  [[0, 0], [0.28, 0], [0.34, 8, "out"], {"settle": 0.54, "to": 0}],
+      "strong": [[0, 0], [0.3, 0], [0.36, 12, "out"], {"settle": 0.72, "to": 0}]
+    }
+  },
+  "reverse": {
+    "//": "moving the tag back: it rises to the first record at once and swings the other way as it stops",
+    "light":  {"tag.y": [[0, 9], [0.26, 0, "hit"]], "tag.rotate": [[0, 0], [0.26, 0], [0.32, -8, "out"], {"settle": 0.52, "to": 0}]},
+    "strong": {"tag.y": [[0, 9], [0.1, 10, "out"], [0.32, 0, "hit"]], "tag.rotate": [[0, 0], [0.32, 0], [0.38, -11, "out"], {"settle": 0.68, "to": 0}]}
+  }
+}

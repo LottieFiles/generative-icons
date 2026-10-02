@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "language-detection",
+  "label": "Language detection",
+  "intent": "The detector samples the utterance and recognises its language. Light: the detector sweeps ten units along the sampling rail; as it reaches the end, the language glyph is identified and pops (it swells with its crossbar, snaps back and settles), and the detector glides home. Strong: the detector draws back before a faster sweep, and the glyph pops harder with a second, smaller swing. The speech card never moves.",
+  "parts": {
+    "language": {
+      "shape": {
+        "path": "M7.8 4.5 L24.2 4.5 C25.74 4.5 27 5.76 27 7.3 L27 19.2 C27 20.74 25.74 22 24.2 22 L10 22 L7.5 24 C7.1 24.3 6.6 24 6.6 23.5 L6.6 21.7 C5.6 21.3 5 20.5 5 19.2 L5 7.3 C5 5.76 6.26 4.5 7.8 4.5 Z"
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "letter": {"shape": {"polyline": [[10, 17], [16, 8.5], [22, 17]]}},
+    "letter-crossbar": {"shape": {"line": [[11.6, 14.7], [20.4, 14.7]]}},
+    "sampling-rail": {"shape": {"line": [[13, 27], [27, 27]]}},
+    "detector": {"shape": {"line": [[14, 25.5], [14, 28.4]]}}
+  },
+  "rigs": {
+    "glyph": {"//": "the identified glyph swells about its own centre", "pivot": [16, 12.75], "carries": ["letter", "letter-crossbar"]},
+    "detector": {"pivot": [14, 27]}
+  },
+  "motion": {
+    "detector.x": {
+      "light": [[0, 0], [0.26, 10, "inOut"], [0.31, 10], [0.48, 0, "inOut"]],
+      "strong": [[0, 0], [0.08, -0.8, "out"], [0.24, 10, "hit"], [0.36, 10], [0.58, 0, "inOut"]]
+    },
+    "glyph.scale": {
+      "light": [[0, 1], [0.24, 1], [0.32, 1.18, "out"], [0.4, 0.98], [0.46, 1]],
+      "strong": [[0, 1], [0.23, 1], [0.3, 1.22, "out"], [0.38, 0.95], [0.45, 1.06], [0.52, 1]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.1, 0.2, 0.26, 0.32, 0.38, 0.42, 0.52],
+    "strong": [0, 0.08, 0.16, 0.24, 0.3, 0.38, 0.47, 0.62]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "open-weights",
+  "label": "Open weights",
+  "intent": "Make the parameter weights accessible. Light: the shackle springs open 38 degrees about its right foot, swinging a little past and settling, and the three weight columns inside hop up in turn as they are released. Strong: the shackle is pressed shut first, springs open past its stop and settles with a bounce, and the columns hop higher with a small second bounce. The shackle stays open (accessible). The reverse closes it: the shackle swings shut and latches with a hit and a click, and the columns are pressed down in turn.",
+  "state": {"from": "restricted", "to": "accessible", "labels": ["Open", "Restrict"], "reverse": "auto"},
+  "parts": {
+    "weights": {"shape": {"rect": [6, 16, 20, 11], "r": 2}, "role": "surface", "solid": "ring"},
+    "weight-small": {"shape": {"line": [[10, 22], [10, 23]]}},
+    "weight-large": {"shape": {"line": [[16, 20], [16, 23]]}},
+    "weight-medium": {"shape": {"line": [[22, 21], [22, 23]]}},
+    "shackle": {"shape": {"path": "M11 16 L11 10 C11 7.2 13.2 5 16 5 C18.8 5 21 7.2 21 10 L21 16"}}
+  },
+  "rigs": {
+    "shackle": {"pivot": [21, 16]}
+  },
+  "motion": {
+    "shackle.rotate": {
+      "light": [[0, 0], [0.24, 41, "out"], [0.32, 37], [0.38, 38]],
+      "strong": [[0, 0], [0.08, -5, "out"], [0.3, 44, "out"], [0.38, 36], [0.45, 39], [0.5, 38]]
+    },
+    "weight-small.y": {
+      "light": [[0, 0], [0.12, 0], [0.2, -1.2, "out"], [0.3, 0, "in"]],
+      "strong": [[0, 0], [0.16, 0], [0.24, -1.5, "out"], [0.34, 0, "hit"], [0.39, -0.4], [0.44, 0]]
+    },
+    "weight-large.y": {"follow": "weight-small.y", "lag": 0.05},
+    "weight-medium.y": {"follow": "weight-small.y", "lag": 0.1}
+  },
+  "reverse": {
+    "//": "restricting: the shackle swings shut and latches with a click; the columns are pressed down in turn",
+    "light": {
+      "shackle.rotate": [[0, 38], [0.24, 0, "hit"], [0.3, 3], [0.36, 0]],
+      "weight-small.y": [[0, 0], [0.24, 0], [0.29, 0.6, "out"], [0.38, 0]],
+      "weight-large.y": [[0, 0], [0.27, 0], [0.32, 0.6, "out"], [0.41, 0]],
+      "weight-medium.y": [[0, 0], [0.3, 0], [0.35, 0.6, "out"], [0.44, 0]]
+    },
+    "strong": {
+      "shackle.rotate": [[0, 38], [0.1, 44, "out"], [0.3, 0, "hit"], [0.36, 5], [0.42, 0, "hit"], [0.47, 1.5], [0.52, 0]],
+      "weight-small.y": [[0, 0], [0.3, 0], [0.35, 0.8, "out"], [0.42, 0], [0.45, 0.3, "out"], [0.52, 0]],
+      "weight-large.y": [[0, 0], [0.33, 0], [0.38, 0.8, "out"], [0.45, 0], [0.48, 0.3, "out"], [0.55, 0]],
+      "weight-medium.y": [[0, 0], [0.36, 0], [0.41, 0.8, "out"], [0.48, 0], [0.51, 0.3, "out"], [0.58, 0]]
+    }
+  }
+}

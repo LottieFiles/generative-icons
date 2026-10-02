@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "convergence",
+  "label": "Convergence",
+  "intent": "The error closes and the run locks onto its target. Light: the upper and lower trajectories bend in toward the target in one move and stop dead in the narrow band; as they arrive the target ring takes the hit, swelling and settling. Strong: two training steps: the trajectories close most of the error and pause, then close the rest; the target answers each arrival, the last time harder with a two-swing settle. The starting observations stay fixed and the error never overshoots.",
+  "state": {"from": "wide-error-range", "to": "converged-range", "labels": ["Converge", "Widen error"], "reverse": "auto"},
+  "parts": {
+    "lower-trajectory": {"shape": {"morph": [{"path": "M5 26 C10 26 11 26 19.5 26"}, {"path": "M5 26 C10 26 11 18 19.5 18"}], "by": "close"}},
+    "upper-trajectory": {"shape": {"morph": [{"path": "M5 6 C10 6 11 6 19.5 6"}, {"path": "M5 6 C10 6 11 14 19.5 14"}], "by": "close"}},
+    "target":           {"shape": {"circle": [[25.5, 16], 3.1]}, "role": "surface", "solid": "ring"}
+  },
+  "rigs": {
+    "target": {"pivot": [25.5, 16]}
+  },
+  "motion": {
+    "close": {
+      "//": "a data value: the error never overshoots",
+      "light":  [[0, 0], [0.36, 1, "hit"]],
+      "strong": [[0, 0], [0.18, 0.7, "hit"], [0.28, 0.7], [0.42, 1, "hit"]]
+    },
+    "target.scale": {
+      "light":  [[0, 1], [0.36, 1], [0.41, 1.14, "out"], [0.49, 0.97], [0.55, 1]],
+      "strong": [[0, 1], [0.18, 1], [0.22, 1.07, "out"], [0.28, 1], [0.42, 1], [0.47, 1.15, "out"], [0.55, 0.95], [0.62, 1.03], [0.68, 1]]
+    }
+  },
+  "reverse": {
+    "//": "widening the error is not an arrival: the target does not answer, and the error opens at once instead of waiting out the pop",
+    "light":  {"target.scale": [[0, 1], [0.1, 1]], "close": [[0, 1], [0.36, 0, "out"]]},
+    "strong": {"target.scale": [[0, 1], [0.1, 1]], "close": [[0, 1], [0.14, 0.7, "out"], [0.22, 0.7], [0.4, 0, "out"]]}
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "model-card",
+  "label": "Model card",
+  "intent": "Inspect a model specification. Light: the model emblem on the card turns a quarter (a gem turned to show its other face) and lands with a click, and the specification lines are written out beneath it in order. Strong: the emblem winds back, turns a half with a pop, knocks and settles, and the lines write out with a longer stagger. The card never moves. A 90 or 180 degree turn of the four-fold emblem ends on its own outline; an invisible step returns the angle to 0 so the end matches the rest pixel for pixel.",
+  "parts": {
+    "card": {"shape": {"rect": [7, 5, 18, 22], "r": 2}, "role": "surface", "solid": "ring"},
+    "model": {
+      "//": "v1's rounded diamond path",
+      "shape": {
+        "path": "M15.505 8.495 C15.835 8.165 16.165 8.165 16.495 8.495 L18.505 10.505 C18.835 10.835 18.835 11.165 18.505 11.495 L16.495 13.505 C16.165 13.835 15.835 13.835 15.505 13.505 L13.495 11.495 C13.165 11.165 13.165 10.835 13.495 10.505 L15.505 8.495 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "spec-a": {"shape": {"line": [[11, 18], [21, 18]]}},
+    "spec-b": {"shape": {"line": [[11, 22], [18, 22]]}}
+  },
+  "rigs": {
+    "model": {"pivot": [16, 11]}
+  },
+  "motion": {
+    "model.rotate": {
+      "light": [[0, 0], [0.22, 90, "hit"], [0.28, 82], [0.34, 90], [0.36, 0, "step"]],
+      "strong": [[0, 0], [0.1, -15, "out"], [0.34, 180, "hit"], [0.4, 168], [0.46, 180, "hit"], [0.51, 176], [0.56, 180], [0.58, 0, "step"]]
+    },
+    "model.scale": {
+      "light": [[0, 1], [0.11, 1.1, "out"], [0.22, 1, "in"]],
+      "strong": [[0, 1], [0.1, 0.94, "out"], [0.22, 1.12, "out"], [0.34, 1, "in"]]
+    },
+    "spec-a.draw": {
+      "light": [[0, 1], [0.08, 0, "in"], [0.14, 0], [0.32, 1, "out"]],
+      "strong": [[0, 1], [0.1, 0, "in"], [0.24, 0], [0.46, 1, "out"]]
+    },
+    "spec-b.draw": {
+      "light": [[0, 1], [0.08, 0, "in"], [0.22, 0], [0.38, 1, "out"]],
+      "strong": [[0, 1], [0.1, 0, "in"], [0.34, 0], [0.56, 1, "out"]]
+    }
+  }
+}

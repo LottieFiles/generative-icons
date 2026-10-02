@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "component-instance",
+  "label": "Component instance",
+  "intent": "An edit to the main component reaches its instance. Light: the main component is pressed in and pops back bigger; the connector pulls back into it and shoots out to the instance, and the instance replays the same pop as the change arrives. Strong: the main component is pressed deeper and pops with a twist and a rebound, the change travels down the connector, and the instance replays every beat of it. The connector's corner never moves.",
+  "parts": {
+    "source": {
+      "shape": {"path": "M5 8.65 C5 8.217 5.186 7.889 5.557 7.666 L8.443 5.934 C8.814 5.711 9.186 5.711 9.557 5.934 L12.443 7.666 C12.814 7.889 13 8.217 13 8.65 L13 11.35 C13 11.783 12.814 12.111 12.443 12.334 L9.557 14.066 C9.186 14.289 8.814 14.289 8.443 14.066 L5.557 12.334 C5.186 12.111 5 11.783 5 11.35 L5 8.65 Z"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "link": {"shape": {"polyline": [[9, 14.4], [9, 21], [18, 21]]}},
+    "instance": {
+      "shape": {"path": "M18 19.65 C18 19.217 18.186 18.889 18.557 18.666 L21.443 16.934 C21.814 16.711 22.186 16.711 22.557 16.934 L25.443 18.666 C25.814 18.889 26 19.217 26 19.65 L26 22.35 C26 22.783 25.814 23.111 25.443 23.334 L22.557 25.066 C22.186 25.289 21.814 25.289 21.443 25.066 L18.557 23.334 C18.186 23.111 18 22.783 18 22.35 L18 19.65 Z"},
+      "role": "surface",
+      "solid": "fill"
+    }
+  },
+  "rigs": {
+    "source": {
+      "pivot": [9, 10]
+    },
+    "instance": {
+      "pivot": [22, 21]
+    }
+  },
+  "motion": {
+    "source.scale": {
+      "light": [[0, 1], [0.08, 0.82, "out"], [0.17, 1.17, "hit"], [0.25, 0.96], [0.33, 1]],
+      "strong": [[0, 1], [0.09, 0.76, "out"], [0.19, 1.24, "hit"], [0.28, 0.93], [0.36, 1.04], [0.44, 1]]
+    },
+    "source.rotate": {
+      "strong": [[0, 0], [0.09, 8, "out"], [0.19, -30, "hit"], [0.28, 7], [0.36, -2], [0.44, 0]]
+    },
+    "link.draw": {
+      "//": "the change runs from the main component (the line's start) to the instance",
+      "light": [[0, 1], [0.08, 0, "in"], [0.2, 1, "hit"]],
+      "strong": [[0, 1], [0.09, 0, "in"], [0.21, 1, "hit"]]
+    },
+    "instance.scale": {"follow": "source.scale", "lag": 0.18},
+    "instance.rotate": {"follow": "source.rotate", "lag": 0.18}
+  }
+}

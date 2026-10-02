@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "max-tokens",
+  "label": "Max tokens",
+  "intent": "Set a hard output length. Light: the end bracket slams 5 units in toward the output and stops dead at the new limit with a small rebound; the output rows flinch back from it in turn (longest row first) and settle. Strong: the bracket is pulled back first, slams in, rebounds and hits again; the rows flinch harder and twice. The bracket never passes the new limit (no overshoot on the value) and stays there. The reverse: the bracket is pressed in to release, then swings back out to the large limit and lands; the rows breathe out after it.",
+  "state": {
+    "from": "large-maximum",
+    "to": "small-maximum",
+    "labels": ["Limit", "Expand"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "first-token": {
+      "shape": {
+        "path": "M7 8 L13 8 C14.104 8 15 8.896 15 10 L15 10 C15 11.104 14.104 12 13 12 L7 12 C5.896 12 5 11.104 5 10 L5 10 C5 8.896 5.896 8 7 8 Z"
+      },
+      "role": "surface",
+      "solid": "fill",
+      "//": "v1's own pill path (its degenerate joins included) so the rest pose matches pixel for pixel"
+    },
+    "output-second": {"shape": {"line": [[5, 18], [16.5, 18]]}},
+    "output-third": {"shape": {"line": [[5, 24], [12, 24]]}},
+    "limit": {"shape": {"polyline": [[23, 5], [26, 5], [26, 27], [23, 27]]}}
+  },
+  "motion": {
+    "limit.x": {
+      "light": [[0, 0], [0.26, -5, "hit"], [0.32, -4.4], [0.4, -5]],
+      "strong": [[0, 0], [0.1, 1, "out"], [0.3, -5, "hit"], [0.36, -4.2], [0.42, -5, "hit"], [0.47, -4.75], [0.53, -5]]
+    },
+    "output-second.x": {
+      "light": [[0, 0], [0.26, 0], [0.31, -1, "out"], [0.4, 0]],
+      "strong": [[0, 0], [0.3, 0], [0.35, -1.4, "out"], [0.42, 0.1], [0.46, -0.6, "out"], [0.54, 0]]
+    },
+    "first-token.x": {"follow": "output-second.x", "lag": 0.04, "scale": 0.8},
+    "output-third.x": {"follow": "output-second.x", "lag": 0.08, "scale": 0.6}
+  },
+  "reverse": {
+    "//": "expanding: pressed in to release, then the bracket swings out to the large limit and lands; the rows breathe out after it",
+    "light": {
+      "limit.x": [[0, -5], [0.06, -5.4, "out"], [0.3, 0, "hit"], [0.36, -0.4], [0.42, 0]],
+      "output-second.x": [[0, 0], [0.12, 0], [0.2, 0.6, "out"], [0.32, 0]],
+      "first-token.x": [[0, 0], [0.16, 0], [0.24, 0.5, "out"], [0.36, 0]],
+      "output-third.x": [[0, 0], [0.2, 0], [0.28, 0.4, "out"], [0.4, 0]]
+    },
+    "strong": {
+      "limit.x": [[0, -5], [0.1, -5.6, "out"], [0.32, 0, "hit"], [0.38, -0.6], [0.44, 0, "hit"], [0.48, -0.2], [0.53, 0]],
+      "output-second.x": [[0, 0], [0.14, 0], [0.22, 0.9, "out"], [0.36, 0]],
+      "first-token.x": [[0, 0], [0.18, 0], [0.26, 0.7, "out"], [0.4, 0]],
+      "output-third.x": [[0, 0], [0.22, 0], [0.3, 0.55, "out"], [0.44, 0]]
+    }
+  }
+}

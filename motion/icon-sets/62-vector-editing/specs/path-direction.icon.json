@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "path-direction",
+  "label": "Path direction",
+  "intent": "The path shows which way it winds. Light: the tangent arrow runs one full lap clockwise along the contour, each anchor point pops in turn as the arrow passes it (bottom, then left), and the arrow lands back on top with a small settle. Strong: the arrow draws back first, runs the lap faster, overshoots the top and settles, and the anchors pop harder. The closed path never moves; the arrow ends exactly where it started.",
+  "parts": {
+    "path": {"shape": {"circle": [[16, 16], 9]}, "role": "surface", "solid": "ring"},
+    "anchor-left": {"shape": {"rect": [5.5, 14.5, 3, 3], "r": 0.45}, "role": "fill"},
+    "anchor-bottom": {"shape": {"rect": [14.5, 23.5, 3, 3], "r": 0.45}, "role": "fill"},
+    "arrow": {"shape": {"polyline": [[15.5, 3.7], [19.1, 7.55], [14.6, 10.1]]}}
+  },
+  "rigs": {
+    "arrow": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "arrow.rotate": {
+      "//": "one lap clockwise, then an invisible step from 360 back to 0 so the last frame is the rest pose to the pixel",
+      "light":  [[0, 0], [0.42, 368, "inOut"], [0.5, 360], [0.52, 0, "step"]],
+      "strong": [[0, 0], [0.1, -18, "out"], [0.48, 372, "inOut"], [0.56, 357], [0.63, 360], [0.65, 0, "step"]]
+    },
+    "anchor-bottom.scale": {
+      "light":  [[0, 1], [0.18, 1], [0.23, 1.5, "out"], [0.32, 1]],
+      "strong": [[0, 1], [0.26, 1], [0.31, 1.7, "out"], [0.38, 0.92], [0.45, 1]]
+    },
+    "anchor-left.scale": {
+      "light":  [[0, 1], [0.25, 1], [0.3, 1.5, "out"], [0.39, 1]],
+      "strong": [[0, 1], [0.32, 1], [0.37, 1.7, "out"], [0.44, 0.92], [0.51, 1]]
+    }
+  }
+}

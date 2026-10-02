@@ -1,0 +1,67 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "endpoint",
+  "label": "Endpoint",
+  "intent": "Connect a configured endpoint. Light: the plug drives 5 units into the socket and seats with a hit and a small rebound; the socket takes the shock and its live light flicks on inside it, then fades. Strong: the plug draws back first, rams home with a hit, a rebound and a second hit; the socket is knocked twice and the light blinks twice (a handshake). The plug stays seated (connected). The reverse pulls the plug back out, tugging the socket as it releases; no light.",
+  "state": {
+    "from": "disconnected",
+    "to": "connected",
+    "labels": ["Connect", "Disconnect"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "socket": {"shape": {"rect": [21, 7, 6, 18], "r": 2}, "role": "surface", "solid": "ring"},
+    "live": {
+      "//": "hidden at rest: the socket's live light, shown only as the connection is made",
+      "shape": {"line": [[24, 12.5], [24, 19.5]]},
+      "hidden": true
+    },
+    "plug": {"shape": {"rect": [6, 12, 6, 8], "r": 1.7}, "role": "surface", "solid": "ring"},
+    "prong-top": {"shape": {"line": [[12, 14], [16, 14]]}},
+    "prong-bottom": {"shape": {"line": [[12, 18], [16, 18]]}},
+    "lead": {"shape": {"line": [[4, 16], [6, 16]]}}
+  },
+  "rigs": {
+    "connector": {"pivot": [9, 16], "carries": ["plug", "prong-top", "prong-bottom", "lead"]},
+    "housing": {
+      "//": "the socket and its light take the shock together",
+      "pivot": [24, 16],
+      "carries": ["socket", "live"]
+    },
+    "live": {"pivot": [24, 16]}
+  },
+  "motion": {
+    "connector.x": {
+      "light": [[0, 0], [0.26, 5, "hit"], [0.32, 4.5], [0.4, 5]],
+      "strong": [[0, 0], [0.12, -1, "out"], [0.32, 5, "hit"], [0.38, 4.3], [0.44, 5, "hit"], [0.49, 4.8], [0.54, 5]]
+    },
+    "housing.x": {
+      "light": [[0, 0], [0.26, 0], [0.31, 0.7, "out"], [0.4, 0]],
+      "strong": [[0, 0], [0.32, 0], [0.37, 1, "out"], [0.44, 0, "in"], [0.48, 0.45, "out"], [0.56, 0]]
+    },
+    "live.opacity": {
+      "light": [[0, 0], [0.26, 0], [0.28, 1, "out"], [0.4, 1], [0.5, 0, "in"]],
+      "strong": [[0, 0], [0.32, 0], [0.34, 1, "out"], [0.4, 1], [0.44, 0.15, "in"], [0.48, 1, "out"], [0.58, 1], [0.68, 0, "in"]]
+    },
+    "live.scale": {
+      "light": [[0, 1], [0.26, 0.3, "step"], [0.34, 1.15, "out"], [0.42, 1]],
+      "strong": [[0, 1], [0.32, 0.3, "step"], [0.4, 1.15, "out"], [0.48, 1]]
+    }
+  },
+  "reverse": {
+    "//": "unplugging: the plug pulls out (strong: a press to release first), the socket is tugged as it lets go; no light",
+    "light": {
+      "connector.x": [[0, 5], [0.3, -0.5, "out"], [0.4, 0]],
+      "housing.x": [[0, 0], [0.05, 0], [0.11, -0.5, "out"], [0.2, 0]],
+      "live.opacity": [[0, 0], [0.4, 0]],
+      "live.scale": [[0, 1], [0.4, 1]]
+    },
+    "strong": {
+      "connector.x": [[0, 5], [0.1, 5.5, "out"], [0.34, -0.8, "out"], [0.42, 0.2], [0.5, 0]],
+      "housing.x": [[0, 0], [0.1, 0.5, "out"], [0.17, -0.7, "out"], [0.27, 0.15], [0.34, 0]],
+      "live.opacity": [[0, 0], [0.5, 0]],
+      "live.scale": [[0, 1], [0.5, 1]]
+    }
+  }
+}

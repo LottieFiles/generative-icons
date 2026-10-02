@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "benchmark-score",
+  "label": "Benchmark score",
+  "intent": "The measured score climbs and beats the benchmark. Light: the score bar rises in one push and stops dead at its new height; as its top passes the benchmark level the benchmark rule reaches across toward it, marking the crossing, and draws back. Strong: the bar climbs, stalls just under the benchmark, then breaks through to its score; the rule reaches across at the crossing and holds a beat before drawing back. The score never overshoots; the baseline never moves.",
+  "state": {"from": "baseline-score", "to": "benchmark-exceeded", "labels": ["Run benchmark", "Reset score"], "reverse": "auto"},
+  "parts": {
+    "score": {
+      "//": "the measured score: one rect whose top edge travels; bottom fixed at y 27",
+      "shape": {"morph": [{"rect": [21, 23, 6, 4], "r": 1.4}, {"rect": [21, 6, 6, 21], "r": 1.4}], "by": "level"},
+      "role": "surface", "solid": "fill"
+    },
+    "baseline":      {"shape": {"rect": [7, 18, 6, 9], "r": 1.4}, "role": "surface", "solid": "fill"},
+    "benchmark-cap": {"shape": {"line": [[5, 7.7], [5, 12.3]]}},
+    "benchmark": {
+      "//": "the rule's right end reaches toward the bar while the score crosses its level, then draws back",
+      "shape": {"morph": [{"line": [[5, 10], [16, 10]]}, {"line": [[5, 10], [18.2, 10]]}], "by": "reach"}
+    }
+  },
+  "motion": {
+    "level": {
+      "//": "a data value: no overshoot. The top crosses the benchmark (y 10) at level 0.765",
+      "light":  [[0, 0], [0.4, 1, "hit"]],
+      "strong": [[0, 0], [0.2, 0.62, "hit"], [0.3, 0.62], [0.44, 1, "hit"]]
+    },
+    "reach": {
+      "light":  [[0, 0], [0.3, 0], [0.35, 1, "out"], [0.41, 1], [0.5, 0, "in"]],
+      "strong": [[0, 0], [0.35, 0], [0.39, 1, "out"], [0.5, 1], [0.58, 0, "in"]]
+    }
+  },
+  "reverse": {
+    "//": "falling back below the benchmark is not a crossing to mark: the rule stays put, and the score drops at once",
+    "light":  {"reach": [[0, 0], [0.1, 0]], "level": [[0, 1], [0.36, 0, "out"]]},
+    "strong": {"reach": [[0, 0], [0.1, 0]], "level": [[0, 1], [0.14, 0.62, "out"], [0.22, 0.62], [0.4, 0, "out"]]}
+  }
+}

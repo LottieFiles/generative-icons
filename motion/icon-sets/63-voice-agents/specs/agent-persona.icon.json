@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "agent-persona",
+  "label": "Agent persona",
+  "intent": "The character mask comes alive and speaks in its persona. Light: the smile opens into a broad grin and the eyes lift with it, then the voice arc beside the mask pulses out toward the caller; the face relaxes back to its rest expression. Strong: the persona says two words, the grin opening twice (wider the second time) and the voice arc pulsing with each. The mask itself never moves.",
+  "parts": {
+    "mask": {
+      "shape": {
+        "path": "M10 5.5 L20 5.5 C22.2 5.5 23 6.8 23 9 L23 17.5 C23 22.5 19.5 26 15 27 C10.5 26 7 22.5 7 17.5 L7 9 C7 6.8 7.8 5.5 10 5.5 Z"
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "eye-left": {"shape": {"line": [[10.7, 12], [12.7, 12]]}},
+    "eye-right": {"shape": {"line": [[17.3, 12], [19.3, 12]]}},
+    "smile": {
+      "//": "the rest smile, and the grin it opens into",
+      "shape": {"morph": [{"path": "M11.5 18 C13 20 17 20 18.5 18"}, {"path": "M11 17.2 C12.8 21.6 17.2 21.6 19 17.2"}], "by": "grin"}
+    },
+    "voice-accent": {"shape": {"path": "M27 11 C29 13 29 18 27 20"}}
+  },
+  "rigs": {
+    "eyes": {"carries": ["eye-left", "eye-right"]},
+    "voice": {"//": "the arc swells out from its chord, toward the caller", "pivot": [27, 15.5], "carries": ["voice-accent"]}
+  },
+  "motion": {
+    "grin": {
+      "light": [[0, 0], [0.12, 1, "out"], [0.22, 0.7], [0.3, 0.85], [0.44, 0]],
+      "strong": [[0, 0], [0.1, 1, "out"], [0.2, 0.3], [0.31, 1.15, "out"], [0.42, 0.6], [0.5, 0.75], [0.64, 0]]
+    },
+    "eyes.y": {"follow": "grin", "scale": -0.7, "lag": 0.03},
+    "voice.scale": {"follow": "grin", "scale": 0.3, "offset": 1, "lag": 0.08}
+  },
+  "preview": {
+    "light": [0, 0.06, 0.12, 0.2, 0.26, 0.32, 0.4, 0.56],
+    "strong": [0, 0.1, 0.2, 0.27, 0.34, 0.42, 0.52, 0.76]
+  }
+}

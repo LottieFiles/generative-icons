@@ -1,0 +1,29 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "adapter-layer",
+  "label": "Adapter layer",
+  "intent": "An adapter is inserted between two frozen model layers and the stack clamps onto it. Light: the adapter drives left four units, seats with a hit and a small recoil, and as it seats the upper and lower layers close in on it and let go. Strong: the adapter draws back first, drives in harder, rebounds off its seat and seats again; the layers clamp on each impact, the second smaller. The adapter stays inserted; the layers end where they started.",
+  "state": {"from": "adapter-released", "to": "adapter-inserted", "labels": ["Insert adapter", "Remove adapter"], "reverse": "auto"},
+  "parts": {
+    "adapter-pin": {"shape": {"line": [[12, 16], [9.5, 16]]}},
+    "adapter":     {"shape": {"rect": [12, 13.5, 16, 5], "r": 1.4}, "role": "surface", "solid": "fill"},
+    "base-lower":  {"shape": {"rect": [5, 22.5, 22, 5], "r": 1.6}, "role": "surface", "solid": "fill"},
+    "base-upper":  {"shape": {"rect": [5, 4.5, 22, 5], "r": 1.6}, "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "adapter": {"//": "the adapter and its pin are one rigid part", "pivot": [20, 16], "carries": ["adapter-pin"]}
+  },
+  "motion": {
+    "adapter.x": {
+      "//": "v1's end state: 4 units left",
+      "light":  [[0, 0], [0.28, -4, "hit"], [0.34, -3.7, "out"], [0.4, -4, "hit"]],
+      "strong": [[0, 0], [0.12, 1, "out"], [0.34, -4, "hit"], [0.42, -3.3, "out"], [0.5, -4, "hit"]]
+    },
+    "base-upper.y": {
+      "light":  [[0, 0], [0.28, 0], [0.33, 1, "out"], [0.41, -0.2], [0.48, 0]],
+      "strong": [[0, 0], [0.34, 0], [0.39, 1.1, "out"], [0.46, 0.1], [0.5, 0.1], [0.54, 0.5, "out"], [0.62, -0.1], [0.68, 0]]
+    },
+    "base-lower.y": {"follow": "base-upper.y", "scale": -1}
+  }
+}

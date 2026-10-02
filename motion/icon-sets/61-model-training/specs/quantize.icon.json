@@ -1,0 +1,36 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "quantize",
+  "label": "Quantize",
+  "intent": "Continuous values snap to discrete levels. Light: the slope snaps into three steps in one decisive move and stops dead, and as it locks the three level cells click down in order, left to right, and spring back. Strong: the slope steps partway and pauses, then locks into its levels, and the cells click harder in order with a small settle. The signal is data and never overshoots; the cells end where they started.",
+  "state": {"from": "continuous-values", "to": "discrete-levels", "labels": ["Quantize", "Restore values"], "reverse": "auto"},
+  "parts": {
+    "quantized-signal": {
+      "shape": {"morph": [
+        {"path": "M5 25 L8.763 23.29 C9.188 23.097 9.612 22.903 10.037 22.71 L13.163 21.29 C13.588 21.097 14.012 20.903 14.437 20.71 L17.563 19.29 C17.988 19.097 18.412 18.903 18.837 18.71 L21.963 17.29 C22.388 17.097 22.812 16.903 23.237 16.71 L27 15"},
+        {"path": "M5 25 L11.3 25 C11.767 25 12 24.767 12 24.3 L12 20.7 C12 20.233 12.233 20 12.7 20 L18.3 20 C18.767 20 19 19.767 19 19.3 L19 15.7 C19 15.233 19.233 15 19.7 15 L27 15"}
+      ], "by": "snap"}
+    },
+    "level-2": {"shape": {"rect": [22, 5, 5, 5], "r": 1.25}, "role": "surface", "solid": "fill"},
+    "level-1": {"shape": {"rect": [13.5, 5, 5, 5], "r": 1.25}, "role": "surface", "solid": "fill"},
+    "level-0": {"shape": {"rect": [5, 5, 5, 5], "r": 1.25}, "role": "surface", "solid": "fill"}
+  },
+  "motion": {
+    "snap": {
+      "light":  [[0, 0], [0.28, 1, "hit"]],
+      "strong": [[0, 0], [0.16, 0.6, "hit"], [0.26, 0.6], [0.4, 1, "hit"]]
+    },
+    "level-0.y": {
+      "light":  [[0, 0], [0.26, 0], [0.3, 1.2, "hit"], [0.38, -0.2], [0.44, 0]],
+      "strong": [[0, 0], [0.38, 0], [0.42, 1.6, "hit"], [0.5, -0.35], [0.56, 0.1], [0.61, 0]]
+    },
+    "level-1.y": {"follow": "level-0.y", "lag": 0.05},
+    "level-2.y": {"follow": "level-0.y", "lag": 0.1}
+  },
+  "reverse": {
+    "//": "restoring continuous values: the slope relaxes at once; the cells do not click",
+    "light":  {"snap": [[0, 1], [0.32, 0, "out"]], "level-0.y": [[0, 0], [0.1, 0]], "level-1.y": [[0, 0], [0.1, 0]], "level-2.y": [[0, 0], [0.1, 0]]},
+    "strong": {"snap": [[0, 1], [0.14, 0.4, "out"], [0.22, 0.4], [0.38, 0, "out"]], "level-0.y": [[0, 0], [0.1, 0]], "level-1.y": [[0, 0], [0.1, 0]], "level-2.y": [[0, 0], [0.1, 0]]}
+  }
+}

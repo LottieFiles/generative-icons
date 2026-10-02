@@ -35,7 +35,7 @@ fn library_mode_matches_the_generation_context_goldens() {
     let repo = repo_arg();
     for (query, golden) in [
         ("notification bell", "4dc3ca333bfc1c33715e7041460adacd4c5d0265a36ca30baaf2c2489c35f786"),
-        ("package return", "73b58d095dcdf8bc11d2325574486f464e23c335c093f2c8af5205115e62eda8"),
+        ("package return", "f4204788f9a6e1a82c539b308b6ef8c9facd3504b715b44cb503a0e23a6f527c"),
         ("heart", "3cd3cc8129f42680b55f8c15daa7562ef713713b87aa0d87cfcce74fa9ef3dff"),
         ("loading spinner", "742e4f4f84fc495d31b5e7b56c10aab090b0a14aba7c66ef54aca30c0494e9fd"),
         ("create a new icon for the payment", "53e53d7f21f60058cb256d75639b0550d0ab7997f410c28ddf72b27548ed19a4"),

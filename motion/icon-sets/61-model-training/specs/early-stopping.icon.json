@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "early-stopping",
+  "label": "Early stopping",
+  "intent": "Training is stopped where the loss flattens. Light: the stop block drops thirteen units onto the end of the flat loss trace and slams down with a hit; the trace gives under it and springs back, and the block rebounds a little and settles on the plateau. Strong: the block lifts first, drops harder, bounces once and lands again, and the trace gives under each impact. The axes never move; the block stays down on the plateau.",
+  "state": {"from": "monitoring", "to": "stopped-at-plateau", "labels": ["Stop training", "Resume monitoring"], "reverse": "auto"},
+  "parts": {
+    "stop-block": {"shape": {"rect": [20.5, 3.5, 7, 7], "r": 1.25}, "role": "surface", "solid": "fill"},
+    "plateau": {
+      "//": "give 1 presses the trace's flat end down one unit under the block",
+      "shape": {"morph": [{"path": "M9 9 C11 20 15 23 21 23"}, {"path": "M9 9 C11 20 15 24 21 24"}], "by": "give"}
+    },
+    "axes": {"shape": {"polyline": [[5, 5], [5, 28], [28, 28]]}}
+  },
+  "motion": {
+    "stop-block.y": {
+      "//": "v1's end state: 13 units down",
+      "light":  [[0, 0], [0.26, 13.8, "hit"], [0.34, 12.7, "out"], [0.42, 13]],
+      "strong": [[0, 0], [0.1, -0.6, "out"], [0.3, 14.2, "hit"], [0.38, 12.3, "out"], [0.47, 13.4, "hit"], [0.56, 13]]
+    },
+    "give": {
+      "light":  [[0, 0], [0.24, 0], [0.26, 0.8, "hit"], [0.34, 0, "out"]],
+      "strong": [[0, 0], [0.28, 0], [0.3, 1.2, "hit"], [0.38, 0, "out"], [0.45, 0], [0.47, 0.4, "hit"], [0.55, 0, "out"]]
+    }
+  },
+  "reverse": {
+    "//": "resuming: the block lifts clear at once and returns to its watch position; the trace does not react",
+    "light":  {"stop-block.y": [[0, 13], [0.32, 0, "inOut"]], "give": [[0, 0], [0.1, 0]]},
+    "strong": {"stop-block.y": [[0, 13], [0.08, 13.5, "out"], [0.34, -0.4, "out"], [0.42, 0]], "give": [[0, 0], [0.1, 0]]}
+  }
+}

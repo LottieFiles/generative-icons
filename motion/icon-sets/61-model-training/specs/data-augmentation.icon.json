@@ -1,0 +1,64 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "data-augmentation",
+  "label": "Data augmentation",
+  "intent": "A transformed copy is made from the source image. Light: a copy of the source frame lifts off it, flies up to the second view while it twists and straightens, shrinking to fit, and lands on it; the view swells as the copy merges and settles. Strong: two copies leave in turn, twisting one way and then the other, and the view takes each arrival. The source never moves; the copies are gone when the action ends.",
+  "parts": {
+    "augmented-sun": {"shape": {"circle": [[23, 9], 0.7]}, "role": "fill"},
+    "augmented-mark": {
+      "shape": {
+        "path": "M20.65 14 C20.45 14 20.404 13.916 20.511 13.747 L21.839 11.653 C21.946 11.484 22.054 11.484 22.161 11.653 L23.489 13.747 C23.596 13.916 23.55 14 23.35 14 L20.65 14 Z"
+      },
+      "role": "fill"
+    },
+    "augmented": {"shape": {"rect": [18, 6, 8, 11], "r": 1.5}, "role": "surface", "solid": "ring"},
+    "source-sun": {"shape": {"circle": [[10.9, 16.5], 0.75]}, "role": "fill"},
+    "source-mark": {
+      "shape": {
+        "path": "M7.95 21.8 C7.717 21.8 7.664 21.702 7.792 21.507 L9.308 19.193 C9.436 18.998 9.564 18.998 9.692 19.193 L11.208 21.507 C11.336 21.702 11.283 21.8 11.05 21.8 L7.95 21.8 Z"
+      },
+      "role": "fill"
+    },
+    "source": {"shape": {"rect": [5, 13, 9, 12], "r": 1.5}, "role": "surface", "solid": "ring"},
+    "copy": {
+      "//": "hidden at rest: the transformed copy only exists while it travels from the source to the view",
+      "shape": {"rect": [5, 13, 9, 12], "r": 1.5},
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "augmented": {"//": "the view and its picture swell together", "pivot": [22, 11.5], "carries": ["augmented-mark", "augmented-sun"]},
+    "copy": {"//": "turns and shrinks about its own centre; x 12.5, y -7.5 puts it on the view", "pivot": [9.5, 19]}
+  },
+  "motion": {
+    "copy.opacity": {
+      "light": [[0, 0], [0.04, 1, "out"], [0.26, 1], [0.34, 0, "in"]],
+      "strong": [[0, 0], [0.04, 1, "out"], [0.23, 1], [0.3, 0, "in"], [0.31, 0], [0.35, 1, "out"], [0.52, 1], [0.59, 0, "in"]]
+    },
+    "copy.x": {
+      "light": [[0, 0], [0.04, 0], [0.3, 12.5, "inOut"], [0.35, 0, "step"]],
+      "strong": [[0, 0], [0.04, 0], [0.27, 12.5, "inOut"], [0.31, 0, "step"], [0.33, 0], [0.56, 12.5, "inOut"], [0.6, 0, "step"]]
+    },
+    "copy.y": {
+      "light": [[0, 0], [0.04, 0], [0.3, -7.5, "inOut"], [0.35, 0, "step"]],
+      "strong": [[0, 0], [0.04, 0], [0.27, -7.5, "inOut"], [0.31, 0, "step"], [0.33, 0], [0.56, -7.5, "inOut"], [0.6, 0, "step"]]
+    },
+    "copy.rotate": {
+      "light": [[0, 0], [0.04, 0], [0.17, -22, "out"], [0.3, 0, "inOut"]],
+      "strong": [[0, 0], [0.04, 0], [0.15, -28, "out"], [0.27, 0, "inOut"], [0.33, 0], [0.44, 28, "out"], [0.56, 0, "inOut"]]
+    },
+    "copy.scale": {
+      "light": [[0, 1], [0.04, 1], [0.3, 0.9], [0.35, 1, "step"]],
+      "strong": [[0, 1], [0.04, 1], [0.27, 0.9], [0.31, 1, "step"], [0.33, 1], [0.56, 0.9], [0.6, 1, "step"]]
+    },
+    "augmented.scale": {
+      "light": [[0, 1], [0.28, 1], [0.33, 1.1, "out"], [0.41, 0.97], [0.47, 1]],
+      "strong": [[0, 1], [0.25, 1], [0.3, 1.08, "out"], [0.36, 0.98], [0.4, 1], [0.54, 1], [0.59, 1.11, "out"], [0.67, 0.96], [0.73, 1.02], [0.78, 1]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.1, 0.17, 0.24, 0.3, 0.33, 0.4, 0.5],
+    "strong": [0, 0.15, 0.27, 0.3, 0.4, 0.5, 0.59, 0.7]
+  }
+}

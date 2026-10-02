@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "join-paths",
+  "label": "Join paths",
+  "intent": "Two open endpoints snap together into one node. Light: the endpoints are drawn toward each other, speeding up like magnets, meet at the shared node with a hit, and the welded node pops once and settles. Strong: they pull back first, then snap together harder and the welded node pops bigger with a rebound. The reverse pulls the joint apart. The arch's feet never move; the joined path holds.",
+  "state": {
+    "from": "open-endpoints",
+    "to": "joined-path",
+    "labels": ["Join paths", "Split path"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "left": {
+      "//": "only the endpoint travels; the curve's handles stay put, exactly as v1's joined arch",
+      "shape": {"morph": [{"path": "M5.5 23 C5.5 15 7 10 10.5 10"}, {"path": "M5.5 23 C5.5 15 7 10 16 10"}], "by": "join"}
+    },
+    "right": {
+      "shape": {"morph": [{"path": "M21.5 10 C25 10 26.5 15 26.5 23"}, {"path": "M16 10 C25 10 26.5 15 26.5 23"}], "by": "join"}
+    },
+    "left-node": {"shape": {"rect": [7.5, 7, 6, 6], "r": 0.45}, "role": "surface", "solid": "fill"},
+    "right-node": {"shape": {"rect": [18.5, 7, 6, 6], "r": 0.45}, "role": "surface", "solid": "fill"}
+  },
+  "motion": {
+    "join": {
+      "light": [[0, 0], [0.3, 1, "hit"]],
+      "strong": [[0, 0], [0.12, -0.2, "out"], [0.3, 1, "hit"]]
+    },
+    "left-node.x": {
+      "//": "5.5 units: the node centre lands on the shared point (16, 10)",
+      "light": [[0, 0], [0.3, 5.5, "hit"]],
+      "strong": [[0, 0], [0.12, -1.1, "out"], [0.3, 5.5, "hit"]]
+    },
+    "right-node.x": {"follow": "left-node.x", "scale": -1},
+    "left-node.scale": {
+      "light": [[0, 1], [0.3, 1], [0.36, 1.22, "out"], [0.44, 0.95], [0.52, 1]],
+      "strong": [[0, 1], [0.3, 1], [0.36, 1.34, "out"], [0.45, 0.9], [0.54, 1.05], [0.63, 1]]
+    },
+    "right-node.scale": {"follow": "left-node.scale"}
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "epoch-counter",
+  "label": "Epoch counter",
+  "intent": "A training pass completes and the counter registers it. Light: the two cycle arrows run one lap, each taking the other's place, overshoot a little and settle; as the lap lands the counter ticks, swelling and settling. Strong: the arrows wind back, run two laps with a stop between, and the counter ticks on each, the second harder. The tally never changes shape; the arrows end exactly where they started.",
+  "parts": {
+    "head-lower":  {"shape": {"polyline": [[8.98, 22.24], [6.393, 20.48], [6.08, 23.6]]}},
+    "head-upper":  {"shape": {"polyline": [[23.02, 9.76], [25.607, 11.52], [25.92, 8.4]]}},
+    "cycle-lower": {"shape": {"path": "M25.607 20.48 C23.866 24.213 20.119 26.6 16 26.6 C11.881 26.6 8.134 24.213 6.393 20.48"}},
+    "cycle-upper": {"shape": {"path": "M6.393 11.52 C8.134 7.787 11.881 5.4 16 5.4 C20.119 5.4 23.866 7.787 25.607 11.52"}},
+    "tally":       {"shape": {"polyline": [[15.5, 15.1], [17, 14.3], [17, 18.2]]}},
+    "counter":     {"shape": {"rect": [11.3, 10.3, 9.4, 11.4], "r": 1.7}, "role": "surface", "solid": "ring"}
+  },
+  "rigs": {
+    "cycle":   {"//": "the two arrows are 180-degree symmetric about the centre: a half turn is one lap", "pivot": [16, 16], "carries": ["head-lower", "head-upper", "cycle-lower", "cycle-upper"]},
+    "counter": {"pivot": [16, 16], "carries": ["tally"]}
+  },
+  "motion": {
+    "cycle.rotate": {
+      "//": "each lap ends on a symmetric pose, then an invisible step back to 0 so the last frame is the exact rest drawing",
+      "light":  [[0, 0], [0.28, 192, "out"], [0.36, 177], [0.42, 180], [0.44, 0, "step"]],
+      "strong": [[0, 0], [0.1, -16, "out"], [0.3, 180, "hit"], [0.38, 180], [0.56, 370, "out"], [0.63, 357], [0.69, 360], [0.71, 0, "step"]]
+    },
+    "counter.scale": {
+      "light":  [[0, 1], [0.27, 1], [0.32, 1.12, "out"], [0.39, 0.97], [0.45, 1]],
+      "strong": [[0, 1], [0.29, 1], [0.33, 1.08, "out"], [0.38, 1], [0.53, 1], [0.58, 1.14, "out"], [0.65, 0.96], [0.71, 1.02], [0.76, 1]]
+    }
+  }
+}

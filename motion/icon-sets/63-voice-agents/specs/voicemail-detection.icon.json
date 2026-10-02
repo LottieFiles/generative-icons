@@ -1,0 +1,45 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "voicemail-detection",
+  "label": "Voicemail detection",
+  "intent": "An answering-machine greeting plays and the detector recognises it. Light: the three greeting syllables swell in turn, left to right; the pupil glances to the first and follows them across, then snaps back to centre and dilates: machine detected. Strong: the greeting plays two phrases, the pupil searches wider, and the recognition beat is bigger with a second, smaller swing. The greeting card and the eye outline never move.",
+  "parts": {
+    "greeting": {
+      "shape": {"path": "M7.8 4.5 L24.2 4.5 C25.74 4.5 27 5.76 27 7.3 L27 12.9 C27 14.44 25.74 15.7 24.2 15.7 L10 15.7 L7.5 17.5 C7.1 17.8 6.6 17.5 6.6 17 L6.6 15.4 C5.6 15 5 14.2 5 12.9 L5 7.3 C5 5.76 6.26 4.5 7.8 4.5 Z"},
+      "role": "surface",
+      "solid": "ring"
+    },
+    "greeting-syllable-0": {"shape": {"line": [[11, 9], [11, 11]]}},
+    "greeting-syllable-1": {"shape": {"line": [[16, 7.5], [16, 12.5]]}},
+    "greeting-syllable-2": {"shape": {"line": [[21, 9], [21, 11]]}},
+    "detection-eye": {"shape": {"path": "M6 24 C10 18.7 22 18.7 26 24 C22 29.3 10 29.3 6 24 Z"}, "role": "surface", "solid": "ring"},
+    "detector-pupil": {"shape": {"circle": [[16, 24], 1.7]}, "role": "fill", "solid": {"circle": [[16, 24], 1.85]}}
+  },
+  "rigs": {
+    "s0": {"//": "each syllable swells about the greeting's centre line", "pivot": [11, 10], "carries": ["greeting-syllable-0"], "squash": {"base": 10, "widen": 0}},
+    "s1": {"//": "the tall middle syllable swells less, to stay clear of the card", "pivot": [16, 10], "carries": ["greeting-syllable-1"], "squash": {"base": 10, "widen": 0}},
+    "s2": {"pivot": [21, 10], "carries": ["greeting-syllable-2"], "squash": {"base": 10, "widen": 0}},
+    "pupil": {"pivot": [16, 24], "carries": ["detector-pupil"]}
+  },
+  "motion": {
+    "s0.squash": {
+      "light":  [[0, 1], [0.08, 1.9, "out"], [0.18, 1]],
+      "strong": [[0, 1], [0.07, 2, "out"], [0.15, 1], [0.2, 1], [0.27, 1.8, "out"], [0.35, 1]]
+    },
+    "s1.squash": {"follow": "s0.squash", "scale": 0.12, "offset": 0.88, "lag": 0.07},
+    "s2.squash": {"follow": "s0.squash", "lag": 0.14},
+    "pupil.x": {
+      "light":  [[0, 0], [0.07, -1.8, "out"], [0.26, 1.8, "inOut"], [0.34, 0, "hit"]],
+      "strong": [[0, 0], [0.07, -2.6, "out"], [0.32, 2.6, "inOut"], [0.41, 0, "hit"]]
+    },
+    "pupil.scale": {
+      "light":  [[0, 1], [0.34, 1], [0.42, 1.5, "out"], [0.49, 0.96], [0.54, 1]],
+      "strong": [[0, 1], [0.41, 1], [0.49, 1.55, "out"], [0.56, 0.92], [0.62, 1.06], [0.68, 1]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.07, 0.15, 0.22, 0.3, 0.37, 0.42, 0.58],
+    "strong": [0, 0.07, 0.15, 0.27, 0.36, 0.44, 0.49, 0.72]
+  }
+}

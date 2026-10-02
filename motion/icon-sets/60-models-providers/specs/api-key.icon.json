@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "api-key",
+  "label": "API key",
+  "intent": "Authorize an app: the key goes in, turns, and the code opens. Light: the key pushes in 2 units and stops with a hit, then turns on its shaft (its profile closes up toward the shaft line, as a key seen side-on does when it turns); a beat later the code brackets spring apart and settle, and the key turns back and withdraws. Strong: the key draws back first, drives in 2.5 with a hit and a rebound, turns further, and the brackets spring wider with a bounce. The brackets never leave their rows; the key stays rigid.",
+  "parts": {
+    "bow": {"shape": {"circle": [[9, 11], 4.4]}, "role": "surface", "solid": "ring"},
+    "shaft": {"shape": {"polyline": [[13.1, 11], [26, 11], [26, 15]]}},
+    "tooth": {"shape": {"line": [[21, 11], [21, 14]]}},
+    "code-left": {"shape": {"polyline": [[11, 21], [8, 24], [11, 27]]}},
+    "code-right": {"shape": {"polyline": [[21, 21], [24, 24], [21, 27]]}}
+  },
+  "rigs": {
+    "key": {"//": "squash about the shaft line = the key turning on its own axis", "pivot": [9, 11], "carries": ["bow", "shaft", "tooth"], "squash": {"base": 11, "widen": 0}}
+  },
+  "motion": {
+    "key.x": {
+      "light": [[0, 0], [0.14, 2, "hit"], [0.36, 2], [0.5, 0, "inOut"]],
+      "strong": [[0, 0], [0.1, -1, "out"], [0.22, 2.5, "hit"], [0.28, 2], [0.34, 2.5, "hit"], [0.54, 2.5], [0.7, 0, "inOut"]]
+    },
+    "key.squash": {
+      "light": [[0, 1], [0.14, 1], [0.26, 0.34, "sine"], [0.36, 0.34], [0.48, 1, "sine"]],
+      "strong": [[0, 1], [0.34, 1], [0.46, 0.24, "sine"], [0.54, 0.24], [0.68, 1, "sine"]]
+    },
+    "code-left.x": {
+      "light": [[0, 0], [0.22, 0], [0.32, -1.6, "out"], [0.42, 0.3], [0.5, 0]],
+      "strong": [[0, 0], [0.42, 0], [0.52, -2.2, "out"], [0.62, 0.5], [0.71, -0.2], [0.8, 0]]
+    },
+    "code-right.x": {"follow": "code-left.x", "scale": -1}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "multimodal-input",
+  "label": "Multimodal input",
+  "intent": "Accept image and audio together. Light: the image drops into the mouth of the input tray and stops with a hit, then the waveform bars drop in after it one by one; the tray dips under each arrival and springs back, and both inputs lift back to their places. Strong: each input gathers (a small lift) before it drops, knocks twice on arrival, and the tray takes three decaying dips. The tray stays rigid; only its position answers the weight.",
+  "parts": {
+    "input-tray": {"shape": {"polyline": [[6, 22], [6, 27], [26, 27], [26, 22]]}},
+    "image": {"shape": {"rect": [4.5, 4.5, 12, 11], "r": 1.8}, "role": "surface", "solid": "ring"},
+    "landscape": {"shape": {"polyline": [[8, 11.5], [10.5, 8.5], [13, 11.5]]}},
+    "audio-left": {"shape": {"line": [[21, 8], [21, 12]]}},
+    "audio-middle": {"shape": {"line": [[24.5, 5.5], [24.5, 14.5]]}},
+    "audio-right": {"shape": {"line": [[28, 8], [28, 12]]}}
+  },
+  "rigs": {
+    "picture": {"pivot": [10.5, 10], "carries": ["image", "landscape"]}
+  },
+  "motion": {
+    "picture.y": {
+      "light": [[0, 0], [0.16, 3.5, "hit"], [0.2, 3.5], [0.34, 0, "inOut"]],
+      "strong": [[0, 0], [0.1, -0.8, "out"], [0.24, 3.5, "hit"], [0.3, 2.7], [0.36, 3.5, "hit"], [0.42, 3.5], [0.58, 0, "inOut"]]
+    },
+    "audio-left.y": {
+      "light": [[0, 0], [0.1, 0], [0.24, 3.5, "hit"], [0.28, 3.5], [0.42, 0, "inOut"]],
+      "strong": [[0, 0], [0.14, -0.8, "out"], [0.3, 3.5, "hit"], [0.36, 2.7], [0.42, 3.5, "hit"], [0.48, 3.5], [0.64, 0, "inOut"]]
+    },
+    "audio-middle.y": {"follow": "audio-left.y", "lag": 0.035},
+    "audio-right.y": {"follow": "audio-left.y", "lag": 0.07},
+    "input-tray.y": {
+      "light": [[0, 0], [0.16, 0], [0.2, 0.9, "out"], [0.25, 0.15], [0.3, 0.7, "out"], [0.4, 0]],
+      "strong": [[0, 0], [0.24, 0], [0.28, 1.2, "out"], [0.34, 0.2], [0.38, 1.1, "out"], [0.45, 0.1], [0.5, 0.5, "out"], [0.6, 0]]
+    }
+  }
+}

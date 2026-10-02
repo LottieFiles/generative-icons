@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "top-p",
+  "label": "Top P",
+  "intent": "Set the nucleus cutoff. Light: the cutoff marker is pulled out along the tail of the distribution, snaps back to its threshold with a hit, and the nucleus it keeps (the area under the curve up to the cutoff) lights up and fades. Strong: the marker is pulled further down the tail, snaps back, knocks twice, and the nucleus lights up twice with the knocks. The marker's top stays on the density curve throughout (a morph between two points on the curve; between them the chord is within 0.2 of the curve).",
+  "parts": {
+    "nucleus": {
+      "//": "hidden at rest: the kept region, the density curve split at the cutoff (t = 0.4 of its second segment)",
+      "shape": {"path": "M5 25 C9 25 10 7 16 7 C18.4 7 20 9.88 21.312 13.336 L21.312 25 L5 25 Z"},
+      "role": "fill",
+      "hidden": true
+    },
+    "density": {"shape": {"path": "M5 25 C9 25 10 7 16 7 C22 7 23 25 27 25 L5 25 Z"}, "role": "surface", "solid": "ring"},
+    "cutoff": {
+      "//": "slide 0 = the rest threshold (t = 0.4 on the curve), 1 = far down the tail (t = 0.75)",
+      "shape": {"morph": [{"line": [[21.312, 13.336], [21.312, 25]]}, {"line": [[24.438, 22.19], [24.438, 25]]}], "by": "slide"}
+    }
+  },
+  "motion": {
+    "slide": {
+      "light": [[0, 0], [0.12, 0.6, "out"], [0.26, 0, "hit"], [0.31, 0.08], [0.36, 0]],
+      "strong": [[0, 0], [0.16, 1, "out"], [0.34, 0, "hit"], [0.4, 0.14], [0.46, 0, "hit"], [0.5, 0.04], [0.54, 0]]
+    },
+    "nucleus.opacity": {
+      "light": [[0, 0], [0.26, 0], [0.3, 0.55, "out"], [0.4, 0.55], [0.54, 0, "in"]],
+      "strong": [[0, 0], [0.34, 0], [0.38, 0.6, "out"], [0.44, 0.3], [0.48, 0.6, "out"], [0.6, 0.6], [0.76, 0, "in"]]
+    }
+  }
+}

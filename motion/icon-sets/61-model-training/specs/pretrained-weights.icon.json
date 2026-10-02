@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "pretrained-weights",
+  "label": "Pretrained weights",
+  "intent": "The stored weights are loaded. Light: the load arrow drives down and stops dead, springing back, and the four stored coefficients light up one after another in reading order, each swelling and settling. Strong: the arrow rises first and drives down harder, the cartridge takes the load with a dip and a rebound, and the coefficients light up in order, larger. The shelf never moves; the coefficients stay rigid in the cartridge.",
+  "parts": {
+    "coefficient-3": {"shape": {"rect": [14.35, 18.25, 2.5, 2.5], "r": 0.65}, "role": "fill"},
+    "coefficient-2": {"shape": {"rect": [8.15, 18.25, 2.5, 2.5], "r": 0.65}, "role": "fill"},
+    "coefficient-1": {"shape": {"rect": [14.35, 11.25, 2.5, 2.5], "r": 0.65}, "role": "fill"},
+    "coefficient-0": {"shape": {"rect": [8.15, 11.25, 2.5, 2.5], "r": 0.65}, "role": "fill"},
+    "cartridge":     {"shape": {"rect": [5, 8, 15, 16], "r": 1.8}, "role": "surface", "solid": "ring"},
+    "load-tip":      {"shape": {"polyline": [[23.5, 19.5], [26, 22], [28.5, 19.5]]}},
+    "load-guide":    {"shape": {"line": [[26, 7], [26, 22]]}},
+    "shelf":         {"shape": {"line": [[4.5, 28], [23.5, 28]]}}
+  },
+  "rigs": {
+    "load":          {"//": "the load arrow: shaft and tip as one", "pivot": [26, 22], "carries": ["load-guide", "load-tip"]},
+    "cartridge":     {"pivot": [12.5, 24], "carries": ["coefficient-0", "coefficient-1", "coefficient-2", "coefficient-3"]},
+    "coefficient-0": {"pivot": [9.4, 12.5]},
+    "coefficient-1": {"pivot": [15.6, 12.5]},
+    "coefficient-2": {"pivot": [9.4, 19.5]},
+    "coefficient-3": {"pivot": [15.6, 19.5]}
+  },
+  "motion": {
+    "load.y": {
+      "light":  [[0, 0], [0.16, 2.5, "hit"], [0.3, 0, "out"]],
+      "strong": [[0, 0], [0.1, -1, "out"], [0.22, 3.5, "hit"], [0.3, 3.1], [0.42, 0, "out"]]
+    },
+    "cartridge.y": {
+      "//": "Strong only: the cartridge takes the load",
+      "strong": [[0, 0], [0.22, 0], [0.27, 1.2, "out"], [0.35, -0.3], [0.42, 0]]
+    },
+    "coefficient-0.scale": {
+      "light":  [[0, 1], [0.14, 1], [0.19, 1.45, "out"], [0.27, 0.92], [0.33, 1]],
+      "strong": [[0, 1], [0.22, 1], [0.27, 1.6, "out"], [0.35, 0.9], [0.41, 1.04], [0.46, 1]]
+    },
+    "coefficient-1.scale": {"follow": "coefficient-0.scale", "lag": 0.06},
+    "coefficient-2.scale": {"follow": "coefficient-0.scale", "lag": 0.12},
+    "coefficient-3.scale": {"follow": "coefficient-0.scale", "lag": 0.18}
+  }
+}

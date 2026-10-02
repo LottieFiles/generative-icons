@@ -1,0 +1,63 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "tokenizer",
+  "label": "Tokenizer",
+  "intent": "The word is cut into tokens. Light: two cuts draw down through the word's boundaries, and as they fade the three cells spring apart into separate tokens and stop dead. Strong: the left cut lands, then the right, and the cells spring apart with a small overshoot and settle. The word line never moves; the tokens stay separate.",
+  "state": {
+    "from": "joined-word",
+    "to": "separate-tokens",
+    "labels": ["Tokenize", "Join word"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "cut-l": {"//": "hidden at rest: the cut through the left boundary", "shape": {"line": [[12.1, 9.5], [12.1, 26]]}, "hidden": true},
+    "cut-r": {"//": "hidden at rest: the cut through the right boundary", "shape": {"line": [[19.9, 9.5], [19.9, 26]]}, "hidden": true},
+    "token-2": {
+      "shape": {"morph": [{"rect": [19.9, 14, 7.8, 10], "r": 1.4}, {"rect": [22.4, 14, 5.4, 10], "r": 1.4}], "by": "split"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "token-1": {
+      "shape": {"morph": [{"rect": [12.1, 14, 7.8, 10], "r": 1.4}, {"rect": [13.3, 14, 5.4, 10], "r": 1.4}], "by": "split"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "token-0": {
+      "shape": {"morph": [{"rect": [4.3, 14, 7.8, 10], "r": 1.4}, {"rect": [4.2, 14, 5.4, 10], "r": 1.4}], "by": "split"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "word": {"shape": {"line": [[6, 6.5], [26, 6.5]]}}
+  },
+  "motion": {
+    "cut-l.draw": {"light": [[0, 1], [0.01, 0, "step"], [0.12, 1, "out"]], "strong": [[0, 1], [0.01, 0, "step"], [0.1, 1, "out"]]},
+    "cut-l.opacity": {
+      "light": [[0, 0], [0.01, 1, "step"], [0.14, 1], [0.24, 0, "in"]],
+      "strong": [[0, 0], [0.01, 1, "step"], [0.22, 1], [0.32, 0, "in"]]
+    },
+    "cut-r.draw": {"light": [[0, 1], [0.01, 0, "step"], [0.12, 1, "out"]], "strong": [[0, 1], [0.1, 1], [0.11, 0, "step"], [0.2, 1, "out"]]},
+    "cut-r.opacity": {
+      "light": [[0, 0], [0.01, 1, "step"], [0.14, 1], [0.24, 0, "in"]],
+      "strong": [[0, 0], [0.1, 0], [0.11, 1, "step"], [0.24, 1], [0.34, 0, "in"]]
+    },
+    "split": {"light": [[0, 0], [0.12, 0], [0.36, 1, "hit"]], "strong": [[0, 0], [0.22, 0], [0.36, 1.07, "out"], [0.45, 0.98], [0.55, 1]]}
+  },
+  "reverse": {
+    "//": "joining is not a cut: the cells snap back together and no cut appears",
+    "light": {
+      "split": [[0, 1], [0.28, 0, "hit"]],
+      "cut-l.opacity": [[0, 0], [0.1, 0]],
+      "cut-r.opacity": [[0, 0], [0.1, 0]],
+      "cut-l.draw": [[0, 1], [0.1, 1]],
+      "cut-r.draw": [[0, 1], [0.1, 1]]
+    },
+    "strong": {
+      "split": [[0, 1], [0.08, 1.06, "out"], [0.3, 0, "hit"]],
+      "cut-l.opacity": [[0, 0], [0.1, 0]],
+      "cut-r.opacity": [[0, 0], [0.1, 0]],
+      "cut-l.draw": [[0, 1], [0.1, 1]],
+      "cut-r.draw": [[0, 1], [0.1, 1]]
+    }
+  }
+}

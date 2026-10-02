@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "learning-rate",
+  "label": "Learning rate",
+  "intent": "The learning rate steps down on its schedule. Light: the second step size drops to its shorter length and stops dead, and the third follows a beat later and drops further. Strong: a step decay in two milestones: at the first both later steps drop to the middle length in turn, and at the second the last step halves again. The first step stays fixed; the sizes are data and never overshoot.",
+  "state": {"from": "constant-rate", "to": "decay-schedule", "labels": ["Decay rate", "Hold rate"], "reverse": "auto"},
+  "parts": {
+    "step-1": {
+      "//": "the third step: right end from x 27 to x 12",
+      "shape": {"morph": [{"rect": [5, 22.5, 22, 4.5], "r": 1.6}, {"rect": [5, 22.5, 7, 4.5], "r": 1.6}], "by": "decay-1"},
+      "role": "surface", "solid": "fill"
+    },
+    "step-0": {
+      "//": "the second step: right end from x 27 to x 19",
+      "shape": {"morph": [{"rect": [5, 13.75, 22, 4.5], "r": 1.6}, {"rect": [5, 13.75, 14, 4.5], "r": 1.6}], "by": "decay-0"},
+      "role": "surface", "solid": "fill"
+    },
+    "initial-step": {"shape": {"rect": [5, 5, 22, 4.5], "r": 1.6}, "role": "surface", "solid": "fill"}
+  },
+  "motion": {
+    "decay-0": {
+      "light":  [[0, 0], [0.24, 1, "hit"]],
+      "strong": [[0, 0], [0.18, 1, "hit"]]
+    },
+    "decay-1": {
+      "//": "0.533 is the middle length (14), the first milestone",
+      "light":  [[0, 0], [0.1, 0], [0.36, 1, "hit"]],
+      "strong": [[0, 0], [0.06, 0], [0.24, 0.533, "hit"], [0.38, 0.533], [0.56, 1, "hit"]]
+    }
+  }
+}

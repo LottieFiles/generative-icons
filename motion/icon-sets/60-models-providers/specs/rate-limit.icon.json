@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "rate-limit",
+  "label": "Rate limit",
+  "intent": "Requests are throttled. Light: the first packet rushes the closed gate, hits it and is knocked back to the queue; the packet behind follows and is held short of the gate; the gate shudders on its foot from the impact and settles. Strong: both packets wind up and rush the gate in turn, each hits and is thrown back past its place before settling, and the gate shudders twice. The foot never moves; the gate stays rigid and only rocks on its base.",
+  "parts": {
+    "gate": {"shape": {"line": [[20, 6], [20, 22]]}},
+    "foot": {
+      "//": "v1's own pill path (its degenerate joins included)",
+      "shape": {"path": "M18 24 L22 24 C22.828 24 23.5 24.672 23.5 25.5 L23.5 25.5 C23.5 26.328 22.828 27 22 27 L18 27 C17.172 27 16.5 26.328 16.5 25.5 L16.5 25.5 C16.5 24.672 17.172 24 18 24 Z"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "packet-a": {"shape": {"rect": [5, 8, 5, 5], "r": 1.5}, "role": "surface", "solid": "fill"},
+    "packet-b": {"shape": {"rect": [5, 17, 5, 5], "r": 1.5}, "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "gate": {"//": "rocks on its base where it meets the foot", "pivot": [20, 23]}
+  },
+  "motion": {
+    "packet-a.x": {
+      "light": [[0, 0], [0.2, 7.3, "hit"], [0.34, -0.6, "out"], [0.44, 0]],
+      "strong": [[0, 0], [0.08, -0.6, "out"], [0.24, 7.3, "hit"], [0.36, -0.8, "out"], [0.46, 0]]
+    },
+    "packet-b.x": {
+      "light": [[0, 0], [0.08, 0], [0.26, 4, "hit"], [0.38, -0.3, "out"], [0.46, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.2, -0.6, "out"], [0.36, 7.3, "hit"], [0.48, -0.8, "out"], [0.58, 0]]
+    },
+    "gate.rotate": {
+      "light": [[0, 0], [0.2, 0], [0.24, 5, "out"], [0.31, -2.5], [0.38, 1.2], [0.44, 0]],
+      "strong": [[0, 0], [0.24, 0], [0.28, 6, "out"], [0.34, -2.5], [0.36, -1], [0.4, 4.5, "out"], [0.47, -2], [0.54, 0.8], [0.6, 0]]
+    }
+  }
+}

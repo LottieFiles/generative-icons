@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "request-timeout",
+  "label": "Request timeout",
+  "intent": "A request runs out of time. Light: the request line clears and runs out again along its path while the timer hand sweeps one full lap; as the lap closes the line reaches its end and the stop at the time boundary shudders. Strong: the hand winds back first, laps and knocks at the top with a rebound, the timer rattles like an alarm, and the stop shudders harder. The hand ends a whole turn from where it started; an invisible step returns it to 0 so the end matches the rest pixel for pixel.",
+  "parts": {
+    "timer": {"shape": {"circle": [[13, 13], 8]}, "role": "surface", "solid": "ring"},
+    "hour": {"shape": {"line": [[13, 13], [16, 13]]}},
+    "hand": {"shape": {"line": [[13, 13], [13, 8.5]]}},
+    "request-path": {"shape": {"polyline": [[13, 21], [13, 26], [23, 26]]}},
+    "stop": {"shape": {"line": [[27, 23], [27, 28]]}}
+  },
+  "rigs": {
+    "clock": {
+      "//": "the alarm rattle moves the whole timer",
+      "pivot": [13, 13],
+      "carries": ["timer", "hour", "hand"]
+    },
+    "hand": {"pivot": [13, 13]}
+  },
+  "motion": {
+    "hand.rotate": {
+      "light": [[0, 0], [0.42, 360, "inOut"], [0.44, 0, "step"]],
+      "strong": [[0, 0], [0.1, -20, "out"], [0.5, 360, "hit"], [0.56, 352], [0.62, 360], [0.64, 0, "step"]]
+    },
+    "request-path.draw": {
+      "light": [[0, 1], [0.06, 0, "in"], [0.42, 1, "inOut"]],
+      "strong": [[0, 1], [0.08, 0, "in"], [0.12, 0], [0.5, 1, "in"]]
+    },
+    "stop.x": {
+      "light": [[0, 0], [0.4, 0], [0.45, 0.8, "out"], [0.51, -0.25], [0.57, 0]],
+      "strong": [[0, 0], [0.5, 0], [0.55, 1.2, "out"], [0.61, -0.4], [0.67, 0.35], [0.73, 0]]
+    },
+    "clock.x": {
+      "strong": [[0, 0], [0.5, 0], [0.53, 1, "out"], [0.57, -0.85], [0.61, 0.6], [0.65, -0.4], [0.69, 0.15], [0.73, 0]]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "loss-curve",
+  "label": "Loss curve",
+  "intent": "Training lowers the loss. Light: the latest loss point drops ten units in one move and stops dead, the trace bending down with it, while a faint copy of the old point stays behind for a moment and fades, showing how far it fell. Strong: two training steps: the point drops most of the way, pauses, then drops the rest; the old point lingers longer. The loss is data and never overshoots; the axes never move.",
+  "state": {"from": "high-loss", "to": "lower-loss", "labels": ["Train", "Restore loss"], "reverse": "auto"},
+  "parts": {
+    "previous": {
+      "//": "hidden at rest: the old loss point, left behind while the new one drops",
+      "shape": {"circle": [[25, 10], 2.6]}, "hidden": true
+    },
+    "endpoint": {"shape": {"circle": [[25, 10], 2.6]}, "role": "surface", "solid": "ring"},
+    "trace": {
+      "//": "the trace's end stays on the point: both move by the same eased keys",
+      "shape": {"morph": [{"path": "M9 8 C11 8 14 10 22.4 10"}, {"path": "M9 8 C11 16 14 20 22.4 20"}], "by": "drop"}
+    },
+    "axes": {"shape": {"polyline": [[5, 5], [5, 28], [28, 28]]}}
+  },
+  "motion": {
+    "drop": {
+      "light":  [[0, 0], [0.34, 1, "hit"]],
+      "strong": [[0, 0], [0.16, 0.6, "hit"], [0.26, 0.6], [0.42, 1, "hit"]]
+    },
+    "endpoint.y": {
+      "//": "the same keys as drop, times 10 (v1's end state: 10 units down)",
+      "light":  [[0, 0], [0.34, 10, "hit"]],
+      "strong": [[0, 0], [0.16, 6, "hit"], [0.26, 6], [0.42, 10, "hit"]]
+    },
+    "previous.opacity": {
+      "light":  [[0, 0], [0.02, 0.55, "step"], [0.2, 0.55], [0.46, 0, "in"]],
+      "strong": [[0, 0], [0.02, 0.55, "step"], [0.3, 0.55], [0.6, 0, "in"]]
+    }
+  },
+  "reverse": {
+    "//": "restoring the old loss: the point rises at once along the same path; nothing is left behind",
+    "light":  {"drop": [[0, 1], [0.34, 0, "out"]], "endpoint.y": [[0, 10], [0.34, 0, "out"]], "previous.opacity": [[0, 0], [0.1, 0]]},
+    "strong": {"drop": [[0, 1], [0.14, 0.4, "out"], [0.22, 0.4], [0.4, 0, "out"]], "endpoint.y": [[0, 10], [0.14, 4, "out"], [0.22, 4], [0.4, 0, "out"]], "previous.opacity": [[0, 0], [0.1, 0]]}
+  }
+}

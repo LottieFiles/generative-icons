@@ -1,0 +1,73 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "ivr-menu",
+  "label": "IVR menu",
+  "intent": "The phone menu routes the caller into the chosen option. Light: the route token swells into a bead you can see on the line, runs down the trunk, turns at the junction, runs along the right branch and drops into option two, shrinking as it lands with a hit; the option box pops to confirm the choice. Strong: the bead waits at the junction and leans toward option one before it commits, drives right and drops in, and the box pops harder with a settle. Reverse: the bead lifts out of option two and runs back up the route to the menu.",
+  "state": {
+    "from": "choose-option",
+    "to": "option-selected",
+    "labels": ["Select option", "Back to menu"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "receiver": {
+      "shape": {
+        "path": "M6.5 8 C8.8 5.3 12.1 4 16 4 C19.9 4 23.2 5.3 25.5 8 C26.1 8.7 26.1 9.6 25.6 10.3 L24.4 12 C24 12.6 23.2 12.8 22.6 12.4 L19.8 10.7 C19.3 10.4 19.1 9.8 19.2 9.2 L19.5 7.9 C17.2 7.1 14.8 7.1 12.5 7.9 L12.8 9.2 C12.9 9.8 12.7 10.4 12.2 10.7 L9.4 12.4 C8.8 12.8 8 12.6 7.6 12 L6.4 10.3 C5.9 9.6 5.9 8.7 6.5 8 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "trunk": {"shape": {"line": [[16, 13.5], [16, 18]]}},
+    "left-branch": {"shape": {"polyline": [[16, 18], [9, 18], [9, 23]]}},
+    "right-branch": {"shape": {"polyline": [[16, 18], [23, 18], [23, 23]]}},
+    "option-one": {"shape": {"rect": [5, 23, 8, 5], "r": 1.8}, "role": "surface", "solid": "ring"},
+    "option-two": {"shape": {"rect": [19, 23, 8, 5], "r": 1.8}, "role": "surface", "solid": "ring"},
+    "route-token": {"shape": {"circle": [[16, 14], 1.05]}, "role": "fill", "solid": {"circle": [[16, 14], 1.2]}}
+  },
+  "rigs": {
+    "token": {
+      "//": "the bead travels the route; it swells while on the line so it shows over the stroke",
+      "pivot": [16, 14],
+      "carries": ["route-token"]
+    },
+    "opt2": {"//": "the chosen option confirms with a pop about its centre", "pivot": [23, 25.5], "carries": ["option-two"]}
+  },
+  "reverse": {
+    "//": "written out: the bead lifts out of option two and runs back up the route; the box does not pop again",
+    "light": {
+      "token.y": [[0, 11.5], [0.1, 4, "out"], [0.22, 4], [0.34, 0, "hit"]],
+      "token.x": [[0, 7], [0.1, 7], [0.22, 0, "linear"]],
+      "token.scale": [[0, 1], [0.06, 2.1, "out"], [0.28, 2.1], [0.34, 1, "hit"]],
+      "opt2.scale": [[0, 1], [0.34, 1]]
+    },
+    "strong": {
+      "token.y": [[0, 11.5], [0.12, 4, "out"], [0.24, 4], [0.34, 0, "hit"], [0.39, 0.4], [0.44, 0]],
+      "token.x": [[0, 7], [0.12, 7], [0.24, 0, "linear"]],
+      "token.scale": [[0, 1], [0.07, 2.3, "out"], [0.3, 2.3], [0.36, 1, "hit"]],
+      "opt2.scale": [[0, 1], [0.44, 1]]
+    }
+  },
+  "motion": {
+    "token.y": {
+      "light": [[0, 0], [0.14, 4, "in"], [0.26, 4], [0.36, 11.5, "hit"]],
+      "strong": [[0, 0], [0.12, 4, "in"], [0.36, 4], [0.44, 11.5, "hit"]]
+    },
+    "token.x": {
+      "light": [[0, 0], [0.14, 0], [0.26, 7, "linear"]],
+      "strong": [[0, 0], [0.12, 0], [0.2, -1.3, "out"], [0.25, -1.1], [0.36, 7, "in"]]
+    },
+    "token.scale": {
+      "light": [[0, 1], [0.07, 2.1, "out"], [0.3, 2.1], [0.36, 1, "hit"]],
+      "strong": [[0, 1], [0.06, 2.3, "out"], [0.38, 2.3], [0.44, 1, "hit"]]
+    },
+    "opt2.scale": {
+      "light": [[0, 1], [0.35, 1], [0.42, 1.12, "out"], [0.49, 0.98], [0.54, 1]],
+      "strong": [[0, 1], [0.43, 1], [0.5, 1.16, "out"], [0.57, 0.96], [0.63, 1.04], [0.68, 1]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.07, 0.14, 0.2, 0.26, 0.32, 0.42, 0.58],
+    "strong": [0, 0.12, 0.2, 0.25, 0.32, 0.4, 0.5, 0.72]
+  }
+}

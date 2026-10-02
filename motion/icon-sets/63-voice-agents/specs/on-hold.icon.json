@@ -1,0 +1,51 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "on-hold",
+  "label": "On hold",
+  "intent": "The call is parked on hold. Light: the receiver is set down 1.5 units onto its rest with a hit and a small bounce, then the pause sign rises out of the two dots, the left bar first and the right one just after, each overshooting a touch and settling. Strong: the receiver is lifted first and set down harder with a double bounce, and the bars shoot up further before settling. Reverse: the pause bars collapse back into dots, right then left, and the receiver is picked up again.",
+  "state": {"from": "call-active", "to": "call-held", "labels": ["Hold", "Resume"], "reverse": "auto"},
+  "parts": {
+    "receiver": {
+      "shape": {"path": "M6.5 21 C8.8 18.3 12.1 17 16 17 C19.9 17 23.2 18.3 25.5 21 C26.1 21.7 26.1 22.6 25.6 23.3 L24.4 25 C24 25.6 23.2 25.8 22.6 25.4 L19.8 23.7 C19.3 23.4 19.1 22.8 19.2 22.2 L19.5 20.9 C17.2 20.1 14.8 20.1 12.5 20.9 L12.8 22.2 C12.9 22.8 12.7 23.4 12.2 23.7 L9.4 25.4 C8.8 25.8 8 25.6 7.6 25 L6.4 23.3 C5.9 22.6 5.9 21.7 6.5 21 Z"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "pause-0": {"//": "v1's dot (a zero-length line), and the bar it grows into", "shape": {"morph": [{"line": [[12.5, 10], [12.5, 10]]}, {"line": [[12.5, 6], [12.5, 14]]}], "by": "bar0"}},
+    "pause-1": {"shape": {"morph": [{"line": [[19.5, 10], [19.5, 10]]}, {"line": [[19.5, 6], [19.5, 14]]}], "by": "bar1"}}
+  },
+  "rigs": {
+    "receiver": {"carries": ["receiver"]}
+  },
+  "reverse": {
+    "//": "written out: the bars collapse first, right then left, and then the receiver is picked up",
+    "light": {
+      "bar1": [[0, 1], [0.12, 0, "in"]],
+      "bar0": [[0, 1], [0.05, 1], [0.17, 0, "in"]],
+      "receiver.y": [[0, 1.5], [0.12, 1.5], [0.27, -0.4, "out"], [0.34, 0]]
+    },
+    "strong": {
+      "bar1": [[0, 1], [0.05, 1.1, "out"], [0.15, 0, "in"]],
+      "bar0": [[0, 1], [0.05, 1], [0.1, 1.1, "out"], [0.2, 0, "in"]],
+      "receiver.y": [[0, 1.5], [0.14, 1.5], [0.17, 1.9, "out"], [0.31, -0.8, "out"], [0.38, 0.2], [0.44, 0]]
+    }
+  },
+  "motion": {
+    "receiver.y": {
+      "light":  [[0, 0], [0.16, 1.5, "hit"], [0.22, 1.2], [0.28, 1.5, "hit"]],
+      "strong": [[0, 0], [0.08, -0.8, "out"], [0.2, 1.5, "hit"], [0.26, 1], [0.32, 1.5, "hit"], [0.36, 1.35], [0.4, 1.5]]
+    },
+    "bar0": {
+      "light":  [[0, 0], [0.12, 0], [0.24, 1.08, "out"], [0.3, 1]],
+      "strong": [[0, 0], [0.18, 0], [0.32, 1.12, "out"], [0.4, 0.95], [0.47, 1]]
+    },
+    "bar1": {
+      "light":  [[0, 0], [0.18, 0], [0.3, 1.08, "out"], [0.36, 1]],
+      "strong": [[0, 0], [0.26, 0], [0.4, 1.12, "out"], [0.48, 0.95], [0.55, 1]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.08, 0.16, 0.2, 0.24, 0.28, 0.32, 0.4],
+    "strong": [0, 0.08, 0.2, 0.26, 0.32, 0.4, 0.48, 0.6]
+  }
+}

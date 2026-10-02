@@ -1,0 +1,48 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "seed-lock",
+  "label": "Seed lock",
+  "intent": "Lock a repeatable random seed. Light: the open shackle swings 30 degrees shut onto the die and latches with a hit and a small click back; the whole lock dips under the impact and recovers. Strong: the shackle opens a little further first, slams shut, clicks twice, and the lock takes two decaying dips. The shackle stays shut (locked). The reverse unlocks: the shackle is pressed down to release, springs open past its stop and settles, and the lock lifts as it lets go. The die's three pips never move on the die.",
+  "state": {"from": "variable-seed", "to": "locked-seed", "labels": ["Lock", "Unlock"], "reverse": "auto"},
+  "parts": {
+    "die": {
+      "shape": {"rect": [6, 15, 20, 12], "r": 2.6},
+      "role": "surface",
+      "solid": "fill",
+      "knockout": [{"part": "pip-0", "gap": 0.2}, {"part": "pip-1", "gap": 0.2}, {"part": "pip-2", "gap": 0.2}]
+    },
+    "pip-0": {"shape": {"circle": [[11, 19], 1.2]}, "role": "fill"},
+    "pip-1": {"shape": {"circle": [[16, 21], 1.2]}, "role": "fill"},
+    "pip-2": {"shape": {"circle": [[21, 23], 1.2]}, "role": "fill"},
+    "shackle": {
+      "//": "v1's open shackle: the closed arch turned +30 degrees about its right leg's foot (21, 15)",
+      "shape": {"path": "M12.34 10 L14.24 6.709 C15.39 4.717 18.245 4.172 20.67 5.572 C23.095 6.972 24.05 9.717 22.9 11.709 L21 15"}
+    }
+  },
+  "rigs": {
+    "lock": {"//": "the whole lock takes the latch's shock", "pivot": [16, 21], "carries": ["die", "pip-0", "pip-1", "pip-2", "shackle"]},
+    "shackle": {"pivot": [21, 15]}
+  },
+  "motion": {
+    "shackle.rotate": {
+      "light": [[0, 0], [0.24, -30, "hit"], [0.3, -27], [0.36, -30]],
+      "strong": [[0, 0], [0.1, 7, "out"], [0.3, -30, "hit"], [0.36, -25], [0.42, -30, "hit"], [0.47, -28.5], [0.52, -30]]
+    },
+    "lock.y": {
+      "light": [[0, 0], [0.24, 0], [0.29, 0.7, "out"], [0.38, 0]],
+      "strong": [[0, 0], [0.3, 0], [0.35, 1, "out"], [0.42, 0], [0.45, 0.4, "out"], [0.53, 0]]
+    }
+  },
+  "reverse": {
+    "//": "unlocking: pressed down to release, the shackle springs open past its stop and settles; the lock lifts as it lets go",
+    "light": {
+      "shackle.rotate": [[0, -30], [0.05, -31.5, "out"], [0.26, 3, "out"], [0.33, -1], [0.4, 0]],
+      "lock.y": [[0, 0], [0.05, 0.3, "out"], [0.12, -0.5, "out"], [0.22, 0]]
+    },
+    "strong": {
+      "shackle.rotate": [[0, -30], [0.08, -33, "out"], [0.3, 5, "out"], [0.38, -1.5], [0.45, 0.5], [0.5, 0]],
+      "lock.y": [[0, 0], [0.08, 0.5, "out"], [0.16, -0.7, "out"], [0.26, 0.15], [0.32, 0]]
+    }
+  }
+}

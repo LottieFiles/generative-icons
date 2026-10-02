@@ -287,12 +287,13 @@ fn assert_mode_failure_before_the_directed_report_writes_nothing() {
     let Some(m) = mirror("62-vector-editing") else {
         return;
     };
+    // An icon still built from its scene: adopted icons skip the drawing rules.
     edit_rules(&m, "62-vector-editing", |doc| {
-        doc["icons"]["blend-steps"][0]["limit"] = Value::from(100)
+        doc["icons"]["auto-layout"][0]["limit"] = Value::from(100)
     });
     let v = run(&m);
     assert!(
-        matches!(v.error, Some(VerifyError::Assertion(ref msg)) if msg.starts_with("blend left spacing: ")),
+        matches!(v.error, Some(VerifyError::Assertion(ref msg)) if msg.starts_with("layout child padding: ")),
         "{:?}",
         v.error
     );

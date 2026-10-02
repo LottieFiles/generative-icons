@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "api-quota",
+  "label": "API quota",
+  "intent": "A request spends one permit from the allowance. Light: the middle permit is drawn out to the right and fades as it goes, and the next permit feeds into the empty slot from the left, landing with a hit and a small rebound. Strong: the permit is gripped (a short pull back) and yanked further out, the next one lands with a hit and a second smaller knock, and the stack above and below gives way and closes up as it seats. At the end the incoming copy hands over to the original on identical pixels.",
+  "parts": {
+    "permit-top": {"shape": {"rect": [6, 5, 16, 5], "r": 2}, "role": "surface", "solid": "fill"},
+    "permit-bottom": {"shape": {"rect": [6, 23, 16, 5], "r": 2}, "role": "surface", "solid": "fill"},
+    "permit-active": {"shape": {"rect": [6, 14, 16, 5], "r": 2}, "role": "surface", "solid": "fill"},
+    "permit-next": {
+      "//": "hidden at rest: the next permit that feeds the slot; hands over to permit-active on identical pixels",
+      "shape": {"rect": [6, 14, 16, 5], "r": 2},
+      "role": "surface",
+      "solid": "fill",
+      "hidden": true
+    }
+  },
+  "motion": {
+    "permit-active.x": {
+      "light": [[0, 0], [0.22, 4.5, "inOut"], [0.24, 0, "step"]],
+      "strong": [[0, 0], [0.1, -0.8, "out"], [0.3, 5.5, "inOut"], [0.32, 0, "step"]]
+    },
+    "permit-active.opacity": {
+      "light": [[0, 1], [0.12, 1], [0.22, 0, "in"], [0.5, 1, "step"]],
+      "strong": [[0, 1], [0.2, 1], [0.3, 0, "in"], [0.72, 1, "step"]]
+    },
+    "permit-next.x": {
+      "light": [[0, 0], [0.1, -3, "step"], [0.34, 0, "hit"], [0.4, -0.4], [0.46, 0]],
+      "strong": [[0, 0], [0.12, -3, "step"], [0.42, 0, "hit"], [0.48, -0.6], [0.54, 0, "hit"], [0.59, -0.2], [0.64, 0]]
+    },
+    "permit-next.opacity": {
+      "light": [[0, 0], [0.16, 0], [0.28, 1, "out"], [0.5, 1], [0.52, 0, "step"]],
+      "strong": [[0, 0], [0.22, 0], [0.34, 1, "out"], [0.72, 1], [0.74, 0, "step"]]
+    },
+    "permit-top.y": {"strong": [[0, 0], [0.42, 0], [0.48, -0.7, "out"], [0.58, 0.15], [0.66, 0]]},
+    "permit-bottom.y": {"follow": "permit-top.y", "scale": -1}
+  }
+}

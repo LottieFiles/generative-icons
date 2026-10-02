@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "silence-timeout",
+  "label": "Silence timeout",
+  "intent": "Nobody speaks, the waiting interval runs out and the timeout fires. Light: the clock's long hand sweeps one full lap and stops dead back at twelve; the clock rings, rocking on its base and settling. Strong: the hand ticks back before a faster lap, and the clock rings harder with more swings. The quiet utterance and the waiting dash never move.",
+  "parts": {
+    "silence": {
+      "shape": {
+        "path": "M7.667 5 L23.333 5 C24.8 5 26 6.2 26 7.667 L26 10.333 C26 11.8 24.8 13 23.333 13 L10 13 L7.5 15 C7.1 15.3 6.6 15 6.6 14.5 L6.6 12.7 C5.6 12.3 5 11.5 5 10.333 L5 7.667 C5 6.2 6.2 5 7.667 5 Z"
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "quiet": {"shape": {"line": [[10, 9], [21, 9]]}},
+    "clock": {"shape": {"circle": [[20.5, 23], 5.6]}, "role": "surface", "solid": "ring"},
+    "minute-hand": {"shape": {"line": [[20.5, 23], [20.5, 20.8]]}},
+    "short-hand": {"shape": {"line": [[20.5, 23], [19.1, 23.8]]}},
+    "waiting-dot": {"shape": {"line": [[7, 23], [10, 23]]}}
+  },
+  "rigs": {
+    "ring": {"//": "the clock rocks on its base when the timeout fires", "pivot": [20.5, 28.6], "carries": ["clock", "short-hand", "minute"]},
+    "minute": {"pivot": [20.5, 23], "carries": ["minute-hand"]}
+  },
+  "motion": {
+    "minute.rotate": {
+      "//": "a full lap, then an invisible step back to 0 so every motion ends on the starting angle",
+      "light": [[0, 0], [0.34, 360, "hit"], [0.35, 0, "step"]],
+      "strong": [[0, 0], [0.08, -20, "out"], [0.34, 360, "hit"], [0.35, 0, "step"]]
+    },
+    "ring.rotate": {
+      "light": [[0, 0], [0.34, 0], [0.37, 9, "out"], [0.42, -6], [0.47, 3.5], [0.52, -1.5], [0.57, 0]],
+      "strong": [[0, 0], [0.34, 0], [0.37, 12, "out"], [0.42, -10], [0.47, 7], [0.52, -4.5], [0.57, 2.5], [0.62, -1], [0.67, 0]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.08, 0.17, 0.26, 0.34, 0.37, 0.42, 0.6],
+    "strong": [0, 0.08, 0.16, 0.25, 0.34, 0.37, 0.42, 0.7]
+  }
+}

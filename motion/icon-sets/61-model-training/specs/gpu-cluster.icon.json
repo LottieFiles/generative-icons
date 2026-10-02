@@ -1,0 +1,85 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "gpu-cluster",
+  "label": "GPU cluster",
+  "intent": "The cluster exchanges its results around the ring. Light: every module sends a packet to its neighbour at once, clockwise; the packets run along the four links and each module swells as its packet lands, then settles. Strong: the modules gather themselves, then two exchange rounds run back to back, the first landing harder. The links never move; the packets are gone when the action ends.",
+  "parts": {
+    "processor-3": {
+      "shape": {"rect": [19.75, 19.75, 6.5, 6.5], "r": 1.25},
+      "role": "surface",
+      "solid": {
+        "path": "M21 19.2 L25 19.2 C25.994 19.2 26.8 20.006 26.8 21 L26.8 25 C26.8 25.994 25.994 26.8 25 26.8 L21 26.8 C20.006 26.8 19.2 25.994 19.2 25 L19.2 21 C19.2 20.006 20.006 19.2 21 19.2 L21 19.2 L22.3 21.9 C22.079 21.9 21.9 22.079 21.9 22.3 L21.9 23.7 C21.9 23.921 22.079 24.1 22.3 24.1 L23.7 24.1 C23.921 24.1 24.1 23.921 24.1 23.7 L24.1 22.3 C24.1 22.079 23.921 21.9 23.7 21.9 L22.3 21.9 L21 19.2 Z"
+      },
+      "//": "v1 Solid: the module filled with a small die opening, one bridged subpath"
+    },
+    "processor-2": {
+      "shape": {"rect": [5.75, 19.75, 6.5, 6.5], "r": 1.25},
+      "role": "surface",
+      "solid": {
+        "path": "M7 19.2 L11 19.2 C11.994 19.2 12.8 20.006 12.8 21 L12.8 25 C12.8 25.994 11.994 26.8 11 26.8 L7 26.8 C6.006 26.8 5.2 25.994 5.2 25 L5.2 21 C5.2 20.006 6.006 19.2 7 19.2 L7 19.2 L8.3 21.9 C8.079 21.9 7.9 22.079 7.9 22.3 L7.9 23.7 C7.9 23.921 8.079 24.1 8.3 24.1 L9.7 24.1 C9.921 24.1 10.1 23.921 10.1 23.7 L10.1 22.3 C10.1 22.079 9.921 21.9 9.7 21.9 L8.3 21.9 L7 19.2 Z"
+      }
+    },
+    "processor-1": {
+      "shape": {"rect": [19.75, 5.75, 6.5, 6.5], "r": 1.25},
+      "role": "surface",
+      "solid": {
+        "path": "M21 5.2 L25 5.2 C25.994 5.2 26.8 6.006 26.8 7 L26.8 11 C26.8 11.994 25.994 12.8 25 12.8 L21 12.8 C20.006 12.8 19.2 11.994 19.2 11 L19.2 7 C19.2 6.006 20.006 5.2 21 5.2 L21 5.2 L22.3 7.9 C22.079 7.9 21.9 8.079 21.9 8.3 L21.9 9.7 C21.9 9.921 22.079 10.1 22.3 10.1 L23.7 10.1 C23.921 10.1 24.1 9.921 24.1 9.7 L24.1 8.3 C24.1 8.079 23.921 7.9 23.7 7.9 L22.3 7.9 L21 5.2 Z"
+      }
+    },
+    "processor-0": {
+      "shape": {"rect": [5.75, 5.75, 6.5, 6.5], "r": 1.25},
+      "role": "surface",
+      "solid": {
+        "path": "M7 5.2 L11 5.2 C11.994 5.2 12.8 6.006 12.8 7 L12.8 11 C12.8 11.994 11.994 12.8 11 12.8 L7 12.8 C6.006 12.8 5.2 11.994 5.2 11 L5.2 7 C5.2 6.006 6.006 5.2 7 5.2 L7 5.2 L8.3 7.9 C8.079 7.9 7.9 8.079 7.9 8.3 L7.9 9.7 C7.9 9.921 8.079 10.1 8.3 10.1 L9.7 10.1 C9.921 10.1 10.1 9.921 10.1 9.7 L10.1 8.3 C10.1 8.079 9.921 7.9 9.7 7.9 L8.3 7.9 L7 5.2 Z"
+      }
+    },
+    "bus-vertical-1": {
+      "//": "the links' ends stay on the module edges while the modules swell",
+      "shape": {"morph": [{"line": [[23, 12.25], [23, 19.75]]}, {"line": [[23, 12.64], [23, 19.36]]}], "by": "pulse"}
+    },
+    "bus-vertical-0": {"shape": {"morph": [{"line": [[9, 12.25], [9, 19.75]]}, {"line": [[9, 12.64], [9, 19.36]]}], "by": "pulse"}},
+    "bus-horizontal-1": {"shape": {"morph": [{"line": [[12.25, 23], [19.75, 23]]}, {"line": [[12.64, 23], [19.36, 23]]}], "by": "pulse"}},
+    "bus-horizontal-0": {"shape": {"morph": [{"line": [[12.25, 9], [19.75, 9]]}, {"line": [[12.64, 9], [19.36, 9]]}], "by": "pulse"}},
+    "packet-0": {
+      "//": "hidden at rest: module 0 to module 1 along the top link",
+      "shape": {"circle": [[14, 9], 1.6]},
+      "role": "fill",
+      "hidden": true
+    },
+    "packet-1": {"//": "module 1 to module 3 down the right link", "shape": {"circle": [[23, 14], 1.6]}, "role": "fill", "hidden": true},
+    "packet-2": {"//": "module 3 to module 2 along the bottom link", "shape": {"circle": [[18, 23], 1.6]}, "role": "fill", "hidden": true},
+    "packet-3": {"//": "module 2 to module 0 up the left link", "shape": {"circle": [[9, 18], 1.6]}, "role": "fill", "hidden": true}
+  },
+  "rigs": {
+    "processor-0": {"pivot": [9, 9]},
+    "processor-1": {"pivot": [23, 9]},
+    "processor-2": {"pivot": [9, 23]},
+    "processor-3": {"pivot": [23, 23]}
+  },
+  "motion": {
+    "packet-0.opacity": {
+      "light": [[0, 0], [0.04, 1, "out"], [0.2, 1], [0.27, 0, "in"]],
+      "strong": [[0, 0], [0.1, 0], [0.13, 1, "out"], [0.26, 1], [0.32, 0, "in"], [0.33, 0], [0.36, 1, "out"], [0.49, 1], [0.55, 0, "in"]]
+    },
+    "packet-0.x": {
+      "light": [[0, 0], [0.04, 0], [0.24, 4, "inOut"], [0.28, 0, "step"]],
+      "strong": [[0, 0], [0.12, 0], [0.29, 4, "inOut"], [0.33, 0, "step"], [0.35, 0], [0.52, 4, "inOut"], [0.56, 0, "step"]]
+    },
+    "packet-1.opacity": {"follow": "packet-0.opacity"},
+    "packet-2.opacity": {"follow": "packet-0.opacity"},
+    "packet-3.opacity": {"follow": "packet-0.opacity"},
+    "packet-1.y": {"follow": "packet-0.x"},
+    "packet-2.x": {"follow": "packet-0.x", "scale": -1},
+    "packet-3.y": {"follow": "packet-0.x", "scale": -1},
+    "processor-1.scale": {"follow": "pulse", "scale": 0.12, "offset": 1},
+    "processor-2.scale": {"follow": "pulse", "scale": 0.12, "offset": 1},
+    "processor-3.scale": {"follow": "pulse", "scale": 0.12, "offset": 1},
+    "pulse": {
+      "//": "pulse 1 is the modules at scale 1.12; the link ends follow the module edges exactly",
+      "light": [[0, 0], [0.23, 0], [0.28, 1, "out"], [0.35, -0.25], [0.41, 0]],
+      "strong": [[0, 0], [0.08, -0.5, "out"], [0.13, 0], [0.27, 0], [0.32, 1.08, "out"], [0.38, -0.17], [0.5, -0.17], [0.55, 0.75, "out"], [0.62, -0.25], [0.68, 0]]
+    },
+    "processor-0.scale": {"follow": "pulse", "scale": 0.12, "offset": 1}
+  }
+}

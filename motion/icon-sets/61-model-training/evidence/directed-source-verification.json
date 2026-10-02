@@ -2,157 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 60,
-  "nativeTransformNodes": 286,
-  "nativeTransformMaxCoordinateError": 0.000011060990960487516,
+  "nativeTransformNodes": 68,
+  "nativeTransformMaxCoordinateError": 0.000006000000002615025,
   "checks": [
-    {
-      "name": "epoch-counter",
-      "fixedParts": [
-        "epoch-counter-counter-frame",
-        "epoch-counter-tally"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "epoch-counter-counter-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "epoch-counter-tally"
-        }
-      ]
-    },
-    {
-      "name": "epoch-counter-strong",
-      "fixedParts": [
-        "epoch-counter-counter-frame",
-        "epoch-counter-tally"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "epoch-counter-counter-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "epoch-counter-tally"
-        }
-      ]
-    },
-    {
-      "name": "loss-curve",
-      "fixedParts": [
-        "loss-curve-axes"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "loss-curve-axes"
-        }
-      ]
-    },
-    {
-      "name": "loss-curve-strong",
-      "fixedParts": [
-        "loss-curve-axes"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "loss-curve-axes"
-        }
-      ]
-    },
-    {
-      "name": "learning-rate",
-      "fixedParts": [
-        "learning-rate-initial-step-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "learning-rate-initial-step-frame"
-        }
-      ]
-    },
-    {
-      "name": "learning-rate-strong",
-      "fixedParts": [
-        "learning-rate-initial-step-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "learning-rate-initial-step-frame"
-        }
-      ]
-    },
-    {
-      "name": "gradient-step",
-      "fixedParts": [
-        "gradient-step-stairs",
-        "gradient-step-parameter-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "gradient-step-stairs"
-        },
-        {
-          "type": "fixed",
-          "part": "gradient-step-parameter-frame"
-        }
-      ]
-    },
-    {
-      "name": "gradient-step-strong",
-      "fixedParts": [
-        "gradient-step-stairs",
-        "gradient-step-parameter-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "gradient-step-stairs"
-        },
-        {
-          "type": "fixed",
-          "part": "gradient-step-parameter-frame"
-        }
-      ]
-    },
     {
       "name": "overfitting",
       "fixedParts": [
@@ -216,192 +68,6 @@
       ]
     },
     {
-      "name": "validation-split",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "validation-split-partition-0-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "validation-split-partition-1-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "validation-split-partition-2-frame"
-        }
-      ]
-    },
-    {
-      "name": "validation-split-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "validation-split-partition-0-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "validation-split-partition-1-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "validation-split-partition-2-frame"
-        }
-      ]
-    },
-    {
-      "name": "data-augmentation",
-      "fixedParts": [
-        "data-augmentation-source-frame",
-        "data-augmentation-source-mark"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "data-augmentation-source-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "data-augmentation-source-mark"
-        },
-        {
-          "type": "rigid",
-          "part": "data-augmentation-augmented-frame"
-        }
-      ]
-    },
-    {
-      "name": "data-augmentation-strong",
-      "fixedParts": [
-        "data-augmentation-source-frame",
-        "data-augmentation-source-mark"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "data-augmentation-source-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "data-augmentation-source-mark"
-        },
-        {
-          "type": "rigid",
-          "part": "data-augmentation-augmented-frame"
-        }
-      ]
-    },
-    {
-      "name": "data-labeling",
-      "fixedParts": [
-        "data-labeling-record-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "data-labeling-record-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "data-labeling-tag-frame"
-        }
-      ]
-    },
-    {
-      "name": "data-labeling-strong",
-      "fixedParts": [
-        "data-labeling-record-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "data-labeling-record-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "data-labeling-tag-frame"
-        }
-      ]
-    },
-    {
-      "name": "gpu-cluster",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "gpu-cluster-processor-0-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "gpu-cluster-processor-1-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "gpu-cluster-processor-2-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "gpu-cluster-processor-3-frame"
-        }
-      ]
-    },
-    {
-      "name": "gpu-cluster-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "gpu-cluster-processor-0-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "gpu-cluster-processor-1-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "gpu-cluster-processor-2-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "gpu-cluster-processor-3-frame"
-        }
-      ]
-    },
-    {
       "name": "hyperparameter",
       "fixedParts": [],
       "topology": true,
@@ -442,56 +108,6 @@
         {
           "type": "rigid",
           "part": "hyperparameter-handle-2-frame"
-        }
-      ]
-    },
-    {
-      "name": "early-stopping",
-      "fixedParts": [
-        "early-stopping-axes",
-        "early-stopping-plateau"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "early-stopping-axes"
-        },
-        {
-          "type": "fixed",
-          "part": "early-stopping-plateau"
-        },
-        {
-          "type": "rigid",
-          "part": "early-stopping-stop-block-frame"
-        }
-      ]
-    },
-    {
-      "name": "early-stopping-strong",
-      "fixedParts": [
-        "early-stopping-axes",
-        "early-stopping-plateau"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "early-stopping-axes"
-        },
-        {
-          "type": "fixed",
-          "part": "early-stopping-plateau"
-        },
-        {
-          "type": "rigid",
-          "part": "early-stopping-stop-block-frame"
         }
       ]
     },
@@ -538,290 +154,6 @@
       ]
     },
     {
-      "name": "adapter-layer",
-      "fixedParts": [
-        "adapter-layer-base-upper-frame",
-        "adapter-layer-base-lower-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "adapter-layer-base-upper-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "adapter-layer-base-lower-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "adapter-layer-adapter-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "adapter-layer-adapter-pin"
-        }
-      ]
-    },
-    {
-      "name": "adapter-layer-strong",
-      "fixedParts": [
-        "adapter-layer-base-upper-frame",
-        "adapter-layer-base-lower-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "adapter-layer-base-upper-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "adapter-layer-base-lower-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "adapter-layer-adapter-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "adapter-layer-adapter-pin"
-        }
-      ]
-    },
-    {
-      "name": "reward-model",
-      "fixedParts": [
-        "reward-model-candidate-left-frame",
-        "reward-model-candidate-right-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "reward-model-candidate-left-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "reward-model-candidate-right-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "reward-model-reward-frame"
-        }
-      ]
-    },
-    {
-      "name": "reward-model-strong",
-      "fixedParts": [
-        "reward-model-candidate-left-frame",
-        "reward-model-candidate-right-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "reward-model-candidate-left-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "reward-model-candidate-right-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "reward-model-reward-frame"
-        }
-      ]
-    },
-    {
-      "name": "benchmark-score",
-      "fixedParts": [
-        "benchmark-score-baseline-frame",
-        "benchmark-score-benchmark"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "benchmark-score-baseline-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "benchmark-score-benchmark"
-        }
-      ]
-    },
-    {
-      "name": "benchmark-score-strong",
-      "fixedParts": [
-        "benchmark-score-baseline-frame",
-        "benchmark-score-benchmark"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "benchmark-score-baseline-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "benchmark-score-benchmark"
-        }
-      ]
-    },
-    {
-      "name": "tokenizer",
-      "fixedParts": [
-        "tokenizer-word"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "tokenizer-word"
-        }
-      ]
-    },
-    {
-      "name": "tokenizer-strong",
-      "fixedParts": [
-        "tokenizer-word"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "tokenizer-word"
-        }
-      ]
-    },
-    {
-      "name": "quantize",
-      "fixedParts": [
-        "quantize-level-0-frame",
-        "quantize-level-1-frame",
-        "quantize-level-2-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "quantize-level-0-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "quantize-level-1-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "quantize-level-2-frame"
-        }
-      ]
-    },
-    {
-      "name": "quantize-strong",
-      "fixedParts": [
-        "quantize-level-0-frame",
-        "quantize-level-1-frame",
-        "quantize-level-2-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "quantize-level-0-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "quantize-level-1-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "quantize-level-2-frame"
-        }
-      ]
-    },
-    {
-      "name": "pretrained-weights",
-      "fixedParts": [
-        "pretrained-weights-shelf",
-        "pretrained-weights-load-guide"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "pretrained-weights-shelf"
-        },
-        {
-          "type": "fixed",
-          "part": "pretrained-weights-load-guide"
-        },
-        {
-          "type": "rigid",
-          "part": "pretrained-weights-cartridge-frame"
-        }
-      ]
-    },
-    {
-      "name": "pretrained-weights-strong",
-      "fixedParts": [
-        "pretrained-weights-shelf",
-        "pretrained-weights-load-guide"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "pretrained-weights-shelf"
-        },
-        {
-          "type": "fixed",
-          "part": "pretrained-weights-load-guide"
-        },
-        {
-          "type": "rigid",
-          "part": "pretrained-weights-cartridge-frame"
-        }
-      ]
-    },
-    {
       "name": "data-shuffle",
       "fixedParts": [],
       "topology": true,
@@ -864,45 +196,179 @@
           "part": "data-shuffle-packet-2-frame"
         }
       ]
-    },
-    {
-      "name": "convergence",
-      "fixedParts": [
-        "convergence-target-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "convergence-target-frame"
-        }
-      ]
-    },
-    {
-      "name": "convergence-strong",
-      "fixedParts": [
-        "convergence-target-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "convergence-target-frame"
-        }
-      ]
     }
   ],
   "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "epoch-counter",
+      "spec": "specs/epoch-counter.icon.json",
+      "specSha256": "39476b45e334725d8ade3f915b56e1629786ed74abf540f79937eed2dfe3c231",
+      "actions": [
+        "epoch-counter",
+        "epoch-counter-strong"
+      ]
+    },
+    {
+      "icon": "loss-curve",
+      "spec": "specs/loss-curve.icon.json",
+      "specSha256": "a579792ebf846638f7cbcfe6d4e8d8087e934595758e60851abc222610b8e9e3",
+      "actions": [
+        "loss-curve",
+        "loss-curve-reverse",
+        "loss-curve-strong",
+        "loss-curve-reverse-strong"
+      ]
+    },
+    {
+      "icon": "learning-rate",
+      "spec": "specs/learning-rate.icon.json",
+      "specSha256": "67b18b64321283e929d265831a6dc5638f75a5f6f464a02ef289b5fe6ef0f475",
+      "actions": [
+        "learning-rate",
+        "learning-rate-reverse",
+        "learning-rate-strong",
+        "learning-rate-reverse-strong"
+      ]
+    },
+    {
+      "icon": "gradient-step",
+      "spec": "specs/gradient-step.icon.json",
+      "specSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
+      "actions": [
+        "gradient-step",
+        "gradient-step-strong"
+      ]
+    },
+    {
+      "icon": "validation-split",
+      "spec": "specs/validation-split.icon.json",
+      "specSha256": "355aeebc00d0d34069be5166a7aceaa2ff71a184569193aeb2089b5c1586e93a",
+      "actions": [
+        "validation-split",
+        "validation-split-reverse",
+        "validation-split-strong",
+        "validation-split-reverse-strong"
+      ]
+    },
+    {
+      "icon": "data-augmentation",
+      "spec": "specs/data-augmentation.icon.json",
+      "specSha256": "2769164d7f91a369f0eb190e6e81eaae083c131b2509d452b2e7ce72ca62be34",
+      "actions": [
+        "data-augmentation",
+        "data-augmentation-strong"
+      ]
+    },
+    {
+      "icon": "data-labeling",
+      "spec": "specs/data-labeling.icon.json",
+      "specSha256": "c433ecb4ab4f6da38492c47c15759c5ae7b346508a55c1b06dfec1b3fd4d8597",
+      "actions": [
+        "data-labeling",
+        "data-labeling-reverse",
+        "data-labeling-strong",
+        "data-labeling-reverse-strong"
+      ]
+    },
+    {
+      "icon": "gpu-cluster",
+      "spec": "specs/gpu-cluster.icon.json",
+      "specSha256": "4b4b7c33f456d3d92c494ec3d820e775030cad1d6984687c22982bf9c2b4b5fb",
+      "actions": [
+        "gpu-cluster",
+        "gpu-cluster-strong"
+      ]
+    },
+    {
+      "icon": "early-stopping",
+      "spec": "specs/early-stopping.icon.json",
+      "specSha256": "6570c073d4b163e2492208719e5af6ecd857e98c1e0252fa175aa0cca878895f",
+      "actions": [
+        "early-stopping",
+        "early-stopping-reverse",
+        "early-stopping-strong",
+        "early-stopping-reverse-strong"
+      ]
+    },
+    {
+      "icon": "adapter-layer",
+      "spec": "specs/adapter-layer.icon.json",
+      "specSha256": "a3945a402ed08ad64b20ccd5a0dd530b48a3d9d4ed82b22e046d58b6d8046c1e",
+      "actions": [
+        "adapter-layer",
+        "adapter-layer-reverse",
+        "adapter-layer-strong",
+        "adapter-layer-reverse-strong"
+      ]
+    },
+    {
+      "icon": "reward-model",
+      "spec": "specs/reward-model.icon.json",
+      "specSha256": "99e606b4d5e8ddd0dceda9619bd74483a91f690ea070680e3f244b8382d73f2d",
+      "actions": [
+        "reward-model",
+        "reward-model-strong"
+      ]
+    },
+    {
+      "icon": "benchmark-score",
+      "spec": "specs/benchmark-score.icon.json",
+      "specSha256": "8522dcc52acde281e4b81abe5ba14d0664c397c60aa3f3ee03519a34d2d7cd02",
+      "actions": [
+        "benchmark-score",
+        "benchmark-score-reverse",
+        "benchmark-score-strong",
+        "benchmark-score-reverse-strong"
+      ]
+    },
+    {
+      "icon": "tokenizer",
+      "spec": "specs/tokenizer.icon.json",
+      "specSha256": "751a11795e3b820860cb74a8525b4fb5206a2476b5ad0cd33a2b08fb9e61ef18",
+      "actions": [
+        "tokenizer",
+        "tokenizer-reverse",
+        "tokenizer-strong",
+        "tokenizer-reverse-strong"
+      ]
+    },
+    {
+      "icon": "quantize",
+      "spec": "specs/quantize.icon.json",
+      "specSha256": "abc26ff40cb147de92ae01c52a7a437d44ddf6d437d46f3672d84ed298590dfb",
+      "actions": [
+        "quantize",
+        "quantize-reverse",
+        "quantize-strong",
+        "quantize-reverse-strong"
+      ]
+    },
+    {
+      "icon": "pretrained-weights",
+      "spec": "specs/pretrained-weights.icon.json",
+      "specSha256": "737ca8c184e09013cf039192a9b244b76a978e85d13cdeea9775b1b4df7b319c",
+      "actions": [
+        "pretrained-weights",
+        "pretrained-weights-strong"
+      ]
+    },
+    {
+      "icon": "convergence",
+      "spec": "specs/convergence.icon.json",
+      "specSha256": "84373b119541519d824001c3fc4556d6817e8037c2cdaf83a61ae8d0840da073",
+      "actions": [
+        "convergence",
+        "convergence-reverse",
+        "convergence-strong",
+        "convergence-reverse-strong"
+      ]
+    }
+  ],
   "drawingChecks": {
-    "checks": 80596,
-    "minimumPaintedMargin": 2.1000000000000014,
-    "minimumAdapterGap": 1.5,
+    "checks": 13316,
+    "minimumPaintedMargin": 2.1999999999999993,
+    "minimumAdapterGap": 32,
     "gpuContacts": true,
     "railContacts": true
   }

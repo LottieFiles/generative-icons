@@ -1,0 +1,55 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "speaker-diarization",
+  "label": "Speaker diarization",
+  "intent": "Two speakers take turns and each one's speech lands in its own lane. Light: speaker A's marker pops and the three segment bars on A's lane swell in turn; then speaker B answers, its marker pops and B's bars swell in turn. Strong: each speaker says two syllables, the bars swelling twice, with a clear gap between the turns. Nothing changes lanes and the lanes never move.",
+  "parts": {
+    "speaker-a": {"shape": {"circle": [[6.6, 8.5], 2.4]}, "role": "surface", "solid": "fill"},
+    "speaker-b": {"shape": {"rect": [4.2, 20.7, 4.8, 4.8], "r": 1.2}, "role": "surface", "solid": "ring"},
+    "lane-a": {"shape": {"line": [[12, 8.5], [27, 8.5]]}},
+    "lane-b": {"shape": {"line": [[12, 23.1], [27, 23.1]]}},
+    "utterance-0-0": {"shape": {"line": [[13.6, 7.3], [13.6, 9.7]]}},
+    "utterance-0-1": {"shape": {"line": [[16, 5.5], [16, 11.5]]}},
+    "utterance-0-2": {"shape": {"line": [[18.4, 7.3], [18.4, 9.7]]}},
+    "utterance-1-0": {"shape": {"line": [[20.6, 21.9], [20.6, 24.3]]}},
+    "utterance-1-1": {"shape": {"line": [[23, 20.1], [23, 26.1]]}},
+    "utterance-1-2": {"shape": {"line": [[25.4, 21.9], [25.4, 24.3]]}}
+  },
+  "rigs": {
+    "spk-a": {"pivot": [6.6, 8.5], "carries": ["speaker-a"]},
+    "spk-b": {"pivot": [6.6, 23.1], "carries": ["speaker-b"]},
+    "a0": {"//": "each bar swells about its own lane; widen 0 keeps its width", "pivot": [13.6, 8.5], "carries": ["utterance-0-0"], "squash": {"base": 8.5, "widen": 0}},
+    "a1": {"pivot": [16, 8.5], "carries": ["utterance-0-1"], "squash": {"base": 8.5, "widen": 0}},
+    "a2": {"pivot": [18.4, 8.5], "carries": ["utterance-0-2"], "squash": {"base": 8.5, "widen": 0}},
+    "b0": {"pivot": [20.6, 23.1], "carries": ["utterance-1-0"], "squash": {"base": 23.1, "widen": 0}},
+    "b1": {"pivot": [23, 23.1], "carries": ["utterance-1-1"], "squash": {"base": 23.1, "widen": 0}},
+    "b2": {"pivot": [25.4, 23.1], "carries": ["utterance-1-2"], "squash": {"base": 23.1, "widen": 0}}
+  },
+  "motion": {
+    "spk-a.scale": {
+      "light":  [[0, 1], [0.08, 1.22, "out"], [0.16, 0.97], [0.22, 1]],
+      "strong": [[0, 1], [0.08, 1.26, "out"], [0.16, 0.96], [0.23, 1.12, "out"], [0.31, 1]]
+    },
+    "a0.squash": {
+      "light":  [[0, 1], [0.04, 1], [0.12, 2, "out"], [0.22, 1]],
+      "strong": [[0, 1], [0.04, 1], [0.11, 2.1, "out"], [0.18, 1.1], [0.25, 1.9, "out"], [0.33, 1]]
+    },
+    "a1.squash": {"//": "the tall middle bar swells less", "follow": "a0.squash", "scale": 0.25, "offset": 0.75, "lag": 0.05},
+    "a2.squash": {"follow": "a0.squash", "lag": 0.1},
+    "spk-b.scale": {
+      "light":  [[0, 1], [0.22, 1], [0.3, 1.22, "out"], [0.38, 0.97], [0.44, 1]],
+      "strong": [[0, 1], [0.35, 1], [0.43, 1.26, "out"], [0.51, 0.96], [0.58, 1.12, "out"], [0.66, 1]]
+    },
+    "b0.squash": {
+      "light":  [[0, 1], [0.26, 1], [0.34, 2, "out"], [0.44, 1]],
+      "strong": [[0, 1], [0.39, 1], [0.46, 2.1, "out"], [0.53, 1.1], [0.6, 1.9, "out"], [0.68, 1]]
+    },
+    "b1.squash": {"follow": "b0.squash", "scale": 0.25, "offset": 0.75, "lag": 0.05},
+    "b2.squash": {"follow": "b0.squash", "lag": 0.1}
+  },
+  "preview": {
+    "light": [0, 0.08, 0.13, 0.2, 0.3, 0.36, 0.42, 0.58],
+    "strong": [0, 0.08, 0.13, 0.25, 0.35, 0.44, 0.6, 0.82]
+  }
+}

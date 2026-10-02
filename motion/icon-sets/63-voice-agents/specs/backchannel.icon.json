@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "backchannel",
+  "label": "Backchannel",
+  "intent": "While the caller keeps talking, the listener chimes in with a brief mm-hm and never takes the floor. Light: the small acknowledgement bubble pops up from its tail (it swells, snaps back with a hit and settles), saying one quick mm. Strong: it says uh-huh, two pops in a row, the second smaller. The main utterance stays steady throughout.",
+  "parts": {
+    "utterance": {
+      "shape": {
+        "path": "M7.5 5.2 L18.9 5.2 C20.44 5.2 21.7 6.46 21.7 8 L21.7 15.4 C21.7 16.94 20.44 18.2 18.9 18.2 L9.7 18.2 L7.2 20.5 C6.8 20.8 6.3 20.5 6.3 20 L6.3 17.9 C5.3 17.5 4.7 16.7 4.7 15.4 L4.7 8 C4.7 6.46 5.96 5.2 7.5 5.2 Z"
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "phrase": {"shape": {"line": [[9.5, 11.7], [16.7, 11.7]]}},
+    "acknowledgement": {
+      "shape": {
+        "path": "M21.567 23 L25.733 23 C26.595 23 27.3 23.705 27.3 24.567 L27.3 26.133 C27.3 26.995 26.595 27.7 25.733 27.7 L25 27.7 L22.5 28.9 C22.1 29.2 21.6 28.9 21.6 28.4 L21.6 27.4 C20.6 27 20 26.2 20 26.133 L20 24.567 C20 23.705 20.705 23 21.567 23 Z"
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "ack-dot": {"shape": {"circle": [[23.7, 25.2], 0.7]}, "role": "fill", "solid": {"circle": [[23.7, 25.2], 0.85]}}
+  },
+  "rigs": {
+    "ack": {
+      "//": "the bubble pops from its tail tip, so it never drops toward the canvas edge",
+      "pivot": [21.8, 28.9],
+      "carries": ["acknowledgement", "ack-dot"]
+    }
+  },
+  "motion": {
+    "ack.scale": {
+      "light": [[0, 1], [0.14, 1.24, "out"], [0.23, 1, "hit"], [0.3, 1.04], [0.38, 1]],
+      "strong": [[0, 1], [0.12, 1.26, "out"], [0.21, 0.97, "hit"], [0.32, 1.17, "out"], [0.41, 0.98, "hit"], [0.48, 1.02], [0.56, 1]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.05, 0.1, 0.14, 0.19, 0.23, 0.3, 0.42],
+    "strong": [0, 0.06, 0.12, 0.21, 0.27, 0.32, 0.41, 0.6]
+  }
+}
