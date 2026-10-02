@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "classification",
+  "label": "Classification",
+  "intent": "A token is sorted into a bin. Light: the token drops down the stem onto the splitter, the splitter tips left under it like a switch, the token rolls down the left arm and lands in the left bin, which takes the hit and settles while the splitter rights itself. Strong: the splitter first tips right (the token hesitates), then commits left; the token lands harder and the bin rebounds twice. Ends with the token in the left bin.",
+  "parts": {
+    "bin-l": {"shape": {"path": "M5 20 L5 24.5 C5 25.9 6.1 27 7.5 27 L11.5 27 C12.9 27 14 25.9 14 24.5 L14 20"}},
+    "bin-r": {"mirror": {"of": "bin-l"}},
+    "fork":  {"shape": {"polyline": [[9.5, 19], [16, 13], [22.5, 19]]}},
+    "stem":  {"shape": {"line": [[16, 7], [16, 13]]}},
+    "token": {"shape": {"circle": [[16, 5.5], 2]}, "role": "fill"}
+  },
+  "rigs": {
+    "fork":  {"//": "the splitter tips about its apex on the stem", "pivot": [16, 13]},
+    "bin-l": {"pivot": [9.5, 27]}
+  },
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "reverse": {
+    "//": "the splitter and the bin end at rest, so the reset fades only the token (as v1 did)",
+    "light":  {"fork.opacity": [[0, 1], [0.25, 1]], "bin-l.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"fork.opacity": [[0, 1], [0.25, 1]], "bin-l.opacity": [[0, 1], [0.25, 1]]}
+  },
+  "motion": {
+    "token.y": {
+      "light":  [[0, 0], [0.16, 7.5, "in"], [0.29, 13.5], [0.36, 17.25, "pass"], [0.42, 18.35, "out"], [0.5, 17.05], [0.57, 17.25]],
+      "strong": [[0, 0], [0.16, 7.5, "in"], [0.34, 7.5], [0.47, 13.5], [0.54, 17.25, "pass"], [0.6, 18.75, "out"], [0.68, 16.9], [0.75, 17.45], [0.82, 17.25]]
+    },
+    "token.x": {
+      "light":  [[0, 0], [0.16, 0], [0.31, -6.5, "out"]],
+      "strong": [[0, 0], [0.34, 0], [0.49, -6.5, "out"]]
+    },
+    "fork.rotate": {
+      "light":  [[0, 0], [0.16, 0], [0.22, -12, "out"], [0.3, -12], [0.4, 2.5], [0.48, 0]],
+      "strong": [[0, 0], [0.16, 0], [0.22, 8, "out"], [0.27, 8], [0.36, -14, "inOut"], [0.47, -14], [0.57, 3], [0.65, -1], [0.72, 0]]
+    },
+    "bin-l.y": {
+      "light":  [[0, 0], [0.36, 0], [0.42, 1.1, "out"], [0.5, -0.2], [0.57, 0]],
+      "strong": [[0, 0], [0.54, 0], [0.6, 1.5, "out"], [0.68, -0.35], [0.75, 0.2], [0.82, 0]]
+    }
+  }
+}

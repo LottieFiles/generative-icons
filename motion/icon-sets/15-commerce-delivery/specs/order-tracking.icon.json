@@ -1,0 +1,81 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "order-tracking",
+  "label": "Order tracking",
+  "intent": "The order reaches its destination. Light: the location pin hops along the route in one arc and drops onto the last stop with a hit and a small bounce; the stop pings as it lands, a ring that spreads and fades. Strong: the pin crouches, hops to the middle stop leaning into the jump, lands with a ping, crouches again and hops on to the last stop with a second, wider ping and two decaying bounces. The pin stays rigid and holds on the last stop; the route never moves. The reverse hops it back, pinging the stops it lands on.",
+  "state": {"from": "first-stop", "to": "delivered", "labels": ["Track", "Reset"], "reverse": "auto"},
+  "parts": {
+    "track-one":   {"shape": {"line": [[10.15, 24], [13.85, 24]]}},
+    "track-two":   {"shape": {"line": [[18.15, 24], [21.85, 24]]}},
+    "stop-one":    {"shape": {"circle": [[8, 24], 2]}},
+    "stop-two":    {"shape": {"circle": [[16, 24], 2]}},
+    "stop-three":  {"shape": {"circle": [[24, 24], 2]}},
+    "ping-1":      {"//": "hidden at rest: a stop pings only as the pin lands on it", "shape": {"circle": [[8, 24], 2]}, "hidden": true},
+    "ping-2":      {"shape": {"circle": [[16, 24], 2]}, "hidden": true},
+    "ping-3":      {"shape": {"circle": [[24, 24], 2]}, "hidden": true},
+    "pin":         {"shape": {"path": "M8 17.5 L10.64 13.98 C11.05 13.43 11.3 12.74 11.3 12 C11.3 10.18 9.82 8.7 8 8.7 C6.18 8.7 4.7 10.18 4.7 12 C4.7 12.74 4.95 13.43 5.36 13.98 L8 17.5 Z"},
+                    "role": "surface", "knockout": [{"part": "pin-eye", "gap": 0}]},
+    "pin-eye":     {"//": "v1 Solid only: the pin's eye; nothing in Outline or Duotone", "shape": {"circle": [[8, 12], 1.2]}, "role": "surface", "outline": "none", "tint": false, "solid": "fill"}
+  },
+  "rigs": {
+    "pin": {"//": "pivot at the tip", "pivot": [8, 17.5], "carries": ["pin", "pin-eye"]}
+  },
+  "motion": {
+    "pin.x": {
+      "light":  [[0, 0], [0.05, 0], [0.36, 16, "inOut"]],
+      "strong": [[0, 0], [0.06, 0], [0.28, 8, "inOut"], [0.34, 8], [0.6, 16, "inOut"]]
+    },
+    "pin.y": {
+      "light":  [[0, 0], [0.05, 0], [0.2, -3.5, "out"], [0.36, 0, "hit"], {"bounce": 0.46, "amp": 0.15}],
+      "strong": [[0, 0], [0.06, 0.5, "out"], [0.17, -3, "out"], [0.28, 0, "hit"], [0.34, 0.5, "out"], [0.47, -3.6, "out"], [0.6, 0, "hit"], {"bounce": 0.7, "amp": 0.18}, {"bounce": 0.78, "amp": 0.3}]
+    },
+    "pin.rotate": {
+      "strong": [[0, 0], [0.06, 0], [0.17, 8, "out"], [0.28, 0, "hit"], [0.34, 0], [0.47, 10, "out"], [0.6, 0, "hit"]]
+    },
+    "ping-1.opacity": {
+      "light":  [[0, 0], [0.1, 0]],
+      "strong": [[0, 0], [0.1, 0]]
+    },
+    "ping-1.r": {
+      "light":  [[0, 0], [0.1, 0]],
+      "strong": [[0, 0], [0.1, 0]]
+    },
+    "ping-2.opacity": {
+      "strong": [[0, 0], [0.28, 0], [0.32, 0], [0.35, 1, "out"], [0.44, 0, "in"]]
+    },
+    "ping-2.r": {
+      "strong": [[0, 0], [0.28, 0], [0.44, 2.2, "out"], [0.46, 0, "step"]]
+    },
+    "ping-3.opacity": {
+      "light":  [[0, 0], [0.36, 0], [0.4, 0], [0.43, 1, "out"], [0.54, 0, "in"]],
+      "strong": [[0, 0], [0.6, 0], [0.64, 0], [0.67, 1, "out"], [0.78, 0, "in"]]
+    },
+    "ping-3.r": {
+      "light":  [[0, 0], [0.36, 0], [0.54, 2.4, "out"], [0.56, 0, "step"]],
+      "strong": [[0, 0], [0.6, 0], [0.78, 3, "out"], [0.8, 0, "step"]]
+    }
+  },
+  "reverse": {
+    "//": "the hop back: the pin lands on the earlier stops, so they ping instead of the last one",
+    "light": {
+      "pin.x":          [[0, 16], [0.05, 16], [0.36, 0, "inOut"]],
+      "pin.y":          [[0, 0], [0.05, 0], [0.2, -3.5, "out"], [0.36, 0, "hit"], {"bounce": 0.46, "amp": 0.15}],
+      "ping-3.opacity": [[0, 0], [0.1, 0]],
+      "ping-3.r":       [[0, 0], [0.1, 0]],
+      "ping-1.opacity": [[0, 0], [0.36, 0], [0.4, 0], [0.43, 1, "out"], [0.54, 0, "in"]],
+      "ping-1.r":       [[0, 0], [0.36, 0], [0.54, 2.4, "out"], [0.56, 0, "step"]]
+    },
+    "strong": {
+      "pin.x":          [[0, 16], [0.06, 16], [0.28, 8, "inOut"], [0.34, 8], [0.6, 0, "inOut"]],
+      "pin.y":          [[0, 0], [0.06, 0.5, "out"], [0.17, -3, "out"], [0.28, 0, "hit"], [0.34, 0.5, "out"], [0.47, -3.6, "out"], [0.6, 0, "hit"], {"bounce": 0.7, "amp": 0.18}, {"bounce": 0.78, "amp": 0.3}],
+      "pin.rotate":     [[0, 0], [0.06, 0], [0.17, -8, "out"], [0.28, 0, "hit"], [0.34, 0], [0.47, -10, "out"], [0.6, 0, "hit"]],
+      "ping-2.opacity": [[0, 0], [0.28, 0], [0.32, 0], [0.35, 1, "out"], [0.44, 0, "in"]],
+      "ping-2.r":       [[0, 0], [0.28, 0], [0.44, 2.2, "out"], [0.46, 0, "step"]],
+      "ping-3.opacity": [[0, 0], [0.1, 0]],
+      "ping-3.r":       [[0, 0], [0.1, 0]],
+      "ping-1.opacity": [[0, 0], [0.6, 0], [0.64, 0], [0.67, 1, "out"], [0.78, 0, "in"]],
+      "ping-1.r":       [[0, 0], [0.6, 0], [0.78, 3, "out"], [0.8, 0, "step"]]
+    }
+  }
+}

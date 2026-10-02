@@ -1,0 +1,357 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "mcp-tools",
+  "label": "MCP tools",
+  "intent": "A tool is connected over MCP: the two-prong plug seats into its tool port. Light: the plug drives in and its prongs meet the port with a hit; the housing is knocked back by the contact, carrying the plug with it, and both spring back and settle with the plug seated. Strong: the plug is pulled back first, then driven in harder; the housing is knocked further and the pair settle in two beats. Disconnect: the plug is pulled back, dragging the housing a little, then comes free; the housing snaps back with a rebound and the plug settles, fully opaque. Plug and housing stay rigid.",
+  "state": {
+    "from": "detached",
+    "to": "attached",
+    "labels": [
+      "Connect",
+      "Disconnect"
+    ],
+    "reverse": "auto"
+  },
+  "parts": {
+    "housing": {
+      "shape": {
+        "rect": [
+          19.5,
+          8,
+          8.5,
+          16
+        ],
+        "r": 2.5
+      },
+      "role": "surface",
+      "solid": {
+        "rect": [
+          20,
+          8,
+          8,
+          16
+        ],
+        "r": 2.5
+      },
+      "//": "v1 Solid: the housing filled from x 20"
+    },
+    "plug": {
+      "shape": {
+        "rect": [
+          4,
+          11,
+          8,
+          10
+        ],
+        "r": 2.5
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "prong-0": {
+      "shape": {
+        "line": [
+          [
+            12.2,
+            13.5
+          ],
+          [
+            15.6,
+            13.5
+          ]
+        ]
+      },
+      "solid": {
+        "rect": [
+          10.9,
+          12.2,
+          6.8,
+          2.6
+        ],
+        "r": 1.3
+      },
+      "//": "v1 Solid: a 2.6 capsule from 12.2 to 16.4"
+    },
+    "prong-1": {
+      "shape": {
+        "line": [
+          [
+            12.2,
+            18.5
+          ],
+          [
+            15.6,
+            18.5
+          ]
+        ]
+      },
+      "solid": {
+        "rect": [
+          10.9,
+          17.2,
+          6.8,
+          2.6
+        ],
+        "r": 1.3
+      }
+    }
+  },
+  "rigs": {
+    "plug": {
+      "pivot": [
+        10,
+        16
+      ],
+      "carries": [
+        "plug",
+        "prong-0",
+        "prong-1"
+      ]
+    }
+  },
+  "motion": {
+    "//": "v1's end state is the plug 3 right, its prongs at the port. After contact the plug rides the housing (same offsets), so they never part. Strong's 1.2 knock keeps the housing 1.55 inside the canvas at Bold.",
+    "plug.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          3,
+          "hit"
+        ],
+        [
+          0.27,
+          3.9,
+          "out"
+        ],
+        [
+          0.36,
+          2.8,
+          "inOut"
+        ],
+        [
+          0.44,
+          3,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -1,
+          "out"
+        ],
+        [
+          0.14,
+          -1
+        ],
+        [
+          0.3,
+          3,
+          "hit"
+        ],
+        [
+          0.37,
+          4.2,
+          "out"
+        ],
+        [
+          0.46,
+          2.6,
+          "inOut"
+        ],
+        [
+          0.54,
+          3.3,
+          "inOut"
+        ],
+        [
+          0.62,
+          3,
+          "inOut"
+        ]
+      ]
+    },
+    "housing.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.27,
+          0.9,
+          "out"
+        ],
+        [
+          0.36,
+          -0.2,
+          "inOut"
+        ],
+        [
+          0.44,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0
+        ],
+        [
+          0.37,
+          1.2,
+          "out"
+        ],
+        [
+          0.46,
+          -0.4,
+          "inOut"
+        ],
+        [
+          0.54,
+          0.3,
+          "inOut"
+        ],
+        [
+          0.62,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  },
+  "reverse": {
+    "//": "a mirrored hit would fling the part past the canvas edge: the release is written out. The receiver is dragged a little with the part, then snaps back with a rebound as the part comes free and settles at rest.",
+    "light": {
+      "plug.x": [
+        [
+          0,
+          3
+        ],
+        [
+          0.1,
+          2.4,
+          "inOut"
+        ],
+        [
+          0.28,
+          -0.5,
+          "out"
+        ],
+        [
+          0.36,
+          0.15,
+          "inOut"
+        ],
+        [
+          0.42,
+          0,
+          "inOut"
+        ]
+      ],
+      "housing.x": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.6,
+          "inOut"
+        ],
+        [
+          0.17,
+          0.25,
+          "out"
+        ],
+        [
+          0.25,
+          -0.08,
+          "inOut"
+        ],
+        [
+          0.31,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "strong": {
+      "plug.x": [
+        [
+          0,
+          3
+        ],
+        [
+          0.14,
+          2.2,
+          "inOut"
+        ],
+        [
+          0.34,
+          -0.9,
+          "out"
+        ],
+        [
+          0.43,
+          0.3,
+          "inOut"
+        ],
+        [
+          0.51,
+          -0.1,
+          "inOut"
+        ],
+        [
+          0.58,
+          0,
+          "inOut"
+        ]
+      ],
+      "housing.x": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          -0.8,
+          "inOut"
+        ],
+        [
+          0.21,
+          0.35,
+          "out"
+        ],
+        [
+          0.3,
+          -0.12,
+          "inOut"
+        ],
+        [
+          0.37,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  }
+}

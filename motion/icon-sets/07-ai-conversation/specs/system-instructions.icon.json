@@ -1,0 +1,50 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "system-instructions",
+  "label": "System instructions",
+  "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "preview": {"light": [0, 0.07, 0.14, 0.2, 0.26, 0.32, 0.38, 0.55], "strong": [0, 0.08, 0.17, 0.36, 0.44, 0.52, 0.58, 0.83]},
+  "parts": {
+    "node":   {"shape": {"rect": [5, 4, 8, 8], "r": 2.5}, "role": "surface", "solid": "fill"},
+    "spine":  {"shape": {"line": [[9, 12], [9, 21.5]]}},
+    "rule-1": {"shape": {"line": [[9, 17], [27, 17]]}},
+    "rule-2": {"shape": {"line": [[9, 21.5], [27, 21.5]]}},
+    "rule-3": {"//": "hidden in the prepared state; the new rule is the result and stays", "shape": {"polyline": [[9, 21.5], [9, 24.5], [10.5, 26], [27, 26]]}, "hidden": true}
+  },
+  "rigs": {
+    "node":   {"//": "presses toward the spine, so it never leaves it", "pivot": [9, 12]},
+    "rule-1": {"//": "stretches out from where it meets the spine", "pivot": [9, 17]},
+    "rule-2": {"pivot": [9, 21.5]},
+    "rule-3": {"//": "the stretch pivot sits on the stem, so the stem only slides along the spine", "pivot": [9, 26]}
+  },
+  "motion": {
+    "node.scale": {
+      "light":  [[0, 1], [0.07, 0.86, "out"], [0.16, 1], [0.34, 1], [0.4, 1.08, "out"], [0.48, 0.98], [0.54, 1]],
+      "strong": [[0, 1], [0.08, 0.8, "out"], [0.16, 1.04], [0.24, 1], [0.6, 1], [0.66, 1.12, "out"], [0.74, 0.96], [0.82, 1]]
+    },
+    "rule-3.opacity": {
+      "light":  [[0, 0], [0.08, 0], [0.09, 1, "step"]],
+      "strong": [[0, 0], [0.3, 0], [0.31, 1, "step"]]
+    },
+    "rule-3.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.08, 0], [0.32, 1, [0.3, 0.15, 0.8, 0.6]]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.3, 0], [0.52, 1, [0.3, 0.15, 0.8, 0.6]]]
+    },
+    "rule-3.scale": {
+      "light":  [[0, 1], [0.32, 1], [0.38, 1.07, "out"], [0.46, 0.985], [0.52, 1]],
+      "strong": [[0, 1], [0.52, 1], [0.58, 1.11, "out"], [0.66, 0.97], [0.74, 1.02], [0.82, 1]]
+    },
+    "rule-1.scale": {
+      "//": "Strong only: the instruction passes down the existing rules",
+      "strong": [[0, 1], [0.1, 1], [0.17, 1.08, "out"], [0.25, 0.99], [0.31, 1]]
+    },
+    "rule-2.scale": {"strong": {"follow": "rule-1.scale", "lag": 0.08}}
+  },
+  "reverse": {
+    "//": "the preview reset fades only the new rule; the root and the existing rules end at rest, so they stay",
+    "light":  {"node.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"node.opacity": [[0, 1], [0.25, 1]], "rule-1.opacity": [[0, 1], [0.25, 1]], "rule-2.opacity": [[0, 1], [0.25, 1]]}
+  }
+}

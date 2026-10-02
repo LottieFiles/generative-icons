@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "filter",
+  "label": "Filter",
+  "intent": "The filter is applied and the list narrows. Light: a push passes down through the funnel: the full-width source dips, then each tier below dips in turn and narrows as it passes, stopping dead at its result width. Strong: a deeper push with a rebound, the same narrowing in order, then a second smaller push follows through. The source keeps its width; the widths are data and never overshoot.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "tier-0": {"shape": {"line": [[6, 8], [26, 8]]}},
+    "tier-1": {"shape": {"line": [[7.5, 16], [24.5, 16]]}},
+    "tier-2": {"shape": {"line": [[10, 24], [22, 24]]}}
+  },
+  "rigs": {
+    "tier-1": {"pivot": [16, 16]},
+    "tier-2": {"pivot": [16, 24]}
+  },
+  "motion": {
+    "tier-0.y": {
+      "light":  [[0, 0], [0.07, 1.2, "hit"], [0.15, -0.2], [0.22, 0]],
+      "strong": [[0, 0], [0.08, 1.8, "hit"], [0.17, -0.4], [0.25, 0.15], [0.3, 0], [0.36, 0.8, "hit"], [0.44, 0]]
+    },
+    "tier-1.y": {"follow": "tier-0.y", "lag": 0.07},
+    "tier-2.y": {"follow": "tier-0.y", "lag": 0.14},
+    "tier-1.scale": {
+      "//": "17 -> 12 wide (v1's end state)",
+      "light":  [[0, 1], [0.05, 1], [0.16, 0.70588, "hit"]],
+      "strong": [[0, 1], [0.06, 1], [0.18, 0.70588, "hit"]]
+    },
+    "tier-2.scale": {
+      "//": "12 -> 5 wide (v1's end state)",
+      "light":  [[0, 1], [0.12, 1], [0.23, 0.41667, "hit"]],
+      "strong": [[0, 1], [0.14, 1], [0.26, 0.41667, "hit"]]
+    }
+  }
+}

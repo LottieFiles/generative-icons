@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "printer",
+  "label": "Printer",
+  "intent": "The printer feeds the page out. Light: the rollers draw the blank sheet down into the top and, a beat later, push the printed page out of the slot in one quick feed that stops dead; the printed line rides on the page. Strong: the page comes out in two chunks, the second shorter, each stopping dead like a stepping feed. The page is a fixed size and never overshoots; the housing never moves.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "field":   {"//": "v1's Duotone tint of the housing, nothing else", "shape": {"rect": [5.5, 12.5, 21, 9.5], "r": 2}, "role": "surface", "outline": "none", "solid": "none"},
+    "input":   {"shape": {"morph": [{"path": "M10 12.5 L10 7 C10 6.2 10.7 5.5 11.5 5.5 L20.5 5.5 C21.3 5.5 22 6.2 22 7 L22 12.5"},
+                                    {"path": "M10 12.5 L10 9.6 C10 8.8 10.7 8.1 11.5 8.1 L20.5 8.1 C21.3 8.1 22 8.8 22 9.6 L22 12.5"}], "by": "pull"}},
+    "housing": {"shape": {"path": "M8 22 L7.5 22 C6.4 22 5.5 21.1 5.5 20 L5.5 14.5 C5.5 13.4 6.4 12.5 7.5 12.5 L24.5 12.5 C25.6 12.5 26.5 13.4 26.5 14.5 L26.5 20 C26.5 21.1 25.6 22 24.5 22 L24 22"}},
+    "sheet":   {"shape": {"morph": [{"rect": [11, 18, 10, 5.4], "r": 0.9}, {"rect": [11, 18, 10, 8], "r": 0.9}], "by": "feed"},
+                "role": "surface", "tint": false, "solid": "fill", "knockout": [{"part": "line", "gap": 0}]},
+    "line":    {"shape": {"line": [[14, 20.7], [18, 20.7]]}, "solid": {"rect": [13.5, 19.85, 5, 1.7], "r": 0.8}}
+  },
+  "motion": {
+    "pull": {
+      "light":  [[0, 0], [0.04, 0], [0.3, 1, "hit"]],
+      "strong": [[0, 0], [0.04, 0], [0.22, 0.6, "hit"], [0.34, 0.6], [0.5, 1, "hit"]]
+    },
+    "feed":   {"follow": "pull", "lag": 0.06},
+    "line.y": {"follow": "pull", "lag": 0.06, "scale": 2.6}
+  }
+}

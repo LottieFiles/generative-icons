@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "image",
+  "label": "Image",
+  "intent": "The picture is reframed to a new crop. Light: the landscape swipes left inside the fixed frame, its left hill sliding out past the edge, overshoots the new crop a little and snaps back into it; the sun is farther away and follows the hills a beat later, so the scene has depth. Strong: a faster, longer swipe that overshoots further and settles in two beats, with the sun trailing further behind. The frame never moves and the new crop holds.",
+  "parts": {
+    "sun":   {"shape": {"circle": [[20.5, 10.8], 1.4]}, "role": "fill"},
+    "hills": {"//": "v1's hills and their cropped end pose: the same command list, so the crop slides with the pan and the left slope stays clipped at the frame", "shape": {"morph": [{"path": "M8 22 L8 22 L8 22 L8 22 L12.451 16.213 C12.817 15.738 13.199 15.724 13.598 16.173 L16.535 19.477 C16.845 19.826 17.19 19.864 17.57 19.593 L19.849 17.965 C20.283 17.655 20.664 17.71 20.991 18.131 L24 22 L24 22 L24 22 L24 22 L8 22 Z"}, {"path": "M8 22 L8 22 L8 18.88 L8 18.88 L10.051 16.213 C10.417 15.738 10.799 15.724 11.198 16.173 L14.135 19.477 C14.445 19.826 14.79 19.864 15.17 19.593 L17.449 17.965 C17.883 17.655 18.264 17.71 18.591 18.131 L21.6 22 L21.6 22 L24 22 L24 22 L8 22 Z"}], "by": "pan"}, "solid": "fill"},
+    "image": {"shape": {"rect": [5.5, 5.5, 21, 21], "r": 2.7}, "role": "surface", "//": "v1 Solid: the frame as a filled band with the picture window open, one bridged subpath", "solid": {"path": "M8.2 5.5 L23.8 5.5 C25.29 5.5 26.5 6.71 26.5 8.2 L26.5 23.8 C26.5 25.29 25.29 26.5 23.8 26.5 L8.2 26.5 C6.71 26.5 5.5 25.29 5.5 23.8 L5.5 8.2 C5.5 6.71 6.71 5.5 8.2 5.5 L8.2 5.5 L9.1 7.9 C8.438 7.9 7.9 8.438 7.9 9.1 L7.9 22.9 C7.9 23.562 8.438 24.1 9.1 24.1 L22.9 24.1 C23.562 24.1 24.1 23.562 24.1 22.9 L24.1 9.1 C24.1 8.438 23.562 7.9 22.9 7.9 L9.1 7.9 L8.2 5.5 Z"}}
+  },
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "motion": {
+    "pan": {
+      "//":     "1 = v1's new crop, 2.4 to the left; past 1 the crop slides on along the same slope",
+      "light":  [[0, 0], [0.03, 0], [0.22, 1.14, "out"], [0.32, 0.96], [0.4, 1]],
+      "strong": [[0, 0], [0.03, 0], [0.2, 1.25, "out"], [0.31, 0.9], [0.41, 1.04], [0.5, 1]]
+    },
+    "sun.x": {
+      "light":  {"follow": "pan", "scale": -2.4, "lag": 0.07},
+      "strong": {"follow": "pan", "scale": -2.4, "lag": 0.1}
+    }
+  },
+  "preview": {"light": [0, 0.08, 0.14, 0.22, 0.28, 0.34, 0.4, 0.5], "strong": [0, 0.08, 0.14, 0.2, 0.26, 0.32, 0.42, 0.62]}
+}

@@ -2,31 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 48,
-  "nativeTransformNodes": 118,
+  "nativeTransformNodes": 48,
   "nativeTransformMaxCoordinateError": 0.000011378323002020352,
   "checks": [
-    {
-      "name": "home",
-      "fixedParts": [
-        "home-shell",
-        "home-doorway"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "home-strong",
-      "fixedParts": [
-        "home-shell",
-        "home-doorway"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
     {
       "name": "calendar",
       "fixedParts": [
@@ -43,68 +21,6 @@
       "fixedParts": [
         "calendar-frame-frame",
         "calendar-header"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "clock",
-      "fixedParts": [
-        "clock-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "clock-strong",
-      "fixedParts": [
-        "clock-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "camera",
-      "fixedParts": [
-        "camera-body",
-        "camera-lens"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "camera-strong",
-      "fixedParts": [
-        "camera-body",
-        "camera-lens"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "image",
-      "fixedParts": [
-        "image-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "image-strong",
-      "fixedParts": [
-        "image-frame"
       ],
       "topology": true,
       "stateBoundaries": true,
@@ -188,22 +104,6 @@
       "designConstraints": []
     },
     {
-      "name": "link",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "link-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
       "name": "shield",
       "fixedParts": [],
       "topology": true,
@@ -213,22 +113,6 @@
     },
     {
       "name": "shield-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "cart",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "cart-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -253,6 +137,46 @@
     }
   ],
   "adoptedSpecs": [
+    {
+      "icon": "home",
+      "spec": "specs/home.icon.json",
+      "specSha256": "0184418941b12544eb717237dcf2adc5c691459e2495f6f0f16f28878c3264d1",
+      "actions": [
+        "home",
+        "home-strong"
+      ]
+    },
+    {
+      "icon": "clock",
+      "spec": "specs/clock.icon.json",
+      "specSha256": "479944210057fdb493954b30313aa1459e5365abfa0e62e01525bdb553e7d3aa",
+      "actions": [
+        "clock",
+        "clock-reset",
+        "clock-strong",
+        "clock-reset-strong"
+      ]
+    },
+    {
+      "icon": "camera",
+      "spec": "specs/camera.icon.json",
+      "specSha256": "15a212d751ce6aadccb197e88791060b362bcf6095a7d73620589073b7cbd2e9",
+      "actions": [
+        "camera",
+        "camera-strong"
+      ]
+    },
+    {
+      "icon": "image",
+      "spec": "specs/image.icon.json",
+      "specSha256": "4de1bcaa3cb3f63b19ad978da6ee09fe243bdce951f161cad9b3bf2ecc95548c",
+      "actions": [
+        "image",
+        "image-reset",
+        "image-strong",
+        "image-reset-strong"
+      ]
+    },
     {
       "icon": "phone",
       "spec": "specs/phone.icon.json",
@@ -314,6 +238,24 @@
       "actions": [
         "compass",
         "compass-strong"
+      ]
+    },
+    {
+      "icon": "link",
+      "spec": "specs/link.icon.json",
+      "specSha256": "7992dc24ed6a4a837ce2f4ae06eb688d9fc89a450130e13641862dcf675034bd",
+      "actions": [
+        "link",
+        "link-strong"
+      ]
+    },
+    {
+      "icon": "cart",
+      "spec": "specs/cart.icon.json",
+      "specSha256": "915e26df8f279e470ac4b6ba7855658a97ff0f8ae12be50a5cbb06bf3b51233c",
+      "actions": [
+        "cart",
+        "cart-strong"
       ]
     }
   ]

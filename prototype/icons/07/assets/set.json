@@ -11,36 +11,35 @@
       "name": "ai-assistant",
       "icon": "ai-assistant",
       "motionId": "light",
+      "continuous": false,
       "previewReset": false,
-      "cycleDegrees": 360,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "cycleDegrees": 0,
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
-      "heading": "Assistant thinks, then replies",
-      "description": "Speech bubble with an orbit arc around a core.",
+      "heading": "AI assistant",
+      "description": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
       "label": "AI assistant",
-      "intent": "The orbit spins one full turn around the core; in Strong the core swells once as the answer forms.",
+      "intent": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.52,
+      "rest": 34,
       "keyPoses": [
         0,
-        0.15,
-        0.3,
-        0.45,
-        0.6
+        0.10400000000000001,
+        0.20800000000000002,
+        0.312,
+        0.41600000000000004,
+        0.52
       ],
-      "layers": 13,
+      "layers": 16,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -50,32 +49,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "f38c2081759af6cdd7167a4cc4b42b21d54e25efd45669a6c811fe7beb88f969",
-      "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-      "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-      "authoringSources": {
-        "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-        "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-        "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-      },
-      "brief": {
-        "light": "Orbit arc rotates 360\u00b0 about (16,14) in .56s ease in-out; end pose equals start.",
-        "strong": "Arc winds back 14\u00b0 (0\u2013.12s), spins to 360\u00b0 by .66s, holds; core swells r 1.3\u21921.7 (.68\u2013.8s) and settles by 1s.",
-        "fixed": "Bubble body in both profiles. Moving: orbit arc (rotation), core (radius, Strong only).",
-        "test": "Core clearance inside orbit at peak swell: 1.25 at Bold outline, 1.1 in Solid; arc gap at top at t=0 and t=end; cycleDegrees boundary compare."
-      },
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "ai-assistant-body"
-        },
-        {
-          "type": "rigid",
-          "part": "ai-assistant-orbit"
-        }
-      ],
+      "nativeSha256": "7f4645168d56eb02dd43184f50c53ce893c3e4b800d030a2a82a3d49f70cd260",
+      "sourceSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
+      "planSha256": "0d5082895064aefc5fd84ad1498e2ded31c3550c09651191ded69e5677f72025",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
+      "constraints": [],
       "category": "Conversation and reasoning",
-      "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+      "definitionsSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -102,36 +83,35 @@
           "name": "ai-assistant",
           "icon": "ai-assistant",
           "motionId": "light",
+          "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 360,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
-          "heading": "Assistant thinks, then replies",
-          "description": "Speech bubble with an orbit arc around a core.",
+          "heading": "AI assistant",
+          "description": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
           "label": "AI assistant",
-          "intent": "The orbit spins one full turn around the core; in Strong the core swells once as the answer forms.",
+          "intent": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.15,
-            0.3,
-            0.45,
-            0.6
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 13,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -141,32 +121,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f38c2081759af6cdd7167a4cc4b42b21d54e25efd45669a6c811fe7beb88f969",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Orbit arc rotates 360\u00b0 about (16,14) in .56s ease in-out; end pose equals start.",
-            "strong": "Arc winds back 14\u00b0 (0\u2013.12s), spins to 360\u00b0 by .66s, holds; core swells r 1.3\u21921.7 (.68\u2013.8s) and settles by 1s.",
-            "fixed": "Bubble body in both profiles. Moving: orbit arc (rotation), core (radius, Strong only).",
-            "test": "Core clearance inside orbit at peak swell: 1.25 at Bold outline, 1.1 in Solid; arc gap at top at t=0 and t=end; cycleDegrees boundary compare."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "ai-assistant-body"
-            },
-            {
-              "type": "rigid",
-              "part": "ai-assistant-orbit"
-            }
-          ],
+          "nativeSha256": "7f4645168d56eb02dd43184f50c53ce893c3e4b800d030a2a82a3d49f70cd260",
+          "sourceSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
+          "planSha256": "0d5082895064aefc5fd84ad1498e2ded31c3550c09651191ded69e5677f72025",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -188,44 +150,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5699,
-          "sha256": "1c0308a7df58554160c59fd17498961a2d4894b8e01fcba4665627c1ea92b18e"
+          "bytes": 5651,
+          "sha256": "22a5346060fd7dda19bd7a04646c9e9f90e37ef8a6ff41e3437e6284240a1cda"
         },
         {
           "name": "ai-assistant-strong",
           "icon": "ai-assistant",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 360,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
-          "heading": "Assistant thinks, then replies",
-          "description": "Speech bubble with an orbit arc around a core.",
+          "heading": "AI assistant",
+          "description": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
           "label": "AI assistant",
-          "intent": "The orbit spins one full turn around the core; in Strong the core swells once as the answer forms.",
+          "intent": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.76,
+          "rest": 48,
           "keyPoses": [
             0,
-            0.1,
-            0.5,
-            0.62,
-            0.74,
-            0.9
+            0.15200000000000002,
+            0.30400000000000005,
+            0.45599999999999996,
+            0.6080000000000001,
+            0.76
           ],
-          "layers": 13,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -235,32 +195,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "62739dbefa2e18ade7e5f45070f99e9098f1c156e5d534af5655e61473693194",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Orbit arc rotates 360\u00b0 about (16,14) in .56s ease in-out; end pose equals start.",
-            "strong": "Arc winds back 14\u00b0 (0\u2013.12s), spins to 360\u00b0 by .66s, holds; core swells r 1.3\u21921.7 (.68\u2013.8s) and settles by 1s.",
-            "fixed": "Bubble body in both profiles. Moving: orbit arc (rotation), core (radius, Strong only).",
-            "test": "Core clearance inside orbit at peak swell: 1.25 at Bold outline, 1.1 in Solid; arc gap at top at t=0 and t=end; cycleDegrees boundary compare."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "ai-assistant-body"
-            },
-            {
-              "type": "rigid",
-              "part": "ai-assistant-orbit"
-            }
-          ],
+          "nativeSha256": "28074649fb78f7ccd227299bbc5faa4b2d8341d212cdfb0842d368e066d22ba7",
+          "sourceSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
+          "planSha256": "0d5082895064aefc5fd84ad1498e2ded31c3550c09651191ded69e5677f72025",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -282,8 +224,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5702,
-          "sha256": "9a672e151851ab79fdb92a9ab015d39407d3de3ab61f31e89b4313f69ce9b497"
+          "bytes": 5654,
+          "sha256": "95acbde087cc11aa2c1d11c45bc0311eb38eecc7a21e43fca609c2d0b8a9e3ea"
         }
       ],
       "animations": [
@@ -291,36 +233,35 @@
           "name": "ai-assistant",
           "icon": "ai-assistant",
           "motionId": "light",
+          "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 360,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
-          "heading": "Assistant thinks, then replies",
-          "description": "Speech bubble with an orbit arc around a core.",
+          "heading": "AI assistant",
+          "description": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
           "label": "AI assistant",
-          "intent": "The orbit spins one full turn around the core; in Strong the core swells once as the answer forms.",
+          "intent": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.15,
-            0.3,
-            0.45,
-            0.6
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 13,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -330,32 +271,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f38c2081759af6cdd7167a4cc4b42b21d54e25efd45669a6c811fe7beb88f969",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Orbit arc rotates 360\u00b0 about (16,14) in .56s ease in-out; end pose equals start.",
-            "strong": "Arc winds back 14\u00b0 (0\u2013.12s), spins to 360\u00b0 by .66s, holds; core swells r 1.3\u21921.7 (.68\u2013.8s) and settles by 1s.",
-            "fixed": "Bubble body in both profiles. Moving: orbit arc (rotation), core (radius, Strong only).",
-            "test": "Core clearance inside orbit at peak swell: 1.25 at Bold outline, 1.1 in Solid; arc gap at top at t=0 and t=end; cycleDegrees boundary compare."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "ai-assistant-body"
-            },
-            {
-              "type": "rigid",
-              "part": "ai-assistant-orbit"
-            }
-          ],
+          "nativeSha256": "7f4645168d56eb02dd43184f50c53ce893c3e4b800d030a2a82a3d49f70cd260",
+          "sourceSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
+          "planSha256": "0d5082895064aefc5fd84ad1498e2ded31c3550c09651191ded69e5677f72025",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -377,44 +300,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5699,
-          "sha256": "1c0308a7df58554160c59fd17498961a2d4894b8e01fcba4665627c1ea92b18e"
+          "bytes": 5651,
+          "sha256": "22a5346060fd7dda19bd7a04646c9e9f90e37ef8a6ff41e3437e6284240a1cda"
         },
         {
           "name": "ai-assistant-strong",
           "icon": "ai-assistant",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 360,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
-          "heading": "Assistant thinks, then replies",
-          "description": "Speech bubble with an orbit arc around a core.",
+          "heading": "AI assistant",
+          "description": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
           "label": "AI assistant",
-          "intent": "The orbit spins one full turn around the core; in Strong the core swells once as the answer forms.",
+          "intent": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.76,
+          "rest": 48,
           "keyPoses": [
             0,
-            0.1,
-            0.5,
-            0.62,
-            0.74,
-            0.9
+            0.15200000000000002,
+            0.30400000000000005,
+            0.45599999999999996,
+            0.6080000000000001,
+            0.76
           ],
-          "layers": 13,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -424,32 +345,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "62739dbefa2e18ade7e5f45070f99e9098f1c156e5d534af5655e61473693194",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Orbit arc rotates 360\u00b0 about (16,14) in .56s ease in-out; end pose equals start.",
-            "strong": "Arc winds back 14\u00b0 (0\u2013.12s), spins to 360\u00b0 by .66s, holds; core swells r 1.3\u21921.7 (.68\u2013.8s) and settles by 1s.",
-            "fixed": "Bubble body in both profiles. Moving: orbit arc (rotation), core (radius, Strong only).",
-            "test": "Core clearance inside orbit at peak swell: 1.25 at Bold outline, 1.1 in Solid; arc gap at top at t=0 and t=end; cycleDegrees boundary compare."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "ai-assistant-body"
-            },
-            {
-              "type": "rigid",
-              "part": "ai-assistant-orbit"
-            }
-          ],
+          "nativeSha256": "28074649fb78f7ccd227299bbc5faa4b2d8341d212cdfb0842d368e066d22ba7",
+          "sourceSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
+          "planSha256": "0d5082895064aefc5fd84ad1498e2ded31c3550c09651191ded69e5677f72025",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -471,12 +374,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5702,
-          "sha256": "9a672e151851ab79fdb92a9ab015d39407d3de3ab61f31e89b4313f69ce9b497"
+          "bytes": 5654,
+          "sha256": "95acbde087cc11aa2c1d11c45bc0311eb38eecc7a21e43fca609c2d0b8a9e3ea"
         }
       ],
-      "bytes": 5699,
-      "sha256": "1c0308a7df58554160c59fd17498961a2d4894b8e01fcba4665627c1ea92b18e"
+      "bytes": 5651,
+      "sha256": "22a5346060fd7dda19bd7a04646c9e9f90e37ef8a6ff41e3437e6284240a1cda"
     },
     {
       "name": "prompt",
@@ -1487,38 +1390,35 @@
       "name": "system-instructions",
       "icon": "system-instructions",
       "motionId": "light",
+      "continuous": false,
       "previewReset": true,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "prepared",
       "endState": "result",
-      "heading": "A rule is added under the root",
-      "description": "Root node with a spine and rules branching right, a directive tree.",
+      "heading": "System instructions",
+      "description": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
       "label": "System instructions",
-      "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
+      "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.55,
-      "rest": 36,
+      "active": 0.54,
+      "rest": 35,
       "keyPoses": [
         0,
-        0.1,
-        0.2,
-        0.36,
-        0.52,
-        0.55
+        0.10800000000000001,
+        0.21600000000000003,
+        0.324,
+        0.43200000000000005,
+        0.54
       ],
-      "layers": 21,
+      "layers": 25,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -1528,37 +1428,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "3b524f02e4a3304fde2aebd34e32e5155f38df7e588294df54ef99c2458cb865",
-      "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-      "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-      "authoringSources": {
-        "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-        "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-        "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-      },
-      "brief": {
-        "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-        "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-        "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-        "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-      },
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "system-instructions-node"
-        },
-        {
-          "type": "fixed",
-          "part": "system-instructions-spine"
-        },
-        {
-          "type": "monotonic",
-          "part": "system-instructions-rule-3",
-          "measure": "width"
-        }
-      ],
+      "nativeSha256": "5922fb54be959b909db734d605fb98930af32b61d33702b0d22cdcceb382b5b4",
+      "sourceSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+      "planSha256": "9086538d0248beb5bbcec7eaf3a4aa047e6b6db81190a25cde52d88b8132af73",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+      "constraints": [],
       "category": "Conversation and reasoning",
-      "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+      "definitionsSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -1580,104 +1457,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "system-instructions-reset",
-        "icon": "system-instructions",
-        "motionId": "light",
-        "previewReset": true,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-          "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "result",
-        "endState": "prepared",
-        "heading": "A rule is added under the root",
-        "description": "Root node with a spine and rules branching right, a directive tree.",
-        "label": "System instructions",
-        "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.28,
-        "rest": 20,
-        "keyPoses": [
-          0,
-          0.06,
-          0.1,
-          0.14,
-          0.2,
-          0.28
-        ],
-        "layers": 21,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "8803e0b23ea3ade7cc71df74bb6d2c0ad956479653adfd01c70ee37bb742271f",
-        "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-        "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-        "authoringSources": {
-          "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-          "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-          "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-        },
-        "brief": {
-          "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-          "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-          "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-          "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-        },
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "system-instructions-node"
-          },
-          {
-            "type": "fixed",
-            "part": "system-instructions-spine"
-          },
-          {
-            "type": "monotonic",
-            "part": "system-instructions-rule-3",
-            "measure": "width"
-          }
-        ],
-        "category": "Conversation and reasoning",
-        "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "forwardLabel": "Play action",
       "reverseLabel": "Reset preview",
       "motions": [
@@ -1685,38 +1464,35 @@
           "name": "system-instructions",
           "icon": "system-instructions",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
-          "heading": "A rule is added under the root",
-          "description": "Root node with a spine and rules branching right, a directive tree.",
+          "heading": "System instructions",
+          "description": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "label": "System instructions",
-          "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
+          "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.54,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.36,
-            0.52,
-            0.55
+            0.10800000000000001,
+            0.21600000000000003,
+            0.324,
+            0.43200000000000005,
+            0.54
           ],
-          "layers": 21,
+          "layers": 25,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1726,37 +1502,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "3b524f02e4a3304fde2aebd34e32e5155f38df7e588294df54ef99c2458cb865",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-            "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-            "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-            "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "system-instructions-node"
-            },
-            {
-              "type": "fixed",
-              "part": "system-instructions-spine"
-            },
-            {
-              "type": "monotonic",
-              "part": "system-instructions-rule-3",
-              "measure": "width"
-            }
-          ],
+          "nativeSha256": "5922fb54be959b909db734d605fb98930af32b61d33702b0d22cdcceb382b5b4",
+          "sourceSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+          "planSha256": "9086538d0248beb5bbcec7eaf3a4aa047e6b6db81190a25cde52d88b8132af73",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1782,22 +1535,19 @@
             "name": "system-instructions-reset",
             "icon": "system-instructions",
             "motionId": "light",
+            "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
-            "heading": "A rule is added under the root",
-            "description": "Root node with a spine and rules branching right, a directive tree.",
+            "heading": "System instructions",
+            "description": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
             "label": "System instructions",
-            "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
+            "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -1807,13 +1557,13 @@
             "rest": 20,
             "keyPoses": [
               0,
-              0.06,
-              0.1,
-              0.14,
-              0.2,
+              0.05600000000000001,
+              0.11200000000000002,
+              0.168,
+              0.22400000000000003,
               0.28
             ],
-            "layers": 21,
+            "layers": 25,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -1823,37 +1573,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "8803e0b23ea3ade7cc71df74bb6d2c0ad956479653adfd01c70ee37bb742271f",
-            "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-            "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-            "authoringSources": {
-              "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-              "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-              "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-            },
-            "brief": {
-              "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-              "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-              "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-              "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-            },
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "system-instructions-node"
-              },
-              {
-                "type": "fixed",
-                "part": "system-instructions-spine"
-              },
-              {
-                "type": "monotonic",
-                "part": "system-instructions-rule-3",
-                "measure": "width"
-              }
-            ],
+            "nativeSha256": "3e07fedd8446a57284008fdc53e7271d2629fe8f6129799932177505498c8b4f",
+            "sourceSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+            "planSha256": "9086538d0248beb5bbcec7eaf3a4aa047e6b6db81190a25cde52d88b8132af73",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+            "constraints": [],
             "category": "Conversation and reasoning",
-            "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+            "definitionsSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -1875,49 +1602,45 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 7542,
-            "sha256": "6ed5c8438914b68d92fbbff60397b4b5eb0e6ef1635dbd42aeaf7dcb6cca3ec6"
+            "bytes": 7497,
+            "sha256": "717e7bbc3a9eaf78b27b8b3f50a800c2b4da1b962338b65eb81ffe43b4355a36"
           },
-          "bytes": 7539,
-          "sha256": "fe4476baebae166191a0d1ef6a4b2169008f8379d00fb00c238dbe6e28de7e37"
+          "bytes": 7494,
+          "sha256": "50d98f7d61fcb74a7ac3cb49a9ac03fa89fd12bffbc12ccac81615e87a1822b1"
         },
         {
           "name": "system-instructions-strong",
           "icon": "system-instructions",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
-          "heading": "A rule is added under the root",
-          "description": "Root node with a spine and rules branching right, a directive tree.",
+          "heading": "System instructions",
+          "description": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "label": "System instructions",
-          "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
+          "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.82,
+          "rest": 52,
           "keyPoses": [
             0,
-            0.04,
-            0.2,
-            0.34,
-            0.38,
-            0.56,
-            0.7
+            0.164,
+            0.328,
+            0.49199999999999994,
+            0.656,
+            0.82
           ],
-          "layers": 21,
+          "layers": 25,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1927,37 +1650,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f76d606426750bb4e167ba34fe2e245f22e6b22736475778bf3bfe5de50bbb55",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-            "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-            "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-            "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "system-instructions-node"
-            },
-            {
-              "type": "fixed",
-              "part": "system-instructions-spine"
-            },
-            {
-              "type": "monotonic",
-              "part": "system-instructions-rule-3",
-              "measure": "width"
-            }
-          ],
+          "nativeSha256": "233881dd2421123330fbb54363c4745ced06e08366ac424ac0681d650deee615",
+          "sourceSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+          "planSha256": "9086538d0248beb5bbcec7eaf3a4aa047e6b6db81190a25cde52d88b8132af73",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1983,22 +1683,19 @@
             "name": "system-instructions-reset-strong",
             "icon": "system-instructions",
             "motionId": "strong",
+            "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
-            "heading": "A rule is added under the root",
-            "description": "Root node with a spine and rules branching right, a directive tree.",
+            "heading": "System instructions",
+            "description": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
             "label": "System instructions",
-            "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
+            "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -2009,12 +1706,12 @@
             "keyPoses": [
               0,
               0.06,
-              0.1,
-              0.14,
-              0.22,
+              0.12,
+              0.18,
+              0.24,
               0.3
             ],
-            "layers": 21,
+            "layers": 25,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -2024,37 +1721,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "c16a85e6c548a991e35c0c32337eddfbffe92fab2916d8ee43873333c987451a",
-            "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-            "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-            "authoringSources": {
-              "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-              "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-              "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-            },
-            "brief": {
-              "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-              "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-              "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-              "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-            },
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "system-instructions-node"
-              },
-              {
-                "type": "fixed",
-                "part": "system-instructions-spine"
-              },
-              {
-                "type": "monotonic",
-                "part": "system-instructions-rule-3",
-                "measure": "width"
-              }
-            ],
+            "nativeSha256": "2c124da878560c0ee8f3f9534d62f9e254c650874b5846b1e07a43249886ebe3",
+            "sourceSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+            "planSha256": "9086538d0248beb5bbcec7eaf3a4aa047e6b6db81190a25cde52d88b8132af73",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+            "constraints": [],
             "category": "Conversation and reasoning",
-            "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+            "definitionsSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -2076,11 +1750,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 7545,
-            "sha256": "979755c85061dc001a5b92e6fabd948237d11d6754766ca330ec3985ed6031a3"
+            "bytes": 7500,
+            "sha256": "3e264c20fb7911468047533f317e51f4e2da146ca43196052e654db387eef1fd"
           },
-          "bytes": 7544,
-          "sha256": "e8b682936c75dc5b5a11bbd0370979dd6e7923dbecbce4ce65b9455eeb9dab84"
+          "bytes": 7499,
+          "sha256": "720e59c2668f3acc86c2324ad046811a17ccca90bf724326c3f522a3d545ba76"
         }
       ],
       "animations": [
@@ -2088,38 +1762,35 @@
           "name": "system-instructions",
           "icon": "system-instructions",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
-          "heading": "A rule is added under the root",
-          "description": "Root node with a spine and rules branching right, a directive tree.",
+          "heading": "System instructions",
+          "description": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "label": "System instructions",
-          "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
+          "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.54,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.36,
-            0.52,
-            0.55
+            0.10800000000000001,
+            0.21600000000000003,
+            0.324,
+            0.43200000000000005,
+            0.54
           ],
-          "layers": 21,
+          "layers": 25,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2129,37 +1800,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "3b524f02e4a3304fde2aebd34e32e5155f38df7e588294df54ef99c2458cb865",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-            "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-            "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-            "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "system-instructions-node"
-            },
-            {
-              "type": "fixed",
-              "part": "system-instructions-spine"
-            },
-            {
-              "type": "monotonic",
-              "part": "system-instructions-rule-3",
-              "measure": "width"
-            }
-          ],
+          "nativeSha256": "5922fb54be959b909db734d605fb98930af32b61d33702b0d22cdcceb382b5b4",
+          "sourceSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+          "planSha256": "9086538d0248beb5bbcec7eaf3a4aa047e6b6db81190a25cde52d88b8132af73",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2181,29 +1829,26 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7539,
-          "sha256": "fe4476baebae166191a0d1ef6a4b2169008f8379d00fb00c238dbe6e28de7e37"
+          "bytes": 7494,
+          "sha256": "50d98f7d61fcb74a7ac3cb49a9ac03fa89fd12bffbc12ccac81615e87a1822b1"
         },
         {
           "name": "system-instructions-reset",
           "icon": "system-instructions",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
-          "heading": "A rule is added under the root",
-          "description": "Root node with a spine and rules branching right, a directive tree.",
+          "heading": "System instructions",
+          "description": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "label": "System instructions",
-          "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
+          "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -2213,13 +1858,13 @@
           "rest": 20,
           "keyPoses": [
             0,
-            0.06,
-            0.1,
-            0.14,
-            0.2,
+            0.05600000000000001,
+            0.11200000000000002,
+            0.168,
+            0.22400000000000003,
             0.28
           ],
-          "layers": 21,
+          "layers": 25,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2229,37 +1874,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "8803e0b23ea3ade7cc71df74bb6d2c0ad956479653adfd01c70ee37bb742271f",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-            "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-            "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-            "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "system-instructions-node"
-            },
-            {
-              "type": "fixed",
-              "part": "system-instructions-spine"
-            },
-            {
-              "type": "monotonic",
-              "part": "system-instructions-rule-3",
-              "measure": "width"
-            }
-          ],
+          "nativeSha256": "3e07fedd8446a57284008fdc53e7271d2629fe8f6129799932177505498c8b4f",
+          "sourceSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+          "planSha256": "9086538d0248beb5bbcec7eaf3a4aa047e6b6db81190a25cde52d88b8132af73",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2281,46 +1903,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7542,
-          "sha256": "6ed5c8438914b68d92fbbff60397b4b5eb0e6ef1635dbd42aeaf7dcb6cca3ec6"
+          "bytes": 7497,
+          "sha256": "717e7bbc3a9eaf78b27b8b3f50a800c2b4da1b962338b65eb81ffe43b4355a36"
         },
         {
           "name": "system-instructions-strong",
           "icon": "system-instructions",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
-          "heading": "A rule is added under the root",
-          "description": "Root node with a spine and rules branching right, a directive tree.",
+          "heading": "System instructions",
+          "description": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "label": "System instructions",
-          "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
+          "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.82,
+          "rest": 52,
           "keyPoses": [
             0,
-            0.04,
-            0.2,
-            0.34,
-            0.38,
-            0.56,
-            0.7
+            0.164,
+            0.328,
+            0.49199999999999994,
+            0.656,
+            0.82
           ],
-          "layers": 21,
+          "layers": 25,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2330,37 +1948,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f76d606426750bb4e167ba34fe2e245f22e6b22736475778bf3bfe5de50bbb55",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-            "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-            "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-            "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "system-instructions-node"
-            },
-            {
-              "type": "fixed",
-              "part": "system-instructions-spine"
-            },
-            {
-              "type": "monotonic",
-              "part": "system-instructions-rule-3",
-              "measure": "width"
-            }
-          ],
+          "nativeSha256": "233881dd2421123330fbb54363c4745ced06e08366ac424ac0681d650deee615",
+          "sourceSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+          "planSha256": "9086538d0248beb5bbcec7eaf3a4aa047e6b6db81190a25cde52d88b8132af73",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2382,29 +1977,26 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7544,
-          "sha256": "e8b682936c75dc5b5a11bbd0370979dd6e7923dbecbce4ce65b9455eeb9dab84"
+          "bytes": 7499,
+          "sha256": "720e59c2668f3acc86c2324ad046811a17ccca90bf724326c3f522a3d545ba76"
         },
         {
           "name": "system-instructions-reset-strong",
           "icon": "system-instructions",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
-          "heading": "A rule is added under the root",
-          "description": "Root node with a spine and rules branching right, a directive tree.",
+          "heading": "System instructions",
+          "description": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "label": "System instructions",
-          "intent": "The spine extends one level below the last rule, then a third rule writes out and stays.",
+          "intent": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -2415,12 +2007,12 @@
           "keyPoses": [
             0,
             0.06,
-            0.1,
-            0.14,
-            0.22,
+            0.12,
+            0.18,
+            0.24,
             0.3
           ],
-          "layers": 21,
+          "layers": 25,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2430,37 +2022,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c16a85e6c548a991e35c0c32337eddfbffe92fab2916d8ee43873333c987451a",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": {
-            "light": "Spine descends 4.5 into a rounded elbow (0\u2013.2s), rule 3 writes to x 27 (.2\u2013.52s), hold.",
-            "strong": "Spine descends with ease in-out (.06\u2013.32s), holds; rule writes in two chunks (.38\u2013.58s, .66\u2013.9s), hold to .98s.",
-            "fixed": "Node, spine, rules 1\u20132 in every style. Moving: rule 3 elbow path (point growth only).",
-            "test": "Degenerate elbow at t=0 is a round dot at (9,21.5) fully inside the spine/rule-2 junction in all weights; rule spacing 4.5 at Bold 24px; silhouette reads as hierarchy, not Document/Clipboard; reset fades only rule 3."
-          },
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "system-instructions-node"
-            },
-            {
-              "type": "fixed",
-              "part": "system-instructions-spine"
-            },
-            {
-              "type": "monotonic",
-              "part": "system-instructions-rule-3",
-              "measure": "width"
-            }
-          ],
+          "nativeSha256": "2c124da878560c0ee8f3f9534d62f9e254c650874b5846b1e07a43249886ebe3",
+          "sourceSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+          "planSha256": "9086538d0248beb5bbcec7eaf3a4aa047e6b6db81190a25cde52d88b8132af73",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The root issues a new rule and it is written into the tree. Light: the root node presses and sends; the spine runs on below the last rule and the new rule writes out to the right, overshoots its length a little and settles; the root springs back as the rule lands. Strong: the root presses harder, the instruction ripples down the existing rules in turn (each stretches out from the spine and springs back), then the new rule writes out, overshoots further and settles twice. Rules never leave the spine.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2482,12 +2051,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7545,
-          "sha256": "979755c85061dc001a5b92e6fabd948237d11d6754766ca330ec3985ed6031a3"
+          "bytes": 7500,
+          "sha256": "3e264c20fb7911468047533f317e51f4e2da146ca43196052e654db387eef1fd"
         }
       ],
-      "bytes": 7539,
-      "sha256": "fe4476baebae166191a0d1ef6a4b2169008f8379d00fb00c238dbe6e28de7e37"
+      "bytes": 7494,
+      "sha256": "50d98f7d61fcb74a7ac3cb49a9ac03fa89fd12bffbc12ccac81615e87a1822b1"
     },
     {
       "name": "context-window",
@@ -9811,38 +9380,35 @@
       "name": "reasoning",
       "icon": "reasoning",
       "motionId": "light",
+      "continuous": false,
       "previewReset": true,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "prepared",
       "endState": "result",
       "heading": "Reasoning",
-      "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+      "description": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
       "label": "Reasoning",
-      "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+      "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.7,
-      "rest": 45,
+      "active": 0.6,
+      "rest": 39,
       "keyPoses": [
         0,
-        0.13999999999999999,
-        0.27999999999999997,
-        0.42,
-        0.5599999999999999,
-        0.7
+        0.12,
+        0.24,
+        0.36,
+        0.48,
+        0.6
       ],
-      "layers": 35,
+      "layers": 40,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -9852,35 +9418,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "ebfd2f7fd6f4a785544daafad15fe9ea47ee9c7eeb5c0ca7b3982bcb4fa1f85b",
-      "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-      "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-      "authoringSources": {
-        "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-        "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-        "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-      },
-      "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "reasoning-n1-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "reasoning-n2-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "reasoning-t1"
-        },
-        {
-          "type": "rigid",
-          "part": "reasoning-t2"
-        }
-      ],
+      "nativeSha256": "338b6520da8c737bc44084e9c6df4c5c1632c3346ef96607452466eb609b1103",
+      "sourceSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+      "planSha256": "d5a74a4233856b83cc66b2c58a519f4205829b721d05696b27e2eb9f0f246446",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+      "constraints": [],
       "category": "Conversation and reasoning",
-      "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+      "definitionsSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -9902,102 +9447,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "reasoning-reset",
-        "icon": "reasoning",
-        "motionId": "light",
-        "previewReset": true,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-          "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "result",
-        "endState": "prepared",
-        "heading": "Reasoning",
-        "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-        "label": "Reasoning",
-        "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.28,
-        "rest": 20,
-        "keyPoses": [
-          0,
-          0.06,
-          0.1,
-          0.14,
-          0.2,
-          0.28
-        ],
-        "layers": 35,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "fef543a901eaeb0c53e81764b21b92cc2005b6de2560af7344404fc1058f8f76",
-        "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-        "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-        "authoringSources": {
-          "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-          "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-          "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-        },
-        "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "reasoning-n1-frame"
-          },
-          {
-            "type": "fixed",
-            "part": "reasoning-n2-frame"
-          },
-          {
-            "type": "rigid",
-            "part": "reasoning-t1"
-          },
-          {
-            "type": "rigid",
-            "part": "reasoning-t2"
-          }
-        ],
-        "category": "Conversation and reasoning",
-        "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "forwardLabel": "Play action",
       "reverseLabel": "Reset preview",
       "motions": [
@@ -10005,38 +9454,35 @@
           "name": "reasoning",
           "icon": "reasoning",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Reasoning",
-          "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "description": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "label": "Reasoning",
-          "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.6,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.12,
+            0.24,
+            0.36,
+            0.48,
+            0.6
           ],
-          "layers": 35,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10046,35 +9492,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "ebfd2f7fd6f4a785544daafad15fe9ea47ee9c7eeb5c0ca7b3982bcb4fa1f85b",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "reasoning-n1-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "reasoning-n2-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t1"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t2"
-            }
-          ],
+          "nativeSha256": "338b6520da8c737bc44084e9c6df4c5c1632c3346ef96607452466eb609b1103",
+          "sourceSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+          "planSha256": "d5a74a4233856b83cc66b2c58a519f4205829b721d05696b27e2eb9f0f246446",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10100,22 +9525,19 @@
             "name": "reasoning-reset",
             "icon": "reasoning",
             "motionId": "light",
+            "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Reasoning",
-            "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+            "description": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
             "label": "Reasoning",
-            "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+            "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -10125,13 +9547,13 @@
             "rest": 20,
             "keyPoses": [
               0,
-              0.06,
-              0.1,
-              0.14,
-              0.2,
+              0.05600000000000001,
+              0.11200000000000002,
+              0.168,
+              0.22400000000000003,
               0.28
             ],
-            "layers": 35,
+            "layers": 40,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -10141,35 +9563,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "fef543a901eaeb0c53e81764b21b92cc2005b6de2560af7344404fc1058f8f76",
-            "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-            "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-            "authoringSources": {
-              "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-              "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-              "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-            },
-            "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "reasoning-n1-frame"
-              },
-              {
-                "type": "fixed",
-                "part": "reasoning-n2-frame"
-              },
-              {
-                "type": "rigid",
-                "part": "reasoning-t1"
-              },
-              {
-                "type": "rigid",
-                "part": "reasoning-t2"
-              }
-            ],
+            "nativeSha256": "c81ac8ab1718e6f51f12a1be935f696ffeda9f30f9ad326ef6562b0455496111",
+            "sourceSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+            "planSha256": "d5a74a4233856b83cc66b2c58a519f4205829b721d05696b27e2eb9f0f246446",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+            "constraints": [],
             "category": "Conversation and reasoning",
-            "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+            "definitionsSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -10191,48 +9592,45 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 8678,
-            "sha256": "6b6d9120ab682cb4aa211caeb70ded96d511b69e66005e96992b324004ed2721"
+            "bytes": 8124,
+            "sha256": "5678ee281f547655d72d372ed16c7fee0923cfb3dd35585168efd694b4a6b2e0"
           },
-          "bytes": 8676,
-          "sha256": "e327f8dd36a3a207514d49d6171271b90d005dee4049fb9d10a0231f3393461d"
+          "bytes": 8122,
+          "sha256": "1d1a1bab8dd4aa773095346cf2a8aff890e988030f65a90b1c416dd0fc714d22"
         },
         {
           "name": "reasoning-strong",
           "icon": "reasoning",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Reasoning",
-          "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "description": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "label": "Reasoning",
-          "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.95,
-          "rest": 60,
+          "active": 0.9,
+          "rest": 57,
           "keyPoses": [
             0,
-            0.19,
-            0.38,
-            0.57,
-            0.76,
-            0.95
+            0.18000000000000002,
+            0.36000000000000004,
+            0.54,
+            0.7200000000000001,
+            0.9
           ],
-          "layers": 35,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10242,35 +9640,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "13fb9f879ec202cc138741ab3c121b8feb9d02fee4daf9f14f856c106dc4c35f",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "reasoning-n1-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "reasoning-n2-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t1"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t2"
-            }
-          ],
+          "nativeSha256": "34c0648dcebe6e36229d01f24ea712e69b4160bf0da29fbc72a28e51641cb07e",
+          "sourceSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+          "planSha256": "d5a74a4233856b83cc66b2c58a519f4205829b721d05696b27e2eb9f0f246446",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10296,22 +9673,19 @@
             "name": "reasoning-reset-strong",
             "icon": "reasoning",
             "motionId": "strong",
+            "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Reasoning",
-            "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+            "description": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
             "label": "Reasoning",
-            "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+            "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -10322,12 +9696,12 @@
             "keyPoses": [
               0,
               0.06,
-              0.1,
-              0.14,
-              0.22,
+              0.12,
+              0.18,
+              0.24,
               0.3
             ],
-            "layers": 35,
+            "layers": 40,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -10337,35 +9711,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "7a0d3c879de83be66d57cc2680e7b775da2998b74fce73c26c52933d83bfd67e",
-            "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-            "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-            "authoringSources": {
-              "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-              "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-              "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-            },
-            "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "reasoning-n1-frame"
-              },
-              {
-                "type": "fixed",
-                "part": "reasoning-n2-frame"
-              },
-              {
-                "type": "rigid",
-                "part": "reasoning-t1"
-              },
-              {
-                "type": "rigid",
-                "part": "reasoning-t2"
-              }
-            ],
+            "nativeSha256": "6a99c6b8caf5ea3a1e6ca96a20fa9bb533605200ee6e5da2e28463a9075058b5",
+            "sourceSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+            "planSha256": "d5a74a4233856b83cc66b2c58a519f4205829b721d05696b27e2eb9f0f246446",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+            "constraints": [],
             "category": "Conversation and reasoning",
-            "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+            "definitionsSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -10387,11 +9740,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 8683,
-            "sha256": "49ef3df2a19e8eefddbd2a0763225e508f3c66cf95b8fba6125134d40b116f2f"
+            "bytes": 8129,
+            "sha256": "57559bfce83b96298bf7bbe2efcb3657d13a0e2370f3351d2b5f2610adf93139"
           },
-          "bytes": 8681,
-          "sha256": "43177bdad45a989e196214153b44d020984297ae9346e514fc63e6d987fc6553"
+          "bytes": 8127,
+          "sha256": "490073626025e523f6f128220937fc1e467df395e2e07d616c5cb28f90627eac"
         }
       ],
       "animations": [
@@ -10399,38 +9752,35 @@
           "name": "reasoning",
           "icon": "reasoning",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Reasoning",
-          "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "description": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "label": "Reasoning",
-          "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.6,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.12,
+            0.24,
+            0.36,
+            0.48,
+            0.6
           ],
-          "layers": 35,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10440,35 +9790,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "ebfd2f7fd6f4a785544daafad15fe9ea47ee9c7eeb5c0ca7b3982bcb4fa1f85b",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "reasoning-n1-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "reasoning-n2-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t1"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t2"
-            }
-          ],
+          "nativeSha256": "338b6520da8c737bc44084e9c6df4c5c1632c3346ef96607452466eb609b1103",
+          "sourceSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+          "planSha256": "d5a74a4233856b83cc66b2c58a519f4205829b721d05696b27e2eb9f0f246446",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10490,29 +9819,26 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 8676,
-          "sha256": "e327f8dd36a3a207514d49d6171271b90d005dee4049fb9d10a0231f3393461d"
+          "bytes": 8122,
+          "sha256": "1d1a1bab8dd4aa773095346cf2a8aff890e988030f65a90b1c416dd0fc714d22"
         },
         {
           "name": "reasoning-reset",
           "icon": "reasoning",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Reasoning",
-          "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "description": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "label": "Reasoning",
-          "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -10522,13 +9848,13 @@
           "rest": 20,
           "keyPoses": [
             0,
-            0.06,
-            0.1,
-            0.14,
-            0.2,
+            0.05600000000000001,
+            0.11200000000000002,
+            0.168,
+            0.22400000000000003,
             0.28
           ],
-          "layers": 35,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10538,35 +9864,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "fef543a901eaeb0c53e81764b21b92cc2005b6de2560af7344404fc1058f8f76",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "reasoning-n1-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "reasoning-n2-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t1"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t2"
-            }
-          ],
+          "nativeSha256": "c81ac8ab1718e6f51f12a1be935f696ffeda9f30f9ad326ef6562b0455496111",
+          "sourceSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+          "planSha256": "d5a74a4233856b83cc66b2c58a519f4205829b721d05696b27e2eb9f0f246446",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10588,45 +9893,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 8678,
-          "sha256": "6b6d9120ab682cb4aa211caeb70ded96d511b69e66005e96992b324004ed2721"
+          "bytes": 8124,
+          "sha256": "5678ee281f547655d72d372ed16c7fee0923cfb3dd35585168efd694b4a6b2e0"
         },
         {
           "name": "reasoning-strong",
           "icon": "reasoning",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Reasoning",
-          "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "description": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "label": "Reasoning",
-          "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.95,
-          "rest": 60,
+          "active": 0.9,
+          "rest": 57,
           "keyPoses": [
             0,
-            0.19,
-            0.38,
-            0.57,
-            0.76,
-            0.95
+            0.18000000000000002,
+            0.36000000000000004,
+            0.54,
+            0.7200000000000001,
+            0.9
           ],
-          "layers": 35,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10636,35 +9938,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "13fb9f879ec202cc138741ab3c121b8feb9d02fee4daf9f14f856c106dc4c35f",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "reasoning-n1-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "reasoning-n2-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t1"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t2"
-            }
-          ],
+          "nativeSha256": "34c0648dcebe6e36229d01f24ea712e69b4160bf0da29fbc72a28e51641cb07e",
+          "sourceSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+          "planSha256": "d5a74a4233856b83cc66b2c58a519f4205829b721d05696b27e2eb9f0f246446",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10686,29 +9967,26 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 8681,
-          "sha256": "43177bdad45a989e196214153b44d020984297ae9346e514fc63e6d987fc6553"
+          "bytes": 8127,
+          "sha256": "490073626025e523f6f128220937fc1e467df395e2e07d616c5cb28f90627eac"
         },
         {
           "name": "reasoning-reset-strong",
           "icon": "reasoning",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Reasoning",
-          "description": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "description": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "label": "Reasoning",
-          "intent": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
+          "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -10719,12 +9997,12 @@
           "keyPoses": [
             0,
             0.06,
-            0.1,
-            0.14,
-            0.22,
+            0.12,
+            0.18,
+            0.24,
             0.3
           ],
-          "layers": 35,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10734,35 +10012,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7a0d3c879de83be66d57cc2680e7b775da2998b74fce73c26c52933d83bfd67e",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Thought hops from the first node to the second and on to the third, leaving every visited node marked; Strong makes a broad, continuous hop through the visited nodes",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "reasoning-n1-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "reasoning-n2-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t1"
-            },
-            {
-              "type": "rigid",
-              "part": "reasoning-t2"
-            }
-          ],
+          "nativeSha256": "6a99c6b8caf5ea3a1e6ca96a20fa9bb533605200ee6e5da2e28463a9075058b5",
+          "sourceSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+          "planSha256": "d5a74a4233856b83cc66b2c58a519f4205829b721d05696b27e2eb9f0f246446",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10784,12 +10041,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 8683,
-          "sha256": "49ef3df2a19e8eefddbd2a0763225e508f3c66cf95b8fba6125134d40b116f2f"
+          "bytes": 8129,
+          "sha256": "57559bfce83b96298bf7bbe2efcb3657d13a0e2370f3351d2b5f2610adf93139"
         }
       ],
-      "bytes": 8676,
-      "sha256": "e327f8dd36a3a207514d49d6171271b90d005dee4049fb9d10a0231f3393461d"
+      "bytes": 8122,
+      "sha256": "1d1a1bab8dd4aa773095346cf2a8aff890e988030f65a90b1c416dd0fc714d22"
     },
     {
       "name": "conversation-branch",
@@ -15285,38 +14542,35 @@
       "name": "intent-detection",
       "icon": "intent-detection",
       "motionId": "light",
+      "continuous": false,
       "previewReset": true,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "prepared",
       "endState": "result",
       "heading": "Intent detection",
-      "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+      "description": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
       "label": "Intent detection",
-      "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+      "intent": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.55,
-      "rest": 36,
+      "active": 0.44,
+      "rest": 29,
       "keyPoses": [
         0,
-        0.11000000000000001,
-        0.22000000000000003,
-        0.33,
-        0.44000000000000006,
-        0.55
+        0.08800000000000001,
+        0.17600000000000002,
+        0.264,
+        0.35200000000000004,
+        0.44
       ],
-      "layers": 25,
+      "layers": 31,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -15326,31 +14580,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "c75bcee4a918d5baadb31aed6a16c1c711a4087fae8e0a69848316d48cf4902e",
-      "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-      "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-      "authoringSources": {
-        "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-        "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-        "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-      },
-      "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "intent-detection-bub-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "intent-detection-bub-solid"
-        },
-        {
-          "type": "opaque",
-          "part": "intent-detection-bub-solid"
-        }
-      ],
+      "nativeSha256": "95a3f2ebca5e25a9a2729ab55d9aed77b9fe9d5caaf9e0a85992dbf05964fd56",
+      "sourceSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+      "planSha256": "fb7f5238b03d19766af02c0c568868830c7728a380bf48c90ee88309712991ee",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
+      "constraints": [],
       "category": "Conversation and reasoning",
-      "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+      "definitionsSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -15372,98 +14609,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "intent-detection-reset",
-        "icon": "intent-detection",
-        "motionId": "light",
-        "previewReset": true,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-          "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "result",
-        "endState": "prepared",
-        "heading": "Intent detection",
-        "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-        "label": "Intent detection",
-        "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.28,
-        "rest": 20,
-        "keyPoses": [
-          0,
-          0.06,
-          0.1,
-          0.14,
-          0.2,
-          0.28
-        ],
-        "layers": 25,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "9ab849d7c310634dd01fe4c400da35da61789c4875a4a8d2b2eb552f3e558920",
-        "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-        "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-        "authoringSources": {
-          "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-          "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-          "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-        },
-        "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "intent-detection-bub-frame"
-          },
-          {
-            "type": "fixed",
-            "part": "intent-detection-bub-solid"
-          },
-          {
-            "type": "opaque",
-            "part": "intent-detection-bub-solid"
-          }
-        ],
-        "category": "Conversation and reasoning",
-        "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "forwardLabel": "Play action",
       "reverseLabel": "Reset preview",
       "motions": [
@@ -15471,38 +14616,35 @@
           "name": "intent-detection",
           "icon": "intent-detection",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Intent detection",
-          "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "description": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "label": "Intent detection",
-          "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "intent": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.44,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.08800000000000001,
+            0.17600000000000002,
+            0.264,
+            0.35200000000000004,
+            0.44
           ],
-          "layers": 25,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -15512,31 +14654,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c75bcee4a918d5baadb31aed6a16c1c711a4087fae8e0a69848316d48cf4902e",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-solid"
-            },
-            {
-              "type": "opaque",
-              "part": "intent-detection-bub-solid"
-            }
-          ],
+          "nativeSha256": "95a3f2ebca5e25a9a2729ab55d9aed77b9fe9d5caaf9e0a85992dbf05964fd56",
+          "sourceSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+          "planSha256": "fb7f5238b03d19766af02c0c568868830c7728a380bf48c90ee88309712991ee",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -15562,22 +14687,19 @@
             "name": "intent-detection-reset",
             "icon": "intent-detection",
             "motionId": "light",
+            "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Intent detection",
-            "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+            "description": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
             "label": "Intent detection",
-            "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+            "intent": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -15587,13 +14709,13 @@
             "rest": 20,
             "keyPoses": [
               0,
-              0.06,
-              0.1,
-              0.14,
-              0.2,
+              0.05600000000000001,
+              0.11200000000000002,
+              0.168,
+              0.22400000000000003,
               0.28
             ],
-            "layers": 25,
+            "layers": 31,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -15603,31 +14725,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "9ab849d7c310634dd01fe4c400da35da61789c4875a4a8d2b2eb552f3e558920",
-            "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-            "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-            "authoringSources": {
-              "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-              "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-              "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-            },
-            "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "intent-detection-bub-frame"
-              },
-              {
-                "type": "fixed",
-                "part": "intent-detection-bub-solid"
-              },
-              {
-                "type": "opaque",
-                "part": "intent-detection-bub-solid"
-              }
-            ],
+            "nativeSha256": "f28c0fe77cc8db623b0e8261d177544fb02d353141eeae3cd6b4b530ea95a3c4",
+            "sourceSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+            "planSha256": "fb7f5238b03d19766af02c0c568868830c7728a380bf48c90ee88309712991ee",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
+            "constraints": [],
             "category": "Conversation and reasoning",
-            "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+            "definitionsSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -15649,48 +14754,45 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 12236,
-            "sha256": "3adf3c7fd61fb0e3abf7778d27ad004801aee879b166034f40cb648877d84657"
+            "bytes": 8593,
+            "sha256": "6a7813302f21787d1884ebd548cdf69334c7bb88219d108059599c65e7725dff"
           },
-          "bytes": 12233,
-          "sha256": "6ae96f2cabda27d45584f0c8ce119baad33af2867d5ffeebf80fb83f53be6be4"
+          "bytes": 8590,
+          "sha256": "a32394ceeaac3950491064c1356e939e7cf50dd5a95589b6d1161b62b4fb894a"
         },
         {
           "name": "intent-detection-strong",
           "icon": "intent-detection",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Intent detection",
-          "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "description": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "label": "Intent detection",
-          "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "intent": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.85,
-          "rest": 54,
+          "active": 0.72,
+          "rest": 46,
           "keyPoses": [
             0,
-            0.17,
-            0.34,
-            0.51,
-            0.68,
-            0.85
+            0.144,
+            0.288,
+            0.432,
+            0.576,
+            0.72
           ],
-          "layers": 25,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -15700,31 +14802,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "823607679ff85ce6cdcb9e222281ce192c29d5e6c7fc90ce3ced1e2cb985b556",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-solid"
-            },
-            {
-              "type": "opaque",
-              "part": "intent-detection-bub-solid"
-            }
-          ],
+          "nativeSha256": "279d96d70007f19a53942d57ac8c7fbc1604123af7d5c0ec5de012f2b1575235",
+          "sourceSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+          "planSha256": "fb7f5238b03d19766af02c0c568868830c7728a380bf48c90ee88309712991ee",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -15750,22 +14835,19 @@
             "name": "intent-detection-reset-strong",
             "icon": "intent-detection",
             "motionId": "strong",
+            "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Intent detection",
-            "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+            "description": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
             "label": "Intent detection",
-            "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+            "intent": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -15776,12 +14858,12 @@
             "keyPoses": [
               0,
               0.06,
-              0.1,
-              0.14,
-              0.22,
+              0.12,
+              0.18,
+              0.24,
               0.3
             ],
-            "layers": 25,
+            "layers": 31,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -15791,31 +14873,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "0bc97a8a503e003d616c0f692d4b295ea942cb82ac7a647415e89ca811e012ae",
-            "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-            "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-            "authoringSources": {
-              "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-              "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-              "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-            },
-            "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "intent-detection-bub-frame"
-              },
-              {
-                "type": "fixed",
-                "part": "intent-detection-bub-solid"
-              },
-              {
-                "type": "opaque",
-                "part": "intent-detection-bub-solid"
-              }
-            ],
+            "nativeSha256": "007ddf4bc8c4f78232bb2cb02b8f65f890d52212385a2fe0cd5a2b899efd4adc",
+            "sourceSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+            "planSha256": "fb7f5238b03d19766af02c0c568868830c7728a380bf48c90ee88309712991ee",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
+            "constraints": [],
             "category": "Conversation and reasoning",
-            "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+            "definitionsSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -15837,11 +14902,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 12240,
-            "sha256": "8fcb6553f5d4581225ec5eef08f071a67d214d715bbc352cfa33e5bb162fc635"
+            "bytes": 8597,
+            "sha256": "635b097829d56c690681204b92f0afc30dc51484043847206c9b1eacbdc1cd6b"
           },
-          "bytes": 12238,
-          "sha256": "db2ac649028f0d9d428a27aa66845580de6c2bbde18522269fb4f59548a0e3e7"
+          "bytes": 8595,
+          "sha256": "f3b9d094ca9f50c4ce5359fc611a79b4074c428d4952be0d6338c3caae163703"
         }
       ],
       "animations": [
@@ -15849,38 +14914,35 @@
           "name": "intent-detection",
           "icon": "intent-detection",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Intent detection",
-          "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "description": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "label": "Intent detection",
-          "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "intent": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.44,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.08800000000000001,
+            0.17600000000000002,
+            0.264,
+            0.35200000000000004,
+            0.44
           ],
-          "layers": 25,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -15890,31 +14952,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c75bcee4a918d5baadb31aed6a16c1c711a4087fae8e0a69848316d48cf4902e",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-solid"
-            },
-            {
-              "type": "opaque",
-              "part": "intent-detection-bub-solid"
-            }
-          ],
+          "nativeSha256": "95a3f2ebca5e25a9a2729ab55d9aed77b9fe9d5caaf9e0a85992dbf05964fd56",
+          "sourceSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+          "planSha256": "fb7f5238b03d19766af02c0c568868830c7728a380bf48c90ee88309712991ee",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -15936,29 +14981,26 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 12233,
-          "sha256": "6ae96f2cabda27d45584f0c8ce119baad33af2867d5ffeebf80fb83f53be6be4"
+          "bytes": 8590,
+          "sha256": "a32394ceeaac3950491064c1356e939e7cf50dd5a95589b6d1161b62b4fb894a"
         },
         {
           "name": "intent-detection-reset",
           "icon": "intent-detection",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Intent detection",
-          "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "description": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "label": "Intent detection",
-          "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "intent": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -15968,13 +15010,13 @@
           "rest": 20,
           "keyPoses": [
             0,
-            0.06,
-            0.1,
-            0.14,
-            0.2,
+            0.05600000000000001,
+            0.11200000000000002,
+            0.168,
+            0.22400000000000003,
             0.28
           ],
-          "layers": 25,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -15984,31 +15026,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9ab849d7c310634dd01fe4c400da35da61789c4875a4a8d2b2eb552f3e558920",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-solid"
-            },
-            {
-              "type": "opaque",
-              "part": "intent-detection-bub-solid"
-            }
-          ],
+          "nativeSha256": "f28c0fe77cc8db623b0e8261d177544fb02d353141eeae3cd6b4b530ea95a3c4",
+          "sourceSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+          "planSha256": "fb7f5238b03d19766af02c0c568868830c7728a380bf48c90ee88309712991ee",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -16030,45 +15055,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 12236,
-          "sha256": "3adf3c7fd61fb0e3abf7778d27ad004801aee879b166034f40cb648877d84657"
+          "bytes": 8593,
+          "sha256": "6a7813302f21787d1884ebd548cdf69334c7bb88219d108059599c65e7725dff"
         },
         {
           "name": "intent-detection-strong",
           "icon": "intent-detection",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Intent detection",
-          "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "description": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "label": "Intent detection",
-          "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "intent": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.85,
-          "rest": 54,
+          "active": 0.72,
+          "rest": 46,
           "keyPoses": [
             0,
-            0.17,
-            0.34,
-            0.51,
-            0.68,
-            0.85
+            0.144,
+            0.288,
+            0.432,
+            0.576,
+            0.72
           ],
-          "layers": 25,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -16078,31 +15100,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "823607679ff85ce6cdcb9e222281ce192c29d5e6c7fc90ce3ced1e2cb985b556",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-solid"
-            },
-            {
-              "type": "opaque",
-              "part": "intent-detection-bub-solid"
-            }
-          ],
+          "nativeSha256": "279d96d70007f19a53942d57ac8c7fbc1604123af7d5c0ec5de012f2b1575235",
+          "sourceSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+          "planSha256": "fb7f5238b03d19766af02c0c568868830c7728a380bf48c90ee88309712991ee",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -16124,29 +15129,26 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 12238,
-          "sha256": "db2ac649028f0d9d428a27aa66845580de6c2bbde18522269fb4f59548a0e3e7"
+          "bytes": 8595,
+          "sha256": "f3b9d094ca9f50c4ce5359fc611a79b4074c428d4952be0d6338c3caae163703"
         },
         {
           "name": "intent-detection-reset-strong",
           "icon": "intent-detection",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Intent detection",
-          "description": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "description": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "label": "Intent detection",
-          "intent": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
+          "intent": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -16157,12 +15159,12 @@
           "keyPoses": [
             0,
             0.06,
-            0.1,
-            0.14,
-            0.22,
+            0.12,
+            0.18,
+            0.24,
             0.3
           ],
-          "layers": 25,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -16172,31 +15174,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "0bc97a8a503e003d616c0f692d4b295ea942cb82ac7a647415e89ca811e012ae",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "3847da89ae075e7688ca7c252651da194aedeb3e5659f9159e842ccad41157ff",
-            "batches/first.mjs": "9f382a9ab44f1d1c16860a7337d7e0b0b11b2ad0f03a2d480c9727ebb7b47686",
-            "batches/remaining.mjs": "06a6b4ac249b98b8e4622ffd05419c188e220fdea1003e688ce12c6886b9b611"
-          },
-          "brief": "Reticle ticks close on the message and a lock dot grows; Strong flares outward first and pops the dot",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "intent-detection-bub-solid"
-            },
-            {
-              "type": "opaque",
-              "part": "intent-detection-bub-solid"
-            }
-          ],
+          "nativeSha256": "007ddf4bc8c4f78232bb2cb02b8f65f890d52212385a2fe0cd5a2b899efd4adc",
+          "sourceSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+          "planSha256": "fb7f5238b03d19766af02c0c568868830c7728a380bf48c90ee88309712991ee",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reticle locks onto the message and the intent is found. Light: the four ticks pull out a hair, then clamp in on the bubble with a hit; the lock dot pops into the bubble's centre on the clamp, and the ticks spring back to their locked distance. Strong: the reticle flares out and turns as it searches, swings back and clamps twice, each smaller, and the dot pops bigger and settles. The bubble never moves.",
+          "constraints": [],
           "category": "Conversation and reasoning",
-          "definitionsSha256": "0bcbb9ceb4fbc8bf428e0fab368d0edafc5d1601b63f60fa1f681565a71cae1e",
+          "definitionsSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -16218,12 +15203,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 12240,
-          "sha256": "8fcb6553f5d4581225ec5eef08f071a67d214d715bbc352cfa33e5bb162fc635"
+          "bytes": 8597,
+          "sha256": "635b097829d56c690681204b92f0afc30dc51484043847206c9b1eacbdc1cd6b"
         }
       ],
-      "bytes": 12233,
-      "sha256": "6ae96f2cabda27d45584f0c8ce119baad33af2867d5ffeebf80fb83f53be6be4"
+      "bytes": 8590,
+      "sha256": "a32394ceeaac3950491064c1356e939e7cf50dd5a95589b6d1161b62b4fb894a"
     },
     {
       "name": "response-length",

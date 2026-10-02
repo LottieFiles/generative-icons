@@ -2,79 +2,9 @@
   "result": "PASS",
   "icons": 10,
   "actions": 32,
-  "nativeTransformNodes": 122,
-  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "nativeTransformNodes": 16,
+  "nativeTransformMaxCoordinateError": 0.00000900000000214618,
   "checks": [
-    {
-      "name": "download",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "download-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "upload",
-      "fixedParts": [
-        "upload-tray"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "upload-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "copy",
-      "fixedParts": [
-        "copy-source"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "copy-strong",
-      "fixedParts": [
-        "copy-source"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "trash",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "trash-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
     {
       "name": "edit",
       "fixedParts": [],
@@ -85,38 +15,6 @@
     },
     {
       "name": "edit-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "send",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "send-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "bookmark",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "bookmark-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -170,6 +68,70 @@
       "stateBoundaries": true,
       "hold": true,
       "designConstraints": []
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "download",
+      "spec": "specs/download.icon.json",
+      "specSha256": "e408046845a3c90a24e4fa95d4c945419924806e8a4ce02a816612309db37b0b",
+      "actions": [
+        "download",
+        "download-strong"
+      ]
+    },
+    {
+      "icon": "upload",
+      "spec": "specs/upload.icon.json",
+      "specSha256": "7a233bd80635f5745242773859c7c76efd45b5800190b20b0ffa4a4af0c98c7c",
+      "actions": [
+        "upload",
+        "upload-reset",
+        "upload-strong",
+        "upload-reset-strong"
+      ]
+    },
+    {
+      "icon": "copy",
+      "spec": "specs/copy.icon.json",
+      "specSha256": "e31670b1f425c4336fdfdfb3c09c2e32ee21430c25b6df14fbb7a7094257ac6c",
+      "actions": [
+        "copy",
+        "copy-reset",
+        "copy-strong",
+        "copy-reset-strong"
+      ]
+    },
+    {
+      "icon": "trash",
+      "spec": "specs/trash.icon.json",
+      "specSha256": "453f1bd8deacd92b050ff1f459a86e21590eb1b08f8adecd24a36fb872136740",
+      "actions": [
+        "trash",
+        "trash-strong"
+      ]
+    },
+    {
+      "icon": "send",
+      "spec": "specs/send.icon.json",
+      "specSha256": "46944fdcc8ad0a19d6ec445aaaba4d0b837d4b84b6ca30d0664c33d77bd83ee4",
+      "actions": [
+        "send",
+        "send-reset",
+        "send-strong",
+        "send-reset-strong"
+      ]
+    },
+    {
+      "icon": "bookmark",
+      "spec": "specs/bookmark.icon.json",
+      "specSha256": "dff86cf675e88d66c2d9ef1853dcf702f83b41d4216f3168be61b4a09c600df8",
+      "actions": [
+        "bookmark",
+        "bookmark-reset",
+        "bookmark-strong",
+        "bookmark-reset-strong"
+      ]
     }
   ]
 }

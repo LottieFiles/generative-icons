@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "tool-call",
+  "label": "Tool call",
+  "intent": "The tool is called and does its job. Light: the wrench drives along its jaw onto the hex port, seats with a hit and a small rebound, then torques: the nut snaps a sixth of a turn to its next flat while the wrench kicks clockwise and springs back. Strong: the wrench pulls back first, drives in harder, and turns the nut one flat in two decaying ratchet strokes (40 then 20 degrees). Light and Strong both end a sixth of a turn on, which is the same drawing, so the seated wrench and the nut are the result.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "wrench": {"shape": {"path": "M15.873 8.702 L9.965 14.611 C9.984 16.574 10.773 18.451 12.161 19.839 L5.09 26.91 L12.161 19.839 C13.549 21.227 15.426 22.016 17.389 22.035 L23.298 16.127"}},
+    "nut":    {"shape": {"path": "M25.203 11.23 C25.375 11.873 25.226 12.431 24.754 12.903 L22.903 14.754 C22.431 15.226 21.873 15.375 21.23 15.203 L18.7 14.525 C18.056 14.352 17.648 13.944 17.475 13.3 L16.797 10.77 C16.625 10.127 16.774 9.569 17.246 9.097 L19.097 7.246 C19.569 6.774 20.127 6.625 20.77 6.797 L23.3 7.475 C23.944 7.648 24.352 8.056 24.525 8.7 L25.203 11.23 Z"},
+               "role": "surface", "solid": "fill", "knockout": [{"part": "bolt", "gap": 0.25}]},
+    "bolt":   {"shape": {"circle": [[21, 11], 1.75]}, "role": "fill"}
+  },
+  "rigs": {
+    "wrench": {"//": "pivot is the rest-frame point that lands on the nut centre once seated", "pivot": [17.464, 14.536]},
+    "nut":    {"//": "both motions end at exactly 60 degrees: Light and Strong must share one rest raster", "pivot": [21, 11], "carries": ["nut", "bolt"]}
+  },
+  "motion": {
+    "wrench.x": {
+      "light":  [[0, 0], [0.2, 3.536, "hit"], {"bounce": 0.28, "amp": 0.1}],
+      "strong": [[0, 0], [0.1, -1.1, "out"], [0.24, 3.536, "hit"], {"bounce": 0.32, "amp": 0.1}]
+    },
+    "wrench.y": {"follow": "wrench.x", "scale": -1},
+    "nut.rotate": {
+      "light":  [[0, 0], [0.2, 0], [0.37, 60, "hit"], {"bounce": 0.45, "amp": 0.1}],
+      "strong": [[0, 0], [0.24, 0], [0.4, 40, "hit"], [0.48, 40], [0.62, 60, "hit"], {"bounce": 0.7, "amp": 0.12}]
+    },
+    "wrench.rotate": {
+      "light":  [[0, 0], [0.2, 0], [0.37, 8, "hit"], [0.5, 0, "out"]],
+      "strong": [[0, 0], [0.24, 0], [0.4, 13, "hit"], [0.48, 1, "out"], [0.62, 7, "hit"], [0.72, -1.2], [0.8, 0]]
+    }
+  }
+}

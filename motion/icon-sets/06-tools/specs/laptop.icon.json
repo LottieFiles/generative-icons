@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "laptop",
+  "label": "Laptop",
+  "intent": "The laptop opens and wakes. Light: the rigid lid swings up from the hinge, overshoots its working angle a little and settles back, and a glint draws across the screen and fades as it comes on. Strong: the lid cracks open first, then swings up harder with a bigger overshoot and two settling swings before the glint. The base and hinge never move; the lid holds open.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "hinge": {"shape": {"line": [[7, 23], [25, 23]]}},
+    "base":  {"shape": {"path": "M7 23 L4.5 24.5 C5 25.7 6 26.5 7.5 26.5 L24.5 26.5 C26 26.5 27 25.7 27.5 24.5 L25 23"}},
+    "lid":   {"//": "v1's closed lid: the open screen foreshortened to 0.24 of its height about the hinge line",
+              "shape": {"path": "M8.8 19.64 L23.2 19.64 C24.194 19.64 25 19.834 25 20.072 L25 22.568 C25 22.806 24.194 23 23.2 23 L8.8 23 C7.806 23 7 22.806 7 22.568 L7 20.072 C7 19.834 7.806 19.64 8.8 19.64 Z"},
+              "role": "surface", "solid": "fill", "knockout": [{"part": "glint", "gap": 0}]},
+    "glint": {"//": "hidden at rest: the screen coming on", "shape": {"line": [[18.5, 16.5], [21.5, 13.5]]}, "hidden": true}
+  },
+  "rigs": {
+    "lid": {"pivot": [16, 23], "squash": {"base": 23, "widen": 0}}
+  },
+  "motion": {
+    "lid.squash": {
+      "//": "4.1667 = 14 / 3.36: the open screen, top edge at y 9 (v1's end state)",
+      "light":  [[0, 1], [0.2, 4.45, "out"], {"settle": 0.4, "to": 4.1667}],
+      "strong": [[0, 1], [0.08, 1.7, "out"], [0.14, 1.7], [0.32, 4.75, "out"], {"settle": 0.62, "to": 4.1667}]
+    },
+    "glint.opacity": {
+      "light":  [[0, 0], [0.17, 0], [0.19, 1], [0.36, 1], [0.46, 0]],
+      "strong": [[0, 0], [0.31, 0], [0.33, 1], [0.58, 1], [0.7, 0]]
+    },
+    "glint.draw": {
+      "light":  [[0, 1], [0.17, 0, "step"], [0.3, 1, "out"]],
+      "strong": [[0, 1], [0.31, 0, "step"], [0.46, 1, "out"]]
+    }
+  }
+}

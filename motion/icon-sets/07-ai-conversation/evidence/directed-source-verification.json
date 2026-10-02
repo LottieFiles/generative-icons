@@ -2,43 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 78,
-  "nativeTransformNodes": 312,
-  "nativeTransformMaxCoordinateError": 0.000011487360463746654,
+  "nativeTransformNodes": 256,
+  "nativeTransformMaxCoordinateError": 0.000008669522429727294,
   "checks": [
-    {
-      "name": "ai-assistant",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "ai-assistant-body"
-        },
-        {
-          "type": "rigid",
-          "part": "ai-assistant-orbit"
-        }
-      ]
-    },
-    {
-      "name": "ai-assistant-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "ai-assistant-body"
-        },
-        {
-          "type": "rigid",
-          "part": "ai-assistant-orbit"
-        }
-      ]
-    },
     {
       "name": "prompt",
       "fixedParts": [],
@@ -79,50 +45,6 @@
         {
           "type": "monotonic",
           "part": "prompt-typed",
-          "measure": "width"
-        }
-      ]
-    },
-    {
-      "name": "system-instructions",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "system-instructions-node"
-        },
-        {
-          "type": "fixed",
-          "part": "system-instructions-spine"
-        },
-        {
-          "type": "monotonic",
-          "part": "system-instructions-rule-3",
-          "measure": "width"
-        }
-      ]
-    },
-    {
-      "name": "system-instructions-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "system-instructions-node"
-        },
-        {
-          "type": "fixed",
-          "part": "system-instructions-spine"
-        },
-        {
-          "type": "monotonic",
-          "part": "system-instructions-rule-3",
           "measure": "width"
         }
       ]
@@ -544,56 +466,6 @@
       ]
     },
     {
-      "name": "reasoning",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "reasoning-n1-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "reasoning-n2-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "reasoning-t1"
-        },
-        {
-          "type": "rigid",
-          "part": "reasoning-t2"
-        }
-      ]
-    },
-    {
-      "name": "reasoning-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "reasoning-n1-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "reasoning-n2-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "reasoning-t1"
-        },
-        {
-          "type": "rigid",
-          "part": "reasoning-t2"
-        }
-      ]
-    },
-    {
       "name": "conversation-branch",
       "fixedParts": [],
       "topology": true,
@@ -758,48 +630,6 @@
       ]
     },
     {
-      "name": "intent-detection",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "intent-detection-bub-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "intent-detection-bub-solid"
-        },
-        {
-          "type": "opaque",
-          "part": "intent-detection-bub-solid"
-        }
-      ]
-    },
-    {
-      "name": "intent-detection-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "intent-detection-bub-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "intent-detection-bub-solid"
-        },
-        {
-          "type": "opaque",
-          "part": "intent-detection-bub-solid"
-        }
-      ]
-    },
-    {
       "name": "response-length",
       "fixedParts": [],
       "topology": true,
@@ -907,6 +737,50 @@
           "measure": "width",
           "direction": -1
         }
+      ]
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "ai-assistant",
+      "spec": "specs/ai-assistant.icon.json",
+      "specSha256": "7ba8aaa39f989ff4fa55c3db3258d357f3840a3d978ac2dc5cd548607e1671b3",
+      "actions": [
+        "ai-assistant",
+        "ai-assistant-strong"
+      ]
+    },
+    {
+      "icon": "system-instructions",
+      "spec": "specs/system-instructions.icon.json",
+      "specSha256": "cc4eddbeff71b0a6f8ae88d429a548b61d72e24262f53f602418d6ed819b687b",
+      "actions": [
+        "system-instructions",
+        "system-instructions-reset",
+        "system-instructions-strong",
+        "system-instructions-reset-strong"
+      ]
+    },
+    {
+      "icon": "reasoning",
+      "spec": "specs/reasoning.icon.json",
+      "specSha256": "9b6d3c187e58667453e263521afceca169aacb1cb017b992c6d317ce715c40a3",
+      "actions": [
+        "reasoning",
+        "reasoning-reset",
+        "reasoning-strong",
+        "reasoning-reset-strong"
+      ]
+    },
+    {
+      "icon": "intent-detection",
+      "spec": "specs/intent-detection.icon.json",
+      "specSha256": "ac4451f15c2729e666338dadd5374dfa1374b00f5331cc62404dbd2ed22be731",
+      "actions": [
+        "intent-detection",
+        "intent-detection-reset",
+        "intent-detection-strong",
+        "intent-detection-reset-strong"
       ]
     }
   ]

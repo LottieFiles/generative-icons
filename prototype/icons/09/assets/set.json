@@ -3782,37 +3782,35 @@
       "name": "image-upscale",
       "icon": "image-upscale",
       "motionId": "light",
+      "continuous": false,
       "previewReset": true,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "prepared",
       "endState": "result",
-      "heading": "Frame grows from a small original, led by a corner arrow",
-      "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+      "heading": "Image upscale",
+      "description": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
       "label": "Image upscale",
-      "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+      "intent": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.45,
+      "rest": 30,
       "keyPoses": [
         0,
-        0.04,
-        0.2,
-        0.36,
-        0.52,
-        0.6
+        0.09000000000000001,
+        0.18000000000000002,
+        0.27,
+        0.36000000000000004,
+        0.45
       ],
-      "layers": 13,
+      "layers": 14,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -3822,34 +3820,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "5231b68a76cbf8aaaa8093907ffb15043b8ce670628dbefba6b58c52431974e2",
-      "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-      "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-      "authoringSources": {
-        "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-        "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-        "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-        "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-        "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-      },
-      "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "image-upscale-original"
-        },
-        {
-          "type": "monotonic",
-          "part": "image-upscale-frame",
-          "measure": "width"
-        },
-        {
-          "type": "rigid",
-          "part": "image-upscale-arrow"
-        }
-      ],
+      "nativeSha256": "cc8010c021558392b4dc67b871fe3380ae5b1f4e106028ae8e0b000656061091",
+      "sourceSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+      "planSha256": "ea8f92b94ccbce02a215a6bbc368bac6c49c2e07df2c40474e491c8a8931678f",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
+      "constraints": [],
       "category": "Creation and multimodal",
-      "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
+      "definitionsSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -3871,100 +3849,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "image-upscale-reset",
-        "icon": "image-upscale",
-        "motionId": "light",
-        "previewReset": true,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "result",
-        "endState": "prepared",
-        "heading": "Frame grows from a small original, led by a corner arrow",
-        "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
-        "label": "Image upscale",
-        "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.28,
-        "rest": 20,
-        "keyPoses": [
-          0,
-          0.06,
-          0.1,
-          0.14,
-          0.2,
-          0.28
-        ],
-        "layers": 13,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "0a1359e628d0513645ae216472dc9bc06a8852fd7d4e963212a7a0fe9a7f1acc",
-        "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-        "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-        "authoringSources": {
-          "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-          "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-          "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-          "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-          "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-        },
-        "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "image-upscale-original"
-          },
-          {
-            "type": "monotonic",
-            "part": "image-upscale-frame",
-            "measure": "width"
-          },
-          {
-            "type": "rigid",
-            "part": "image-upscale-arrow"
-          }
-        ],
-        "category": "Creation and multimodal",
-        "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "forwardLabel": "Play action",
       "reverseLabel": "Reset preview",
       "motions": [
@@ -3972,37 +3856,35 @@
           "name": "image-upscale",
           "icon": "image-upscale",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
-          "heading": "Frame grows from a small original, led by a corner arrow",
-          "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "heading": "Image upscale",
+          "description": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "label": "Image upscale",
-          "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "intent": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.45,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.04,
-            0.2,
-            0.36,
-            0.52,
-            0.6
+            0.09000000000000001,
+            0.18000000000000002,
+            0.27,
+            0.36000000000000004,
+            0.45
           ],
-          "layers": 13,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4012,34 +3894,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5231b68a76cbf8aaaa8093907ffb15043b8ce670628dbefba6b58c52431974e2",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-            "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-            "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-            "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-            "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-          },
-          "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-upscale-original"
-            },
-            {
-              "type": "monotonic",
-              "part": "image-upscale-frame",
-              "measure": "width"
-            },
-            {
-              "type": "rigid",
-              "part": "image-upscale-arrow"
-            }
-          ],
+          "nativeSha256": "cc8010c021558392b4dc67b871fe3380ae5b1f4e106028ae8e0b000656061091",
+          "sourceSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+          "planSha256": "ea8f92b94ccbce02a215a6bbc368bac6c49c2e07df2c40474e491c8a8931678f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
+          "constraints": [],
           "category": "Creation and multimodal",
-          "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
+          "definitionsSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4065,21 +3927,19 @@
             "name": "image-upscale-reset",
             "icon": "image-upscale",
             "motionId": "light",
+            "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
-            "heading": "Frame grows from a small original, led by a corner arrow",
-            "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+            "heading": "Image upscale",
+            "description": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
             "label": "Image upscale",
-            "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+            "intent": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -4089,13 +3949,13 @@
             "rest": 20,
             "keyPoses": [
               0,
-              0.06,
-              0.1,
-              0.14,
-              0.2,
+              0.05600000000000001,
+              0.11200000000000002,
+              0.168,
+              0.22400000000000003,
               0.28
             ],
-            "layers": 13,
+            "layers": 14,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -4105,34 +3965,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "0a1359e628d0513645ae216472dc9bc06a8852fd7d4e963212a7a0fe9a7f1acc",
-            "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-            "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-            "authoringSources": {
-              "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-              "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-              "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-              "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-              "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-            },
-            "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "image-upscale-original"
-              },
-              {
-                "type": "monotonic",
-                "part": "image-upscale-frame",
-                "measure": "width"
-              },
-              {
-                "type": "rigid",
-                "part": "image-upscale-arrow"
-              }
-            ],
+            "nativeSha256": "76a339839dc7d94451ed5ea620e715e4799750be817211db3db4518cc42f17ab",
+            "sourceSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+            "planSha256": "ea8f92b94ccbce02a215a6bbc368bac6c49c2e07df2c40474e491c8a8931678f",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
+            "constraints": [],
             "category": "Creation and multimodal",
-            "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
+            "definitionsSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -4154,49 +3994,45 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 11277,
-            "sha256": "d8c4b18e74bc0d79767d60e1af870ca6c824ee53da54a34bdac58f0e0066e1f8"
+            "bytes": 7176,
+            "sha256": "c227a37e5d17f29db7c1cef930e5879c6c1830acd0a62573304a239b4436b4a6"
           },
-          "bytes": 11275,
-          "sha256": "d1532b1d928bd16be3348bd7bd5cae3ec88a9b93362cfc586e63036810179410"
+          "bytes": 7174,
+          "sha256": "9a836b6fe2434ae4b0ee1735d9015febe007417b8c04f32b84cb8f831d97eb65"
         },
         {
           "name": "image-upscale-strong",
           "icon": "image-upscale",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
-          "heading": "Frame grows from a small original, led by a corner arrow",
-          "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "heading": "Image upscale",
+          "description": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "label": "Image upscale",
-          "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "intent": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1,
-          "rest": 63,
+          "active": 0.66,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.04,
-            0.16,
-            0.4,
-            0.62,
-            0.72,
-            0.8,
-            1
+            0.132,
+            0.264,
+            0.396,
+            0.528,
+            0.66
           ],
-          "layers": 13,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4206,34 +4042,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7500b096be496674feafa830477daf316abfe52c19d8424278e55f8aa94e56c6",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-            "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-            "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-            "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-            "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-          },
-          "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-upscale-original"
-            },
-            {
-              "type": "monotonic",
-              "part": "image-upscale-frame",
-              "measure": "width"
-            },
-            {
-              "type": "rigid",
-              "part": "image-upscale-arrow"
-            }
-          ],
+          "nativeSha256": "16c66570fb22d8dc8f471dd59ef493926dce76006d99196cd961cbc62f6a05db",
+          "sourceSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+          "planSha256": "ea8f92b94ccbce02a215a6bbc368bac6c49c2e07df2c40474e491c8a8931678f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
+          "constraints": [],
           "category": "Creation and multimodal",
-          "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
+          "definitionsSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4259,21 +4075,19 @@
             "name": "image-upscale-reset-strong",
             "icon": "image-upscale",
             "motionId": "strong",
+            "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
-            "heading": "Frame grows from a small original, led by a corner arrow",
-            "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+            "heading": "Image upscale",
+            "description": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
             "label": "Image upscale",
-            "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+            "intent": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -4284,12 +4098,12 @@
             "keyPoses": [
               0,
               0.06,
-              0.1,
-              0.14,
-              0.22,
+              0.12,
+              0.18,
+              0.24,
               0.3
             ],
-            "layers": 13,
+            "layers": 14,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -4299,34 +4113,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "d1336328707b13998bfaaf130c93f5bb54608349b09354a7d9e30ab1b04bad60",
-            "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-            "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-            "authoringSources": {
-              "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-              "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-              "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-              "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-              "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-            },
-            "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "image-upscale-original"
-              },
-              {
-                "type": "monotonic",
-                "part": "image-upscale-frame",
-                "measure": "width"
-              },
-              {
-                "type": "rigid",
-                "part": "image-upscale-arrow"
-              }
-            ],
+            "nativeSha256": "36d331ea123c1fd33787c301a7fcb8dde0378e80da62edd1fbce61ea418a231c",
+            "sourceSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+            "planSha256": "ea8f92b94ccbce02a215a6bbc368bac6c49c2e07df2c40474e491c8a8931678f",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
+            "constraints": [],
             "category": "Creation and multimodal",
-            "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
+            "definitionsSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -4348,11 +4142,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 11281,
-            "sha256": "86e5baca8f749591a2e342eabe3683d8da28385e69e8cf9ac991e871df648bd0"
+            "bytes": 7180,
+            "sha256": "2e5b95ebd5f12162ac52a48462138898a25f99ab89c1d0d2f040a095c1c924f9"
           },
-          "bytes": 11278,
-          "sha256": "85dd72b3fcfedb6180d78b917192724b885ecdc6c96432c356f72d3a39948857"
+          "bytes": 7177,
+          "sha256": "8874bd4f835f8c12de2c0203e15a13737e5a1ff2e784f06bba892f1314cc02d9"
         }
       ],
       "animations": [
@@ -4360,37 +4154,35 @@
           "name": "image-upscale",
           "icon": "image-upscale",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
-          "heading": "Frame grows from a small original, led by a corner arrow",
-          "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "heading": "Image upscale",
+          "description": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "label": "Image upscale",
-          "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "intent": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.45,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.04,
-            0.2,
-            0.36,
-            0.52,
-            0.6
+            0.09000000000000001,
+            0.18000000000000002,
+            0.27,
+            0.36000000000000004,
+            0.45
           ],
-          "layers": 13,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4400,34 +4192,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5231b68a76cbf8aaaa8093907ffb15043b8ce670628dbefba6b58c52431974e2",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-            "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-            "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-            "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-            "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-          },
-          "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-upscale-original"
-            },
-            {
-              "type": "monotonic",
-              "part": "image-upscale-frame",
-              "measure": "width"
-            },
-            {
-              "type": "rigid",
-              "part": "image-upscale-arrow"
-            }
-          ],
+          "nativeSha256": "cc8010c021558392b4dc67b871fe3380ae5b1f4e106028ae8e0b000656061091",
+          "sourceSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+          "planSha256": "ea8f92b94ccbce02a215a6bbc368bac6c49c2e07df2c40474e491c8a8931678f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
+          "constraints": [],
           "category": "Creation and multimodal",
-          "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
+          "definitionsSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4449,28 +4221,26 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11275,
-          "sha256": "d1532b1d928bd16be3348bd7bd5cae3ec88a9b93362cfc586e63036810179410"
+          "bytes": 7174,
+          "sha256": "9a836b6fe2434ae4b0ee1735d9015febe007417b8c04f32b84cb8f831d97eb65"
         },
         {
           "name": "image-upscale-reset",
           "icon": "image-upscale",
           "motionId": "light",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
-          "heading": "Frame grows from a small original, led by a corner arrow",
-          "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "heading": "Image upscale",
+          "description": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "label": "Image upscale",
-          "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "intent": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -4480,13 +4250,13 @@
           "rest": 20,
           "keyPoses": [
             0,
-            0.06,
-            0.1,
-            0.14,
-            0.2,
+            0.05600000000000001,
+            0.11200000000000002,
+            0.168,
+            0.22400000000000003,
             0.28
           ],
-          "layers": 13,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4496,34 +4266,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "0a1359e628d0513645ae216472dc9bc06a8852fd7d4e963212a7a0fe9a7f1acc",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-            "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-            "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-            "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-            "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-          },
-          "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-upscale-original"
-            },
-            {
-              "type": "monotonic",
-              "part": "image-upscale-frame",
-              "measure": "width"
-            },
-            {
-              "type": "rigid",
-              "part": "image-upscale-arrow"
-            }
-          ],
+          "nativeSha256": "76a339839dc7d94451ed5ea620e715e4799750be817211db3db4518cc42f17ab",
+          "sourceSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+          "planSha256": "ea8f92b94ccbce02a215a6bbc368bac6c49c2e07df2c40474e491c8a8931678f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
+          "constraints": [],
           "category": "Creation and multimodal",
-          "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
+          "definitionsSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4545,46 +4295,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11277,
-          "sha256": "d8c4b18e74bc0d79767d60e1af870ca6c824ee53da54a34bdac58f0e0066e1f8"
+          "bytes": 7176,
+          "sha256": "c227a37e5d17f29db7c1cef930e5879c6c1830acd0a62573304a239b4436b4a6"
         },
         {
           "name": "image-upscale-strong",
           "icon": "image-upscale",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
-          "heading": "Frame grows from a small original, led by a corner arrow",
-          "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "heading": "Image upscale",
+          "description": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "label": "Image upscale",
-          "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "intent": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1,
-          "rest": 63,
+          "active": 0.66,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.04,
-            0.16,
-            0.4,
-            0.62,
-            0.72,
-            0.8,
-            1
+            0.132,
+            0.264,
+            0.396,
+            0.528,
+            0.66
           ],
-          "layers": 13,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4594,34 +4340,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7500b096be496674feafa830477daf316abfe52c19d8424278e55f8aa94e56c6",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-            "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-            "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-            "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-            "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-          },
-          "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-upscale-original"
-            },
-            {
-              "type": "monotonic",
-              "part": "image-upscale-frame",
-              "measure": "width"
-            },
-            {
-              "type": "rigid",
-              "part": "image-upscale-arrow"
-            }
-          ],
+          "nativeSha256": "16c66570fb22d8dc8f471dd59ef493926dce76006d99196cd961cbc62f6a05db",
+          "sourceSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+          "planSha256": "ea8f92b94ccbce02a215a6bbc368bac6c49c2e07df2c40474e491c8a8931678f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
+          "constraints": [],
           "category": "Creation and multimodal",
-          "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
+          "definitionsSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4643,28 +4369,26 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11278,
-          "sha256": "85dd72b3fcfedb6180d78b917192724b885ecdc6c96432c356f72d3a39948857"
+          "bytes": 7177,
+          "sha256": "8874bd4f835f8c12de2c0203e15a13737e5a1ff2e784f06bba892f1314cc02d9"
         },
         {
           "name": "image-upscale-reset-strong",
           "icon": "image-upscale",
           "motionId": "strong",
+          "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
-          "heading": "Frame grows from a small original, led by a corner arrow",
-          "description": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "heading": "Image upscale",
+          "description": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "label": "Image upscale",
-          "intent": "A small original stays anchored bottom-left while a larger frame grows from it toward the upper-right; a drag arrow outside the corner leads the growth.",
+          "intent": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -4675,12 +4399,12 @@
           "keyPoses": [
             0,
             0.06,
-            0.1,
-            0.14,
-            0.22,
+            0.12,
+            0.18,
+            0.24,
             0.3
           ],
-          "layers": 13,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4690,34 +4414,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "d1336328707b13998bfaaf130c93f5bb54608349b09354a7d9e30ab1b04bad60",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "a7b2948a8b444f4c29eddc83bc75934eb413cabced48cb6061e5e8c035d9450c",
-            "batches/02.mjs": "de12277286d1b5e81f5da5ecd8789e0d927756b58bac6168fc3731f5f780e449",
-            "batches/03.mjs": "fd3bfe50d5c46d8ea27dc9c07058370f9f3b01c652df6c8d5cb786ce7c886202",
-            "batches/04.mjs": "6081b33fc6c17281ec5b2102f2b4e3330f9a7b3c42b7cd5e1c86cd6c69a5a99d",
-            "batches/first.mjs": "6e42afaf4604c943bc1f7c9e209356bfa959063f7cf732312b56d86565796ca7"
-          },
-          "brief": "Light: frame grows 9->17 from the bottom-left origin (.04-.52); the rigid arrow translates with the corner, offset 2.25 diagonally outside it. Strong: the arrow takes up tension and leads one continuous frame expansion to the shared final size. Authored curves define timing. Fixed: original square. Moving: frame (size only, fixed topology), arrow (one stroked path, shaft + retraced head, rigid translation). Clearance: arrow base cap to frame corner arc 4.26 (Bold 1.76), 1.05 at the deepest pull-back; arrow never approaches the original. Solid: ring frame plus filled original, original edges inside the ring buried. Bold painted extents x 3.75..28.75, y 3.25..28.25.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-upscale-original"
-            },
-            {
-              "type": "monotonic",
-              "part": "image-upscale-frame",
-              "measure": "width"
-            },
-            {
-              "type": "rigid",
-              "part": "image-upscale-arrow"
-            }
-          ],
+          "nativeSha256": "36d331ea123c1fd33787c301a7fcb8dde0378e80da62edd1fbce61ea418a231c",
+          "sourceSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+          "planSha256": "ea8f92b94ccbce02a215a6bbc368bac6c49c2e07df2c40474e491c8a8931678f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The corner handle drags the image up to a larger size. Light: the drag arrow shoots out to the upper right and settles, and the frame stretches after it from the small original, overshoots a little and settles. Strong: the arrow tugs in toward the image first, then yanks out further, and the frame follows with a bigger overshoot and two settling swings. The original stays anchored bottom-left. Ends with the large frame, as in v1.",
+          "constraints": [],
           "category": "Creation and multimodal",
-          "definitionsSha256": "5a1cc538dd02349527d2ba86c78dda5d970ef8f0585cb1fbc5037f4f19ddef90",
+          "definitionsSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4739,12 +4443,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11281,
-          "sha256": "86e5baca8f749591a2e342eabe3683d8da28385e69e8cf9ac991e871df648bd0"
+          "bytes": 7180,
+          "sha256": "2e5b95ebd5f12162ac52a48462138898a25f99ab89c1d0d2f040a095c1c924f9"
         }
       ],
-      "bytes": 11275,
-      "sha256": "d1532b1d928bd16be3348bd7bd5cae3ec88a9b93362cfc586e63036810179410"
+      "bytes": 7174,
+      "sha256": "9a836b6fe2434ae4b0ee1735d9015febe007417b8c04f32b84cb8f831d97eb65"
     },
     {
       "name": "style-transfer",

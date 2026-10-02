@@ -1,0 +1,184 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "upload",
+  "label": "Upload",
+  "intent": "The file goes up. Light: the arrow sinks to load, then launches up out of the tray; the tray recoils under the push, rebounds and settles, and the arrow overshoots and settles 2.2 units higher, where it stays. Strong: a deeper load, a harder launch that settles in two beats, and a bigger recoil that rebounds twice. The preview reset fades it back to the prepared pose.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "parts": {
+    "tray": {
+      "shape": {
+        "path": "M5.5 20.5 L5.5 23.5 C5.5 25.16 6.84 26.5 8.5 26.5 L23.5 26.5 C25.16 26.5 26.5 25.16 26.5 23.5 L26.5 20.5"
+      },
+      "solid": {
+        "path": "M4.3 20.5 C4.3 18.9 6.7 18.9 6.7 20.5 L6.7 23.5 C6.7 24.49 7.51 25.3 8.5 25.3 L23.5 25.3 C24.49 25.3 25.3 24.49 25.3 23.5 L25.3 20.5 C25.3 18.9 27.7 18.9 27.7 20.5 L27.7 23.5 C27.7 25.82 25.82 27.7 23.5 27.7 L8.5 27.7 C6.18 27.7 4.3 25.82 4.3 23.5 L4.3 20.5 Z"
+      }
+    },
+    "shaft": {
+      "shape": {
+        "line": [
+          [
+            16,
+            19
+          ],
+          [
+            16,
+            8.5
+          ]
+        ]
+      },
+      "solid": {
+        "path": "M14.7 19 L14.7 9.6 C14.7 8.882 15.282 8.3 16 8.3 L16 8.3 C16.718 8.3 17.3 8.882 17.3 9.6 L17.3 19 C17.3 19.718 16.718 20.3 16 20.3 L16 20.3 C15.282 20.3 14.7 19.718 14.7 19 Z"
+      }
+    },
+    "head": {
+      "shape": {
+        "polyline": [
+          [
+            11.2,
+            13.3
+          ],
+          [
+            16,
+            8.5
+          ],
+          [
+            20.8,
+            13.3
+          ]
+        ]
+      },
+      "solid": {
+        "path": "M11.31 13.88 C10.97 13.56 10.957 13.228 11.272 12.883 L15.528 8.217 C15.843 7.872 16.157 7.872 16.472 8.217 L20.728 12.883 C21.043 13.228 21.03 13.56 20.69 13.88 L20.01 14.52 C19.67 14.84 19.344 14.826 19.032 14.479 L16.468 11.621 C16.156 11.274 15.844 11.274 15.532 11.621 L12.968 14.479 C12.656 14.826 12.33 14.84 11.99 14.52 L11.31 13.88 Z"
+      }
+    }
+  },
+  "rigs": {
+    "arrow": {
+      "pivot": [
+        16,
+        13.75
+      ],
+      "carries": [
+        "shaft",
+        "head"
+      ]
+    }
+  },
+  "motion": {
+    "arrow.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0.9,
+          "out"
+        ],
+        [
+          0.2,
+          -3.1,
+          "out"
+        ],
+        [
+          0.28,
+          -1.95
+        ],
+        [
+          0.35,
+          -2.2
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          1.4,
+          "out"
+        ],
+        [
+          0.27,
+          -3.6,
+          "out"
+        ],
+        [
+          0.37,
+          -1.7
+        ],
+        [
+          0.46,
+          -2.4
+        ],
+        [
+          0.56,
+          -2.2
+        ]
+      ]
+    },
+    "tray.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.13,
+          1.2,
+          "out"
+        ],
+        [
+          0.21,
+          -0.3
+        ],
+        [
+          0.28,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          0.3
+        ],
+        [
+          0.17,
+          1.8,
+          "out"
+        ],
+        [
+          0.26,
+          -0.5
+        ],
+        [
+          0.34,
+          0.2
+        ],
+        [
+          0.41,
+          0
+        ]
+      ]
+    }
+  }
+}

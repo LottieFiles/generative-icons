@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "battery",
+  "label": "Battery",
+  "intent": "Power arrives and the battery charges. Light: a bolt strikes down into the empty cell, then the level sweeps across it to the retained charge in one decisive fill and the bolt is absorbed. Strong: a harder strike, then the level climbs in three ticks, each smaller, and holds. The level never overshoots; the shell and terminal never move.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "terminal": {"shape": {"line": [[28, 14], [28, 18]]}},
+    "charge":   {"//": "the level: one rect whose right edge travels; left edge fixed at x 8",
+                 "shape": {"morph": [{"rect": [8, 13, 4, 6], "r": 1}, {"rect": [8, 13, 12, 6], "r": 1}], "by": "level"},
+                 "role": "fill"},
+    "bolt":     {"//": "hidden at rest: the power that arrives; the level fill swallows it",
+                 "shape": {"polygon": [[18.2, 12.6], [14.2, 16.7], [16.3, 16.7], [14.8, 19.4], [18.8, 15.3], [16.7, 15.3]], "r": 0.25},
+                 "role": "fill", "hidden": true},
+    "shell":    {"shape": {"rect": [5, 10, 20, 12], "r": 2.2}, "role": "surface",
+                 "solid": {"path": "M7.2 10 L22.8 10 C24.014 10 25 10.986 25 12.2 L25 19.8 C25 21.014 24.014 22 22.8 22 L7.2 22 C5.986 22 5 21.014 5 19.8 L5 12.2 C5 10.986 5.986 10 7.2 10 L7.2 10 L8.3 12.4 C7.803 12.4 7.4 12.803 7.4 13.3 L7.4 18.7 C7.4 19.197 7.803 19.6 8.3 19.6 L21.7 19.6 C22.197 19.6 22.6 19.197 22.6 18.7 L22.6 13.3 C22.6 12.803 22.197 12.4 21.7 12.4 L8.3 12.4 L7.2 10 Z"},
+                 "//": "v1 Solid: the shell filled with the cell left open, one bridged subpath"}
+  },
+  "motion": {
+    "bolt.opacity": {
+      "light":  [[0, 0], [0.05, 1, "out"], [0.3, 1], [0.36, 0]],
+      "strong": [[0, 0], [0.05, 1, "out"], [0.5, 1], [0.58, 0]]
+    },
+    "bolt.y": {
+      "light":  [[0, 0], [0.01, -2, "step"], [0.1, 0, "hit"]],
+      "strong": [[0, 0], [0.01, -3, "step"], [0.11, 0, "hit"], [0.15, -0.5], [0.2, 0, "hit"]]
+    },
+    "level": {
+      "light":  [[0, 0], [0.1, 0], [0.4, 1, "out"]],
+      "strong": [[0, 0], [0.16, 0], [0.28, 0.45, "hit"], [0.34, 0.45], [0.45, 0.78, "hit"], [0.51, 0.78], [0.6, 1, "hit"]]
+    }
+  }
+}

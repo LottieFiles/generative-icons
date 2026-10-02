@@ -1,0 +1,46 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "background-run",
+  "label": "Background run",
+  "intent": "The task is sent to the background and keeps running there. Light: the front pane steps aside down-left, overshoots a little and settles, and a beat later the progress knob in the back pane runs the length of its track and stops at the end. Strong: the front pane is nudged back first, then pushed further aside and settles in two beats; the knob runs faster and pops as it reaches the end. The back pane's edges stay cut exactly where the front pane covers them. The reset slides the panes back opaque and fades the knob back to its start, as in v1.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "back":   {"//": "the back pane's frame, cut where the front pane covers it; the cut follows the front pane through the morph",
+               "shape": {"morph": [
+                 {"path": "M11 13 L11 5.5 C11 4.4 11.9 3.5 13 3.5 L25 3.5 C26.1 3.5 27 4.4 27 5.5 L27 15.5 C27 16.6 26.1 17.5 25 17.5 L21.5 17.5"},
+                 {"path": "M11 14.75 L11 5.5 C11 4.4 11.9 3.5 13 3.5 L25 3.5 C26.1 3.5 27 4.4 27 5.5 L27 15.5 C27 16.6 26.1 17.5 25 17.5 L20 17.5"}
+               ], "by": "aside"}},
+    "front":  {"shape": {"rect": [5.5, 13, 16, 12.5], "r": 2}, "role": "surface", "solid": "fill"},
+    "track":  {"shape": {"line": [[15.5, 8.2], [22.5, 8.2]]}},
+    "runner": {"shape": {"circle": [[15.5, 8.2], 1.8]}, "role": "fill"}
+  },
+  "motion": {
+    "//": "v1's end state: the front pane 1.5 left and 1.75 down, the knob 7 along. The pane's y and the back pane's cut follow its x exactly (1.75 / 1.5 and 1 / 1.5), overshoot and wind-up included.",
+    "front.x": {
+      "light":  [[0, 0], [0.2, -1.85, "out"], [0.3, -1.38, "inOut"], [0.38, -1.5, "inOut"]],
+      "strong": [[0, 0], [0.08, 0.4, "out"], [0.12, 0.4], [0.3, -2.05, "out"], [0.4, -1.3, "inOut"], [0.48, -1.6, "inOut"], [0.56, -1.5, "inOut"]]
+    },
+    "front.y": {"follow": "front.x", "scale": -1.1666667},
+    "aside":   {"follow": "front.x", "scale": -0.6666667},
+    "runner.x": {
+      "light":  [[0, 0], [0.1, 0], [0.48, 7, "hit"]],
+      "strong": [[0, 0], [0.16, 0], [0.46, 7, "hit"]]
+    },
+    "runner.scale": {
+      "//": "Strong only: the knob pops as it reaches the end of the run",
+      "strong": [[0, 1], [0.46, 1], [0.51, 1.35, "out"], [0.59, 0.92], [0.66, 1]]
+    }
+  },
+  "reverse": {
+    "//": "v1's reset keeps both panes opaque and slides the front pane back; only the knob fades back to its start",
+    "light":  {
+      "front.opacity": [[0, 1], [0.25, 1]], "back.opacity": [[0, 1], [0.25, 1]],
+      "front.x": [[0, -1.5], [0.25, 0, "inOut"]], "front.y": [[0, 1.75], [0.25, 0, "inOut"]], "aside": [[0, 1], [0.25, 0, "inOut"]]
+    },
+    "strong": {
+      "front.opacity": [[0, 1], [0.25, 1]], "back.opacity": [[0, 1], [0.25, 1]],
+      "front.x": [[0, -1.5], [0.25, 0, "inOut"]], "front.y": [[0, 1.75], [0.25, 0, "inOut"]], "aside": [[0, 1], [0.25, 0, "inOut"]]
+    }
+  }
+}

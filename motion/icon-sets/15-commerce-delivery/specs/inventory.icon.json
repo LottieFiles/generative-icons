@@ -1,0 +1,58 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "inventory",
+  "label": "Inventory",
+  "intent": "A parcel is put away onto the next stack. Light: the top parcel hops across in one arc and lands square on the right-hand box with a hit; the box under it takes the weight, dips with it and springs back, and the left box lifts a little as it is unloaded. Strong: the parcel crouches into the left box, is tossed higher with a tilt, slaps down flat, and the right stack takes a deeper dip that rebounds twice. Every box stays rigid; the parcel holds in the right column. The reverse hops it back and the left box takes the landing.",
+  "state": {"from": "left-column", "to": "right-column", "labels": ["Move right", "Move back"], "reverse": "auto"},
+  "parts": {
+    "box-left":       {"shape": {"rect": [5, 19, 9, 8], "r": 1}, "role": "surface"},
+    "box-left-tape":  {"shape": {"line": [[9.5, 19], [9.5, 27]]}, "solid": "none"},
+    "box-right":      {"shape": {"rect": [18, 19, 9, 8], "r": 1}, "role": "surface"},
+    "box-right-tape": {"shape": {"line": [[22.5, 19], [22.5, 27]]}, "solid": "none"},
+    "parcel":         {"shape": {"rect": [5, 7.5, 9, 8], "r": 1}, "role": "surface"},
+    "parcel-tape":    {"shape": {"line": [[9.5, 7.5], [9.5, 15.5]]}, "solid": "none"}
+  },
+  "rigs": {
+    "parcel":    {"pivot": [9.5, 11.5], "carries": ["parcel", "parcel-tape"]},
+    "box-left":  {"carries": ["box-left", "box-left-tape"]},
+    "box-right": {"carries": ["box-right", "box-right-tape"]}
+  },
+  "motion": {
+    "parcel.x": {
+      "light":  [[0, 0], [0.04, 0], [0.34, 13, "inOut"]],
+      "strong": [[0, 0], [0.14, 0], [0.46, 13, "inOut"]]
+    },
+    "parcel.y": {
+      "light":  [[0, 0], [0.04, 0], [0.19, -3.2, "out"], [0.34, 0, "hit"], [0.39, 0.6, "out"], [0.47, -0.1, "inOut"], [0.54, 0, "inOut"]],
+      "strong": [[0, 0], [0.08, 0.6, "out"], [0.14, 0.6], [0.3, -3.8, "out"], [0.46, 0, "hit"], [0.52, 1, "out"], [0.61, -0.2, "inOut"], [0.69, 0.1, "inOut"], [0.76, 0, "inOut"]]
+    },
+    "parcel.rotate": {
+      "strong": [[0, 0], [0.14, 0], [0.3, 8, "out"], [0.46, 0, "hit"]]
+    },
+    "box-left.y": {
+      "light":  [[0, 0], [0.04, 0], [0.1, -0.4, "out"], [0.18, 0, "inOut"]],
+      "strong": [[0, 0], [0.08, 0.6, "out"], [0.14, 0.6], [0.2, -0.4, "out"], [0.28, 0.1, "inOut"], [0.34, 0, "inOut"]]
+    },
+    "box-right.y": {
+      "light":  [[0, 0], [0.34, 0], [0.39, 0.6, "out"], [0.47, -0.1, "inOut"], [0.54, 0, "inOut"]],
+      "strong": [[0, 0], [0.46, 0], [0.52, 1, "out"], [0.61, -0.2, "inOut"], [0.69, 0.1, "inOut"], [0.76, 0, "inOut"]]
+    }
+  },
+  "reverse": {
+    "//": "the hop back: the right box is unloaded and the left box takes the landing, so the reactions swap sides",
+    "light": {
+      "parcel.x":    [[0, 13], [0.04, 13], [0.34, 0, "inOut"]],
+      "parcel.y":    [[0, 0], [0.04, 0], [0.19, -3.2, "out"], [0.34, 0, "hit"], [0.39, 0.6, "out"], [0.47, -0.1, "inOut"], [0.54, 0, "inOut"]],
+      "box-right.y": [[0, 0], [0.04, 0], [0.1, -0.4, "out"], [0.18, 0, "inOut"]],
+      "box-left.y":  [[0, 0], [0.34, 0], [0.39, 0.6, "out"], [0.47, -0.1, "inOut"], [0.54, 0, "inOut"]]
+    },
+    "strong": {
+      "parcel.x":      [[0, 13], [0.14, 13], [0.46, 0, "inOut"]],
+      "parcel.y":      [[0, 0], [0.08, 0.6, "out"], [0.14, 0.6], [0.3, -3.8, "out"], [0.46, 0, "hit"], [0.52, 1, "out"], [0.61, -0.2, "inOut"], [0.69, 0.1, "inOut"], [0.76, 0, "inOut"]],
+      "parcel.rotate": [[0, 0], [0.14, 0], [0.3, -8, "out"], [0.46, 0, "hit"]],
+      "box-right.y":   [[0, 0], [0.08, 0.6, "out"], [0.14, 0.6], [0.2, -0.4, "out"], [0.28, 0.1, "inOut"], [0.34, 0, "inOut"]],
+      "box-left.y":    [[0, 0], [0.46, 0], [0.52, 1, "out"], [0.61, -0.2, "inOut"], [0.69, 0.1, "inOut"], [0.76, 0, "inOut"]]
+    }
+  }
+}

@@ -2,35 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 46,
-  "nativeTransformNodes": 362,
+  "nativeTransformNodes": 350,
   "nativeTransformMaxCoordinateError": 0.000010000000003174137,
   "checks": [
-    {
-      "name": "airplane",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "airplane-airframe"
-        }
-      ]
-    },
-    {
-      "name": "airplane-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "airplane-airframe"
-        }
-      ]
-    },
     {
       "name": "passport",
       "fixedParts": [],
@@ -651,6 +625,17 @@
           "type": "rigid",
           "part": "signpost-lower-board"
         }
+      ]
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "airplane",
+      "spec": "specs/airplane.icon.json",
+      "specSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
+      "actions": [
+        "airplane",
+        "airplane-strong"
       ]
     }
   ]

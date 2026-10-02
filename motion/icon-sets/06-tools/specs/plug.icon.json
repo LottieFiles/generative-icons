@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "plug",
+  "label": "Plug",
+  "intent": "The plug connects. Light: it draws back, then pushes home into its rest pose with a hit; impact ticks flash out from the top corners where the face meets the socket, the plug rebounds a little and seats, and the cable whips a beat behind and settles. Strong: a deeper draw-back, a harder push that knocks twice, two flashes of ticks, and a bigger cable whip.",
+  "parts": {
+    "body":    {"shape": {"path": "M9 12 L23 12 L23 16 C23 20 20 22 16 22 C12 22 9 20 9 16 L9 12 Z"}, "role": "surface", "solid": "fill"},
+    "prong-l": {"shape": {"line": [[12, 6], [12, 12]]}},
+    "prong-r": {"mirror": {"of": "prong-l"}},
+    "cable":   {"shape": {"morph": [{"path": "M16 22 C16 24 16 25.5 16 27"}, {"path": "M16 22 C16 23.8 16.5 25.6 17.5 26.7"}], "by": "whip"}},
+    "tick-l":  {"//": "hidden at rest: impact ticks exist only at the moment of contact",
+                "shape": [{"line": [[6.8, 10.7], [5.1, 9.7]]}, {"line": [[6.5, 12.6], [4.6, 12.9]]}], "hidden": true},
+    "tick-r":  {"mirror": {"of": "tick-l"}}
+  },
+  "rigs": {
+    "plug": {"pivot": [16, 17], "carries": ["body", "prong-l", "prong-r", "cable"]}
+  },
+  "motion": {
+    "plug.y": {
+      "light":  [[0, 0], [0.14, 1.65, "inOut"], [0.22, 0, "hit"], [0.28, 0.35], [0.35, 0]],
+      "strong": [[0, 0], [0.17, 2.1, "inOut"], [0.25, 0, "hit"], [0.31, 0.7], [0.37, 0, "hit"], [0.42, 0.22], [0.48, 0]]
+    },
+    "whip": {
+      "light":  [[0, 0], [0.12, 0], [0.22, -0.3], [0.3, 0.9, "out"], [0.4, -0.3], [0.48, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.25, -0.5], [0.33, 1.25, "out"], [0.43, -0.6], [0.52, 0.25], [0.6, 0]]
+    },
+    "tick-l.opacity": {
+      "light":  [[0, 0], [0.21, 0], [0.23, 1, "out"], [0.29, 1], [0.37, 0, "in"]],
+      "strong": [[0, 0], [0.24, 0], [0.26, 1, "out"], [0.31, 1], [0.35, 0, "in"], [0.36, 0], [0.38, 1, "out"], [0.42, 1], [0.49, 0, "in"]]
+    },
+    "tick-l.x": {
+      "light":  [[0, 0], [0.22, 0], [0.37, -0.8, "out"], [0.39, 0, "step"]],
+      "strong": [[0, 0], [0.25, 0], [0.35, -1.1, "out"], [0.36, 0, "step"], [0.49, -0.7, "out"], [0.51, 0, "step"]]
+    },
+    "tick-r.opacity": {"follow": "tick-l.opacity"},
+    "tick-r.x": {"follow": "tick-l.x", "scale": -1}
+  }
+}

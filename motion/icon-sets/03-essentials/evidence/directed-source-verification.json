@@ -2,25 +2,9 @@
   "result": "PASS",
   "icons": 5,
   "actions": 14,
-  "nativeTransformNodes": 10,
-  "nativeTransformMaxCoordinateError": 0.000011593418062005867,
+  "nativeTransformNodes": 0,
+  "nativeTransformMaxCoordinateError": 0,
   "checks": [
-    {
-      "name": "star",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "star-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
     {
       "name": "check",
       "fixedParts": [],
@@ -88,6 +72,17 @@
       "stateBoundaries": true,
       "hold": true,
       "designConstraints": []
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "star",
+      "spec": "specs/star.icon.json",
+      "specSha256": "a0bb09c9c0cca1709bc02fc1b302e4137c4d69714553d3f7ad9a7502f7f32722",
+      "actions": [
+        "star",
+        "star-strong"
+      ]
     }
   ]
 }

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "reasoning",
+  "label": "Reasoning",
+  "intent": "A thought works its way through the chain, step by step. Light: the thought hops out of the first node, arcs over and drops into the second with a hit, and the node takes it with a pop; a beat later it hops on and drops into the third, which pops too. Every visited node keeps its mark. Strong: the first node gathers and launches the thought, the hops are higher, and each node takes a harder pop and settles. The links never move.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "n1": {"shape": {"circle": [[9, 21.5], 3.75]}, "role": "surface", "solid": "ring"},
+    "n2": {"shape": {"circle": [[16, 9], 3.75]}, "role": "surface", "solid": "ring"},
+    "n3": {"shape": {"circle": [[23, 21.5], 3.75]}, "role": "surface", "solid": "ring"},
+    "k1": {"shape": {"line": [[10.832, 18.228], [14.168, 12.272]]}},
+    "k2": {"shape": {"line": [[17.832, 12.272], [21.168, 18.228]]}},
+    "d1": {"//": "the first node's mark; it stays", "shape": {"circle": [[9, 21.5], 1.6]}, "role": "fill"},
+    "t1": {"//": "the thought that stops at the second node", "shape": {"circle": [[9, 21.5], 1.6]}, "role": "fill"},
+    "t2": {"//": "the thought that goes on to the third node", "shape": {"circle": [[9, 21.5], 1.6]}, "role": "fill"}
+  },
+  "motion": {
+    "t1.x": {
+      "//": "hop 1 climbs the open left side first (y leads), then swings right into the second node with a hit",
+      "light":  [[0, 0], [0.02, 0], [0.2, 7, "hit"]],
+      "strong": [[0, 0], [0.1, 0], [0.31, 7, "hit"]]
+    },
+    "t1.y": {
+      "light":  [[0, 0], [0.02, 0], [0.2, -12.5, "out"]],
+      "strong": [[0, 0], [0.1, 0], [0.25, -14.3, "out"], [0.31, -12.5, "hit"]]
+    },
+    "t2.x": {
+      "//": "hop 2 swings out over the open right side first (x leads), then drops into the third node with a hit",
+      "light":  [[0, 0], [0.02, 0], [0.2, 7, "hit"], [0.25, 7], [0.42, 14, "out"]],
+      "strong": [[0, 0], [0.1, 0], [0.31, 7, "hit"], [0.39, 7], [0.53, 15.6, "out"], [0.6, 14, "hit"]]
+    },
+    "t2.y": {
+      "light":  [[0, 0], [0.02, 0], [0.2, -12.5, "out"], [0.25, -12.5], [0.42, 0, "hit"]],
+      "strong": [[0, 0], [0.1, 0], [0.25, -14.3, "out"], [0.31, -12.5, "hit"], [0.39, -12.5], [0.6, 0, "hit"]]
+    },
+    "n1.scale": {
+      "//": "Strong only: the first node gathers round the thought and launches it",
+      "strong": [[0, 1], [0.08, 0.88, "out"], [0.16, 1.1], [0.26, 0.98], [0.34, 1]]
+    },
+    "n2.scale": {
+      "light":  [[0, 1], [0.2, 1], [0.26, 1.18, "out"], [0.33, 0.96], [0.39, 1]],
+      "strong": [[0, 1], [0.31, 1], [0.37, 1.26, "out"], [0.45, 0.92], [0.53, 1.04], [0.6, 1]]
+    },
+    "n3.scale": {
+      "light":  [[0, 1], [0.42, 1], [0.48, 1.18, "out"], [0.55, 0.96], [0.6, 1]],
+      "strong": [[0, 1], [0.6, 1], [0.66, 1.26, "out"], [0.74, 0.92], [0.82, 1.04], [0.9, 1]]
+    }
+  },
+  "reverse": {
+    "//": "the preview reset fades only the travelling thoughts; the nodes' pops end at rest, so the nodes stay",
+    "light":  {"n2.opacity": [[0, 1], [0.25, 1]], "n3.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"n1.opacity": [[0, 1], [0.25, 1]], "n2.opacity": [[0, 1], [0.25, 1]], "n3.opacity": [[0, 1], [0.25, 1]]}
+  }
+}

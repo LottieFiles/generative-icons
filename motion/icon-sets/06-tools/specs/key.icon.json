@@ -1,0 +1,27 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "key",
+  "label": "Key",
+  "intent": "The key unlocks. Light: the rigid key pushes in along its shaft and seats with a dead stop, turns on its inserted tip and stops with a click, then turns back and withdraws, quicker and smaller than the action. Strong: a short draw-back before a harder push that bounces on seating, a wider turn that clicks and rebounds, then the same quick return. The key never bends.",
+  "parts": {
+    "shaft": {"shape": {"polyline": [[12.8, 14.3], [23, 24.5], [25.7, 21.8]]}},
+    "tooth": {"shape": {"line": [[19, 20.5], [21.7, 17.8]]}},
+    "bow":   {"shape": {"circle": [[9.5, 11], 4.7]}, "role": "surface", "solid": "ring"}
+  },
+  "rigs": {
+    "key":  {"//": "the push along the shaft (45 degrees down-right)", "carries": ["turn"]},
+    "turn": {"//": "the turn about the inserted tip", "pivot": [23, 24.5], "carries": ["shaft", "tooth", "bow"]}
+  },
+  "motion": {
+    "key.x": {
+      "light":  [[0, 0], [0.12, 1.6, "hit"], [0.36, 1.6], [0.48, 0]],
+      "strong": [[0, 0], [0.07, -0.6, "out"], [0.17, 1.9, "hit"], {"bounce": 0.23, "amp": 0.15}, [0.52, 1.9], [0.66, 0]]
+    },
+    "key.y": {"follow": "key.x"},
+    "turn.rotate": {
+      "light":  [[0, 0], [0.12, 0], [0.24, 15, "hit"], [0.3, 15], [0.4, 0]],
+      "strong": [[0, 0], [0.23, 0], [0.35, 21, "hit"], [0.4, 16.5], [0.45, 19], [0.5, 19], [0.62, 0]]
+    }
+  }
+}

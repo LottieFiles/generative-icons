@@ -1,0 +1,47 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "model-evaluation",
+  "label": "Model evaluation",
+  "intent": "The model is weighed. Light: a weight drops onto the left pan, the beam tips under it, swings back past level and settles level as the reading is taken and the weight fades. Strong: the model drops onto the left pan and the beam tips hard, then a reference weight drops onto the right pan and swings it back; the beam rocks in decaying beats to level and both weights fade. The pans hang plumb from the beam ends; the post and base never move.",
+  "parts": {
+    "post":         {"shape": {"line": [[16, 7], [16, 26]]}},
+    "base":         {"shape": {"line": [[11, 26], [21, 26]]}},
+    "beam":         {"shape": {"line": [[7.5, 7], [24.5, 7]]}},
+    "left-hanger":  {"shape": {"line": [[7.5, 7], [7.5, 15]]}},
+    "left-pan":     {"shape": {"path": "M4.25 15 L10.75 15 C10.75 21 4.25 21 4.25 15 Z"}, "role": "surface", "solid": "fill"},
+    "right-hanger": {"shape": {"line": [[24.5, 7], [24.5, 15]]}},
+    "right-pan":    {"shape": {"path": "M21.25 15 L27.75 15 C27.75 21 21.25 21 21.25 15 Z"}, "role": "surface", "solid": "fill"},
+    "token-l":      {"//": "hidden at rest: the load only exists while it is weighed", "shape": {"rect": [5.7, 10.6, 3.6, 3.6], "r": 0.9}, "role": "fill", "hidden": true},
+    "token-r":      {"mirror": {"of": "token-l"}}
+  },
+  "rigs": {
+    "beam":    {"pivot": [16, 7]},
+    "lpan":    {"carries": ["left-hanger", "left-pan", "token-l"]},
+    "rpan":    {"carries": ["right-hanger", "right-pan", "token-r"]},
+    "token-l": {"pivot": [7.5, 12.4]},
+    "token-r": {"pivot": [24.5, 12.4]}
+  },
+  "motion": {
+    "beam.rotate": {
+      "light":  [[0, 0], [0.14, 0], [0.24, -9, "out"], [0.35, 3], [0.44, -1], [0.52, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.25, -12, "out"], [0.4, -9.5], [0.5, 6, "out"], [0.6, -2.5], [0.68, 0.8], [0.76, 0]]
+    },
+    "lpan.y": {"//": "the left beam end drops 8.5 sin(-angle): plumb pans ride the ends", "follow": "beam.rotate", "scale": -0.1484},
+    "rpan.y": {"follow": "beam.rotate", "scale": 0.1484},
+    "token-l.y": {
+      "light":  [[0, 0], [0.017, -2.4, "step"], [0.14, 0, "in"]],
+      "strong": [[0, 0], [0.017, -2.4, "step"], [0.14, 0, "in"]]
+    },
+    "token-l.opacity": {
+      "light":  [[0, 0], [0.017, 0], [0.06, 1, "out"], [0.36, 1], [0.46, 0, "in"]],
+      "strong": [[0, 0], [0.017, 0], [0.06, 1, "out"], [0.62, 1], [0.74, 0, "in"]]
+    },
+    "token-r.y": {
+      "strong": [[0, 0], [0.26, 0], [0.27, -2.4, "step"], [0.4, 0, "in"]]
+    },
+    "token-r.opacity": {
+      "strong": [[0, 0], [0.27, 0], [0.31, 1, "out"], [0.62, 1], [0.74, 0, "in"]]
+    }
+  }
+}

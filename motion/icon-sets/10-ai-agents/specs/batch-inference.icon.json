@@ -1,0 +1,28 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "batch-inference",
+  "label": "Batch inference",
+  "intent": "The whole batch is submitted at once. Light: the three cards drive right as one block until the top and bottom cards strike the collector's arm tips, rebound and settle pushed in; the collector takes the impact a beat later and springs back. Strong: the batch winds back first, drives in harder and settles in two beats, and the collector is knocked further and settles in two beats. The cards stay pushed in.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "card-1":    {"shape": {"rect": [4.5, 5, 12, 5], "r": 2.5}, "role": "surface", "solid": "fill"},
+    "card-2":    {"shape": {"rect": [4.5, 13.5, 12, 5], "r": 2.5}, "role": "surface", "solid": "fill"},
+    "card-3":    {"shape": {"rect": [4.5, 22, 12, 5], "r": 2.5}, "role": "surface", "solid": "fill"},
+    "collector": {"shape": {"polyline": [[22.5, 6], [25.5, 6], [25.5, 26], [22.5, 26]], "r": 1}}
+  },
+  "rigs": {
+    "batch": {"carries": ["card-1", "card-2", "card-3"]}
+  },
+  "motion": {
+    "batch.x": {
+      "//": "at 3.4 the outer cards touch the arm tips at Bold: that contact is the hit",
+      "light":  [[0, 0], [0.18, 3.4, "hit"], [0.27, 2.3], [0.34, 2.55], [0.4, 2.5]],
+      "strong": [[0, 0], [0.12, -1.5, "out"], [0.18, -1.5], [0.3, 3.4, "hit"], [0.39, 2.05], [0.47, 2.65], [0.54, 2.45], [0.6, 2.5]]
+    },
+    "collector.x": {
+      "light":  [[0, 0], [0.18, 0], [0.24, 1, "out"], [0.33, -0.15], [0.4, 0]],
+      "strong": [[0, 0], [0.3, 0], [0.36, 1.6, "out"], [0.46, -0.35], [0.54, 0.1], [0.62, 0]]
+    }
+  }
+}

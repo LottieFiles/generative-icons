@@ -1,0 +1,289 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "star",
+  "label": "Star",
+  "intent": "The star is awarded and shines. Light: it gathers in, pops out with a rebound, and as it comes down from the pop five sparks flash out between its points and fade as they fly. Strong: a deeper gather with a counter-twist, then the star pops harder with a twist the other way, swings back through two decaying beats, and the sparks fly further.",
+  "parts": {
+    "body": {
+      "shape": {
+        "path": "M15.638 6.669 C15.879 6.156 16.121 6.156 16.362 6.669 L18.636 11.505 C18.877 12.018 19.279 12.309 19.841 12.38 L25.143 13.049 C25.705 13.12 25.78 13.349 25.366 13.737 L21.47 17.394 C21.057 17.782 20.904 18.254 21.01 18.811 L22.012 24.06 C22.119 24.616 21.923 24.758 21.427 24.485 L16.745 21.91 C16.248 21.637 15.752 21.637 15.255 21.91 L10.573 24.485 C10.077 24.758 9.881 24.616 9.988 24.06 L10.99 18.811 C11.096 18.254 10.943 17.782 10.53 17.394 L6.634 13.737 C6.22 13.349 6.295 13.12 6.857 13.049 L12.159 12.38 C12.721 12.309 13.123 12.018 13.364 11.505 L15.638 6.669 Z"
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M15.292 7.355 C15.764 6.252 16.236 6.252 16.708 7.355 L18.546 11.654 C18.769 12.175 19.162 12.461 19.727 12.512 L24.384 12.932 C25.579 13.04 25.725 13.488 24.821 14.278 L21.3 17.355 C20.874 17.728 20.723 18.19 20.849 18.743 L21.889 23.302 C22.156 24.472 21.774 24.749 20.744 24.133 L16.73 21.736 C16.243 21.445 15.757 21.445 15.27 21.736 L11.256 24.133 C10.226 24.749 9.844 24.472 10.111 23.302 L11.151 18.743 C11.277 18.19 11.126 17.728 10.7 17.355 L7.179 14.278 C6.275 13.488 6.421 13.04 7.616 12.932 L12.273 12.512 C12.838 12.461 13.231 12.175 13.454 11.654 L15.292 7.355 Z"
+      },
+      "//": "v1 Solid: an inset filled star"
+    },
+    "spark-a": {
+      "//": "hidden at rest: five sparks in the gaps between the points, only while the star shines",
+      "shape": {
+        "line": [
+          [
+            21.643,
+            8.633
+          ],
+          [
+            22.466,
+            7.501
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "spark-b": {
+      "shape": {
+        "line": [
+          [
+            25.13,
+            19.367
+          ],
+          [
+            26.462,
+            19.799
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "spark-c": {
+      "shape": {
+        "line": [
+          [
+            16,
+            26
+          ],
+          [
+            16,
+            27.4
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "spark-d": {
+      "mirror": {
+        "of": "spark-b"
+      }
+    },
+    "spark-e": {
+      "mirror": {
+        "of": "spark-a"
+      }
+    }
+  },
+  "rigs": {
+    "body": {
+      "//": "the star's centre",
+      "pivot": [
+        16,
+        16.4
+      ]
+    },
+    "sparks": {
+      "//": "the sparks fly outward from the star's centre",
+      "pivot": [
+        16,
+        16.4
+      ],
+      "carries": [
+        "spark-a",
+        "spark-b",
+        "spark-c",
+        "spark-d",
+        "spark-e"
+      ]
+    }
+  },
+  "motion": {
+    "body.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          0.86,
+          "out"
+        ],
+        [
+          0.18,
+          1.16,
+          "out"
+        ],
+        [
+          0.28,
+          0.96
+        ],
+        [
+          0.38,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.1,
+          0.8,
+          "out"
+        ],
+        [
+          0.27,
+          1.22,
+          "out"
+        ],
+        [
+          0.37,
+          0.93
+        ],
+        [
+          0.47,
+          1.04
+        ],
+        [
+          0.56,
+          1
+        ]
+      ]
+    },
+    "body.rotate": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -10,
+          "out"
+        ],
+        [
+          0.27,
+          16,
+          "out"
+        ],
+        [
+          0.37,
+          -6
+        ],
+        [
+          0.47,
+          2
+        ],
+        [
+          0.56,
+          0
+        ]
+      ]
+    },
+    "spark-a.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          0
+        ],
+        [
+          0.2,
+          1,
+          "out"
+        ],
+        [
+          0.3,
+          1
+        ],
+        [
+          0.4,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.28,
+          0
+        ],
+        [
+          0.3,
+          1,
+          "out"
+        ],
+        [
+          0.42,
+          1
+        ],
+        [
+          0.54,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "spark-b.opacity": {
+      "follow": "spark-a.opacity"
+    },
+    "spark-c.opacity": {
+      "follow": "spark-a.opacity"
+    },
+    "spark-d.opacity": {
+      "follow": "spark-a.opacity"
+    },
+    "spark-e.opacity": {
+      "follow": "spark-a.opacity"
+    },
+    "sparks.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          0.4,
+          1.12,
+          "out"
+        ],
+        [
+          0.42,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.28,
+          1
+        ],
+        [
+          0.54,
+          1.16,
+          "out"
+        ],
+        [
+          0.56,
+          1,
+          "step"
+        ]
+      ],
+      "//": "the bottom spark must stay 1.4 inside the canvas at Bold: 16.4 + 11 x 1.16 + 1.25 = 30.4"
+    }
+  }
+}

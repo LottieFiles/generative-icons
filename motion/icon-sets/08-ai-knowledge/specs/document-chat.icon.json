@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "document-chat",
+  "label": "Document chat",
+  "intent": "The document types its answer. Light: the cursor dot on the last line hops once like a typing indicator, and the reply line types out from it. Strong: the cursor hops twice, the reply types out in two words, and the finished line drops into place with a small kick and settles. The bubble and the first two lines never move. Ends with the reply line written.",
+  "parts": {
+    "bubble": {
+      "shape": {"path": "M10 5 L22 5 C23.66 5 25 6.34 25 8 L25 21 C25 22.66 23.66 24 22 24 L15.2 24 C14.6 24 14.2 24.2 13.9 24.6 L11.5 27.2 C11 27.7 10.5 27.5 10.5 26.8 L10.5 24 L10 24 C8.34 24 7 22.66 7 21 L7 8 C7 6.34 8.34 5 10 5 Z"},
+      "role": "surface", "solid": "fill",
+      "knockout": [{"part": "text1", "gap": 0}, {"part": "text2", "gap": 0}, {"part": "ink", "gap": 0}]
+    },
+    "text1": {"shape": {"line": [[11, 11], [21, 11]]}},
+    "text2": {"shape": {"line": [[11, 15], [18, 15]]}},
+    "ink":   {"//": "the reply line: a dot (the cursor) in the prepared state, written out in the result", "shape": {"morph": [{"line": [[11, 19], [11, 19]]}, {"line": [[11, 19], [18.5, 19]]}], "by": "reply"}}
+  },
+  "rigs": {
+    "ink": {"//": "the cursor hops on its line; the bubble stays still so the fade reset touches only the reply", "pivot": [11, 19]}
+  },
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "motion": {
+    "ink.y": {
+      "light":  [[0, 0], [0.07, -1.6, "out"], [0.14, 0, "hit"]],
+      "strong": [[0, 0], [0.07, -1.8, "out"], [0.14, 0, "hit"], [0.2, -1.2, "out"], [0.26, 0, "hit"], [0.47, 0], [0.52, 0.8, "out"], [0.59, -0.25], [0.65, 0]]
+    },
+    "reply": {
+      "light":  [[0, 0], [0.14, 0], [0.34, 1, "out"]],
+      "strong": [[0, 0], [0.26, 0], [0.34, 0.5, "out"], [0.4, 0.5], [0.47, 1, "hit"]]
+    }
+  }
+}

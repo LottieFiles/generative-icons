@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "ai-assistant",
+  "label": "AI assistant",
+  "intent": "The assistant thinks, then replies. Light: the orbit whips one turn round the core and comes to rest; as it lands the core flashes bigger (the answer forms) and the speech bubble swells once a beat later as the reply goes out, then both settle. Strong: the orbit winds back before the turn, overshoots its stop and settles; the core flashes harder and the bubble swells further with a second, smaller swing.",
+  "parts": {
+    "body": {
+      "shape": {"path": "M11 5 L21 5 C24.314 5 27 7.686 27 11 L27 17 C27 20.314 24.314 23 21 23 L13.2 23 L8.9 26.7 C8 27.5 6.6 26.9 6.6 25.7 L6.6 22.4 C5.6 21.6 5 20.4 5 19 L5 11 C5 7.686 7.686 5 11 5 Z"},
+      "role": "surface",
+      "solid": {"path": "M11 5 L21 5 C24.314 5 27 7.686 27 11 L27 17 C27 20.314 24.314 23 21 23 L13.2 23 L8.9 26.7 C8 27.5 6.6 26.9 6.6 25.7 L6.6 22.4 C5.6 21.6 5 20.4 5 19 L5 11 C5 7.686 7.686 5 11 5 L11 5 L16 7.7 C12.521 7.7 9.7 10.521 9.7 14 C9.7 17.479 12.521 20.3 16 20.3 C19.479 20.3 22.3 17.479 22.3 14 C22.3 10.521 19.479 7.7 16 7.7 L11 5 Z"},
+      "//": "v1 Solid: the bubble filled with a round window for the orbit and core, one bridged subpath"
+    },
+    "orbit": {
+      "shape": {"arc": [[16, 14], 4.2, -60, 240]},
+      "solid": {"path": "M18.6 9.497 C20.638 10.673 21.632 13.073 21.023 15.346 C20.414 17.619 18.354 19.2 16 19.2 C13.646 19.2 11.586 17.619 10.977 15.346 C10.368 13.073 11.362 10.673 13.4 9.497 C13.974 9.165 14.708 9.362 15.039 9.936 C15.371 10.51 15.174 11.244 14.6 11.575 C13.502 12.209 12.967 13.501 13.295 14.725 C13.623 15.949 14.733 16.8 16 16.8 C17.267 16.8 18.377 15.949 18.705 14.725 C19.033 13.501 18.498 12.209 17.4 11.575 C16.826 11.244 16.629 10.51 16.961 9.936 C17.292 9.362 18.026 9.165 18.6 9.497 Z"},
+      "//": "v1 Solid draws the orbit at r 4 and width 2.4: that stroke's outline, with round caps, as a fill"
+    },
+    "core": {"shape": {"circle": [[16, 14], 1.3]}, "role": "fill"}
+  },
+  "rigs": {
+    "orbit": {"pivot": [16, 14]},
+    "core":  {"pivot": [16, 14]},
+    "body":  {"//": "swells about the window centre, so the orbit and core stay centred in it", "pivot": [16, 14]}
+  },
+  "motion": {
+    "orbit.rotate": {
+      "//": "a whole turn; once it has stopped, the angle steps from 360 back to 0 (the same picture) so the rest frame is exactly the first",
+      "light":  [[0, 0], [0.28, 368, "out"], [0.38, 360], [0.4, 0, "step"]],
+      "strong": [[0, 0], [0.1, -25, "out"], [0.4, 380, "out"], [0.5, 354], [0.6, 361], [0.68, 360], [0.7, 0, "step"]]
+    },
+    "core.scale": {
+      "light":  [[0, 1], [0.22, 1], [0.29, 1.65, "out"], [0.37, 0.88], [0.45, 1]],
+      "strong": [[0, 1], [0.34, 1], [0.41, 1.72, "out"], [0.5, 0.82], [0.58, 1.08], [0.66, 1]]
+    },
+    "body.scale": {
+      "light":  [[0, 1], [0.28, 1], [0.35, 1.07, "out"], [0.44, 0.985], [0.52, 1]],
+      "strong": [[0, 1], [0.41, 1], [0.48, 1.1, "out"], [0.57, 0.97], [0.66, 1.025], [0.76, 1]]
+    }
+  }
+}

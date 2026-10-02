@@ -11,38 +11,35 @@
       "name": "airplane",
       "icon": "airplane",
       "motionId": "light",
-      "revision": "travel-v1-claude-supervised",
+      "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Airplane",
-      "description": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+      "description": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
       "label": "Airplane",
-      "intent": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+      "intent": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.78,
-      "rest": 50,
+      "active": 0.52,
+      "rest": 34,
       "keyPoses": [
         0,
-        0.15600000000000003,
-        0.31200000000000006,
-        0.46799999999999997,
-        0.6240000000000001,
-        0.78
+        0.10400000000000001,
+        0.20800000000000002,
+        0.312,
+        0.41600000000000004,
+        0.52
       ],
-      "layers": 6,
+      "layers": 18,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -52,26 +49,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "bc34856d6b512b70c4f6a38761919fef14017d742bd2c1ca30c5d5600f84cb31",
-      "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-      "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-      "authoringSources": {
-        "set-config.json": "bacd2f06c02cba188eca2a7b931677f32e4bc053529ad7d9a7f19a36d516a7c9",
-        "batches/01.mjs": "0764a3da3fa3d803d74d51b462b12ad677a074693e71eca02cbe8949ae74274e",
-        "batches/02.mjs": "60984ca084a289625509962f36aa07af08309a3d50d3644ff2205d49b9ee88c2",
-        "batches/03.mjs": "10ea3830cd07b16d009d987213957764dabcd3d98fe8e2118c7d32ca6fdb8267",
-        "batches/04.mjs": "03cbff26f91cfb01fe6967ee3086b66d71b789d47ef05b19e3fd4740e1c0f213",
-        "batches/helpers.mjs": "9b0358f79b2d2a1241b9aee7897c0c2609b9170c273abb1ebd8cefe5bce6cdb2"
-      },
-      "brief": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "airplane-airframe"
-        }
-      ],
+      "nativeSha256": "8c7457b82d213119920028689b742df12d5eec81a4a27d23f66a920351224e69",
+      "sourceSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
+      "planSha256": "fce7fa7b0230ffdc60c98cdca725899b368905ce9aaaf5219664f678fb27f455",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
+      "constraints": [],
       "category": "Travel",
-      "definitionsSha256": "dfec92fb6d061fa2e54eeb02adf5c961bae4be30b3a20d3da5f71319bb4c963b",
+      "definitionsSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -98,38 +83,35 @@
           "name": "airplane",
           "icon": "airplane",
           "motionId": "light",
-          "revision": "travel-v1-claude-supervised",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Airplane",
-          "description": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+          "description": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
           "label": "Airplane",
-          "intent": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+          "intent": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.78,
-          "rest": 50,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.15600000000000003,
-            0.31200000000000006,
-            0.46799999999999997,
-            0.6240000000000001,
-            0.78
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 6,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -139,26 +121,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "bc34856d6b512b70c4f6a38761919fef14017d742bd2c1ca30c5d5600f84cb31",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "bacd2f06c02cba188eca2a7b931677f32e4bc053529ad7d9a7f19a36d516a7c9",
-            "batches/01.mjs": "0764a3da3fa3d803d74d51b462b12ad677a074693e71eca02cbe8949ae74274e",
-            "batches/02.mjs": "60984ca084a289625509962f36aa07af08309a3d50d3644ff2205d49b9ee88c2",
-            "batches/03.mjs": "10ea3830cd07b16d009d987213957764dabcd3d98fe8e2118c7d32ca6fdb8267",
-            "batches/04.mjs": "03cbff26f91cfb01fe6967ee3086b66d71b789d47ef05b19e3fd4740e1c0f213",
-            "batches/helpers.mjs": "9b0358f79b2d2a1241b9aee7897c0c2609b9170c273abb1ebd8cefe5bce6cdb2"
-          },
-          "brief": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "airplane-airframe"
-            }
-          ],
+          "nativeSha256": "8c7457b82d213119920028689b742df12d5eec81a4a27d23f66a920351224e69",
+          "sourceSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
+          "planSha256": "fce7fa7b0230ffdc60c98cdca725899b368905ce9aaaf5219664f678fb27f455",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
+          "constraints": [],
           "category": "Travel",
-          "definitionsSha256": "dfec92fb6d061fa2e54eeb02adf5c961bae4be30b3a20d3da5f71319bb4c963b",
+          "definitionsSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -180,45 +150,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5901,
-          "sha256": "c2cd04d5c7af31f30d2a05a9430b93ceca3c7fd177c3b4b5cea7b7f5917fd955"
+          "bytes": 4727,
+          "sha256": "99fb14574c99b5d0a447f50abd9c6a849113d4bd094340a51256860314794e9d"
         },
         {
           "name": "airplane-strong",
           "icon": "airplane",
           "motionId": "strong",
-          "revision": "travel-v1-claude-supervised",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Airplane",
-          "description": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+          "description": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
           "label": "Airplane",
-          "intent": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+          "intent": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.23,
-          "rest": 77,
+          "active": 0.62,
+          "rest": 40,
           "keyPoses": [
             0,
-            0.246,
-            0.492,
-            0.738,
-            0.984,
-            1.23
+            0.124,
+            0.248,
+            0.372,
+            0.496,
+            0.62
           ],
-          "layers": 6,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -228,26 +195,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6d6c510270e544041a78bd54246839cde50ec42c377b6ce9b06c7f089886de5e",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "bacd2f06c02cba188eca2a7b931677f32e4bc053529ad7d9a7f19a36d516a7c9",
-            "batches/01.mjs": "0764a3da3fa3d803d74d51b462b12ad677a074693e71eca02cbe8949ae74274e",
-            "batches/02.mjs": "60984ca084a289625509962f36aa07af08309a3d50d3644ff2205d49b9ee88c2",
-            "batches/03.mjs": "10ea3830cd07b16d009d987213957764dabcd3d98fe8e2118c7d32ca6fdb8267",
-            "batches/04.mjs": "03cbff26f91cfb01fe6967ee3086b66d71b789d47ef05b19e3fd4740e1c0f213",
-            "batches/helpers.mjs": "9b0358f79b2d2a1241b9aee7897c0c2609b9170c273abb1ebd8cefe5bce6cdb2"
-          },
-          "brief": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "airplane-airframe"
-            }
-          ],
+          "nativeSha256": "548ee569bf63db0b656c3c9b75ed89a9df4846a180d9085cff5ec318dca00055",
+          "sourceSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
+          "planSha256": "fce7fa7b0230ffdc60c98cdca725899b368905ce9aaaf5219664f678fb27f455",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
+          "constraints": [],
           "category": "Travel",
-          "definitionsSha256": "dfec92fb6d061fa2e54eeb02adf5c961bae4be30b3a20d3da5f71319bb4c963b",
+          "definitionsSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -269,8 +224,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5903,
-          "sha256": "10d2cb6c054da9853f02a94aa92dcb8c35a47821d2ef0cd452524980055f7f2c"
+          "bytes": 4729,
+          "sha256": "310bc5d326bcf36a3090a6c1bbdf73c473daadde7600f9366758a0540a1727d5"
         }
       ],
       "animations": [
@@ -278,38 +233,35 @@
           "name": "airplane",
           "icon": "airplane",
           "motionId": "light",
-          "revision": "travel-v1-claude-supervised",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Airplane",
-          "description": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+          "description": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
           "label": "Airplane",
-          "intent": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+          "intent": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.78,
-          "rest": 50,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.15600000000000003,
-            0.31200000000000006,
-            0.46799999999999997,
-            0.6240000000000001,
-            0.78
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 6,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -319,26 +271,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "bc34856d6b512b70c4f6a38761919fef14017d742bd2c1ca30c5d5600f84cb31",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "bacd2f06c02cba188eca2a7b931677f32e4bc053529ad7d9a7f19a36d516a7c9",
-            "batches/01.mjs": "0764a3da3fa3d803d74d51b462b12ad677a074693e71eca02cbe8949ae74274e",
-            "batches/02.mjs": "60984ca084a289625509962f36aa07af08309a3d50d3644ff2205d49b9ee88c2",
-            "batches/03.mjs": "10ea3830cd07b16d009d987213957764dabcd3d98fe8e2118c7d32ca6fdb8267",
-            "batches/04.mjs": "03cbff26f91cfb01fe6967ee3086b66d71b789d47ef05b19e3fd4740e1c0f213",
-            "batches/helpers.mjs": "9b0358f79b2d2a1241b9aee7897c0c2609b9170c273abb1ebd8cefe5bce6cdb2"
-          },
-          "brief": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "airplane-airframe"
-            }
-          ],
+          "nativeSha256": "8c7457b82d213119920028689b742df12d5eec81a4a27d23f66a920351224e69",
+          "sourceSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
+          "planSha256": "fce7fa7b0230ffdc60c98cdca725899b368905ce9aaaf5219664f678fb27f455",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
+          "constraints": [],
           "category": "Travel",
-          "definitionsSha256": "dfec92fb6d061fa2e54eeb02adf5c961bae4be30b3a20d3da5f71319bb4c963b",
+          "definitionsSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -360,45 +300,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5901,
-          "sha256": "c2cd04d5c7af31f30d2a05a9430b93ceca3c7fd177c3b4b5cea7b7f5917fd955"
+          "bytes": 4727,
+          "sha256": "99fb14574c99b5d0a447f50abd9c6a849113d4bd094340a51256860314794e9d"
         },
         {
           "name": "airplane-strong",
           "icon": "airplane",
           "motionId": "strong",
-          "revision": "travel-v1-claude-supervised",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Airplane",
-          "description": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+          "description": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
           "label": "Airplane",
-          "intent": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
+          "intent": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.23,
-          "rest": 77,
+          "active": 0.62,
+          "rest": 40,
           "keyPoses": [
             0,
-            0.246,
-            0.492,
-            0.738,
-            0.984,
-            1.23
+            0.124,
+            0.248,
+            0.372,
+            0.496,
+            0.62
           ],
-          "layers": 6,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -408,26 +345,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6d6c510270e544041a78bd54246839cde50ec42c377b6ce9b06c7f089886de5e",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "bacd2f06c02cba188eca2a7b931677f32e4bc053529ad7d9a7f19a36d516a7c9",
-            "batches/01.mjs": "0764a3da3fa3d803d74d51b462b12ad677a074693e71eca02cbe8949ae74274e",
-            "batches/02.mjs": "60984ca084a289625509962f36aa07af08309a3d50d3644ff2205d49b9ee88c2",
-            "batches/03.mjs": "10ea3830cd07b16d009d987213957764dabcd3d98fe8e2118c7d32ca6fdb8267",
-            "batches/04.mjs": "03cbff26f91cfb01fe6967ee3086b66d71b789d47ef05b19e3fd4740e1c0f213",
-            "batches/helpers.mjs": "9b0358f79b2d2a1241b9aee7897c0c2609b9170c273abb1ebd8cefe5bce6cdb2"
-          },
-          "brief": "The aircraft prepares its turn, banks and advances, then returns to level flight as one rigid shape.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "airplane-airframe"
-            }
-          ],
+          "nativeSha256": "548ee569bf63db0b656c3c9b75ed89a9df4846a180d9085cff5ec318dca00055",
+          "sourceSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
+          "planSha256": "fce7fa7b0230ffdc60c98cdca725899b368905ce9aaaf5219664f678fb27f455",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The plane takes off. Light: it turns its nose 35\u00b0 toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
+          "constraints": [],
           "category": "Travel",
-          "definitionsSha256": "dfec92fb6d061fa2e54eeb02adf5c961bae4be30b3a20d3da5f71319bb4c963b",
+          "definitionsSha256": "83d2e2f9bc9e90cae20c06c66a7de33a74edc9034555a575dd34df937070f189",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -449,12 +374,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5903,
-          "sha256": "10d2cb6c054da9853f02a94aa92dcb8c35a47821d2ef0cd452524980055f7f2c"
+          "bytes": 4729,
+          "sha256": "310bc5d326bcf36a3090a6c1bbdf73c473daadde7600f9366758a0540a1727d5"
         }
       ],
-      "bytes": 5901,
-      "sha256": "c2cd04d5c7af31f30d2a05a9430b93ceca3c7fd177c3b4b5cea7b7f5917fd955"
+      "bytes": 4727,
+      "sha256": "99fb14574c99b5d0a447f50abd9c6a849113d4bd094340a51256860314794e9d"
     },
     {
       "name": "passport",

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "flag",
+  "label": "Flag",
+  "intent": "The flag is planted to mark the spot. Light: the flag lifts and plants with a dead stop, and the cloth whips once from the impact and settles. Strong: a higher lift (kept 1.4 inside the canvas), a harder plant that bounces once while two ground puffs flash out sideways at the foot of the pole, and the cloth whips harder with a decaying flutter. The pole stays rigid.",
+  "parts": {
+    "pole":  {"shape": {"line": [[8, 5], [8, 27]]}},
+    "cloth": {"//": "flap 1 = the wave inverted and the free edge lifted 1; the driver swings past 0 for the flutter",
+              "shape": {"morph": [{"path": "M8 6 C14 4.5 18 10 25 7 L25 18 C18 21 14 15.5 8 17 L8 6 Z"},
+                                  {"path": "M8 6 C14 8.5 18 3 25 6 L25 17 C18 15 14 20 8 17 L8 6 Z"}], "by": "flap"},
+              "role": "surface", "solid": "fill"},
+    "thud-l": {"//": "hidden at rest: Strong's ground puffs either side of the foot of the pole, kept level so they never read as an arrowhead", "shape": {"line": [[4, 27.2], [5.2, 27.2]]}, "hidden": true},
+    "thud-r": {"mirror": {"of": "thud-l", "x": 8}}
+  },
+  "rigs": {
+    "flag": {"carries": ["pole", "cloth"]}
+  },
+  "motion": {
+    "flag.y": {
+      "light":  [[0, 0], [0.1, -1.9, "out"], [0.2, 0, "hit"]],
+      "strong": [[0, 0], [0.12, -2.25, "out"], [0.22, 0, "hit"], {"bounce": 0.3, "amp": 0.18}]
+    },
+    "flap": {
+      "light":  [[0, 0], [0.2, 0], [0.28, 1, "out"], [0.37, -0.35], [0.46, 0]],
+      "strong": [[0, 0], [0.22, 0], [0.31, 1.25, "out"], [0.41, -0.6], [0.5, 0.3], [0.58, -0.1], [0.66, 0]]
+    },
+    "thud-l.opacity": {
+      "strong": [[0, 0], [0.21, 0], [0.23, 1], [0.3, 1], [0.38, 0]]
+    },
+    "thud-l.x": {
+      "strong": [[0, 0], [0.22, 0], [0.38, -0.8, "out"], [0.4, 0, "step"]]
+    },
+    "thud-r.opacity": {"follow": "thud-l.opacity"},
+    "thud-r.x": {"follow": "thud-l.x", "scale": -1}
+  }
+}

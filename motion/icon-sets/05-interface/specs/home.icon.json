@@ -1,0 +1,24 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "home",
+  "label": "Home",
+  "intent": "Welcome home: the front door opens. Light: the door leaf swings out on its left hinge, past edge-on, until it lies open against the wall beside the doorway, knocks and bounces once, and soft light shows in the empty doorway; then the door swings shut, latches with a hit and a small rebound, and the light goes out. Strong: the door is flung open, bounces twice against the wall, holds open longer with brighter light, and slams shut with a rebound and a second, smaller knock. The house never moves.",
+  "parts": {
+    "glow":      {"//": "hidden at rest: the light inside only shows while the door is open", "shape": {"rect": [14.2, 18.2, 4.3, 7.3], "r": 0.5}, "role": "fill", "hidden": true},
+    "door-leaf": {"//": "v1's leaf, drawn over the doorway at rest; open, it has swung out past edge-on and lies against the wall left of the hinge, mirrored and foreshortened (0.42 of its width)", "shape": {"morph": [{"path": "M14 17.5 L18 17.5 C18.552 17.5 19 17.948 19 18.5 L19 25 C19 25.552 18.552 26 18 26 L14 26 C13.448 26 13 25.552 13 25 L13 18.5 C13 17.948 13.448 17.5 14 17.5 Z"}, {"path": "M12.580 17.5 L10.900 17.5 C10.668 17.5 10.480 17.948 10.480 18.5 L10.480 25 C10.480 25.552 10.668 26 10.900 26 L12.580 26 C12.812 26 13.000 25.552 13.000 25 L13.000 18.5 C13.000 17.948 12.812 17.5 12.580 17.5 Z"}], "by": "swing"}},
+    "home":      {"shape": {"path": "M7.5 14.9 C7.5 14.167 7.77 13.552 8.31 13.056 L15.042 6.879 C15.681 6.293 16.319 6.293 16.958 6.879 L23.69 13.056 C24.23 13.552 24.5 14.167 24.5 14.9 L24.5 24 C24.5 25.333 23.833 26 22.5 26 L9.5 26 C8.167 26 7.5 25.333 7.5 24 L7.5 14.9 Z"}, "role": "surface", "//": "v1 Solid: the house filled with the doorway left open, one bridged subpath; the leaf shows inside it", "solid": {"path": "M7.5 14.9 C7.5 14.167 7.77 13.552 8.31 13.056 L15.042 6.879 C15.681 6.293 16.319 6.293 16.958 6.879 L23.69 13.056 C24.23 13.552 24.5 14.167 24.5 14.9 L24.5 24 C24.5 25.333 23.833 26 22.5 26 L9.5 26 C8.167 26 7.5 25.333 7.5 24 L7.5 14.9 L14 17.5 C13.448 17.5 13 17.948 13 18.5 L13 25 C13 25.552 13.448 26 14 26 L18 26 C18.552 26 19 25.552 19 25 L19 18.5 C19 17.948 18.552 17.5 18 17.5 L14 17.5 L7.5 14.9 Z"}},
+    "doorway":   {"shape": {"rect": [13, 17.5, 6, 8.5], "r": 1}, "solid": "none"}
+  },
+  "motion": {
+    "swing": {
+      "light":  [[0, 0], [0.03, 0], [0.17, 1, "hit"], [0.23, 0.85], [0.28, 1], [0.32, 1], [0.43, 0, "hit"], [0.48, 0.1], [0.54, 0]],
+      "strong": [[0, 0], [0.02, 0], [0.13, 1, "hit"], [0.19, 0.72], [0.24, 1, "hit"], [0.28, 0.9], [0.32, 1], [0.46, 1], [0.56, 0, "hit"], [0.62, 0.2], [0.67, 0, "hit"], [0.71, 0.06], [0.76, 0]]
+    },
+    "glow.opacity": {
+      "light":  [[0, 0], [0.06, 0], [0.15, 0.35, "out"], [0.32, 0.35], [0.4, 0, "in"]],
+      "strong": [[0, 0], [0.05, 0], [0.12, 0.45, "out"], [0.46, 0.45], [0.54, 0, "in"]]
+    }
+  },
+  "preview": {"light": [0, 0.08, 0.12, 0.17, 0.23, 0.32, 0.43, 0.58], "strong": [0, 0.06, 0.13, 0.19, 0.35, 0.5, 0.56, 0.8]}
+}

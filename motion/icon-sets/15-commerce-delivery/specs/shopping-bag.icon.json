@@ -1,0 +1,45 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "shopping-bag",
+  "label": "Shopping bag",
+  "intent": "The bag is picked up. Light: the handle is pulled taut into a peak first, then the bag comes up after it, overshoots and hangs from the peak, swinging once before it settles at the lifted height. Strong: the bag sags as the handle is gathered, is yanked higher, and swings twice from the handle before it settles at the same height. The bag stays rigid; only the handle changes from slack to taut, as in v1.",
+  "state": {"from": "resting", "to": "lifted", "labels": ["Lift", "Set down"], "reverse": "auto"},
+  "parts": {
+    "handle": {"//": "v1's slack arch becomes v1's taut peak (drawn here in the bag's resting frame; the lift carries it up 1.2)",
+               "shape": {"morph": [{"path": "M11 14 C11 9 13 7.8 16 7.8 C19 7.8 21 9 21 14"},
+                                   {"path": "M11 14 C11 14 16 7.2 16 7.2 C16 7.2 21 14 21 14"}], "by": "taut"}},
+    "body":   {"shape": {"path": "M9 14 L23 14 C23.7 14 24.2 14.5 24.3 15.2 L25 26 C25.05 26.55 24.6 27 24 27 L8 27 C7.4 27 6.95 26.55 7 26 L7.7 15.2 C7.8 14.5 8.3 14 9 14 Z"},
+               "role": "surface"}
+  },
+  "rigs": {
+    "bag": {"//": "hangs from the handle's peak", "pivot": [16, 7.2], "carries": ["handle", "body"]}
+  },
+  "motion": {
+    "taut": {
+      "light":  [[0, 0], [0.1, 1, "out"]],
+      "strong": [[0, 0], [0.12, 1, "out"]]
+    },
+    "bag.y": {
+      "light":  [[0, 0], [0.06, 0], [0.2, -2.2, "out"], [0.32, -0.9, "inOut"], [0.42, -1.2, "inOut"]],
+      "strong": [[0, 0], [0.1, 0.6, "out"], [0.14, 0.6], [0.3, -3, "out"], [0.44, -0.7, "inOut"], [0.54, -1.4, "inOut"], [0.62, -1.2, "inOut"]]
+    },
+    "bag.rotate": {
+      "light":  [[0, 0], [0.1, 0], [0.22, 5, "out"], [0.34, -2.5, "inOut"], [0.44, 1, "inOut"], [0.52, 0, "inOut"]],
+      "strong": [[0, 0], [0.16, 0], [0.3, 8, "out"], [0.46, -5, "inOut"], [0.6, 2.5, "inOut"], [0.72, -1, "inOut"], [0.8, 0, "inOut"]]
+    }
+  },
+  "reverse": {
+    "//": "set down: the bag lowers, lands flat on its base with a hit (never sinking below it), and the handle goes slack after it lands",
+    "light": {
+      "bag.y":      [[0, -1.2], [0.05, -1.6, "out"], [0.22, 0, "hit"], [0.28, -0.25, "out"], [0.36, 0, "inOut"]],
+      "bag.rotate": [[0, 0], [0.05, 0], [0.14, -3, "inOut"], [0.22, 0, "inOut"]],
+      "taut":       [[0, 1], [0.22, 1], [0.34, 0, "out"]]
+    },
+    "strong": {
+      "bag.y":      [[0, -1.2], [0.08, -2, "out"], [0.3, 0, "hit"], [0.37, -0.45, "out"], [0.45, 0, "hit"], [0.51, -0.12, "out"], [0.57, 0, "inOut"]],
+      "bag.rotate": [[0, 0], [0.08, 0], [0.19, -5, "inOut"], [0.3, 0, "inOut"]],
+      "taut":       [[0, 1], [0.3, 1], [0.46, 0, "out"]]
+    }
+  }
+}

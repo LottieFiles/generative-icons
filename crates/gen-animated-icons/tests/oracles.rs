@@ -49,7 +49,7 @@ fn legacy_projects_get_the_exact_lottie_icons_bytes() {
     assert_eq!(result["icons"], json!(["heart", "menu", "heart"]));
     assert_eq!(
         sha(app, "src/lottie-icons/menu.mjs"),
-        "51021e323e549f73f80ce928fc1d234ef10894cba90f6bc7bfb701987654dcd6"
+        "0cdf24f243921b7e073e3a1f7f263a299d674ed8ef4cb3a1e5f89271dca1709c"
     );
     assert_eq!(
         sha(app, "src/lottie-icons/menu.d.mts"),
@@ -72,7 +72,7 @@ fn current_projects_differ_from_the_goldens_only_by_name() {
     };
     for (file, golden) in [
         ("src/gen-animated-icons/heart.mjs", "982a4b0581dd127f15268b9bdee65a758baa69ce274d4a7e81abddbb6baf141c"),
-        ("src/gen-animated-icons/menu.mjs", "51021e323e549f73f80ce928fc1d234ef10894cba90f6bc7bfb701987654dcd6"),
+        ("src/gen-animated-icons/menu.mjs", "0cdf24f243921b7e073e3a1f7f263a299d674ed8ef4cb3a1e5f89271dca1709c"),
         ("src/gen-animated-icons/settings.mjs", "4ba48edd3c7eb4345864d8988f91a9b2983c05bed0427193176681c3024939c3"),
     ] {
         assert_eq!(gai_core::sha256_hex(renamed(read(app, file))), golden, "{file}");
@@ -114,7 +114,7 @@ fn baked_weights_match_the_runtime_bridge() {
 /// `generation-context.mjs --search` goldens (cli.md §4.3): sha256 of stdout.
 const SEARCHES: [(&str, &str); 7] = [
     ("notification bell", "4dc3ca333bfc1c33715e7041460adacd4c5d0265a36ca30baaf2c2489c35f786"),
-    ("package return", "003dcb0474c3fca846158c745d3fc2bcde40c21f84886d8722e1c9f00b31c7aa"),
+    ("package return", "a4ff2856f2ab7ade551ec6bb37238bbf66dc512c3fa2562248fadbaec79919c1"),
     ("heart", "3cd3cc8129f42680b55f8c15daa7562ef713713b87aa0d87cfcce74fa9ef3dff"),
     ("loading spinner", "742e4f4f84fc495d31b5e7b56c10aab090b0a14aba7c66ef54aca30c0494e9fd"),
     ("create a new icon for the payment", "53e53d7f21f60058cb256d75639b0550d0ab7997f410c28ddf72b27548ed19a4"),
@@ -154,10 +154,10 @@ fn ranked_search_matches_generation_context() {
         match query {
             "notification bell" => {}
             "package return" => {
-                assert_eq!(shown[..4], ranked[..4], "{query}");
+                assert_eq!(shown[..3], ranked[..3], "{query}");
                 // A description-only "return" (air-conditioner, announcement) gives way to
                 // icons of the delivery category, which the query's "package" names.
-                assert_eq!(shown[4..], ["inventory", "subscription-box"], "{query}");
+                assert_eq!(shown[3..], ["inventory", "pickup-locker", "subscription-box"], "{query}");
             }
             // Two keyframe icons matched only the stray token "i" in their descriptions.
             "Café İstanbul key" => assert_eq!(shown, ranked[..4], "{query}"),

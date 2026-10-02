@@ -1,0 +1,46 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "download",
+  "label": "Download",
+  "intent": "A download lands. Light: the arrow drives down into the tray and stops dead; the tray takes the knock, rebounds and settles, and a content line draws out from the middle of the tray where the arrow lands. The spent arrow fades and a fresh one drops in from above to its rest pose, and the line fades as it settles. Strong: a short wind-up, a harder drive, a bigger knock that rebounds twice, and the line snaps out.",
+  "parts": {
+    "tray":    {"shape": {"path": "M5.5 20.5 L5.5 23.5 C5.5 25.16 6.84 26.5 8.5 26.5 L23.5 26.5 C25.16 26.5 26.5 25.16 26.5 23.5 L26.5 20.5"},
+                "solid": {"path": "M4.3 20.5 C4.3 18.9 6.7 18.9 6.7 20.5 L6.7 23.5 C6.7 24.49 7.51 25.3 8.5 25.3 L23.5 25.3 C24.49 25.3 25.3 24.49 25.3 23.5 L25.3 20.5 C25.3 18.9 27.7 18.9 27.7 20.5 L27.7 23.5 C27.7 25.82 25.82 27.7 23.5 27.7 L8.5 27.7 C6.18 27.7 4.3 25.82 4.3 23.5 L4.3 20.5 Z"}},
+    "line-l":  {"//": "hidden at rest: the content that lands, drawn out from where the arrow points", "shape": {"line": [[16, 23.2], [11.5, 23.2]]}, "hidden": true},
+    "line-r":  {"mirror": {"of": "line-l"}},
+    "shaft":   {"shape": {"line": [[16, 6.3], [16, 16.5]]},
+                "solid": {"path": "M17.3 6.3 L17.3 15.4 C17.3 16.118 16.718 16.7 16 16.7 L16 16.7 C15.282 16.7 14.7 16.118 14.7 15.4 L14.7 6.3 C14.7 5.582 15.282 5 16 5 L16 5 C16.718 5 17.3 5.582 17.3 6.3 Z"}},
+    "head":    {"shape": {"polyline": [[11.2, 11.7], [16, 16.5], [20.8, 11.7]]},
+                "solid": {"path": "M11.272 12.117 C10.957 11.772 10.97 11.44 11.31 11.12 L11.99 10.48 C12.33 10.16 12.656 10.174 12.968 10.521 L15.532 13.379 C15.844 13.726 16.156 13.726 16.468 13.379 L19.032 10.521 C19.344 10.174 19.67 10.16 20.01 10.48 L20.69 11.12 C21.03 11.44 21.043 11.772 20.728 12.117 L16.472 16.783 C16.157 17.128 15.843 17.128 15.528 16.783 L11.272 12.117 Z"}}
+  },
+  "rigs": {
+    "tray":  {"pivot": [16, 23.5], "carries": ["tray", "line-l", "line-r"]},
+    "arrow": {"pivot": [16, 11.4], "carries": ["shaft", "head"]}
+  },
+  "motion": {
+    "arrow.y": {
+      "light":  [[0, 0], [0.14, 3.5, "hit"], [0.22, 3.5], [0.23, -3, "step"], [0.38, 0, "out"]],
+      "strong": [[0, 0], [0.1, -1.2, "inOut"], [0.2, 3.8, "hit"], [0.28, 3.8], [0.29, -3, "step"], [0.45, 0, "out"]]
+    },
+    "shaft.opacity": {
+      "light":  [[0, 1], [0.15, 1], [0.22, 0, "in"], [0.24, 0], [0.33, 1, "out"]],
+      "strong": [[0, 1], [0.21, 1], [0.28, 0, "in"], [0.3, 0], [0.39, 1, "out"]]
+    },
+    "head.opacity": {"follow": "shaft.opacity"},
+    "tray.y": {
+      "light":  [[0, 0], [0.14, 0], [0.2, 1.4, "out"], [0.28, -0.3], [0.36, 0]],
+      "strong": [[0, 0], [0.2, 0], [0.26, 2.2, "out"], [0.34, -0.6], [0.41, 0.2], [0.48, 0]]
+    },
+    "line-l.opacity": {
+      "light":  [[0, 0], [0.14, 0], [0.15, 1, "step"], [0.36, 1], [0.46, 0, "in"]],
+      "strong": [[0, 0], [0.2, 0], [0.21, 1, "step"], [0.5, 1], [0.6, 0, "in"]]
+    },
+    "line-l.draw": {
+      "light":  [[0, 1], [0.14, 0, "step"], [0.28, 1, "out"]],
+      "strong": [[0, 1], [0.2, 0, "step"], [0.28, 1, "hit"]]
+    },
+    "line-r.opacity": {"follow": "line-l.opacity"},
+    "line-r.draw": {"follow": "line-l.draw"}
+  }
+}

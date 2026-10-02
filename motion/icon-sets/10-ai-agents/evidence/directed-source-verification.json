@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 76,
-  "nativeTransformNodes": 386,
+  "nativeTransformNodes": 264,
   "nativeTransformMaxCoordinateError": 0.000010000000003174137,
   "checks": [
     {
@@ -98,40 +98,6 @@
       ]
     },
     {
-      "name": "tool-call",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "tool-call-wrench"
-        },
-        {
-          "type": "rigid",
-          "part": "tool-call-nut"
-        }
-      ]
-    },
-    {
-      "name": "tool-call-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "tool-call-wrench"
-        },
-        {
-          "type": "rigid",
-          "part": "tool-call-nut"
-        }
-      ]
-    },
-    {
       "name": "agent-workflow",
       "fixedParts": [],
       "topology": true,
@@ -178,52 +144,6 @@
         {
           "type": "rigid",
           "part": "agent-workflow-packet"
-        }
-      ]
-    },
-    {
-      "name": "task-plan",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "task-plan-step1-frame"
-        },
-        {
-          "type": "monotonic",
-          "part": "task-plan-step2-frame",
-          "measure": "width"
-        },
-        {
-          "type": "monotonic",
-          "part": "task-plan-step3-frame",
-          "measure": "width"
-        }
-      ]
-    },
-    {
-      "name": "task-plan-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "task-plan-step1-frame"
-        },
-        {
-          "type": "monotonic",
-          "part": "task-plan-step2-frame",
-          "measure": "width"
-        },
-        {
-          "type": "monotonic",
-          "part": "task-plan-step3-frame",
-          "measure": "width"
         }
       ]
     },
@@ -440,114 +360,6 @@
       ]
     },
     {
-      "name": "model-evaluation",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "model-evaluation-post"
-        },
-        {
-          "type": "fixed",
-          "part": "model-evaluation-base"
-        },
-        {
-          "type": "rigid",
-          "part": "model-evaluation-beam"
-        },
-        {
-          "type": "rigid",
-          "part": "model-evaluation-left-pan-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "model-evaluation-right-pan-frame"
-        }
-      ]
-    },
-    {
-      "name": "model-evaluation-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "model-evaluation-post"
-        },
-        {
-          "type": "fixed",
-          "part": "model-evaluation-base"
-        },
-        {
-          "type": "rigid",
-          "part": "model-evaluation-beam"
-        },
-        {
-          "type": "rigid",
-          "part": "model-evaluation-left-pan-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "model-evaluation-right-pan-frame"
-        }
-      ]
-    },
-    {
-      "name": "confidence-score",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "confidence-score-estimate-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "confidence-score-axis"
-        },
-        {
-          "type": "rigid",
-          "part": "confidence-score-cap-l"
-        },
-        {
-          "type": "rigid",
-          "part": "confidence-score-cap-r"
-        }
-      ]
-    },
-    {
-      "name": "confidence-score-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "confidence-score-estimate-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "confidence-score-axis"
-        },
-        {
-          "type": "rigid",
-          "part": "confidence-score-cap-l"
-        },
-        {
-          "type": "rigid",
-          "part": "confidence-score-cap-r"
-        }
-      ]
-    },
-    {
       "name": "inference",
       "fixedParts": [],
       "topology": true,
@@ -574,48 +386,6 @@
           "part": "inference-in-mid",
           "measure": "width",
           "direction": -1
-        }
-      ]
-    },
-    {
-      "name": "batch-inference",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "batch-inference-collector"
-        },
-        {
-          "type": "rigid",
-          "part": "batch-inference-card-1-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "batch-inference-card-3-frame"
-        }
-      ]
-    },
-    {
-      "name": "batch-inference-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "batch-inference-collector"
-        },
-        {
-          "type": "rigid",
-          "part": "batch-inference-card-1-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "batch-inference-card-3-frame"
         }
       ]
     },
@@ -696,48 +466,6 @@
       ]
     },
     {
-      "name": "model-version",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "model-version-trunk"
-        },
-        {
-          "type": "fixed",
-          "part": "model-version-v2-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "model-version-v1-frame"
-        }
-      ]
-    },
-    {
-      "name": "model-version-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "model-version-trunk"
-        },
-        {
-          "type": "fixed",
-          "part": "model-version-v2-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "model-version-v1-frame"
-        }
-      ]
-    },
-    {
       "name": "usage-meter",
       "fixedParts": [],
       "topology": true,
@@ -811,6 +539,72 @@
           "type": "fixed",
           "part": "ai-connection-node-b-frame"
         }
+      ]
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "tool-call",
+      "spec": "specs/tool-call.icon.json",
+      "specSha256": "ab51de8166f7c98fcc991a5da39fa646b58248658e584179af91b45c1415d7c8",
+      "actions": [
+        "tool-call",
+        "tool-call-reset",
+        "tool-call-strong",
+        "tool-call-reset-strong"
+      ]
+    },
+    {
+      "icon": "task-plan",
+      "spec": "specs/task-plan.icon.json",
+      "specSha256": "09c181cb4eaf3f2a6a5244821878f7d8a9a03821314adabc10cb4a2b3a595648",
+      "actions": [
+        "task-plan",
+        "task-plan-reset",
+        "task-plan-strong",
+        "task-plan-reset-strong"
+      ]
+    },
+    {
+      "icon": "model-evaluation",
+      "spec": "specs/model-evaluation.icon.json",
+      "specSha256": "5459268f39ce99c1d0dbe3e3641dfb3cbdc23ddf64a431c9eff1fb3df00770a4",
+      "actions": [
+        "model-evaluation",
+        "model-evaluation-strong"
+      ]
+    },
+    {
+      "icon": "confidence-score",
+      "spec": "specs/confidence-score.icon.json",
+      "specSha256": "ab60e03b6b9c6449688e7ae206a31db88b7c16cb9b0453cf22fb6c7746380293",
+      "actions": [
+        "confidence-score",
+        "confidence-score-reset",
+        "confidence-score-strong",
+        "confidence-score-reset-strong"
+      ]
+    },
+    {
+      "icon": "batch-inference",
+      "spec": "specs/batch-inference.icon.json",
+      "specSha256": "5288544edbd1b8b4ad239a9298566500144aea0cda6bcb35aef1899bfc2d98d1",
+      "actions": [
+        "batch-inference",
+        "batch-inference-reset",
+        "batch-inference-strong",
+        "batch-inference-reset-strong"
+      ]
+    },
+    {
+      "icon": "model-version",
+      "spec": "specs/model-version.icon.json",
+      "specSha256": "72e11ed436e0a646d78922d2be974cbddc1ee710d45e43dc3e48d164f5d54d33",
+      "actions": [
+        "model-version",
+        "model-version-reset",
+        "model-version-strong",
+        "model-version-reset-strong"
       ]
     }
   ]

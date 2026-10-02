@@ -1,0 +1,63 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "gift-card",
+  "label": "Gift card",
+  "intent": "The gift is tied off with a flourish. Light: the ribbon is tugged, so the card dips and the loops pinch down; then the bow springs open, the loops flick up past their pose, a spark flashes out on each side, and the loops swing back once and settle as the card rebounds. Strong: two tugs, the second deeper, then a bigger spring with a fuller burst of sparks and loops that swing twice before they settle. The card stays rigid; the knot stays on the ribbon.",
+  "parts": {
+    "card":     {"shape": {"rect": [5, 12, 22, 13], "r": 2.5}, "role": "surface", "knockout": [{"part": "ribbon", "gap": 0}]},
+    "ribbon":   {"shape": {"line": [[16, 12], [16, 25]]}, "solid": {"rect": [14.7, 14.2, 2.6, 8.6], "r": 1.3},
+                 "//": "v1 Solid: a slot in the card, not the full ribbon"},
+    "loop-l":   {"shape": {"path": "M16 12 C13.5 11 9.5 9.5 10 7 C10.5 4.5 15.5 6.5 16 12 Z"}, "role": "surface"},
+    "loop-r":   {"mirror": {"of": "loop-l"}},
+    "knot":     {"shape": {"circle": [[16, 12], 1.1]}, "role": "fill"},
+    "spark-l":  {"//": "hidden at rest: the flourish only exists while the bow springs", "shape": {"line": [[8.4, 8.4], [6.8, 7.6]]}, "hidden": true},
+    "spark-r":  {"mirror": {"of": "spark-l"}},
+    "spark2-l": {"//": "Strong only: the upper ray of the burst", "shape": {"line": [[9.7, 5.7], [8.5, 4.5]]}, "hidden": true},
+    "spark2-r": {"mirror": {"of": "spark2-l"}}
+  },
+  "rigs": {
+    "card":   {"carries": ["card", "ribbon", "bow"]},
+    "bow":    {"pivot": [16, 12], "carries": ["knot", "loop-l", "loop-r"]},
+    "loop-l": {"pivot": [16, 12]},
+    "loop-r": {"pivot": [16, 12]}
+  },
+  "motion": {
+    "loop-l.rotate": {
+      "light":  [[0, 0], [0.08, -6, "inOut"], [0.2, 20, "out"], [0.32, -4, "inOut"], [0.42, 0, "inOut"]],
+      "strong": [[0, 0], [0.07, -5, "inOut"], [0.14, 3, "inOut"], [0.22, -9, "inOut"], [0.36, 26, "out"], [0.48, -7, "inOut"], [0.58, 4, "inOut"], [0.68, 0, "inOut"]]
+    },
+    "loop-r.rotate": {"follow": "loop-l.rotate", "scale": -1},
+    "card.y": {
+      "light":  [[0, 0], [0.08, 0.8, "out"], [0.18, -0.5, "out"], [0.28, 0.15, "inOut"], [0.36, 0, "inOut"]],
+      "strong": [[0, 0], [0.07, 0.6, "out"], [0.14, 0, "inOut"], [0.22, 1.1, "out"], [0.34, -0.8, "out"], [0.46, 0.25, "inOut"], [0.56, -0.08, "inOut"], [0.64, 0, "inOut"]]
+    },
+    "spark-l.opacity": {
+      "light":  [[0, 0], [0.12, 0], [0.14, 1, "out"], [0.24, 1], [0.32, 0, "in"]],
+      "strong": [[0, 0], [0.27, 0], [0.29, 1, "out"], [0.4, 1], [0.48, 0, "in"]]
+    },
+    "spark-l.x": {
+      "light":  [[0, 0], [0.12, 0], [0.32, -0.6, "out"], [0.34, 0, "step"]],
+      "strong": [[0, 0], [0.27, 0], [0.48, -0.9, "out"], [0.5, 0, "step"]]
+    },
+    "spark-l.y": {
+      "light":  [[0, 0], [0.12, 0], [0.32, -0.3, "out"], [0.34, 0, "step"]],
+      "strong": [[0, 0], [0.27, 0], [0.48, -0.45, "out"], [0.5, 0, "step"]]
+    },
+    "spark-r.opacity": {"follow": "spark-l.opacity"},
+    "spark-r.x": {"follow": "spark-l.x", "scale": -1},
+    "spark-r.y": {"follow": "spark-l.y"},
+    "spark2-l.opacity": {
+      "strong": [[0, 0], [0.3, 0], [0.32, 1, "out"], [0.42, 1], [0.5, 0, "in"]]
+    },
+    "spark2-l.x": {
+      "strong": [[0, 0], [0.3, 0], [0.5, -0.5, "out"], [0.52, 0, "step"]]
+    },
+    "spark2-l.y": {
+      "strong": [[0, 0], [0.3, 0], [0.5, -0.5, "out"], [0.52, 0, "step"]]
+    },
+    "spark2-r.opacity": {"follow": "spark2-l.opacity"},
+    "spark2-r.x": {"follow": "spark2-l.x", "scale": -1},
+    "spark2-r.y": {"follow": "spark2-l.y"}
+  }
+}

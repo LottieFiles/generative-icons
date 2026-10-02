@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "link",
+  "label": "Link",
+  "intent": "The link connects. Light: the two loops draw apart along the chain until they barely hold, then snap back into each other with a hit; click marks flash out from both sides of the join and the loops rebound a touch and settle. Strong: they draw apart further, snap together harder, knock a second time with a smaller bounce, and the click marks flash out twice. The loops are rigid; they only slide along their shared axis.",
+  "parts": {
+    "loop-1": {"shape": {"path": "M14.308 13.308 L21.308 6.308 C22.518 5.098 24.482 5.098 25.692 6.308 L25.692 6.308 C26.902 7.518 26.902 9.482 25.692 10.692 L18.692 17.692 C17.482 18.902 15.518 18.902 14.308 17.692 L14.308 17.692 C13.098 16.482 13.098 14.518 14.308 13.308 Z"}, "role": "surface", "//": "v1 Solid: the loop as a filled band (1 outside, 1.2 inside the centreline), one bridged subpath", "solid": {"path": "M13.601 12.601 L20.601 5.601 C22.201 4.001 24.799 4.001 26.399 5.601 L26.399 5.601 C27.999 7.201 27.999 9.799 26.399 11.399 L19.399 18.399 C17.799 19.999 15.201 19.999 13.601 18.399 L13.601 18.399 C12.001 16.799 12.001 14.201 13.601 12.601 L13.601 12.601 L15.156 14.156 C14.415 14.898 14.415 16.102 15.156 16.843 L15.156 16.843 C15.898 17.585 17.102 17.585 17.843 16.843 L24.843 9.844 C25.585 9.102 25.585 7.898 24.843 7.157 L24.843 7.157 C24.102 6.415 22.898 6.415 22.157 7.157 L15.156 14.156 L13.601 12.601 Z"}},
+    "loop-0": {"shape": {"path": "M6.308 21.308 L13.308 14.308 C14.518 13.098 16.482 13.098 17.692 14.308 L17.692 14.308 C18.902 15.518 18.902 17.482 17.692 18.692 L10.692 25.692 C9.482 26.902 7.518 26.902 6.308 25.692 L6.308 25.692 C5.098 24.482 5.098 22.518 6.308 21.308 Z"}, "role": "surface", "solid": {"path": "M5.601 20.601 L12.601 13.601 C14.201 12.001 16.799 12.001 18.399 13.601 L18.399 13.601 C19.999 15.201 19.999 17.799 18.399 19.399 L11.399 26.399 C9.799 27.999 7.201 27.999 5.601 26.399 L5.601 26.399 C4.001 24.799 4.001 22.201 5.601 20.601 L5.601 20.601 L7.157 22.157 C6.415 22.898 6.415 24.102 7.157 24.843 L7.157 24.843 C7.898 25.585 9.102 25.585 9.844 24.843 L16.843 17.843 C17.585 17.102 17.585 15.898 16.843 15.156 L16.843 15.156 C16.102 14.415 14.898 14.415 14.156 15.156 L7.157 22.157 L5.601 20.601 Z"}},
+    "click":  {"//": "hidden at rest: two pairs of click marks, square to the chain on both sides of the join; they exist only at the moment the loops lock", "shape": [{"line": [{"from": [16, 16], "angle": -115, "len": 7.0}, {"from": [16, 16], "angle": -115, "len": 8.6}]}, {"line": [{"from": [16, 16], "angle": -155, "len": 7.0}, {"from": [16, 16], "angle": -155, "len": 8.6}]}, {"line": [{"from": [16, 16], "angle": 65, "len": 7.0}, {"from": [16, 16], "angle": 65, "len": 8.6}]}, {"line": [{"from": [16, 16], "angle": 25, "len": 7.0}, {"from": [16, 16], "angle": 25, "len": 8.6}]}], "hidden": true}
+  },
+  "rigs": {
+    "click": {"//": "the marks fly outward from the join", "pivot": [16, 16]}
+  },
+  "motion": {
+    "//":            "The chain runs along (1, -1): loop-1 slides up-right (x +, y -), loop-0 the opposite way, so every track follows loop-1.x.",
+    "loop-1.x": {
+      "light":  [[0, 0], [0.12, 1.25, "out"], [0.21, 0, "hit"], [0.28, 0.3], [0.36, 0]],
+      "strong": [[0, 0], [0.16, 1.7, "out"], [0.26, 0, "hit"], [0.33, 0.55], [0.4, 0, "hit"], [0.46, 0.15], [0.54, 0]]
+    },
+    "loop-1.y":      {"follow": "loop-1.x", "scale": -1},
+    "loop-0.x":      {"follow": "loop-1.x", "scale": -1},
+    "loop-0.y":      {"follow": "loop-1.x"},
+    "click.opacity": {
+      "light":  [[0, 0], [0.2, 0], [0.22, 1, "out"], [0.29, 1], [0.38, 0, "in"]],
+      "strong": [[0, 0], [0.25, 0], [0.27, 1, "out"], [0.33, 1], [0.38, 0, "in"], [0.39, 0], [0.41, 0.85, "out"], [0.47, 0.85], [0.56, 0, "in"]]
+    },
+    "click.scale": {
+      "light":  [[0, 1], [0.2, 0.88, "step"], [0.38, 1.1, "out"], [0.4, 1, "step"]],
+      "strong": [[0, 1], [0.25, 0.88, "step"], [0.38, 1.08, "out"], [0.39, 0.9, "step"], [0.56, 1.06, "out"], [0.58, 1, "step"]]
+    }
+  },
+  "preview": {"light": [0, 0.06, 0.12, 0.17, 0.21, 0.25, 0.3, 0.42], "strong": [0, 0.08, 0.16, 0.26, 0.3, 0.33, 0.41, 0.6]}
+}

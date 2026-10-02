@@ -2,27 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 80,
-  "nativeTransformNodes": 388,
+  "nativeTransformNodes": 276,
   "nativeTransformMaxCoordinateError": 0.000011902735471025494,
   "checks": [
-    {
-      "name": "agent-skills",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "agent-skills-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
     {
       "name": "tool-discovery",
       "fixedParts": [],
@@ -34,24 +16,6 @@
     },
     {
       "name": "tool-discovery-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "mcp-tools",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "mcp-tools-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -150,24 +114,6 @@
       "designConstraints": []
     },
     {
-      "name": "agent-checkpoint",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "agent-checkpoint-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "resume-run",
       "fixedParts": [],
       "topology": true,
@@ -258,24 +204,6 @@
       "designConstraints": []
     },
     {
-      "name": "background-run",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "background-run-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "scheduled-agent",
       "fixedParts": [],
       "topology": true,
@@ -328,43 +256,75 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "agent-artifact",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "agent-artifact-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "budget-limit",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "budget-limit-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "agent-skills",
+      "spec": "specs/agent-skills.icon.json",
+      "specSha256": "4cfd3a9bbbc9ce239b37d0dccc9ac87c05b930d2a94d36b9bd10ea7e4ec95939",
+      "actions": [
+        "agent-skills",
+        "agent-skills-reverse",
+        "agent-skills-strong",
+        "agent-skills-reverse-strong"
+      ]
+    },
+    {
+      "icon": "mcp-tools",
+      "spec": "specs/mcp-tools.icon.json",
+      "specSha256": "abd89229994e0034b051a8b7f7a38d7045b8c559f2d8c1b349390eae86fa162c",
+      "actions": [
+        "mcp-tools",
+        "mcp-tools-reverse",
+        "mcp-tools-strong",
+        "mcp-tools-reverse-strong"
+      ]
+    },
+    {
+      "icon": "agent-checkpoint",
+      "spec": "specs/agent-checkpoint.icon.json",
+      "specSha256": "fa5ee3edce4eb2445fe44b96d72cc286de4a3e4960fadd4d4a5b956c1a2f3867",
+      "actions": [
+        "agent-checkpoint",
+        "agent-checkpoint-reverse",
+        "agent-checkpoint-strong",
+        "agent-checkpoint-reverse-strong"
+      ]
+    },
+    {
+      "icon": "background-run",
+      "spec": "specs/background-run.icon.json",
+      "specSha256": "643f940aa9cfca169faaeb4108d4e20a6a10263631a5bcdd5202a506c809c302",
+      "actions": [
+        "background-run",
+        "background-run-reset",
+        "background-run-strong",
+        "background-run-reset-strong"
+      ]
+    },
+    {
+      "icon": "agent-artifact",
+      "spec": "specs/agent-artifact.icon.json",
+      "specSha256": "dce7caffd9b6907d60b9d47afa7e52d87a2d3e4095cc85f32a57f328440e29b6",
+      "actions": [
+        "agent-artifact",
+        "agent-artifact-reset",
+        "agent-artifact-strong",
+        "agent-artifact-reset-strong"
+      ]
+    },
+    {
+      "icon": "budget-limit",
+      "spec": "specs/budget-limit.icon.json",
+      "specSha256": "f9392ca5bc84e9c61cb2a58104b759172b90025287abb561ee3b44648e8d3a49",
+      "actions": [
+        "budget-limit",
+        "budget-limit-reset",
+        "budget-limit-strong",
+        "budget-limit-reset-strong"
+      ]
+    }
+  ]
 }

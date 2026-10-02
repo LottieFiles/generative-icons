@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 76,
-  "nativeTransformNodes": 366,
+  "nativeTransformNodes": 332,
   "nativeTransformMaxCoordinateError": 0.000010012106248069585,
   "checks": [
     {
@@ -204,76 +204,6 @@
       ]
     },
     {
-      "name": "document-chat",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "monotonic",
-          "part": "document-chat-ink",
-          "measure": "width"
-        }
-      ]
-    },
-    {
-      "name": "document-chat-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "monotonic",
-          "part": "document-chat-ink",
-          "measure": "width"
-        }
-      ]
-    },
-    {
-      "name": "source-grounding",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "source-grounding-ground1"
-        },
-        {
-          "type": "fixed",
-          "part": "source-grounding-ground3"
-        },
-        {
-          "type": "rigid",
-          "part": "source-grounding-block-frame"
-        }
-      ]
-    },
-    {
-      "name": "source-grounding-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "source-grounding-ground1"
-        },
-        {
-          "type": "fixed",
-          "part": "source-grounding-ground3"
-        },
-        {
-          "type": "rigid",
-          "part": "source-grounding-block-frame"
-        }
-      ]
-    },
-    {
       "name": "retrieve-context",
       "fixedParts": [],
       "topology": true,
@@ -362,48 +292,6 @@
       ]
     },
     {
-      "name": "classification",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "classification-bin-l"
-        },
-        {
-          "type": "fixed",
-          "part": "classification-bin-r"
-        },
-        {
-          "type": "rigid",
-          "part": "classification-token"
-        }
-      ]
-    },
-    {
-      "name": "classification-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "classification-bin-l"
-        },
-        {
-          "type": "fixed",
-          "part": "classification-bin-r"
-        },
-        {
-          "type": "rigid",
-          "part": "classification-token"
-        }
-      ]
-    },
-    {
       "name": "clustering",
       "fixedParts": [],
       "topology": true,
@@ -446,48 +334,6 @@
       ]
     },
     {
-      "name": "entity-extraction",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "entity-extraction-l2"
-        },
-        {
-          "type": "fixed",
-          "part": "entity-extraction-l3"
-        },
-        {
-          "type": "rigid",
-          "part": "entity-extraction-pill-frame"
-        }
-      ]
-    },
-    {
-      "name": "entity-extraction-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "entity-extraction-l2"
-        },
-        {
-          "type": "fixed",
-          "part": "entity-extraction-l3"
-        },
-        {
-          "type": "rigid",
-          "part": "entity-extraction-pill-frame"
-        }
-      ]
-    },
-    {
       "name": "fact-check",
       "fixedParts": [],
       "topology": true,
@@ -510,44 +356,6 @@
         {
           "type": "rigid",
           "part": "fact-check-stamp-frame"
-        }
-      ]
-    },
-    {
-      "name": "source-rank",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "inside",
-          "part": "source-rank-podium-frame",
-          "box": [
-            4,
-            8,
-            28,
-            26
-          ]
-        }
-      ]
-    },
-    {
-      "name": "source-rank-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "inside",
-          "part": "source-rank-podium-frame",
-          "box": [
-            4,
-            8,
-            28,
-            26
-          ]
         }
       ]
     },
@@ -729,6 +537,61 @@
           "type": "rigid",
           "part": "long-term-memory-dial"
         }
+      ]
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "document-chat",
+      "spec": "specs/document-chat.icon.json",
+      "specSha256": "fbf9666d2c1453e0823c5647f0aeb625021d14634e7dbc02b66e57187defc9d4",
+      "actions": [
+        "document-chat",
+        "document-chat-reset",
+        "document-chat-strong",
+        "document-chat-reset-strong"
+      ]
+    },
+    {
+      "icon": "source-grounding",
+      "spec": "specs/source-grounding.icon.json",
+      "specSha256": "b5d51a002458f886d64655fe88b18e904c341008604edfa8d396a5ddff9f869c",
+      "actions": [
+        "source-grounding",
+        "source-grounding-strong"
+      ]
+    },
+    {
+      "icon": "classification",
+      "spec": "specs/classification.icon.json",
+      "specSha256": "3d2b8fa8fdd7d87f0d012f7674f56edff6a9a57aa787ec7ad48963ec1820e415",
+      "actions": [
+        "classification",
+        "classification-reset",
+        "classification-strong",
+        "classification-reset-strong"
+      ]
+    },
+    {
+      "icon": "entity-extraction",
+      "spec": "specs/entity-extraction.icon.json",
+      "specSha256": "17ba35e5fe3909c520ae6530ed51fc44072c0b181aeff2cbf8c4417620618f31",
+      "actions": [
+        "entity-extraction",
+        "entity-extraction-reset",
+        "entity-extraction-strong",
+        "entity-extraction-reset-strong"
+      ]
+    },
+    {
+      "icon": "source-rank",
+      "spec": "specs/source-rank.icon.json",
+      "specSha256": "81940093dcd7e4ea88534e924be4d62973e25148d21971bfdc7df86c06484434",
+      "actions": [
+        "source-rank",
+        "source-rank-reset",
+        "source-rank-strong",
+        "source-rank-reset-strong"
       ]
     }
   ]

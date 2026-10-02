@@ -1,0 +1,36 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "confidence-score",
+  "label": "Confidence score",
+  "intent": "Evidence comes in and confidence rises. Light: the interval clamps in on the estimate and stops dead, the estimate condenses with a quick squeeze, and the score marker follows along the axis and lands on its higher score. Strong: two samples arrive: the interval clamps in two decaying steps, the estimate squeezes at each, and the marker steps up twice. The interval and the score never overshoot; the tight interval and the higher score stay.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "estimate":  {"shape": {"circle": [[16, 12], 3.25]}, "role": "surface", "solid": "fill"},
+    "whisker-l": {"shape": {"morph": [{"line": [[5.5, 12], [12.75, 12]]}, {"line": [[9, 12], [12.75, 12]]}], "by": "tighten"}},
+    "whisker-r": {"shape": {"morph": [{"line": [[19.25, 12], [26.5, 12]]}, {"line": [[19.25, 12], [23, 12]]}], "by": "tighten"}},
+    "cap-l":     {"shape": {"line": [[5.5, 8.5], [5.5, 15.5]]}},
+    "cap-r":     {"shape": {"line": [[26.5, 8.5], [26.5, 15.5]]}},
+    "axis":      {"shape": {"line": [[5, 24], [27, 24]]}},
+    "marker":    {"shape": {"line": [[11, 21.5], [11, 26.5]]}}
+  },
+  "rigs": {
+    "estimate": {"//": "scale only goes below 1: a bigger ring would uncover the whisker caps inside it", "pivot": [16, 12]}
+  },
+  "motion": {
+    "tighten": {
+      "light":  [[0, 0], [0.2, 1, "hit"]],
+      "strong": [[0, 0], [0.15, 0.65, "hit"], [0.3, 0.65], [0.4, 1, "hit"]]
+    },
+    "cap-l.x": {"follow": "tighten", "scale": 3.5},
+    "cap-r.x": {"follow": "tighten", "scale": -3.5},
+    "estimate.scale": {
+      "light":  [[0, 1], [0.2, 1], [0.25, 0.85, "out"], [0.36, 1]],
+      "strong": [[0, 1], [0.15, 1], [0.2, 0.82, "out"], [0.3, 1], [0.4, 1], [0.45, 0.9, "out"], [0.56, 1]]
+    },
+    "marker.x": {
+      "light":  [[0, 0], [0.1, 0], [0.38, 10, "hit"]],
+      "strong": [[0, 0], [0.08, 0], [0.27, 6.5, "hit"], [0.36, 6.5], [0.52, 10, "hit"]]
+    }
+  }
+}

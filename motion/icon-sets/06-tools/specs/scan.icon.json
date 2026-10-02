@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "scan",
+  "label": "Scan",
+  "intent": "The scanner locks focus, then reads. Light: the four brackets snap in on the target and spring back out, then the scan bar crosses the frame at a steady speed and stops dead at the lower edge. Strong: a deeper focus snap, the same steady pass, and on arrival the brackets squeeze once more to confirm the capture. The bar holds at the lower edge.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "bar":       {"shape": {"line": [[11, 10], [21, 10]]}},
+    "corner-bl": {"shape": {"path": "M12 26 L8.2 26 C6.8 26 6 25.2 6 23.8 L6 20"}},
+    "corner-br": {"shape": {"path": "M26 20 L26 23.8 C26 25.2 25.2 26 23.8 26 L20 26"}},
+    "corner-tr": {"shape": {"path": "M20 6 L23.8 6 C25.2 6 26 6.8 26 8.2 L26 12"}},
+    "corner-tl": {"shape": {"path": "M6 12 L6 8.2 C6 6.8 6.8 6 8.2 6 L12 6"}}
+  },
+  "motion": {
+    "corner-tl.x": {
+      "light":  [[0, 0], [0.08, 1.2, "hit"], [0.15, -0.3], [0.22, 0]],
+      "strong": [[0, 0], [0.08, 1.6, "hit"], [0.16, -0.4], [0.24, 0], [0.6, 0], [0.66, 0.9, "hit"], [0.74, -0.2], [0.82, 0]]
+    },
+    "corner-tl.y": {"//": "the squeeze is mostly sideways so the top brackets never touch the bar", "follow": "corner-tl.x", "scale": 0.45},
+    "corner-tr.x": {"follow": "corner-tl.x", "scale": -1},
+    "corner-tr.y": {"follow": "corner-tl.x", "scale": 0.45},
+    "corner-bl.x": {"follow": "corner-tl.x"},
+    "corner-bl.y": {"follow": "corner-tl.x", "scale": -0.45},
+    "corner-br.x": {"follow": "corner-tl.x", "scale": -1},
+    "corner-br.y": {"follow": "corner-tl.x", "scale": -0.45},
+    "bar.y": {
+      "light":  [[0, 0], [0.13, 0], [0.45, 10, "linear"]],
+      "strong": [[0, 0], [0.18, 0], [0.6, 10, "linear"]]
+    }
+  }
+}

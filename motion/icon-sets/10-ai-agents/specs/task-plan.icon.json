@@ -1,0 +1,23 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "task-plan",
+  "label": "Task plan",
+  "intent": "The plan unrolls step by step. Light: the second step shoots out from its marker into a full bar and snaps against its end, and the third follows 100 ms later, each with a small rebound. Strong: the steps unroll one at a time, each overshooting its end and settling, so the plan visibly lands in order. The first step never moves; the prepared state shows the later steps as markers.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "step3": {"shape": {"morph": [{"rect": [14, 21, 5, 5], "r": 2.5}, {"rect": [14, 21, 13, 5], "r": 2.5}], "by": "plan3"}, "role": "surface", "solid": "fill"},
+    "step2": {"shape": {"morph": [{"rect": [10, 13.5, 5, 5], "r": 2.5}, {"rect": [10, 13.5, 13, 5], "r": 2.5}], "by": "plan2"}, "role": "surface", "solid": "fill"},
+    "step1": {"shape": {"rect": [6, 6, 11, 5], "r": 2.5}, "role": "surface", "solid": "fill"}
+  },
+  "motion": {
+    "plan2": {
+      "light":  [[0, 0], [0.18, 1, "hit"], {"bounce": 0.28, "amp": 0.12}],
+      "strong": [[0, 0], [0.16, 1.25, "out"], [0.26, 0.94], [0.34, 1.02], [0.4, 1]]
+    },
+    "plan3": {
+      "light":  [[0, 0], [0.1, 0], [0.28, 1, "hit"], {"bounce": 0.38, "amp": 0.12}],
+      "strong": [[0, 0], [0.22, 0], [0.38, 1.25, "out"], [0.48, 0.94], [0.56, 1.02], [0.62, 1]]
+    }
+  }
+}

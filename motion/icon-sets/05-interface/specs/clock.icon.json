@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "clock",
+  "label": "Clock",
+  "intent": "A quarter of an hour passes. Light: the minute hand sweeps from 12 to 3 in one fast move, lands with a hit, recoils and settles; the hour hand is geared to it at a true 12:1 and creeps on 7.5 degrees. Strong: the minute hand jumps in three 5-minute ticks, each a hit with a recoil, the last the hardest with a second, smaller recoil. The hands never pass the new time, the case never moves, and the new time holds.",
+  "parts": {
+    "hour":   {"shape": {"line": [[16, 16], [20.5, 18.2]]}},
+    "minute": {"shape": {"line": [[16, 16], [16, 9.8]]}},
+    "clock":  {"shape": {"circle": [[16, 16], 10.5]}, "role": "surface", "solid": "ring"}
+  },
+  "rigs": {
+    "minute": {"pivot": [16, 16]},
+    "hour":   {"pivot": [16, 16]}
+  },
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "motion": {
+    "minute.rotate": {
+      "light":  [[0, 0], [0.03, 0], [0.24, 90, "hit"], [0.31, 82], [0.4, 90]],
+      "strong": [[0, 0], [0.04, 0], [0.13, 30, "hit"], [0.17, 25], [0.21, 30], [0.24, 30], [0.33, 60, "hit"], [0.37, 55], [0.41, 60], [0.44, 60], [0.53, 90, "hit"], [0.6, 80], [0.67, 90, "hit"], [0.72, 87], [0.78, 90]]
+    },
+    "hour.rotate":   {"//": "geared: a true 12:1, no lag", "follow": "minute.rotate", "scale": 0.083333}
+  },
+  "preview": {"light": [0, 0.08, 0.14, 0.2, 0.24, 0.31, 0.4, 0.48], "strong": [0, 0.13, 0.17, 0.33, 0.37, 0.53, 0.6, 0.84]}
+}

@@ -1,0 +1,333 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "trash",
+  "label": "Trash",
+  "intent": "Something is thrown away. Light: the lid flips open on its right-hand hinge, a crumpled scrap drops from under the raised edge into the bin and vanishes inside, and the lid drops shut with a hit and one chatter while the whole bin dips on contact. Strong: the lid flips wider and holds longer, two scraps drop in one after the other, and the lid slams with two chatters and a deeper dip.",
+  "parts": {
+    "scrap": {
+      "//": "hidden at rest: the thing thrown away, released from under the raised lid and dropped in",
+      "shape": {
+        "circle": [
+          [
+            12.3,
+            9.5
+          ],
+          1.4
+        ]
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "scrap-2": {
+      "//": "Strong only: a second scrap on the same path",
+      "shape": {
+        "circle": [
+          [
+            12.3,
+            9.5
+          ],
+          1.4
+        ]
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "slot": {
+      "shape": {
+        "line": [
+          [
+            16,
+            18.5
+          ],
+          [
+            16,
+            22.5
+          ]
+        ]
+      },
+      "solid": {
+        "rect": [
+          14.8,
+          18,
+          2.4,
+          5.2
+        ],
+        "r": 1.2
+      }
+    },
+    "body": {
+      "shape": {
+        "path": "M9 12.8 L10 24 C10.17 25.42 11.38 26.5 12.8 26.5 L19.2 26.5 C20.62 26.5 21.83 25.42 22 24 L23 12.8 L9 12.8 Z"
+      },
+      "role": "surface",
+      "solid": "fill",
+      "knockout": [
+        {
+          "part": "slot",
+          "gap": 0
+        }
+      ]
+    },
+    "handle": {
+      "shape": {
+        "path": "M13 11.5 L13 8 C13 7.45 13.45 7 14 7 L18.5 7 C19.05 7 19.5 7.45 19.5 8 L19.5 11.5"
+      },
+      "solid": {
+        "path": "M11.8 11.5 L11.8 8 C11.8 6.79 12.79 5.8 14 5.8 L18.5 5.8 C19.71 5.8 20.7 6.79 20.7 8 L20.7 11.5 L18.3 11.5 L18.3 8.2 L14.2 8.2 L14.2 11.5 L11.8 11.5 Z"
+      }
+    },
+    "lid": {
+      "shape": {
+        "line": [
+          [
+            7.5,
+            11.5
+          ],
+          [
+            25,
+            11.5
+          ]
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "bin": {
+      "//": "the whole bin dips when the lid lands",
+      "pivot": [
+        16,
+        26.5
+      ],
+      "carries": [
+        "body",
+        "slot",
+        "lid"
+      ]
+    },
+    "lid": {
+      "//": "hinged at its right-hand end; positive turns lift the left end",
+      "pivot": [
+        25,
+        11.5
+      ],
+      "carries": [
+        "lid",
+        "handle"
+      ]
+    }
+  },
+  "motion": {
+    "lid.rotate": {
+      "//": "22-24 deg is the most the handle allows (1.4 inside the canvas at Bold)",
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          22,
+          "out"
+        ],
+        [
+          0.26,
+          22
+        ],
+        [
+          0.33,
+          0,
+          "hit"
+        ],
+        {
+          "bounce": 0.41,
+          "amp": 0.16
+        }
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          24,
+          "out"
+        ],
+        [
+          0.34,
+          24
+        ],
+        [
+          0.41,
+          0,
+          "hit"
+        ],
+        {
+          "bounce": 0.49,
+          "amp": 0.18
+        },
+        {
+          "bounce": 0.56,
+          "amp": 0.35
+        }
+      ]
+    },
+    "bin.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.33,
+          0
+        ],
+        [
+          0.37,
+          0.8,
+          "out"
+        ],
+        [
+          0.44,
+          -0.2
+        ],
+        [
+          0.5,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.41,
+          0
+        ],
+        [
+          0.45,
+          1.2,
+          "out"
+        ],
+        [
+          0.52,
+          -0.3
+        ],
+        [
+          0.58,
+          0.1
+        ],
+        [
+          0.64,
+          0
+        ]
+      ]
+    },
+    "scrap.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          0
+        ],
+        [
+          0.24,
+          7.5,
+          "in"
+        ],
+        [
+          0.25,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          0
+        ],
+        [
+          0.24,
+          7.5,
+          "in"
+        ],
+        [
+          0.25,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "scrap.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          0
+        ],
+        [
+          0.12,
+          1,
+          "out"
+        ],
+        [
+          0.2,
+          1
+        ],
+        [
+          0.24,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          0
+        ],
+        [
+          0.12,
+          1,
+          "out"
+        ],
+        [
+          0.2,
+          1
+        ],
+        [
+          0.24,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "scrap-2.y": {
+      "strong": {
+        "follow": "scrap.y",
+        "lag": 0.08
+      }
+    },
+    "scrap-2.opacity": {
+      "strong": {
+        "follow": "scrap.opacity",
+        "lag": 0.08
+      }
+    }
+  }
+}

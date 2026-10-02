@@ -2,8 +2,8 @@
   "result": "PASS",
   "icons": 20,
   "actions": 72,
-  "nativeTransformNodes": 372,
-  "nativeTransformMaxCoordinateError": 0.00001000000000139778,
+  "nativeTransformNodes": 228,
+  "nativeTransformMaxCoordinateError": 0.000010000000000509601,
   "checks": [
     {
       "name": "storefront",
@@ -40,32 +40,6 @@
       ]
     },
     {
-      "name": "shopping-bag",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "shopping-bag-body"
-        }
-      ]
-    },
-    {
-      "name": "shopping-bag-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "shopping-bag-body"
-        }
-      ]
-    },
-    {
       "name": "basket",
       "fixedParts": [],
       "topology": true,
@@ -96,32 +70,6 @@
         {
           "type": "fixed",
           "part": "basket-rim"
-        }
-      ]
-    },
-    {
-      "name": "product-tag",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "product-tag-tag"
-        }
-      ]
-    },
-    {
-      "name": "product-tag-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "product-tag-tag"
         }
       ]
     },
@@ -186,40 +134,6 @@
       ]
     },
     {
-      "name": "coupon",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "coupon-body"
-        },
-        {
-          "type": "rigid",
-          "part": "coupon-stub"
-        }
-      ]
-    },
-    {
-      "name": "coupon-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "coupon-body"
-        },
-        {
-          "type": "rigid",
-          "part": "coupon-stub"
-        }
-      ]
-    },
-    {
       "name": "loyalty-points",
       "fixedParts": [],
       "topology": true,
@@ -250,40 +164,6 @@
         {
           "type": "rigid",
           "part": "loyalty-points-stamp-foot"
-        }
-      ]
-    },
-    {
-      "name": "gift-card",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "gift-card-card"
-        },
-        {
-          "type": "rigid",
-          "part": "gift-card-loop-left"
-        }
-      ]
-    },
-    {
-      "name": "gift-card-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "gift-card-card"
-        },
-        {
-          "type": "rigid",
-          "part": "gift-card-loop-left"
         }
       ]
     },
@@ -518,82 +398,6 @@
       ]
     },
     {
-      "name": "order-tracking",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "order-tracking-stop-one"
-        },
-        {
-          "type": "rigid",
-          "part": "order-tracking-pin"
-        }
-      ]
-    },
-    {
-      "name": "order-tracking-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "order-tracking-stop-one"
-        },
-        {
-          "type": "rigid",
-          "part": "order-tracking-pin"
-        }
-      ]
-    },
-    {
-      "name": "pickup-locker",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "pickup-locker-frame-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "pickup-locker-door"
-        },
-        {
-          "type": "rigid",
-          "part": "pickup-locker-handle"
-        }
-      ]
-    },
-    {
-      "name": "pickup-locker-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "pickup-locker-frame-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "pickup-locker-door"
-        },
-        {
-          "type": "rigid",
-          "part": "pickup-locker-handle"
-        }
-      ]
-    },
-    {
       "name": "warehouse",
       "fixedParts": [],
       "topology": true,
@@ -626,47 +430,80 @@
           "part": "warehouse-jambs"
         }
       ]
-    },
+    }
+  ],
+  "adoptedSpecs": [
     {
-      "name": "inventory",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "inventory-box-left"
-        },
-        {
-          "type": "fixed",
-          "part": "inventory-box-right"
-        },
-        {
-          "type": "rigid",
-          "part": "inventory-moving-box"
-        }
+      "icon": "shopping-bag",
+      "spec": "specs/shopping-bag.icon.json",
+      "specSha256": "40e06fa86cbc2fc7c68ea05cbe4995ff486ab17f76a9fecaa066b945f18674c2",
+      "actions": [
+        "shopping-bag",
+        "shopping-bag-reverse",
+        "shopping-bag-strong",
+        "shopping-bag-reverse-strong"
       ]
     },
     {
-      "name": "inventory-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "inventory-box-left"
-        },
-        {
-          "type": "fixed",
-          "part": "inventory-box-right"
-        },
-        {
-          "type": "rigid",
-          "part": "inventory-moving-box"
-        }
+      "icon": "product-tag",
+      "spec": "specs/product-tag.icon.json",
+      "specSha256": "cd92d6809ed2fb3a976220bf15b6137bc6356fe6cea1cc9ae3f5d231c1eeb7c0",
+      "actions": [
+        "product-tag",
+        "product-tag-strong"
+      ]
+    },
+    {
+      "icon": "coupon",
+      "spec": "specs/coupon.icon.json",
+      "specSha256": "b77efc05ef420a410cb32f0b12495d164619b7d52889890ae7a57a3cd5602846",
+      "actions": [
+        "coupon",
+        "coupon-reverse",
+        "coupon-strong",
+        "coupon-reverse-strong"
+      ]
+    },
+    {
+      "icon": "gift-card",
+      "spec": "specs/gift-card.icon.json",
+      "specSha256": "56d2d5b0465e88ca5754bbff88d098e26f2df13547cf0ae76e64befc3fd9e2b4",
+      "actions": [
+        "gift-card",
+        "gift-card-strong"
+      ]
+    },
+    {
+      "icon": "order-tracking",
+      "spec": "specs/order-tracking.icon.json",
+      "specSha256": "3f7871aed2f6442b5e8b71c1ae5796dbca6a466f113a86b661ff32815c22232d",
+      "actions": [
+        "order-tracking",
+        "order-tracking-reverse",
+        "order-tracking-strong",
+        "order-tracking-reverse-strong"
+      ]
+    },
+    {
+      "icon": "pickup-locker",
+      "spec": "specs/pickup-locker.icon.json",
+      "specSha256": "ebb085272e3b04863ff669afa08a34a29a3865d564149621c1f0cb446827a530",
+      "actions": [
+        "pickup-locker",
+        "pickup-locker-reverse",
+        "pickup-locker-strong",
+        "pickup-locker-reverse-strong"
+      ]
+    },
+    {
+      "icon": "inventory",
+      "spec": "specs/inventory.icon.json",
+      "specSha256": "4cbf065d620aa28f3881c975619e6e7f553979f728451d010a148d5eedb65e47",
+      "actions": [
+        "inventory",
+        "inventory-reverse",
+        "inventory-strong",
+        "inventory-reverse-strong"
       ]
     }
   ]

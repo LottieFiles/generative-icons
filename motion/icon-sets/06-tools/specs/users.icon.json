@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "users",
+  "label": "Users",
+  "intent": "The group says hello in turn. Light: the person at the back crouches, pops up and lands with a bounce, and a beat later the person in front answers with a smaller hop; shoulders stretch with each pop and squash on each landing. Strong: a higher pop and a second hop at the back, each echoed by the front person a beat later. Heads stay round.",
+  "parts": {
+    "front-head":      {"shape": {"circle": [[12.5, 11], 3.4]}, "role": "surface", "solid": {"grow": 0.7}},
+    "front-shoulders": {"shape": {"path": "M5 26 L5 24 C5 20.4 8.4 18.8 12.5 18.8 C16.6 18.8 20 20.4 20 24 L20 26 L5 26 Z"},
+                        "role": "surface", "solid": "fill"},
+    "rear-shoulder":   {"shape": {"path": "M23 16 C25.4 16 27 19 27 23.5"}},
+    "rear-head":       {"shape": {"circle": [[23, 8.8], 3]}, "role": "surface", "solid": {"grow": 0.8}}
+  },
+  "rigs": {
+    "front-shoulders": {"pivot": [12.5, 26], "squash": {"base": 26, "widen": 0.5}},
+    "rear-shoulder":   {"pivot": [25, 23.5], "squash": {"base": 23.5, "widen": 0.5}}
+  },
+  "motion": {
+    "rear-head.y": {
+      "light":  [[0, 0], [0.07, 0.9, "out"], [0.18, -2.2, "out"], [0.29, 0, "hit"], {"bounce": 0.36, "amp": 0.18}],
+      "strong": [[0, 0], [0.08, 1.2, "out"], [0.2, -3, "out"], [0.32, 0, "hit"], [0.37, 0.45], [0.44, -1.2, "out"], [0.52, 0, "hit"], {"bounce": 0.58, "amp": 0.2}]
+    },
+    "rear-shoulder.squash": {
+      "light":  [[0, 1], [0.07, 0.9, "out"], [0.18, 1.05, "out"], [0.29, 0.93, "hit"], [0.39, 1]],
+      "strong": [[0, 1], [0.08, 0.87, "out"], [0.2, 1.06, "out"], [0.32, 0.91, "hit"], [0.41, 1.03], [0.52, 0.95, "hit"], [0.6, 1]]
+    },
+    "front-head.y":           {"//": "the answer: a beat later and smaller", "follow": "rear-head.y", "lag": 0.1, "scale": 0.75},
+    "front-shoulders.squash": {"follow": "rear-shoulder.squash", "lag": 0.1, "scale": 0.75, "offset": 0.25}
+  }
+}

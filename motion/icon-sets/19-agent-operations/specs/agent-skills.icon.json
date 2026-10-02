@@ -1,0 +1,331 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "agent-skills",
+  "label": "Agent skills",
+  "intent": "A skill cartridge is loaded into its dock. Light: the cartridge drops into the dock and lands with a hit; the dock takes the load, giving under it with the cartridge, and both spring back and settle with the cartridge seated. Strong: the cartridge is lifted first, then driven down harder; the dock gives further and the pair settle in two beats. Eject: the cartridge is pulled up, dragging the dock a little, then pops free; the dock snaps back with a rebound and the cartridge settles above it. Cartridge and dock stay rigid.",
+  "state": {
+    "from": "detached",
+    "to": "loaded",
+    "labels": [
+      "Load",
+      "Eject"
+    ],
+    "reverse": "auto"
+  },
+  "parts": {
+    "dock": {
+      "shape": {
+        "rect": [
+          6,
+          19,
+          20,
+          7
+        ],
+        "r": 2.5
+      },
+      "role": "surface",
+      "solid": {
+        "rect": [
+          6,
+          19.5,
+          20,
+          6.5
+        ],
+        "r": 2.5
+      },
+      "//": "v1 Solid: the dock filled from 19.5, below the seated tab"
+    },
+    "cartridge": {
+      "shape": {
+        "rect": [
+          9,
+          3.8,
+          14,
+          7
+        ],
+        "r": 2
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "tab": {
+      "shape": {
+        "rect": [
+          13,
+          10.3,
+          6,
+          6
+        ],
+        "r": 0.5
+      },
+      "role": "fill",
+      "solid": {
+        "rect": [
+          13,
+          9.8,
+          6,
+          7.5
+        ],
+        "r": 0.5
+      },
+      "//": "v1 Solid: the tab runs 0.5 further into the cartridge and the dock"
+    }
+  },
+  "rigs": {
+    "cart": {
+      "pivot": [
+        16,
+        10
+      ],
+      "carries": [
+        "cartridge",
+        "tab"
+      ]
+    }
+  },
+  "motion": {
+    "//": "v1's end state is the cartridge 3.2 down, its tab seated in the dock. After contact the cartridge rides the dock (same offsets), so they never part. Strong's 1 lift keeps the cartridge 1.55 inside the canvas at Bold.",
+    "cart.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          3.2,
+          "hit"
+        ],
+        [
+          0.27,
+          4.2,
+          "out"
+        ],
+        [
+          0.36,
+          2.9,
+          "inOut"
+        ],
+        [
+          0.44,
+          3.2,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -1,
+          "out"
+        ],
+        [
+          0.14,
+          -1
+        ],
+        [
+          0.3,
+          3.2,
+          "hit"
+        ],
+        [
+          0.37,
+          4.6,
+          "out"
+        ],
+        [
+          0.46,
+          2.7,
+          "inOut"
+        ],
+        [
+          0.54,
+          3.4,
+          "inOut"
+        ],
+        [
+          0.62,
+          3.2,
+          "inOut"
+        ]
+      ]
+    },
+    "dock.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.27,
+          1,
+          "out"
+        ],
+        [
+          0.36,
+          -0.3,
+          "inOut"
+        ],
+        [
+          0.44,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0
+        ],
+        [
+          0.37,
+          1.4,
+          "out"
+        ],
+        [
+          0.46,
+          -0.5,
+          "inOut"
+        ],
+        [
+          0.54,
+          0.2,
+          "inOut"
+        ],
+        [
+          0.62,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  },
+  "reverse": {
+    "//": "a mirrored hit would fling the part past the canvas edge: the release is written out. The receiver is dragged a little with the part, then snaps back with a rebound as the part comes free and settles at rest.",
+    "light": {
+      "cart.y": [
+        [
+          0,
+          3.2
+        ],
+        [
+          0.1,
+          2.6,
+          "inOut"
+        ],
+        [
+          0.28,
+          -0.5,
+          "out"
+        ],
+        [
+          0.36,
+          0.15,
+          "inOut"
+        ],
+        [
+          0.42,
+          0,
+          "inOut"
+        ]
+      ],
+      "dock.y": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.6,
+          "inOut"
+        ],
+        [
+          0.17,
+          0.25,
+          "out"
+        ],
+        [
+          0.25,
+          -0.08,
+          "inOut"
+        ],
+        [
+          0.31,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "strong": {
+      "cart.y": [
+        [
+          0,
+          3.2
+        ],
+        [
+          0.14,
+          2.4,
+          "inOut"
+        ],
+        [
+          0.34,
+          -0.9,
+          "out"
+        ],
+        [
+          0.43,
+          0.3,
+          "inOut"
+        ],
+        [
+          0.51,
+          -0.1,
+          "inOut"
+        ],
+        [
+          0.58,
+          0,
+          "inOut"
+        ]
+      ],
+      "dock.y": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          -0.8,
+          "inOut"
+        ],
+        [
+          0.21,
+          0.35,
+          "out"
+        ],
+        [
+          0.3,
+          -0.12,
+          "inOut"
+        ],
+        [
+          0.37,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  }
+}

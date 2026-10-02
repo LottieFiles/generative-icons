@@ -2,115 +2,9 @@
   "result": "PASS",
   "icons": 21,
   "actions": 62,
-  "nativeTransformNodes": 162,
-  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "nativeTransformNodes": 8,
+  "nativeTransformMaxCoordinateError": 0.000005000000001587068,
   "checks": [
-    {
-      "name": "user",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "user-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "users",
-      "fixedParts": [
-        "users-front-shoulders-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "users-strong",
-      "fixedParts": [
-        "users-front-shoulders-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "key",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "key-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "scan",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "scan-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "battery",
-      "fixedParts": [
-        "battery-shell-frame",
-        "battery-terminal"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "battery-strong",
-      "fixedParts": [
-        "battery-shell-frame",
-        "battery-terminal"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "plug",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "plug-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
     {
       "name": "bluetooth",
       "fixedParts": [
@@ -180,48 +74,6 @@
       "designConstraints": []
     },
     {
-      "name": "laptop",
-      "fixedParts": [
-        "laptop-base",
-        "laptop-hinge"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "laptop-strong",
-      "fixedParts": [
-        "laptop-base",
-        "laptop-hinge"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "printer",
-      "fixedParts": [
-        "printer-housing"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "printer-strong",
-      "fixedParts": [
-        "printer-housing"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
       "name": "document",
       "fixedParts": [
         "document-page",
@@ -237,26 +89,6 @@
       "fixedParts": [
         "document-page",
         "document-fold"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "clipboard",
-      "fixedParts": [
-        "clipboard-board"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "clipboard-strong",
-      "fixedParts": [
-        "clipboard-board"
       ],
       "topology": true,
       "stateBoundaries": true,
@@ -308,50 +140,6 @@
       "designConstraints": []
     },
     {
-      "name": "gift",
-      "fixedParts": [
-        "gift-box",
-        "gift-ribbon",
-        "gift-solid-box"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "gift-strong",
-      "fixedParts": [
-        "gift-box",
-        "gift-ribbon",
-        "gift-solid-box"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "flag",
-      "fixedParts": [
-        "flag-pole"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "flag-strong",
-      "fixedParts": [
-        "flag-pole"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
       "name": "chart",
       "fixedParts": [],
       "topology": true,
@@ -362,26 +150,6 @@
     {
       "name": "chart-strong",
       "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "filter",
-      "fixedParts": [
-        "filter-tier-0"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "filter-strong",
-      "fixedParts": [
-        "filter-tier-0"
-      ],
       "topology": true,
       "stateBoundaries": true,
       "hold": true,
@@ -406,12 +174,130 @@
   ],
   "adoptedSpecs": [
     {
+      "icon": "user",
+      "spec": "specs/user.icon.json",
+      "specSha256": "e6b04766147f1fd838309fb02e132d1d4651fc398b0f6e08a3a5f274f56f0f1e",
+      "actions": [
+        "user",
+        "user-strong"
+      ]
+    },
+    {
+      "icon": "users",
+      "spec": "specs/users.icon.json",
+      "specSha256": "33060fc24ebe7a8bb32cc7c4d36b4bcbf87af143d6f4108761e23f8af9ddb9d5",
+      "actions": [
+        "users",
+        "users-strong"
+      ]
+    },
+    {
+      "icon": "key",
+      "spec": "specs/key.icon.json",
+      "specSha256": "fe585dc5be01fe66cfa8298bee3c2444447c1210f8f173e48f935ddf4eb8c880",
+      "actions": [
+        "key",
+        "key-strong"
+      ]
+    },
+    {
+      "icon": "scan",
+      "spec": "specs/scan.icon.json",
+      "specSha256": "e1aef4ab91b261fbc7e0c3d866b16f65fe78cb57effbc8215d01675da7f9c777",
+      "actions": [
+        "scan",
+        "scan-reset",
+        "scan-strong",
+        "scan-reset-strong"
+      ]
+    },
+    {
+      "icon": "battery",
+      "spec": "specs/battery.icon.json",
+      "specSha256": "7140fa17c781754e0aec98eeff477eb5bba62d2b010ac627199d7715daa5416b",
+      "actions": [
+        "battery",
+        "battery-reset",
+        "battery-strong",
+        "battery-reset-strong"
+      ]
+    },
+    {
+      "icon": "plug",
+      "spec": "specs/plug.icon.json",
+      "specSha256": "0873ae788f7fdb95019de10ac70f0f6da386646c508c9007f4ac494a1c04af63",
+      "actions": [
+        "plug",
+        "plug-strong"
+      ]
+    },
+    {
+      "icon": "laptop",
+      "spec": "specs/laptop.icon.json",
+      "specSha256": "d6319d13e5815a5ed44a02ba1558fa7fd4228930c315df1a41bc51af557c6db9",
+      "actions": [
+        "laptop",
+        "laptop-reset",
+        "laptop-strong",
+        "laptop-reset-strong"
+      ]
+    },
+    {
+      "icon": "printer",
+      "spec": "specs/printer.icon.json",
+      "specSha256": "e801e83589838decc2d0ec2586f645bbb39f56a46b70a4da97ed7f5f4d1ee01d",
+      "actions": [
+        "printer",
+        "printer-reset",
+        "printer-strong",
+        "printer-reset-strong"
+      ]
+    },
+    {
+      "icon": "clipboard",
+      "spec": "specs/clipboard.icon.json",
+      "specSha256": "3bc28b3da4a8fc6f058e22c8be402b1d58212ac37190db7cebfd5ba796be42fd",
+      "actions": [
+        "clipboard",
+        "clipboard-strong"
+      ]
+    },
+    {
       "icon": "credit-card",
       "spec": "specs/credit-card.icon.json",
       "specSha256": "f520109f397c4fe905eafecbcfa0570d08958249f0d00299b7bcaed33d5585d0",
       "actions": [
         "credit-card",
         "credit-card-strong"
+      ]
+    },
+    {
+      "icon": "gift",
+      "spec": "specs/gift.icon.json",
+      "specSha256": "5cc5feac82271f473601f15097cbdb5140d80db3d9dbdda737cd99fd2916b282",
+      "actions": [
+        "gift",
+        "gift-strong"
+      ]
+    },
+    {
+      "icon": "flag",
+      "spec": "specs/flag.icon.json",
+      "specSha256": "8aff5b448bb5bc6b32f53aaedadaa285db0e17a046866134fa40fdb38ec7a87a",
+      "actions": [
+        "flag",
+        "flag-strong"
+      ]
+    },
+    {
+      "icon": "filter",
+      "spec": "specs/filter.icon.json",
+      "specSha256": "2b43a16e7eaef85dc47e76f0b32b175ec0995ffb0b3bd6e75fb23184ba42a132",
+      "actions": [
+        "filter",
+        "filter-reset",
+        "filter-strong",
+        "filter-reset-strong"
       ]
     }
   ]

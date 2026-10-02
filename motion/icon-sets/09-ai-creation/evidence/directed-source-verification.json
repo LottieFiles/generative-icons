@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 76,
-  "nativeTransformNodes": 184,
+  "nativeTransformNodes": 176,
   "nativeTransformMaxCoordinateError": 0.000010000000003174137,
   "checks": [
     {
@@ -158,50 +158,6 @@
         {
           "type": "rigid",
           "part": "object-select-pointer-frame"
-        }
-      ]
-    },
-    {
-      "name": "image-upscale",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "image-upscale-original"
-        },
-        {
-          "type": "monotonic",
-          "part": "image-upscale-frame",
-          "measure": "width"
-        },
-        {
-          "type": "rigid",
-          "part": "image-upscale-arrow"
-        }
-      ]
-    },
-    {
-      "name": "image-upscale-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "image-upscale-original"
-        },
-        {
-          "type": "monotonic",
-          "part": "image-upscale-frame",
-          "measure": "width"
-        },
-        {
-          "type": "rigid",
-          "part": "image-upscale-arrow"
         }
       ]
     },
@@ -707,6 +663,19 @@
           "type": "rigid",
           "part": "code-review-rb"
         }
+      ]
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "image-upscale",
+      "spec": "specs/image-upscale.icon.json",
+      "specSha256": "45e9491b83bd048dafa244c976bf251749bc59a910460ce00ba5cd017f08b85e",
+      "actions": [
+        "image-upscale",
+        "image-upscale-reset",
+        "image-upscale-strong",
+        "image-upscale-reset-strong"
       ]
     }
   ]

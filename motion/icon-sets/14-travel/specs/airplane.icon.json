@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "airplane",
+  "label": "Airplane",
+  "intent": "The plane takes off. Light: it turns its nose 35° toward the upper right and accelerates out along it, laying a contrail from each wingtip and the tail, and fades before the edge; the contrails hang until it returns; it glides back in from the lower left on the same line, levels off and lands on its rest pose with a small overshoot. Strong: a short draw-back first, a faster launch with contrails twice as long, and a landing that overshoots and settles in two beats.",
+  "parts": {
+    "airframe": {"shape": {"path": "M15.787 6.614 C15.929 6.205 16.071 6.205 16.213 6.614 L18.037 11.886 C18.179 12.295 18.419 12.635 18.758 12.906 L26.492 19.094 C26.831 19.365 27 19.717 27 20.15 L27 20.85 C27 21.283 26.795 21.43 26.385 21.289 L18.865 18.711 C18.455 18.57 18.25 18.717 18.25 19.15 L18.25 22.85 C18.25 23.283 18.422 23.632 18.765 23.896 L20.985 25.604 C21.328 25.868 21.5 26.117 21.5 26.35 L21.5 26.65 C21.5 26.883 21.289 26.95 20.867 26.85 L16.633 25.85 C16.211 25.75 15.789 25.75 15.367 25.85 L11.133 26.85 C10.711 26.95 10.5 26.883 10.5 26.65 L10.5 26.35 C10.5 26.117 10.672 25.868 11.015 25.604 L13.235 23.896 C13.578 23.632 13.75 23.283 13.75 22.85 L13.75 19.15 C13.75 18.717 13.545 18.57 13.135 18.711 L5.615 21.289 C5.205 21.43 5 21.283 5 20.85 L5 20.15 C5 19.717 5.169 19.365 5.508 19.094 L13.242 12.906 C13.581 12.635 13.821 12.295 13.963 11.886 L15.787 6.614 Z"}, "role": "surface"},
+    "trail-a":  {"//": "hidden at rest: contrails laid along the flight line where the wingtips and tail pass, back end first", "shape": {"line": [[4.73, 14.47], [7.6, 10.37]]}, "hidden": true},
+    "trail-b":  {"shape": {"line": [[10.64, 24.16], [13.5, 20.06]]}, "hidden": true},
+    "trail-c":  {"shape": {"line": [[21.77, 26.4], [24.63, 22.3]]}, "hidden": true}
+  },
+  "rigs": {
+    "plane": {"pivot": [16, 16.5], "carries": ["airframe"]}
+  },
+  "motion": {
+    "//": "The plane travels along its nose at 35°: x = 0.574 d, y = -0.819 d, so y follows x at -1.428.",
+    "plane.x": {
+      "light":  [[0, 0], [0.06, 0], [0.13, 1.147, "in"], [0.22, 5.736, "linear"], [0.23, -3.441, "step"], [0.42, 0.229, "out"], [0.5, 0]],
+      "strong": [[0, 0], [0.1, -0.574, "out"], [0.16, 0.86, "in"], [0.23, 6.309, "linear"], [0.24, -3.728, "step"], [0.45, 0.459, "out"], [0.53, -0.143], [0.61, 0]]
+    },
+    "plane.y": {"follow": "plane.x", "scale": -1.428},
+    "plane.rotate": {
+      "light":  [[0, 0], [0.12, 35, "out"], [0.3, 35], [0.44, -3, "out"], [0.52, 0]],
+      "strong": [[0, 0], [0.08, -4], [0.16, 35, "out"], [0.32, 35], [0.46, -5, "out"], [0.54, 2], [0.62, 0]]
+    },
+    "airframe.opacity": {
+      "light":  [[0, 1], [0.12, 1], [0.175, 0, "in"], [0.293, 0], [0.37, 1, "out"]],
+      "strong": [[0, 1], [0.15, 1], [0.19, 0, "in"], [0.308, 0], [0.39, 1, "out"]]
+    },
+    "trail-a.opacity": {
+      "light":  [[0, 0], [0.07, 0], [0.09, 1], [0.285, 1], [0.32, 0, "in"]],
+      "strong": [[0, 0], [0.14, 0], [0.15, 1], [0.3, 1], [0.335, 0, "in"]]
+    },
+    "trail-a.draw": {
+      "light":  [[0, 1], [0.07, 0, "step"], [0.141, 0.6, "in"], [0.35, 1, "step"]],
+      "strong": [[0, 1], [0.14, 0, "step"], [0.186, 1, "in"]]
+    },
+    "trail-b.opacity": {"follow": "trail-a.opacity", "lag": 0.01},
+    "trail-b.draw": {"follow": "trail-a.draw", "lag": 0.01},
+    "trail-c.opacity": {"follow": "trail-a.opacity", "lag": 0.02},
+    "trail-c.draw": {"follow": "trail-a.draw", "lag": 0.02}
+  }
+}

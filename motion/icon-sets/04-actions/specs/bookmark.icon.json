@@ -1,0 +1,166 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "bookmark",
+  "label": "Bookmark",
+  "intent": "The place is marked. Light: the ribbon lifts, then drops into the page, stretching as it falls, lands 1.2 lower with a hit and a squash, bounces once and stays seated. Strong: a higher lift, a harder drop with more stretch, a deeper squash and two decaying bounces before it seats. The preview reset fades it back to the prepared pose.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "parts": {
+    "ribbon": {
+      "shape": {
+        "path": "M9 7.8 C9 6.6 9.6 6 10.8 6 L21.2 6 C22.4 6 23 6.6 23 7.8 L23 24.15 C23 24.717 22.762 24.847 22.285 24.54 L16.757 20.987 C16.252 20.662 15.748 20.662 15.243 20.987 L9.715 24.54 C9.238 24.847 9 24.717 9 24.15 L9 7.8 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    }
+  },
+  "rigs": {
+    "ribbon": {
+      "//": "squashes onto its tail tips, where it lands",
+      "pivot": [
+        16,
+        24.8
+      ],
+      "squash": {
+        "base": 24.8,
+        "widen": 0.5
+      }
+    }
+  },
+  "motion": {
+    "ribbon.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          -1.4,
+          "out"
+        ],
+        [
+          0.19,
+          1.8,
+          "hit"
+        ],
+        [
+          0.27,
+          0.9
+        ],
+        [
+          0.35,
+          1.2
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.11,
+          -2.2,
+          "out"
+        ],
+        [
+          0.23,
+          2.0,
+          "hit"
+        ],
+        [
+          0.32,
+          0.7
+        ],
+        [
+          0.41,
+          1.5
+        ],
+        [
+          0.5,
+          1.1
+        ],
+        [
+          0.58,
+          1.2
+        ]
+      ]
+    },
+    "ribbon.squash": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.09,
+          1
+        ],
+        [
+          0.17,
+          1.05
+        ],
+        [
+          0.19,
+          1
+        ],
+        [
+          0.23,
+          0.94,
+          "out"
+        ],
+        [
+          0.31,
+          1.02
+        ],
+        [
+          0.38,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.11,
+          1
+        ],
+        [
+          0.21,
+          1.08
+        ],
+        [
+          0.23,
+          1
+        ],
+        [
+          0.27,
+          0.9,
+          "out"
+        ],
+        [
+          0.36,
+          1.04
+        ],
+        [
+          0.45,
+          0.99
+        ],
+        [
+          0.54,
+          1
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "source-grounding",
+  "label": "Source grounding",
+  "intent": "The statement lands on its source and the ground takes it. Light: the statement block lifts on its stem and drops back onto it with a hit, and the impact runs down through the ground symbol: each bar dips slightly and flares wider in turn, top to bottom. Strong: a higher lift, a harder slam and a second small landing, with a wave through the ground on each contact. The stem stretches with the block and the ground symbol stays where it is.",
+  "parts": {
+    "ground3": {"shape": {"line": [[14, 28], [18, 28]]}},
+    "ground2": {"shape": {"line": [[10.5, 24.5], [21.5, 24.5]]}},
+    "ground1": {"shape": {"line": [[7, 21], [25, 21]]}},
+    "stem":    {"//": "stretches with the block so the statement stays wired to its ground", "shape": {"morph": [{"line": [[16, 15], [16, 21]]}, {"line": [[16, 12.5], [16, 21]]}], "by": "lift"}},
+    "block":   {"shape": {"rect": [11, 6, 10, 9], "r": 2.5}, "role": "surface", "solid": "fill", "knockout": [{"part": "quote", "gap": 0}]},
+    "quote":   {"shape": {"line": [[13.5, 10.5], [18.5, 10.5]]}}
+  },
+  "rigs": {
+    "block":   {"pivot": [16, 15], "carries": ["quote"]},
+    "ground1": {"pivot": [16, 21]},
+    "ground2": {"pivot": [16, 24.5]},
+    "ground3": {"pivot": [16, 28]}
+  },
+  "motion": {
+    "block.y": {
+      "light":  [[0, 0], [0.11, -2.5, "out"], [0.2, 0, "hit"], {"bounce": 0.3, "amp": 0.16}],
+      "strong": [[0, 0], [0.13, -3.2, "out"], [0.19, -3], [0.27, 0, "hit"], [0.35, -0.9, "out"], [0.42, 0, "hit"]]
+    },
+    "lift": {"follow": "block.y", "scale": -0.4},
+    "ground1.y": {
+      "light":  [[0, 0], [0.2, 0], [0.25, 0.55, "out"], [0.33, -0.12], [0.4, 0]],
+      "strong": [[0, 0], [0.27, 0], [0.32, 0.65, "out"], [0.39, -0.15], [0.42, 0], [0.47, 0.35, "out"], [0.54, -0.06], [0.6, 0]]
+    },
+    "ground1.scale": {
+      "light":  [[0, 1], [0.2, 1], [0.25, 1.2, "out"], [0.36, 0.98], [0.4, 1]],
+      "strong": [[0, 1], [0.27, 1], [0.32, 1.26, "out"], [0.42, 1], [0.47, 1.12, "out"], [0.6, 1]]
+    },
+    "ground2.y": {"follow": "ground1.y", "lag": 0.04},
+    "ground3.y": {"follow": "ground1.y", "lag": 0.08},
+    "ground2.scale": {"//": "shorter bars widen more so each bar's flare reads", "follow": "ground1.scale", "lag": 0.04, "scale": 1.5, "offset": -0.5},
+    "ground3.scale": {"follow": "ground1.scale", "lag": 0.08, "scale": 2.5, "offset": -1.5}
+  }
+}

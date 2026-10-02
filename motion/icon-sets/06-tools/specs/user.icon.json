@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "user",
+  "label": "User",
+  "intent": "The person perks up to say hello. Light: the shoulders crouch, the head pops up and lands back with a small bounce, and the shoulders stretch up with it and squash as it lands. Strong: a deeper crouch, a higher pop and a firmer landing, then a second, smaller hop before it settles. The head stays round.",
+  "parts": {
+    "head":      {"shape": {"circle": [[16, 9], 3.7]}, "role": "surface", "solid": {"grow": 0.8}},
+    "shoulders": {"shape": {"path": "M7 26 L7 24 C7 20.2 11 18 16 18 C21 18 25 20.2 25 24 L25 26 C25 26.6 24.6 27 24 27 L8 27 C7.4 27 7 26.6 7 26 Z"},
+                  "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "shoulders": {"pivot": [16, 27], "squash": {"base": 27, "widen": 0.5}}
+  },
+  "motion": {
+    "head.y": {
+      "light":  [[0, 0], [0.07, 1, "out"], [0.19, -2, "out"], [0.31, 0, "hit"], {"bounce": 0.39, "amp": 0.18}],
+      "strong": [[0, 0], [0.08, 1.4, "out"], [0.21, -2.6, "out"], [0.34, 0, "hit"], [0.39, 0.5], [0.46, -1.2, "out"], [0.54, 0, "hit"], {"bounce": 0.6, "amp": 0.2}]
+    },
+    "shoulders.squash": {
+      "light":  [[0, 1], [0.07, 0.9, "out"], [0.19, 1.05, "out"], [0.31, 0.93, "hit"], [0.42, 1]],
+      "strong": [[0, 1], [0.08, 0.86, "out"], [0.21, 1.07, "out"], [0.34, 0.9, "hit"], [0.43, 1.03], [0.54, 0.95, "hit"], [0.62, 1]]
+    }
+  }
+}
