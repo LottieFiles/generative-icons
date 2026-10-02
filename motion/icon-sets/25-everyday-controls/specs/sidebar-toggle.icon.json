@@ -1,0 +1,46 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "sidebar-toggle",
+  "label": "Sidebar toggle",
+  "intent": "The sidebar collapses to a rail. Light: the divider leans open a touch, then drives left, the sidebar's tint narrowing with it, and hits the rail with a small rebound; a beat later the chevron flips over to point back out and nudges that way. Strong: a bigger lean, a harder drive that hits the rail and rebounds twice, and the chevron flips and kicks out farther before it settles. The frame never moves. The reverse reopens the panel.",
+  "state": {
+    "from": "open",
+    "to": "closed",
+    "labels": ["Collapse sidebar", "Expand sidebar"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "panel": {
+      "//": "v1's Duotone tint of the sidebar, nothing else; it narrows from v1's open shape to v1's closed shape",
+      "shape": {
+        "morph": [
+          {"path": "M4 9 C4 7 5 6 7 6 L13 6 L13 6 L13 26 L13 26 L7 26 C5 26 4 25 4 23 L4 9 Z"},
+          {"path": "M4 9 C4 7 4.467 6 5.4 6 L8 6 L8 6 L8 26 L8 26 L5.4 26 C4.467 26 4 25 4 23 L4 9 Z"}
+        ],
+        "by": "collapse"
+      },
+      "role": "surface",
+      "outline": "none",
+      "solid": "none"
+    },
+    "frame": {"shape": {"rect": [4, 6, 24, 20], "r": 3}},
+    "divider": {"shape": {"line": [[13, 6], [13, 26]]}},
+    "chevron": {
+      "//": "flips by morph: the point crosses from left to right, so it turns over instead of spinning through 'up'",
+      "shape": {"morph": [{"polyline": [[21.2, 12], [17.8, 16], [21.2, 20]]}, {"polyline": [[17.8, 12], [21.2, 16], [17.8, 20]]}], "by": "flip"}
+    }
+  },
+  "rigs": {
+    "chevron": {"pivot": [19.5, 16]}
+  },
+  "motion": {
+    "divider.x": {
+      "light": [[0, 0], [0.08, 0.8, "out"], [0.24, -5, "hit"], {"bounce": 0.33, "amp": 0.12}],
+      "strong": [[0, 0], [0.1, 1.0, "out"], [0.27, -5, "hit"], [0.34, -4.1, "out"], [0.41, -5, "hit"], [0.46, -4.7, "out"], [0.51, -5, "hit"]]
+    },
+    "collapse": {"light": [[0, 0], [0.08, 0], [0.24, 1, "hit"]], "strong": [[0, 0], [0.1, 0], [0.27, 1, "hit"]]},
+    "flip": {"light": [[0, 0], [0.15, 0], [0.32, 1, "hit"]], "strong": [[0, 0], [0.17, 0], [0.34, 1, "hit"]]},
+    "chevron.x": {"light": [[0, 0], [0.32, 0], [0.38, 0.7, "out"], [0.45, 0]], "strong": [[0, 0], [0.34, 0], [0.4, 1.2, "out"], [0.48, -0.3], [0.56, 0]]}
+  }
+}

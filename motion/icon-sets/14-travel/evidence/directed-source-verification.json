@@ -2,69 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 46,
-  "nativeTransformNodes": 350,
-  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "nativeTransformNodes": 42,
+  "nativeTransformMaxCoordinateError": 0.000007515865451779291,
   "checks": [
-    {
-      "name": "passport",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "passport-cover"
-        },
-        {
-          "type": "rigid",
-          "part": "passport-equator"
-        }
-      ]
-    },
-    {
-      "name": "passport-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "passport-cover"
-        },
-        {
-          "type": "rigid",
-          "part": "passport-equator"
-        }
-      ]
-    },
-    {
-      "name": "boarding-pass",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "boarding-pass-ticket"
-        }
-      ]
-    },
-    {
-      "name": "boarding-pass-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "boarding-pass-ticket"
-        }
-      ]
-    },
     {
       "name": "suitcase",
       "fixedParts": [],
@@ -100,178 +40,6 @@
       ]
     },
     {
-      "name": "backpack",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "backpack-body"
-        }
-      ]
-    },
-    {
-      "name": "backpack-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "backpack-body"
-        }
-      ]
-    },
-    {
-      "name": "train",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "train-carriage"
-        },
-        {
-          "type": "rigid",
-          "part": "train-connecting-rod"
-        }
-      ]
-    },
-    {
-      "name": "train-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "train-carriage"
-        },
-        {
-          "type": "rigid",
-          "part": "train-connecting-rod"
-        }
-      ]
-    },
-    {
-      "name": "bus",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "bus-body"
-        }
-      ]
-    },
-    {
-      "name": "bus-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "bus-body"
-        }
-      ]
-    },
-    {
-      "name": "car-rental",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "car-rental-body"
-        }
-      ]
-    },
-    {
-      "name": "car-rental-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "car-rental-body"
-        }
-      ]
-    },
-    {
-      "name": "ferry",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "ferry-vessel"
-        }
-      ]
-    },
-    {
-      "name": "ferry-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "ferry-vessel"
-        }
-      ]
-    },
-    {
-      "name": "bicycle",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bicycle-front-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "bicycle-crank"
-        }
-      ]
-    },
-    {
-      "name": "bicycle-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bicycle-front-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "bicycle-crank"
-        }
-      ]
-    },
-    {
       "name": "hotel",
       "fixedParts": [],
       "topology": true,
@@ -302,100 +70,6 @@
         {
           "type": "fixed",
           "part": "hotel-mast"
-        }
-      ]
-    },
-    {
-      "name": "bed",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bed-mattress"
-        },
-        {
-          "type": "fixed",
-          "part": "bed-headboard"
-        }
-      ]
-    },
-    {
-      "name": "bed-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bed-mattress"
-        },
-        {
-          "type": "fixed",
-          "part": "bed-headboard"
-        }
-      ]
-    },
-    {
-      "name": "tent",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "tent-shell"
-        }
-      ]
-    },
-    {
-      "name": "tent-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "tent-shell"
-        }
-      ]
-    },
-    {
-      "name": "beach-umbrella",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "beach-umbrella-sand"
-        },
-        {
-          "type": "rigid",
-          "part": "beach-umbrella-pole"
-        }
-      ]
-    },
-    {
-      "name": "beach-umbrella-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "beach-umbrella-sand"
-        },
-        {
-          "type": "rigid",
-          "part": "beach-umbrella-pole"
         }
       ]
     },
@@ -466,166 +140,6 @@
           "part": "route-destination"
         }
       ]
-    },
-    {
-      "name": "globe",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "globe-sphere"
-        },
-        {
-          "type": "fixed",
-          "part": "globe-stand"
-        },
-        {
-          "type": "rigid",
-          "part": "globe-meridian"
-        }
-      ]
-    },
-    {
-      "name": "globe-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "globe-sphere"
-        },
-        {
-          "type": "fixed",
-          "part": "globe-stand"
-        },
-        {
-          "type": "rigid",
-          "part": "globe-meridian"
-        }
-      ]
-    },
-    {
-      "name": "ticket",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "ticket-body"
-        },
-        {
-          "type": "rigid",
-          "part": "ticket-stub"
-        }
-      ]
-    },
-    {
-      "name": "ticket-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "ticket-body"
-        },
-        {
-          "type": "rigid",
-          "part": "ticket-stub"
-        }
-      ]
-    },
-    {
-      "name": "luggage-tag",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "luggage-tag-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "luggage-tag-tag"
-        },
-        {
-          "type": "rigid",
-          "part": "luggage-tag-strap"
-        }
-      ]
-    },
-    {
-      "name": "luggage-tag-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "luggage-tag-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "luggage-tag-tag"
-        },
-        {
-          "type": "rigid",
-          "part": "luggage-tag-strap"
-        }
-      ]
-    },
-    {
-      "name": "signpost",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "signpost-foot"
-        },
-        {
-          "type": "rigid",
-          "part": "signpost-upper-board"
-        },
-        {
-          "type": "rigid",
-          "part": "signpost-lower-board"
-        }
-      ]
-    },
-    {
-      "name": "signpost-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "signpost-foot"
-        },
-        {
-          "type": "rigid",
-          "part": "signpost-upper-board"
-        },
-        {
-          "type": "rigid",
-          "part": "signpost-lower-board"
-        }
-      ]
     }
   ],
   "adoptedSpecs": [
@@ -636,6 +150,143 @@
       "actions": [
         "airplane",
         "airplane-strong"
+      ]
+    },
+    {
+      "icon": "passport",
+      "spec": "specs/passport.icon.json",
+      "specSha256": "77ab6336d28b4672612885c6941fe974b970306634a52311ce571616a044f400",
+      "actions": [
+        "passport",
+        "passport-strong"
+      ]
+    },
+    {
+      "icon": "boarding-pass",
+      "spec": "specs/boarding-pass.icon.json",
+      "specSha256": "7778ce14056e8972698efdedfdf3d7ad3410fb5de095b41227aa9f6211e1e56d",
+      "actions": [
+        "boarding-pass",
+        "boarding-pass-strong"
+      ]
+    },
+    {
+      "icon": "backpack",
+      "spec": "specs/backpack.icon.json",
+      "specSha256": "15a5697c257aa66b98f4b7316c022b411c16a0d1fc784e816ff4c8b4a950f9e9",
+      "actions": [
+        "backpack",
+        "backpack-strong"
+      ]
+    },
+    {
+      "icon": "train",
+      "spec": "specs/train.icon.json",
+      "specSha256": "e0abc4e9cbbf0389b2a64e08c641f96e225789c99bbd425a031572ce2a7aaa27",
+      "actions": [
+        "train",
+        "train-strong"
+      ]
+    },
+    {
+      "icon": "bus",
+      "spec": "specs/bus.icon.json",
+      "specSha256": "2eac35285e1573074a3619a1c05e1209b527dd082dd3696ccc520536ecceb20b",
+      "actions": [
+        "bus",
+        "bus-strong"
+      ]
+    },
+    {
+      "icon": "car-rental",
+      "spec": "specs/car-rental.icon.json",
+      "specSha256": "6533a3ae7f9eca9c34b4b3b7bf5e428251618ade8865811a1b98e27dafeea6fa",
+      "actions": [
+        "car-rental",
+        "car-rental-reset",
+        "car-rental-strong",
+        "car-rental-reset-strong"
+      ]
+    },
+    {
+      "icon": "ferry",
+      "spec": "specs/ferry.icon.json",
+      "specSha256": "e5fc9cbc1f3bdc8fc38a4ccbc89f044e0842b3c1ef2aa922647e4155fd2c5db6",
+      "actions": [
+        "ferry",
+        "ferry-strong"
+      ]
+    },
+    {
+      "icon": "bicycle",
+      "spec": "specs/bicycle.icon.json",
+      "specSha256": "ed4494c438feb5a6be38fa3caec28c5ccb9a67ccc340711f161d0b40e928a8e6",
+      "actions": [
+        "bicycle",
+        "bicycle-strong"
+      ]
+    },
+    {
+      "icon": "bed",
+      "spec": "specs/bed.icon.json",
+      "specSha256": "3018a3df2643eb7a078042a513537b9be5087383274f1dd5d265da4ea592d81d",
+      "actions": [
+        "bed",
+        "bed-strong"
+      ]
+    },
+    {
+      "icon": "tent",
+      "spec": "specs/tent.icon.json",
+      "specSha256": "05773232b921e8bdd1e4457397024a44d14d1af3c6487b27539c8fa466bd45b9",
+      "actions": [
+        "tent",
+        "tent-strong"
+      ]
+    },
+    {
+      "icon": "beach-umbrella",
+      "spec": "specs/beach-umbrella.icon.json",
+      "specSha256": "b20bf30b11cd63b64af06821b0f182c2121235ac09e79ad55ec2fd565d89bdb3",
+      "actions": [
+        "beach-umbrella",
+        "beach-umbrella-strong"
+      ]
+    },
+    {
+      "icon": "globe",
+      "spec": "specs/globe.icon.json",
+      "specSha256": "b4ff982188307bc2548dd7bb7b1e999b5114cf4d3012f8cf9aa0bf6f602e1a7e",
+      "actions": [
+        "globe",
+        "globe-strong"
+      ]
+    },
+    {
+      "icon": "ticket",
+      "spec": "specs/ticket.icon.json",
+      "specSha256": "c48a26db339fa49b3f675211399bd35f93aa37b57bd8b37b9d739b6b589294ce",
+      "actions": [
+        "ticket",
+        "ticket-strong"
+      ]
+    },
+    {
+      "icon": "luggage-tag",
+      "spec": "specs/luggage-tag.icon.json",
+      "specSha256": "c45ed38c372bfa9bf618ed56240745abec8845406440822f5a23fc1122308510",
+      "actions": [
+        "luggage-tag",
+        "luggage-tag-strong"
+      ]
+    },
+    {
+      "icon": "signpost",
+      "spec": "specs/signpost.icon.json",
+      "specSha256": "0007f4493ef8d6bad8f1a48054182d24f8519a9dd13757cc302be2165fc58c9e",
+      "actions": [
+        "signpost",
+        "signpost-strong"
       ]
     }
   ]

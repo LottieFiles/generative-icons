@@ -1,0 +1,77 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "switch-voice",
+  "label": "Switch voice",
+  "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+  "state": {
+    "from": "voice-a",
+    "to": "voice-b",
+    "labels": ["Switch voice", "Switch back"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "echo-b": {"//": "hidden at rest: B's voice, a sound arc off the side of the head", "shape": {"arc": [[22.5, 13], 6.3, -28, 28]}, "hidden": true},
+    "echo-a": {"//": "A's voice, for the reverse", "mirror": {"of": "echo-b"}},
+    "body-a": {"shape": {"path": "M5 26 L5 24.5 C5 22.13 7.01 20.2 9.5 20.2 C11.99 20.2 14 22.13 14 24.5 L14 26"}},
+    "head-a": {"shape": {"circle": [[9.5, 13], 3.2]}, "role": "surface", "solid": "fill"},
+    "body-b": {"shape": {"path": "M18 26 L18 24.5 C18 22.13 20.01 20.2 22.5 20.2 C24.99 20.2 27 22.13 27 24.5 L27 26"}},
+    "head-b": {"shape": {"circle": [[22.5, 13], 3.2]}, "role": "surface", "solid": "fill"},
+    "marker": {"shape": {"path": "M5.6 7.2 C7.1 4.8 11.9 4.8 13.4 7.2"}}
+  },
+  "rigs": {
+    "head-a": {"//": "a speaker's voice arc moves with the head", "pivot": [9.5, 13], "carries": ["echo-a"]},
+    "head-b": {"pivot": [22.5, 13], "carries": ["echo-b"]}
+  },
+  "motion": {
+    "marker.x": {
+      "//": "v1's end state: the marker 13 to the right, over B",
+      "light": [[0, 0], [0.04, 0], [0.3, 13, "inOut"]],
+      "strong": [[0, 0], [0.1, -0.6, "out"], [0.36, 13, "inOut"]]
+    },
+    "marker.y": {
+      "light": [[0, 0], [0.04, 0], [0.17, -2.2, "out"], [0.3, 0], [0.36, 1.1, "out"], [0.43, -0.25], [0.5, 0]],
+      "strong": [[0, 0], [0.1, 0.9, "out"], [0.23, -2.5, "out"], [0.36, 0], [0.42, 1.3, "out"], [0.5, -0.4], [0.57, 0.2], [0.64, 0]]
+    },
+    "head-b.y": {
+      "light": [[0, 0], [0.3, 0], [0.36, 1.1, "out"], [0.43, -0.25], [0.5, 0]],
+      "strong": [[0, 0], [0.36, 0], [0.42, 1.3, "out"], [0.5, -0.4], [0.57, 0.2], [0.64, 0]]
+    },
+    "body-b.y": {"follow": "head-b.y", "scale": 0.5, "lag": 0.03},
+    "head-a.y": {"//": "Strong only: A dips with the marker's push-off", "strong": [[0, 0], [0.1, 0.9, "out"], [0.2, -0.3], [0.28, 0]]},
+    "body-a.y": {"follow": "head-a.y", "scale": 0.5, "lag": 0.03},
+    "echo-b.opacity": {
+      "light": [[0, 0], [0.32, 0], [0.34, 1], [0.42, 1], [0.52, 0, "in"]],
+      "strong": [[0, 0], [0.38, 0], [0.4, 1], [0.47, 1], [0.55, 0, "in"], [0.56, 0], [0.58, 1], [0.65, 1], [0.73, 0, "in"]]
+    },
+    "echo-b.r": {
+      "light": [[0, 0], [0.32, 0], [0.52, 0.3, "out"], [0.53, 0, "step"]],
+      "strong": [[0, 0], [0.38, 0], [0.55, 0.3, "out"], [0.56, 0, "step"], [0.73, 0.3, "out"], [0.74, 0, "step"]]
+    }
+  },
+  "reverse": {
+    "//": "the same hand-off back to A: A receives and speaks, B pushes off in Strong",
+    "light": {
+      "marker.x": [[0, 13], [0.04, 13], [0.3, 0, "inOut"]],
+      "marker.y": [[0, 0], [0.04, 0], [0.17, -2.2, "out"], [0.3, 0], [0.36, 1.1, "out"], [0.43, -0.25], [0.5, 0]],
+      "head-b.y": [[0, 0], [0.1, 0]],
+      "body-b.y": [[0, 0], [0.1, 0]],
+      "head-a.y": [[0, 0], [0.3, 0], [0.36, 1.1, "out"], [0.43, -0.25], [0.5, 0]],
+      "body-a.y": [[0, 0], [0.33, 0], [0.39, 0.55, "out"], [0.46, -0.125], [0.53, 0]],
+      "echo-b.opacity": [[0, 0], [0.1, 0]],
+      "echo-a.opacity": [[0, 0], [0.32, 0], [0.34, 1], [0.42, 1], [0.52, 0, "in"]],
+      "echo-a.r": [[0, 0], [0.32, 0], [0.52, 0.3, "out"], [0.53, 0, "step"]]
+    },
+    "strong": {
+      "marker.x": [[0, 13], [0.1, 13.6, "out"], [0.36, 0, "inOut"]],
+      "marker.y": [[0, 0], [0.1, 0.9, "out"], [0.23, -2.5, "out"], [0.36, 0], [0.42, 1.3, "out"], [0.5, -0.4], [0.57, 0.2], [0.64, 0]],
+      "head-b.y": [[0, 0], [0.1, 0.9, "out"], [0.2, -0.3], [0.28, 0]],
+      "body-b.y": [[0, 0], [0.03, 0], [0.13, 0.45, "out"], [0.23, -0.15], [0.31, 0]],
+      "head-a.y": [[0, 0], [0.36, 0], [0.42, 1.3, "out"], [0.5, -0.4], [0.57, 0.2], [0.64, 0]],
+      "body-a.y": [[0, 0], [0.39, 0], [0.45, 0.65, "out"], [0.53, -0.2], [0.6, 0.1], [0.67, 0]],
+      "echo-b.opacity": [[0, 0], [0.1, 0]],
+      "echo-a.opacity": [[0, 0], [0.38, 0], [0.4, 1], [0.47, 1], [0.55, 0, "in"], [0.56, 0], [0.58, 1], [0.65, 1], [0.73, 0, "in"]],
+      "echo-a.r": [[0, 0], [0.38, 0], [0.55, 0.3, "out"], [0.56, 0, "step"], [0.73, 0.3, "out"], [0.74, 0, "step"]]
+    }
+  }
+}

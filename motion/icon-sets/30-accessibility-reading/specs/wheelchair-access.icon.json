@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "wheelchair-access",
+  "label": "Wheelchair access",
+  "intent": "The chair pushes off and goes. Light: the rider leans into a push, two speed lines stream out behind, and the chair pops a small wheelie back on its big wheel, then drops its front down with a hit and a small bounce; the head trails the chair by a beat. Strong: a harder push and a higher wheelie, a heavier landing with two decaying bounces. The chair stays rigid and ends exactly at rest; the speed lines are gone again.",
+  "parts": {
+    "head":  {"shape": {"circle": [[13.5, 6.8], 1.7]}, "role": "fill"},
+    "body":  {"shape": {"polyline": [[14.5, 11], [14.5, 16.5], [20, 16.5], [23, 22.5]]}},
+    "speed": {"//": "hidden at rest: drawn from the chair outward, so the lines stream backward",
+              "shape": [{"line": [[8, 12], [4.5, 12]]}, {"line": [[7.5, 15], [3.5, 15]]}], "hidden": true},
+    "wheel": {"shape": {"circle": [[12, 22], 5.5]}, "role": "surface", "solid": "ring"}
+  },
+  "rigs": {
+    "chair": {"//": "tips back on the big wheel's axle: a wheelie", "pivot": [12, 22], "carries": ["body", "wheel"]},
+    "head":  {"pivot": [12, 22]}
+  },
+  "motion": {
+    "chair.rotate": {
+      "light":  [[0, 0], [0.07, 3, "out"], [0.2, -12, "out"], [0.32, 0, "hit"], [0.38, -2.5], [0.44, 0]],
+      "strong": [[0, 0], [0.08, 4, "out"], [0.24, -18, "out"], [0.36, 0, "hit"], [0.43, -5], [0.5, 0, "hit"], [0.56, -1.5], [0.62, 0]]
+    },
+    "head.rotate": {"follow": "chair.rotate", "lag": 0.04},
+    "speed.opacity": {
+      "light":  [[0, 0], [0.05, 0], [0.08, 1, "out"], [0.2, 1], [0.3, 0, "in"]],
+      "strong": [[0, 0], [0.06, 0], [0.09, 1, "out"], [0.26, 1], [0.38, 0, "in"]]
+    },
+    "speed.draw": {
+      "light":  [[0, 1], [0.05, 0, "step"], [0.17, 1, "out"]],
+      "strong": [[0, 1], [0.06, 0, "step"], [0.2, 1, "out"]]
+    }
+  }
+}

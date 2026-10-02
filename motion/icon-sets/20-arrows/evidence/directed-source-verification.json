@@ -2,659 +2,190 @@
   "result": "PASS",
   "icons": 20,
   "actions": 40,
-  "nativeTransformNodes": 344,
-  "nativeTransformMaxCoordinateError": 0.000011004352572285825,
-  "checks": [
+  "nativeTransformNodes": 0,
+  "nativeTransformMaxCoordinateError": 0,
+  "checks": [],
+  "loopChecks": [],
+  "adoptedSpecs": [
     {
-      "name": "arrow-right",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-right-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-right-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-right-head"
-        }
+      "icon": "arrow-right",
+      "spec": "specs/arrow-right.icon.json",
+      "specSha256": "21a8d6c898dbd76a050667384fb81dd5d931474b3b510e0aa289acf54881f71c",
+      "actions": [
+        "arrow-right",
+        "arrow-right-strong"
       ]
     },
     {
-      "name": "arrow-right-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-right-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-right-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-right-head"
-        }
+      "icon": "arrow-left",
+      "spec": "specs/arrow-left.icon.json",
+      "specSha256": "0b8e57f1f19cb896e60147f4839df7a1fdc5bbb10d656d8b64c543eed97cae08",
+      "actions": [
+        "arrow-left",
+        "arrow-left-strong"
       ]
     },
     {
-      "name": "arrow-left",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-left-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-left-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-left-head"
-        }
+      "icon": "arrow-up",
+      "spec": "specs/arrow-up.icon.json",
+      "specSha256": "3863697bc1fb72d32d25221e73049a4bdcdaaff0cf00a7cfd97e0bb959650f35",
+      "actions": [
+        "arrow-up",
+        "arrow-up-strong"
       ]
     },
     {
-      "name": "arrow-left-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-left-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-left-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-left-head"
-        }
+      "icon": "arrow-down",
+      "spec": "specs/arrow-down.icon.json",
+      "specSha256": "3f0bd00d6be429a775fa989e593ff2710f37e6101fa2caf6ae84b191726076eb",
+      "actions": [
+        "arrow-down",
+        "arrow-down-strong"
       ]
     },
     {
-      "name": "arrow-up",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-up-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-up-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-up-head"
-        }
+      "icon": "arrow-up-right",
+      "spec": "specs/arrow-up-right.icon.json",
+      "specSha256": "680c3c05ab8161c8b66e3492a5cd469fa01abf062cfcd8823f6cdce26fbcd3b3",
+      "actions": [
+        "arrow-up-right",
+        "arrow-up-right-strong"
       ]
     },
     {
-      "name": "arrow-up-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-up-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-up-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-up-head"
-        }
+      "icon": "arrow-up-left",
+      "spec": "specs/arrow-up-left.icon.json",
+      "specSha256": "d1bc2978232b4ec39e5ccc068866f41b09a83fb744605bde52314ea90d940d1b",
+      "actions": [
+        "arrow-up-left",
+        "arrow-up-left-strong"
       ]
     },
     {
-      "name": "arrow-down",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-down-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-down-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-down-head"
-        }
+      "icon": "arrow-down-right",
+      "spec": "specs/arrow-down-right.icon.json",
+      "specSha256": "c72f9330d878fa340e5205e0407902c0a2e905b4c98f889284ae79566d5216d1",
+      "actions": [
+        "arrow-down-right",
+        "arrow-down-right-strong"
       ]
     },
     {
-      "name": "arrow-down-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-down-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-down-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-down-head"
-        }
+      "icon": "arrow-down-left",
+      "spec": "specs/arrow-down-left.icon.json",
+      "specSha256": "b0b03c2ca7cfba77df0f572286753ce63568a55b386a5eeaca435436f1a892c3",
+      "actions": [
+        "arrow-down-left",
+        "arrow-down-left-strong"
       ]
     },
     {
-      "name": "arrow-up-right",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-up-right-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-up-right-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-up-right-head"
-        }
+      "icon": "chevron-right",
+      "spec": "specs/chevron-right.icon.json",
+      "specSha256": "f1e274e3d9a15748339cd5c65fa605aa3babab81e5cea6dbfa9bab33cb0efc03",
+      "actions": [
+        "chevron-right",
+        "chevron-right-strong"
       ]
     },
     {
-      "name": "arrow-up-right-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-up-right-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-up-right-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-up-right-head"
-        }
+      "icon": "chevron-left",
+      "spec": "specs/chevron-left.icon.json",
+      "specSha256": "0053c957d43f948255acfb9fa103804780f66c7e8ec0f7bce591727220fa6531",
+      "actions": [
+        "chevron-left",
+        "chevron-left-strong"
       ]
     },
     {
-      "name": "arrow-up-left",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-up-left-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-up-left-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-up-left-head"
-        }
+      "icon": "chevron-up",
+      "spec": "specs/chevron-up.icon.json",
+      "specSha256": "12651d4d5e9244e5c5e64010f9ff9123ae76e14e710a507864e6d6a55209d2f9",
+      "actions": [
+        "chevron-up",
+        "chevron-up-strong"
       ]
     },
     {
-      "name": "arrow-up-left-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-up-left-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-up-left-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-up-left-head"
-        }
+      "icon": "chevron-down",
+      "spec": "specs/chevron-down.icon.json",
+      "specSha256": "d0392ef92fb5179e803409ace281df01b78e500bcb406f45801f0b61986de439",
+      "actions": [
+        "chevron-down",
+        "chevron-down-strong"
       ]
     },
     {
-      "name": "arrow-down-right",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-down-right-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-down-right-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-down-right-head"
-        }
+      "icon": "arrows-horizontal",
+      "spec": "specs/arrows-horizontal.icon.json",
+      "specSha256": "946cf76fc497dc8a04a89f5a52bd8ac569c770e2341764882527fa12f7943e8d",
+      "actions": [
+        "arrows-horizontal",
+        "arrows-horizontal-strong"
       ]
     },
     {
-      "name": "arrow-down-right-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-down-right-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-down-right-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-down-right-head"
-        }
+      "icon": "arrows-vertical",
+      "spec": "specs/arrows-vertical.icon.json",
+      "specSha256": "85740e6c3ef899f5fd92e3ae30acd570aaf3ae70370acf3d8b853efd4d3f7c17",
+      "actions": [
+        "arrows-vertical",
+        "arrows-vertical-strong"
       ]
     },
     {
-      "name": "arrow-down-left",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-down-left-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-down-left-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-down-left-head"
-        }
+      "icon": "arrows-swap",
+      "spec": "specs/arrows-swap.icon.json",
+      "specSha256": "b4942556266986f838bc012a3012beb8745b7c7a34b764877fa3e77479dd65b6",
+      "actions": [
+        "arrows-swap",
+        "arrows-swap-strong"
       ]
     },
     {
-      "name": "arrow-down-left-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "arrow-down-left-head"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-down-left-shaft"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-down-left-head"
-        }
+      "icon": "arrow-turn-right",
+      "spec": "specs/arrow-turn-right.icon.json",
+      "specSha256": "2459649b9029327e6b30bb3cf36c70410493977ab199c5e75660449ab21abe16",
+      "actions": [
+        "arrow-turn-right",
+        "arrow-turn-right-strong"
       ]
     },
     {
-      "name": "chevron-right",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "chevron-right-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "chevron-left",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "chevron-left-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "chevron-up",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "chevron-up-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "chevron-down",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "chevron-down-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrows-horizontal",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrows-horizontal-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrows-vertical",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrows-vertical-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrows-swap",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrows-swap-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrow-turn-right",
-      "fixedParts": [
-        "arrow-turn-right-stem-arc"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "arrow-turn-right-stem-arc"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-turn-right-head"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-turn-right-head"
-        }
+      "icon": "arrow-turn-left",
+      "spec": "specs/arrow-turn-left.icon.json",
+      "specSha256": "3fe82c5a624e82eeacf72d41ea1bbbad4e0dc92c64fafecae483b5c7b32da228",
+      "actions": [
+        "arrow-turn-left",
+        "arrow-turn-left-strong"
       ]
     },
     {
-      "name": "arrow-turn-right-strong",
-      "fixedParts": [
-        "arrow-turn-right-stem-arc"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "arrow-turn-right-stem-arc"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-turn-right-head"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-turn-right-head"
-        }
+      "icon": "arrow-u-turn",
+      "spec": "specs/arrow-u-turn.icon.json",
+      "specSha256": "8832612d9d081a08d7ac911bc1c34c2fef9f34ad57dccb615919d1544a3b6050",
+      "actions": [
+        "arrow-u-turn",
+        "arrow-u-turn-strong"
       ]
     },
     {
-      "name": "arrow-turn-left",
-      "fixedParts": [
-        "arrow-turn-left-stem-arc"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "arrow-turn-left-stem-arc"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-turn-left-head"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-turn-left-head"
-        }
+      "icon": "arrows-expand",
+      "spec": "specs/arrows-expand.icon.json",
+      "specSha256": "2f2e20e91235bdfb31c9703f0009fe10fe58d07bf0eab09e32e46087479e2473",
+      "actions": [
+        "arrows-expand",
+        "arrows-expand-strong"
       ]
     },
     {
-      "name": "arrow-turn-left-strong",
-      "fixedParts": [
-        "arrow-turn-left-stem-arc"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "arrow-turn-left-stem-arc"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-turn-left-head"
-        },
-        {
-          "type": "opaque",
-          "part": "arrow-turn-left-head"
-        }
+      "icon": "arrows-collapse",
+      "spec": "specs/arrows-collapse.icon.json",
+      "specSha256": "95dc1c1289dbc9ae049bfc5ae50eb601ac4b381989c2d1560a67389ecff3475f",
+      "actions": [
+        "arrows-collapse",
+        "arrows-collapse-strong"
       ]
-    },
-    {
-      "name": "arrow-u-turn",
-      "fixedParts": [
-        "arrow-u-turn-stem-arc"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "arrow-u-turn-stem-arc"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-u-turn-head"
-        }
-      ]
-    },
-    {
-      "name": "arrow-u-turn-strong",
-      "fixedParts": [
-        "arrow-u-turn-stem-arc"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "arrow-u-turn-stem-arc"
-        },
-        {
-          "type": "rigid",
-          "part": "arrow-u-turn-head"
-        }
-      ]
-    },
-    {
-      "name": "arrows-expand",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrows-expand-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrows-collapse",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "arrows-collapse-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
     }
-  ],
-  "loopChecks": []
+  ]
 }

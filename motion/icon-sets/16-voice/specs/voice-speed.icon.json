@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "voice-speed",
+  "label": "Voice speed",
+  "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+  "state": {
+    "from": "normal-speed",
+    "to": "faster-speech",
+    "labels": ["Speed up", "Normal speed"],
+    "reverse": "mirror"
+  },
+  "parts": {
+    "play": {
+      "shape": {"path": "M6.8 9.9 C6.4 9.6 5.7 9.9 5.7 10.5 L5.7 21.5 C5.7 22.1 6.4 22.4 6.8 22.1 L13.8 16.9 C14.4 16.5 14.4 15.5 13.8 15.1 L6.8 9.9 Z"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "tick-1": {"shape": {"line": [[18, 12.5], [18, 19.5]]}},
+    "tick-2": {"shape": {"line": [[23, 12.5], [23, 19.5]]}},
+    "tick-3": {"shape": {"line": [[28, 12.5], [28, 19.5]]}}
+  },
+  "motion": {
+    "play.scale": {
+      "light": [[0, 1], [0.08, 1.12, "out"], [0.18, 0.97], [0.26, 1]],
+      "strong": [[0, 1], [0.11, 0.93, "out"], [0.2, 1.15, "out"], [0.31, 0.96], [0.4, 1.02], [0.48, 1]]
+    },
+    "tick-2.x": {
+      "//": "v1's end state: tick-2 1.4 and tick-3 2.8 closer to Play",
+      "light": [[0, 0], [0.06, 0], [0.2, -1.4, "hit"], {"bounce": 0.3, "amp": 0.3}],
+      "strong": [[0, 0], [0.12, 0.4, "out"], [0.25, -1.4, "hit"], [0.32, -0.9, "out"], [0.39, -1.4, "hit"], [0.45, -1.2, "out"], [0.5, -1.4, "hit"]]
+    },
+    "tick-3.x": {"light": {"follow": "tick-2.x", "scale": 2, "lag": 0.07}, "strong": {"follow": "tick-2.x", "scale": 2, "lag": 0.07}}
+  }
+}

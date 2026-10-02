@@ -1,0 +1,28 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "line-spacing",
+  "label": "Line spacing",
+  "intent": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
+  "parts": {
+    "row-top": {"shape": {"line": [[13, 11], [27, 11]]}},
+    "row-mid": {"shape": {"line": [[13, 16], [27, 16]]}},
+    "row-bottom": {"shape": {"line": [[13, 21], [27, 21]]}},
+    "shaft": {"//": "v1's double arrow, split into shaft and heads so it can stretch", "shape": {"line": [[6, 9], [6, 23]]}},
+    "head-up": {"shape": {"polyline": [[3.5, 11.5], [6, 9], [8.5, 11.5]]}},
+    "head-down": {"shape": {"polyline": [[3.5, 20.5], [6, 23], [8.5, 20.5]]}}
+  },
+  "rigs": {
+    "shaft": {"pivot": [6, 16], "squash": {"base": 16, "widen": 0}}
+  },
+  "motion": {
+    "head-up.y": {
+      "light":  [[0, 0], [0.15, -2.2, "hit"], [0.22, -1.6], [0.28, -1.9], [0.40, 0.3, "inOut"], [0.47, 0]],
+      "strong": [[0, 0], [0.09, 0.9, "out"], [0.22, -3.2, "hit"], [0.29, -2.4], [0.35, -2.9], [0.41, -2.7], [0.53, 0.4, "inOut"], [0.60, -0.1], [0.66, 0]]
+    },
+    "head-down.y": {"follow": "head-up.y", "scale": -1},
+    "shaft.squash": {"//": "shaft half-length 7: squash = 1 - y/7 keeps the shaft meeting the heads", "follow": "head-up.y", "scale": -0.142857, "offset": 1},
+    "row-top.y": {"follow": "head-up.y", "lag": 0.06},
+    "row-bottom.y": {"follow": "head-up.y", "lag": 0.06, "scale": -1}
+  }
+}

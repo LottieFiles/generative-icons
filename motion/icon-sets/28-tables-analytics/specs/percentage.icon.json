@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "percentage",
+  "label": "Percentage",
+  "intent": "The percent is struck. Light: the slash pulls up into its top end and strikes down between the two counters, stopping dead at the bottom; the top counter pops as the stroke passes it and the bottom one pops on the hit. Strong: the slash pulls up and hangs, then strikes harder; each counter is knocked away from the stroke as it pops bigger, rebounds and settles, top first. The counters stay round and open.",
+  "parts": {
+    "slash":  {"shape": {"line": [[22, 7], [10, 25]]}},
+    "ring-b": {"shape": {"circle": [[22, 22], 3.5]}},
+    "ring-a": {"shape": {"circle": [[10, 10], 3.5]}}
+  },
+  "motion": {
+    "slash.draw": {
+      "light":  [[0, 1], [0.1, 0.1, "in"], [0.28, 1, "hit"]],
+      "strong": [[0, 1], [0.1, 0.08, "in"], [0.18, 0.08], [0.32, 1, "hit"]]
+    },
+    "ring-a.scale": {
+      "light":  [[0, 1], [0.14, 1], [0.2, 1.22, "out"], [0.28, 0.95], [0.36, 1]],
+      "strong": [[0, 1], [0.2, 1], [0.26, 1.32, "out"], [0.35, 0.9], [0.43, 1.05], [0.5, 1]]
+    },
+    "ring-b.scale": {"follow": "ring-a.scale", "lag": 0.08},
+    "ring-a.x": {
+      "//": "Strong only: knocked away from the slash, along its normal (-0.83, -0.55)",
+      "strong": [[0, 0], [0.2, 0], [0.26, -1.2, "out"], [0.36, 0.3], [0.46, 0]]
+    },
+    "ring-a.y": {"follow": "ring-a.x", "scale": 0.667},
+    "ring-b.x": {"follow": "ring-a.x", "scale": -1, "lag": 0.08},
+    "ring-b.y": {"follow": "ring-a.x", "scale": -0.667, "lag": 0.08}
+  }
+}

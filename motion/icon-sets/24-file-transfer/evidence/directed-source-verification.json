@@ -2,285 +2,9 @@
   "result": "PASS",
   "icons": 10,
   "actions": 40,
-  "nativeTransformNodes": 236,
+  "nativeTransformNodes": 132,
   "nativeTransformMaxCoordinateError": 0.000006000000002615025,
   "checks": [
-    {
-      "name": "file-upload",
-      "fixedParts": [
-        "file-upload-page-frame",
-        "file-upload-fold"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "file-upload-page-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "file-upload-fold"
-        },
-        {
-          "type": "rigid",
-          "part": "file-upload-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "file-upload-head"
-        }
-      ]
-    },
-    {
-      "name": "file-upload-strong",
-      "fixedParts": [
-        "file-upload-page-frame",
-        "file-upload-fold"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "file-upload-page-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "file-upload-fold"
-        },
-        {
-          "type": "rigid",
-          "part": "file-upload-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "file-upload-head"
-        }
-      ]
-    },
-    {
-      "name": "file-download",
-      "fixedParts": [
-        "file-download-page-frame",
-        "file-download-fold"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "file-download-page-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "file-download-fold"
-        },
-        {
-          "type": "rigid",
-          "part": "file-download-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "file-download-head"
-        }
-      ]
-    },
-    {
-      "name": "file-download-strong",
-      "fixedParts": [
-        "file-download-page-frame",
-        "file-download-fold"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "file-download-page-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "file-download-fold"
-        },
-        {
-          "type": "rigid",
-          "part": "file-download-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "file-download-head"
-        }
-      ]
-    },
-    {
-      "name": "attach-file",
-      "fixedParts": [
-        "attach-file-page"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "attach-file-page"
-        },
-        {
-          "type": "rigid",
-          "part": "attach-file-clip"
-        }
-      ]
-    },
-    {
-      "name": "attach-file-strong",
-      "fixedParts": [
-        "attach-file-page"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "attach-file-page"
-        },
-        {
-          "type": "rigid",
-          "part": "attach-file-clip"
-        }
-      ]
-    },
-    {
-      "name": "detach-file",
-      "fixedParts": [
-        "detach-file-page"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "detach-file-page"
-        },
-        {
-          "type": "rigid",
-          "part": "detach-file-clip"
-        }
-      ]
-    },
-    {
-      "name": "detach-file-strong",
-      "fixedParts": [
-        "detach-file-page"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "detach-file-page"
-        },
-        {
-          "type": "rigid",
-          "part": "detach-file-clip"
-        }
-      ]
-    },
-    {
-      "name": "cloud-upload",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cloud-upload-cloud"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-upload-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-upload-head"
-        }
-      ]
-    },
-    {
-      "name": "cloud-upload-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cloud-upload-cloud"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-upload-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-upload-head"
-        }
-      ]
-    },
-    {
-      "name": "cloud-download",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cloud-download-cloud"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-download-head"
-        }
-      ]
-    },
-    {
-      "name": "cloud-download-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cloud-download-cloud"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-download-head"
-        }
-      ]
-    },
     {
       "name": "drag-and-drop",
       "fixedParts": [
@@ -518,5 +242,73 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "file-upload",
+      "spec": "specs/file-upload.icon.json",
+      "specSha256": "d3b4dd78a904f00c67a1eac624257b6c2b91bcf76a20ad3702bc27eb954f027f",
+      "actions": [
+        "file-upload",
+        "file-upload-reset",
+        "file-upload-strong",
+        "file-upload-reset-strong"
+      ]
+    },
+    {
+      "icon": "file-download",
+      "spec": "specs/file-download.icon.json",
+      "specSha256": "6394c42ef1aa381ea2bd89d8a36096cebe80efd6760ba29aa90b0ff5395b002f",
+      "actions": [
+        "file-download",
+        "file-download-reset",
+        "file-download-strong",
+        "file-download-reset-strong"
+      ]
+    },
+    {
+      "icon": "attach-file",
+      "spec": "specs/attach-file.icon.json",
+      "specSha256": "a86e2d93684cdcc5ae9eec74b2212754ed6e81bd280e9d6ddaeca66f5aafffdd",
+      "actions": [
+        "attach-file",
+        "attach-file-reset",
+        "attach-file-strong",
+        "attach-file-reset-strong"
+      ]
+    },
+    {
+      "icon": "detach-file",
+      "spec": "specs/detach-file.icon.json",
+      "specSha256": "395e555a9281b53286f9aadda293b3db545ee4f20325c363348317c1f4730a6f",
+      "actions": [
+        "detach-file",
+        "detach-file-reset",
+        "detach-file-strong",
+        "detach-file-reset-strong"
+      ]
+    },
+    {
+      "icon": "cloud-upload",
+      "spec": "specs/cloud-upload.icon.json",
+      "specSha256": "275b8f815e0f6a4e05be29ce486e65bb2e0fbaaba5109e13a56ec176dcdd34a2",
+      "actions": [
+        "cloud-upload",
+        "cloud-upload-reset",
+        "cloud-upload-strong",
+        "cloud-upload-reset-strong"
+      ]
+    },
+    {
+      "icon": "cloud-download",
+      "spec": "specs/cloud-download.icon.json",
+      "specSha256": "90411f26ee6a3fbaddc7c991a20fd5617b651ec513e58c56c56c0aadca095d26",
+      "actions": [
+        "cloud-download",
+        "cloud-download-reset",
+        "cloud-download-strong",
+        "cloud-download-reset-strong"
+      ]
+    }
+  ]
 }

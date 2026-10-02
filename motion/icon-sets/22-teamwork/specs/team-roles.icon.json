@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "team-roles",
+  "label": "Team roles",
+  "intent": "A role is assigned and its badge is put on. Light: the role title clears, the badge is tugged out on its clip and swings back, and the role title writes itself in under the avatar as the swing settles. Strong: a small wind-up, a wider tug, two decaying swings, and the role title writes in as the badge comes to rest.",
+  "parts": {
+    "strap-left":  {"shape": {"line": [[16, 6.5], [12.5, 12]]}},
+    "strap-right": {"mirror": {"of": "strap-left"}},
+    "clip":        {"shape": {"circle": [[16, 5.5], 1.6]}, "role": "fill"},
+    "badge":       {"shape": {"rect": [9.5, 12, 13, 15], "r": 2.2}, "role": "surface",
+                    "knockout": [{"part": "role", "gap": 0.3}, {"part": "role-line", "gap": 0}]},
+    "role":        {"shape": {"circle": [[16, 17.5], 2.2]}, "role": "fill"},
+    "role-line":   {"shape": {"line": [[12.5, 23], [19.5, 23]]}, "solid": {"rect": [11.3, 21.8, 9.4, 2.4], "r": 1.2}}
+  },
+  "rigs": {
+    "badge": {"//": "the badge and its straps hang from the clip", "pivot": [16, 5.5], "carries": ["strap-left", "strap-right", "role", "role-line"]}
+  },
+  "motion": {
+    "//": "The badge is long (21.5 below its clip), so the tug is capped at 18 degrees: its swung Bold corner stays 1.4 inside the side edges.",
+    "badge.rotate": {
+      "light":  [[0, 0], [0.1, -12, "out"], [0.24, 5], [0.33, -2], [0.41, 0]],
+      "strong": [[0, 0], [0.06, 3, "out"], [0.17, -18, "out"], [0.32, 8], [0.43, -3.5], [0.52, 1.2], [0.6, 0]]
+    },
+    "role-line.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.22, 0], [0.38, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.36, 0], [0.54, 1, "out"]]
+    }
+  }
+}

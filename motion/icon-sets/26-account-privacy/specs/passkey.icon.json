@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "passkey",
+  "label": "Passkey",
+  "intent": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
+  "parts": {
+    "shoulders": {"shape": {"path": "M4.2 23 C4.2 17.8 6.4 15.6 9.5 15.6 C12.6 15.6 14.8 17.8 14.8 23"}},
+    "head": {"shape": {"circle": [[9.5, 9], 3]}, "role": "surface"},
+    "shaft": {"shape": {"line": [[21.5, 13.1], [21.5, 21.5]]}},
+    "tooth": {"shape": {"line": [[21.5, 19], [23.7, 19]]}},
+    "ring": {"shape": {"circle": [[21.5, 10.5], 2.6]}},
+    "signal": {"//": "hidden at rest: the click sends one arc out of the bow towards the person", "shape": {"arc": [[21.5, 10.5], 5, 180, 285]}, "hidden": true}
+  },
+  "rigs": {
+    "key": {"//": "turns about the centre of its bow, as v1's swing did", "pivot": [21.5, 10.5], "carries": ["ring", "shaft", "tooth"]},
+    "person": {"pivot": [9.5, 23], "carries": ["head", "shoulders"]}
+  },
+  "motion": {
+    "key.rotate": {
+      "light":  [[0, 0], [0.12, -30, "hit"], {"hold": 0.26}, [0.38, 2], [0.46, 0]],
+      "strong": [[0, 0], [0.1, 8, "out"], [0.22, -36, "hit"], {"bounce": 0.3, "amp": 0.15}, {"hold": 0.46}, [0.58, 3], [0.66, 0]]
+    },
+    "signal.r": {
+      "light":  {"pulse": [0.12, 0.2], "r": 1.4},
+      "strong": {"pulse": [0.22, 0.24], "r": 1.5}
+    },
+    "person.y": {
+      "light":  [[0, 0], [0.16, 0], [0.26, -1.6, "out"], [0.36, 0, "in"], [0.42, -0.3], [0.48, 0]],
+      "strong": [[0, 0], [0.27, 0], [0.38, -2.2, "out"], [0.49, 0, "in"], [0.56, -0.8, "out"], [0.63, 0, "in"]]
+    }
+  }
+}

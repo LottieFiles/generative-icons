@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "backpack",
+  "label": "Backpack",
+  "intent": "The pack is zipped shut, ready to go. Light: the zip across the flap runs open to the left, then closes back across to the right with a hit, and the pull tugs the pack after it, leaning left then right; the zipped pack hops once and lands with a small bounce. Strong: the zip opens, pauses, and snaps shut harder; the pack hops higher and lands with two decaying bounces while the fabric grab loop lags: it stretches at the top of the hop, squashes on landing and springs back. The pack stays one rigid piece.",
+  "parts": {
+    "body":   {"shape": {"path": "M8 15 C8 11.667 10.667 10 16 10 C21.333 10 24 11.667 24 15 L24 25 C24 26.381 22.881 27.5 21.5 27.5 L10.5 27.5 C9.119 27.5 8 26.381 8 25 L8 15 Z"},
+               "role": "surface",
+               "knockout": [{"part": "pocket", "gap": 0}, {"part": "slot", "gap": 0}]},
+    "pocket": {"shape": {"rect": [11.5, 18, 9, 5.5], "r": 1.5}, "solid": "fill"},
+    "slot":   {"//": "v1's Solid flap slot: drawn in no outline style, only cut from the body in Solid (a trimmed slot made slivers)",
+               "shape": {"rect": [9.05, 13.35, 13.9, 2.3], "r": 1.15}, "role": "surface", "outline": "none", "tint": false, "solid": "fill"},
+    "flap":   {"//": "the zip: it draws back to the left and closes again; in Solid the static slot stands for it",
+               "shape": {"line": [[8.3, 14.5], [23.7, 14.5]]}, "solid": "none"},
+    "loop":   {"shape": {"path": "M12.5 10.312 C14.5 4.562 17.5 4.562 19.5 10.312"}}
+  },
+  "rigs": {
+    "pack": {"pivot": [16, 27.5], "carries": ["body", "pocket", "slot", "flap", "loop"]},
+    "loop": {"//": "the fabric grab loop flexes from where it is sewn on", "pivot": [16, 10.3], "squash": {"base": 10.3, "widen": 0}}
+  },
+  "motion": {
+    "flap.draw": {
+      "light":  [[0, 1], [0.1, 0.12, "inOut"], [0.28, 1, "hit"]],
+      "strong": [[0, 1], [0.12, 0.08, "inOut"], [0.2, 0.08], [0.32, 1, "hit"]]
+    },
+    "pack.y": {
+      "light":  [[0, 0], [0.28, 0], [0.35, -1.2, "out"], [0.43, 0, "hit"], {"bounce": 0.5, "amp": 0.15}],
+      "strong": [[0, 0], [0.32, 0], [0.4, -1.8, "out"], [0.49, 0, "hit"], {"bounce": 0.57, "amp": 0.2}, {"bounce": 0.64, "amp": 0.35}]
+    },
+    "pack.rotate": {
+      "//": "the zip pull tugs the pack: it leans after the pull as the zip runs open, then the other way as it closes",
+      "light":  [[0, 0], [0.1, -3, "inOut"], [0.28, 2.5, "inOut"], [0.38, 0]],
+      "strong": [[0, 0], [0.12, -3.5, "inOut"], [0.2, -3], [0.32, 3, "inOut"], [0.42, 0]]
+    },
+    "loop.squash": {
+      "strong": [[0, 1], [0.32, 1], [0.36, 0.88], [0.42, 1.15], [0.49, 1], [0.53, 0.75, "out"], [0.6, 1.08], [0.67, 0.97], [0.74, 1]]
+    }
+  }
+}

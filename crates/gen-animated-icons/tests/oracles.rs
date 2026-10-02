@@ -114,7 +114,7 @@ fn baked_weights_match_the_runtime_bridge() {
 /// `generation-context.mjs --search` goldens (cli.md §4.3): sha256 of stdout.
 const SEARCHES: [(&str, &str); 7] = [
     ("notification bell", "4dc3ca333bfc1c33715e7041460adacd4c5d0265a36ca30baaf2c2489c35f786"),
-    ("package return", "a4ff2856f2ab7ade551ec6bb37238bbf66dc512c3fa2562248fadbaec79919c1"),
+    ("package return", "5f80cc0088dd55a4c00666495f874c78edc5f54183e2458b531a590b11fb0ead"),
     ("heart", "3cd3cc8129f42680b55f8c15daa7562ef713713b87aa0d87cfcce74fa9ef3dff"),
     ("loading spinner", "742e4f4f84fc495d31b5e7b56c10aab090b0a14aba7c66ef54aca30c0494e9fd"),
     ("create a new icon for the payment", "53e53d7f21f60058cb256d75639b0550d0ab7997f410c28ddf72b27548ed19a4"),

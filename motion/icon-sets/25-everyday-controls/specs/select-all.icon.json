@@ -1,0 +1,75 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "select-all",
+  "label": "Select all",
+  "intent": "Everything is selected. Light: the selection boundary runs on from the corner bracket round the right side, the bottom and up the left until it closes, and each object pops as the boundary passes it, top-right, bottom-right, bottom-left, then the first one as the loop closes. Strong: the boundary accelerates round in one stroke and closes with a hit that makes the whole selection pulse, and the objects pop bigger with a rebound. The reverse retracts the boundary to the bracket without a pop.",
+  "state": {
+    "from": "one",
+    "to": "all",
+    "labels": ["Select all", "Deselect"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "bracket": {"//": "v1's rest marquee: the corner bracket on the first object", "shape": {"path": "M4.5 16 L4.5 6.5 C4.5 5.395 5.395 4.5 6.5 4.5 L16 4.5"}},
+    "sweep": {
+      "//": "hidden at rest: the rest of v1's end marquee, from the bracket's end round to its start; bracket + sweep is v1's closed boundary",
+      "shape": {
+        "path": "M16 4.5 L25.5 4.5 C26.605 4.5 27.5 5.395 27.5 6.5 L27.5 25.5 C27.5 26.605 26.605 27.5 25.5 27.5 L6.5 27.5 C5.395 27.5 4.5 26.605 4.5 25.5 L4.5 16"
+      },
+      "hidden": true
+    },
+    "tile-0": {"shape": {"rect": [8.5, 8.5, 4, 4], "r": 1.2}, "role": "surface"},
+    "tile-1": {"shape": {"rect": [19.5, 8.5, 4, 4], "r": 1.2}, "role": "surface"},
+    "tile-2": {"shape": {"rect": [8.5, 19.5, 4, 4], "r": 1.2}, "role": "surface"},
+    "tile-3": {"shape": {"rect": [19.5, 19.5, 4, 4], "r": 1.2}, "role": "surface"}
+  },
+  "rigs": {
+    "marquee": {"pivot": [16, 16], "carries": ["bracket", "sweep"]},
+    "tile-0": {"pivot": [10.5, 10.5]},
+    "tile-1": {"pivot": [21.5, 10.5]},
+    "tile-2": {"pivot": [10.5, 21.5]},
+    "tile-3": {"pivot": [21.5, 21.5]}
+  },
+  "motion": {
+    "sweep.opacity": {"light": [[0, 0], [0.04, 0], [0.05, 1, "step"]], "strong": [[0, 0], [0.07, 0], [0.08, 1, "step"]]},
+    "sweep.draw": {"light": [[0, 1], [0.017, 0, "step"], [0.05, 0], [0.36, 1, "linear"]], "strong": [[0, 1], [0.017, 0, "step"], [0.08, 0], [0.32, 1, "in"]]},
+    "marquee.scale": {"strong": [[0, 1], [0.32, 1], [0.38, 1.035, "out"], [0.45, 0.99], [0.52, 1]]},
+    "tile-1.scale": {
+      "light": [[0, 1], [0.12, 1], [0.18, 1.25, "out"], [0.25, 0.95], [0.31, 1]],
+      "strong": [[0, 1], [0.23, 1], [0.29, 1.32, "out"], [0.37, 0.92], [0.44, 1.04], [0.51, 1]]
+    },
+    "tile-3.scale": {
+      "light": [[0, 1], [0.17, 1], [0.23, 1.25, "out"], [0.3, 0.95], [0.36, 1]],
+      "strong": [[0, 1], [0.258, 1], [0.318, 1.32, "out"], [0.398, 0.92], [0.468, 1.04], [0.538, 1]]
+    },
+    "tile-2.scale": {
+      "light": [[0, 1], [0.27, 1], [0.33, 1.25, "out"], [0.4, 0.95], [0.46, 1]],
+      "strong": [[0, 1], [0.298, 1], [0.358, 1.32, "out"], [0.438, 0.92], [0.508, 1.04], [0.578, 1]]
+    },
+    "tile-0.scale": {
+      "light": [[0, 1], [0.36, 1], [0.42, 1.25, "out"], [0.49, 0.95], [0.55, 1]],
+      "strong": [[0, 1], [0.32, 1], [0.38, 1.32, "out"], [0.46, 0.92], [0.53, 1.04], [0.6, 1]]
+    }
+  },
+  "reverse": {
+    "//": "deselecting is not a selection: the boundary retracts to the bracket and nothing pops",
+    "light": {
+      "sweep.draw": [[0, 1], [0.3, 0, "inOut"], [0.317, 1, "step"]],
+      "sweep.opacity": [[0, 1], [0.3, 1], [0.317, 0, "step"]],
+      "tile-0.scale": [[0, 1], [0.1, 1]],
+      "tile-1.scale": [[0, 1], [0.1, 1]],
+      "tile-2.scale": [[0, 1], [0.1, 1]],
+      "tile-3.scale": [[0, 1], [0.1, 1]]
+    },
+    "strong": {
+      "sweep.draw": [[0, 1], [0.28, 0, "hit"], [0.297, 1, "step"]],
+      "sweep.opacity": [[0, 1], [0.28, 1], [0.297, 0, "step"]],
+      "tile-0.scale": [[0, 1], [0.1, 1]],
+      "tile-1.scale": [[0, 1], [0.1, 1]],
+      "tile-2.scale": [[0, 1], [0.1, 1]],
+      "tile-3.scale": [[0, 1], [0.1, 1]],
+      "marquee.scale": [[0, 1], [0.1, 1]]
+    }
+  }
+}

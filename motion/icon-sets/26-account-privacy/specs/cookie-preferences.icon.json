@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "cookie-preferences",
+  "label": "Cookie preferences",
+  "intent": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
+  "parts": {
+    "cookie": {
+      "//": "circle r 9.5 at the centre with a bite of r 4.48 at (23.5, 8.5); v1's Solid is the fill with the chips cut 0.3 clear",
+      "shape": {"path": "M24.927 12.751 C26.451 16.937 24.861 21.619 21.104 24.012 C17.348 26.406 12.432 25.867 9.282 22.718 C6.133 19.568 5.594 14.652 7.988 10.896 C10.381 7.139 15.063 5.549 19.249 7.073 L19.254 7.071 C18.711 8.684 19.129 10.465 20.332 11.668 C21.535 12.871 23.316 13.289 24.929 12.746 L24.927 12.751 Z"},
+      "role": "surface",
+      "knockout": [
+        {"part": "chip-0", "gap": 0.3},
+        {"part": "chip-1", "gap": 0.3},
+        {"part": "chip-2", "gap": 0.3},
+        {"part": "chip-3", "gap": 0.3}
+      ]
+    },
+    "chip-0": {"shape": {"circle": [[13, 11.5], 1.1]}, "role": "fill"},
+    "chip-1": {"shape": {"circle": [[18, 15.5], 1.1]}, "role": "fill"},
+    "chip-2": {"shape": {"circle": [[12, 18.5], 1.1]}, "role": "fill"},
+    "chip-3": {"shape": {"circle": [[18, 21], 1.1]}, "role": "fill"}
+  },
+  "rigs": {
+    "cookie": {"//": "the dial turns about the cookie's centre and carries the chips", "pivot": [16, 16], "carries": ["chip-0", "chip-1", "chip-2", "chip-3"]}
+  },
+  "motion": {
+    "cookie.rotate": {
+      "light":  [[0, 0], [0.12, 12, "hit"], {"hold": 0.24}, [0.36, -2.5], [0.46, 0]],
+      "strong": [[0, 0], [0.1, -7, "out"], [0.24, 22, "hit"], {"hold": 0.42}, [0.54, -5], [0.66, 1.5], [0.76, 0]]
+    },
+    "chip-0.r": {
+      "light":  [[0, 0], [0.06, 0], [0.13, 0.9, "out"], [0.21, -0.15], [0.27, 0]],
+      "strong": [[0, 0], [0.18, 0], [0.25, 1.3, "out"], [0.34, -0.25], [0.41, 0]]
+    },
+    "chip-1.r": {"follow": "chip-0.r", "lag": 0.06},
+    "chip-2.r": {"follow": "chip-0.r", "lag": 0.12},
+    "chip-3.r": {"follow": "chip-0.r", "lag": 0.18}
+  }
+}

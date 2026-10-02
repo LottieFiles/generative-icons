@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "stop",
+  "label": "Stop",
+  "intent": "Playback brakes to a dead stop. Light: the block draws back, then drives forward with two speed lines laid behind it; it stops dead on its place, the lines cut off, and its momentum tips it forward onto its front corner before it rocks back to rest. Strong: a longer draw-back and a faster drive, a harder forward tip and one rock back onto its heel before it settles.",
+  "parts": {
+    "trail-a": {
+      "//": "hidden at rest: speed lines behind the block while it drives, laid from the block outward",
+      "shape": {"line": [[5.3, 13], [2.8, 13]]},
+      "hidden": true
+    },
+    "trail-b": {"shape": {"line": [[5.3, 19], [2.8, 19]]}, "hidden": true},
+    "block": {"shape": {"rect": [9, 9, 14, 14], "r": 2.5}, "role": "surface", "solid": {"grow": 1}}
+  },
+  "anchors": {
+    "heel": [9, 23],
+    "toe": [23, 23]
+  },
+  "rigs": {
+    "block": {"//": "tips forward on its front corner (positive) and rocks back on its heel (negative)", "pivot": {"contact": ["heel", "toe"]}}
+  },
+  "motion": {
+    "block.x": {"light": [[0, 0], [0.1, -1.5, "out"], [0.22, 0, "hit"]], "strong": [[0, 0], [0.13, -2.5, "out"], [0.25, 0, "hit"]]},
+    "block.rotate": {
+      "light": [[0, 0], [0.22, 0], [0.3, 9, "out"], [0.4, -1.5], [0.48, 0]],
+      "strong": [[0, 0], [0.25, 0], [0.33, 13, "out"], [0.45, -4], [0.56, 1.2], [0.66, 0]]
+    },
+    "trail-a.opacity": {"light": [[0, 0], [0.15, 0], [0.16, 1], [0.22, 1], [0.25, 0, "in"]], "strong": [[0, 0], [0.17, 0], [0.18, 1], [0.25, 1], [0.28, 0, "in"]]},
+    "trail-a.draw": {"light": [[0, 1], [0.15, 0, "step"], [0.21, 1, "out"]], "strong": [[0, 1], [0.17, 0, "step"], [0.23, 1, "out"]]},
+    "trail-b.opacity": {"follow": "trail-a.opacity", "lag": 0.02},
+    "trail-b.draw": {"follow": "trail-a.draw", "lag": 0.02}
+  }
+}

@@ -2,8 +2,8 @@
   "result": "PASS",
   "icons": 16,
   "actions": 50,
-  "nativeTransformNodes": 172,
-  "nativeTransformMaxCoordinateError": 0.000009999999999621423,
+  "nativeTransformNodes": 138,
+  "nativeTransformMaxCoordinateError": 0.00000900000000214618,
   "checks": [
     {
       "name": "sort-order",
@@ -114,76 +114,6 @@
       ]
     },
     {
-      "name": "resize-column",
-      "fixedParts": [
-        "resize-column-frame-frame",
-        "resize-column-arrow-left",
-        "resize-column-arrow-right",
-        "resize-column-arrow-shaft"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "resize-column-frame-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "resize-column-arrow-left"
-        },
-        {
-          "type": "fixed",
-          "part": "resize-column-arrow-right"
-        },
-        {
-          "type": "fixed",
-          "part": "resize-column-arrow-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "resize-column-divider"
-        }
-      ]
-    },
-    {
-      "name": "resize-column-strong",
-      "fixedParts": [
-        "resize-column-frame-frame",
-        "resize-column-arrow-left",
-        "resize-column-arrow-right",
-        "resize-column-arrow-shaft"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "resize-column-frame-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "resize-column-arrow-left"
-        },
-        {
-          "type": "fixed",
-          "part": "resize-column-arrow-right"
-        },
-        {
-          "type": "fixed",
-          "part": "resize-column-arrow-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "resize-column-divider"
-        }
-      ]
-    },
-    {
       "name": "group-rows",
       "fixedParts": [
         "group-rows-header"
@@ -228,66 +158,6 @@
         {
           "type": "rigid",
           "part": "group-rows-row-2"
-        }
-      ]
-    },
-    {
-      "name": "freeze-column",
-      "fixedParts": [
-        "freeze-column-frame-frame",
-        "freeze-column-divider",
-        "freeze-column-frozen-bar"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "freeze-column-frame-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "freeze-column-divider"
-        },
-        {
-          "type": "fixed",
-          "part": "freeze-column-frozen-bar"
-        },
-        {
-          "type": "rigid",
-          "part": "freeze-column-scroll-bar"
-        }
-      ]
-    },
-    {
-      "name": "freeze-column-strong",
-      "fixedParts": [
-        "freeze-column-frame-frame",
-        "freeze-column-divider",
-        "freeze-column-frozen-bar"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "freeze-column-frame-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "freeze-column-divider"
-        },
-        {
-          "type": "fixed",
-          "part": "freeze-column-frozen-bar"
-        },
-        {
-          "type": "rigid",
-          "part": "freeze-column-scroll-bar"
         }
       ]
     },
@@ -398,146 +268,6 @@
         {
           "type": "rigid",
           "part": "formula-caret"
-        }
-      ]
-    },
-    {
-      "name": "sum",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "sum-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "percentage",
-      "fixedParts": [
-        "percentage-ring-a",
-        "percentage-ring-b"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "percentage-ring-a"
-        },
-        {
-          "type": "fixed",
-          "part": "percentage-ring-b"
-        },
-        {
-          "type": "rigid",
-          "part": "percentage-slash"
-        }
-      ]
-    },
-    {
-      "name": "percentage-strong",
-      "fixedParts": [
-        "percentage-ring-a",
-        "percentage-ring-b"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "percentage-ring-a"
-        },
-        {
-          "type": "fixed",
-          "part": "percentage-ring-b"
-        },
-        {
-          "type": "rigid",
-          "part": "percentage-slash"
-        }
-      ]
-    },
-    {
-      "name": "line-chart",
-      "fixedParts": [
-        "line-chart-axes"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "line-chart-axes"
-        }
-      ]
-    },
-    {
-      "name": "line-chart-strong",
-      "fixedParts": [
-        "line-chart-axes"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "line-chart-axes"
-        }
-      ]
-    },
-    {
-      "name": "pie-chart",
-      "fixedParts": [
-        "pie-chart-body-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "pie-chart-body-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "pie-chart-wedge-frame"
-        }
-      ]
-    },
-    {
-      "name": "pie-chart-strong",
-      "fixedParts": [
-        "pie-chart-body-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "pie-chart-body-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "pie-chart-wedge-frame"
         }
       ]
     },
@@ -722,58 +452,6 @@
       ]
     },
     {
-      "name": "radar-chart",
-      "fixedParts": [
-        "radar-chart-axis-0",
-        "radar-chart-axis-1",
-        "radar-chart-axis-2"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "radar-chart-axis-0"
-        },
-        {
-          "type": "fixed",
-          "part": "radar-chart-axis-1"
-        },
-        {
-          "type": "fixed",
-          "part": "radar-chart-axis-2"
-        }
-      ]
-    },
-    {
-      "name": "radar-chart-strong",
-      "fixedParts": [
-        "radar-chart-axis-0",
-        "radar-chart-axis-1",
-        "radar-chart-axis-2"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "radar-chart-axis-0"
-        },
-        {
-          "type": "fixed",
-          "part": "radar-chart-axis-1"
-        },
-        {
-          "type": "fixed",
-          "part": "radar-chart-axis-2"
-        }
-      ]
-    },
-    {
       "name": "dashboard",
       "fixedParts": [
         "dashboard-header-frame",
@@ -832,5 +510,74 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "resize-column",
+      "spec": "specs/resize-column.icon.json",
+      "specSha256": "7197c71988520d7ba0efebb4f264dee490707cb41886db65dcbc39f702a08e11",
+      "actions": [
+        "resize-column",
+        "resize-column-strong"
+      ]
+    },
+    {
+      "icon": "freeze-column",
+      "spec": "specs/freeze-column.icon.json",
+      "specSha256": "3de6c1187cba3757b81bc06c1992780975595b90587caf077142378930540a0a",
+      "actions": [
+        "freeze-column",
+        "freeze-column-strong"
+      ]
+    },
+    {
+      "icon": "sum",
+      "spec": "specs/sum.icon.json",
+      "specSha256": "11bf9112af6452afa48c9bd6204d604040819d2880173eb0efb5cb1fdcaf7848",
+      "actions": [
+        "sum",
+        "sum-strong"
+      ]
+    },
+    {
+      "icon": "percentage",
+      "spec": "specs/percentage.icon.json",
+      "specSha256": "b887a4647082bb63a106e5475e5499f7105a3ded9155550a5b100657e9adfdb1",
+      "actions": [
+        "percentage",
+        "percentage-strong"
+      ]
+    },
+    {
+      "icon": "line-chart",
+      "spec": "specs/line-chart.icon.json",
+      "specSha256": "48e153f859b3ef72c313dee1cb0a0a10251b243b0b1a973d24d0aa8c17765ab6",
+      "actions": [
+        "line-chart",
+        "line-chart-reset",
+        "line-chart-strong",
+        "line-chart-reset-strong"
+      ]
+    },
+    {
+      "icon": "pie-chart",
+      "spec": "specs/pie-chart.icon.json",
+      "specSha256": "1ff383992919e2ba23784d5b4ec1e3c79cf85da839c537e616408f532fcfe0e5",
+      "actions": [
+        "pie-chart",
+        "pie-chart-strong"
+      ]
+    },
+    {
+      "icon": "radar-chart",
+      "spec": "specs/radar-chart.icon.json",
+      "specSha256": "f8af70391347be8936093ffe3a74c693eb9489c374dcec220f88df92195d35ae",
+      "actions": [
+        "radar-chart",
+        "radar-chart-reset",
+        "radar-chart-strong",
+        "radar-chart-reset-strong"
+      ]
+    }
+  ]
 }

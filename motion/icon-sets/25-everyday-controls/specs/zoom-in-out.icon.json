@@ -1,0 +1,47 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "zoom-in-out",
+  "label": "Zoom in / out",
+  "intent": "The magnifier zooms in. Light: the lying bar swings up to stand across the other, minus becomes plus, lands upright with a hit and a small rebound, and a beat later the lens swells, magnifying the plus, and settles. Strong: the bar winds back first, swings past upright and settles in the same fold add-remove uses, and the lens dips, then swells harder and settles in two beats. The handle never moves. The reverse lays the bar back down while the lens shrinks: zooming out.",
+  "state": {
+    "from": "zoom-out",
+    "to": "zoom-in",
+    "labels": ["Zoom in", "Zoom out"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "lens": {"shape": {"circle": [[14, 14], 7.5]}, "role": "surface", "solid": "ring"},
+    "handle": {"shape": {"line": [[19.9, 19.9], [25.6, 25.6]]}},
+    "bar-h": {"shape": {"line": [[10.5, 14], [17.5, 14]]}},
+    "bar-v": {"//": "drawn lying (v1's zoom-out state); it turns -90 degrees to stand up", "shape": {"line": [[17.5, 14], [10.5, 14]]}}
+  },
+  "rigs": {
+    "lens": {"//": "the magnification: the glass and the plus swell about the lens centre", "pivot": [14, 14], "carries": ["lens", "bar-h"]},
+    "bar-v": {"pivot": [14, 14]}
+  },
+  "motion": {
+    "bar-v.rotate": {
+      "light": [[0, 0], [0.18, -90, "hit"], [0.25, -76, "out"], [0.32, -90, "hit"]],
+      "strong": [[0, 0], [0.09, 16, "out"], [0.25, -106, "out"], {"settle": 0.56, "to": -90}]
+    },
+    "lens.scale": {
+      "light": [[0, 1], [0.12, 1], [0.24, 1.12, "out"], [0.34, 0.98], [0.42, 1]],
+      "strong": [[0, 1], [0.09, 0.94, "out"], [0.27, 1.18, "out"], [0.38, 0.95], [0.48, 1.03], [0.58, 1]]
+    },
+    "bar-v.scale": {"follow": "lens.scale"}
+  },
+  "reverse": {
+    "//": "zooming out: the lens shrinks instead of swelling (no more than 0.88, so it never parts from the handle), and the bar lies back down with the same landing",
+    "light": {
+      "bar-v.rotate": [[0, -90], [0.18, 0, "hit"], [0.25, -14, "out"], [0.32, 0, "hit"]],
+      "lens.scale": [[0, 1], [0.12, 1], [0.24, 0.9, "out"], [0.34, 1.02], [0.42, 1]],
+      "bar-v.scale": [[0, 1], [0.12, 1], [0.24, 0.9, "out"], [0.34, 1.02], [0.42, 1]]
+    },
+    "strong": {
+      "bar-v.rotate": [[0, -90], [0.09, -106, "out"], [0.25, 16, "out"], {"settle": 0.56, "to": 0}],
+      "lens.scale": [[0, 1], [0.09, 1.05, "out"], [0.27, 0.88, "out"], [0.38, 1.04], [0.48, 0.98], [0.58, 1]],
+      "bar-v.scale": [[0, 1], [0.09, 1.05, "out"], [0.27, 0.88, "out"], [0.38, 1.04], [0.48, 0.98], [0.58, 1]]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "resize-column",
+  "label": "Resize column",
+  "intent": "The column boundary is dragged to a new width. Light: the resize handle (the double arrow under the boundary) pulls right, the boundary follows a beat later and stops dead at the wider column, then both ease home. Strong: a grab-tug left, a long drag right that stops dead, a smaller correction back past rest to the left that also clicks, then home. The frame never resizes.",
+  "parts": {
+    "frame":       {"shape": {"rect": [4, 4, 24, 15], "r": 2.4}, "role": "surface", "solid": "ring",
+                    "//": "v1 Solid is the frame ring plus the divider at 2.6, with both columns open"},
+    "divider":     {"shape": {"line": [[16, 4], [16, 19]]}},
+    "arrow-shaft": {"shape": {"line": [[10, 25.5], [22, 25.5]]}},
+    "arrow-left":  {"shape": {"polyline": [[12.5, 23], [10, 25.5], [12.5, 28]]}},
+    "arrow-right": {"shape": {"polyline": [[19.5, 23], [22, 25.5], [19.5, 28]]}}
+  },
+  "rigs": {
+    "handle": {"pivot": [16, 25.5], "carries": ["arrow-shaft", "arrow-left", "arrow-right"]}
+  },
+  "motion": {
+    "handle.x": {
+      "light":  [[0, 0], [0.2, 3.5, "hit"], [0.28, 3.5], [0.42, 0, "inOut"]],
+      "strong": [[0, 0], [0.07, -0.8, "out"], [0.26, 4, "hit"], [0.33, 4], [0.45, -1.6, "hit"], [0.5, -1.6], [0.62, 0, "inOut"]]
+    },
+    "divider.x": {"follow": "handle.x", "lag": 0.07}
+  }
+}

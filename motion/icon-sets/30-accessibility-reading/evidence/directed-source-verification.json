@@ -2,261 +2,9 @@
   "result": "PASS",
   "icons": 10,
   "actions": 28,
-  "nativeTransformNodes": 148,
-  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "nativeTransformNodes": 16,
+  "nativeTransformMaxCoordinateError": 0.000005999999999062311,
   "checks": [
-    {
-      "name": "accessibility",
-      "fixedParts": [
-        "accessibility-ring-frame",
-        "accessibility-head",
-        "accessibility-torso",
-        "accessibility-leg"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "accessibility-ring-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "accessibility-head"
-        },
-        {
-          "type": "fixed",
-          "part": "accessibility-torso"
-        },
-        {
-          "type": "fixed",
-          "part": "accessibility-leg"
-        },
-        {
-          "type": "rigid",
-          "part": "accessibility-arm-left"
-        },
-        {
-          "type": "rigid",
-          "part": "accessibility-arm-right"
-        }
-      ]
-    },
-    {
-      "name": "accessibility-strong",
-      "fixedParts": [
-        "accessibility-ring-frame",
-        "accessibility-head",
-        "accessibility-torso",
-        "accessibility-leg"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "accessibility-ring-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "accessibility-head"
-        },
-        {
-          "type": "fixed",
-          "part": "accessibility-torso"
-        },
-        {
-          "type": "fixed",
-          "part": "accessibility-leg"
-        },
-        {
-          "type": "rigid",
-          "part": "accessibility-arm-left"
-        },
-        {
-          "type": "rigid",
-          "part": "accessibility-arm-right"
-        }
-      ]
-    },
-    {
-      "name": "wheelchair-access",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "wheelchair-access-head"
-        },
-        {
-          "type": "rigid",
-          "part": "wheelchair-access-body"
-        },
-        {
-          "type": "rigid",
-          "part": "wheelchair-access-wheel-frame"
-        }
-      ]
-    },
-    {
-      "name": "wheelchair-access-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "wheelchair-access-head"
-        },
-        {
-          "type": "rigid",
-          "part": "wheelchair-access-body"
-        },
-        {
-          "type": "rigid",
-          "part": "wheelchair-access-wheel-frame"
-        }
-      ]
-    },
-    {
-      "name": "hearing-assistance",
-      "fixedParts": [
-        "hearing-assistance-helix",
-        "hearing-assistance-fold"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "hearing-assistance-helix"
-        },
-        {
-          "type": "fixed",
-          "part": "hearing-assistance-fold"
-        },
-        {
-          "type": "rigid",
-          "part": "hearing-assistance-arc-small"
-        },
-        {
-          "type": "rigid",
-          "part": "hearing-assistance-arc-large"
-        }
-      ]
-    },
-    {
-      "name": "hearing-assistance-strong",
-      "fixedParts": [
-        "hearing-assistance-helix",
-        "hearing-assistance-fold"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "hearing-assistance-helix"
-        },
-        {
-          "type": "fixed",
-          "part": "hearing-assistance-fold"
-        },
-        {
-          "type": "rigid",
-          "part": "hearing-assistance-arc-small"
-        },
-        {
-          "type": "rigid",
-          "part": "hearing-assistance-arc-large"
-        }
-      ]
-    },
-    {
-      "name": "high-contrast",
-      "fixedParts": [
-        "high-contrast-ring-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "high-contrast-ring-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "high-contrast-half"
-        }
-      ]
-    },
-    {
-      "name": "high-contrast-strong",
-      "fixedParts": [
-        "high-contrast-ring-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "high-contrast-ring-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "high-contrast-half"
-        }
-      ]
-    },
-    {
-      "name": "reduced-motion",
-      "fixedParts": [
-        "reduced-motion-ball-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "reduced-motion-ball-frame"
-        }
-      ]
-    },
-    {
-      "name": "reduced-motion-strong",
-      "fixedParts": [
-        "reduced-motion-ball-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "reduced-motion-ball-frame"
-        }
-      ]
-    },
     {
       "name": "text-size",
       "fixedParts": [
@@ -286,118 +34,6 @@
         {
           "type": "fixed",
           "part": "text-size-rule"
-        }
-      ]
-    },
-    {
-      "name": "keyboard",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "keyboard-body"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-key1"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-key2"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-key3"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-space"
-        }
-      ]
-    },
-    {
-      "name": "keyboard-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "keyboard-body"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-key1"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-key2"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-key3"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-space"
-        }
-      ]
-    },
-    {
-      "name": "keyboard-shortcuts",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "keyboard-shortcuts-mod-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-shortcuts-mod-bar"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-shortcuts-key-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-shortcuts-key-mark"
-        }
-      ]
-    },
-    {
-      "name": "keyboard-shortcuts-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "keyboard-shortcuts-mod-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-shortcuts-mod-bar"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-shortcuts-key-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "keyboard-shortcuts-key-mark"
         }
       ]
     },
@@ -502,5 +138,72 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "accessibility",
+      "spec": "specs/accessibility.icon.json",
+      "specSha256": "2c8cb2fbe70eee09e6fb6274c63ae0cd5e2d071d6fa3db156720b010276317ec",
+      "actions": [
+        "accessibility",
+        "accessibility-strong"
+      ]
+    },
+    {
+      "icon": "wheelchair-access",
+      "spec": "specs/wheelchair-access.icon.json",
+      "specSha256": "16efdc44db86d94e6a63fc3dd6efe3d1c21c168c0fb4168fda80152ae264ccc2",
+      "actions": [
+        "wheelchair-access",
+        "wheelchair-access-strong"
+      ]
+    },
+    {
+      "icon": "hearing-assistance",
+      "spec": "specs/hearing-assistance.icon.json",
+      "specSha256": "b46927768e2c8abfc0c522d1a710c5e9494670dbaa63874be93c8c74f4f27e60",
+      "actions": [
+        "hearing-assistance",
+        "hearing-assistance-strong"
+      ]
+    },
+    {
+      "icon": "high-contrast",
+      "spec": "specs/high-contrast.icon.json",
+      "specSha256": "a90ae7cd3299ff749f0d0cfea8202c1fec4ee82c26791a2cee891879a3f5670e",
+      "actions": [
+        "high-contrast",
+        "high-contrast-strong"
+      ]
+    },
+    {
+      "icon": "reduced-motion",
+      "spec": "specs/reduced-motion.icon.json",
+      "specSha256": "7880fd36ffefbb1750a691416301acd3931d4197cd20060cc5c3bc3988416d0b",
+      "actions": [
+        "reduced-motion",
+        "reduced-motion-reverse",
+        "reduced-motion-strong",
+        "reduced-motion-reverse-strong"
+      ]
+    },
+    {
+      "icon": "keyboard",
+      "spec": "specs/keyboard.icon.json",
+      "specSha256": "70b17f1072e16dd6f63ce6606d257502fbd1c789490a75bcfc7b4d13e359da81",
+      "actions": [
+        "keyboard",
+        "keyboard-strong"
+      ]
+    },
+    {
+      "icon": "keyboard-shortcuts",
+      "spec": "specs/keyboard-shortcuts.icon.json",
+      "specSha256": "44de10de5ee6035f7a6f4b14787de43238ec711395db24b3af86cc2b89479a7f",
+      "actions": [
+        "keyboard-shortcuts",
+        "keyboard-shortcuts-strong"
+      ]
+    }
+  ]
 }

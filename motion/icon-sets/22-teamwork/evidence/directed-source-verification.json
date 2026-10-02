@@ -2,81 +2,9 @@
   "result": "PASS",
   "icons": 40,
   "actions": 130,
-  "nativeTransformNodes": 588,
+  "nativeTransformNodes": 374,
   "nativeTransformMaxCoordinateError": 0.000010986898693943203,
   "checks": [
-    {
-      "name": "invite-teammate",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "invite-teammate-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "join-team",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "join-team-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "team-directory",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "team-directory-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "team-roles",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "team-roles-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
     {
       "name": "team-presence",
       "fixedParts": [],
@@ -258,24 +186,6 @@
       "designConstraints": []
     },
     {
-      "name": "team-workload",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "team-workload-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "shared-document",
       "fixedParts": [],
       "topology": true,
@@ -304,24 +214,6 @@
     },
     {
       "name": "co-edit-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "live-cursors",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "live-cursors-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -394,24 +286,6 @@
     },
     {
       "name": "reply-thread-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "mention-teammate",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "mention-teammate-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -510,24 +384,6 @@
       "designConstraints": []
     },
     {
-      "name": "compare-revisions",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "compare-revisions-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "version-history",
       "fixedParts": [],
       "topology": true,
@@ -546,42 +402,6 @@
       "designConstraints": []
     },
     {
-      "name": "share-workspace",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "share-workspace-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "invite-link",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "invite-link-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "guest-access",
       "fixedParts": [],
       "topology": true,
@@ -592,24 +412,6 @@
     },
     {
       "name": "guest-access-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "view-access",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "view-access-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -654,24 +456,6 @@
       "designConstraints": []
     },
     {
-      "name": "raise-hand",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "raise-hand-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "team-poll",
       "fixedParts": [],
       "topology": true,
@@ -706,25 +490,130 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "team-celebration",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "team-celebration-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "invite-teammate",
+      "spec": "specs/invite-teammate.icon.json",
+      "specSha256": "2ed6e32a7978f6ca2f5de0df5426c306d495dfc549fc17e30a3afbf36658f8b2",
+      "actions": [
+        "invite-teammate",
+        "invite-teammate-strong"
+      ]
+    },
+    {
+      "icon": "join-team",
+      "spec": "specs/join-team.icon.json",
+      "specSha256": "19debfa17fe964fafd61d30114d75a2247b1aaa270e8ac539608304f2c720c8e",
+      "actions": [
+        "join-team",
+        "join-team-reset",
+        "join-team-strong",
+        "join-team-reset-strong"
+      ]
+    },
+    {
+      "icon": "team-directory",
+      "spec": "specs/team-directory.icon.json",
+      "specSha256": "a660d6cfc6e716f0e3ff164161b48d216c13960d67169db7d0ea97146539b323",
+      "actions": [
+        "team-directory",
+        "team-directory-strong"
+      ]
+    },
+    {
+      "icon": "team-roles",
+      "spec": "specs/team-roles.icon.json",
+      "specSha256": "f6bf139e5b6811f063d9feff9cb28e852c82d0290e5ae60e0341aa675279b0cd",
+      "actions": [
+        "team-roles",
+        "team-roles-strong"
+      ]
+    },
+    {
+      "icon": "team-workload",
+      "spec": "specs/team-workload.icon.json",
+      "specSha256": "73d7e4fdd479a347543c57ddeaef205d933b1b45120c901bec26d11fed7a3185",
+      "actions": [
+        "team-workload",
+        "team-workload-reset",
+        "team-workload-strong",
+        "team-workload-reset-strong"
+      ]
+    },
+    {
+      "icon": "live-cursors",
+      "spec": "specs/live-cursors.icon.json",
+      "specSha256": "48fe7c015aa1322650c593e6d460061493249ef823fcc9f6e7def47f71d9a26e",
+      "actions": [
+        "live-cursors",
+        "live-cursors-strong"
+      ]
+    },
+    {
+      "icon": "mention-teammate",
+      "spec": "specs/mention-teammate.icon.json",
+      "specSha256": "e1903cacdeebe882c0788823b9f80dfb20a1b52cba5ef1a238fbf156b2cc97b9",
+      "actions": [
+        "mention-teammate",
+        "mention-teammate-strong"
+      ]
+    },
+    {
+      "icon": "compare-revisions",
+      "spec": "specs/compare-revisions.icon.json",
+      "specSha256": "57e58430900c21ad569bd492eaa5d4934f499ca6a5e7f343f08fbca6b3049942",
+      "actions": [
+        "compare-revisions",
+        "compare-revisions-strong"
+      ]
+    },
+    {
+      "icon": "share-workspace",
+      "spec": "specs/share-workspace.icon.json",
+      "specSha256": "38464f80cd83db5cbdc418c89ba9a9f8b925ace31773ffb16de1386e28e6f8c7",
+      "actions": [
+        "share-workspace",
+        "share-workspace-strong"
+      ]
+    },
+    {
+      "icon": "invite-link",
+      "spec": "specs/invite-link.icon.json",
+      "specSha256": "bab6e11a8c83368ac5df9c596b0fc476a841ba2c593dfde4ad2503452694c1c1",
+      "actions": [
+        "invite-link",
+        "invite-link-strong"
+      ]
+    },
+    {
+      "icon": "view-access",
+      "spec": "specs/view-access.icon.json",
+      "specSha256": "d9adab25a45eeb9301b4f6b2f1f456c0749bc757c3327edeb4591a2051e9405c",
+      "actions": [
+        "view-access",
+        "view-access-strong"
+      ]
+    },
+    {
+      "icon": "raise-hand",
+      "spec": "specs/raise-hand.icon.json",
+      "specSha256": "74d2fa9ab2ce97c29be923cd7022cadf96841c1c01eb567bd2195c083e85ba6d",
+      "actions": [
+        "raise-hand",
+        "raise-hand-strong"
+      ]
+    },
+    {
+      "icon": "team-celebration",
+      "spec": "specs/team-celebration.icon.json",
+      "specSha256": "5a6004617e32155c2a82ee24a36273f59b7581be6de1181790a7b91de47f44b9",
+      "actions": [
+        "team-celebration",
+        "team-celebration-strong"
+      ]
+    }
+  ]
 }

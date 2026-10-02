@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "private-browsing",
+  "label": "Private browsing",
+  "intent": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
+  "parts": {
+    "temple-l": {"shape": {"line": [[5, 16.4], [3.6, 14.8]]}},
+    "temple-r": {"mirror": {"of": "temple-l"}},
+    "bridge": {"shape": {"path": "M14.2 16 C14.6 14.4 17.4 14.4 17.8 16"}},
+    "lens-l": {"shape": {"circle": [[9.5, 17], 4.2]}, "role": "surface", "solid": "ring"},
+    "lens-r": {"mirror": {"of": "lens-l"}},
+    "shade-l": {"//": "hidden at rest: the dark lens fills the rim only while the glasses are in disguise; its highlight (a 45-degree streak 2 wide, upper left) is a real counter, so each lens keeps an opening at 32 px (set 26 rule)", "shape": {"circle": [[9.5, 17], 3.2]}, "role": "fill", "hidden": true, "holes": [{"polygon": [[10.721, 15.393], [9.307, 13.979], [6.479, 16.807], [7.893, 18.221]], "r": 0.95}]},
+    "shade-r": {"//": "drawn, not mirrored, so both highlights sit upper left like one light source", "shape": {"circle": [[22.5, 17], 3.2]}, "role": "fill", "hidden": true, "holes": [{"polygon": [[23.721, 15.393], [22.307, 13.979], [19.479, 16.807], [20.893, 18.221]], "r": 0.95}]}
+  },
+  "rigs": {
+    "glasses": {"pivot": [16, 17], "carries": ["temple-l", "temple-r", "bridge", "lens-l", "lens-r", "shade-l", "shade-r"]}
+  },
+  "motion": {
+    "glasses.y": {
+      "light":  [[0, 0], [0.1, -1.5, "out"], [0.22, 0, "in"], [0.28, -0.3], [0.34, 0]],
+      "strong": [[0, 0], [0.06, 0.5, "out"], [0.17, -2, "out"], [0.3, 0, "in"], [0.37, -0.8, "out"], [0.45, 0, "in"], [0.52, -0.2], [0.58, 0]]
+    },
+    "shade-l.opacity": {
+      "light":  [[0, 0], [0.07, 0], [0.16, 1, "out"], [0.34, 1], [0.46, 0, "in"]],
+      "strong": [[0, 0], [0.13, 0], [0.22, 1, "out"], [0.6, 1], [0.72, 0, "in"]]
+    },
+    "shade-r.opacity": {"follow": "shade-l.opacity", "lag": 0.05}
+  }
+}

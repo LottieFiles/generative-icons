@@ -2024,36 +2024,32 @@
       "continuous": false,
       "previewReset": true,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "prepared",
       "endState": "result",
       "heading": "ID card",
-      "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+      "description": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
       "label": "ID card",
-      "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+      "intent": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.5,
-      "rest": 33,
+      "active": 0.38,
+      "rest": 26,
       "keyPoses": [
         0,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5
+        0.07600000000000001,
+        0.15200000000000002,
+        0.22799999999999998,
+        0.30400000000000005,
+        0.38
       ],
-      "layers": 14,
+      "layers": 13,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -2063,28 +2059,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "55c3a0640a304880e7d75767c0ccf1d5453e88f3733b8f8685801f8adfa93213",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-        "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-      },
-      "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "id-card-card-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "id-card-photo"
-        }
-      ],
+      "nativeSha256": "c7e6b085c6299b8c3de3c8a5295a51e724ffef0b80f8dcc667d54ddca75f2eb0",
+      "sourceSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+      "planSha256": "8ab42a59484ecc64dda5b510dafc3ae44865f0fecf7d404da33f8afa2448373a",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
+      "constraints": [],
       "category": "Account & privacy",
-      "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+      "definitionsSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -2106,96 +2088,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "id-card-reset",
-        "icon": "id-card",
-        "motionId": "light",
-        "continuous": false,
-        "previewReset": true,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-          "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "result",
-        "endState": "prepared",
-        "heading": "ID card",
-        "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-        "label": "ID card",
-        "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.3,
-        "rest": 21,
-        "keyPoses": [
-          0,
-          0.06,
-          0.12,
-          0.18,
-          0.24,
-          0.3
-        ],
-        "layers": 14,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "f45e52802c5b5adb2943cf6bc7a850825e354c4e5624f009d326231d4b159365",
-        "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "authoringSources": {
-          "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-          "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-          "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-          "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-        },
-        "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-        "constraints": [
-          {
-            "type": "rigid",
-            "part": "id-card-card-frame"
-          },
-          {
-            "type": "rigid",
-            "part": "id-card-photo"
-          }
-        ],
-        "category": "Account & privacy",
-        "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "number": 419,
       "forwardLabel": "Play action",
       "reverseLabel": "Reset preview",
@@ -2207,36 +2099,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "ID card",
-          "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "description": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "label": "ID card",
-          "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "intent": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 14,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2246,28 +2134,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "55c3a0640a304880e7d75767c0ccf1d5453e88f3733b8f8685801f8adfa93213",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "id-card-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "id-card-photo"
-            }
-          ],
+          "nativeSha256": "c7e6b085c6299b8c3de3c8a5295a51e724ffef0b80f8dcc667d54ddca75f2eb0",
+          "sourceSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+          "planSha256": "8ab42a59484ecc64dda5b510dafc3ae44865f0fecf7d404da33f8afa2448373a",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2296,36 +2170,32 @@
             "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "ID card",
-            "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+            "description": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
             "label": "ID card",
-            "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+            "intent": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.3,
-            "rest": 21,
+            "active": 0.28,
+            "rest": 20,
             "keyPoses": [
               0,
-              0.06,
-              0.12,
-              0.18,
-              0.24,
-              0.3
+              0.05600000000000001,
+              0.11200000000000002,
+              0.168,
+              0.22400000000000003,
+              0.28
             ],
-            "layers": 14,
+            "layers": 13,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -2335,28 +2205,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "f45e52802c5b5adb2943cf6bc7a850825e354c4e5624f009d326231d4b159365",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-              "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-              "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-              "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-            },
-            "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-            "constraints": [
-              {
-                "type": "rigid",
-                "part": "id-card-card-frame"
-              },
-              {
-                "type": "rigid",
-                "part": "id-card-photo"
-              }
-            ],
+            "nativeSha256": "e02b64e37a685114c758b93dda4e0320858730cd670a0c8aad9975c8b9053d20",
+            "sourceSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+            "planSha256": "8ab42a59484ecc64dda5b510dafc3ae44865f0fecf7d404da33f8afa2448373a",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
+            "constraints": [],
             "category": "Account & privacy",
-            "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+            "definitionsSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -2378,11 +2234,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 15144,
-            "sha256": "c064fbf6032942cda6850b01c819840fb9e027f16dda17c1a6531b59cdb7e13b"
+            "bytes": 6231,
+            "sha256": "f2392c0465e61a25482316296a8eeee9eca7865af1420780d7f24fe17d957595"
           },
-          "bytes": 15142,
-          "sha256": "c74edf2b950f4f9ab9e49b02adfbe9625e5b03e0e5047c7e3e5dca5820fafb04"
+          "bytes": 6229,
+          "sha256": "01a5aa125ddb85cfee0db3f76170979d95a947767d8010b3ba6091eaac95e59b"
         },
         {
           "name": "id-card-strong",
@@ -2391,36 +2247,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "ID card",
-          "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "description": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "label": "ID card",
-          "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "intent": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.57,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.11399999999999999,
+            0.22799999999999998,
+            0.34199999999999997,
+            0.45599999999999996,
+            0.57
           ],
-          "layers": 14,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2430,28 +2282,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4c87d4f7ec9e2f3165e57e51e0a9c8ccf89e5c610691336c017fcc659f6ba216",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "id-card-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "id-card-photo"
-            }
-          ],
+          "nativeSha256": "7d0077e3ebe220b615a801048b92a9e5c868646e6352b65bcf353bb3dd3e3be0",
+          "sourceSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+          "planSha256": "8ab42a59484ecc64dda5b510dafc3ae44865f0fecf7d404da33f8afa2448373a",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2480,20 +2318,16 @@
             "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "ID card",
-            "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+            "description": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
             "label": "ID card",
-            "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+            "intent": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -2509,7 +2343,7 @@
               0.24,
               0.3
             ],
-            "layers": 14,
+            "layers": 13,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -2519,28 +2353,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "3b4f5610f224c5016464e048fad82dbf9fef93fee62fbedbcebf301471dc386f",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-              "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-              "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-              "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-            },
-            "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-            "constraints": [
-              {
-                "type": "rigid",
-                "part": "id-card-card-frame"
-              },
-              {
-                "type": "rigid",
-                "part": "id-card-photo"
-              }
-            ],
+            "nativeSha256": "9c288f45bb460f877f1534d607f29f864e7a645691d9c12b79eefb0fdda1bfb3",
+            "sourceSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+            "planSha256": "8ab42a59484ecc64dda5b510dafc3ae44865f0fecf7d404da33f8afa2448373a",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
+            "constraints": [],
             "category": "Account & privacy",
-            "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+            "definitionsSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -2562,11 +2382,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 15148,
-            "sha256": "4921a23e88ff277bf467a9e3da73292ae626611b4d52488609ed04e4ac5568ca"
+            "bytes": 6235,
+            "sha256": "3763154ca63564b1374d95c11d9c118f139192efe3c32401a11241a546d5f564"
           },
-          "bytes": 15145,
-          "sha256": "2db034684db67786e34673bac2781e7bfae69742c99fc082d82b0efb71ef7557"
+          "bytes": 6232,
+          "sha256": "6073d3cf82d30879ae4e254f18233063eb46164358e4511f6afc40d3a06c745c"
         }
       ],
       "animations": [
@@ -2577,36 +2397,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "ID card",
-          "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "description": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "label": "ID card",
-          "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "intent": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 14,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2616,28 +2432,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "55c3a0640a304880e7d75767c0ccf1d5453e88f3733b8f8685801f8adfa93213",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "id-card-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "id-card-photo"
-            }
-          ],
+          "nativeSha256": "c7e6b085c6299b8c3de3c8a5295a51e724ffef0b80f8dcc667d54ddca75f2eb0",
+          "sourceSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+          "planSha256": "8ab42a59484ecc64dda5b510dafc3ae44865f0fecf7d404da33f8afa2448373a",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2659,8 +2461,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 15142,
-          "sha256": "c74edf2b950f4f9ab9e49b02adfbe9625e5b03e0e5047c7e3e5dca5820fafb04"
+          "bytes": 6229,
+          "sha256": "01a5aa125ddb85cfee0db3f76170979d95a947767d8010b3ba6091eaac95e59b"
         },
         {
           "name": "id-card-reset",
@@ -2669,36 +2471,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "ID card",
-          "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "description": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "label": "ID card",
-          "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "intent": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.3,
-          "rest": 21,
+          "active": 0.28,
+          "rest": 20,
           "keyPoses": [
             0,
-            0.06,
-            0.12,
-            0.18,
-            0.24,
-            0.3
+            0.05600000000000001,
+            0.11200000000000002,
+            0.168,
+            0.22400000000000003,
+            0.28
           ],
-          "layers": 14,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2708,28 +2506,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f45e52802c5b5adb2943cf6bc7a850825e354c4e5624f009d326231d4b159365",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "id-card-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "id-card-photo"
-            }
-          ],
+          "nativeSha256": "e02b64e37a685114c758b93dda4e0320858730cd670a0c8aad9975c8b9053d20",
+          "sourceSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+          "planSha256": "8ab42a59484ecc64dda5b510dafc3ae44865f0fecf7d404da33f8afa2448373a",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2751,8 +2535,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 15144,
-          "sha256": "c064fbf6032942cda6850b01c819840fb9e027f16dda17c1a6531b59cdb7e13b"
+          "bytes": 6231,
+          "sha256": "f2392c0465e61a25482316296a8eeee9eca7865af1420780d7f24fe17d957595"
         },
         {
           "name": "id-card-strong",
@@ -2761,36 +2545,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "ID card",
-          "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "description": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "label": "ID card",
-          "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "intent": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.57,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.11399999999999999,
+            0.22799999999999998,
+            0.34199999999999997,
+            0.45599999999999996,
+            0.57
           ],
-          "layers": 14,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2800,28 +2580,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4c87d4f7ec9e2f3165e57e51e0a9c8ccf89e5c610691336c017fcc659f6ba216",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "id-card-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "id-card-photo"
-            }
-          ],
+          "nativeSha256": "7d0077e3ebe220b615a801048b92a9e5c868646e6352b65bcf353bb3dd3e3be0",
+          "sourceSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+          "planSha256": "8ab42a59484ecc64dda5b510dafc3ae44865f0fecf7d404da33f8afa2448373a",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2843,8 +2609,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 15145,
-          "sha256": "2db034684db67786e34673bac2781e7bfae69742c99fc082d82b0efb71ef7557"
+          "bytes": 6232,
+          "sha256": "6073d3cf82d30879ae4e254f18233063eb46164358e4511f6afc40d3a06c745c"
         },
         {
           "name": "id-card-reset-strong",
@@ -2853,20 +2619,16 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "ID card",
-          "description": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "description": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "label": "ID card",
-          "intent": "The card taps and its identity details fill in beside the photo; details stay revealed.",
+          "intent": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -2882,7 +2644,7 @@
             0.24,
             0.3
           ],
-          "layers": 14,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2892,28 +2654,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "3b4f5610f224c5016464e048fad82dbf9fef93fee62fbedbcebf301471dc386f",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The card taps and its identity details fill in beside the photo; details stay revealed.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "id-card-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "id-card-photo"
-            }
-          ],
+          "nativeSha256": "9c288f45bb460f877f1534d607f29f864e7a645691d9c12b79eefb0fdda1bfb3",
+          "sourceSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+          "planSha256": "8ab42a59484ecc64dda5b510dafc3ae44865f0fecf7d404da33f8afa2448373a",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The card is read and the holder's details fill in. Light: the photo pops as the identity is captured, then the first detail line writes out to full length and the second follows a beat later; the details stay. Strong: the card taps down onto a reader and springs back, the photo pops harder, and the two lines write out in turn, each stopping crisply at full length. The preview reset fades the details back to their stubs.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2935,12 +2683,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 15148,
-          "sha256": "4921a23e88ff277bf467a9e3da73292ae626611b4d52488609ed04e4ac5568ca"
+          "bytes": 6235,
+          "sha256": "3763154ca63564b1374d95c11d9c118f139192efe3c32401a11241a546d5f564"
         }
       ],
-      "bytes": 15142,
-      "sha256": "c74edf2b950f4f9ab9e49b02adfbe9625e5b03e0e5047c7e3e5dca5820fafb04"
+      "bytes": 6229,
+      "sha256": "01a5aa125ddb85cfee0db3f76170979d95a947767d8010b3ba6091eaac95e59b"
     },
     {
       "name": "password",
@@ -3994,35 +3742,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Passkey",
-      "description": "A device key swings beside the account holder and settles; the person acknowledges.",
+      "description": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
       "label": "Passkey",
-      "intent": "A device key swings beside the account holder and settles; the person acknowledges.",
+      "intent": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.5,
-      "rest": 33,
+      "active": 0.48,
+      "rest": 32,
       "keyPoses": [
         0,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5
+        0.096,
+        0.192,
+        0.288,
+        0.384,
+        0.48
       ],
-      "layers": 21,
+      "layers": 27,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -4032,40 +3777,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "bec7a11d6ca090e04dde32f7fd47a27743063d4e28795da8c3de8a1bcf110921",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-        "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-      },
-      "brief": "A device key swings beside the account holder and settles; the person acknowledges.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "passkey-head-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-shoulders"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-tooth"
-        }
-      ],
+      "nativeSha256": "6c4694f19dc49de6e96b494d3b7bced84498245a6c3c28d1d0492d8f19842095",
+      "sourceSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
+      "planSha256": "a12d3946175a2c5984a44534b9952e152e1b085826c534e7b76dfc71125ad824",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
+      "constraints": [],
       "category": "Account & privacy",
-      "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+      "definitionsSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -4096,35 +3815,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Passkey",
-          "description": "A device key swings beside the account holder and settles; the person acknowledges.",
+          "description": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
           "label": "Passkey",
-          "intent": "A device key swings beside the account holder and settles; the person acknowledges.",
+          "intent": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.48,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
           ],
-          "layers": 21,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4134,40 +3850,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "bec7a11d6ca090e04dde32f7fd47a27743063d4e28795da8c3de8a1bcf110921",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "A device key swings beside the account holder and settles; the person acknowledges.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "passkey-head-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-shoulders"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-ring"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-tooth"
-            }
-          ],
+          "nativeSha256": "6c4694f19dc49de6e96b494d3b7bced84498245a6c3c28d1d0492d8f19842095",
+          "sourceSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
+          "planSha256": "a12d3946175a2c5984a44534b9952e152e1b085826c534e7b76dfc71125ad824",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4189,8 +3879,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4811,
-          "sha256": "5c4fc23903874ed6bad3e5eb551a248342d89c41be4a0819dc214bb915847fee"
+          "bytes": 4159,
+          "sha256": "aa1392836941a24cc18d9fa7fe27d4be998779c646eb8cb84ce2487b2f85fef2"
         },
         {
           "name": "passkey-strong",
@@ -4199,35 +3889,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Passkey",
-          "description": "A device key swings beside the account holder and settles; the person acknowledges.",
+          "description": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
           "label": "Passkey",
-          "intent": "A device key swings beside the account holder and settles; the person acknowledges.",
+          "intent": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.66,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.132,
+            0.264,
+            0.396,
+            0.528,
+            0.66
           ],
-          "layers": 21,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4237,40 +3924,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "137701f2a4da1f4c10289ba22a3626491b01f840edfa13d33e45cfe71d55492e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "A device key swings beside the account holder and settles; the person acknowledges.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "passkey-head-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-shoulders"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-ring"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-tooth"
-            }
-          ],
+          "nativeSha256": "7b68a85bb8d97b941baf6f1e7d21885fddb89448d0bd6ca77127d52e0c486097",
+          "sourceSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
+          "planSha256": "a12d3946175a2c5984a44534b9952e152e1b085826c534e7b76dfc71125ad824",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4292,8 +3953,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4813,
-          "sha256": "1568a4840f51f9daa872aab3dfcecb8f68eda12b8eca6d86b83aaec6c17cbf75"
+          "bytes": 4161,
+          "sha256": "b4e3e9554fa160e095a2bbbc3f24a441ce8a906d5f7023e6a38db59173e0a594"
         }
       ],
       "animations": [
@@ -4304,35 +3965,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Passkey",
-          "description": "A device key swings beside the account holder and settles; the person acknowledges.",
+          "description": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
           "label": "Passkey",
-          "intent": "A device key swings beside the account holder and settles; the person acknowledges.",
+          "intent": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.48,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
           ],
-          "layers": 21,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4342,40 +4000,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "bec7a11d6ca090e04dde32f7fd47a27743063d4e28795da8c3de8a1bcf110921",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "A device key swings beside the account holder and settles; the person acknowledges.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "passkey-head-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-shoulders"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-ring"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-tooth"
-            }
-          ],
+          "nativeSha256": "6c4694f19dc49de6e96b494d3b7bced84498245a6c3c28d1d0492d8f19842095",
+          "sourceSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
+          "planSha256": "a12d3946175a2c5984a44534b9952e152e1b085826c534e7b76dfc71125ad824",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4397,8 +4029,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4811,
-          "sha256": "5c4fc23903874ed6bad3e5eb551a248342d89c41be4a0819dc214bb915847fee"
+          "bytes": 4159,
+          "sha256": "aa1392836941a24cc18d9fa7fe27d4be998779c646eb8cb84ce2487b2f85fef2"
         },
         {
           "name": "passkey-strong",
@@ -4407,35 +4039,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Passkey",
-          "description": "A device key swings beside the account holder and settles; the person acknowledges.",
+          "description": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
           "label": "Passkey",
-          "intent": "A device key swings beside the account holder and settles; the person acknowledges.",
+          "intent": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.66,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.132,
+            0.264,
+            0.396,
+            0.528,
+            0.66
           ],
-          "layers": 21,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4445,40 +4074,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "137701f2a4da1f4c10289ba22a3626491b01f840edfa13d33e45cfe71d55492e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "A device key swings beside the account holder and settles; the person acknowledges.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "passkey-head-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-shoulders"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-ring"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "passkey-tooth"
-            }
-          ],
+          "nativeSha256": "7b68a85bb8d97b941baf6f1e7d21885fddb89448d0bd6ca77127d52e0c486097",
+          "sourceSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
+          "planSha256": "a12d3946175a2c5984a44534b9952e152e1b085826c534e7b76dfc71125ad824",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The passkey lets the person in. Light: the key turns 30 degrees like a key in a lock and stops dead (the click), holds, and turns back quickly; the click sends one arc out of the bow towards the person, and a beat later the account holder hops up, signed in, and lands. Strong: the key winds back first, turns further and bounces on the click, and the person hops higher, then once more, smaller.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4500,12 +4103,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4813,
-          "sha256": "1568a4840f51f9daa872aab3dfcecb8f68eda12b8eca6d86b83aaec6c17cbf75"
+          "bytes": 4161,
+          "sha256": "b4e3e9554fa160e095a2bbbc3f24a441ce8a906d5f7023e6a38db59173e0a594"
         }
       ],
-      "bytes": 4811,
-      "sha256": "5c4fc23903874ed6bad3e5eb551a248342d89c41be4a0819dc214bb915847fee"
+      "bytes": 4159,
+      "sha256": "aa1392836941a24cc18d9fa7fe27d4be998779c646eb8cb84ce2487b2f85fef2"
     },
     {
       "name": "fingerprint",
@@ -4994,35 +4597,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Face authentication",
-      "description": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+      "description": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
       "label": "Face authentication",
-      "intent": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+      "intent": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.5,
-      "rest": 33,
+      "active": 0.48,
+      "rest": 32,
       "keyPoses": [
         0,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5
+        0.096,
+        0.192,
+        0.288,
+        0.384,
+        0.48
       ],
-      "layers": 28,
+      "layers": 38,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -5032,48 +4632,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "89b40b7116e911d4249fbc7147aabaa2cdc4bfe80ec447d0d6c560ca7fc596b3",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-        "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-      },
-      "brief": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "face-authentication-eye-l"
-        },
-        {
-          "type": "fixed",
-          "part": "face-authentication-eye-r"
-        },
-        {
-          "type": "fixed",
-          "part": "face-authentication-mouth"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-tl"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-tr"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-br"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-bl"
-        }
-      ],
+      "nativeSha256": "24f09591ff7598f338e55a9eb88351a05e1a421e82eb9d7222b9872f3be002a9",
+      "sourceSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
+      "planSha256": "34951721345c358040287c895055d6ef883517f49812956563da5b211103cdf5",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
+      "constraints": [],
       "category": "Account & privacy",
-      "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+      "definitionsSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -5104,35 +4670,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Face authentication",
-          "description": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+          "description": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
           "label": "Face authentication",
-          "intent": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+          "intent": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.48,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
           ],
-          "layers": 28,
+          "layers": 38,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5142,48 +4705,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "89b40b7116e911d4249fbc7147aabaa2cdc4bfe80ec447d0d6c560ca7fc596b3",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "face-authentication-eye-l"
-            },
-            {
-              "type": "fixed",
-              "part": "face-authentication-eye-r"
-            },
-            {
-              "type": "fixed",
-              "part": "face-authentication-mouth"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-tl"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-tr"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-br"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-bl"
-            }
-          ],
+          "nativeSha256": "24f09591ff7598f338e55a9eb88351a05e1a421e82eb9d7222b9872f3be002a9",
+          "sourceSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
+          "planSha256": "34951721345c358040287c895055d6ef883517f49812956563da5b211103cdf5",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5205,8 +4734,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5792,
-          "sha256": "aeeacbe530a4641b9d9ae7f3099773166eddebda6a44e381e25bda00eed550b4"
+          "bytes": 4262,
+          "sha256": "471f8f0ae2a80e6a455029248755933e0a8ad4d37e9150b6dffcccaf50e2340e"
         },
         {
           "name": "face-authentication-strong",
@@ -5215,35 +4744,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Face authentication",
-          "description": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+          "description": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
           "label": "Face authentication",
-          "intent": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+          "intent": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 28,
+          "layers": 38,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5253,48 +4779,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "75a4162b7cd11a2ca5a23ed0f50c410aba15c6a975cb6b78b150a05f59f3ecd9",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "face-authentication-eye-l"
-            },
-            {
-              "type": "fixed",
-              "part": "face-authentication-eye-r"
-            },
-            {
-              "type": "fixed",
-              "part": "face-authentication-mouth"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-tl"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-tr"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-br"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-bl"
-            }
-          ],
+          "nativeSha256": "e4a9067f37d5f7817060189576c11547adfa006daf153515da2d22d2d5caa1b1",
+          "sourceSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
+          "planSha256": "34951721345c358040287c895055d6ef883517f49812956563da5b211103cdf5",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5316,8 +4808,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5796,
-          "sha256": "b056c105e3fc4b299a4be119bc8a323c39f5af4f0cda94895f7d96a5181718e7"
+          "bytes": 4266,
+          "sha256": "4fd1a3996211ddd58817f73d0431088cbe1a32020716f0ea41e6423f18350b4d"
         }
       ],
       "animations": [
@@ -5328,35 +4820,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Face authentication",
-          "description": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+          "description": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
           "label": "Face authentication",
-          "intent": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+          "intent": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.48,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
           ],
-          "layers": 28,
+          "layers": 38,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5366,48 +4855,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "89b40b7116e911d4249fbc7147aabaa2cdc4bfe80ec447d0d6c560ca7fc596b3",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "face-authentication-eye-l"
-            },
-            {
-              "type": "fixed",
-              "part": "face-authentication-eye-r"
-            },
-            {
-              "type": "fixed",
-              "part": "face-authentication-mouth"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-tl"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-tr"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-br"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-bl"
-            }
-          ],
+          "nativeSha256": "24f09591ff7598f338e55a9eb88351a05e1a421e82eb9d7222b9872f3be002a9",
+          "sourceSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
+          "planSha256": "34951721345c358040287c895055d6ef883517f49812956563da5b211103cdf5",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5429,8 +4884,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5792,
-          "sha256": "aeeacbe530a4641b9d9ae7f3099773166eddebda6a44e381e25bda00eed550b4"
+          "bytes": 4262,
+          "sha256": "471f8f0ae2a80e6a455029248755933e0a8ad4d37e9150b6dffcccaf50e2340e"
         },
         {
           "name": "face-authentication-strong",
@@ -5439,35 +4894,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Face authentication",
-          "description": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+          "description": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
           "label": "Face authentication",
-          "intent": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
+          "intent": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 28,
+          "layers": 38,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5477,48 +4929,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "75a4162b7cd11a2ca5a23ed0f50c410aba15c6a975cb6b78b150a05f59f3ecd9",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The framing marks tighten on the face, then release: one inward focus in Light, a prepared snap with a single release in Strong.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "face-authentication-eye-l"
-            },
-            {
-              "type": "fixed",
-              "part": "face-authentication-eye-r"
-            },
-            {
-              "type": "fixed",
-              "part": "face-authentication-mouth"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-tl"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-tr"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-br"
-            },
-            {
-              "type": "rigid",
-              "part": "face-authentication-bracket-bl"
-            }
-          ],
+          "nativeSha256": "e4a9067f37d5f7817060189576c11547adfa006daf153515da2d22d2d5caa1b1",
+          "sourceSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
+          "planSha256": "34951721345c358040287c895055d6ef883517f49812956563da5b211103cdf5",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The face is scanned and recognised. Light: a scan line appears at the top of the frame, sweeps down over the face and fades; as it finishes, the four corner brackets snap in onto the face (hit), rebound and settle. Strong: the scan sweeps down and back up, the brackets lock on harder with a bounce, and the face gives a small nod of acceptance.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5540,12 +4958,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5796,
-          "sha256": "b056c105e3fc4b299a4be119bc8a323c39f5af4f0cda94895f7d96a5181718e7"
+          "bytes": 4266,
+          "sha256": "4fd1a3996211ddd58817f73d0431088cbe1a32020716f0ea41e6423f18350b4d"
         }
       ],
-      "bytes": 5792,
-      "sha256": "aeeacbe530a4641b9d9ae7f3099773166eddebda6a44e381e25bda00eed550b4"
+      "bytes": 4262,
+      "sha256": "471f8f0ae2a80e6a455029248755933e0a8ad4d37e9150b6dffcccaf50e2340e"
     },
     {
       "name": "two-factor-code",
@@ -7524,35 +6942,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Private browsing",
-      "description": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+      "description": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
       "label": "Private browsing",
-      "intent": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+      "intent": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.55,
-      "rest": 36,
+      "active": 0.51,
+      "rest": 33,
       "keyPoses": [
         0,
-        0.11000000000000001,
-        0.22000000000000003,
-        0.33,
-        0.44000000000000006,
-        0.55
+        0.10200000000000001,
+        0.20400000000000001,
+        0.306,
+        0.40800000000000003,
+        0.51
       ],
-      "layers": 22,
+      "layers": 31,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -7562,40 +6977,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "51497b4cfcc767c779e66f6b5e10843b9caf8e762b907a00f9141f5e5587f8c7",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-        "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-      },
-      "brief": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "private-browsing-lens-l-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-lens-r-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-bridge"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-temple-l"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-temple-r"
-        }
-      ],
+      "nativeSha256": "b558424e7e3d028587eb3d2a5c450cad2b9e39a81fa1e68bb0ddc14284e89321",
+      "sourceSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
+      "planSha256": "40b7a11a45b977e9ce9192a9743ad9d7d2ba48d018c43dd2047185453572288b",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
+      "constraints": [],
       "category": "Account & privacy",
-      "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+      "definitionsSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -7626,35 +7015,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Private browsing",
-          "description": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+          "description": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
           "label": "Private browsing",
-          "intent": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+          "intent": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.51,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.10200000000000001,
+            0.20400000000000001,
+            0.306,
+            0.40800000000000003,
+            0.51
           ],
-          "layers": 22,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7664,40 +7050,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "51497b4cfcc767c779e66f6b5e10843b9caf8e762b907a00f9141f5e5587f8c7",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "private-browsing-lens-l-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-lens-r-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-bridge"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-temple-l"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-temple-r"
-            }
-          ],
+          "nativeSha256": "b558424e7e3d028587eb3d2a5c450cad2b9e39a81fa1e68bb0ddc14284e89321",
+          "sourceSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
+          "planSha256": "40b7a11a45b977e9ce9192a9743ad9d7d2ba48d018c43dd2047185453572288b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7719,8 +7079,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4986,
-          "sha256": "3d53f1456e3c41e30c0d1a2d1a3fb8060b19a1b1d4b713c5b4e11829d6364315"
+          "bytes": 4393,
+          "sha256": "ce456cb887dca2d51cc526b4cb4eaf6450bb733a0a7af1bd9f868f9a2edf146f"
         },
         {
           "name": "private-browsing-strong",
@@ -7729,35 +7089,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Private browsing",
-          "description": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+          "description": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
           "label": "Private browsing",
-          "intent": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+          "intent": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.77,
+          "rest": 49,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.15400000000000003,
+            0.30800000000000005,
+            0.46199999999999997,
+            0.6160000000000001,
+            0.77
           ],
-          "layers": 22,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7767,40 +7124,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "dcba7bcc32e8560f6cc5ec6ddb6645feb210598f1efa8fe27633ff1050403c29",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "private-browsing-lens-l-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-lens-r-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-bridge"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-temple-l"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-temple-r"
-            }
-          ],
+          "nativeSha256": "f1c3f7b0b01b7e0484adb6aa962b0be856e6f8d343bd20bced68f38c385f3fa6",
+          "sourceSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
+          "planSha256": "40b7a11a45b977e9ce9192a9743ad9d7d2ba48d018c43dd2047185453572288b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7822,8 +7153,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4990,
-          "sha256": "35105b3c03fbc5eb4a43aceb43725547dd2b473966cf4a171ff2202d8d71da71"
+          "bytes": 4397,
+          "sha256": "285eb6f391d8bc47af94edb1df4cc382062c198036dae6367f57b3f5a1d5dc6a"
         }
       ],
       "animations": [
@@ -7834,35 +7165,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Private browsing",
-          "description": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+          "description": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
           "label": "Private browsing",
-          "intent": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+          "intent": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.51,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.10200000000000001,
+            0.20400000000000001,
+            0.306,
+            0.40800000000000003,
+            0.51
           ],
-          "layers": 22,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7872,40 +7200,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "51497b4cfcc767c779e66f6b5e10843b9caf8e762b907a00f9141f5e5587f8c7",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "private-browsing-lens-l-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-lens-r-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-bridge"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-temple-l"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-temple-r"
-            }
-          ],
+          "nativeSha256": "b558424e7e3d028587eb3d2a5c450cad2b9e39a81fa1e68bb0ddc14284e89321",
+          "sourceSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
+          "planSha256": "40b7a11a45b977e9ce9192a9743ad9d7d2ba48d018c43dd2047185453572288b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7927,8 +7229,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4986,
-          "sha256": "3d53f1456e3c41e30c0d1a2d1a3fb8060b19a1b1d4b713c5b4e11829d6364315"
+          "bytes": 4393,
+          "sha256": "ce456cb887dca2d51cc526b4cb4eaf6450bb733a0a7af1bd9f868f9a2edf146f"
         },
         {
           "name": "private-browsing-strong",
@@ -7937,35 +7239,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Private browsing",
-          "description": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+          "description": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
           "label": "Private browsing",
-          "intent": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
+          "intent": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.77,
+          "rest": 49,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.15400000000000003,
+            0.30800000000000005,
+            0.46199999999999997,
+            0.6160000000000001,
+            0.77
           ],
-          "layers": 22,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7975,40 +7274,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "dcba7bcc32e8560f6cc5ec6ddb6645feb210598f1efa8fe27633ff1050403c29",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The glasses are pushed up the nose and settle back: a quiet nudge in Light, a decisive push with one drop in Strong.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "private-browsing-lens-l-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-lens-r-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-bridge"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-temple-l"
-            },
-            {
-              "type": "rigid",
-              "part": "private-browsing-temple-r"
-            }
-          ],
+          "nativeSha256": "f1c3f7b0b01b7e0484adb6aa962b0be856e6f8d343bd20bced68f38c385f3fa6",
+          "sourceSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
+          "planSha256": "40b7a11a45b977e9ce9192a9743ad9d7d2ba48d018c43dd2047185453572288b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Going incognito. Light: the glasses are pushed up and, a beat later, both lenses darken into shades with a highlight (left, then right), hold while the glasses drop back and settle, then clear. Strong: a dip, a higher push and a second sly lift (a double eyebrow raise) while the shades darken and stay dark longer before they clear. The highlight keeps each lens open, as the set's native-opening rule requires.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8030,12 +7303,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4990,
-          "sha256": "35105b3c03fbc5eb4a43aceb43725547dd2b473966cf4a171ff2202d8d71da71"
+          "bytes": 4397,
+          "sha256": "285eb6f391d8bc47af94edb1df4cc382062c198036dae6367f57b3f5a1d5dc6a"
         }
       ],
-      "bytes": 4986,
-      "sha256": "3d53f1456e3c41e30c0d1a2d1a3fb8060b19a1b1d4b713c5b4e11829d6364315"
+      "bytes": 4393,
+      "sha256": "ce456cb887dca2d51cc526b4cb4eaf6450bb733a0a7af1bd9f868f9a2edf146f"
     },
     {
       "name": "cookie-preferences",
@@ -8044,35 +7317,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Cookie preferences",
-      "description": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+      "description": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
       "label": "Cookie preferences",
-      "intent": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+      "intent": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.55,
-      "rest": 36,
+      "active": 0.46,
+      "rest": 30,
       "keyPoses": [
         0,
-        0.11000000000000001,
-        0.22000000000000003,
-        0.33,
-        0.44000000000000006,
-        0.55
+        0.09200000000000001,
+        0.18400000000000002,
+        0.276,
+        0.36800000000000005,
+        0.46
       ],
-      "layers": 18,
+      "layers": 19,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -8082,28 +7352,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "13961bd987b86ca5a49a12ec45178d5783b75a1c9516cf8ae51509fbacdabf2e",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-        "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-      },
-      "brief": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "cookie-preferences-rim"
-        },
-        {
-          "type": "rigid",
-          "part": "cookie-preferences-chip-0"
-        }
-      ],
+      "nativeSha256": "c4449b8044bbf78f6fb68a38e71e72b87b540bc590e42c86ba42056fdb4ecb4a",
+      "sourceSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
+      "planSha256": "d781e1cee94005f5628227a20660343b00e46d02507914dca5b066187665dc56",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
+      "constraints": [],
       "category": "Account & privacy",
-      "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+      "definitionsSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -8134,35 +7390,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cookie preferences",
-          "description": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+          "description": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
           "label": "Cookie preferences",
-          "intent": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+          "intent": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 18,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8172,28 +7425,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "13961bd987b86ca5a49a12ec45178d5783b75a1c9516cf8ae51509fbacdabf2e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "cookie-preferences-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "cookie-preferences-chip-0"
-            }
-          ],
+          "nativeSha256": "c4449b8044bbf78f6fb68a38e71e72b87b540bc590e42c86ba42056fdb4ecb4a",
+          "sourceSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
+          "planSha256": "d781e1cee94005f5628227a20660343b00e46d02507914dca5b066187665dc56",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8215,8 +7454,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5436,
-          "sha256": "a127cda684c69014ce55d65467bc7d62a2a854c115297e115c1165edec85c1e4"
+          "bytes": 4790,
+          "sha256": "68f85b2c6df47d79f8342b56699595178db72521b77cab9df4fa9be68cd00cc5"
         },
         {
           "name": "cookie-preferences-strong",
@@ -8225,35 +7464,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cookie preferences",
-          "description": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+          "description": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
           "label": "Cookie preferences",
-          "intent": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+          "intent": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.85,
-          "rest": 54,
+          "active": 0.76,
+          "rest": 48,
           "keyPoses": [
             0,
-            0.17,
-            0.34,
-            0.51,
-            0.68,
-            0.85
+            0.15200000000000002,
+            0.30400000000000005,
+            0.45599999999999996,
+            0.6080000000000001,
+            0.76
           ],
-          "layers": 18,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8263,28 +7499,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "201e10c0885a2088d0222083c15e9aa284a5e93664faac3eaab631c528988d77",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "cookie-preferences-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "cookie-preferences-chip-0"
-            }
-          ],
+          "nativeSha256": "f009ac2673f748fd0c19b14603043d195f393391cec285b83fc780dbc2f62f33",
+          "sourceSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
+          "planSha256": "d781e1cee94005f5628227a20660343b00e46d02507914dca5b066187665dc56",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8306,8 +7528,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5439,
-          "sha256": "792f64bfcb48050a546aa87077f8d53655a2d75e89487ce1d8c9dc1bc68a192a"
+          "bytes": 4793,
+          "sha256": "4c7d221113a5faaec1953acef26543f33bbbdeb62f7d38bddf38f23b7337f18a"
         }
       ],
       "animations": [
@@ -8318,35 +7540,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cookie preferences",
-          "description": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+          "description": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
           "label": "Cookie preferences",
-          "intent": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+          "intent": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 18,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8356,28 +7575,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "13961bd987b86ca5a49a12ec45178d5783b75a1c9516cf8ae51509fbacdabf2e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "cookie-preferences-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "cookie-preferences-chip-0"
-            }
-          ],
+          "nativeSha256": "c4449b8044bbf78f6fb68a38e71e72b87b540bc590e42c86ba42056fdb4ecb4a",
+          "sourceSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
+          "planSha256": "d781e1cee94005f5628227a20660343b00e46d02507914dca5b066187665dc56",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8399,8 +7604,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5436,
-          "sha256": "a127cda684c69014ce55d65467bc7d62a2a854c115297e115c1165edec85c1e4"
+          "bytes": 4790,
+          "sha256": "68f85b2c6df47d79f8342b56699595178db72521b77cab9df4fa9be68cd00cc5"
         },
         {
           "name": "cookie-preferences-strong",
@@ -8409,35 +7614,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cookie preferences",
-          "description": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+          "description": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
           "label": "Cookie preferences",
-          "intent": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
+          "intent": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.85,
-          "rest": 54,
+          "active": 0.76,
+          "rest": 48,
           "keyPoses": [
             0,
-            0.17,
-            0.34,
-            0.51,
-            0.68,
-            0.85
+            0.15200000000000002,
+            0.30400000000000005,
+            0.45599999999999996,
+            0.6080000000000001,
+            0.76
           ],
-          "layers": 18,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8447,28 +7649,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "201e10c0885a2088d0222083c15e9aa284a5e93664faac3eaab631c528988d77",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "038f3e6d219aacb722c5913614766843343af93e77b07989aead57469cdda471",
-            "batches/access.mjs": "c55e95eca893a554e66d42e8069d8ee2b5772ab9260b22f2de7bd4f4a92d723e",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/privacy.mjs": "61953d4d5736b8105a0cdfb19045849838c174ff0509addac38ae79d1ed338bc"
-          },
-          "brief": "The cookie turns like a dial and settles: a small turn in Light, a wound-up swing with one return in Strong.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "cookie-preferences-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "cookie-preferences-chip-0"
-            }
-          ],
+          "nativeSha256": "f009ac2673f748fd0c19b14603043d195f393391cec285b83fc780dbc2f62f33",
+          "sourceSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
+          "planSha256": "d781e1cee94005f5628227a20660343b00e46d02507914dca5b066187665dc56",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Preferences get set. Light: the cookie clicks round like a dial (12 degrees, stops dead) and its chips switch on one after another as it passes them, each popping and settling, before the sprung dial returns. Strong: the dial winds back first, clicks further round, and the chips pop larger in turn while the dial springs home in two swings.",
+          "constraints": [],
           "category": "Account & privacy",
-          "definitionsSha256": "a17ebdeef5d6902006ce7ff121a5eeb8b308373b11bf88a3fa278a70a3531c33",
+          "definitionsSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8490,12 +7678,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5439,
-          "sha256": "792f64bfcb48050a546aa87077f8d53655a2d75e89487ce1d8c9dc1bc68a192a"
+          "bytes": 4793,
+          "sha256": "4c7d221113a5faaec1953acef26543f33bbbdeb62f7d38bddf38f23b7337f18a"
         }
       ],
-      "bytes": 5436,
-      "sha256": "a127cda684c69014ce55d65467bc7d62a2a854c115297e115c1165edec85c1e4"
+      "bytes": 4790,
+      "sha256": "68f85b2c6df47d79f8342b56699595178db72521b77cab9df4fa9be68cd00cc5"
     },
     {
       "name": "block-user",

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "split-layer",
+  "label": "Split layer",
+  "intent": "The razor splits the clip in two. Light: the blade drives down through the clip and stops dead at its floor; only then do the two halves spring apart, past their place, and settle, while the blade pulls straight back out. Strong: the blade first lifts to wind up, slams down and jolts once on impact, and the halves burst farther apart and recoil twice before they settle. The halves stay rigid; the preview reset fades it back.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "left": {
+      "shape": {"path": "M8 18.1 C8 16.7 8.933 16 10.8 16 L16 16 L16 16 L16 22 L16 22 L10.8 22 C8.933 22 8 21.3 8 19.9 L8 18.1 Z"},
+      "role": "surface",
+      "solid": {"path": "M8 18.1 C8 16.7 8.945 16 10.835 16 L16.1 16 L16.1 16 L16.1 22 L16.1 22 L10.835 22 C8.945 22 8 21.3 8 19.9 L8 18.1 Z"}
+    },
+    "right": {
+      "shape": {"path": "M16 16 L16 16 L21.2 16 C23.067 16 24 16.7 24 18.1 L24 19.9 C24 21.3 23.067 22 21.2 22 L16 22 L16 22 L16 16 Z"},
+      "role": "surface",
+      "solid": {"path": "M15.9 16 L15.9 16 L21.165 16 C23.055 16 24 16.7 24 18.1 L24 19.9 C24 21.3 23.055 22 21.165 22 L15.9 22 L15.9 22 L15.9 16 Z"}
+    },
+    "razor": {"shape": {"line": [[16, 5], [16, 11]]}}
+  },
+  "motion": {
+    "razor.y": {
+      "//": "11 down puts the blade through the clip (16 to 22); it leaves faster than it came",
+      "light":  [[0, 0], [0.16, 11, "hit"], [0.22, 11], [0.36, 0, "out"]],
+      "strong": [[0, 0], [0.1, -1.6, "out"], [0.24, 11, "hit"], [0.29, 10.2], [0.34, 11, "hit"], [0.4, 11], [0.54, 0, "out"]]
+    },
+    "left.x": {
+      "//": "the halves part only once the blade is through (v1's end: 3.5 each way)",
+      "light":  [[0, 0], [0.15, 0], [0.27, -4.1, "out"], [0.35, -3.3], [0.42, -3.5]],
+      "strong": [[0, 0], [0.23, 0], [0.36, -4.7, "out"], [0.45, -3.1], [0.53, -3.65], [0.6, -3.5]]
+    },
+    "right.x": {"follow": "left.x", "scale": -1}
+  }
+}

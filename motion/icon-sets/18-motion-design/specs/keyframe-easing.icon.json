@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "keyframe-easing",
+  "label": "Keyframe easing",
+  "intent": "A linear keyframe is eased. Light: the diamond's straight sides are pulled in to the hourglass of an eased key, pinching just past it with a dead stop and settling once. Strong: the key first bows out (the sides bulge as the corners are grabbed), then snaps into the hourglass, pinching well past it, and settles in two decaying beats. The reverse eases it back to linear.",
+  "state": {"from": "linear", "to": "eased", "labels": ["Ease", "Make linear"], "reverse": "auto"},
+  "parts": {
+    "key-type": {
+      "//": "ease 0 = the linear diamond (straight sides as cubics), 1 = v1's eased key; the driver goes past 0 and 1 for the bulge and the pinch",
+      "shape": {"morph": [
+        {"path": "M16 7 C19 10 22 13 25 16 C22 19 19 22 16 25 C13 22 10 19 7 16 C10 13 13 10 16 7 Z"},
+        {"path": "M16 7 C21.6 7 19.2 11.5 19.2 16 C19.2 20.5 21.6 25 16 25 C10.4 25 12.8 20.5 12.8 16 C12.8 11.5 10.4 7 16 7 Z"}
+      ], "by": "ease"},
+      "role": "surface",
+      "solid": "fill"
+    }
+  },
+  "motion": {
+    "ease": {
+      "light":  [[0, 0], [0.24, 1.14, "hit"], [0.34, 0.95], [0.44, 1]],
+      "strong": [[0, 0], [0.13, -0.24, "out"], [0.33, 1.26, "hit"], [0.43, 0.9], [0.52, 1.05], [0.61, 0.99], [0.68, 1]]
+    }
+  }
+}

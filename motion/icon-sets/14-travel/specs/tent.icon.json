@@ -1,0 +1,23 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "tent",
+  "label": "Tent",
+  "intent": "The tent is pitched. Light: the slack fabric sags low and wide onto the ground, then the tent springs up and snaps taut a little taller than rest with a hit, dips back once and settles. Strong: it sags flatter and lies there a beat before it springs up higher and settles in two decaying beats. The base stays on the ground; the door rides with the fabric.",
+  "parts": {
+    "canvas": {"//": "the tent's Duotone and Solid fill, with the door cut out; it has no outline",
+               "shape": {"path": "M5.65 26 C5.217 26 5.109 25.812 5.326 25.437 L15.674 7.563 C15.891 7.188 16.109 7.188 16.326 7.563 L26.674 25.437 C26.891 25.812 26.783 26 26.35 26 L20.65 26 C20.217 26 19.923 25.798 19.769 25.393 L16.231 16.107 C16.077 15.702 15.923 15.702 15.769 16.107 L12.231 25.393 C12.077 25.798 11.783 26 11.35 26 L5.65 26 Z"},
+               "role": "surface", "outline": "none", "solid": "fill"},
+    "shell":  {"shape": {"path": "M6.4 26 C5.467 26 5.234 25.596 5.701 24.788 L15.299 8.212 C15.766 7.404 16.234 7.404 16.701 8.212 L26.299 24.788 C26.766 25.596 26.533 26 25.6 26 L6.4 26 Z"}},
+    "door":   {"shape": {"path": "M12 26 L15.65 16.6 C15.9 15.75 16.1 15.75 16.35 16.6 L20 26"}}
+  },
+  "rigs": {
+    "tent": {"//": "the fabric squashes onto and springs up from the ground line", "pivot": [16, 26], "squash": {"base": 26, "widen": 0.4}, "carries": ["canvas", "shell", "door"]}
+  },
+  "motion": {
+    "tent.squash": {
+      "light":  [[0, 1], [0.1, 0.6, "inOut"], [0.2, 1.12, "hit"], [0.29, 0.95], [0.37, 1.02], [0.44, 1]],
+      "strong": [[0, 1], [0.12, 0.45, "inOut"], [0.2, 0.45], [0.29, 1.16, "hit"], [0.38, 0.93], [0.47, 1.04], [0.55, 0.98], [0.62, 1]]
+    }
+  }
+}

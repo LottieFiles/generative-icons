@@ -1,0 +1,51 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "team-workload",
+  "label": "Team workload",
+  "intent": "Work moves off the overloaded member onto the lightest. Light: the end of the top bar breaks off as the bar shortens, drops past the middle bar to the bottom row with a hit, slides in against the bottom bar, and the bottom bar grows to take it. Strong: the piece drops faster and bounces on landing, slides in harder, the bottom member dips as the load arrives and the top member lifts, relieved. Bar lengths only ever shrink or grow, with no overshoot. Ends with the rebalanced bars, as in v1; the preview reset fades them back.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "member-1": {"shape": {"circle": [[7, 8], 2.2]}, "solid": {"grow": 0.9}},
+    "member-2": {"shape": {"circle": [[7, 16], 2.2]}, "solid": {"grow": 0.9}},
+    "member-3": {"shape": {"circle": [[7, 24], 2.2]}, "solid": {"grow": 0.9}},
+    "bar-1": {"shape": {"morph": [{"rect": [12, 6.5, 16, 3], "r": 1.5}, {"rect": [12, 6.5, 12, 3], "r": 1.5}], "by": "load-off"}, "role": "fill"},
+    "bar-2": {"shape": {"rect": [12, 14.5, 10, 3], "r": 1.5}, "role": "fill"},
+    "bar-3": {"shape": {"morph": [{"rect": [12, 22.5, 5, 3], "r": 1.5}, {"rect": [12, 22.5, 10, 3], "r": 1.5}], "by": "load-on"}, "role": "fill"},
+    "chunk": {"//": "hidden at rest and in the result: the piece of work in transit, from the top bar's end to the bottom bar's", "shape": {"rect": [24, 6.5, 4, 3], "r": 1.5}, "role": "fill", "hidden": true}
+  },
+  "motion": {
+    "//": "The piece drops straight down beside the middle bar (which ends at x 22), then slides left; the bottom bar grows over it and it hides.",
+    "load-off": {
+      "light":  [[0, 0], [0.03, 0], [0.11, 1, "out"]],
+      "strong": [[0, 0], [0.02, 0], [0.08, 1, "out"]]
+    },
+    "chunk.opacity": {
+      "light":  [[0, 0], [0.017, 1, "step"], [0.4, 1], [0.417, 0, "step"]],
+      "strong": [[0, 0], [0.017, 1, "step"], [0.42, 1], [0.437, 0, "step"]]
+    },
+    "chunk.y": {
+      "light":  [[0, 0], [0.09, 0], [0.24, 16, "hit"]],
+      "strong": [[0, 0], [0.06, 0], [0.18, 16, "hit"], [0.22, 15.2, "out"], [0.26, 16, "hit"]]
+    },
+    "chunk.x": {
+      "light":  [[0, 0], [0.24, 0], [0.34, -6, "out"]],
+      "strong": [[0, 0], [0.26, 0], [0.33, -6.3, "out"], [0.37, -6]]
+    },
+    "load-on": {
+      "light":  [[0, 0], [0.3, 0], [0.4, 1, "out"]],
+      "strong": [[0, 0], [0.32, 0], [0.42, 1, "out"]]
+    },
+    "member-3.y": {
+      "strong": [[0, 0], [0.33, 0], [0.38, 0.8, "hit"], [0.45, -0.2], [0.51, 0]]
+    },
+    "member-1.y": {
+      "strong": [[0, 0], [0.04, 0], [0.12, -0.7, "out"], [0.22, 0.15], [0.29, 0]]
+    }
+  },
+  "reverse": {
+    "//": "the preview reset fades only the bars that changed, as v1 did",
+    "light":  {"member-1.opacity": [[0, 1], [0.25, 1]], "member-2.opacity": [[0, 1], [0.25, 1]], "member-3.opacity": [[0, 1], [0.25, 1]], "bar-2.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"member-1.opacity": [[0, 1], [0.25, 1]], "member-2.opacity": [[0, 1], [0.25, 1]], "member-3.opacity": [[0, 1], [0.25, 1]], "bar-2.opacity": [[0, 1], [0.25, 1]]}
+  }
+}

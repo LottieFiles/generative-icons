@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "word-wrap",
+  "label": "Word wrap",
+  "intent": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
+  "parts": {
+    "row-1": {"shape": {"line": [[6, 9], [24, 9]]}},
+    "row-2": {"shape": {"line": [[6, 16], [14, 16]]}},
+    "row-3": {"shape": {"line": [[6, 23], [11, 23]]}},
+    "route": {"//": "v1's return arrow, split into the route and its head", "shape": {"path": "M27 13 L27 17.5 C27 19.157 25.657 20.5 24 20.5 L18.5 20.5"}},
+    "head": {"shape": {"polyline": [[21.5, 17.5], [18.5, 20.5], [21.5, 23.5]]}}
+  },
+  "motion": {
+    "route.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.26, 1, "linear"]],
+      "strong": [[0, 1], [0.10, 1], [0.117, 0, "step"], [0.32, 1, "linear"]]
+    },
+    "head.opacity": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.22, 0], [0.237, 1, "step"]],
+      "strong": [[0, 1], [0.10, 1], [0.117, 0, "step"], [0.28, 0], [0.297, 1, "step"]]
+    },
+    "head.x": {
+      "light":  [[0, 0], [0.017, 1.6, "step"], [0.22, 1.6], [0.29, -0.8, "hit"], [0.36, 0.2], [0.42, 0]],
+      "strong": [[0, 0], [0.117, 2.0, "step"], [0.28, 2.0], [0.35, -1.2, "hit"], [0.42, 0.4], [0.49, -0.15], [0.56, 0]]
+    },
+    "row-1.x": {
+      "strong": [[0, 0], [0.10, 1.6, "out"], [0.19, -0.4], [0.27, 0.1], [0.33, 0]]
+    }
+  }
+}

@@ -2,14 +2,6 @@
   "result": "PASS",
   "actions": [
     {
-      "name": "bold",
-      "frames": 145
-    },
-    {
-      "name": "bold-strong",
-      "frames": 145
-    },
-    {
       "name": "italic",
       "frames": 145
     },
@@ -55,22 +47,6 @@
     },
     {
       "name": "strikethrough-reverse-strong",
-      "frames": 145
-    },
-    {
-      "name": "heading",
-      "frames": 145
-    },
-    {
-      "name": "heading-strong",
-      "frames": 145
-    },
-    {
-      "name": "paragraph",
-      "frames": 145
-    },
-    {
-      "name": "paragraph-strong",
       "frames": 145
     },
     {
@@ -154,14 +130,6 @@
       "frames": 145
     },
     {
-      "name": "text-color",
-      "frames": 145
-    },
-    {
-      "name": "text-color-strong",
-      "frames": 145
-    },
-    {
       "name": "text-highlight",
       "frames": 145
     },
@@ -242,14 +210,6 @@
       "frames": 145
     },
     {
-      "name": "word-wrap",
-      "frames": 145
-    },
-    {
-      "name": "word-wrap-strong",
-      "frames": 145
-    },
-    {
       "name": "letter-case",
       "frames": 145
     },
@@ -264,30 +224,16 @@
     {
       "name": "letter-case-reverse-strong",
       "frames": 145
-    },
-    {
-      "name": "line-spacing",
-      "frames": 145
-    },
-    {
-      "name": "line-spacing-strong",
-      "frames": 145
     }
   ],
   "minimumPaintedMargin": 2.0854299999999997,
   "gaps": {
-    "bold glyph stays opaque at joined glyph strokes": 1,
-    "bold glyph-solid stays opaque at joined glyph strokes": 1,
     "italic glyph stays opaque at joined glyph strokes": 1,
     "italic glyph-solid stays opaque at joined glyph strokes": 1,
     "underline glyph / rule": 1.629809999999999,
     "underline glyph-solid / rule-solid": 1.529809999999999,
     "strikethrough glyph stays opaque at joined glyph strokes": 1,
     "strikethrough glyph-solid stays opaque at joined glyph strokes": 1,
-    "heading glyph / level": 3,
-    "heading glyph-solid / level-solid": 2.9,
-    "paragraph stem-a / stem-b": 2.5,
-    "paragraph stem-a-solid / stem-b-solid": 2.3999999999999986,
     "text-alignment full-a / short-a": 2.5,
     "text-alignment full-a-solid / short-a-solid": 2.3999999999999986,
     "text-alignment short-a / full-b": 2.5,
@@ -334,10 +280,6 @@
     "horizontal-rule top-2-solid / rule-solid": 1.4124799999999993,
     "horizontal-rule rule / bottom-1": 1.51248,
     "horizontal-rule rule-solid / bottom-1-solid": 1.4124799999999993,
-    "text-color legs / swatch-frame": 1.1999999999999993,
-    "text-color legs-solid / swatch-solid": 1.0999999999999985,
-    "text-color crossbar / swatch-frame": 6.199999999999999,
-    "text-color crossbar-solid / swatch-solid": 6.099999999999999,
     "text-highlight line-1 / line-2": 1.5,
     "text-highlight line-1-solid / line-2-solid": 1.4,
     "text-highlight line-2 / marker": 2.9945925113158482,
@@ -392,28 +334,10 @@
     "page-break dash-l-solid / page-solid": 1.3999999999999992,
     "page-break dash-r / page-frame": 1.5,
     "page-break dash-r-solid / page-solid": 1.3999999999999992,
-    "word-wrap arrow / row-1": 1.5,
-    "word-wrap arrow-solid / row-1-solid": 1.4,
-    "word-wrap arrow / row-2": 1.4028758787591498,
-    "word-wrap arrow-solid / row-2-solid": 1.3028758787591497,
-    "word-wrap arrow / row-3": 2.2335378154188232,
-    "word-wrap arrow-solid / row-3-solid": 2.133537815418823,
-    "word-wrap arrow barb / bend": 1.3890872965260113,
-    "word-wrap arrow-solid barb / bend": 1.2890872965260112,
     "letter-case glyph stays opaque at joined glyph strokes": 1,
-    "letter-case glyph-solid stays opaque at joined glyph strokes": 1,
-    "line-spacing arrow / row-top": 2.000277769204918,
-    "line-spacing arrow-solid / row-top-solid": 1.900277769204918,
-    "line-spacing arrow / row-mid": 3.8639610306789285,
-    "line-spacing arrow-solid / row-mid-solid": 3.7639610306789284,
-    "line-spacing arrow / row-bottom": 2.000277769204918,
-    "line-spacing arrow-solid / row-bottom-solid": 1.900277769204918,
-    "line-spacing row-top / row-mid": 1.5999999999999996,
-    "line-spacing row-top-solid / row-mid-solid": 1.4999999999999996,
-    "line-spacing row-mid / row-bottom": 1.6000000000000014,
-    "line-spacing row-mid-solid / row-bottom-solid": 1.5000000000000013
+    "letter-case glyph-solid stays opaque at joined glyph strokes": 1
   },
-  "checks": 120352,
+  "checks": 102372,
   "errors": [],
   "exceptions": {
     "glyphs": "Legs, crossbars and bowls intentionally join within the glyph. Counters remain open; native all-frame counter checks cover Bold, Paragraph, Text color and Letter case.",

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "join-team",
+  "label": "Join team",
+  "intent": "A new member takes their seat at the team's table and the team welcomes them. Light: the fourth seat slides in to the round table, docks with a hit and a small rebound, and the table pulses once as it lands. Strong: the seat draws back first, drives in harder with two settling swings, the table pulses bigger, and the welcome ripples round the circle: the neighbouring seats open out and back, then the far seat. Ends with the new seat in the ring, as in v1; the preview reset fades it back to the prepared pose.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "table":       {"shape": {"circle": [[16, 16], 4]}, "role": "surface", "solid": "fill"},
+    "seat-top":    {"shape": {"arc": [[16, 16], 9, -112, -68]}},
+    "seat-right":  {"shape": {"arc": [[16, 16], 9, -22, 22]}},
+    "seat-bottom": {"shape": {"arc": [[16, 16], 9, 68, 112]}},
+    "seat-new":    {"//": "drawn at radius 12.5 in the prepared state; the result is radius 9, in the ring", "shape": {"arc": [[16, 16], 12.5, 158, 202]}}
+  },
+  "rigs": {
+    "table": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "//": "seat-new.r ends at -3.5 (radius 9, v1's end state). Strong's draw-back to radius 13.1 keeps the Solid seat 1.6 inside the left edge.",
+    "seat-new.r": {
+      "light":  [[0, 0], [0.22, -3.85, "hit"], [0.29, -3.3], [0.36, -3.5]],
+      "strong": [[0, 0], [0.08, 0.6, "out"], [0.26, -4.0, "hit"], [0.33, -3.15], [0.4, -3.62], [0.46, -3.5]]
+    },
+    "table.scale": {
+      "light":  [[0, 1], [0.22, 1], [0.28, 1.12, "out"], [0.35, 0.97], [0.42, 1]],
+      "strong": [[0, 1], [0.26, 1], [0.32, 1.18, "out"], [0.4, 0.94], [0.47, 1.03], [0.54, 1]]
+    },
+    "seat-top.r": {
+      "strong": [[0, 0], [0.27, 0], [0.33, 0.9, "out"], [0.41, -0.15], [0.47, 0]]
+    },
+    "seat-bottom.r": {"follow": "seat-top.r"},
+    "seat-right.r": {"follow": "seat-top.r", "lag": 0.07}
+  },
+  "reverse": {
+    "//": "the preview reset fades only the new seat, as v1 did; the table and the other seats end at rest, so they stay",
+    "light":  {"table.opacity": [[0, 1], [0.25, 1]], "seat-top.opacity": [[0, 1], [0.25, 1]], "seat-right.opacity": [[0, 1], [0.25, 1]], "seat-bottom.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"table.opacity": [[0, 1], [0.25, 1]], "seat-top.opacity": [[0, 1], [0.25, 1]], "seat-right.opacity": [[0, 1], [0.25, 1]], "seat-bottom.opacity": [[0, 1], [0.25, 1]]}
+  }
+}

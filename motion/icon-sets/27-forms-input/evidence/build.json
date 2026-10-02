@@ -3634,36 +3634,32 @@
       "continuous": false,
       "previewReset": true,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "prepared",
       "endState": "result",
       "heading": "Number field",
-      "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+      "description": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
       "label": "Number field",
-      "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+      "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.38,
+      "rest": 26,
       "keyPoses": [
         0,
-        0.12,
-        0.24,
-        0.36,
-        0.48,
-        0.6
+        0.07600000000000001,
+        0.15200000000000002,
+        0.22799999999999998,
+        0.30400000000000005,
+        0.38
       ],
-      "layers": 17,
+      "layers": 24,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -3673,32 +3669,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "d08f249cdb082c374fcdfaaaeedf97dcf94127a94cb487cf610c102955041913",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-        "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-      },
-      "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "number-field-field-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "number-field-step-down"
-        },
-        {
-          "type": "rigid",
-          "part": "number-field-step-up"
-        }
-      ],
+      "nativeSha256": "d41a5b52f1371c8ad02557f24f182999a63423e44f82a40b2ad06dcc996c8dbd",
+      "sourceSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+      "planSha256": "752ccb2a1a5b31b4217867ab0ffe7847f1fef4c59830031baf51b624bf963499",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+      "constraints": [],
       "category": "Forms & input",
-      "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+      "definitionsSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -3720,100 +3698,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "number-field-reset",
-        "icon": "number-field",
-        "motionId": "light",
-        "continuous": false,
-        "previewReset": true,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-          "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "result",
-        "endState": "prepared",
-        "heading": "Number field",
-        "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-        "label": "Number field",
-        "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.3,
-        "rest": 21,
-        "keyPoses": [
-          0,
-          0.06,
-          0.12,
-          0.18,
-          0.24,
-          0.3
-        ],
-        "layers": 17,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "b85eac527bb10d6e58b78a1ea9664a3e9fe226df460044d8351ba35637327dec",
-        "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "authoringSources": {
-          "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-          "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-          "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-          "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-        },
-        "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "number-field-field-frame"
-          },
-          {
-            "type": "fixed",
-            "part": "number-field-step-down"
-          },
-          {
-            "type": "rigid",
-            "part": "number-field-step-up"
-          }
-        ],
-        "category": "Forms & input",
-        "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "number": 433,
       "forwardLabel": "Play action",
       "reverseLabel": "Reset preview",
@@ -3825,36 +3709,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Number field",
-          "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "description": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "label": "Number field",
-          "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 17,
+          "layers": 24,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3864,32 +3744,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "d08f249cdb082c374fcdfaaaeedf97dcf94127a94cb487cf610c102955041913",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-            "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-          },
-          "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "number-field-field-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "number-field-step-down"
-            },
-            {
-              "type": "rigid",
-              "part": "number-field-step-up"
-            }
-          ],
+          "nativeSha256": "d41a5b52f1371c8ad02557f24f182999a63423e44f82a40b2ad06dcc996c8dbd",
+          "sourceSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+          "planSha256": "752ccb2a1a5b31b4217867ab0ffe7847f1fef4c59830031baf51b624bf963499",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+          "constraints": [],
           "category": "Forms & input",
-          "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+          "definitionsSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3918,36 +3780,32 @@
             "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Number field",
-            "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+            "description": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
             "label": "Number field",
-            "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+            "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.3,
-            "rest": 21,
+            "active": 0.28,
+            "rest": 20,
             "keyPoses": [
               0,
-              0.06,
-              0.12,
-              0.18,
-              0.24,
-              0.3
+              0.05600000000000001,
+              0.11200000000000002,
+              0.168,
+              0.22400000000000003,
+              0.28
             ],
-            "layers": 17,
+            "layers": 24,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -3957,32 +3815,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "b85eac527bb10d6e58b78a1ea9664a3e9fe226df460044d8351ba35637327dec",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-              "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-              "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-              "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-            },
-            "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "number-field-field-frame"
-              },
-              {
-                "type": "fixed",
-                "part": "number-field-step-down"
-              },
-              {
-                "type": "rigid",
-                "part": "number-field-step-up"
-              }
-            ],
+            "nativeSha256": "0e2c8904e4c59ce81c2ccf4c33ee757c5b038a8af68f63087b630a7f0fa6c78a",
+            "sourceSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+            "planSha256": "752ccb2a1a5b31b4217867ab0ffe7847f1fef4c59830031baf51b624bf963499",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+            "constraints": [],
             "category": "Forms & input",
-            "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+            "definitionsSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -4004,11 +3844,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 10897,
-            "sha256": "b772956383b9f732c7e48f991063def13afb857ad34b0aa7bac87e250cfba79f"
+            "bytes": 6726,
+            "sha256": "f175d79aeb1cee4b520c37341cfb8acdaa9575edcac0266ed87fcf019eb14007"
           },
-          "bytes": 10895,
-          "sha256": "e9ea9519bfbb8d1b89658098415c7f7cd2982626ad5eaaeadd640eb256b023bf"
+          "bytes": 6724,
+          "sha256": "3d29a8518eaa38dba3dd5c4a766de044ebba750466fa0945f916e1502492f57b"
         },
         {
           "name": "number-field-strong",
@@ -4017,36 +3857,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Number field",
-          "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "description": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "label": "Number field",
-          "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.56,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.11200000000000002,
+            0.22400000000000003,
+            0.336,
+            0.44800000000000006,
+            0.56
           ],
-          "layers": 17,
+          "layers": 24,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4056,32 +3892,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "be3d0136a1711accb92c3af51c476894938bb2dd3cbfc007c6682618e597476c",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-            "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-          },
-          "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "number-field-field-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "number-field-step-down"
-            },
-            {
-              "type": "rigid",
-              "part": "number-field-step-up"
-            }
-          ],
+          "nativeSha256": "a38b16b2cdd1f5e1656ef8777cd71d2e830ca4e5107507bc9549a8564626b25e",
+          "sourceSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+          "planSha256": "752ccb2a1a5b31b4217867ab0ffe7847f1fef4c59830031baf51b624bf963499",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+          "constraints": [],
           "category": "Forms & input",
-          "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+          "definitionsSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4110,20 +3928,16 @@
             "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Number field",
-            "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+            "description": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
             "label": "Number field",
-            "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+            "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -4139,7 +3953,7 @@
               0.24,
               0.3
             ],
-            "layers": 17,
+            "layers": 24,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -4149,32 +3963,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "93d173e11c715a5873f37cbaad9a4ca86806bbb79e8ded42405038e22595dbf5",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-              "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-              "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-              "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-            },
-            "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "number-field-field-frame"
-              },
-              {
-                "type": "fixed",
-                "part": "number-field-step-down"
-              },
-              {
-                "type": "rigid",
-                "part": "number-field-step-up"
-              }
-            ],
+            "nativeSha256": "781b1fae8f5366c176043c93e13e3bd56be1022a8b0433da9b0c5a586a3eb3b9",
+            "sourceSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+            "planSha256": "752ccb2a1a5b31b4217867ab0ffe7847f1fef4c59830031baf51b624bf963499",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+            "constraints": [],
             "category": "Forms & input",
-            "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+            "definitionsSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -4196,11 +3992,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 10901,
-            "sha256": "842cf8a1c39e161cf7a6a8753d60b78487375c4b32c6e75402488288fc839e40"
+            "bytes": 6730,
+            "sha256": "4b0b7fc4b0b63d8e162426b207fc7eaec34932fa3b92508e378434d08765f497"
           },
-          "bytes": 10898,
-          "sha256": "448bc05713c53767f38b16884fec94ce466a72bbb1aa1b66bc3e92af7a55be4c"
+          "bytes": 6727,
+          "sha256": "295181cb8f13010cefb36811d346aa83b0f34480e64efbea177223fc28bd4a39"
         }
       ],
       "animations": [
@@ -4211,36 +4007,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Number field",
-          "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "description": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "label": "Number field",
-          "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 17,
+          "layers": 24,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4250,32 +4042,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "d08f249cdb082c374fcdfaaaeedf97dcf94127a94cb487cf610c102955041913",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-            "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-          },
-          "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "number-field-field-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "number-field-step-down"
-            },
-            {
-              "type": "rigid",
-              "part": "number-field-step-up"
-            }
-          ],
+          "nativeSha256": "d41a5b52f1371c8ad02557f24f182999a63423e44f82a40b2ad06dcc996c8dbd",
+          "sourceSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+          "planSha256": "752ccb2a1a5b31b4217867ab0ffe7847f1fef4c59830031baf51b624bf963499",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+          "constraints": [],
           "category": "Forms & input",
-          "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+          "definitionsSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4297,8 +4071,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 10895,
-          "sha256": "e9ea9519bfbb8d1b89658098415c7f7cd2982626ad5eaaeadd640eb256b023bf"
+          "bytes": 6724,
+          "sha256": "3d29a8518eaa38dba3dd5c4a766de044ebba750466fa0945f916e1502492f57b"
         },
         {
           "name": "number-field-reset",
@@ -4307,36 +4081,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Number field",
-          "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "description": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "label": "Number field",
-          "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.3,
-          "rest": 21,
+          "active": 0.28,
+          "rest": 20,
           "keyPoses": [
             0,
-            0.06,
-            0.12,
-            0.18,
-            0.24,
-            0.3
+            0.05600000000000001,
+            0.11200000000000002,
+            0.168,
+            0.22400000000000003,
+            0.28
           ],
-          "layers": 17,
+          "layers": 24,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4346,32 +4116,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "b85eac527bb10d6e58b78a1ea9664a3e9fe226df460044d8351ba35637327dec",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-            "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-          },
-          "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "number-field-field-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "number-field-step-down"
-            },
-            {
-              "type": "rigid",
-              "part": "number-field-step-up"
-            }
-          ],
+          "nativeSha256": "0e2c8904e4c59ce81c2ccf4c33ee757c5b038a8af68f63087b630a7f0fa6c78a",
+          "sourceSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+          "planSha256": "752ccb2a1a5b31b4217867ab0ffe7847f1fef4c59830031baf51b624bf963499",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+          "constraints": [],
           "category": "Forms & input",
-          "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+          "definitionsSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4393,8 +4145,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 10897,
-          "sha256": "b772956383b9f732c7e48f991063def13afb857ad34b0aa7bac87e250cfba79f"
+          "bytes": 6726,
+          "sha256": "f175d79aeb1cee4b520c37341cfb8acdaa9575edcac0266ed87fcf019eb14007"
         },
         {
           "name": "number-field-strong",
@@ -4403,36 +4155,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Number field",
-          "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "description": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "label": "Number field",
-          "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.56,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.11200000000000002,
+            0.22400000000000003,
+            0.336,
+            0.44800000000000006,
+            0.56
           ],
-          "layers": 17,
+          "layers": 24,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4442,32 +4190,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "be3d0136a1711accb92c3af51c476894938bb2dd3cbfc007c6682618e597476c",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-            "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-          },
-          "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "number-field-field-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "number-field-step-down"
-            },
-            {
-              "type": "rigid",
-              "part": "number-field-step-up"
-            }
-          ],
+          "nativeSha256": "a38b16b2cdd1f5e1656ef8777cd71d2e830ca4e5107507bc9549a8564626b25e",
+          "sourceSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+          "planSha256": "752ccb2a1a5b31b4217867ab0ffe7847f1fef4c59830031baf51b624bf963499",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+          "constraints": [],
           "category": "Forms & input",
-          "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+          "definitionsSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4489,8 +4219,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 10898,
-          "sha256": "448bc05713c53767f38b16884fec94ce466a72bbb1aa1b66bc3e92af7a55be4c"
+          "bytes": 6727,
+          "sha256": "295181cb8f13010cefb36811d346aa83b0f34480e64efbea177223fc28bd4a39"
         },
         {
           "name": "number-field-reset-strong",
@@ -4499,20 +4229,16 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Number field",
-          "description": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "description": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "label": "Number field",
-          "intent": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
+          "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -4528,7 +4254,7 @@
             0.24,
             0.3
           ],
-          "layers": 17,
+          "layers": 24,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4538,32 +4264,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "93d173e11c715a5873f37cbaad9a4ca86806bbb79e8ded42405038e22595dbf5",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "bc004e3468f5a01e35f428d0ec9c2982110ff975be3cd50f3240c1ae50b8b9e3",
-            "batches/entry.mjs": "81d0add132ec13352aa2a453b6d924a07aaaf73bb9b9143bda07f36e6684b79d",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/selection.mjs": "cd74615b2f6a13e8285c1110bd1a51221567d0b81434c34892885575e4c40dbb"
-          },
-          "brief": "Up stepper is pressed; the value changes from 1 to 2 and stays.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "number-field-field-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "number-field-step-down"
-            },
-            {
-              "type": "rigid",
-              "part": "number-field-step-up"
-            }
-          ],
+          "nativeSha256": "781b1fae8f5366c176043c93e13e3bd56be1022a8b0433da9b0c5a586a3eb3b9",
+          "sourceSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+          "planSha256": "752ccb2a1a5b31b4217867ab0ffe7847f1fef4c59830031baf51b624bf963499",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+          "constraints": [],
           "category": "Forms & input",
-          "definitionsSha256": "36b3c17d2903582dcc5a27f325b8ab00bbbc75b4bcd441d269a87e286fbb3c6b",
+          "definitionsSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4585,12 +4293,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 10901,
-          "sha256": "842cf8a1c39e161cf7a6a8753d60b78487375c4b32c6e75402488288fc839e40"
+          "bytes": 6730,
+          "sha256": "4b0b7fc4b0b63d8e162426b207fc7eaec34932fa3b92508e378434d08765f497"
         }
       ],
-      "bytes": 10895,
-      "sha256": "e9ea9519bfbb8d1b89658098415c7f7cd2982626ad5eaaeadd640eb256b023bf"
+      "bytes": 6724,
+      "sha256": "3d29a8518eaa38dba3dd5c4a766de044ebba750466fa0945f916e1502492f57b"
     },
     {
       "name": "select-field",

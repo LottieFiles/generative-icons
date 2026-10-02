@@ -1,0 +1,181 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "cloud-upload",
+  "label": "Cloud upload",
+  "intent": "The file goes up into the cloud. Light: the arrow sinks to load, launches up through the opening, overshoots and settles 6 units higher inside the cloud, where it stays; the cloud takes it, bumping up as it arrives, rebounding and settling. Strong: a deeper load, a harder launch that settles in two beats, and a bigger bump that settles in two beats. The preview reset fades it back to the prepared arrow.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "parts": {
+    "cloud": {
+      "shape": {
+        "path": "M9 24 C6 24 4 22 4 19.5 C4 16.5 6.5 14.5 9 14.5 C9.5 10.5 13 7.5 17 7.5 C21 7.5 24 10.3 24.5 13.5 C27 14 28.5 16.5 28.5 19 C28.5 21.5 26.5 24 23.5 24"
+      }
+    },
+    "shaft": {
+      "shape": {
+        "line": [
+          [
+            16,
+            27.5
+          ],
+          [
+            16,
+            21.5
+          ]
+        ]
+      }
+    },
+    "head": {
+      "shape": {
+        "polyline": [
+          [
+            13.2,
+            24.3
+          ],
+          [
+            16,
+            21.5
+          ],
+          [
+            18.8,
+            24.3
+          ]
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "cloud": {
+      "pivot": [
+        16.25,
+        15.75
+      ]
+    },
+    "arrow": {
+      "pivot": [
+        16,
+        24.5
+      ],
+      "carries": [
+        "shaft",
+        "head"
+      ]
+    }
+  },
+  "motion": {
+    "arrow.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0.9,
+          "out"
+        ],
+        [
+          0.22,
+          -7,
+          "out"
+        ],
+        [
+          0.3,
+          -5.75
+        ],
+        [
+          0.38,
+          -6
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          1.4,
+          "out"
+        ],
+        [
+          0.28,
+          -7.4,
+          "out"
+        ],
+        [
+          0.37,
+          -5.6
+        ],
+        [
+          0.46,
+          -6.25
+        ],
+        [
+          0.56,
+          -6
+        ]
+      ]
+    },
+    "cloud.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.17,
+          0
+        ],
+        [
+          0.23,
+          -1.2,
+          "out"
+        ],
+        [
+          0.31,
+          0.3
+        ],
+        [
+          0.38,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.22,
+          0
+        ],
+        [
+          0.28,
+          -1.7,
+          "out"
+        ],
+        [
+          0.36,
+          0.45
+        ],
+        [
+          0.44,
+          -0.15
+        ],
+        [
+          0.52,
+          0
+        ]
+      ]
+    }
+  }
+}

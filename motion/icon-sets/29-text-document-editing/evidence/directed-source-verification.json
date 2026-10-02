@@ -2,37 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 68,
-  "nativeTransformNodes": 250,
+  "nativeTransformNodes": 176,
   "nativeTransformMaxCoordinateError": 0.000009999999999621423,
   "checks": [
-    {
-      "name": "bold",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "bold-glyph"
-        }
-      ]
-    },
-    {
-      "name": "bold-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "bold-glyph"
-        }
-      ]
-    },
     {
       "name": "italic",
       "fixedParts": [],
@@ -108,90 +80,6 @@
         {
           "type": "fixed",
           "part": "strikethrough-glyph"
-        }
-      ]
-    },
-    {
-      "name": "heading",
-      "fixedParts": [
-        "heading-level"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "heading-level"
-        },
-        {
-          "type": "rigid",
-          "part": "heading-glyph"
-        }
-      ]
-    },
-    {
-      "name": "heading-strong",
-      "fixedParts": [
-        "heading-level"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "heading-level"
-        },
-        {
-          "type": "rigid",
-          "part": "heading-glyph"
-        }
-      ]
-    },
-    {
-      "name": "paragraph",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "paragraph-bowl"
-        },
-        {
-          "type": "rigid",
-          "part": "paragraph-stem-a"
-        },
-        {
-          "type": "rigid",
-          "part": "paragraph-stem-b"
-        }
-      ]
-    },
-    {
-      "name": "paragraph-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "paragraph-bowl"
-        },
-        {
-          "type": "rigid",
-          "part": "paragraph-stem-a"
-        },
-        {
-          "type": "rigid",
-          "part": "paragraph-stem-b"
         }
       ]
     },
@@ -514,56 +402,6 @@
       ]
     },
     {
-      "name": "text-color",
-      "fixedParts": [
-        "text-color-legs",
-        "text-color-crossbar"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "text-color-legs"
-        },
-        {
-          "type": "fixed",
-          "part": "text-color-crossbar"
-        },
-        {
-          "type": "rigid",
-          "part": "text-color-swatch-frame"
-        }
-      ]
-    },
-    {
-      "name": "text-color-strong",
-      "fixedParts": [
-        "text-color-legs",
-        "text-color-crossbar"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "text-color-legs"
-        },
-        {
-          "type": "fixed",
-          "part": "text-color-crossbar"
-        },
-        {
-          "type": "rigid",
-          "part": "text-color-swatch-frame"
-        }
-      ]
-    },
-    {
       "name": "text-highlight",
       "fixedParts": [
         "text-highlight-line-1",
@@ -832,66 +670,6 @@
       ]
     },
     {
-      "name": "word-wrap",
-      "fixedParts": [
-        "word-wrap-row-1",
-        "word-wrap-row-2",
-        "word-wrap-row-3"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "word-wrap-row-1"
-        },
-        {
-          "type": "fixed",
-          "part": "word-wrap-row-2"
-        },
-        {
-          "type": "fixed",
-          "part": "word-wrap-row-3"
-        },
-        {
-          "type": "rigid",
-          "part": "word-wrap-arrow"
-        }
-      ]
-    },
-    {
-      "name": "word-wrap-strong",
-      "fixedParts": [
-        "word-wrap-row-1",
-        "word-wrap-row-2",
-        "word-wrap-row-3"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "word-wrap-row-1"
-        },
-        {
-          "type": "fixed",
-          "part": "word-wrap-row-2"
-        },
-        {
-          "type": "fixed",
-          "part": "word-wrap-row-3"
-        },
-        {
-          "type": "rigid",
-          "part": "word-wrap-arrow"
-        }
-      ]
-    },
-    {
       "name": "letter-case",
       "fixedParts": [],
       "topology": true,
@@ -908,65 +686,63 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "line-spacing",
-      "fixedParts": [
-        "line-spacing-arrow",
-        "line-spacing-row-mid"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "line-spacing-arrow"
-        },
-        {
-          "type": "fixed",
-          "part": "line-spacing-row-mid"
-        },
-        {
-          "type": "rigid",
-          "part": "line-spacing-row-top"
-        },
-        {
-          "type": "rigid",
-          "part": "line-spacing-row-bottom"
-        }
-      ]
-    },
-    {
-      "name": "line-spacing-strong",
-      "fixedParts": [
-        "line-spacing-arrow",
-        "line-spacing-row-mid"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "line-spacing-arrow"
-        },
-        {
-          "type": "fixed",
-          "part": "line-spacing-row-mid"
-        },
-        {
-          "type": "rigid",
-          "part": "line-spacing-row-top"
-        },
-        {
-          "type": "rigid",
-          "part": "line-spacing-row-bottom"
-        }
-      ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "bold",
+      "spec": "specs/bold.icon.json",
+      "specSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
+      "actions": [
+        "bold",
+        "bold-strong"
+      ]
+    },
+    {
+      "icon": "heading",
+      "spec": "specs/heading.icon.json",
+      "specSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
+      "actions": [
+        "heading",
+        "heading-strong"
+      ]
+    },
+    {
+      "icon": "paragraph",
+      "spec": "specs/paragraph.icon.json",
+      "specSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
+      "actions": [
+        "paragraph",
+        "paragraph-strong"
+      ]
+    },
+    {
+      "icon": "text-color",
+      "spec": "specs/text-color.icon.json",
+      "specSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
+      "actions": [
+        "text-color",
+        "text-color-strong"
+      ]
+    },
+    {
+      "icon": "word-wrap",
+      "spec": "specs/word-wrap.icon.json",
+      "specSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
+      "actions": [
+        "word-wrap",
+        "word-wrap-strong"
+      ]
+    },
+    {
+      "icon": "line-spacing",
+      "spec": "specs/line-spacing.icon.json",
+      "specSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
+      "actions": [
+        "line-spacing",
+        "line-spacing-strong"
+      ]
+    }
+  ]
 }

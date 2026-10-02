@@ -1,0 +1,27 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "raise-hand",
+  "label": "Raise hand",
+  "intent": "A teammate puts their hand up to ask for the floor. Light: the arm shoots up from the shoulder until the hand is above the shoulder beside the head, stops with a hit and a small rebound, holds, then drops back down with a hit. Strong: a short wind-up, the arm shoots up harder as the body straightens, the hand waves twice at the top ('pick me'), then drops back with a hit and a small bounce.",
+  "parts": {
+    "head": {"shape": {"circle": [[11.5, 10.6], 2.4]}, "role": "surface", "solid": "fill"},
+    "body": {"shape": {"path": "M8.1 25 L14.9 25 C15.23 25 15.5 24.73 15.5 24.4 L15.5 21 C15.5 18.8 13.7 17.4 11.5 17.4 C9.3 17.4 7.5 18.8 7.5 21 L7.5 24.4 C7.5 24.73 7.77 25 8.1 25 Z"}, "role": "surface", "solid": "fill"},
+    "arm":  {"shape": {"line": [[16.5, 19.5], [19.04, 23.82]]}},
+    "palm": {"shape": {"circle": [[19.5, 24.6], 1.7]}, "role": "fill"}
+  },
+  "rigs": {
+    "person": {"//": "Strong only: the teammate straightens as the hand goes up", "pivot": [11.5, 25], "carries": ["head", "body", "arm"]},
+    "arm":    {"//": "the arm swings from the shoulder; -140 degrees puts the hand up beside the head", "pivot": [16.5, 19.5], "carries": ["palm"]}
+  },
+  "motion": {
+    "//": "At -150 degrees the hand still clears the head by 0.4 at Bold.",
+    "arm.rotate": {
+      "light":  [[0, 0], [0.17, -140, "hit"], [0.23, -129], [0.29, -137], [0.34, -134], [0.38, -134], [0.5, 0, "hit"], [0.54, 4], [0.58, 0]],
+      "strong": [[0, 0], [0.08, 10, "out"], [0.24, -145, "hit"], [0.3, -132], [0.36, -147], [0.42, -134], [0.48, -142], [0.53, -138], [0.64, 0, "hit"], [0.69, 5], [0.74, 0]]
+    },
+    "person.y": {
+      "strong": [[0, 0], [0.08, 0.4, "out"], [0.24, -0.8, "out"], [0.52, -0.8], [0.64, 0, "inOut"]]
+    }
+  }
+}

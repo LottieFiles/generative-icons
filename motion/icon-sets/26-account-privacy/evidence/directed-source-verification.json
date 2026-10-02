@@ -2,8 +2,8 @@
   "result": "PASS",
   "icons": 12,
   "actions": 38,
-  "nativeTransformNodes": 350,
-  "nativeTransformMaxCoordinateError": 0.000011130544120163677,
+  "nativeTransformNodes": 182,
+  "nativeTransformMaxCoordinateError": 0.00001000000000139778,
   "checks": [
     {
       "name": "sign-in-out",
@@ -114,42 +114,6 @@
       ]
     },
     {
-      "name": "id-card",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "id-card-card-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "id-card-photo"
-        }
-      ]
-    },
-    {
-      "name": "id-card-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "id-card-card-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "id-card-photo"
-        }
-      ]
-    },
-    {
       "name": "password",
       "fixedParts": [
         "password-field-frame",
@@ -216,66 +180,6 @@
       ]
     },
     {
-      "name": "passkey",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "passkey-head-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-shoulders"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-tooth"
-        }
-      ]
-    },
-    {
-      "name": "passkey-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "passkey-head-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-shoulders"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "passkey-tooth"
-        }
-      ]
-    },
-    {
       "name": "fingerprint",
       "fixedParts": [],
       "topology": true,
@@ -316,90 +220,6 @@
         {
           "type": "rigid",
           "part": "fingerprint-ridge-3"
-        }
-      ]
-    },
-    {
-      "name": "face-authentication",
-      "fixedParts": [
-        "face-authentication-eye-l",
-        "face-authentication-eye-r",
-        "face-authentication-mouth"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "face-authentication-eye-l"
-        },
-        {
-          "type": "fixed",
-          "part": "face-authentication-eye-r"
-        },
-        {
-          "type": "fixed",
-          "part": "face-authentication-mouth"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-tl"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-tr"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-br"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-bl"
-        }
-      ]
-    },
-    {
-      "name": "face-authentication-strong",
-      "fixedParts": [
-        "face-authentication-eye-l",
-        "face-authentication-eye-r",
-        "face-authentication-mouth"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "face-authentication-eye-l"
-        },
-        {
-          "type": "fixed",
-          "part": "face-authentication-eye-r"
-        },
-        {
-          "type": "fixed",
-          "part": "face-authentication-mouth"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-tl"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-tr"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-br"
-        },
-        {
-          "type": "rigid",
-          "part": "face-authentication-bracket-bl"
         }
       ]
     },
@@ -504,102 +324,6 @@
       ]
     },
     {
-      "name": "private-browsing",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "private-browsing-lens-l-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-lens-r-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-bridge"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-temple-l"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-temple-r"
-        }
-      ]
-    },
-    {
-      "name": "private-browsing-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "private-browsing-lens-l-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-lens-r-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-bridge"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-temple-l"
-        },
-        {
-          "type": "rigid",
-          "part": "private-browsing-temple-r"
-        }
-      ]
-    },
-    {
-      "name": "cookie-preferences",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cookie-preferences-rim"
-        },
-        {
-          "type": "rigid",
-          "part": "cookie-preferences-chip-0"
-        }
-      ]
-    },
-    {
-      "name": "cookie-preferences-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cookie-preferences-rim"
-        },
-        {
-          "type": "rigid",
-          "part": "cookie-preferences-chip-0"
-        }
-      ]
-    },
-    {
       "name": "block-user",
       "fixedParts": [],
       "topology": true,
@@ -644,5 +368,54 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "id-card",
+      "spec": "specs/id-card.icon.json",
+      "specSha256": "03783f68f1366e096a79a8e0ce77ec5b85ee561e783f30ba0645b238763cd0da",
+      "actions": [
+        "id-card",
+        "id-card-reset",
+        "id-card-strong",
+        "id-card-reset-strong"
+      ]
+    },
+    {
+      "icon": "passkey",
+      "spec": "specs/passkey.icon.json",
+      "specSha256": "62a02a41908d6ac041e9e3698bf68f85aaf6c71b2231788ce4688776aa951420",
+      "actions": [
+        "passkey",
+        "passkey-strong"
+      ]
+    },
+    {
+      "icon": "face-authentication",
+      "spec": "specs/face-authentication.icon.json",
+      "specSha256": "9076f7d89cb2e1aaa7cb8bb33cf7ddd24846b812e41bcf48e07225cb87d6a419",
+      "actions": [
+        "face-authentication",
+        "face-authentication-strong"
+      ]
+    },
+    {
+      "icon": "private-browsing",
+      "spec": "specs/private-browsing.icon.json",
+      "specSha256": "cc7d9a44f929710e65851bc2cdd18fc2a39776786b022df137757a82b445f270",
+      "actions": [
+        "private-browsing",
+        "private-browsing-strong"
+      ]
+    },
+    {
+      "icon": "cookie-preferences",
+      "spec": "specs/cookie-preferences.icon.json",
+      "specSha256": "58adab2babf9abb5cb6ee27bd2b28127d054f8f1ca5741b97e5a9d8af0a0b424",
+      "actions": [
+        "cookie-preferences",
+        "cookie-preferences-strong"
+      ]
+    }
+  ]
 }

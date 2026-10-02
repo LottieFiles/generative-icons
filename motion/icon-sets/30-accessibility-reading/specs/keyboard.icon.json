@@ -1,0 +1,45 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "keyboard",
+  "label": "Keyboard",
+  "intent": "Typing makes text. Light: the three top keys tap down in turn, left to right, and with each tap a line of text above the keyboard writes on one more step; the line fades once the word is typed. Strong: deeper, quicker taps, then the space bar thumps down with a bounce, and the typed line lifts away as it fades. The keyboard body never moves.",
+  "parts": {
+    "body":  {"shape": {"rect": [3.3, 9.3, 25.4, 13.4], "r": 2.3}, "role": "surface",
+              "//": "Solid: v1 cuts every key out of the filled body; the keys press by morph so their cut-outs follow them",
+              "knockout": [{"part": "key1", "gap": 0}, {"part": "key2", "gap": 0}, {"part": "key3", "gap": 0}, {"part": "space", "gap": 0}]},
+    "key1":  {"shape": {"morph": [{"line": [[7.5, 13.3], [9.5, 13.3]]}, {"line": [[7.5, 14.7], [9.5, 14.7]]}], "by": "press1"}},
+    "key2":  {"shape": {"morph": [{"line": [[15, 13.3], [17, 13.3]]}, {"line": [[15, 14.7], [17, 14.7]]}], "by": "press2"}},
+    "key3":  {"shape": {"morph": [{"line": [[22.5, 13.3], [24.5, 13.3]]}, {"line": [[22.5, 14.7], [24.5, 14.7]]}], "by": "press3"}},
+    "space": {"shape": {"morph": [{"line": [[10, 18.7], [22, 18.7]]}, {"line": [[10, 19.7], [22, 19.7]]}], "by": "press-space"}},
+    "text":  {"//": "hidden at rest: the typed line", "shape": {"line": [[9, 4.6], [23, 4.6]]}, "hidden": true}
+  },
+  "motion": {
+    "press1": {
+      "light":  [[0, 0], [0.04, 0], [0.09, 0.8, "hit"], [0.16, 0, "out"]],
+      "strong": [[0, 0], [0.03, 0], [0.07, 1, "hit"], [0.13, 0, "out"]]
+    },
+    "press2": {
+      "light":  [[0, 0], [0.12, 0], [0.17, 0.8, "hit"], [0.24, 0, "out"]],
+      "strong": [[0, 0], [0.1, 0], [0.14, 1, "hit"], [0.2, 0, "out"]]
+    },
+    "press3": {
+      "light":  [[0, 0], [0.2, 0], [0.25, 0.8, "hit"], [0.32, 0, "out"]],
+      "strong": [[0, 0], [0.17, 0], [0.21, 1, "hit"], [0.27, 0, "out"]]
+    },
+    "press-space": {
+      "strong": [[0, 0], [0.28, 0], [0.34, 1, "hit"], [0.4, 0, "out"], [0.44, 0.25], [0.49, 0, "hit"]]
+    },
+    "text.opacity": {
+      "light":  [[0, 0], [0.08, 0], [0.09, 1, "step"], [0.36, 1], [0.46, 0, "in"]],
+      "strong": [[0, 0], [0.06, 0], [0.07, 1, "step"], [0.4, 1], [0.58, 0, "in"]]
+    },
+    "text.draw": {
+      "light":  [[0, 1], [0.08, 0, "step"], [0.12, 0.33, "out"], [0.2, 0.33], [0.24, 0.66, "out"], [0.28, 0.66], [0.32, 1, "out"]],
+      "strong": [[0, 1], [0.06, 0, "step"], [0.1, 0.33, "out"], [0.17, 0.33], [0.2, 0.66, "out"], [0.24, 0.66], [0.27, 1, "out"]]
+    },
+    "text.y": {
+      "strong": [[0, 0], [0.34, 0], [0.44, -0.9, "out"], [0.58, -1.3], [0.59, 0, "step"]]
+    }
+  }
+}

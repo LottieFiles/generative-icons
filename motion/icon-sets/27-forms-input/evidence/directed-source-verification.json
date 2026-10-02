@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 11,
   "actions": 42,
-  "nativeTransformNodes": 92,
+  "nativeTransformNodes": 84,
   "nativeTransformMaxCoordinateError": 0.000009999999999621423,
   "checks": [
     {
@@ -142,56 +142,6 @@
         {
           "type": "rigid",
           "part": "text-field-caret"
-        }
-      ]
-    },
-    {
-      "name": "number-field",
-      "fixedParts": [
-        "number-field-field-frame",
-        "number-field-step-down"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "number-field-field-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "number-field-step-down"
-        },
-        {
-          "type": "rigid",
-          "part": "number-field-step-up"
-        }
-      ]
-    },
-    {
-      "name": "number-field-strong",
-      "fixedParts": [
-        "number-field-field-frame",
-        "number-field-step-down"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "number-field-field-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "number-field-step-down"
-        },
-        {
-          "type": "rigid",
-          "part": "number-field-step-up"
         }
       ]
     },
@@ -634,5 +584,18 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "number-field",
+      "spec": "specs/number-field.icon.json",
+      "specSha256": "8fd830735cdf91613289bcd1732b57d2e0686add81437ca6ee6603e08457adf9",
+      "actions": [
+        "number-field",
+        "number-field-reset",
+        "number-field-strong",
+        "number-field-reset-strong"
+      ]
+    }
+  ]
 }

@@ -1,0 +1,159 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "team-directory",
+  "label": "Team directory",
+  "intent": "Flipping through the team directory to the next member. Light: the front member card flips up into the file about its top edge and the next card drops down in its place, landing with a small rebound. Strong: two cards flip over in quick succession, the second landing with a settle. The card behind never moves.",
+  "parts": {
+    "back-card": {
+      "shape": {
+        "path": "M10.5 11 L10.5 8.5 C10.5 7.4 11.4 6.5 12.5 6.5 L19.5 6.5 C20.6 6.5 21.5 7.4 21.5 8.5 L21.5 11"
+      }
+    },
+    "card": {
+      "shape": {
+        "rect": [
+          7.5,
+          11,
+          17,
+          16
+        ],
+        "r": 2.2
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "member",
+          "gap": 0.5
+        },
+        {
+          "part": "member-line",
+          "gap": 0
+        }
+      ]
+    },
+    "member": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            17.5
+          ],
+          2.1
+        ]
+      },
+      "role": "fill"
+    },
+    "member-line": {
+      "shape": {
+        "line": [
+          [
+            12.5,
+            23
+          ],
+          [
+            19.5,
+            23
+          ]
+        ]
+      },
+      "solid": {
+        "rect": [
+          11.3,
+          21.8,
+          9.4,
+          2.4
+        ],
+        "r": 1.2
+      }
+    }
+  },
+  "rigs": {
+    "card": {
+      "//": "the front card flips up about its top edge, where it stays joined to the card behind; its member and line go with it",
+      "pivot": [
+        16,
+        11
+      ],
+      "squash": {
+        "base": 11,
+        "widen": 0
+      },
+      "carries": [
+        "member",
+        "member-line"
+      ]
+    }
+  },
+  "motion": {
+    "//": "The flip squashes the card to 8% about its top edge, like a flip-file page, so the card behind never comes apart from it (a gap there reads as a padlock opening). The overshoot reaches 1.08 (Solid bottom edge 2.4 inside).",
+    "card.squash": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.12,
+          0.08,
+          "in"
+        ],
+        [
+          0.25,
+          1.06,
+          "out"
+        ],
+        [
+          0.31,
+          0.98
+        ],
+        [
+          0.36,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.1,
+          0.08,
+          "in"
+        ],
+        [
+          0.21,
+          1,
+          "out"
+        ],
+        [
+          0.23,
+          1
+        ],
+        [
+          0.32,
+          0.08,
+          "in"
+        ],
+        [
+          0.44,
+          1.08,
+          "out"
+        ],
+        [
+          0.5,
+          0.97
+        ],
+        [
+          0.56,
+          1.01
+        ],
+        [
+          0.61,
+          1
+        ]
+      ]
+    }
+  }
+}

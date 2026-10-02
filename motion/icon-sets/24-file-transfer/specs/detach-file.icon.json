@@ -1,0 +1,179 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "detach-file",
+  "label": "Detach file",
+  "intent": "The clip is pulled off the sheet. Light: the clip tugs and the sheet comes up with it, stretching from the top; then the clip snaps free, springs up past its mark and settles above the sheet, where it stays, while the sheet drops back, overshoots and settles. Strong: the clip sticks and tugs twice before it snaps free, springs higher and settles in two beats, and the sheet drops back harder. The preview reset fades it back to the prepared clip.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "parts": {
+    "clip": {
+      "shape": {
+        "path": "M10 23.4 L10 11.9 C10 7.9 22 7.9 22 11.9 L22 20.4 C22 24.4 14 24.4 14 20.4 L14 15.4 C14 12.7 18 12.7 18 15.4 L18 19.2"
+      }
+    },
+    "page": {
+      "shape": {
+        "path": "M6.3 12 C5.7 12 5 12.7 5 13.5 L5 27 C5 27.8 5.7 28.5 6.5 28.5 L25.5 28.5 C26.3 28.5 27 27.8 27 27 L27 13.5 C27 12.7 26.3 12 25.7 12"
+      }
+    }
+  },
+  "rigs": {
+    "clip": {
+      "pivot": [
+        16,
+        16
+      ]
+    },
+    "page": {
+      "//": "the sheet stretches up from its bottom edge while the clip still holds it",
+      "pivot": [
+        16,
+        20.25
+      ],
+      "carries": [
+        "page"
+      ],
+      "squash": {
+        "base": 28.5,
+        "widen": 0.5
+      }
+    }
+  },
+  "motion": {
+    "//": "while the clip holds, the sheet's top follows it: squash = 1 + rise / 16.5",
+    "clip.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -1.2,
+          "inOut"
+        ],
+        [
+          0.21,
+          -5.8,
+          "out"
+        ],
+        [
+          0.29,
+          -4.75
+        ],
+        [
+          0.37,
+          -5
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -1,
+          "inOut"
+        ],
+        [
+          0.12,
+          -0.6
+        ],
+        [
+          0.18,
+          -1.5,
+          "inOut"
+        ],
+        [
+          0.29,
+          -6,
+          "out"
+        ],
+        [
+          0.37,
+          -4.7
+        ],
+        [
+          0.46,
+          -5.2
+        ],
+        [
+          0.56,
+          -5
+        ]
+      ]
+    },
+    "page.squash": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.1,
+          1.073,
+          "inOut"
+        ],
+        [
+          0.16,
+          0.97,
+          "out"
+        ],
+        [
+          0.23,
+          1.01
+        ],
+        [
+          0.3,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          1.061,
+          "inOut"
+        ],
+        [
+          0.12,
+          1.036
+        ],
+        [
+          0.18,
+          1.091,
+          "inOut"
+        ],
+        [
+          0.24,
+          0.95,
+          "out"
+        ],
+        [
+          0.31,
+          1.02
+        ],
+        [
+          0.38,
+          0.995
+        ],
+        [
+          0.44,
+          1
+        ]
+      ]
+    }
+  }
+}

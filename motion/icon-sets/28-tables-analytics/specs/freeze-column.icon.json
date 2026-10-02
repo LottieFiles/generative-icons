@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "freeze-column",
+  "label": "Freeze column",
+  "intent": "The sheet scrolls under a frozen column. Light: the scrolling column slides left and fades out under the frozen boundary while the next column slides in from the right in lockstep, overshoots a little and snaps into place. Strong: two flicks, one column each: the first stops short, the second lands with a bigger overshoot and a settle. The frozen column and the divider never move.",
+  "parts": {
+    "frame":      {"shape": {"rect": [4, 6, 24, 20], "r": 2.4}, "role": "surface", "solid": "ring",
+                   "//": "v1 Solid is the frame ring plus the divider at 2.6, with both columns open"},
+    "divider":    {"shape": {"line": [[12, 6], [12, 26]]}},
+    "frozen-bar": {"shape": {"line": [[8, 10], [8, 22]]}},
+    "scroll-bar": {"shape": {"line": [[20, 10], [20, 22]]}},
+    "prev-bar":   {"//": "hidden at rest: a copy of the scrolling column that takes its place at frame 1 (same pixels) and scrolls away under the frozen boundary",
+                   "shape": {"line": [[20, 10], [20, 22]]}, "hidden": true}
+  },
+  "motion": {
+    "//": "Columns are 5 apart and move in lockstep: the leaving copy goes 0 to -5 while the scrolling column comes in from +5. Every hand-off happens with both at the same pixels.",
+    "scroll-bar.opacity": {
+      "light":  [[0, 1], [0.02, 0, "step"], [0.04, 0], [0.12, 1, "out"]],
+      "strong": [[0, 1], [0.02, 0, "step"], [0.04, 0], [0.11, 1, "out"], [0.26, 1], [0.27, 0, "step"], [0.29, 0], [0.36, 1, "out"]]
+    },
+    "scroll-bar.x": {
+      "light":  [[0, 0], [0.02, 5, "step"], [0.26, -0.7, "out"], [0.38, 0, "inOut"]],
+      "strong": [[0, 0], [0.02, 5, "step"], [0.21, 0, "out"], [0.26, 0], [0.27, 5, "step"], [0.47, -1.1, "out"], [0.57, 0.3, "inOut"], [0.65, 0, "inOut"]]
+    },
+    "prev-bar.opacity": {
+      "light":  [[0, 0], [0.02, 1, "step"], [0.06, 1], [0.14, 0, "in"]],
+      "strong": [[0, 0], [0.02, 1, "step"], [0.06, 1], [0.13, 0, "in"], [0.26, 0], [0.27, 1, "step"], [0.31, 1], [0.38, 0, "in"]]
+    },
+    "prev-bar.x": {
+      "light":  [[0, 0], [0.02, 0], [0.26, -5.7, "out"], [0.27, 0, "step"]],
+      "strong": [[0, 0], [0.02, 0], [0.21, -5, "out"], [0.22, 0, "step"], [0.27, 0], [0.47, -6.1, "out"], [0.48, 0, "step"]]
+    }
+  }
+}

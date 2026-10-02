@@ -1,0 +1,55 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "bicycle",
+  "label": "Bicycle",
+  "intent": "A pedal stroke sends the bike off. Light: the crank turns half a revolution; the push lifts the front wheel and the bike surges forward while two speed lines stream out behind it; the front wheel lands with a hit, the rear answers with a small rebound, and the bike eases back onto its spot as the lines fade. Strong: the rider loads the pedal first and the bike rocks back, then the crank turns a full revolution, the front lifts into a small wheelie, the surge goes further with longer streaks, and the landing bounces twice. The bike stays rigid; only the crank turns.",
+  "cycle": 180,
+  "parts": {
+    "wheel-left":  {"shape": {"circle": [[8, 22], 3.2]}},
+    "wheel-right": {"shape": {"circle": [[24, 22], 3.2]}},
+    "rear":        {"shape": {"polyline": [[13, 11], [8, 22], [16, 18.5]]}},
+    "front":       {"shape": {"polygon": [[13, 11], [21, 12], [16, 18.5]]}},
+    "fork":        {"shape": {"line": [[21, 12], [24, 22]]}},
+    "seat-post":   {"shape": {"line": [[13, 11], [12.8, 9.5]]}},
+    "saddle":      {"shape": {"line": [[10.5, 9.5], [14, 9.5]]}},
+    "handlebar":   {"shape": {"line": [[21, 12], [23.5, 9.5]]}},
+    "crank":       {"shape": {"line": [[13.8, 18.5], [18.2, 18.5]]}},
+    "streak-1":    {"//": "hidden at rest: speed lines stream out behind the bike while it surges", "shape": {"line": [[8, 13], [4.5, 13]]}, "hidden": true},
+    "streak-2":    {"shape": {"line": [[7.2, 15.8], [4.2, 15.8]]}, "hidden": true}
+  },
+  "rigs": {
+    "bike":  {"//": "surges along x; the push lifts the front about the rear tyre's contact, a rebound tips it about the front one", "pivot": {"contact": [[8, 25.2], [24, 25.2]]},
+              "carries": ["wheel-left", "wheel-right", "rear", "front", "fork", "seat-post", "saddle", "handlebar", "crank"]},
+    "crank": {"pivot": [16, 18.5]},
+    "streaks": {"pivot": [6, 14.4], "carries": ["streak-1", "streak-2"]}
+  },
+  "motion": {
+    "crank.rotate": {
+      "light":  [[0, 0], [0.3, 180, "inOut"]],
+      "strong": [[0, 0], [0.08, -15, "out"], [0.42, 360, "inOut"]]
+    },
+    "bike.x": {
+      "light":  [[0, 0], [0.18, 1.5, "out"], [0.44, 0, "inOut"]],
+      "strong": [[0, 0], [0.08, -0.6, "out"], [0.26, 2, "out"], [0.6, 0, "inOut"]]
+    },
+    "bike.rotate": {
+      "light":  [[0, 0], [0.1, -4, "out"], [0.21, 0, "hit"], [0.28, 1.5], [0.35, 0]],
+      "strong": [[0, 0], [0.08, 1], [0.18, -7, "out"], [0.3, 0, "hit"], [0.37, 2], [0.43, 0, "hit"], [0.48, 0.6], [0.53, 0]]
+    },
+    "streak-1.opacity": {
+      "light":  [[0, 0], [0.05, 0], [0.09, 1, "out"], [0.24, 1], [0.34, 0, "in"]],
+      "strong": [[0, 0], [0.12, 0], [0.16, 1, "out"], [0.34, 1], [0.46, 0, "in"]]
+    },
+    "streak-1.draw": {
+      "light":  [[0, 1], [0.05, 0, "step"], [0.18, 1, "out"]],
+      "strong": [[0, 1], [0.12, 0, "step"], [0.26, 1, "out"]]
+    },
+    "streak-2.opacity": {"follow": "streak-1.opacity", "lag": 0.04},
+    "streak-2.draw": {"follow": "streak-1.draw", "lag": 0.04},
+    "streaks.x": {
+      "light":  [[0, 0], [0.05, 0], [0.38, -1, "out"], [0.4, 0, "step"]],
+      "strong": [[0, 0], [0.12, 0], [0.5, -1.2, "out"], [0.52, 0, "step"]]
+    }
+  }
+}

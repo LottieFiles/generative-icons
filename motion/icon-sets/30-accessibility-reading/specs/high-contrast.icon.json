@@ -1,0 +1,21 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "high-contrast",
+  "label": "High contrast",
+  "intent": "The contrast dial flips. Light: the dark half winds back a touch, then sweeps one full clockwise turn through the inverted split and locks home with a hit and a small rebound. Strong: a deeper wind-up, the half snaps over to the inverted side and holds there a beat (light and dark swapped), then completes the turn, overshoots and settles. The ring never moves; the turn ends on the starting angle.",
+  "parts": {
+    "ring": {"shape": {"circle": [[16, 16], 11]}, "role": "surface", "solid": "ring"},
+    "half": {"shape": {"path": "M16 27 C9.925 27 5 22.075 5 16 C5 9.925 9.925 5 16 5 L16 27 Z"}, "role": "fill"}
+  },
+  "rigs": {
+    "half": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "half.rotate": {
+      "//": "a whole turn renders a hair off 0, so each motion steps back to 0 (the same pixels) after it lands",
+      "light":  [[0, 0], [0.06, -10, "out"], [0.32, 360, "hit"], [0.39, 352], [0.45, 360], [0.46, 0, "step"]],
+      "strong": [[0, 0], [0.09, -20, "out"], [0.25, 180, "hit"], [0.36, 180], [0.52, 372, "out"], [0.6, 355], [0.67, 361], [0.72, 360], [0.73, 0, "step"]]
+    }
+  }
+}

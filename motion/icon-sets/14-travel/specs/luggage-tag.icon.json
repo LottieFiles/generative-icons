@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "luggage-tag",
+  "label": "Luggage tag",
+  "intent": "The tag is filled in. Light: the address lines wipe back and are written out again left to right; the pen's push swings the tag on its ring, and it swings back once and settles. Strong: the lines are written with a firmer hand, the tag swings further, and it settles in three decaying swings. The ring never moves; the strap and tag swing as one rigid piece.",
+  "parts": {
+    "ring":   {"shape": {"circle": [[16, 7.5], 2.5]}},
+    "strap":  {"shape": {"line": [[16, 10], [16, 13]]}},
+    "tag":    {"shape": {"rect": [10, 13, 12, 14], "r": 2}, "role": "surface", "knockout": [{"part": "slots", "gap": 0}]},
+    "slots":  {"//": "v1's Solid label slots: drawn in no outline style, only cut from the tag in Solid",
+               "shape": [{"rect": [12.4, 16.9, 7.2, 2.2], "r": 1.1}, {"rect": [12.4, 20.9, 6.2, 2.2], "r": 1.1}],
+               "role": "surface", "outline": "none", "tint": false, "solid": "fill"},
+    "labels": {"//": "the two address lines as one part, so they write on together; in Solid the static slots stand for them",
+               "shape": [{"line": [[13.5, 18], [18.5, 18]]}, {"line": [[13.5, 22], [17.5, 22]]}], "solid": "none"}
+  },
+  "rigs": {
+    "tag": {"//": "the strap hangs from the fixed ring", "pivot": [16, 7.5], "carries": ["strap", "tag", "slots", "labels"]}
+  },
+  "motion": {
+    "labels.draw": {
+      "light":  [[0, 1], [0.06, 0, "in"], [0.26, 1, "out"]],
+      "strong": [[0, 1], [0.07, 0, "in"], [0.3, 1, "out"]]
+    },
+    "tag.rotate": {
+      "light":  [[0, 0], [0.08, 0], [0.18, 7, "out"], [0.3, -2.5], [0.4, 0.8], [0.48, 0]],
+      "strong": [[0, 0], [0.09, 0], [0.21, 12, "out"], [0.35, -5], [0.47, 2.2], [0.58, -0.8], [0.68, 0]]
+    }
+  }
+}

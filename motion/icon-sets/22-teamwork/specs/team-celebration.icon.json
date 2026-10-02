@@ -1,0 +1,373 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "team-celebration",
+  "label": "Team celebration",
+  "intent": "The team raises a toast and the glasses clink. Light: both glasses lift and tip in toward each other, meet at the rims with a hit as three sparks flash up from the clink, bounce apart a little and come back upright. Strong: the glasses tip back first, swing in harder to the clink with bigger sparks, bounce apart and clink a second, smaller time with a second flash, then settle upright.",
+  "parts": {
+    "left-bowl": {
+      "shape": {
+        "path": "M6.1 9.4 L11.9 9.4 C12.3 9.4 12.5 9.6 12.5 10 C12.5 15 11 19.6 9 19.6 C7 19.6 5.5 15 5.5 10 C5.5 9.6 5.7 9.4 6.1 9.4 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "left-stem": {
+      "shape": {
+        "line": [
+          [
+            9,
+            19
+          ],
+          [
+            9,
+            26.5
+          ]
+        ]
+      }
+    },
+    "left-base": {
+      "shape": {
+        "line": [
+          [
+            6,
+            26.5
+          ],
+          [
+            12,
+            26.5
+          ]
+        ]
+      }
+    },
+    "right-bowl": {
+      "mirror": {
+        "of": "left-bowl"
+      }
+    },
+    "right-stem": {
+      "mirror": {
+        "of": "left-stem"
+      }
+    },
+    "right-base": {
+      "mirror": {
+        "of": "left-base"
+      }
+    },
+    "spark-c": {
+      "//": "hidden at rest: the clink flashes up from where the rims meet",
+      "shape": {
+        "line": [
+          [
+            16.0,
+            4.8
+          ],
+          [
+            16.0,
+            3.2
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "spark-l": {
+      "shape": {
+        "line": [
+          [
+            14.329,
+            5.208
+          ],
+          [
+            13.365,
+            4.059
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "spark-r": {
+      "mirror": {
+        "of": "spark-l"
+      }
+    }
+  },
+  "rigs": {
+    "left": {
+      "//": "each glass tips on the centre of its foot",
+      "pivot": [
+        9,
+        26.5
+      ],
+      "carries": [
+        "left-bowl",
+        "left-stem",
+        "left-base"
+      ]
+    },
+    "right": {
+      "pivot": [
+        23,
+        26.5
+      ],
+      "carries": [
+        "right-bowl",
+        "right-stem",
+        "right-base"
+      ]
+    }
+  },
+  "motion": {
+    "//": "The rims meet at about 10 degrees of tip; the 4-degree tip back keeps the Bold bowls 3 inside the side edges. The sparks fan up from 2.4 above the clink and stop 1.9 inside the top edge in Solid.",
+    "left.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.17,
+          10,
+          "hit"
+        ],
+        [
+          0.25,
+          4
+        ],
+        [
+          0.32,
+          5.5
+        ],
+        [
+          0.46,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -4,
+          "out"
+        ],
+        [
+          0.24,
+          11,
+          "hit"
+        ],
+        [
+          0.31,
+          3
+        ],
+        [
+          0.38,
+          8,
+          "hit"
+        ],
+        [
+          0.45,
+          3.5
+        ],
+        [
+          0.58,
+          -1,
+          "inOut"
+        ],
+        [
+          0.65,
+          0
+        ]
+      ]
+    },
+    "right.rotate": {
+      "follow": "left.rotate",
+      "scale": -1
+    },
+    "left.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.15,
+          -1.2,
+          "out"
+        ],
+        [
+          0.32,
+          -1.2
+        ],
+        [
+          0.46,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.5,
+          "out"
+        ],
+        [
+          0.22,
+          -1.5,
+          "out"
+        ],
+        [
+          0.45,
+          -1.5
+        ],
+        [
+          0.6,
+          0.2,
+          "inOut"
+        ],
+        [
+          0.65,
+          0
+        ]
+      ]
+    },
+    "right.y": {
+      "follow": "left.y"
+    },
+    "spark-c.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.17,
+          0
+        ],
+        [
+          0.18,
+          1,
+          "out"
+        ],
+        [
+          0.26,
+          1
+        ],
+        [
+          0.33,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.25,
+          1,
+          "out"
+        ],
+        [
+          0.32,
+          1
+        ],
+        [
+          0.36,
+          0,
+          "in"
+        ],
+        [
+          0.38,
+          0
+        ],
+        [
+          0.39,
+          0.85,
+          "out"
+        ],
+        [
+          0.45,
+          0.85
+        ],
+        [
+          0.51,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "spark-c.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.17,
+          0,
+          "step"
+        ],
+        [
+          0.24,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.24,
+          0,
+          "step"
+        ],
+        [
+          0.3,
+          1,
+          "out"
+        ],
+        [
+          0.38,
+          0,
+          "step"
+        ],
+        [
+          0.44,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "spark-l.opacity": {
+      "follow": "spark-c.opacity",
+      "lag": 0.02
+    },
+    "spark-l.draw": {
+      "follow": "spark-c.draw",
+      "lag": 0.02
+    },
+    "spark-r.opacity": {
+      "follow": "spark-c.opacity",
+      "lag": 0.02
+    },
+    "spark-r.draw": {
+      "follow": "spark-c.draw",
+      "lag": 0.02
+    }
+  }
+}

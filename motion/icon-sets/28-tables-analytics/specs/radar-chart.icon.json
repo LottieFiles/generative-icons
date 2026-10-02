@@ -1,0 +1,45 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "radar-chart",
+  "label": "Radar chart",
+  "intent": "The scores are plotted. Light: the value triangle is pushed out along its three axes and stops dead on its values, and the three data points flash in turn around the chart (top, right, left). Strong: two readings: the triangle steps out halfway and stops, then out to its full values, and the data points flash bigger. Values never overshoot; the axes never move; the plotted triangle stays.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "web": {"shape": {"morph": [
+              {"path": "M15.624 10.856 C15.875 10.385 16.111 10.392 16.334 10.877 L19.325 17.386 C19.548 17.87 19.393 18.128 18.86 18.16 L12.295 18.552 C11.763 18.584 11.622 18.365 11.873 17.894 L15.624 10.856 Z"},
+              {"path": "M15.624 7.706 C15.875 7.235 16.111 7.242 16.334 7.727 L21.295 18.523 C21.518 19.008 21.363 19.266 20.831 19.298 L9.87 19.952 C9.338 19.984 9.197 19.765 9.448 19.294 L15.624 7.706 Z"}
+            ], "by": "plot"},
+            "role": "surface", "solid": "ring",
+            "//": "v1 Solid is the outline at 2.6, hollow; the morph runs from the prepared values to v1's end values"},
+    "axis-2": {"shape": {"line": [[12.103, 18.25], [5.608, 22]]}},
+    "axis-1": {"shape": {"line": [[19.897, 18.25], [26.392, 22]]}},
+    "axis-0": {"shape": {"line": [[16, 11.5], [16, 4]]}},
+    "point-0": {"//": "hidden: data point flashes on the plotted vertices; they sit on the axes, so they are big enough to read past the axis stroke", "shape": {"circle": [[16, 7.36], 2.3]}, "role": "fill", "hidden": true},
+    "point-1": {"shape": {"circle": [[21.35, 19.08], 2.3]}, "role": "fill", "hidden": true},
+    "point-2": {"shape": {"circle": [[9.37, 19.81], 2.3]}, "role": "fill", "hidden": true}
+  },
+  "motion": {
+    "plot": {
+      "light":  [[0, 0], [0.06, 0], [0.3, 1, "hit"]],
+      "strong": [[0, 0], [0.05, 0], [0.19, 0.55, "hit"], [0.27, 0.55], [0.41, 1, "hit"]]
+    },
+    "point-0.opacity": {
+      "light":  [[0, 0], [0.3, 0], [0.31, 1, "step"], [0.42, 1], [0.52, 0, "in"]],
+      "strong": [[0, 0], [0.41, 0], [0.42, 1, "step"], [0.55, 1], [0.65, 0, "in"]]
+    },
+    "point-0.r": {
+      "light":  [[0, 0], [0.3, -1.2, "step"], [0.36, 0.4, "out"], [0.42, 0]],
+      "strong": [[0, 0], [0.41, -1.5, "step"], [0.47, 0.7, "out"], [0.54, 0]]
+    },
+    "point-1.opacity": {"follow": "point-0.opacity", "lag": 0.04},
+    "point-1.r": {"follow": "point-0.r", "lag": 0.04},
+    "point-2.opacity": {"follow": "point-0.opacity", "lag": 0.08},
+    "point-2.r": {"follow": "point-0.r", "lag": 0.08}
+  },
+  "reverse": {
+    "//": "The reset keeps the triangle visible and shrinks it back to the prepared values (as v1 did): set 28's visual check needs its opening in every frame, and a fade closes it.",
+    "light":  {"web.opacity": [[0, 1], [0.24, 1]], "plot": [[0, 1], [0.22, 0, "inOut"]]},
+    "strong": {"web.opacity": [[0, 1], [0.24, 1]], "plot": [[0, 1], [0.22, 0, "inOut"]]}
+  }
+}

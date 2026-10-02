@@ -1,0 +1,164 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "attach-file",
+  "label": "Attach file",
+  "intent": "The clip bites onto the sheet. Light: the clip drops in through the sheet's open top and drives into it; the sheet takes the knock, squashing down from the top as the clip rides it, then springs back and the clip settles seated, where it stays. Strong: the clip lifts first, drives in harder, and the sheet squashes deeper and settles in two beats. The preview reset fades it back to the prepared clip.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "parts": {
+    "clip": {
+      "shape": {
+        "path": "M10 18.4 L10 6.9 C10 2.9 22 2.9 22 6.9 L22 15.4 C22 19.4 14 19.4 14 15.4 L14 10.4 C14 7.7 18 7.7 18 10.4 L18 14.2"
+      }
+    },
+    "page": {
+      "shape": {
+        "path": "M6.3 12 C5.7 12 5 12.7 5 13.5 L5 27 C5 27.8 5.7 28.5 6.5 28.5 L25.5 28.5 C26.3 28.5 27 27.8 27 27 L27 13.5 C27 12.7 26.3 12 25.7 12"
+      }
+    }
+  },
+  "rigs": {
+    "clip": {
+      "pivot": [
+        16,
+        11
+      ]
+    },
+    "page": {
+      "//": "the sheet squashes toward its bottom edge",
+      "pivot": [
+        16,
+        20.25
+      ],
+      "carries": [
+        "page"
+      ],
+      "squash": {
+        "base": 28.5,
+        "widen": 0.5
+      }
+    }
+  },
+  "motion": {
+    "//": "after contact the clip rides the sheet's top: 5 + 16.5 x (1 - squash)",
+    "clip.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.15,
+          5,
+          "in"
+        ],
+        [
+          0.21,
+          6.24,
+          "out"
+        ],
+        [
+          0.29,
+          4.75
+        ],
+        [
+          0.37,
+          5
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -1,
+          "out"
+        ],
+        [
+          0.22,
+          5,
+          "in"
+        ],
+        [
+          0.28,
+          6.65,
+          "out"
+        ],
+        [
+          0.37,
+          4.6
+        ],
+        [
+          0.46,
+          5.2
+        ],
+        [
+          0.56,
+          5
+        ]
+      ]
+    },
+    "page.squash": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.15,
+          1
+        ],
+        [
+          0.21,
+          0.925,
+          "out"
+        ],
+        [
+          0.29,
+          1.015
+        ],
+        [
+          0.37,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.22,
+          1
+        ],
+        [
+          0.28,
+          0.9,
+          "out"
+        ],
+        [
+          0.37,
+          1.024
+        ],
+        [
+          0.46,
+          0.988
+        ],
+        [
+          0.56,
+          1
+        ]
+      ]
+    }
+  }
+}

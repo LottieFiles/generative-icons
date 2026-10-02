@@ -2,8 +2,8 @@
   "result": "PASS",
   "icons": 20,
   "actions": 60,
-  "nativeTransformNodes": 270,
-  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "nativeTransformNodes": 60,
+  "nativeTransformMaxCoordinateError": 0.0000093822157989365,
   "checks": [
     {
       "name": "add-remove",
@@ -180,148 +180,6 @@
       ]
     },
     {
-      "name": "zoom-in-out",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "zoom-in-out-lens-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "zoom-in-out-bar-v"
-        },
-        {
-          "type": "rigid",
-          "part": "zoom-in-out-handle"
-        }
-      ]
-    },
-    {
-      "name": "zoom-in-out-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "zoom-in-out-lens-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "zoom-in-out-bar-v"
-        },
-        {
-          "type": "rigid",
-          "part": "zoom-in-out-handle"
-        }
-      ]
-    },
-    {
-      "name": "select-all",
-      "fixedParts": [
-        "select-all-tile-0-frame",
-        "select-all-tile-1-frame",
-        "select-all-tile-2-frame",
-        "select-all-tile-3-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "select-all-tile-0-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "select-all-tile-1-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "select-all-tile-2-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "select-all-tile-3-frame"
-        }
-      ]
-    },
-    {
-      "name": "select-all-strong",
-      "fixedParts": [
-        "select-all-tile-0-frame",
-        "select-all-tile-1-frame",
-        "select-all-tile-2-frame",
-        "select-all-tile-3-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "select-all-tile-0-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "select-all-tile-1-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "select-all-tile-2-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "select-all-tile-3-frame"
-        }
-      ]
-    },
-    {
-      "name": "move-tool",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "move-tool-bar-h"
-        },
-        {
-          "type": "rigid",
-          "part": "move-tool-bar-v"
-        }
-      ]
-    },
-    {
-      "name": "move-tool-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "move-tool-bar-h"
-        },
-        {
-          "type": "rigid",
-          "part": "move-tool-bar-v"
-        }
-      ]
-    },
-    {
       "name": "grid-list-view",
       "fixedParts": [],
       "topology": true,
@@ -338,102 +196,6 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "sidebar-toggle",
-      "fixedParts": [
-        "sidebar-toggle-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "sidebar-toggle-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "sidebar-toggle-divider"
-        },
-        {
-          "type": "rigid",
-          "part": "sidebar-toggle-chevron"
-        }
-      ]
-    },
-    {
-      "name": "sidebar-toggle-strong",
-      "fixedParts": [
-        "sidebar-toggle-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "sidebar-toggle-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "sidebar-toggle-divider"
-        },
-        {
-          "type": "rigid",
-          "part": "sidebar-toggle-chevron"
-        }
-      ]
-    },
-    {
-      "name": "split-view",
-      "fixedParts": [
-        "split-view-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "split-view-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "split-view-divider"
-        },
-        {
-          "type": "rigid",
-          "part": "split-view-grip"
-        }
-      ]
-    },
-    {
-      "name": "split-view-strong",
-      "fixedParts": [
-        "split-view-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "split-view-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "split-view-divider"
-        },
-        {
-          "type": "rigid",
-          "part": "split-view-grip"
-        }
-      ]
     },
     {
       "name": "tab-switcher",
@@ -482,122 +244,6 @@
         {
           "type": "rigid",
           "part": "tab-switcher-active"
-        }
-      ]
-    },
-    {
-      "name": "command-menu",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "command-menu-key"
-        }
-      ]
-    },
-    {
-      "name": "command-menu-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "command-menu-key"
-        }
-      ]
-    },
-    {
-      "name": "drag-handle",
-      "fixedParts": [
-        "drag-handle-row-c"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "drag-handle-row-c"
-        },
-        {
-          "type": "rigid",
-          "part": "drag-handle-bar"
-        },
-        {
-          "type": "rigid",
-          "part": "drag-handle-row-b"
-        }
-      ]
-    },
-    {
-      "name": "drag-handle-strong",
-      "fixedParts": [
-        "drag-handle-row-c"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "drag-handle-row-c"
-        },
-        {
-          "type": "rigid",
-          "part": "drag-handle-bar"
-        },
-        {
-          "type": "rigid",
-          "part": "drag-handle-row-b"
-        }
-      ]
-    },
-    {
-      "name": "target",
-      "fixedParts": [
-        "target-dot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "target-dot"
-        },
-        {
-          "type": "rigid",
-          "part": "target-ring"
-        }
-      ]
-    },
-    {
-      "name": "target-strong",
-      "fixedParts": [
-        "target-dot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "target-dot"
-        },
-        {
-          "type": "rigid",
-          "part": "target-ring"
         }
       ]
     },
@@ -681,12 +327,92 @@
       ]
     },
     {
+      "icon": "zoom-in-out",
+      "spec": "specs/zoom-in-out.icon.json",
+      "specSha256": "29899704e068ccffcff76bb16079b0d042e473d55f8508884da172ac53fdeead",
+      "actions": [
+        "zoom-in-out",
+        "zoom-in-out-reverse",
+        "zoom-in-out-strong",
+        "zoom-in-out-reverse-strong"
+      ]
+    },
+    {
+      "icon": "select-all",
+      "spec": "specs/select-all.icon.json",
+      "specSha256": "2313c13999f8339975e109619fa0cf289aba02ba7f09d73ab5b90d8b5b8508c4",
+      "actions": [
+        "select-all",
+        "select-all-reverse",
+        "select-all-strong",
+        "select-all-reverse-strong"
+      ]
+    },
+    {
+      "icon": "move-tool",
+      "spec": "specs/move-tool.icon.json",
+      "specSha256": "6ee370f3bee14d93a5af57ea5f9009334766946cef3dcbec5e99b8c8c7bcdbb4",
+      "actions": [
+        "move-tool",
+        "move-tool-strong"
+      ]
+    },
+    {
+      "icon": "sidebar-toggle",
+      "spec": "specs/sidebar-toggle.icon.json",
+      "specSha256": "4f4b9be460f091e7688e5cc71fc7a639e19f609127fe267126f1f5385c2e94fd",
+      "actions": [
+        "sidebar-toggle",
+        "sidebar-toggle-reverse",
+        "sidebar-toggle-strong",
+        "sidebar-toggle-reverse-strong"
+      ]
+    },
+    {
+      "icon": "split-view",
+      "spec": "specs/split-view.icon.json",
+      "specSha256": "9e15c367e04a2c1775bc7e0df11f677016bc20e381cc9eee69cd494280b815b2",
+      "actions": [
+        "split-view",
+        "split-view-strong"
+      ]
+    },
+    {
+      "icon": "command-menu",
+      "spec": "specs/command-menu.icon.json",
+      "specSha256": "09d5eba5f37f8478b58fcd651f348231cad5a8a72c74fd068a8e3be193d46131",
+      "actions": [
+        "command-menu",
+        "command-menu-strong"
+      ]
+    },
+    {
+      "icon": "drag-handle",
+      "spec": "specs/drag-handle.icon.json",
+      "specSha256": "cce5f39485d8f6bc60e1af476ff2ed2f32ef730c098025835287fa2f753bcda7",
+      "actions": [
+        "drag-handle",
+        "drag-handle-reverse",
+        "drag-handle-strong",
+        "drag-handle-reverse-strong"
+      ]
+    },
+    {
       "icon": "archive",
       "spec": "specs/archive.icon.json",
       "specSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
       "actions": [
         "archive",
         "archive-strong"
+      ]
+    },
+    {
+      "icon": "target",
+      "spec": "specs/target.icon.json",
+      "specSha256": "2bc3664aa11a5a6d7718a1657c45c0846a0b7e2a8710f668cd647d28bd9011da",
+      "actions": [
+        "target",
+        "target-strong"
       ]
     }
   ]

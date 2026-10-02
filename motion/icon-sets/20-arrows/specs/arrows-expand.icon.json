@@ -1,0 +1,78 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "arrows-expand",
+  "label": "Expand arrows",
+  "intent": "It opens out. Light: the four corner arrows launch outward along their diagonals and fade before the edges; a fresh set bursts out of the middle, lands just past rest and settles. Strong: they pull in first, launch farther with speed streaks behind them, and the fresh set lands with a bigger overshoot and settles in two beats.",
+  "parts": {
+    "trail-0": {
+      "shape": {"line": [[8, 8], [13, 13]]},
+      "hidden": true,
+      "//": "hidden at rest: a speed streak along the shaft's rest line, retracting toward the head"
+    },
+    "trail-1": {"shape": {"line": [[24, 8], [19, 13]]}, "hidden": true},
+    "trail-2": {"shape": {"line": [[24, 24], [19, 19]]}, "hidden": true},
+    "trail-3": {"shape": {"line": [[8, 24], [13, 19]]}, "hidden": true},
+    "corner-0": {
+      "shape": [{"line": [[8, 8], [13, 13]]}, {"polyline": [[13, 8], [8, 8], [8, 13]]}],
+      "solid": {
+        "path": "M6.7 8 C6.7 7.133 7.133 6.7 8 6.7 L13 6.7 C13.867 6.7 14.3 7.003 14.3 7.61 L14.3 8.39 C14.3 8.997 13.867 9.3 13 9.3 L11.138 9.3 L13.919 12.081 C14.427 12.588 14.427 13.412 13.919 13.919 C13.412 14.427 12.588 14.427 12.081 13.919 L9.3 11.138 L9.3 13 C9.3 13.867 8.997 14.3 8.39 14.3 L7.61 14.3 C7.003 14.3 6.7 13.867 6.7 13 L6.7 8 Z"
+      },
+      "//": "v1 shaft + head; Solid is the union of v1's capsule and filled head"
+    },
+    "corner-1": {
+      "shape": [{"line": [[24, 8], [19, 13]]}, {"polyline": [[24, 13], [24, 8], [19, 8]]}],
+      "solid": {
+        "path": "M24 6.7 C24.867 6.7 25.3 7.133 25.3 8 L25.3 13 C25.3 13.867 24.997 14.3 24.39 14.3 L23.61 14.3 C23.003 14.3 22.7 13.867 22.7 13 L22.7 11.138 L19.919 13.919 C19.412 14.427 18.588 14.427 18.081 13.919 C17.573 13.412 17.573 12.588 18.081 12.081 L20.862 9.3 L19 9.3 C18.133 9.3 17.7 8.997 17.7 8.39 L17.7 7.61 C17.7 7.003 18.133 6.7 19 6.7 L24 6.7 Z"
+      }
+    },
+    "corner-2": {
+      "shape": [{"line": [[24, 24], [19, 19]]}, {"polyline": [[19, 24], [24, 24], [24, 19]]}],
+      "solid": {
+        "path": "M25.3 24 C25.3 24.867 24.867 25.3 24 25.3 L19 25.3 C18.133 25.3 17.7 24.997 17.7 24.39 L17.7 23.61 C17.7 23.003 18.133 22.7 19 22.7 L20.862 22.7 L18.081 19.919 C17.573 19.412 17.573 18.588 18.081 18.081 C18.588 17.573 19.412 17.573 19.919 18.081 L22.7 20.862 L22.7 19 C22.7 18.133 23.003 17.7 23.61 17.7 L24.39 17.7 C24.997 17.7 25.3 18.133 25.3 19 L25.3 24 Z"
+      }
+    },
+    "corner-3": {
+      "shape": [{"line": [[8, 24], [13, 19]]}, {"polyline": [[8, 19], [8, 24], [13, 24]]}],
+      "solid": {
+        "path": "M8 25.3 C7.133 25.3 6.7 24.867 6.7 24 L6.7 19 C6.7 18.133 7.003 17.7 7.61 17.7 L8.39 17.7 C8.997 17.7 9.3 18.133 9.3 19 L9.3 20.862 L12.081 18.081 C12.588 17.573 13.412 17.573 13.919 18.081 C14.427 18.588 14.427 19.412 13.919 19.919 L11.138 22.7 L13 22.7 C13.867 22.7 14.3 23.003 14.3 23.61 L14.3 24.39 C14.3 24.997 13.867 25.3 13 25.3 L8 25.3 Z"
+      }
+    }
+  },
+  "motion": {
+    "corner-0.x": {
+      "light": [[0, 0], [0.15, -2.97, [0.33, 0, 0.67, 0.33]], [0.16, 1.414, "step"], [0.33, -0.354, "out"], [0.43, 0]],
+      "strong": [
+        [0, 0],
+        [0.09, 0.778, "inOut"],
+        [0.215, -3.536, [0.33, 0, 0.67, 0.33]],
+        [0.23, 1.414, "step"],
+        [0.4, -0.636, "out"],
+        [0.49, 0.191],
+        [0.58, 0]
+      ]
+    },
+    "corner-0.y": {"follow": "corner-0.x"},
+    "corner-1.x": {"follow": "corner-0.x", "scale": -1},
+    "corner-1.y": {"follow": "corner-0.x"},
+    "corner-2.x": {"follow": "corner-0.x", "scale": -1},
+    "corner-2.y": {"follow": "corner-0.x", "scale": -1},
+    "corner-3.x": {"follow": "corner-0.x"},
+    "corner-3.y": {"follow": "corner-0.x", "scale": -1},
+    "corner-0.opacity": {
+      "light": [[0, 1], [0.06, 1], [0.15, 0.1, "in"], [0.16, 0.1], [0.27, 1, "out"]],
+      "strong": [[0, 1], [0.15, 1], [0.215, 0.1, "in"], [0.23, 0.1], [0.34, 1, "out"]]
+    },
+    "corner-1.opacity": {"follow": "corner-0.opacity"},
+    "corner-2.opacity": {"follow": "corner-0.opacity"},
+    "corner-3.opacity": {"follow": "corner-0.opacity"},
+    "trail-0.opacity": {"strong": [[0, 0], [0.145, 0.6, "step"], [0.2, 0.6], [0.23, 0, "in"]]},
+    "trail-0.draw": {"strong": [[0, 1], [0.18, 1], [0.23, 0.2, "in"], [0.25, 1, "step"]]},
+    "trail-1.opacity": {"follow": "trail-0.opacity"},
+    "trail-1.draw": {"follow": "trail-0.draw"},
+    "trail-2.opacity": {"follow": "trail-0.opacity"},
+    "trail-2.draw": {"follow": "trail-0.draw"},
+    "trail-3.opacity": {"follow": "trail-0.opacity"},
+    "trail-3.draw": {"follow": "trail-0.draw"}
+  }
+}

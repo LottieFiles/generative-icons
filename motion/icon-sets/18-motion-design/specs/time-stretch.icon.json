@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "time-stretch",
+  "label": "Time stretch",
+  "intent": "The clip is stretched and its keyframes spread in proportion. Light: the clip's end is pulled out to its new length and stops dead a little past it; the nearer key follows, then the farther one, each landing in turn and settling. Strong: the clip first squeezes in (the keys bunch up), then is pulled out hard past its new length and settles in decaying beats, with the keys arriving in order behind it. The ruler never moves; the preview reset fades it back.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "bar": {
+      "//": "stretch 0 = v1's 13-long clip, 1 = its 21-long result; the driver passes 1 for the overshoot",
+      "shape": {"morph": [{"rect": [5, 17, 13, 6], "r": 3}, {"rect": [5, 17, 21, 6], "r": 3}], "by": "stretch"},
+      "role": "surface", "solid": "fill"
+    },
+    "baseline": {"shape": {"line": [[5, 27], [27, 27]]}},
+    "key-0": {"shape": {"path": "M8.617 9.383 C8.806 9.194 8.994 9.194 9.183 9.383 L10.517 10.717 C10.706 10.906 10.706 11.094 10.517 11.283 L9.183 12.617 C8.994 12.806 8.806 12.806 8.617 12.617 L7.283 11.283 C7.094 11.094 7.094 10.906 7.283 10.717 L8.617 9.383 Z"}, "role": "fill"},
+    "key-1": {"shape": {"path": "M13.817 9.383 C14.006 9.194 14.194 9.194 14.383 9.383 L15.717 10.717 C15.906 10.906 15.906 11.094 15.717 11.283 L14.383 12.617 C14.194 12.806 14.006 12.806 13.817 12.617 L12.483 11.283 C12.294 11.094 12.294 10.906 12.483 10.717 L13.817 9.383 Z"}, "role": "fill"}
+  },
+  "motion": {
+    "stretch": {
+      "light":  [[0, 0], [0.22, 1.15, "hit"], [0.31, 0.96], [0.4, 1]],
+      "strong": [[0, 0], [0.12, -0.2, "out"], [0.31, 1.22, "hit"], [0.41, 0.92], [0.5, 1.04], [0.59, 0.99], [0.66, 1]]
+    },
+    "key-1.x": {
+      "//": "the clip end's beats x 5.6 (v1's spread of the nearer key), landing 50 ms after it",
+      "light":  [[0, 0], [0.05, 0], [0.27, 6.44, "hit"], [0.36, 5.376], [0.45, 5.6]],
+      "strong": [[0, 0], [0.05, 0], [0.17, -1.12, "out"], [0.36, 6.832, "hit"], [0.46, 5.152], [0.55, 5.824], [0.64, 5.544], [0.71, 5.6]]
+    },
+    "key-0.x": {"//": "2.4 / 5.6 of the nearer key (v1's spread of the farther key), 50 ms behind it", "follow": "key-1.x", "scale": 0.42857, "lag": 0.05}
+  }
+}

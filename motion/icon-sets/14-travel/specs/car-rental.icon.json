@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "car-rental",
+  "label": "Car rental",
+  "intent": "The rental key is handed over. Light: the key is tossed up with a tilt, drops into its handover spot half a unit lower with a hit and one small bounce, and stays there; 70 ms later the car answers as if unlocked: its body dips on the suspension and springs back. Strong: a dip of the hand, a higher toss with more tilt, a catch that bounces twice, and the car answers with a double bounce, chirp-chirp. The key and car stay rigid; the wheels stay planted. The reset fades the key back to its starting place above the car.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "wheel-left":  {"shape": {"circle": [[10.5, 24.5], 2.3]}},
+    "wheel-right": {"shape": {"circle": [[21.5, 24.5], 2.3]}},
+    "body":        {"shape": {"path": "M6.5 21 C5.833 21 5.5 20.667 5.5 20 L5.5 19 C5.5 18.333 5.833 18 6.5 18 L8 18 C8.667 18 9.162 17.709 9.486 17.126 L11.014 14.374 C11.338 13.791 11.833 13.5 12.5 13.5 L19.5 13.5 C20.167 13.5 20.662 13.791 20.986 14.374 L22.514 17.126 C22.838 17.709 23.333 18 24 18 L25.5 18 C26.167 18 26.5 18.333 26.5 19 L26.5 20 C26.5 20.667 26.167 21 25.5 21 L6.5 21 Z"},
+                    "role": "surface"},
+    "key-bow":     {"shape": {"circle": [[9, 7.5], 2.5]}},
+    "key-shaft":   {"shape": {"line": [[11.5, 7.5], [21, 7.5]]}},
+    "key-tooth":   {"shape": {"line": [[19, 7.5], [19, 9.5]]}}
+  },
+  "rigs": {
+    "key":  {"pivot": [14, 7.5], "carries": ["key-bow", "key-shaft", "key-tooth"]},
+    "body": {"pivot": [16, 21]}
+  },
+  "reverse": {
+    "//": "v1's reset fades only the key; the car only answered, so it stays visible",
+    "light":  {"body.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"body.opacity": [[0, 1], [0.25, 1]]}
+  },
+  "motion": {
+    "key.y": {
+      "light":  [[0, 0], [0.1, -1.4, "out"], [0.22, 0.5, "hit"], {"bounce": 0.3, "amp": 0.12}],
+      "strong": [[0, 0], [0.06, 0.3, "out"], [0.18, -2, "out"], [0.32, 0.5, "hit"], {"bounce": 0.4, "amp": 0.12}, {"bounce": 0.47, "amp": 0.25}]
+    },
+    "key.rotate": {
+      "light":  [[0, 0], [0.1, -8, "out"], [0.22, 0, "hit"], [0.28, 2], [0.34, 0]],
+      "strong": [[0, 0], [0.06, 3], [0.18, -14, "out"], [0.32, 0, "hit"], [0.38, 4], [0.44, -1.5], [0.5, 0]]
+    },
+    "body.y": {
+      "light":  [[0, 0], [0.29, 0], [0.34, 0.8, "out"], [0.42, -0.25], [0.49, 0]],
+      "strong": [[0, 0], [0.39, 0], [0.44, 1, "out"], [0.51, -0.3], [0.57, 0.6, "out"], [0.64, -0.12], [0.7, 0]]
+    }
+  }
+}

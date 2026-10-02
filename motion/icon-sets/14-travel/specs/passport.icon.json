@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "passport",
+  "label": "Passport",
+  "intent": "The passport is stamped at the border. Light: the globe emblem swells as the stamp comes up to it, then slams back to size with a hit; impact ticks flash out on both sides of the cover and the booklet dips under the blow and springs back. Strong: a light tap first, then the full stamp: the emblem swells further and slams harder, the ticks fly out further, the booklet dips deeper and settles in two beats. The booklet stays rigid.",
+  "parts": {
+    "cover":     {"shape": {"rect": [9, 5.5, 14, 22], "r": 2}, "role": "surface",
+                  "knockout": [{"part": "globe", "gap": 0}, {"part": "title-one", "gap": 0}, {"part": "title-two", "gap": 0}]},
+    "globe":     {"shape": {"circle": [[16, 13], 3.25]}, "solid": {"circle": [[16, 13], 3.6]}},
+    "equator":   {"shape": {"line": [[12.75, 13], [19.25, 13]]}},
+    "title-one": {"shape": {"line": [[12.5, 20.5], [19.5, 20.5]]}, "solid": {"rect": [11.2, 19.2, 9.6, 2.6], "r": 1.3}},
+    "title-two": {"shape": {"line": [[12.5, 24], [19.5, 24]]}, "solid": {"rect": [11.2, 22.7, 9.6, 2.6], "r": 1.3}},
+    "tick-l":    {"//": "hidden at rest: the stamp's impact flashes out beside the cover",
+                  "shape": [{"line": [[6.8, 10.9], [4.6, 9.7]]}, {"line": [[6.8, 15.1], [4.6, 16.3]]}], "hidden": true},
+    "tick-r":    {"mirror": {"of": "tick-l"}}
+  },
+  "rigs": {
+    "book":   {"pivot": [16, 16.5], "carries": ["cover", "title-one", "title-two", "emblem"]},
+    "emblem": {"pivot": [16, 13], "carries": ["globe", "equator"]}
+  },
+  "motion": {
+    "emblem.scale": {
+      "light":  [[0, 1], [0.1, 1.28, "out"], [0.17, 1, "hit"], [0.25, 1.06], [0.32, 1]],
+      "strong": [[0, 1], [0.06, 1.12, "out"], [0.11, 1, "hit"], [0.24, 1.32, "out"], [0.31, 1, "hit"], [0.39, 1.08], [0.47, 0.97], [0.55, 1]]
+    },
+    "book.y": {
+      "light":  [[0, 0], [0.17, 0], [0.21, 0.9, "out"], [0.3, -0.2], [0.38, 0]],
+      "strong": [[0, 0], [0.11, 0], [0.14, 0.4, "out"], [0.2, 0], [0.31, 0], [0.35, 1.3, "out"], [0.44, -0.35], [0.52, 0.12], [0.6, 0]]
+    },
+    "tick-l.opacity": {
+      "light":  [[0, 0], [0.17, 0], [0.19, 1, "out"], [0.26, 1], [0.34, 0, "in"]],
+      "strong": [[0, 0], [0.31, 0], [0.33, 1, "out"], [0.41, 1], [0.5, 0, "in"]]
+    },
+    "tick-l.x": {
+      "light":  [[0, 0], [0.17, 0], [0.34, -0.8, "out"], [0.36, 0, "step"]],
+      "strong": [[0, 0], [0.31, 0], [0.5, -1.2, "out"], [0.52, 0, "step"]]
+    },
+    "tick-r.opacity": {"follow": "tick-l.opacity"},
+    "tick-r.x": {"follow": "tick-l.x", "scale": -1}
+  }
+}

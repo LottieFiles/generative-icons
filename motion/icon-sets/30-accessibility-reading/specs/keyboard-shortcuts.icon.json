@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "keyboard-shortcuts",
+  "label": "Keyboard shortcuts",
+  "intent": "A key combination fires a command. Light: the modifier keycap goes down and holds, the letter keycap strikes down after it, and three short sparks burst from the letter key as the shortcut fires; the letter key lets go first, then the modifier, each popping back up with a small rebound. Strong: both keys strike deeper with a bounce, the burst is bigger, and the release rebounds and settles.",
+  "parts": {
+    "mod":      {"shape": {"rect": [3.3, 10.5, 11.7, 11], "r": 2.3}, "role": "surface", "knockout": [{"part": "mod-bar", "gap": 0}]},
+    "mod-bar":  {"shape": {"line": [[7, 16], [11.3, 16]]}},
+    "key":      {"shape": {"rect": [19.5, 10.5, 9.2, 11], "r": 2.3}, "role": "surface", "knockout": [{"part": "key-mark", "gap": 0}]},
+    "key-mark": {"shape": {"line": [[24.1, 14.5], [24.1, 17.5]]}},
+    "spark":    {"//": "hidden at rest: the shortcut firing above the letter key",
+                 "shape": [{"line": [[24.1, 6.8], [24.1, 4.6]]}, {"line": [[21.1, 7.6], [19.8, 6.1]]}, {"line": [[27.1, 7.6], [28.4, 6.1]]}],
+                 "hidden": true}
+  },
+  "rigs": {
+    "mod":   {"pivot": [9.15, 16], "carries": ["mod", "mod-bar"]},
+    "key":   {"pivot": [24.1, 16], "carries": ["key", "key-mark"]},
+    "spark": {"pivot": [24.1, 9.2]}
+  },
+  "motion": {
+    "mod.y": {
+      "light":  [[0, 0], [0.07, 1.5, "hit"], [0.29, 1.5], [0.35, -0.3, "out"], [0.42, 0]],
+      "strong": [[0, 0], [0.07, 2.1, "hit"], [0.12, 1.6], [0.17, 2.0, "hit"], [0.38, 2.0], [0.45, -0.5, "out"], [0.53, 0.15], [0.6, 0]]
+    },
+    "key.y": {
+      "light":  [[0, 0], [0.1, 0], [0.16, 1.5, "hit"], [0.25, 1.5], [0.31, -0.3, "out"], [0.38, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.2, 2.1, "hit"], [0.25, 1.6], [0.3, 2.0, "hit"], [0.33, 2.0], [0.4, -0.5, "out"], [0.48, 0.15], [0.55, 0]]
+    },
+    "spark.opacity": {
+      "light":  [[0, 0], [0.15, 0], [0.16, 1, "step"], [0.27, 1], [0.36, 0, "in"]],
+      "strong": [[0, 0], [0.19, 0], [0.2, 1, "step"], [0.33, 1], [0.44, 0, "in"]]
+    },
+    "spark.draw": {
+      "light":  [[0, 1], [0.15, 0, "step"], [0.25, 1, "out"]],
+      "strong": [[0, 1], [0.19, 0, "step"], [0.29, 1, "out"]]
+    },
+    "spark.scale": {
+      "strong": [[0, 1], [0.19, 0.8], [0.32, 1.15, "out"], [0.44, 1.15], [0.45, 1, "step"]]
+    }
+  }
+}

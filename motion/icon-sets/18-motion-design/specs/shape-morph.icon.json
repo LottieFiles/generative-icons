@@ -1,0 +1,43 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "shape-morph",
+  "label": "Shape morph",
+  "intent": "The circle becomes the target square through matching path points. Light: the source circle gives a little first, then the shape's points run out to the rounded square, snapping a touch past it and settling; the target square answers with a pulse as the match lands. Strong: after the source gives, the circle winds back (it pinches and counter-turns), then twists through as it morphs, overshooting both the turn and the corners before settling square, and the target answers harder. The preview reset fades it back.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "source": {"shape": {"circle": [[8, 23], 3]}, "role": "surface", "solid": "fill"},
+    "target": {"shape": {"rect": [21, 20, 6, 6], "r": 1.6}, "role": "surface", "solid": "fill"},
+    "hero": {
+      "//": "form 0 = v1's 8-point circle, 1 = v1's rounded square (same 8 points, corners r 2.4); the driver passes 1 for the corner overshoot",
+      "shape": {"morph": [
+        {"path": "M14.087 5.381 C15.312 4.873 16.688 4.873 17.913 5.381 C19.139 5.888 20.112 6.861 20.619 8.087 C21.127 9.312 21.127 10.688 20.619 11.913 C20.112 13.139 19.139 14.112 17.913 14.619 C16.688 15.127 15.312 15.127 14.087 14.619 C12.861 14.112 11.888 13.139 11.381 11.913 C10.873 10.688 10.873 9.312 11.381 8.087 C11.888 6.861 12.861 5.888 14.087 5.381 Z"},
+        {"path": "M12.9 4.5 C14.967 4.5 17.033 4.5 19.1 4.5 C20.425 4.5 21.5 5.575 21.5 6.9 C21.5 8.967 21.5 11.033 21.5 13.1 C21.5 14.425 20.425 15.5 19.1 15.5 C17.033 15.5 14.967 15.5 12.9 15.5 C11.575 15.5 10.5 14.425 10.5 13.1 C10.5 11.033 10.5 8.967 10.5 6.9 C10.5 5.575 11.575 4.5 12.9 4.5 Z"}
+      ], "by": "form"},
+      "role": "surface", "solid": "fill"
+    }
+  },
+  "rigs": {
+    "hero": {"pivot": [16, 10]},
+    "source": {"pivot": [8, 23]},
+    "target": {"pivot": [24, 23]}
+  },
+  "motion": {
+    "source.scale": {
+      "light":  [[0, 1], [0.08, 0.75, "out"], [0.2, 1]],
+      "strong": [[0, 1], [0.1, 0.7, "out"], [0.24, 1.05], [0.3, 1]]
+    },
+    "form": {
+      "light":  [[0, 0], [0.06, 0], [0.28, 1.12, "hit"], [0.37, 0.96], [0.45, 1]],
+      "strong": [[0, 0], [0.08, 0], [0.18, -0.2, "out"], [0.38, 1.18, "hit"], [0.47, 0.93], [0.55, 1.03], [0.62, 1]]
+    },
+    "hero.rotate": {
+      "//": "a twist about the centre: counter-turn while it winds back, swing through as it morphs, settle square (a full quarter turn would leave a rest raster that differs from Light's)",
+      "strong": [[0, 0], [0.08, 0], [0.18, -15, "out"], [0.4, 14, "hit"], [0.49, -5], [0.57, 2], [0.64, 0]]
+    },
+    "target.scale": {
+      "light":  [[0, 1], [0.26, 1], [0.33, 1.3, "out"], [0.45, 1]],
+      "strong": [[0, 1], [0.36, 1], [0.43, 1.35, "out"], [0.52, 0.95], [0.6, 1]]
+    }
+  }
+}

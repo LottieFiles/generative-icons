@@ -1,0 +1,68 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "drag-handle",
+  "label": "Drag handle",
+  "intent": "The gripped row is moved down one place. Light: the row is pulled out to the right, carried down one slot while the row below rises into its place and lands with a small rebound, then the moved row slides back into the list and seats with a hit and a rebound. Strong: the row is first pressed back and lifted, yanked out farther, carried down past its slot and back, and seated with a hit and two rebounds, while the displaced row lands and rebounds twice. The bottom row never moves. The reverse moves the row back up the same way.",
+  "state": {
+    "from": "first",
+    "to": "second",
+    "labels": ["Move down", "Move up"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "row-c": {"shape": {"line": [[10, 24], [14.5, 24]]}},
+    "row-b": {"shape": {"line": [[10, 16], [14.5, 16]]}},
+    "bar": {"shape": {"line": [[10, 8], [14.5, 8]]}},
+    "dots": {"shape": [{"circle": [[7.2, 9.6], 1]}, {"circle": [[7.2, 6.4], 1]}, {"circle": [[4.2, 9.6], 1]}, {"circle": [[4.2, 6.4], 1]}], "role": "fill"}
+  },
+  "rigs": {
+    "grip": {"//": "the gripped row: its bar and the handle's dots", "pivot": [9, 8], "carries": ["bar", "dots"]}
+  },
+  "motion": {
+    "grip.x": {
+      "light": [[0, 0], [0.14, 13.8, "out"], [0.26, 13.8], [0.4, 0, "hit"], {"bounce": 0.47, "amp": 0.06}],
+      "strong": [
+        [0, 0],
+        [0.06, -0.9, "out"],
+        [0.18, 14.3, "out"],
+        [0.24, 13.8],
+        [0.32, 13.8],
+        [0.44, 0, "hit"],
+        [0.5, 1.1, "out"],
+        [0.56, 0, "hit"],
+        [0.6, 0.35, "out"],
+        [0.64, 0, "hit"]
+      ]
+    },
+    "grip.y": {"light": [[0, 0], [0.08, 0], [0.28, 8, "inOut"]], "strong": [[0, 0], [0.1, -0.8, "out"], [0.3, 8.4, "inOut"], [0.36, 8]]},
+    "row-b.y": {
+      "light": [[0, 0], [0.12, 0], [0.3, -8, "hit"], {"bounce": 0.37, "amp": 0.08}],
+      "strong": [[0, 0], [0.14, 0], [0.32, -8, "hit"], [0.38, -7.1, "out"], [0.44, -8, "hit"], [0.49, -7.7, "out"], [0.54, -8, "hit"]]
+    }
+  },
+  "reverse": {
+    "//": "moving the row back up: the same pull-out, carry and seat, mirrored top to bottom (an automatic reflection would swing the row through the other one)",
+    "light": {
+      "grip.x": [[0, 0], [0.14, 13.8, "out"], [0.26, 13.8], [0.4, 0, "hit"], {"bounce": 0.47, "amp": 0.06}],
+      "grip.y": [[0, 8], [0.08, 8], [0.28, 0, "inOut"]],
+      "row-b.y": [[0, -8], [0.12, -8], [0.3, 0, "hit"], {"bounce": 0.37, "amp": 0.08}]
+    },
+    "strong": {
+      "grip.x": [
+        [0, 0],
+        [0.06, -0.9, "out"],
+        [0.18, 14.3, "out"],
+        [0.24, 13.8],
+        [0.32, 13.8],
+        [0.44, 0, "hit"],
+        [0.5, 1.1, "out"],
+        [0.56, 0, "hit"],
+        [0.6, 0.35, "out"],
+        [0.64, 0, "hit"]
+      ],
+      "grip.y": [[0, 8], [0.1, 8.8, "out"], [0.3, -0.4, "inOut"], [0.36, 0]],
+      "row-b.y": [[0, -8], [0.14, -8], [0.32, 0, "hit"], [0.38, -0.9, "out"], [0.44, 0, "hit"], [0.49, -0.3, "out"], [0.54, 0, "hit"]]
+    }
+  }
+}

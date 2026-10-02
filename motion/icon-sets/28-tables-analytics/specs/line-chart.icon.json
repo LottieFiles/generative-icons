@@ -1,0 +1,54 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "line-chart",
+  "label": "Line chart",
+  "intent": "The trend is plotted. Light: a pen draws the series from the origin left to right through its values, lifting the flat placeholder line off the baseline as it goes, and stops dead on the latest value, which flashes a data point. Strong: a quicker plot that marks every value in turn as the pen reaches it, the latest last. Values never overshoot; the axes never move; the plotted trend stays.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "axes":  {"shape": {"polyline": [[6, 5], [6, 26], [27, 26]]}},
+    "flat":  {"//": "the prepared state's flat line, drawn right to left so that undrawing erases it from the origin, in step with the pen",
+              "shape": {"line": [[25, 21], [10, 21]]}},
+    "trend": {"//": "hidden in the prepared state: the plotted series (v1's end state)",
+              "shape": {"polyline": [[10, 21], [15, 14], [19, 18], [25, 9]]}, "hidden": true},
+    "point-1": {"//": "hidden: data point flashes, Strong only", "shape": {"circle": [[15, 14], 1.8]}, "role": "fill", "hidden": true},
+    "point-2": {"shape": {"circle": [[19, 18], 1.8]}, "role": "fill", "hidden": true},
+    "tip":     {"//": "hidden: the latest value's flash", "shape": {"circle": [[25, 9], 2]}, "role": "fill", "hidden": true}
+  },
+  "motion": {
+    "//": "The trend's vertices fall at 0.343 and 0.569 of its length; the flat line is erased to the same x (x=15 at 0.667, x=19 at 0.4) at the same times.",
+    "trend.opacity": {
+      "light":  [[0, 0], [0.05, 1, "step"]],
+      "strong": [[0, 0], [0.04, 1, "step"]]
+    },
+    "trend.draw": {
+      "light":  [[0, 1], [0.03, 0, "step"], [0.06, 0], [0.18, 0.343], [0.25, 0.569], [0.38, 1, "hit"]],
+      "strong": [[0, 1], [0.02, 0, "step"], [0.05, 0], [0.16, 0.343], [0.22, 0.569], [0.34, 1, "hit"]]
+    },
+    "flat.draw": {
+      "light":  [[0, 1], [0.06, 1], [0.18, 0.667], [0.25, 0.4], [0.38, 0, "hit"]],
+      "strong": [[0, 1], [0.05, 1], [0.16, 0.667], [0.22, 0.4], [0.34, 0, "hit"]]
+    },
+    "point-1.opacity": {
+      "strong": [[0, 0], [0.16, 0], [0.17, 1, "step"], [0.34, 1], [0.44, 0, "in"]]
+    },
+    "point-1.r": {
+      "strong": [[0, 0], [0.16, -1, "step"], [0.21, 0.3, "out"], [0.26, 0]]
+    },
+    "point-2.opacity": {"follow": "point-1.opacity", "lag": 0.06},
+    "point-2.r": {"follow": "point-1.r", "lag": 0.06},
+    "tip.opacity": {
+      "light":  [[0, 0], [0.38, 0], [0.39, 1, "step"], [0.5, 1], [0.6, 0, "in"]],
+      "strong": [[0, 0], [0.34, 0], [0.35, 1, "step"], [0.48, 1], [0.6, 0, "in"]]
+    },
+    "tip.r": {
+      "light":  [[0, 0], [0.38, -1, "step"], [0.44, 0.3, "out"], [0.5, 0]],
+      "strong": [[0, 0], [0.34, -1.4, "step"], [0.4, 0.5, "out"], [0.46, 0]]
+    }
+  },
+  "reverse": {
+    "//": "The fade reset: keep the half-restored flat line from showing while it fades; it comes back whole.",
+    "light":  {"flat.draw": [[0, 0], [0.1, 1, "step"]]},
+    "strong": {"flat.draw": [[0, 0], [0.1, 1, "step"]]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "trim-layer",
+  "label": "Trim layer",
+  "intent": "The layer's out-point is trimmed. Light: the out-point handle drives in 6 and stops dead a little past its mark; the clip's end follows it 50 ms later, shortening the layer, and both settle. Strong: the handle first pulls back, then slams in well past its mark, rebounds and settles; the clip's end follows each beat. The time ruler never moves; the preview reset fades it back.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "bar": {
+      "//": "trim 0 = v1's 18-long layer, 1 = its 12-long result; the driver passes 1 for the overshoot",
+      "shape": {"morph": [{"rect": [5, 12, 18, 6], "r": 3}, {"rect": [5, 12, 12, 6], "r": 3}], "by": "trim"},
+      "role": "surface", "solid": "fill"
+    },
+    "handle": {"shape": {"line": [[27.5, 9], [27.5, 21]]}},
+    "baseline": {"shape": {"line": [[5, 25], [27, 25]]}}
+  },
+  "motion": {
+    "handle.x": {
+      "light":  [[0, 0], [0.2, -7.3, "hit"], [0.29, -5.7], [0.38, -6]],
+      "strong": [[0, 0], [0.11, 1.1, "out"], [0.29, -7.8, "hit"], [0.38, -5.5], [0.46, -6.25], [0.54, -5.95], [0.6, -6]]
+    },
+    "trim": {"//": "the clip end is pulled by the handle: same beats, 50 ms behind", "follow": "handle.x", "scale": -0.16667, "lag": 0.05}
+  }
+}

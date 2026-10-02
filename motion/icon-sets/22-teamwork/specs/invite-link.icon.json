@@ -1,0 +1,269 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "invite-link",
+  "label": "Invite link",
+  "intent": "The invite link is forged, then the invite is created. Light: the plus clears, the two chain loops pull apart and snap back into each other with a hit and a small rebound, and the plus writes itself in, bar then post, and pops once. Strong: the loops pull further apart and snap harder with two rebounds, and the plus writes in and pops bigger with a settle.",
+  "parts": {
+    "chain-loop-a": {
+      "shape": {
+        "rect": [
+          4.5,
+          15,
+          10,
+          7
+        ],
+        "r": 3.5
+      }
+    },
+    "chain-loop-b": {
+      "shape": {
+        "rect": [
+          12.5,
+          15,
+          10,
+          7
+        ],
+        "r": 3.5
+      }
+    },
+    "plus-h": {
+      "shape": {
+        "line": [
+          [
+            23,
+            8.5
+          ],
+          [
+            27,
+            8.5
+          ]
+        ]
+      }
+    },
+    "plus-v": {
+      "shape": {
+        "line": [
+          [
+            25,
+            6.5
+          ],
+          [
+            25,
+            10.5
+          ]
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "plus": {
+      "//": "the finished plus pops about its centre",
+      "pivot": [
+        25,
+        8.5
+      ],
+      "carries": [
+        "plus-h",
+        "plus-v"
+      ]
+    }
+  },
+  "motion": {
+    "//": "Loop a stops 1.6 left of rest at most, so its Solid rim stays 1.6 inside the left edge.",
+    "chain-loop-a.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.11,
+          -1.3,
+          "out"
+        ],
+        [
+          0.2,
+          0.3,
+          "hit"
+        ],
+        [
+          0.27,
+          -0.1
+        ],
+        [
+          0.33,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.13,
+          -1.6,
+          "out"
+        ],
+        [
+          0.22,
+          0.4,
+          "hit"
+        ],
+        [
+          0.29,
+          -0.3
+        ],
+        [
+          0.36,
+          0.12
+        ],
+        [
+          0.42,
+          0
+        ]
+      ]
+    },
+    "chain-loop-b.x": {
+      "follow": "chain-loop-a.x",
+      "scale": -1
+    },
+    "plus-h.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.3,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.22,
+          0
+        ],
+        [
+          0.31,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "plus-v.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.26,
+          0
+        ],
+        [
+          0.36,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.27,
+          0
+        ],
+        [
+          0.36,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "plus.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.36,
+          1
+        ],
+        [
+          0.42,
+          1.25,
+          "out"
+        ],
+        [
+          0.49,
+          0.96
+        ],
+        [
+          0.55,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.36,
+          1
+        ],
+        [
+          0.44,
+          1.32,
+          "out"
+        ],
+        [
+          0.52,
+          0.92
+        ],
+        [
+          0.59,
+          1.04
+        ],
+        [
+          0.66,
+          1
+        ]
+      ]
+    }
+  }
+}

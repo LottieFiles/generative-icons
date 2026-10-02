@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "ticket",
+  "label": "Ticket",
+  "intent": "Admit one: the stub is torn off. Light: the stub tears away from the top, tipping about its lower corner, then drops off down and to the right and fades; the ticket recoils a little from the tear and settles; a fresh stub fades back in at its place. Strong: the stub resists once with a small tug, then tears further and drops farther, and the ticket recoils harder with a two-beat settle. Body and stub stay rigid.",
+  "parts": {
+    "body":       {"shape": {"path": "M8.5 10 L16 10 C17.105 10 18 10.895 18 12 L18 20 C18 21.105 17.105 22 16 22 L8.5 22 C7.395 22 6.5 21.105 6.5 20 L6.5 17.5 C7.328 17.5 8 16.828 8 16 C8 15.172 7.328 14.5 6.5 14.5 L6.5 12 C6.5 10.895 7.395 10 8.5 10 Z"},
+                   "role": "surface",
+                   "knockout": [{"part": "detail-one", "gap": 0}, {"part": "detail-two", "gap": 0}]},
+    "detail-one": {"shape": {"line": [[10.5, 14], [14, 14]]}, "solid": {"rect": [9.45, 12.95, 5.6, 2.1], "r": 1.05}},
+    "detail-two": {"shape": {"line": [[10.5, 18], [13.5, 18]]}, "solid": {"rect": [9.45, 16.95, 5.1, 2.1], "r": 1.05}},
+    "stub":       {"shape": {"rect": [22, 10, 3.5, 12], "r": 1.5}, "role": "surface"}
+  },
+  "rigs": {
+    "body": {"pivot": [12.25, 16], "carries": ["detail-one", "detail-two"]},
+    "stub": {"//": "the tear runs down the perforation, so the stub tips about its lower inner corner", "pivot": [22, 22]}
+  },
+  "motion": {
+    "stub.rotate": {
+      "light":  [[0, 0], [0.1, 12, "in"], [0.24, 16], [0.26, 0, "step"]],
+      "strong": [[0, 0], [0.06, 5, "out"], [0.12, 0, "in"], [0.22, 13, "in"], [0.38, 16], [0.4, 0, "step"]]
+    },
+    "stub.x": {
+      "light":  [[0, 0], [0.1, 0], [0.24, 0.5, "out"], [0.26, 0, "step"]],
+      "strong": [[0, 0], [0.22, 0], [0.38, 0.3, "out"], [0.4, 0, "step"]]
+    },
+    "stub.y": {
+      "light":  [[0, 0], [0.1, 0], [0.24, 2.5, "in"], [0.26, 0, "step"]],
+      "strong": [[0, 0], [0.22, 0], [0.38, 4, "in"], [0.4, 0, "step"]]
+    },
+    "stub.opacity": {
+      "light":  [[0, 1], [0.11, 1], [0.23, 0, "in"], [0.28, 0], [0.4, 1, "out"]],
+      "strong": [[0, 1], [0.23, 1], [0.36, 0, "in"], [0.44, 0], [0.56, 1, "out"]]
+    },
+    "body.x": {
+      "light":  [[0, 0], [0.08, 0], [0.13, -1, "out"], [0.22, 0.25], [0.3, 0]],
+      "strong": [[0, 0], [0.04, 0], [0.07, -0.5, "out"], [0.12, 0], [0.2, 0], [0.25, -1.5, "out"], [0.34, 0.4], [0.42, -0.12], [0.5, 0]]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "layer-stack",
+  "label": "Layer stack",
+  "intent": "A layer is set down on the stack. Light: the top layer lifts and drops back onto the stack with a dead stop; the impact passes down, the middle layer dipping 60 ms later and the bottom one after it, and each settles. Strong: the top layer lifts higher and tilts as it is carried, lands flat with a harder hit, and the impact passes down the stack in deeper, decaying beats. The layers stay rigid.",
+  "parts": {
+    "layer-2": {"//": "v1's own pill paths (all three): the rect primitive rounds the 2.25 ends slightly differently", "shape": {"path": "M9.25 22.5 L22.75 22.5 C23.992 22.5 25 23.508 25 24.75 L25 24.75 C25 25.992 23.992 27 22.75 27 L9.25 27 C8.008 27 7 25.992 7 24.75 L7 24.75 C7 23.508 8.008 22.5 9.25 22.5 Z"}, "role": "surface", "solid": "fill"},
+    "layer-1": {"shape": {"path": "M9.25 14.5 L22.75 14.5 C23.992 14.5 25 15.508 25 16.75 L25 16.75 C25 17.992 23.992 19 22.75 19 L9.25 19 C8.008 19 7 17.992 7 16.75 L7 16.75 C7 15.508 8.008 14.5 9.25 14.5 Z"}, "role": "surface", "solid": "fill"},
+    "layer-0": {"shape": {"path": "M9.25 6.5 L22.75 6.5 C23.992 6.5 25 7.508 25 8.75 L25 8.75 C25 9.992 23.992 11 22.75 11 L9.25 11 C8.008 11 7 9.992 7 8.75 L7 8.75 C7 7.508 8.008 6.5 9.25 6.5 Z"}, "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "layer-0": {"pivot": [16, 8.75]}
+  },
+  "motion": {
+    "layer-0.y": {
+      "light":  [[0, 0], [0.12, -2.4, "out"], [0.22, 0.6, "hit"], [0.3, -0.25], [0.37, 0]],
+      "strong": [[0, 0], [0.14, -2.8, "out"], [0.26, 0.7, "hit"], [0.34, -0.4], [0.41, 0.15], [0.47, 0]]
+    },
+    "layer-0.rotate": {
+      "strong": [[0, 0], [0.14, -4, "out"], [0.26, 0, "hit"], [0.33, 1.2], [0.4, 0]]
+    },
+    "layer-1.y": {
+      "//": "the impact arrives 60 ms after the top layer lands",
+      "light":  [[0, 0], [0.22, 0], [0.28, 0.8, "out"], [0.36, -0.2], [0.42, 0]],
+      "strong": [[0, 0], [0.26, 0], [0.32, 1.0, "out"], [0.4, -0.3], [0.47, 0.1], [0.52, 0]]
+    },
+    "layer-2.y": {
+      "light":  [[0, 0], [0.27, 0], [0.33, 0.6, "out"], [0.41, -0.15], [0.47, 0]],
+      "strong": [[0, 0], [0.31, 0], [0.37, 0.8, "out"], [0.45, -0.2], [0.51, 0.05], [0.56, 0]]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "split-view",
+  "label": "Split view",
+  "intent": "The window splits in two. Light: the divider vanishes and cuts down through the window from top to bottom, the grip pops in at its middle as the cut passes, overshoots and settles, and the left pane's tint fills in. Strong: the cut runs down faster and lands with a hit, and the grip drops down the divider from the top edge, lands on the middle with a hit and bounces twice before it settles. The frame never moves.",
+  "parts": {
+    "pane": {
+      "//": "v1's Duotone tint of the left pane, nothing else",
+      "shape": {"path": "M4 9 C4 7 5 6 7 6 L16 6 L16 6 L16 26 L16 26 L7 26 C5 26 4 25 4 23 L4 9 Z"},
+      "role": "surface",
+      "outline": "none",
+      "solid": "none"
+    },
+    "frame": {"shape": {"rect": [4, 6, 24, 20], "r": 3}},
+    "divider": {"shape": {"line": [[16, 6], [16, 26]]}},
+    "grip": {"shape": {"rect": [14, 11, 4, 10], "r": 2}, "role": "fill"}
+  },
+  "rigs": {
+    "grip": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "divider.draw": {"light": [[0, 1], [0.017, 0, "step"], [0.04, 0], [0.22, 1, "out"]], "strong": [[0, 1], [0.017, 0, "step"], [0.04, 0], [0.19, 1, "hit"]]},
+    "grip.opacity": {"light": [[0, 1], [0.017, 0, "step"], [0.12, 0], [0.13, 1, "step"]], "strong": [[0, 1], [0.017, 0, "step"], [0.1, 0], [0.15, 1, "out"]]},
+    "grip.scale": {"light": [[0, 1], [0.017, 0.3, "step"], [0.12, 0.3], [0.22, 1.22, "out"], [0.3, 0.94], [0.38, 1]]},
+    "grip.y": {
+      "strong": [[0, 0], [0.017, -6, "step"], [0.12, -6], [0.32, 0, "hit"], [0.4, -1.1, "out"], [0.47, 0, "hit"], [0.53, -0.4, "out"], [0.58, 0, "hit"]]
+    },
+    "pane.opacity": {"light": [[0, 1], [0.017, 0, "step"], [0.1, 0], [0.3, 1, "out"]], "strong": [[0, 1], [0.017, 0, "step"], [0.12, 0], [0.32, 1, "out"]]}
+  }
+}

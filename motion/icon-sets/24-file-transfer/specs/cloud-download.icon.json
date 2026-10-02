@@ -1,0 +1,241 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "cloud-download",
+  "label": "Cloud download",
+  "intent": "The file comes down out of the cloud. Light: the arrow shoots down, its shaft stretching out of the cloud, stops dead past its mark, springs back and settles at full length, where it stays; the cloud lifts as it lets go and settles. Strong: the arrow draws up into the cloud first, then drops harder and settles in two beats, and the cloud recoils further and settles in two beats. The preview reset fades it back to the prepared arrow.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "parts": {
+    "cloud": {
+      "shape": {
+        "path": "M9 24 C6 24 4 22 4 19.5 C4 16.5 6.5 14.5 9 14.5 C9.5 10.5 13 7.5 17 7.5 C21 7.5 24 10.3 24.5 13.5 C27 14 28.5 16.5 28.5 19 C28.5 21.5 26.5 24 23.5 24"
+      }
+    },
+    "shaft": {
+      "//": "the shaft's tip travels with the head (8.5 units per unit of reach); its top stays in the cloud",
+      "shape": {
+        "morph": [
+          {
+            "line": [
+              [
+                16,
+                13
+              ],
+              [
+                16,
+                18
+              ]
+            ]
+          },
+          {
+            "line": [
+              [
+                16,
+                13
+              ],
+              [
+                16,
+                26.5
+              ]
+            ]
+          }
+        ],
+        "by": "reach"
+      }
+    },
+    "head": {
+      "shape": {
+        "polyline": [
+          [
+            13.2,
+            15.2
+          ],
+          [
+            16,
+            18
+          ],
+          [
+            18.8,
+            15.2
+          ]
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "cloud": {
+      "pivot": [
+        16.25,
+        15.75
+      ]
+    },
+    "head": {
+      "pivot": [
+        16,
+        16.6
+      ]
+    }
+  },
+  "motion": {
+    "reach": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.21,
+          1.1,
+          "hit"
+        ],
+        [
+          0.3,
+          0.96
+        ],
+        [
+          0.39,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -0.25,
+          "inOut"
+        ],
+        [
+          0.28,
+          1.16,
+          "hit"
+        ],
+        [
+          0.37,
+          0.93
+        ],
+        [
+          0.45,
+          1.04
+        ],
+        [
+          0.53,
+          1
+        ]
+      ]
+    },
+    "head.y": {
+      "//": "8.5 x reach, key for key",
+      "light": [
+        [
+          0,
+          0.0
+        ],
+        [
+          0.21,
+          9.35,
+          "hit"
+        ],
+        [
+          0.3,
+          8.16
+        ],
+        [
+          0.39,
+          8.5
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0.0
+        ],
+        [
+          0.12,
+          -2.125,
+          "inOut"
+        ],
+        [
+          0.28,
+          9.86,
+          "hit"
+        ],
+        [
+          0.37,
+          7.905
+        ],
+        [
+          0.45,
+          8.84
+        ],
+        [
+          0.53,
+          8.5
+        ]
+      ]
+    },
+    "cloud.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.12,
+          -1.3,
+          "out"
+        ],
+        [
+          0.21,
+          0.3
+        ],
+        [
+          0.29,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          0.5,
+          "inOut"
+        ],
+        [
+          0.2,
+          -1.8,
+          "out"
+        ],
+        [
+          0.29,
+          0.5
+        ],
+        [
+          0.37,
+          -0.15
+        ],
+        [
+          0.45,
+          0
+        ]
+      ]
+    }
+  }
+}

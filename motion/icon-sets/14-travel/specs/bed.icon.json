@@ -1,0 +1,50 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "bed",
+  "label": "Bed",
+  "intent": "Someone goes to sleep. Light: a head lands on the pillow, which squashes with a hit and lofts back with a small rebound; the duvet settles a beat later, and one z drifts up from the pillow, growing, and fades. Strong: a heavier landing, then a second, smaller snuggle into the pillow, with two z's drifting up in turn. The headboard, mattress and foot never move.",
+  "parts": {
+    "headboard":    {"shape": {"line": [[6, 25], [6, 10]]}},
+    "mattress":     {"shape": {"path": "M6 17 L25.5 17 C26.328 17 27 17.672 27 18.5 L27 20.5 C27 21.328 26.328 22 25.5 22 L6 22 Z"},
+                     "role": "surface", "outline": "open", "solid": "fill"},
+    "pillow-tint":  {"//": "the pillow's interior (Duotone tint, Solid fill); the stroke part below draws its open outline in every style",
+                     "shape": {"path": "M9.5 17 L9.5 14 C9.5 13.172 10.172 12.5 11 12.5 L14 12.5 C14.828 12.5 15.5 13.172 15.5 14 L15.5 17 Z"},
+                     "role": "surface", "outline": "none", "solid": "fill"},
+    "pillow":       {"shape": {"path": "M9.5 17 L9.5 14 C9.5 13.172 10.172 12.5 11 12.5 L14 12.5 C14.828 12.5 15.5 13.172 15.5 14 L15.5 17"}},
+    "blanket-tint": {"shape": {"path": "M19 17 L19 15 C19 14.172 19.672 13.5 20.5 13.5 L24 13.5 C24.828 13.5 25.5 14.172 25.5 15 L25.5 17 Z"},
+                     "role": "surface", "outline": "none", "solid": "fill"},
+    "blanket":      {"shape": {"path": "M19 17 L19 15 C19 14.172 19.672 13.5 20.5 13.5 L24 13.5 C24.828 13.5 25.5 14.172 25.5 15 L25.5 17"}},
+    "foot":         {"shape": {"line": [[27, 22], [27, 25]]}},
+    "zed":          {"//": "hidden at rest: the z of sleep exists only while it drifts up",
+                     "shape": {"polyline": [[15.5, 4.5], [20.5, 4.5], [15.5, 9.5], [20.5, 9.5]]}, "hidden": true}
+  },
+  "rigs": {
+    "pillow":  {"//": "the pillow squashes down onto the mattress", "pivot": [12.5, 17], "squash": {"base": 17, "widen": 0.3}, "carries": ["pillow-tint"]},
+    "blanket": {"pivot": [22.25, 17], "squash": {"base": 17, "widen": 0.3}, "carries": ["blanket-tint"]},
+    "zed":     {"pivot": [18, 7]}
+  },
+  "motion": {
+    "pillow.squash": {
+      "light":  [[0, 1], [0.1, 0.7, "hit"], [0.2, 1.07], [0.3, 0.98], [0.37, 1]],
+      "strong": [[0, 1], [0.1, 0.62, "hit"], [0.2, 1.1], [0.3, 0.96], [0.38, 1], [0.45, 0.84, "out"], [0.54, 1.03], [0.62, 1]]
+    },
+    "blanket.squash": {"follow": "pillow.squash", "lag": 0.08, "scale": 0.5, "offset": 0.5},
+    "zed.opacity": {
+      "light":  [[0, 0], [0.13, 0], [0.19, 1, "out"], [0.36, 1], [0.48, 0, "in"]],
+      "strong": [[0, 0], [0.13, 0], [0.19, 1, "out"], [0.32, 1], [0.42, 0, "in"], [0.47, 0], [0.53, 1, "out"], [0.66, 1], [0.76, 0, "in"]]
+    },
+    "zed.y": {
+      "light":  [[0, 0], [0.13, 1.6, "step"], [0.48, -1, "out"], [0.5, 0, "step"]],
+      "strong": [[0, 0], [0.13, 1.8, "step"], [0.42, -0.2, "out"], [0.47, 1.6, "step"], [0.76, -1.2, "out"], [0.78, 0, "step"]]
+    },
+    "zed.x": {
+      "light":  [[0, 0], [0.13, -1.5, "step"], [0.48, 1, "out"], [0.5, 0, "step"]],
+      "strong": [[0, 0], [0.13, -2, "step"], [0.42, -0.3, "out"], [0.47, -1.5, "step"], [0.76, 1.2, "out"], [0.78, 0, "step"]]
+    },
+    "zed.scale": {
+      "light":  [[0, 1], [0.13, 0.5, "step"], [0.48, 1.05, "out"], [0.5, 1, "step"]],
+      "strong": [[0, 1], [0.13, 0.45, "step"], [0.42, 0.85, "out"], [0.47, 0.5, "step"], [0.76, 1.1, "out"], [0.78, 1, "step"]]
+    }
+  }
+}

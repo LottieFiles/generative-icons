@@ -1,0 +1,50 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "command-menu",
+  "label": "Command menu",
+  "intent": "The command key is pressed and the command fires. Light: the glyph pinches in and bottoms out with a hit (its square closes up and the four loops are drawn in with it, keeping their size) while the keycap's edge flashes up around it and spreads away, fading; the glyph springs back a little past its size and settles. Strong: a double press, a light tap then a deeper press that bottoms out harder with the keycap flash, and a bigger spring with two settling beats.",
+  "parts": {
+    "cap": {
+      "//": "hidden at rest: the keycap's edge, flashed out from the glyph when the key fires",
+      "shape": {"rect": [4, 4, 24, 24], "r": 5.5},
+      "hidden": true
+    },
+    "square": {
+      "//": "the glyph is v1's one path cut at the square's corners: the joins are round, so the union is the same drawing",
+      "shape": {"rect": [12, 12, 8, 8], "r": 0}
+    },
+    "loop-tl": {"shape": {"path": "M12 12 L12 9.25 C12 7.731 10.769 6.5 9.25 6.5 C7.731 6.5 6.5 7.731 6.5 9.25 C6.5 10.769 7.731 12 9.25 12 L12 12"}},
+    "loop-tr": {"shape": {"path": "M20 12 L22.75 12 C24.269 12 25.5 10.769 25.5 9.25 C25.5 7.731 24.269 6.5 22.75 6.5 C21.231 6.5 20 7.731 20 9.25 L20 12"}},
+    "loop-br": {
+      "shape": {"path": "M20 20 L20 22.75 C20 24.269 21.231 25.5 22.75 25.5 C24.269 25.5 25.5 24.269 25.5 22.75 C25.5 21.231 24.269 20 22.75 20 L20 20"}
+    },
+    "loop-bl": {"shape": {"path": "M12 20 L9.25 20 C7.731 20 6.5 21.231 6.5 22.75 C6.5 24.269 7.731 25.5 9.25 25.5 C10.769 25.5 12 24.269 12 22.75 L12 20"}}
+  },
+  "rigs": {
+    "square": {
+      "//": "the press: the square scales about the centre; the loops ride its corners (offset = 4 x (1 - scale)) so their counters stay open at 24 px",
+      "pivot": [16, 16]
+    },
+    "cap": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "square.scale": {
+      "light": [[0, 1], [0.1, 0.72, "hit"], [0.2, 1.1, "out"], [0.28, 0.97], [0.36, 1]],
+      "strong": [[0, 1], [0.07, 0.84, "hit"], [0.13, 0.92, "out"], [0.22, 0.64, "hit"], [0.32, 1.14, "out"], [0.42, 0.94], [0.5, 1.03], [0.58, 1]]
+    },
+    "loop-tl.x": {"follow": "square.scale", "scale": -4, "offset": 4},
+    "loop-tl.y": {"follow": "square.scale", "scale": -4, "offset": 4},
+    "loop-tr.x": {"follow": "square.scale", "scale": 4, "offset": -4},
+    "loop-tr.y": {"follow": "square.scale", "scale": -4, "offset": 4},
+    "loop-br.x": {"follow": "square.scale", "scale": 4, "offset": -4},
+    "loop-br.y": {"follow": "square.scale", "scale": 4, "offset": -4},
+    "loop-bl.x": {"follow": "square.scale", "scale": -4, "offset": 4},
+    "loop-bl.y": {"follow": "square.scale", "scale": 4, "offset": -4},
+    "cap.opacity": {
+      "light": [[0, 0], [0.05, 0], [0.1, 0.85, "out"], [0.14, 0.85], [0.24, 0, "in"]],
+      "strong": [[0, 0], [0.17, 0], [0.22, 1, "out"], [0.25, 1], [0.32, 0, "in"]]
+    },
+    "cap.scale": {"light": [[0, 1], [0.05, 1], [0.24, 1.07, "out"], [0.25, 1, "step"]], "strong": [[0, 1], [0.17, 1], [0.32, 1.1, "out"], [0.33, 1, "step"]]}
+  }
+}

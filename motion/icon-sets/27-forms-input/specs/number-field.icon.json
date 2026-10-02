@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "number-field",
+  "label": "Number field",
+  "intent": "Stepping the value up. Light: the up stepper kicks up as it is pressed and springs back; a beat later the value ticks over like a counter: the 1 rides up and fades out, then the 2 rises from below, fades in and lands, and the 2 stays. Strong: the stepper winds down before a harder kick, and the 2 lands with a small bounce. The preview reset fades the 1 back in.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "field": {"shape": {"rect": [3.5, 9, 17.5, 14], "r": 3}, "role": "surface", "solid": "ring"},
+    "value-1": {"//": "the prepared value", "shape": {"path": "M8.5 14.7 C9 14.27 9.5 13.83 10 13.4 C10 15.13 10 16.87 10 18.6 L10 18.6"}},
+    "value-2": {"//": "hidden in the prepared state; v1's result value, which stays", "shape": {"path": "M8.4 14.8 C8.8 13.1 11.7 13.1 11.5 15.1 C11.35 16.1 8.3 17.7 8.3 18.6 C9.43 18.6 10.57 18.6 11.7 18.6"}, "hidden": true},
+    "step-up": {"shape": {"polyline": [[25.4, 14], [26.9, 12.4], [28.4, 14]]}},
+    "step-down": {"shape": {"polyline": [[25.4, 18], [26.9, 19.6], [28.4, 18]]}}
+  },
+  "motion": {
+    "step-up.y": {
+      "light":  [[0, 0], [0.07, -1.3, "hit"], [0.16, 0.2], [0.24, 0]],
+      "strong": [[0, 0], [0.06, 0.5, "out"], [0.14, -1.6, "hit"], [0.24, 0.3], [0.32, 0]]
+    },
+    "value-1.y": {
+      "light":  [[0, 0], [0.08, 0], [0.2, -1.8, "in"]],
+      "strong": [[0, 0], [0.14, 0], [0.26, -1.8, "in"]]
+    },
+    "value-1.opacity": {
+      "light":  [[0, 1], [0.1, 1], [0.19, 0, "in"]],
+      "strong": [[0, 1], [0.16, 1], [0.25, 0, "in"]]
+    },
+    "value-2.y": {
+      "light":  [[0, 0], [0.02, 1.8, "step"], [0.17, 1.8], [0.38, 0, "out"]],
+      "strong": [[0, 0], [0.02, 1.8, "step"], [0.23, 1.8], [0.42, 0, "hit"], {"bounce": 0.56, "amp": 0.2}]
+    },
+    "value-2.opacity": {
+      "light":  [[0, 0], [0.17, 0], [0.27, 1, "out"]],
+      "strong": [[0, 0], [0.23, 0], [0.32, 1, "out"]]
+    }
+  },
+  "reverse": {
+    "//": "the preview reset fades only the value; the stepper ends at rest, so it stays",
+    "light":  {"step-up.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"step-up.opacity": [[0, 1], [0.25, 1]]}
+  }
+}

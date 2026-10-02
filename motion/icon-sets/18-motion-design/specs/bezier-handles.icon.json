@@ -1,0 +1,36 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "bezier-handles",
+  "label": "Bezier handles",
+  "intent": "Dragging a tangent handle reshapes the curve. Light: the right handle is grabbed (its knob swells), dragged down so the handle pivots on the anchor, and the curve bends through the anchor to follow it a beat later; on release it snaps back past straight and settles. Strong: the handle is nudged up first, then dragged farther so the curve bends deeper, and the release springs back through two decaying swings. The anchor never moves.",
+  "parts": {
+    "curve": {
+      "//": "bend 0 = v1's curve; 1 = the tangent at the anchor turned 32 deg with the handle and lengthened to 4.5 (ends unchanged)",
+      "shape": {"morph": [
+        {"path": "M7 25 C7 25 13 16 16 16 C19 16 25 7 25 7"},
+        {"path": "M7 25 C7 25 12.184 13.615 16 16 C19.816 18.385 25 7 25 7"}
+      ], "by": "bend"}
+    },
+    "handle-bar": {"shape": {"line": [[8, 16], [24, 16]]}},
+    "handle-0": {"shape": {"circle": [[8, 16], 1.5]}, "role": "fill", "solid": {"circle": [[8, 16], 1.9]}},
+    "handle-1": {"shape": {"circle": [[24, 16], 1.5]}, "role": "fill", "solid": {"circle": [[24, 16], 1.9]}},
+    "anchor": {"//": "v1's own paths: the rect primitive rounds these 0.6 corners a hair tighter", "shape": {"path": "M14.9 14.3 L17.1 14.3 C17.431 14.3 17.7 14.569 17.7 14.9 L17.7 17.1 C17.7 17.431 17.431 17.7 17.1 17.7 L14.9 17.7 C14.569 17.7 14.3 17.431 14.3 17.1 L14.3 14.9 C14.3 14.569 14.569 14.3 14.9 14.3 Z"}, "role": "fill",
+               "solid": {"path": "M14.7 14.1 L17.3 14.1 C17.631 14.1 17.9 14.369 17.9 14.7 L17.9 17.3 C17.9 17.631 17.631 17.9 17.3 17.9 L14.7 17.9 C14.369 17.9 14.1 17.631 14.1 17.3 L14.1 14.7 C14.1 14.369 14.369 14.1 14.7 14.1 Z"}}
+  },
+  "rigs": {
+    "handle": {"pivot": [16, 16], "carries": ["handle-bar", "handle-0", "grab"]},
+    "grab": {"//": "the grabbed knob swells while it is held", "pivot": [24, 16], "carries": ["handle-1"]}
+  },
+  "motion": {
+    "grab.scale": {
+      "light":  [[0, 1], [0.06, 1.35, "out"], [0.3, 1.35], [0.37, 1]],
+      "strong": [[0, 1], [0.06, 1.45, "out"], [0.44, 1.45], [0.51, 1]]
+    },
+    "handle.rotate": {
+      "light":  [[0, 0], [0.06, 0], [0.24, 32, "out"], [0.3, 32], [0.4, -6], [0.47, 2], [0.53, 0]],
+      "strong": [[0, 0], [0.06, 0], [0.14, -8, "out"], [0.36, 42, "out"], [0.44, 42], [0.54, -10], [0.62, 4], [0.7, -1.5], [0.77, 0]]
+    },
+    "bend": {"//": "the curve follows the handle's angle (1 per 32 deg), 40 ms behind", "follow": "handle.rotate", "scale": 0.03125, "lag": 0.04}
+  }
+}

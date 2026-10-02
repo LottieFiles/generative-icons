@@ -14,35 +14,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Bold",
-      "description": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+      "description": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
       "label": "Bold",
-      "intent": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+      "intent": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.5,
-      "rest": 33,
+      "active": 0.417,
+      "rest": 28,
       "keyPoses": [
         0,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5
+        0.0834,
+        0.1668,
+        0.2502,
+        0.3336,
+        0.417
       ],
-      "layers": 4,
+      "layers": 15,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -52,29 +49,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "6041143ce49557d18531c42ff63e8f6f7d3f149f0950896eb8b130c890802ac5",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-        "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-        "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-        "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-        "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-        "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-        "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-      },
-      "brief": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "bold-glyph"
-        }
-      ],
+      "nativeSha256": "66e9a1c61101b0d657e55fe0eab4f18a16d928912cb143266a70aa046d2c2611",
+      "sourceSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
+      "planSha256": "43ab3f7f355fd0471b3f68e92bf506d01252ba15a3b8a99789213a46245b0b16",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
+      "constraints": [],
       "category": "Text & document editing",
-      "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+      "definitionsSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -105,35 +87,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Bold",
-          "description": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+          "description": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
           "label": "Bold",
-          "intent": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+          "intent": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.417,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.0834,
+            0.1668,
+            0.2502,
+            0.3336,
+            0.417
           ],
-          "layers": 4,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -143,29 +122,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6041143ce49557d18531c42ff63e8f6f7d3f149f0950896eb8b130c890802ac5",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "bold-glyph"
-            }
-          ],
+          "nativeSha256": "66e9a1c61101b0d657e55fe0eab4f18a16d928912cb143266a70aa046d2c2611",
+          "sourceSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
+          "planSha256": "43ab3f7f355fd0471b3f68e92bf506d01252ba15a3b8a99789213a46245b0b16",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -187,8 +151,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3160,
-          "sha256": "7ff5977b2f2c21a0f38edfd40082c47073efbeb6f467ccb84a14bb06186b261c"
+          "bytes": 3250,
+          "sha256": "a83c60eed776fecea6f7f9e5c2c9729a131d2275be5e8801e66a6584a3ed911d"
         },
         {
           "name": "bold-strong",
@@ -197,35 +161,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Bold",
-          "description": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+          "description": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
           "label": "Bold",
-          "intent": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+          "intent": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.657,
+          "rest": 42,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.13140000000000002,
+            0.26280000000000003,
+            0.3942,
+            0.5256000000000001,
+            0.657
           ],
-          "layers": 4,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -235,29 +196,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "3c52a6c4af8fc5eb0a6040e43c6119154a1f021ea1514fffa5078623241df34d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "bold-glyph"
-            }
-          ],
+          "nativeSha256": "130561f6de70a9cb14dc0969afc290664a28fcf15f96a86b76e5826b28c45777",
+          "sourceSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
+          "planSha256": "43ab3f7f355fd0471b3f68e92bf506d01252ba15a3b8a99789213a46245b0b16",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -279,8 +225,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3162,
-          "sha256": "74bd607582e4211ad69e233bcd6d1cf8c3545cb274e3bd9f29a93784b3a17e0c"
+          "bytes": 3252,
+          "sha256": "9a0ffed707cc69d306f11319cd83166cc9a2e9c91cfc759cc456034730369a0c"
         }
       ],
       "animations": [
@@ -291,35 +237,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Bold",
-          "description": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+          "description": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
           "label": "Bold",
-          "intent": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+          "intent": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.417,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.0834,
+            0.1668,
+            0.2502,
+            0.3336,
+            0.417
           ],
-          "layers": 4,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -329,29 +272,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6041143ce49557d18531c42ff63e8f6f7d3f149f0950896eb8b130c890802ac5",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "bold-glyph"
-            }
-          ],
+          "nativeSha256": "66e9a1c61101b0d657e55fe0eab4f18a16d928912cb143266a70aa046d2c2611",
+          "sourceSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
+          "planSha256": "43ab3f7f355fd0471b3f68e92bf506d01252ba15a3b8a99789213a46245b0b16",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -373,8 +301,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3160,
-          "sha256": "7ff5977b2f2c21a0f38edfd40082c47073efbeb6f467ccb84a14bb06186b261c"
+          "bytes": 3250,
+          "sha256": "a83c60eed776fecea6f7f9e5c2c9729a131d2275be5e8801e66a6584a3ed911d"
         },
         {
           "name": "bold-strong",
@@ -383,35 +311,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Bold",
-          "description": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+          "description": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
           "label": "Bold",
-          "intent": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
+          "intent": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.657,
+          "rest": 42,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.13140000000000002,
+            0.26280000000000003,
+            0.3942,
+            0.5256000000000001,
+            0.657
           ],
-          "layers": 4,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -421,29 +346,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "3c52a6c4af8fc5eb0a6040e43c6119154a1f021ea1514fffa5078623241df34d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Toggle strong text emphasis: the B lifts and stamps decisively onto its baseline, then rests where it started.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "bold-glyph"
-            }
-          ],
+          "nativeSha256": "130561f6de70a9cb14dc0969afc290664a28fcf15f96a86b76e5826b28c45777",
+          "sourceSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
+          "planSha256": "43ab3f7f355fd0471b3f68e92bf506d01252ba15a3b8a99789213a46245b0b16",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The text is made bold: the B is stamped down and its weight goes on. Light: the B lifts, stamps onto its baseline with a hit, and at the impact a double strike spreads its strokes heavy (two hidden copies of the B push out 0.7 to each side), holds a beat and draws back in as it settles. Strong: a higher lift, a harder stamp with a rebound and a second smaller stamp; the strike spreads 1.0 each way and pushes again on the second stamp before it draws back in.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "4cb2120029d0a014ea551d04be1d62c70db462fadfd37b4a9ae56e33cc4a7813",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -465,12 +375,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3162,
-          "sha256": "74bd607582e4211ad69e233bcd6d1cf8c3545cb274e3bd9f29a93784b3a17e0c"
+          "bytes": 3252,
+          "sha256": "9a0ffed707cc69d306f11319cd83166cc9a2e9c91cfc759cc456034730369a0c"
         }
       ],
-      "bytes": 3160,
-      "sha256": "7ff5977b2f2c21a0f38edfd40082c47073efbeb6f467ccb84a14bb06186b261c"
+      "bytes": 3250,
+      "sha256": "a83c60eed776fecea6f7f9e5c2c9729a131d2275be5e8801e66a6584a3ed911d"
     },
     {
       "name": "italic",
@@ -3234,35 +3144,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Heading",
-      "description": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+      "description": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
       "label": "Heading",
-      "intent": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+      "intent": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.55,
-      "rest": 36,
+      "active": 0.38,
+      "rest": 26,
       "keyPoses": [
         0,
-        0.11000000000000001,
-        0.22000000000000003,
-        0.33,
-        0.44000000000000006,
-        0.55
+        0.07600000000000001,
+        0.15200000000000002,
+        0.22799999999999998,
+        0.30400000000000005,
+        0.38
       ],
-      "layers": 8,
+      "layers": 10,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -3272,33 +3179,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "c1954c8d45b4af46bec38808e727ef33d47ec621d19c1fb745284ea5868ac725",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-        "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-        "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-        "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-        "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-        "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-        "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-      },
-      "brief": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "heading-level"
-        },
-        {
-          "type": "rigid",
-          "part": "heading-glyph"
-        }
-      ],
+      "nativeSha256": "1647cfbd8ccf6adfa2522d975bd402aa82146d703066f5ee6fc4f9448b218471",
+      "sourceSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
+      "planSha256": "d0b267ae0dd2f4b76a57dca74bb71b03178b928a977f6ee635b0779a6dfd2b66",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
+      "constraints": [],
       "category": "Text & document editing",
-      "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+      "definitionsSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -3329,35 +3217,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Heading",
-          "description": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+          "description": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
           "label": "Heading",
-          "intent": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+          "intent": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 8,
+          "layers": 10,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3367,33 +3252,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c1954c8d45b4af46bec38808e727ef33d47ec621d19c1fb745284ea5868ac725",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "heading-level"
-            },
-            {
-              "type": "rigid",
-              "part": "heading-glyph"
-            }
-          ],
+          "nativeSha256": "1647cfbd8ccf6adfa2522d975bd402aa82146d703066f5ee6fc4f9448b218471",
+          "sourceSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
+          "planSha256": "d0b267ae0dd2f4b76a57dca74bb71b03178b928a977f6ee635b0779a6dfd2b66",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3415,8 +3281,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3249,
-          "sha256": "14402fe80d86e8a8f3b734c485258b1ea846556846b1bc82fae24df0c8184cd5"
+          "bytes": 3234,
+          "sha256": "4614e610409175b702056e80fe7913edc2b4db5e43007ae3d6817fdab21ce45a"
         },
         {
           "name": "heading-strong",
@@ -3425,35 +3291,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Heading",
-          "description": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+          "description": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
           "label": "Heading",
-          "intent": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+          "intent": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.6,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.12,
+            0.24,
+            0.36,
+            0.48,
+            0.6
           ],
-          "layers": 8,
+          "layers": 10,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3463,33 +3326,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "e4eba2eba7a25c22bda40790f5c960361ae3c9ac84e14b20c36fc07e454ee1cc",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "heading-level"
-            },
-            {
-              "type": "rigid",
-              "part": "heading-glyph"
-            }
-          ],
+          "nativeSha256": "622b606d6061570ad0bbbbef34563061256b2d554a98f8cc4afcfd0c931bba53",
+          "sourceSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
+          "planSha256": "d0b267ae0dd2f4b76a57dca74bb71b03178b928a977f6ee635b0779a6dfd2b66",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3511,8 +3355,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3252,
-          "sha256": "99c5c2429773674633b4836211ab8cbc213dd0f152e52517adb0691467a4ad35"
+          "bytes": 3237,
+          "sha256": "69b0e703a8630c9c1678488525085ceeb567699696db430e9e7b88e5b3d14bec"
         }
       ],
       "animations": [
@@ -3523,35 +3367,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Heading",
-          "description": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+          "description": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
           "label": "Heading",
-          "intent": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+          "intent": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 8,
+          "layers": 10,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3561,33 +3402,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c1954c8d45b4af46bec38808e727ef33d47ec621d19c1fb745284ea5868ac725",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "heading-level"
-            },
-            {
-              "type": "rigid",
-              "part": "heading-glyph"
-            }
-          ],
+          "nativeSha256": "1647cfbd8ccf6adfa2522d975bd402aa82146d703066f5ee6fc4f9448b218471",
+          "sourceSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
+          "planSha256": "d0b267ae0dd2f4b76a57dca74bb71b03178b928a977f6ee635b0779a6dfd2b66",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3609,8 +3431,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3249,
-          "sha256": "14402fe80d86e8a8f3b734c485258b1ea846556846b1bc82fae24df0c8184cd5"
+          "bytes": 3234,
+          "sha256": "4614e610409175b702056e80fe7913edc2b4db5e43007ae3d6817fdab21ce45a"
         },
         {
           "name": "heading-strong",
@@ -3619,35 +3441,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Heading",
-          "description": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+          "description": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
           "label": "Heading",
-          "intent": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
+          "intent": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.6,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.12,
+            0.24,
+            0.36,
+            0.48,
+            0.6
           ],
-          "layers": 8,
+          "layers": 10,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3657,33 +3476,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "e4eba2eba7a25c22bda40790f5c960361ae3c9ac84e14b20c36fc07e454ee1cc",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Change a block to a heading: the H steps up and lands back on its baseline beside the level mark.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "heading-level"
-            },
-            {
-              "type": "rigid",
-              "part": "heading-glyph"
-            }
-          ],
+          "nativeSha256": "622b606d6061570ad0bbbbef34563061256b2d554a98f8cc4afcfd0c931bba53",
+          "sourceSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
+          "planSha256": "d0b267ae0dd2f4b76a57dca74bb71b03178b928a977f6ee635b0779a6dfd2b66",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "3e641cde486b9ae599ddfc4f4cc93efc447941e137bae9b46f7d2088fd14a44c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3705,12 +3505,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3252,
-          "sha256": "99c5c2429773674633b4836211ab8cbc213dd0f152e52517adb0691467a4ad35"
+          "bytes": 3237,
+          "sha256": "69b0e703a8630c9c1678488525085ceeb567699696db430e9e7b88e5b3d14bec"
         }
       ],
-      "bytes": 3249,
-      "sha256": "14402fe80d86e8a8f3b734c485258b1ea846556846b1bc82fae24df0c8184cd5"
+      "bytes": 3234,
+      "sha256": "4614e610409175b702056e80fe7913edc2b4db5e43007ae3d6817fdab21ce45a"
     },
     {
       "name": "paragraph",
@@ -3719,35 +3519,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Paragraph",
-      "description": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+      "description": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
       "label": "Paragraph",
-      "intent": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+      "intent": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.5,
-      "rest": 33,
+      "active": 0.43,
+      "rest": 29,
       "keyPoses": [
         0,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5
+        0.08600000000000001,
+        0.17200000000000001,
+        0.258,
+        0.34400000000000003,
+        0.43
       ],
-      "layers": 12,
+      "layers": 13,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -3757,37 +3554,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "63b95aa098e8a9a464c143178b1f9f9765a4d6fae273c38a1fe1e06d5208d677",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-        "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-        "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-        "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-        "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-        "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-        "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-      },
-      "brief": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "paragraph-bowl"
-        },
-        {
-          "type": "rigid",
-          "part": "paragraph-stem-a"
-        },
-        {
-          "type": "rigid",
-          "part": "paragraph-stem-b"
-        }
-      ],
+      "nativeSha256": "3ca500c73c4c14b5446d5881c52735af66c42bcb8157b6dda39c578f0d98e3c3",
+      "sourceSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
+      "planSha256": "75b7927a223666f5b0226465fcf5e13b9d373897212a5fc5c764e51f6d059824",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
+      "constraints": [],
       "category": "Text & document editing",
-      "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+      "definitionsSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -3818,35 +3592,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Paragraph",
-          "description": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+          "description": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
           "label": "Paragraph",
-          "intent": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+          "intent": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.43,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.08600000000000001,
+            0.17200000000000001,
+            0.258,
+            0.34400000000000003,
+            0.43
           ],
-          "layers": 12,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3856,37 +3627,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "63b95aa098e8a9a464c143178b1f9f9765a4d6fae273c38a1fe1e06d5208d677",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "paragraph-bowl"
-            },
-            {
-              "type": "rigid",
-              "part": "paragraph-stem-a"
-            },
-            {
-              "type": "rigid",
-              "part": "paragraph-stem-b"
-            }
-          ],
+          "nativeSha256": "3ca500c73c4c14b5446d5881c52735af66c42bcb8157b6dda39c578f0d98e3c3",
+          "sourceSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
+          "planSha256": "75b7927a223666f5b0226465fcf5e13b9d373897212a5fc5c764e51f6d059824",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3908,8 +3656,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3779,
-          "sha256": "2867d9f1ee3e6057d16374df028c9a843e912f06ab98d4745452d0fad1c4b8e4"
+          "bytes": 3527,
+          "sha256": "e2acd84179a6d17752f8cd2598c8a473bc075e14c85780a4cf5f8a329e620fa6"
         },
         {
           "name": "paragraph-strong",
@@ -3918,35 +3666,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Paragraph",
-          "description": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+          "description": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
           "label": "Paragraph",
-          "intent": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+          "intent": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.58,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.11599999999999999,
+            0.23199999999999998,
+            0.348,
+            0.46399999999999997,
+            0.58
           ],
-          "layers": 12,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3956,37 +3701,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "cdd47f35ba1e263ed480ebc9f6b5ff273754f19395819304255ae7e5efb97d20",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "paragraph-bowl"
-            },
-            {
-              "type": "rigid",
-              "part": "paragraph-stem-a"
-            },
-            {
-              "type": "rigid",
-              "part": "paragraph-stem-b"
-            }
-          ],
+          "nativeSha256": "ee199b6926d370c795696c2f5428ac4acf6eb1a32f65920f419310054ff60ad0",
+          "sourceSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
+          "planSha256": "75b7927a223666f5b0226465fcf5e13b9d373897212a5fc5c764e51f6d059824",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4008,8 +3730,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3781,
-          "sha256": "831559e5ca0832a41f594c3e9966a6d051a6bce1c81797776b2a8332776a5ff7"
+          "bytes": 3529,
+          "sha256": "798e73142bd4a11e9050b2fdc3125a9eac0dea6944e848b493bbb38accfb2414"
         }
       ],
       "animations": [
@@ -4020,35 +3742,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Paragraph",
-          "description": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+          "description": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
           "label": "Paragraph",
-          "intent": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+          "intent": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.43,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.08600000000000001,
+            0.17200000000000001,
+            0.258,
+            0.34400000000000003,
+            0.43
           ],
-          "layers": 12,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4058,37 +3777,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "63b95aa098e8a9a464c143178b1f9f9765a4d6fae273c38a1fe1e06d5208d677",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "paragraph-bowl"
-            },
-            {
-              "type": "rigid",
-              "part": "paragraph-stem-a"
-            },
-            {
-              "type": "rigid",
-              "part": "paragraph-stem-b"
-            }
-          ],
+          "nativeSha256": "3ca500c73c4c14b5446d5881c52735af66c42bcb8157b6dda39c578f0d98e3c3",
+          "sourceSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
+          "planSha256": "75b7927a223666f5b0226465fcf5e13b9d373897212a5fc5c764e51f6d059824",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4110,8 +3806,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3779,
-          "sha256": "2867d9f1ee3e6057d16374df028c9a843e912f06ab98d4745452d0fad1c4b8e4"
+          "bytes": 3527,
+          "sha256": "e2acd84179a6d17752f8cd2598c8a473bc075e14c85780a4cf5f8a329e620fa6"
         },
         {
           "name": "paragraph-strong",
@@ -4120,35 +3816,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Paragraph",
-          "description": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+          "description": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
           "label": "Paragraph",
-          "intent": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
+          "intent": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.58,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.11599999999999999,
+            0.23199999999999998,
+            0.348,
+            0.46399999999999997,
+            0.58
           ],
-          "layers": 12,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4158,37 +3851,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "cdd47f35ba1e263ed480ebc9f6b5ff273754f19395819304255ae7e5efb97d20",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "The pilcrow lifts slightly, drops like a carriage return, and settles in place.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "paragraph-bowl"
-            },
-            {
-              "type": "rigid",
-              "part": "paragraph-stem-a"
-            },
-            {
-              "type": "rigid",
-              "part": "paragraph-stem-b"
-            }
-          ],
+          "nativeSha256": "ee199b6926d370c795696c2f5428ac4acf6eb1a32f65920f419310054ff60ad0",
+          "sourceSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
+          "planSha256": "75b7927a223666f5b0226465fcf5e13b9d373897212a5fc5c764e51f6d059824",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "0d131018b1db322855c8c7eb08a9816c53e91f8dfd219d4be6ad7c43a3ea0b65",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4210,12 +3880,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3781,
-          "sha256": "831559e5ca0832a41f594c3e9966a6d051a6bce1c81797776b2a8332776a5ff7"
+          "bytes": 3529,
+          "sha256": "798e73142bd4a11e9050b2fdc3125a9eac0dea6944e848b493bbb38accfb2414"
         }
       ],
-      "bytes": 3779,
-      "sha256": "2867d9f1ee3e6057d16374df028c9a843e912f06ab98d4745452d0fad1c4b8e4"
+      "bytes": 3527,
+      "sha256": "e2acd84179a6d17752f8cd2598c8a473bc075e14c85780a4cf5f8a329e620fa6"
     },
     {
       "name": "text-alignment",
@@ -9659,35 +9329,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Text color",
-      "description": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+      "description": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
       "label": "Text color",
-      "intent": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+      "intent": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.64,
-      "rest": 41,
+      "active": 0.457,
+      "rest": 30,
       "keyPoses": [
         0,
-        0.128,
-        0.256,
-        0.384,
-        0.512,
-        0.64
+        0.09140000000000001,
+        0.18280000000000002,
+        0.2742,
+        0.36560000000000004,
+        0.457
       ],
-      "layers": 13,
+      "layers": 23,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -9697,37 +9364,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "bc0fec612c540c7fb923a294d7d1cb18647f14c561af1896a687cfacc696dcf8",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-        "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-        "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-        "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-        "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-        "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-        "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-      },
-      "brief": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "text-color-legs"
-        },
-        {
-          "type": "fixed",
-          "part": "text-color-crossbar"
-        },
-        {
-          "type": "rigid",
-          "part": "text-color-swatch-frame"
-        }
-      ],
+      "nativeSha256": "296dbd371098730934f755a10a3bab17f675a9ae8abbbe95bab49c7f854a1624",
+      "sourceSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
+      "planSha256": "a6d1e77ab726da1d2ac0f34d6d07e8237e68b910c9f8adc488fbc788a7bcad0c",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
+      "constraints": [],
       "category": "Text & document editing",
-      "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+      "definitionsSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -9758,35 +9402,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Text color",
-          "description": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+          "description": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
           "label": "Text color",
-          "intent": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+          "intent": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.64,
-          "rest": 41,
+          "active": 0.457,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.128,
-            0.256,
-            0.384,
-            0.512,
-            0.64
+            0.09140000000000001,
+            0.18280000000000002,
+            0.2742,
+            0.36560000000000004,
+            0.457
           ],
-          "layers": 13,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -9796,37 +9437,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "bc0fec612c540c7fb923a294d7d1cb18647f14c561af1896a687cfacc696dcf8",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "text-color-legs"
-            },
-            {
-              "type": "fixed",
-              "part": "text-color-crossbar"
-            },
-            {
-              "type": "rigid",
-              "part": "text-color-swatch-frame"
-            }
-          ],
+          "nativeSha256": "296dbd371098730934f755a10a3bab17f675a9ae8abbbe95bab49c7f854a1624",
+          "sourceSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
+          "planSha256": "a6d1e77ab726da1d2ac0f34d6d07e8237e68b910c9f8adc488fbc788a7bcad0c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -9848,8 +9466,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3801,
-          "sha256": "d4fed83347ab375990c7228be485ac950b4fcf88d6f29492bc8c0b7b1e246494"
+          "bytes": 3788,
+          "sha256": "70d02a9218d1a33afc27875ab463697c6878e79b594eb008600304c0cad53213"
         },
         {
           "name": "text-color-strong",
@@ -9858,35 +9476,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Text color",
-          "description": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+          "description": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
           "label": "Text color",
-          "intent": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+          "intent": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.64,
+          "active": 0.637,
           "rest": 41,
           "keyPoses": [
             0,
-            0.128,
-            0.256,
-            0.384,
-            0.512,
-            0.64
+            0.1274,
+            0.2548,
+            0.3822,
+            0.5096,
+            0.637
           ],
-          "layers": 13,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -9896,37 +9511,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5ca9d5c067830d4c06b61e138db6b4ae805599580d9236acd9e038168f6cbcc3",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "text-color-legs"
-            },
-            {
-              "type": "fixed",
-              "part": "text-color-crossbar"
-            },
-            {
-              "type": "rigid",
-              "part": "text-color-swatch-frame"
-            }
-          ],
+          "nativeSha256": "4c517a718b93eb37e2f4ec6b5241755cc257029d206b86f5d64e9f2f1dfcc21f",
+          "sourceSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
+          "planSha256": "a6d1e77ab726da1d2ac0f34d6d07e8237e68b910c9f8adc488fbc788a7bcad0c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -9948,8 +9540,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3803,
-          "sha256": "512736d7a8cdecb02d8fb19596124d96c814a453f0af3b078bfe788544b0a8b0"
+          "bytes": 3790,
+          "sha256": "d1840a7fd058955a54ed1121d74093b1e32bc1ec31cf6dd73ae7bc977c0cd0e0"
         }
       ],
       "animations": [
@@ -9960,35 +9552,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Text color",
-          "description": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+          "description": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
           "label": "Text color",
-          "intent": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+          "intent": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.64,
-          "rest": 41,
+          "active": 0.457,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.128,
-            0.256,
-            0.384,
-            0.512,
-            0.64
+            0.09140000000000001,
+            0.18280000000000002,
+            0.2742,
+            0.36560000000000004,
+            0.457
           ],
-          "layers": 13,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -9998,37 +9587,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "bc0fec612c540c7fb923a294d7d1cb18647f14c561af1896a687cfacc696dcf8",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "text-color-legs"
-            },
-            {
-              "type": "fixed",
-              "part": "text-color-crossbar"
-            },
-            {
-              "type": "rigid",
-              "part": "text-color-swatch-frame"
-            }
-          ],
+          "nativeSha256": "296dbd371098730934f755a10a3bab17f675a9ae8abbbe95bab49c7f854a1624",
+          "sourceSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
+          "planSha256": "a6d1e77ab726da1d2ac0f34d6d07e8237e68b910c9f8adc488fbc788a7bcad0c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10050,8 +9616,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3801,
-          "sha256": "d4fed83347ab375990c7228be485ac950b4fcf88d6f29492bc8c0b7b1e246494"
+          "bytes": 3788,
+          "sha256": "70d02a9218d1a33afc27875ab463697c6878e79b594eb008600304c0cad53213"
         },
         {
           "name": "text-color-strong",
@@ -10060,35 +9626,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Text color",
-          "description": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+          "description": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
           "label": "Text color",
-          "intent": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
+          "intent": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.64,
+          "active": 0.637,
           "rest": 41,
           "keyPoses": [
             0,
-            0.128,
-            0.256,
-            0.384,
-            0.512,
-            0.64
+            0.1274,
+            0.2548,
+            0.3822,
+            0.5096,
+            0.637
           ],
-          "layers": 13,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10098,37 +9661,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5ca9d5c067830d4c06b61e138db6b4ae805599580d9236acd9e038168f6cbcc3",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Choose the foreground color of selected text. The swatch bar under the A rises to apply its color and settles back. Light: a small quiet lift. Strong: a short dip, a fast rise almost to the baseline, one bounded rebound.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "text-color-legs"
-            },
-            {
-              "type": "fixed",
-              "part": "text-color-crossbar"
-            },
-            {
-              "type": "rigid",
-              "part": "text-color-swatch-frame"
-            }
-          ],
+          "nativeSha256": "4c517a718b93eb37e2f4ec6b5241755cc257029d206b86f5d64e9f2f1dfcc21f",
+          "sourceSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
+          "planSha256": "a6d1e77ab726da1d2ac0f34d6d07e8237e68b910c9f8adc488fbc788a7bcad0c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "9056e6aa1d995dc702086813bea1a4a218821215e1e6c2c0910d2b33d9f2e697",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10150,12 +9690,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3803,
-          "sha256": "512736d7a8cdecb02d8fb19596124d96c814a453f0af3b078bfe788544b0a8b0"
+          "bytes": 3790,
+          "sha256": "d1840a7fd058955a54ed1121d74093b1e32bc1ec31cf6dd73ae7bc977c0cd0e0"
         }
       ],
-      "bytes": 3801,
-      "sha256": "d4fed83347ab375990c7228be485ac950b4fcf88d6f29492bc8c0b7b1e246494"
+      "bytes": 3788,
+      "sha256": "70d02a9218d1a33afc27875ab463697c6878e79b594eb008600304c0cad53213"
     },
     {
       "name": "text-highlight",
@@ -15319,35 +14859,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Word wrap",
-      "description": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+      "description": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
       "label": "Word wrap",
-      "intent": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+      "intent": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.7,
-      "rest": 45,
+      "active": 0.42,
+      "rest": 28,
       "keyPoses": [
         0,
-        0.13999999999999999,
-        0.27999999999999997,
-        0.42,
-        0.5599999999999999,
-        0.7
+        0.084,
+        0.168,
+        0.252,
+        0.336,
+        0.42
       ],
-      "layers": 16,
+      "layers": 22,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -15357,41 +14894,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "dde9066509a7ba3406ce6ef5d56ca103582700576e3c62c39d133c29d73bead5",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-        "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-        "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-        "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-        "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-        "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-        "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-      },
-      "brief": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "word-wrap-row-1"
-        },
-        {
-          "type": "fixed",
-          "part": "word-wrap-row-2"
-        },
-        {
-          "type": "fixed",
-          "part": "word-wrap-row-3"
-        },
-        {
-          "type": "rigid",
-          "part": "word-wrap-arrow"
-        }
-      ],
+      "nativeSha256": "705cf2acf90cc8ed87362de06909adb1fcbdd18d610636179873706b111e0b0f",
+      "sourceSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
+      "planSha256": "cde2676eb57d268bc3da640286c08964fbe89a4d536a34d095772e801cdd581b",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
+      "constraints": [],
       "category": "Text & document editing",
-      "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+      "definitionsSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -15422,35 +14932,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Word wrap",
-          "description": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+          "description": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
           "label": "Word wrap",
-          "intent": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+          "intent": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -15460,41 +14967,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "dde9066509a7ba3406ce6ef5d56ca103582700576e3c62c39d133c29d73bead5",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-1"
-            },
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-2"
-            },
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-3"
-            },
-            {
-              "type": "rigid",
-              "part": "word-wrap-arrow"
-            }
-          ],
+          "nativeSha256": "705cf2acf90cc8ed87362de06909adb1fcbdd18d610636179873706b111e0b0f",
+          "sourceSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
+          "planSha256": "cde2676eb57d268bc3da640286c08964fbe89a4d536a34d095772e801cdd581b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -15516,8 +14996,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3581,
-          "sha256": "cf1569082743084f7e883b32f99417809ab16ec2ad375ca27f7f9750d3273aa8"
+          "bytes": 3451,
+          "sha256": "6edea9a085edcf94b24357fbad291166e737682c56ae85a52dc6ed1ea7b19014"
         },
         {
           "name": "word-wrap-strong",
@@ -15526,35 +15006,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Word wrap",
-          "description": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+          "description": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
           "label": "Word wrap",
-          "intent": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+          "intent": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.65,
-          "rest": 42,
+          "active": 0.56,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.13,
-            0.26,
-            0.39,
-            0.52,
-            0.65
+            0.11200000000000002,
+            0.22400000000000003,
+            0.336,
+            0.44800000000000006,
+            0.56
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -15564,41 +15041,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2d6db2e743ff28831139e48cbbb2a0af53f1cec5acdae7234f0f615be80167e4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-1"
-            },
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-2"
-            },
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-3"
-            },
-            {
-              "type": "rigid",
-              "part": "word-wrap-arrow"
-            }
-          ],
+          "nativeSha256": "0f879ce68c42df637d8ad7a0d12d9319d3479f949ed05edb82338666cfb7041f",
+          "sourceSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
+          "planSha256": "cde2676eb57d268bc3da640286c08964fbe89a4d536a34d095772e801cdd581b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -15620,8 +15070,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3583,
-          "sha256": "84ee0aaf4154458f963c97d37fde42c0f5a89485ffab68510e1cc493be452cad"
+          "bytes": 3453,
+          "sha256": "6698b3b720f85ff413a4c2b08d442b6a1d409529b12b8311f518705e9c432c6e"
         }
       ],
       "animations": [
@@ -15632,35 +15082,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Word wrap",
-          "description": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+          "description": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
           "label": "Word wrap",
-          "intent": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+          "intent": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -15670,41 +15117,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "dde9066509a7ba3406ce6ef5d56ca103582700576e3c62c39d133c29d73bead5",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-1"
-            },
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-2"
-            },
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-3"
-            },
-            {
-              "type": "rigid",
-              "part": "word-wrap-arrow"
-            }
-          ],
+          "nativeSha256": "705cf2acf90cc8ed87362de06909adb1fcbdd18d610636179873706b111e0b0f",
+          "sourceSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
+          "planSha256": "cde2676eb57d268bc3da640286c08964fbe89a4d536a34d095772e801cdd581b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -15726,8 +15146,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3581,
-          "sha256": "cf1569082743084f7e883b32f99417809ab16ec2ad375ca27f7f9750d3273aa8"
+          "bytes": 3451,
+          "sha256": "6edea9a085edcf94b24357fbad291166e737682c56ae85a52dc6ed1ea7b19014"
         },
         {
           "name": "word-wrap-strong",
@@ -15736,35 +15156,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Word wrap",
-          "description": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+          "description": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
           "label": "Word wrap",
-          "intent": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
+          "intent": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.65,
-          "rest": 42,
+          "active": 0.56,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.13,
-            0.26,
-            0.39,
-            0.52,
-            0.65
+            0.11200000000000002,
+            0.22400000000000003,
+            0.336,
+            0.44800000000000006,
+            0.56
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -15774,41 +15191,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2d6db2e743ff28831139e48cbbb2a0af53f1cec5acdae7234f0f615be80167e4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "The return arrow presses left toward the wrapped line end and comes back; Strong winds right, throws harder, and settles.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-1"
-            },
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-2"
-            },
-            {
-              "type": "fixed",
-              "part": "word-wrap-row-3"
-            },
-            {
-              "type": "rigid",
-              "part": "word-wrap-arrow"
-            }
-          ],
+          "nativeSha256": "0f879ce68c42df637d8ad7a0d12d9319d3479f949ed05edb82338666cfb7041f",
+          "sourceSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
+          "planSha256": "cde2676eb57d268bc3da640286c08964fbe89a4d536a34d095772e801cdd581b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The text wraps at the margin. Light: the return route draws itself from the margin, down and round the bend toward the next line at full speed, and the head is carried in at its end, stops dead just past its place and springs back. Strong: the top line first runs into the margin and springs back as the overflow wraps; the route draws faster, and the head lands harder with two decaying recoils. The two short lines never move.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "df8e470cd907d182e943cda39ad73324683cca1627d7bc4dce908a3794b89488",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -15830,12 +15220,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3583,
-          "sha256": "84ee0aaf4154458f963c97d37fde42c0f5a89485ffab68510e1cc493be452cad"
+          "bytes": 3453,
+          "sha256": "6698b3b720f85ff413a4c2b08d442b6a1d409529b12b8311f518705e9c432c6e"
         }
       ],
-      "bytes": 3581,
-      "sha256": "cf1569082743084f7e883b32f99417809ab16ec2ad375ca27f7f9750d3273aa8"
+      "bytes": 3451,
+      "sha256": "6edea9a085edcf94b24357fbad291166e737682c56ae85a52dc6ed1ea7b19014"
     },
     {
       "name": "letter-case",
@@ -16729,35 +16119,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Line spacing",
-      "description": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+      "description": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
       "label": "Line spacing",
-      "intent": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+      "intent": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.75,
-      "rest": 48,
+      "active": 0.53,
+      "rest": 35,
       "keyPoses": [
         0,
-        0.15000000000000002,
-        0.30000000000000004,
-        0.44999999999999996,
-        0.6000000000000001,
-        0.75
+        0.10600000000000001,
+        0.21200000000000002,
+        0.318,
+        0.42400000000000004,
+        0.53
       ],
-      "layers": 16,
+      "layers": 29,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -16767,41 +16154,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "865831f575e1abaf195c2dd7b4a39fcd88e6b240389abac37ef7f1e89af5995a",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-        "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-        "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-        "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-        "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-        "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-        "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-      },
-      "brief": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "line-spacing-arrow"
-        },
-        {
-          "type": "fixed",
-          "part": "line-spacing-row-mid"
-        },
-        {
-          "type": "rigid",
-          "part": "line-spacing-row-top"
-        },
-        {
-          "type": "rigid",
-          "part": "line-spacing-row-bottom"
-        }
-      ],
+      "nativeSha256": "f370ff04718b0e9f82a5c25b7f479da386f2c616784e267070cbfdb70374b5c8",
+      "sourceSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
+      "planSha256": "c3b7f8bf690de6363a0c12c4c0c0bf02a33395ddb9c27cab864d3e7808478bdf",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
+      "constraints": [],
       "category": "Text & document editing",
-      "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+      "definitionsSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -16832,35 +16192,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Line spacing",
-          "description": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+          "description": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
           "label": "Line spacing",
-          "intent": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+          "intent": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.53,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.10600000000000001,
+            0.21200000000000002,
+            0.318,
+            0.42400000000000004,
+            0.53
           ],
-          "layers": 16,
+          "layers": 29,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -16870,41 +16227,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "865831f575e1abaf195c2dd7b4a39fcd88e6b240389abac37ef7f1e89af5995a",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "line-spacing-arrow"
-            },
-            {
-              "type": "fixed",
-              "part": "line-spacing-row-mid"
-            },
-            {
-              "type": "rigid",
-              "part": "line-spacing-row-top"
-            },
-            {
-              "type": "rigid",
-              "part": "line-spacing-row-bottom"
-            }
-          ],
+          "nativeSha256": "f370ff04718b0e9f82a5c25b7f479da386f2c616784e267070cbfdb70374b5c8",
+          "sourceSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
+          "planSha256": "c3b7f8bf690de6363a0c12c4c0c0bf02a33395ddb9c27cab864d3e7808478bdf",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -16926,8 +16256,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4371,
-          "sha256": "85623a74934695c6606a1f3efae8b3f181032d762ccdbb16351200b65c1a8cca"
+          "bytes": 3979,
+          "sha256": "2818ad924f3bd499854df629c420cf58dcb6bec5b8dc4b155b32f6bcb5bc1f73"
         },
         {
           "name": "line-spacing-strong",
@@ -16936,35 +16266,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Line spacing",
-          "description": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+          "description": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
           "label": "Line spacing",
-          "intent": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+          "intent": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.72,
+          "rest": 46,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.144,
+            0.288,
+            0.432,
+            0.576,
+            0.72
           ],
-          "layers": 16,
+          "layers": 29,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -16974,41 +16301,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "19d1fdf0979cb3b1f2e7a62e75489e5663a0cc2dad2535a4886160d6fac82dba",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "line-spacing-arrow"
-            },
-            {
-              "type": "fixed",
-              "part": "line-spacing-row-mid"
-            },
-            {
-              "type": "rigid",
-              "part": "line-spacing-row-top"
-            },
-            {
-              "type": "rigid",
-              "part": "line-spacing-row-bottom"
-            }
-          ],
+          "nativeSha256": "a00b6d363525f4aad95f9f4f233f478473c3e2377a5f0bbb01ea510d21bfa1ad",
+          "sourceSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
+          "planSha256": "c3b7f8bf690de6363a0c12c4c0c0bf02a33395ddb9c27cab864d3e7808478bdf",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -17030,8 +16330,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4375,
-          "sha256": "d35bc07a352274d013b753b7634fd4133398b3542aaf7cc8050fd0b78267c34f"
+          "bytes": 3983,
+          "sha256": "d9d5e5ccf864e7ed26c6399800fcdc83769375a1456807fe0944164686168e85"
         }
       ],
       "animations": [
@@ -17042,35 +16342,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Line spacing",
-          "description": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+          "description": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
           "label": "Line spacing",
-          "intent": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+          "intent": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.53,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.10600000000000001,
+            0.21200000000000002,
+            0.318,
+            0.42400000000000004,
+            0.53
           ],
-          "layers": 16,
+          "layers": 29,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -17080,41 +16377,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "865831f575e1abaf195c2dd7b4a39fcd88e6b240389abac37ef7f1e89af5995a",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "line-spacing-arrow"
-            },
-            {
-              "type": "fixed",
-              "part": "line-spacing-row-mid"
-            },
-            {
-              "type": "rigid",
-              "part": "line-spacing-row-top"
-            },
-            {
-              "type": "rigid",
-              "part": "line-spacing-row-bottom"
-            }
-          ],
+          "nativeSha256": "f370ff04718b0e9f82a5c25b7f479da386f2c616784e267070cbfdb70374b5c8",
+          "sourceSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
+          "planSha256": "c3b7f8bf690de6363a0c12c4c0c0bf02a33395ddb9c27cab864d3e7808478bdf",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -17136,8 +16406,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4371,
-          "sha256": "85623a74934695c6606a1f3efae8b3f181032d762ccdbb16351200b65c1a8cca"
+          "bytes": 3979,
+          "sha256": "2818ad924f3bd499854df629c420cf58dcb6bec5b8dc4b155b32f6bcb5bc1f73"
         },
         {
           "name": "line-spacing-strong",
@@ -17146,35 +16416,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Line spacing",
-          "description": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+          "description": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
           "label": "Line spacing",
-          "intent": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
+          "intent": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.72,
+          "rest": 46,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.144,
+            0.288,
+            0.432,
+            0.576,
+            0.72
           ],
-          "layers": 16,
+          "layers": 29,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -17184,41 +16451,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "19d1fdf0979cb3b1f2e7a62e75489e5663a0cc2dad2535a4886160d6fac82dba",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d69166bc108d2591db12d241f328ecd7488bd6434d06f9d8ed62b1c36490adbf",
-            "batches/document-clearance.mjs": "060093eabc27685b2b3b63ed8b546fa4443e93ab523635181e77e27b8cba87ee",
-            "batches/document-letter-case.mjs": "edc87a78a98af3608c1c35828528e553e5b61bed437734ab0d472292b25860a1",
-            "batches/document-tools.mjs": "fedf1d74b553960fb0bd166fd25c8cf839a6f7e3a7d25b46749d67c8a5c8e389",
-            "batches/emphasis-reverse.mjs": "c748f68806817e9466245260c0c73418bd3f8d7144cd3723959a4d78ad5ba089",
-            "batches/emphasis.mjs": "9e37f1fad9f306f43d6daf4d3bec43331f65bd7b0c67a4dd141402f5653433be",
-            "batches/formatting.mjs": "105352ded9519fc7f99f01a917c5fa860852358c948f5c29cab2bdff36e79617",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/paragraph-list.mjs": "78e381b58b59bcaf476b1b5085be3c3715d152b993419dc89a79d8f9a50de64e"
-          },
-          "brief": "Outer rows spread apart from the middle row along the double arrow and settle back; Strong squeezes in first, then spreads wider.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "line-spacing-arrow"
-            },
-            {
-              "type": "fixed",
-              "part": "line-spacing-row-mid"
-            },
-            {
-              "type": "rigid",
-              "part": "line-spacing-row-top"
-            },
-            {
-              "type": "rigid",
-              "part": "line-spacing-row-bottom"
-            }
-          ],
+          "nativeSha256": "a00b6d363525f4aad95f9f4f233f478473c3e2377a5f0bbb01ea510d21bfa1ad",
+          "sourceSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
+          "planSha256": "c3b7f8bf690de6363a0c12c4c0c0bf02a33395ddb9c27cab864d3e7808478bdf",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The line spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the outer rows are pushed apart from the middle row the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and rows squeeze in first, then the arrow throws its heads out 3.2 and the rows follow to a hit, rebound twice and close back with a settle. The middle row never moves.",
+          "constraints": [],
           "category": "Text & document editing",
-          "definitionsSha256": "b423e86c7ce7b2018aace4b3209e27485c56a1b2308e062687b2facdbd00a7d6",
+          "definitionsSha256": "72ba2d7cba16054293606b9d8ef9307f5b6966d3b766b689a92ad33905b97ade",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -17240,12 +16480,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4375,
-          "sha256": "d35bc07a352274d013b753b7634fd4133398b3542aaf7cc8050fd0b78267c34f"
+          "bytes": 3983,
+          "sha256": "d9d5e5ccf864e7ed26c6399800fcdc83769375a1456807fe0944164686168e85"
         }
       ],
-      "bytes": 4371,
-      "sha256": "85623a74934695c6606a1f3efae8b3f181032d762ccdbb16351200b65c1a8cca"
+      "bytes": 3979,
+      "sha256": "2818ad924f3bd499854df629c420cf58dcb6bec5b8dc4b155b32f6bcb5bc1f73"
     }
   ]
 }

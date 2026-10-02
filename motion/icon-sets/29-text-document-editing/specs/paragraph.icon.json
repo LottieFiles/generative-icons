@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "paragraph",
+  "label": "Paragraph",
+  "intent": "A paragraph break is set, like a carriage return: the pilcrow's two stems run down from the foot of the bowl to the baseline in turn, and the mark takes their landing. Light: both stems are pulled up to the foot of the bowl (the bowl's counter stays closed), then drop one after the other and stop dead on the baseline; the mark squashes onto the baseline as the second lands and springs back. Strong: the stems visibly roll up to the bowl first, then drop harder in turn; the mark squashes deeper, rebounds and settles.",
+  "parts": {
+    "stem-b": {"shape": {"line": [[23, 6], [23, 25]]}},
+    "stem-a": {"shape": {"line": [[18, 6], [18, 25]]}},
+    "bowl": {"shape": {"path": "M23 6 L13.5 6 C11.015 6 9 8.015 9 10.5 C9 12.985 11.015 15 13.5 15 L18 15"}}
+  },
+  "rigs": {
+    "mark": {"//": "squashes onto the baseline the stems land on", "pivot": [16, 25], "squash": {"base": 25, "widen": 0.5}, "carries": ["stem-a", "stem-b", "bowl"]}
+  },
+  "motion": {
+    "stem-a.draw": {
+      "//": "never shorter than 0.5 (y 15.5): stem-a closes the bowl's counter, which set 29 keeps open in every frame",
+      "light":  [[0, 1], [0.017, 0.5, "step"], [0.18, 1, "hit"]],
+      "strong": [[0, 1], [0.10, 0.5, "in"], [0.12, 0.5], [0.25, 1, "hit"]]
+    },
+    "stem-b.draw": {
+      "//": "retracts with stem-a, drops 70 ms after it",
+      "light":  [[0, 1], [0.017, 0.5, "step"], [0.087, 0.5], [0.25, 1, "hit"]],
+      "strong": [[0, 1], [0.10, 0.5, "in"], [0.19, 0.5], [0.32, 1, "hit"]]
+    },
+    "mark.squash": {
+      "light":  [[0, 1], [0.25, 1], [0.29, 0.92, "out"], [0.36, 1.02], [0.43, 1]],
+      "strong": [[0, 1], [0.32, 1], [0.36, 0.88, "out"], [0.44, 1.04], [0.51, 0.98], [0.58, 1]]
+    }
+  }
+}

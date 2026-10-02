@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "heading",
+  "label": "Heading",
+  "intent": "The block becomes a level-1 heading: the H grows to heading size and the level is written beside it. Light: the H swells up from its baseline to 1.16x, stops dead, dips back a touch under and settles, and a beat later the 1 writes itself in, flag first, then down its stem to the baseline. Strong: the H gathers first (a small dip), swells to 1.2x with a rebound and a second smaller swell; the 1 writes itself in and pops as its stem lands.",
+  "parts": {
+    "glyph": {"shape": {"polyline": [[7, 7], [7, 25], [7, 16], [16, 16], [16, 7], [16, 25]]}},
+    "level": {"shape": {"polyline": [[21.5, 18], [23.5, 16], [23.5, 25]]}}
+  },
+  "rigs": {
+    "glyph": {"//": "grows from its baseline, so it stays seated on the line", "pivot": [11.5, 25]},
+    "level": {"pivot": [23.5, 25]}
+  },
+  "motion": {
+    "glyph.scale": {
+      "light":  [[0, 1], [0.14, 1.16, "hit"], [0.22, 0.97], [0.30, 1]],
+      "strong": [[0, 1], [0.07, 0.95, "out"], [0.19, 1.2, "hit"], [0.27, 0.96], [0.34, 1.08, "out"], [0.42, 0.99], [0.48, 1]]
+    },
+    "level.draw": {
+      "light":  [[0, 1], [0.12, 1], [0.137, 0, "step"], [0.38, 1, "inOut"]],
+      "strong": [[0, 1], [0.16, 1], [0.177, 0, "step"], [0.40, 1, "inOut"]]
+    },
+    "level.opacity": {
+      "//": "hidden while its draw is near 0, where the round caps would leave a dot",
+      "light":  [[0, 1], [0.12, 1], [0.137, 0, "step"], [0.17, 0], [0.187, 1, "step"]],
+      "strong": [[0, 1], [0.16, 1], [0.177, 0, "step"], [0.21, 0], [0.227, 1, "step"]]
+    },
+    "level.scale": {
+      "strong": [[0, 1], [0.40, 1], [0.46, 1.2, "out"], [0.53, 0.95], [0.60, 1]]
+    }
+  }
+}

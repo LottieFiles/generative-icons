@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "move-tool",
+  "label": "Move tool",
+  "intent": "The handle shows it moves every way. Light: each arm of the cross shoots out along its own direction in turn, clockwise from the top, its shaft stretching with it, and snaps back with a small rebound, so the push runs round the four directions. Strong: the whole cross gathers in first, then the arms shoot out farther in the same clockwise run, rebound and settle in two beats.",
+  "parts": {
+    "head-right": {"shape": {"polyline": [[22.2, 12.7], [25.5, 16], [22.2, 19.3]]}},
+    "head-left": {"shape": {"polyline": [[9.8, 12.7], [6.5, 16], [9.8, 19.3]]}},
+    "head-down": {"shape": {"polyline": [[12.7, 22.2], [16, 25.5], [19.3, 22.2]]}},
+    "head-up": {"shape": {"polyline": [[12.7, 9.8], [16, 6.5], [19.3, 9.8]]}},
+    "shaft-up": {"//": "v1's two bars, each cut at the centre into two shafts (round caps: the same drawing)", "shape": {"line": [[16, 16], [16, 6.5]]}},
+    "shaft-down": {"shape": {"line": [[16, 16], [16, 25.5]]}},
+    "shaft-left": {"shape": {"line": [[16, 16], [6.5, 16]]}},
+    "shaft-right": {"shape": {"line": [[16, 16], [25.5, 16]]}}
+  },
+  "rigs": {
+    "arm-up": {"//": "each arm scales from the centre, so its shaft stretches with its head", "pivot": [16, 16], "carries": ["shaft-up", "head-up"]},
+    "arm-right": {"pivot": [16, 16], "carries": ["shaft-right", "head-right"]},
+    "arm-down": {"pivot": [16, 16], "carries": ["shaft-down", "head-down"]},
+    "arm-left": {"pivot": [16, 16], "carries": ["shaft-left", "head-left"]}
+  },
+  "motion": {
+    "arm-up.scale": {
+      "light": [[0, 1], [0.1, 1.22, "out"], [0.17, 0.95], [0.24, 1]],
+      "strong": [[0, 1], [0.08, 0.88, "out"], [0.17, 1.32, "out"], [0.25, 0.93], [0.33, 1.03], [0.41, 1]]
+    },
+    "arm-right.scale": {"follow": "arm-up.scale", "lag": 0.06},
+    "arm-down.scale": {"follow": "arm-up.scale", "lag": 0.12},
+    "arm-left.scale": {"follow": "arm-up.scale", "lag": 0.18}
+  }
+}

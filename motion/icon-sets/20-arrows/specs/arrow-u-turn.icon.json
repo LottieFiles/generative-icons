@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "arrow-u-turn",
+  "label": "U-turn",
+  "intent": "The U-turn is taken. Light: the outlet and head launch back down out of the bend, accelerating, and fade before the edge; a fresh outlet slides out of the bend, lands just past its rest pose and settles. Strong: it winds back into the bend first, launches farther with a speed trail that retracts behind it, and the fresh outlet lands with a bigger overshoot and settles in two beats. The stem and bend never move.",
+  "parts": {
+    "stem-arc": {"shape": {"path": "M22 25 L22 13 C22 9.686 19.314 7 16 7 C12.686 7 10 9.686 10 13"}},
+    "trail": {
+      "//": "hidden at rest: a speed streak along the outlet's rest line, retracting toward the exit",
+      "shape": {"line": [[10, 23], [10, 13]]},
+      "hidden": true
+    },
+    "arrow": {
+      "//": "v1 outlet + head; Solid is the union of v1's outlet capsule and filled head",
+      "shape": [{"line": [[10, 13], [10, 23]]}, {"polyline": [[14.5, 18.5], [10, 23], [5.5, 18.5]]}],
+      "solid": {
+        "path": "M10.707 22.293 C10.236 22.764 9.764 22.764 9.293 22.293 L5.519 18.519 C4.906 17.906 4.815 17.385 5.244 16.956 L5.796 16.404 C6.225 15.975 6.746 16.066 7.359 16.679 L8.7 18.02 L8.7 13 C8.7 12.282 9.282 11.7 10 11.7 C10.718 11.7 11.3 12.282 11.3 13 L11.3 18.02 L12.641 16.679 C13.254 16.066 13.775 15.975 14.204 16.404 L14.756 16.956 C15.185 17.385 15.094 17.906 14.481 18.519 L10.707 22.293 Z"
+      }
+    }
+  },
+  "motion": {
+    "arrow.y": {
+      "light": [[0, 0], [0.15, 4.2, [0.33, 0, 0.67, 0.33]], [0.16, -2.6, "step"], [0.33, 0.5, "out"], [0.43, 0]],
+      "strong": [
+        [0, 0],
+        [0.09, -1.1, "inOut"],
+        [0.215, 5, [0.33, 0, 0.67, 0.33]],
+        [0.23, -3, "step"],
+        [0.4, 0.9, "out"],
+        [0.49, -0.27],
+        [0.58, 0]
+      ]
+    },
+    "arrow.opacity": {
+      "light": [[0, 1], [0.06, 1], [0.15, 0.1, "in"], [0.16, 0.1], [0.27, 1, "out"]],
+      "strong": [[0, 1], [0.15, 1], [0.215, 0.1, "in"], [0.23, 0.1], [0.34, 1, "out"]]
+    },
+    "trail.opacity": {"strong": [[0, 0], [0.145, 0.6, "step"], [0.2, 0.6], [0.23, 0, "in"]]},
+    "trail.draw": {"strong": [[0, 1], [0.18, 1], [0.23, 0.2, "in"], [0.25, 1, "step"]]}
+  }
+}

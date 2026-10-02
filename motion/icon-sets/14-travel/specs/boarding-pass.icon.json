@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "boarding-pass",
+  "label": "Boarding pass",
+  "intent": "The pass is scanned at the gate. Light: a scan beam appears at the left end of the pass, sweeps across it to the right and fades; the pass is accepted: it hops once and lands with a small bounce. Strong: the beam sweeps across and back, a double read, and the pass hops higher and lands with two decaying bounces. The pass stays rigid with all its print.",
+  "parts": {
+    "ticket":   {"shape": {"path": "M8 10 L18 10 C18 10.828 18.672 11.5 19.5 11.5 C20.328 11.5 21 10.828 21 10 L24 10 C24.828 10 25.5 10.672 25.5 11.5 L25.5 20.5 C25.5 21.328 24.828 22 24 22 L21 22 C21 21.172 20.328 20.5 19.5 20.5 C18.672 20.5 18 21.172 18 22 L8 22 C7.172 22 6.5 21.328 6.5 20.5 L6.5 11.5 C6.5 10.672 7.172 10 8 10 Z"},
+                 "role": "surface",
+                 "knockout": [{"part": "line-one", "gap": 0}, {"part": "line-two", "gap": 0}, {"part": "beam", "gap": 0.5}]},
+    "line-one": {"shape": {"line": [[10, 13.5], [14.5, 13.5]]}, "solid": {"rect": [8.9, 12.4, 6.7, 2.2], "r": 1.1}},
+    "line-two": {"shape": {"line": [[10, 18.5], [14.5, 18.5]]}, "solid": {"rect": [8.9, 17.4, 6.7, 2.2], "r": 1.1}},
+    "beam":     {"//": "hidden at rest: the scanner's line exists only while it reads the pass; in Solid it is a slit through the pass",
+                 "shape": {"line": [[9, 8], [9, 24]]}, "hidden": true}
+  },
+  "rigs": {
+    "pass": {"pivot": [16, 16], "carries": ["ticket", "line-one", "line-two"]}
+  },
+  "motion": {
+    "beam.x": {
+      "light":  [[0, 0], [0.26, 14, "inOut"], [0.28, 0, "step"]],
+      "strong": [[0, 0], [0.22, 14, "inOut"], [0.42, 1, "inOut"], [0.44, 0, "step"]]
+    },
+    "beam.opacity": {
+      "light":  [[0, 0], [0.04, 1, "out"], [0.21, 1], [0.27, 0, "in"]],
+      "strong": [[0, 0], [0.04, 1, "out"], [0.37, 1], [0.43, 0, "in"]]
+    },
+    "pass.y": {
+      "light":  [[0, 0], [0.26, 0], [0.33, -1.4, "out"], [0.41, 0, "hit"], {"bounce": 0.48, "amp": 0.15}],
+      "strong": [[0, 0], [0.42, 0], [0.5, -2, "out"], [0.59, 0, "hit"], {"bounce": 0.67, "amp": 0.22}, {"bounce": 0.74, "amp": 0.35}]
+    }
+  }
+}

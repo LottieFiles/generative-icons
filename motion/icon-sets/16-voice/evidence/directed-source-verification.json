@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 10,
   "actions": 28,
-  "nativeTransformNodes": 126,
+  "nativeTransformNodes": 64,
   "nativeTransformMaxCoordinateError": 0.000006000000002615025,
   "checks": [
     {
@@ -362,48 +362,6 @@
       ]
     },
     {
-      "name": "switch-voice",
-      "fixedParts": [
-        "switch-voice-body-a",
-        "switch-voice-body-b"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "switch-voice-body-a"
-        },
-        {
-          "type": "fixed",
-          "part": "switch-voice-body-b"
-        }
-      ]
-    },
-    {
-      "name": "switch-voice-strong",
-      "fixedParts": [
-        "switch-voice-body-a",
-        "switch-voice-body-b"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "switch-voice-body-a"
-        },
-        {
-          "type": "fixed",
-          "part": "switch-voice-body-b"
-        }
-      ]
-    },
-    {
       "name": "voice-isolation",
       "fixedParts": [
         "voice-isolation-voice-l",
@@ -452,38 +410,6 @@
         {
           "type": "fixed",
           "part": "voice-isolation-voice-r"
-        }
-      ]
-    },
-    {
-      "name": "voice-speed",
-      "fixedParts": [
-        "voice-speed-tick-1"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "voice-speed-tick-1"
-        }
-      ]
-    },
-    {
-      "name": "voice-speed-strong",
-      "fixedParts": [
-        "voice-speed-tick-1"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "voice-speed-tick-1"
         }
       ]
     }
@@ -538,6 +464,28 @@
       "actions": [
         "wake-word",
         "wake-word-strong"
+      ]
+    },
+    {
+      "icon": "switch-voice",
+      "spec": "specs/switch-voice.icon.json",
+      "specSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+      "actions": [
+        "switch-voice",
+        "switch-voice-reverse",
+        "switch-voice-strong",
+        "switch-voice-reverse-strong"
+      ]
+    },
+    {
+      "icon": "voice-speed",
+      "spec": "specs/voice-speed.icon.json",
+      "specSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+      "actions": [
+        "voice-speed",
+        "voice-speed-reverse",
+        "voice-speed-strong",
+        "voice-speed-reverse-strong"
       ]
     }
   ]

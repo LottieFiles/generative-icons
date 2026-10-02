@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "globe",
+  "label": "Globe",
+  "intent": "A flick spins the globe on its axis. Light: one flick sends the meridians sweeping left to right across the face: the left one crosses to the right, the right one runs off at the limb and a new one comes in from the left; the turn coasts a little past and settles back onto the rest pattern. Strong: a harder spin that turns two meridian spacings, picking up speed through the first and coasting past and settling after the second. The sphere outline, the equator, the stand and the foot never move.",
+  "parts": {
+    "sphere":   {"shape": {"circle": [[16, 14.5], 9.3]}, "role": "surface", "solid": "ring"},
+    "equator":  {"shape": {"line": [[6.7, 14.5], [25.3, 14.5]]}},
+    "mer-l":    {"//": "the left half of the v1 meridian; it crosses to the right half's place as the globe turns one spacing",
+                 "shape": {"morph": [{"path": "M16 5.2 C13.68 5.2 11.8 9.36 11.8 14.5 C11.8 19.64 13.68 23.8 16 23.8"},
+                                     {"path": "M16 5.2 C18.835 5.2 21.133 9.36 21.133 14.5 C21.133 19.64 18.835 23.8 16 23.8"}], "by": "spin"}},
+    "mer-r":    {"//": "the right half of the v1 meridian; it runs off at the right limb and fades there",
+                 "shape": {"morph": [{"path": "M16 5.2 C18.32 5.2 20.2 9.36 20.2 14.5 C20.2 19.64 18.32 23.8 16 23.8"},
+                                     {"path": "M16 5.2 C21.37 5.2 25.722 9.36 25.722 14.5 C25.722 19.64 21.37 23.8 16 23.8"}], "by": "spin"}},
+    "mer-n":    {"//": "hidden at rest: the next meridian, coming round from the left limb to the left half's place",
+                 "shape": {"morph": [{"path": "M16 5.2 C10.863 5.2 6.7 9.36 6.7 14.5 C6.7 19.64 10.863 23.8 16 23.8"},
+                                     {"path": "M16 5.2 C13.993 5.2 12.367 9.36 12.367 14.5 C12.367 19.64 13.993 23.8 16 23.8"}], "by": "spin"},
+                 "hidden": true},
+    "stand":    {"shape": {"line": [[16, 23.8], [16, 27.5]]}},
+    "foot":     {"shape": {"line": [[11, 27.5], [21, 27.5]]}}
+  },
+  "motion": {
+    "//": "spin 0.9 is one meridian spacing (53.7 degrees): the pattern there equals rest, so the step back to 0 is invisible; 1 is the coast past it",
+    "spin": {
+      "light":  [[0, 0], [0.26, 1, "out"], [0.4, 0.9, "inOut"], [0.42, 0, "step"]],
+      "strong": [[0, 0], [0.17, 0.9, "in"], [0.18, 0, "step"], [0.42, 1, "out"], [0.56, 0.9, "inOut"], [0.58, 0, "step"]]
+    },
+    "mer-n.opacity": {
+      "light":  [[0, 0], [0.05, 1, "out"], [0.42, 0, "step"]],
+      "strong": [[0, 0], [0.08, 1, "out"], [0.18, 0, "step"], [0.21, 1, "out"], [0.58, 0, "step"]]
+    },
+    "mer-r.opacity": {
+      "light":  [[0, 1], [0.08, 1], [0.15, 0, "in"], [0.42, 1, "step"]],
+      "strong": [[0, 1], [0.13, 1], [0.165, 0, "in"], [0.18, 1, "step"], [0.26, 1], [0.33, 0, "in"], [0.58, 1, "step"]]
+    }
+  }
+}

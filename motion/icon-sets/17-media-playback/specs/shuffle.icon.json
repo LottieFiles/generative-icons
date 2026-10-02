@@ -1,0 +1,43 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "shuffle",
+  "label": "Shuffle",
+  "intent": "The tracks are rerouted across each other. Light: both routes pull back into their start, then shoot out again along their crossing paths, the rising route first and the falling one 80 ms later; each arrowhead is knocked forward as its route arrives and settles back. Strong: the routes pull back almost to nothing, shoot out harder 100 ms apart, and the heads are knocked further with a rebound before they settle.",
+  "parts": {
+    "route-1": {"shape": {"path": "M4.5 10 L10.5 10 C13.5 10 15 12 16 16 C17 20 18.5 22 21.5 22 L25.5 22"}, "solid": "none"},
+    "route-1-solid": {
+      "//": "v1's Solid route stops short under the filled head; Solid only",
+      "shape": {"path": "M4.5 10 L10.5 10 C13.5 10 15 12 16 16 C17 20 18.5 22 21.5 22 L23.5 22"},
+      "role": "surface", "outline": "none", "tint": false, "solid": "ring"
+    },
+    "head-1": {
+      "shape": {"polyline": [[22.7, 19.2], [25.5, 22], [22.7, 24.8]]},
+      "solid": {"path": "M22 19.2 C22 18.667 22.204 18.571 22.613 18.914 L25.687 21.486 C26.096 21.829 26.096 22.171 25.687 22.514 L22.613 25.086 C22.204 25.429 22 25.333 22 24.8 L22 19.2 Z"}
+    },
+    "route-0": {"shape": {"path": "M4.5 22 L10.5 22 C13.5 22 15 20 16 16 C17 12 18.5 10 21.5 10 L25.5 10"}, "solid": "none"},
+    "route-0-solid": {
+      "shape": {"path": "M4.5 22 L10.5 22 C13.5 22 15 20 16 16 C17 12 18.5 10 21.5 10 L23.5 10"},
+      "role": "surface", "outline": "none", "tint": false, "solid": "ring"
+    },
+    "head-0": {
+      "shape": {"polyline": [[22.7, 7.2], [25.5, 10], [22.7, 12.8]]},
+      "solid": {"path": "M22 7.2 C22 6.667 22.204 6.571 22.613 6.914 L25.687 9.486 C26.096 9.829 26.096 10.171 25.687 10.514 L22.613 13.086 C22.204 13.429 22 13.333 22 12.8 L22 7.2 Z"}
+    }
+  },
+  "motion": {
+    "route-0.draw": {
+      "//": "the rising route leads",
+      "light": [[0, 1], [0.1, 0.25, "out"], [0.24, 1, "hit"]],
+      "strong": [[0, 1], [0.12, 0.1, "out"], [0.26, 1, "hit"]]
+    },
+    "route-0-solid.draw": {"follow": "route-0.draw"},
+    "route-1.draw": {"light": {"follow": "route-0.draw", "lag": 0.08}, "strong": {"follow": "route-0.draw", "lag": 0.1}},
+    "route-1-solid.draw": {"light": {"follow": "route-0.draw", "lag": 0.08}, "strong": {"follow": "route-0.draw", "lag": 0.1}},
+    "head-0.x": {
+      "light": [[0, 0], [0.24, 0], [0.3, 1.3, "out"], [0.38, -0.2], [0.44, 0]],
+      "strong": [[0, 0], [0.26, 0], [0.32, 1.8, "out"], [0.4, -0.4], [0.47, 0.15], [0.53, 0]]
+    },
+    "head-1.x": {"light": {"follow": "head-0.x", "lag": 0.08}, "strong": {"follow": "head-0.x", "lag": 0.1}}
+  }
+}

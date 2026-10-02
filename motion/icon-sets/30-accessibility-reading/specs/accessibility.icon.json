@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "accessibility",
+  "label": "Accessibility",
+  "intent": "Everyone is welcome. Light: the figure dips, springs up 1.5 inside the ring and throws both arms up into an open V, lands with a hit and the arms drop back with a small rebound; the head trails the body by a beat. Strong: a deeper dip, a higher jump with the arms flung wider, a harder landing with two decaying bounces while the arms settle. The ring never moves.",
+  "parts": {
+    "ring":      {"shape": {"circle": [[16, 16], 12.5]}, "role": "surface", "solid": "ring"},
+    "head":      {"shape": {"circle": [[16, 9.2], 1.6]}, "role": "fill"},
+    "torso":     {"shape": {"polyline": [[16, 13.2], [16, 18.6], [12.8, 23.8]]}},
+    "leg":       {"shape": {"line": [[16, 18.6], [19.2, 23.8]]}},
+    "arm-left":  {"shape": {"line": [[16, 14.4], [11, 13.6]]}},
+    "arm-right": {"mirror": {"of": "arm-left"}}
+  },
+  "rigs": {
+    "body":      {"//": "the figure below the head: it jumps; the arms ride on it", "pivot": [16, 18.6], "carries": ["torso", "leg", "arm-left", "arm-right"]},
+    "arm-left":  {"pivot": [16, 14.4]},
+    "arm-right": {"pivot": [16, 14.4]}
+  },
+  "motion": {
+    "body.y": {
+      "light":  [[0, 0], [0.07, 0.6, "out"], [0.19, -1.5, "out"], [0.31, 0, "hit"], [0.38, -0.35], [0.45, 0]],
+      "strong": [[0, 0], [0.09, 0.9, "out"], [0.23, -1.9, "out"], [0.36, 0, "hit"], [0.43, -0.6], [0.5, 0, "hit"], [0.56, -0.2], [0.62, 0]]
+    },
+    "head.y": {"follow": "body.y", "lag": 0.05},
+    "arm-left.rotate": {
+      "light":  [[0, 0], [0.07, -6, "out"], [0.21, 30, "out"], [0.31, 30], [0.39, -6], [0.48, 0]],
+      "strong": [[0, 0], [0.09, -9, "out"], [0.24, 40, "out"], [0.36, 36], [0.44, -8], [0.53, 4], [0.62, 0]]
+    },
+    "arm-right.rotate": {"follow": "arm-left.rotate", "scale": -1}
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "file-upload",
+  "label": "File upload",
+  "intent": "The file goes up. Light: the arrow sinks toward the port to load, and the port gives under it, dipping and spreading; then the arrow launches up beside the sheet, overshoots and settles 4.5 units higher, where it stays, while the port springs back. Strong: a deeper load, a harder launch that settles in two beats, and a bigger give that settles in two beats. The preview reset fades it back to the prepared arrow.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "parts": {
+    "page": {
+      "shape": {
+        "path": "M4 6.6 C4 5.533 4.533 5 5.6 5 L9.5 5 C9.833 5 10.118 5.118 10.354 5.354 L16.646 11.646 C16.882 11.882 17 12.167 17 12.5 L17 25.4 C17 26.467 16.467 27 15.4 27 L5.6 27 C4.533 27 4 26.467 4 25.4 L4 6.6 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "fold": {
+      "shape": {
+        "polyline": [
+          [
+            10,
+            5
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            17,
+            12
+          ]
+        ]
+      },
+      "solid": "none"
+    },
+    "port": {
+      "//": "the launch pad: it spreads 0.8 each way (morph) as it gives",
+      "shape": {
+        "morph": [
+          {
+            "line": [
+              [
+                21,
+                28
+              ],
+              [
+                28,
+                28
+              ]
+            ]
+          },
+          {
+            "line": [
+              [
+                20.2,
+                28
+              ],
+              [
+                28.8,
+                28
+              ]
+            ]
+          }
+        ],
+        "by": "give"
+      }
+    },
+    "shaft": {
+      "shape": {
+        "line": [
+          [
+            24.5,
+            23.5
+          ],
+          [
+            24.5,
+            16.5
+          ]
+        ]
+      }
+    },
+    "head": {
+      "shape": {
+        "polyline": [
+          [
+            21.7,
+            19.3
+          ],
+          [
+            24.5,
+            16.5
+          ],
+          [
+            27.3,
+            19.3
+          ]
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "arrow": {
+      "pivot": [
+        24.5,
+        20
+      ],
+      "carries": [
+        "shaft",
+        "head"
+      ]
+    },
+    "port": {
+      "pivot": [
+        24.5,
+        28
+      ]
+    }
+  },
+  "motion": {
+    "arrow.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0.9,
+          "out"
+        ],
+        [
+          0.21,
+          -5.3,
+          "out"
+        ],
+        [
+          0.29,
+          -4.25
+        ],
+        [
+          0.37,
+          -4.5
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          1.4,
+          "out"
+        ],
+        [
+          0.27,
+          -5.8,
+          "out"
+        ],
+        [
+          0.36,
+          -4.1
+        ],
+        [
+          0.45,
+          -4.7
+        ],
+        [
+          0.55,
+          -4.5
+        ]
+      ]
+    },
+    "port.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.1,
+          0.9,
+          "out"
+        ],
+        [
+          0.18,
+          -0.25
+        ],
+        [
+          0.26,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.14,
+          1.2,
+          "out"
+        ],
+        [
+          0.22,
+          -0.4
+        ],
+        [
+          0.29,
+          0.15
+        ],
+        [
+          0.36,
+          0
+        ]
+      ]
+    },
+    "give": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.1,
+          1,
+          "out"
+        ],
+        [
+          0.19,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.14,
+          1,
+          "out"
+        ],
+        [
+          0.22,
+          0.2
+        ],
+        [
+          0.29,
+          0.4
+        ],
+        [
+          0.37,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  }
+}

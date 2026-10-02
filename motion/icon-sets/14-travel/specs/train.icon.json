@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "train",
+  "label": "Train",
+  "intent": "The train sets off. Light: the coupling rod drives the wheels through one full turn as the train pulls forward along the rail; the carriage sits back on its springs at the start, pitches forward once and settles, and the train eases back onto its spot. Strong: the couplings take up slack first (a small jolt back), then the rod drives two turns, the pull is longer and the carriage rocks deeper with a two-beat settle. The rail never moves; the carriage, wheels and rod stay rigid.",
+  "parts": {
+    "rail":           {"shape": {"line": [[5, 27.5], [27, 27.5]]}},
+    "carriage":       {"shape": {"rect": [5.5, 6, 21, 13.5], "r": 2.5}, "role": "surface",
+                       "knockout": [{"part": "window-left", "gap": 0}, {"part": "window-right", "gap": 0}]},
+    "window-left":    {"shape": {"rect": [9, 9.5, 4.5, 5], "r": 1}, "solid": "fill"},
+    "window-right":   {"shape": {"rect": [18.5, 9.5, 4.5, 5], "r": 1}, "solid": "fill"},
+    "wheel-left":     {"shape": {"circle": [[10, 23], 3.5]}},
+    "wheel-right":    {"shape": {"circle": [[22, 23], 3.5]}},
+    "connecting-rod": {"shape": {"line": [[11, 23], [23, 23]]}}
+  },
+  "rigs": {
+    "train":          {"pivot": [16, 23], "carries": ["body", "wheel-left", "wheel-right", "connecting-rod"]},
+    "body":           {"//": "the carriage on its springs: it tips about a lower corner and never sinks into the wheels", "pivot": {"contact": [[6, 19.5], [26, 19.5]]}, "carries": ["carriage", "window-left", "window-right"]},
+    "connecting-rod": {"//": "the rod's ends ride crank pins 1 unit from each wheel centre, so it circles without turning", "pivot": [17, 23]}
+  },
+  "motion": {
+    "connecting-rod.x": {
+      "light":  [[0, 0], [0.1, -1], [0.2, -2], [0.3, -1], [0.4, 0]],
+      "strong": [[0, 0], [0.12, 0], [0.2, -1], [0.27, -2], [0.34, -1], [0.41, 0], [0.48, -1], [0.55, -2], [0.62, -1], [0.7, 0]]
+    },
+    "connecting-rod.y": {
+      "light":  [[0, 0], [0.1, 1], [0.2, 0], [0.3, -1], [0.4, 0]],
+      "strong": [[0, 0], [0.12, 0], [0.2, 1], [0.27, 0], [0.34, -1], [0.41, 0], [0.48, 1], [0.55, 0], [0.62, -1], [0.7, 0]]
+    },
+    "train.x": {
+      "light":  [[0, 0], [0.22, 1.6, "out"], [0.48, 0, "inOut"]],
+      "strong": [[0, 0], [0.07, -0.5, "out"], [0.12, -0.5], [0.36, 2.1, "out"], [0.72, 0, "inOut"]]
+    },
+    "body.rotate": {
+      "light":  [[0, 0], [0.08, -4, "out"], [0.2, 1.5], [0.3, -0.5], [0.38, 0]],
+      "strong": [[0, 0], [0.07, 1.5, "out"], [0.12, 0], [0.2, -6, "out"], [0.32, 1.5], [0.42, -1], [0.5, 0.4], [0.57, 0]]
+    }
+  }
+}

@@ -2,27 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 68,
-  "nativeTransformNodes": 342,
-  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "nativeTransformNodes": 144,
+  "nativeTransformMaxCoordinateError": 0.00001000000000139778,
   "checks": [
-    {
-      "name": "timeline",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "timeline-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
     {
       "name": "add-keyframe",
       "fixedParts": [],
@@ -60,42 +42,6 @@
       "designConstraints": []
     },
     {
-      "name": "auto-keyframe",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "auto-keyframe-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "keyframe-easing",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "keyframe-easing-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "graph-editor",
       "fixedParts": [],
       "topology": true,
@@ -114,42 +60,6 @@
       "designConstraints": []
     },
     {
-      "name": "bezier-handles",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "bezier-handles-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "motion-path",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "motion-path-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "anchor-point",
       "fixedParts": [],
       "topology": true,
@@ -160,24 +70,6 @@
     },
     {
       "name": "anchor-point-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "layer-stack",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "layer-stack-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -222,60 +114,6 @@
       "designConstraints": []
     },
     {
-      "name": "trim-layer",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "trim-layer-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "split-layer",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "split-layer-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "time-stretch",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "time-stretch-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "onion-skin",
       "fixedParts": [],
       "topology": true,
@@ -286,42 +124,6 @@
     },
     {
       "name": "onion-skin-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "shape-morph",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "shape-morph-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "mask-path",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "mask-path-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -366,5 +168,120 @@
       "designConstraints": []
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "timeline",
+      "spec": "specs/timeline.icon.json",
+      "specSha256": "e7f12d32072f57647b07eb014045b939c6cbf4162e056819a0f7199bc0862d90",
+      "actions": [
+        "timeline",
+        "timeline-reset",
+        "timeline-strong",
+        "timeline-reset-strong"
+      ]
+    },
+    {
+      "icon": "auto-keyframe",
+      "spec": "specs/auto-keyframe.icon.json",
+      "specSha256": "80c3ed1a43ae4f7c2e99fee9f4b90b2350c49933689eea8b93361a60cac19f94",
+      "actions": [
+        "auto-keyframe",
+        "auto-keyframe-strong"
+      ]
+    },
+    {
+      "icon": "keyframe-easing",
+      "spec": "specs/keyframe-easing.icon.json",
+      "specSha256": "efe8e9733b44dec055c96ba4abe7cb8510519f21252a54551bc521c27a43e508",
+      "actions": [
+        "keyframe-easing",
+        "keyframe-easing-reverse",
+        "keyframe-easing-strong",
+        "keyframe-easing-reverse-strong"
+      ]
+    },
+    {
+      "icon": "bezier-handles",
+      "spec": "specs/bezier-handles.icon.json",
+      "specSha256": "d4fa477bdfb4041c80b3b6ffc7faa209b2668fb09406a81e1f55acc525c8adfb",
+      "actions": [
+        "bezier-handles",
+        "bezier-handles-strong"
+      ]
+    },
+    {
+      "icon": "motion-path",
+      "spec": "specs/motion-path.icon.json",
+      "specSha256": "dcf814a48b050c35ef884a97241bd2a6773ae1fe968e70234acb81deb7229fb0",
+      "actions": [
+        "motion-path",
+        "motion-path-reset",
+        "motion-path-strong",
+        "motion-path-reset-strong"
+      ]
+    },
+    {
+      "icon": "layer-stack",
+      "spec": "specs/layer-stack.icon.json",
+      "specSha256": "833b8e19e5705464bdcc3c666bd89578e792a3a2871fb3726ddfc9379425b7e7",
+      "actions": [
+        "layer-stack",
+        "layer-stack-strong"
+      ]
+    },
+    {
+      "icon": "trim-layer",
+      "spec": "specs/trim-layer.icon.json",
+      "specSha256": "b817656657fa60bf6f46e123d267854130a586778091579326222a507e47f0bc",
+      "actions": [
+        "trim-layer",
+        "trim-layer-reset",
+        "trim-layer-strong",
+        "trim-layer-reset-strong"
+      ]
+    },
+    {
+      "icon": "split-layer",
+      "spec": "specs/split-layer.icon.json",
+      "specSha256": "306201aa84604e33457d30298e557d1add771b5e4b43a7f33e9425ebc63f9a25",
+      "actions": [
+        "split-layer",
+        "split-layer-reset",
+        "split-layer-strong",
+        "split-layer-reset-strong"
+      ]
+    },
+    {
+      "icon": "time-stretch",
+      "spec": "specs/time-stretch.icon.json",
+      "specSha256": "bab9cdd0a3ec7d5af7f1d7551aa33207c66760544e4568cf509790b14d15443b",
+      "actions": [
+        "time-stretch",
+        "time-stretch-reset",
+        "time-stretch-strong",
+        "time-stretch-reset-strong"
+      ]
+    },
+    {
+      "icon": "shape-morph",
+      "spec": "specs/shape-morph.icon.json",
+      "specSha256": "8f6eb26885559e8a92e43df86a318cc39a08dca76d308c0b469352d3077ab0c0",
+      "actions": [
+        "shape-morph",
+        "shape-morph-reset",
+        "shape-morph-strong",
+        "shape-morph-reset-strong"
+      ]
+    },
+    {
+      "icon": "mask-path",
+      "spec": "specs/mask-path.icon.json",
+      "specSha256": "6eed8bf5dc1b1b2be62d1e8bf2830b7250f89c059fcc6dcc5750ba3f0e62c926",
+      "actions": [
+        "mask-path",
+        "mask-path-strong"
+      ]
+    }
+  ]
 }

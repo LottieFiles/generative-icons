@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "motion-path",
+  "label": "Motion path",
+  "intent": "A position marker travels its motion path from the first keyframe to the last and lands on it. Light: the marker leaves the start key, runs the actual cubic route (keyed along its arc length), brakes a little past the end key along the route's tangent and settles back onto it; the end key pulses as the marker reaches it. Strong: the marker first backs off the start key, then crosses the route decisively, brakes farther past the end key, undershoots and settles; the end key pulses harder. The route and keys never move; the preview reset fades it back.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "route": {"shape": {"path": "M6 24 C6 8 26 26 26 8"}},
+    "start": {"shape": {"path": "M5.717 21.879 C5.906 21.69 6.094 21.69 6.283 21.879 L8.121 23.717 C8.31 23.906 8.31 24.094 8.121 24.283 L6.283 26.121 C6.094 26.31 5.906 26.31 5.717 26.121 L3.879 24.283 C3.69 24.094 3.69 23.906 3.879 23.717 L5.717 21.879 Z"}, "role": "fill",
+              "solid": {"path": "M5.717 21.454 C5.906 21.266 6.094 21.266 6.283 21.454 L8.546 23.717 C8.734 23.906 8.734 24.094 8.546 24.283 L6.283 26.546 C6.094 26.734 5.906 26.734 5.717 26.546 L3.454 24.283 C3.266 24.094 3.266 23.906 3.454 23.717 L5.717 21.454 Z"}},
+    "end": {"shape": {"path": "M25.717 5.879 C25.906 5.69 26.094 5.69 26.283 5.879 L28.121 7.717 C28.31 7.906 28.31 8.094 28.121 8.283 L26.283 10.121 C26.094 10.31 25.906 10.31 25.717 10.121 L23.879 8.283 C23.69 8.094 23.69 7.906 23.879 7.717 L25.717 5.879 Z"}, "role": "fill",
+            "solid": {"path": "M25.717 5.454 C25.906 5.266 26.094 5.266 26.283 5.454 L28.546 7.717 C28.734 7.906 28.734 8.094 28.546 8.283 L26.283 10.546 C26.094 10.734 25.906 10.734 25.717 10.546 L23.454 8.283 C23.266 8.094 23.266 7.906 23.454 7.717 L25.717 5.454 Z"}},
+    "traveler": {"shape": {"circle": [[6, 24], 2.1]}, "role": "fill", "solid": {"circle": [[6, 24], 2.5]}}
+  },
+  "rigs": {
+    "end": {"//": "pulses about its centre as the marker arrives", "pivot": [26, 8]}
+  },
+  "motion": {
+    "traveler.x": {
+      "//": "sampled along the route's arc length every frame (tools/mpath.py); past the end it runs on up the end tangent, which is vertical, so x holds",
+      "light":  [[0.0, 0], [0.0333, 0.016, "linear"], [0.05, 0.084, "linear"], [0.0667, 0.275, "linear"], [0.0833, 0.719, "linear"], [0.1, 1.625, "linear"], [0.1167, 3.135, "linear"], [0.1333, 5.067, "linear"], [0.15, 7.176, "linear"], [0.1667, 9.357, "linear"], [0.1833, 11.568, "linear"], [0.2, 13.771, "linear"], [0.2167, 15.879, "linear"], [0.2333, 17.668, "linear"], [0.25, 18.873, "linear"], [0.2667, 19.53, "linear"], [0.2833, 19.844, "linear"], [0.3, 19.97, "linear"], [0.3167, 20, "linear"]],
+      "strong": [[0.0, 0], [0.15, 0, "linear"], [0.1667, 0.014, "linear"], [0.1833, 0.194, "linear"], [0.2, 1.052, "linear"], [0.2167, 3.887, "linear"], [0.2333, 8.676, "linear"], [0.25, 14.338, "linear"], [0.2667, 18.293, "linear"], [0.2833, 19.664, "linear"], [0.3, 19.97, "linear"], [0.3167, 20, "linear"]]
+    },
+    "traveler.y": {
+      "light":  [[0.0, 0.0], [0.0167, -0.199, "linear"], [0.0333, -0.77, "linear"], [0.05, -1.673, "linear"], [0.0667, -2.859, "linear"], [0.1, -5.654, "linear"], [0.1167, -6.723, "linear"], [0.1333, -7.244, "linear"], [0.15, -7.36, "linear"], [0.1833, -7.19, "linear"], [0.2, -7.255, "linear"], [0.2167, -7.697, "linear"], [0.2333, -8.725, "linear"], [0.25, -10.251, "linear"], [0.2667, -11.917, "linear"], [0.2833, -13.481, "linear"], [0.3, -14.837, "linear"], [0.3167, -15.924, "linear"], [0.3333, -16.701, "linear"], [0.35, -17.128, "linear"], [0.3667, -17.185, "linear"], [0.3833, -17.034, "linear"], [0.4, -16.778, "linear"], [0.4167, -16.481, "linear"], [0.4333, -16.21, "linear"], [0.45, -16.034, "linear"], [0.4667, -16, "linear"]],
+      "strong": [[0.0, 0.0], [0.0167, 0.081, "linear"], [0.0333, 0.285, "linear"], [0.0667, 0.815, "linear"], [0.0833, 1.019, "linear"], [0.1, 1.1, "linear"], [0.1167, 1.071, "linear"], [0.1333, 0.872, "linear"], [0.15, 0.33, "linear"], [0.1667, -0.725, "linear"], [0.1833, -2.455, "linear"], [0.2, -4.889, "linear"], [0.2167, -6.998, "linear"], [0.2333, -7.316, "linear"], [0.25, -7.325, "linear"], [0.2667, -9.376, "linear"], [0.2833, -12.458, "linear"], [0.3, -14.846, "linear"], [0.3167, -16.435, "linear"], [0.3333, -17.374, "linear"], [0.35, -17.834, "linear"], [0.3667, -17.985, "linear"], [0.3833, -17.992, "linear"], [0.4, -17.74, "linear"], [0.4167, -17.238, "linear"], [0.4333, -16.625, "linear"], [0.45, -16.04, "linear"], [0.4667, -15.621, "linear"], [0.4833, -15.503, "linear"], [0.5, -15.602, "linear"], [0.5333, -15.981, "linear"], [0.55, -16.122, "linear"], [0.5667, -16.145, "linear"], [0.6, -16.039, "linear"], [0.6167, -16, "linear"]]
+    },
+    "end.scale": {
+      "light":  [[0, 1], [0.33, 1], [0.39, 1.35, "out"], [0.5, 1]],
+      "strong": [[0, 1], [0.31, 1], [0.37, 1.45, "out"], [0.46, 0.95], [0.54, 1]]
+    }
+  }
+}

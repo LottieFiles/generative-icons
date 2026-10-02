@@ -4091,40 +4091,35 @@
       "name": "switch-voice",
       "icon": "switch-voice",
       "motionId": "light",
-      "revision": "voice-claude-reviewed-v1",
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
-      "startState": "Voice A",
-      "endState": "Voice B",
+      "startState": "voice-a",
+      "endState": "voice-b",
       "heading": "Switch voice",
-      "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+      "description": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
       "label": "Switch voice",
-      "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+      "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.45,
-      "rest": 30,
+      "active": 0.53,
+      "rest": 35,
       "keyPoses": [
         0,
-        0.09000000000000001,
-        0.18000000000000002,
-        0.27,
-        0.36000000000000004,
-        0.45
+        0.10600000000000001,
+        0.21200000000000002,
+        0.318,
+        0.42400000000000004,
+        0.53
       ],
-      "layers": 22,
+      "layers": 35,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -4134,30 +4129,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "c4d00c03c1a5c1d8b657e5c624afcaeef331fc52fcd960e32306a111e02b2836",
-      "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-      "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-      "authoringSources": {
-        "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-        "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-        "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-        "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-        "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-        "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-      },
-      "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "switch-voice-body-a"
-        },
-        {
-          "type": "fixed",
-          "part": "switch-voice-body-b"
-        }
-      ],
+      "nativeSha256": "a97524dfcd14510fce73d052205e24855caf490049ccbbcfd51f4d675cd10d04",
+      "sourceSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+      "planSha256": "445c4909e49e4d8fb3fb1dbc635a741b38ab6aec19a1287a40316e79bca3b33e",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+      "constraints": [],
       "category": "Voice",
-      "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+      "definitionsSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -4179,99 +4158,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "switch-voice-reverse",
-        "icon": "switch-voice",
-        "motionId": "light",
-        "revision": "voice-claude-reviewed-v1",
-        "continuous": false,
-        "previewReset": false,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-          "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "Voice B",
-        "endState": "Voice A",
-        "heading": "Switch voice",
-        "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-        "label": "Switch voice",
-        "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.45,
-        "rest": 30,
-        "keyPoses": [
-          0,
-          0.09000000000000001,
-          0.18000000000000002,
-          0.27,
-          0.36000000000000004,
-          0.45
-        ],
-        "layers": 22,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "e5c67663ffa5bad4e315073c75a0508e0a777baee8c45d845ef78dd3e297267a",
-        "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-        "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-        "authoringSources": {
-          "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-          "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-          "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-          "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-          "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-          "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-        },
-        "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "switch-voice-body-a"
-          },
-          {
-            "type": "fixed",
-            "part": "switch-voice-body-b"
-          }
-        ],
-        "category": "Voice",
-        "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "number": 247,
       "forwardLabel": "Voice B",
       "reverseLabel": "Voice A",
@@ -4280,40 +4166,35 @@
           "name": "switch-voice",
           "icon": "switch-voice",
           "motionId": "light",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
-          "startState": "Voice A",
-          "endState": "Voice B",
+          "startState": "voice-a",
+          "endState": "voice-b",
           "heading": "Switch voice",
-          "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "description": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "label": "Switch voice",
-          "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.45,
-          "rest": 30,
+          "active": 0.53,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.09000000000000001,
-            0.18000000000000002,
-            0.27,
-            0.36000000000000004,
-            0.45
+            0.10600000000000001,
+            0.21200000000000002,
+            0.318,
+            0.42400000000000004,
+            0.53
           ],
-          "layers": 22,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4323,30 +4204,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c4d00c03c1a5c1d8b657e5c624afcaeef331fc52fcd960e32306a111e02b2836",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-a"
-            },
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-b"
-            }
-          ],
+          "nativeSha256": "a97524dfcd14510fce73d052205e24855caf490049ccbbcfd51f4d675cd10d04",
+          "sourceSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+          "planSha256": "445c4909e49e4d8fb3fb1dbc635a741b38ab6aec19a1287a40316e79bca3b33e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4372,40 +4237,35 @@
             "name": "switch-voice-reverse",
             "icon": "switch-voice",
             "motionId": "light",
-            "revision": "voice-claude-reviewed-v1",
             "continuous": false,
             "previewReset": false,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
-            "startState": "Voice B",
-            "endState": "Voice A",
+            "startState": "voice-b",
+            "endState": "voice-a",
             "heading": "Switch voice",
-            "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+            "description": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
             "label": "Switch voice",
-            "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+            "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.45,
-            "rest": 30,
+            "active": 0.53,
+            "rest": 35,
             "keyPoses": [
               0,
-              0.09000000000000001,
-              0.18000000000000002,
-              0.27,
-              0.36000000000000004,
-              0.45
+              0.10600000000000001,
+              0.21200000000000002,
+              0.318,
+              0.42400000000000004,
+              0.53
             ],
-            "layers": 22,
+            "layers": 35,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -4415,30 +4275,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "e5c67663ffa5bad4e315073c75a0508e0a777baee8c45d845ef78dd3e297267a",
-            "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-            "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-            "authoringSources": {
-              "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-              "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-              "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-              "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-              "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-              "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-            },
-            "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "switch-voice-body-a"
-              },
-              {
-                "type": "fixed",
-                "part": "switch-voice-body-b"
-              }
-            ],
+            "nativeSha256": "e00aa79ea48651430beb18551bf1d60663656d14398408ccefbcf82784538708",
+            "sourceSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+            "planSha256": "445c4909e49e4d8fb3fb1dbc635a741b38ab6aec19a1287a40316e79bca3b33e",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+            "constraints": [],
             "category": "Voice",
-            "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+            "definitionsSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -4460,50 +4304,45 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 7763,
-            "sha256": "4ed181886bc5dd8ffc63714b4d661abc7b7804d4e23131b9411e99167becff3b"
+            "bytes": 8602,
+            "sha256": "bf760c55e68ca70a0b28f6f711ef0f942bbb7fa2af0878ca5a89eb807b281513"
           },
-          "bytes": 7761,
-          "sha256": "fa22f07c7b7185d0171bf6237ed097f022fb85ddd5cfeb993d88693f0791c92c"
+          "bytes": 8600,
+          "sha256": "fe20473871cb4b3fc356a0953d655eb3d89ac890280563b43ffc3f370ab63f31"
         },
         {
           "name": "switch-voice-strong",
           "icon": "switch-voice",
           "motionId": "strong",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
-          "startState": "Voice A",
-          "endState": "Voice B",
+          "startState": "voice-a",
+          "endState": "voice-b",
           "heading": "Switch voice",
-          "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "description": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "label": "Switch voice",
-          "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.74,
+          "rest": 47,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.148,
+            0.296,
+            0.444,
+            0.592,
+            0.74
           ],
-          "layers": 22,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4513,30 +4352,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7fff59b932ac7872d1200fe1aca6515dfa8bc9c263892aacdd3d581d901a025e",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-a"
-            },
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-b"
-            }
-          ],
+          "nativeSha256": "069df3ec5bd33a97b3fee05bb9e1f38b3296dee48e4847804b0838b0019ffc26",
+          "sourceSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+          "planSha256": "445c4909e49e4d8fb3fb1dbc635a741b38ab6aec19a1287a40316e79bca3b33e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4562,40 +4385,35 @@
             "name": "switch-voice-reverse-strong",
             "icon": "switch-voice",
             "motionId": "strong",
-            "revision": "voice-claude-reviewed-v1",
             "continuous": false,
             "previewReset": false,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
-            "startState": "Voice B",
-            "endState": "Voice A",
+            "startState": "voice-b",
+            "endState": "voice-a",
             "heading": "Switch voice",
-            "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+            "description": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
             "label": "Switch voice",
-            "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+            "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.8,
-            "rest": 51,
+            "active": 0.74,
+            "rest": 47,
             "keyPoses": [
               0,
-              0.16000000000000003,
-              0.32000000000000006,
-              0.48,
-              0.6400000000000001,
-              0.8
+              0.148,
+              0.296,
+              0.444,
+              0.592,
+              0.74
             ],
-            "layers": 22,
+            "layers": 35,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -4605,30 +4423,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "5502ec97622ea05b4732f51c53e79bb601b3428fae4f6040d3bca683926d1183",
-            "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-            "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-            "authoringSources": {
-              "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-              "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-              "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-              "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-              "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-              "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-            },
-            "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "switch-voice-body-a"
-              },
-              {
-                "type": "fixed",
-                "part": "switch-voice-body-b"
-              }
-            ],
+            "nativeSha256": "8586739428ed8be6df44c6fc6e10ece3350710f36de26497a3809cb76d7e6f6e",
+            "sourceSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+            "planSha256": "445c4909e49e4d8fb3fb1dbc635a741b38ab6aec19a1287a40316e79bca3b33e",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+            "constraints": [],
             "category": "Voice",
-            "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+            "definitionsSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -4650,11 +4452,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 7767,
-            "sha256": "c7fa1978f17450bca4f5f38d261dc1ba1c35acc60c431997976a142c60ce422a"
+            "bytes": 8606,
+            "sha256": "c2919c1a7be95604eb8c4a403c4b52e0c3109fd8bfdcb9120214cae6d85d3a6a"
           },
-          "bytes": 7764,
-          "sha256": "5a75ac65001ccae4d94b0722f1e0186b6e4e5b36f0b165c8ec731b138166c85b"
+          "bytes": 8603,
+          "sha256": "5d96660b19c6478c4a6d927fbb6387db7dabe9e4e327b43a376112292ed35fa9"
         }
       ],
       "animations": [
@@ -4662,40 +4464,35 @@
           "name": "switch-voice",
           "icon": "switch-voice",
           "motionId": "light",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
-          "startState": "Voice A",
-          "endState": "Voice B",
+          "startState": "voice-a",
+          "endState": "voice-b",
           "heading": "Switch voice",
-          "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "description": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "label": "Switch voice",
-          "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.45,
-          "rest": 30,
+          "active": 0.53,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.09000000000000001,
-            0.18000000000000002,
-            0.27,
-            0.36000000000000004,
-            0.45
+            0.10600000000000001,
+            0.21200000000000002,
+            0.318,
+            0.42400000000000004,
+            0.53
           ],
-          "layers": 22,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4705,30 +4502,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c4d00c03c1a5c1d8b657e5c624afcaeef331fc52fcd960e32306a111e02b2836",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-a"
-            },
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-b"
-            }
-          ],
+          "nativeSha256": "a97524dfcd14510fce73d052205e24855caf490049ccbbcfd51f4d675cd10d04",
+          "sourceSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+          "planSha256": "445c4909e49e4d8fb3fb1dbc635a741b38ab6aec19a1287a40316e79bca3b33e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4750,47 +4531,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7761,
-          "sha256": "fa22f07c7b7185d0171bf6237ed097f022fb85ddd5cfeb993d88693f0791c92c"
+          "bytes": 8600,
+          "sha256": "fe20473871cb4b3fc356a0953d655eb3d89ac890280563b43ffc3f370ab63f31"
         },
         {
           "name": "switch-voice-reverse",
           "icon": "switch-voice",
           "motionId": "light",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
-          "startState": "Voice B",
-          "endState": "Voice A",
+          "startState": "voice-b",
+          "endState": "voice-a",
           "heading": "Switch voice",
-          "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "description": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "label": "Switch voice",
-          "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.45,
-          "rest": 30,
+          "active": 0.53,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.09000000000000001,
-            0.18000000000000002,
-            0.27,
-            0.36000000000000004,
-            0.45
+            0.10600000000000001,
+            0.21200000000000002,
+            0.318,
+            0.42400000000000004,
+            0.53
           ],
-          "layers": 22,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4800,30 +4576,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "e5c67663ffa5bad4e315073c75a0508e0a777baee8c45d845ef78dd3e297267a",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-a"
-            },
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-b"
-            }
-          ],
+          "nativeSha256": "e00aa79ea48651430beb18551bf1d60663656d14398408ccefbcf82784538708",
+          "sourceSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+          "planSha256": "445c4909e49e4d8fb3fb1dbc635a741b38ab6aec19a1287a40316e79bca3b33e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4845,47 +4605,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7763,
-          "sha256": "4ed181886bc5dd8ffc63714b4d661abc7b7804d4e23131b9411e99167becff3b"
+          "bytes": 8602,
+          "sha256": "bf760c55e68ca70a0b28f6f711ef0f942bbb7fa2af0878ca5a89eb807b281513"
         },
         {
           "name": "switch-voice-strong",
           "icon": "switch-voice",
           "motionId": "strong",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
-          "startState": "Voice A",
-          "endState": "Voice B",
+          "startState": "voice-a",
+          "endState": "voice-b",
           "heading": "Switch voice",
-          "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "description": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "label": "Switch voice",
-          "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.74,
+          "rest": 47,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.148,
+            0.296,
+            0.444,
+            0.592,
+            0.74
           ],
-          "layers": 22,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4895,30 +4650,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7fff59b932ac7872d1200fe1aca6515dfa8bc9c263892aacdd3d581d901a025e",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-a"
-            },
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-b"
-            }
-          ],
+          "nativeSha256": "069df3ec5bd33a97b3fee05bb9e1f38b3296dee48e4847804b0838b0019ffc26",
+          "sourceSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+          "planSha256": "445c4909e49e4d8fb3fb1dbc635a741b38ab6aec19a1287a40316e79bca3b33e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4940,47 +4679,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7764,
-          "sha256": "5a75ac65001ccae4d94b0722f1e0186b6e4e5b36f0b165c8ec731b138166c85b"
+          "bytes": 8603,
+          "sha256": "5d96660b19c6478c4a6d927fbb6387db7dabe9e4e327b43a376112292ed35fa9"
         },
         {
           "name": "switch-voice-reverse-strong",
           "icon": "switch-voice",
           "motionId": "strong",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
-          "startState": "Voice B",
-          "endState": "Voice A",
+          "startState": "voice-b",
+          "endState": "voice-a",
           "heading": "Switch voice",
-          "description": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "description": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "label": "Switch voice",
-          "intent": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
+          "intent": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.8,
-          "rest": 51,
+          "active": 0.74,
+          "rest": 47,
           "keyPoses": [
             0,
-            0.16000000000000003,
-            0.32000000000000006,
-            0.48,
-            0.6400000000000001,
-            0.8
+            0.148,
+            0.296,
+            0.444,
+            0.592,
+            0.74
           ],
-          "layers": 22,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4990,30 +4724,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5502ec97622ea05b4732f51c53e79bb601b3428fae4f6040d3bca683926d1183",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "The voice marker transfers from one speaker to the other and stays there. Strong has a prepared leap and a brief receiving nod.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-a"
-            },
-            {
-              "type": "fixed",
-              "part": "switch-voice-body-b"
-            }
-          ],
+          "nativeSha256": "8586739428ed8be6df44c6fc6e10ece3350710f36de26497a3809cb76d7e6f6e",
+          "sourceSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
+          "planSha256": "445c4909e49e4d8fb3fb1dbc635a741b38ab6aec19a1287a40316e79bca3b33e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The voice passes to the other speaker. Light: the voice marker leaps in an arc from speaker A and lands on speaker B with a hit; B's head and shoulders dip under it and rebound, and a sound arc swells off the side of B's head and fades as B starts speaking. Strong: the marker first presses down on A, who dips with it, and pushes off into a higher leap; it lands harder on B, who takes it in two beats, and B speaks twice. The marker stays on B. The reverse is the same hand-off back to A.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "36dc935bb295f6d174478ca6ba6227483a6202fde4cc92ee524eeca3f49ef00b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5035,12 +4753,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7767,
-          "sha256": "c7fa1978f17450bca4f5f38d261dc1ba1c35acc60c431997976a142c60ce422a"
+          "bytes": 8606,
+          "sha256": "c2919c1a7be95604eb8c4a403c4b52e0c3109fd8bfdcb9120214cae6d85d3a6a"
         }
       ],
-      "bytes": 7761,
-      "sha256": "fa22f07c7b7185d0171bf6237ed097f022fb85ddd5cfeb993d88693f0791c92c"
+      "bytes": 8600,
+      "sha256": "fe20473871cb4b3fc356a0953d655eb3d89ac890280563b43ffc3f370ab63f31"
     },
     {
       "name": "voice-isolation",
@@ -6041,40 +5759,35 @@
       "name": "voice-speed",
       "icon": "voice-speed",
       "motionId": "light",
-      "revision": "voice-claude-reviewed-v1",
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
-      "startState": "Normal speed",
-      "endState": "Faster speech",
+      "startState": "normal-speed",
+      "endState": "faster-speech",
       "heading": "Voice speed",
-      "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+      "description": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
       "label": "Voice speed",
-      "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+      "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.4,
-      "rest": 27,
+      "active": 0.37,
+      "rest": 25,
       "keyPoses": [
         0,
-        0.08000000000000002,
-        0.16000000000000003,
-        0.24,
-        0.32000000000000006,
-        0.4
+        0.074,
+        0.148,
+        0.222,
+        0.296,
+        0.37
       ],
-      "layers": 17,
+      "layers": 20,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -6084,26 +5797,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "136f9991ec2a90a504e165814bd8e5cf1f90776dff52ff7a5716a36761937f75",
-      "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-      "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-      "authoringSources": {
-        "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-        "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-        "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-        "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-        "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-        "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-      },
-      "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "voice-speed-tick-1"
-        }
-      ],
+      "nativeSha256": "2b61937b7a9011e2e190b1ef761c6ae20b6ba930b6d00814e12783881dbdde36",
+      "sourceSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+      "planSha256": "f859ee50e2bab9223b972de1c63b69afb5701a5b2308f355a93bf1186c53371c",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+      "constraints": [],
       "category": "Voice",
-      "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+      "definitionsSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -6125,95 +5826,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "voice-speed-reverse",
-        "icon": "voice-speed",
-        "motionId": "light",
-        "revision": "voice-claude-reviewed-v1",
-        "continuous": false,
-        "previewReset": false,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-          "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "Faster speech",
-        "endState": "Normal speed",
-        "heading": "Voice speed",
-        "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-        "label": "Voice speed",
-        "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.4,
-        "rest": 27,
-        "keyPoses": [
-          0,
-          0.08000000000000002,
-          0.16000000000000003,
-          0.24,
-          0.32000000000000006,
-          0.4
-        ],
-        "layers": 17,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "7a55b9d25d606b37d7df46e2c57a9e0f67f6ab898e52bf987befb67257ba1523",
-        "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-        "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-        "authoringSources": {
-          "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-          "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-          "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-          "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-          "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-          "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-        },
-        "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "voice-speed-tick-1"
-          }
-        ],
-        "category": "Voice",
-        "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "number": 249,
       "forwardLabel": "Faster speech",
       "reverseLabel": "Normal speed",
@@ -6222,40 +5834,35 @@
           "name": "voice-speed",
           "icon": "voice-speed",
           "motionId": "light",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
-          "startState": "Normal speed",
-          "endState": "Faster speech",
+          "startState": "normal-speed",
+          "endState": "faster-speech",
           "heading": "Voice speed",
-          "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "description": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "label": "Voice speed",
-          "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.4,
-          "rest": 27,
+          "active": 0.37,
+          "rest": 25,
           "keyPoses": [
             0,
-            0.08000000000000002,
-            0.16000000000000003,
-            0.24,
-            0.32000000000000006,
-            0.4
+            0.074,
+            0.148,
+            0.222,
+            0.296,
+            0.37
           ],
-          "layers": 17,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6265,26 +5872,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "136f9991ec2a90a504e165814bd8e5cf1f90776dff52ff7a5716a36761937f75",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voice-speed-tick-1"
-            }
-          ],
+          "nativeSha256": "2b61937b7a9011e2e190b1ef761c6ae20b6ba930b6d00814e12783881dbdde36",
+          "sourceSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+          "planSha256": "f859ee50e2bab9223b972de1c63b69afb5701a5b2308f355a93bf1186c53371c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6310,40 +5905,35 @@
             "name": "voice-speed-reverse",
             "icon": "voice-speed",
             "motionId": "light",
-            "revision": "voice-claude-reviewed-v1",
             "continuous": false,
             "previewReset": false,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
-            "startState": "Faster speech",
-            "endState": "Normal speed",
+            "startState": "faster-speech",
+            "endState": "normal-speed",
             "heading": "Voice speed",
-            "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+            "description": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
             "label": "Voice speed",
-            "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+            "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.4,
-            "rest": 27,
+            "active": 0.37,
+            "rest": 25,
             "keyPoses": [
               0,
-              0.08000000000000002,
-              0.16000000000000003,
-              0.24,
-              0.32000000000000006,
-              0.4
+              0.074,
+              0.148,
+              0.222,
+              0.296,
+              0.37
             ],
-            "layers": 17,
+            "layers": 20,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -6353,26 +5943,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "7a55b9d25d606b37d7df46e2c57a9e0f67f6ab898e52bf987befb67257ba1523",
-            "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-            "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-            "authoringSources": {
-              "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-              "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-              "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-              "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-              "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-              "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-            },
-            "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "voice-speed-tick-1"
-              }
-            ],
+            "nativeSha256": "126cb733e7bdadf87e4a62a32ad447a8dbf49e34e6aec084bd0ed6b3698d3d38",
+            "sourceSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+            "planSha256": "f859ee50e2bab9223b972de1c63b69afb5701a5b2308f355a93bf1186c53371c",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+            "constraints": [],
             "category": "Voice",
-            "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+            "definitionsSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -6394,50 +5972,45 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 6917,
-            "sha256": "ae8b3faeef8de96721c2bdde69ada88738c492f03adeeb8886c24c1c99c575b8"
+            "bytes": 7472,
+            "sha256": "8562cb721870f2215f2ef6dbd98da3c10dfc7292595cb59bd1428c27e1ce387a"
           },
-          "bytes": 6917,
-          "sha256": "46ce487f7140903ab316d5b7e8f8f3019ec83616602edb8d04a26166cbc34df5"
+          "bytes": 7472,
+          "sha256": "4f8e7e385eb6aa69a2b1359b5b7c9dddd14ca98e7f5a640eea493b73241bd13a"
         },
         {
           "name": "voice-speed-strong",
           "icon": "voice-speed",
           "motionId": "strong",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
-          "startState": "Normal speed",
-          "endState": "Faster speech",
+          "startState": "normal-speed",
+          "endState": "faster-speech",
           "heading": "Voice speed",
-          "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "description": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "label": "Voice speed",
-          "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.5700000000000001,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.11400000000000002,
+            0.22800000000000004,
+            0.342,
+            0.45600000000000007,
+            0.5700000000000001
           ],
-          "layers": 17,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6447,26 +6020,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c50d29fb3c3f10842f9cfc9d9e459afa7427ce6cbdadc2a90dca4d71069d382e",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voice-speed-tick-1"
-            }
-          ],
+          "nativeSha256": "db99edf2ae63142d5aae348a44b2cd5a554b40ec4d6f8896cf371e0f00085cb7",
+          "sourceSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+          "planSha256": "f859ee50e2bab9223b972de1c63b69afb5701a5b2308f355a93bf1186c53371c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6492,40 +6053,35 @@
             "name": "voice-speed-reverse-strong",
             "icon": "voice-speed",
             "motionId": "strong",
-            "revision": "voice-claude-reviewed-v1",
             "continuous": false,
             "previewReset": false,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
-            "startState": "Faster speech",
-            "endState": "Normal speed",
+            "startState": "faster-speech",
+            "endState": "normal-speed",
             "heading": "Voice speed",
-            "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+            "description": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
             "label": "Voice speed",
-            "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+            "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.34,
-            "rest": 23,
+            "active": 0.5700000000000001,
+            "rest": 37,
             "keyPoses": [
               0,
-              0.068,
-              0.136,
-              0.20400000000000001,
-              0.272,
-              0.34
+              0.11400000000000002,
+              0.22800000000000004,
+              0.342,
+              0.45600000000000007,
+              0.5700000000000001
             ],
-            "layers": 17,
+            "layers": 20,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -6535,26 +6091,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "9b932b335051d1c50857e405058e4ec1e4618ad0d929d84c2dfd635df06296e6",
-            "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-            "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-            "authoringSources": {
-              "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-              "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-              "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-              "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-              "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-              "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-            },
-            "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "voice-speed-tick-1"
-              }
-            ],
+            "nativeSha256": "1f23c2e3e39c9487577dab53c50f90e709125d42fb6f8c70bb1fb4a1b94c5796",
+            "sourceSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+            "planSha256": "f859ee50e2bab9223b972de1c63b69afb5701a5b2308f355a93bf1186c53371c",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+            "constraints": [],
             "category": "Voice",
-            "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+            "definitionsSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -6576,11 +6120,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 6922,
-            "sha256": "49a1d6e8ee9edae7153821b46688deb7fc127dc2c6b5b1122c0b32e0ab523b0f"
+            "bytes": 7477,
+            "sha256": "5f3578bcae28b2d0c69120e7210764176b973b7f9fc3400d626cb413ee06c9ef"
           },
-          "bytes": 6919,
-          "sha256": "2faedabf870d4e9c1823333742b390c199ad5134f0cad51d450956aceb2e2a2b"
+          "bytes": 7474,
+          "sha256": "0f9109e6009f6afcdf7b890e376dcfbea3e698f41f9f6749e96df3e098471d11"
         }
       ],
       "animations": [
@@ -6588,40 +6132,35 @@
           "name": "voice-speed",
           "icon": "voice-speed",
           "motionId": "light",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
-          "startState": "Normal speed",
-          "endState": "Faster speech",
+          "startState": "normal-speed",
+          "endState": "faster-speech",
           "heading": "Voice speed",
-          "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "description": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "label": "Voice speed",
-          "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.4,
-          "rest": 27,
+          "active": 0.37,
+          "rest": 25,
           "keyPoses": [
             0,
-            0.08000000000000002,
-            0.16000000000000003,
-            0.24,
-            0.32000000000000006,
-            0.4
+            0.074,
+            0.148,
+            0.222,
+            0.296,
+            0.37
           ],
-          "layers": 17,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6631,26 +6170,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "136f9991ec2a90a504e165814bd8e5cf1f90776dff52ff7a5716a36761937f75",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voice-speed-tick-1"
-            }
-          ],
+          "nativeSha256": "2b61937b7a9011e2e190b1ef761c6ae20b6ba930b6d00814e12783881dbdde36",
+          "sourceSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+          "planSha256": "f859ee50e2bab9223b972de1c63b69afb5701a5b2308f355a93bf1186c53371c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6672,47 +6199,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 6917,
-          "sha256": "46ce487f7140903ab316d5b7e8f8f3019ec83616602edb8d04a26166cbc34df5"
+          "bytes": 7472,
+          "sha256": "4f8e7e385eb6aa69a2b1359b5b7c9dddd14ca98e7f5a640eea493b73241bd13a"
         },
         {
           "name": "voice-speed-reverse",
           "icon": "voice-speed",
           "motionId": "light",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
-          "startState": "Faster speech",
-          "endState": "Normal speed",
+          "startState": "faster-speech",
+          "endState": "normal-speed",
           "heading": "Voice speed",
-          "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "description": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "label": "Voice speed",
-          "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.4,
-          "rest": 27,
+          "active": 0.37,
+          "rest": 25,
           "keyPoses": [
             0,
-            0.08000000000000002,
-            0.16000000000000003,
-            0.24,
-            0.32000000000000006,
-            0.4
+            0.074,
+            0.148,
+            0.222,
+            0.296,
+            0.37
           ],
-          "layers": 17,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6722,26 +6244,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7a55b9d25d606b37d7df46e2c57a9e0f67f6ab898e52bf987befb67257ba1523",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voice-speed-tick-1"
-            }
-          ],
+          "nativeSha256": "126cb733e7bdadf87e4a62a32ad447a8dbf49e34e6aec084bd0ed6b3698d3d38",
+          "sourceSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+          "planSha256": "f859ee50e2bab9223b972de1c63b69afb5701a5b2308f355a93bf1186c53371c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6763,47 +6273,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 6917,
-          "sha256": "ae8b3faeef8de96721c2bdde69ada88738c492f03adeeb8886c24c1c99c575b8"
+          "bytes": 7472,
+          "sha256": "8562cb721870f2215f2ef6dbd98da3c10dfc7292595cb59bd1428c27e1ce387a"
         },
         {
           "name": "voice-speed-strong",
           "icon": "voice-speed",
           "motionId": "strong",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
-          "startState": "Normal speed",
-          "endState": "Faster speech",
+          "startState": "normal-speed",
+          "endState": "faster-speech",
           "heading": "Voice speed",
-          "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "description": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "label": "Voice speed",
-          "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.5700000000000001,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.11400000000000002,
+            0.22800000000000004,
+            0.342,
+            0.45600000000000007,
+            0.5700000000000001
           ],
-          "layers": 17,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6813,26 +6318,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c50d29fb3c3f10842f9cfc9d9e459afa7427ce6cbdadc2a90dca4d71069d382e",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voice-speed-tick-1"
-            }
-          ],
+          "nativeSha256": "db99edf2ae63142d5aae348a44b2cd5a554b40ec4d6f8896cf371e0f00085cb7",
+          "sourceSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+          "planSha256": "f859ee50e2bab9223b972de1c63b69afb5701a5b2308f355a93bf1186c53371c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6854,47 +6347,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 6919,
-          "sha256": "2faedabf870d4e9c1823333742b390c199ad5134f0cad51d450956aceb2e2a2b"
+          "bytes": 7474,
+          "sha256": "0f9109e6009f6afcdf7b890e376dcfbea3e698f41f9f6749e96df3e098471d11"
         },
         {
           "name": "voice-speed-reverse-strong",
           "icon": "voice-speed",
           "motionId": "strong",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
-          "startState": "Faster speech",
-          "endState": "Normal speed",
+          "startState": "faster-speech",
+          "endState": "normal-speed",
           "heading": "Voice speed",
-          "description": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "description": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "label": "Voice speed",
-          "intent": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
+          "intent": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.34,
-          "rest": 23,
+          "active": 0.5700000000000001,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.068,
-            0.136,
-            0.20400000000000001,
-            0.272,
-            0.34
+            0.11400000000000002,
+            0.22800000000000004,
+            0.342,
+            0.45600000000000007,
+            0.5700000000000001
           ],
-          "layers": 17,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6904,26 +6392,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9b932b335051d1c50857e405058e4ec1e4618ad0d929d84c2dfd635df06296e6",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "Cadence marks gather toward Play to select faster speech. Strong prepares outward, then closes the spacing with a faster drive.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voice-speed-tick-1"
-            }
-          ],
+          "nativeSha256": "1f23c2e3e39c9487577dab53c50f90e709125d42fb6f8c70bb1fb4a1b94c5796",
+          "sourceSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
+          "planSha256": "f859ee50e2bab9223b972de1c63b69afb5701a5b2308f355a93bf1186c53371c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Speech speeds up. Light: Play gives one beat as the faster speed engages, and the cadence marks bunch up behind it like cars braking in a queue: the middle mark slams into its tighter slot first, the far one 70 ms later, each hitting home and rebounding once. Strong: Play gathers, then beats harder while the marks first spread out, drive in faster and rebound twice. The first mark never moves; the marks stay at the tighter spacing. The reverse is the exact time reversal: the marks relax back out, far one first.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "93082fdcd77e74489647c9077ff7bf80527aa3cab0615ead4aa96ef713351002",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6945,12 +6421,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 6922,
-          "sha256": "49a1d6e8ee9edae7153821b46688deb7fc127dc2c6b5b1122c0b32e0ab523b0f"
+          "bytes": 7477,
+          "sha256": "5f3578bcae28b2d0c69120e7210764176b973b7f9fc3400d626cb413ee06c9ef"
         }
       ],
-      "bytes": 6917,
-      "sha256": "46ce487f7140903ab316d5b7e8f8f3019ec83616602edb8d04a26166cbc34df5"
+      "bytes": 7472,
+      "sha256": "4f8e7e385eb6aa69a2b1359b5b7c9dddd14ca98e7f5a640eea493b73241bd13a"
     }
   ]
 }

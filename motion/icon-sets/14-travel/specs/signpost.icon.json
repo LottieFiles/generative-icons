@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "signpost",
+  "label": "Signpost",
+  "intent": "The signpost points the ways. Light: the upper board draws back a little, then thrusts out along its arrow to the right with a hit and springs back with a small rebound; the lower board does the same to the left 80 ms later. Strong: both boards pull back toward the post together, then thrust out harder, upper first, and each settles in two decaying beats. The post and foot never move; the boards slide along their own arrows and stay on the post.",
+  "parts": {
+    "upper-board":  {"shape": {"path": "M6 7.7 C6 6.9 6.4 6.5 7.2 6.5 L19.8 6.5 C20.6 6.5 21.32 6.74 21.96 7.22 L24.04 8.78 C24.68 9.26 24.68 9.74 24.04 10.22 L21.96 11.78 C21.32 12.26 20.6 12.5 19.8 12.5 L7.2 12.5 C6.4 12.5 6 12.1 6 11.3 L6 7.7 Z"},
+                     "role": "surface"},
+    "post-between": {"shape": {"line": [[16, 12.5], [16, 17]]}},
+    "lower-board":  {"shape": {"path": "M26 18.2 C26 17.4 25.6 17 24.8 17 L12.2 17 C11.4 17 10.68 17.24 10.04 17.72 L7.96 19.28 C7.32 19.76 7.32 20.24 7.96 20.72 L10.04 22.28 C10.68 22.76 11.4 23 12.2 23 L24.8 23 C25.6 23 26 22.6 26 21.8 L26 18.2 Z"},
+                     "role": "surface"},
+    "post-lower":   {"shape": {"line": [[16, 23], [16, 27.5]]}},
+    "foot":         {"shape": {"line": [[11, 27.5], [21, 27.5]]}}
+  },
+  "rigs": {
+    "upper-board": {"pivot": [16, 9.5]},
+    "lower-board": {"pivot": [16, 20]}
+  },
+  "motion": {
+    "upper-board.x": {
+      "light":  [[0, 0], [0.07, -0.6, "out"], [0.16, 2.2, "hit"], [0.26, -0.35], [0.34, 0]],
+      "strong": [[0, 0], [0.1, -1, "out"], [0.16, -1], [0.24, 3, "hit"], [0.34, -0.5], [0.43, 0.2], [0.51, 0]]
+    },
+    "lower-board.x": {
+      "light":  [[0, 0], [0.15, 0], [0.22, 0.6, "out"], [0.31, -2.2, "hit"], [0.41, 0.35], [0.49, 0]],
+      "strong": [[0, 0], [0.1, 1, "out"], [0.24, 1], [0.32, -3, "hit"], [0.42, 0.5], [0.51, -0.2], [0.59, 0]]
+    }
+  }
+}

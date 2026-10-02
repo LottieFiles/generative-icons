@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "target",
+  "label": "Target",
+  "intent": "The reticle locks on. Light: the four ticks close in on the mark and stop with a hit, the ring tightens a beat after them and the centre dot pops as the lock lands, then the reticle releases back out with a small rebound. Strong: the ticks first swing a third of a quarter-turn off and open wide, searching, then snap back and close in harder, the ring tightens more, the dot pops bigger and everything settles in two beats.",
+  "parts": {
+    "tick-right": {"shape": {"line": [[22, 16], [26, 16]]}},
+    "tick-left": {"shape": {"line": [[6, 16], [10, 16]]}},
+    "tick-down": {"shape": {"line": [[16, 22], [16, 26]]}},
+    "tick-up": {"shape": {"line": [[16, 6], [16, 10]]}},
+    "ring": {"shape": {"circle": [[16, 16], 6.5]}},
+    "dot": {"shape": {"circle": [[16, 16], 1.1]}, "role": "fill"}
+  },
+  "rigs": {
+    "ticks": {"pivot": [16, 16], "carries": ["tick-right", "tick-left", "tick-down", "tick-up"]},
+    "ring": {"pivot": [16, 16]},
+    "dot": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "ticks.scale": {
+      "light": [[0, 1], [0.05, 1.08, "out"], [0.15, 0.76, "hit"], [0.22, 0.76], [0.32, 1.04, "out"], [0.4, 1]],
+      "strong": [[0, 1], [0.12, 1.15, "out"], [0.26, 0.72, "hit"], [0.33, 0.72], [0.43, 1.06, "out"], [0.52, 0.98], [0.6, 1]]
+    },
+    "ticks.rotate": {"//": "Strong only: the search swing; it returns to 0 exactly", "strong": [[0, 0], [0.12, -30, "out"], [0.26, 0, "hit"]]},
+    "ring.scale": {
+      "light": [[0, 1], [0.1, 1], [0.18, 0.9, "hit"], [0.27, 1.03], [0.35, 1]],
+      "strong": [[0, 1], [0.21, 1], [0.29, 0.86, "hit"], [0.39, 1.05], [0.48, 0.98], [0.56, 1]]
+    },
+    "dot.scale": {
+      "light": [[0, 1], [0.14, 1], [0.2, 1.8, "out"], [0.3, 0.9], [0.38, 1]],
+      "strong": [[0, 1], [0.25, 1], [0.31, 2.2, "out"], [0.41, 0.85], [0.5, 1.08], [0.58, 1]]
+    }
+  }
+}

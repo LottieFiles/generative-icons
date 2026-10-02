@@ -1,0 +1,560 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "support-ticket",
+  "label": "Support ticket",
+  "intent": "The ticket is torn off. Light: the stub peels away from the top of the seam, a fleck flying off there, strains a beat, then the bottom gives with a second fleck and the stub jerks free to the right, swings past its tilt and settles torn away, where it stays. Strong: a deeper peel that strains twice, a harder rip that overshoots further and settles in two beats. The preview reset fades it back to the prepared ticket.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "parts": {
+    "body": {
+      "shape": {
+        "rect": [
+          4,
+          9,
+          13,
+          14
+        ],
+        "r": 2
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "line-1",
+          "gap": 0
+        },
+        {
+          "part": "line-2",
+          "gap": 0
+        }
+      ]
+    },
+    "line-1": {
+      "shape": {
+        "line": [
+          [
+            8,
+            14
+          ],
+          [
+            13.5,
+            14
+          ]
+        ]
+      },
+      "solid": {
+        "rect": [
+          7,
+          13,
+          7.5,
+          2
+        ],
+        "r": 1
+      }
+    },
+    "line-2": {
+      "shape": {
+        "line": [
+          [
+            8,
+            18
+          ],
+          [
+            12,
+            18
+          ]
+        ]
+      },
+      "solid": {
+        "rect": [
+          7,
+          17,
+          6,
+          2
+        ],
+        "r": 1
+      }
+    },
+    "stub": {
+      "shape": {
+        "rect": [
+          17,
+          9,
+          5,
+          14
+        ],
+        "r": 2
+      },
+      "role": "surface"
+    },
+    "fleck-t": {
+      "//": "hidden at rest: torn paper flying off the top of the seam as the peel starts, inner end first",
+      "shape": {
+        "line": [
+          [
+            17.4,
+            6.4
+          ],
+          [
+            18.2,
+            4.4
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "fleck-b": {
+      "//": "hidden at rest: the second fleck, off the bottom of the seam as it rips",
+      "shape": {
+        "line": [
+          [
+            17.4,
+            25.6
+          ],
+          [
+            18.2,
+            27.6
+          ]
+        ]
+      },
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "tear": {
+      "//": "v1's end state: the stub 5 to the right, turned 6 deg about its centre",
+      "pivot": [
+        19.5,
+        16
+      ],
+      "carries": [
+        "peel"
+      ]
+    },
+    "peel": {
+      "//": "the stub peels about the bottom of the seam, which tears last",
+      "pivot": [
+        17,
+        23
+      ],
+      "carries": [
+        "stub"
+      ]
+    }
+  },
+  "motion": {
+    "peel.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          10,
+          "out"
+        ],
+        [
+          0.15,
+          10
+        ],
+        [
+          0.23,
+          0,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          13,
+          "out"
+        ],
+        [
+          0.14,
+          10.5
+        ],
+        [
+          0.18,
+          14
+        ],
+        [
+          0.21,
+          14
+        ],
+        [
+          0.29,
+          0,
+          "out"
+        ]
+      ]
+    },
+    "tear.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.15,
+          0
+        ],
+        [
+          0.24,
+          5.7,
+          "out"
+        ],
+        [
+          0.32,
+          4.8
+        ],
+        [
+          0.4,
+          5
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.21,
+          0
+        ],
+        [
+          0.3,
+          5.8,
+          "out"
+        ],
+        [
+          0.38,
+          4.6
+        ],
+        [
+          0.46,
+          5.15
+        ],
+        [
+          0.53,
+          5
+        ]
+      ]
+    },
+    "tear.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.15,
+          0
+        ],
+        [
+          0.24,
+          8,
+          "out"
+        ],
+        [
+          0.32,
+          5.4
+        ],
+        [
+          0.4,
+          6
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.21,
+          0
+        ],
+        [
+          0.3,
+          8.5,
+          "out"
+        ],
+        [
+          0.38,
+          4.8
+        ],
+        [
+          0.46,
+          6.4
+        ],
+        [
+          0.53,
+          6
+        ]
+      ]
+    },
+    "fleck-t.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.03,
+          0
+        ],
+        [
+          0.04,
+          1,
+          "step"
+        ],
+        [
+          0.12,
+          1
+        ],
+        [
+          0.18,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.03,
+          0
+        ],
+        [
+          0.04,
+          1,
+          "step"
+        ],
+        [
+          0.13,
+          1
+        ],
+        [
+          0.19,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "fleck-t.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.03,
+          0,
+          "step"
+        ],
+        [
+          0.1,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.03,
+          0,
+          "step"
+        ],
+        [
+          0.1,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "fleck-t.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.03,
+          0
+        ],
+        [
+          0.18,
+          -0.8,
+          "out"
+        ],
+        [
+          0.19,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.03,
+          0
+        ],
+        [
+          0.19,
+          -1,
+          "out"
+        ],
+        [
+          0.2,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "fleck-b.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          0
+        ],
+        [
+          0.15,
+          1,
+          "step"
+        ],
+        [
+          0.23,
+          1
+        ],
+        [
+          0.29,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.21,
+          1,
+          "step"
+        ],
+        [
+          0.3,
+          1
+        ],
+        [
+          0.36,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "fleck-b.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.14,
+          0,
+          "step"
+        ],
+        [
+          0.21,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.2,
+          0,
+          "step"
+        ],
+        [
+          0.27,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "fleck-b.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          0
+        ],
+        [
+          0.29,
+          0.8,
+          "out"
+        ],
+        [
+          0.3,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.36,
+          1,
+          "out"
+        ],
+        [
+          0.37,
+          0,
+          "step"
+        ]
+      ]
+    }
+  }
+}

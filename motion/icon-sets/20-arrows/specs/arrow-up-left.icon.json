@@ -1,0 +1,45 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "arrow-up-left",
+  "label": "Arrow up left",
+  "intent": "The arrow goes up left. Light: it launches up left along its shaft, accelerating, and fades before the edge; a fresh arrow slides in from behind, lands just past its rest pose and settles. Strong: it winds back first, launches farther with a speed trail that retracts behind it, and the fresh arrow lands with a bigger overshoot and settles in two beats. Shaft and head are one part so they fade as one.",
+  "parts": {
+    "trail": {
+      "//": "hidden at rest: a speed streak along the shaft's rest line, retracting toward the tip as the arrow leaves",
+      "shape": {"line": [[10.343, 10.343], [22.364, 22.364]]},
+      "hidden": true
+    },
+    "arrow": {
+      "//": "v1 shaft + head; Solid is the union of v1's capsule and filled head",
+      "shape": [
+        {"line": [[22.364, 22.364], [10.343, 10.343]]},
+        {"polyline": [[10.343, 19.536], [10.343, 10.343], [19.536, 10.343]]}
+      ],
+      "solid": {
+        "path": "M10.269 9.123 C9.47 9.088 9.088 9.47 9.123 10.269 L9.601 20.999 C9.624 21.532 9.825 21.609 10.202 21.233 L14.798 16.636 L21.445 23.283 C21.952 23.791 22.775 23.791 23.283 23.283 C23.791 22.775 23.791 21.952 23.283 21.445 L16.636 14.798 L21.233 10.202 C21.609 9.825 21.532 9.624 20.999 9.601 L10.269 9.123 Z"
+      }
+    }
+  },
+  "motion": {
+    "arrow.x": {
+      "light": [[0, 0], [0.15, -2.969, [0.33, 0, 0.67, 0.33]], [0.16, 1.838, "step"], [0.33, -0.353, "out"], [0.43, 0]],
+      "strong": [
+        [0, 0],
+        [0.09, 0.778, "inOut"],
+        [0.215, -3.535, [0.33, 0, 0.67, 0.33]],
+        [0.23, 2.121, "step"],
+        [0.4, -0.636, "out"],
+        [0.49, 0.191],
+        [0.58, 0]
+      ]
+    },
+    "arrow.y": {"follow": "arrow.x"},
+    "arrow.opacity": {
+      "light": [[0, 1], [0.06, 1], [0.15, 0.1, "in"], [0.16, 0.1], [0.27, 1, "out"]],
+      "strong": [[0, 1], [0.15, 1], [0.215, 0.1, "in"], [0.23, 0.1], [0.34, 1, "out"]]
+    },
+    "trail.opacity": {"strong": [[0, 0], [0.145, 0.6, "step"], [0.2, 0.6], [0.23, 0, "in"]]},
+    "trail.draw": {"strong": [[0, 1], [0.18, 1], [0.23, 0.2, "in"], [0.25, 1, "step"]]}
+  }
+}

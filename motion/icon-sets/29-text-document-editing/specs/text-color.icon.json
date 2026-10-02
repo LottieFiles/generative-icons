@@ -1,0 +1,52 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "text-color",
+  "label": "Text color",
+  "intent": "The chosen colour is applied to the text. Light: the swatch is pressed and springs back; the old colour washes out of the A (it dims to 0.3), and the new colour paints it back from the foot nearest the swatch: up the left leg, over the apex, down the right leg, then across the crossbar. Strong: a deeper press with a rebound, the same repaint, and the A takes the colour with a hop that lands with a hit and a small rebound. The dimmed A keeps its counter closed throughout.",
+  "parts": {
+    "swatch": {"shape": {"rect": [6, 25, 20, 3], "r": 1.5}, "role": "surface"},
+    "legs": {"shape": {"path": "M9.5 19.5 L15.4 6.4 C15.7 5.7 16.3 5.7 16.6 6.4 L22.5 19.5"}},
+    "crossbar": {"shape": {"line": [[12.2, 14.5], [19.8, 14.5]]}},
+    "paint-legs": {
+      "//": "hidden at rest: the new colour, painted over the dimmed letter",
+      "shape": {"path": "M9.5 19.5 L15.4 6.4 C15.7 5.7 16.3 5.7 16.6 6.4 L22.5 19.5"},
+      "hidden": true
+    },
+    "paint-bar": {"shape": {"line": [[12.2, 14.5], [19.8, 14.5]]}, "hidden": true}
+  },
+  "rigs": {
+    "swatch": {"pivot": [16, 26.5]},
+    "letter": {"pivot": [16, 19.5], "carries": ["legs", "crossbar", "paint-legs", "paint-bar"]}
+  },
+  "motion": {
+    "swatch.y": {
+      "light":  [[0, 0], [0.07, 0.8, "out"], [0.15, -0.25], [0.22, 0]],
+      "strong": [[0, 0], [0.08, 1.1, "out"], [0.16, -0.4], [0.23, 0.15], [0.29, 0]]
+    },
+    "legs.opacity": {
+      "light":  [[0, 1], [0.08, 1], [0.12, 0.3, "out"], [0.44, 0.3], [0.457, 1, "step"]],
+      "strong": [[0, 1], [0.09, 1], [0.13, 0.3, "out"], [0.62, 0.3], [0.637, 1, "step"]]
+    },
+    "crossbar.opacity": {"follow": "legs.opacity"},
+    "paint-legs.opacity": {
+      "light":  [[0, 0], [0.11, 0], [0.127, 1, "step"], [0.44, 1], [0.457, 0, "step"]],
+      "strong": [[0, 0], [0.12, 0], [0.137, 1, "step"], [0.62, 1], [0.637, 0, "step"]]
+    },
+    "paint-legs.draw": {
+      "light":  [[0, 1], [0.11, 1], [0.127, 0, "step"], [0.34, 1, "inOut"]],
+      "strong": [[0, 1], [0.12, 1], [0.137, 0, "step"], [0.32, 1, "inOut"]]
+    },
+    "paint-bar.opacity": {
+      "light":  [[0, 0], [0.25, 0], [0.267, 1, "step"], [0.44, 1], [0.457, 0, "step"]],
+      "strong": [[0, 0], [0.24, 0], [0.257, 1, "step"], [0.62, 1], [0.637, 0, "step"]]
+    },
+    "paint-bar.draw": {
+      "light":  [[0, 1], [0.25, 1], [0.267, 0, "step"], [0.40, 1, "out"]],
+      "strong": [[0, 1], [0.24, 1], [0.257, 0, "step"], [0.37, 1, "out"]]
+    },
+    "letter.y": {
+      "strong": [[0, 0], [0.33, 0], [0.42, -1.6, "out"], [0.50, 0, "hit"], [0.56, -0.4], [0.62, 0]]
+    }
+  }
+}

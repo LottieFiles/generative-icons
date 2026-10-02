@@ -1,0 +1,24 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "timeline",
+  "label": "Timeline",
+  "intent": "The playhead scrubs to a new frame across the clip tracks. Light: the head launches along the ruler, crosses 12 and stops dead a little past its frame; its marks on the two tracks catch up in order (top track, then bottom) and everything settles. Strong: the head first pulls back, then sweeps faster and overshoots farther, rebounding twice before it settles, with the track marks arriving in order behind it. Ruler and clips never move; the preview reset fades it back.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "ruler": {"shape": {"line": [[5, 7], [27, 7]]}},
+    "clip-a": {"shape": {"line": [[7, 13], [15, 13]]}},
+    "clip-b": {"shape": {"line": [[12, 22], [26, 22]]}},
+    "playhead-guide-a": {"shape": {"line": [[10, 16.6], [10, 18.4]]}},
+    "playhead-guide-b": {"shape": {"line": [[10, 25.6], [10, 27]]}},
+    "playhead-head": {"shape": {"path": "M7.5 3.9 C7.5 3.633 7.633 3.5 7.9 3.5 L12.1 3.5 C12.367 3.5 12.5 3.633 12.5 3.9 L12.5 6.6 C12.5 6.867 12.415 7.102 12.244 7.307 L10.256 9.693 C10.085 9.898 9.915 9.898 9.744 9.693 L7.756 7.307 C7.585 7.102 7.5 6.867 7.5 6.6 L7.5 3.9 Z"}, "role": "fill"}
+  },
+  "motion": {
+    "playhead-head.x": {
+      "light":  [[0, 0], [0.24, 13.4, "hit"], [0.33, 11.6], [0.42, 12]],
+      "strong": [[0, 0], [0.1, -1.6, "out"], [0.29, 14.2, "hit"], [0.38, 11.1], [0.46, 12.5], [0.54, 11.85], [0.6, 12]]
+    },
+    "playhead-guide-a.x": {"//": "the track marks catch up in order", "follow": "playhead-head.x", "lag": 0.04},
+    "playhead-guide-b.x": {"follow": "playhead-head.x", "lag": 0.08}
+  }
+}
