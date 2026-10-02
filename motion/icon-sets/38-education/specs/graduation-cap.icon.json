@@ -1,0 +1,54 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "graduation-cap",
+  "label": "Graduation cap",
+  "intent": "Graduation: the cap is tossed in celebration. Light: the cap flies up with a tilt, drops back and lands with a hit and one small bounce, and the tassel swings behind it and damps out. Strong: a dip to throw, a higher toss with more tumble, and a landing with two decaying bounces while the tassel swings wide and damps out.",
+  "preview": {
+    "light": [0, 0.08, 0.16, 0.24, 0.32, 0.38, 0.46, 0.56],
+    "strong": [0, 0.08, 0.2, 0.32, 0.42, 0.5, 0.57, 0.74]
+  },
+  "parts": {
+    "tassel": {"shape": {"line": [[25.4, 14.08], [25.4, 19.6]]}},
+    "band": {"shape": {"path": "M10.5 15.5 L10.5 21 C10.5 23.1 13 24.5 16 24.5 C19 24.5 21.5 23.1 21.5 21 L21.5 15.5"}},
+    "board": {
+      "shape": {
+        "path": "M15.169 8.346 C15.723 8.115 16.277 8.115 16.831 8.346 L27.169 12.654 C27.723 12.885 27.723 13.115 27.169 13.346 L16.831 17.654 C16.277 17.885 15.723 17.885 15.169 17.654 L4.831 13.346 C4.277 13.115 4.277 12.885 4.831 12.654 L15.169 8.346 Z"
+      },
+      "role": "surface",
+      "solid": "fill",
+      "//": "v1 Solid is the board filled with no rim"
+    }
+  },
+  "rigs": {
+    "cap": {
+      "//": "the whole cap is thrown; it turns about the board's centre",
+      "pivot": [16, 13],
+      "carries": ["board", "band", "tassel"]
+    },
+    "tassel": {"//": "hangs from its knot on the board and swings behind the throw", "pivot": [25.4, 14.08]}
+  },
+  "motion": {
+    "cap.y": {
+      "light": [[0, 0], [0.16, -2.6, "out"], [0.32, 0, "hit"], [0.38, -0.45, "out"], [0.44, 0, "hit"]],
+      "strong": [
+        [0, 0],
+        [0.08, 0.8],
+        [0.32, -3.6, "out"],
+        [0.5, 0, "hit"],
+        [0.57, -0.7, "out"],
+        [0.64, 0, "hit"],
+        [0.69, -0.2, "out"],
+        [0.74, 0, "hit"]
+      ]
+    },
+    "cap.rotate": {
+      "light": [[0, 0], [0.16, -6, "out"], [0.32, 0, "hit"], [0.38, 1], [0.46, 0]],
+      "strong": [[0, 0], [0.08, 2], [0.32, -10, "out"], [0.5, 0, "hit"], [0.56, 1.5], [0.64, -0.5], [0.72, 0]]
+    },
+    "tassel.rotate": {
+      "light": [[0, 0], [0.18, 12, "out"], [0.34, -9], [0.44, 4], [0.52, -1.5], [0.58, 0]],
+      "strong": [[0, 0], [0.12, -8], [0.32, 18, "out"], [0.5, -14], [0.6, 10], [0.7, -5], [0.8, 2], [0.88, 0]]
+    }
+  }
+}

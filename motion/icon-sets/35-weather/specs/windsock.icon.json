@@ -1,0 +1,46 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "windsock",
+  "label": "Windsock",
+  "intent": "A gust fills the windsock. Light: two wind lines streak in under the sock from the pole, one after the other; the gust snaps the drooping sock out nearly level, it flutters once in the wind and sags back to its droop with a small swing. Strong: two gusts in turn: the sock is blown out past level, flutters, is held up by the second gust, then drops and swings twice before it hangs still. The pole never moves.",
+  "parts": {
+    "pole":     {"shape": {"line": [[7, 4.8], [7, 27.6]]}},
+    "foot":     {"shape": {"line": [[4.6, 27.6], [9.4, 27.6]]}},
+    "gust-a":   {"//": "hidden at rest: the wind shows only while it blows, under the sock where the canvas is open",
+                 "shape": {"line": [[11, 20.5], [15.5, 20.5]]}, "hidden": true},
+    "gust-b":   {"shape": {"line": [[12.5, 23.8], [15.5, 23.8]]}, "hidden": true},
+    "sock":     {"//": "the mouth stays on the pole; the gust driver lifts the body from its droop (0) to nearly level (1)",
+                 "shape": {"morph": [
+                   {"path": "M8.8 5.2 C10.566 6.35 12.332 7.5 14.098 8.65 C15.864 9.8 17.629 10.95 19.395 12.1 C21.161 13.25 22.927 14.4 24.693 15.55 L24.693 18.15 C22.927 17.423 21.161 16.695 19.395 15.967 C17.629 15.239 15.864 14.511 14.098 13.784 C12.332 13.056 10.566 12.328 8.8 11.6 L8.8 5.2 Z"},
+                   {"path": "M8.8 5.2 C10.778 5.578 12.756 5.956 14.733 6.333 C16.711 6.711 18.689 7.089 20.667 7.467 C22.644 7.844 24.622 8.222 26.6 8.6 L26.6 11.2 C24.622 11.244 22.644 11.289 20.667 11.333 C18.689 11.378 16.711 11.422 14.733 11.467 C12.756 11.511 10.778 11.556 8.8 11.6 L8.8 5.2 Z"}],
+                   "by": "gust"},
+                 "role": "surface", "solid": "fill"},
+    "stripe-0": {"//": "the bands keep their place along the sock (0.36 and 0.68 of its length), edge to edge",
+                 "shape": {"morph": [{"line": [[14.521, 8.926], [14.521, 13.958]]}, {"line": [[15.208, 6.424], [15.208, 11.456]]}], "by": "gust"},
+                 "solid": "none"},
+    "stripe-1": {"shape": {"morph": [{"line": [[19.607, 12.238], [19.607, 16.054]]}, {"line": [[20.904, 7.512], [20.904, 11.328]]}], "by": "gust"},
+                 "solid": "none"}
+  },
+  "motion": {
+    "gust-a.opacity": {
+      "light":  [[0, 0], [0.03, 1, "out"], [0.13, 1], [0.21, 0, "in"]],
+      "strong": [[0, 0], [0.03, 1, "out"], [0.12, 1], [0.19, 0, "in"], [0.24, 0], [0.27, 1, "out"], [0.36, 1], [0.43, 0, "in"]]
+    },
+    "gust-a.draw": {
+      "light":  [[0, 0], [0.11, 1, "out"]],
+      "strong": [[0, 0], [0.1, 1, "out"], [0.22, 1], [0.24, 0, "step"], [0.34, 1, "out"]]
+    },
+    "gust-a.x": {
+      "light":  [[0, 0], [0.21, 4.5, "out"], [0.23, 0, "step"]],
+      "strong": [[0, 0], [0.19, 5, "out"], [0.21, 0, "step"], [0.24, 0], [0.43, 5, "out"], [0.45, 0, "step"]]
+    },
+    "gust-b.opacity": {"follow": "gust-a.opacity", "lag": 0.05},
+    "gust-b.draw": {"follow": "gust-a.draw", "lag": 0.05},
+    "gust-b.x": {"//": "the lower line is shorter and travels less", "follow": "gust-a.x", "lag": 0.05, "scale": 0.8},
+    "gust": {
+      "light":  [[0, 0], [0.06, 0], [0.19, 1, "out"], [0.26, 0.8], [0.32, 0.92], [0.46, 0, "in"], [0.52, -0.08], [0.58, 0]],
+      "strong": [[0, 0], [0.05, 0], [0.18, 1.1, "out"], [0.26, 0.82], [0.34, 1.04, "out"], [0.42, 0.86], [0.5, 0.97], [0.64, 0, "in"], [0.7, -0.13], [0.77, 0.04], [0.83, 0]]
+    }
+  }
+}

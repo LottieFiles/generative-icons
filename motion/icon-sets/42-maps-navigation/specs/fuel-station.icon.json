@@ -1,0 +1,133 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "fuel-station",
+  "label": "Fuel station",
+  "intent": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
+  "preview": {
+    "light": [
+      0,
+      0.1,
+      0.15,
+      0.22,
+      0.27,
+      0.31,
+      0.36,
+      0.43
+    ],
+    "strong": [
+      0,
+      0.06,
+      0.17,
+      0.25,
+      0.33,
+      0.42,
+      0.5,
+      0.57
+    ]
+  },
+  "parts": {
+    "nozzle": {
+      "shape": {
+        "polyline": [[24, 15], [24, 10], [26, 10]]
+      }
+    },
+    "hose": {
+      "shape": {
+        "path": "M16.5 17 C21 17 24 17.5 24 15"
+      }
+    },
+    "base": {
+      "shape": {
+        "line": [[3.5, 27], [18.5, 27]]
+      }
+    },
+    "window": {
+      "shape": {
+        "rect": [
+          8.5,
+          9.5,
+          5,
+          4.5
+        ],
+        "r": 0.8
+      },
+      "solid": "none"
+    },
+    "body": {
+      "//": "v1 Solid: the body filled with the window cut out (one subpath with a slit)",
+      "shape": {
+        "rect": [
+          5,
+          6,
+          12,
+          21
+        ],
+        "r": 2
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M7 6 L15 6 C16.104 6 17 6.896 17 8 L17 25 C17 26.104 16.104 27 15 27 L7 27 C5.896 27 5 26.104 5 25 L5 8 C5 6.896 5.896 6 7 6 L7 6 L9.3 9.5 C8.858 9.5 8.5 9.858 8.5 10.3 L8.5 13.2 C8.5 13.642 8.858 14 9.3 14 L12.7 14 C13.142 14 13.5 13.642 13.5 13.2 L13.5 10.3 C13.5 9.858 13.142 9.5 12.7 9.5 L9.3 9.5 L7 6 Z"
+      }
+    },
+    "drop": {
+      "//": "hidden at rest: fuel only shows while it pours from the spout",
+      "shape": {
+        "path": "M28 11.2 C28.6 12 29.3 12.6 29.3 13.6 C29.3 14.32 28.72 14.9 28 14.9 C27.28 14.9 26.7 14.32 26.7 13.6 C26.7 12.6 27.4 12 28 11.2 Z"
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "drop-b": {
+      "//": "the second drop in Strong",
+      "shape": {
+        "path": "M28 11.2 C28.6 12 29.3 12.6 29.3 13.6 C29.3 14.32 28.72 14.9 28 14.9 C27.28 14.9 26.7 14.32 26.7 13.6 C26.7 12.6 27.4 12 28 11.2 Z"
+      },
+      "role": "fill",
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "nozzle": {
+      "//": "tips on its hose joint, so the hose stays attached",
+      "pivot": [24, 15]
+    },
+    "drop": {
+      "//": "swells from the spout tip",
+      "pivot": [28, 11.2]
+    },
+    "drop-b": {
+      "pivot": [28, 11.2]
+    }
+  },
+  "motion": {
+    "nozzle.rotate": {
+      "light": [[0, 0], [0.12, 20, "out"], [0.22, 20], [0.31, 0, "hit"], [0.37, 2.5], [0.43, 0]],
+      "strong": [[0, 0], [0.06, -4, "out"], [0.17, 26, "out"], [0.25, 21], [0.32, 26], [0.4, 26], [0.49, 0, "hit"], [0.56, 4], [0.62, -1], [0.68, 0]]
+    },
+    "drop.opacity": {
+      "light": [[0, 0], [0.1, 0], [0.12, 1, "out"], [0.33, 1], [0.4, 0, "in"]],
+      "strong": [[0, 0], [0.14, 0], [0.16, 1, "out"], [0.36, 1], [0.43, 0, "in"]]
+    },
+    "drop.scale": {
+      "light": [[0, 1], [0.1, 0.35, "step"], [0.19, 1, "out"]],
+      "strong": [[0, 1], [0.14, 0.35, "step"], [0.22, 1, "out"]]
+    },
+    "drop.y": {
+      "light": [[0, 0], [0.19, 0], [0.4, 4.4, "in"], [0.41, 0, "step"]],
+      "strong": [[0, 0], [0.22, 0], [0.43, 5.4, "in"], [0.44, 0, "step"]]
+    },
+    "drop-b.opacity": {
+      "light": [[0, 0]],
+      "strong": [[0, 0], [0.31, 0], [0.33, 1, "out"], [0.53, 1], [0.6, 0, "in"]]
+    },
+    "drop-b.scale": {
+      "light": [[0, 1]],
+      "strong": [[0, 1], [0.31, 0.35, "step"], [0.39, 1, "out"]]
+    },
+    "drop-b.y": {
+      "light": [[0, 0]],
+      "strong": [[0, 0], [0.39, 0], [0.6, 5.4, "in"], [0.61, 0, "step"]]
+    }
+  }
+}

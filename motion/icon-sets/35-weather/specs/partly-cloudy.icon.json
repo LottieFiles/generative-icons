@@ -1,0 +1,61 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "partly-cloudy",
+  "label": "Partly cloudy",
+  "intent": "The sun breaks through the cloud. Light: a wave of light sweeps clockwise from the lowest ray toward the cloud: each ray pulls back into the disc and shines out again in turn while the disc swells once; as the last rays reach the cloud it is pushed aside, away from the sun, and drifts back with one small rebound. Strong: the rays shoot out past their length and spring back in turn while the crown turns a little with the light, the disc swells harder, and the cloud is pushed further and settles in two beats.",
+  "preview": {"light": [0, 0.06, 0.12, 0.2, 0.26, 0.32, 0.42, 0.55], "strong": [0, 0.08, 0.16, 0.24, 0.34, 0.46, 0.56, 0.7]},
+  "parts": {
+    "sun":   {"shape": {"circle": [[11.4, 11.4], 3.3]}, "role": "surface", "solid": "fill"},
+    "ray-0": {"shape": {"line": [[7.44, 15.36], [6.309, 16.491]]}},
+    "ray-1": {"shape": {"line": [[5.8, 11.4], [4.2, 11.4]]}},
+    "ray-2": {"shape": {"line": [[7.44, 7.44], [6.309, 6.309]]}},
+    "ray-3": {"shape": {"line": [[11.4, 5.8], [11.4, 4.2]]}},
+    "ray-4": {"shape": {"line": [[15.36, 7.44], [16.491, 6.309]]}},
+    "cloud": {"shape": {"path": "M15.22 26.68 C13.06 26.68 12.196 25.24 12.196 23.656 C12.196 22.072 13.276 20.632 15.004 20.416 C15.148 16.6 18.1 14.296 21.34 15.736 C23.428 15.448 25.372 17.392 25.3 19.48 C27.388 19.624 28.54 21.064 28.54 23.08 C28.54 25.24 26.956 26.68 24.94 26.68 L15.22 26.68 Z"},
+              "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "rays":  {"//": "Strong: the crown of rays turns about the disc with the light", "pivot": [11.4, 11.4], "carries": ["ray-0", "ray-1", "ray-2", "ray-3", "ray-4"]},
+    "ray-0": {"//": "each ray lengthens from its inner end", "pivot": [7.44, 15.36]},
+    "ray-1": {"pivot": [5.8, 11.4]},
+    "ray-2": {"pivot": [7.44, 7.44]},
+    "ray-3": {"pivot": [11.4, 5.8]},
+    "ray-4": {"pivot": [15.36, 7.44]}
+  },
+  "motion": {
+    "ray-0.draw": {
+      "//": "the lowest ray leads; the light sweeps clockwise toward the cloud",
+      "light":  [[0, 1], [0.06, 0, "in"], [0.2, 1, "out"]],
+      "strong": [[0, 1], [0.07, 0, "in"], [0.22, 1, "out"]]
+    },
+    "ray-1.draw": {"light": {"follow": "ray-0.draw", "lag": 0.04}, "strong": {"follow": "ray-0.draw", "lag": 0.045}},
+    "ray-2.draw": {"light": {"follow": "ray-0.draw", "lag": 0.08}, "strong": {"follow": "ray-0.draw", "lag": 0.09}},
+    "ray-3.draw": {"light": {"follow": "ray-0.draw", "lag": 0.12}, "strong": {"follow": "ray-0.draw", "lag": 0.135}},
+    "ray-4.draw": {"light": {"follow": "ray-0.draw", "lag": 0.16}, "strong": {"follow": "ray-0.draw", "lag": 0.18}},
+    "ray-0.scale": {
+      "//": "Strong only: the ray shoots past its length as it draws out, then springs back",
+      "strong": [[0, 1], [0.07, 1], [0.24, 1.4, "out"], [0.36, 0.92], [0.45, 1]]
+    },
+    "ray-1.scale": {"strong": {"follow": "ray-0.scale", "lag": 0.045}},
+    "ray-2.scale": {"strong": {"follow": "ray-0.scale", "lag": 0.09}},
+    "ray-3.scale": {"strong": {"follow": "ray-0.scale", "lag": 0.135}},
+    "ray-4.scale": {"strong": {"follow": "ray-0.scale", "lag": 0.18}},
+    "rays.rotate": {
+      "strong": [[0, 0], [0.28, 12, "out"], [0.46, -3], [0.58, 1], [0.66, 0]]
+    },
+    "sun.scale": {
+      "light":  [[0, 1], [0.12, 1.15, "out"], [0.26, 0.97], [0.36, 1]],
+      "strong": [[0, 1], [0.14, 1.22, "out"], [0.3, 0.95], [0.42, 1.03], [0.5, 1]]
+    },
+    "cloud.x": {
+      "//": "pushed away from the sun, mostly down: the cloud's right edge has only 0.8 of room at Bold",
+      "light":  [[0, 0], [0.2, 0], [0.32, 0.7, "out"], [0.42, -0.15], [0.5, 0]],
+      "strong": [[0, 0], [0.22, 0], [0.34, 0.7, "out"], [0.46, -0.2], [0.56, 0.08], [0.64, 0]]
+    },
+    "cloud.y": {
+      "light":  [[0, 0], [0.2, 0], [0.32, 1.2, "out"], [0.42, -0.25], [0.5, 0]],
+      "strong": [[0, 0], [0.22, 0], [0.34, 1.6, "out"], [0.46, -0.4], [0.56, 0.15], [0.64, 0]]
+    }
+  }
+}

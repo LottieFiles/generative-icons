@@ -1,0 +1,304 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "hotkey-hint",
+  "label": "Hotkey hint",
+  "intent": "The shortcut is struck. Light: the keycap is pressed down into its well with a hit, two strike marks flash out from its top corners as it bottoms out, and the key springs back past rest and settles. Strong: a quick double tap: a light first tap, then a hard press that bottoms out with the strike marks flying further, and a two-beat spring back. The well never moves; the keycap stays rigid.",
+  "parts": {
+    "skirt": {
+      "shape": {
+        "polyline": [
+          [
+            4.5,
+            13.5
+          ],
+          [
+            4.5,
+            26
+          ],
+          [
+            27.5,
+            26
+          ],
+          [
+            27.5,
+            13.5
+          ]
+        ],
+        "r": 3
+      }
+    },
+    "face": {
+      "//": "v1 Solid: the keycap filled, no rim, legend hidden",
+      "shape": {
+        "rect": [
+          8,
+          7,
+          16,
+          13
+        ],
+        "r": 2.5
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "legend": {
+      "shape": {
+        "line": [
+          [
+            13,
+            13.5
+          ],
+          [
+            19,
+            13.5
+          ]
+        ]
+      },
+      "solid": "none"
+    },
+    "strike-l": {
+      "//": "hidden at rest: a strike mark off the keycap's top-left corner, drawn outward",
+      "shape": {
+        "line": [
+          [
+            6.6,
+            5.6
+          ],
+          [
+            5.2,
+            4.2
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "strike-r": {
+      "mirror": {
+        "of": "strike-l"
+      }
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [
+        16,
+        13.5
+      ],
+      "carries": [
+        "face",
+        "legend"
+      ]
+    }
+  },
+  "motion": {
+    "face.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          2.0,
+          "hit"
+        ],
+        [
+          0.13,
+          2.0
+        ],
+        [
+          0.25,
+          -0.45,
+          "out"
+        ],
+        [
+          0.38,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.07,
+          1.0,
+          "hit"
+        ],
+        [
+          0.15,
+          0,
+          "out"
+        ],
+        [
+          0.25,
+          2.6,
+          "hit"
+        ],
+        [
+          0.3,
+          2.6
+        ],
+        [
+          0.42,
+          -0.6,
+          "out"
+        ],
+        [
+          0.52,
+          0.2
+        ],
+        [
+          0.6,
+          0
+        ]
+      ]
+    },
+    "strike-l.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.11,
+          1,
+          "out"
+        ],
+        [
+          0.16,
+          1
+        ],
+        [
+          0.24,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0
+        ],
+        [
+          0.27,
+          1,
+          "out"
+        ],
+        [
+          0.32,
+          1
+        ],
+        [
+          0.4,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "strike-l.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.09,
+          0,
+          "step"
+        ],
+        [
+          0.15,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.25,
+          0,
+          "step"
+        ],
+        [
+          0.31,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "strike-l.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.24,
+          -0.6,
+          "out"
+        ],
+        [
+          0.26,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0
+        ],
+        [
+          0.4,
+          -0.9,
+          "out"
+        ],
+        [
+          0.42,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "strike-l.y": {
+      "follow": "strike-l.x"
+    },
+    "strike-r.opacity": {
+      "follow": "strike-l.opacity"
+    },
+    "strike-r.draw": {
+      "follow": "strike-l.draw"
+    },
+    "strike-r.x": {
+      "follow": "strike-l.x",
+      "scale": -1
+    },
+    "strike-r.y": {
+      "follow": "strike-l.x"
+    },
+    "//": "The strike marks flash only while the key is down and are gone before the rebound brings the keycap back up to them."
+  }
+}

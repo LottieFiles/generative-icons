@@ -2,59 +2,11 @@
   "result": "PASS",
   "actions": [
     {
-      "name": "server",
-      "frames": 145
-    },
-    {
-      "name": "server-strong",
-      "frames": 145
-    },
-    {
-      "name": "database",
-      "frames": 145
-    },
-    {
-      "name": "database-strong",
-      "frames": 145
-    },
-    {
-      "name": "processor",
-      "frames": 145
-    },
-    {
-      "name": "processor-strong",
-      "frames": 145
-    },
-    {
-      "name": "memory-chip",
-      "frames": 145
-    },
-    {
-      "name": "memory-chip-strong",
-      "frames": 145
-    },
-    {
       "name": "hard-drive",
       "frames": 145
     },
     {
       "name": "hard-drive-strong",
-      "frames": 145
-    },
-    {
-      "name": "ethernet",
-      "frames": 145
-    },
-    {
-      "name": "ethernet-strong",
-      "frames": 145
-    },
-    {
-      "name": "router",
-      "frames": 145
-    },
-    {
-      "name": "router-strong",
       "frames": 145
     },
     {
@@ -72,50 +24,10 @@
     {
       "name": "load-balancer-reset-strong",
       "frames": 145
-    },
-    {
-      "name": "firewall",
-      "frames": 145
-    },
-    {
-      "name": "firewall-strong",
-      "frames": 145
-    },
-    {
-      "name": "usb-drive",
-      "frames": 145
-    },
-    {
-      "name": "usb-drive-strong",
-      "frames": 145
     }
   ],
-  "minimumPaintedMargin": 2.1013599999999997,
+  "minimumPaintedMargin": 2.2,
   "gaps": {
-    "server unit-top-frame / unit-bottom-frame": 1.5,
-    "server unit-top-bar / unit-top-frame": 1.4999999999999991,
-    "server unit-top-led / unit-top-frame": 1.4499999999999993,
-    "server unit-bottom-bar / unit-bottom-frame": 1.5,
-    "server unit-bottom-led / unit-bottom-frame": 1.4499999999999993,
-    "database band / cap": 2.5249736968928405,
-    "database tier-upper-solid / tier-lower-solid": 1.5556448066738242,
-    "database band / drum-bottom-1": 1.4529102752087044,
-    "database band / drum-bottom-2": 1.4529102752087022,
-    "processor core / body-frame": 3.876337131233214,
-    "processor core-solid / body-solid": 1.626337131233214,
-    "memory-chip contact-0 / slot": 1.5593499999999985,
-    "memory-chip contact-0-solid / slot-solid": 1.4593499999999984,
-    "memory-chip contact-1 / slot": 1.5593499999999985,
-    "memory-chip contact-1-solid / slot-solid": 1.4593499999999984,
-    "memory-chip contact-2 / slot": 1.5593499999999985,
-    "memory-chip contact-2-solid / slot-solid": 1.4593499999999984,
-    "memory-chip contact-3 / slot": 1.5593499999999985,
-    "memory-chip contact-3-solid / slot-solid": 1.4593499999999984,
-    "memory-chip contact-4 / slot": 1.5593499999999985,
-    "memory-chip contact-4-solid / slot-solid": 1.4593499999999984,
-    "memory-chip chip-0 / module-frame": 1.25,
-    "memory-chip chip-1 / module-frame": 1.7499999999999982,
-    "memory-chip chip-2 / module-frame": 1.25,
     "hard-drive hub / platter": 1.549450637991661,
     "hard-drive hub-solid / platter-solid": 1.4995219476388246,
     "hard-drive platter / body-frame": 1.2996422277069088,
@@ -124,13 +36,6 @@
     "hard-drive platter / status-2": 3.033261519104708,
     "hard-drive status-1 / body-frame": 1.5,
     "hard-drive status-2 / body-frame": 1.5,
-    "ethernet contact-a / plug-frame": 1.4999999999999991,
-    "ethernet contact-b / plug-frame": 1.4999999999999991,
-    "ethernet contact-a / contact-b": 1.5,
-    "ethernet plug-solid remains opaque": 1,
-    "router antenna-l / antenna-r": 7.760840000000002,
-    "router antenna-l-solid / antenna-r-solid": 7.660850267181397,
-    "router status / body-frame": 1.1499999999999986,
     "load-balancer target-l-frame / target-r-frame": 1.5,
     "load-balancer target-l-solid / target-r-solid": 1.3999999999999986,
     "load-balancer packet remains opaque": 1,
@@ -142,23 +47,9 @@
     "load-balancer packet / source prep strong": 1.2088700000000001,
     "load-balancer packet / source prep strong-solid": 1.2587692241583261,
     "load-balancer packet / received strong": 1.3499999999999979,
-    "load-balancer packet / received strong-solid": 1.3998879209605315,
-    "firewall arrow-head / wall-frame": 1.2475000000000005,
-    "firewall arrow-head-solid / tile-tl": 2.0397913419103855,
-    "firewall arrow-head-solid / tile-tr": 10.544366146288647,
-    "firewall arrow-head-solid / tile-bl": 2.0397913419103846,
-    "firewall arrow-head-solid / tile-br": 8.596522879920716,
-    "firewall attached arrow tip": 0,
-    "firewall attached arrow tip-solid": 0,
-    "usb-drive contact-a / drive-frame": 1.2499999999999991,
-    "usb-drive contact-b / drive-frame": 1.2499999999999991,
-    "usb-drive contact-a / contact-b": 2.6000000000000014,
-    "usb-drive contact-a / junction": 2.049999999999999,
-    "usb-drive contact-b / junction": 2.049999999999999,
-    "usb-drive divider attached 0": 0,
-    "usb-drive divider attached 1": 0
+    "load-balancer packet / received strong-solid": 1.3998879209605315
   },
-  "checks": 54408,
+  "checks": 15548,
   "errors": [],
   "exceptions": {
     "server": "Status holes are inside each actual unit; adjacent units remain separated.",

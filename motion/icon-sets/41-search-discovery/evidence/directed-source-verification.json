@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 66,
-  "nativeTransformNodes": 270,
+  "nativeTransformNodes": 226,
   "nativeTransformMaxCoordinateError": 0.000009999999999621423,
   "checks": [
     {
@@ -186,100 +186,6 @@
         {
           "type": "fixed",
           "part": "search-voice-handle"
-        }
-      ]
-    },
-    {
-      "name": "search-image",
-      "fixedParts": [
-        "search-image-frame",
-        "search-image-mountain"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "search-image-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "search-image-mountain"
-        },
-        {
-          "type": "rigid",
-          "part": "search-image-lens"
-        },
-        {
-          "type": "rigid",
-          "part": "search-image-handle"
-        }
-      ]
-    },
-    {
-      "name": "search-image-strong",
-      "fixedParts": [
-        "search-image-frame",
-        "search-image-mountain"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "search-image-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "search-image-mountain"
-        },
-        {
-          "type": "rigid",
-          "part": "search-image-lens"
-        },
-        {
-          "type": "rigid",
-          "part": "search-image-handle"
-        }
-      ]
-    },
-    {
-      "name": "search-filter",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "search-filter-lens"
-        },
-        {
-          "type": "rigid",
-          "part": "search-filter-handle"
-        }
-      ]
-    },
-    {
-      "name": "search-filter-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "search-filter-lens"
-        },
-        {
-          "type": "rigid",
-          "part": "search-filter-handle"
         }
       ]
     },
@@ -476,92 +382,6 @@
         {
           "type": "rigid",
           "part": "tag-remove-eyelet"
-        }
-      ]
-    },
-    {
-      "name": "trending-up",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "trending-up-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "trending-down",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "trending-down-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "telescope",
-      "fixedParts": [
-        "telescope-post",
-        "telescope-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "telescope-post"
-        },
-        {
-          "type": "fixed",
-          "part": "telescope-base"
-        },
-        {
-          "type": "rigid",
-          "part": "telescope-tube"
-        }
-      ]
-    },
-    {
-      "name": "telescope-strong",
-      "fixedParts": [
-        "telescope-post",
-        "telescope-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "telescope-post"
-        },
-        {
-          "type": "fixed",
-          "part": "telescope-base"
-        },
-        {
-          "type": "rigid",
-          "part": "telescope-tube"
         }
       ]
     },
@@ -766,48 +586,6 @@
       ]
     },
     {
-      "name": "search-scope",
-      "fixedParts": [
-        "search-scope-lens",
-        "search-scope-handle"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "search-scope-lens"
-        },
-        {
-          "type": "fixed",
-          "part": "search-scope-handle"
-        }
-      ]
-    },
-    {
-      "name": "search-scope-strong",
-      "fixedParts": [
-        "search-scope-lens",
-        "search-scope-handle"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "search-scope-lens"
-        },
-        {
-          "type": "fixed",
-          "part": "search-scope-handle"
-        }
-      ]
-    },
-    {
       "name": "searching",
       "fixedParts": [
         "searching-lens",
@@ -868,6 +646,70 @@
       "name": "searching-strong",
       "maxSeamPositionError": 0,
       "maxVelocityRatio": 0.08729921181283987
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "search-image",
+      "spec": "specs/search-image.icon.json",
+      "specSha256": "a48f137e2b33c855cc41267e58289fe8cc7854e32cdbb2c86a18c7de705a19ef",
+      "actions": [
+        "search-image",
+        "search-image-strong"
+      ]
+    },
+    {
+      "icon": "search-filter",
+      "spec": "specs/search-filter.icon.json",
+      "specSha256": "1f9f424b36ed0b159921d6fbfb940b70321bb8dad064280286b65bcd5b2bb5d5",
+      "actions": [
+        "search-filter",
+        "search-filter-reverse",
+        "search-filter-strong",
+        "search-filter-reverse-strong"
+      ]
+    },
+    {
+      "icon": "trending-up",
+      "spec": "specs/trending-up.icon.json",
+      "specSha256": "a58d0e7751c9c7a8bd3e4f88c30b6158d2889aadf47d729596a7d037b47fdae8",
+      "actions": [
+        "trending-up",
+        "trending-up-reverse",
+        "trending-up-strong",
+        "trending-up-reverse-strong"
+      ]
+    },
+    {
+      "icon": "trending-down",
+      "spec": "specs/trending-down.icon.json",
+      "specSha256": "f7ecc5d42a72100392945336af6e91adccb89ec76abcc3ceb111c86459e5e067",
+      "actions": [
+        "trending-down",
+        "trending-down-reverse",
+        "trending-down-strong",
+        "trending-down-reverse-strong"
+      ]
+    },
+    {
+      "icon": "telescope",
+      "spec": "specs/telescope.icon.json",
+      "specSha256": "047ba69cb96d20da78e73056268ad7e6d4bb712cbccf38bd08efa7ceb720be9d",
+      "actions": [
+        "telescope",
+        "telescope-strong"
+      ]
+    },
+    {
+      "icon": "search-scope",
+      "spec": "specs/search-scope.icon.json",
+      "specSha256": "a22eaeb7902456ecb5e3e391c993cf22a87412a22c27a36a743c91e9b33eb52f",
+      "actions": [
+        "search-scope",
+        "search-scope-reverse",
+        "search-scope-strong",
+        "search-scope-reverse-strong"
+      ]
     }
   ]
 }

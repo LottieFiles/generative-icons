@@ -1,0 +1,47 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "library-shelf",
+  "label": "Library shelf",
+  "intent": "A book is taken down and shelved again. Light: the middle book is drawn up out of the row, held, and dropped home with a knock; the knock rattles the row: the leaning book rocks back on its corner and the left book tips, each settling a beat later. Strong: the book sticks first (a short tug), is pulled out higher, then shelved hard with a rebound, and the knock rocks both neighbours wider before they settle. The shelf never moves.",
+  "preview": {
+    "light": [0, 0.07, 0.14, 0.22, 0.34, 0.39, 0.45, 0.52],
+    "strong": [0, 0.07, 0.18, 0.32, 0.4, 0.5, 0.56, 0.66]
+  },
+  "parts": {
+    "band-2": {"shape": {"line": [[22.436, 15.457], [26.992, 16.097]]}},
+    "book-2": {
+      "//": "v1's leaning book: a 4.6 x 14 r1.2 spine turned 8 degrees, exact path",
+      "shape": {"path": "M24.112 12.158 L26.291 12.464 C26.946 12.557 27.404 13.164 27.312 13.82 L25.767 24.812 C25.675 25.468 25.068 25.925 24.412 25.833 L22.233 25.527 C21.577 25.435 21.12 24.827 21.212 24.171 L22.757 13.18 C22.849 12.524 23.456 12.066 24.112 12.158 Z"},
+      "role": "surface", "solid": "ring"
+    },
+    "band-1": {"shape": {"line": [[12.9, 10.5], [17.5, 10.5]]}},
+    "book-1": {"shape": {"rect": [12.9, 7, 4.6, 19], "r": 1.2}, "role": "surface", "solid": "ring"},
+    "band-0": {"shape": {"line": [[4.8, 13.5], [9.4, 13.5]]}},
+    "book-0": {"shape": {"rect": [4.8, 10, 4.6, 16], "r": 1.2}, "role": "surface", "solid": "ring"},
+    "shelf": {"shape": {"line": [[4, 26], [28, 26]]}}
+  },
+  "rigs": {
+    "book-1": {"//": "the middle book slides straight up out of the row", "pivot": [15.2, 26], "carries": ["book-1", "band-1"]},
+    "book-2": {"//": "the leaning book rocks on its bottom corners", "pivot": {"contact": [[21.75, 25.55], [25, 25.95]]}, "carries": ["book-2", "band-2"]},
+    "book-0": {"//": "the left book tips on its bottom corners", "pivot": {"contact": [[4.8, 26], [9.4, 26]]}, "carries": ["book-0", "band-0"]}
+  },
+  "motion": {
+    "book-1.y": {
+      "light": [[0, 0], [0.14, -3, "out"], [0.22, -3], [0.34, 0, "hit"], [0.39, -0.4, "out"], [0.44, 0, "hit"]],
+      "strong": [
+        [0, 0], [0.06, -0.9, "out"], [0.11, 0, "hit"],
+        [0.3, -4, "out"], [0.38, -4], [0.5, 0, "hit"],
+        [0.56, -0.7, "out"], [0.62, 0, "hit"], [0.66, -0.2, "out"], [0.7, 0, "hit"]
+      ]
+    },
+    "book-2.rotate": {
+      "light": [[0, 0], [0.34, 0], [0.4, -5, "out"], [0.48, 1.5], [0.55, 0]],
+      "strong": [[0, 0], [0.11, 0], [0.15, -1.5, "out"], [0.2, 0], [0.5, 0], [0.56, -7, "out"], [0.64, 2.5], [0.71, -0.8], [0.77, 0]]
+    },
+    "book-0.rotate": {
+      "light": [[0, 0], [0.36, 0], [0.41, -3, "out"], [0.48, 1], [0.54, 0]],
+      "strong": [[0, 0], [0.52, 0], [0.57, -4.5, "out"], [0.65, 1.5], [0.72, -0.5], [0.78, 0]]
+    }
+  }
+}

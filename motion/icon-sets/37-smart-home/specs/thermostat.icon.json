@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "thermostat",
+  "label": "Thermostat",
+  "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+  "preview": {"light": [0, 0.1, 0.18, 0.26, 0.34, 0.38, 0.44, 0.5], "strong": [0, 0.18, 0.25, 0.33, 0.46, 0.53, 0.61, 0.77]},
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "ring":        {"shape": {"circle": [[16, 16], 11.2]}, "role": "surface", "solid": "ring"},
+    "hub":         {"shape": {"circle": [[16, 16], 1.6]}, "role": "fill"},
+    "setpoint":    {"//": "v1's starting setpoint, 135 to 200 degrees on r 6.8", "shape": {"arc": [[16, 16], 6.8, 135, 200]}},
+    "setpoint-up": {"//": "hidden at rest: the rest of the end-state arc (200 to 330), drawn on behind the knob; together they make v1's end arc",
+                    "shape": {"arc": [[16, 16], 6.8, 200, 330]}, "hidden": true},
+    "knob":        {"shape": {"circle": [[9.61, 13.674], 1.9]}, "role": "fill"}
+  },
+  "rigs": {
+    "knob": {"//": "the knob rides the end of the setpoint round the dial centre", "pivot": [16, 16]}
+  },
+  "motion": {
+    "knob.rotate": {
+      "light":  [[0, 0], [0.02, 0], [0.34, 130, "inOut"]],
+      "strong": [[0, 0], [0.08, 0], [0.18, 60, "hit"], [0.25, 60], [0.33, 100, "hit"], [0.39, 100], [0.46, 130, "hit"]]
+    },
+    "setpoint-up.draw": {
+      "//": "the knob's turn divided by 130, key for key, so the arc's end stays under the knob",
+      "light":  [[0, 1], [0.02, 0, "step"], [0.34, 1, "inOut"]],
+      "strong": [[0, 1], [0.08, 0, "step"], [0.18, 0.4615385, "hit"], [0.25, 0.4615385], [0.33, 0.7692308, "hit"], [0.39, 0.7692308], [0.46, 1, "hit"]]
+    },
+    "setpoint-up.opacity": {
+      "light":  [[0, 0], [0.02, 1, "step"]],
+      "strong": [[0, 0], [0.08, 1, "step"]]
+    },
+    "hub.scale": {
+      "light":  [[0, 1], [0.3, 1], [0.38, 1.5, "out"], [0.5, 1]],
+      "strong": [[0, 1], [0.46, 1], [0.53, 1.75, "out"], [0.61, 0.88], [0.69, 1.1], [0.77, 1]]
+    }
+  },
+  "reverse": {
+    "//": "the hub's glow ends at rest, so the reset keeps it; only the knob and the new setting fade",
+    "light":  {"hub.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"hub.opacity": [[0, 1], [0.25, 1]]}
+  }
+}

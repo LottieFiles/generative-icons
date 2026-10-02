@@ -1,0 +1,67 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "pill",
+  "label": "Pill",
+  "intent": "The capsule releases its dose. Light: the halves pull apart along the axis, a granule spills out of the gap on each side and fades, and the halves snap shut with a hit and a tiny click rebound. Strong: the capsule twists as it pulls further apart, two granules spill out of each side in turn, and it snaps shut, rebounds and untwists with a settle.",
+  "parts": {
+    "gran-1": {
+      "//": "hidden at rest: medicine spilling out of the gap, toward the lower right",
+      "shape": {"circle": [[16, 16], 1.1]},
+      "role": "fill",
+      "hidden": true
+    },
+    "gran-2": {"//": "hidden at rest: toward the upper left", "shape": {"circle": [[16, 16], 1.1]}, "role": "fill", "hidden": true},
+    "gran-3": {"//": "Strong only: a second granule, lower right", "shape": {"circle": [[16, 16], 0.95]}, "role": "fill", "hidden": true},
+    "gran-4": {"//": "Strong only: a second granule, upper left", "shape": {"circle": [[16, 16], 0.95]}, "role": "fill", "hidden": true},
+    "half-a": {
+      "shape": {
+        "path": "M13.172 13.172 L7.67 18.673 L7.67 18.673 C6.108 20.235 6.108 22.768 7.67 24.33 C9.232 25.892 11.765 25.892 13.327 24.33 L18.828 18.828 L13.172 13.172 Z"
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M12.783 13.56 L7.67 18.673 L7.67 18.673 C6.108 20.235 6.108 22.768 7.67 24.33 C9.232 25.892 11.765 25.892 13.327 24.33 L18.44 19.217 L12.783 13.56 Z"
+      },
+      "//": "v1 Solid: each half filled at its centerline, pulled 0.55 back from the seam"
+    },
+    "half-b": {
+      "shape": {
+        "path": "M18.828 18.828 L24.33 13.327 L24.33 13.327 C25.892 11.765 25.892 9.232 24.33 7.67 C22.768 6.108 20.235 6.108 18.673 7.67 L13.172 13.172 L18.828 18.828 Z"
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M19.217 18.44 L24.33 13.327 L24.33 13.327 C25.892 11.765 25.892 9.232 24.33 7.67 C22.768 6.108 20.235 6.108 18.673 7.67 L13.56 12.783 L19.217 18.44 Z"
+      }
+    }
+  },
+  "rigs": {
+    "pill": {"pivot": [16, 16], "carries": ["half-a", "half-b", "gran-1", "gran-2", "gran-3", "gran-4"]},
+    "half-a": {"pivot": [10.5, 21.5]},
+    "half-b": {"pivot": [21.5, 10.5]}
+  },
+  "motion": {
+    "half-b.x": {
+      "light": [[0, 0], [0.14, 1, "out"], [0.25, 1], [0.33, 0, "hit"], [0.37, 0.15, "out"], [0.41, 0, "hit"]],
+      "strong": [[0, 0], [0.17, 1.5, "out"], [0.36, 1.5], [0.44, 0, "hit"], [0.48, 0.25, "out"], [0.52, 0, "hit"]]
+    },
+    "half-b.y": {"follow": "half-b.x", "scale": -1},
+    "half-a.x": {"follow": "half-b.x", "scale": -1},
+    "half-a.y": {"follow": "half-b.x"},
+    "pill.rotate": {"strong": [[0, 0], [0.17, -12, "out"], [0.36, -12], [0.44, 0, "hit"], [0.5, 2], [0.58, 0, "inOut"]]},
+    "gran-1.opacity": {"light": [[0, 0], [0.06, 0], [0.09, 1, "out"], [0.26, 1], [0.36, 0, "in"]], "strong": [[0, 0], [0.07, 0], [0.1, 1, "out"], [0.3, 1], [0.4, 0, "in"]]},
+    "gran-1.x": {
+      "light": [[0, 0], [0.06, 0.4, "step"], [0.3, 4.8, "out"], [0.36, 5], [0.38, 0, "step"]],
+      "strong": [[0, 0], [0.07, 0.4, "step"], [0.32, 5.2, "out"], [0.4, 5.4], [0.42, 0, "step"]]
+    },
+    "gran-1.y": {"follow": "gran-1.x"},
+    "gran-2.opacity": {"follow": "gran-1.opacity", "lag": 0.03},
+    "gran-2.x": {"follow": "gran-1.x", "lag": 0.03, "scale": -1},
+    "gran-2.y": {"follow": "gran-1.x", "lag": 0.03, "scale": -1},
+    "gran-3.opacity": {"strong": [[0, 0], [0.15, 0], [0.18, 1, "out"], [0.34, 1], [0.44, 0, "in"]]},
+    "gran-3.x": {"strong": [[0, 0], [0.15, 0.2, "step"], [0.38, 3.3, "out"], [0.44, 3.5], [0.46, 0, "step"]]},
+    "gran-3.y": {"strong": [[0, 0], [0.15, 0.6, "step"], [0.38, 4.6, "out"], [0.44, 4.8], [0.46, 0, "step"]]},
+    "gran-4.opacity": {"follow": "gran-3.opacity", "lag": 0.03},
+    "gran-4.x": {"follow": "gran-3.x", "lag": 0.03, "scale": -1},
+    "gran-4.y": {"follow": "gran-3.y", "lag": 0.03, "scale": -1}
+  }
+}

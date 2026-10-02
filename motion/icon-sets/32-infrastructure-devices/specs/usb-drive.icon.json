@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "usb-drive",
+  "label": "USB drive",
+  "intent": "The drive clicks home in its port. The drawing is the plugged-in drive, connector to the left. Light: it eases back out, drives in and stops dead on its seat; two click ticks flick off the body's front corners where it meets the port, and it rebounds once and settles. Strong: a longer pull out, a harder drive, a bigger click, then a second smaller re-seat. The drive moves as one rigid piece.",
+  "parts": {
+    "contact-b": {"shape": {"circle": [[7.6, 18.4], 1.1]}, "role": "fill", "solid": "none"},
+    "contact-a": {"shape": {"circle": [[7.6, 13.6], 1.1]}, "role": "fill", "solid": "none"},
+    "junction":  {"shape": {"line": [[12, 8.75], [12, 23.25]]}, "solid": "none"},
+    "drive":     {"//": "Solid: v1's body with the junction and contact windows cut",
+                  "shape": {"path": "M5.5 22 C4.5 22 4 21.5 4 20.5 L4 11.5 C4 10.5 4.5 10 5.5 10 L10.5 10 C11.5 10 12 9.708 12 9.125 L12 8.375 C12 7.792 12.5 7.5 13.5 7.5 L23.5 7.5 C24.5 7.5 25 8 25 9 L25 23 C25 24 24.5 24.5 23.5 24.5 L13.5 24.5 C12.5 24.5 12 24.208 12 23.625 L12 22.875 C12 22.292 11.5 22 10.5 22 L5.5 22 Z"},
+                  "role": "surface",
+                  "solid": {"path": "M5.2 23.3 C3.533 23.3 2.7 22.467 2.7 20.8 L2.7 11.2 C2.7 9.533 3.533 8.7 5.2 8.7 L8.2 8.7 C9.867 8.7 10.7 8.408 10.7 7.825 L10.7 7.075 C10.7 6.492 11.533 6.2 13.2 6.2 L23.8 6.2 C25.467 6.2 26.3 7.033 26.3 8.7 L26.3 23.3 C26.3 24.967 25.467 25.8 23.8 25.8 L13.2 25.8 C11.533 25.8 10.7 25.508 10.7 24.925 L10.7 24.175 C10.7 23.592 9.867 23.3 8.2 23.3 L5.2 23.3 L13.3 11.5 C13.3 10.782 12.718 10.2 12 10.2 L12 10.2 C11.282 10.2 10.7 10.782 10.7 11.5 L10.7 20.5 C10.7 21.218 11.282 21.8 12 21.8 L12 21.8 C12.718 21.8 13.3 21.218 13.3 20.5 L13.3 11.5 L5.2 23.3 L7.6 12.5 C6.992 12.5 6.5 12.992 6.5 13.6 C6.5 14.208 6.992 14.7 7.6 14.7 C8.208 14.7 8.7 14.208 8.7 13.6 C8.7 12.992 8.208 12.5 7.6 12.5 L5.2 23.3 L7.6 17.3 C6.992 17.3 6.5 17.792 6.5 18.4 C6.5 19.008 6.992 19.5 7.6 19.5 C8.208 19.5 8.7 19.008 8.7 18.4 C8.7 17.792 8.208 17.3 7.6 17.3 L5.2 23.3 Z"}},
+    "click-t":   {"//": "hidden at rest: the click only exists as the drive seats", "shape": {"line": [[10, 5.6], [8.6, 4.2]]}, "hidden": true},
+    "click-b":   {"mirror": {"of": "click-t", "y": 16}}
+  },
+  "rigs": {
+    "stick": {"pivot": [14.5, 16], "carries": ["drive", "junction", "contact-a", "contact-b"]}
+  },
+  "motion": {
+    "stick.x": {
+      "light":  [[0, 0], [0.12, 1.6, "out"], [0.22, 0, "hit"], [0.29, 0.4], [0.37, 0]],
+      "strong": [[0, 0], [0.15, 2.4, "out"], [0.26, 0, "hit"], [0.34, 0.7], [0.41, 0, "hit"], [0.48, 0.15], [0.55, 0]]
+    },
+    "click-t.opacity": {
+      "light":  [[0, 0], [0.21, 0], [0.23, 1, "out"], [0.31, 1], [0.4, 0, "in"]],
+      "strong": [[0, 0], [0.25, 0], [0.27, 1, "out"], [0.37, 1], [0.48, 0, "in"]]
+    },
+    "click-t.x": {
+      "light":  [[0, 0], [0.22, 0], [0.4, -0.7, "out"], [0.42, 0, "step"]],
+      "strong": [[0, 0], [0.26, 0], [0.48, -1.1, "out"], [0.5, 0, "step"]]
+    },
+    "click-t.y": {
+      "light":  [[0, 0], [0.22, 0], [0.4, -0.7, "out"], [0.42, 0, "step"]],
+      "strong": [[0, 0], [0.26, 0], [0.48, -1.1, "out"], [0.5, 0, "step"]]
+    },
+    "click-b.opacity": {"follow": "click-t.opacity"},
+    "click-b.x": {"follow": "click-t.x"},
+    "click-b.y": {"follow": "click-t.y", "scale": -1}
+  }
+}

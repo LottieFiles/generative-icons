@@ -1,0 +1,62 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "quoted-message",
+  "label": "Quoted message",
+  "intent": "A quote is inserted. Light: the two quote marks lift and stamp down in turn, left then right, while the quoted line winds back; once both have landed the quoted line draws on beneath them. Strong: the marks lift higher, tipping back, and stamp down with a hit and a second smaller tap; the line draws on after them. The bubble never moves.",
+  "parts": {
+    "bubble": {
+      "shape": {"path": "M8 5 L24 5 C25.7 5 27 6.3 27 8 L27 21 C27 22.7 25.7 24 24 24 L12 24 L7.6 27 C7 27.4 6.5 27 6.7 26.3 L7.2 24 C5.9 23.7 5 22.5 5 21 L5 8 C5 6.3 6.3 5 8 5 Z"},
+      "role": "surface",
+      "solid": "ring"
+    },
+    "quote-left": {
+      "shape": {"rect": [10, 10, 2.6, 3], "r": 1},
+      "role": "fill"
+    },
+    "quote-left-tail": {
+      "shape": {"line": [[11.6, 12], [10, 15]]}
+    },
+    "quote-right": {
+      "shape": {"rect": [16, 10, 2.6, 3], "r": 1},
+      "role": "fill"
+    },
+    "quote-right-tail": {
+      "shape": {"line": [[17.6, 12], [16, 15]]}
+    },
+    "quotation": {
+      "shape": {"line": [[10, 20], [21, 20]]}
+    }
+  },
+  "rigs": {
+    "ql": {
+      "pivot": [11.3, 11.5],
+      "carries": ["quote-left", "quote-left-tail"]
+    },
+    "qr": {
+      "pivot": [17.3, 11.5],
+      "carries": ["quote-right", "quote-right-tail"]
+    }
+  },
+  "motion": {
+    "ql.y": {
+      "light": [[0, 0], [0.08, -2.2, "out"], [0.18, 0, "hit"], [0.23, -0.3], [0.28, 0]],
+      "strong": [[0, 0], [0.1, -2.8, "out"], [0.22, 0, "hit"], [0.28, -0.7, "out"], [0.34, 0, "hit"], [0.4, 0]]
+    },
+    "ql.rotate": {
+      "strong": [[0, 0], [0.1, -14, "out"], [0.22, 0, "hit"], [0.29, 4], [0.37, 0]]
+    },
+    "qr.y": {
+      "follow": "ql.y",
+      "lag": 0.07
+    },
+    "qr.rotate": {
+      "follow": "ql.rotate",
+      "lag": 0.07
+    },
+    "quotation.draw": {
+      "light": [[0, 1], [0.1, 0, "in"], [0.25, 0], [0.42, 1, "out"]],
+      "strong": [[0, 1], [0.1, 0, "in"], [0.34, 0], [0.56, 1, "out"]]
+    }
+  }
+}

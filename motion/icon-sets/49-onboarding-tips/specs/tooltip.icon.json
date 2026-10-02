@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "tooltip",
+  "label": "Tooltip",
+  "intent": "The target is hovered and its tooltip pops up with the hint. Light: the target dot swells, the bubble ducks into its tail, pops out with an overshoot and settles, and its two text lines write in from the left, the second a beat after the first. Strong: the target taps in and swells, the bubble ducks deeper, pops bigger with a two-beat settle, and the lines write in turn. The bubble grows from its tail tip, so it stays anchored to its target.",
+  "parts": {
+    "target": {"shape": {"circle": [[16, 26], 1.5]}, "role": "fill"},
+    "bubble": {"//": "v1 Solid: the bubble filled, no rim, text hidden", "shape": {"path": "M6 9 C6 7.333 6.833 6.5 8.5 6.5 L23.5 6.5 C25.167 6.5 26 7.333 26 9 L26 16 C26 17.667 25.167 18.5 23.5 18.5 L18.4 18.5 C18.133 18.5 17.917 18.604 17.75 18.812 L16.312 20.61 C16.104 20.87 15.896 20.87 15.688 20.61 L14.25 18.812 C14.083 18.604 13.867 18.5 13.6 18.5 L8.5 18.5 C6.833 18.5 6 17.667 6 16 L6 9 Z"}, "role": "surface", "solid": "fill"},
+    "line-0": {"shape": {"line": [[10, 11], [22, 11]]}, "solid": "none"},
+    "line-1": {"shape": {"line": [[10, 14.5], [18, 14.5]]}, "solid": "none"}
+  },
+  "rigs": {
+    "bubble": {"pivot": [16, 20.8], "carries": ["bubble", "line-0", "line-1"]}
+  },
+  "motion": {
+    "//": "Scaled about the tail tip; 1.12 keeps the bubble 3.5 inside the canvas at Bold.",
+    "target.scale": {
+      "light":  [[0, 1], [0.07, 1.6, "out"], [0.18, 1, "inOut"]],
+      "strong": [[0, 1], [0.06, 0.6, "out"], [0.14, 1.7, "out"], [0.26, 1, "inOut"]]
+    },
+    "bubble.scale": {
+      "light":  [[0, 1], [0.04, 1], [0.1, 0.85, "in"], [0.22, 1.08, "out"], [0.3, 0.97], [0.38, 1]],
+      "strong": [[0, 1], [0.1, 1], [0.17, 0.78, "in"], [0.3, 1.12, "out"], [0.4, 0.95], [0.48, 1.03], [0.56, 1]]
+    },
+    "line-0.draw": {
+      "light":  [[0, 1], [0.1, 0, "step"], [0.32, 1, "out"]],
+      "strong": [[0, 1], [0.17, 0, "step"], [0.42, 1, "out"]]
+    },
+    "line-1.draw": {
+      "light":  [[0, 1], [0.1, 0, "step"], [0.17, 0], [0.38, 1, "out"]],
+      "strong": [[0, 1], [0.17, 0, "step"], [0.26, 0], [0.5, 1, "out"]]
+    }
+  }
+}

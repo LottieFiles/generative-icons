@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "inbox",
+  "label": "Inbox",
+  "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": ["Play action", "Reset preview"],
+    "reverse": "fade"
+  },
+  "parts": {
+    "front": {
+      "shape": {
+        "path": "M5 22 L5 22 L10.5 22 L10.5 22 L11.776 23.276 C12.059 23.559 12.4 23.7 12.8 23.7 L19.2 23.7 C19.6 23.7 19.941 23.559 20.224 23.276 L21.5 22 L21.5 22 L27 22 L27 22 L27 26 C27 27 26.5 27.5 25.5 27.5 L6.5 27.5 C5.5 27.5 5 27 5 26 L5 22 Z"
+      },
+      "role": "surface",
+      "outline": "none"
+    },
+    "shelf": {"shape": {"polyline": [[5, 22], [10.5, 22], [12.2, 23.7], [19.8, 23.7], [21.5, 22], [27, 22]]}},
+    "walls": {"shape": {"path": "M5 15.5 L5 26 C5 26.8 5.7 27.5 6.5 27.5 L25.5 27.5 C26.3 27.5 27 26.8 27 26 L27 15.5"}},
+    "card-flap": {"shape": {"polyline": [[9.5, 4.2], [16, 8.2], [22.5, 4.2]]}, "solid": "none"},
+    "card": {"shape": {"rect": [9.5, 4.2, 13, 7.6], "r": 1.4}, "role": "surface"}
+  },
+  "rigs": {
+    "card": {"pivot": [16, 8], "carries": ["card", "card-flap"]},
+    "tray": {"pivot": [16, 24], "carries": ["front", "shelf", "walls"]}
+  },
+  "reverse": {
+    "//": "v1's reset moves only the card; the tray only reacted, so it stays visible",
+    "light": {
+      "front.opacity": [[0, 1], [0.25, 1]],
+      "shelf.opacity": [[0, 1], [0.25, 1]],
+      "walls.opacity": [[0, 1], [0.25, 1]]
+    },
+    "strong": {
+      "front.opacity": [[0, 1], [0.25, 1]],
+      "shelf.opacity": [[0, 1], [0.25, 1]],
+      "walls.opacity": [[0, 1], [0.25, 1]]
+    }
+  },
+  "motion": {
+    "card.y": {
+      "light": [[0, 0], [0.08, -0.7, "out"], [0.28, 6.6, "hit"], {"bounce": 0.38, "amp": 0.12}],
+      "strong": [[0, 0], [0.1, -1.2, "out"], [0.3, 6.6, "hit"], {"bounce": 0.41, "amp": 0.14}, {"bounce": 0.5, "amp": 0.3}]
+    },
+    "tray.y": {
+      "light": [[0, 0], [0.28, 0], [0.33, 0.7, "out"], [0.42, -0.15], [0.5, 0]],
+      "strong": [[0, 0], [0.3, 0], [0.35, 1, "out"], [0.44, -0.3], [0.52, 0.1], [0.59, 0]]
+    }
+  }
+}

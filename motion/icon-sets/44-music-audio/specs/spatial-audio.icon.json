@@ -1,0 +1,26 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "spatial-audio",
+  "label": "Spatial audio",
+  "intent": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
+  "parts": {
+    "arc-left": {"shape": {"arc": [[16, 16], 10.5, 160, 200]}},
+    "arc-top": {"shape": {"arc": [[16, 16], 10.5, 250, 290]}},
+    "arc-right": {"shape": {"arc": [[16, 16], 10.5, -20, 20]}},
+    "shoulders": {"shape": {"arc": [[16, 23], 4.8, 200, 340]}},
+    "head": {"shape": {"circle": [[16, 13.5], 2.4]}, "role": "fill"}
+  },
+  "rigs": {
+    "field": {"pivot": [16, 16], "carries": ["arc-left", "arc-top", "arc-right"]}
+  },
+  "motion": {
+    "arc-left.r": {"light": [[0, 0], [0.12, -2.6, "hit"], [0.21, 0.5], [0.3, 0]]},
+    "arc-top.r": {"follow": "arc-left.r", "lag": 0.1},
+    "arc-right.r": {"follow": "arc-left.r", "lag": 0.2},
+    "field.rotate": {
+      "//": "a whole turn; once it has stopped, the angle steps from 360 back to 0 (the same picture) so the rest frame is exactly the first",
+      "strong": [[0, 0], [0.12, -22, "out"], [0.52, 372, "out"], [0.64, 356], [0.74, 361], [0.82, 360], [0.84, 0, "step"]]
+    }
+  }
+}

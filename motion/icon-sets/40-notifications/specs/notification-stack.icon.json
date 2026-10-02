@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "notification-stack",
+  "label": "Notification stack",
+  "intent": "A new notification lands on the stack. Light: the unread dot pops, the front card drops onto the stack with a hit, and the stacked edges below give in turn, each less, then everything settles. Strong: the card lifts first, the dot pops harder, the card slams down and bounces once more, and the edges take both landings in order.",
+  "parts": {
+    "card": {
+      "shape": {"rect": [5, 7, 22, 9.5], "r": 2.2},
+      "role": "surface",
+      "//": "v1 Solid: a hollow ring with a 1.2 inner corner, one bridged subpath",
+      "solid": {"path": "M7.2 5.7 L24.8 5.7 C26.732 5.7 28.3 7.268 28.3 9.2 L28.3 14.3 C28.3 16.232 26.732 17.8 24.8 17.8 L7.2 17.8 C5.268 17.8 3.7 16.232 3.7 14.3 L3.7 9.2 C3.7 7.268 5.268 5.7 7.2 5.7 L7.2 5.7 L7.5 8.3 C6.838 8.3 6.3 8.838 6.3 9.5 L6.3 14 C6.3 14.662 6.838 15.2 7.5 15.2 L24.5 15.2 C25.162 15.2 25.7 14.662 25.7 14 L25.7 9.5 C25.7 8.838 25.162 8.3 24.5 8.3 L7.5 8.3 L7.2 5.7 Z"}
+    },
+    "dot": {"shape": {"circle": [[9.6, 11.75], 1.4]}, "role": "fill"},
+    "line": {"shape": {"line": [[13.5, 11.75], [23, 11.75]]}},
+    "edge-0": {"shape": {"line": [[7, 20.5], [25, 20.5]]}},
+    "edge-1": {"shape": {"line": [[9, 25], [23, 25]]}}
+  },
+  "rigs": {
+    "card": {"//": "the front card carries its content", "pivot": [16, 11.75], "carries": ["dot", "line"]},
+    "dot": {"//": "the unread dot pops about its centre", "pivot": [9.6, 11.75]}
+  },
+  "motion": {
+    "dot.scale": {
+      "light":  [[0, 1], [0.08, 1.6, "out"], [0.16, 0.9], [0.23, 1]],
+      "strong": [[0, 1], [0.1, 1.7, "out"], [0.2, 0.85, "hit"], [0.28, 1.1], [0.36, 1]]
+    },
+    "card.y": {
+      "light":  [[0, 0], [0.08, 0], [0.16, 1.2, "hit"], [0.25, -0.3], [0.33, 0]],
+      "strong": [[0, 0], [0.1, -1.4, "out"], [0.2, 1.5, "hit"], [0.29, -0.5], [0.37, 0.5, "hit"], [0.45, -0.12], [0.52, 0]]
+    },
+    "edge-0.y": {
+      "light":  [[0, 0], [0.13, 0], [0.21, 0.7, "hit"], [0.29, -0.15], [0.37, 0]],
+      "strong": [[0, 0], [0.18, 0], [0.26, 0.9, "hit"], [0.34, -0.25], [0.42, 0.3, "hit"], [0.5, 0]]
+    },
+    "edge-1.y": {
+      "light":  [[0, 0], [0.19, 0], [0.27, 0.4, "hit"], [0.34, -0.08], [0.41, 0]],
+      "strong": [[0, 0], [0.24, 0], [0.32, 0.55, "hit"], [0.4, -0.12], [0.48, 0.18, "hit"], [0.56, 0]]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "guitar",
+  "label": "Guitar",
+  "intent": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
+  "parts": {
+    "sound-hole": {"shape": {"circle": [[15, 21], 1.9]}, "role": "fill"},
+    "body": {
+      "shape": {"path": "M15 13.5 C10.8 13.5 9.2 16.2 10.2 19 C7.2 20.6 7.2 28.2 15 28.2 C22.8 28.2 22.8 20.6 19.8 19 C20.8 16.2 19.2 13.5 15 13.5 Z"},
+      "role": "surface",
+      "solid": "fill",
+      "knockout": [{"part": "sound-hole", "gap": 0.5}]
+    },
+    "head": {"shape": {"rect": [13.2, 3.2, 3.6, 3.6], "r": 1.2}, "role": "fill"},
+    "neck": {"shape": {"line": [[15, 13.5], [15, 5]]}},
+    "wave-l": {"//": "hidden at rest: sound only exists while it rings", "shape": {"arc": [[15, 22.9], 10, 155, 205]}, "hidden": true},
+    "wave-r": {"mirror": {"of": "wave-l", "x": 15}}
+  },
+  "rigs": {
+    "guitar": {"pivot": [15, 28.2], "carries": ["body", "head", "neck", "sound-hole"]},
+    "sound-hole": {"pivot": [15, 21]}
+  },
+  "motion": {
+    "guitar.rotate": {
+      "light": [[0, 0], [0.07, -4.5, "hit"], [0.19, 2], [0.3, -0.7], [0.4, 0]],
+      "strong": [[0, 0], [0.07, -5, "hit"], [0.18, 1.5], [0.28, 0], [0.33, 5.5, "hit"], [0.45, -2.2], [0.56, 0.8], [0.66, 0]]
+    },
+    "sound-hole.scale": {
+      "light": [[0, 1], [0.04, 1], [0.1, 1.4, "hit"], [0.2, 0.92], [0.3, 1]],
+      "strong": [[0, 1], [0.04, 1], [0.1, 1.35, "hit"], [0.19, 0.93], [0.27, 1], [0.3, 1], [0.36, 1.5, "hit"], [0.46, 0.9], [0.56, 1]]
+    },
+    "wave-l.opacity": {
+      "light": [[0, 0], [0.06, 0], [0.1, 1, "out"], [0.2, 1], [0.42, 0, "in"]],
+      "strong": [[0, 0], [0.06, 0], [0.1, 1, "out"], [0.17, 1], [0.3, 0, "in"], [0.32, 0], [0.36, 1, "out"], [0.44, 1], [0.64, 0, "in"]]
+    },
+    "wave-l.r": {
+      "light": [[0, 0], [0.06, 0], [0.42, 1.5, "out"], [0.44, 0, "step"]],
+      "strong": [[0, 0], [0.06, 0], [0.3, 1.2, "out"], [0.31, 0, "step"], [0.32, 0], [0.64, 1.6, "out"], [0.66, 0, "step"]]
+    },
+    "wave-r.opacity": {"follow": "wave-l.opacity"},
+    "wave-r.r": {"follow": "wave-l.r"}
+  }
+}

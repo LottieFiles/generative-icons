@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "conversation-history",
+  "label": "Conversation history",
+  "intent": "The conversation replays from the top. Light: a quick rewind pulls the two transcript rows back into the history rail (latest first) and the rail winds up toward the top message; then the rail runs down again and each row unrolls out of it as the rail reaches it, in order. Strong: a deeper rewind in which the rows slide into the rail as they wind in, and a replay in which each row slides back out, overshoots and settles. The top message never moves.",
+  "parts": {
+    "top-message": {
+      "shape": {"path": "M12 5 L24 5 C25.7 5 27 6.3 27 8 L27 10 C27 11.7 25.7 13 24 13 L16 13 L11.6 16 C11 16.4 10.5 16 10.7 15.3 L11.2 13 C9.9 12.7 9 11.5 9 10 L9 8 C9 6.3 10.3 5 12 5 Z"},
+      "role": "surface",
+      "solid": "ring"
+    },
+    "history-rail": {
+      "shape": {"path": "M5 9 L5 25 C5 26.1 5.9 27 7 27 L8.5 27"}
+    },
+    "older-row": {
+      "shape": {"line": [[13, 21], [26, 21]]}
+    },
+    "oldest-row": {
+      "shape": {"line": [[13, 27], [23, 27]]}
+    }
+  },
+  "motion": {
+    "//": "The rail reaches the older row (y 21) at draw 0.58 and its end at 1; each row unrolls as the rail passes it.",
+    "history-rail.draw": {
+      "light": [[0, 1], [0.12, 0.25, "in"], [0.38, 1, "out"]],
+      "strong": [[0, 1], [0.14, 0.16, "in"], [0.18, 0.16], [0.44, 1, "out"]]
+    },
+    "oldest-row.draw": {
+      "light": [[0, 1], [0.08, 0, "in"], [0.28, 0], [0.42, 1, "out"]],
+      "strong": [[0, 1], [0.09, 0, "in"], [0.33, 0], [0.47, 1, "out"]]
+    },
+    "older-row.draw": {
+      "light": [[0, 1], [0.03, 1], [0.12, 0, "in"], [0.18, 0], [0.31, 1, "out"]],
+      "strong": [[0, 1], [0.04, 1], [0.13, 0, "in"], [0.22, 0], [0.36, 1, "out"]]
+    },
+    "oldest-row.x": {
+      "strong": [[0, 0], [0.09, -2, "in"], [0.33, -2], [0.45, 0.5, "out"], [0.53, -0.15], [0.6, 0]]
+    },
+    "older-row.x": {
+      "strong": [[0, 0], [0.04, 0], [0.13, -2, "in"], [0.22, -2], [0.34, 0.5, "out"], [0.42, -0.15], [0.49, 0]]
+    }
+  }
+}

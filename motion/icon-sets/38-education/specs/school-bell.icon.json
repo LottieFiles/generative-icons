@@ -1,0 +1,49 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "school-bell",
+  "label": "School bell",
+  "intent": "The school bell rings. Light: the hand bell is swung from its handle, the clapper trails it and strikes, a ring arc flicks out at each upper side and fades as it spreads, and the swing decays back to rest in smaller beats. Strong: a back-swing to wind up, then a hard shake that rings twice, once at each end of the swing, while the clapper chases the bell through a longer decay (family match with the set 01 bell).",
+  "preview": {
+    "light": [0, 0.06, 0.09, 0.15, 0.21, 0.27, 0.36, 0.5],
+    "strong": [0, 0.07, 0.16, 0.22, 0.28, 0.36, 0.45, 0.6]
+  },
+  "parts": {
+    "clapper": {"shape": {"circle": [[16, 26.9], 1.5]}, "role": "fill"},
+    "handle": {
+      "//": "v1's handle: an open loop in Outline, filled in Solid and tinted in Duotone",
+      "shape": {"path": "M14.2 11.6 L14.2 6.8 C14.2 5.8 15 5 16 5 C17 5 17.8 5.8 17.8 6.8 L17.8 11.6 Z"},
+      "role": "surface", "outline": "open", "solid": "fill"
+    },
+    "body": {
+      "shape": {"path": "M13.6 11.6 L18.4 11.6 C19.6 11.6 20.4 12.4 20.6 13.6 L21.4 19.2 C21.6 20.8 22.6 22.2 24 23 C24.6 23.3 24.4 23.6 23.8 23.6 L8.2 23.6 C7.6 23.6 7.4 23.3 8 23 C9.4 22.2 10.4 20.8 10.6 19.2 L11.4 13.6 C11.6 12.4 12.4 11.6 13.6 11.6 Z"},
+      "role": "surface", "solid": "fill"
+    },
+    "ring-l": {
+      "//": "hidden at rest: the ring only exists while the bell sounds; kept 1.4 inside the canvas at full spread",
+      "shape": {"arc": [[16, 14], 11, 200, 235]}, "hidden": true
+    },
+    "ring-r": {"mirror": {"of": "ring-l"}}
+  },
+  "rigs": {
+    "bell": {"//": "the hand holds the handle: the bell swings about it", "pivot": [16, 8], "carries": ["handle", "body"]},
+    "clapper": {"//": "hangs from the same point and trails the bell, a little wider", "pivot": [16, 8]}
+  },
+  "motion": {
+    "bell.rotate": {
+      "light": [[0, 0], [0.09, 12, "out"], [0.21, -8], [0.32, 4], [0.42, -1.5], [0.5, 0]],
+      "strong": [[0, 0], [0.07, -5], [0.16, 16, "out"], [0.28, -14], [0.4, 9], [0.51, -5], [0.61, 2], [0.7, 0]]
+    },
+    "clapper.rotate": {"follow": "bell.rotate", "lag": 0.06, "scale": 1.2},
+    "ring-l.opacity": {
+      "light": [[0, 0], [0.1, 0], [0.13, 1, "out"], [0.24, 1], [0.34, 0, "in"]],
+      "strong": [[0, 0], [0.17, 0], [0.2, 1, "out"], [0.26, 1], [0.33, 0, "in"], [0.35, 0], [0.38, 1, "out"], [0.45, 1], [0.54, 0, "in"]]
+    },
+    "ring-l.r": {
+      "light": [[0, 0], [0.1, 0], [0.34, 1.5, "out"], [0.36, 0, "step"]],
+      "strong": [[0, 0], [0.17, 0], [0.33, 1.3, "out"], [0.35, 0, "step"], [0.54, 1.5, "out"], [0.56, 0, "step"]]
+    },
+    "ring-r.opacity": {"follow": "ring-l.opacity"},
+    "ring-r.r": {"follow": "ring-l.r"}
+  }
+}

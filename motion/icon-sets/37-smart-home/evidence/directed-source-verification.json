@@ -2,8 +2,8 @@
   "result": "PASS",
   "icons": 20,
   "actions": 62,
-  "nativeTransformNodes": 314,
-  "nativeTransformMaxCoordinateError": 0.000010199061007298837,
+  "nativeTransformNodes": 270,
+  "nativeTransformMaxCoordinateError": 0.00001000000000139778,
   "checks": [
     {
       "name": "smart-bulb",
@@ -44,38 +44,6 @@
         {
           "type": "fixed",
           "part": "smart-bulb-thread-1"
-        }
-      ]
-    },
-    {
-      "name": "thermostat",
-      "fixedParts": [
-        "thermostat-ring-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "thermostat-ring-frame"
-        }
-      ]
-    },
-    {
-      "name": "thermostat-strong",
-      "fixedParts": [
-        "thermostat-ring-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "thermostat-ring-frame"
         }
       ]
     },
@@ -284,84 +252,6 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "video-doorbell",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "video-doorbell-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "security-camera",
-      "fixedParts": [
-        "security-camera-plate",
-        "security-camera-arm",
-        "security-camera-joint"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "security-camera-plate"
-        },
-        {
-          "type": "fixed",
-          "part": "security-camera-arm"
-        },
-        {
-          "type": "fixed",
-          "part": "security-camera-joint"
-        },
-        {
-          "type": "rigid",
-          "part": "security-camera-body-frame"
-        }
-      ]
-    },
-    {
-      "name": "security-camera-strong",
-      "fixedParts": [
-        "security-camera-plate",
-        "security-camera-arm",
-        "security-camera-joint"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "security-camera-plate"
-        },
-        {
-          "type": "fixed",
-          "part": "security-camera-arm"
-        },
-        {
-          "type": "fixed",
-          "part": "security-camera-joint"
-        },
-        {
-          "type": "rigid",
-          "part": "security-camera-body-frame"
-        }
-      ]
     },
     {
       "name": "window-blinds",
@@ -776,5 +666,36 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "thermostat",
+      "spec": "specs/thermostat.icon.json",
+      "specSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+      "actions": [
+        "thermostat",
+        "thermostat-reset",
+        "thermostat-strong",
+        "thermostat-reset-strong"
+      ]
+    },
+    {
+      "icon": "video-doorbell",
+      "spec": "specs/video-doorbell.icon.json",
+      "specSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
+      "actions": [
+        "video-doorbell",
+        "video-doorbell-strong"
+      ]
+    },
+    {
+      "icon": "security-camera",
+      "spec": "specs/security-camera.icon.json",
+      "specSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
+      "actions": [
+        "security-camera",
+        "security-camera-strong"
+      ]
+    }
+  ]
 }

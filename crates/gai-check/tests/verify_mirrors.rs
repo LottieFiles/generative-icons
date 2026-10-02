@@ -308,9 +308,12 @@ fn contract_clearance_failure_after_the_directed_report() {
     let contract = m.paths.set_dir.join("geometry-contract.json");
     let mut doc = read_json(&contract);
     let icons = doc["icons"].as_object_mut().unwrap();
+    // A rule of an icon still built from its scene: adopted icons are checked against their specs.
+    let specs = m.paths.set_dir.join("specs");
     let rule = icons
-        .values_mut()
-        .flat_map(|r| r.as_array_mut().unwrap().iter_mut())
+        .iter_mut()
+        .filter(|(id, _)| !specs.join(format!("{id}.icon.json")).exists())
+        .flat_map(|(_, r)| r.as_array_mut().unwrap().iter_mut())
         .find(|r| r["kind"] == "gap")
         .unwrap();
     rule["min"] = Value::from(100);

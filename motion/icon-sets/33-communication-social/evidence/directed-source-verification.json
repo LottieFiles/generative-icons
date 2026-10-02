@@ -2,59 +2,9 @@
   "result": "PASS",
   "icons": 9,
   "actions": 22,
-  "nativeTransformNodes": 158,
+  "nativeTransformNodes": 72,
   "nativeTransformMaxCoordinateError": 0.000011377123968259184,
   "checks": [
-    {
-      "name": "inbox",
-      "fixedParts": [
-        "inbox-walls",
-        "inbox-shelf"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "inbox-walls"
-        },
-        {
-          "type": "fixed",
-          "part": "inbox-shelf"
-        },
-        {
-          "type": "rigid",
-          "part": "inbox-card-frame"
-        }
-      ]
-    },
-    {
-      "name": "inbox-strong",
-      "fixedParts": [
-        "inbox-walls",
-        "inbox-shelf"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "inbox-walls"
-        },
-        {
-          "type": "fixed",
-          "part": "inbox-shelf"
-        },
-        {
-          "type": "rigid",
-          "part": "inbox-card-frame"
-        }
-      ]
-    },
     {
       "name": "address-book",
       "fixedParts": [
@@ -120,70 +70,6 @@
         {
           "type": "rigid",
           "part": "address-book-shoulders"
-        }
-      ]
-    },
-    {
-      "name": "voicemail",
-      "fixedParts": [
-        "voicemail-tape"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "voicemail-tape"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-left-rim"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-left-mark"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-right-rim"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-right-mark"
-        }
-      ]
-    },
-    {
-      "name": "voicemail-strong",
-      "fixedParts": [
-        "voicemail-tape"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "voicemail-tape"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-left-rim"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-left-mark"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-right-rim"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-right-mark"
         }
       ]
     },
@@ -398,50 +284,6 @@
       ]
     },
     {
-      "name": "emoji-picker",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "emoji-picker-face-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "emoji-picker-eye-l"
-        },
-        {
-          "type": "rigid",
-          "part": "emoji-picker-eye-r"
-        }
-      ]
-    },
-    {
-      "name": "emoji-picker-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "emoji-picker-face-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "emoji-picker-eye-l"
-        },
-        {
-          "type": "rigid",
-          "part": "emoji-picker-eye-r"
-        }
-      ]
-    },
-    {
       "name": "thumbs-up-down",
       "fixedParts": [],
       "topology": true,
@@ -476,75 +318,56 @@
           "part": "thumbs-up-down-cuff"
         }
       ]
-    },
-    {
-      "name": "rss-feed",
-      "fixedParts": [
-        "rss-feed-dot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "rss-feed-dot"
-        }
-      ]
-    },
-    {
-      "name": "rss-feed-strong",
-      "fixedParts": [
-        "rss-feed-dot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "rss-feed-dot"
-        }
-      ]
-    },
-    {
-      "name": "announcement",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "announcement-horn-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "announcement-handle"
-        }
-      ]
-    },
-    {
-      "name": "announcement-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "announcement-horn-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "announcement-handle"
-        }
-      ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "inbox",
+      "spec": "specs/inbox.icon.json",
+      "specSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+      "actions": [
+        "inbox",
+        "inbox-reset",
+        "inbox-strong",
+        "inbox-reset-strong"
+      ]
+    },
+    {
+      "icon": "voicemail",
+      "spec": "specs/voicemail.icon.json",
+      "specSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
+      "actions": [
+        "voicemail",
+        "voicemail-strong"
+      ]
+    },
+    {
+      "icon": "emoji-picker",
+      "spec": "specs/emoji-picker.icon.json",
+      "specSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
+      "actions": [
+        "emoji-picker",
+        "emoji-picker-strong"
+      ]
+    },
+    {
+      "icon": "rss-feed",
+      "spec": "specs/rss-feed.icon.json",
+      "specSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
+      "actions": [
+        "rss-feed",
+        "rss-feed-strong"
+      ]
+    },
+    {
+      "icon": "announcement",
+      "spec": "specs/announcement.icon.json",
+      "specSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
+      "actions": [
+        "announcement",
+        "announcement-strong"
+      ]
+    }
+  ]
 }

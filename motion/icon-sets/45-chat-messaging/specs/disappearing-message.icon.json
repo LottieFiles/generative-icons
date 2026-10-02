@@ -1,0 +1,54 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "disappearing-message",
+  "label": "Disappearing message",
+  "intent": "The message timer is set. Light: the hourglass flips over (a half turn about its waist) and stops dead with a small rebound; the old sand empties out as it turns, then a stream of sand runs through the waist into the lower chamber and the sand settles there again. Strong: a short wind-up the other way, a harder flip that rebounds and settles in two beats, then the same stream. The hourglass draws in a little while it turns so its corners clear the bubble; the bubble never moves.",
+  "parts": {
+    "bubble": {
+      "shape": {"path": "M8 5 L24 5 C25.7 5 27 6.3 27 8 L27 21 C27 22.7 25.7 24 24 24 L12 24 L7.6 27 C7 27.4 6.5 27 6.7 26.3 L7.2 24 C5.9 23.7 5 22.5 5 21 L5 8 C5 6.3 6.3 5 8 5 Z"},
+      "role": "surface",
+      "solid": "ring"
+    },
+    "sand": {
+      "shape": {"path": "M13.748 19.47 C13.583 19.49 13.583 19.5 13.75 19.5 L18.25 19.5 C18.417 19.5 18.417 19.49 18.252 19.47 L16.248 19.23 C16.083 19.21 15.917 19.21 15.752 19.23 L13.748 19.47 Z"},
+      "role": "fill"
+    },
+    "stream": {
+      "//": "hidden at rest: the sand running through the waist into the lower chamber",
+      "shape": {"line": [[16, 15.8], [16, 19.2]]},
+      "hidden": true
+    },
+    "timer": {
+      "shape": {"path": "M12 9 L20 9 C20 13 18 13.5 16 15 C14 16.5 12 17 12 21 L20 21 C20 17 18 16.5 16 15 C14 13.5 12 13 12 9 Z"}
+    }
+  },
+  "rigs": {
+    "timer": {
+      "//": "the hourglass is point-symmetric about its waist, so 180 degrees draws the rest shape; the track steps back to 0 once it has settled",
+      "pivot": [16, 15]
+    }
+  },
+  "motion": {
+    "timer.rotate": {
+      "light": [[0, 0], [0.22, 180, "hit"], [0.28, 172], [0.34, 180], [0.36, 0, "step"]],
+      "strong": [[0, 0], [0.08, -12, "out"], [0.32, 180, "hit"], [0.38, 171], [0.44, 183], [0.5, 180], [0.52, 0, "step"]]
+    },
+    "timer.scale": {
+      "light": [[0, 1], [0.05, 0.88, "out"], [0.2, 0.88], [0.25, 1, "out"]],
+      "strong": [[0, 1], [0.08, 0.97], [0.13, 0.88, "out"], [0.3, 0.88], [0.35, 1, "out"]]
+    },
+    "sand.opacity": {
+      "light": [[0, 1], [0.06, 0, "out"], [0.3, 0], [0.4, 1, "out"]],
+      "strong": [[0, 1], [0.06, 0, "out"], [0.4, 0], [0.5, 1, "out"]]
+    },
+    "stream.opacity": {
+      "light": [[0, 0], [0.24, 0], [0.25, 1, "step"], [0.4, 1], [0.48, 0, "in"]],
+      "strong": [[0, 0], [0.33, 0], [0.34, 1, "step"], [0.5, 1], [0.58, 0, "in"]]
+    },
+    "stream.draw": {
+      "light": [[0, 1], [0.24, 0, "step"], [0.36, 1, "in"]],
+      "strong": [[0, 1], [0.33, 0, "step"], [0.45, 1, "in"]]
+    }
+  }
+}

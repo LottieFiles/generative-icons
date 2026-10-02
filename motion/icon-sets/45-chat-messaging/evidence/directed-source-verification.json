@@ -2,101 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 58,
-  "nativeTransformNodes": 620,
+  "nativeTransformNodes": 236,
   "nativeTransformMaxCoordinateError": 0.000010000000002285958,
   "checks": [
-    {
-      "name": "composing-message",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "composing-message-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-text"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-text-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-lower-text"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-lower-text-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-caret"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-caret-solid"
-        }
-      ]
-    },
-    {
-      "name": "composing-message-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "composing-message-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-text"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-text-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-lower-text"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-lower-text-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-caret"
-        },
-        {
-          "type": "rigid",
-          "part": "composing-message-caret-solid"
-        }
-      ]
-    },
     {
       "name": "message-sent",
       "fixedParts": [],
@@ -426,222 +334,6 @@
       ]
     },
     {
-      "name": "quoted-message",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "quoted-message-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-left"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-left-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-left-tail"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-left-tail-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-right"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-right-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-right-tail"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-right-tail-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quotation"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quotation-solid"
-        }
-      ]
-    },
-    {
-      "name": "quoted-message-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "quoted-message-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-left"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-left-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-left-tail"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-left-tail-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-right"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-right-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-right-tail"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quote-right-tail-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quotation"
-        },
-        {
-          "type": "rigid",
-          "part": "quoted-message-quotation-solid"
-        }
-      ]
-    },
-    {
-      "name": "forward-message",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "forward-message-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-text"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-text-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-arrow-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-arrow-shaft-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-arrow-head"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-arrow-head-solid"
-        }
-      ]
-    },
-    {
-      "name": "forward-message-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "forward-message-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-text"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-text-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-arrow-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-arrow-shaft-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-arrow-head"
-        },
-        {
-          "type": "rigid",
-          "part": "forward-message-arrow-head-solid"
-        }
-      ]
-    },
-    {
       "name": "pin-message",
       "fixedParts": [],
       "topology": true,
@@ -734,98 +426,6 @@
       ]
     },
     {
-      "name": "conversation-history",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "conversation-history-top-message-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-top-message"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-top-message-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-history-rail"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-history-rail-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-older-row"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-older-row-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-oldest-row"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-oldest-row-solid"
-        }
-      ]
-    },
-    {
-      "name": "conversation-history-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "conversation-history-top-message-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-top-message"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-top-message-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-history-rail"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-history-rail-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-older-row"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-older-row-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-oldest-row"
-        },
-        {
-          "type": "rigid",
-          "part": "conversation-history-oldest-row-solid"
-        }
-      ]
-    },
-    {
       "name": "mute-chat",
       "fixedParts": [],
       "topology": true,
@@ -866,114 +466,6 @@
         {
           "type": "rigid",
           "part": "mute-chat-bubble-solid"
-        }
-      ]
-    },
-    {
-      "name": "group-chat",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "group-chat-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-member-a"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-member-a-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-shoulders-a"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-shoulders-a-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-member-b"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-member-b-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-shoulders-b"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-shoulders-b-solid"
-        }
-      ]
-    },
-    {
-      "name": "group-chat-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "group-chat-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-member-a"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-member-a-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-shoulders-a"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-shoulders-a-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-member-b"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-member-b-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-shoulders-b"
-        },
-        {
-          "type": "rigid",
-          "part": "group-chat-shoulders-b-solid"
         }
       ]
     },
@@ -1034,198 +526,6 @@
         {
           "type": "rigid",
           "part": "voice-note-play-solid"
-        }
-      ]
-    },
-    {
-      "name": "sticker",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "sticker-eye-a"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-eye-a-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-eye-b"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-eye-b-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-smile"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-smile-solid"
-        }
-      ]
-    },
-    {
-      "name": "sticker-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "sticker-eye-a"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-eye-a-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-eye-b"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-eye-b-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-smile"
-        },
-        {
-          "type": "rigid",
-          "part": "sticker-smile-solid"
-        }
-      ]
-    },
-    {
-      "name": "gif-picker",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "gif-picker-stack"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-stack-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-tile-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-tile"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-tile-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-g"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-g-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-i"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-i-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-f"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-f-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-f-bar"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-f-bar-solid"
-        }
-      ]
-    },
-    {
-      "name": "gif-picker-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "gif-picker-stack"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-stack-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-tile-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-tile"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-tile-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-g"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-g-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-i"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-i-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-f"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-f-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-f-bar"
-        },
-        {
-          "type": "rigid",
-          "part": "gif-picker-f-bar-solid"
         }
       ]
     },
@@ -1396,343 +696,110 @@
           "part": "delete-message-removed-solid"
         }
       ]
-    },
-    {
-      "name": "unread-divider",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "unread-divider-upper-message-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-upper-message"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-upper-message-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-lower-message-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-lower-message"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-lower-message-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-divider-l"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-divider-l-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-unread-dot"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-unread-dot-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-divider-r"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-divider-r-solid"
-        }
-      ]
-    },
-    {
-      "name": "unread-divider-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "unread-divider-upper-message-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-upper-message"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-upper-message-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-lower-message-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-lower-message"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-lower-message-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-divider-l"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-divider-l-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-unread-dot"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-unread-dot-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-divider-r"
-        },
-        {
-          "type": "rigid",
-          "part": "unread-divider-divider-r-solid"
-        }
-      ]
-    },
-    {
-      "name": "archive-chat",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "archive-chat-tray"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-chat-tray-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-chat-message-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-chat-message"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-chat-message-solid"
-        }
-      ]
-    },
-    {
-      "name": "archive-chat-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "archive-chat-tray"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-chat-tray-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-chat-message-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-chat-message"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-chat-message-solid"
-        }
-      ]
-    },
-    {
-      "name": "disappearing-message",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "disappearing-message-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "disappearing-message-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "disappearing-message-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "disappearing-message-timer"
-        },
-        {
-          "type": "rigid",
-          "part": "disappearing-message-timer-solid"
-        }
-      ]
-    },
-    {
-      "name": "disappearing-message-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "disappearing-message-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "disappearing-message-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "disappearing-message-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "disappearing-message-timer"
-        },
-        {
-          "type": "rigid",
-          "part": "disappearing-message-timer-solid"
-        }
-      ]
-    },
-    {
-      "name": "chat-search",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "chat-search-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-text"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-text-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-lens-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-lens"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-lens-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-handle"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-handle-solid"
-        }
-      ]
-    },
-    {
-      "name": "chat-search-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "chat-search-bubble-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-bubble"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-bubble-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-text"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-text-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-lens-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-lens"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-lens-solid"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-handle"
-        },
-        {
-          "type": "rigid",
-          "part": "chat-search-handle-solid"
-        }
-      ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "composing-message",
+      "spec": "specs/composing-message.icon.json",
+      "specSha256": "8f71634145125d504c26f074a91b501d0678965050d6687a6c3d10db55efba2b",
+      "actions": [
+        "composing-message",
+        "composing-message-strong"
+      ]
+    },
+    {
+      "icon": "quoted-message",
+      "spec": "specs/quoted-message.icon.json",
+      "specSha256": "957ab13966f1dc172dbccebcff5aea67b412e368a41089765a6b12bed5910f4d",
+      "actions": [
+        "quoted-message",
+        "quoted-message-strong"
+      ]
+    },
+    {
+      "icon": "forward-message",
+      "spec": "specs/forward-message.icon.json",
+      "specSha256": "fa35ce8933bcc8d66936fb453f875eb8f8f7ea8bd74e2650a77c2ae11a26f431",
+      "actions": [
+        "forward-message",
+        "forward-message-strong"
+      ]
+    },
+    {
+      "icon": "conversation-history",
+      "spec": "specs/conversation-history.icon.json",
+      "specSha256": "4c5d239a0e13ebc19108ed2b04847476245056522e1586fe388bd2fd32c623d8",
+      "actions": [
+        "conversation-history",
+        "conversation-history-strong"
+      ]
+    },
+    {
+      "icon": "group-chat",
+      "spec": "specs/group-chat.icon.json",
+      "specSha256": "c6e172293496e077af3806a36e432ef6617f73ea57e336a8aad99dd61f0288cc",
+      "actions": [
+        "group-chat",
+        "group-chat-strong"
+      ]
+    },
+    {
+      "icon": "sticker",
+      "spec": "specs/sticker.icon.json",
+      "specSha256": "910928e6ea5876141303d1ba34a93a0088b6a5e40a966c894c2a195b10160195",
+      "actions": [
+        "sticker",
+        "sticker-strong"
+      ]
+    },
+    {
+      "icon": "gif-picker",
+      "spec": "specs/gif-picker.icon.json",
+      "specSha256": "53507b5905eca8ee4064d3bbef7affe7bd834f375e226dd3f1db2624f0314902",
+      "actions": [
+        "gif-picker",
+        "gif-picker-strong"
+      ]
+    },
+    {
+      "icon": "unread-divider",
+      "spec": "specs/unread-divider.icon.json",
+      "specSha256": "eb6b833ed0ff8ef5ee9389947bd9f426dd9c30f8729721d26a441511ff6655aa",
+      "actions": [
+        "unread-divider",
+        "unread-divider-strong"
+      ]
+    },
+    {
+      "icon": "archive-chat",
+      "spec": "specs/archive-chat.icon.json",
+      "specSha256": "729b63e958b79d4a94642cf25e6588c0939a5ad242d3865b0fca97521bed3c20",
+      "actions": [
+        "archive-chat",
+        "archive-chat-reverse",
+        "archive-chat-strong",
+        "archive-chat-reverse-strong"
+      ]
+    },
+    {
+      "icon": "disappearing-message",
+      "spec": "specs/disappearing-message.icon.json",
+      "specSha256": "7da879fd9ac164312c2a0a3edcf41f9c5881b16740e1ff10ecf3ae8fb74aa907",
+      "actions": [
+        "disappearing-message",
+        "disappearing-message-strong"
+      ]
+    },
+    {
+      "icon": "chat-search",
+      "spec": "specs/chat-search.icon.json",
+      "specSha256": "10e38cc768c0f63fc30cd2307148d3cc8e1e9f2216946aa44d58c79244c608c7",
+      "actions": [
+        "chat-search",
+        "chat-search-strong"
+      ]
+    }
+  ]
 }

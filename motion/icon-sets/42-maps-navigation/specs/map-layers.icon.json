@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "map-layers",
+  "label": "Map layers",
+  "intent": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
+  "preview": {"light": [0, 0.06, 0.12, 0.18, 0.24, 0.29, 0.36, 0.53], "strong": [0, 0.08, 0.16, 0.22, 0.28, 0.33, 0.42, 0.67]},
+  "parts": {
+    "layer-3": {"shape": {"polyline": [[6, 20.4], [16, 25.4], [26, 20.4]]}},
+    "layer-2": {"shape": {"polyline": [[6, 16.2], [16, 21.2], [26, 16.2]]}},
+    "top":     {"shape": {"path": "M15.106 7.447 C15.702 7.149 16.298 7.149 16.894 7.447 L25.106 11.553 C25.702 11.851 25.702 12.149 25.106 12.447 L16.894 16.553 C16.298 16.851 15.702 16.851 15.106 16.553 L6.894 12.447 C6.298 12.149 6.298 11.851 6.894 11.553 L15.106 7.447 Z"}, "role": "surface", "solid": "fill"},
+    "sheet":   {"//": "hidden at rest: the incoming layer, the top layer's twin; it lands exactly on the top layer and hands over to it", "shape": {"path": "M15.106 7.447 C15.702 7.149 16.298 7.149 16.894 7.447 L25.106 11.553 C25.702 11.851 25.702 12.149 25.106 12.447 L16.894 16.553 C16.298 16.851 15.702 16.851 15.106 16.553 L6.894 12.447 C6.298 12.149 6.298 11.851 6.894 11.553 L15.106 7.447 Z"}, "role": "surface", "tint": false, "solid": "fill", "hidden": true}
+  },
+  "motion": {
+    "sheet.opacity": {
+      "light":  [[0, 0], [0.02, 0], [0.08, 1, "out"], [0.2, 1], [0.21, 0, "step"]],
+      "strong": [[0, 0], [0.02, 0], [0.09, 1, "out"], [0.24, 1], [0.25, 0, "step"]]
+    },
+    "sheet.y": {
+      "light":  [[0, 0], [0.01, -3.2, "step"], [0.2, 0, "in"]],
+      "strong": [[0, 0], [0.01, -4.3, "step"], [0.08, -4.3], [0.24, 0, "in"]]
+    },
+    "top.y": {
+      "light":  [[0, 0], [0.2, 0], [0.26, 1.3, "out"], [0.35, -0.3], [0.43, 0]],
+      "strong": [[0, 0], [0.24, 0], [0.3, 1.9, "out"], [0.4, -0.6], [0.49, 0.25], [0.57, 0]]
+    },
+    "layer-2.y": {"//": "the landing travels down the stack", "follow": "top.y", "lag": 0.05, "scale": 0.75},
+    "layer-3.y": {"follow": "top.y", "lag": 0.1, "scale": 0.5}
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "noodle-bowl",
+  "label": "Noodle bowl",
+  "intent": "A bite of hot noodles is pulled up out of the bowl. Light: the chopsticks pull up 2.6 and the noodles stretch up from the rim with them, bob once on the springy noodles, then lower back and settle; a wisp of steam rises from the bowl as the noodles come up. Strong: the chopsticks dip in first, pull up 3.4, bob twice, hold and lower back with a small settle; two wisps of steam rise in turn. The bowl never moves.",
+  "parts": {
+    "stick-1": {"shape": {"line": [[15.6, 11.2], [27.2, 9.8]]}},
+    "stick-0": {"shape": {"line": [[15.6, 11.2], [25.8, 6.6]]}},
+    "noodle-1": {"shape": {"path": "M18 17 C17.996 16.517 17.916 16.033 17.577 15.55 C17.238 15.067 16.75 14.583 16.55 14.1 C16.35 13.617 16.438 13.133 16.377 12.65 C16.316 12.167 15.996 11.683 15.6 11.2"}},
+    "noodle-0": {"shape": {"path": "M13.2 17 C13.596 16.517 13.916 16.033 13.977 15.55 C14.038 15.067 13.95 14.583 14.15 14.1 C14.35 13.617 14.838 13.133 15.177 12.65 C15.516 12.167 15.596 11.683 15.6 11.2"}},
+    "bowl": {"shape": {"path": "M5.5 17 L26.5 17 C26.5 22.8 21.8 27 16 27 C10.2 27 5.5 22.8 5.5 17 Z"}, "role": "surface", "solid": "fill"},
+    "steam-a": {"//": "hidden at rest: a wisp of steam rising from the bowl, left of the noodles; lower end first", "shape": {"path": "M9.8 14.8 C9.1 13.6 10.5 12.2 9.8 10.9 C9.3 10 10.1 9.2 9.8 8.4"}, "hidden": true},
+    "steam-b": {"//": "hidden at rest: Strong's second wisp, further left", "shape": {"path": "M6.3 15.4 C5.6 14.2 7 12.8 6.3 11.5 C5.8 10.6 6.6 9.8 6.3 9"}, "hidden": true}
+  },
+  "rigs": {
+    "sticks": {"carries": ["stick-0", "stick-1"]},
+    "noodles": {"//": "the noodles hang from the pinch and stretch up from the rim to follow it", "pivot": [15.6, 17], "squash": {"base": 17, "widen": 0}, "carries": ["noodle-0", "noodle-1"]}
+  },
+  "motion": {
+    "sticks.y": {
+      "light": [[0, 0], [0.16, -2.6, "out"], [0.24, -2.05], [0.3, -2.3], [0.44, 0.3, "inOut"], [0.5, 0]],
+      "strong": [[0, 0], [0.08, 0.6, "out"], [0.24, -3.4, "out"], [0.32, -2.6], [0.39, -3.15], [0.45, -2.9], [0.62, 0.35, "inOut"], [0.7, 0]]
+    },
+    "noodles.squash": {"//": "the pinch sits 5.8 above the rim: the stretch keeps it on the chopsticks", "follow": "sticks.y", "scale": -0.172414, "offset": 1},
+    "steam-a.opacity": {
+      "light": [[0, 0], [0.06, 0], [0.1, 0.9, "out"], [0.26, 0.9], [0.38, 0, "in"]],
+      "strong": [[0, 0], [0.12, 0], [0.16, 0.9, "out"], [0.32, 0.9], [0.44, 0, "in"]]
+    },
+    "steam-a.draw": {
+      "light": [[0, 1], [0.06, 0, "step"], [0.2, 1, "out"]],
+      "strong": [[0, 1], [0.12, 0, "step"], [0.26, 1, "out"]]
+    },
+    "steam-a.y": {
+      "light": [[0, 0], [0.06, 0], [0.38, -1.8, "out"], [0.4, 0, "step"]],
+      "strong": [[0, 0], [0.12, 0], [0.44, -2.3, "out"], [0.46, 0, "step"]]
+    },
+    "steam-b.opacity": {
+      "strong": [[0, 0], [0.22, 0], [0.26, 0.8, "out"], [0.42, 0.8], [0.54, 0, "in"]]
+    },
+    "steam-b.draw": {
+      "strong": [[0, 1], [0.22, 0, "step"], [0.36, 1, "out"]]
+    },
+    "steam-b.y": {
+      "strong": [[0, 0], [0.22, 0], [0.54, -2.0, "out"], [0.56, 0, "step"]]
+    }
+  }
+}

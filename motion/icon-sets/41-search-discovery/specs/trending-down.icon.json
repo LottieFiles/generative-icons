@@ -1,0 +1,384 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "trending-down",
+  "label": "Trending down",
+  "intent": "The trend breaks out. Light: the arrow's tip drops away first, its head turning to the new heading, and the rest of the line falls into the trend about 80 ms behind it; both stop dead at the trend (no overshoot on the values) and the head nods once past its heading and settles. Strong: the flat arrow lifts first, then the tip plunges faster with the line chasing it, and the head nods hard and rocks to rest in decaying beats. The trend is kept; the reverse flattens it.",
+  "state": {
+    "from": "flat",
+    "to": "falling",
+    "labels": [
+      "Trend down",
+      "Flatten"
+    ],
+    "reverse": "auto"
+  },
+  "parts": {
+    "line": {
+      "//": "the first two segments; the joint at 16.5 meets the tip segment under round caps",
+      "shape": {
+        "morph": [
+          {
+            "polyline": [
+              [
+                4.5,
+                8
+              ],
+              [
+                11.5,
+                8
+              ],
+              [
+                16.5,
+                8
+              ]
+            ]
+          },
+          {
+            "polyline": [
+              [
+                4.5,
+                8
+              ],
+              [
+                11.5,
+                16
+              ],
+              [
+                16.5,
+                12
+              ]
+            ]
+          }
+        ],
+        "by": "rise"
+      }
+    },
+    "tip": {
+      "//": "the last segment, drawn relative to its start: the front rig adds the joint's travel",
+      "shape": {
+        "morph": [
+          {
+            "line": [
+              [
+                16.5,
+                8
+              ],
+              [
+                26.5,
+                8
+              ]
+            ]
+          },
+          {
+            "line": [
+              [
+                16.5,
+                8
+              ],
+              [
+                26.5,
+                18.5
+              ]
+            ]
+          }
+        ],
+        "by": "lead"
+      }
+    },
+    "head": {
+      "shape": {
+        "polyline": [
+          [
+            23.318,
+            11.182
+          ],
+          [
+            26.5,
+            8
+          ],
+          [
+            23.318,
+            4.818
+          ]
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "trend": {
+      "//": "the whole arrow, for Strong's anticipation",
+      "pivot": [
+        16,
+        8
+      ],
+      "carries": [
+        "line",
+        "front"
+      ]
+    },
+    "front": {
+      "//": "carries the tip segment with the joint: y = +4 x rise",
+      "pivot": [
+        16.5,
+        8
+      ],
+      "carries": [
+        "tip",
+        "aim"
+      ]
+    },
+    "aim": {
+      "//": "rides the tip and turns with the last segment: y = +10.5 x lead, rotate = +46.3972 x lead",
+      "pivot": [
+        26.5,
+        8
+      ],
+      "carries": [
+        "head"
+      ]
+    },
+    "head": {
+      "//": "the head's nod past its heading",
+      "pivot": [
+        26.5,
+        8
+      ]
+    }
+  },
+  "motion": {
+    "lead": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.3,
+          1,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.27,
+          1,
+          "hit"
+        ]
+      ]
+    },
+    "aim.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.3,
+          10.5,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.27,
+          10.5,
+          "hit"
+        ]
+      ]
+    },
+    "aim.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.3,
+          46.3972,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.27,
+          46.3972,
+          "hit"
+        ]
+      ]
+    },
+    "rise": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          0
+        ],
+        [
+          0.38,
+          1,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.15,
+          0
+        ],
+        [
+          0.35,
+          1,
+          "hit"
+        ]
+      ]
+    },
+    "front.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          0
+        ],
+        [
+          0.38,
+          4,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.15,
+          0
+        ],
+        [
+          0.35,
+          4,
+          "hit"
+        ]
+      ]
+    },
+    "head.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0
+        ],
+        [
+          0.36,
+          7,
+          "out"
+        ],
+        [
+          0.43,
+          -1.5
+        ],
+        [
+          0.5,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.27,
+          0
+        ],
+        [
+          0.34,
+          14,
+          "out"
+        ],
+        [
+          0.43,
+          -6
+        ],
+        [
+          0.51,
+          2.5
+        ],
+        [
+          0.58,
+          -0.8
+        ],
+        [
+          0.64,
+          0
+        ]
+      ]
+    },
+    "trend.y": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          -0.8,
+          "out"
+        ],
+        [
+          0.17,
+          0
+        ]
+      ]
+    }
+  }
+}

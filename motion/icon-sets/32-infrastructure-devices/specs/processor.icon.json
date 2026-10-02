@@ -1,0 +1,54 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "processor",
+  "label": "Processor",
+  "intent": "The processor runs a clock cycle. Light: the core gathers, then fires; a pulse ring spreads from the core to the package edge and fades, and as it arrives the pins on all four sides kick outward and settle. Strong: two clock beats, tick then a bigger tock, each with its own ring and pin kick. The package never moves.",
+  "parts": {
+    "core":         {"shape": {"rect": [13.7, 13.7, 4.6, 4.6], "r": 0.9}, "role": "fill"},
+    "pin-bottom-2": {"shape": {"line": [[20, 27], [20, 24.5]]}},
+    "pin-bottom-1": {"shape": {"line": [[16, 27], [16, 24.5]]}},
+    "pin-bottom-0": {"shape": {"line": [[12, 27], [12, 24.5]]}},
+    "pin-top-2":    {"shape": {"line": [[20, 5], [20, 7.5]]}},
+    "pin-top-1":    {"shape": {"line": [[16, 5], [16, 7.5]]}},
+    "pin-top-0":    {"shape": {"line": [[12, 5], [12, 7.5]]}},
+    "pin-right-2":  {"shape": {"line": [[27, 20], [24.5, 20]]}},
+    "pin-right-1":  {"shape": {"line": [[27, 16], [24.5, 16]]}},
+    "pin-right-0":  {"shape": {"line": [[27, 12], [24.5, 12]]}},
+    "pin-left-2":   {"shape": {"line": [[5, 20], [7.5, 20]]}},
+    "pin-left-1":   {"shape": {"line": [[5, 16], [7.5, 16]]}},
+    "pin-left-0":   {"shape": {"line": [[5, 12], [7.5, 12]]}},
+    "body":         {"//": "Solid: v1's package with the die window open around the core",
+                     "shape": {"rect": [8, 8, 16, 16], "r": 2.5}, "role": "surface",
+                     "solid": {"path": "M10.5 6.7 L21.5 6.7 C23.598 6.7 25.3 8.402 25.3 10.5 L25.3 21.5 C25.3 23.598 23.598 25.3 21.5 25.3 L10.5 25.3 C8.402 25.3 6.7 23.598 6.7 21.5 L6.7 10.5 C6.7 8.402 8.402 6.7 10.5 6.7 L10.5 6.7 L13.5 11.5 C12.396 11.5 11.5 12.396 11.5 13.5 L11.5 18.5 C11.5 19.604 12.396 20.5 13.5 20.5 L18.5 20.5 C19.604 20.5 20.5 19.604 20.5 18.5 L20.5 13.5 C20.5 12.396 19.604 11.5 18.5 11.5 L13.5 11.5 L10.5 6.7 Z"}},
+    "ring":         {"//": "hidden at rest: the clock pulse only exists while it spreads; not drawn in Solid, where it would close the die window",
+                     "shape": {"rect": [13.7, 13.7, 4.6, 4.6], "r": 0.9}, "hidden": true, "solid": "none"}
+  },
+  "rigs": {
+    "pins-l": {"pivot": [6.25, 16], "carries": ["pin-left-0", "pin-left-1", "pin-left-2"]},
+    "pins-r": {"pivot": [25.75, 16], "carries": ["pin-right-0", "pin-right-1", "pin-right-2"]},
+    "pins-t": {"pivot": [16, 6.25], "carries": ["pin-top-0", "pin-top-1", "pin-top-2"]},
+    "pins-b": {"pivot": [16, 25.75], "carries": ["pin-bottom-0", "pin-bottom-1", "pin-bottom-2"]}
+  },
+  "motion": {
+    "core.scale": {
+      "light":  [[0, 1], [0.08, 0.82], [0.16, 1.26, "hit"], [0.26, 0.94], [0.36, 1]],
+      "strong": [[0, 1], [0.07, 0.85], [0.14, 1.2, "hit"], [0.22, 0.95], [0.3, 1], [0.36, 0.8], [0.45, 1.3, "hit"], [0.55, 0.92], [0.65, 1.04], [0.74, 1]]
+    },
+    "ring.opacity": {
+      "light":  [[0, 0], [0.15, 0], [0.17, 1, "out"], [0.28, 1], [0.38, 0, "in"]],
+      "strong": [[0, 0], [0.13, 0], [0.15, 1, "out"], [0.24, 1], [0.33, 0, "in"], [0.44, 0], [0.46, 1, "out"], [0.57, 1], [0.67, 0, "in"]]
+    },
+    "ring.grow": {
+      "light":  [[0, 0], [0.16, 0], [0.38, 3.6, "out"], [0.4, 0, "step"]],
+      "strong": [[0, 0], [0.14, 0], [0.33, 3.3, "out"], [0.35, 0, "step"], [0.45, 0], [0.67, 3.7, "out"], [0.69, 0, "step"]]
+    },
+    "pins-l.x": {
+      "light":  [[0, 0], [0.24, 0], [0.3, -1.1, "out"], [0.38, 0.2], [0.46, 0]],
+      "strong": [[0, 0], [0.21, 0], [0.26, -0.7, "out"], [0.34, 0], [0.52, 0], [0.58, -1.3, "out"], [0.66, 0.25], [0.74, 0]]
+    },
+    "pins-r.x": {"follow": "pins-l.x", "scale": -1},
+    "pins-t.y": {"follow": "pins-l.x"},
+    "pins-b.y": {"follow": "pins-l.x", "scale": -1}
+  }
+}

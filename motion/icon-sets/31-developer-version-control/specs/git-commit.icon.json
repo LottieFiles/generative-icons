@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "git-commit",
+  "label": "Git commit",
+  "intent": "A commit lands on the history line. Light: the point drops in from above, falls through the top of the empty ring and lands in its centre with a hit; the line takes the weight, dips, springs back and settles, and the point stays. Strong: the point hangs higher and rises a little before it drops, lands harder, a ripple runs out from the ring on impact, and the line settles in two beats. The preview reset fades the point back out.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "ripple":     {"//": "Strong only, hidden at rest: the impact ring running outward, clear of the ring", "shape": {"circle": [[16, 16], 7.4]}, "hidden": true},
+    "point":      {"//": "hidden at rest: the commit, v1's end-state dot", "shape": {"circle": [[16, 16], 1.7]}, "role": "fill", "hidden": true},
+    "ring":       {"shape": {"circle": [[16, 16], 4.5]}},
+    "lane-right": {"shape": {"line": [[20.5, 16], [28.5, 16]]}},
+    "lane-left":  {"shape": {"line": [[3.5, 16], [11.5, 16]]}}
+  },
+  "rigs": {
+    "graph": {"pivot": [16, 16], "carries": ["ring", "lane-right", "lane-left", "ripple"]}
+  },
+  "motion": {
+    "//": "The point never grows past its rest size: set 31's visual check needs the ring's opening clear in every frame.",
+    "point.opacity": {
+      "light":  [[0, 0], [0.02, 0], [0.09, 1, "out"]],
+      "strong": [[0, 0], [0.02, 0], [0.1, 1, "out"]]
+    },
+    "point.y": {
+      "light":  [[0, 0], [0.02, -8, "step"], [0.2, 0, "in"], [0.26, 1.2, "out"], [0.34, -0.3, "inOut"], [0.42, 0, "inOut"]],
+      "strong": [[0, 0], [0.02, -8.8, "step"], [0.12, -9.6, "out"], [0.26, 0, "in"], [0.32, 1.8, "out"], [0.4, -0.6, "inOut"], [0.48, 0.25, "inOut"], [0.56, 0, "inOut"]]
+    },
+    "graph.y": {
+      "light":  [[0, 0], [0.2, 0], [0.26, 1.2, "out"], [0.34, -0.3, "inOut"], [0.42, 0, "inOut"]],
+      "strong": [[0, 0], [0.26, 0], [0.32, 1.8, "out"], [0.4, -0.6, "inOut"], [0.48, 0.25, "inOut"], [0.56, 0, "inOut"]]
+    },
+    "ripple.opacity": {
+      "strong": [[0, 0], [0.27, 0], [0.29, 0.65, "out"], [0.46, 0, "in"]]
+    },
+    "ripple.r": {
+      "strong": [[0, 0], [0.27, 0], [0.46, 1.4, "out"], [0.48, 0, "step"]]
+    }
+  },
+  "reverse": {
+    "//": "v1's reset only removes the point; the line is steady at both ends, so it must not fade",
+    "light":  {"ring.opacity": [[0, 1], [0.25, 1]], "lane-left.opacity": [[0, 1], [0.25, 1]], "lane-right.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"ring.opacity": [[0, 1], [0.25, 1]], "lane-left.opacity": [[0, 1], [0.25, 1]], "lane-right.opacity": [[0, 1], [0.25, 1]]}
+  }
+}

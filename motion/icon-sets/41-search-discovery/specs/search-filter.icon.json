@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "search-filter",
+  "label": "Search filter",
+  "intent": "The filter is applied to the results. Light: the magnifier takes a press, and the push passes down the result lines: the middle line narrows as it is reached, then the bottom one, each stopping dead at its funnel width; the magnifier springs back. Strong: a deeper press with a rebound narrows most of the way, then a second, smaller press clicks both lines to their final widths. The widths never overshoot; the funnel is kept.",
+  "state": {"from": "unfiltered", "to": "filtered", "labels": ["Filter", "Clear filter"], "reverse": "auto"},
+  "parts": {
+    "lens": {"shape": {"circle": [[13.5, 13.5], 8.5]}, "role": "surface", "solid": "ring"},
+    "handle": {"shape": {"line": [[19.5, 19.5], [26, 26]]}},
+    "line-0": {"shape": {"line": [[9.5, 9.5], [17.5, 9.5]]}},
+    "line-1": {"shape": {"line": [[9.5, 13.5], [17.5, 13.5]]}},
+    "line-2": {"shape": {"line": [[9.5, 17.5], [17.5, 17.5]]}}
+  },
+  "rigs": {
+    "magnifier": {"//": "the whole magnifier takes the press", "pivot": [13.5, 13.5], "carries": ["lens", "handle", "line-0", "line-1", "line-2"]},
+    "line-1": {"//": "narrows about the lens's centre line: 8 to 5 wide", "pivot": [13.5, 13.5]},
+    "line-2": {"//": "narrows about the lens's centre line: 8 to 2 wide", "pivot": [13.5, 17.5]}
+  },
+  "motion": {
+    "magnifier.y": {
+      "light":  [[0, 0], [0.12, 1.5, "hit"], [0.25, -0.3], [0.36, 0]],
+      "strong": [[0, 0], [0.1, 2, "hit"], [0.2, -0.5], [0.28, 0.2], [0.36, 0], [0.44, 0.9, "hit"], [0.52, -0.15], [0.6, 0]]
+    },
+    "line-1.scale": {
+      "light":  [[0, 1], [0.08, 1], [0.22, 0.625, "hit"]],
+      "strong": [[0, 1], [0.06, 1], [0.17, 0.72, "hit"], [0.44, 0.72], [0.52, 0.625, "hit"]]
+    },
+    "line-2.scale": {
+      "light":  [[0, 1], [0.16, 1], [0.34, 0.25, "hit"]],
+      "strong": [[0, 1], [0.11, 1], [0.23, 0.45, "hit"], [0.48, 0.45], [0.57, 0.25, "hit"]]
+    }
+  }
+}

@@ -6309,34 +6309,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "File search",
-      "description": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+      "description": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
       "label": "File search",
-      "intent": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+      "intent": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.62,
-      "rest": 40,
+      "active": 0.5,
+      "rest": 33,
       "keyPoses": [
         0,
-        0.124,
-        0.248,
-        0.372,
-        0.496,
-        0.62
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5
       ],
-      "layers": 15,
+      "layers": 16,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -6346,41 +6344,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "69484de2d608d0b41537aa8fd9272b1a064cb2e032d12957e7f0333a13a63a31",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-        "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-        "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-        "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-        "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-      },
-      "brief": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "file-search-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "file-search-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "file-search-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "file-search-lens"
-        },
-        {
-          "type": "rigid",
-          "part": "file-search-handle"
-        }
-      ],
+      "nativeSha256": "21b4c39a6cbfa52832390458beae5de6001f03bb172308a4337497b943d01308",
+      "sourceSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
+      "planSha256": "afabb449f26240a516683015006404743c4e8ca1ce152cc496bf923c9f7bf2c2",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
+      "constraints": [],
       "category": "Files & folders",
-      "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+      "definitionsSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -6411,34 +6382,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "File search",
-          "description": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+          "description": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
           "label": "File search",
-          "intent": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+          "intent": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 15,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6448,41 +6417,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "69484de2d608d0b41537aa8fd9272b1a064cb2e032d12957e7f0333a13a63a31",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "file-search-lens"
-            },
-            {
-              "type": "rigid",
-              "part": "file-search-handle"
-            }
-          ],
+          "nativeSha256": "21b4c39a6cbfa52832390458beae5de6001f03bb172308a4337497b943d01308",
+          "sourceSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
+          "planSha256": "afabb449f26240a516683015006404743c4e8ca1ce152cc496bf923c9f7bf2c2",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6504,8 +6446,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17190,
-          "sha256": "f36e529040aaf532c0e348372b132d4ffbf99b693b28a5b6350a79d7d3b93af5"
+          "bytes": 4273,
+          "sha256": "8b54a6a8cf0b88958b95efc0c2967158708fd33705887cc2cd82492b1c0a8a97"
         },
         {
           "name": "file-search-strong",
@@ -6514,18 +6456,16 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "File search",
-          "description": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+          "description": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
           "label": "File search",
-          "intent": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+          "intent": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -6541,7 +6481,7 @@
             0.5599999999999999,
             0.7
           ],
-          "layers": 15,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6551,41 +6491,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f9ec5851b9eab264044f87e601645b15c9a5ad1de54b5eda99cc7db71a1dd383",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "file-search-lens"
-            },
-            {
-              "type": "rigid",
-              "part": "file-search-handle"
-            }
-          ],
+          "nativeSha256": "794845ff9db4eaf3f3073b5ccd9c9f0d5e04851600a7318773906826c0320c45",
+          "sourceSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
+          "planSha256": "afabb449f26240a516683015006404743c4e8ca1ce152cc496bf923c9f7bf2c2",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6607,8 +6520,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17191,
-          "sha256": "895ce56945086a0c1d521e790cd034730d61ccf1a74df40abb4c05fb3c39dfef"
+          "bytes": 4274,
+          "sha256": "12358d67b9b1b6610f5cd478f8912ad888e228314c9e630b2d1d9405db26d6b8"
         }
       ],
       "animations": [
@@ -6619,34 +6532,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "File search",
-          "description": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+          "description": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
           "label": "File search",
-          "intent": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+          "intent": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 15,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6656,41 +6567,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "69484de2d608d0b41537aa8fd9272b1a064cb2e032d12957e7f0333a13a63a31",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "file-search-lens"
-            },
-            {
-              "type": "rigid",
-              "part": "file-search-handle"
-            }
-          ],
+          "nativeSha256": "21b4c39a6cbfa52832390458beae5de6001f03bb172308a4337497b943d01308",
+          "sourceSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
+          "planSha256": "afabb449f26240a516683015006404743c4e8ca1ce152cc496bf923c9f7bf2c2",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6712,8 +6596,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17190,
-          "sha256": "f36e529040aaf532c0e348372b132d4ffbf99b693b28a5b6350a79d7d3b93af5"
+          "bytes": 4273,
+          "sha256": "8b54a6a8cf0b88958b95efc0c2967158708fd33705887cc2cd82492b1c0a8a97"
         },
         {
           "name": "file-search-strong",
@@ -6722,18 +6606,16 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "File search",
-          "description": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+          "description": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
           "label": "File search",
-          "intent": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
+          "intent": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -6749,7 +6631,7 @@
             0.5599999999999999,
             0.7
           ],
-          "layers": 15,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6759,41 +6641,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f9ec5851b9eab264044f87e601645b15c9a5ad1de54b5eda99cc7db71a1dd383",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "The magnifier glides across the sheet and returns. Light: one 1.4-unit glide. Strong: a short draw back, a fast dart with a hit, a settle, then a slower return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "file-search-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "file-search-lens"
-            },
-            {
-              "type": "rigid",
-              "part": "file-search-handle"
-            }
-          ],
+          "nativeSha256": "794845ff9db4eaf3f3073b5ccd9c9f0d5e04851600a7318773906826c0320c45",
+          "sourceSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
+          "planSha256": "afabb449f26240a516683015006404743c4e8ca1ce152cc496bf923c9f7bf2c2",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The file is searched and the match is found. Light: the magnifier makes one quick searching loop over the sheet, stops dead back on its spot and zooms in on the find (it swells and settles). Strong: a short dip, a faster and wider loop, a harder stop, and a bigger zoom that settles in two beats. The sheet holds still under it.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6815,12 +6670,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17191,
-          "sha256": "895ce56945086a0c1d521e790cd034730d61ccf1a74df40abb4c05fb3c39dfef"
+          "bytes": 4274,
+          "sha256": "12358d67b9b1b6610f5cd478f8912ad888e228314c9e630b2d1d9405db26d6b8"
         }
       ],
-      "bytes": 17190,
-      "sha256": "f36e529040aaf532c0e348372b132d4ffbf99b693b28a5b6350a79d7d3b93af5"
+      "bytes": 4273,
+      "sha256": "8b54a6a8cf0b88958b95efc0c2967158708fd33705887cc2cd82492b1c0a8a97"
     },
     {
       "name": "file-preview",
@@ -7834,34 +7689,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "File tag",
-      "description": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+      "description": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
       "label": "File tag",
-      "intent": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+      "intent": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.42,
+      "rest": 28,
       "keyPoses": [
         0,
-        0.12,
-        0.24,
-        0.36,
-        0.48,
-        0.6
+        0.084,
+        0.168,
+        0.252,
+        0.336,
+        0.42
       ],
-      "layers": 15,
+      "layers": 18,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -7871,37 +7724,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "58dd4b594531a55e9a8817bd3d0b9a90df30eab508407361fa9c4708a55d618a",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-        "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-        "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-        "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-        "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-      },
-      "brief": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "file-tag-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "file-tag-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "file-tag-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "file-tag-tag"
-        }
-      ],
+      "nativeSha256": "bd6ba7f79e3ffbf80b9dc39690f0f883fed5822c5dc5cf6c0e4907ea7da450a9",
+      "sourceSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
+      "planSha256": "c989ea4a910988f77859816f75f5d63ffec15685dbe1f6b54872947b94dd470b",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
+      "constraints": [],
       "category": "Files & folders",
-      "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+      "definitionsSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -7932,34 +7762,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "File tag",
-          "description": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+          "description": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
           "label": "File tag",
-          "intent": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+          "intent": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 15,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7969,37 +7797,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "58dd4b594531a55e9a8817bd3d0b9a90df30eab508407361fa9c4708a55d618a",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "file-tag-tag"
-            }
-          ],
+          "nativeSha256": "bd6ba7f79e3ffbf80b9dc39690f0f883fed5822c5dc5cf6c0e4907ea7da450a9",
+          "sourceSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
+          "planSha256": "c989ea4a910988f77859816f75f5d63ffec15685dbe1f6b54872947b94dd470b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8021,8 +7826,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 20448,
-          "sha256": "8862cd06b175bba0fac7ca8750b615a5fabaf77954790720f5a220d6e86041d8"
+          "bytes": 4846,
+          "sha256": "714663a1f6a464a444dcef60d4962da81e097d4bbd39aac585b2e8fbc79dc45b"
         },
         {
           "name": "file-tag-strong",
@@ -8031,34 +7836,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "File tag",
-          "description": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+          "description": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
           "label": "File tag",
-          "intent": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+          "intent": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.55,
+          "rest": 36,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.11000000000000001,
+            0.22000000000000003,
+            0.33,
+            0.44000000000000006,
+            0.55
           ],
-          "layers": 15,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8068,37 +7871,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "078a608f4fc1a7902ea27a045161a2bc089eb5f481735d903128ec6d0235acc7",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "file-tag-tag"
-            }
-          ],
+          "nativeSha256": "749125a2125ae79adaa342ee38539360ef9f53221e70e06cc9688268a947769c",
+          "sourceSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
+          "planSha256": "c989ea4a910988f77859816f75f5d63ffec15685dbe1f6b54872947b94dd470b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8120,8 +7900,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 20451,
-          "sha256": "f2b74519bf248c82b9f3af7fc9e73445dbe8c1c10e3334fa90ff8aabf4ddf20d"
+          "bytes": 4849,
+          "sha256": "f2d89861af7f10e3726b7cd5841e1359d21fa7fae6e0f9f88e413ebb8026359e"
         }
       ],
       "animations": [
@@ -8132,34 +7912,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "File tag",
-          "description": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+          "description": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
           "label": "File tag",
-          "intent": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+          "intent": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 15,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8169,37 +7947,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "58dd4b594531a55e9a8817bd3d0b9a90df30eab508407361fa9c4708a55d618a",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "file-tag-tag"
-            }
-          ],
+          "nativeSha256": "bd6ba7f79e3ffbf80b9dc39690f0f883fed5822c5dc5cf6c0e4907ea7da450a9",
+          "sourceSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
+          "planSha256": "c989ea4a910988f77859816f75f5d63ffec15685dbe1f6b54872947b94dd470b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8221,8 +7976,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 20448,
-          "sha256": "8862cd06b175bba0fac7ca8750b615a5fabaf77954790720f5a220d6e86041d8"
+          "bytes": 4846,
+          "sha256": "714663a1f6a464a444dcef60d4962da81e097d4bbd39aac585b2e8fbc79dc45b"
         },
         {
           "name": "file-tag-strong",
@@ -8231,34 +7986,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "File tag",
-          "description": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+          "description": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
           "label": "File tag",
-          "intent": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
+          "intent": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.55,
+          "rest": 36,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.11000000000000001,
+            0.22000000000000003,
+            0.33,
+            0.44000000000000006,
+            0.55
           ],
-          "layers": 15,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8268,37 +8021,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "078a608f4fc1a7902ea27a045161a2bc089eb5f481735d903128ec6d0235acc7",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "A label tag hangs from its tip on the sheet and swings. Light: one 8\u00b0 swing with a small return. Strong: a pull back, an 18\u00b0 swing with a hit and a damped return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "file-tag-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "file-tag-tag"
-            }
-          ],
+          "nativeSha256": "749125a2125ae79adaa342ee38539360ef9f53221e70e06cc9688268a947769c",
+          "sourceSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
+          "planSha256": "c989ea4a910988f77859816f75f5d63ffec15685dbe1f6b54872947b94dd470b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8320,12 +8050,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 20451,
-          "sha256": "f2b74519bf248c82b9f3af7fc9e73445dbe8c1c10e3334fa90ff8aabf4ddf20d"
+          "bytes": 4849,
+          "sha256": "f2d89861af7f10e3726b7cd5841e1359d21fa7fae6e0f9f88e413ebb8026359e"
         }
       ],
-      "bytes": 20448,
-      "sha256": "8862cd06b175bba0fac7ca8750b615a5fabaf77954790720f5a220d6e86041d8"
+      "bytes": 4846,
+      "sha256": "714663a1f6a464a444dcef60d4962da81e097d4bbd39aac585b2e8fbc79dc45b"
     },
     {
       "name": "file-star",
@@ -10569,34 +10299,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Image file",
-      "description": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+      "description": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
       "label": "Image file",
-      "intent": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+      "intent": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.62,
-      "rest": 40,
+      "active": 0.46,
+      "rest": 30,
       "keyPoses": [
         0,
-        0.124,
-        0.248,
-        0.372,
-        0.496,
-        0.62
+        0.09200000000000001,
+        0.18400000000000002,
+        0.276,
+        0.36800000000000005,
+        0.46
       ],
-      "layers": 14,
+      "layers": 16,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -10606,41 +10334,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "05c0697fe7b8a3a1278a6f246e6fa34e5b94785cc646f1344a08e9ea002c4201",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-        "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-        "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-        "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-        "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-      },
-      "brief": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "image-file-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "image-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "image-file-sheet-interior"
-        },
-        {
-          "type": "fixed",
-          "part": "image-file-peaks"
-        },
-        {
-          "type": "rigid",
-          "part": "image-file-sun"
-        }
-      ],
+      "nativeSha256": "2dc323a8c293de88f3501c2b34a9db73a2815142cf5b0aa220650352aa8e81ea",
+      "sourceSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
+      "planSha256": "62f478786cb68aae37f9f2f7d6a375569e0922ef90d4b93d5871345b3579e5b9",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
+      "constraints": [],
       "category": "Files & folders",
-      "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+      "definitionsSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -10671,34 +10372,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Image file",
-          "description": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+          "description": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
           "label": "Image file",
-          "intent": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+          "intent": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 14,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10708,41 +10407,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "05c0697fe7b8a3a1278a6f246e6fa34e5b94785cc646f1344a08e9ea002c4201",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-interior"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-peaks"
-            },
-            {
-              "type": "rigid",
-              "part": "image-file-sun"
-            }
-          ],
+          "nativeSha256": "2dc323a8c293de88f3501c2b34a9db73a2815142cf5b0aa220650352aa8e81ea",
+          "sourceSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
+          "planSha256": "62f478786cb68aae37f9f2f7d6a375569e0922ef90d4b93d5871345b3579e5b9",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10764,8 +10436,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 8528,
-          "sha256": "69f7085709bb8866e74f322390a3bb8b2087796c3e2e98f1474055ae6ae27441"
+          "bytes": 4476,
+          "sha256": "94e70133f21c59ab45869956fb868305765b420d279053cfbbb94b54c2301c9a"
         },
         {
           "name": "image-file-strong",
@@ -10774,34 +10446,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Image file",
-          "description": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+          "description": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
           "label": "Image file",
-          "intent": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+          "intent": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.58,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.11599999999999999,
+            0.23199999999999998,
+            0.348,
+            0.46399999999999997,
+            0.58
           ],
-          "layers": 14,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10811,41 +10481,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "a202d84596c96b933a3a5713b319f0bc91553996d8d8f8ee8dfd994b79728d0b",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-interior"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-peaks"
-            },
-            {
-              "type": "rigid",
-              "part": "image-file-sun"
-            }
-          ],
+          "nativeSha256": "5b703fb252e7402cb2c2792a732261cff4b5c760c1957d4d6175aa2f0e8f735f",
+          "sourceSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
+          "planSha256": "62f478786cb68aae37f9f2f7d6a375569e0922ef90d4b93d5871345b3579e5b9",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10867,8 +10510,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 8529,
-          "sha256": "386af686e00428f1dd48a4c40374cb8e2d8bf1fb1d795a459f6cd40d5d77cc72"
+          "bytes": 4477,
+          "sha256": "cf845e6a6fe5f1150e2fded6519dd1ac27ea8d7bc3d9fedb3650712c2e02692c"
         }
       ],
       "animations": [
@@ -10879,34 +10522,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Image file",
-          "description": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+          "description": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
           "label": "Image file",
-          "intent": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+          "intent": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 14,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10916,41 +10557,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "05c0697fe7b8a3a1278a6f246e6fa34e5b94785cc646f1344a08e9ea002c4201",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-interior"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-peaks"
-            },
-            {
-              "type": "rigid",
-              "part": "image-file-sun"
-            }
-          ],
+          "nativeSha256": "2dc323a8c293de88f3501c2b34a9db73a2815142cf5b0aa220650352aa8e81ea",
+          "sourceSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
+          "planSha256": "62f478786cb68aae37f9f2f7d6a375569e0922ef90d4b93d5871345b3579e5b9",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10972,8 +10586,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 8528,
-          "sha256": "69f7085709bb8866e74f322390a3bb8b2087796c3e2e98f1474055ae6ae27441"
+          "bytes": 4476,
+          "sha256": "94e70133f21c59ab45869956fb868305765b420d279053cfbbb94b54c2301c9a"
         },
         {
           "name": "image-file-strong",
@@ -10982,34 +10596,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Image file",
-          "description": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+          "description": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
           "label": "Image file",
-          "intent": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
+          "intent": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.58,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.11599999999999999,
+            0.23199999999999998,
+            0.348,
+            0.46399999999999997,
+            0.58
           ],
-          "layers": 14,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11019,41 +10631,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "a202d84596c96b933a3a5713b319f0bc91553996d8d8f8ee8dfd994b79728d0b",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "Two peaks and a sun on the sheet. Light: the sun lifts 0.9 and settles back. Strong: the sun dips, swoops up and right with a hit, then sinks back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-sheet-interior"
-            },
-            {
-              "type": "fixed",
-              "part": "image-file-peaks"
-            },
-            {
-              "type": "rigid",
-              "part": "image-file-sun"
-            }
-          ],
+          "nativeSha256": "5b703fb252e7402cb2c2792a732261cff4b5c760c1957d4d6175aa2f0e8f735f",
+          "sourceSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
+          "planSha256": "62f478786cb68aae37f9f2f7d6a375569e0922ef90d4b93d5871345b3579e5b9",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11075,12 +10660,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 8529,
-          "sha256": "386af686e00428f1dd48a4c40374cb8e2d8bf1fb1d795a459f6cd40d5d77cc72"
+          "bytes": 4477,
+          "sha256": "cf845e6a6fe5f1150e2fded6519dd1ac27ea8d7bc3d9fedb3650712c2e02692c"
         }
       ],
-      "bytes": 8528,
-      "sha256": "69f7085709bb8866e74f322390a3bb8b2087796c3e2e98f1474055ae6ae27441"
+      "bytes": 4476,
+      "sha256": "94e70133f21c59ab45869956fb868305765b420d279053cfbbb94b54c2301c9a"
     },
     {
       "name": "code-file",
@@ -11089,34 +10674,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Code file",
-      "description": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+      "description": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
       "label": "Code file",
-      "intent": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+      "intent": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.4,
+      "rest": 27,
       "keyPoses": [
         0,
-        0.12,
+        0.08000000000000002,
+        0.16000000000000003,
         0.24,
-        0.36,
-        0.48,
-        0.6
+        0.32000000000000006,
+        0.4
       ],
-      "layers": 14,
+      "layers": 12,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -11126,41 +10709,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "33aa118119eb02f5e1106bca4ebf81f647bf31defefb4428b2cba163111cdccf",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-        "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-        "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-        "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-        "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-      },
-      "brief": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "code-file-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "code-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "code-file-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "code-file-bracket-l"
-        },
-        {
-          "type": "rigid",
-          "part": "code-file-bracket-r"
-        }
-      ],
+      "nativeSha256": "02fb13f7a8e3c07a661a41b789936a198d5e309839ebe9fe35cf000064b471c0",
+      "sourceSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
+      "planSha256": "adbd3579d395fd878de5a845f8652b2e52417371e6e789b6843ea6b0b0d639ce",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
+      "constraints": [],
       "category": "Files & folders",
-      "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+      "definitionsSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -11191,34 +10747,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Code file",
-          "description": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+          "description": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
           "label": "Code file",
-          "intent": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+          "intent": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.4,
+          "rest": 27,
           "keyPoses": [
             0,
-            0.12,
+            0.08000000000000002,
+            0.16000000000000003,
             0.24,
-            0.36,
-            0.48,
-            0.6
+            0.32000000000000006,
+            0.4
           ],
-          "layers": 14,
+          "layers": 12,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11228,41 +10782,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "33aa118119eb02f5e1106bca4ebf81f647bf31defefb4428b2cba163111cdccf",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "code-file-bracket-l"
-            },
-            {
-              "type": "rigid",
-              "part": "code-file-bracket-r"
-            }
-          ],
+          "nativeSha256": "02fb13f7a8e3c07a661a41b789936a198d5e309839ebe9fe35cf000064b471c0",
+          "sourceSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
+          "planSha256": "adbd3579d395fd878de5a845f8652b2e52417371e6e789b6843ea6b0b0d639ce",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11284,8 +10811,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 16194,
-          "sha256": "0299fd483b9f49e03bb240a70f0297fca3284e64866ddb52da0b18bf6d7aaae3"
+          "bytes": 3932,
+          "sha256": "ece7fab204cb8aaa36b0e0897e201ccc72e1755ef80d32581f2ea71344d168d3"
         },
         {
           "name": "code-file-strong",
@@ -11294,34 +10821,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Code file",
-          "description": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+          "description": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
           "label": "Code file",
-          "intent": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+          "intent": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.68,
-          "rest": 44,
+          "active": 0.66,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.136,
-            0.272,
-            0.40800000000000003,
-            0.544,
-            0.68
+            0.132,
+            0.264,
+            0.396,
+            0.528,
+            0.66
           ],
-          "layers": 14,
+          "layers": 12,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11331,41 +10856,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "832d2c54282053caadf2a9a40f42eb3db7e5284ce61a1608026306a323a41334",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "code-file-bracket-l"
-            },
-            {
-              "type": "rigid",
-              "part": "code-file-bracket-r"
-            }
-          ],
+          "nativeSha256": "7644d3c247bdb941730bded2dc7b50c497687bb63c6c774e12027dfe820b2a7c",
+          "sourceSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
+          "planSha256": "adbd3579d395fd878de5a845f8652b2e52417371e6e789b6843ea6b0b0d639ce",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11387,8 +10885,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 16197,
-          "sha256": "a5eab7cb062fe209bcab1ed97fd1ef1d91fe055ab9ff0c17b9391d6c62d5812f"
+          "bytes": 3935,
+          "sha256": "a92aadfbe9acb017ca445d3966e572844e1d80e1b31cc2592108dd0618a7c5ae"
         }
       ],
       "animations": [
@@ -11399,34 +10897,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Code file",
-          "description": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+          "description": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
           "label": "Code file",
-          "intent": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+          "intent": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.4,
+          "rest": 27,
           "keyPoses": [
             0,
-            0.12,
+            0.08000000000000002,
+            0.16000000000000003,
             0.24,
-            0.36,
-            0.48,
-            0.6
+            0.32000000000000006,
+            0.4
           ],
-          "layers": 14,
+          "layers": 12,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11436,41 +10932,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "33aa118119eb02f5e1106bca4ebf81f647bf31defefb4428b2cba163111cdccf",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "code-file-bracket-l"
-            },
-            {
-              "type": "rigid",
-              "part": "code-file-bracket-r"
-            }
-          ],
+          "nativeSha256": "02fb13f7a8e3c07a661a41b789936a198d5e309839ebe9fe35cf000064b471c0",
+          "sourceSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
+          "planSha256": "adbd3579d395fd878de5a845f8652b2e52417371e6e789b6843ea6b0b0d639ce",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11492,8 +10961,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 16194,
-          "sha256": "0299fd483b9f49e03bb240a70f0297fca3284e64866ddb52da0b18bf6d7aaae3"
+          "bytes": 3932,
+          "sha256": "ece7fab204cb8aaa36b0e0897e201ccc72e1755ef80d32581f2ea71344d168d3"
         },
         {
           "name": "code-file-strong",
@@ -11502,34 +10971,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Code file",
-          "description": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+          "description": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
           "label": "Code file",
-          "intent": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
+          "intent": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.68,
-          "rest": 44,
+          "active": 0.66,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.136,
-            0.272,
-            0.40800000000000003,
-            0.544,
-            0.68
+            0.132,
+            0.264,
+            0.396,
+            0.528,
+            0.66
           ],
-          "layers": 14,
+          "layers": 12,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11539,41 +11006,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "832d2c54282053caadf2a9a40f42eb3db7e5284ce61a1608026306a323a41334",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "Two angle brackets on the sheet. Light: they spread half a unit apart and return. Strong: they close first, spring a full unit apart with a hit and settle back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "code-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "code-file-bracket-l"
-            },
-            {
-              "type": "rigid",
-              "part": "code-file-bracket-r"
-            }
-          ],
+          "nativeSha256": "7644d3c247bdb941730bded2dc7b50c497687bb63c6c774e12027dfe820b2a7c",
+          "sourceSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
+          "planSha256": "adbd3579d395fd878de5a845f8652b2e52417371e6e789b6843ea6b0b0d639ce",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11595,12 +11035,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 16197,
-          "sha256": "a5eab7cb062fe209bcab1ed97fd1ef1d91fe055ab9ff0c17b9391d6c62d5812f"
+          "bytes": 3935,
+          "sha256": "a92aadfbe9acb017ca445d3966e572844e1d80e1b31cc2592108dd0618a7c5ae"
         }
       ],
-      "bytes": 16194,
-      "sha256": "0299fd483b9f49e03bb240a70f0297fca3284e64866ddb52da0b18bf6d7aaae3"
+      "bytes": 3932,
+      "sha256": "ece7fab204cb8aaa36b0e0897e201ccc72e1755ef80d32581f2ea71344d168d3"
     },
     {
       "name": "spreadsheet-file",
@@ -12649,34 +12089,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Video file",
-      "description": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+      "description": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
       "label": "Video file",
-      "intent": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+      "intent": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.5,
-      "rest": 33,
+      "active": 0.42,
+      "rest": 28,
       "keyPoses": [
         0,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5
+        0.084,
+        0.168,
+        0.252,
+        0.336,
+        0.42
       ],
-      "layers": 11,
+      "layers": 14,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -12686,33 +12124,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "77d640691f09b77a535fb4bb513e11e5303a77be4c41ca2ba23a533eec39100d",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-        "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-        "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-        "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-        "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-      },
-      "brief": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "video-file-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "video-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "video-file-sheet-interior"
-        }
-      ],
+      "nativeSha256": "73397da973be24f26901c8db7a963cb11ece3da434f06540db5e02e06cbd0e86",
+      "sourceSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
+      "planSha256": "bd6fb65959e438f73392865ee01ee8de88c47c0f90ef2510c02d25ec45b781af",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
+      "constraints": [],
       "category": "Files & folders",
-      "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+      "definitionsSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -12743,34 +12162,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Video file",
-          "description": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+          "description": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
           "label": "Video file",
-          "intent": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+          "intent": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 11,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12780,33 +12197,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "77d640691f09b77a535fb4bb513e11e5303a77be4c41ca2ba23a533eec39100d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-interior"
-            }
-          ],
+          "nativeSha256": "73397da973be24f26901c8db7a963cb11ece3da434f06540db5e02e06cbd0e86",
+          "sourceSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
+          "planSha256": "bd6fb65959e438f73392865ee01ee8de88c47c0f90ef2510c02d25ec45b781af",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12828,8 +12226,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 13390,
-          "sha256": "e5a489f3268c0679c06f0eb1a3c03f5aef3d39cff647e1f03c6fe768a2d443f9"
+          "bytes": 4435,
+          "sha256": "81b468181d3f194b8cc4fba1edd7ac3db90c2ee295446273c1523bfe225b454b"
         },
         {
           "name": "video-file-strong",
@@ -12838,34 +12236,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Video file",
-          "description": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+          "description": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
           "label": "Video file",
-          "intent": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+          "intent": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.62,
+          "rest": 40,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.124,
+            0.248,
+            0.372,
+            0.496,
+            0.62
           ],
-          "layers": 11,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12875,33 +12271,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "cf7a0eb8ca7fe36293f8dfda4be61d860ec937c34f306096eb58a5092c656f32",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-interior"
-            }
-          ],
+          "nativeSha256": "48bae16f1f4befedd60be258207b845069ed80b11970aa5ded0ca4b54f1cdf2b",
+          "sourceSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
+          "planSha256": "bd6fb65959e438f73392865ee01ee8de88c47c0f90ef2510c02d25ec45b781af",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12923,8 +12300,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 13392,
-          "sha256": "39824c8cfbd57b4542866fa44f82c461daeff68e9703ef26320e7218d714a1a3"
+          "bytes": 4437,
+          "sha256": "9b606914772ec0bb45edebbc4535ad67337c22ba4ac2c69a89f787ab508e4e06"
         }
       ],
       "animations": [
@@ -12935,34 +12312,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Video file",
-          "description": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+          "description": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
           "label": "Video file",
-          "intent": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+          "intent": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 11,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12972,33 +12347,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "77d640691f09b77a535fb4bb513e11e5303a77be4c41ca2ba23a533eec39100d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-interior"
-            }
-          ],
+          "nativeSha256": "73397da973be24f26901c8db7a963cb11ece3da434f06540db5e02e06cbd0e86",
+          "sourceSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
+          "planSha256": "bd6fb65959e438f73392865ee01ee8de88c47c0f90ef2510c02d25ec45b781af",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13020,8 +12376,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 13390,
-          "sha256": "e5a489f3268c0679c06f0eb1a3c03f5aef3d39cff647e1f03c6fe768a2d443f9"
+          "bytes": 4435,
+          "sha256": "81b468181d3f194b8cc4fba1edd7ac3db90c2ee295446273c1523bfe225b454b"
         },
         {
           "name": "video-file-strong",
@@ -13030,34 +12386,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Video file",
-          "description": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+          "description": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
           "label": "Video file",
-          "intent": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
+          "intent": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.62,
+          "rest": 40,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.124,
+            0.248,
+            0.372,
+            0.496,
+            0.62
           ],
-          "layers": 11,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13067,33 +12421,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "cf7a0eb8ca7fe36293f8dfda4be61d860ec937c34f306096eb58a5092c656f32",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "A play triangle on the sheet. Light: it nudges right with a small swell and returns. Strong: it presses down, pops past size and forward with a hit, then settles.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-page"
-            },
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "video-file-sheet-interior"
-            }
-          ],
+          "nativeSha256": "48bae16f1f4befedd60be258207b845069ed80b11970aa5ded0ca4b54f1cdf2b",
+          "sourceSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
+          "planSha256": "bd6fb65959e438f73392865ee01ee8de88c47c0f90ef2510c02d25ec45b781af",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Play is pressed and the video starts. Light: the play triangle presses in (the sheet gives under the press), then springs forward with a kick, stops and eases home. Strong: a deeper press with the sheet sinking further, a harder kick forward that pops the triangle past full size, and a settle in two beats.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13115,12 +12450,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 13392,
-          "sha256": "39824c8cfbd57b4542866fa44f82c461daeff68e9703ef26320e7218d714a1a3"
+          "bytes": 4437,
+          "sha256": "9b606914772ec0bb45edebbc4535ad67337c22ba4ac2c69a89f787ab508e4e06"
         }
       ],
-      "bytes": 13390,
-      "sha256": "e5a489f3268c0679c06f0eb1a3c03f5aef3d39cff647e1f03c6fe768a2d443f9"
+      "bytes": 4435,
+      "sha256": "81b468181d3f194b8cc4fba1edd7ac3db90c2ee295446273c1523bfe225b454b"
     }
   ]
 }

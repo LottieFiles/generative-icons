@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "repository-fork",
+  "label": "Repository fork",
+  "intent": "The repository is forked into copies. Light: the source swells and sends its contents down the trunk as a bead; the bead splits at the junction, a bead runs down each lane, and each copy pops as its bead docks against it and bounces once back onto its size, left first. Strong: the source swells harder, the beads run faster, and each copy pops bigger and bounces twice onto its size, the right a beat after the left. The trunk and lanes never move.",
+  "parts": {
+    "bead-l":     {"//": "hidden at rest: the left half of the copied contents, drawn where it docks on lane-left (4.5 from copy-left's centre, clear of its opening); it leaves from the trunk under the source", "shape": {"circle": [[11.76, 19.45], 1.9]}, "role": "fill", "hidden": true},
+    "bead-r":     {"mirror": {"of": "bead-l"}},
+    "copy-right": {"shape": {"circle": [[23, 23], 2.5]}},
+    "lane-right": {"shape": {"line": [[16, 14], [21.5, 21]]}},
+    "copy-left":  {"shape": {"circle": [[9, 23], 2.5]}},
+    "lane-left":  {"shape": {"line": [[16, 14], [10.5, 21]]}},
+    "trunk":      {"shape": {"line": [[16, 8.5], [16, 14]]}},
+    "source":     {"shape": {"circle": [[16, 6], 2.5]}}
+  },
+  "motion": {
+    "//": "Set 31's visual check needs all three ring openings clear in every frame at 32 px: the nodes only ever grow and bounce back down onto their rest size (never below it), and the beads never come within 4.5 of a node's centre.",
+    "source.scale": {
+      "light":  [[0, 1], [0.07, 1.14, "out"], [0.15, 1, "in"], [0.19, 1.04, "out"], [0.23, 1, "in"]],
+      "strong": [[0, 1], [0.05, 1.05, "out"], [0.1, 1.2, "hit"], [0.18, 1, "in"], [0.23, 1.06, "out"], [0.28, 1, "in"]]
+    },
+    "bead-l.opacity": {
+      "light":  [[0, 0], [0.04, 0], [0.08, 1, "out"], [0.23, 1], [0.27, 0, "in"]],
+      "strong": [[0, 0], [0.08, 0], [0.11, 1, "out"], [0.22, 1], [0.25, 0, "in"]]
+    },
+    "bead-l.x": {
+      "light":  [[0, 0], [0.04, 4.24, "step"], [0.13, 4.24], [0.24, 0, "linear"]],
+      "strong": [[0, 0], [0.08, 4.24, "step"], [0.14, 4.24], [0.22, 0, "linear"]]
+    },
+    "bead-l.y": {
+      "light":  [[0, 0], [0.04, -8.95, "step"], [0.13, -5.45, "in"], [0.24, 0, "linear"]],
+      "strong": [[0, 0], [0.08, -8.95, "step"], [0.14, -5.45, "in"], [0.22, 0, "linear"]]
+    },
+    "bead-r.opacity": {"light": {"follow": "bead-l.opacity", "lag": 0.04}, "strong": {"follow": "bead-l.opacity", "lag": 0.06}},
+    "bead-r.x":       {"light": {"follow": "bead-l.x", "scale": -1, "lag": 0.04}, "strong": {"follow": "bead-l.x", "scale": -1, "lag": 0.06}},
+    "bead-r.y":       {"light": {"follow": "bead-l.y", "lag": 0.04}, "strong": {"follow": "bead-l.y", "lag": 0.06}},
+    "copy-left.scale": {
+      "light":  [[0, 1], [0.24, 1], [0.3, 1.2, "out"], [0.37, 1, "in"], [0.42, 1.05, "out"], [0.47, 1, "in"]],
+      "strong": [[0, 1], [0.22, 1], [0.28, 1.26, "out"], [0.35, 1, "in"], [0.41, 1.1, "out"], [0.47, 1, "in"], [0.51, 1.03, "out"], [0.55, 1, "in"]]
+    },
+    "copy-right.scale": {"light": {"follow": "copy-left.scale", "lag": 0.04}, "strong": {"follow": "copy-left.scale", "lag": 0.06}}
+  }
+}

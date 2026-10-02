@@ -1,0 +1,27 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "regular-expression",
+  "label": "Regular expression",
+  "intent": "The pattern matches and repeats: the dot (any character) hops, and as it lands the star (repeat) clicks round one step like a ratchet counting the match. Light: one hop, one 60-degree click with a small overshoot. Strong: the star winds back as the dot rises, then two hops in decaying height, each landing clicking the star round another step, settling on the second. The star always ends on its drawn angle.",
+  "parts": {
+    "arm-c": {"shape": {"line": [[25.062, 16.5], [12.938, 9.5]]}},
+    "arm-b": {"shape": {"line": [[25.062, 9.5], [12.938, 16.5]]}},
+    "arm-a": {"shape": {"line": [[19, 6], [19, 20]]}},
+    "dot":   {"shape": {"circle": [[8, 23], 2.2]}, "role": "fill"}
+  },
+  "rigs": {
+    "star": {"pivot": [19, 13], "carries": ["arm-a", "arm-b", "arm-c"]}
+  },
+  "motion": {
+    "//": "The asterisk repeats every 60 degrees; each motion ends with an invisible step from 60 or 120 back to 0 so the end pixels match the start exactly.",
+    "dot.y": {
+      "light":  [[0, 0], [0.12, -3, "out"], [0.22, 0, "in"]],
+      "strong": [[0, 0], [0.12, -3.6, "out"], [0.22, 0, "in"], [0.3, -2, "out"], [0.37, 0, "in"]]
+    },
+    "star.rotate": {
+      "light":  [[0, 0], [0.22, 0], [0.3, 67, "out"], [0.37, 58, "inOut"], [0.43, 60, "inOut"], [0.44, 0, "step"]],
+      "strong": [[0, 0], [0.1, 0], [0.22, -9, "inOut"], [0.29, 66, "hit"], [0.37, 60, "inOut"], [0.44, 127, "hit"], [0.5, 117, "inOut"], [0.56, 121, "inOut"], [0.61, 120, "inOut"], [0.62, 0, "step"]]
+    }
+  }
+}

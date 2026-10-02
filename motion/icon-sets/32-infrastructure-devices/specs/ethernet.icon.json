@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "ethernet",
+  "label": "Ethernet",
+  "intent": "The plug clicks home in its port. The drawing is the seated plug. Light: it eases back, drives up and stops dead on its seat; two click ticks flick out from the shoulders where it meets the port, and it rebounds once and settles. Strong: a deeper pull back, a harder drive, a bigger click, then a second smaller re-seat. The plug, contacts and cable move as one rigid piece.",
+  "parts": {
+    "cable":     {"shape": {"line": [[16, 24], [16, 27]]}},
+    "contact-b": {"shape": {"line": [[18, 12], [18, 13]]}},
+    "contact-a": {"shape": {"line": [[14, 12], [14, 13]]}},
+    "plug":      {"shape": {"path": "M9.2 24 C8.4 24 8 23.6 8 22.8 L8 17.2 C8 16.4 8.233 16 8.7 16 L9.3 16 C9.767 16 10 15.6 10 14.8 L10 9.2 C10 8.4 10.4 8 11.2 8 L20.8 8 C21.6 8 22 8.4 22 9.2 L22 14.8 C22 15.6 22.233 16 22.7 16 L23.3 16 C23.767 16 24 16.4 24 17.2 L24 22.8 C24 23.6 23.6 24 22.8 24 L9.2 24 Z"},
+                  "role": "surface",
+                  "knockout": [{"part": "contact-a", "gap": 0}, {"part": "contact-b", "gap": 0}]},
+    "click-l":   {"//": "hidden at rest: the click only exists as the plug seats", "shape": {"line": [[5.8, 14.2], [4.4, 12.8]]}, "hidden": true},
+    "click-r":   {"mirror": {"of": "click-l"}}
+  },
+  "rigs": {
+    "jack": {"pivot": [16, 16], "carries": ["plug", "contact-a", "contact-b", "cable"]}
+  },
+  "motion": {
+    "jack.y": {
+      "light":  [[0, 0], [0.12, 1.4, "out"], [0.22, 0, "hit"], [0.29, 0.35], [0.37, 0]],
+      "strong": [[0, 0], [0.15, 2, "out"], [0.26, 0, "hit"], [0.34, 0.6], [0.41, 0, "hit"], [0.48, 0.15], [0.55, 0]]
+    },
+    "click-l.opacity": {
+      "light":  [[0, 0], [0.21, 0], [0.23, 1, "out"], [0.31, 1], [0.4, 0, "in"]],
+      "strong": [[0, 0], [0.25, 0], [0.27, 1, "out"], [0.37, 1], [0.48, 0, "in"]]
+    },
+    "click-l.x": {
+      "light":  [[0, 0], [0.22, 0], [0.4, -0.8, "out"], [0.42, 0, "step"]],
+      "strong": [[0, 0], [0.26, 0], [0.48, -1.2, "out"], [0.5, 0, "step"]]
+    },
+    "click-l.y": {
+      "light":  [[0, 0], [0.22, 0], [0.4, -0.6, "out"], [0.42, 0, "step"]],
+      "strong": [[0, 0], [0.26, 0], [0.48, -0.9, "out"], [0.5, 0, "step"]]
+    },
+    "click-r.opacity": {"follow": "click-l.opacity"},
+    "click-r.x": {"follow": "click-l.x", "scale": -1},
+    "click-r.y": {"follow": "click-l.y"}
+  }
+}

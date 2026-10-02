@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 52,
-  "nativeTransformNodes": 170,
+  "nativeTransformNodes": 96,
   "nativeTransformMaxCoordinateError": 0.000010057876746571992,
   "checks": [
     {
@@ -16,24 +16,6 @@
     },
     {
       "name": "heart-rate-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "step-counter",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "step-counter-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -156,100 +138,6 @@
       ]
     },
     {
-      "name": "calories",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "calories-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "stethoscope",
-      "fixedParts": [
-        "stethoscope-binaural"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "stethoscope-binaural"
-        },
-        {
-          "type": "rigid",
-          "part": "stethoscope-chest-frame"
-        }
-      ]
-    },
-    {
-      "name": "stethoscope-strong",
-      "fixedParts": [
-        "stethoscope-binaural"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "stethoscope-binaural"
-        },
-        {
-          "type": "rigid",
-          "part": "stethoscope-chest-frame"
-        }
-      ]
-    },
-    {
-      "name": "pill",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "pill-half-a"
-        },
-        {
-          "type": "rigid",
-          "part": "pill-half-b"
-        }
-      ]
-    },
-    {
-      "name": "pill-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "pill-half-a"
-        },
-        {
-          "type": "rigid",
-          "part": "pill-half-b"
-        }
-      ]
-    },
-    {
       "name": "syringe",
       "fixedParts": [
         "syringe-barrel",
@@ -316,60 +204,6 @@
           "part": "syringe-thumb"
         }
       ]
-    },
-    {
-      "name": "first-aid-kit",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "first-aid-kit-case"
-        },
-        {
-          "type": "rigid",
-          "part": "first-aid-kit-handle"
-        }
-      ]
-    },
-    {
-      "name": "first-aid-kit-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "first-aid-kit-case"
-        },
-        {
-          "type": "rigid",
-          "part": "first-aid-kit-handle"
-        }
-      ]
-    },
-    {
-      "name": "bandage",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "bandage-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
     },
     {
       "name": "weight-scale",
@@ -450,52 +284,6 @@
       "designConstraints": []
     },
     {
-      "name": "meditation",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "meditation-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "nutrition",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "nutrition-apple-frame"
-        }
-      ]
-    },
-    {
-      "name": "nutrition-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "nutrition-apple-frame"
-        }
-      ]
-    },
-    {
       "name": "jump-rope",
       "fixedParts": [],
       "topology": true,
@@ -532,48 +320,6 @@
       ]
     },
     {
-      "name": "hospital",
-      "fixedParts": [
-        "hospital-building",
-        "hospital-doorway"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "hospital-building"
-        },
-        {
-          "type": "fixed",
-          "part": "hospital-doorway"
-        }
-      ]
-    },
-    {
-      "name": "hospital-strong",
-      "fixedParts": [
-        "hospital-building",
-        "hospital-doorway"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "hospital-building"
-        },
-        {
-          "type": "fixed",
-          "part": "hospital-doorway"
-        }
-      ]
-    },
-    {
       "name": "dna",
       "fixedParts": [],
       "topology": true,
@@ -592,5 +338,88 @@
       "designConstraints": []
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "step-counter",
+      "spec": "specs/step-counter.icon.json",
+      "specSha256": "29ba16d6f6312ac8eb041fe0b5ca4f931923ba0dcf625242ddb98697910620fb",
+      "actions": [
+        "step-counter",
+        "step-counter-strong"
+      ]
+    },
+    {
+      "icon": "calories",
+      "spec": "specs/calories.icon.json",
+      "specSha256": "67aa9609aaef061d17f56c319927891e2c1a7b0466faf328cb9cd5994eece2d8",
+      "actions": [
+        "calories",
+        "calories-strong"
+      ]
+    },
+    {
+      "icon": "stethoscope",
+      "spec": "specs/stethoscope.icon.json",
+      "specSha256": "84619e90e20afe3a039988639e1c943ff21e476b29378a330817fc54e5113de4",
+      "actions": [
+        "stethoscope",
+        "stethoscope-strong"
+      ]
+    },
+    {
+      "icon": "pill",
+      "spec": "specs/pill.icon.json",
+      "specSha256": "b7836fbd8c164a557381e9806dfa50f22fe68fa61f5c8e2b050bdf83f38bfce2",
+      "actions": [
+        "pill",
+        "pill-strong"
+      ]
+    },
+    {
+      "icon": "first-aid-kit",
+      "spec": "specs/first-aid-kit.icon.json",
+      "specSha256": "72c8dc7880bbd6d7179697eeaa4d4142c01d1296f04780daf6186857ad6e479c",
+      "actions": [
+        "first-aid-kit",
+        "first-aid-kit-strong"
+      ]
+    },
+    {
+      "icon": "bandage",
+      "spec": "specs/bandage.icon.json",
+      "specSha256": "9c5706e35b5a8255753febf3d428d154669aa209946e4ff785be6a8baf8ccba3",
+      "actions": [
+        "bandage",
+        "bandage-strong"
+      ]
+    },
+    {
+      "icon": "meditation",
+      "spec": "specs/meditation.icon.json",
+      "specSha256": "5a116e84d73bbda74728614d8527e164e2885604c6679975a6e26dbb18004cdf",
+      "actions": [
+        "meditation",
+        "meditation-strong"
+      ]
+    },
+    {
+      "icon": "nutrition",
+      "spec": "specs/nutrition.icon.json",
+      "specSha256": "552cd3d797c58dd07112138dde6070ef93deeaf16788b1e7f4fbb1baf6badb47",
+      "actions": [
+        "nutrition",
+        "nutrition-strong"
+      ]
+    },
+    {
+      "icon": "hospital",
+      "spec": "specs/hospital.icon.json",
+      "specSha256": "332f9205fc49b71fc3dedfd1e68f862067c50700f5095280abb0106f98b74ec8",
+      "actions": [
+        "hospital",
+        "hospital-strong"
+      ]
+    }
+  ]
 }

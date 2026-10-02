@@ -1,0 +1,226 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "image-file",
+  "label": "Image file",
+  "intent": "The sun rises over the picture. Light: the sun sinks into the peaks and fades as it goes down, then rises back out of them, swelling and brightening, overshoots its spot and settles. Strong: it sinks deeper, rises faster and higher with a hit, swells more, and settles in two beats. The peaks never move.",
+  "parts": {
+    "sheet": {
+      "//": "v1's sheet: frame, tint, and v1's Solid (the fold is a hole) with the peaks cut by a mask and the sun by a matte that follows its rise, swell and fade",
+      "shape": {
+        "path": "M7 5.8 C7 4.6 7.6 4 8.8 4 L18.1 4 C18.7 4 19.212 4.212 19.636 4.636 L24.364 9.364 C24.788 9.788 25 10.3 25 10.9 L25 26.2 C25 27.4 24.4 28 23.2 28 L8.8 28 C7.6 28 7 27.4 7 26.2 L7 5.8 Z"
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M7 5.8 C7 4.6 7.6 4 8.8 4 L18.1 4 C18.7 4 19.212 4.212 19.636 4.636 L24.364 9.364 C24.788 9.788 25 10.3 25 10.9 L25 26.2 C25 27.4 24.4 28 23.2 28 L8.8 28 C7.6 28 7 27.4 7 26.2 L7 5.8 L20 6.3 L20 8.2 C20 8.4 20.1 8.5 20.3 8.5 L22.2 8.5 C22.4 8.5 22.429 8.429 22.288 8.288 L20.212 6.212 C20.071 6.071 20 6.1 20 6.3 L7 5.8 Z"
+      },
+      "knockout": [
+        {
+          "part": "peaks",
+          "gap": 0
+        },
+        {
+          "part": "sun",
+          "gap": 0
+        }
+      ]
+    },
+    "fold": {
+      "shape": {
+        "path": "M19 5 L19 9 C19 9.6 19.4 10 20 10 L24 10"
+      },
+      "solid": "none"
+    },
+    "peaks": {
+      "//": "Solid: v1 cuts the peaks' filled shape out of the sheet",
+      "shape": {
+        "path": "M11.4 23.4 C11 23.4 10.899 23.226 11.096 22.878 L13.806 18.096 C14.069 17.632 14.367 17.608 14.7 18.025 L16.225 19.931 C16.475 20.244 16.729 20.247 16.988 19.942 L18.283 18.411 C18.628 18.004 18.905 18.045 19.115 18.535 L20.964 22.849 C21.121 23.216 21 23.4 20.6 23.4 L11.4 23.4 Z"
+      },
+      "solid": "fill"
+    },
+    "sun": {
+      "shape": {
+        "circle": [
+          [
+            12.4,
+            12.8
+          ],
+          1.5
+        ]
+      },
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "sun": {
+      "pivot": [
+        12.4,
+        12.8
+      ],
+      "carries": [
+        "sun"
+      ]
+    }
+  },
+  "motion": {
+    "sun.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          2.2,
+          "linear"
+        ],
+        [
+          0.15,
+          2.2
+        ],
+        [
+          0.3,
+          -1.2,
+          "out"
+        ],
+        [
+          0.46,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.13,
+          2.5,
+          "linear"
+        ],
+        [
+          0.17,
+          2.5
+        ],
+        [
+          0.29,
+          -2.0,
+          "hit"
+        ],
+        [
+          0.4,
+          0.35,
+          "inOut"
+        ],
+        [
+          0.5,
+          -0.12,
+          "inOut"
+        ],
+        [
+          0.58,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "sun.opacity": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.07,
+          1
+        ],
+        [
+          0.12,
+          0,
+          "in"
+        ],
+        [
+          0.15,
+          0
+        ],
+        [
+          0.21,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          1
+        ],
+        [
+          0.13,
+          0,
+          "in"
+        ],
+        [
+          0.17,
+          0
+        ],
+        [
+          0.23,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "sun.r": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.15,
+          0
+        ],
+        [
+          0.3,
+          0.3,
+          "out"
+        ],
+        [
+          0.46,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.17,
+          0
+        ],
+        [
+          0.29,
+          0.45,
+          "hit"
+        ],
+        [
+          0.4,
+          -0.05,
+          "inOut"
+        ],
+        [
+          0.5,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  }
+}

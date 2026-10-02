@@ -2,8 +2,8 @@
   "result": "PASS",
   "icons": 20,
   "actions": 64,
-  "nativeTransformNodes": 352,
-  "nativeTransformMaxCoordinateError": 0.000010618946987506206,
+  "nativeTransformNodes": 240,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
   "checks": [
     {
       "name": "pin-cluster",
@@ -78,34 +78,6 @@
         {
           "type": "fixed",
           "part": "current-location-ring"
-        }
-      ]
-    },
-    {
-      "name": "directions",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "directions-pointer-frame"
-        }
-      ]
-    },
-    {
-      "name": "directions-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "directions-pointer-frame"
         }
       ]
     },
@@ -224,42 +196,6 @@
       ]
     },
     {
-      "name": "map-layers",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "map-layers-top-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "map-layers-layer-2"
-        }
-      ]
-    },
-    {
-      "name": "map-layers-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "map-layers-top-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "map-layers-layer-2"
-        }
-      ]
-    },
-    {
       "name": "satellite",
       "fixedParts": [],
       "topology": true,
@@ -300,54 +236,6 @@
         {
           "type": "rigid",
           "part": "satellite-signal-1"
-        }
-      ]
-    },
-    {
-      "name": "street-view",
-      "fixedParts": [
-        "street-view-street"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "street-view-street"
-        },
-        {
-          "type": "rigid",
-          "part": "street-view-torso-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "street-view-leg-l"
-        }
-      ]
-    },
-    {
-      "name": "street-view-strong",
-      "fixedParts": [
-        "street-view-street"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "street-view-street"
-        },
-        {
-          "type": "rigid",
-          "part": "street-view-torso-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "street-view-leg-l"
         }
       ]
     },
@@ -484,56 +372,6 @@
       ]
     },
     {
-      "name": "fuel-station",
-      "fixedParts": [
-        "fuel-station-body-frame",
-        "fuel-station-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "fuel-station-body-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "fuel-station-base"
-        },
-        {
-          "type": "rigid",
-          "part": "fuel-station-nozzle"
-        }
-      ]
-    },
-    {
-      "name": "fuel-station-strong",
-      "fixedParts": [
-        "fuel-station-body-frame",
-        "fuel-station-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "fuel-station-body-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "fuel-station-base"
-        },
-        {
-          "type": "rigid",
-          "part": "fuel-station-nozzle"
-        }
-      ]
-    },
-    {
       "name": "ev-charger",
       "fixedParts": [
         "ev-charger-post-frame",
@@ -572,56 +410,6 @@
         {
           "type": "fixed",
           "part": "ev-charger-cable"
-        }
-      ]
-    },
-    {
-      "name": "transit-stop",
-      "fixedParts": [
-        "transit-stop-post",
-        "transit-stop-ground"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "transit-stop-post"
-        },
-        {
-          "type": "fixed",
-          "part": "transit-stop-ground"
-        },
-        {
-          "type": "rigid",
-          "part": "transit-stop-sign-frame"
-        }
-      ]
-    },
-    {
-      "name": "transit-stop-strong",
-      "fixedParts": [
-        "transit-stop-post",
-        "transit-stop-ground"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "transit-stop-post"
-        },
-        {
-          "type": "fixed",
-          "part": "transit-stop-ground"
-        },
-        {
-          "type": "rigid",
-          "part": "transit-stop-sign-frame"
         }
       ]
     },
@@ -774,5 +562,52 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "directions",
+      "spec": "specs/directions.icon.json",
+      "specSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
+      "actions": [
+        "directions",
+        "directions-strong"
+      ]
+    },
+    {
+      "icon": "map-layers",
+      "spec": "specs/map-layers.icon.json",
+      "specSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
+      "actions": [
+        "map-layers",
+        "map-layers-strong"
+      ]
+    },
+    {
+      "icon": "street-view",
+      "spec": "specs/street-view.icon.json",
+      "specSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
+      "actions": [
+        "street-view",
+        "street-view-strong"
+      ]
+    },
+    {
+      "icon": "fuel-station",
+      "spec": "specs/fuel-station.icon.json",
+      "specSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
+      "actions": [
+        "fuel-station",
+        "fuel-station-strong"
+      ]
+    },
+    {
+      "icon": "transit-stop",
+      "spec": "specs/transit-stop.icon.json",
+      "specSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
+      "actions": [
+        "transit-stop",
+        "transit-stop-strong"
+      ]
+    }
+  ]
 }

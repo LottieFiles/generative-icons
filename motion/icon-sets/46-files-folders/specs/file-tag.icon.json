@@ -1,0 +1,246 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "file-tag",
+  "label": "File tag",
+  "intent": "The file is tagged. Light: the tag lifts off the sheet toward you, then slaps back down onto it and stops dead; the sheet takes the slap, rebounds and settles. Strong: the tag peels up higher by its point, slams down flat, the sheet takes a harder knock and settles in two beats, and the tag gives one small bounce. The tag and its eyelet stay rigid.",
+  "parts": {
+    "sheet": {
+      "//": "v1's sheet: frame, tint, and v1's Solid (the fold is a hole) with the tag cut out by a matte that follows it",
+      "shape": {
+        "path": "M7 5.8 C7 4.6 7.6 4 8.8 4 L18.1 4 C18.7 4 19.212 4.212 19.636 4.636 L24.364 9.364 C24.788 9.788 25 10.3 25 10.9 L25 26.2 C25 27.4 24.4 28 23.2 28 L8.8 28 C7.6 28 7 27.4 7 26.2 L7 5.8 Z"
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M7 5.8 C7 4.6 7.6 4 8.8 4 L18.1 4 C18.7 4 19.212 4.212 19.636 4.636 L24.364 9.364 C24.788 9.788 25 10.3 25 10.9 L25 26.2 C25 27.4 24.4 28 23.2 28 L8.8 28 C7.6 28 7 27.4 7 26.2 L7 5.8 L20 6.3 L20 8.2 C20 8.4 20.1 8.5 20.3 8.5 L22.2 8.5 C22.4 8.5 22.429 8.429 22.288 8.288 L20.212 6.212 C20.071 6.071 20 6.1 20 6.3 L7 5.8 Z"
+      },
+      "knockout": [
+        {
+          "part": "tag",
+          "gap": 0
+        }
+      ]
+    },
+    "fold": {
+      "shape": {
+        "path": "M19 5 L19 9 C19 9.6 19.4 10 20 10 L24 10"
+      },
+      "solid": "none"
+    },
+    "tag": {
+      "//": "Solid: v1 cuts the tag's filled shape out of the sheet and paints the eyelet in the hole",
+      "shape": {
+        "path": "M11.677 18.336 C11.226 17.845 11.226 17.355 11.677 16.864 L13.791 14.563 C14.197 14.121 14.7 13.9 15.3 13.9 L19.9 13.9 C20.5 13.9 20.8 14.2 20.8 14.8 L20.8 20.4 C20.8 21 20.5 21.3 19.9 21.3 L15.3 21.3 C14.7 21.3 14.197 21.079 13.791 20.637 L11.677 18.336 Z"
+      },
+      "solid": "fill"
+    },
+    "eyelet": {
+      "shape": {
+        "circle": [
+          [
+            14.6,
+            17.6
+          ],
+          0.85
+        ]
+      },
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "doc": {
+      "pivot": [
+        16,
+        16
+      ],
+      "carries": [
+        "sheet",
+        "fold",
+        "tag"
+      ]
+    },
+    "tag": {
+      "pivot": [
+        16,
+        17.6
+      ],
+      "carries": [
+        "tag",
+        "eyelet"
+      ]
+    }
+  },
+  "motion": {
+    "tag.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -0.5,
+          "out"
+        ],
+        [
+          0.2,
+          0,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          -0.75,
+          "out"
+        ],
+        [
+          0.18,
+          -0.75
+        ],
+        [
+          0.25,
+          0,
+          "hit"
+        ]
+      ]
+    },
+    "tag.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.12,
+          1.12,
+          "out"
+        ],
+        [
+          0.2,
+          1,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.14,
+          1.16,
+          "out"
+        ],
+        [
+          0.18,
+          1.16
+        ],
+        [
+          0.25,
+          1,
+          "hit"
+        ],
+        [
+          0.31,
+          1.04,
+          "out"
+        ],
+        [
+          0.37,
+          1,
+          "in"
+        ]
+      ]
+    },
+    "tag.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          9,
+          "out"
+        ],
+        [
+          0.18,
+          9
+        ],
+        [
+          0.25,
+          0,
+          "hit"
+        ]
+      ]
+    },
+    "doc.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.26,
+          0.9,
+          "out"
+        ],
+        [
+          0.34,
+          -0.2,
+          "inOut"
+        ],
+        [
+          0.42,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0
+        ],
+        [
+          0.31,
+          1.1,
+          "out"
+        ],
+        [
+          0.39,
+          -0.35,
+          "inOut"
+        ],
+        [
+          0.47,
+          0.12,
+          "inOut"
+        ],
+        [
+          0.55,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  }
+}

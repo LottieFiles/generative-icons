@@ -2,59 +2,9 @@
   "result": "PASS",
   "icons": 13,
   "actions": 42,
-  "nativeTransformNodes": 154,
-  "nativeTransformMaxCoordinateError": 0.000007935560308425238,
+  "nativeTransformNodes": 34,
+  "nativeTransformMaxCoordinateError": 0.000007313881166481906,
   "checks": [
-    {
-      "name": "repository",
-      "fixedParts": [
-        "repository-cover",
-        "repository-spine"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "repository-cover"
-        },
-        {
-          "type": "fixed",
-          "part": "repository-spine"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-mark"
-        }
-      ]
-    },
-    {
-      "name": "repository-strong",
-      "fixedParts": [
-        "repository-cover",
-        "repository-spine"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "repository-cover"
-        },
-        {
-          "type": "fixed",
-          "part": "repository-spine"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-mark"
-        }
-      ]
-    },
     {
       "name": "git-branch",
       "fixedParts": [
@@ -104,58 +54,6 @@
         {
           "type": "fixed",
           "part": "git-branch-trunk"
-        }
-      ]
-    },
-    {
-      "name": "git-commit",
-      "fixedParts": [
-        "git-commit-ring",
-        "git-commit-lane-left",
-        "git-commit-lane-right"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "git-commit-ring"
-        },
-        {
-          "type": "fixed",
-          "part": "git-commit-lane-left"
-        },
-        {
-          "type": "fixed",
-          "part": "git-commit-lane-right"
-        }
-      ]
-    },
-    {
-      "name": "git-commit-strong",
-      "fixedParts": [
-        "git-commit-ring",
-        "git-commit-lane-left",
-        "git-commit-lane-right"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "git-commit-ring"
-        },
-        {
-          "type": "fixed",
-          "part": "git-commit-lane-left"
-        },
-        {
-          "type": "fixed",
-          "part": "git-commit-lane-right"
         }
       ]
     },
@@ -232,202 +130,6 @@
       ]
     },
     {
-      "name": "pull-request",
-      "fixedParts": [
-        "pull-request-root",
-        "pull-request-base",
-        "pull-request-trunk",
-        "pull-request-branch"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "pull-request-root"
-        },
-        {
-          "type": "fixed",
-          "part": "pull-request-base"
-        },
-        {
-          "type": "fixed",
-          "part": "pull-request-trunk"
-        },
-        {
-          "type": "fixed",
-          "part": "pull-request-branch"
-        },
-        {
-          "type": "rigid",
-          "part": "pull-request-head"
-        }
-      ]
-    },
-    {
-      "name": "pull-request-strong",
-      "fixedParts": [
-        "pull-request-root",
-        "pull-request-base",
-        "pull-request-trunk",
-        "pull-request-branch"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "pull-request-root"
-        },
-        {
-          "type": "fixed",
-          "part": "pull-request-base"
-        },
-        {
-          "type": "fixed",
-          "part": "pull-request-trunk"
-        },
-        {
-          "type": "fixed",
-          "part": "pull-request-branch"
-        },
-        {
-          "type": "rigid",
-          "part": "pull-request-head"
-        }
-      ]
-    },
-    {
-      "name": "repository-fork",
-      "fixedParts": [
-        "repository-fork-source",
-        "repository-fork-trunk"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "repository-fork-source"
-        },
-        {
-          "type": "fixed",
-          "part": "repository-fork-trunk"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-fork-lane-left"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-fork-copy-left"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-fork-lane-right"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-fork-copy-right"
-        }
-      ]
-    },
-    {
-      "name": "repository-fork-strong",
-      "fixedParts": [
-        "repository-fork-source",
-        "repository-fork-trunk"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "repository-fork-source"
-        },
-        {
-          "type": "fixed",
-          "part": "repository-fork-trunk"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-fork-lane-left"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-fork-copy-left"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-fork-lane-right"
-        },
-        {
-          "type": "rigid",
-          "part": "repository-fork-copy-right"
-        }
-      ]
-    },
-    {
-      "name": "merge-conflict",
-      "fixedParts": [
-        "merge-conflict-lane-left",
-        "merge-conflict-lane-right",
-        "merge-conflict-junction"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "merge-conflict-lane-left"
-        },
-        {
-          "type": "fixed",
-          "part": "merge-conflict-lane-right"
-        },
-        {
-          "type": "fixed",
-          "part": "merge-conflict-junction"
-        }
-      ]
-    },
-    {
-      "name": "merge-conflict-strong",
-      "fixedParts": [
-        "merge-conflict-lane-left",
-        "merge-conflict-lane-right",
-        "merge-conflict-junction"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "merge-conflict-lane-left"
-        },
-        {
-          "type": "fixed",
-          "part": "merge-conflict-lane-right"
-        },
-        {
-          "type": "fixed",
-          "part": "merge-conflict-junction"
-        }
-      ]
-    },
-    {
       "name": "git-stash",
       "fixedParts": [
         "git-stash-tray"
@@ -464,74 +166,6 @@
         {
           "type": "rigid",
           "part": "git-stash-card-frame"
-        }
-      ]
-    },
-    {
-      "name": "debug",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "debug-body-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-seam"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-leg-lu"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-leg-ll"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-leg-ru"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-leg-rl"
-        }
-      ]
-    },
-    {
-      "name": "debug-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "debug-body-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-seam"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-leg-lu"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-leg-ll"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-leg-ru"
-        },
-        {
-          "type": "rigid",
-          "part": "debug-leg-rl"
         }
       ]
     },
@@ -658,62 +292,6 @@
       ]
     },
     {
-      "name": "regular-expression",
-      "fixedParts": [
-        "regular-expression-dot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "regular-expression-dot"
-        },
-        {
-          "type": "rigid",
-          "part": "regular-expression-arm-a"
-        },
-        {
-          "type": "rigid",
-          "part": "regular-expression-arm-b"
-        },
-        {
-          "type": "rigid",
-          "part": "regular-expression-arm-c"
-        }
-      ]
-    },
-    {
-      "name": "regular-expression-strong",
-      "fixedParts": [
-        "regular-expression-dot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "regular-expression-dot"
-        },
-        {
-          "type": "rigid",
-          "part": "regular-expression-arm-a"
-        },
-        {
-          "type": "rigid",
-          "part": "regular-expression-arm-b"
-        },
-        {
-          "type": "rigid",
-          "part": "regular-expression-arm-c"
-        }
-      ]
-    },
-    {
       "name": "webhook",
       "fixedParts": [
         "webhook-source"
@@ -762,5 +340,74 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "repository",
+      "spec": "specs/repository.icon.json",
+      "specSha256": "1438089c21d6bc7602edbce6ba0eb0e1b18fd326677fae04b8321a6f4622d93d",
+      "actions": [
+        "repository",
+        "repository-strong"
+      ]
+    },
+    {
+      "icon": "git-commit",
+      "spec": "specs/git-commit.icon.json",
+      "specSha256": "54cdd026a0e820b909291f02f81722ae03350d749b4203fa6d82725ecd90f2de",
+      "actions": [
+        "git-commit",
+        "git-commit-reset",
+        "git-commit-strong",
+        "git-commit-reset-strong"
+      ]
+    },
+    {
+      "icon": "pull-request",
+      "spec": "specs/pull-request.icon.json",
+      "specSha256": "f86ee0584fb89b4093822de96b51d4bd10c76175d066f215adc73f4f99c6a930",
+      "actions": [
+        "pull-request",
+        "pull-request-strong"
+      ]
+    },
+    {
+      "icon": "repository-fork",
+      "spec": "specs/repository-fork.icon.json",
+      "specSha256": "5c0dc3abc9350eb96dde2cb60a5582f7a04ff1d728715feec6af3b321ad29eac",
+      "actions": [
+        "repository-fork",
+        "repository-fork-strong"
+      ]
+    },
+    {
+      "icon": "merge-conflict",
+      "spec": "specs/merge-conflict.icon.json",
+      "specSha256": "bf1d8009db220edcc22527efebe8c9468a0f8638df6ea7be46a2c71949016bf9",
+      "actions": [
+        "merge-conflict",
+        "merge-conflict-reset",
+        "merge-conflict-strong",
+        "merge-conflict-reset-strong"
+      ]
+    },
+    {
+      "icon": "debug",
+      "spec": "specs/debug.icon.json",
+      "specSha256": "24d6d26348f374be8a53f9f13f3d5bdb4fa6852a41ef51d92c45c8641ecdcbf8",
+      "actions": [
+        "debug",
+        "debug-strong"
+      ]
+    },
+    {
+      "icon": "regular-expression",
+      "spec": "specs/regular-expression.icon.json",
+      "specSha256": "4cee83205bf704a73fe1209c72043ba09b6738393d718994d481b58c024b958e",
+      "actions": [
+        "regular-expression",
+        "regular-expression-strong"
+      ]
+    }
+  ]
 }

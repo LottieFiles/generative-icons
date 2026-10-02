@@ -1,0 +1,232 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "code-file",
+  "label": "Code file",
+  "intent": "Code is written into the file. Light: the brackets spring apart and a slash slides out of the left bracket into the gap, so the sheet reads </> for a beat; then the slash tucks back and the brackets snap shut, quicker than they opened. Strong: the brackets fly wider with the slash, overshoot and settle on </>, hold, snap shut and rebound once.",
+  "parts": {
+    "sheet": {
+      "//": "v1's sheet: frame, tint, and v1's Solid (the fold is a hole) with the code cut out by a matte that follows it",
+      "shape": {
+        "path": "M7 5.8 C7 4.6 7.6 4 8.8 4 L18.1 4 C18.7 4 19.212 4.212 19.636 4.636 L24.364 9.364 C24.788 9.788 25 10.3 25 10.9 L25 26.2 C25 27.4 24.4 28 23.2 28 L8.8 28 C7.6 28 7 27.4 7 26.2 L7 5.8 Z"
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M7 5.8 C7 4.6 7.6 4 8.8 4 L18.1 4 C18.7 4 19.212 4.212 19.636 4.636 L24.364 9.364 C24.788 9.788 25 10.3 25 10.9 L25 26.2 C25 27.4 24.4 28 23.2 28 L8.8 28 C7.6 28 7 27.4 7 26.2 L7 5.8 L20 6.3 L20 8.2 C20 8.4 20.1 8.5 20.3 8.5 L22.2 8.5 C22.4 8.5 22.429 8.429 22.288 8.288 L20.212 6.212 C20.071 6.071 20 6.1 20 6.3 L7 5.8 Z"
+      },
+      "knockout": [
+        {
+          "part": "code",
+          "gap": 0
+        }
+      ]
+    },
+    "fold": {
+      "shape": {
+        "path": "M19 5 L19 9 C19 9.6 19.4 10 20 10 L24 10"
+      },
+      "solid": "none"
+    },
+    "code": {
+      "//": "one part so one matte cuts it in Solid. spread 0 = v1's < > with the slash lying exactly on the < upper arm (one stroke, so it adds no ink); spread 1 = </> with each bracket 1.5 out",
+      "shape": [
+        {
+          "morph": [
+            {
+              "polyline": [
+                [
+                  13.9,
+                  13.8
+                ],
+                [
+                  11.4,
+                  17.8
+                ],
+                [
+                  13.9,
+                  21.8
+                ]
+              ]
+            },
+            {
+              "polyline": [
+                [
+                  12.4,
+                  13.8
+                ],
+                [
+                  9.9,
+                  17.8
+                ],
+                [
+                  12.4,
+                  21.8
+                ]
+              ]
+            }
+          ],
+          "by": "spread"
+        },
+        {
+          "morph": [
+            {
+              "polyline": [
+                [
+                  18.1,
+                  13.8
+                ],
+                [
+                  20.6,
+                  17.8
+                ],
+                [
+                  18.1,
+                  21.8
+                ]
+              ]
+            },
+            {
+              "polyline": [
+                [
+                  19.6,
+                  13.8
+                ],
+                [
+                  22.1,
+                  17.8
+                ],
+                [
+                  19.6,
+                  21.8
+                ]
+              ]
+            }
+          ],
+          "by": "spread"
+        },
+        {
+          "morph": [
+            {
+              "line": [
+                [
+                  13.9,
+                  13.8
+                ],
+                [
+                  11.4,
+                  17.8
+                ]
+              ]
+            },
+            {
+              "line": [
+                [
+                  16.8,
+                  15.2
+                ],
+                [
+                  15.2,
+                  20.4
+                ]
+              ]
+            }
+          ],
+          "by": "spread"
+        }
+      ]
+    }
+  },
+  "motion": {
+    "spread": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.16,
+          1,
+          "out"
+        ],
+        [
+          0.3,
+          1
+        ],
+        [
+          0.4,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.13,
+          1.1,
+          "out"
+        ],
+        [
+          0.21,
+          0.97
+        ],
+        [
+          0.28,
+          1
+        ],
+        [
+          0.45,
+          1
+        ],
+        [
+          0.54,
+          0,
+          "in"
+        ],
+        [
+          0.6,
+          0.1,
+          "out"
+        ],
+        [
+          0.66,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "code.opacity": {
+      "//": "imperceptible: it makes the builder cut the Solid with a matte that follows the morph",
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.2,
+          0.995
+        ],
+        [
+          0.4,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.3,
+          0.995
+        ],
+        [
+          0.66,
+          1
+        ]
+      ]
+    }
+  }
+}

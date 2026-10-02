@@ -1,0 +1,57 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "sticker",
+  "label": "Sticker",
+  "intent": "The sticker is slapped on and comes alive. Light: it lifts toward you with a slight tilt, slaps down flat with a hit (pressed a little below its size), springs back, and winks. Strong: a higher lift with more tilt, a harder slap that rebounds and settles in two beats, then the wink. The face rides on the sticker; the sticker stays flat and rigid.",
+  "parts": {
+    "paper": {
+      "shape": {"path": "M8 5 L24 5 C25.7 5 27 6.3 27 8 L27 21 L21 27 L8 27 C6.3 27 5 25.7 5 24 L5 8 C5 6.3 6.3 5 8 5 Z"},
+      "role": "surface",
+      "solid": "ring"
+    },
+    "fold": {
+      "shape": {"path": "M21 27 L21 23 C21 21.9 21.9 21 23 21 L27 21"}
+    },
+    "eye-a": {
+      "shape": {"circle": [[11, 12], 1]},
+      "role": "fill"
+    },
+    "eye-b": {
+      "shape": {"circle": [[19, 12], 1]},
+      "role": "fill"
+    },
+    "wink": {
+      "//": "hidden at rest: the closed eye, swapped in for eye-b while it winks",
+      "shape": {"line": [[18, 12.4], [20, 12.4]]},
+      "hidden": true
+    },
+    "smile": {
+      "shape": {"path": "M10 16 C12 18.5 16 18.5 18 16"}
+    }
+  },
+  "rigs": {
+    "sticker": {
+      "pivot": [16, 16],
+      "carries": ["paper", "fold", "eye-a", "eye-b", "wink", "smile"]
+    }
+  },
+  "motion": {
+    "sticker.scale": {
+      "light": [[0, 1], [0.1, 1.08, "out"], [0.2, 0.94, "hit"], [0.28, 1.02], [0.35, 1]],
+      "strong": [[0, 1], [0.12, 1.1, "out"], [0.23, 0.92, "hit"], [0.31, 1.03], [0.38, 0.98], [0.45, 1]]
+    },
+    "sticker.rotate": {
+      "light": [[0, 0], [0.1, -5, "out"], [0.2, 0, "hit"]],
+      "strong": [[0, 0], [0.12, -6, "out"], [0.23, 0, "hit"], [0.31, 2], [0.39, 0]]
+    },
+    "eye-b.opacity": {
+      "light": [[0, 1], [0.27, 1], [0.28, 0, "step"], [0.42, 0], [0.43, 1, "step"]],
+      "strong": [[0, 1], [0.4, 1], [0.41, 0, "step"], [0.56, 0], [0.57, 1, "step"]]
+    },
+    "wink.opacity": {
+      "light": [[0, 0], [0.27, 0], [0.28, 1, "step"], [0.42, 1], [0.43, 0, "step"]],
+      "strong": [[0, 0], [0.4, 0], [0.41, 1, "step"], [0.56, 1], [0.57, 0, "step"]]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "emoji-picker",
+  "label": "Emoji picker",
+  "intent": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
+  "parts": {
+    "face": {
+      "shape": {"circle": [[16, 16], 11]},
+      "role": "surface",
+      "knockout": [{"part": "eye-l", "gap": 0}, {"part": "eye-r", "gap": 0}, {"part": "mouth", "gap": 0}]
+    },
+    "mouth": {"shape": {"path": "M10.5 17.5 C11.704 19.37 13.776 20.5 16 20.5 C18.224 20.5 20.296 19.37 21.5 17.5"}},
+    "eye-r": {
+      "//": "the wink is a morph: Outline and Duotone; Solid cuts the eye at its rest shape",
+      "shape": {"morph": [{"ellipse": [[20, 12.5], 1.3, 1.3]}, {"ellipse": [[20, 12.5], 1.7, 0.55]}], "by": "wink"},
+      "role": "fill"
+    },
+    "eye-l": {"shape": {"circle": [[12, 12.5], 1.3]}, "role": "fill"}
+  },
+  "rigs": {
+    "face": {"pivot": [16, 16], "carries": ["face", "mouth", "eye-r", "eye-l"]},
+    "mouth": {"//": "the grin grows from the corners' line; its Solid cut-out follows (a matte)", "pivot": [16, 17.5]}
+  },
+  "motion": {
+    "face.rotate": {
+      "light": [[0, 0], [0.12, 7, "out"], [0.28, 6], [0.42, -1, "inOut"], [0.5, 0]],
+      "strong": [[0, 0], [0.12, -5, "inOut"], [0.28, 12, "out"], [0.5, 11], [0.64, -2.5, "inOut"], [0.74, 0.8], [0.82, 0]]
+    },
+    "wink": {
+      "light": [[0, 0.0], [0.06, 0.0], [0.12, 1.0, "in"], [0.22, 1.0], [0.3, 0.0, "out"]],
+      "strong": [[0, 0.0], [0.2, 0.0], [0.26, 1.0, "in"], [0.44, 1.0], [0.52, 0.0, "out"]]
+    },
+    "mouth.scale": {
+      "light": [[0, 1], [0.08, 1], [0.2, 1.18, "out"], [0.3, 1.18], [0.46, 1, "inOut"]],
+      "strong": [[0, 1], [0.2, 1], [0.32, 1.3, "out"], [0.52, 1.28], [0.7, 1, "inOut"]]
+    }
+  }
+}

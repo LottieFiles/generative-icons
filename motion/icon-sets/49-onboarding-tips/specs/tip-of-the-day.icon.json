@@ -1,0 +1,364 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "tip-of-the-day",
+  "label": "Tip of the day",
+  "intent": "Today's tip lights up on the calendar page. Light: the sparkle draws in on itself with a counter-twist, then flares out with a twist and settles, and a small twinkle flashes beside it at the top right. Strong: a deeper gather, a bigger flare and twist with a two-beat settle, and two twinkles flash in turn, right then left. The calendar never moves.",
+  "parts": {
+    "leaf": {
+      "//": "v1 Solid is hollow: the frame at 2.6",
+      "shape": {
+        "rect": [
+          5,
+          6,
+          22,
+          22
+        ],
+        "r": 2.7
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "header": {
+      "shape": {
+        "line": [
+          [
+            5.5,
+            11.5
+          ],
+          [
+            26.5,
+            11.5
+          ]
+        ]
+      }
+    },
+    "peg-l": {
+      "shape": {
+        "line": [
+          [
+            11,
+            4
+          ],
+          [
+            11,
+            8.5
+          ]
+        ]
+      }
+    },
+    "peg-r": {
+      "shape": {
+        "line": [
+          [
+            21,
+            4
+          ],
+          [
+            21,
+            8.5
+          ]
+        ]
+      }
+    },
+    "sparkle": {
+      "shape": {
+        "path": "M20.2 19.8 C17.26 19.8 16 21.06 16 24 C16 21.06 14.74 19.8 11.8 19.8 C14.74 19.8 16 18.54 16 15.6 C16 18.54 17.26 19.8 20.2 19.8 Z"
+      },
+      "role": "fill"
+    },
+    "twinkle-r": {
+      "//": "hidden at rest: a small twinkle at the top right of the page",
+      "shape": {
+        "path": "M24.5 15.8 C23.03 15.8 22.4 16.43 22.4 17.9 C22.4 16.43 21.77 15.8 20.3 15.8 C21.77 15.8 22.4 15.17 22.4 13.7 C22.4 15.17 23.03 15.8 24.5 15.8 Z"
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "twinkle-l": {
+      "//": "Strong only: the second twinkle, top left",
+      "shape": {
+        "path": "M11.7 15.8 C10.23 15.8 9.6 16.43 9.6 17.9 C9.6 16.43 8.97 15.8 7.5 15.8 C8.97 15.8 9.6 15.17 9.6 13.7 C9.6 15.17 10.23 15.8 11.7 15.8 Z"
+      },
+      "role": "fill",
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "sparkle": {
+      "pivot": [
+        16,
+        19.8
+      ],
+      "carries": [
+        "sparkle"
+      ]
+    }
+  },
+  "motion": {
+    "//": "The twist is twist-and-return to exactly 0 (a 90 degree turn would not end on the same pixels). At 1.35x the sparkle stays inside the page, clear of the header.",
+    "sparkle.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          0.7,
+          "out"
+        ],
+        [
+          0.2,
+          1.25,
+          "out"
+        ],
+        [
+          0.3,
+          0.95
+        ],
+        [
+          0.38,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.11,
+          0.55,
+          "out"
+        ],
+        [
+          0.25,
+          1.35,
+          "out"
+        ],
+        [
+          0.35,
+          0.92
+        ],
+        [
+          0.44,
+          1.04
+        ],
+        [
+          0.52,
+          1
+        ]
+      ]
+    },
+    "sparkle.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -10,
+          "out"
+        ],
+        [
+          0.2,
+          20,
+          "out"
+        ],
+        [
+          0.3,
+          -4
+        ],
+        [
+          0.38,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.11,
+          -15,
+          "out"
+        ],
+        [
+          0.25,
+          35,
+          "out"
+        ],
+        [
+          0.36,
+          -8
+        ],
+        [
+          0.45,
+          3
+        ],
+        [
+          0.52,
+          0
+        ]
+      ]
+    },
+    "twinkle-r.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.17,
+          0
+        ],
+        [
+          0.2,
+          1,
+          "out"
+        ],
+        [
+          0.3,
+          1
+        ],
+        [
+          0.4,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.22,
+          0
+        ],
+        [
+          0.25,
+          1,
+          "out"
+        ],
+        [
+          0.34,
+          1
+        ],
+        [
+          0.44,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "twinkle-r.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.17,
+          0.3,
+          "step"
+        ],
+        [
+          0.27,
+          1.15,
+          "out"
+        ],
+        [
+          0.4,
+          0.8
+        ],
+        [
+          0.42,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.22,
+          0.3,
+          "step"
+        ],
+        [
+          0.32,
+          1.25,
+          "out"
+        ],
+        [
+          0.44,
+          0.8
+        ],
+        [
+          0.46,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "twinkle-l.opacity": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.32,
+          0
+        ],
+        [
+          0.35,
+          1,
+          "out"
+        ],
+        [
+          0.44,
+          1
+        ],
+        [
+          0.54,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "twinkle-l.scale": {
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.32,
+          0.3,
+          "step"
+        ],
+        [
+          0.42,
+          1.2,
+          "out"
+        ],
+        [
+          0.54,
+          0.8
+        ],
+        [
+          0.56,
+          1,
+          "step"
+        ]
+      ]
+    }
+  }
+}

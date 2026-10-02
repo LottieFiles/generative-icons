@@ -1,0 +1,320 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "search-image",
+  "label": "Search image",
+  "intent": "The search finds what is in the picture. Light: the magnifier sweeps across the sky and stops dead over the far peak; the lens pops as it finds it and the mountain hops in answer a beat later, then the magnifier glides home. Strong: it draws back first, shoots across to a hard stop with a recoil, and the mountain hops twice before the magnifier returns. The frame never moves.",
+  "parts": {
+    "frame": {
+      "shape": {
+        "rect": [
+          3.5,
+          4,
+          25,
+          23
+        ],
+        "r": 2.5
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "mountain": {
+      "shape": {
+        "polyline": [
+          [
+            8,
+            23.5
+          ],
+          [
+            12.5,
+            18.5
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            19.5,
+            19
+          ],
+          [
+            24,
+            23.5
+          ]
+        ]
+      }
+    },
+    "lens": {
+      "shape": {
+        "circle": [
+          [
+            10.8,
+            11
+          ],
+          3.4
+        ]
+      }
+    },
+    "handle": {
+      "shape": {
+        "line": [
+          [
+            13.2,
+            13.4
+          ],
+          [
+            15.2,
+            15.4
+          ]
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "magnifier": {
+      "//": "the whole magnifier travels",
+      "pivot": [
+        10.8,
+        11
+      ],
+      "carries": [
+        "lens",
+        "handle"
+      ]
+    },
+    "lens": {
+      "//": "the lens pops about its centre; the handle stays rigid",
+      "pivot": [
+        10.8,
+        11
+      ]
+    },
+    "handle": {
+      "//": "the handle stays on the lens rim as the lens pops: x = y = 2.404 (scale - 1)",
+      "pivot": [
+        13.2,
+        13.4
+      ]
+    }
+  },
+  "motion": {
+    "magnifier.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          8.7,
+          "hit"
+        ],
+        [
+          0.3,
+          8.7
+        ],
+        [
+          0.48,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.8,
+          "out"
+        ],
+        [
+          0.24,
+          8.7,
+          "hit"
+        ],
+        [
+          0.3,
+          8.2
+        ],
+        [
+          0.36,
+          8.7
+        ],
+        [
+          0.52,
+          8.7
+        ],
+        [
+          0.72,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "lens.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.2,
+          1
+        ],
+        [
+          0.26,
+          1.08,
+          "out"
+        ],
+        [
+          0.35,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.24,
+          1
+        ],
+        [
+          0.3,
+          1.14,
+          "out"
+        ],
+        [
+          0.38,
+          0.96
+        ],
+        [
+          0.45,
+          1.02
+        ],
+        [
+          0.52,
+          1
+        ]
+      ]
+    },
+    "handle.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.26,
+          0.1923,
+          "out"
+        ],
+        [
+          0.35,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.3,
+          0.3366,
+          "out"
+        ],
+        [
+          0.38,
+          -0.0962
+        ],
+        [
+          0.45,
+          0.0481
+        ],
+        [
+          0.52,
+          0
+        ]
+      ]
+    },
+    "handle.y": {
+      "follow": "handle.x"
+    },
+    "mountain.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.22,
+          0
+        ],
+        [
+          0.3,
+          -0.9,
+          "out"
+        ],
+        [
+          0.38,
+          0,
+          "hit"
+        ],
+        [
+          0.43,
+          -0.15
+        ],
+        [
+          0.48,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.27,
+          0
+        ],
+        [
+          0.35,
+          -1.1,
+          "out"
+        ],
+        [
+          0.43,
+          0,
+          "hit"
+        ],
+        [
+          0.49,
+          -0.5,
+          "out"
+        ],
+        [
+          0.55,
+          0,
+          "hit"
+        ],
+        [
+          0.6,
+          0
+        ]
+      ]
+    }
+  }
+}

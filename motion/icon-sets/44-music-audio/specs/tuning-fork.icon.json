@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "tuning-fork",
+  "label": "Tuning fork",
+  "intent": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
+  "parts": {
+    "knob": {"shape": {"circle": [[16, 26.4], 1.5]}, "role": "fill"},
+    "stem": {"shape": {"line": [[16, 14.8], [16, 26]]}},
+    "prongs": {
+      "//": "the morph flexes the prong tips apart (1) or together (negative); the base never moves",
+      "shape": {"morph": [{"path": "M11 4.5 L11 12.5 C11 15.6 21 15.6 21 12.5 L21 4.5"}, {"path": "M9.8 4.5 L11 12.5 C11 15.6 21 15.6 21 12.5 L22.2 4.5"}], "by": "ring"}
+    },
+    "wave-l": {"//": "hidden at rest: sound only exists while the fork rings", "shape": {"arc": [[16, 7.5], 10, 160, 200]}, "hidden": true},
+    "wave-r": {"mirror": {"of": "wave-l"}}
+  },
+  "rigs": {
+    "fork": {"carries": ["knob", "stem", "prongs"]}
+  },
+  "motion": {
+    "fork.y": {"light": [[0, 0], [0.06, 1, "hit"], [0.15, -0.25], [0.23, 0]], "strong": [[0, 0], [0.12, -1.2, "out"], [0.2, 1, "hit"], [0.29, -0.3], [0.37, 0]]},
+    "ring": {
+      "light": [[0, 0], {"wobble": 0.06, "amp": 1.1, "until": 0.5, "swings": 5}],
+      "strong": [[0, 0], [0.2, 0], {"wobble": 0.2, "amp": 1.3, "until": 0.85, "swings": 6}]
+    },
+    "wave-l.opacity": {
+      "light": [[0, 0], [0.06, 0], [0.1, 1, "out"], [0.2, 1], [0.4, 0, "in"]],
+      "strong": [[0, 0], [0.2, 0], [0.24, 1, "out"], [0.32, 1], [0.46, 0, "in"], [0.47, 0], [0.5, 1, "out"], [0.58, 1], [0.74, 0, "in"]]
+    },
+    "wave-l.r": {
+      "light": [[0, 0], [0.06, 0], [0.4, 1.5, "out"], [0.42, 0, "step"]],
+      "strong": [[0, 0], [0.2, 0], [0.46, 1.3, "out"], [0.47, 0, "step"], [0.74, 1.6, "out"], [0.76, 0, "step"]]
+    },
+    "wave-r.opacity": {"follow": "wave-l.opacity"},
+    "wave-r.r": {"follow": "wave-l.r"}
+  }
+}

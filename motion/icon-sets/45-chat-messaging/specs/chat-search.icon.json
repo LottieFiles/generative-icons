@@ -1,0 +1,29 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "chat-search",
+  "label": "Chat search",
+  "intent": "The search finds the message. Light: the lens sweeps 3 units left beneath the message, swings back and stops dead on its result, then zooms in on it (the magnifier grows from the hand toward the message) and settles. Strong: the lens winds up to the right, sweeps 4 units with its glass trailing, snaps back onto the result and zooms further, settling in two beats. The bubble and its text never move.",
+  "parts": {
+    "bubble": {"shape": {"path": "M8 5 L24 5 C25.7 5 27 6.3 27 8 L27 10 C27 11.7 25.7 13 24 13 L12 13 L7.6 16 C7 16.4 6.5 16 6.7 15.3 L7.2 13 C5.9 12.7 5 11.5 5 10 L5 8 C5 6.3 6.3 5 8 5 Z"}, "role": "surface", "solid": "ring"},
+    "text":   {"shape": {"line": [[10, 9], [21, 9]]}},
+    "lens":   {"shape": {"circle": [[18, 23], 4]}, "role": "surface", "solid": "ring"},
+    "handle": {"shape": {"line": [[20.8, 25.8], [23.6, 28.6]]}}
+  },
+  "rigs": {
+    "lens": {"//": "held at the end of the handle: the zoom grows the glass toward the message and the tip stays put", "pivot": [23.6, 28.6], "carries": ["lens", "handle"]}
+  },
+  "motion": {
+    "lens.x": {
+      "light":  [[0, 0], [0.14, -3, "out"], [0.28, 0, "hit"]],
+      "strong": [[0, 0], [0.08, 0.8, "out"], [0.26, -4, "inOut"], [0.4, 0, "hit"]]
+    },
+    "lens.rotate": {
+      "strong": [[0, 0], [0.08, 3, "out"], [0.26, -8, "inOut"], [0.4, 0, "hit"]]
+    },
+    "lens.scale": {
+      "light":  [[0, 1], [0.28, 1], [0.35, 1.18, "out"], [0.43, 0.97], [0.5, 1]],
+      "strong": [[0, 1], [0.4, 1], [0.47, 1.26, "out"], [0.55, 0.95], [0.62, 1.03], [0.69, 1]]
+    }
+  }
+}

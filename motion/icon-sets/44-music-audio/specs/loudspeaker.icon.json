@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "loudspeaker",
+  "label": "Loudspeaker",
+  "intent": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
+  "parts": {
+    "cabinet": {"shape": {"rect": [7.5, 3.5, 17, 25], "r": 2.6}, "role": "surface", "solid": "fill", "knockout": [{"part": "woofer", "gap": 0}]},
+    "tweeter": {"//": "v1 fills the tweeter over its own Solid hole, so it reads as solid there", "shape": {"circle": [[16, 9], 1.6]}, "role": "fill"},
+    "woofer": {"//": "in Solid the cone is a hole of the woofer's radius", "shape": {"circle": [[16, 20], 4.2]}, "solid": "fill"},
+    "cap": {"shape": {"circle": [[16, 20], 1.3]}, "role": "fill", "solid": {"circle": [[16, 20], 2.4]}},
+    "wave-r": {"//": "hidden at rest: sound only exists while it plays", "shape": {"arc": [[10, 20], 18.2, -13, 13]}, "hidden": true},
+    "wave-l": {"mirror": {"of": "wave-r"}}
+  },
+  "rigs": {
+    "cabinet": {"//": "the Strong jolt moves the whole speaker", "carries": ["tweeter", "woofer", "cap"]},
+    "woofer": {"pivot": [16, 20]},
+    "cap": {"pivot": [16, 20]}
+  },
+  "motion": {
+    "woofer.scale": {
+      "light": [[0, 1], [0.07, 1.2, "hit"], [0.17, 0.95], [0.27, 1]],
+      "strong": [[0, 1], [0.07, 1.16, "hit"], [0.16, 0.96], [0.24, 1], [0.3, 1], [0.37, 1.24, "hit"], [0.47, 0.94], [0.56, 1.02], [0.64, 1]]
+    },
+    "cap.scale": {
+      "light": [[0, 1], [0.04, 1], [0.11, 1.4, "hit"], [0.21, 0.92], [0.31, 1]],
+      "strong": [[0, 1], [0.04, 1], [0.11, 1.3, "hit"], [0.2, 0.92], [0.28, 1], [0.34, 1], [0.41, 1.5, "hit"], [0.51, 0.9], [0.6, 1.03], [0.68, 1]]
+    },
+    "wave-r.opacity": {
+      "light": [[0, 0], [0.06, 0], [0.1, 1, "out"], [0.2, 1], [0.4, 0, "in"]],
+      "strong": [[0, 0], [0.06, 0], [0.1, 1, "out"], [0.16, 1], [0.28, 0, "in"], [0.36, 0], [0.4, 1, "out"], [0.47, 1], [0.62, 0, "in"]]
+    },
+    "wave-r.r": {
+      "light": [[0, 0], [0.06, 0], [0.4, 0.9, "out"], [0.42, 0, "step"]],
+      "strong": [[0, 0], [0.06, 0], [0.28, 0.8, "out"], [0.3, 0, "step"], [0.36, 0], [0.62, 0.95, "out"], [0.64, 0, "step"]]
+    },
+    "wave-l.opacity": {"follow": "wave-r.opacity"},
+    "wave-l.r": {"follow": "wave-r.r"},
+    "cabinet.x": {"strong": [[0, 0], [0.37, 0], [0.41, 0.6, "hit"], [0.47, -0.4], [0.53, 0.15], [0.59, 0]]}
+  }
+}

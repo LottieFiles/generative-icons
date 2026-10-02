@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "umbrella",
+  "label": "Umbrella",
+  "intent": "Rain lands on the umbrella and it shields. Light: a raindrop falls onto the left shoulder of the canopy, then one onto the right; each vanishes on contact and the rigid umbrella takes the hit, dipping and tipping toward that side, then rocks back and settles. Strong: a heavier shower: two drops land on each side in turn and the umbrella rocks under four decaying hits before it settles.",
+  "parts": {
+    "drop-l": {"//": "hidden at rest: rain only exists while it falls; it lands on the canopy's shoulder, where there is room above it",
+               "shape": {"line": [[5.8, 3], [5.8, 5]]}, "hidden": true},
+    "drop-r": {"mirror": {"of": "drop-l"}},
+    "canopy": {"shape": {"path": "M4.5 16.2 C4.5 9.85 9.65 4.7 16 4.7 C22.35 4.7 27.5 9.85 27.5 16.2 C26.54 15 25.58 14.4 24.63 14.4 C23.67 14.4 22.71 15 21.75 16.2 C20.79 15 19.83 14.4 18.88 14.4 C17.92 14.4 16.96 15 16 16.2 C15.04 15 14.08 14.4 13.13 14.4 C12.17 14.4 11.21 15 10.25 16.2 C9.29 15 8.33 14.4 7.38 14.4 C6.42 14.4 5.46 15 4.5 16.2 Z"},
+               "role": "surface", "solid": "fill"},
+    "shaft":  {"shape": {"path": "M16 16.2 L16 25.2 C16 26.8 14.9 27.8 13.6 27.8 C12.4 27.8 11.5 26.9 11.5 25.8"}}
+  },
+  "rigs": {
+    "umbrella": {"//": "rigid: it tips about the hand on the shaft", "pivot": [16, 24], "carries": ["canopy", "shaft"]}
+  },
+  "motion": {
+    "drop-l.opacity": {
+      "light":  [[0, 0], [0.03, 1, "out"], [0.15, 1], [0.17, 0]],
+      "strong": [[0, 0], [0.03, 1, "out"], [0.13, 1], [0.15, 0], [0.2, 0], [0.22, 1, "out"], [0.32, 1], [0.34, 0]]
+    },
+    "drop-l.y": {
+      "//": "a 4.6 fall beside the curve onto the canopy, accelerating",
+      "light":  [[0, 0], [0.16, 4.6, "in"], [0.18, 0, "step"]],
+      "strong": [[0, 0], [0.14, 4.6, "in"], [0.16, 0, "step"], [0.2, 0], [0.33, 4.6, "in"], [0.35, 0, "step"]]
+    },
+    "drop-r.opacity": {"follow": "drop-l.opacity", "lag": 0.08},
+    "drop-r.y": {"follow": "drop-l.y", "lag": 0.08},
+    "umbrella.rotate": {
+      "//": "each landing tips the canopy toward the side it lands on",
+      "light":  [[0, 0], [0.16, 0], [0.21, -4, "out"], [0.24, -2.5], [0.3, 3, "out"], [0.38, -1], [0.46, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.19, -5, "out"], [0.22, -3], [0.28, 4.5, "out"], [0.33, 2.5], [0.39, -3.5, "out"], [0.42, -2], [0.47, 2.5, "out"], [0.55, -0.8], [0.63, 0]]
+    },
+    "umbrella.y": {
+      "light":  [[0, 0], [0.16, 0], [0.2, 0.8, "out"], [0.24, 0.25], [0.28, 0.6, "out"], [0.36, -0.15], [0.44, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.18, 1, "out"], [0.22, 0.3], [0.26, 0.9, "out"], [0.31, 0.25], [0.37, 0.7, "out"], [0.41, 0.2], [0.45, 0.5, "out"], [0.53, -0.15], [0.6, 0]]
+    }
+  }
+}

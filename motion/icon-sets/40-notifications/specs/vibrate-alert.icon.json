@@ -1,0 +1,27 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "vibrate-alert",
+  "label": "Vibrate alert",
+  "intent": "The phone buzzes. Light: one burst: the rigid handset rattles fast about its centre in decaying beats while both vibration arcs kick out and spring back. Strong: buzz, pause, buzz: two harder bursts, the arcs kicking out further on each.",
+  "parts": {
+    "phone": {"shape": {"rect": [10.5, 4, 11, 24], "r": 2.8}, "role": "surface", "solid": "ring"},
+    "home": {"shape": {"line": [[14, 25.4], [18, 25.4]]}},
+    "arc-l": {"//": "v1's vibration arcs, on a 10.5 circle about the phone's centre", "shape": {"arc": [[16, 16], 10.5, 160, 200]}},
+    "arc-r": {"mirror": {"of": "arc-l"}}
+  },
+  "rigs": {
+    "phone": {"//": "the handset rattles about its centre; hardware stays rigid", "pivot": [16, 16], "carries": ["home"]}
+  },
+  "motion": {
+    "phone.rotate": {
+      "light":  [[0, 0], [0.04, -6], [0.09, 6], [0.14, -5], [0.19, 4], [0.24, -2.5], [0.29, 1], [0.34, 0]],
+      "strong": [[0, 0], [0.04, -8], [0.09, 8], [0.14, -7], [0.19, 6], [0.24, -4], [0.29, 0], [0.38, 0], [0.42, -8], [0.47, 8], [0.52, -7], [0.57, 5], [0.62, -3], [0.67, 1.5], [0.72, 0]]
+    },
+    "arc-l.r": {
+      "light":  [[0, 0], [0.06, 1.8, "out"], [0.24, 1.4], [0.34, -0.3], [0.42, 0]],
+      "strong": [[0, 0], [0.06, 2.2, "out"], [0.26, 1.8], [0.35, 0, "in"], [0.4, 0], [0.46, 2.2, "out"], [0.64, 1.8], [0.74, -0.3], [0.82, 0]]
+    },
+    "arc-r.r": {"follow": "arc-l.r"}
+  }
+}

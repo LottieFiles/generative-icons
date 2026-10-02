@@ -1,0 +1,43 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "humidity",
+  "label": "Humidity",
+  "intent": "Moisture gathers and the humidity rises. Light: a droplet forms under the tip of the drop, falls through it and lands in the water; on contact the level rises from low to just above the middle in one decisive fill while the surface sloshes and settles level. Strong: two droplets land in turn and the level climbs in two ticks, each landing sloshing the surface harder. The level never overshoots; the drop never moves.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "drop":    {"shape": {"path": "M15.31 5.76 C15.77 4.99 16.23 4.99 16.69 5.76 L22.43 15.35 L22.435 15.348 C23.822 17.666 23.856 20.55 22.524 22.899 C21.193 25.248 18.701 26.7 16 26.7 C13.299 26.7 10.807 25.248 9.476 22.899 C8.144 20.55 8.178 17.666 9.565 15.348 L15.31 5.76 Z"}},
+    "droplet": {"//": "hidden at rest: the moisture that arrives; behind the water so the fill swallows it",
+                "shape": {"path": "M16 9.2 C17.1 10.9 17.8 12 17.8 12.9 C17.8 13.89 16.99 14.7 16 14.7 C15.01 14.7 14.2 13.89 14.2 12.9 C14.2 12 14.9 10.9 16 9.2 Z"},
+                "role": "fill", "hidden": true},
+    "water":   {"//": "tint and Solid only, as in v1: the body of water below the surface; the level driver raises it",
+                "shape": {"morph": [
+                  {"path": "M10.41 24.2 C14.137 24.2 17.863 24.2 21.59 24.2 L21.59 24.2 C20.649 25.252 19.431 26.017 18.075 26.407 C16.719 26.798 15.281 26.798 13.925 26.407 C12.569 26.017 11.351 25.252 10.41 24.2 Z"},
+                  {"path": "M8.543 18.4 C13.514 18.4 18.486 18.4 23.457 18.4 L23.457 18.4 C23.763 21.255 22.413 24.034 19.979 25.558 C17.545 27.081 14.455 27.081 12.021 25.558 C9.587 24.034 8.237 21.255 8.543 18.4 Z"}],
+                  "by": "level"},
+                "role": "surface", "outline": "none", "solid": "fill"},
+    "surface": {"shape": {"morph": [{"line": [[10.41, 24.2], [21.59, 24.2]]}, {"line": [[8.543, 18.4], [23.457, 18.4]]}], "by": "level"}}
+  },
+  "rigs": {
+    "liquid": {"//": "the centre of the drop's round bowl: a slosh keeps the water's edge on the wall", "pivot": [16, 19.2], "carries": ["water", "surface"]}
+  },
+  "motion": {
+    "droplet.opacity": {
+      "light":  [[0, 0], [0.05, 1, "out"], [0.2, 1], [0.24, 0, "in"]],
+      "strong": [[0, 0], [0.04, 1, "out"], [0.17, 1], [0.21, 0, "in"], [0.28, 0], [0.32, 1, "out"], [0.45, 1], [0.49, 0, "in"]]
+    },
+    "droplet.y": {
+      "//": "falls from under the tip until it meets the surface (9.3 down at the low level, 6.4 at the half level)",
+      "light":  [[0, 0], [0.04, 0], [0.21, 9.3, "in"], [0.26, 0, "step"]],
+      "strong": [[0, 0], [0.03, 0], [0.18, 9.3, "in"], [0.23, 0, "step"], [0.31, 0], [0.46, 6.4, "in"], [0.51, 0, "step"]]
+    },
+    "level": {
+      "light":  [[0, 0], [0.21, 0], [0.5, 1, "out"]],
+      "strong": [[0, 0], [0.18, 0], [0.32, 0.5, "out"], [0.46, 0.5], [0.64, 1, "out"]]
+    },
+    "liquid.rotate": {
+      "light":  [[0, 0], [0.21, 0], [0.29, 7, "out"], [0.39, -3.5], [0.48, 1.2], [0.56, 0]],
+      "strong": [[0, 0], [0.18, 0], [0.25, 8, "out"], [0.35, -3.5], [0.46, 0], [0.53, -11, "out"], [0.63, 5.5], [0.72, -2.2], [0.8, 0.7], [0.87, 0]]
+    }
+  }
+}

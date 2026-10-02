@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "directions",
+  "label": "Directions",
+  "intent": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
+  "preview": {"light": [0, 0.07, 0.14, 0.18, 0.23, 0.27, 0.32, 0.42], "strong": [0, 0.1, 0.19, 0.27, 0.36, 0.44, 0.52, 0.71]},
+  "parts": {
+    "trail-l": {"//": "hidden at rest: speed lines left behind the tail as the pointer launches", "shape": {"line": [[12.6, 24.2], [12.6, 27]]}, "hidden": true},
+    "trail-r": {"mirror": {"of": "trail-l"}},
+    "pointer": {"shape": {"path": "M15.497 6.09 C15.832 5.363 16.168 5.363 16.503 6.09 L24.581 23.592 C24.86 24.197 24.709 24.338 24.126 24.014 L16.699 19.889 C16.233 19.629 15.767 19.629 15.301 19.889 L7.874 24.014 C7.291 24.338 7.14 24.197 7.419 23.592 L15.497 6.09 Z"}, "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "pointer": {"//": "turns about its middle to find the heading", "pivot": [16, 15.5]}
+  },
+  "motion": {
+    "pointer.y": {
+      "light":  [[0, 0], [0.07, 0.8, "out"], [0.19, -2.4, "in"], [0.2, 2.8, "step"], [0.34, -0.45, "out"], [0.42, 0]],
+      "strong": [[0, 0], [0.19, 0], [0.27, 1.2, "out"], [0.39, -2.5, "in"], [0.4, 3, "step"], [0.54, -0.8, "out"], [0.63, 0.25], [0.71, 0]]
+    },
+    "pointer.opacity": {
+      "light":  [[0, 1], [0.13, 1], [0.19, 0, "in"], [0.21, 0], [0.29, 1, "out"]],
+      "strong": [[0, 1], [0.33, 1], [0.39, 0, "in"], [0.41, 0], [0.49, 1, "out"]]
+    },
+    "pointer.rotate": {
+      "light":  [[0, 0]],
+      "strong": [[0, 0], [0.1, -16, "out"], [0.19, 0, "hit"]]
+    },
+    "trail-l.opacity": {
+      "light":  [[0, 0], [0.1, 0], [0.12, 1, "out"], [0.16, 1], [0.21, 0, "in"]],
+      "strong": [[0, 0], [0.3, 0], [0.32, 1, "out"], [0.36, 1], [0.41, 0, "in"]]
+    },
+    "trail-l.y": {
+      "light":  [[0, 0], [0.1, 0], [0.21, 1.2, "out"], [0.22, 0, "step"]],
+      "strong": [[0, 0], [0.3, 0], [0.41, 1.6, "out"], [0.42, 0, "step"]]
+    },
+    "trail-r.opacity": {"follow": "trail-l.opacity"},
+    "trail-r.y": {"follow": "trail-l.y"}
+  }
+}

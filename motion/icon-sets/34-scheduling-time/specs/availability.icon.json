@@ -1,0 +1,24 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "availability",
+  "label": "Availability",
+  "intent": "The open slot is pulled out to be picked. Light: the free slot slides out to the right, hits its stop, recoils a little and settles, and stays open; the two busy slots never move. Strong: the slot is pushed in first, then pulled out hard to its stop and settles in two beats. The reverse pushes it home against its stop.",
+  "state": {"from": "closed", "to": "open", "labels": ["Open", "Close"], "reverse": "auto"},
+  "parts": {
+    "busy-bottom": {"//": "a filled pill that grows with the weight: a fill plus an edge stroked at the weight", "shape": {"rect": [7, 21.1, 18, 4.6], "r": 2.3}, "role": "fill"},
+    "busy-bottom-edge": {"shape": {"rect": [7, 21.1, 18, 4.6], "r": 2.3}},
+    "free": {"shape": {"rect": [7, 12.8, 18, 4.6], "r": 2.3}, "role": "surface", "solid": "ring"},
+    "busy-top": {"shape": {"rect": [7, 4.5, 18, 4.6], "r": 2.3}, "role": "fill"},
+    "busy-top-edge": {"shape": {"rect": [7, 4.5, 18, 4.6], "r": 2.3}}
+  },
+  "rigs": {
+    "free": {"pivot": [16, 15.1]}
+  },
+  "motion": {
+    "free.x": {
+      "light": [[0, 0], [0.24, 3, "hit"], [0.31, 2.55], [0.39, 3]],
+      "strong": [[0, 0], [0.12, -1, "inOut"], [0.3, 3, "hit"], [0.37, 2.45], [0.44, 3, "hit"], [0.5, 2.8], [0.56, 3]]
+    }
+  }
+}

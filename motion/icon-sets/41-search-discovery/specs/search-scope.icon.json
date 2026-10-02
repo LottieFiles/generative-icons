@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "search-scope",
+  "label": "Search scope",
+  "intent": "The scope narrows and locks onto the search. Light: the four viewfinder brackets close in 2.5 units, one after another clockwise, and stop dead; the lens pops once as the scope locks. Strong: the brackets flare out first and snap in to a dead stop, and the lens pops harder with a rebound and settle. The narrow scope is kept.",
+  "state": {"from": "wide", "to": "narrow", "labels": ["Narrow scope", "Widen scope"], "reverse": "auto"},
+  "parts": {
+    "lens": {"shape": {"circle": [[14.8, 14.8], 5.2]}, "role": "surface", "solid": "ring"},
+    "handle": {"shape": {"line": [[18.5, 18.5], [22, 22]]}},
+    "bracket-0": {"shape": {"polyline": [[8.5, 3.5], [3.5, 3.5], [3.5, 8.5]], "r": 1.2}},
+    "bracket-1": {"shape": {"polyline": [[28.5, 8.5], [28.5, 3.5], [23.5, 3.5]], "r": 1.2}},
+    "bracket-2": {"shape": {"polyline": [[23.5, 28.5], [28.5, 28.5], [28.5, 23.5]], "r": 1.2}},
+    "bracket-3": {"shape": {"polyline": [[3.5, 23.5], [3.5, 28.5], [8.5, 28.5]], "r": 1.2}}
+  },
+  "rigs": {
+    "lens": {"//": "the lens pops about its centre as the scope locks", "pivot": [14.8, 14.8]},
+    "handle": {"//": "stays on the lens rim: x = y = 3.7 (scale - 1)", "pivot": [18.5, 18.5]}
+  },
+  "motion": {
+    "bracket-0.x": {
+      "light":  [[0, 0], [0.04, 0], [0.22, 2.5, "hit"]],
+      "strong": [[0, 0], [0.1, -0.7, "out"], [0.24, 2.5, "hit"]]
+    },
+    "bracket-0.y": {"follow": "bracket-0.x"},
+    "bracket-1.x": {"follow": "bracket-0.x", "scale": -1, "lag": 0.03},
+    "bracket-1.y": {"follow": "bracket-0.x", "lag": 0.03},
+    "bracket-2.x": {"follow": "bracket-0.x", "scale": -1, "lag": 0.06},
+    "bracket-2.y": {"follow": "bracket-0.x", "scale": -1, "lag": 0.06},
+    "bracket-3.x": {"follow": "bracket-0.x", "lag": 0.09},
+    "bracket-3.y": {"follow": "bracket-0.x", "scale": -1, "lag": 0.09},
+    "lens.scale": {
+      "light":  [[0, 1], [0.3, 1], [0.37, 1.12, "out"], [0.46, 1]],
+      "strong": [[0, 1], [0.32, 1], [0.39, 1.16, "out"], [0.47, 0.95], [0.55, 1.03], [0.62, 1]]
+    },
+    "handle.x": {
+      "light":  [[0, 0], [0.3, 0], [0.37, 0.444, "out"], [0.46, 0]],
+      "strong": [[0, 0], [0.32, 0], [0.39, 0.592, "out"], [0.47, -0.185], [0.55, 0.111], [0.62, 0]]
+    },
+    "handle.y": {"follow": "handle.x"}
+  }
+}

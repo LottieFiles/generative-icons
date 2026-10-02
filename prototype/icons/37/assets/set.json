@@ -959,35 +959,32 @@
       "continuous": false,
       "previewReset": true,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "prepared",
       "endState": "result",
       "heading": "Thermostat",
-      "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+      "description": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
       "label": "Thermostat",
-      "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+      "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.62,
-      "rest": 40,
+      "active": 0.5,
+      "rest": 33,
       "keyPoses": [
         0,
-        0.124,
-        0.248,
-        0.372,
-        0.496,
-        0.62
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5
       ],
-      "layers": 17,
+      "layers": 23,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -997,27 +994,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "6f4e292abca1e6869e958eefcc509aafedf027b062c4df745dcc53e11659d20c",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-        "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-        "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-        "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-        "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-        "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-        "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-      },
-      "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "thermostat-ring-frame"
-        }
-      ],
+      "nativeSha256": "d6c97cde4bd316908539f2ecf9989455122eb0fa819b80d4c3857b4f493dc6d2",
+      "sourceSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+      "planSha256": "d0a25b12b1188a04919f27e537334df0d1fb83329b660d18e166ee91f8ebe773",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+      "constraints": [],
       "category": "Smart Home",
-      "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+      "definitionsSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -1039,94 +1023,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "thermostat-reset",
-        "icon": "thermostat",
-        "motionId": "light",
-        "continuous": false,
-        "previewReset": true,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "result",
-        "endState": "prepared",
-        "heading": "Thermostat",
-        "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-        "label": "Thermostat",
-        "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.28,
-        "rest": 20,
-        "keyPoses": [
-          0,
-          0.06,
-          0.1,
-          0.14,
-          0.2,
-          0.28
-        ],
-        "layers": 17,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "8e105c79bf57a9e75d0930a6af0d06260fd18e3a89b4ac1d21fce392d2396268",
-        "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "authoringSources": {
-          "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-          "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-          "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-          "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-          "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-          "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-          "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-        },
-        "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "thermostat-ring-frame"
-          }
-        ],
-        "category": "Smart Home",
-        "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "number": 567,
       "forwardLabel": "Play action",
       "reverseLabel": "Reset preview",
@@ -1138,35 +1034,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Thermostat",
-          "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "description": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "label": "Thermostat",
-          "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 17,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1176,27 +1069,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6f4e292abca1e6869e958eefcc509aafedf027b062c4df745dcc53e11659d20c",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "thermostat-ring-frame"
-            }
-          ],
+          "nativeSha256": "d6c97cde4bd316908539f2ecf9989455122eb0fa819b80d4c3857b4f493dc6d2",
+          "sourceSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+          "planSha256": "d0a25b12b1188a04919f27e537334df0d1fb83329b660d18e166ee91f8ebe773",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1225,19 +1105,16 @@
             "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Thermostat",
-            "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+            "description": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
             "label": "Thermostat",
-            "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+            "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -1247,13 +1124,13 @@
             "rest": 20,
             "keyPoses": [
               0,
-              0.06,
-              0.1,
-              0.14,
-              0.2,
+              0.05600000000000001,
+              0.11200000000000002,
+              0.168,
+              0.22400000000000003,
               0.28
             ],
-            "layers": 17,
+            "layers": 23,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -1263,27 +1140,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "8e105c79bf57a9e75d0930a6af0d06260fd18e3a89b4ac1d21fce392d2396268",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-              "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-              "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-              "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-              "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-              "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-              "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-            },
-            "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "thermostat-ring-frame"
-              }
-            ],
+            "nativeSha256": "a8823c808087d107efbe7b7d5e27c1710fb02831d50d9954dbe4143e75ba5f2f",
+            "sourceSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+            "planSha256": "d0a25b12b1188a04919f27e537334df0d1fb83329b660d18e166ee91f8ebe773",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+            "constraints": [],
             "category": "Smart Home",
-            "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+            "definitionsSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -1305,11 +1169,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 17191,
-            "sha256": "75c766dfeb3731e0b8f9b4ad35ccf5a947331b72a6a1298153aead403b3524a1"
+            "bytes": 7131,
+            "sha256": "7268b60c1c18cc9357206847f2c7f4f4b7e675be62f4861cb9b00aae7fb80672"
           },
-          "bytes": 17189,
-          "sha256": "3097824035117d11cd6f38d515df1762512e6b7bd1518998674bbed4a48aed5f"
+          "bytes": 7129,
+          "sha256": "77597e43aeec011f329872823986a101c005bf0829dcc4a3149943a3240c5bd9"
         },
         {
           "name": "thermostat-strong",
@@ -1318,35 +1182,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Thermostat",
-          "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "description": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "label": "Thermostat",
-          "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.56,
-          "rest": 37,
+          "active": 0.77,
+          "rest": 49,
           "keyPoses": [
             0,
-            0.11200000000000002,
-            0.22400000000000003,
-            0.336,
-            0.44800000000000006,
-            0.56
+            0.15400000000000003,
+            0.30800000000000005,
+            0.46199999999999997,
+            0.6160000000000001,
+            0.77
           ],
-          "layers": 17,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1356,27 +1217,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "63f481f403eb13bc358407b8b45037682f29238ade9f727d4fc0beea1a234117",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "thermostat-ring-frame"
-            }
-          ],
+          "nativeSha256": "dbdfd1265dfc9898efe76f3a29744b1cabcf6961cb06098b8db8d8ad1d3452ee",
+          "sourceSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+          "planSha256": "d0a25b12b1188a04919f27e537334df0d1fb83329b660d18e166ee91f8ebe773",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1405,19 +1253,16 @@
             "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Thermostat",
-            "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+            "description": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
             "label": "Thermostat",
-            "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+            "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -1428,12 +1273,12 @@
             "keyPoses": [
               0,
               0.06,
-              0.1,
-              0.14,
-              0.22,
+              0.12,
+              0.18,
+              0.24,
               0.3
             ],
-            "layers": 17,
+            "layers": 23,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -1443,27 +1288,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "ebf3bee1ee5e1a6626d6fb2ec3b521552eabceca868e7cc866266cf03fbcfedd",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-              "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-              "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-              "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-              "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-              "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-              "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-            },
-            "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "thermostat-ring-frame"
-              }
-            ],
+            "nativeSha256": "17b7060e42354c7c74b7bcbb50f88acc60e8bef34f02349e086cee1dcde5f8d6",
+            "sourceSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+            "planSha256": "d0a25b12b1188a04919f27e537334df0d1fb83329b660d18e166ee91f8ebe773",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+            "constraints": [],
             "category": "Smart Home",
-            "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+            "definitionsSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -1485,11 +1317,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 17195,
-            "sha256": "417d18b6da61ef3c5894420294c5bc9634ab19b2d6d442d9cddccf64b7cb34b8"
+            "bytes": 7135,
+            "sha256": "f66d30f8ebae68c2e1a5cf7473112c56b63fbf289b8efd1cbe086681c5fd1cab"
           },
-          "bytes": 17192,
-          "sha256": "619c8ded5b43cc6bab2ad4c47a849453be4739b31bcad76159943c7d7e9c31a9"
+          "bytes": 7132,
+          "sha256": "de8b8849500c214765c978055ea95da21c7032d30ea2d3c6c558378aa5435116"
         }
       ],
       "animations": [
@@ -1500,35 +1332,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Thermostat",
-          "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "description": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "label": "Thermostat",
-          "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 17,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1538,27 +1367,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6f4e292abca1e6869e958eefcc509aafedf027b062c4df745dcc53e11659d20c",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "thermostat-ring-frame"
-            }
-          ],
+          "nativeSha256": "d6c97cde4bd316908539f2ecf9989455122eb0fa819b80d4c3857b4f493dc6d2",
+          "sourceSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+          "planSha256": "d0a25b12b1188a04919f27e537334df0d1fb83329b660d18e166ee91f8ebe773",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1580,8 +1396,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17189,
-          "sha256": "3097824035117d11cd6f38d515df1762512e6b7bd1518998674bbed4a48aed5f"
+          "bytes": 7129,
+          "sha256": "77597e43aeec011f329872823986a101c005bf0829dcc4a3149943a3240c5bd9"
         },
         {
           "name": "thermostat-reset",
@@ -1590,19 +1406,16 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Thermostat",
-          "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "description": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "label": "Thermostat",
-          "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -1612,13 +1425,13 @@
           "rest": 20,
           "keyPoses": [
             0,
-            0.06,
-            0.1,
-            0.14,
-            0.2,
+            0.05600000000000001,
+            0.11200000000000002,
+            0.168,
+            0.22400000000000003,
             0.28
           ],
-          "layers": 17,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1628,27 +1441,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "8e105c79bf57a9e75d0930a6af0d06260fd18e3a89b4ac1d21fce392d2396268",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "thermostat-ring-frame"
-            }
-          ],
+          "nativeSha256": "a8823c808087d107efbe7b7d5e27c1710fb02831d50d9954dbe4143e75ba5f2f",
+          "sourceSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+          "planSha256": "d0a25b12b1188a04919f27e537334df0d1fb83329b660d18e166ee91f8ebe773",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1670,8 +1470,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17191,
-          "sha256": "75c766dfeb3731e0b8f9b4ad35ccf5a947331b72a6a1298153aead403b3524a1"
+          "bytes": 7131,
+          "sha256": "7268b60c1c18cc9357206847f2c7f4f4b7e675be62f4861cb9b00aae7fb80672"
         },
         {
           "name": "thermostat-strong",
@@ -1680,35 +1480,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Thermostat",
-          "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "description": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "label": "Thermostat",
-          "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.56,
-          "rest": 37,
+          "active": 0.77,
+          "rest": 49,
           "keyPoses": [
             0,
-            0.11200000000000002,
-            0.22400000000000003,
-            0.336,
-            0.44800000000000006,
-            0.56
+            0.15400000000000003,
+            0.30800000000000005,
+            0.46199999999999997,
+            0.6160000000000001,
+            0.77
           ],
-          "layers": 17,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1718,27 +1515,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "63f481f403eb13bc358407b8b45037682f29238ade9f727d4fc0beea1a234117",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "thermostat-ring-frame"
-            }
-          ],
+          "nativeSha256": "dbdfd1265dfc9898efe76f3a29744b1cabcf6961cb06098b8db8d8ad1d3452ee",
+          "sourceSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+          "planSha256": "d0a25b12b1188a04919f27e537334df0d1fb83329b660d18e166ee91f8ebe773",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1760,8 +1544,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17192,
-          "sha256": "619c8ded5b43cc6bab2ad4c47a849453be4739b31bcad76159943c7d7e9c31a9"
+          "bytes": 7132,
+          "sha256": "de8b8849500c214765c978055ea95da21c7032d30ea2d3c6c558378aa5435116"
         },
         {
           "name": "thermostat-reset-strong",
@@ -1770,19 +1554,16 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Thermostat",
-          "description": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "description": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "label": "Thermostat",
-          "intent": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
+          "intent": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -1793,12 +1574,12 @@
           "keyPoses": [
             0,
             0.06,
-            0.1,
-            0.14,
-            0.22,
+            0.12,
+            0.18,
+            0.24,
             0.3
           ],
-          "layers": 17,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1808,27 +1589,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "ebf3bee1ee5e1a6626d6fb2ec3b521552eabceca868e7cc866266cf03fbcfedd",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the setpoint arc sweeps clockwise to a higher temperature with its knob riding the end. Strong: the setting is turned up in a quarter second and the hub pulses as the heating engages. The setting is retained; preview reset rearms.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "thermostat-ring-frame"
-            }
-          ],
+          "nativeSha256": "17b7060e42354c7c74b7bcbb50f88acc60e8bef34f02349e086cee1dcde5f8d6",
+          "sourceSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
+          "planSha256": "d0a25b12b1188a04919f27e537334df0d1fb83329b660d18e166ee91f8ebe773",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The heat is turned up and the heating engages. Light: the knob is turned clockwise round the dial in one sweep, the setpoint arc growing behind it to the higher temperature, and the hub glows once as the heating comes on. Strong: the setting is clicked up in three detents, each step smaller, then the hub glows hard as the heating engages, rebounds and settles. The setpoint never overshoots and is kept; the preview reset fades the new setting away and rearms.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "dfec7bcf0f07981acf61757dc099b47eb13620cad0d42b46be324df9293d8e12",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1850,12 +1618,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17195,
-          "sha256": "417d18b6da61ef3c5894420294c5bc9634ab19b2d6d442d9cddccf64b7cb34b8"
+          "bytes": 7135,
+          "sha256": "f66d30f8ebae68c2e1a5cf7473112c56b63fbf289b8efd1cbe086681c5fd1cab"
         }
       ],
-      "bytes": 17189,
-      "sha256": "3097824035117d11cd6f38d515df1762512e6b7bd1518998674bbed4a48aed5f"
+      "bytes": 7129,
+      "sha256": "77597e43aeec011f329872823986a101c005bf0829dcc4a3149943a3240c5bd9"
     },
     {
       "name": "smart-lock",
@@ -6024,34 +5792,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Video doorbell",
-      "description": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+      "description": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
       "label": "Video doorbell",
-      "intent": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+      "intent": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.3,
-      "rest": 21,
+      "active": 0.38,
+      "rest": 26,
       "keyPoses": [
         0,
-        0.06,
-        0.12,
-        0.18,
-        0.24,
-        0.3
+        0.07600000000000001,
+        0.15200000000000002,
+        0.22799999999999998,
+        0.30400000000000005,
+        0.38
       ],
-      "layers": 18,
+      "layers": 27,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -6061,22 +5827,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "f56837662ccba23d449d1478bc342485683fd36d66a55203de6572215cb72f02",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-        "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-        "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-        "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-        "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-        "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-        "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-      },
-      "brief": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+      "nativeSha256": "4d9bfe967b86e36ff6e6c23986c233f6711d339ac206ebbe3646615c09b58aed",
+      "sourceSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
+      "planSha256": "72a7930bdf3b982dc25a506b4c6d10c7b509cd4e7741af62428ecf4ecf19d393",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
       "constraints": [],
       "category": "Smart Home",
-      "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+      "definitionsSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -6107,34 +5865,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Video doorbell",
-          "description": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "description": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "label": "Video doorbell",
-          "intent": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "intent": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.3,
-          "rest": 21,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.06,
-            0.12,
-            0.18,
-            0.24,
-            0.3
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 18,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6144,22 +5900,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f56837662ccba23d449d1478bc342485683fd36d66a55203de6572215cb72f02",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "nativeSha256": "4d9bfe967b86e36ff6e6c23986c233f6711d339ac206ebbe3646615c09b58aed",
+          "sourceSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
+          "planSha256": "72a7930bdf3b982dc25a506b4c6d10c7b509cd4e7741af62428ecf4ecf19d393",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6181,8 +5929,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 14764,
-          "sha256": "f37193f038dac17b72dd6d1dd81b73b6cb20e65de92171826fef5d1188b14533"
+          "bytes": 4716,
+          "sha256": "d586cd441fc3793d2dba825af986a76f7c81c81f3792db1082e2861162c7421a"
         },
         {
           "name": "video-doorbell-strong",
@@ -6191,34 +5939,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Video doorbell",
-          "description": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "description": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "label": "Video doorbell",
-          "intent": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "intent": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.62,
+          "rest": 40,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.124,
+            0.248,
+            0.372,
+            0.496,
+            0.62
           ],
-          "layers": 18,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6228,22 +5974,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6772611b271d2ec83d5def92c090f9acc467760567d406da44e49d3522f54e9e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "nativeSha256": "684eab59e08c9e7a5224b1f7df109d5067ed7b7d47398c8d7d3e2dacad40500b",
+          "sourceSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
+          "planSha256": "72a7930bdf3b982dc25a506b4c6d10c7b509cd4e7741af62428ecf4ecf19d393",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6265,8 +6003,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 14766,
-          "sha256": "cd2183e34c2f43c6b566a5f27fa7e4885bca66ed0e0a112eb737ba6f30e7a773"
+          "bytes": 4718,
+          "sha256": "ff214f40dd62a4308e58af22776472140f97e3dc777eae95e8897a35a15678dc"
         }
       ],
       "animations": [
@@ -6277,34 +6015,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Video doorbell",
-          "description": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "description": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "label": "Video doorbell",
-          "intent": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "intent": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.3,
-          "rest": 21,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.06,
-            0.12,
-            0.18,
-            0.24,
-            0.3
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 18,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6314,22 +6050,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f56837662ccba23d449d1478bc342485683fd36d66a55203de6572215cb72f02",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "nativeSha256": "4d9bfe967b86e36ff6e6c23986c233f6711d339ac206ebbe3646615c09b58aed",
+          "sourceSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
+          "planSha256": "72a7930bdf3b982dc25a506b4c6d10c7b509cd4e7741af62428ecf4ecf19d393",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6351,8 +6079,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 14764,
-          "sha256": "f37193f038dac17b72dd6d1dd81b73b6cb20e65de92171826fef5d1188b14533"
+          "bytes": 4716,
+          "sha256": "d586cd441fc3793d2dba825af986a76f7c81c81f3792db1082e2861162c7421a"
         },
         {
           "name": "video-doorbell-strong",
@@ -6361,34 +6089,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Video doorbell",
-          "description": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "description": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "label": "Video doorbell",
-          "intent": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "intent": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.62,
+          "rest": 40,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.124,
+            0.248,
+            0.372,
+            0.496,
+            0.62
           ],
-          "layers": 18,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6398,22 +6124,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6772611b271d2ec83d5def92c090f9acc467760567d406da44e49d3522f54e9e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the ring button presses in to 84% and springs back. Strong: a deeper press to 70% with a snap back, and the doorbell rocks 4\u00b0 on its base as it rings.",
+          "nativeSha256": "684eab59e08c9e7a5224b1f7df109d5067ed7b7d47398c8d7d3e2dacad40500b",
+          "sourceSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
+          "planSha256": "72a7930bdf3b982dc25a506b4c6d10c7b509cd4e7741af62428ecf4ecf19d393",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A visitor rings. Light: the ring button is pressed in, the chime sounds as a pair of arcs that flick out beside the button and fade as they spread, and the button springs back with a small overshoot. Strong: ding-dong: a deeper press, two chimes in turn, the second wider, and the camera wakes as the lens pupil opens wide, holds and closes again. The doorbell housing never moves.",
           "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "48e33a1afd8fad50ea47dbef95848275058de31df80633f6f92cbd62206e9e57",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6435,12 +6153,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 14766,
-          "sha256": "cd2183e34c2f43c6b566a5f27fa7e4885bca66ed0e0a112eb737ba6f30e7a773"
+          "bytes": 4718,
+          "sha256": "ff214f40dd62a4308e58af22776472140f97e3dc777eae95e8897a35a15678dc"
         }
       ],
-      "bytes": 14764,
-      "sha256": "f37193f038dac17b72dd6d1dd81b73b6cb20e65de92171826fef5d1188b14533"
+      "bytes": 4716,
+      "sha256": "d586cd441fc3793d2dba825af986a76f7c81c81f3792db1082e2861162c7421a"
     },
     {
       "name": "security-camera",
@@ -6449,34 +6167,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Security camera",
-      "description": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+      "description": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
       "label": "Security camera",
-      "intent": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+      "intent": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.5,
-      "rest": 33,
+      "active": 0.48,
+      "rest": 32,
       "keyPoses": [
         0,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5
+        0.096,
+        0.192,
+        0.288,
+        0.384,
+        0.48
       ],
-      "layers": 21,
+      "layers": 23,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -6486,39 +6202,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "5571ab3b393df30eebf0ce071ebd96092ce6ac0b984538dbef34e6f1796a255d",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-        "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-        "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-        "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-        "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-        "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-        "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-      },
-      "brief": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "security-camera-plate"
-        },
-        {
-          "type": "fixed",
-          "part": "security-camera-arm"
-        },
-        {
-          "type": "fixed",
-          "part": "security-camera-joint"
-        },
-        {
-          "type": "rigid",
-          "part": "security-camera-body-frame"
-        }
-      ],
+      "nativeSha256": "4dc187903ac7201bc48918915ec8b851c23554f471e8e405ace0544be547c7f3",
+      "sourceSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
+      "planSha256": "b3775339e864530f810c7ee24658816c64d0175b18c59413c4bfd4f7c223a50f",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
+      "constraints": [],
       "category": "Smart Home",
-      "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+      "definitionsSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -6549,34 +6240,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Security camera",
-          "description": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+          "description": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
           "label": "Security camera",
-          "intent": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+          "intent": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.48,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
           ],
-          "layers": 21,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6586,39 +6275,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5571ab3b393df30eebf0ce071ebd96092ce6ac0b984538dbef34e6f1796a255d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "security-camera-plate"
-            },
-            {
-              "type": "fixed",
-              "part": "security-camera-arm"
-            },
-            {
-              "type": "fixed",
-              "part": "security-camera-joint"
-            },
-            {
-              "type": "rigid",
-              "part": "security-camera-body-frame"
-            }
-          ],
+          "nativeSha256": "4dc187903ac7201bc48918915ec8b851c23554f471e8e405ace0544be547c7f3",
+          "sourceSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
+          "planSha256": "b3775339e864530f810c7ee24658816c64d0175b18c59413c4bfd4f7c223a50f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6640,8 +6304,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5147,
-          "sha256": "3473db96bde60fa03d4b1e0a84b846c6d03fabe3c9573979d6628596b547b874"
+          "bytes": 4072,
+          "sha256": "93cac0c9167a80511e4759d53bd6bf8b2bfcd0ed9d6215457d6b9055058cf709"
         },
         {
           "name": "security-camera-strong",
@@ -6650,34 +6314,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Security camera",
-          "description": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+          "description": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
           "label": "Security camera",
-          "intent": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+          "intent": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.78,
-          "rest": 50,
+          "active": 0.86,
+          "rest": 54,
           "keyPoses": [
             0,
-            0.15600000000000003,
-            0.31200000000000006,
-            0.46799999999999997,
-            0.6240000000000001,
-            0.78
+            0.17200000000000001,
+            0.34400000000000003,
+            0.516,
+            0.6880000000000001,
+            0.86
           ],
-          "layers": 21,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6687,39 +6349,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f00b5aa48d4997e2256315a9a7e5815e7b06de472547bc9287a53f01315d23bd",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "security-camera-plate"
-            },
-            {
-              "type": "fixed",
-              "part": "security-camera-arm"
-            },
-            {
-              "type": "fixed",
-              "part": "security-camera-joint"
-            },
-            {
-              "type": "rigid",
-              "part": "security-camera-body-frame"
-            }
-          ],
+          "nativeSha256": "9acdb360a4c007c234e536d712f6a7e031dcfe9cc43a0d06445fdf107e53e01d",
+          "sourceSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
+          "planSha256": "b3775339e864530f810c7ee24658816c64d0175b18c59413c4bfd4f7c223a50f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6741,8 +6378,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5150,
-          "sha256": "82be15148966d2d388013a5eca15c9299269ecaa8ec9bea0a854e8fddd74c78e"
+          "bytes": 4075,
+          "sha256": "4929a39a0ff7666fed905058389afbc003c451b90dee180b81fef7e0be1a2a72"
         }
       ],
       "animations": [
@@ -6753,34 +6390,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Security camera",
-          "description": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+          "description": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
           "label": "Security camera",
-          "intent": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+          "intent": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.48,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
           ],
-          "layers": 21,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6790,39 +6425,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5571ab3b393df30eebf0ce071ebd96092ce6ac0b984538dbef34e6f1796a255d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "security-camera-plate"
-            },
-            {
-              "type": "fixed",
-              "part": "security-camera-arm"
-            },
-            {
-              "type": "fixed",
-              "part": "security-camera-joint"
-            },
-            {
-              "type": "rigid",
-              "part": "security-camera-body-frame"
-            }
-          ],
+          "nativeSha256": "4dc187903ac7201bc48918915ec8b851c23554f471e8e405ace0544be547c7f3",
+          "sourceSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
+          "planSha256": "b3775339e864530f810c7ee24658816c64d0175b18c59413c4bfd4f7c223a50f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6844,8 +6454,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5147,
-          "sha256": "3473db96bde60fa03d4b1e0a84b846c6d03fabe3c9573979d6628596b547b874"
+          "bytes": 4072,
+          "sha256": "93cac0c9167a80511e4759d53bd6bf8b2bfcd0ed9d6215457d6b9055058cf709"
         },
         {
           "name": "security-camera-strong",
@@ -6854,34 +6464,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Security camera",
-          "description": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+          "description": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
           "label": "Security camera",
-          "intent": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
+          "intent": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.78,
-          "rest": 50,
+          "active": 0.86,
+          "rest": 54,
           "keyPoses": [
             0,
-            0.15600000000000003,
-            0.31200000000000006,
-            0.46799999999999997,
-            0.6240000000000001,
-            0.78
+            0.17200000000000001,
+            0.34400000000000003,
+            0.516,
+            0.6880000000000001,
+            0.86
           ],
-          "layers": 21,
+          "layers": 23,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6891,39 +6499,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "f00b5aa48d4997e2256315a9a7e5815e7b06de472547bc9287a53f01315d23bd",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "67be8f0aa4ff86929421b5ce7fe1bf543b30ed1196c1feca8c667d805d46ea07",
-            "batches/helpers.mjs": "baf948881d389957afc4c03e38883df24ac526d24d22e9662fd47f4463aeecf3",
-            "batches/home-a.mjs": "1080d1b170f2dbed4e20b1df6fd5423b7353fe86372cb9515aa362ad1ceb2e79",
-            "batches/home-b.mjs": "eef9994cef6a1cc3fd70f7fb177c5f0489a29c90605dd18fe84aac7e755bd34d",
-            "batches/home-c.mjs": "7a0707b4fc14a52bb7244ee860d9a861cc87bc3e16b43b9b16ff1da906faba5d",
-            "batches/home-d.mjs": "ed4caad87e532f0c6e68e36f19d353324544d2b74148e238a95518f53b2e9229",
-            "batches/sky.mjs": "90c97caba261370de3dc49553dfbfcf24b3afa549f40c190928e186d77a371c3"
-          },
-          "brief": "Light: the camera tilts 6\u00b0 down, scans up 4\u00b0 and returns. Strong: it dips 10\u00b0, holds on the view, sweeps 9\u00b0 up and settles with one small return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "security-camera-plate"
-            },
-            {
-              "type": "fixed",
-              "part": "security-camera-arm"
-            },
-            {
-              "type": "fixed",
-              "part": "security-camera-joint"
-            },
-            {
-              "type": "rigid",
-              "part": "security-camera-body-frame"
-            }
-          ],
+          "nativeSha256": "9acdb360a4c007c234e536d712f6a7e031dcfe9cc43a0d06445fdf107e53e01d",
+          "sourceSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
+          "planSha256": "b3775339e864530f810c7ee24658816c64d0175b18c59413c4bfd4f7c223a50f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
+          "constraints": [],
           "category": "Smart Home",
-          "definitionsSha256": "2e618a4dbfa20d4002778658115b8de014f309767da3fa7225339d54b3645a32",
+          "definitionsSha256": "3dda0d0bf732b2a5e2667a25632681faa0ba3ca7fff24dfb25e2826eca26dc5a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6945,12 +6528,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5150,
-          "sha256": "82be15148966d2d388013a5eca15c9299269ecaa8ec9bea0a854e8fddd74c78e"
+          "bytes": 4075,
+          "sha256": "4929a39a0ff7666fed905058389afbc003c451b90dee180b81fef7e0be1a2a72"
         }
       ],
-      "bytes": 5147,
-      "sha256": "3473db96bde60fa03d4b1e0a84b846c6d03fabe3c9573979d6628596b547b874"
+      "bytes": 4072,
+      "sha256": "93cac0c9167a80511e4759d53bd6bf8b2bfcd0ed9d6215457d6b9055058cf709"
     },
     {
       "name": "window-blinds",

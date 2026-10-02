@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "memory-chip",
+  "label": "Memory chip",
+  "intent": "The RAM module seats in its slot. Light: the module drives down until its contacts meet the slot and stops dead; the slot takes the hit, dips and settles while the module holds seated a beat, then it springs back up and settles. Strong: a short lift first, a harder drive that buries the contacts in the slot, a deeper slot dip with a rebound, then the release. The module stays rigid.",
+  "parts": {
+    "contact-4": {"shape": {"line": [[24, 17.5], [24, 19]]}},
+    "contact-3": {"shape": {"line": [[20, 17.5], [20, 19]]}},
+    "contact-2": {"shape": {"line": [[16, 17.5], [16, 19]]}},
+    "contact-1": {"shape": {"line": [[12, 17.5], [12, 19]]}},
+    "contact-0": {"shape": {"line": [[8, 17.5], [8, 19]]}},
+    "chip-2":    {"shape": {"rect": [20.5, 10, 5, 4], "r": 1}, "role": "fill"},
+    "chip-1":    {"shape": {"rect": [13.5, 10, 5, 4], "r": 1}, "role": "fill"},
+    "chip-0":    {"shape": {"rect": [6.5, 10, 5, 4], "r": 1}, "role": "fill"},
+    "module":    {"shape": {"rect": [4, 7, 24, 10], "r": 2.5}, "role": "surface",
+                  "knockout": [{"part": "chip-0", "gap": 0}, {"part": "chip-1", "gap": 0}, {"part": "chip-2", "gap": 0}]},
+    "slot":      {"shape": {"line": [[5, 26.5], [27, 26.5]]}}
+  },
+  "rigs": {
+    "stick": {"pivot": [16, 13], "carries": ["module", "chip-0", "chip-1", "chip-2", "contact-0", "contact-1", "contact-2", "contact-3", "contact-4"]}
+  },
+  "motion": {
+    "stick.y": {
+      "light":  [[0, 0], [0.18, 5, "hit"], [0.27, 5], [0.4, -0.4], [0.5, 0]],
+      "strong": [[0, 0], [0.1, -1, "out"], [0.25, 5.5, "hit"], [0.36, 5.5], [0.5, -0.6], [0.6, 0.2], [0.68, 0]]
+    },
+    "slot.y": {
+      "light":  [[0, 0], [0.17, 0], [0.21, 0.8, "out"], [0.29, -0.2], [0.36, 0]],
+      "strong": [[0, 0], [0.24, 0], [0.28, 1.2, "out"], [0.36, -0.35], [0.43, 0.15], [0.5, 0]]
+    }
+  }
+}

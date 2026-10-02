@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 50,
-  "nativeTransformNodes": 288,
+  "nativeTransformNodes": 124,
   "nativeTransformMaxCoordinateError": 0.00001000000000139778,
   "checks": [
     {
@@ -96,78 +96,6 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "beer-mug",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "beer-mug-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "cocktail",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "cocktail-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "cooking-pot",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cooking-pot-lid-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "cooking-pot-knob"
-        }
-      ]
-    },
-    {
-      "name": "cooking-pot-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cooking-pot-lid-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "cooking-pot-knob"
-        }
-      ]
     },
     {
       "name": "frying-pan",
@@ -278,60 +206,6 @@
       "designConstraints": []
     },
     {
-      "name": "chef-hat",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "chef-hat-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "cutlery",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cutlery-fork"
-        },
-        {
-          "type": "rigid",
-          "part": "cutlery-blade-frame"
-        }
-      ]
-    },
-    {
-      "name": "cutlery-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cutlery-fork"
-        },
-        {
-          "type": "rigid",
-          "part": "cutlery-blade-frame"
-        }
-      ]
-    },
-    {
       "name": "pizza",
       "fixedParts": [],
       "topology": true,
@@ -348,46 +222,6 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "burger",
-      "fixedParts": [
-        "burger-bottom-bun-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "burger-bottom-bun-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "burger-top-bun-frame"
-        }
-      ]
-    },
-    {
-      "name": "burger-strong",
-      "fixedParts": [
-        "burger-bottom-bun-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "burger-bottom-bun-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "burger-top-bun-frame"
-        }
-      ]
     },
     {
       "name": "cake",
@@ -464,54 +298,6 @@
       ]
     },
     {
-      "name": "noodle-bowl",
-      "fixedParts": [
-        "noodle-bowl-bowl-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "noodle-bowl-bowl-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "noodle-bowl-stick-0"
-        },
-        {
-          "type": "rigid",
-          "part": "noodle-bowl-stick-1"
-        }
-      ]
-    },
-    {
-      "name": "noodle-bowl-strong",
-      "fixedParts": [
-        "noodle-bowl-bowl-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "noodle-bowl-bowl-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "noodle-bowl-stick-0"
-        },
-        {
-          "type": "rigid",
-          "part": "noodle-bowl-stick-1"
-        }
-      ]
-    },
-    {
       "name": "bread",
       "fixedParts": [],
       "topology": true,
@@ -528,42 +314,6 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "recipe-book",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "recipe-book-cover-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "recipe-book-ribbon"
-        }
-      ]
-    },
-    {
-      "name": "recipe-book-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "recipe-book-cover-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "recipe-book-ribbon"
-        }
-      ]
     },
     {
       "name": "restaurant-menu",
@@ -598,5 +348,79 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "beer-mug",
+      "spec": "specs/beer-mug.icon.json",
+      "specSha256": "1165e75e852dd5749f5cbde0034b5e54b1ed0c8868df89a75e4f5d195674210e",
+      "actions": [
+        "beer-mug",
+        "beer-mug-strong"
+      ]
+    },
+    {
+      "icon": "cocktail",
+      "spec": "specs/cocktail.icon.json",
+      "specSha256": "3aba85c4e64435cc9e518bbbe4f92daac5f74f2deee3d661b42602318dcaa9cd",
+      "actions": [
+        "cocktail",
+        "cocktail-strong"
+      ]
+    },
+    {
+      "icon": "cooking-pot",
+      "spec": "specs/cooking-pot.icon.json",
+      "specSha256": "ceed5e66ccdebd2d742fbb6421370d75948b46a1d9d3b6bbfc497448c5507bb6",
+      "actions": [
+        "cooking-pot",
+        "cooking-pot-strong"
+      ]
+    },
+    {
+      "icon": "chef-hat",
+      "spec": "specs/chef-hat.icon.json",
+      "specSha256": "1dd07712b0c0ffb9ae5191abf055e686e7645cb042a2e2f9dce9c15d2e61af98",
+      "actions": [
+        "chef-hat",
+        "chef-hat-strong"
+      ]
+    },
+    {
+      "icon": "cutlery",
+      "spec": "specs/cutlery.icon.json",
+      "specSha256": "723b08bb599b5a9cd1da95d8d675607346929bea4a680aa8b8c3716ea0580192",
+      "actions": [
+        "cutlery",
+        "cutlery-strong"
+      ]
+    },
+    {
+      "icon": "burger",
+      "spec": "specs/burger.icon.json",
+      "specSha256": "f2bbff7691b0be4553702e3771baa9482a621d44c9a10a63118bca4064063d05",
+      "actions": [
+        "burger",
+        "burger-strong"
+      ]
+    },
+    {
+      "icon": "noodle-bowl",
+      "spec": "specs/noodle-bowl.icon.json",
+      "specSha256": "8d033dc36aaac49acccac7cb3b6a690e53be2f781760c3f8818bf9358cf01698",
+      "actions": [
+        "noodle-bowl",
+        "noodle-bowl-strong"
+      ]
+    },
+    {
+      "icon": "recipe-book",
+      "spec": "specs/recipe-book.icon.json",
+      "specSha256": "a6e26431baea03c864f483e6a509817ca0dbc06ebe23f07d43f563ee8e1fe4f5",
+      "actions": [
+        "recipe-book",
+        "recipe-book-strong"
+      ]
+    }
+  ]
 }

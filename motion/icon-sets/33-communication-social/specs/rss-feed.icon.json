@@ -1,0 +1,36 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "rss-feed",
+  "label": "RSS feed",
+  "intent": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
+  "parts": {
+    "arc-outer": {"shape": {"arc": [[11, 23], 14, -90, 0]}},
+    "arc-inner": {"shape": {"arc": [[11, 23], 8, -90, 0]}},
+    "dot": {"shape": {"circle": [[11, 23], 2]}, "role": "fill"}
+  },
+  "motion": {
+    "dot.scale": {
+      "light": [[0, 1], [0.07, 1.35, "out"], [0.16, 0.9, "inOut"], [0.24, 1]],
+      "strong": [[0, 1], [0.1, 0.75, "inOut"], [0.17, 1.5, "out"], [0.27, 0.9, "inOut"], [0.35, 1]]
+    },
+    "arc-inner.r": {
+      "//": "travels out to the outer radius, hands over to arc-outer at the same frame, then a fresh wave grows out of the dot",
+      "light": [[0, 0], [0.04, 0], [0.3, 6, "out"], [0.31, -5, "step"], [0.44, 0.5, "out"], [0.52, 0]],
+      "strong": [[0, 0], [0.1, -0.8, "inOut"], [0.38, 6, "out"], [0.39, -5, "step"], [0.52, 0.8, "out"], [0.6, -0.3], [0.68, 0]]
+    },
+    "arc-inner.opacity": {
+      "light": [[0, 1], [0.3, 1], [0.31, 0, "step"], [0.39, 1, "out"]],
+      "strong": [[0, 1], [0.38, 1], [0.39, 0, "step"], [0.47, 1, "out"]]
+    },
+    "arc-outer.r": {
+      "//": "the old wave leaves and fades, then waits unseen at rest for the hand-over",
+      "light": [[0, 0], [0.04, 0], [0.24, 3, "out"], [0.25, 0, "step"]],
+      "strong": [[0, 0], [0.1, -0.8, "inOut"], [0.32, 4, "out"], [0.33, 0, "step"]]
+    },
+    "arc-outer.opacity": {
+      "light": [[0, 1], [0.06, 1], [0.24, 0, "in"], [0.25, 0], [0.31, 1, "step"]],
+      "strong": [[0, 1], [0.12, 1], [0.32, 0, "in"], [0.33, 0], [0.39, 1, "step"]]
+    }
+  }
+}

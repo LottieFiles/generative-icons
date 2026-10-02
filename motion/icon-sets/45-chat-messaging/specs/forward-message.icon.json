@@ -1,0 +1,45 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "forward-message",
+  "label": "Forward message",
+  "intent": "The message is sent on. Light: the arrow flies off to the right, speeding up and fading as it goes, and a new arrow draws out from under the bubble, its head riding the end of the shaft until it stops dead at its rest point and rebounds once. Strong: the arrow pulls back first, flies off harder, and the new arrow lands with a rebound and a settle. The bubble never moves.",
+  "parts": {
+    "bubble": {
+      "shape": {"path": "M8 5 L20 5 C21.7 5 23 6.3 23 8 L23 13 C23 14.7 21.7 16 20 16 L12 16 L7.6 19 C7 19.4 6.5 19 6.7 18.3 L7.2 16 C5.9 15.7 5 14.5 5 13 L5 8 C5 6.3 6.3 5 8 5 Z"},
+      "role": "surface",
+      "solid": "ring"
+    },
+    "text": {
+      "shape": {"line": [[10, 10.5], [18, 10.5]]}
+    },
+    "arrow-shaft": {
+      "shape": {"line": [[10, 24], [23, 24]]}
+    },
+    "arrow-head": {
+      "shape": {"polyline": [[19, 20], [23, 24], [19, 28]]}
+    }
+  },
+  "motion": {
+    "//": "While the new arrow draws, the head rides the shaft's end: arrow-head.x = 13 * arrow-shaft.draw - 13, with the same eases. It starts at draw 0.3 so the head clears the bubble's tail.",
+    "arrow-shaft.x": {
+      "light": [[0, 0], [0.16, 5, "in"], [0.17, 0, "step"]],
+      "strong": [[0, 0], [0.08, -1, "out"], [0.22, 5, "in"], [0.23, 0, "step"]]
+    },
+    "arrow-shaft.opacity": {
+      "light": [[0, 1], [0.08, 1], [0.16, 0, "in"], [0.18, 0], [0.22, 1, "out"]],
+      "strong": [[0, 1], [0.14, 1], [0.22, 0, "in"], [0.24, 0], [0.28, 1, "out"]]
+    },
+    "arrow-shaft.draw": {
+      "light": [[0, 1], [0.17, 0.3, "step"], [0.34, 1, "hit"]],
+      "strong": [[0, 1], [0.23, 0.3, "step"], [0.38, 1, "hit"]]
+    },
+    "arrow-head.x": {
+      "light": [[0, 0], [0.16, 5, "in"], [0.17, -9.1, "step"], [0.34, 0, "hit"], [0.4, 0.6], [0.46, 0]],
+      "strong": [[0, 0], [0.08, -1, "out"], [0.22, 5, "in"], [0.23, -9.1, "step"], [0.38, 0, "hit"], [0.44, 0.9], [0.5, -0.2], [0.56, 0]]
+    },
+    "arrow-head.opacity": {
+      "follow": "arrow-shaft.opacity"
+    }
+  }
+}

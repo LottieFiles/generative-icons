@@ -2,37 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 68,
-  "nativeTransformNodes": 272,
-  "nativeTransformMaxCoordinateError": 0.00001000000000139778,
+  "nativeTransformNodes": 254,
+  "nativeTransformMaxCoordinateError": 0.000009520728109890797,
   "checks": [
-    {
-      "name": "graduation-cap",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "graduation-cap-tassel"
-        }
-      ]
-    },
-    {
-      "name": "graduation-cap-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "graduation-cap-tassel"
-        }
-      ]
-    },
     {
       "name": "chalkboard",
       "fixedParts": [],
@@ -246,66 +218,6 @@
       "designConstraints": []
     },
     {
-      "name": "microscope",
-      "fixedParts": [
-        "microscope-base",
-        "microscope-arm",
-        "microscope-stage"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "microscope-base"
-        },
-        {
-          "type": "fixed",
-          "part": "microscope-arm"
-        },
-        {
-          "type": "fixed",
-          "part": "microscope-stage"
-        },
-        {
-          "type": "rigid",
-          "part": "microscope-tube-frame"
-        }
-      ]
-    },
-    {
-      "name": "microscope-strong",
-      "fixedParts": [
-        "microscope-base",
-        "microscope-arm",
-        "microscope-stage"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "microscope-base"
-        },
-        {
-          "type": "fixed",
-          "part": "microscope-arm"
-        },
-        {
-          "type": "fixed",
-          "part": "microscope-stage"
-        },
-        {
-          "type": "rigid",
-          "part": "microscope-tube-frame"
-        }
-      ]
-    },
-    {
       "name": "abacus",
       "fixedParts": [
         "abacus-frame-frame",
@@ -394,34 +306,6 @@
         {
           "type": "fixed",
           "part": "abacus-bead-2-0"
-        }
-      ]
-    },
-    {
-      "name": "school-bell",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "school-bell-body-frame"
-        }
-      ]
-    },
-    {
-      "name": "school-bell-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "school-bell-body-frame"
         }
       ]
     },
@@ -524,56 +408,6 @@
         {
           "type": "rigid",
           "part": "lecture-pointer"
-        }
-      ]
-    },
-    {
-      "name": "library-shelf",
-      "fixedParts": [
-        "library-shelf-shelf",
-        "library-shelf-book-0-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "library-shelf-shelf"
-        },
-        {
-          "type": "fixed",
-          "part": "library-shelf-book-0-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "library-shelf-book-1-frame"
-        }
-      ]
-    },
-    {
-      "name": "library-shelf-strong",
-      "fixedParts": [
-        "library-shelf-shelf",
-        "library-shelf-book-0-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "library-shelf-shelf"
-        },
-        {
-          "type": "fixed",
-          "part": "library-shelf-book-0-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "library-shelf-book-1-frame"
         }
       ]
     },
@@ -686,5 +520,43 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "graduation-cap",
+      "spec": "specs/graduation-cap.icon.json",
+      "specSha256": "f2da832456035c5b975dedd49e1cab22b052824324bafdf04f40f0ff9480dce9",
+      "actions": [
+        "graduation-cap",
+        "graduation-cap-strong"
+      ]
+    },
+    {
+      "icon": "microscope",
+      "spec": "specs/microscope.icon.json",
+      "specSha256": "64a3f0d966be249c4d6f0f91a97db732c374cc15ed4f52c0a42b885d06bc11c0",
+      "actions": [
+        "microscope",
+        "microscope-strong"
+      ]
+    },
+    {
+      "icon": "school-bell",
+      "spec": "specs/school-bell.icon.json",
+      "specSha256": "c9db8964004bbc3efd10de2d61fc1857fd136335fe6c9702f6165cb10e295b2c",
+      "actions": [
+        "school-bell",
+        "school-bell-strong"
+      ]
+    },
+    {
+      "icon": "library-shelf",
+      "spec": "specs/library-shelf.icon.json",
+      "specSha256": "4439f2c60b481c028a3af75b9c1fdadec5117f2ea511c7404c5ebb1e186e5282",
+      "actions": [
+        "library-shelf",
+        "library-shelf-strong"
+      ]
+    }
+  ]
 }

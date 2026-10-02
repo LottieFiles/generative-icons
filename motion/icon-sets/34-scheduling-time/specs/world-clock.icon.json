@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "world-clock",
+  "label": "World clock",
+  "intent": "The clock switches to the other side of the world. Light: the globe turns half a turn, and a beat behind it the zone dial's minute hand swings half a turn to the new time, stops dead, ticks back and settles, the hour hand following it geared 12:1; the new time stays. Strong: the globe and the minute hand wind back first, the globe spins faster, and the hand lands harder with two ticks back. Neither hand passes the new time. The reset fades the hands back.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "hour": {"shape": {"line": [[22.4, 9.6], [24.2, 9.6]]}},
+    "minute": {"shape": {"line": [[22.4, 9.6], [22.4, 7.2]]}},
+    "dial": {"shape": {"circle": [[22.4, 9.6], 6.2]}, "role": "surface", "solid": "ring"},
+    "meridian": {"shape": {"ellipse": [[9.9, 20.6], 2.2, 6.5]}},
+    "globe": {"shape": {"circle": [[9.9, 20.6], 6.5]}, "role": "surface", "solid": "ring"}
+  },
+  "rigs": {
+    "globe": {"pivot": [9.9, 20.6], "carries": ["globe", "meridian"]},
+    "minute": {"pivot": [22.4, 9.6]},
+    "hour": {"pivot": [22.4, 9.6]}
+  },
+  "reverse": {
+    "//": "only the hands changed; the globe ends where it started, so it stays visible",
+    "light": {"globe.opacity": [[0, 1], [0.25, 1]], "meridian.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"globe.opacity": [[0, 1], [0.25, 1]], "meridian.opacity": [[0, 1], [0.25, 1]]}
+  },
+  "motion": {
+    "globe.rotate": {
+      "//": "half a turn brings the meridian back on itself; an invisible step then puts the angle on exactly 0",
+      "light": [[0, 0], [0.28, 180, "inOut"], [0.3, 0, "step"]],
+      "strong": [[0, 0], [0.1, -20, "out"], [0.32, 180, "inOut"], [0.34, 0, "step"]]
+    },
+    "minute.rotate": {
+      "light": [[0, 0], [0.08, 0], [0.34, 180, "hit"], [0.4, 172], [0.47, 180]],
+      "strong": [[0, 0], [0.1, -10, "out"], [0.38, 180, "hit"], [0.44, 168], [0.51, 180, "hit"], [0.56, 176], [0.62, 180]]
+    },
+    "hour.rotate": {"//": "geared 12:1 to the minute hand: 15 degrees", "follow": "minute.rotate", "scale": 0.0833333333, "lag": 0.03}
+  }
+}

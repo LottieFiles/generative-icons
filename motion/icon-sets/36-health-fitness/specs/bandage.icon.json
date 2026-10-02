@@ -1,0 +1,47 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "bandage",
+  "label": "Bandage",
+  "intent": "The bandage is pressed on. Light: the strip peels up toward the viewer with a small twist, slaps down flat with a hit and a little press below rest, and press marks flash out along both long sides. Strong: a higher peel with more twist, a harder slap with the press marks, then a second, smaller press as it is smoothed down.",
+  "parts": {
+    "strip": {"shape": {"path": "M8.222 16.707 L16.707 8.222 C18.659 6.27 21.827 6.27 23.778 8.222 L23.778 8.222 C25.73 10.173 25.73 13.341 23.778 15.293 L15.293 23.778 C13.341 25.73 10.173 25.73 8.222 23.778 L8.222 23.778 C6.27 21.827 6.27 18.659 8.222 16.707 Z"},
+              "role": "surface", "solid": "fill",
+              "knockout": [{"part": "dot-0", "gap": 0.05}, {"part": "dot-1", "gap": 0.05}, {"part": "dot-2", "gap": 0.05}, {"part": "dot-3", "gap": 0.05}],
+              "//": "v1 Solid: the strip filled at its centerline with the four dots cut 0.8 round; the pad lines are not drawn"},
+    "pad-l": {"shape": {"line": [[9.495, 15.434], [16.566, 22.505]]}, "solid": "none"},
+    "pad-r": {"shape": {"line": [[15.434, 9.495], [22.505, 16.566]]}, "solid": "none"},
+    "dot-0": {"shape": {"circle": [[14.02, 16], 0.75]}, "role": "fill"},
+    "dot-1": {"shape": {"circle": [[16, 14.02], 0.75]}, "role": "fill"},
+    "dot-2": {"shape": {"circle": [[16, 17.98], 0.75]}, "role": "fill"},
+    "dot-3": {"shape": {"circle": [[17.98, 16], 0.75]}, "role": "fill"},
+    "press": {"//": "hidden at rest: two press marks off each long side, only while the strip is pressed down",
+              "shape": [
+                {"line": [{"from": [16, 16], "angle": 33, "len": 8}, {"from": [16, 16], "angle": 33, "len": 9.6}]},
+                {"line": [{"from": [16, 16], "angle": 57, "len": 8}, {"from": [16, 16], "angle": 57, "len": 9.6}]},
+                {"line": [{"from": [16, 16], "angle": 213, "len": 8}, {"from": [16, 16], "angle": 213, "len": 9.6}]},
+                {"line": [{"from": [16, 16], "angle": 237, "len": 8}, {"from": [16, 16], "angle": 237, "len": 9.6}]}
+              ], "hidden": true}
+  },
+  "rigs": {
+    "strip": {"pivot": [16, 16], "carries": ["pad-l", "pad-r", "dot-0", "dot-1", "dot-2", "dot-3"]}
+  },
+  "motion": {
+    "strip.scale": {
+      "light":  [[0, 1], [0.14, 1.1, "out"], [0.24, 1, "hit"], [0.29, 0.96, "out"], [0.38, 1, "inOut"]],
+      "strong": [[0, 1], [0.17, 1.14, "out"], [0.28, 1, "hit"], [0.33, 0.95, "out"], [0.41, 1.02], [0.48, 0.97, "hit"], [0.56, 1, "inOut"]]
+    },
+    "strip.rotate": {
+      "light":  [[0, 0], [0.14, -6, "out"], [0.24, 0, "hit"]],
+      "strong": [[0, 0], [0.17, -10, "out"], [0.28, 0, "hit"], [0.34, 1.5, "out"], [0.42, 0, "inOut"]]
+    },
+    "press.opacity": {
+      "light":  [[0, 0], [0.23, 0], [0.25, 1, "out"], [0.32, 1], [0.42, 0, "in"]],
+      "strong": [[0, 0], [0.27, 0], [0.29, 1, "out"], [0.36, 1], [0.44, 0, "in"], [0.47, 0], [0.49, 0.8, "out"], [0.53, 0.8], [0.6, 0, "in"]]
+    },
+    "press.scale": {
+      "light":  [[0, 1], [0.23, 0.96, "step"], [0.42, 1.1, "out"], [0.44, 1, "step"]],
+      "strong": [[0, 1], [0.27, 0.96, "step"], [0.44, 1.12, "out"], [0.47, 0.96, "step"], [0.6, 1.06, "out"], [0.62, 1, "step"]]
+    }
+  }
+}

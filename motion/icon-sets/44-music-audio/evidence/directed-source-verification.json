@@ -2,53 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 52,
-  "nativeTransformNodes": 310,
+  "nativeTransformNodes": 182,
   "nativeTransformMaxCoordinateError": 0.000010000000003174137,
   "checks": [
-    {
-      "name": "music-note",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "music-note-head"
-        },
-        {
-          "type": "rigid",
-          "part": "music-note-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "music-note-flag"
-        }
-      ]
-    },
-    {
-      "name": "music-note-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "music-note-head"
-        },
-        {
-          "type": "rigid",
-          "part": "music-note-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "music-note-flag"
-        }
-      ]
-    },
     {
       "name": "vinyl-record",
       "fixedParts": [
@@ -202,24 +158,6 @@
       "designConstraints": []
     },
     {
-      "name": "loudspeaker",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "loudspeaker-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "radio",
       "fixedParts": [
         "radio-body",
@@ -258,54 +196,6 @@
         {
           "type": "fixed",
           "part": "radio-scale"
-        }
-      ]
-    },
-    {
-      "name": "metronome",
-      "fixedParts": [
-        "metronome-body-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "metronome-body-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "metronome-rod"
-        },
-        {
-          "type": "rigid",
-          "part": "metronome-weight"
-        }
-      ]
-    },
-    {
-      "name": "metronome-strong",
-      "fixedParts": [
-        "metronome-body-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "metronome-body-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "metronome-rod"
-        },
-        {
-          "type": "rigid",
-          "part": "metronome-weight"
         }
       ]
     },
@@ -476,50 +366,6 @@
       ]
     },
     {
-      "name": "guitar",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "guitar-body"
-        },
-        {
-          "type": "rigid",
-          "part": "guitar-neck"
-        },
-        {
-          "type": "rigid",
-          "part": "guitar-head"
-        }
-      ]
-    },
-    {
-      "name": "guitar-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "guitar-body"
-        },
-        {
-          "type": "rigid",
-          "part": "guitar-neck"
-        },
-        {
-          "type": "rigid",
-          "part": "guitar-head"
-        }
-      ]
-    },
-    {
       "name": "drum",
       "fixedParts": [],
       "topology": true,
@@ -648,58 +494,6 @@
         {
           "type": "rigid",
           "part": "music-album-sleeve"
-        }
-      ]
-    },
-    {
-      "name": "earbuds",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-a"
-        },
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-a-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-b"
-        },
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-b-stem"
-        }
-      ]
-    },
-    {
-      "name": "earbuds-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-a"
-        },
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-a-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-b"
-        },
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-b-stem"
         }
       ]
     },
@@ -922,85 +716,72 @@
           "part": "audio-jack-cable"
         }
       ]
-    },
-    {
-      "name": "spatial-audio",
-      "fixedParts": [
-        "spatial-audio-head",
-        "spatial-audio-shoulders"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "spatial-audio-head"
-        },
-        {
-          "type": "fixed",
-          "part": "spatial-audio-shoulders"
-        }
-      ]
-    },
-    {
-      "name": "spatial-audio-strong",
-      "fixedParts": [
-        "spatial-audio-head",
-        "spatial-audio-shoulders"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "spatial-audio-head"
-        },
-        {
-          "type": "fixed",
-          "part": "spatial-audio-shoulders"
-        }
-      ]
-    },
-    {
-      "name": "tuning-fork",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "tuning-fork-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "tuning-fork-knob"
-        }
-      ]
-    },
-    {
-      "name": "tuning-fork-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "tuning-fork-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "tuning-fork-knob"
-        }
-      ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "music-note",
+      "spec": "specs/music-note.icon.json",
+      "specSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
+      "actions": [
+        "music-note",
+        "music-note-strong"
+      ]
+    },
+    {
+      "icon": "loudspeaker",
+      "spec": "specs/loudspeaker.icon.json",
+      "specSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
+      "actions": [
+        "loudspeaker",
+        "loudspeaker-strong"
+      ]
+    },
+    {
+      "icon": "metronome",
+      "spec": "specs/metronome.icon.json",
+      "specSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
+      "actions": [
+        "metronome",
+        "metronome-strong"
+      ]
+    },
+    {
+      "icon": "guitar",
+      "spec": "specs/guitar.icon.json",
+      "specSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
+      "actions": [
+        "guitar",
+        "guitar-strong"
+      ]
+    },
+    {
+      "icon": "earbuds",
+      "spec": "specs/earbuds.icon.json",
+      "specSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
+      "actions": [
+        "earbuds",
+        "earbuds-strong"
+      ]
+    },
+    {
+      "icon": "spatial-audio",
+      "spec": "specs/spatial-audio.icon.json",
+      "specSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
+      "actions": [
+        "spatial-audio",
+        "spatial-audio-strong"
+      ]
+    },
+    {
+      "icon": "tuning-fork",
+      "spec": "specs/tuning-fork.icon.json",
+      "specSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
+      "actions": [
+        "tuning-fork",
+        "tuning-fork-strong"
+      ]
+    }
+  ]
 }

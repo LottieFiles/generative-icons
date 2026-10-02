@@ -1,0 +1,49 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "announcement",
+  "label": "Announcement",
+  "intent": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
+  "parts": {
+    "wave-outer": {"shape": {"arc": [[18.5, 15], 8.6, -35, 35]}},
+    "wave-inner": {"shape": {"arc": [[18.5, 15], 4.8, -35, 35]}},
+    "handle": {"shape": {"polyline": [[10, 18], [10, 24], [14.6, 24], [14.6, 20.5]]}},
+    "horn": {
+      "shape": {
+        "path": "M4 13.5 C4 12.833 4.333 12.5 5 12.5 L7.8 12.5 C8.333 12.5 8.838 12.38 9.314 12.139 L17.25 8.131 C18.083 7.71 18.5 7.967 18.5 8.9 L18.5 21.1 C18.5 22.033 18.083 22.29 17.25 21.869 L9.314 17.861 C8.838 17.62 8.333 17.5 7.8 17.5 L5 17.5 C4.333 17.5 4 17.167 4 16.5 L4 13.5 Z"
+      },
+      "role": "surface"
+    }
+  },
+  "rigs": {
+    "horn": {"//": "the bell kicks up about the mouthpiece", "pivot": [4, 15], "carries": ["horn", "handle"]}
+  },
+  "motion": {
+    "horn.rotate": {
+      "light": [[0, 0], [0.07, -6, "out"], [0.22, 1, "inOut"], [0.32, 0]],
+      "strong": [[0, 0], [0.12, 3, "inOut"], [0.2, -8, "out"], [0.32, 0.5, "inOut"], [0.38, 0], [0.44, -6, "out"], [0.58, 1, "inOut"], [0.7, 0]]
+    },
+    "horn.x": {
+      "light": [[0, 0], [0.07, -0.9, "out"], [0.22, 0.2, "inOut"], [0.32, 0]],
+      "strong": [[0, 0], [0.12, 0.5, "inOut"], [0.2, -0.8, "out"], [0.32, 0.1, "inOut"], [0.38, 0], [0.44, -0.6, "out"], [0.58, 0.15, "inOut"], [0.7, 0]]
+    },
+    "wave-inner.opacity": {
+      "light": [[0, 1], [0.05, 1], [0.25, 0, "in"], [0.26, 0], [0.4, 1, "out"]],
+      "strong": [[0, 1], [0.17, 1], [0.33, 0, "in"], [0.34, 0], [0.4, 1, "out"], [0.41, 1], [0.57, 0, "in"], [0.58, 0], [0.72, 1, "out"]]
+    },
+    "wave-inner.r": {
+      "//": "both waves travel out together and fade; fresh ones swell out of the mouth, inner first",
+      "light": [[0, 0], [0.05, 0], [0.25, 2, "out"], [0.26, -1.6, "step"], [0.4, 0, "out"]],
+      "strong": [[0, 0], [0.17, 0], [0.33, 2, "out"], [0.34, -1.6, "step"], [0.4, 0, "out"], [0.41, 0], [0.57, 2, "out"], [0.58, -1.6, "step"], [0.72, 0, "out"]]
+    },
+    "wave-outer.opacity": {
+      "light": [[0, 1], [0.05, 1], [0.22, 0, "in"], [0.23, 0], [0.33, 0], [0.47, 1, "out"]],
+      "strong": [[0, 1], [0.17, 1], [0.31, 0, "in"], [0.32, 0], [0.42, 1, "out"], [0.56, 0, "in"], [0.57, 0], [0.65, 0], [0.79, 1, "out"]]
+    },
+    "wave-outer.r": {
+      "//": "2.0 at most: the outer wave stays 1.4 inside the right edge",
+      "light": [[0, 0], [0.05, 0], [0.22, 2, "out"], [0.23, -1.6, "step"], [0.33, -1.6], [0.47, 0, "out"]],
+      "strong": [[0, 0], [0.17, 0], [0.31, 2, "out"], [0.32, -1.6, "step"], [0.42, 0, "out"], [0.56, 2, "out"], [0.57, -1.6, "step"], [0.65, -1.6], [0.79, 0, "out"]]
+    }
+  }
+}

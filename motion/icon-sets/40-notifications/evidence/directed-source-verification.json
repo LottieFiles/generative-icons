@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 66,
-  "nativeTransformNodes": 420,
+  "nativeTransformNodes": 332,
   "nativeTransformMaxCoordinateError": 0.00001000000000139778,
   "checks": [
     {
@@ -52,24 +52,6 @@
     },
     {
       "name": "bell-snooze-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "notification-badge",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "notification-badge-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -168,24 +150,6 @@
       "designConstraints": []
     },
     {
-      "name": "notification-stack",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "notification-stack-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "mention-alert",
       "fixedParts": [],
       "topology": true,
@@ -196,24 +160,6 @@
     },
     {
       "name": "mention-alert-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "priority-alert",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "priority-alert-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -346,25 +292,45 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "vibrate-alert",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "vibrate-alert-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "notification-badge",
+      "spec": "specs/notification-badge.icon.json",
+      "specSha256": "9237b264d4457c42d96b495874d5d775c83aa877310cd1136ee84d2fc256d9d9",
+      "actions": [
+        "notification-badge",
+        "notification-badge-strong"
+      ]
+    },
+    {
+      "icon": "notification-stack",
+      "spec": "specs/notification-stack.icon.json",
+      "specSha256": "d0b1507ab4bee4455b73ffd1e0e9e3148f1cba1d20ab23800c7b8a991c696c5e",
+      "actions": [
+        "notification-stack",
+        "notification-stack-strong"
+      ]
+    },
+    {
+      "icon": "priority-alert",
+      "spec": "specs/priority-alert.icon.json",
+      "specSha256": "e359c2133485a783b9cd7611b04280c27a108b1ece1b95eb2de704f1f5aa229d",
+      "actions": [
+        "priority-alert",
+        "priority-alert-strong"
+      ]
+    },
+    {
+      "icon": "vibrate-alert",
+      "spec": "specs/vibrate-alert.icon.json",
+      "specSha256": "a0c66823681755ff6737053d183cbeb6aa0954427c09ebf015797483142b1521",
+      "actions": [
+        "vibrate-alert",
+        "vibrate-alert-strong"
+      ]
+    }
+  ]
 }

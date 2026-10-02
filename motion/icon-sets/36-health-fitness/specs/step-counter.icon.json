@@ -1,0 +1,46 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "step-counter",
+  "label": "Step counter",
+  "intent": "Steps land and are counted. Light: one stride: the back foot lifts toward the viewer with a toe-off twist and stamps down with a hit and a contact dip, its toes landing a beat after the sole; then the front foot does the same. Strong: two strides, four footfalls in turn, each lifted higher and stamped harder.",
+  "parts": {
+    "left-sole": {"shape": {"path": "M9.717 14.524 C7.778 14.866 7.336 16.609 7.811 18.357 C8.257 19.943 9.155 20.784 9.383 22.076 C9.639 23.53 10.456 24.385 11.587 24.186 C12.717 23.986 13.031 22.932 12.722 21.654 C12.414 20.376 11.625 19.683 11.588 18.524 C11.55 17.365 12.486 16.533 12.315 15.564 C12.144 14.595 11.009 14.296 9.717 14.524 Z"}, "role": "surface", "solid": "fill"},
+    "left-toe-0": {"shape": {"circle": [[10.482, 11.308], 0.7]}, "role": "fill"},
+    "left-toe-1": {"shape": {"circle": [[8.055, 11.237], 0.575]}, "role": "fill"},
+    "left-toe-2": {"shape": {"circle": [[6.288, 12.548], 0.49]}, "role": "fill"},
+    "right-sole": {"shape": {"path": "M22.283 8.724 C24.222 9.066 24.664 10.809 24.189 12.557 C23.743 14.143 22.845 14.984 22.617 16.276 C22.361 17.73 21.544 18.585 20.413 18.386 C19.283 18.186 18.969 17.132 19.278 15.854 C19.586 14.576 20.375 13.883 20.412 12.724 C20.45 11.565 19.514 10.733 19.685 9.764 C19.856 8.795 20.991 8.496 22.283 8.724 Z"}, "role": "surface", "solid": "fill"},
+    "right-toe-0": {"shape": {"circle": [[21.518, 5.508], 0.7]}, "role": "fill"},
+    "right-toe-1": {"shape": {"circle": [[23.945, 5.437], 0.575]}, "role": "fill"},
+    "right-toe-2": {"shape": {"circle": [[25.712, 6.748], 0.49]}, "role": "fill"}
+  },
+  "rigs": {
+    "left-sole": {"pivot": [10.2, 19.3]},
+    "left-toes": {"//": "the toes land a beat after the sole", "pivot": [10.2, 19.3], "carries": ["left-toe-0", "left-toe-1", "left-toe-2"]},
+    "right-sole": {"pivot": [21.8, 13.5]},
+    "right-toes": {"pivot": [21.8, 13.5], "carries": ["right-toe-0", "right-toe-1", "right-toe-2"]}
+  },
+  "motion": {
+    "left-sole.scale": {
+      "light":  [[0, 1], [0.1, 1.14, "out"], [0.2, 1, "hit"], [0.25, 0.95, "out"], [0.31, 1, "inOut"]],
+      "strong": [[0, 1], [0.09, 1.16, "out"], [0.18, 1, "hit"], [0.22, 0.94, "out"], [0.28, 1, "inOut"], [0.36, 1], [0.45, 1.16, "out"], [0.54, 1, "hit"], [0.58, 0.94, "out"], [0.64, 1, "inOut"]]
+    },
+    "left-sole.y": {
+      "light":  [[0, 0], [0.1, -1.2, "out"], [0.2, 0, "hit"]],
+      "strong": [[0, 0], [0.09, -1.4, "out"], [0.18, 0, "hit"], [0.36, 0], [0.45, -1.4, "out"], [0.54, 0, "hit"]]
+    },
+    "left-sole.rotate": {
+      "light":  [[0, 0], [0.1, -5, "out"], [0.2, 0, "hit"]],
+      "strong": [[0, 0], [0.09, -6, "out"], [0.18, 0, "hit"], [0.36, 0], [0.45, -6, "out"], [0.54, 0, "hit"]]
+    },
+    "left-toes.scale": {"follow": "left-sole.scale", "lag": 0.05},
+    "left-toes.y": {"follow": "left-sole.y", "lag": 0.05},
+    "left-toes.rotate": {"follow": "left-sole.rotate", "lag": 0.05},
+    "right-sole.scale": {"follow": "left-sole.scale", "lag": 0.17},
+    "right-sole.y": {"follow": "left-sole.y", "lag": 0.17},
+    "right-sole.rotate": {"follow": "left-sole.rotate", "lag": 0.17},
+    "right-toes.scale": {"follow": "left-sole.scale", "lag": 0.22},
+    "right-toes.y": {"follow": "left-sole.y", "lag": 0.22},
+    "right-toes.rotate": {"follow": "left-sole.rotate", "lag": 0.22}
+  }
+}

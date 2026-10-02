@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "countdown-timer",
+  "label": "Countdown timer",
+  "intent": "The countdown is started. Light: the marker at 12 is pressed in with a click and springs back; on the click the remaining-time arc drains steadily from its tail toward 12, stops dead at the new time and catches; the time left stays. Strong: the marker lifts first and is pressed harder, and the arc counts down in three ticks, each a hit with a small catch, the last settling in two beats. The remaining time never drops below its new value. The reset fades the arc back to full.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": ["Play action", "Reset preview"],
+    "reverse": "fade"
+  },
+  "parts": {
+    "remaining": {
+      "//": "anchored at 12, clockwise to 9: 270 degrees; the result keeps 150 (draw 5/9)",
+      "shape": {"arc": [[16, 16], 6.5, -90, 180]}
+    },
+    "marker": {"shape": {"line": [[16, 5.5], [16, 3.4]]}},
+    "dial": {"shape": {"circle": [[16, 16], 10.5]}, "role": "surface", "solid": "ring"}
+  },
+  "reverse": {
+    "//": "only the arc changed; the marker ends at rest, so it stays visible",
+    "light": {"marker.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"marker.opacity": [[0, 1], [0.25, 1]]}
+  },
+  "motion": {
+    "marker.y": {
+      "//": "pressed into the dial's rim; 1.2 at most, so it never touches the arc's start at 12",
+      "light": [[0, 0], [0.07, 1, "hit"], [0.15, -0.2], [0.22, 0]],
+      "strong": [[0, 0], [0.05, -0.4, "out"], [0.11, 1.2, "hit"], [0.18, -0.25], [0.24, 0]]
+    },
+    "remaining.draw": {
+      "light": [[0, 1], [0.07, 1], [0.36, 0.555556, "linear"], [0.42, 0.57], [0.48, 0.555556]],
+      "strong": [[0, 1], [0.11, 1], [0.2, 0.851852, "hit"], [0.24, 0.862], [0.28, 0.851852], [0.36, 0.703704, "hit"], [0.4, 0.714], [0.44, 0.703704], [0.52, 0.555556, "hit"], [0.57, 0.572], [0.63, 0.555556], [0.68, 0.563], [0.73, 0.555556]]
+    }
+  }
+}

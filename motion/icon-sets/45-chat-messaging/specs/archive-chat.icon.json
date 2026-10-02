@@ -1,0 +1,28 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "archive-chat",
+  "label": "Archive chat",
+  "intent": "The chat is filed into the archive tray and stays there. Light: the message lifts a little, drops 7 units into the tray and lands with weight: it pushes the tray down with it, and both spring back once. Strong: a higher lift with a forward tip, a faster drop, and a heavier landing that pushes the tray deeper and settles in two beats. The reverse lifts the message back out of the tray.",
+  "state": {"from": "inbox", "to": "archived", "labels": ["Archive", "Unarchive"], "reverse": "auto"},
+  "parts": {
+    "message": {"shape": {"path": "M10 5 L22 5 C23.7 5 25 6.3 25 8 L25 10 C25 11.7 23.7 13 22 13 L14 13 L9.6 16 C9 16.4 8.5 16 8.7 15.3 L9.2 13 C7.9 12.7 7 11.5 7 10 L7 8 C7 6.3 8.3 5 10 5 Z"}, "role": "surface", "solid": "ring"},
+    "tray":    {"shape": {"path": "M5 22 L5 26 C5 27.1 5.9 28 7 28 L25 28 C26.1 28 27 27.1 27 26 L27 22"}}
+  },
+  "rigs": {
+    "message": {"pivot": [16, 9]}
+  },
+  "motion": {
+    "message.y": {
+      "light":  [[0, 0], [0.08, -1, "out"], [0.28, 7, "in"], [0.33, 7.8, "out"], [0.41, 6.85], [0.48, 7]],
+      "strong": [[0, 0], [0.1, -1.4, "out"], [0.28, 7, "in"], [0.34, 8.1, "out"], [0.43, 6.6], [0.51, 7.15], [0.58, 7]]
+    },
+    "message.rotate": {
+      "strong": [[0, 0], [0.1, -4, "out"], [0.28, 0, "in"], [0.36, 1.2], [0.45, 0]]
+    },
+    "tray.y": {
+      "light":  [[0, 0], [0.28, 0], [0.33, 0.8, "out"], [0.41, -0.15], [0.48, 0]],
+      "strong": [[0, 0], [0.28, 0], [0.34, 1.1, "out"], [0.43, -0.4], [0.51, 0.15], [0.58, 0]]
+    }
+  }
+}

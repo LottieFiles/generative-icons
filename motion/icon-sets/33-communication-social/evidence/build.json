@@ -14,36 +14,32 @@
       "continuous": false,
       "previewReset": true,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "prepared",
       "endState": "result",
       "heading": "Inbox",
-      "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+      "description": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
       "label": "Inbox",
-      "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+      "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.62,
-      "rest": 40,
+      "active": 0.5,
+      "rest": 33,
       "keyPoses": [
         0,
-        0.124,
-        0.248,
-        0.372,
-        0.496,
-        0.62
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5
       ],
-      "layers": 18,
+      "layers": 20,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -53,36 +49,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "931817e7cc5a1e479c5cf40dc6567c552fb068e755ab73ac36d9d5b5ba89dfbc",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-        "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-        "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-        "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-        "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-        "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-      },
-      "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "inbox-walls"
-        },
-        {
-          "type": "fixed",
-          "part": "inbox-shelf"
-        },
-        {
-          "type": "rigid",
-          "part": "inbox-card-frame"
-        }
-      ],
+      "nativeSha256": "793f4d7e12085369ee1b1a41df2ec35b9b181583122fb6c21cc5a9a3f88d81a8",
+      "sourceSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+      "planSha256": "407e6c9ca904dc050ba56d023a3237e5650965e8ed3d1e7d53c6389518b14e08",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+      "constraints": [],
       "category": "Communication & social",
-      "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+      "definitionsSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -104,104 +78,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "inbox-reset",
-        "icon": "inbox",
-        "motionId": "light",
-        "continuous": false,
-        "previewReset": true,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-          "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "result",
-        "endState": "prepared",
-        "heading": "Inbox",
-        "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-        "label": "Inbox",
-        "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.3,
-        "rest": 21,
-        "keyPoses": [
-          0,
-          0.06,
-          0.12,
-          0.18,
-          0.24,
-          0.3
-        ],
-        "layers": 18,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "5136cc6e832fab628122ac21c9ca9016be7e0840a7af3ca354ba3003bb842c31",
-        "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "authoringSources": {
-          "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-          "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-          "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-          "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-          "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-          "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-          "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-          "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-        },
-        "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "inbox-walls"
-          },
-          {
-            "type": "fixed",
-            "part": "inbox-shelf"
-          },
-          {
-            "type": "rigid",
-            "part": "inbox-card-frame"
-          }
-        ],
-        "category": "Communication & social",
-        "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "number": 509,
       "forwardLabel": "Play action",
       "reverseLabel": "Reset preview",
@@ -213,36 +89,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Inbox",
-          "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "description": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "label": "Inbox",
-          "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 18,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -252,36 +124,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "931817e7cc5a1e479c5cf40dc6567c552fb068e755ab73ac36d9d5b5ba89dfbc",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "inbox-walls"
-            },
-            {
-              "type": "fixed",
-              "part": "inbox-shelf"
-            },
-            {
-              "type": "rigid",
-              "part": "inbox-card-frame"
-            }
-          ],
+          "nativeSha256": "793f4d7e12085369ee1b1a41df2ec35b9b181583122fb6c21cc5a9a3f88d81a8",
+          "sourceSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+          "planSha256": "407e6c9ca904dc050ba56d023a3237e5650965e8ed3d1e7d53c6389518b14e08",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -310,36 +160,32 @@
             "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Inbox",
-            "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+            "description": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
             "label": "Inbox",
-            "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+            "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.3,
-            "rest": 21,
+            "active": 0.28,
+            "rest": 20,
             "keyPoses": [
               0,
-              0.06,
-              0.12,
-              0.18,
-              0.24,
-              0.3
+              0.05600000000000001,
+              0.11200000000000002,
+              0.168,
+              0.22400000000000003,
+              0.28
             ],
-            "layers": 18,
+            "layers": 20,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -349,36 +195,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "5136cc6e832fab628122ac21c9ca9016be7e0840a7af3ca354ba3003bb842c31",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-              "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-              "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-              "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-              "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-              "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-              "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-              "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-            },
-            "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "inbox-walls"
-              },
-              {
-                "type": "fixed",
-                "part": "inbox-shelf"
-              },
-              {
-                "type": "rigid",
-                "part": "inbox-card-frame"
-              }
-            ],
+            "nativeSha256": "0f29e648acc08cf42dc617d3058066ce2a0c843c6231e8481b1ce88568805c59",
+            "sourceSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+            "planSha256": "407e6c9ca904dc050ba56d023a3237e5650965e8ed3d1e7d53c6389518b14e08",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+            "constraints": [],
             "category": "Communication & social",
-            "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+            "definitionsSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -400,11 +224,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 7804,
-            "sha256": "e7c90664b978610ab5809ea15b2274018324bee22c9abae590f7939df3e3a7f2"
+            "bytes": 6385,
+            "sha256": "547f7505bd74d4bfabe94e7aa8ee090e74b7de5a9c3391f44d0824cacc91c9ba"
           },
-          "bytes": 7801,
-          "sha256": "13a9f1a3b1a5d2cc17a3cd4407e1ecf51287ff070fcfd50c1562c274e025f229"
+          "bytes": 6382,
+          "sha256": "ce89d2079b40453f9cda4d3f35466448fba112e347249e8c8e7efa3da7c35ecf"
         },
         {
           "name": "inbox-strong",
@@ -413,36 +237,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Inbox",
-          "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "description": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "label": "Inbox",
-          "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.59,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.118,
+            0.236,
+            0.354,
+            0.472,
+            0.59
           ],
-          "layers": 18,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -452,36 +272,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6a3b0ecedd5fecc7431ecba3fbd2549f569d4f44b18f17106b747844d2dd5f63",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "inbox-walls"
-            },
-            {
-              "type": "fixed",
-              "part": "inbox-shelf"
-            },
-            {
-              "type": "rigid",
-              "part": "inbox-card-frame"
-            }
-          ],
+          "nativeSha256": "9f96a5f026e30d2e822e014f0ce06310ae87f40b4025f3aa3da2941ec9f582c8",
+          "sourceSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+          "planSha256": "407e6c9ca904dc050ba56d023a3237e5650965e8ed3d1e7d53c6389518b14e08",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -510,20 +308,16 @@
             "continuous": false,
             "previewReset": true,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-              "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "result",
             "endState": "prepared",
             "heading": "Inbox",
-            "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+            "description": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
             "label": "Inbox",
-            "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+            "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -539,7 +333,7 @@
               0.24,
               0.3
             ],
-            "layers": 18,
+            "layers": 20,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -549,36 +343,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "c86494228613f02ade83cf8f29995dfc604f84c1899d3158fe830c92f571dd79",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-              "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-              "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-              "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-              "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-              "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-              "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-              "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-            },
-            "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "inbox-walls"
-              },
-              {
-                "type": "fixed",
-                "part": "inbox-shelf"
-              },
-              {
-                "type": "rigid",
-                "part": "inbox-card-frame"
-              }
-            ],
+            "nativeSha256": "43c7f72fe70b355cfa2cb7d44c8e140de5760d382902afcb89ae28386f7406e0",
+            "sourceSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+            "planSha256": "407e6c9ca904dc050ba56d023a3237e5650965e8ed3d1e7d53c6389518b14e08",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+            "constraints": [],
             "category": "Communication & social",
-            "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+            "definitionsSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -600,11 +372,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 7807,
-            "sha256": "bd2c368a171c30c23a46cf65993ee1441f9e4c7dec51a0aa3682476f1335792c"
+            "bytes": 6388,
+            "sha256": "801cae08f1e4d0f8a5d731a74fe2fcef432946298bec83353c7abe4bcf622c7e"
           },
-          "bytes": 7805,
-          "sha256": "84e2f2aa8fa5fcd0d8fe4e1ad8c8a616f712fea5fb7d1295ea0cf98bd56cc4b5"
+          "bytes": 6386,
+          "sha256": "70e628b1094f4a8def31a76b26391d3882e2df57ddd6ac1acaa438c575eb7730"
         }
       ],
       "animations": [
@@ -615,36 +387,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Inbox",
-          "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "description": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "label": "Inbox",
-          "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 18,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -654,36 +422,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "931817e7cc5a1e479c5cf40dc6567c552fb068e755ab73ac36d9d5b5ba89dfbc",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "inbox-walls"
-            },
-            {
-              "type": "fixed",
-              "part": "inbox-shelf"
-            },
-            {
-              "type": "rigid",
-              "part": "inbox-card-frame"
-            }
-          ],
+          "nativeSha256": "793f4d7e12085369ee1b1a41df2ec35b9b181583122fb6c21cc5a9a3f88d81a8",
+          "sourceSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+          "planSha256": "407e6c9ca904dc050ba56d023a3237e5650965e8ed3d1e7d53c6389518b14e08",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -705,8 +451,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7801,
-          "sha256": "13a9f1a3b1a5d2cc17a3cd4407e1ecf51287ff070fcfd50c1562c274e025f229"
+          "bytes": 6382,
+          "sha256": "ce89d2079b40453f9cda4d3f35466448fba112e347249e8c8e7efa3da7c35ecf"
         },
         {
           "name": "inbox-reset",
@@ -715,36 +461,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Inbox",
-          "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "description": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "label": "Inbox",
-          "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.3,
-          "rest": 21,
+          "active": 0.28,
+          "rest": 20,
           "keyPoses": [
             0,
-            0.06,
-            0.12,
-            0.18,
-            0.24,
-            0.3
+            0.05600000000000001,
+            0.11200000000000002,
+            0.168,
+            0.22400000000000003,
+            0.28
           ],
-          "layers": 18,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -754,36 +496,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5136cc6e832fab628122ac21c9ca9016be7e0840a7af3ca354ba3003bb842c31",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "inbox-walls"
-            },
-            {
-              "type": "fixed",
-              "part": "inbox-shelf"
-            },
-            {
-              "type": "rigid",
-              "part": "inbox-card-frame"
-            }
-          ],
+          "nativeSha256": "0f29e648acc08cf42dc617d3058066ce2a0c843c6231e8481b1ce88568805c59",
+          "sourceSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+          "planSha256": "407e6c9ca904dc050ba56d023a3237e5650965e8ed3d1e7d53c6389518b14e08",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -805,8 +525,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7804,
-          "sha256": "e7c90664b978610ab5809ea15b2274018324bee22c9abae590f7939df3e3a7f2"
+          "bytes": 6385,
+          "sha256": "547f7505bd74d4bfabe94e7aa8ee090e74b7de5a9c3391f44d0824cacc91c9ba"
         },
         {
           "name": "inbox-strong",
@@ -815,36 +535,32 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "prepared",
           "endState": "result",
           "heading": "Inbox",
-          "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "description": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "label": "Inbox",
-          "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.59,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.118,
+            0.236,
+            0.354,
+            0.472,
+            0.59
           ],
-          "layers": 18,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -854,36 +570,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6a3b0ecedd5fecc7431ecba3fbd2549f569d4f44b18f17106b747844d2dd5f63",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "inbox-walls"
-            },
-            {
-              "type": "fixed",
-              "part": "inbox-shelf"
-            },
-            {
-              "type": "rigid",
-              "part": "inbox-card-frame"
-            }
-          ],
+          "nativeSha256": "9f96a5f026e30d2e822e014f0ce06310ae87f40b4025f3aa3da2941ec9f582c8",
+          "sourceSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+          "planSha256": "407e6c9ca904dc050ba56d023a3237e5650965e8ed3d1e7d53c6389518b14e08",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -905,8 +599,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7805,
-          "sha256": "84e2f2aa8fa5fcd0d8fe4e1ad8c8a616f712fea5fb7d1295ea0cf98bd56cc4b5"
+          "bytes": 6386,
+          "sha256": "70e628b1094f4a8def31a76b26391d3882e2df57ddd6ac1acaa438c575eb7730"
         },
         {
           "name": "inbox-reset-strong",
@@ -915,20 +609,16 @@
           "continuous": false,
           "previewReset": true,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "result",
           "endState": "prepared",
           "heading": "Inbox",
-          "description": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "description": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "label": "Inbox",
-          "intent": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
+          "intent": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -944,7 +634,7 @@
             0.24,
             0.3
           ],
-          "layers": 18,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -954,36 +644,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c86494228613f02ade83cf8f29995dfc604f84c1899d3158fe830c92f571dd79",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "An incoming card lifts slightly, drops into the tray and lands on the shelf above the front lip; Strong prepares, falls faster and settles with one bounded rebound. The card stays received in the tray.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "inbox-walls"
-            },
-            {
-              "type": "fixed",
-              "part": "inbox-shelf"
-            },
-            {
-              "type": "rigid",
-              "part": "inbox-card-frame"
-            }
-          ],
+          "nativeSha256": "43c7f72fe70b355cfa2cb7d44c8e140de5760d382902afcb89ae28386f7406e0",
+          "sourceSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
+          "planSha256": "407e6c9ca904dc050ba56d023a3237e5650965e8ed3d1e7d53c6389518b14e08",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A message arrives. Light: the incoming card lifts a touch, drops into the tray and lands with a hit and one small bounce, and stays received; the tray takes the knock, dipping and springing back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The card and tray stay rigid. The reset fades back to the card waiting above the tray.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "5a344ba51211314c74dbf2b9cc97d2d08eed9546b5049b52cb27e2ee8f457f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1005,12 +673,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7807,
-          "sha256": "bd2c368a171c30c23a46cf65993ee1441f9e4c7dec51a0aa3682476f1335792c"
+          "bytes": 6388,
+          "sha256": "801cae08f1e4d0f8a5d731a74fe2fcef432946298bec83353c7abe4bcf622c7e"
         }
       ],
-      "bytes": 7801,
-      "sha256": "13a9f1a3b1a5d2cc17a3cd4407e1ecf51287ff070fcfd50c1562c274e025f229"
+      "bytes": 6382,
+      "sha256": "ce89d2079b40453f9cda4d3f35466448fba112e347249e8c8e7efa3da7c35ecf"
     },
     {
       "name": "address-book",
@@ -1558,36 +1226,33 @@
       "motionId": "light",
       "continuous": false,
       "previewReset": false,
-      "cycleDegrees": 360,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "cycleDegrees": 0,
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Voicemail",
-      "description": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+      "description": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
       "label": "Voicemail",
-      "intent": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+      "intent": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.9,
-      "rest": 57,
+      "active": 0.6000000000000001,
+      "rest": 39,
       "keyPoses": [
         0,
-        0.18000000000000002,
+        0.12000000000000002,
+        0.24000000000000005,
         0.36000000000000004,
-        0.54,
-        0.7200000000000001,
-        0.9
+        0.4800000000000001,
+        0.6000000000000001
       ],
-      "layers": 20,
+      "layers": 22,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -1597,44 +1262,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "279fe9f14630265a8be40a76077ec10f041a50b97a3548e41c11aadb51c2ac90",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-        "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-        "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-        "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-        "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-        "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-      },
-      "brief": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "voicemail-tape"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-left-rim"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-left-mark"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-right-rim"
-        },
-        {
-          "type": "rigid",
-          "part": "voicemail-reel-right-mark"
-        }
-      ],
+      "nativeSha256": "fb9517bdc78e3c3e624d78c027e6efd16610fb6cb3f4952012d70ab3e1cad9f6",
+      "sourceSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
+      "planSha256": "9a766883aff3028884c84ec7f9c568040c3a337e7a6931f7bdc50c63f3827473",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
+      "constraints": [],
       "category": "Communication & social",
-      "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+      "definitionsSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -1664,36 +1299,33 @@
           "motionId": "light",
           "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 360,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Voicemail",
-          "description": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+          "description": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
           "label": "Voicemail",
-          "intent": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+          "intent": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.6000000000000001,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.18000000000000002,
+            0.12000000000000002,
+            0.24000000000000005,
             0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.4800000000000001,
+            0.6000000000000001
           ],
-          "layers": 20,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1703,44 +1335,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "279fe9f14630265a8be40a76077ec10f041a50b97a3548e41c11aadb51c2ac90",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voicemail-tape"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-left-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-left-mark"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-right-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-right-mark"
-            }
-          ],
+          "nativeSha256": "fb9517bdc78e3c3e624d78c027e6efd16610fb6cb3f4952012d70ab3e1cad9f6",
+          "sourceSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
+          "planSha256": "9a766883aff3028884c84ec7f9c568040c3a337e7a6931f7bdc50c63f3827473",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1762,8 +1364,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4600,
-          "sha256": "61921d9473d3f9a0374d8198c4ad0455b8cfded8ce92ea6d564c32b385e4bc76"
+          "bytes": 3249,
+          "sha256": "2fd05a3c3dccac27ba7ec736e0269b1255626ea745ccc36bd25eaea556713d45"
         },
         {
           "name": "voicemail-strong",
@@ -1771,36 +1373,33 @@
           "motionId": "strong",
           "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 360,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Voicemail",
-          "description": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+          "description": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
           "label": "Voicemail",
-          "intent": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+          "intent": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.65,
-          "rest": 42,
+          "active": 0.8500000000000001,
+          "rest": 54,
           "keyPoses": [
             0,
-            0.13,
-            0.26,
-            0.39,
-            0.52,
-            0.65
+            0.17000000000000004,
+            0.3400000000000001,
+            0.51,
+            0.6800000000000002,
+            0.8500000000000001
           ],
-          "layers": 20,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1810,44 +1409,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "35887a1d6dae5753a9fabd2c237d0a89fd86f043c2a218ae8be12a8e5ea78d48",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voicemail-tape"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-left-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-left-mark"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-right-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-right-mark"
-            }
-          ],
+          "nativeSha256": "581a7fc1ca77ac2519e1e880e74924ee51ba8b58a1e633f99a0c28feb738c7dd",
+          "sourceSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
+          "planSha256": "9a766883aff3028884c84ec7f9c568040c3a337e7a6931f7bdc50c63f3827473",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1869,8 +1438,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4602,
-          "sha256": "5c8a475fb2999a4039b67260080f66471bcc31223a8963799f7d6b10a8d6fde3"
+          "bytes": 3251,
+          "sha256": "113625eb5aefe7a6dbb5cc0db4dee6692b5459d2053d84834665d057d2047f6c"
         }
       ],
       "animations": [
@@ -1880,36 +1449,33 @@
           "motionId": "light",
           "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 360,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Voicemail",
-          "description": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+          "description": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
           "label": "Voicemail",
-          "intent": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+          "intent": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.6000000000000001,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.18000000000000002,
+            0.12000000000000002,
+            0.24000000000000005,
             0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.4800000000000001,
+            0.6000000000000001
           ],
-          "layers": 20,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1919,44 +1485,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "279fe9f14630265a8be40a76077ec10f041a50b97a3548e41c11aadb51c2ac90",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voicemail-tape"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-left-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-left-mark"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-right-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-right-mark"
-            }
-          ],
+          "nativeSha256": "fb9517bdc78e3c3e624d78c027e6efd16610fb6cb3f4952012d70ab3e1cad9f6",
+          "sourceSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
+          "planSha256": "9a766883aff3028884c84ec7f9c568040c3a337e7a6931f7bdc50c63f3827473",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1978,8 +1514,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4600,
-          "sha256": "61921d9473d3f9a0374d8198c4ad0455b8cfded8ce92ea6d564c32b385e4bc76"
+          "bytes": 3249,
+          "sha256": "2fd05a3c3dccac27ba7ec736e0269b1255626ea745ccc36bd25eaea556713d45"
         },
         {
           "name": "voicemail-strong",
@@ -1987,36 +1523,33 @@
           "motionId": "strong",
           "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 360,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Voicemail",
-          "description": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+          "description": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
           "label": "Voicemail",
-          "intent": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
+          "intent": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.65,
-          "rest": 42,
+          "active": 0.8500000000000001,
+          "rest": 54,
           "keyPoses": [
             0,
-            0.13,
-            0.26,
-            0.39,
-            0.52,
-            0.65
+            0.17000000000000004,
+            0.3400000000000001,
+            0.51,
+            0.6800000000000002,
+            0.8500000000000001
           ],
-          "layers": 20,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2026,44 +1559,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "35887a1d6dae5753a9fabd2c237d0a89fd86f043c2a218ae8be12a8e5ea78d48",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Both tape reels turn one full playback revolution with an index mark showing the motion; Strong recoils and spins decisively faster.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "voicemail-tape"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-left-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-left-mark"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-right-rim"
-            },
-            {
-              "type": "rigid",
-              "part": "voicemail-reel-right-mark"
-            }
-          ],
+          "nativeSha256": "581a7fc1ca77ac2519e1e880e74924ee51ba8b58a1e633f99a0c28feb738c7dd",
+          "sourceSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
+          "planSha256": "9a766883aff3028884c84ec7f9c568040c3a337e7a6931f7bdc50c63f3827473",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "c8171b60d84b10683a153e5416513f76e317ab0b1d1ff7fac32540d8a9f923ba",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2085,12 +1588,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4602,
-          "sha256": "5c8a475fb2999a4039b67260080f66471bcc31223a8963799f7d6b10a8d6fde3"
+          "bytes": 3251,
+          "sha256": "113625eb5aefe7a6dbb5cc0db4dee6692b5459d2053d84834665d057d2047f6c"
         }
       ],
-      "bytes": 4600,
-      "sha256": "61921d9473d3f9a0374d8198c4ad0455b8cfded8ce92ea6d564c32b385e4bc76"
+      "bytes": 3249,
+      "sha256": "2fd05a3c3dccac27ba7ec736e0269b1255626ea745ccc36bd25eaea556713d45"
     },
     {
       "name": "transfer-call",
@@ -3339,35 +2842,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Emoji picker",
-      "description": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+      "description": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
       "label": "Emoji picker",
-      "intent": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+      "intent": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 1,
-      "rest": 63,
+      "active": 0.5,
+      "rest": 33,
       "keyPoses": [
         0,
+        0.1,
         0.2,
+        0.3,
         0.4,
-        0.6,
-        0.8,
-        1
+        0.5
       ],
-      "layers": 14,
+      "layers": 17,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -3377,36 +2877,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "c69658a990e65a25e919513694120f6a16bc3ab24d72d6f3634840d7c3a88884",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-        "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-        "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-        "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-        "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-        "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-      },
-      "brief": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "emoji-picker-face-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "emoji-picker-eye-l"
-        },
-        {
-          "type": "rigid",
-          "part": "emoji-picker-eye-r"
-        }
-      ],
+      "nativeSha256": "71dbf9030755d6b5c98b29d61eaf0ea00cefaf22bc5da66523fa29da75064eea",
+      "sourceSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
+      "planSha256": "da37c18313319bad0c8117d9d9d47bb9bfa96982b8a8046c8e4ef6aa365d8251",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
+      "constraints": [],
       "category": "Communication & social",
-      "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+      "definitionsSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -3437,35 +2915,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Emoji picker",
-          "description": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+          "description": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
           "label": "Emoji picker",
-          "intent": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+          "intent": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1,
-          "rest": 63,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
+            0.1,
             0.2,
+            0.3,
             0.4,
-            0.6,
-            0.8,
-            1
+            0.5
           ],
-          "layers": 14,
+          "layers": 17,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3475,36 +2950,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c69658a990e65a25e919513694120f6a16bc3ab24d72d6f3634840d7c3a88884",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "emoji-picker-face-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "emoji-picker-eye-l"
-            },
-            {
-              "type": "rigid",
-              "part": "emoji-picker-eye-r"
-            }
-          ],
+          "nativeSha256": "71dbf9030755d6b5c98b29d61eaf0ea00cefaf22bc5da66523fa29da75064eea",
+          "sourceSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
+          "planSha256": "da37c18313319bad0c8117d9d9d47bb9bfa96982b8a8046c8e4ef6aa365d8251",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3526,8 +2979,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 41089,
-          "sha256": "66dee47fb2deba5ac25452336829abf7ed9bc68ddc8f3c469bec409283aac65f"
+          "bytes": 4029,
+          "sha256": "55f04e03abbf8c809088003b5d51503d65ac7480c506c415b12deb892b8d8ef0"
         },
         {
           "name": "emoji-picker-strong",
@@ -3536,35 +2989,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Emoji picker",
-          "description": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+          "description": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
           "label": "Emoji picker",
-          "intent": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+          "intent": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.2,
-          "rest": 75,
+          "active": 0.82,
+          "rest": 52,
           "keyPoses": [
             0,
-            0.24,
-            0.48,
-            0.72,
-            0.96,
-            1.2
+            0.164,
+            0.328,
+            0.49199999999999994,
+            0.656,
+            0.82
           ],
-          "layers": 14,
+          "layers": 17,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3574,36 +3024,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "90e8ef61df00b7763d75c944c6d58f6b85a9912459c61ab646262bd76adc04d0",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "emoji-picker-face-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "emoji-picker-eye-l"
-            },
-            {
-              "type": "rigid",
-              "part": "emoji-picker-eye-r"
-            }
-          ],
+          "nativeSha256": "ff170686f63f1fdb0b4b104f76a26eb814a63c89a7e28f1093c30536fb618bf9",
+          "sourceSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
+          "planSha256": "da37c18313319bad0c8117d9d9d47bb9bfa96982b8a8046c8e4ef6aa365d8251",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3625,8 +3053,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 41092,
-          "sha256": "4f9d5f87af1ea7a6b2d61aa169c2c57b1b8fbbaf9f17cb42454e42ae223b67a8"
+          "bytes": 4032,
+          "sha256": "3a0cade5d9f2b8d441a7370b5d993c0b20d77121f2e78e132fd2e521f9d6f712"
         }
       ],
       "animations": [
@@ -3637,35 +3065,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Emoji picker",
-          "description": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+          "description": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
           "label": "Emoji picker",
-          "intent": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+          "intent": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1,
-          "rest": 63,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
+            0.1,
             0.2,
+            0.3,
             0.4,
-            0.6,
-            0.8,
-            1
+            0.5
           ],
-          "layers": 14,
+          "layers": 17,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3675,36 +3100,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c69658a990e65a25e919513694120f6a16bc3ab24d72d6f3634840d7c3a88884",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "emoji-picker-face-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "emoji-picker-eye-l"
-            },
-            {
-              "type": "rigid",
-              "part": "emoji-picker-eye-r"
-            }
-          ],
+          "nativeSha256": "71dbf9030755d6b5c98b29d61eaf0ea00cefaf22bc5da66523fa29da75064eea",
+          "sourceSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
+          "planSha256": "da37c18313319bad0c8117d9d9d47bb9bfa96982b8a8046c8e4ef6aa365d8251",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3726,8 +3129,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 41089,
-          "sha256": "66dee47fb2deba5ac25452336829abf7ed9bc68ddc8f3c469bec409283aac65f"
+          "bytes": 4029,
+          "sha256": "55f04e03abbf8c809088003b5d51503d65ac7480c506c415b12deb892b8d8ef0"
         },
         {
           "name": "emoji-picker-strong",
@@ -3736,35 +3139,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Emoji picker",
-          "description": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+          "description": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
           "label": "Emoji picker",
-          "intent": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
+          "intent": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.2,
-          "rest": 75,
+          "active": 0.82,
+          "rest": 52,
           "keyPoses": [
             0,
-            0.24,
-            0.48,
-            0.72,
-            0.96,
-            1.2
+            0.164,
+            0.328,
+            0.49199999999999994,
+            0.656,
+            0.82
           ],
-          "layers": 14,
+          "layers": 17,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3774,36 +3174,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "90e8ef61df00b7763d75c944c6d58f6b85a9912459c61ab646262bd76adc04d0",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the smile quietly widens and relaxes. Strong: a small head cock back, then the face tips 10 degrees and breaks into a broad grin, holds the expression, and returns.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "emoji-picker-face-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "emoji-picker-eye-l"
-            },
-            {
-              "type": "rigid",
-              "part": "emoji-picker-eye-r"
-            }
-          ],
+          "nativeSha256": "ff170686f63f1fdb0b4b104f76a26eb814a63c89a7e28f1093c30536fb618bf9",
+          "sourceSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
+          "planSha256": "da37c18313319bad0c8117d9d9d47bb9bfa96982b8a8046c8e4ef6aa365d8251",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The face reacts: it winks and grins. Light: the head tips toward its right eye, the eye snaps shut and opens again, and the smile widens into a grin a beat later; the head comes back past rest and settles as the grin relaxes. Strong: the head cocks the other way first, then tips further, winks, and breaks into a broad grin that holds, then swings back with two small settling beats. In Solid the wink stays open (a closed slit would close the eye's opening); the grin and the tilt carry it.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "3811622d645e604db49d165874f089ed447bef66b7358fb7de6f08b7e60d877f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3825,12 +3203,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 41092,
-          "sha256": "4f9d5f87af1ea7a6b2d61aa169c2c57b1b8fbbaf9f17cb42454e42ae223b67a8"
+          "bytes": 4032,
+          "sha256": "3a0cade5d9f2b8d441a7370b5d993c0b20d77121f2e78e132fd2e521f9d6f712"
         }
       ],
-      "bytes": 41089,
-      "sha256": "66dee47fb2deba5ac25452336829abf7ed9bc68ddc8f3c469bec409283aac65f"
+      "bytes": 4029,
+      "sha256": "55f04e03abbf8c809088003b5d51503d65ac7480c506c415b12deb892b8d8ef0"
     },
     {
       "name": "thumbs-up-down",
@@ -4804,35 +4182,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "RSS feed",
-      "description": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+      "description": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
       "label": "RSS feed",
-      "intent": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+      "intent": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.8,
-      "rest": 51,
+      "active": 0.52,
+      "rest": 34,
       "keyPoses": [
         0,
-        0.16000000000000003,
-        0.32000000000000006,
-        0.48,
-        0.6400000000000001,
-        0.8
+        0.10400000000000001,
+        0.20800000000000002,
+        0.312,
+        0.41600000000000004,
+        0.52
       ],
-      "layers": 12,
+      "layers": 13,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -4842,28 +4217,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "1a54a7405df7705d86df7a19edb9c06408ddc75e0ea380df3b68bce0ca92dc31",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-        "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-        "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-        "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-        "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-        "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-      },
-      "brief": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "rss-feed-dot"
-        }
-      ],
+      "nativeSha256": "244681c42f531466fecd0a5e78f2224b0b918ce050ee703b7a43af7076c14612",
+      "sourceSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
+      "planSha256": "fd49eb7cc8b1d58127ab8d7b701db4e60d3187d04bcf753d8f2fdc2c0d3af74c",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
+      "constraints": [],
       "category": "Communication & social",
-      "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+      "definitionsSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -4894,35 +4255,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "RSS feed",
-          "description": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+          "description": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
           "label": "RSS feed",
-          "intent": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+          "intent": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.8,
-          "rest": 51,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.16000000000000003,
-            0.32000000000000006,
-            0.48,
-            0.6400000000000001,
-            0.8
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 12,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4932,28 +4290,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "1a54a7405df7705d86df7a19edb9c06408ddc75e0ea380df3b68bce0ca92dc31",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "rss-feed-dot"
-            }
-          ],
+          "nativeSha256": "244681c42f531466fecd0a5e78f2224b0b918ce050ee703b7a43af7076c14612",
+          "sourceSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
+          "planSha256": "fd49eb7cc8b1d58127ab8d7b701db4e60d3187d04bcf753d8f2fdc2c0d3af74c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4975,8 +4319,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7360,
-          "sha256": "25700f019852153f1cde3a3816fac2d61d57cc3e25f5bd8e65dba59d1588edfb"
+          "bytes": 3654,
+          "sha256": "26dce5a1432a14d7fcbd57b577adbb710f6e94c3f112147c7625adaeca182247"
         },
         {
           "name": "rss-feed-strong",
@@ -4985,35 +4329,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "RSS feed",
-          "description": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+          "description": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
           "label": "RSS feed",
-          "intent": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+          "intent": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.95,
-          "rest": 60,
+          "active": 0.68,
+          "rest": 44,
           "keyPoses": [
             0,
-            0.19,
-            0.38,
-            0.57,
-            0.76,
-            0.95
+            0.136,
+            0.272,
+            0.40800000000000003,
+            0.544,
+            0.68
           ],
-          "layers": 12,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5023,28 +4364,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "3175489484fe25a360d86d0cd8747ce9dbebc659e85ee148ed1e6f3896a77ed4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "rss-feed-dot"
-            }
-          ],
+          "nativeSha256": "1aeff60efbb9904e1ec54ca9e00302e7005a1ff469ad385a6c5faf6f9e5095fb",
+          "sourceSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
+          "planSha256": "fd49eb7cc8b1d58127ab8d7b701db4e60d3187d04bcf753d8f2fdc2c0d3af74c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5066,8 +4393,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7362,
-          "sha256": "b034dcc13358e435912cbd73f9a0b094b512d67a0929eebcd8f198c376493a88"
+          "bytes": 3656,
+          "sha256": "fea2f1715b5ce9b42d8065a8edf8e0f8baf8ab79dc040c87995a4f1bb26f2180"
         }
       ],
       "animations": [
@@ -5078,35 +4405,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "RSS feed",
-          "description": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+          "description": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
           "label": "RSS feed",
-          "intent": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+          "intent": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.8,
-          "rest": 51,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.16000000000000003,
-            0.32000000000000006,
-            0.48,
-            0.6400000000000001,
-            0.8
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 12,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5116,28 +4440,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "1a54a7405df7705d86df7a19edb9c06408ddc75e0ea380df3b68bce0ca92dc31",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "rss-feed-dot"
-            }
-          ],
+          "nativeSha256": "244681c42f531466fecd0a5e78f2224b0b918ce050ee703b7a43af7076c14612",
+          "sourceSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
+          "planSha256": "fd49eb7cc8b1d58127ab8d7b701db4e60d3187d04bcf753d8f2fdc2c0d3af74c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5159,8 +4469,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7360,
-          "sha256": "25700f019852153f1cde3a3816fac2d61d57cc3e25f5bd8e65dba59d1588edfb"
+          "bytes": 3654,
+          "sha256": "26dce5a1432a14d7fcbd57b577adbb710f6e94c3f112147c7625adaeca182247"
         },
         {
           "name": "rss-feed-strong",
@@ -5169,35 +4479,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "RSS feed",
-          "description": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+          "description": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
           "label": "RSS feed",
-          "intent": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
+          "intent": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.95,
-          "rest": 60,
+          "active": 0.68,
+          "rest": 44,
           "keyPoses": [
             0,
-            0.19,
-            0.38,
-            0.57,
-            0.76,
-            0.95
+            0.136,
+            0.272,
+            0.40800000000000003,
+            0.544,
+            0.68
           ],
-          "layers": 12,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5207,28 +4514,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "3175489484fe25a360d86d0cd8747ce9dbebc659e85ee148ed1e6f3896a77ed4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the two arcs breathe outward from the signal point, inner first, and settle. Strong: both arcs draw in toward the dot, then push out in a staggered, decisive emit with one settle back to rest. The dot never moves.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "rss-feed-dot"
-            }
-          ],
+          "nativeSha256": "1aeff60efbb9904e1ec54ca9e00302e7005a1ff469ad385a6c5faf6f9e5095fb",
+          "sourceSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
+          "planSha256": "fd49eb7cc8b1d58127ab8d7b701db4e60d3187d04bcf753d8f2fdc2c0d3af74c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The feed publishes. Light: the dot fires with a pop; the outer wave travels out and fades, the inner wave travels out to take its place, and a fresh inner wave is born at the dot and swells out to its spot, overshooting a touch and settling. Strong: the dot draws in and the waves pull back first, then a bigger pop sends the outer wave further and the fresh wave lands with two settling beats. The dot never leaves its spot.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "2e1849d2d174bc8e4d9faa9d075cfe4f326e57842566203f640b6a2608afac2f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5250,12 +4543,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7362,
-          "sha256": "b034dcc13358e435912cbd73f9a0b094b512d67a0929eebcd8f198c376493a88"
+          "bytes": 3656,
+          "sha256": "fea2f1715b5ce9b42d8065a8edf8e0f8baf8ab79dc040c87995a4f1bb26f2180"
         }
       ],
-      "bytes": 7360,
-      "sha256": "25700f019852153f1cde3a3816fac2d61d57cc3e25f5bd8e65dba59d1588edfb"
+      "bytes": 3654,
+      "sha256": "26dce5a1432a14d7fcbd57b577adbb710f6e94c3f112147c7625adaeca182247"
     },
     {
       "name": "announcement",
@@ -5264,35 +4557,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Announcement",
-      "description": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+      "description": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
       "label": "Announcement",
-      "intent": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+      "intent": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.75,
-      "rest": 48,
+      "active": 0.47,
+      "rest": 31,
       "keyPoses": [
         0,
-        0.15000000000000002,
-        0.30000000000000004,
-        0.44999999999999996,
-        0.6000000000000001,
-        0.75
+        0.094,
+        0.188,
+        0.282,
+        0.376,
+        0.47
       ],
-      "layers": 17,
+      "layers": 18,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -5302,32 +4592,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "58eec009ee2e924f0b55ef6cc9678a2c036c1da5f293ee4f2bc83abb1d84ae5b",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-        "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-        "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-        "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-        "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-        "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-      },
-      "brief": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "announcement-horn-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "announcement-handle"
-        }
-      ],
+      "nativeSha256": "25a47c05fcf97c35226be1524327718794f4041bb9c43ceaf4506f22925766dd",
+      "sourceSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
+      "planSha256": "5c42048e6a8bddaa397b0ce03e1666335c4b08fb6edab11d3b6479272188f429",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
+      "constraints": [],
       "category": "Communication & social",
-      "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+      "definitionsSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -5358,35 +4630,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Announcement",
-          "description": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+          "description": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
           "label": "Announcement",
-          "intent": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+          "intent": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.47,
+          "rest": 31,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.094,
+            0.188,
+            0.282,
+            0.376,
+            0.47
           ],
-          "layers": 17,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5396,32 +4665,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "58eec009ee2e924f0b55ef6cc9678a2c036c1da5f293ee4f2bc83abb1d84ae5b",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "announcement-horn-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "announcement-handle"
-            }
-          ],
+          "nativeSha256": "25a47c05fcf97c35226be1524327718794f4041bb9c43ceaf4506f22925766dd",
+          "sourceSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
+          "planSha256": "5c42048e6a8bddaa397b0ce03e1666335c4b08fb6edab11d3b6479272188f429",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5443,8 +4694,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 12210,
-          "sha256": "9569bd581a9648702d268c78b1391ab327a2a5f0912ecb55b4a1b27bcb067c93"
+          "bytes": 4508,
+          "sha256": "3675e50c90a09df42918cd4bf84e494dd0a7b52aa613b46e1f87dbee555f948a"
         },
         {
           "name": "announcement-strong",
@@ -5453,35 +4704,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Announcement",
-          "description": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+          "description": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
           "label": "Announcement",
-          "intent": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+          "intent": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.79,
+          "rest": 50,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.15800000000000003,
+            0.31600000000000006,
+            0.474,
+            0.6320000000000001,
+            0.79
           ],
-          "layers": 17,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5491,32 +4739,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9fddf93c418d40acd1596b444266afaa755fd77b080dc5e17af7a76f636a9935",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "announcement-horn-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "announcement-handle"
-            }
-          ],
+          "nativeSha256": "d03d0959bb7185c55cb2016a58d4e9ff634131a0995a76c23a96576c5b70c5e7",
+          "sourceSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
+          "planSha256": "5c42048e6a8bddaa397b0ce03e1666335c4b08fb6edab11d3b6479272188f429",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5538,8 +4768,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 12212,
-          "sha256": "70de9d1c20e33f56ac9e218abede79ab37c687dfe5d3908dde94408b54f50bd0"
+          "bytes": 4510,
+          "sha256": "cc9fad1b50435201decd8687c1a6e471447f5c802a5107bed64765e2119c72a1"
         }
       ],
       "animations": [
@@ -5550,35 +4780,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Announcement",
-          "description": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+          "description": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
           "label": "Announcement",
-          "intent": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+          "intent": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.47,
+          "rest": 31,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.094,
+            0.188,
+            0.282,
+            0.376,
+            0.47
           ],
-          "layers": 17,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5588,32 +4815,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "58eec009ee2e924f0b55ef6cc9678a2c036c1da5f293ee4f2bc83abb1d84ae5b",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "announcement-horn-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "announcement-handle"
-            }
-          ],
+          "nativeSha256": "25a47c05fcf97c35226be1524327718794f4041bb9c43ceaf4506f22925766dd",
+          "sourceSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
+          "planSha256": "5c42048e6a8bddaa397b0ce03e1666335c4b08fb6edab11d3b6479272188f429",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5635,8 +4844,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 12210,
-          "sha256": "9569bd581a9648702d268c78b1391ab327a2a5f0912ecb55b4a1b27bcb067c93"
+          "bytes": 4508,
+          "sha256": "3675e50c90a09df42918cd4bf84e494dd0a7b52aa613b46e1f87dbee555f948a"
         },
         {
           "name": "announcement-strong",
@@ -5645,35 +4854,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Announcement",
-          "description": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+          "description": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
           "label": "Announcement",
-          "intent": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
+          "intent": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.79,
+          "rest": 50,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.15800000000000003,
+            0.31600000000000006,
+            0.474,
+            0.6320000000000001,
+            0.79
           ],
-          "layers": 17,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5683,32 +4889,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9fddf93c418d40acd1596b444266afaa755fd77b080dc5e17af7a76f636a9935",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "20f728fa44e9f7ff80208618175c6aacadc24b4291ff99606de2b068cfb15321",
-            "batches/accepted.mjs": "d81225f65438890e0a042820ceedcc023d0ce03807e641f54a38a9aa8ac77ad2",
-            "batches/emoji-02.mjs": "ac8ecae040ceaa039d98ea8eaa6f4d9ad7cdef2426b55a0a484e344b26ca0b90",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/mail-call-02.mjs": "c3de4351f145007d6e98902c5b3d6e6663adaddc6c99602789353f9639944872",
-            "batches/mail-call-04.mjs": "a2be262ca7084c79f354c843b5554c30d7cd3b0dd86656d3cb16d0029c65c7f9",
-            "batches/social-broadcast-01.mjs": "608adac9343842f98375c5c0bf8b9d1c15a43a9b4c279931174ac1bcaf67e3bb",
-            "batches/transfer-call-04.mjs": "bce4c2cb9643d53bc507fabacab2f8b3d2fa3c2b394c2e63f7a20c4b9493b552"
-          },
-          "brief": "Light: the megaphone eases back a touch while its sound arcs swell and settle. Strong: the horn dips 3 degrees to set, then kicks back 7 degrees as both arcs blast outward 1.5 units, one damped return to rest.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "announcement-horn-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "announcement-handle"
-            }
-          ],
+          "nativeSha256": "d03d0959bb7185c55cb2016a58d4e9ff634131a0995a76c23a96576c5b70c5e7",
+          "sourceSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
+          "planSha256": "5c42048e6a8bddaa397b0ce03e1666335c4b08fb6edab11d3b6479272188f429",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The announcement blasts out. Light: the megaphone kicks, its bell lifting as the horn recoils, and both sound waves travel out from the bell and fade; fresh waves swell back out of the mouth, inner first, as the horn settles. Strong: the horn leans in first, then blasts twice, two syllables: each kick sends both waves out, and the horn settles after the second. The horn stays rigid.",
+          "constraints": [],
           "category": "Communication & social",
-          "definitionsSha256": "4627b201c2ab8556caeff3785f530eff997084861132f8dfdfcecec64bfef6ce",
+          "definitionsSha256": "93b0edba877dd150cc3e5ec61d76e160d18374895f8dc6df5e375d6880071c06",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5730,12 +4918,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 12212,
-          "sha256": "70de9d1c20e33f56ac9e218abede79ab37c687dfe5d3908dde94408b54f50bd0"
+          "bytes": 4510,
+          "sha256": "cc9fad1b50435201decd8687c1a6e471447f5c802a5107bed64765e2119c72a1"
         }
       ],
-      "bytes": 12210,
-      "sha256": "9569bd581a9648702d268c78b1391ab327a2a5f0912ecb55b4a1b27bcb067c93"
+      "bytes": 4508,
+      "sha256": "3675e50c90a09df42918cd4bf84e494dd0a7b52aa613b46e1f87dbee555f948a"
     }
   ]
 }

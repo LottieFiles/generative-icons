@@ -14,34 +14,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Music note",
-      "description": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+      "description": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
       "label": "Music note",
-      "intent": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+      "intent": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.68,
-      "rest": 44,
+      "active": 0.54,
+      "rest": 35,
       "keyPoses": [
         0,
-        0.136,
-        0.272,
-        0.40800000000000003,
-        0.544,
-        0.68
+        0.10800000000000001,
+        0.21600000000000003,
+        0.324,
+        0.43200000000000005,
+        0.54
       ],
-      "layers": 12,
+      "layers": 18,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -51,33 +49,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "0981cfa8d5eaafbfaf628cdae4af7c5607a6cb1479cb80ea95015464ee5cf1d4",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-        "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-        "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-        "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-        "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-      },
-      "brief": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "music-note-head"
-        },
-        {
-          "type": "rigid",
-          "part": "music-note-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "music-note-flag"
-        }
-      ],
+      "nativeSha256": "0d9160d9c9eba5dcee63289fbc687d9690467d02abc72b2060f69cff758523df",
+      "sourceSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
+      "planSha256": "127f04aaf62ff3cd7e065d8abca0022e9034ddbe0f714c92a592c16a53f36f5f",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
+      "constraints": [],
       "category": "Music & audio",
-      "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+      "definitionsSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -108,34 +87,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Music note",
-          "description": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+          "description": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
           "label": "Music note",
-          "intent": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+          "intent": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.68,
-          "rest": 44,
+          "active": 0.54,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.136,
-            0.272,
-            0.40800000000000003,
-            0.544,
-            0.68
+            0.10800000000000001,
+            0.21600000000000003,
+            0.324,
+            0.43200000000000005,
+            0.54
           ],
-          "layers": 12,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -145,33 +122,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "0981cfa8d5eaafbfaf628cdae4af7c5607a6cb1479cb80ea95015464ee5cf1d4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "music-note-head"
-            },
-            {
-              "type": "rigid",
-              "part": "music-note-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "music-note-flag"
-            }
-          ],
+          "nativeSha256": "0d9160d9c9eba5dcee63289fbc687d9690467d02abc72b2060f69cff758523df",
+          "sourceSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
+          "planSha256": "127f04aaf62ff3cd7e065d8abca0022e9034ddbe0f714c92a592c16a53f36f5f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -193,8 +151,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4917,
-          "sha256": "b915d19f3dfac7cdbbdf57480a3bac755ec823e81264f73f1a083b1fbd81a1b8"
+          "bytes": 3840,
+          "sha256": "10f12f94f5bd3aed54739d6b00a552596da52df478913f09c0f27e76a9314b3d"
         },
         {
           "name": "music-note-strong",
@@ -203,34 +161,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Music note",
-          "description": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+          "description": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
           "label": "Music note",
-          "intent": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+          "intent": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 12,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -240,33 +196,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "221a9b9c7e98ea192f4d44575c9ca10983ad630fddee1739134709ddfcd71a75",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "music-note-head"
-            },
-            {
-              "type": "rigid",
-              "part": "music-note-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "music-note-flag"
-            }
-          ],
+          "nativeSha256": "1971914e835e8a8a57d293e8f5365f159e7f59ee54347208e87eda25fb201b6f",
+          "sourceSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
+          "planSha256": "127f04aaf62ff3cd7e065d8abca0022e9034ddbe0f714c92a592c16a53f36f5f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -288,8 +225,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4919,
-          "sha256": "65f191103fcafbd96ff7a224668729998696a8faeef77a8bdaaec2967331e25e"
+          "bytes": 3842,
+          "sha256": "917df6165a639096b7f10f17ee8950f24fd9c33dae7bc63777b2e70450d1ed3f"
         }
       ],
       "animations": [
@@ -300,34 +237,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Music note",
-          "description": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+          "description": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
           "label": "Music note",
-          "intent": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+          "intent": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.68,
-          "rest": 44,
+          "active": 0.54,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.136,
-            0.272,
-            0.40800000000000003,
-            0.544,
-            0.68
+            0.10800000000000001,
+            0.21600000000000003,
+            0.324,
+            0.43200000000000005,
+            0.54
           ],
-          "layers": 12,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -337,33 +272,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "0981cfa8d5eaafbfaf628cdae4af7c5607a6cb1479cb80ea95015464ee5cf1d4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "music-note-head"
-            },
-            {
-              "type": "rigid",
-              "part": "music-note-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "music-note-flag"
-            }
-          ],
+          "nativeSha256": "0d9160d9c9eba5dcee63289fbc687d9690467d02abc72b2060f69cff758523df",
+          "sourceSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
+          "planSha256": "127f04aaf62ff3cd7e065d8abca0022e9034ddbe0f714c92a592c16a53f36f5f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -385,8 +301,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4917,
-          "sha256": "b915d19f3dfac7cdbbdf57480a3bac755ec823e81264f73f1a083b1fbd81a1b8"
+          "bytes": 3840,
+          "sha256": "10f12f94f5bd3aed54739d6b00a552596da52df478913f09c0f27e76a9314b3d"
         },
         {
           "name": "music-note-strong",
@@ -395,34 +311,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Music note",
-          "description": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+          "description": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
           "label": "Music note",
-          "intent": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
+          "intent": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 12,
+          "layers": 18,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -432,33 +346,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "221a9b9c7e98ea192f4d44575c9ca10983ad630fddee1739134709ddfcd71a75",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the note bobs up 1.2 units with a 5\u00b0 lean and settles. Strong: it hops 3.2 units after a small dip, leans 10\u00b0 and lands with a short bounce.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "music-note-head"
-            },
-            {
-              "type": "rigid",
-              "part": "music-note-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "music-note-flag"
-            }
-          ],
+          "nativeSha256": "1971914e835e8a8a57d293e8f5365f159e7f59ee54347208e87eda25fb201b6f",
+          "sourceSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
+          "planSha256": "127f04aaf62ff3cd7e065d8abca0022e9034ddbe0f714c92a592c16a53f36f5f",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A note is played. Light: the note springs up and lands on the beat, its flag trailing in the air and whipping out on the landing, as a sound arc rings out beside it and fades. Strong: it crouches, leaps higher, lands hard, bounces once more and lands again, the flag whipping on each landing and an arc ringing out with each.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "6b4e51c72944c234fcc77566daf04d30f4bbd3db7ac445697aa495b10128c541",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -480,12 +375,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4919,
-          "sha256": "65f191103fcafbd96ff7a224668729998696a8faeef77a8bdaaec2967331e25e"
+          "bytes": 3842,
+          "sha256": "917df6165a639096b7f10f17ee8950f24fd9c33dae7bc63777b2e70450d1ed3f"
         }
       ],
-      "bytes": 4917,
-      "sha256": "b915d19f3dfac7cdbbdf57480a3bac755ec823e81264f73f1a083b1fbd81a1b8"
+      "bytes": 3840,
+      "sha256": "10f12f94f5bd3aed54739d6b00a552596da52df478913f09c0f27e76a9314b3d"
     },
     {
       "name": "vinyl-record",
@@ -1949,34 +1844,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Loudspeaker",
-      "description": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+      "description": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
       "label": "Loudspeaker",
-      "intent": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+      "intent": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.66,
-      "rest": 43,
+      "active": 0.42,
+      "rest": 28,
       "keyPoses": [
         0,
-        0.132,
-        0.264,
-        0.396,
-        0.528,
-        0.66
+        0.084,
+        0.168,
+        0.252,
+        0.336,
+        0.42
       ],
-      "layers": 16,
+      "layers": 28,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -1986,20 +1879,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "34dac2f4a03ae31fdf585a2ec8b4014c2cd46e2abffe41bdb53497ba7161380b",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-        "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-        "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-        "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-        "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-      },
-      "brief": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+      "nativeSha256": "3d1abb47739c02db6a2339a3849df0c10e43f641d131548636b0d30d9fe7dea5",
+      "sourceSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
+      "planSha256": "760fa79ee4fcb6fa5fce46b605eaf3dfd529da6d9b3702f3ecbdc8dec09a7c03",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
       "constraints": [],
       "category": "Music & audio",
-      "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+      "definitionsSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -2030,34 +1917,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Loudspeaker",
-          "description": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "description": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "label": "Loudspeaker",
-          "intent": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "intent": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 16,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2067,20 +1952,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "34dac2f4a03ae31fdf585a2ec8b4014c2cd46e2abffe41bdb53497ba7161380b",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "nativeSha256": "3d1abb47739c02db6a2339a3849df0c10e43f641d131548636b0d30d9fe7dea5",
+          "sourceSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
+          "planSha256": "760fa79ee4fcb6fa5fce46b605eaf3dfd529da6d9b3702f3ecbdc8dec09a7c03",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2102,8 +1981,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 22010,
-          "sha256": "04aff9cbe708c7384d928578a8f7778ddd507a3420700e006ac683c7684d0bc2"
+          "bytes": 5703,
+          "sha256": "5de535f3eeb00f09c75c7e465eef0fa212b5b295d55db4f883158d9b92f85247"
         },
         {
           "name": "loudspeaker-strong",
@@ -2112,34 +1991,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Loudspeaker",
-          "description": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "description": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "label": "Loudspeaker",
-          "intent": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "intent": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.74,
-          "rest": 47,
+          "active": 0.68,
+          "rest": 44,
           "keyPoses": [
             0,
-            0.148,
-            0.296,
-            0.444,
-            0.592,
-            0.74
+            0.136,
+            0.272,
+            0.40800000000000003,
+            0.544,
+            0.68
           ],
-          "layers": 16,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2149,20 +2026,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "0e1694202e8bf79275a5980359d0cd45666f554893c6ee3bfe926eec3a0a527d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "nativeSha256": "f2c33ba416dfe73a529243079c4fa37f7f6b9eb191e74d09218f93199da65f4a",
+          "sourceSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
+          "planSha256": "760fa79ee4fcb6fa5fce46b605eaf3dfd529da6d9b3702f3ecbdc8dec09a7c03",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2184,8 +2055,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 22012,
-          "sha256": "b7975bdbb8867eac5db3186a4238347f5dd58d9c9aea5ec307296ccd71fedf3c"
+          "bytes": 5705,
+          "sha256": "67161725eb0ba59147914dfd6169de85911e151f168cb0bdcbc085c2fbf907f0"
         }
       ],
       "animations": [
@@ -2196,34 +2067,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Loudspeaker",
-          "description": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "description": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "label": "Loudspeaker",
-          "intent": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "intent": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 16,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2233,20 +2102,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "34dac2f4a03ae31fdf585a2ec8b4014c2cd46e2abffe41bdb53497ba7161380b",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "nativeSha256": "3d1abb47739c02db6a2339a3849df0c10e43f641d131548636b0d30d9fe7dea5",
+          "sourceSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
+          "planSha256": "760fa79ee4fcb6fa5fce46b605eaf3dfd529da6d9b3702f3ecbdc8dec09a7c03",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2268,8 +2131,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 22010,
-          "sha256": "04aff9cbe708c7384d928578a8f7778ddd507a3420700e006ac683c7684d0bc2"
+          "bytes": 5703,
+          "sha256": "5de535f3eeb00f09c75c7e465eef0fa212b5b295d55db4f883158d9b92f85247"
         },
         {
           "name": "loudspeaker-strong",
@@ -2278,34 +2141,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Loudspeaker",
-          "description": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "description": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "label": "Loudspeaker",
-          "intent": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "intent": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.74,
-          "rest": 47,
+          "active": 0.68,
+          "rest": 44,
           "keyPoses": [
             0,
-            0.148,
-            0.296,
-            0.444,
-            0.592,
-            0.74
+            0.136,
+            0.272,
+            0.40800000000000003,
+            0.544,
+            0.68
           ],
-          "layers": 16,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2315,20 +2176,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "0e1694202e8bf79275a5980359d0cd45666f554893c6ee3bfe926eec3a0a527d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the woofer cone pushes out once (ring and cap grow) and relaxes. Strong: three hard kicks in a row, each shaking the cabinet sideways.",
+          "nativeSha256": "f2c33ba416dfe73a529243079c4fa37f7f6b9eb191e74d09218f93199da65f4a",
+          "sourceSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
+          "planSha256": "760fa79ee4fcb6fa5fce46b605eaf3dfd529da6d9b3702f3ecbdc8dec09a7c03",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The speaker plays a beat. Light: the woofer cone kicks out once (the ring jumps wider and the dust cap punches out a beat behind it) and a sound arc leaves each side of the cabinet, fading as it travels out. Strong: two kicks, the second harder, each sending its pair of arcs, and the cabinet jolts with the second. The tweeter stays still.",
           "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "30bdb338485bd488ea2ebedfa2be60b89e91d6671423e88faa6b1c9bc535f1cd",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2350,12 +2205,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 22012,
-          "sha256": "b7975bdbb8867eac5db3186a4238347f5dd58d9c9aea5ec307296ccd71fedf3c"
+          "bytes": 5705,
+          "sha256": "67161725eb0ba59147914dfd6169de85911e151f168cb0bdcbc085c2fbf907f0"
         }
       ],
-      "bytes": 22010,
-      "sha256": "04aff9cbe708c7384d928578a8f7778ddd507a3420700e006ac683c7684d0bc2"
+      "bytes": 5703,
+      "sha256": "5de535f3eeb00f09c75c7e465eef0fa212b5b295d55db4f883158d9b92f85247"
     },
     {
       "name": "radio",
@@ -2824,34 +2679,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Metronome",
-      "description": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+      "description": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
       "label": "Metronome",
-      "intent": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+      "intent": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 1.04,
-      "rest": 65,
+      "active": 0.52,
+      "rest": 34,
       "keyPoses": [
         0,
+        0.10400000000000001,
         0.20800000000000002,
+        0.312,
         0.41600000000000004,
-        0.624,
-        0.8320000000000001,
-        1.04
+        0.52
       ],
-      "layers": 13,
+      "layers": 22,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -2861,33 +2714,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "b81d7bb4540cfdbbb4a218e735e58148142d30fa4a69b0ce7218f964d2397905",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-        "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-        "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-        "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-        "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-      },
-      "brief": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "metronome-body-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "metronome-rod"
-        },
-        {
-          "type": "rigid",
-          "part": "metronome-weight"
-        }
-      ],
+      "nativeSha256": "c22d3bbb36f09fbada99145a8ace135cc56bfdbff9187a0d5b977e2709cae285",
+      "sourceSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
+      "planSha256": "2918a471bbe1f3e4a9872488c22f922c1760064d03003fd68ca7293fd771a364",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
+      "constraints": [],
       "category": "Music & audio",
-      "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+      "definitionsSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -2918,34 +2752,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Metronome",
-          "description": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+          "description": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
           "label": "Metronome",
-          "intent": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+          "intent": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.04,
-          "rest": 65,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
+            0.10400000000000001,
             0.20800000000000002,
+            0.312,
             0.41600000000000004,
-            0.624,
-            0.8320000000000001,
-            1.04
+            0.52
           ],
-          "layers": 13,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2955,33 +2787,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "b81d7bb4540cfdbbb4a218e735e58148142d30fa4a69b0ce7218f964d2397905",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "metronome-body-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "metronome-rod"
-            },
-            {
-              "type": "rigid",
-              "part": "metronome-weight"
-            }
-          ],
+          "nativeSha256": "c22d3bbb36f09fbada99145a8ace135cc56bfdbff9187a0d5b977e2709cae285",
+          "sourceSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
+          "planSha256": "2918a471bbe1f3e4a9872488c22f922c1760064d03003fd68ca7293fd771a364",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3003,8 +2816,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4542,
-          "sha256": "33bc137687d4e7cc92fd1906198d15b3d9d5ed3e76b654b918830f71f6b68a00"
+          "bytes": 4034,
+          "sha256": "b5f7456f91776fbcbfe9c3a9823e735678e32022068887acf6b076b7cfd90249"
         },
         {
           "name": "metronome-strong",
@@ -3013,34 +2826,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Metronome",
-          "description": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+          "description": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
           "label": "Metronome",
-          "intent": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+          "intent": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.76,
-          "rest": 48,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.15200000000000002,
-            0.30400000000000005,
-            0.45599999999999996,
-            0.6080000000000001,
-            0.76
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 13,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3050,33 +2861,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "832d308e02e4fb3fe884cd5d540a2a87673043ef0f4a0b5c2f398e2c99c70606",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "metronome-body-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "metronome-rod"
-            },
-            {
-              "type": "rigid",
-              "part": "metronome-weight"
-            }
-          ],
+          "nativeSha256": "393e8496e1567ad41b43f2de81278a970e5055f13a6c8e8fe56a72b4cf483d6b",
+          "sourceSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
+          "planSha256": "2918a471bbe1f3e4a9872488c22f922c1760064d03003fd68ca7293fd771a364",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3098,8 +2890,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4544,
-          "sha256": "705c1318eb5b78b0371796bf9aa2751a410b6594377302fe1f49089d9bd84034"
+          "bytes": 4036,
+          "sha256": "ccc0b558a78dad2875c69d6e9c9cadc2267d9bcc9ce3ac9c72b127e35a7b05ba"
         }
       ],
       "animations": [
@@ -3110,34 +2902,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Metronome",
-          "description": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+          "description": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
           "label": "Metronome",
-          "intent": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+          "intent": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.04,
-          "rest": 65,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
+            0.10400000000000001,
             0.20800000000000002,
+            0.312,
             0.41600000000000004,
-            0.624,
-            0.8320000000000001,
-            1.04
+            0.52
           ],
-          "layers": 13,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3147,33 +2937,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "b81d7bb4540cfdbbb4a218e735e58148142d30fa4a69b0ce7218f964d2397905",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "metronome-body-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "metronome-rod"
-            },
-            {
-              "type": "rigid",
-              "part": "metronome-weight"
-            }
-          ],
+          "nativeSha256": "c22d3bbb36f09fbada99145a8ace135cc56bfdbff9187a0d5b977e2709cae285",
+          "sourceSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
+          "planSha256": "2918a471bbe1f3e4a9872488c22f922c1760064d03003fd68ca7293fd771a364",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3195,8 +2966,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4542,
-          "sha256": "33bc137687d4e7cc92fd1906198d15b3d9d5ed3e76b654b918830f71f6b68a00"
+          "bytes": 4034,
+          "sha256": "b5f7456f91776fbcbfe9c3a9823e735678e32022068887acf6b076b7cfd90249"
         },
         {
           "name": "metronome-strong",
@@ -3205,34 +2976,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Metronome",
-          "description": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+          "description": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
           "label": "Metronome",
-          "intent": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
+          "intent": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.76,
-          "rest": 48,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.15200000000000002,
-            0.30400000000000005,
-            0.45599999999999996,
-            0.6080000000000001,
-            0.76
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 13,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3242,33 +3011,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "832d308e02e4fb3fe884cd5d540a2a87673043ef0f4a0b5c2f398e2c99c70606",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the pendulum swings 7\u00b0 each way once and returns to centre. Strong: it swings 14\u00b0 each way with a hard stop at each extreme.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "metronome-body-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "metronome-rod"
-            },
-            {
-              "type": "rigid",
-              "part": "metronome-weight"
-            }
-          ],
+          "nativeSha256": "393e8496e1567ad41b43f2de81278a970e5055f13a6c8e8fe56a72b4cf483d6b",
+          "sourceSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
+          "planSha256": "2918a471bbe1f3e4a9872488c22f922c1760064d03003fd68ca7293fd771a364",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The metronome ticks. Light: the pendulum swings out to the left and stops dead on the beat, a tick arc flashing out beside the weight, then falls back to centre with a small settle. Strong: tick then tock: it hits the left stop (tick arc left), swings across to hit the right stop (tock arc right) and settles back on centre. The body never moves.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "2bec56d3e45216e714b0209d55b45c14b0c989c1019d6a16262b668021f74d85",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3290,12 +3040,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4544,
-          "sha256": "705c1318eb5b78b0371796bf9aa2751a410b6594377302fe1f49089d9bd84034"
+          "bytes": 4036,
+          "sha256": "ccc0b558a78dad2875c69d6e9c9cadc2267d9bcc9ce3ac9c72b127e35a7b05ba"
         }
       ],
-      "bytes": 4542,
-      "sha256": "33bc137687d4e7cc92fd1906198d15b3d9d5ed3e76b654b918830f71f6b68a00"
+      "bytes": 4034,
+      "sha256": "b5f7456f91776fbcbfe9c3a9823e735678e32022068887acf6b076b7cfd90249"
     },
     {
       "name": "tuner",
@@ -4949,34 +4699,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Guitar",
-      "description": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+      "description": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
       "label": "Guitar",
-      "intent": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+      "intent": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.9,
-      "rest": 57,
+      "active": 0.44,
+      "rest": 29,
       "keyPoses": [
         0,
-        0.18000000000000002,
-        0.36000000000000004,
-        0.54,
-        0.7200000000000001,
-        0.9
+        0.08800000000000001,
+        0.17600000000000002,
+        0.264,
+        0.35200000000000004,
+        0.44
       ],
-      "layers": 16,
+      "layers": 27,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -4986,33 +4734,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "373d400f5d0b1164b48878a85172fba50020fd1e15486d9c6fd73b33dc02fa23",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-        "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-        "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-        "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-        "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-      },
-      "brief": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "guitar-body"
-        },
-        {
-          "type": "rigid",
-          "part": "guitar-neck"
-        },
-        {
-          "type": "rigid",
-          "part": "guitar-head"
-        }
-      ],
+      "nativeSha256": "8980db2869a9ad244eaf0cf0c730c0297bad42d57c2cdd8c32333333b896378d",
+      "sourceSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
+      "planSha256": "30b7c64430815ee3263875a0c5152ae18668c367d7f3e1c2db263bd6c6cf9f26",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
+      "constraints": [],
       "category": "Music & audio",
-      "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+      "definitionsSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -5043,34 +4772,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Guitar",
-          "description": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+          "description": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
           "label": "Guitar",
-          "intent": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+          "intent": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.44,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.08800000000000001,
+            0.17600000000000002,
+            0.264,
+            0.35200000000000004,
+            0.44
           ],
-          "layers": 16,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5080,33 +4807,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "373d400f5d0b1164b48878a85172fba50020fd1e15486d9c6fd73b33dc02fa23",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "guitar-body"
-            },
-            {
-              "type": "rigid",
-              "part": "guitar-neck"
-            },
-            {
-              "type": "rigid",
-              "part": "guitar-head"
-            }
-          ],
+          "nativeSha256": "8980db2869a9ad244eaf0cf0c730c0297bad42d57c2cdd8c32333333b896378d",
+          "sourceSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
+          "planSha256": "30b7c64430815ee3263875a0c5152ae18668c367d7f3e1c2db263bd6c6cf9f26",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5128,8 +4836,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 32841,
-          "sha256": "d65338779d85670d56e1f3cf674e32439b6fdfcbb81b3092a714af1fab60f338"
+          "bytes": 4888,
+          "sha256": "2c070eacb9618a432937ded4c8ab892c2780de1ce055a5db2832a40d6110d687"
         },
         {
           "name": "guitar-strong",
@@ -5138,34 +4846,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Guitar",
-          "description": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+          "description": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
           "label": "Guitar",
-          "intent": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+          "intent": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.74,
-          "rest": 47,
+          "active": 0.66,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.148,
-            0.296,
-            0.444,
-            0.592,
-            0.74
+            0.132,
+            0.264,
+            0.396,
+            0.528,
+            0.66
           ],
-          "layers": 16,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5175,33 +4881,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9e677fcf10ba12ff84b8c5587bcb57f2ec59efbf821c14f8985f8501f0eda975",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "guitar-body"
-            },
-            {
-              "type": "rigid",
-              "part": "guitar-neck"
-            },
-            {
-              "type": "rigid",
-              "part": "guitar-head"
-            }
-          ],
+          "nativeSha256": "53cbd2255bee76ee0a6264c7703eed97c20f2ea5c2fc9606198c7e9df132a100",
+          "sourceSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
+          "planSha256": "30b7c64430815ee3263875a0c5152ae18668c367d7f3e1c2db263bd6c6cf9f26",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5223,8 +4910,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 32843,
-          "sha256": "7dd1c1557602b7cd650a9ec2111756ec19a36f50f8db6ca7a3605f53a9231296"
+          "bytes": 4890,
+          "sha256": "1096066619dc85621990a8779f49b002901042e98b6c1c14504763499f4609c9"
         }
       ],
       "animations": [
@@ -5235,34 +4922,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Guitar",
-          "description": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+          "description": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
           "label": "Guitar",
-          "intent": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+          "intent": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.44,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.08800000000000001,
+            0.17600000000000002,
+            0.264,
+            0.35200000000000004,
+            0.44
           ],
-          "layers": 16,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5272,33 +4957,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "373d400f5d0b1164b48878a85172fba50020fd1e15486d9c6fd73b33dc02fa23",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "guitar-body"
-            },
-            {
-              "type": "rigid",
-              "part": "guitar-neck"
-            },
-            {
-              "type": "rigid",
-              "part": "guitar-head"
-            }
-          ],
+          "nativeSha256": "8980db2869a9ad244eaf0cf0c730c0297bad42d57c2cdd8c32333333b896378d",
+          "sourceSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
+          "planSha256": "30b7c64430815ee3263875a0c5152ae18668c367d7f3e1c2db263bd6c6cf9f26",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5320,8 +4986,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 32841,
-          "sha256": "d65338779d85670d56e1f3cf674e32439b6fdfcbb81b3092a714af1fab60f338"
+          "bytes": 4888,
+          "sha256": "2c070eacb9618a432937ded4c8ab892c2780de1ce055a5db2832a40d6110d687"
         },
         {
           "name": "guitar-strong",
@@ -5330,34 +4996,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Guitar",
-          "description": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+          "description": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
           "label": "Guitar",
-          "intent": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
+          "intent": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.74,
-          "rest": 47,
+          "active": 0.66,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.148,
-            0.296,
-            0.444,
-            0.592,
-            0.74
+            0.132,
+            0.264,
+            0.396,
+            0.528,
+            0.66
           ],
-          "layers": 16,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5367,33 +5031,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9e677fcf10ba12ff84b8c5587bcb57f2ec59efbf821c14f8985f8501f0eda975",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the guitar rocks 3\u00b0 one way and 2\u00b0 back before settling. Strong: a strum kicks it 8\u00b0 with a spring settle while the sound hole pumps once.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "guitar-body"
-            },
-            {
-              "type": "rigid",
-              "part": "guitar-neck"
-            },
-            {
-              "type": "rigid",
-              "part": "guitar-head"
-            }
-          ],
+          "nativeSha256": "53cbd2255bee76ee0a6264c7703eed97c20f2ea5c2fc9606198c7e9df132a100",
+          "sourceSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
+          "planSha256": "30b7c64430815ee3263875a0c5152ae18668c367d7f3e1c2db263bd6c6cf9f26",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A strum rings out. Light: the strum knocks the guitar into a quick sway, the sound hole pumps once and a pair of sound arcs leave both sides of the body and fade as they travel out. Strong: a down-strum then an up-strum: two knocks the other way each time, two pumps and two waves of arcs, settling upright.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "2c6d3d91e1896df74aa0f27cec12acdb8e6322581b59712a64d9aee16d7ed8df",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5415,12 +5060,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 32843,
-          "sha256": "7dd1c1557602b7cd650a9ec2111756ec19a36f50f8db6ca7a3605f53a9231296"
+          "bytes": 4890,
+          "sha256": "1096066619dc85621990a8779f49b002901042e98b6c1c14504763499f4609c9"
         }
       ],
-      "bytes": 32841,
-      "sha256": "d65338779d85670d56e1f3cf674e32439b6fdfcbb81b3092a714af1fab60f338"
+      "bytes": 4888,
+      "sha256": "2c070eacb9618a432937ded4c8ab892c2780de1ce055a5db2832a40d6110d687"
     },
     {
       "name": "drum",
@@ -7294,34 +6939,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Earbuds",
-      "description": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+      "description": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
       "label": "Earbuds",
-      "intent": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+      "intent": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.76,
-      "rest": 48,
+      "active": 0.54,
+      "rest": 35,
       "keyPoses": [
         0,
-        0.15200000000000002,
-        0.30400000000000005,
-        0.45599999999999996,
-        0.6080000000000001,
-        0.76
+        0.10800000000000001,
+        0.21600000000000003,
+        0.324,
+        0.43200000000000005,
+        0.54
       ],
-      "layers": 16,
+      "layers": 26,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -7331,37 +6974,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "035df61a4be518fac357fee211f77f614d21038466d334772d330f078839dceb",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-        "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-        "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-        "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-        "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-      },
-      "brief": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-a"
-        },
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-a-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-b"
-        },
-        {
-          "type": "rigid",
-          "part": "earbuds-bud-b-stem"
-        }
-      ],
+      "nativeSha256": "2aa3a38989ecccf34477a8e32c094c0bca442094512d5279e953c5485d33e21c",
+      "sourceSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
+      "planSha256": "b9e1e62aaedee4dc22de4c6974fc122931188d50b782ee259b5bf57d8d63cd54",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
+      "constraints": [],
       "category": "Music & audio",
-      "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+      "definitionsSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -7392,34 +7012,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Earbuds",
-          "description": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+          "description": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
           "label": "Earbuds",
-          "intent": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+          "intent": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.76,
-          "rest": 48,
+          "active": 0.54,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.15200000000000002,
-            0.30400000000000005,
-            0.45599999999999996,
-            0.6080000000000001,
-            0.76
+            0.10800000000000001,
+            0.21600000000000003,
+            0.324,
+            0.43200000000000005,
+            0.54
           ],
-          "layers": 16,
+          "layers": 26,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7429,37 +7047,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "035df61a4be518fac357fee211f77f614d21038466d334772d330f078839dceb",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-a"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-a-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-b"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-b-stem"
-            }
-          ],
+          "nativeSha256": "2aa3a38989ecccf34477a8e32c094c0bca442094512d5279e953c5485d33e21c",
+          "sourceSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
+          "planSha256": "b9e1e62aaedee4dc22de4c6974fc122931188d50b782ee259b5bf57d8d63cd54",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7481,8 +7076,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5495,
-          "sha256": "aa8493ad9f1cec43ebea8b5ca78e274633e6e90d17778fcbde90fc62b75d751f"
+          "bytes": 4295,
+          "sha256": "b7e0d856a9713d944ea1b07149a2233a85d58d3eab900841f8f8cce9fca9da17"
         },
         {
           "name": "earbuds-strong",
@@ -7491,34 +7086,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Earbuds",
-          "description": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+          "description": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
           "label": "Earbuds",
-          "intent": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+          "intent": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.7799999999999999,
+          "rest": 50,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.156,
+            0.312,
+            0.4679999999999999,
+            0.624,
+            0.7799999999999999
           ],
-          "layers": 16,
+          "layers": 26,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7528,37 +7121,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "d1571b6c91b546dad1e018d50d6028be0b21c95ab4b8870edcbd1b88393c3114",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-a"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-a-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-b"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-b-stem"
-            }
-          ],
+          "nativeSha256": "ceac3c2993378bec6e0a0de832251a4933f5dd1cf56bc9ed0fda5e12e99b6ff0",
+          "sourceSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
+          "planSha256": "b9e1e62aaedee4dc22de4c6974fc122931188d50b782ee259b5bf57d8d63cd54",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7580,8 +7150,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5497,
-          "sha256": "92b18b2b7ce88a41fd57339aebe296f922499f06a02165a8d6bb24808837cf8a"
+          "bytes": 4297,
+          "sha256": "8c7fbb3ab06353c4e37a19591d4854ea96d72e44e4c742aa6b47fc65f46bb93d"
         }
       ],
       "animations": [
@@ -7592,34 +7162,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Earbuds",
-          "description": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+          "description": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
           "label": "Earbuds",
-          "intent": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+          "intent": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.76,
-          "rest": 48,
+          "active": 0.54,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.15200000000000002,
-            0.30400000000000005,
-            0.45599999999999996,
-            0.6080000000000001,
-            0.76
+            0.10800000000000001,
+            0.21600000000000003,
+            0.324,
+            0.43200000000000005,
+            0.54
           ],
-          "layers": 16,
+          "layers": 26,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7629,37 +7197,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "035df61a4be518fac357fee211f77f614d21038466d334772d330f078839dceb",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-a"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-a-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-b"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-b-stem"
-            }
-          ],
+          "nativeSha256": "2aa3a38989ecccf34477a8e32c094c0bca442094512d5279e953c5485d33e21c",
+          "sourceSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
+          "planSha256": "b9e1e62aaedee4dc22de4c6974fc122931188d50b782ee259b5bf57d8d63cd54",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7681,8 +7226,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5495,
-          "sha256": "aa8493ad9f1cec43ebea8b5ca78e274633e6e90d17778fcbde90fc62b75d751f"
+          "bytes": 4295,
+          "sha256": "b7e0d856a9713d944ea1b07149a2233a85d58d3eab900841f8f8cce9fca9da17"
         },
         {
           "name": "earbuds-strong",
@@ -7691,34 +7236,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Earbuds",
-          "description": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+          "description": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
           "label": "Earbuds",
-          "intent": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
+          "intent": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.7799999999999999,
+          "rest": 50,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.156,
+            0.312,
+            0.4679999999999999,
+            0.624,
+            0.7799999999999999
           ],
-          "layers": 16,
+          "layers": 26,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7728,37 +7271,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "d1571b6c91b546dad1e018d50d6028be0b21c95ab4b8870edcbd1b88393c3114",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the two buds bob 0.9 units one after the other. Strong: each bud hops 2.6 units and tilts outward 9\u00b0 with a spring, left then right.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-a"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-a-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-b"
-            },
-            {
-              "type": "rigid",
-              "part": "earbuds-bud-b-stem"
-            }
-          ],
+          "nativeSha256": "ceac3c2993378bec6e0a0de832251a4933f5dd1cf56bc9ed0fda5e12e99b6ff0",
+          "sourceSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
+          "planSha256": "b9e1e62aaedee4dc22de4c6974fc122931188d50b782ee259b5bf57d8d63cd54",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Music plays in the earbuds. Light: on the beat each bud pops up and lands hard, and a sound arc leaves its outer side and fades as it travels out; the right bud answers the left a beat later. Strong: two beats, the first bigger, each bud sending an arc on every landing.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "6388a27f06d472ff704f5de28f030a186ac61d6f48927a9daaa1f92288bf61aa",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7780,12 +7300,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5497,
-          "sha256": "92b18b2b7ce88a41fd57339aebe296f922499f06a02165a8d6bb24808837cf8a"
+          "bytes": 4297,
+          "sha256": "8c7fbb3ab06353c4e37a19591d4854ea96d72e44e4c742aa6b47fc65f46bb93d"
         }
       ],
-      "bytes": 5495,
-      "sha256": "aa8493ad9f1cec43ebea8b5ca78e274633e6e90d17778fcbde90fc62b75d751f"
+      "bytes": 4295,
+      "sha256": "b7e0d856a9713d944ea1b07149a2233a85d58d3eab900841f8f8cce9fca9da17"
     },
     {
       "name": "mute-audio",
@@ -11774,34 +11294,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Spatial audio",
-      "description": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+      "description": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
       "label": "Spatial audio",
-      "intent": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+      "intent": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.72,
-      "rest": 46,
+      "active": 0.5,
+      "rest": 33,
       "keyPoses": [
         0,
-        0.144,
-        0.288,
-        0.432,
-        0.576,
-        0.72
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5
       ],
-      "layers": 20,
+      "layers": 21,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -11811,29 +11329,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "81db039fef894c6b4ebe84398cfceca3d91e9bf6b86547d14ec6c61cd0546ba4",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-        "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-        "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-        "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-        "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-      },
-      "brief": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "spatial-audio-head"
-        },
-        {
-          "type": "fixed",
-          "part": "spatial-audio-shoulders"
-        }
-      ],
+      "nativeSha256": "3c72610cbf553dda8d4cecfced0f71833505bba24b9512fad4d203053eee2d3b",
+      "sourceSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
+      "planSha256": "48282dfba0f54edd16c9dd8814577acb5446b5978f08a2c14c577ef855d3c6e7",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
+      "constraints": [],
       "category": "Music & audio",
-      "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+      "definitionsSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -11864,34 +11367,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Spatial audio",
-          "description": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+          "description": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
           "label": "Spatial audio",
-          "intent": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+          "intent": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.72,
-          "rest": 46,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.144,
-            0.288,
-            0.432,
-            0.576,
-            0.72
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 20,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11901,29 +11402,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "81db039fef894c6b4ebe84398cfceca3d91e9bf6b86547d14ec6c61cd0546ba4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "spatial-audio-head"
-            },
-            {
-              "type": "fixed",
-              "part": "spatial-audio-shoulders"
-            }
-          ],
+          "nativeSha256": "3c72610cbf553dda8d4cecfced0f71833505bba24b9512fad4d203053eee2d3b",
+          "sourceSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
+          "planSha256": "48282dfba0f54edd16c9dd8814577acb5446b5978f08a2c14c577ef855d3c6e7",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11945,8 +11431,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17582,
-          "sha256": "b757c3d01bb7288b3fe00cb9a73e309c7315019407476f897ead16bc12d2ae71"
+          "bytes": 3760,
+          "sha256": "3a6aa2128debf1ffa86bc2be70651cb81d08df1c900e4c03e801880e4b523803"
         },
         {
           "name": "spatial-audio-strong",
@@ -11955,34 +11441,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Spatial audio",
-          "description": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+          "description": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
           "label": "Spatial audio",
-          "intent": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+          "intent": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.76,
-          "rest": 48,
+          "active": 0.84,
+          "rest": 53,
           "keyPoses": [
             0,
-            0.15200000000000002,
-            0.30400000000000005,
-            0.45599999999999996,
-            0.6080000000000001,
-            0.76
+            0.168,
+            0.336,
+            0.504,
+            0.672,
+            0.84
           ],
-          "layers": 20,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11992,29 +11476,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "40be619e2d7473530035af9d3b33162d2ec28babe40f8e9955fd6bfba3985974",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "spatial-audio-head"
-            },
-            {
-              "type": "fixed",
-              "part": "spatial-audio-shoulders"
-            }
-          ],
+          "nativeSha256": "6daf4c7cec8b1a435a23169f1c943e2cf9bbe33cac79fa1d7839c5e7f18b9379",
+          "sourceSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
+          "planSha256": "48282dfba0f54edd16c9dd8814577acb5446b5978f08a2c14c577ef855d3c6e7",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12036,8 +11505,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17584,
-          "sha256": "bcc2d3f42ea8271fbe92ee56d61d84937ec67fdcffd3e13864e6057c2b7f36ee"
+          "bytes": 3762,
+          "sha256": "842067e32662ad5e9d9cec8ac22d82eb86abc027cdd665b5339ebcc57eeb1129"
         }
       ],
       "animations": [
@@ -12048,34 +11517,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Spatial audio",
-          "description": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+          "description": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
           "label": "Spatial audio",
-          "intent": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+          "intent": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.72,
-          "rest": 46,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.144,
-            0.288,
-            0.432,
-            0.576,
-            0.72
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 20,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12085,29 +11552,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "81db039fef894c6b4ebe84398cfceca3d91e9bf6b86547d14ec6c61cd0546ba4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "spatial-audio-head"
-            },
-            {
-              "type": "fixed",
-              "part": "spatial-audio-shoulders"
-            }
-          ],
+          "nativeSha256": "3c72610cbf553dda8d4cecfced0f71833505bba24b9512fad4d203053eee2d3b",
+          "sourceSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
+          "planSha256": "48282dfba0f54edd16c9dd8814577acb5446b5978f08a2c14c577ef855d3c6e7",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12129,8 +11581,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17582,
-          "sha256": "b757c3d01bb7288b3fe00cb9a73e309c7315019407476f897ead16bc12d2ae71"
+          "bytes": 3760,
+          "sha256": "3a6aa2128debf1ffa86bc2be70651cb81d08df1c900e4c03e801880e4b523803"
         },
         {
           "name": "spatial-audio-strong",
@@ -12139,34 +11591,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Spatial audio",
-          "description": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+          "description": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
           "label": "Spatial audio",
-          "intent": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
+          "intent": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.76,
-          "rest": 48,
+          "active": 0.84,
+          "rest": 53,
           "keyPoses": [
             0,
-            0.15200000000000002,
-            0.30400000000000005,
-            0.45599999999999996,
-            0.6080000000000001,
-            0.76
+            0.168,
+            0.336,
+            0.504,
+            0.672,
+            0.84
           ],
-          "layers": 20,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12176,29 +11626,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "40be619e2d7473530035af9d3b33162d2ec28babe40f8e9955fd6bfba3985974",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the three surrounding arcs breathe 0.9 units outward and back. Strong: the arcs orbit the listener through one full turn and stop where they started.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "spatial-audio-head"
-            },
-            {
-              "type": "fixed",
-              "part": "spatial-audio-shoulders"
-            }
-          ],
+          "nativeSha256": "6daf4c7cec8b1a435a23169f1c943e2cf9bbe33cac79fa1d7839c5e7f18b9379",
+          "sourceSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
+          "planSha256": "48282dfba0f54edd16c9dd8814577acb5446b5978f08a2c14c577ef855d3c6e7",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Sound moves around the listener. Light: the sound sweeps from the left, over the top, to the right: each arc in turn pushes in toward the listener and springs back. Strong: the whole sound field winds back, then travels a full turn around the listener, overshoots and settles where it started.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "892898218ddabc77ee67c4f22f7dc8fea8deebd0ba5eb295389a51e75dc2214a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12220,12 +11655,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17584,
-          "sha256": "bcc2d3f42ea8271fbe92ee56d61d84937ec67fdcffd3e13864e6057c2b7f36ee"
+          "bytes": 3762,
+          "sha256": "842067e32662ad5e9d9cec8ac22d82eb86abc027cdd665b5339ebcc57eeb1129"
         }
       ],
-      "bytes": 17582,
-      "sha256": "b757c3d01bb7288b3fe00cb9a73e309c7315019407476f897ead16bc12d2ae71"
+      "bytes": 3760,
+      "sha256": "3a6aa2128debf1ffa86bc2be70651cb81d08df1c900e4c03e801880e4b523803"
     },
     {
       "name": "tuning-fork",
@@ -12234,34 +11669,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Tuning fork",
-      "description": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+      "description": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
       "label": "Tuning fork",
-      "intent": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+      "intent": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.8,
-      "rest": 51,
+      "active": 0.5,
+      "rest": 33,
       "keyPoses": [
         0,
-        0.16000000000000003,
-        0.32000000000000006,
-        0.48,
-        0.6400000000000001,
-        0.8
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5
       ],
-      "layers": 12,
+      "layers": 21,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -12271,29 +11704,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "26e22eb5ba92d86221d623b4324529b1587f7a4ee7321d6687df0dca96e2cc90",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-        "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-        "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-        "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-        "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-      },
-      "brief": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "tuning-fork-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "tuning-fork-knob"
-        }
-      ],
+      "nativeSha256": "7767c0643ddb85f4ef936972de11279b4e04e864a484e0fe81042d79671eb283",
+      "sourceSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
+      "planSha256": "c616eb41e562ae1aa37528811545f6d6a3b5b95143fc1066a7bf87d63301f2e8",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
+      "constraints": [],
       "category": "Music & audio",
-      "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+      "definitionsSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -12324,34 +11742,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Tuning fork",
-          "description": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+          "description": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
           "label": "Tuning fork",
-          "intent": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+          "intent": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.8,
-          "rest": 51,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.16000000000000003,
-            0.32000000000000006,
-            0.48,
-            0.6400000000000001,
-            0.8
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 12,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12361,29 +11777,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "26e22eb5ba92d86221d623b4324529b1587f7a4ee7321d6687df0dca96e2cc90",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "tuning-fork-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "tuning-fork-knob"
-            }
-          ],
+          "nativeSha256": "7767c0643ddb85f4ef936972de11279b4e04e864a484e0fe81042d79671eb283",
+          "sourceSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
+          "planSha256": "c616eb41e562ae1aa37528811545f6d6a3b5b95143fc1066a7bf87d63301f2e8",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12405,8 +11806,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 6703,
-          "sha256": "7262b59a915e8ddbf5dfd895a99a2d73c65bc4409e1166c74507ff60e594182e"
+          "bytes": 4228,
+          "sha256": "7d1337d3fd690911faee40efd45cea0013dc905690477a807f1478fa36608bbe"
         },
         {
           "name": "tuning-fork-strong",
@@ -12415,34 +11816,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Tuning fork",
-          "description": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+          "description": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
           "label": "Tuning fork",
-          "intent": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+          "intent": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.85,
+          "rest": 54,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.17,
+            0.34,
+            0.51,
+            0.68,
+            0.85
           ],
-          "layers": 12,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12452,29 +11851,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2e1f383edc323e8486f4af1842b1fa6c0982f40a6cb284991c9749d201b74d07",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "tuning-fork-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "tuning-fork-knob"
-            }
-          ],
+          "nativeSha256": "e971ba07cfb978069070dfdadfc0bb8163e74b2a5507dc84807e55f272c211ab",
+          "sourceSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
+          "planSha256": "c616eb41e562ae1aa37528811545f6d6a3b5b95143fc1066a7bf87d63301f2e8",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12496,8 +11880,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 6705,
-          "sha256": "1168bd386a481ae7c1a57c1d83c76b3897bdefa6ca98bc54bb8969fdfb826e86"
+          "bytes": 4230,
+          "sha256": "45fea092cc81291f176ff24e180e161dd7a19512cfd1e86f2b28921a1dce2ccd"
         }
       ],
       "animations": [
@@ -12508,34 +11892,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Tuning fork",
-          "description": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+          "description": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
           "label": "Tuning fork",
-          "intent": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+          "intent": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.8,
-          "rest": 51,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.16000000000000003,
-            0.32000000000000006,
-            0.48,
-            0.6400000000000001,
-            0.8
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 12,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12545,29 +11927,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "26e22eb5ba92d86221d623b4324529b1587f7a4ee7321d6687df0dca96e2cc90",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "tuning-fork-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "tuning-fork-knob"
-            }
-          ],
+          "nativeSha256": "7767c0643ddb85f4ef936972de11279b4e04e864a484e0fe81042d79671eb283",
+          "sourceSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
+          "planSha256": "c616eb41e562ae1aa37528811545f6d6a3b5b95143fc1066a7bf87d63301f2e8",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12589,8 +11956,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 6703,
-          "sha256": "7262b59a915e8ddbf5dfd895a99a2d73c65bc4409e1166c74507ff60e594182e"
+          "bytes": 4228,
+          "sha256": "7d1337d3fd690911faee40efd45cea0013dc905690477a807f1478fa36608bbe"
         },
         {
           "name": "tuning-fork-strong",
@@ -12599,34 +11966,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Tuning fork",
-          "description": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+          "description": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
           "label": "Tuning fork",
-          "intent": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
+          "intent": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.85,
+          "rest": 54,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.17,
+            0.34,
+            0.51,
+            0.68,
+            0.85
           ],
-          "layers": 12,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12636,29 +12001,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2e1f383edc323e8486f4af1842b1fa6c0982f40a6cb284991c9749d201b74d07",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "d955dbfed8077fcd0a34f2f9ad23a1ef7736333206d5e2c5f03ba3539388f1e9",
-            "batches/helpers.mjs": "042d4a7563105dd23629a7590fa425840340162cb45ff8e4dc361dc670d97029",
-            "batches/music-a.mjs": "eed6b598bb9627863a81ed41c04ff48f3fdd6ae092117afa2254a9496abb49d4",
-            "batches/music-b.mjs": "68484abb43bf563f3cd526e33a71589024c84496ae7b67b07a8cf94285862af2",
-            "batches/music-c.mjs": "db322fe93bb1b7abf74f2cecb4004a7f78845566889cb1a1645163fbf482aa51"
-          },
-          "brief": "Light: the prong tips vibrate 0.6 units in opposite directions and die away. Strong: the fork drops, strikes and rings with a 1.4-unit vibration that decays over 0.8 s.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "tuning-fork-stem"
-            },
-            {
-              "type": "rigid",
-              "part": "tuning-fork-knob"
-            }
-          ],
+          "nativeSha256": "e971ba07cfb978069070dfdadfc0bb8163e74b2a5507dc84807e55f272c211ab",
+          "sourceSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
+          "planSha256": "c616eb41e562ae1aa37528811545f6d6a3b5b95143fc1066a7bf87d63301f2e8",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The fork is struck and rings. Light: a tap jolts the fork, its prongs ring (spreading and closing in a decaying vibration) and a pair of sound arcs leave the prong tips and fade as they travel out. Strong: the fork is raised and struck hard, the prongs ring wider and longer, and two waves of arcs leave in turn.",
+          "constraints": [],
           "category": "Music & audio",
-          "definitionsSha256": "79b2bbb2350befa1f593524c414b764b4998a8a201193baf347dec0e569de46e",
+          "definitionsSha256": "34e8d07b26e9e4e0cbdaf640283802fd08e8d8c1cf86fc0d53d5ce7ffc136aa0",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12680,12 +12030,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 6705,
-          "sha256": "1168bd386a481ae7c1a57c1d83c76b3897bdefa6ca98bc54bb8969fdfb826e86"
+          "bytes": 4230,
+          "sha256": "45fea092cc81291f176ff24e180e161dd7a19512cfd1e86f2b28921a1dce2ccd"
         }
       ],
-      "bytes": 6703,
-      "sha256": "7262b59a915e8ddbf5dfd895a99a2d73c65bc4409e1166c74507ff60e594182e"
+      "bytes": 4228,
+      "sha256": "7d1337d3fd690911faee40efd45cea0013dc905690477a807f1478fa36608bbe"
     }
   ]
 }

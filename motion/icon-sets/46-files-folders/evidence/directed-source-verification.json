@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 54,
-  "nativeTransformNodes": 136,
+  "nativeTransformNodes": 92,
   "nativeTransformMaxCoordinateError": 0.000011017337453012033,
   "checks": [
     {
@@ -408,74 +408,6 @@
       ]
     },
     {
-      "name": "file-search",
-      "fixedParts": [
-        "file-search-sheet-page",
-        "file-search-sheet-fold",
-        "file-search-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "file-search-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "file-search-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "file-search-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "file-search-lens"
-        },
-        {
-          "type": "rigid",
-          "part": "file-search-handle"
-        }
-      ]
-    },
-    {
-      "name": "file-search-strong",
-      "fixedParts": [
-        "file-search-sheet-page",
-        "file-search-sheet-fold",
-        "file-search-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "file-search-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "file-search-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "file-search-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "file-search-lens"
-        },
-        {
-          "type": "rigid",
-          "part": "file-search-handle"
-        }
-      ]
-    },
-    {
       "name": "file-preview",
       "fixedParts": [
         "file-preview-sheet-page",
@@ -534,66 +466,6 @@
         {
           "type": "fixed",
           "part": "file-preview-lower-lid"
-        }
-      ]
-    },
-    {
-      "name": "file-tag",
-      "fixedParts": [
-        "file-tag-sheet-page",
-        "file-tag-sheet-fold",
-        "file-tag-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "file-tag-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "file-tag-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "file-tag-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "file-tag-tag"
-        }
-      ]
-    },
-    {
-      "name": "file-tag-strong",
-      "fixedParts": [
-        "file-tag-sheet-page",
-        "file-tag-sheet-fold",
-        "file-tag-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "file-tag-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "file-tag-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "file-tag-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "file-tag-tag"
         }
       ]
     },
@@ -714,144 +586,6 @@
         {
           "type": "rigid",
           "part": "file-sync-arrow-b-arc"
-        }
-      ]
-    },
-    {
-      "name": "image-file",
-      "fixedParts": [
-        "image-file-sheet-page",
-        "image-file-sheet-fold",
-        "image-file-sheet-interior",
-        "image-file-peaks"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "image-file-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "image-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "image-file-sheet-interior"
-        },
-        {
-          "type": "fixed",
-          "part": "image-file-peaks"
-        },
-        {
-          "type": "rigid",
-          "part": "image-file-sun"
-        }
-      ]
-    },
-    {
-      "name": "image-file-strong",
-      "fixedParts": [
-        "image-file-sheet-page",
-        "image-file-sheet-fold",
-        "image-file-sheet-interior",
-        "image-file-peaks"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "image-file-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "image-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "image-file-sheet-interior"
-        },
-        {
-          "type": "fixed",
-          "part": "image-file-peaks"
-        },
-        {
-          "type": "rigid",
-          "part": "image-file-sun"
-        }
-      ]
-    },
-    {
-      "name": "code-file",
-      "fixedParts": [
-        "code-file-sheet-page",
-        "code-file-sheet-fold",
-        "code-file-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "code-file-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "code-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "code-file-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "code-file-bracket-l"
-        },
-        {
-          "type": "rigid",
-          "part": "code-file-bracket-r"
-        }
-      ]
-    },
-    {
-      "name": "code-file-strong",
-      "fixedParts": [
-        "code-file-sheet-page",
-        "code-file-sheet-fold",
-        "code-file-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "code-file-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "code-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "code-file-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "code-file-bracket-l"
-        },
-        {
-          "type": "rigid",
-          "part": "code-file-bracket-r"
         }
       ]
     },
@@ -998,62 +732,28 @@
           "part": "audio-file-sheet-interior"
         }
       ]
-    },
-    {
-      "name": "video-file",
-      "fixedParts": [
-        "video-file-sheet-page",
-        "video-file-sheet-fold",
-        "video-file-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "video-file-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "video-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "video-file-sheet-interior"
-        }
-      ]
-    },
-    {
-      "name": "video-file-strong",
-      "fixedParts": [
-        "video-file-sheet-page",
-        "video-file-sheet-fold",
-        "video-file-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "video-file-sheet-page"
-        },
-        {
-          "type": "fixed",
-          "part": "video-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "video-file-sheet-interior"
-        }
-      ]
     }
   ],
   "loopChecks": [],
   "adoptedSpecs": [
+    {
+      "icon": "file-search",
+      "spec": "specs/file-search.icon.json",
+      "specSha256": "c5ca7a65a0814988b339246ccfafd2b17762d59fdcb5a321c5c45c176f2680c6",
+      "actions": [
+        "file-search",
+        "file-search-strong"
+      ]
+    },
+    {
+      "icon": "file-tag",
+      "spec": "specs/file-tag.icon.json",
+      "specSha256": "7b6eac45ab2fc7e427c4ad954beb76515c99f97b95a2f5f5d183317881db8eb3",
+      "actions": [
+        "file-tag",
+        "file-tag-strong"
+      ]
+    },
     {
       "icon": "import-file",
       "spec": "specs/import-file.icon.json",
@@ -1070,6 +770,33 @@
       "actions": [
         "export-file",
         "export-file-strong"
+      ]
+    },
+    {
+      "icon": "image-file",
+      "spec": "specs/image-file.icon.json",
+      "specSha256": "41d87f7ea7f5bf6ef3260a1bde71eaf590d43776fc9c6290dfeff6e1d916800a",
+      "actions": [
+        "image-file",
+        "image-file-strong"
+      ]
+    },
+    {
+      "icon": "code-file",
+      "spec": "specs/code-file.icon.json",
+      "specSha256": "8e1b9a9731bc2903b21650c30b511d6b633d8aa2da4a84f370badcdcc24d4b32",
+      "actions": [
+        "code-file",
+        "code-file-strong"
+      ]
+    },
+    {
+      "icon": "video-file",
+      "spec": "specs/video-file.icon.json",
+      "specSha256": "315176ee6b02ef4aa0f05ce044342d75556b2c994a9555d1472b516dce42c8ad",
+      "actions": [
+        "video-file",
+        "video-file-strong"
       ]
     }
   ]

@@ -1359,34 +1359,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Directions",
-      "description": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+      "description": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
       "label": "Directions",
-      "intent": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+      "intent": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.8,
-      "rest": 51,
+      "active": 0.42,
+      "rest": 28,
       "keyPoses": [
         0,
-        0.16000000000000003,
-        0.32000000000000006,
-        0.48,
-        0.6400000000000001,
-        0.8
+        0.084,
+        0.168,
+        0.252,
+        0.336,
+        0.42
       ],
-      "layers": 5,
+      "layers": 16,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -1396,21 +1394,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "9eb84b82889ce0c7272cb3eba77503a54905682d06eb7c370f2626c70c0bfe80",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-      },
-      "brief": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "directions-pointer-frame"
-        }
-      ],
+      "nativeSha256": "2e458519d24ce28e2d49bdd2585ba39e04560efe5224185e3df7cbc528f56b9d",
+      "sourceSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
+      "planSha256": "f52f8419307b93fc93c7fbe47ad2c0de1483e35b57f4b305e79bd2d68a70e9fb",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
+      "constraints": [],
       "category": "Maps & navigation",
-      "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+      "definitionsSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -1441,34 +1432,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Directions",
-          "description": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+          "description": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
           "label": "Directions",
-          "intent": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+          "intent": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.8,
-          "rest": 51,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.16000000000000003,
-            0.32000000000000006,
-            0.48,
-            0.6400000000000001,
-            0.8
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 5,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1478,21 +1467,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9eb84b82889ce0c7272cb3eba77503a54905682d06eb7c370f2626c70c0bfe80",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "directions-pointer-frame"
-            }
-          ],
+          "nativeSha256": "2e458519d24ce28e2d49bdd2585ba39e04560efe5224185e3df7cbc528f56b9d",
+          "sourceSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
+          "planSha256": "f52f8419307b93fc93c7fbe47ad2c0de1483e35b57f4b305e79bd2d68a70e9fb",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1514,8 +1496,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3616,
-          "sha256": "bf64c02cbfc752b746dc16db205e6c5adcf1e182df387736e8f2ba9eb3632a83"
+          "bytes": 3617,
+          "sha256": "066f6ef7cf1cf7c071f7c5d0d463dd8b6d82ad367a03d77b154c8b7543366498"
         },
         {
           "name": "directions-strong",
@@ -1524,34 +1506,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Directions",
-          "description": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+          "description": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
           "label": "Directions",
-          "intent": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+          "intent": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.71,
+          "rest": 45,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.142,
+            0.284,
+            0.426,
+            0.568,
+            0.71
           ],
-          "layers": 5,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1561,21 +1541,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9b34aa61f8b0d9fc00827d1fbee94ca5b182a0501c9e3750d6e639c838998152",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "directions-pointer-frame"
-            }
-          ],
+          "nativeSha256": "cb7214c6759f47ddd038cb9a8ca7b6aeca71306eb1dc3b17fa9580804e08c16c",
+          "sourceSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
+          "planSha256": "f52f8419307b93fc93c7fbe47ad2c0de1483e35b57f4b305e79bd2d68a70e9fb",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1597,8 +1570,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3618,
-          "sha256": "1d6d222e0bb328c08a7be121b5dc274cc8695f232c1e53cce347720a57e6477e"
+          "bytes": 3619,
+          "sha256": "eb91c32682ec2175809820fd4c41c81b5c30d39f419944467e17d07e72a7a8be"
         }
       ],
       "animations": [
@@ -1609,34 +1582,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Directions",
-          "description": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+          "description": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
           "label": "Directions",
-          "intent": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+          "intent": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.8,
-          "rest": 51,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.16000000000000003,
-            0.32000000000000006,
-            0.48,
-            0.6400000000000001,
-            0.8
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 5,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1646,21 +1617,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9eb84b82889ce0c7272cb3eba77503a54905682d06eb7c370f2626c70c0bfe80",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "directions-pointer-frame"
-            }
-          ],
+          "nativeSha256": "2e458519d24ce28e2d49bdd2585ba39e04560efe5224185e3df7cbc528f56b9d",
+          "sourceSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
+          "planSha256": "f52f8419307b93fc93c7fbe47ad2c0de1483e35b57f4b305e79bd2d68a70e9fb",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1682,8 +1646,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3616,
-          "sha256": "bf64c02cbfc752b746dc16db205e6c5adcf1e182df387736e8f2ba9eb3632a83"
+          "bytes": 3617,
+          "sha256": "066f6ef7cf1cf7c071f7c5d0d463dd8b6d82ad367a03d77b154c8b7543366498"
         },
         {
           "name": "directions-strong",
@@ -1692,34 +1656,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Directions",
-          "description": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+          "description": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
           "label": "Directions",
-          "intent": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
+          "intent": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.71,
+          "rest": 45,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.142,
+            0.284,
+            0.426,
+            0.568,
+            0.71
           ],
-          "layers": 5,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1729,21 +1691,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9b34aa61f8b0d9fc00827d1fbee94ca5b182a0501c9e3750d6e639c838998152",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the pointer swings 28\u00b0 to the new heading and eases back. Strong: it winds back, snaps 52\u00b0 with a hard stop and damps to rest.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "directions-pointer-frame"
-            }
-          ],
+          "nativeSha256": "cb7214c6759f47ddd038cb9a8ca7b6aeca71306eb1dc3b17fa9580804e08c16c",
+          "sourceSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
+          "planSha256": "f52f8419307b93fc93c7fbe47ad2c0de1483e35b57f4b305e79bd2d68a70e9fb",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pointer sets off along its heading. Light: it draws back, launches forward and streaks out of view with two speed lines left behind its tail, then comes back up from behind as the route rolls on and arrives on its spot with a small overrun and settle. Strong: it first swings to find its heading and locks on with a hard stop, then draws back further, launches and arrives with a two-beat settle. The pointer stays rigid.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "8f4fcafbf6da651246129d7af231e525d44c60a5e33fe808772aa52091021c98",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1765,12 +1720,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3618,
-          "sha256": "1d6d222e0bb328c08a7be121b5dc274cc8695f232c1e53cce347720a57e6477e"
+          "bytes": 3619,
+          "sha256": "eb91c32682ec2175809820fd4c41c81b5c30d39f419944467e17d07e72a7a8be"
         }
       ],
-      "bytes": 3616,
-      "sha256": "bf64c02cbfc752b746dc16db205e6c5adcf1e182df387736e8f2ba9eb3632a83"
+      "bytes": 3617,
+      "sha256": "066f6ef7cf1cf7c071f7c5d0d463dd8b6d82ad367a03d77b154c8b7543366498"
     },
     {
       "name": "turn-by-turn",
@@ -4394,34 +4349,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Map layers",
-      "description": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+      "description": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
       "label": "Map layers",
-      "intent": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+      "intent": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.53,
+      "rest": 35,
       "keyPoses": [
         0,
-        0.12,
-        0.24,
-        0.36,
-        0.48,
-        0.6
+        0.10600000000000001,
+        0.21200000000000002,
+        0.318,
+        0.42400000000000004,
+        0.53
       ],
-      "layers": 13,
+      "layers": 21,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -4431,25 +4384,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "6f34adb27131970e430ea10b8e447de6a30f6ac08e3b0e19962e827b335d1d54",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-      },
-      "brief": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "map-layers-top-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "map-layers-layer-2"
-        }
-      ],
+      "nativeSha256": "88fe4a3513baf90eea0d756291750f3a04d1884e8f02d3b529d16434f72f2ed7",
+      "sourceSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
+      "planSha256": "ee30ce541066c0b810261d6279fa56cae4080f02318d15f6fc10afc299790c9e",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
+      "constraints": [],
       "category": "Maps & navigation",
-      "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+      "definitionsSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -4480,34 +4422,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Map layers",
-          "description": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+          "description": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
           "label": "Map layers",
-          "intent": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+          "intent": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.53,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.10600000000000001,
+            0.21200000000000002,
+            0.318,
+            0.42400000000000004,
+            0.53
           ],
-          "layers": 13,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4517,25 +4457,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6f34adb27131970e430ea10b8e447de6a30f6ac08e3b0e19962e827b335d1d54",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "map-layers-top-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "map-layers-layer-2"
-            }
-          ],
+          "nativeSha256": "88fe4a3513baf90eea0d756291750f3a04d1884e8f02d3b529d16434f72f2ed7",
+          "sourceSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
+          "planSha256": "ee30ce541066c0b810261d6279fa56cae4080f02318d15f6fc10afc299790c9e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4557,8 +4486,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3745,
-          "sha256": "53d1c0058f562a100cf144b60bc4f0f80968d7abf087e9749748ab3579c3246d"
+          "bytes": 3675,
+          "sha256": "64dbfcb37da17fae5b99952cb64b5b878ea676f508944ba55e4717f3111f923a"
         },
         {
           "name": "map-layers-strong",
@@ -4567,34 +4496,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Map layers",
-          "description": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+          "description": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
           "label": "Map layers",
-          "intent": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+          "intent": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.6699999999999999,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.13399999999999998,
+            0.26799999999999996,
+            0.40199999999999997,
+            0.5359999999999999,
+            0.6699999999999999
           ],
-          "layers": 13,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4604,25 +4531,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "87cb343297e9919f52f3ac7158bd4130b077c30e805b4209aa898de4e0a85613",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "map-layers-top-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "map-layers-layer-2"
-            }
-          ],
+          "nativeSha256": "cdc0067338c7c16f70a5f636fcca0e473bd3baee7ef9e1aa04c7c6b981988e5d",
+          "sourceSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
+          "planSha256": "ee30ce541066c0b810261d6279fa56cae4080f02318d15f6fc10afc299790c9e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4644,8 +4560,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3746,
-          "sha256": "b7b913f4cdd0327275b96600330b8fd63061fd7788bb5761a2522c2dd881671a"
+          "bytes": 3676,
+          "sha256": "6024f368e85c353cb5e8eea9bd8d09d1bdea4f39aa1dbe5412af0f67e2222468"
         }
       ],
       "animations": [
@@ -4656,34 +4572,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Map layers",
-          "description": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+          "description": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
           "label": "Map layers",
-          "intent": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+          "intent": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.53,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.10600000000000001,
+            0.21200000000000002,
+            0.318,
+            0.42400000000000004,
+            0.53
           ],
-          "layers": 13,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4693,25 +4607,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6f34adb27131970e430ea10b8e447de6a30f6ac08e3b0e19962e827b335d1d54",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "map-layers-top-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "map-layers-layer-2"
-            }
-          ],
+          "nativeSha256": "88fe4a3513baf90eea0d756291750f3a04d1884e8f02d3b529d16434f72f2ed7",
+          "sourceSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
+          "planSha256": "ee30ce541066c0b810261d6279fa56cae4080f02318d15f6fc10afc299790c9e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4733,8 +4636,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3745,
-          "sha256": "53d1c0058f562a100cf144b60bc4f0f80968d7abf087e9749748ab3579c3246d"
+          "bytes": 3675,
+          "sha256": "64dbfcb37da17fae5b99952cb64b5b878ea676f508944ba55e4717f3111f923a"
         },
         {
           "name": "map-layers-strong",
@@ -4743,34 +4646,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Map layers",
-          "description": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+          "description": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
           "label": "Map layers",
-          "intent": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
+          "intent": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.6699999999999999,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.13399999999999998,
+            0.26799999999999996,
+            0.40199999999999997,
+            0.5359999999999999,
+            0.6699999999999999
           ],
-          "layers": 13,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4780,25 +4681,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "87cb343297e9919f52f3ac7158bd4130b077c30e805b4209aa898de4e0a85613",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the top layer lifts 1.8 units off the stack and settles back. Strong: it springs up 3.4, hovers, drops with a hard landing and the lower layers dip under it.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "map-layers-top-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "map-layers-layer-2"
-            }
-          ],
+          "nativeSha256": "cdc0067338c7c16f70a5f636fcca0e473bd3baee7ef9e1aa04c7c6b981988e5d",
+          "sourceSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
+          "planSha256": "ee30ce541066c0b810261d6279fa56cae4080f02318d15f6fc10afc299790c9e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A new map layer is laid onto the stack. Light: a sheet fades in above the stack, falls onto the top layer and becomes it; the stack takes the landing in order, top first, then the two layers below 50 ms apart, and rebounds into place. Strong: the sheet comes in from higher and lands harder, and the stack compresses deeper and settles in two beats.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "0d67a57a2a40149fa33227004351f7940f374820761da6c907d7e53b589e585e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4820,12 +4710,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3746,
-          "sha256": "b7b913f4cdd0327275b96600330b8fd63061fd7788bb5761a2522c2dd881671a"
+          "bytes": 3676,
+          "sha256": "6024f368e85c353cb5e8eea9bd8d09d1bdea4f39aa1dbe5412af0f67e2222468"
         }
       ],
-      "bytes": 3745,
-      "sha256": "53d1c0058f562a100cf144b60bc4f0f80968d7abf087e9749748ab3579c3246d"
+      "bytes": 3675,
+      "sha256": "64dbfcb37da17fae5b99952cb64b5b878ea676f508944ba55e4717f3111f923a"
     },
     {
       "name": "satellite",
@@ -5294,34 +5184,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Street view",
-      "description": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+      "description": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
       "label": "Street view",
-      "intent": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+      "intent": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.43,
+      "rest": 29,
       "keyPoses": [
         0,
-        0.12,
-        0.24,
-        0.36,
-        0.48,
-        0.6
+        0.08600000000000001,
+        0.17200000000000001,
+        0.258,
+        0.34400000000000003,
+        0.43
       ],
-      "layers": 21,
+      "layers": 32,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -5331,29 +5219,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "42e572f0a8f7e9163737fdd715013735733f90566a11406b476a489f68dbdf1d",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-      },
-      "brief": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "street-view-street"
-        },
-        {
-          "type": "rigid",
-          "part": "street-view-torso-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "street-view-leg-l"
-        }
-      ],
+      "nativeSha256": "673659f88347725456b64a022ca4a1e88a5f0248f1a5d81cd35caff80c9721c6",
+      "sourceSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
+      "planSha256": "1dbe28a61272d7327ce1e3eacabd33694b5dfa48e8b7f09718aaca9a9310e965",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
+      "constraints": [],
       "category": "Maps & navigation",
-      "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+      "definitionsSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -5384,34 +5257,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Street view",
-          "description": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+          "description": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
           "label": "Street view",
-          "intent": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+          "intent": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.43,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.08600000000000001,
+            0.17200000000000001,
+            0.258,
+            0.34400000000000003,
+            0.43
           ],
-          "layers": 21,
+          "layers": 32,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5421,29 +5292,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "42e572f0a8f7e9163737fdd715013735733f90566a11406b476a489f68dbdf1d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "street-view-street"
-            },
-            {
-              "type": "rigid",
-              "part": "street-view-torso-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "street-view-leg-l"
-            }
-          ],
+          "nativeSha256": "673659f88347725456b64a022ca4a1e88a5f0248f1a5d81cd35caff80c9721c6",
+          "sourceSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
+          "planSha256": "1dbe28a61272d7327ce1e3eacabd33694b5dfa48e8b7f09718aaca9a9310e965",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5465,8 +5321,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5016,
-          "sha256": "237f292900b8efdd8a576fcf1a1a5c23111e5c23244d14910e802525922d3186"
+          "bytes": 5606,
+          "sha256": "c03e20bcff5db6b8f45c3ebd150d12cd77ccdfd2313031a534773cb4b6bde454"
         },
         {
           "name": "street-view-strong",
@@ -5475,34 +5331,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Street view",
-          "description": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+          "description": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
           "label": "Street view",
-          "intent": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+          "intent": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.67,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.134,
+            0.268,
+            0.402,
+            0.536,
+            0.67
           ],
-          "layers": 21,
+          "layers": 32,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5512,29 +5366,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c9c31d9bd95b12fd851dfeb6b9feafc7b463f6021900e24c9296232b5620f722",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "street-view-street"
-            },
-            {
-              "type": "rigid",
-              "part": "street-view-torso-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "street-view-leg-l"
-            }
-          ],
+          "nativeSha256": "f0c6e6600ba59d34c4c67f60ba042c0b652b2c96ae2f18ee5f4143928624cb33",
+          "sourceSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
+          "planSha256": "1dbe28a61272d7327ce1e3eacabd33694b5dfa48e8b7f09718aaca9a9310e965",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5556,8 +5395,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5018,
-          "sha256": "25224722e36319d59394bf9eb7b4687519204789ec8d65a0a4be291b175f07bf"
+          "bytes": 5608,
+          "sha256": "d8dc1259aba7cfaeeb086726b78036a673afa9bc51fcfaf3a5d9c5b84a082226"
         }
       ],
       "animations": [
@@ -5568,34 +5407,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Street view",
-          "description": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+          "description": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
           "label": "Street view",
-          "intent": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+          "intent": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.43,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.08600000000000001,
+            0.17200000000000001,
+            0.258,
+            0.34400000000000003,
+            0.43
           ],
-          "layers": 21,
+          "layers": 32,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5605,29 +5442,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "42e572f0a8f7e9163737fdd715013735733f90566a11406b476a489f68dbdf1d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "street-view-street"
-            },
-            {
-              "type": "rigid",
-              "part": "street-view-torso-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "street-view-leg-l"
-            }
-          ],
+          "nativeSha256": "673659f88347725456b64a022ca4a1e88a5f0248f1a5d81cd35caff80c9721c6",
+          "sourceSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
+          "planSha256": "1dbe28a61272d7327ce1e3eacabd33694b5dfa48e8b7f09718aaca9a9310e965",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5649,8 +5471,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5016,
-          "sha256": "237f292900b8efdd8a576fcf1a1a5c23111e5c23244d14910e802525922d3186"
+          "bytes": 5606,
+          "sha256": "c03e20bcff5db6b8f45c3ebd150d12cd77ccdfd2313031a534773cb4b6bde454"
         },
         {
           "name": "street-view-strong",
@@ -5659,34 +5481,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Street view",
-          "description": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+          "description": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
           "label": "Street view",
-          "intent": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
+          "intent": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.67,
+          "rest": 43,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.134,
+            0.268,
+            0.402,
+            0.536,
+            0.67
           ],
-          "layers": 21,
+          "layers": 32,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5696,29 +5516,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "c9c31d9bd95b12fd851dfeb6b9feafc7b463f6021900e24c9296232b5620f722",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the pegman is lifted 1.6 units off the street and set back down. Strong: it is picked up 3.2 units with a 10\u00b0 tilt, dropped, and bounces once on landing.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "street-view-street"
-            },
-            {
-              "type": "rigid",
-              "part": "street-view-torso-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "street-view-leg-l"
-            }
-          ],
+          "nativeSha256": "f0c6e6600ba59d34c4c67f60ba042c0b652b2c96ae2f18ee5f4143928624cb33",
+          "sourceSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
+          "planSha256": "1dbe28a61272d7327ce1e3eacabd33694b5dfa48e8b7f09718aaca9a9310e965",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pegman is dropped into the street. Light: it is picked up 2.6 units, dropped onto its feet with a hit, squashes on landing while two dust marks kick out from its feet and fade, and springs back into its stance. Strong: it is picked up higher, lands harder with a deeper squash and a bigger kick of dust, bounces once and lands again with a smaller puff before it settles. The street never moves.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "dd80a5bdae9764063490b8061eec38d9e17d8ee74025de382136905467ae3f62",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5740,12 +5545,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5018,
-          "sha256": "25224722e36319d59394bf9eb7b4687519204789ec8d65a0a4be291b175f07bf"
+          "bytes": 5608,
+          "sha256": "d8dc1259aba7cfaeeb086726b78036a673afa9bc51fcfaf3a5d9c5b84a082226"
         }
       ],
-      "bytes": 5016,
-      "sha256": "237f292900b8efdd8a576fcf1a1a5c23111e5c23244d14910e802525922d3186"
+      "bytes": 5606,
+      "sha256": "c03e20bcff5db6b8f45c3ebd150d12cd77ccdfd2313031a534773cb4b6bde454"
     },
     {
       "name": "geofence",
@@ -9164,34 +8969,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Fuel station",
-      "description": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+      "description": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
       "label": "Fuel station",
-      "intent": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+      "intent": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.65,
-      "rest": 42,
+      "active": 0.43,
+      "rest": 29,
       "keyPoses": [
         0,
-        0.13,
-        0.26,
-        0.39,
-        0.52,
-        0.65
+        0.08600000000000001,
+        0.17200000000000001,
+        0.258,
+        0.34400000000000003,
+        0.43
       ],
-      "layers": 20,
+      "layers": 31,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -9201,29 +9004,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "abce09465fc40600c328554dd22ad11694e9958ce82ad1a82fdda21960101402",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-      },
-      "brief": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "fuel-station-body-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "fuel-station-base"
-        },
-        {
-          "type": "rigid",
-          "part": "fuel-station-nozzle"
-        }
-      ],
+      "nativeSha256": "0bbdc246f96f760156c9d0ac13bde7904a5068c8772ae5d1fec79760d57d2d26",
+      "sourceSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
+      "planSha256": "d3132f0739817db4ecec7d1759820b6e7866a46298a44d764a43d655df9f1688",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
+      "constraints": [],
       "category": "Maps & navigation",
-      "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+      "definitionsSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -9254,34 +9042,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Fuel station",
-          "description": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+          "description": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
           "label": "Fuel station",
-          "intent": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+          "intent": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.65,
-          "rest": 42,
+          "active": 0.43,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.13,
-            0.26,
-            0.39,
-            0.52,
-            0.65
+            0.08600000000000001,
+            0.17200000000000001,
+            0.258,
+            0.34400000000000003,
+            0.43
           ],
-          "layers": 20,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -9291,29 +9077,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "abce09465fc40600c328554dd22ad11694e9958ce82ad1a82fdda21960101402",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "fuel-station-body-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "fuel-station-base"
-            },
-            {
-              "type": "rigid",
-              "part": "fuel-station-nozzle"
-            }
-          ],
+          "nativeSha256": "0bbdc246f96f760156c9d0ac13bde7904a5068c8772ae5d1fec79760d57d2d26",
+          "sourceSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
+          "planSha256": "d3132f0739817db4ecec7d1759820b6e7866a46298a44d764a43d655df9f1688",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -9335,8 +9106,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4893,
-          "sha256": "fad13e3224cd64c699f993af538f053e366e56ebc52b30fe1109e16af5426f78"
+          "bytes": 4557,
+          "sha256": "85f8d36d56a0f5a9e0532eaa203612517b6ddce15ce6fd3eacbf4ae529a05c48"
         },
         {
           "name": "fuel-station-strong",
@@ -9345,34 +9116,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Fuel station",
-          "description": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+          "description": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
           "label": "Fuel station",
-          "intent": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+          "intent": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.68,
+          "rest": 44,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.136,
+            0.272,
+            0.40800000000000003,
+            0.544,
+            0.68
           ],
-          "layers": 20,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -9382,29 +9151,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "238fdd89efddd5cc593fa72ffee18218f5fcb6f9f35cd2dc1057bd9c40ecc4b4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "fuel-station-body-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "fuel-station-base"
-            },
-            {
-              "type": "rigid",
-              "part": "fuel-station-nozzle"
-            }
-          ],
+          "nativeSha256": "8ee2cd90be44638b14fece4a066e7bbef679e31004e9881509d3fc33964155a4",
+          "sourceSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
+          "planSha256": "d3132f0739817db4ecec7d1759820b6e7866a46298a44d764a43d655df9f1688",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -9426,8 +9180,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4896,
-          "sha256": "00dc25892a2ca3b7400e762834fdd41ba76428988efbc51081d256c79f033756"
+          "bytes": 4560,
+          "sha256": "5c8b618d6faf57ecd4bf2b0c5882adfe77aac0d2b7a0a4e949e383a16587f795"
         }
       ],
       "animations": [
@@ -9438,34 +9192,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Fuel station",
-          "description": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+          "description": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
           "label": "Fuel station",
-          "intent": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+          "intent": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.65,
-          "rest": 42,
+          "active": 0.43,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.13,
-            0.26,
-            0.39,
-            0.52,
-            0.65
+            0.08600000000000001,
+            0.17200000000000001,
+            0.258,
+            0.34400000000000003,
+            0.43
           ],
-          "layers": 20,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -9475,29 +9227,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "abce09465fc40600c328554dd22ad11694e9958ce82ad1a82fdda21960101402",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "fuel-station-body-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "fuel-station-base"
-            },
-            {
-              "type": "rigid",
-              "part": "fuel-station-nozzle"
-            }
-          ],
+          "nativeSha256": "0bbdc246f96f760156c9d0ac13bde7904a5068c8772ae5d1fec79760d57d2d26",
+          "sourceSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
+          "planSha256": "d3132f0739817db4ecec7d1759820b6e7866a46298a44d764a43d655df9f1688",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -9519,8 +9256,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4893,
-          "sha256": "fad13e3224cd64c699f993af538f053e366e56ebc52b30fe1109e16af5426f78"
+          "bytes": 4557,
+          "sha256": "85f8d36d56a0f5a9e0532eaa203612517b6ddce15ce6fd3eacbf4ae529a05c48"
         },
         {
           "name": "fuel-station-strong",
@@ -9529,34 +9266,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Fuel station",
-          "description": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+          "description": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
           "label": "Fuel station",
-          "intent": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
+          "intent": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.68,
+          "rest": 44,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.136,
+            0.272,
+            0.40800000000000003,
+            0.544,
+            0.68
           ],
-          "layers": 20,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -9566,29 +9301,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "238fdd89efddd5cc593fa72ffee18218f5fcb6f9f35cd2dc1057bd9c40ecc4b4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the nozzle tips 12\u00b0 off its hook and settles back. Strong: it is lifted 1.6 units and tipped 18\u00b0, the hose follows, and it clacks back onto the hook.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "fuel-station-body-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "fuel-station-base"
-            },
-            {
-              "type": "rigid",
-              "part": "fuel-station-nozzle"
-            }
-          ],
+          "nativeSha256": "8ee2cd90be44638b14fece4a066e7bbef679e31004e9881509d3fc33964155a4",
+          "sourceSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
+          "planSha256": "d3132f0739817db4ecec7d1759820b6e7866a46298a44d764a43d655df9f1688",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The pump dispenses fuel. Light: the nozzle tips 20\u00b0 on its hose joint to pour, a drop swells at the spout and falls away as the nozzle swings back and clacks onto its hook with a small rebound. Strong: the nozzle is eased off the hook, tips further, squeezes out two drops in turn and clacks back with a two-beat settle. The pump body, window, hose and base never move.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "8895112df2ee729cac58aef6c1195f2aafdc81ccf52573d193d08694f20c076d",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -9610,12 +9330,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4896,
-          "sha256": "00dc25892a2ca3b7400e762834fdd41ba76428988efbc51081d256c79f033756"
+          "bytes": 4560,
+          "sha256": "5c8b618d6faf57ecd4bf2b0c5882adfe77aac0d2b7a0a4e949e383a16587f795"
         }
       ],
-      "bytes": 4893,
-      "sha256": "fad13e3224cd64c699f993af538f053e366e56ebc52b30fe1109e16af5426f78"
+      "bytes": 4557,
+      "sha256": "85f8d36d56a0f5a9e0532eaa203612517b6ddce15ce6fd3eacbf4ae529a05c48"
     },
     {
       "name": "ev-charger",
@@ -10509,34 +10229,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Transit stop",
-      "description": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+      "description": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
       "label": "Transit stop",
-      "intent": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+      "intent": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.7,
-      "rest": 45,
+      "active": 0.49,
+      "rest": 32,
       "keyPoses": [
         0,
-        0.13999999999999999,
-        0.27999999999999997,
-        0.42,
-        0.5599999999999999,
-        0.7
+        0.098,
+        0.196,
+        0.294,
+        0.392,
+        0.49
       ],
-      "layers": 25,
+      "layers": 27,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -10546,29 +10264,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "e5d43553f37aa9c1c113f9867b3ba154c02ee54b364f33d5e222629fb4ad656a",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-      },
-      "brief": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "transit-stop-post"
-        },
-        {
-          "type": "fixed",
-          "part": "transit-stop-ground"
-        },
-        {
-          "type": "rigid",
-          "part": "transit-stop-sign-frame"
-        }
-      ],
+      "nativeSha256": "ccf0dce2082e0311cd1e5d3157daf5ccc8ab4d185ac2a4b372073eb8d519443c",
+      "sourceSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
+      "planSha256": "542083ded05f1bc1145bf6840fea7b7c0c25e68335fbda142a696ff7c96dca79",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
+      "constraints": [],
       "category": "Maps & navigation",
-      "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+      "definitionsSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -10599,34 +10302,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Transit stop",
-          "description": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+          "description": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
           "label": "Transit stop",
-          "intent": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+          "intent": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.49,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.098,
+            0.196,
+            0.294,
+            0.392,
+            0.49
           ],
-          "layers": 25,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10636,29 +10337,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "e5d43553f37aa9c1c113f9867b3ba154c02ee54b364f33d5e222629fb4ad656a",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "transit-stop-post"
-            },
-            {
-              "type": "fixed",
-              "part": "transit-stop-ground"
-            },
-            {
-              "type": "rigid",
-              "part": "transit-stop-sign-frame"
-            }
-          ],
+          "nativeSha256": "ccf0dce2082e0311cd1e5d3157daf5ccc8ab4d185ac2a4b372073eb8d519443c",
+          "sourceSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
+          "planSha256": "542083ded05f1bc1145bf6840fea7b7c0c25e68335fbda142a696ff7c96dca79",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10680,8 +10366,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5216,
-          "sha256": "5e5a8387a6685744e625da23cfff0db0b4e7772e14a58eaf63d79021a01d76b7"
+          "bytes": 3748,
+          "sha256": "64b54b4ccc25e64b5f35ce4da8bfaaa85cb4f5b7843109fe9b5bc58c8a4fd2e8"
         },
         {
           "name": "transit-stop-strong",
@@ -10690,34 +10376,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Transit stop",
-          "description": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+          "description": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
           "label": "Transit stop",
-          "intent": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+          "intent": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.57,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.11399999999999999,
+            0.22799999999999998,
+            0.34199999999999997,
+            0.45599999999999996,
+            0.57
           ],
-          "layers": 25,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10727,29 +10411,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4a91467b48bb7b899f2f358452777e8bf7fc0b36ae8a9a855e5020e575fefcef",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "transit-stop-post"
-            },
-            {
-              "type": "fixed",
-              "part": "transit-stop-ground"
-            },
-            {
-              "type": "rigid",
-              "part": "transit-stop-sign-frame"
-            }
-          ],
+          "nativeSha256": "86fc60545e598602030be74c661f7515a4d9fe2ef8e8e15204bfabc67ea6a18c",
+          "sourceSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
+          "planSha256": "542083ded05f1bc1145bf6840fea7b7c0c25e68335fbda142a696ff7c96dca79",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10771,8 +10440,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5218,
-          "sha256": "15fd3e73c2fa03fa2a6d1fbe0f1f1c57a6bec03db013caa0428b7cac3e9dfb20"
+          "bytes": 3750,
+          "sha256": "1bd4496ef2cba6003c024135942961cb01dad4f98a63eb1845260fa3806a6f7e"
         }
       ],
       "animations": [
@@ -10783,34 +10452,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Transit stop",
-          "description": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+          "description": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
           "label": "Transit stop",
-          "intent": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+          "intent": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.49,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.098,
+            0.196,
+            0.294,
+            0.392,
+            0.49
           ],
-          "layers": 25,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10820,29 +10487,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "e5d43553f37aa9c1c113f9867b3ba154c02ee54b364f33d5e222629fb4ad656a",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "transit-stop-post"
-            },
-            {
-              "type": "fixed",
-              "part": "transit-stop-ground"
-            },
-            {
-              "type": "rigid",
-              "part": "transit-stop-sign-frame"
-            }
-          ],
+          "nativeSha256": "ccf0dce2082e0311cd1e5d3157daf5ccc8ab4d185ac2a4b372073eb8d519443c",
+          "sourceSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
+          "planSha256": "542083ded05f1bc1145bf6840fea7b7c0c25e68335fbda142a696ff7c96dca79",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10864,8 +10516,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5216,
-          "sha256": "5e5a8387a6685744e625da23cfff0db0b4e7772e14a58eaf63d79021a01d76b7"
+          "bytes": 3748,
+          "sha256": "64b54b4ccc25e64b5f35ce4da8bfaaa85cb4f5b7843109fe9b5bc58c8a4fd2e8"
         },
         {
           "name": "transit-stop-strong",
@@ -10874,34 +10526,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Transit stop",
-          "description": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+          "description": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
           "label": "Transit stop",
-          "intent": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
+          "intent": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.57,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.11399999999999999,
+            0.22799999999999998,
+            0.34199999999999997,
+            0.45599999999999996,
+            0.57
           ],
-          "layers": 25,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10911,29 +10561,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4a91467b48bb7b899f2f358452777e8bf7fc0b36ae8a9a855e5020e575fefcef",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "eae300dc9eb3e564a6c12020e048f37229baa68e7b9d1d218028310813ece3fb"
-          },
-          "brief": "Light: the stop sign swings 4\u00b0 on its post and settles. Strong: it is kicked 8\u00b0 and rocks back and forth with a damped settle.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "transit-stop-post"
-            },
-            {
-              "type": "fixed",
-              "part": "transit-stop-ground"
-            },
-            {
-              "type": "rigid",
-              "part": "transit-stop-sign-frame"
-            }
-          ],
+          "nativeSha256": "86fc60545e598602030be74c661f7515a4d9fe2ef8e8e15204bfabc67ea6a18c",
+          "sourceSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
+          "planSha256": "542083ded05f1bc1145bf6840fea7b7c0c25e68335fbda142a696ff7c96dca79",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The next bus pulls in to the stop. Light: the bus pulls away to the right and fades, the next one rolls in from the left, decelerates to a stop at its place, and its body dips 7\u00b0 onto its front wheel and rocks back to rest. Strong: it comes in faster and brakes harder with a short overrun, the body dipping 10\u00b0 and rocking back in two beats. The sign, post and ground never move.",
+          "constraints": [],
           "category": "Maps & navigation",
-          "definitionsSha256": "6829f919df0f7970c2a0b4cd4ea8c86a5508ff5e4de1e7b28fc1ab134e2433b6",
+          "definitionsSha256": "5226612019126e5f2379336ef9e50949f09164fc03e97e091b17d92f641f69c6",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10955,12 +10590,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5218,
-          "sha256": "15fd3e73c2fa03fa2a6d1fbe0f1f1c57a6bec03db013caa0428b7cac3e9dfb20"
+          "bytes": 3750,
+          "sha256": "1bd4496ef2cba6003c024135942961cb01dad4f98a63eb1845260fa3806a6f7e"
         }
       ],
-      "bytes": 5216,
-      "sha256": "5e5a8387a6685744e625da23cfff0db0b4e7772e14a58eaf63d79021a01d76b7"
+      "bytes": 3748,
+      "sha256": "64b54b4ccc25e64b5f35ce4da8bfaaa85cb4f5b7843109fe9b5bc58c8a4fd2e8"
     },
     {
       "name": "walking-route",

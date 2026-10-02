@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "composing-message",
+  "label": "Composing message",
+  "intent": "The message is being typed. Light: the caret sweeps back over the top line, erasing it, then types it out again in three quick keystrokes, sliding right with each character until it is back at its insertion point. Strong: the caret sweeps back a touch past the line's start, types the line in four quicker keystrokes, then blinks twice, waiting for more. The bubble and the lower line never move.",
+  "parts": {
+    "bubble": {
+      "shape": {"path": "M8 6 L24 6 C25.7 6 27 7.3 27 9 L27 20 C27 21.7 25.7 23 24 23 L12 23 L7.6 26 C7 26.4 6.5 26 6.7 25.3 L7.2 23 C5.9 22.7 5 21.5 5 20 L5 9 C5 7.3 6.3 6 8 6 Z"},
+      "role": "surface",
+      "solid": "ring"
+    },
+    "text": {
+      "shape": {"line": [[10, 12], [14, 12]]}
+    },
+    "lower-text": {
+      "shape": {"line": [[10, 18], [16, 18]]}
+    },
+    "caret": {
+      "shape": {"line": [[18, 10], [18, 14]]}
+    }
+  },
+  "motion": {
+    "//": "The caret stays 4 units after the end of the typed line: caret.x = 4 * text.draw - 4.",
+    "text.draw": {
+      "light": [[0, 1], [0.12, 0, "in"], [0.16, 0], [0.21, 0.34, "out"], [0.25, 0.34], [0.3, 0.67, "out"], [0.34, 0.67], [0.39, 1, "out"]],
+      "strong": [[0, 1], [0.12, 0, "in"], [0.16, 0], [0.2, 0.25, "out"], [0.23, 0.25], [0.27, 0.5, "out"], [0.3, 0.5], [0.34, 0.75, "out"], [0.37, 0.75], [0.41, 1, "out"]]
+    },
+    "caret.x": {
+      "light": [[0, 0], [0.12, -4, "in"], [0.16, -4], [0.21, -2.64, "out"], [0.25, -2.64], [0.3, -1.32, "out"], [0.34, -1.32], [0.39, 0, "out"]],
+      "strong": [[0, 0], [0.1, -4.6, "in"], [0.13, -4, "out"], [0.16, -4], [0.2, -3, "out"], [0.23, -3], [0.27, -2, "out"], [0.3, -2], [0.34, -1, "out"], [0.37, -1], [0.41, 0, "out"]]
+    },
+    "caret.opacity": {
+      "strong": [[0, 1], [0.5, 1], [0.51, 0, "step"], [0.6, 0], [0.61, 1, "step"], [0.7, 1], [0.71, 0, "step"], [0.8, 0], [0.81, 1, "step"]]
+    }
+  }
+}

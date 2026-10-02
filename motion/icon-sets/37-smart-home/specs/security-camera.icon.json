@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "security-camera",
+  "label": "Security camera",
+  "intent": "The camera spots movement and records it. Light: the camera snaps down about its wall joint onto the scene, stops dead, and the lens flashes once as recording starts; then it swings back up with a small overshoot and settles. Strong: it scans up first, sweeps down hard onto the target with a recoil, the lens flashes twice while it holds the view, and it swings back and settles. The arm, joint and wall plate never move.",
+  "parts": {
+    "joint": {"shape": {"circle": [[18, 16.5], 1.4]}, "role": "fill"},
+    "lens":  {"shape": {"circle": [[9.149, 14.069], 1.6]}, "role": "fill"},
+    "body":  {"//": "v1's 14 x 9 r3 housing turned -14 degrees, exact path; v1 Solid is the hollow rim",
+              "shape": {"path": "M7.09 9.945 L14.852 8.009 C16.459 7.609 18.088 8.588 18.489 10.194 L19.215 13.105 C19.615 14.712 18.637 16.341 17.03 16.742 L9.267 18.677 C7.661 19.078 6.031 18.099 5.631 16.492 L4.905 13.581 C4.504 11.974 5.483 10.345 7.09 9.945 Z"},
+              "role": "surface", "solid": "ring"},
+    "arm":   {"shape": {"line": [[18, 16.5], [26.5, 20.5]]}},
+    "plate": {"shape": {"line": [[26.5, 16.6], [26.5, 24.4]]}}
+  },
+  "rigs": {
+    "camera": {"//": "the housing turns on the ball joint at the end of the arm", "pivot": [18, 16.5], "carries": ["body", "lens"]},
+    "lens":   {"//": "the recording flash swells from the lens centre", "pivot": [9.149, 14.069]}
+  },
+  "motion": {
+    "camera.rotate": {
+      "light":  [[0, 0], [0.12, -12, "hit"], [0.24, -12], [0.38, 1.5], [0.48, 0]],
+      "strong": [[0, 0], [0.1, 5, "out"], [0.26, -15, "hit"], [0.31, -12.5], [0.36, -14], [0.52, -14], [0.68, 2], [0.78, -0.6], [0.86, 0]]
+    },
+    "lens.scale": {
+      "light":  [[0, 1], [0.12, 1], [0.15, 1.45, "out"], [0.24, 1, "in"]],
+      "strong": [[0, 1], [0.27, 1], [0.3, 1.45, "out"], [0.38, 1, "in"], [0.41, 1.45, "out"], [0.5, 1, "in"]]
+    }
+  }
+}

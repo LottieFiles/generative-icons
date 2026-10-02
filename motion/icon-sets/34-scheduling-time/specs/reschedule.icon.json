@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "reschedule",
+  "label": "Reschedule",
+  "intent": "The event moves to a new date. Light: the marked date pops as it is picked; a beat later the event chip hops out of its tray, arcs across the page and lands on the date with a hit and one small bounce, covering it; the empty tray stays behind. Strong: the date pops harder, the chip dips into its tray first, then hops higher and lands with two bounces. The calendar never moves. The reset fades the chip back into its tray.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": ["Play action", "Reset preview"],
+    "reverse": "fade"
+  },
+  "parts": {
+    "chip": {"shape": {"rect": [11.05, 17.55, 4.6, 2.8], "r": 1.4}, "role": "fill"},
+    "target": {"shape": {"circle": [[22.25, 17.3], 1.3]}, "role": "fill"},
+    "tray": {"shape": {"polyline": [[8.6, 21], [8.6, 22.8], [17.4, 22.8], [17.4, 21]]}},
+    "header": {"shape": {"line": [[5.5, 11.5], [26.5, 11.5]]}},
+    "peg-r": {"shape": {"line": [[21, 4], [21, 8]]}},
+    "peg-l": {"shape": {"line": [[11, 4], [11, 8]]}},
+    "leaf": {"shape": {"rect": [5, 6, 22, 21], "r": 2.7}, "role": "surface", "solid": "ring"}
+  },
+  "rigs": {
+    "chip": {"pivot": [13.35, 18.95]},
+    "target": {"pivot": [22.25, 17.3]}
+  },
+  "reverse": {
+    "//": "only the chip changed; the date ends at rest, so it stays visible",
+    "light": {"target.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"target.opacity": [[0, 1], [0.25, 1]]}
+  },
+  "motion": {
+    "target.scale": {
+      "//": "the new date is picked first: the cause",
+      "light": [[0, 1], [0.08, 1.6, "out"], [0.18, 1, "inOut"]],
+      "strong": [[0, 1], [0.08, 1.75, "out"], [0.2, 0.9, "inOut"], [0.28, 1]]
+    },
+    "chip.x": {"light": [[0, 0], [0.08, 0], [0.32, 8.9, "inOut"]], "strong": [[0, 0], [0.12, 0], [0.38, 8.9, "inOut"]]},
+    "chip.y": {
+      "//": "the arc's top stays 0.5 clear of the header line",
+      "light": [[0, 0], [0.08, 0], [0.2, -3.6, "out"], [0.32, -1.65, "hit"], {"bounce": 0.42, "amp": 0.15}],
+      "strong": [[0, 0], [0.1, 0.6, "inOut"], [0.24, -4.2, "out"], [0.38, -1.65, "hit"], {"bounce": 0.48, "amp": 0.18}, {"bounce": 0.57, "amp": 0.3}]
+    }
+  }
+}

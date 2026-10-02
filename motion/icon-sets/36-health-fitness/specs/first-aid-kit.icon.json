@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "first-aid-kit",
+  "label": "First aid kit",
+  "intent": "The kit is grabbed and set down, ready to help. Light: it is snatched up by its handle with a swing, lands with a thud and one small bounce, and the cross pops a beat after the landing. Strong: a dip before a harder snatch, a wider swing, a landing with two decaying bounces, and the cross pops bigger and rings down. The case stays rigid.",
+  "parts": {
+    "case": {"shape": {"rect": [5.5, 10, 21, 17], "r": 2.6}, "role": "surface",
+             "knockout": [{"part": "cross-h", "gap": 0}, {"part": "cross-v", "gap": 0}],
+             "//": "v1 Solid: the case with a 2.6 rim and the cross cut out"},
+    "handle": {"shape": {"polyline": [[12, 10], [12, 6], [20, 6], [20, 10]], "r": 1.6}},
+    "cross-h": {"shape": {"line": [[12.1, 18.5], [19.9, 18.5]]}},
+    "cross-v": {"shape": {"line": [[16, 14.6], [16, 22.4]]}}
+  },
+  "rigs": {
+    "kit": {"//": "hangs from the handle grip", "pivot": [16, 6], "carries": ["case", "handle", "cross"]},
+    "cross": {"pivot": [16, 18.5], "carries": ["cross-h", "cross-v"]}
+  },
+  "motion": {
+    "kit.y": {
+      "light":  [[0, 0], [0.13, -2.2, "out"], [0.27, 0, "hit"], [0.32, -0.45, "out"], [0.37, 0, "hit"]],
+      "strong": [[0, 0], [0.07, 0.6, "out"], [0.2, -2.8, "out"], [0.35, 0, "hit"], [0.41, -0.75, "out"], [0.47, 0, "hit"], [0.51, -0.25, "out"], [0.55, 0, "hit"]]
+    },
+    "kit.rotate": {
+      "light":  [[0, 0], [0.13, -4, "out"], [0.25, 2.5], [0.35, -1], [0.43, 0]],
+      "strong": [[0, 0], [0.07, 1], [0.2, -6, "out"], [0.32, 4], [0.43, -2.2], [0.53, 1], [0.61, 0]]
+    },
+    "cross.scale": {
+      "light":  [[0, 1], [0.3, 1], [0.36, 1.24, "out"], [0.44, 0.95], [0.52, 1]],
+      "strong": [[0, 1], [0.38, 1], [0.44, 1.32, "out"], [0.52, 0.92], [0.6, 1.08], [0.68, 0.98], [0.75, 1]]
+    }
+  }
+}

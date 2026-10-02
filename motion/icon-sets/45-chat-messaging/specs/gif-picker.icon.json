@@ -1,0 +1,49 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "gif-picker",
+  "label": "GIF picker",
+  "intent": "Browsing GIFs flips to the next one. Light: the GIF tile flips over like a split-flap card (it folds flat about its middle and opens again with the next GIF), overshoots a little and settles. Strong: the tile is picked up off the stack, flips through two GIFs in turn, and drops back onto the stack with a hit; the stack dips under it and springs back.",
+  "parts": {
+    "stack": {
+      "shape": {"line": [[7, 26], [25, 26]]}
+    },
+    "tile": {
+      "shape": {"rect": [4.5, 7, 23, 14], "r": 3},
+      "role": "surface",
+      "solid": "ring"
+    },
+    "g": {
+      "shape": {"polyline": [[12, 10.5], [7.5, 10.5], [7.5, 17.5], [12, 17.5], [12, 14.5], [10.5, 14.5]]}
+    },
+    "i": {
+      "shape": {"line": [[16, 10.5], [16, 17.5]]}
+    },
+    "f": {
+      "shape": {"polyline": [[20, 17], [20, 11.5], [24, 11.5]]}
+    },
+    "f-bar": {
+      "shape": {"line": [[20, 14], [23, 14]]}
+    }
+  },
+  "rigs": {
+    "tile": {
+      "//": "the card flips about its middle: squash folds it flat to y 14 and opens it again",
+      "pivot": [16, 14],
+      "squash": {"base": 14, "widen": 0},
+      "carries": ["tile", "g", "i", "f", "f-bar"]
+    }
+  },
+  "motion": {
+    "tile.squash": {
+      "light": [[0, 1], [0.12, 0.06, "in"], [0.26, 1.1, "out"], [0.34, 0.96], [0.42, 1]],
+      "strong": [[0, 1], [0.1, 1], [0.2, 0.06, "in"], [0.3, 1, "out"], [0.39, 0.06, "in"], [0.5, 1.08, "out"], [0.58, 1]]
+    },
+    "tile.y": {
+      "strong": [[0, 0], [0.1, -1.8, "out"], [0.5, -1.8], [0.6, 0, "hit"], {"bounce": 0.68, "amp": 0.12}]
+    },
+    "stack.y": {
+      "strong": [[0, 0], [0.6, 0], [0.64, 0.8, "out"], [0.71, -0.15], [0.77, 0]]
+    }
+  }
+}

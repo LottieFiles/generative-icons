@@ -2,37 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 56,
-  "nativeTransformNodes": 344,
+  "nativeTransformNodes": 262,
   "nativeTransformMaxCoordinateError": 0.000012067287915584757,
   "checks": [
-    {
-      "name": "partly-cloudy",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "partly-cloudy-cloud-frame"
-        }
-      ]
-    },
-    {
-      "name": "partly-cloudy-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "partly-cloudy-cloud-frame"
-        }
-      ]
-    },
     {
       "name": "rain",
       "fixedParts": [],
@@ -150,50 +122,6 @@
         {
           "type": "rigid",
           "part": "thunderstorm-bolt"
-        }
-      ]
-    },
-    {
-      "name": "snowflake",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "snowflake-arm-0"
-        },
-        {
-          "type": "rigid",
-          "part": "snowflake-arm-1"
-        },
-        {
-          "type": "rigid",
-          "part": "snowflake-arm-2"
-        }
-      ]
-    },
-    {
-      "name": "snowflake-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "snowflake-arm-0"
-        },
-        {
-          "type": "rigid",
-          "part": "snowflake-arm-1"
-        },
-        {
-          "type": "rigid",
-          "part": "snowflake-arm-2"
         }
       ]
     },
@@ -450,100 +378,6 @@
       "designConstraints": []
     },
     {
-      "name": "temperature",
-      "fixedParts": [
-        "temperature-body-frame",
-        "temperature-tick-0",
-        "temperature-tick-1",
-        "temperature-tick-2"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "temperature-body-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "temperature-tick-0"
-        },
-        {
-          "type": "fixed",
-          "part": "temperature-tick-1"
-        },
-        {
-          "type": "fixed",
-          "part": "temperature-tick-2"
-        }
-      ]
-    },
-    {
-      "name": "temperature-strong",
-      "fixedParts": [
-        "temperature-body-frame",
-        "temperature-tick-0",
-        "temperature-tick-1",
-        "temperature-tick-2"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "temperature-body-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "temperature-tick-0"
-        },
-        {
-          "type": "fixed",
-          "part": "temperature-tick-1"
-        },
-        {
-          "type": "fixed",
-          "part": "temperature-tick-2"
-        }
-      ]
-    },
-    {
-      "name": "humidity",
-      "fixedParts": [
-        "humidity-drop"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "humidity-drop"
-        }
-      ]
-    },
-    {
-      "name": "humidity-strong",
-      "fixedParts": [
-        "humidity-drop"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "humidity-drop"
-        }
-      ]
-    },
-    {
       "name": "uv-index",
       "fixedParts": [],
       "topology": true,
@@ -560,66 +394,6 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "umbrella",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "umbrella-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "windsock",
-      "fixedParts": [
-        "windsock-pole",
-        "windsock-foot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "windsock-pole"
-        },
-        {
-          "type": "fixed",
-          "part": "windsock-foot"
-        }
-      ]
-    },
-    {
-      "name": "windsock-strong",
-      "fixedParts": [
-        "windsock-pole",
-        "windsock-foot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "windsock-pole"
-        },
-        {
-          "type": "fixed",
-          "part": "windsock-foot"
-        }
-      ]
     },
     {
       "name": "weather-radar",
@@ -672,5 +446,65 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "partly-cloudy",
+      "spec": "specs/partly-cloudy.icon.json",
+      "specSha256": "ae2305f6f267631c5f2fe2f1f4ef30e51d90cabd5f750756b858183996ab1dfb",
+      "actions": [
+        "partly-cloudy",
+        "partly-cloudy-strong"
+      ]
+    },
+    {
+      "icon": "snowflake",
+      "spec": "specs/snowflake.icon.json",
+      "specSha256": "c35b3f22af8a57cea0275e2d4e9d77133daec5da85b3430094add50e7cf073c7",
+      "actions": [
+        "snowflake",
+        "snowflake-strong"
+      ]
+    },
+    {
+      "icon": "temperature",
+      "spec": "specs/temperature.icon.json",
+      "specSha256": "617a75bd25f207ae6a9be94d5be6164a6135aff1df6c1bc8a89268bdd3467bd0",
+      "actions": [
+        "temperature",
+        "temperature-reset",
+        "temperature-strong",
+        "temperature-reset-strong"
+      ]
+    },
+    {
+      "icon": "humidity",
+      "spec": "specs/humidity.icon.json",
+      "specSha256": "5bede9ba3ed27e4556858d3bfcc85727ad6afb6f1b7fd9e93e50a713a6117cf7",
+      "actions": [
+        "humidity",
+        "humidity-reset",
+        "humidity-strong",
+        "humidity-reset-strong"
+      ]
+    },
+    {
+      "icon": "umbrella",
+      "spec": "specs/umbrella.icon.json",
+      "specSha256": "544988e6503e86f5c7241d47c1312ac0635c240c005ee301acfbeadeff58c49f",
+      "actions": [
+        "umbrella",
+        "umbrella-strong"
+      ]
+    },
+    {
+      "icon": "windsock",
+      "spec": "specs/windsock.icon.json",
+      "specSha256": "2986f0dae7bb7d8e36e1d30c2135c580490488f53e76ec6c3620be149028b8c2",
+      "actions": [
+        "windsock",
+        "windsock-strong"
+      ]
+    }
+  ]
 }

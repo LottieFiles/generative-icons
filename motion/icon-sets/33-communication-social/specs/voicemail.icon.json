@@ -1,0 +1,26 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "voicemail",
+  "label": "Voicemail",
+  "intent": "The message plays back. Light: the take-up reel on the left starts the tape, the right reel follows a beat behind, and both run one full turn, stop dead just past their marks and tick back into place. Strong: the reels wind back first, then run two fast turns, stop harder and settle in two ticks. The tape and the rims never move; the index marks show the turn.",
+  "parts": {
+    "reel-right-mark": {"shape": {"line": [[23, 15], [23, 11.5]]}},
+    "reel-right-rim": {"shape": {"circle": [[23, 16], 4.5]}},
+    "reel-left-mark": {"shape": {"line": [[9, 15], [9, 11.5]]}},
+    "reel-left-rim": {"shape": {"circle": [[9, 16], 4.5]}},
+    "tape": {"shape": {"line": [[9, 20.5], [23, 20.5]]}}
+  },
+  "rigs": {
+    "reel-left-mark": {"pivot": [9, 16]},
+    "reel-right-mark": {"pivot": [23, 16]}
+  },
+  "motion": {
+    "reel-left-mark.rotate": {
+      "//": "the driving reel; after the whole turns an invisible step puts the angle back on exactly 0, so the rest frame matches the first pixel for pixel",
+      "light": [[0, 0], [0.38, 372, "hit"], [0.45, 355], [0.52, 360], [0.54, 0, "step"]],
+      "strong": [[0, 0], [0.12, -25, "out"], [0.56, 736, "hit"], [0.63, 709], [0.7, 725], [0.77, 720], [0.79, 0, "step"]]
+    },
+    "reel-right-mark.rotate": {"//": "the following reel, pulled by the tape", "follow": "reel-left-mark.rotate", "lag": 0.06}
+  }
+}

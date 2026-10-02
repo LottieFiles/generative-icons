@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "telescope",
+  "label": "Telescope",
+  "intent": "The telescope spots a star. Light: the tube swings up onto the star and stops dead with a small rebound, the star flares and twists as it is found, and the tube lowers. Strong: the tube dips first, swings higher onto the star with a recoil, holds on the find while the star flares twice, then lowers. The post and base never move.",
+  "parts": {
+    "tube": {
+      "shape": {"path": "M7.039 19.479 C6.705 18.901 6.815 18.426 7.367 18.053 L19.667 9.745 C20.33 9.297 20.861 9.42 21.261 10.113 L22.861 12.884 C23.261 13.577 23.102 14.098 22.382 14.449 L9.038 20.946 C8.438 21.238 7.972 21.095 7.639 20.518 L7.039 19.479 Z"},
+      "role": "surface",
+      "solid": "ring"
+    },
+    "post": {"shape": {"line": [[15.8, 17.65], [15.8, 27.5]]}},
+    "base": {"shape": {"line": [[11, 27.5], [21, 27.5]]}},
+    "star": {
+      "shape": {"path": "M25.5 3.9 C25.5 5.772 26.228 6.5 28.1 6.5 C26.228 6.5 25.5 7.228 25.5 9.1 C25.5 7.228 24.772 6.5 22.9 6.5 C24.772 6.5 25.5 5.772 25.5 3.9 Z"},
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "tube": {"//": "the tube tilts about its mount on top of the post", "pivot": [15.8, 17.65]},
+    "star": {"//": "the star flares about its centre", "pivot": [25.5, 6.5]}
+  },
+  "motion": {
+    "tube.rotate": {
+      "light":  [[0, 0], [0.15, -11, "hit"], [0.22, -9.2], [0.29, -10], [0.36, -10], [0.54, 0, "inOut"]],
+      "strong": [[0, 0], [0.08, 3, "out"], [0.24, -14, "hit"], [0.31, -11], [0.38, -12.5], [0.44, -12], [0.6, -12], [0.82, 0, "inOut"]]
+    },
+    "star.scale": {
+      "light":  [[0, 1], [0.15, 1], [0.23, 1.55, "out"], [0.33, 0.9], [0.41, 1]],
+      "strong": [[0, 1], [0.24, 1], [0.32, 1.7, "out"], [0.42, 0.88], [0.5, 1.3, "out"], [0.58, 0.95], [0.66, 1]]
+    },
+    "star.rotate": {
+      "light":  [[0, 0], [0.15, 0], [0.25, 30, "out"], [0.41, 0, "inOut"]],
+      "strong": [[0, 0], [0.24, 0], [0.36, 35, "out"], [0.54, -8], [0.66, 0]]
+    }
+  }
+}
