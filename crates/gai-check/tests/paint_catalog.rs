@@ -81,9 +81,12 @@ fn whole_catalog_matches_committed_evidence() {
     };
     let report = audit_catalog(&repo().join("prototype/icons"), PaintContract::builtin()).unwrap();
     eprintln!("{}", report.summary());
+    // Stroke paints change when icons are reanimated (`library adopt`); the committed
+    // evidence, written by the JS reference, records the current count.
+    let recorded: serde_json::Value = serde_json::from_str(&expected).unwrap();
     assert_eq!(
         (report.icons, report.actions, report.stroke_paints),
-        (1005, 3094, 35718)
+        (1005, 3094, recorded["strokePaints"].as_u64().unwrap())
     );
     assert!(
         report.to_json() == expected,

@@ -48,6 +48,10 @@ fn clear_outputs(copy: &Path, set: &str) -> Vec<PathBuf> {
     std::fs::File::options().write(true).open(assets.join("set.json")).unwrap().set_modified(UNIX_EPOCH).unwrap();
     let mut removed = Vec::new();
     for icon in manifest["icons"].as_array().unwrap() {
+        // An icon adopted from a spec ships what `library adopt` copied in; builds keep it.
+        if icon.get("source").and_then(Value::as_str) == Some("gai-icon/2") {
+            continue;
+        }
         let actions = icon.get("animations").or_else(|| icon.get("motions")).and_then(Value::as_array).unwrap();
         for name in actions.iter().map(|action| action["name"].as_str().unwrap()) {
             for suffix in [".json", ".lottie", ".manifest.json", ".theme-dark.json", ".theme-light.json"] {
@@ -129,8 +133,14 @@ fn rebuild(sets: &[&str], whole_checkout: bool) -> Option<(PathBuf, tempfile::Te
             &std::fs::read(repo.join("prototype/icons").join(&set[..2]).join("assets/set.json")).unwrap(),
         )
         .unwrap();
-        let animations: usize =
-            manifest["icons"].as_array().unwrap().iter().map(|icon| icon["animations"].as_array().unwrap().len()).sum();
+        // Adopted spec icons are kept, not built.
+        let animations: usize = manifest["icons"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .filter(|icon| icon.get("source").and_then(Value::as_str) != Some("gai-icon/2"))
+            .map(|icon| icon["animations"].as_array().unwrap().len())
+            .sum();
         assert_eq!(report["actions"].as_array().unwrap().len(), animations, "{set}");
         run(dir.path(), &["--library-root", &root, "library", "package", set]).ok();
         let verified = run(dir.path(), &["--library-root", &root, "library", "verify", set]).ok();

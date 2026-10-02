@@ -118,18 +118,25 @@ const RECORD_FIELDS: [&str; 11] = [
     "brief",
 ];
 
-/// The describe() variants of one set against its committed set.json; returns the records checked.
-fn check_description(set: &Path) -> usize {
+/// The describe() variants of one set against its committed set.json; returns the records
+/// checked and the records of adopted spec icons, which describe() no longer covers.
+fn check_description(set: &Path) -> (usize, usize) {
     let number = &set.file_name().unwrap().to_string_lossy()[..2];
     let Ok(text) = fs::read_to_string(repo().join(format!("prototype/icons/{number}/assets/set.json"))) else {
-        return 0;
+        return (0, 0);
     };
     let committed: Value = serde_json::from_str(&text).unwrap();
     let limits = Limits::default();
     let source = SetSource::library_set(set).unwrap();
     let description = run_on_worker(&limits, || SetRuntime::load(&source, &limits)?.install()).unwrap();
-    let mut checked = 0;
+    let (mut checked, mut adopted) = (0, 0);
     for entry in committed["icons"].as_array().unwrap() {
+        // An icon adopted from a spec (`library adopt`) is described by its spec, not by
+        // the definitions, which keep the old icon only for the legacy checks.
+        if entry.get("source").and_then(Value::as_str) == Some("gai-icon/2") {
+            adopted += entry.get("animations").and_then(Value::as_array).map_or(0, Vec::len);
+            continue;
+        }
         let icon = description.icons.iter().find(|icon| icon.name == entry["icon"]).expect("icon in describe()");
         for key in ["number", "forwardLabel", "reverseLabel"] {
             assert_eq!(entry.get(key).map(to_js_json), icon.meta.get(key).map(to_js_json), "{}.{key}", icon.name);
@@ -153,13 +160,13 @@ fn check_description(set: &Path) -> usize {
             checked += 1;
         }
     }
-    checked
+    (checked, adopted)
 }
 
 #[test]
 fn description_matches_committed_set_json() {
     let sets: Vec<PathBuf> = ["01", "03", "07", "12", "40"].iter().filter_map(|n| set_dir(n)).collect();
-    let checked: usize = sets.iter().map(|set| check_description(set)).sum();
+    let checked: usize = sets.iter().map(|set| check_description(set).0).sum();
     eprintln!("{checked} set.json records match describe()");
 }
 
@@ -167,10 +174,10 @@ fn description_matches_committed_set_json() {
 #[ignore = "whole catalog"]
 fn every_description_matches_committed_set_json() {
     let sets: Vec<PathBuf> = (1..=63).filter_map(|n| set_dir(&format!("{n:02}"))).collect();
-    let checked: usize =
-        map_parallel(sets, workers(), &Limits::default(), |set| check_description(&set)).into_iter().sum();
-    eprintln!("{checked} set.json records match describe()");
-    assert!(checked > 3000 || checked == 0);
+    let counts = map_parallel(sets, workers(), &Limits::default(), |set| check_description(&set));
+    let (checked, adopted) = counts.into_iter().fold((0, 0), |(c, a), (x, y)| (c + x, a + y));
+    eprintln!("{checked} set.json records match describe(); {adopted} come from adopted specs");
+    assert!(checked + adopted > 3000 || checked == 0);
 }
 
 /// JS `Math.max(...values)`: NaN if any value is NaN, and +0 above -0.
