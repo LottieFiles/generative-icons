@@ -18,6 +18,14 @@ use tokio::runtime::Runtime;
 use wiremock::matchers::{method, path, path_regex};
 use wiremock::{Mock, MockServer, Request, Respond, ResponseTemplate};
 
+/// A 1×1 PNG, the images a mock draft attaches.
+pub const TINY_PNG: &[u8] = &[
+    0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d, 0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x01,
+    0x00, 0x00, 0x00, 0x01, 0x08, 0x06, 0x00, 0x00, 0x00, 0x1f, 0x15, 0xc4, 0x89, 0x00, 0x00, 0x00, 0x0d, 0x49, 0x44, 0x41,
+    0x54, 0x78, 0x9c, 0x63, 0x60, 0x60, 0x60, 0xf8, 0x0f, 0x00, 0x01, 0x04, 0x01, 0x00, 0x5f, 0xe5, 0xc3, 0x4b, 0x00, 0x00,
+    0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82,
+];
+
 /// The code the fake consent page hands back.
 pub const CODE: &str = "the-code";
 
@@ -261,6 +269,25 @@ impl Mcp {
             .unwrap_or_default()
             .to_owned();
         match name {
+            // Spec v2: one plan script per icon; `file` stores the bundle, `sheet` attaches PNGs.
+            "creator_exec" if args.pointer("/params/plan").is_some() => {
+                assert_eq!(args["timeoutMs"], 30000);
+                state.documents_used.insert(doc.clone());
+                let mut stored = Vec::new();
+                if !file.is_empty() {
+                    let bytes = state.hosted_body.len();
+                    state.files.insert((doc.clone(), file.clone()), state.hosted_body.clone());
+                    stored.push(json!({"bytes": bytes, "file": file, "format": "lottie", "kind": "export", "status": "ready"}));
+                }
+                let sheets = if args.pointer("/params/sheet").is_some() { 2 } else { 0 };
+                (
+                    false,
+                    json!({
+                        "documentId": doc, "durability": "durable", "logs": [], "revision": "3",
+                        "result": {"stored": stored, "sheets": vec![json!({"tiles": 1}); sheets], "timing": {"totalMs": 42}},
+                    }),
+                )
+            }
             "creator_exec" => {
                 assert_eq!(args["code"].as_str(), Some(EXPORT_SCRIPT));
                 assert!(
@@ -390,7 +417,15 @@ impl Respond for Mcp {
                 Value::String(text) => text.clone(),
                 other => other.to_string(),
             };
-            let result = json!({"content": [{"type": "text", "text": text}], "isError": is_error});
+            let mut content = vec![json!({"type": "text", "text": text})];
+            if name == "creator_exec" && args.pointer("/params/sheet").is_some() {
+                use base64::Engine as _;
+                for _ in 0..2 {
+                    let png = base64::engine::general_purpose::STANDARD.encode(TINY_PNG);
+                    content.push(json!({"type": "image", "data": png, "mimeType": "image/png"}));
+                }
+            }
+            let result = json!({"content": content, "isError": is_error});
             return self.reply(&state, &id, result);
         }
         if method == "resources/read" {

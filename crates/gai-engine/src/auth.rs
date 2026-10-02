@@ -533,18 +533,31 @@ impl StoredTokens {
         *self.cached.lock().unwrap_or_else(|e| e.into_inner()) = session;
     }
 
-    /// Under the process mutex and the cross-process file lock: re-read the store, use its token
-    /// if another process already refreshed, else redeem the refresh token and save the rotated
-    /// pair before the lock is released.
+    /// Under the process mutex: a current token in the file (another process refreshed) is used
+    /// as it is, without the lock or the keychain. Otherwise, under the cross-process file lock,
+    /// re-read the store, use its token if another process refreshed meanwhile, else redeem the
+    /// refresh token and save the rotated pair before the lock is released.
     fn refresh(&self, engine: &str, rejected: Option<&str>) -> Result<String> {
         let _in_process = self.refreshing.lock().unwrap_or_else(|e| e.into_inner());
+        let usable = |session: &Session| {
+            session.valid_for(MIN_VALIDITY) && rejected != Some(session.access_token.as_str())
+        };
+        if let Some(session) = self
+            .store
+            .record()?
+            .and_then(|record| record.session)
+            .filter(usable)
+        {
+            self.remember(Some(session.clone()));
+            return Ok(session.access_token);
+        }
         let lock = self.store.lock()?;
         let not_logged_in = || Error::NotLoggedIn {
             engine: engine.to_owned(),
         };
         let mut record = self.store.load(&lock)?.ok_or_else(not_logged_in)?;
         let session = record.session.clone().ok_or_else(not_logged_in)?;
-        if session.valid_for(MIN_VALIDITY) && rejected != Some(session.access_token.as_str()) {
+        if usable(&session) {
             self.remember(Some(session.clone()));
             return Ok(session.access_token);
         }
@@ -595,6 +608,7 @@ impl StoredTokens {
 mod tests {
     use std::collections::HashSet;
     use std::path::Path;
+    use std::sync::atomic::Ordering::SeqCst;
     use std::sync::{Arc, Barrier};
     use std::thread;
 
@@ -832,6 +846,81 @@ mod tests {
         assert_eq!(issued, HashSet::from(["at-1".to_owned()]));
         let session = stored(&config).unwrap().session.unwrap();
         assert_eq!(session.refresh_token.as_deref(), Some("rt-1"));
+    }
+
+    #[test]
+    fn a_keychain_prompt_never_holds_the_sign_in_lock() {
+        let tokens = RotatingTokens::default();
+        tokens.state.lock().unwrap().valid.insert("rt-0".into());
+        let (_rt, server) = start(&tokens);
+        let home = tempfile::tempdir().unwrap();
+        let (config, keychain) = keychain_config(&server, home.path());
+        seed(&config);
+
+        // Reading the refresh token now waits on an access prompt, as macOS asks a new binary.
+        keychain.prompt.open();
+        let reads = keychain.reads.load(SeqCst);
+        let refreshing = {
+            let config = config.clone();
+            thread::spawn(move || Auth::new(&config, http::client().unwrap()).access_token())
+        };
+        while keychain.reads.load(SeqCst) == reads {
+            thread::sleep(Duration::from_millis(2));
+        }
+        // Another process takes the lock while the prompt is open.
+        let mut other = config.clone();
+        other.credential_store = CredentialStoreKind::File;
+        let (sent, taken) = std::sync::mpsc::channel();
+        thread::spawn(move || {
+            let store = CredentialStore::open(&other);
+            let _ = sent.send(store.lock().map(drop).is_ok());
+        });
+        let took = taken.recv_timeout(Duration::from_secs(5));
+        keychain.prompt.answer();
+        let token = refreshing.join().unwrap();
+        assert_eq!(
+            took,
+            Ok(true),
+            "the sign-in lock was held across the keychain prompt"
+        );
+
+        // The refresh still redeems rt-0 once and keeps its successor.
+        assert_eq!(token.unwrap(), "at-1");
+        let state = tokens.state.lock().unwrap();
+        assert_eq!((state.refreshes, state.reuses), (1, 0));
+        assert_eq!(keychain.entries().values().collect::<Vec<_>>(), ["rt-1"]);
+    }
+
+    #[test]
+    fn slow_keychain_reads_still_redeem_each_refresh_token_once() {
+        let tokens = RotatingTokens::default();
+        tokens.state.lock().unwrap().valid.insert("rt-0".into());
+        let (_rt, server) = start(&tokens);
+        let home = tempfile::tempdir().unwrap();
+        let (config, keychain) = keychain_config(&server, home.path());
+        seed(&config);
+        *keychain.read_delay.lock().unwrap() = Duration::from_millis(30);
+
+        // Every reader has read rt-0 before the first refresh rotates it.
+        let barrier = Arc::new(Barrier::new(8));
+        let handles: Vec<_> = (0..8)
+            .map(|_| {
+                let config = config.clone();
+                let barrier = Arc::clone(&barrier);
+                thread::spawn(move || {
+                    let auth = Auth::new(&config, http::client().unwrap());
+                    barrier.wait();
+                    auth.access_token().unwrap()
+                })
+            })
+            .collect();
+        let issued: HashSet<String> = handles.into_iter().map(|h| h.join().unwrap()).collect();
+
+        let state = tokens.state.lock().unwrap();
+        assert_eq!(state.reuses, 0, "a refresh token was redeemed twice");
+        assert_eq!(state.refreshes, 1);
+        assert_eq!(issued, HashSet::from(["at-1".to_owned()]));
+        assert_eq!(keychain.entries().values().collect::<Vec<_>>(), ["rt-1"]);
     }
 
     #[test]

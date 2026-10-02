@@ -32,6 +32,9 @@ const DESIGN_REVIEW: &str = "# Design and review record\n\nRecord meaning, refer
 
 /// Runs `create`.
 pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
+    if args.spec {
+        return super::v2::create(ctx, args);
+    }
     let root = ctx.cwd.as_path();
     let config = Config::require(root, ctx.platform)?;
     if config.layout == Layout::Legacy {

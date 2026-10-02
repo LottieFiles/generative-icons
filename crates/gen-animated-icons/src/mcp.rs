@@ -1,12 +1,12 @@
 //! `mcp`: a stdio MCP server that gives agents this CLI's task-shaped commands:
-//! `search`, `add`, `create`, `context`, `check`, `build` and `preview`.
+//! `search`, `add`, `create`, `context`, `check`, `draft`, `build` and `preview`.
 //!
 //! Each tool call runs the command in a child process of this binary with `--json`, so
 //! a renderer fault or a stuck engine call ends that call, not the server, and icon code
 //! never runs in the server itself: the child, like any one-shot command, ends itself
 //! with `SOURCE_ERROR` when that code runs past its time limit ([`crate::protect`]). The result
 //! is the command's JSON as text plus `structuredContent`, then its warnings as text;
-//! `preview` also returns the rendered sheets as PNG images. `submit` and `login` are not
+//! `preview` and `draft` (spec v2) also return the rendered sheets as PNG images. `submit` and `login` are not
 //! exposed: both need the user.
 //!
 //! A call's arguments must match the tool's input schema exactly ([`validate`]): an
@@ -59,7 +59,8 @@ const INVALID_REQUEST: i64 = -32600;
 const INSTRUCTIONS: &str = "gen-animated-icons finds, creates and builds animated icons (dotLottie) for the project in the working folder. \
 Look for an existing icon first: search, then add. To make a missing icon: context (read the contract and the nearest references), \
 create (scaffold a batch, optionally --from a close library icon), edit the batch file it names, check, build, then preview and look at the images. \
-Revise and rebuild until the sheets look right. Never claim a visual review you did not do.";
+Revise and rebuild until the sheets look right. Never claim a visual review you did not do. \
+Prototype: an icon can instead be a JSON spec (create with spec: true); check it offline, then draft (one engine call returns a review sheet as images, nothing stored) before you build.";
 
 /// The MCP settings entry that starts this server; `init` prints it for the user to add
 /// and never writes it.
@@ -465,11 +466,14 @@ fn structured(value: Value) -> Value {
     }
 }
 
-/// The PNG sheets a `preview` result lists, as image content.
+/// The PNG sheets a `preview` result (`files[].path`) or a `draft` result (`sheets[]`)
+/// lists, as image content.
 fn images(cwd: &Path, value: &Value) -> Vec<ContentBlock> {
-    let files = value.get("files").and_then(Value::as_array).into_iter().flatten();
+    let files = value.get("files").and_then(Value::as_array).into_iter().flatten().filter_map(|file| file.get("path"));
+    let sheets = value.get("sheets").and_then(Value::as_array).into_iter().flatten();
     files
-        .filter_map(|file| file.get("path").and_then(Value::as_str))
+        .chain(sheets)
+        .filter_map(Value::as_str)
         .filter_map(|path| std::fs::read(cwd.join(path)).ok())
         .take(MAX_IMAGES)
         .map(|png| ContentBlock::image(base64::engine::general_purpose::STANDARD.encode(png), "image/png"))
@@ -587,7 +591,8 @@ fn tools() -> Vec<ToolSpec> {
                     "from": { "type": "string", "description": "Library icon to start from" },
                     "label": { "type": "string", "description": "Display label (default: from the id)" },
                     "intent": { "type": "string", "description": "What the motion communicates" },
-                    "neighbors": { "type": "array", "items": { "type": "string" }, "maxItems": 4, "description": "Reference icons for the saved context packet, as chosen with `context` (default: `from`, else the nearest by label and intent)" }
+                    "neighbors": { "type": "array", "items": { "type": "string" }, "maxItems": 4, "description": "Reference icons for the saved context packet, as chosen with `context` (default: `from`, else the nearest by label and intent)" },
+                    "spec": { "type": "boolean", "description": "Prototype: write a spec v2 icon instead (gen-animated-icons/icons/<id>.icon.json: plain JSON shapes, roles, rigs and eased keys, no code), a starter that checks clean; `from` and `neighbors` do not apply. Then check, draft and build it." }
                 }),
                 &["id"],
                 annotations(false, false, false, true),
@@ -595,6 +600,7 @@ fn tools() -> Vec<ToolSpec> {
             argv: |args| {
                 let id = string(args, "id")?.ok_or("id is required")?;
                 let mut options = Vec::new();
+                push_flag(&mut options, "--spec", flag(args, "spec"));
                 push_value(&mut options, "--from", string(args, "from")?);
                 push_value(&mut options, "--label", string(args, "label")?);
                 push_value(&mut options, "--intent", string(args, "intent")?);
@@ -633,6 +639,23 @@ fn tools() -> Vec<ToolSpec> {
                 Ok(command_line("check", options, strings(args, "ids")?))
             },
             images: false,
+        },
+        ToolSpec {
+            tool: tool(
+                "draft",
+                "Draft a spec v2 icon",
+                "Prototype, spec v2 icons only (gen-animated-icons/icons/<id>.icon.json). Validates the spec, then makes ONE hosted-engine call that builds every motion and renders a review sheet with the engine's renderer: rows are Light, then Strong in Regular, Bold, Solid and Duotone, then the reverses; columns are the beats of each motion (contacts, turns, holds, rest), labelled with their times. Nothing is exported or stored on the engine. Returns {status, sheets, rows, diagnostics, engine} plus the sheets as images (4x, and the real 24 px size enlarged): look at them before you build. A spec with errors stops before the engine (status FAIL, stage spec). Needs the user's sign-in (on NOT_LOGGED_IN ask them to run `gen-animated-icons login`) and the network. The engine's renderer is not the player: `build` ends with dotlottie-rs sheets.",
+                json!({
+                    "id": { "type": "string", "pattern": ICON_ID_PATTERN, "description": "A local spec v2 icon id" }
+                }),
+                &["id"],
+                annotations(false, false, true, true),
+            ),
+            argv: |args| {
+                let id = string(args, "id")?.ok_or("id is required")?;
+                Ok(command_line("draft", Vec::new(), vec![id]))
+            },
+            images: true,
         },
         ToolSpec {
             tool: tool(
@@ -915,6 +938,8 @@ mod tests {
         );
         assert_eq!(argv("check", json!({"ids": ["a"], "source": true})).unwrap(), ["check", "--source", "--", "a"]);
         assert_eq!(argv("build", json!({})).unwrap(), ["build"]);
+        assert_eq!(argv("draft", json!({"id": "bell-ring"})).unwrap(), ["draft", "--", "bell-ring"]);
+        assert_eq!(argv("create", json!({"id": "x", "spec": true})).unwrap(), ["create", "--spec", "--", "x"]);
         // Values that look like flags stay values.
         assert_eq!(argv("add", json!({"ids": ["--installed"]})).unwrap(), ["add", "--", "--installed"]);
         assert_eq!(argv("create", json!({"id": "x", "from": "-y"})).unwrap(), ["create", "--from=-y", "--", "x"]);

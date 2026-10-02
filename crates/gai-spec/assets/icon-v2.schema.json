@@ -1,0 +1,1254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "title": "gen-animated-icons icon spec v2 (gai-icon/2)",
+  "description": "One animated icon as data: shapes, roles, rigs and keys. No value is a function of time. Units: the 32-unit grid, y down; angles in degrees, positive = clockwise on screen; times in seconds on the 2.4 s timeline. Object key order is meaningful in `parts` (back to front). This copy is what gen-animated-icons validates (gai-spec): it adds polar points, 96-vertex polygons and polylines, knockout clearances per part, follow.offset and cycle to the design's Appendix A.",
+  "type": "object",
+  "required": [
+    "format",
+    "id",
+    "label",
+    "intent",
+    "parts",
+    "motion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "//": {
+      "$ref": "#/$defs/comment"
+    },
+    "format": {
+      "const": "gai-icon/2",
+      "description": "Marks a v2 spec; the CLI dispatches on it."
+    },
+    "id": {
+      "$ref": "#/$defs/name"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 20,
+      "description": "What Light and Strong (and the reverse) show, in plain words. It is the motion brief."
+    },
+    "state": {
+      "$ref": "#/$defs/state"
+    },
+    "anchors": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/$defs/name"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/xy"
+      }
+    },
+    "parts": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 40,
+      "propertyNames": {
+        "$ref": "#/$defs/name"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/part"
+      }
+    },
+    "rigs": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/$defs/name"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/rig"
+      }
+    },
+    "motion": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "$ref": "#/$defs/target"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/track"
+      }
+    },
+    "reverse": {
+      "type": "object",
+      "description": "Per-track overrides of the automatic reverse (state.reverse 'auto'): explicit keys for that motion's reverse.",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "//": {
+          "$ref": "#/$defs/comment"
+        },
+        "light": {
+          "$ref": "#/$defs/overrides"
+        },
+        "strong": {
+          "$ref": "#/$defs/overrides"
+        }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "description": "Overrides the derived action length (the last key of the motion). Rest is active + 0.04 s, rounded up to a frame.",
+      "additionalProperties": false,
+      "properties": {
+        "light": {
+          "$ref": "#/$defs/active"
+        },
+        "strong": {
+          "$ref": "#/$defs/active"
+        },
+        "reverse": {
+          "$ref": "#/$defs/active"
+        },
+        "reverseStrong": {
+          "$ref": "#/$defs/active"
+        }
+      }
+    },
+    "preview": {
+      "type": "object",
+      "description": "Overrides the draft sheet's columns (by default the beats the compiler finds: starts, peaks, contacts, holds and rest).",
+      "additionalProperties": false,
+      "properties": {
+        "light": {
+          "$ref": "#/$defs/beats"
+        },
+        "strong": {
+          "$ref": "#/$defs/beats"
+        }
+      }
+    },
+    "cycle": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 360,
+      "description": "Rotational symmetry in degrees (cycleDegrees): a rotation may end this many degrees, or a multiple, from where it started. Whole turns are always allowed."
+    }
+  },
+  "$defs": {
+    "comment": {
+      "type": "string",
+      "description": "A note for people; ignored by the compiler."
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "maxLength": 32
+    },
+    "coord": {
+      "type": "number",
+      "minimum": -16,
+      "maximum": 48
+    },
+    "length": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 48
+    },
+    "time": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 2.4
+    },
+    "active": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 2.3
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/time"
+      },
+      "minItems": 2,
+      "maxItems": 8
+    },
+    "xy": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/coord"
+        },
+        {
+          "$ref": "#/$defs/coord"
+        }
+      ],
+      "items": false,
+      "minItems": 2
+    },
+    "anchorRef": {
+      "type": "string",
+      "description": "A named anchor, or a part's derived anchor: c, top, bottom, left, right, tl, tr, bl, br (bounding box) or start, end (open shapes).",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*(\\.(c|top|bottom|left|right|tl|tr|bl|br|start|end))?$"
+    },
+    "point": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/xy"
+        },
+        {
+          "$ref": "#/$defs/anchorRef"
+        },
+        {
+          "$ref": "#/$defs/polar"
+        }
+      ]
+    },
+    "points": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/point"
+      },
+      "minItems": 2,
+      "maxItems": 96
+    },
+    "radius": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 16
+    },
+    "radii": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/radius"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/radius"
+          },
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "[tl, tr, br, bl]"
+        }
+      ]
+    },
+    "shape": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/line"
+        },
+        {
+          "$ref": "#/$defs/polyline"
+        },
+        {
+          "$ref": "#/$defs/rect"
+        },
+        {
+          "$ref": "#/$defs/circle"
+        },
+        {
+          "$ref": "#/$defs/ellipse"
+        },
+        {
+          "$ref": "#/$defs/arc"
+        },
+        {
+          "$ref": "#/$defs/polygon"
+        },
+        {
+          "$ref": "#/$defs/wave"
+        },
+        {
+          "$ref": "#/$defs/path"
+        },
+        {
+          "$ref": "#/$defs/minus"
+        },
+        {
+          "$ref": "#/$defs/morph"
+        }
+      ]
+    },
+    "line": {
+      "type": "object",
+      "required": [
+        "line"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "line": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/point"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "polyline": {
+      "type": "object",
+      "required": [
+        "polyline"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "polyline": {
+          "$ref": "#/$defs/points"
+        },
+        "r": {
+          "$ref": "#/$defs/radius"
+        }
+      }
+    },
+    "rect": {
+      "type": "object",
+      "required": [
+        "rect"
+      ],
+      "additionalProperties": false,
+      "description": "[x, y, w, h] from the top-left corner. The contour starts at the bottom-left corner and runs clockwise, so outline 'open' leaves out the bottom edge.",
+      "properties": {
+        "rect": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/coord"
+            },
+            {
+              "$ref": "#/$defs/coord"
+            },
+            {
+              "$ref": "#/$defs/length"
+            },
+            {
+              "$ref": "#/$defs/length"
+            }
+          ],
+          "items": false,
+          "minItems": 4
+        },
+        "r": {
+          "$ref": "#/$defs/radii"
+        }
+      }
+    },
+    "circle": {
+      "type": "object",
+      "required": [
+        "circle"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "circle": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/point"
+            },
+            {
+              "$ref": "#/$defs/length"
+            }
+          ],
+          "items": false,
+          "minItems": 2
+        }
+      }
+    },
+    "ellipse": {
+      "type": "object",
+      "required": [
+        "ellipse"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ellipse": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/point"
+            },
+            {
+              "$ref": "#/$defs/length"
+            },
+            {
+              "$ref": "#/$defs/length"
+            }
+          ],
+          "items": false,
+          "minItems": 3
+        }
+      }
+    },
+    "arc": {
+      "type": "object",
+      "required": [
+        "arc"
+      ],
+      "additionalProperties": false,
+      "description": "[centre, r, from, to] in degrees, 0 = +x, clockwise on screen. closed: true adds the chord.",
+      "properties": {
+        "arc": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/point"
+            },
+            {
+              "$ref": "#/$defs/length"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false,
+          "minItems": 4
+        },
+        "closed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "polygon": {
+      "type": "object",
+      "required": [
+        "polygon"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "polygon": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 96,
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/point"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "p"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "p": {
+                    "$ref": "#/$defs/point"
+                  },
+                  "r": {
+                    "$ref": "#/$defs/radius"
+                  },
+                  "curve": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/point"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "description": "Cubic control points that bend the edge to the next vertex."
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "r": {
+          "$ref": "#/$defs/radius"
+        }
+      }
+    },
+    "wave": {
+      "type": "object",
+      "required": [
+        "wave"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "wave": {
+          "type": "object",
+          "required": [
+            "x",
+            "y",
+            "cycles",
+            "amp"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "x": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coord"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "y": {
+              "$ref": "#/$defs/coord"
+            },
+            "cycles": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 6
+            },
+            "amp": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 8
+            },
+            "phase": {
+              "type": "number",
+              "description": "In cycles; keyable as <part>.phase."
+            }
+          }
+        }
+      }
+    },
+    "path": {
+      "type": "object",
+      "required": [
+        "path"
+      ],
+      "additionalProperties": false,
+      "description": "Escape hatch: SVG path data with ONE subpath (a single M; Z only at the end). The engine rejects a second MoveTo; use a list of shapes instead.",
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^\\s*[Mm][^MmZz]*([Zz]\\s*)?$",
+          "maxLength": 2000
+        }
+      }
+    },
+    "minus": {
+      "type": "object",
+      "required": [
+        "minus"
+      ],
+      "additionalProperties": false,
+      "description": "Exact boolean: the first shape minus the others, computed by the CLI into one contour.",
+      "properties": {
+        "minus": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/shape"
+          },
+          "minItems": 2,
+          "maxItems": 6
+        }
+      }
+    },
+    "morph": {
+      "type": "object",
+      "required": [
+        "morph",
+        "by"
+      ],
+      "additionalProperties": false,
+      "description": "Two shapes of the same kind, interpolated by their parameters as the driver goes 0 -> 1. Key the driver as a bare motion target.",
+      "properties": {
+        "morph": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/shape"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "by": {
+          "$ref": "#/$defs/name"
+        }
+      }
+    },
+    "part": {
+      "type": "object",
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "shape"
+          ]
+        },
+        {
+          "required": [
+            "mirror"
+          ]
+        }
+      ],
+      "properties": {
+        "//": {
+          "$ref": "#/$defs/comment"
+        },
+        "shape": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/shape"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/shape"
+              },
+              "minItems": 2,
+              "maxItems": 8,
+              "description": "Several subpaths painted as one layer per style (a group paint): no stroke ever carries two MoveTos."
+            }
+          ]
+        },
+        "mirror": {
+          "type": "object",
+          "required": [
+            "of"
+          ],
+          "additionalProperties": false,
+          "description": "A mirrored copy of another part, across the vertical line x (default 16) or the horizontal line y.",
+          "properties": {
+            "of": {
+              "$ref": "#/$defs/name"
+            },
+            "x": {
+              "$ref": "#/$defs/coord"
+            },
+            "y": {
+              "$ref": "#/$defs/coord"
+            }
+          }
+        },
+        "role": {
+          "enum": [
+            "stroke",
+            "surface",
+            "fill"
+          ],
+          "default": "stroke"
+        },
+        "outline": {
+          "enum": [
+            "closed",
+            "open",
+            "none"
+          ],
+          "description": "surface and fill only. open leaves out the closing edge (a rect's bottom, an arc's chord)."
+        },
+        "tint": {
+          "type": "boolean",
+          "description": "surface only; default true: the Duotone interior."
+        },
+        "solid": {
+          "oneOf": [
+            {
+              "enum": [
+                "auto",
+                "ring",
+                "fill",
+                "none"
+              ]
+            },
+            {
+              "type": "object",
+              "required": [
+                "grow"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "grow": {
+                  "type": "number",
+                  "minimum": -2,
+                  "maximum": 3
+                }
+              }
+            },
+            {
+              "$ref": "#/$defs/shape"
+            }
+          ],
+          "description": "auto: stroke -> the centerline at 2.6; surface -> filled and rimmed at 2.6; fill -> filled. ring: the outline at 2.6, hollow."
+        },
+        "holes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/shape"
+          },
+          "minItems": 1,
+          "maxItems": 6,
+          "description": "Real counters: stroked in Outline, cut from tint and Solid with subtract masks (overlaps stay open)."
+        },
+        "knockout": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/name"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "part"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "part": {
+                    "$ref": "#/$defs/name"
+                  },
+                  "gap": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 4
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 6,
+          "description": "In Solid, these parts are cut out of this surface (with gap) instead of being drawn. A part that moves relative to the surface is cut by a matte that follows its rig."
+        },
+        "gap": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 4,
+              "description": "Clearance around knockouts (default 0.6)."
+            },
+            {
+              "type": "object",
+              "propertyNames": {
+                "$ref": "#/$defs/name"
+              },
+              "additionalProperties": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "description": "Cut this part where it comes within d of another part's shape at rest."
+            }
+          ]
+        },
+        "hidden": {
+          "type": "boolean",
+          "description": "Invisible at rest; motion (opacity, pulse) shows it."
+        }
+      }
+    },
+    "rig": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A transform. A rig named like a part moves that part; carries lists the parts and rigs that move with it, at any depth. The CLI flattens rigs into composition-level groups chained by layer parenting.",
+      "properties": {
+        "//": {
+          "$ref": "#/$defs/comment"
+        },
+        "pivot": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/point"
+            },
+            {
+              "type": "object",
+              "required": [
+                "contact"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "contact": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/point"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "description": "Turn about the first point for negative angles and the second for positive ones (tipping on a foot)."
+                }
+              }
+            }
+          ]
+        },
+        "carries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/name"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "swing": {
+          "type": "object",
+          "required": [
+            "hinge"
+          ],
+          "additionalProperties": false,
+          "description": "A door turning in depth about a vertical hinge: points scale by cos(angle) about the hinge, strokes keep their width. Keyed as <rig>.swing in degrees.",
+          "properties": {
+            "hinge": {
+              "$ref": "#/$defs/point"
+            },
+            "front": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/name"
+              },
+              "description": "Carried parts on the front face: they fade out as it turns away."
+            },
+            "occludes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/name"
+              },
+              "description": "Parts behind the closed door: shown only where the door has uncovered them."
+            },
+            "fade": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 180
+              },
+              "minItems": 2,
+              "maxItems": 2,
+              "default": [
+                50,
+                70
+              ]
+            }
+          }
+        },
+        "flip": {
+          "type": "object",
+          "required": [
+            "axis"
+          ],
+          "additionalProperties": false,
+          "description": "A card turning about the vertical line x = axis; faces swap at 90 degrees and an edge rim stays visible. Keyed as <rig>.flip.",
+          "properties": {
+            "axis": {
+              "$ref": "#/$defs/coord"
+            },
+            "back": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/name"
+              }
+            }
+          }
+        },
+        "squash": {
+          "type": "object",
+          "required": [
+            "base"
+          ],
+          "additionalProperties": false,
+          "description": "Point deformation about the line y = base; strokes keep their width. Keyed as <rig>.squash (1 = rest).",
+          "properties": {
+            "base": {
+              "$ref": "#/$defs/coord"
+            },
+            "widen": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2,
+              "default": 0.5
+            }
+          }
+        }
+      }
+    },
+    "target": {
+      "type": "string",
+      "description": "<part or rig>.<property>, or a bare morph driver. x, y, rotate, r, grow, phase and amp are offsets from the drawn rest pose; opacity (0-1), draw (0-1), scale and squash (factors, 1 = rest) are absolute; swing and flip are degrees. scale and squash compile to path keys about the rig pivot (or base), so strokes keep their width; layer scale is never used.",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*(\\.(x|y|rotate|scale|opacity|draw|swing|flip|squash|r|grow|phase|amp))?$"
+    },
+    "track": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "//": {
+              "$ref": "#/$defs/comment"
+            },
+            "light": {
+              "$ref": "#/$defs/motionValue"
+            },
+            "strong": {
+              "$ref": "#/$defs/motionValue"
+            }
+          }
+        },
+        {
+          "$ref": "#/$defs/follow"
+        }
+      ]
+    },
+    "motionValue": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/keys"
+        },
+        {
+          "$ref": "#/$defs/pulse"
+        },
+        {
+          "$ref": "#/$defs/loop"
+        },
+        {
+          "$ref": "#/$defs/follow"
+        }
+      ]
+    },
+    "keys": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 40,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/key"
+          },
+          {
+            "$ref": "#/$defs/hold"
+          },
+          {
+            "$ref": "#/$defs/settle"
+          },
+          {
+            "$ref": "#/$defs/bounce"
+          },
+          {
+            "$ref": "#/$defs/wobble"
+          }
+        ]
+      }
+    },
+    "key": {
+      "type": "array",
+      "description": "[t, value] or [t, value, ease]. The ease names how the motion ARRIVES at this key; the default is auto.",
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/time"
+        },
+        {
+          "type": "number",
+          "minimum": -1080,
+          "maximum": 1080
+        },
+        {
+          "$ref": "#/$defs/ease"
+        }
+      ],
+      "items": false,
+      "minItems": 2
+    },
+    "ease": {
+      "oneOf": [
+        {
+          "enum": [
+            "auto",
+            "linear",
+            "in",
+            "out",
+            "inOut",
+            "smooth",
+            "sine",
+            "hit",
+            "launch",
+            "pass",
+            "step"
+          ],
+          "description": "auto: smooth through same-direction keys, stops at turns and at the ends (exact). linear, in, out, inOut (= smooth): exact cubics. sine: today's cosine io (7.9e-5 of the move). hit: arrive at full speed and stop dead, even before a hold. launch: leave at full speed. pass: keep speed through. step: jump at this key."
+        },
+        {
+          "type": "array",
+          "description": "A raw cubic-bezier [x1, y1, x2, y2] for the arriving segment.",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "number",
+              "minimum": -2,
+              "maximum": 3
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "number",
+              "minimum": -2,
+              "maximum": 3
+            }
+          ],
+          "items": false,
+          "minItems": 4
+        }
+      ]
+    },
+    "hold": {
+      "type": "object",
+      "required": [
+        "hold"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "hold": {
+          "$ref": "#/$defs/time"
+        }
+      },
+      "description": "Stay at the value just reached until this time."
+    },
+    "settle": {
+      "type": "object",
+      "required": [
+        "settle"
+      ],
+      "additionalProperties": false,
+      "description": "Damped swings that end at `to` (default: the value just reached) at time `settle`. From the key just reached, the values alternate about `to` with each swing `decay` times the last, evenly spaced, ease auto. `explain` prints the keys.",
+      "properties": {
+        "settle": {
+          "$ref": "#/$defs/time"
+        },
+        "to": {
+          "type": "number",
+          "minimum": -1080,
+          "maximum": 1080
+        },
+        "amp": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "default": 0.3,
+          "description": "First swing as a fraction of the arriving move, when `to` is the value just reached."
+        },
+        "decay": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1,
+          "default": 0.5
+        },
+        "swings": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4,
+          "default": 2
+        }
+      }
+    },
+    "bounce": {
+      "type": "object",
+      "required": [
+        "bounce"
+      ],
+      "additionalProperties": false,
+      "description": "Rebound off a stop without passing it, back at the stop by this time.",
+      "properties": {
+        "bounce": {
+          "$ref": "#/$defs/time"
+        },
+        "amp": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "default": 0.12
+        }
+      }
+    },
+    "wobble": {
+      "type": "object",
+      "required": [
+        "wobble",
+        "amp",
+        "until"
+      ],
+      "additionalProperties": false,
+      "description": "A damped shake that starts from rest at `wobble` and ends at `until`.",
+      "properties": {
+        "wobble": {
+          "$ref": "#/$defs/time"
+        },
+        "amp": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 90
+        },
+        "until": {
+          "$ref": "#/$defs/time"
+        },
+        "swings": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "default": 3
+        }
+      }
+    },
+    "pulse": {
+      "type": "object",
+      "required": [
+        "pulse"
+      ],
+      "additionalProperties": false,
+      "description": "Fade in while swelling out, then fade away: opacity and one shape parameter of a part. The part is hidden at rest.",
+      "properties": {
+        "pulse": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/time"
+            },
+            {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 2.4
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "description": "[start, duration]"
+        },
+        "r": {
+          "type": "number",
+          "minimum": -8,
+          "maximum": 8
+        },
+        "grow": {
+          "type": "number",
+          "minimum": -8,
+          "maximum": 8
+        }
+      }
+    },
+    "loop": {
+      "type": "object",
+      "required": [
+        "loop",
+        "period"
+      ],
+      "additionalProperties": false,
+      "description": "Repeat these keys every period seconds (a loop must end where it starts).",
+      "properties": {
+        "loop": {
+          "$ref": "#/$defs/keys"
+        },
+        "period": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 2.4
+        },
+        "until": {
+          "$ref": "#/$defs/time"
+        }
+      }
+    },
+    "follow": {
+      "type": "object",
+      "required": [
+        "follow"
+      ],
+      "additionalProperties": false,
+      "description": "Copy another track: value = scale × source + offset, delayed by lag (scale -1 mirrors a turn).",
+      "properties": {
+        "//": {
+          "$ref": "#/$defs/comment"
+        },
+        "follow": {
+          "$ref": "#/$defs/target"
+        },
+        "lag": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "scale": {
+          "type": "number",
+          "minimum": -4,
+          "maximum": 4
+        },
+        "offset": {
+          "type": "number",
+          "minimum": -1080,
+          "maximum": 1080
+        }
+      }
+    },
+    "overrides": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "$ref": "#/$defs/target"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/keys"
+      }
+    },
+    "state": {
+      "type": "object",
+      "required": [
+        "from",
+        "to",
+        "labels"
+      ],
+      "additionalProperties": false,
+      "description": "A stateful icon: Light and Strong go from -> to, and a reverse of each goes back.",
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/name"
+        },
+        "to": {
+          "$ref": "#/$defs/name"
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 24
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "[forward, reverse]"
+        },
+        "reverse": {
+          "enum": [
+            "auto",
+            "mirror",
+            "fade"
+          ],
+          "default": "auto",
+          "description": "auto: replay the beats in mirrored order, each from its end to its start with its own arrival ease and preset (not a time reversal). mirror: exact time reversal of the forward keys. fade: today's preview reset."
+        }
+      }
+    },
+    "polar": {
+      "type": "object",
+      "required": [
+        "from",
+        "angle",
+        "len"
+      ],
+      "additionalProperties": false,
+      "description": "A point len units from another point at angle degrees (0 = +x, i.e. 3 o'clock; clockwise on screen; -90 points up).",
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/point"
+        },
+        "angle": {
+          "type": "number",
+          "minimum": -720,
+          "maximum": 720
+        },
+        "len": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 48
+        }
+      }
+    }
+  }
+}

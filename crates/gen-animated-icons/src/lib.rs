@@ -165,6 +165,7 @@ pub fn execute(ctx: &Context, command: &Command) -> Result<Report> {
         Command::Check(args) => commands::check::run(ctx, args),
         Command::Build(args) => commands::build::run(ctx, args),
         Command::Preview(args) => commands::preview::run(ctx, args),
+        Command::Draft(args) => commands::v2::draft(ctx, args),
         Command::Submit(args) => commands::submit::run(ctx, args),
         Command::Mcp => Err(CliError::usage("mcp serves stdio; run gen-animated-icons mcp")),
         Command::Library(command) => commands::library::run(ctx, command),

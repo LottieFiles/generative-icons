@@ -594,9 +594,11 @@ impl Stale {
 /// `definitions.mjs` that `create` regenerated (it still only imports the batches, the
 /// icon's among them) is not a change. `None` when the build is current. A build without
 /// a snapshot list counts as changed; one without `depends` (an earlier format) depends
-/// on every listed file and every top-level batch. Sources are read only as regular files
-/// inside `icons_dir` (see [`read_inside`]): a listed path that is not one is refused
-/// unread and counts as changed, so a planted entry can neither leave the folder nor block.
+/// on every listed file and every top-level batch. A spec v2 build depends on its spec alone
+/// (`<id>.icon.json`): it is current while the spec's sha256 is the one recorded at build time.
+/// Sources are read only as regular files inside `icons_dir` (see [`read_inside`]): a listed
+/// path that is not one is refused unread and counts as changed, so a planted entry can
+/// neither leave the folder nor block.
 pub fn changed_source(icons_dir: &Path, build: &Path) -> Option<Stale> {
     let stale =
         |file: &str, untracked: bool, refused: Option<ErrorCode>| Stale { file: file.to_string(), untracked, refused };
@@ -629,6 +631,10 @@ pub fn changed_source(icons_dir: &Path, build: &Path) -> Option<Stale> {
             continue;
         }
         return Some(stale(relative, false, None));
+    }
+    // A v2 build reads none of the set's v1 config and rule files.
+    if depends.iter().any(|relative| relative.ends_with(gai_spec::SUFFIX)) {
+        return None;
     }
     let added = SNAPSHOT_FILES.iter().filter(|name| **name != "definitions.mjs");
     added
@@ -759,6 +765,30 @@ mod tests {
             out,
             "import {a} from './_x.helpers.mjs';\nexport * from \"../../library/drawing.mjs\";\nimport svgpath from 'svgpath';\n// 90° turn\nconst imported = 1; import('./_x.lazy.mjs');\nimport './_x.side.mjs';\n"
         );
+    }
+
+    #[test]
+    fn a_v2_build_is_stale_only_when_its_spec_changes() {
+        let dir = tempfile::tempdir().unwrap();
+        let (icons, build) = (dir.path().join("icons"), dir.path().join("build"));
+        std::fs::create_dir_all(&icons).unwrap();
+        std::fs::create_dir_all(&build).unwrap();
+        let spec = "{\"format\": \"gai-icon/2\", \"id\": \"bell\"}\n";
+        std::fs::write(icons.join("bell.icon.json"), spec).unwrap();
+        // What a v2 build records: its spec alone.
+        let listed = json!({"files": {"bell.icon.json": gai_core::sha256_hex(spec)}, "depends": ["bell.icon.json"]});
+        std::fs::write(build.join(SOURCES_FILE), listed.to_string()).unwrap();
+        assert_eq!(changed_source(&icons, &build), None);
+        // The set's v1 config and rule files, and other specs, are not its sources.
+        std::fs::write(icons.join("set-config.json"), "{}\n").unwrap();
+        std::fs::write(icons.join("verify.rules.json"), "{}\n").unwrap();
+        std::fs::write(icons.join("other.icon.json"), "{}\n").unwrap();
+        assert_eq!(changed_source(&icons, &build), None);
+        std::fs::write(icons.join("bell.icon.json"), spec.replace("bell", "bell ")).unwrap();
+        let stale = changed_source(&icons, &build).unwrap();
+        assert_eq!((stale.file.as_str(), stale.untracked, stale.refused), ("bell.icon.json", false, None));
+        std::fs::remove_file(icons.join("bell.icon.json")).unwrap();
+        assert_eq!(changed_source(&icons, &build).unwrap().file, "bell.icon.json");
     }
 
     #[test]

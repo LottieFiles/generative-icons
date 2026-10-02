@@ -1,5 +1,8 @@
 //! Errors from the engine client.
 
+use std::path::PathBuf;
+use std::time::Duration;
+
 /// Result type of this crate.
 pub type Result<T, E = Error> = std::result::Result<T, E>;
 
@@ -67,12 +70,23 @@ pub enum Error {
     /// The keychain or credentials file failed.
     #[error("credential store: {0}")]
     Store(String),
+    /// Another process held the sign-in lock for the whole
+    /// [`LockWait::give_up_after`](crate::config::LockWait::give_up_after): it is signing in,
+    /// refreshing, or waiting on a keychain prompt.
+    #[error("another process has held the sign-in lock ({}) for {} s", lock.display(), seconds(*waited))]
+    SignInBusy { lock: PathBuf, waited: Duration },
     /// Bad engine URL or settings.
     #[error("invalid engine configuration: {0}")]
     Config(String),
     /// Local I/O (credentials file, lock file, loopback socket, stdin).
     #[error(transparent)]
     Io(#[from] std::io::Error),
+}
+
+/// Seconds with at most one decimal: `60`, `0.4`.
+fn seconds(duration: Duration) -> String {
+    let tenths = (duration.as_secs_f64() * 10.0).round() / 10.0;
+    tenths.to_string()
 }
 
 impl From<reqwest::Error> for Error {
@@ -110,6 +124,8 @@ pub enum ErrorKind {
     /// The scene handed to the exporter is not JSON.
     InvalidScene,
     CredentialStore,
+    /// Another process holds the sign-in lock.
+    SignInBusy,
     Io,
     InvalidConfig,
 }
@@ -129,6 +145,7 @@ impl ErrorKind {
             ErrorKind::Engine => "ENGINE_ERROR",
             ErrorKind::InvalidScene => "INVALID_SCENE",
             ErrorKind::CredentialStore => "CREDENTIAL_STORE",
+            ErrorKind::SignInBusy => "SIGN_IN_BUSY",
             ErrorKind::Io => "IO",
             ErrorKind::InvalidConfig => "INVALID_CONFIG",
         }
@@ -152,6 +169,7 @@ impl Error {
             Error::Http { .. } | Error::Protocol(_) | Error::InvalidExport(_) => ErrorKind::Engine,
             Error::InvalidScene(_) => ErrorKind::InvalidScene,
             Error::Store(_) => ErrorKind::CredentialStore,
+            Error::SignInBusy { .. } => ErrorKind::SignInBusy,
             Error::Io(_) => ErrorKind::Io,
             Error::Config(_) => ErrorKind::InvalidConfig,
         }

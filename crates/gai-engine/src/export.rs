@@ -228,18 +228,18 @@ impl Exporter for HostedExporter {
 }
 
 /// Fixed engine document ids handed out one export at a time; doubles as the concurrency limit.
-struct DocumentPool {
+pub(crate) struct DocumentPool {
     free: Mutex<Vec<String>>,
     returned: Condvar,
 }
 
-struct Lease<'a> {
+pub(crate) struct Lease<'a> {
     pool: &'a DocumentPool,
     id: String,
 }
 
 impl DocumentPool {
-    fn new(mut ids: Vec<String>) -> Self {
+    pub(crate) fn new(mut ids: Vec<String>) -> Self {
         // Hand out the first id first.
         ids.reverse();
         DocumentPool {
@@ -249,7 +249,7 @@ impl DocumentPool {
     }
 
     /// Blocks until a document is free.
-    fn acquire(&self) -> Lease<'_> {
+    pub(crate) fn acquire(&self) -> Lease<'_> {
         let mut free = self.free.lock().unwrap_or_else(|e| e.into_inner());
         loop {
             if let Some(id) = free.pop() {
@@ -261,7 +261,7 @@ impl DocumentPool {
 }
 
 impl Lease<'_> {
-    fn id(&self) -> &str {
+    pub(crate) fn id(&self) -> &str {
         &self.id
     }
 }

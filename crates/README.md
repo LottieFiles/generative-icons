@@ -39,6 +39,17 @@ gai-build::post_export ─► assets, themes, manifests ─► gai-build::record
        gai-check (preflight, verify, paint, contracts)   gai-render (dotlottie-rs: visual checks, sheets)
 ```
 
+### Spec v2 (prototype)
+
+```
+icons/<id>.icon.json ─► gai-spec: parse + names + motion + lints (offline, ms) ─► plan (gai-plan/1)
+      plan + build-v2.js ─► ONE creator_exec: every motion as rigs, eased keys, masks, mattes, markers
+            draft: renderFilmstrip sheet (nothing stored)   build: one bundle file ─► split ─► normalize_native
+      gai-build::post_export_v2 (slots by paint name, themes, markers) ─► gai-package .lottie ─► verify ─► install
+```
+
+v1 code paths are unchanged; `check`, `draft`, `build`, `submit` and `create --spec` take the v2 path only for icons with a spec (`check` without ids checks every spec as well), and the MCP server adds a `draft` tool that returns the sheets as images. A draft or build reports its engine round trip split at the script's own `startedAt` (`engine.phases`: before, in and after the script). Authoring reference: `gen-animated-icons/assets/skill/references/authoring-v2.md`.
+
 ## Crates
 
 | Crate | Owns |
@@ -49,7 +60,8 @@ gai-build::post_export ─► assets, themes, manifests ─► gai-build::record
 | `gai-package` | dotLottie archives (byte-identical ZIP writer), set zips, catalog, release, npm package builds, asset audit |
 | `gai-check` | Preflight, set verification (generic checks plus rule data in `rules/`), paint contract, geometry contracts, motion measurement |
 | `gai-render` | dotlottie-rs rendering, the visual checks that replace `verify.html`, review sheets |
-| `gai-engine` | Hosted Creator MCP client: OAuth sign-in, token storage, export, downloads, native normalization |
+| `gai-engine` | Hosted Creator MCP client: OAuth sign-in, token storage, export, downloads, native normalization; `PlanRunner` for spec v2 (one call per icon, draft images, bundle split) |
+| `gai-spec` | Icon spec v2 (`gai-icon/2`, prototype): JSON validation with pointer diagnostics, the compiler to a plan (`gai-plan/1`), lints, and the engine script `assets/build-v2.js` |
 | `gen-animated-icons` | The CLI: app commands, `library` maintainer commands, the `mcp` server, and the agent skill it installs (`assets/skill/`, the one source of that skill) |
 
 ## Build
@@ -95,7 +107,7 @@ cargo test --workspace --release -- --ignored --skip live_   # whole-catalog par
 - **The legacy pipeline stays until the oracles are committed.** The parity tests run the JS and Python tools side by side, so `motion/`, `scripts/` and the per-set scripts stay, marked legacy in the docs. The local-exporter plumbing is gone: `motion/src/export.mjs` now stops with a pointer to `library build`.
 - **Authoring stays JavaScript.** Definitions run in QuickJS-NG 0.8.0 (`rquickjs =0.9.0`), with a vendored `rquickjs-sys` patched so `Math.*`, `Math.hypot` and `**` use V8's fdlibm (`ieee754.cc`, FMA contraction on) and a correctly rounded `pow`, plus time-limit, linear-time and module-lifetime patches (`vendor/rquickjs-sys/PATCHED.md`). Rounding stays in JS. Every output number is formatted by Rust (`ryu-js`), never by QuickJS. Keep `Cargo.lock` pinned: a floating `rquickjs-sys` would bypass the patch (it fails at link time).
 - **Engine is hosted only.** The engine is `https://creator.mcp.lottiefiles.dev/mcp` (production later), internal until launch. Exports use a group-per-part script that clears documents with `creator.removeComp` (deleting composition nodes fails on reused documents). The client unwraps the identity group and sorts keys, which matches the old local exporter except each path's `nm`. Export file names carry the process id and a random suffix, so concurrent exports don't collide.
-- **Credentials.** The refresh token lives in the OS keychain under an account keyed by the engine origin and the credentials home, or in a `0600` file; refreshes are serialized across processes with a file lock. Agents never sign in: hints tell them to ask the user.
+- **Credentials.** The refresh token lives in the OS keychain under an account keyed by the engine origin and the credentials home, or in a `0600` file; refreshes are serialized across processes with a file lock, which is never held across a keychain read (macOS may ask the user first); a wait for it is said after 3 s and ends with `SIGN_IN_BUSY` after 60 s. Agents never sign in: hints tell them to ask the user.
 - **Renderer is the one users run.** dotlottie-rs at `e112d3f`, the commit dotlottie-web 0.80.0 was built from. The player reloads for every paint change, because a second slot flush after a render crashes natively.
 - **Frozen sets.** 01 and 02 are never rebuilt (their assets are verified as they are). 03–06 build through built-in legacy profiles.
 - **Formats kept for now.** `set.json` and dotLottie manifests stay in Python `json.dumps` format, and the `.lottie` ZIP bytes stay exact (classic zlib level 9, fixed dates). Changing a format is a deliberate, separate step.

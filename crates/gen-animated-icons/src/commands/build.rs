@@ -38,6 +38,16 @@ use std::path::Path;
 /// Runs `build` against the hosted engine; `--offline` refuses before anything runs.
 pub fn run(ctx: &Context, args: &BuildArgs) -> Result<Report> {
     engine::require_online(ctx, "build", "Drop --offline to build; gen-animated-icons check runs the offline checks")?;
+    // Spec v2 icons (`icons/<id>.icon.json`) take their own path; v1 is unchanged.
+    if let Some(project) = Config::load(&ctx.cwd, ctx.platform).ok().flatten()
+        && project.layout == Layout::Current
+        && let Some(ids) = super::v2::wants_build(&ctx.cwd, &LocalSet::of(&project), args)?
+    {
+        return super::v2::build(ctx, args, &ids);
+    }
+    if args.emit_call.is_some() || args.from_bundle.is_some() {
+        return Err(CliError::usage("--emit-call and --from-bundle are for spec v2 icons (*.icon.json)"));
+    }
     let mut config = engine::config(ctx)?;
     config.documents = args.jobs.clamp(1, MAX_DOCUMENTS);
     engine::require_session(&config)?;

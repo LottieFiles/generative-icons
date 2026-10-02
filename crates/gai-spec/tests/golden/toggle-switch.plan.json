@@ -1,0 +1,326 @@
+{
+  "format": "gai-plan/1",
+  "id": "toggle-switch",
+  "w": 32,
+  "h": 32,
+  "fps": 60,
+  "duration": 2.4,
+  "color": [
+    0.0,
+    0.866667,
+    0.701961
+  ],
+  "rigs": [
+    {
+      "name": "rig-knob",
+      "pivot": [
+        11.0,
+        16.0
+      ],
+      "split": true
+    }
+  ],
+  "geos": {
+    "track/0": {
+      "rect": [
+        16.0,
+        16.0,
+        25.0,
+        15.0,
+        7.5
+      ]
+    },
+    "knob/0": {
+      "ellipse": [
+        11.0,
+        16.0,
+        3.0,
+        3.0
+      ]
+    }
+  },
+  "layers": [
+    {
+      "name": "toggle-switch-track-tint__color.primary__tint",
+      "style": "tint",
+      "geos": [
+        "track/0"
+      ],
+      "paints": [
+        [
+          "fill"
+        ]
+      ],
+      "vis": "track.opacity"
+    },
+    {
+      "name": "toggle-switch-track-light__color.primary__outline.light",
+      "style": "outline.light",
+      "geos": [
+        "track/0"
+      ],
+      "paints": [
+        [
+          "stroke",
+          1.5
+        ]
+      ],
+      "vis": "track.opacity"
+    },
+    {
+      "name": "toggle-switch-track-regular__color.primary__outline.regular",
+      "style": "outline.regular",
+      "geos": [
+        "track/0"
+      ],
+      "paints": [
+        [
+          "stroke",
+          2.0
+        ]
+      ],
+      "vis": "track.opacity"
+    },
+    {
+      "name": "toggle-switch-track-bold__color.primary__outline.bold",
+      "style": "outline.bold",
+      "geos": [
+        "track/0"
+      ],
+      "paints": [
+        [
+          "stroke",
+          2.5
+        ]
+      ],
+      "vis": "track.opacity"
+    },
+    {
+      "name": "toggle-switch-track-solid__color.primary__solid",
+      "style": "solid",
+      "geos": [
+        "track/0"
+      ],
+      "paints": [
+        [
+          "stroke",
+          2.6
+        ]
+      ],
+      "vis": "track.opacity"
+    },
+    {
+      "name": "toggle-switch-knob-light__color.primary__outline.light",
+      "style": "outline.light",
+      "rig": "rig-knob",
+      "geos": [
+        "knob/0"
+      ],
+      "paints": [
+        [
+          "stroke",
+          1.5
+        ]
+      ],
+      "vis": "knob.opacity"
+    },
+    {
+      "name": "toggle-switch-knob-regular__color.primary__outline.regular",
+      "style": "outline.regular",
+      "rig": "rig-knob",
+      "geos": [
+        "knob/0"
+      ],
+      "paints": [
+        [
+          "stroke",
+          2.0
+        ]
+      ],
+      "vis": "knob.opacity"
+    },
+    {
+      "name": "toggle-switch-knob-bold__color.primary__outline.bold",
+      "style": "outline.bold",
+      "rig": "rig-knob",
+      "geos": [
+        "knob/0"
+      ],
+      "paints": [
+        [
+          "stroke",
+          2.5
+        ]
+      ],
+      "vis": "knob.opacity"
+    },
+    {
+      "name": "toggle-switch-knob-solid__color.primary__solid",
+      "style": "solid",
+      "rig": "rig-knob",
+      "geos": [
+        "knob/0"
+      ],
+      "paints": [
+        [
+          "fill"
+        ],
+        [
+          "stroke",
+          2.6
+        ]
+      ],
+      "vis": "knob.opacity"
+    }
+  ],
+  "motions": [
+    {
+      "name": "toggle-switch",
+      "active": 0.5,
+      "rest": 0.55,
+      "tracks": [
+        {
+          "target": "rig-knob",
+          "prop": "PositionX",
+          "keys": [
+            [
+              0.0,
+              11.0,
+              [
+                0.333333,
+                0.0,
+                0.666667,
+                1.0
+              ]
+            ],
+            [
+              0.42,
+              21.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "toggle-switch-strong",
+      "active": 0.5,
+      "rest": 0.55,
+      "tracks": [
+        {
+          "target": "rig-knob",
+          "prop": "PositionX",
+          "keys": [
+            [
+              0.0,
+              11.0,
+              [
+                0.333333,
+                0.0,
+                0.666667,
+                1.0
+              ]
+            ],
+            [
+              0.09,
+              10.3,
+              [
+                0.333333,
+                0.0,
+                0.666667,
+                1.0
+              ]
+            ],
+            [
+              0.22,
+              21.7,
+              [
+                0.333333,
+                0.0,
+                0.666667,
+                1.0
+              ]
+            ],
+            [
+              0.36,
+              21.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "toggle-switch-reverse",
+      "active": 0.5,
+      "rest": 0.55,
+      "tracks": [
+        {
+          "target": "rig-knob",
+          "prop": "PositionX",
+          "keys": [
+            [
+              0.0,
+              21.0,
+              [
+                0.333333,
+                0.0,
+                0.666667,
+                1.0
+              ]
+            ],
+            [
+              0.42,
+              11.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "toggle-switch-reverse-strong",
+      "active": 0.5,
+      "rest": 0.55,
+      "tracks": [
+        {
+          "target": "rig-knob",
+          "prop": "PositionX",
+          "keys": [
+            [
+              0.0,
+              21.0,
+              [
+                0.333333,
+                0.0,
+                0.666667,
+                1.0
+              ]
+            ],
+            [
+              0.09,
+              21.7,
+              [
+                0.333333,
+                0.0,
+                0.666667,
+                1.0
+              ]
+            ],
+            [
+              0.22,
+              10.3,
+              [
+                0.333333,
+                0.0,
+                0.666667,
+                1.0
+              ]
+            ],
+            [
+              0.36,
+              11.0
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

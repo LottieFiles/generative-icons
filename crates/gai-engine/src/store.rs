@@ -14,20 +14,27 @@
 //! A record is used only for the engine URL it was signed in to, and only while its endpoints
 //! pass [`AuthServer::check`] for that URL, so no token goes to another origin.
 //!
-//! The keychain is read and written only under `<home>/refresh.lock`, an exclusive file lock
-//! shared by all processes, so a rotated refresh token is saved before anyone else can read the
-//! old one.
+//! `<home>/refresh.lock`, an exclusive file lock shared by all processes, serializes refreshes
+//! and writes, so a rotated refresh token is saved before anyone else can use the old one.
+//! Nobody holds it across a keychain read, which may wait on the user: macOS asks before a binary
+//! it has not seen (a new build) reads an entry. The keychain is read before the lock is taken,
+//! and that read stands once the lock is held only if the credentials file has not changed
+//! meanwhile: every save writes the keychain, then the file. Otherwise it is read again, still
+//! without the lock. Writes stay under the lock, to entries this process has just read. A wait
+//! for the lock is said after a few seconds and ends with [`Error::SignInBusy`] (see
+//! [`LockWait`]).
 
 use std::collections::BTreeMap;
 use std::fs::{self, File, OpenOptions};
 use std::io::{ErrorKind, Write};
 use std::path::{Path, PathBuf};
-use std::sync::Arc;
+use std::sync::{Arc, Mutex, MutexGuard};
+use std::time::{Duration, Instant};
 
 use serde::{Deserialize, Serialize};
 use url::Url;
 
-use crate::config::{CredentialStoreKind, EngineConfig};
+use crate::config::{CredentialStoreKind, EngineConfig, LockWait, Notice, NoticeSink, notify};
 use crate::error::{Error, Result};
 use crate::oauth::{AuthServer, RegisteredClient, TokenResponse, account_from_jwt, now};
 
@@ -40,6 +47,8 @@ const LOCK_FILE: &str = "refresh.lock";
 const FILE_VERSION: u32 = 2;
 /// Lifetime assumed when a token response omits `expires_in` (the engine issues 5-minute tokens).
 const DEFAULT_ACCESS_LIFETIME: u64 = 300;
+/// The longest pause between two tries of a held lock.
+const MAX_LOCK_PAUSE: Duration = Duration::from_millis(100);
 
 /// Everything stored for one engine.
 #[derive(Clone, Serialize, Deserialize)]
@@ -192,6 +201,8 @@ pub(crate) struct CredentialStore {
     engine: Url,
     origin: String,
     keychain: Option<Arc<dyn Keychain>>,
+    wait: LockWait,
+    notices: Option<NoticeSink>,
 }
 
 impl CredentialStore {
@@ -205,6 +216,8 @@ impl CredentialStore {
             engine: config.url.clone(),
             origin: config.origin(),
             keychain,
+            wait: config.lock_wait,
+            notices: config.notices.clone(),
         }
     }
 
@@ -227,17 +240,17 @@ impl CredentialStore {
     /// belongs to another URL on this origin or names endpoints this engine may not send tokens
     /// to. A refresh token that an earlier build left under the legacy keychain account moves to
     /// this home's account, unless a build of this format has written the file since.
-    pub fn load(&self, _lock: &RefreshLock) -> Result<Option<EngineRecord>> {
+    pub fn load(&self, lock: &RefreshLock) -> Result<Option<EngineRecord>> {
         let file = self.read_file()?;
         let legacy_era = file.version < FILE_VERSION;
         let Some(mut record) = self.record_in(file) else {
             return Ok(None);
         };
         if let (Some(keychain), Some(session)) = (&self.keychain, record.session.as_mut()) {
-            let account = self.keychain_account();
-            session.refresh_token = match keychain.get(&account)? {
+            let mut secrets = lock.secrets();
+            session.refresh_token = match secrets.account.clone() {
                 Some(token) => Some(token),
-                None if legacy_era => self.move_legacy(keychain.as_ref(), &account)?,
+                None if legacy_era => self.move_legacy(keychain.as_ref(), &mut secrets)?,
                 None => None,
             };
         }
@@ -250,14 +263,22 @@ impl CredentialStore {
             .filter(|record| self.issued_for_this_engine(record))
     }
 
-    /// Moves the legacy entry's token to `account`. The legacy entry is deleted only once the
-    /// token is safe under the new name; if that delete fails, `login` and `logout` remove it.
-    fn move_legacy(&self, keychain: &dyn Keychain, account: &str) -> Result<Option<String>> {
-        let Some(token) = keychain.get(self.legacy_account())? else {
+    /// Moves the legacy entry's token to this home's account. The legacy entry is deleted only
+    /// once the token is safe under the new name; if that delete fails, `login` and `logout`
+    /// remove it.
+    fn move_legacy(
+        &self,
+        keychain: &dyn Keychain,
+        secrets: &mut Secrets,
+    ) -> Result<Option<String>> {
+        let Some(token) = secrets.legacy.clone() else {
             return Ok(None);
         };
-        keychain.set(account, &token)?;
-        let _ = keychain.delete(self.legacy_account());
+        keychain.set(&self.keychain_account(), &token)?;
+        secrets.account = Some(token.clone());
+        if keychain.delete(self.legacy_account()).is_ok() {
+            secrets.legacy = None;
+        }
         Ok(Some(token))
     }
 
@@ -265,7 +286,7 @@ impl CredentialStore {
     /// returns it, so the caller can revoke it. That entry was shared by every home, so only a
     /// home whose file predates per-home accounts and holds a record for this engine claims it;
     /// for any other home (a new one, or one this build has written) it stays untouched.
-    pub fn take_legacy(&self, _lock: &RefreshLock) -> Result<Option<String>> {
+    pub fn take_legacy(&self, lock: &RefreshLock) -> Result<Option<String>> {
         let Some(keychain) = &self.keychain else {
             return Ok(None);
         };
@@ -273,11 +294,13 @@ impl CredentialStore {
         if file.version >= FILE_VERSION || self.record_in(file).is_none() {
             return Ok(None);
         }
-        let token = keychain.get(self.legacy_account())?;
-        if token.is_some() {
-            keychain.delete(self.legacy_account())?;
-        }
-        Ok(token)
+        let mut secrets = lock.secrets();
+        let Some(token) = secrets.legacy.clone() else {
+            return Ok(None);
+        };
+        keychain.delete(self.legacy_account())?;
+        secrets.legacy = None;
+        Ok(Some(token))
     }
 
     fn issued_for_this_engine(&self, record: &EngineRecord) -> bool {
@@ -289,16 +312,19 @@ impl CredentialStore {
                 .is_none_or(|client| client.issuer == record.server.issuer)
     }
 
-    /// Writes `record`.
-    pub fn save(&self, _lock: &RefreshLock, record: &EngineRecord) -> Result<()> {
+    /// Writes `record`: the keychain first, then the file, which tells [`lock`](Self::lock) in
+    /// other processes that their keychain read may be stale.
+    pub fn save(&self, lock: &RefreshLock, record: &EngineRecord) -> Result<()> {
         ensure_dir(&self.home)?;
         let mut stored = record.clone();
         if let Some(keychain) = &self.keychain {
             let account = self.keychain_account();
-            match stored.session.as_mut().and_then(|s| s.refresh_token.take()) {
-                Some(token) => keychain.set(&account, &token)?,
+            let token = stored.session.as_mut().and_then(|s| s.refresh_token.take());
+            match &token {
+                Some(token) => keychain.set(&account, token)?,
                 None => keychain.delete(&account)?,
             }
+            lock.secrets().account = token;
         }
         let mut file = self.read_file()?;
         file.version = FILE_VERSION;
@@ -306,16 +332,88 @@ impl CredentialStore {
         self.write_file(&file)
     }
 
-    /// Takes the cross-process lock that guards refreshes and writes.
+    /// Takes the cross-process lock that guards refreshes and writes, with this home's keychain
+    /// entries as they are under it. The keychain is read first, without the lock; the read
+    /// stands when the credentials file is unchanged once the lock is held, and is repeated
+    /// otherwise (see the module notes). The wait for a held lock is bounded by [`LockWait`].
     pub fn lock(&self) -> Result<RefreshLock> {
         ensure_dir(&self.home)?;
+        let mut wait = Wait::default();
+        loop {
+            let before = self.read_bytes()?;
+            let secrets = self.read_secrets(before.as_deref())?;
+            let file = self.acquire(&mut wait)?;
+            if self.keychain.is_none() || self.read_bytes()? == before {
+                return Ok(RefreshLock {
+                    file,
+                    secrets: Mutex::new(secrets),
+                });
+            }
+            // Another process saved meanwhile. Closing the file releases the lock.
+            drop(file);
+        }
+    }
+
+    /// The keychain entries a locked load or [`take_legacy`](Self::take_legacy) may need, for
+    /// the credentials file `bytes`: this home's account when the record has a session, and the
+    /// legacy account when the file predates per-home accounts.
+    fn read_secrets(&self, bytes: Option<&[u8]>) -> Result<Secrets> {
+        let (Some(keychain), Some(bytes)) = (&self.keychain, bytes) else {
+            return Ok(Secrets::default());
+        };
+        let file = self.parse_file(bytes)?;
+        let legacy_era = file.version < FILE_VERSION;
+        let Some(record) = self.record_in(file) else {
+            return Ok(Secrets::default());
+        };
+        if record.session.is_none() && !legacy_era {
+            return Ok(Secrets::default());
+        }
+        notify(self.notices.as_ref(), Notice::ReadingKeychain);
+        let account = match record.session {
+            Some(_) => keychain.get(&self.keychain_account())?,
+            None => None,
+        };
+        let legacy = match legacy_era {
+            true => keychain.get(self.legacy_account())?,
+            false => None,
+        };
+        Ok(Secrets { account, legacy })
+    }
+
+    /// Opens and locks `refresh.lock`, trying again while another process holds it. The time
+    /// spent waiting adds up in `wait` across tries: the notice comes once, after
+    /// [`LockWait::notice_after`], and [`Error::SignInBusy`] after
+    /// [`LockWait::give_up_after`].
+    fn acquire(&self, wait: &mut Wait) -> Result<File> {
+        let path = self.home.join(LOCK_FILE);
         let file = private_options()
             .read(true)
             .write(true)
             .truncate(false)
-            .open(self.home.join(LOCK_FILE))?;
-        fs4::FileExt::lock(&file)?;
-        Ok(RefreshLock(file))
+            .open(&path)?;
+        let started = Instant::now();
+        let mut pause = Duration::from_millis(5);
+        loop {
+            match fs4::FileExt::try_lock(&file) {
+                Ok(()) => {
+                    wait.waited += started.elapsed();
+                    return Ok(file);
+                }
+                Err(fs4::TryLockError::WouldBlock) => {}
+                Err(fs4::TryLockError::Error(error)) => return Err(error.into()),
+            }
+            let waited = wait.waited + started.elapsed();
+            if waited >= self.wait.give_up_after {
+                return Err(Error::SignInBusy { lock: path, waited });
+            }
+            if !wait.noticed && waited >= self.wait.notice_after {
+                wait.noticed = true;
+                notify(self.notices.as_ref(), Notice::WaitingForSignInLock);
+            }
+            std::thread::sleep(pause.min(self.wait.give_up_after - waited));
+            pause = (pause * 2).min(MAX_LOCK_PAUSE);
+        }
     }
 
     /// The engine origin and a hash of the canonical home, so homes never share a token.
@@ -335,12 +433,24 @@ impl CredentialStore {
     }
 
     fn read_file(&self) -> Result<CredentialsFile> {
+        match self.read_bytes()? {
+            Some(bytes) => self.parse_file(&bytes),
+            None => Ok(CredentialsFile::default()),
+        }
+    }
+
+    /// The credentials file's bytes; `None` when there is none.
+    fn read_bytes(&self) -> Result<Option<Vec<u8>>> {
         match fs::read(self.path()) {
-            Ok(bytes) => serde_json::from_slice(&bytes)
-                .map_err(|e| Error::Store(format!("{}: {e}", self.path().display()))),
-            Err(e) if e.kind() == ErrorKind::NotFound => Ok(CredentialsFile::default()),
+            Ok(bytes) => Ok(Some(bytes)),
+            Err(e) if e.kind() == ErrorKind::NotFound => Ok(None),
             Err(e) => Err(e.into()),
         }
+    }
+
+    fn parse_file(&self, bytes: &[u8]) -> Result<CredentialsFile> {
+        serde_json::from_slice(bytes)
+            .map_err(|e| Error::Store(format!("{}: {e}", self.path().display())))
     }
 
     /// Replaces the file atomically: a new temp file with a random name (created exclusively,
@@ -360,14 +470,41 @@ impl CredentialStore {
     }
 }
 
-/// Held while refreshing or writing credentials; released on drop.
-pub(crate) struct RefreshLock(File);
+/// Held while refreshing or writing credentials; released on drop. It carries this home's
+/// keychain entries as they were when it was taken, kept current by its holder's own writes.
+pub(crate) struct RefreshLock {
+    file: File,
+    secrets: Mutex<Secrets>,
+}
+
+impl RefreshLock {
+    fn secrets(&self) -> MutexGuard<'_, Secrets> {
+        self.secrets.lock().unwrap_or_else(|e| e.into_inner())
+    }
+}
 
 impl Drop for RefreshLock {
     fn drop(&mut self) {
         // Closing the file releases the lock as well.
-        let _ = fs4::FileExt::unlock(&self.0);
+        let _ = fs4::FileExt::unlock(&self.file);
     }
+}
+
+/// Refresh tokens read from the keychain.
+#[derive(Default)]
+struct Secrets {
+    /// Under this home's account.
+    account: Option<String>,
+    /// Under the legacy account (the bare origin), read only for a file that predates per-home
+    /// accounts and holds a record for this engine.
+    legacy: Option<String>,
+}
+
+/// The time [`CredentialStore::lock`] has spent waiting on the lock so far.
+#[derive(Default)]
+struct Wait {
+    waited: Duration,
+    noticed: bool,
 }
 
 fn private_options() -> OpenOptions {
@@ -408,6 +545,44 @@ pub(crate) struct FakeKeychain {
     pub entries: std::sync::Mutex<BTreeMap<String, String>>,
     /// Makes every `set` fail, like a locked or denied keychain.
     pub refuse_writes: std::sync::atomic::AtomicBool,
+    /// While open, every `get` waits, like a macOS access prompt nobody has answered yet.
+    pub prompt: FakePrompt,
+    /// Each `get` takes this long.
+    pub read_delay: std::sync::Mutex<std::time::Duration>,
+    /// `get` calls started.
+    pub reads: std::sync::atomic::AtomicUsize,
+    /// Runs once, after the next `get` has read its value: another process acting meanwhile.
+    #[allow(clippy::type_complexity)]
+    pub after_next_read: std::sync::Mutex<Option<Box<dyn FnOnce() + Send>>>,
+}
+
+/// The access prompt of a [`FakeKeychain`].
+#[cfg(test)]
+#[derive(Default)]
+pub(crate) struct FakePrompt {
+    open: std::sync::Mutex<bool>,
+    answered: std::sync::Condvar,
+}
+
+#[cfg(test)]
+impl FakePrompt {
+    /// Every read waits from now on.
+    pub fn open(&self) {
+        *self.open.lock().unwrap() = true;
+    }
+
+    /// Lets every waiting and later read through.
+    pub fn answer(&self) {
+        *self.open.lock().unwrap() = false;
+        self.answered.notify_all();
+    }
+
+    fn wait(&self) {
+        let mut open = self.open.lock().unwrap();
+        while *open {
+            open = self.answered.wait(open).unwrap();
+        }
+    }
 }
 
 #[cfg(test)]
@@ -420,7 +595,18 @@ impl FakeKeychain {
 #[cfg(test)]
 impl Keychain for FakeKeychain {
     fn get(&self, account: &str) -> Result<Option<String>> {
-        Ok(self.entries.lock().unwrap().get(account).cloned())
+        self.reads.fetch_add(1, std::sync::atomic::Ordering::SeqCst);
+        self.prompt.wait();
+        let delay = *self.read_delay.lock().unwrap();
+        if !delay.is_zero() {
+            std::thread::sleep(delay);
+        }
+        let secret = self.entries.lock().unwrap().get(account).cloned();
+        let after = self.after_next_read.lock().unwrap().take();
+        if let Some(after) = after {
+            after();
+        }
+        Ok(secret)
     }
 
     fn set(&self, account: &str, secret: &str) -> Result<()> {
@@ -710,6 +896,120 @@ mod tests {
         );
         assert!(current.take_legacy(&lock).unwrap().is_none());
         assert_eq!(keychain.entries().len(), 1);
+    }
+
+    /// What a store's notices said.
+    fn listen(config: &mut EngineConfig) -> Arc<std::sync::Mutex<Vec<Notice>>> {
+        let heard = Arc::new(std::sync::Mutex::new(Vec::new()));
+        let sink = heard.clone();
+        config.notices = Some(Arc::new(move |notice| sink.lock().unwrap().push(notice)));
+        heard
+    }
+
+    #[test]
+    fn waiting_for_the_sign_in_lock_is_said_once_and_bounded() {
+        use std::time::{Duration, Instant};
+        let dir = tempfile::tempdir().unwrap();
+        let mut config = EngineConfig::new("https://engine.example/mcp", dir.path()).unwrap();
+        config.credential_store = CredentialStoreKind::File;
+        config.lock_wait = LockWait {
+            notice_after: Duration::from_millis(100),
+            give_up_after: Duration::from_millis(400),
+        };
+        let heard = listen(&mut config);
+        let store = CredentialStore::open(&config);
+
+        // Free: taken at once, nothing said.
+        drop(store.lock().unwrap());
+        assert!(heard.lock().unwrap().is_empty());
+
+        // Held by another process throughout: one notice, then SIGN_IN_BUSY.
+        let holder = CredentialStore::open(&config).lock().unwrap();
+        let started = Instant::now();
+        let err = store.lock().err().unwrap();
+        let waited = started.elapsed();
+        assert!(matches!(err, Error::SignInBusy { .. }), "{err}");
+        assert_eq!(err.code(), "SIGN_IN_BUSY");
+        assert!(err.to_string().contains(LOCK_FILE), "{err}");
+        assert!(
+            waited >= Duration::from_millis(400) && waited < Duration::from_secs(3),
+            "{waited:?}"
+        );
+        assert_eq!(*heard.lock().unwrap(), [Notice::WaitingForSignInLock]);
+
+        // Released while this one waits: taken, after one notice.
+        heard.lock().unwrap().clear();
+        config.lock_wait.give_up_after = Duration::from_secs(10);
+        let store = CredentialStore::open(&config);
+        let release = std::thread::spawn(move || {
+            std::thread::sleep(Duration::from_millis(300));
+            drop(holder);
+        });
+        let started = Instant::now();
+        drop(store.lock().unwrap());
+        release.join().unwrap();
+        assert!(started.elapsed() < Duration::from_secs(5));
+        assert_eq!(*heard.lock().unwrap(), [Notice::WaitingForSignInLock]);
+    }
+
+    #[test]
+    fn reading_the_keychain_is_announced_as_a_detail() {
+        assert!(Notice::ReadingKeychain.is_detail());
+        assert!(!Notice::WaitingForSignInLock.is_detail());
+        let dir = tempfile::tempdir().unwrap();
+        let keychain = Arc::new(FakeKeychain::default());
+        let mut config = EngineConfig::new("https://engine.example/mcp", dir.path()).unwrap();
+        config.test_keychain = Some(keychain.clone());
+        let heard = listen(&mut config);
+        let store = CredentialStore::open(&config);
+
+        // Signed out: the keychain is not read.
+        drop(store.lock().unwrap());
+        assert!(heard.lock().unwrap().is_empty());
+        assert_eq!(keychain.reads.load(std::sync::atomic::Ordering::SeqCst), 0);
+        save(&store, &record("engine.example", Some("rt-1")));
+        heard.lock().unwrap().clear();
+
+        // Signed in: said before the read.
+        assert_eq!(refresh_token(&store).as_deref(), Some("rt-1"));
+        assert_eq!(*heard.lock().unwrap(), [Notice::ReadingKeychain]);
+
+        // Without a keychain there is nothing to say.
+        heard.lock().unwrap().clear();
+        config.credential_store = CredentialStoreKind::File;
+        drop(CredentialStore::open(&config).lock().unwrap());
+        assert!(heard.lock().unwrap().is_empty());
+    }
+
+    #[test]
+    fn a_keychain_read_overtaken_by_a_rotation_is_read_again() {
+        let dir = tempfile::tempdir().unwrap();
+        let keychain = Arc::new(FakeKeychain::default());
+        let store = keychain_store(dir.path(), &keychain);
+        save(&store, &record("engine.example", Some("rt-1")));
+
+        // Another process rotates the token after this one read the keychain and before it
+        // holds the lock: the read is stale, and the changed file says so.
+        let other = keychain_store(dir.path(), &keychain);
+        *keychain.after_next_read.lock().unwrap() = Some(Box::new(move || {
+            let mut rotated = record("engine.example", Some("rt-2"));
+            rotated.session.as_mut().unwrap().access_token = "at-2".into();
+            save(&other, &rotated);
+        }));
+        let reads = keychain.reads.load(std::sync::atomic::Ordering::SeqCst);
+        let loaded = load(&store).unwrap().session.unwrap();
+        assert_eq!(
+            (
+                loaded.access_token.as_str(),
+                loaded.refresh_token.as_deref()
+            ),
+            ("at-2", Some("rt-2"))
+        );
+        // Its own read, the other process's, and its read again.
+        assert_eq!(
+            keychain.reads.load(std::sync::atomic::Ordering::SeqCst) - reads,
+            3
+        );
     }
 
     #[test]

@@ -94,6 +94,8 @@ pub enum Command {
     Build(BuildArgs),
     /// Render an icon's motions to contact sheets (PNG)
     Preview(PreviewArgs),
+    /// Render a v2 icon's review sheet in one engine call, before any build (nothing stored)
+    Draft(DraftArgs),
     /// Send local icons for review (or write the bundle with --dry-run)
     Submit(SubmitArgs),
     /// Run an MCP server on stdio for coding agents
@@ -221,6 +223,20 @@ pub struct CreateArgs {
     /// [default: the --from icon, else the nearest by label and intent]
     #[arg(long, value_name = "ID")]
     pub neighbor: Vec<String>,
+    /// Write a spec v2 icon (`icons/<ID>.icon.json`, plain JSON) instead of a JS batch
+    #[arg(long, conflicts_with_all = ["from", "neighbor"])]
+    pub spec: bool,
+}
+
+/// Arguments of `draft`.
+#[derive(Debug, Args)]
+pub struct DraftArgs {
+    /// A local spec v2 icon (`gen-animated-icons/icons/<ID>.icon.json`)
+    #[arg(value_name = "ID")]
+    pub id: String,
+    /// Write the engine call (creator_exec arguments) to FILE instead of sending it
+    #[arg(long, value_name = "FILE")]
+    pub emit_call: Option<PathBuf>,
 }
 
 /// Arguments of `context`.
@@ -290,6 +306,12 @@ pub struct BuildArgs {
     /// Engine exports in flight at once (1-4)
     #[arg(long, default_value_t = 2, value_parser = parse_jobs)]
     pub jobs: usize,
+    /// Spec v2: write the engine call (creator_exec arguments) to FILE and stop
+    #[arg(long, value_name = "FILE", hide = true)]
+    pub emit_call: Option<PathBuf>,
+    /// Spec v2: finish the build from a bundle the engine exported elsewhere (no engine call)
+    #[arg(long, value_name = "FILE", hide = true, conflicts_with = "emit_call")]
+    pub from_bundle: Option<PathBuf>,
 }
 
 /// Which motions `preview` renders.

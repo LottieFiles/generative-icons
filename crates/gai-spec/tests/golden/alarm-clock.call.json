@@ -1,0 +1,948 @@
+{
+  "code_sha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+  "params": {
+    "plan": {
+      "format": "gai-plan/1",
+      "id": "alarm-clock",
+      "w": 32,
+      "h": 32,
+      "fps": 60,
+      "duration": 2.4,
+      "color": [
+        0.0,
+        0.866667,
+        0.701961
+      ],
+      "rigs": [
+        {
+          "name": "rig-clock-b",
+          "pivot": [
+            21.4,
+            27.6
+          ]
+        },
+        {
+          "name": "rig-clock-a",
+          "pivot": [
+            10.6,
+            27.6
+          ],
+          "parent": "rig-clock-b"
+        },
+        {
+          "name": "rig-bell-l",
+          "pivot": [
+            10.0,
+            11.5
+          ],
+          "parent": "rig-clock-a"
+        },
+        {
+          "name": "rig-bell-r",
+          "pivot": [
+            22.0,
+            11.5
+          ],
+          "parent": "rig-clock-a"
+        }
+      ],
+      "geos": {
+        "body/0": {
+          "ellipse": [
+            16.0,
+            17.5,
+            8.5,
+            8.5
+          ]
+        },
+        "minute/0": {
+          "path": {
+            "c": [
+              0,
+              1
+            ],
+            "p": [
+              16.0,
+              17.5,
+              16.0,
+              13.0
+            ]
+          }
+        },
+        "hour/0": {
+          "path": {
+            "c": [
+              0,
+              1
+            ],
+            "p": [
+              16.0,
+              17.5,
+              19.3,
+              17.5
+            ]
+          }
+        },
+        "leg-l/0": {
+          "path": {
+            "c": [
+              0,
+              1
+            ],
+            "p": [
+              12.2,
+              25.2,
+              10.6,
+              27.6
+            ]
+          }
+        },
+        "leg-r/0": {
+          "path": {
+            "c": [
+              0,
+              1
+            ],
+            "p": [
+              19.8,
+              25.2,
+              21.4,
+              27.6
+            ]
+          }
+        },
+        "bell-l/0": {
+          "path": {
+            "c": [
+              0,
+              2,
+              2,
+              3
+            ],
+            "p": [
+              8.014365,
+              12.625635,
+              7.155212,
+              11.766481,
+              7.155212,
+              10.373519,
+              8.014365,
+              9.514365,
+              8.873519,
+              8.655212,
+              10.266481,
+              8.655212,
+              11.125635,
+              9.514365
+            ]
+          }
+        },
+        "bell-r/0": {
+          "path": {
+            "c": [
+              0,
+              2,
+              2,
+              3
+            ],
+            "p": [
+              23.985635,
+              12.625635,
+              24.844788,
+              11.766481,
+              24.844788,
+              10.373519,
+              23.985635,
+              9.514365,
+              23.126481,
+              8.655212,
+              21.733519,
+              8.655212,
+              20.874365,
+              9.514365
+            ]
+          }
+        }
+      },
+      "layers": [
+        {
+          "name": "alarm-clock-body-tint__color.primary__tint",
+          "style": "tint",
+          "rig": "rig-clock-a",
+          "geos": [
+            "body/0"
+          ],
+          "paints": [
+            [
+              "fill"
+            ]
+          ],
+          "vis": "body.opacity"
+        },
+        {
+          "name": "alarm-clock-body-light__color.primary__outline.light",
+          "style": "outline.light",
+          "rig": "rig-clock-a",
+          "geos": [
+            "body/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              1.5
+            ]
+          ],
+          "vis": "body.opacity"
+        },
+        {
+          "name": "alarm-clock-body-regular__color.primary__outline.regular",
+          "style": "outline.regular",
+          "rig": "rig-clock-a",
+          "geos": [
+            "body/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.0
+            ]
+          ],
+          "vis": "body.opacity"
+        },
+        {
+          "name": "alarm-clock-body-bold__color.primary__outline.bold",
+          "style": "outline.bold",
+          "rig": "rig-clock-a",
+          "geos": [
+            "body/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.5
+            ]
+          ],
+          "vis": "body.opacity"
+        },
+        {
+          "name": "alarm-clock-body-solid__color.primary__solid",
+          "style": "solid",
+          "rig": "rig-clock-a",
+          "geos": [
+            "body/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.6
+            ]
+          ],
+          "vis": "body.opacity"
+        },
+        {
+          "name": "alarm-clock-minute-light__color.primary__outline.light",
+          "style": "outline.light",
+          "rig": "rig-clock-a",
+          "geos": [
+            "minute/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              1.5
+            ]
+          ],
+          "vis": "minute.opacity"
+        },
+        {
+          "name": "alarm-clock-minute-regular__color.primary__outline.regular",
+          "style": "outline.regular",
+          "rig": "rig-clock-a",
+          "geos": [
+            "minute/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.0
+            ]
+          ],
+          "vis": "minute.opacity"
+        },
+        {
+          "name": "alarm-clock-minute-bold__color.primary__outline.bold",
+          "style": "outline.bold",
+          "rig": "rig-clock-a",
+          "geos": [
+            "minute/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.5
+            ]
+          ],
+          "vis": "minute.opacity"
+        },
+        {
+          "name": "alarm-clock-minute-solid__color.primary__solid",
+          "style": "solid",
+          "rig": "rig-clock-a",
+          "geos": [
+            "minute/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.6
+            ]
+          ],
+          "vis": "minute.opacity"
+        },
+        {
+          "name": "alarm-clock-hour-light__color.primary__outline.light",
+          "style": "outline.light",
+          "rig": "rig-clock-a",
+          "geos": [
+            "hour/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              1.5
+            ]
+          ],
+          "vis": "hour.opacity"
+        },
+        {
+          "name": "alarm-clock-hour-regular__color.primary__outline.regular",
+          "style": "outline.regular",
+          "rig": "rig-clock-a",
+          "geos": [
+            "hour/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.0
+            ]
+          ],
+          "vis": "hour.opacity"
+        },
+        {
+          "name": "alarm-clock-hour-bold__color.primary__outline.bold",
+          "style": "outline.bold",
+          "rig": "rig-clock-a",
+          "geos": [
+            "hour/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.5
+            ]
+          ],
+          "vis": "hour.opacity"
+        },
+        {
+          "name": "alarm-clock-hour-solid__color.primary__solid",
+          "style": "solid",
+          "rig": "rig-clock-a",
+          "geos": [
+            "hour/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.6
+            ]
+          ],
+          "vis": "hour.opacity"
+        },
+        {
+          "name": "alarm-clock-leg-l-light__color.primary__outline.light",
+          "style": "outline.light",
+          "rig": "rig-clock-a",
+          "geos": [
+            "leg-l/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              1.5
+            ]
+          ],
+          "vis": "leg-l.opacity"
+        },
+        {
+          "name": "alarm-clock-leg-l-regular__color.primary__outline.regular",
+          "style": "outline.regular",
+          "rig": "rig-clock-a",
+          "geos": [
+            "leg-l/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.0
+            ]
+          ],
+          "vis": "leg-l.opacity"
+        },
+        {
+          "name": "alarm-clock-leg-l-bold__color.primary__outline.bold",
+          "style": "outline.bold",
+          "rig": "rig-clock-a",
+          "geos": [
+            "leg-l/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.5
+            ]
+          ],
+          "vis": "leg-l.opacity"
+        },
+        {
+          "name": "alarm-clock-leg-l-solid__color.primary__solid",
+          "style": "solid",
+          "rig": "rig-clock-a",
+          "geos": [
+            "leg-l/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.6
+            ]
+          ],
+          "vis": "leg-l.opacity"
+        },
+        {
+          "name": "alarm-clock-leg-r-light__color.primary__outline.light",
+          "style": "outline.light",
+          "rig": "rig-clock-a",
+          "geos": [
+            "leg-r/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              1.5
+            ]
+          ],
+          "vis": "leg-r.opacity"
+        },
+        {
+          "name": "alarm-clock-leg-r-regular__color.primary__outline.regular",
+          "style": "outline.regular",
+          "rig": "rig-clock-a",
+          "geos": [
+            "leg-r/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.0
+            ]
+          ],
+          "vis": "leg-r.opacity"
+        },
+        {
+          "name": "alarm-clock-leg-r-bold__color.primary__outline.bold",
+          "style": "outline.bold",
+          "rig": "rig-clock-a",
+          "geos": [
+            "leg-r/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.5
+            ]
+          ],
+          "vis": "leg-r.opacity"
+        },
+        {
+          "name": "alarm-clock-leg-r-solid__color.primary__solid",
+          "style": "solid",
+          "rig": "rig-clock-a",
+          "geos": [
+            "leg-r/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.6
+            ]
+          ],
+          "vis": "leg-r.opacity"
+        },
+        {
+          "name": "alarm-clock-bell-l-light__color.primary__outline.light",
+          "style": "outline.light",
+          "rig": "rig-bell-l",
+          "geos": [
+            "bell-l/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              1.5
+            ]
+          ],
+          "vis": "bell-l.opacity"
+        },
+        {
+          "name": "alarm-clock-bell-l-regular__color.primary__outline.regular",
+          "style": "outline.regular",
+          "rig": "rig-bell-l",
+          "geos": [
+            "bell-l/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.0
+            ]
+          ],
+          "vis": "bell-l.opacity"
+        },
+        {
+          "name": "alarm-clock-bell-l-bold__color.primary__outline.bold",
+          "style": "outline.bold",
+          "rig": "rig-bell-l",
+          "geos": [
+            "bell-l/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.5
+            ]
+          ],
+          "vis": "bell-l.opacity"
+        },
+        {
+          "name": "alarm-clock-bell-l-solid__color.primary__solid",
+          "style": "solid",
+          "rig": "rig-bell-l",
+          "geos": [
+            "bell-l/0"
+          ],
+          "paints": [
+            [
+              "fill"
+            ],
+            [
+              "stroke",
+              2.6
+            ]
+          ],
+          "vis": "bell-l.opacity"
+        },
+        {
+          "name": "alarm-clock-bell-r-light__color.primary__outline.light",
+          "style": "outline.light",
+          "rig": "rig-bell-r",
+          "geos": [
+            "bell-r/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              1.5
+            ]
+          ],
+          "vis": "bell-r.opacity"
+        },
+        {
+          "name": "alarm-clock-bell-r-regular__color.primary__outline.regular",
+          "style": "outline.regular",
+          "rig": "rig-bell-r",
+          "geos": [
+            "bell-r/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.0
+            ]
+          ],
+          "vis": "bell-r.opacity"
+        },
+        {
+          "name": "alarm-clock-bell-r-bold__color.primary__outline.bold",
+          "style": "outline.bold",
+          "rig": "rig-bell-r",
+          "geos": [
+            "bell-r/0"
+          ],
+          "paints": [
+            [
+              "stroke",
+              2.5
+            ]
+          ],
+          "vis": "bell-r.opacity"
+        },
+        {
+          "name": "alarm-clock-bell-r-solid__color.primary__solid",
+          "style": "solid",
+          "rig": "rig-bell-r",
+          "geos": [
+            "bell-r/0"
+          ],
+          "paints": [
+            [
+              "fill"
+            ],
+            [
+              "stroke",
+              2.6
+            ]
+          ],
+          "vis": "bell-r.opacity"
+        }
+      ],
+      "motions": [
+        {
+          "name": "alarm-clock",
+          "active": 0.45,
+          "rest": 0.5,
+          "tracks": [
+            {
+              "target": "rig-bell-l",
+              "prop": "Rotation",
+              "keys": [
+                [
+                  0.0,
+                  0.0,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.1,
+                  0.10472,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.42,
+                  0.0
+                ]
+              ]
+            },
+            {
+              "target": "rig-bell-r",
+              "prop": "Rotation",
+              "keys": [
+                [
+                  0.0,
+                  0.0,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.1,
+                  -0.10472,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.42,
+                  0.0
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "alarm-clock-strong",
+          "active": 0.7,
+          "rest": 0.75,
+          "tracks": [
+            {
+              "target": "rig-bell-l",
+              "prop": "Rotation",
+              "keys": [
+                [
+                  0.0,
+                  0.0,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.07,
+                  -0.087266,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    0.466667
+                  ]
+                ],
+                [
+                  0.17,
+                  0.349066,
+                  [
+                    0.333333,
+                    0.233333,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.29,
+                  -0.226893,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.41,
+                  0.122173,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.53,
+                  -0.05236,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.68,
+                  0.0
+                ]
+              ]
+            },
+            {
+              "target": "rig-clock-b",
+              "prop": "Rotation",
+              "keys": [
+                [
+                  0.0,
+                  0.0,
+                  null
+                ],
+                [
+                  0.109215,
+                  0.0,
+                  [
+                    0.333333,
+                    0.228835,
+                    0.666667,
+                    0.599191
+                  ]
+                ],
+                [
+                  0.17,
+                  -0.095993,
+                  [
+                    0.333333,
+                    0.195841,
+                    0.666667,
+                    0.678681
+                  ]
+                ],
+                [
+                  0.272583,
+                  0.0,
+                  null
+                ],
+                [
+                  0.433669,
+                  0.0,
+                  [
+                    0.333333,
+                    0.58023,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.48,
+                  -0.008727,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.66,
+                  0.0
+                ]
+              ]
+            },
+            {
+              "target": "rig-clock-a",
+              "prop": "Rotation",
+              "keys": [
+                [
+                  0.0,
+                  0.0,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.07,
+                  0.022689,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    0.375394
+                  ]
+                ],
+                [
+                  0.109215,
+                  0.0,
+                  null
+                ],
+                [
+                  0.272583,
+                  0.0,
+                  [
+                    0.333333,
+                    0.581854,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.33,
+                  0.029671,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    0.618144
+                  ]
+                ],
+                [
+                  0.433669,
+                  0.0,
+                  null
+                ],
+                [
+                  0.66,
+                  0.0
+                ]
+              ]
+            },
+            {
+              "target": "rig-bell-r",
+              "prop": "Rotation",
+              "keys": [
+                [
+                  0.0,
+                  0.0,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.07,
+                  0.087266,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    0.466667
+                  ]
+                ],
+                [
+                  0.17,
+                  -0.349066,
+                  [
+                    0.333333,
+                    0.233333,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.29,
+                  0.226893,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.41,
+                  -0.122173,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.53,
+                  0.05236,
+                  [
+                    0.333333,
+                    0.0,
+                    0.666667,
+                    1.0
+                  ]
+                ],
+                [
+                  0.68,
+                  0.0
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "file": "alarm-clock.json"
+  }
+}

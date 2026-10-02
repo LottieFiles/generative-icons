@@ -1,10 +1,11 @@
 //! `check`: offline gates for a project. `--project` validates the config and lock,
 //! `--source` preflights the local icon source (kit hashes, definitions, the hold and
 //! pairing checks verification runs after an export, library id collisions against the
-//! cached catalog), `--descriptors` validates installed
-//! descriptors, and `--native` verifies each local icon's build. With no selector every
-//! check runs, and icons not built yet are skipped by the native check, not failed, so
-//! `check <id>` works before the first build and verifies the build after it.
+//! cached catalog) and, with no icon named, validates every spec v2 icon (the `spec` check),
+//! `--descriptors` validates installed descriptors, and `--native` verifies each local icon's
+//! build, v1 or v2. With no selector every check runs, and icons not built yet are skipped by
+//! the native check, not failed, so `check <id>` works before the first build and verifies the
+//! build after it.
 
 use crate::Context;
 use crate::cli::CheckArgs;
@@ -86,6 +87,17 @@ pub fn run(ctx: &Context, args: &CheckArgs) -> Result<Report> {
     let all = !(args.project || args.source || args.descriptors || args.native);
     let root = ctx.cwd.as_path();
     let config = Config::require(root, ctx.platform)?;
+    // Spec v2 icons named here are checked by the v2 compiler; v1 is unchanged.
+    if !args.ids.is_empty() && (all || args.source) {
+        let set = LocalSet::of(&config);
+        let specs: Vec<bool> = args.ids.iter().map(|id| super::v2::has_spec(root, &set, id)).collect::<Result<_>>()?;
+        if specs.iter().all(|&s| s) {
+            return super::v2::check(ctx, &args.ids);
+        }
+        if specs.iter().any(|&s| s) {
+            return Err(CliError::usage("Check v1 icons (batches/*.mjs) and v2 icons (*.icon.json) in separate runs"));
+        }
+    }
     let mut checks = Vec::new();
     if all || args.project {
         checks.push(project(root, &config)?);
@@ -93,12 +105,25 @@ pub fn run(ctx: &Context, args: &CheckArgs) -> Result<Report> {
     let set = LocalSet::of(&config);
     let mut warnings = Vec::new();
     if all || args.source {
+        // Named icons are all v1 here; with none named, every spec is checked too.
+        let specs = match args.ids.is_empty() {
+            true => super::v2::spec_ids(root, &set)?,
+            false => Vec::new(),
+        };
+        let v1 = inside(root, &set.file("definitions.mjs"))?.is_file();
         // `check` never waits on the network: library ids come from the cached catalog.
         let offline = Context { offline: true, ..ctx.clone() };
-        checks.push(match set.exists(root)? {
-            true => source(&offline, &set, &args.ids, &mut warnings)?.check,
-            false => Check::skip("source", "No local icon source; gen-animated-icons create <id> starts one"),
-        });
+        match (set.exists(root)?, v1 || specs.is_empty()) {
+            (true, true) => checks.push(source(&offline, &set, &args.ids, &mut warnings)?.check),
+            (false, true) => {
+                checks.push(Check::skip("source", "No local icon source; gen-animated-icons create <id> starts one"))
+            }
+            // Only spec v2 icons: there is no v1 source to preflight.
+            (_, false) => {}
+        }
+        if !specs.is_empty() {
+            checks.push(spec_check(root, &set, &specs)?);
+        }
     }
     if all || args.descriptors {
         checks.push(descriptors(root, &config, &args.ids)?);
@@ -145,7 +170,12 @@ pub fn run(ctx: &Context, args: &CheckArgs) -> Result<Report> {
                 writeln!(text, "        {} {}{icon}: {}", field("severity"), field("code"), message_text(diagnostic));
             if let Some(path) = diagnostic.get("path").and_then(Value::as_str) {
                 let line = diagnostic.get("line").map(|line| format!(" (at or after line {line})")).unwrap_or_default();
-                let _ = writeln!(text, "          in {path}{line}");
+                let pointer = diagnostic.get("pointer").and_then(Value::as_str).unwrap_or_default();
+                let pointer = if pointer.is_empty() { String::new() } else { format!("#{pointer}") };
+                let _ = writeln!(text, "          in {path}{pointer}{line}");
+            }
+            if let Some(hint) = diagnostic.get("hint").and_then(Value::as_str) {
+                let _ = writeln!(text, "          hint: {hint}");
             }
         }
     }
@@ -158,6 +188,40 @@ fn message_text(diagnostic: &Value) -> String {
         Some(other) => gai_core::to_js_json(other),
         None => String::new(),
     }
+}
+
+/// The `spec` check: each v2 spec of `ids` validated, compiled and linted, as `check <id>`
+/// does (see [`spec_findings`]).
+fn spec_check(root: &Path, set: &LocalSet, ids: &[String]) -> Result<Check> {
+    let results = ids
+        .iter()
+        .map(|id| super::v2::findings(root, set, id).map(|(path, found, compiled)| (id.clone(), path, found, compiled)))
+        .collect::<Result<Vec<_>>>()?;
+    Ok(spec_findings(&results))
+}
+
+/// The `spec` check of `(id, spec path, findings, compiled)` results: each finding with its
+/// icon, the spec's project-relative `path`, the JSON `pointer` into it and its `hint`, and
+/// `icons` with each spec's status (`FAIL` when it does not compile).
+pub fn spec_findings(results: &[(String, String, gai_spec::Diagnostics, bool)]) -> Check {
+    let mut diagnostics = Vec::new();
+    let mut icons = Vec::new();
+    for (id, path, found, compiled) in results {
+        for d in &found.0 {
+            let mut finding = finding_at(d.level.as_str(), d.code, Some(id), &d.message, path);
+            if !d.path.is_empty() {
+                finding["pointer"] = json!(d.path);
+            }
+            if let Some(hint) = &d.hint {
+                finding["hint"] = json!(hint);
+            }
+            diagnostics.push(finding);
+        }
+        icons.push(json!({ "id": id, "status": if *compiled { "PASS" } else { "FAIL" }, "spec": path }));
+    }
+    let mut check = Check::new("spec", diagnostics);
+    check.extra.insert("icons".into(), Value::Array(icons));
+    check
 }
 
 /// Config validity (already loaded) and the lock's file states.
@@ -862,9 +926,10 @@ fn descriptors(root: &Path, config: &Config, ids: &[String]) -> Result<Check> {
     Ok(check)
 }
 
-/// Verifies the build of each local icon (or the requested ones). A requested icon that
-/// is not built yet is an error only when the native check was asked for by name
-/// (`--native`); otherwise it is skipped, so `check <id>` also works before a build.
+/// Verifies the build of each local icon (or the requested ones): a v1 build by set
+/// verification, a v2 build as `build` verified it. A requested icon that is not built yet
+/// is an error only when the native check was asked for by name (`--native`); otherwise it
+/// is skipped, so `check <id>` also works before a build.
 fn native(root: &Path, set: &LocalSet, ids: &[String], explicit: bool) -> Result<Check> {
     let built_now = built_ids(root)?;
     let (built, unbuilt): (Vec<String>, Vec<String>) = match ids.is_empty() {
@@ -887,7 +952,10 @@ fn native(root: &Path, set: &LocalSet, ids: &[String], explicit: bool) -> Result
     let kit_dir = set.kit_dir(root)?;
     for id in &built {
         let dir = build_dir(root, id)?;
-        let verdict = verify_build(&dir, &kit_dir);
+        let verdict = match super::v2::is_v2_build(&dir, id) {
+            true => super::v2::verify_build(root, id),
+            false => verify_build(&dir, &kit_dir),
+        };
         if let Some(error) = &verdict.error {
             diagnostics.push(finding("error", "VERIFY_FAILED", Some(id), error));
         }

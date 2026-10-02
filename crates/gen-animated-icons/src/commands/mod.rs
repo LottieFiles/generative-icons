@@ -16,6 +16,7 @@ pub mod preview;
 pub mod remove;
 pub mod search;
 pub mod submit;
+pub mod v2;
 pub mod verify_action;
 
 use crate::Context;

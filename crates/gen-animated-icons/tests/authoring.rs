@@ -120,7 +120,7 @@ fn a_local_icon_builds_to_the_library_bytes() {
     assert_eq!(check["checks"][0]["status"], "PASS", "{check}");
 
     let replay = Replay { natives, calls: AtomicUsize::new(0) };
-    let args = BuildArgs { ids: vec![LOCAL.into()], all: false, no_install: false, jobs: 2 };
+    let args = BuildArgs { ids: vec![LOCAL.into()], all: false, no_install: false, jobs: 2, emit_call: None, from_bundle: None };
     let report = build_with(&ctx(app, &repo), &args, &replay, None).unwrap();
     assert!(!report.failed, "{}", report.text);
     assert_eq!(replay.calls.load(Ordering::SeqCst), 4);
@@ -476,7 +476,7 @@ fn icons_built_before_a_failed_one_are_still_installed() {
         ),
     );
     let exporter = FailOne { replay: Replay { natives, calls: AtomicUsize::new(0) }, failing: "zz-folder" };
-    let args = BuildArgs { ids: vec![LOCAL.into(), "zz-folder".into()], all: false, no_install: false, jobs: 1 };
+    let args = BuildArgs { ids: vec![LOCAL.into(), "zz-folder".into()], all: false, no_install: false, jobs: 1, emit_call: None, from_bundle: None };
     let error = build_with(&ctx(app, &repo), &args, &exporter, None).unwrap_err();
     assert_eq!(
         (error.code, error.id.as_deref()),

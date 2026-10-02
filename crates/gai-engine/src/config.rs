@@ -1,6 +1,7 @@
 //! Where the engine lives and how the client talks to it.
 
 use std::path::PathBuf;
+use std::sync::Arc;
 use std::time::Duration;
 
 use url::Url;
@@ -56,6 +57,72 @@ impl Default for RetryPolicy {
     }
 }
 
+/// How long a command waits for the sign-in lock while another process holds it (that process
+/// is refreshing, signing in, or waiting on a keychain prompt).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct LockWait {
+    /// When to say so ([`Notice::WaitingForSignInLock`]).
+    pub notice_after: Duration,
+    /// When to give up with [`Error::SignInBusy`](crate::Error::SignInBusy).
+    pub give_up_after: Duration,
+}
+
+impl Default for LockWait {
+    fn default() -> Self {
+        LockWait {
+            notice_after: Duration::from_secs(3),
+            give_up_after: Duration::from_secs(60),
+        }
+    }
+}
+
+/// What the person running a command should hear while it waits.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[non_exhaustive]
+pub enum Notice {
+    /// Another process has held the sign-in lock for [`LockWait::notice_after`]; this one
+    /// keeps waiting.
+    WaitingForSignInLock,
+    /// The refresh token is about to be read from the OS keychain, which may ask the user to
+    /// allow it (macOS does for a binary it has not seen).
+    ReadingKeychain,
+}
+
+impl Notice {
+    /// The line to show.
+    pub fn message(self) -> &'static str {
+        match self {
+            Notice::WaitingForSignInLock => {
+                "Waiting for another gen-animated-icons process that holds the sign-in lock…"
+            }
+            Notice::ReadingKeychain if cfg!(target_os = "macos") => {
+                "Reading the sign-in from the macOS Keychain; macOS may ask you to allow access"
+            }
+            Notice::ReadingKeychain => {
+                "Reading the sign-in from the system keychain, which may ask you to allow access"
+            }
+        }
+    }
+
+    /// Whether it is a detail, shown only on request, rather than a wait the user should know
+    /// about.
+    pub fn is_detail(self) -> bool {
+        matches!(self, Notice::ReadingKeychain)
+    }
+}
+
+/// Receives [`Notice`]s; see [`EngineConfig::notices`].
+pub type NoticeSink = Arc<dyn Fn(Notice) + Send + Sync>;
+
+/// Sends `notice` to `sink`; without one, a wait goes to stderr and a detail nowhere.
+pub(crate) fn notify(sink: Option<&NoticeSink>, notice: Notice) {
+    match sink {
+        Some(sink) => sink(notice),
+        None if !notice.is_detail() => eprintln!("{}", notice.message()),
+        None => {}
+    }
+}
+
 /// Engine client settings.
 #[derive(Clone)]
 pub struct EngineConfig {
@@ -71,6 +138,10 @@ pub struct EngineConfig {
     pub documents: usize,
     /// Retry behaviour for engine requests.
     pub retry: RetryPolicy,
+    /// How long to wait for the sign-in lock.
+    pub lock_wait: LockWait,
+    /// Where [`Notice`]s go; `None` prints waits on stderr and drops details.
+    pub notices: Option<NoticeSink>,
     /// The keychain an `Auto` store uses in unit tests, which never touch the OS keychain.
     #[cfg(test)]
     pub(crate) test_keychain: Option<std::sync::Arc<dyn crate::store::Keychain>>,
@@ -86,6 +157,8 @@ impl EngineConfig {
             token_override: None,
             documents: DEFAULT_DOCUMENTS,
             retry: RetryPolicy::default(),
+            lock_wait: LockWait::default(),
+            notices: None,
             #[cfg(test)]
             test_keychain: None,
         })
@@ -148,6 +221,8 @@ impl std::fmt::Debug for EngineConfig {
             )
             .field("documents", &self.documents)
             .field("retry", &self.retry)
+            .field("lock_wait", &self.lock_wait)
+            .field("notices", &self.notices.is_some())
             .finish()
     }
 }

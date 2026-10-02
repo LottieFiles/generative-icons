@@ -259,7 +259,7 @@ fn verification_failures_are_found_before_an_export() {
     // build stops at the same findings, before the engine is reached.
     let mut ctx = Context::new(app.canonicalize().unwrap(), Output::new(Format::Json, true, false, false));
     ctx.library = Some(library.clone());
-    let args = BuildArgs { ids: vec!["bell-nudge".into()], all: false, no_install: false, jobs: 1 };
+    let args = BuildArgs { ids: vec!["bell-nudge".into()], all: false, no_install: false, jobs: 1, emit_call: None, from_bundle: None };
     let built = build_with(&ctx, &args, &Unreachable, None).unwrap();
     assert!(built.failed);
     assert_eq!(built.value["stage"], "source");

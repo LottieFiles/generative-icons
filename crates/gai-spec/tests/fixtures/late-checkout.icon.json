@@ -1,0 +1,29 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "late-checkout",
+  "label": "Late checkout",
+  "intent": "Light: the clock on the door winds its minute hand once round the dial. Strong: the hand winds back a little, sweeps round twice and stops hard at twelve, and the clock rocks on the floor and settles.",
+  "anchors": {"dial": [22, 21.5], "foot": [22, 28]},
+  "parts": {
+    "door":   {"shape": {"rect": [5, 4, 11.5, 23.5], "r": [1.5, 1.5, 0, 0]}, "role": "surface",
+               "outline": "open", "gap": {"clock": 3.5}, "knockout": ["knob"]},
+    "floor":  {"shape": {"line": [[2.5, 27.5], [22, 27.5]]}, "gap": {"clock": 3.5}},
+    "knob":   {"shape": {"circle": [[13, 15.2], 1.2]}, "role": "fill"},
+    "clock":  {"shape": {"circle": ["dial", 6.5]}, "role": "surface", "solid": "fill",
+               "knockout": ["hour", "minute"]},
+    "hour":   {"shape": {"line": ["dial", {"from": "dial", "angle": -30, "len": 2.3}]}},
+    "minute": {"shape": {"line": ["dial", [22, 18]]}}
+  },
+  "rigs": {
+    "clock":  {"pivot": "foot", "carries": ["hour", "minute"]},
+    "minute": {"pivot": "dial"}
+  },
+  "motion": {
+    "minute.rotate": {
+      "light":  [[0.05, 0], [0.86, 360, "sine"]],
+      "strong": [[0, 0], [0.1, -30], [0.52, 720, "hit"], [0.6, 706], [0.68, 720]]
+    },
+    "clock.rotate": {"strong": [[0.52, 0], [0.6, 9], [0.72, -3], [0.84, 0]]}
+  }
+}

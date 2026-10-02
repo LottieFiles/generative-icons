@@ -13,6 +13,8 @@
 //!   a token refresh on 401 and backoff on 429 and 5xx.
 //! - **Export** ([`HostedExporter`]): runs [`export::EXPORT_SCRIPT`] in `creator_exec`,
 //!   downloads the file and [normalizes](normalize_native) it to the committed native format.
+//! - **Spec v2** ([`PlanRunner`]): one `creator_exec` per icon runs a compiled plan, for a
+//!   draft sheet (attached images, nothing stored) or one bundle export split per motion.
 //! - **Public endpoints** ([`Downloader`]): the same TLS stack and trust roots for the library
 //!   and review submissions.
 //!
@@ -27,15 +29,17 @@ mod loopback;
 pub mod mcp;
 pub mod normalize;
 mod oauth;
+pub mod plan;
 mod store;
 
 pub use auth::{
     LoginInteraction, LoginMode, LoginOptions, LogoutOutcome, SessionCheck, SessionState, Status,
     StdioInteraction, Whoami, check_session, login, logout, status, whoami,
 };
-pub use config::{CredentialStoreKind, EngineConfig, RetryPolicy};
+pub use config::{CredentialStoreKind, EngineConfig, LockWait, Notice, NoticeSink, RetryPolicy};
 pub use error::{Error, ErrorKind, Result};
 pub use export::HostedExporter;
 pub use http::Downloader;
-pub use mcp::{McpClient, ServerInfo};
+pub use mcp::{McpClient, ServerInfo, ToolImage, ToolOutput};
 pub use normalize::{NativeLottie, normalize_native};
+pub use plan::{Bundle, BundleAnimation, PlanRunner, Run, animations_from_bundle, split_bundle};

@@ -73,6 +73,9 @@ pub enum ErrorCode {
     EngineError,
     /// The keychain or credentials file failed.
     CredentialStore,
+    /// Another process held the sign-in lock too long (it is signing in, or waiting on a
+    /// keychain prompt).
+    SignInBusy,
     /// A bug in this tool, or a binary built wrongly.
     Internal,
 }
@@ -114,6 +117,7 @@ impl ErrorCode {
             Self::EngineTimeout => "ENGINE_TIMEOUT",
             Self::EngineError => "ENGINE_ERROR",
             Self::CredentialStore => "CREDENTIAL_STORE",
+            Self::SignInBusy => "SIGN_IN_BUSY",
             Self::Internal => "INTERNAL",
         }
     }
@@ -139,7 +143,7 @@ impl ErrorCode {
             | Self::UnsupportedReference
             | Self::CredentialStore
             | Self::Io => 3,
-            Self::NotLoggedIn | Self::SessionExpired | Self::LoginCancelled | Self::AuthError => 4,
+            Self::NotLoggedIn | Self::SessionExpired | Self::LoginCancelled | Self::AuthError | Self::SignInBusy => 4,
             Self::Network | Self::RateLimited | Self::EngineUnavailable | Self::EngineTimeout | Self::EngineError => 5,
             Self::HashMismatch | Self::CorruptArchive | Self::InvalidCatalog | Self::StaleReference => 6,
             Self::Internal => 70,

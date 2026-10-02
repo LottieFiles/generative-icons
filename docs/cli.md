@@ -34,13 +34,14 @@ Before the first release, build the binary from this repository ([development](d
 | `remove <id…>` | Uninstalls icons whose files are unedited |
 | `doctor` | Checks the binary and CPU, project, skills, kit, lock, library, sign-in, engine and renderer |
 | `context [<query…>]` | Prints the reference packet an AI reads before drawing: the family contract and the nearest library icons' geometry and timing. `--neighbor <id>` (up to four) chooses references, `--search` lists candidates, `--prompt` prints a design prompt, `--output <dir>` saves the packet. `--format text` prints a summary; use JSON for the geometry. |
-| `create <id>` | Scaffolds a local icon in `gen-animated-icons/icons/batches/<id>.mjs` (`--label`, `--intent`, `--neighbor`). `--from <library-id>` starts from a library icon's source and needs a library checkout. Ids are kebab-case and can't be names Windows reserves (`con`, `aux`, `nul`, `com1`…). |
-| `check [<id>…]` | Offline checks: source preflight, installed descriptors, config and lock, and (once built) the build's verification. `STALE` means the source changed since the last build, so rebuild before previewing or submitting. `UNTRACED_IMPORTS` warns about imports `submit` can't follow (use plain string specifiers). |
-| `build [<id>…]` | Exports on the hosted engine, then packages, verifies, renders preview sheets and installs (`--no-install`, `--jobs 1-4`, `--all`) |
+| `create <id>` | Scaffolds a local icon in `gen-animated-icons/icons/batches/<id>.mjs` (`--label`, `--intent`, `--neighbor`). `--from <library-id>` starts from a library icon's source and needs a library checkout. Ids are kebab-case and can't be names Windows reserves (`con`, `aux`, `nul`, `com1`…). `--spec` (prototype) writes a spec v2 icon instead: `gen-animated-icons/icons/<id>.icon.json`, plain JSON shapes, roles, rigs and eased keys. |
+| `check [<id>…]` | Offline checks: source preflight, installed descriptors, config and lock, and (once built) the build's verification. `STALE` means the source changed since the last build, so rebuild before previewing or submitting. `UNTRACED_IMPORTS` warns about imports `submit` can't follow (use plain string specifiers). A spec v2 icon is validated, compiled and linted instead, with JSON Pointers into the spec; with no ids, every spec is. |
+| `draft <id>` | Prototype, spec v2 icons only: one hosted-engine call builds every motion and renders a labelled review sheet (`.gen-animated-icons/drafts/<id>.png` and `<id>-24px.png`). Nothing is exported or stored. A spec with errors stops before the engine. |
+| `build [<id>…]` | Exports on the hosted engine, then packages, verifies, renders preview sheets and installs (`--no-install`, `--jobs 1-4`, `--all`). A spec v2 icon takes one engine call for all its motions. v1 and v2 icons build in separate runs. |
 | `preview <id>` | Renders a built, installed or library icon to PNG contact sheets (`--motion`, `--animation`, `--times`, `--frames`, `--styles`, `--weights`, `--themes`, `--cell`, `--out`) |
-| `submit <id…>` | Sends verified local icons for review (`--license MIT\|CC-BY-4.0`, `--message`). The bundle holds each icon's verified build snapshot, only the modules it imports, and its two review sheets (regenerated if they are missing or edited). Icons with untraceable imports are refused unless you pass `--include-untraced`. `--dry-run --output bundle.zip` only writes the bundle. |
+| `submit <id…>` | Sends verified local icons for review (`--license MIT\|CC-BY-4.0`, `--message`). The bundle holds each icon's verified build snapshot, only the modules it imports, and its two review sheets (regenerated if they are missing or edited). Icons with untraceable imports are refused unless you pass `--include-untraced`. A spec v2 icon's bundle holds its spec and its verified build. `--dry-run --output bundle.zip` only writes the bundle. |
 | `login`, `logout`, `whoami` | Signs in to the hosted engine, signs out, and shows the account and whether the session is verified |
-| `mcp` | Serves `search`, `add`, `context`, `create`, `check`, `build` and `preview` as MCP tools over stdio |
+| `mcp` | Serves `search`, `add`, `context`, `create`, `check`, `draft`, `build` and `preview` as MCP tools over stdio |
 
 ## Sign-in and the hosted engine
 
@@ -49,6 +50,7 @@ Before the first release, build the binary from this repository ([development](d
 - `gen-animated-icons login` opens the browser. `--no-browser` prints the sign-in address and reads the redirect address from stdin; that mode is automatic in CI and over SSH.
 - The refresh token is kept in the OS keychain, or in a `0600` credentials file where no keychain is available. The credentials folder is the OS config folder's `gen-animated-icons` (override with `GEN_ANIMATED_ICONS_HOME`).
 - `build` sends the icon's sampled shapes and motion to the engine. Your app's code stays on your machine.
+- Commands share a sign-in lock in that folder while they refresh the session. When another `gen-animated-icons` process holds it (it is signing in, or waiting on a macOS Keychain prompt), a command says so after 3 s and stops after 60 s with `SIGN_IN_BUSY` (exit 4): approve the prompt, or end that process. `--verbose` says when a command reads the keychain.
 - Coding agents never sign in themselves: on `NOT_LOGGED_IN` or `SESSION_EXPIRED` they ask you to run `login`.
 
 ## Files in your app
@@ -96,6 +98,7 @@ The hosted library and the submission service go live at launch. Until then, pas
 | `GEN_ANIMATED_ICONS_CACHE_DIR` | Download cache (default: the OS cache folder's `gen-animated-icons`) |
 | `GEN_ANIMATED_ICONS_SUBMIT_URL` | Same as `submit --endpoint` |
 | `GEN_ANIMATED_ICONS_BINARY` | Makes the npm shim run this binary instead |
+| `GEN_ANIMATED_ICONS_V2_DOCUMENTS` | Prefix of the engine documents spec v2 drafts and builds use (default `gen-animated-icons-v2`) |
 
 ## Maintainer commands
 

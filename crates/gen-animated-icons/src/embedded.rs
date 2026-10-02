@@ -5,8 +5,9 @@
 pub const SKILL_NAME: &str = "gen-animated-icons";
 
 /// Skill files, relative to the skill folder, in breadth-first bytewise order.
-pub const SKILL_FILES: [(&str, &str); 4] = [
+pub const SKILL_FILES: [(&str, &str); 5] = [
     ("SKILL.md", include_str!("../assets/skill/SKILL.md")),
+    ("references/authoring-v2.md", include_str!("../assets/skill/references/authoring-v2.md")),
     ("references/authoring.md", include_str!("../assets/skill/references/authoring.md")),
     ("references/review.md", include_str!("../assets/skill/references/review.md")),
     ("references/runtime.md", include_str!("../assets/skill/references/runtime.md")),

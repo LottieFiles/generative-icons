@@ -1,0 +1,18 @@
+{
+  "format": "gai-icon/2",
+  "id": "toggle-switch",
+  "label": "Toggle switch",
+  "intent": "Knob pulls back, snaps across the track, and settles; toggle returns it.",
+  "state": {"from": "off", "to": "on", "labels": ["Turn on", "Turn off"], "reverse": "auto"},
+  "parts": {
+    "track": {"shape": {"rect": [3.5, 8.5, 25, 15], "r": 7.5}, "role": "surface", "solid": "ring"},
+    "knob":  {"shape": {"circle": [[11, 16], 3]}, "role": "surface", "tint": false}
+  },
+  "motion": {
+    "knob.x": {
+      "light":  [[0, 0], [0.42, 10, "inOut"]],
+      "strong": [[0, 0], [0.09, -0.7], [0.22, 10.7], [0.36, 10]]
+    }
+  },
+  "timing": {"light": 0.5, "strong": 0.5, "reverse": 0.5, "reverseStrong": 0.5}
+}

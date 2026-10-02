@@ -13,6 +13,12 @@
 //! in the previews folder never reaches the bundle. A sheet in the previews folder that is
 //! missing or differs is rewritten there once nothing else refuses the submission.
 //!
+//! A spec v2 icon (`<id>.icon.json`) is bundled the same way, with the spec its build verified
+//! (the build's copy, which its snapshot list records and the icons folder still holds) as its
+//! source, `checks.json` holding the `spec` check in place of the source preflight, and
+//! `"format": "gai-icon/2"` in `submission.json`. v1 and v2 icons are submitted in separate
+//! runs.
+//!
 //! The source is what each build verified, taken from the build's own snapshot: the files
 //! its icon depends on (its batch, the modules that batch imports, helpers in subfolders
 //! included, and the set's config and rule files), plus a `definitions.mjs` that imports
@@ -24,12 +30,13 @@
 //! entry name is a plain relative path (see [`is_portable_path`]).
 //!
 //! ```text
-//! source/gen-animated-icons/icons/…   definitions, set config, the icons' modules, evidence
+//! source/gen-animated-icons/icons/…   definitions, set config, the icons' modules (v2: the
+//!                                      specs), evidence
 //! built/<id>/…                         assets, .lottie files, set.json, provenance, evidence
 //! previews/<id>/<action>.png           the build's review sheets
 //! checks.json                          the source and native check results
-//! submission.json                      { schemaVersion: 1, ids, cli, kitSha256, engine,
-//!                                        files: { <path>: <sha256> }, license, message }
+//! submission.json                      { schemaVersion: 1, ids, format? (v2), cli, kitSha256,
+//!                                        engine, files: { <path>: <sha256> }, license, message }
 //! ```
 //!
 //! `submission.json` is JS-JSON indented 2. `files` covers every other entry. `kitSha256`
@@ -67,17 +74,89 @@ const PRIVATE: [&str; 3] = [".local", "wip", "unreleased"];
 /// Largest submissions response read (it is `{submissionId, status, reviewUrl}`).
 const MAX_RESPONSE: u64 = 1 << 20;
 
+/// What a submission bundles before its review sheets, checks and `submission.json`.
+struct Gathered {
+    files: BTreeMap<String, Vec<u8>>,
+    /// The verified builds, in id order.
+    builds: Vec<Built>,
+    /// The `checks` of `checks.json`.
+    checks: Vec<Value>,
+    /// `submission.json`'s `format`: `gai-icon/2` for spec v2 icons, none for v1.
+    format: Option<&'static str>,
+}
+
 /// Runs `submit`.
 pub fn run(ctx: &Context, args: &SubmitArgs) -> Result<Report> {
     let root = ctx.cwd.as_path();
     let config = Config::require(root, ctx.platform)?;
     let set = LocalSet::of(&config);
-    set.require(root)?;
     let ids: Vec<String> = super::unique(&args.ids).into_iter().map(str::to_string).collect();
+    let mut warnings = Vec::new();
+    let gathered = match spec_icons(root, &set, &ids)? {
+        true => gather_v2(root, &set, &ids)?,
+        false => gather(ctx, &set, &ids, args, &mut warnings)?,
+    };
+    finish(ctx, args, &ids, gathered, warnings)
+}
+
+/// Whether `ids` are spec v2 icons (each has a spec); v1 and v2 icons go in separate runs.
+fn spec_icons(root: &Path, set: &LocalSet, ids: &[String]) -> Result<bool> {
+    let has_spec = |id: &String| {
+        super::v2::has_spec(root, set, id).map_err(|error| symlink_error(error, &super::v2::spec_file(set, id)))
+    };
+    let specs: Vec<bool> = ids.iter().map(has_spec).collect::<Result<_>>()?;
+    match (specs.iter().all(|&s| s), specs.iter().any(|&s| s)) {
+        (true, true) => Ok(true),
+        (false, true) => {
+            Err(CliError::usage("Submit v1 icons (batches/*.mjs) and v2 icons (*.icon.json) in separate runs"))
+        }
+        _ => Ok(false),
+    }
+}
+
+/// The build of `id`, refused when it holds anything a build never writes, which
+/// verification would follow.
+fn read_build(root: &Path, id: &str) -> Result<Built> {
+    let built = Built::read(root, id)?.ok_or_else(|| {
+        CliError::new(ErrorCode::UnknownIcon, format!("{id} is not built"))
+            .with_id(id)
+            .with_hint(format!("Run gen-animated-icons build {id}"))
+    })?;
+    if let Some(entry) = check::foreign_entry(&built.dir) {
+        let shown = super::preview::relative(root, &entry);
+        if std::fs::symlink_metadata(&entry).is_ok_and(|meta| meta.file_type().is_symlink()) {
+            return Err(symlink_refused(&shown));
+        }
+        return Err(CliError::new(ErrorCode::InvalidPath, format!("{shown} is not a regular file or folder"))
+            .with_path(shown)
+            .with_id(id)
+            .with_hint(format!("Run gen-animated-icons build {id}, then submit again")));
+    }
+    Ok(built)
+}
+
+/// `CHECK_FAILED` naming what failed: only verified icons can be submitted.
+fn unverified(failures: &[String]) -> CliError {
+    CliError::new(
+        ErrorCode::CheckFailed,
+        format!("Only verified icons can be submitted; failed: {}", failures.join("; ")),
+    )
+    .with_hint("Fix the icons, run gen-animated-icons build, then submit again")
+}
+
+/// v1 icons: the source preflight, each verified build and the source it verified.
+fn gather(
+    ctx: &Context,
+    set: &LocalSet,
+    ids: &[String],
+    args: &SubmitArgs,
+    warnings: &mut Vec<String>,
+) -> Result<Gathered> {
+    let root = ctx.cwd.as_path();
+    set.require(root)?;
     let mut files: BTreeMap<String, Vec<u8>> = BTreeMap::new();
     let kit_dir = set.kit_dir(root)?;
-    let mut warnings = Vec::new();
-    let source = check::source(ctx, &set, &ids, &mut warnings)?;
+    let source = check::source(ctx, set, ids, warnings)?;
     let mut failures = Vec::new();
     if source.check.status == "FAIL" {
         failures.push("source preflight".to_string());
@@ -85,23 +164,8 @@ pub fn run(ctx: &Context, args: &SubmitArgs) -> Result<Report> {
     let mut native = Vec::new();
     let icons_dir = set.icons_dir(root)?;
     let mut builds = Vec::new();
-    for id in &ids {
-        let built = Built::read(root, id)?.ok_or_else(|| {
-            CliError::new(ErrorCode::UnknownIcon, format!("{id} is not built"))
-                .with_id(id)
-                .with_hint(format!("Run gen-animated-icons build {id}"))
-        })?;
-        // What a build never writes is refused before verification would follow it.
-        if let Some(entry) = check::foreign_entry(&built.dir) {
-            let shown = super::preview::relative(root, &entry);
-            if std::fs::symlink_metadata(&entry).is_ok_and(|meta| meta.file_type().is_symlink()) {
-                return Err(symlink_refused(&shown));
-            }
-            return Err(CliError::new(ErrorCode::InvalidPath, format!("{shown} is not a regular file or folder"))
-                .with_path(shown)
-                .with_id(id)
-                .with_hint(format!("Run gen-animated-icons build {id}, then submit again")));
-        }
+    for id in ids {
+        let built = read_build(root, id)?;
         let verdict = verify_build(&built.dir, &kit_dir);
         if let Some(error) = &verdict.error {
             failures.push(format!("{id}: {error}"));
@@ -117,14 +181,96 @@ pub fn run(ctx: &Context, args: &SubmitArgs) -> Result<Report> {
         builds.push(built);
     }
     if !failures.is_empty() {
-        return Err(CliError::new(
-            ErrorCode::CheckFailed,
-            format!("Only verified icons can be submitted; failed: {}", failures.join("; ")),
-        )
-        .with_hint("Fix the icons, run gen-animated-icons build, then submit again"));
+        return Err(unverified(&failures));
     }
     let origin = SourceOrigin { root, icons_dir: &icons_dir, icons: &set.icons };
-    add_source(&mut files, origin, &builds, args.include_untraced, &mut warnings)?;
+    add_source(&mut files, origin, &builds, args.include_untraced, warnings)?;
+    let checks = vec![source.check.to_json(), json!({ "id": "native", "status": "PASS", "icons": native })];
+    Ok(Gathered { files, builds, checks, format: None })
+}
+
+/// Spec v2 icons: each verified build, bundled as v1's, and as its source the spec it was built
+/// from (the build's own copy, which must be the one its snapshot list records and the one in
+/// the icons folder now), plus the set's evidence. The spec is read only as a regular file,
+/// never through a symlink, in the build or in the icons folder.
+fn gather_v2(root: &Path, set: &LocalSet, ids: &[String]) -> Result<Gathered> {
+    let prefix = "source/gen-animated-icons/icons";
+    let icons_dir = set.icons_dir(root)?;
+    let mut files: BTreeMap<String, Vec<u8>> = BTreeMap::new();
+    let (mut failures, mut specs, mut native, mut builds) = (Vec::new(), Vec::new(), Vec::new(), Vec::new());
+    for id in ids {
+        let built = read_build(root, id)?;
+        let spec = format!("{id}{}", gai_spec::SUFFIX);
+        let built_path = format!("{BUILD_DIR}/{id}/{spec}");
+        let rebuild = format!("Run gen-animated-icons build {id}, then submit again");
+        let snapshot = Snapshot::read(&built.dir).ok_or_else(|| {
+            CliError::new(ErrorCode::CheckFailed, format!("{id}: its build lists no sources ({SOURCES_FILE})"))
+                .with_id(id)
+                .with_hint(&rebuild)
+        })?;
+        let bytes = read_regular(&built.dir, &spec, &built_path)?;
+        if snapshot.sha256(&spec) != Some(sha256_hex(&bytes).as_str()) {
+            return Err(CliError::new(
+                ErrorCode::HashMismatch,
+                format!("{built_path} differs from the build's snapshot list"),
+            )
+            .with_id(id)
+            .with_path(built_path)
+            .with_hint(rebuild));
+        }
+        no_symlink(&icons_dir, &spec, &format!("{}/{spec}", set.icons))?;
+        if let Some(stale) = changed_source(&icons_dir, &built.dir) {
+            if stale.refused == Some(ErrorCode::SymlinkPath) {
+                return Err(symlink_refused(&format!("{}/{}", set.icons, stale.file)));
+            }
+            failures.push(format!("{id}: the source changed since it was built ({})", stale.describe()));
+        }
+        let compiled = std::str::from_utf8(&bytes).ok().map(gai_spec::load);
+        let found = match &compiled {
+            Some(Ok(compiled)) => {
+                let verdict = super::v2::verify(&built, compiled);
+                if let Some(error) = &verdict.error {
+                    failures.push(format!("{id}: {error}"));
+                }
+                native.push(json!({ "id": id, "status": if verdict.error.is_none() { "PASS" } else { "FAIL" }, "error": verdict.error, "summary": verdict.summary }));
+                compiled.diagnostics.clone()
+            }
+            Some(Err(diagnostics)) => {
+                failures.push(format!("{id}: its spec has errors (gen-animated-icons check {id})"));
+                diagnostics.clone()
+            }
+            None => {
+                failures.push(format!("{id}: its spec is not UTF-8"));
+                gai_spec::Diagnostics::default()
+            }
+        };
+        specs.push((id.clone(), set.file(&spec), found, matches!(compiled, Some(Ok(_)))));
+        add_build(&mut files, root, id, &built.dir)?;
+        files.insert(format!("{prefix}/{spec}"), bytes);
+        builds.push(built);
+    }
+    if !failures.is_empty() {
+        return Err(unverified(&failures));
+    }
+    add_evidence(&mut files, SourceOrigin { root, icons_dir: &icons_dir, icons: &set.icons })?;
+    let checks = vec![
+        check::spec_findings(&specs).to_json(),
+        json!({ "id": "native", "status": "PASS", "icons": native }),
+    ];
+    Ok(Gathered { files, builds, checks, format: Some(gai_spec::FORMAT) })
+}
+
+/// The review sheets, `checks.json` and `submission.json`, then the bundle: written, sent, or
+/// both.
+fn finish(
+    ctx: &Context,
+    args: &SubmitArgs,
+    ids: &[String],
+    gathered: Gathered,
+    warnings: Vec<String>,
+) -> Result<Report> {
+    let root = ctx.cwd.as_path();
+    let Gathered { mut files, builds, checks, format } = gathered;
     let mut stale_sheets = Vec::new();
     for (id, built) in ids.iter().zip(&builds) {
         for (name, png) in Review::of(&built.icon).pngs(&built.lottie)? {
@@ -136,7 +282,7 @@ pub fn run(ctx: &Context, args: &SubmitArgs) -> Result<Report> {
             files.insert(format!("previews/{id}/{name}"), png);
         }
     }
-    let checks = json!({ "status": "PASS", "scope": check::SCOPE, "checks": [source.check.to_json(), { "id": "native", "status": "PASS", "icons": native }] });
+    let checks = json!({ "status": "PASS", "scope": check::SCOPE, "checks": checks });
     files.insert("checks.json".into(), crate::js::json_file(&checks));
 
     // From the bundled provenance, never a file read again.
@@ -146,7 +292,7 @@ pub fn run(ctx: &Context, args: &SubmitArgs) -> Result<Report> {
     });
     let digests: Map<String, Value> =
         files.iter().map(|(path, bytes)| (path.clone(), json!(sha256_hex(bytes)))).collect();
-    let submission = json!({
+    let mut submission = json!({
         "schemaVersion": 1,
         "ids": ids,
         "cli": format!("gen-animated-icons@{}", env!("CARGO_PKG_VERSION")),
@@ -156,6 +302,9 @@ pub fn run(ctx: &Context, args: &SubmitArgs) -> Result<Report> {
         "license": args.license.as_str(),
         "message": args.message,
     });
+    if let (Some(format), Value::Object(map)) = (format, &mut submission) {
+        map.shift_insert(2, "format".into(), json!(format));
+    }
     files.insert("submission.json".into(), crate::js::json_file(&submission));
     if let Some(name) = files.keys().find(|name| !is_bundle_name(name)) {
         return Err(unbundlable(name));
@@ -411,9 +560,14 @@ fn add_source(
     }
     ids.sort();
     files.insert(format!("{prefix}/definitions.mjs"), definitions(&ids).into_bytes());
+    add_evidence(files, origin)
+}
+
+/// `source/gen-animated-icons/icons/evidence/…`: the set's evidence notes and images.
+fn add_evidence(files: &mut BTreeMap<String, Vec<u8>>, origin: SourceOrigin<'_>) -> Result<()> {
     let evidence = inside(origin.icons_dir, "evidence")
         .map_err(|error| symlink_error(error, &format!("{}/evidence", origin.icons)))?;
-    add_tree(files, origin.root, &evidence, &format!("{prefix}/evidence"), |name| {
+    add_tree(files, origin.root, &evidence, "source/gen-animated-icons/icons/evidence", |name| {
         EVIDENCE_SUFFIXES.iter().any(|s| name.ends_with(s))
     })
 }

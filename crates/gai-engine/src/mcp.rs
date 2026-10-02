@@ -38,6 +38,22 @@ pub struct ServerInfo {
     pub protocol_version: String,
 }
 
+/// A tool result with its attached images.
+#[derive(Debug, Clone, PartialEq)]
+pub struct ToolOutput {
+    /// `structuredContent`, or the first text item parsed as JSON.
+    pub payload: Value,
+    /// Image items in result order.
+    pub images: Vec<ToolImage>,
+}
+
+/// One image item of a tool result.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ToolImage {
+    pub mime: String,
+    pub bytes: Vec<u8>,
+}
+
 #[derive(Debug, Clone)]
 struct Session {
     id: Option<String>,
@@ -112,6 +128,34 @@ impl McpClient {
             return Err(tool_error(name, &payload));
         }
         Ok(payload)
+    }
+
+    /// Calls a tool and returns its payload (as [`call_tool`](Self::call_tool) does) plus every
+    /// image item of the result, decoded: `creator_exec` attaches `renderFilmstrip` PNGs this way.
+    pub fn call_tool_full(&self, name: &str, arguments: Value) -> Result<ToolOutput> {
+        let result = self.request("tools/call", json!({"name": name, "arguments": arguments}))?;
+        let items = result.get("content").and_then(Value::as_array).cloned().unwrap_or_default();
+        let text = items
+            .iter()
+            .find(|item| item.get("type").and_then(Value::as_str) == Some("text"))
+            .and_then(|item| item.get("text"))
+            .and_then(Value::as_str);
+        let payload = match (result.get("structuredContent").filter(|v| v.is_object()), text) {
+            (Some(structured), _) => structured.clone(),
+            (None, Some(text)) => serde_json::from_str(text).unwrap_or_else(|_| Value::String(text.to_owned())),
+            (None, None) => Value::Null,
+        };
+        if result.get("isError").and_then(Value::as_bool) == Some(true) {
+            return Err(tool_error(name, &payload));
+        }
+        let mut images = Vec::new();
+        for item in items.iter().filter(|item| item.get("type").and_then(Value::as_str) == Some("image")) {
+            let data = item.get("data").and_then(Value::as_str).unwrap_or_default();
+            let bytes = STANDARD.decode(data).map_err(|e| Error::Protocol(format!("{name}: image item: {e}")))?;
+            let mime = item.get("mimeType").and_then(Value::as_str).unwrap_or("image/png").to_owned();
+            images.push(ToolImage { mime, bytes });
+        }
+        Ok(ToolOutput { payload, images })
     }
 
     /// Reads a resource and returns its bytes (`text` as UTF-8, or `blob` decoded).

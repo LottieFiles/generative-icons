@@ -5,6 +5,7 @@ pub mod scene;
 pub mod template;
 pub mod profile;
 pub mod post_export;
+pub mod post_export_v2;
 pub mod records;
 pub mod set_json;
 pub mod build;

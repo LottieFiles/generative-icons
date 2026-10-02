@@ -1,0 +1,14 @@
+[package]
+name = "gai-spec"
+description = "Icon spec v2 (gai-icon/2): validation, lints and compilation to one engine call"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+gai-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+indexmap.workspace = true
+thiserror.workspace = true

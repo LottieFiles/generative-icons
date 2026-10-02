@@ -127,7 +127,7 @@ fn agents_search_and_preview_through_mcp() {
 
     let tools = session.request("tools/list", json!({}));
     let names: Vec<&str> = tools["tools"].as_array().unwrap().iter().map(|t| t["name"].as_str().unwrap()).collect();
-    assert_eq!(names, ["search", "add", "context", "create", "check", "build", "preview"]);
+    assert_eq!(names, ["search", "add", "context", "create", "check", "draft", "build", "preview"]);
     let search_tool = &tools["tools"][0];
     assert_eq!(search_tool["inputSchema"]["required"], json!(["query"]));
     assert_eq!(search_tool["annotations"]["readOnlyHint"], true);
@@ -214,7 +214,7 @@ fn a_call_stuck_in_icon_code_leaves_the_server_answering() {
     session.send(json!({"jsonrpc": "2.0", "id": 900, "method": "tools/call", "params": {"name": "check", "arguments": {"ids": ["spin"]}}}));
     // The server is not running that code: other requests are answered meanwhile.
     let tools = session.request("tools/list", json!({}));
-    assert_eq!(tools["tools"].as_array().unwrap().len(), 7);
+    assert_eq!(tools["tools"].as_array().unwrap().len(), 8);
     let found = session.request("tools/call", json!({"name": "search", "arguments": {"query": "bell", "limit": 1}}));
     assert_eq!(found["isError"], false, "{found}");
     assert!(started.elapsed() < Duration::from_secs(60), "{:?}", started.elapsed());
@@ -320,7 +320,7 @@ fn lines_that_are_not_requests_are_answered_and_the_server_keeps_serving() {
     assert!(long["error"]["message"].as_str().unwrap().contains("longer than"), "{long}");
 
     let tools = session.request("tools/list", json!({}));
-    assert_eq!(tools["tools"].as_array().unwrap().len(), 7);
+    assert_eq!(tools["tools"].as_array().unwrap().len(), 8);
     assert!(
         session.stray.is_empty() && session.notifications.is_empty(),
         "{:?} {:?}",
