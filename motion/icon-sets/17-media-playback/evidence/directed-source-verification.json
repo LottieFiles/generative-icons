@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 58,
-  "nativeTransformNodes": 276,
+  "nativeTransformNodes": 256,
   "nativeTransformMaxCoordinateError": 0.000012096514423021176,
   "checks": [
     {
@@ -178,24 +178,6 @@
     },
     {
       "name": "add-to-queue-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "headphones",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "headphones-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -386,6 +368,17 @@
       "name": "live-broadcast-strong",
       "maxSeamPositionError": 0,
       "maxVelocityRatio": 0.045673076923049206
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "headphones",
+      "spec": "specs/headphones.icon.json",
+      "specSha256": "41f20e22c86092f0059b67954346b0748bda95207d94b971dc3d3f4c8a3705d8",
+      "actions": [
+        "headphones",
+        "headphones-strong"
+      ]
     }
   ]
 }

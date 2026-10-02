@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 48,
-  "nativeTransformNodes": 180,
+  "nativeTransformNodes": 118,
   "nativeTransformMaxCoordinateError": 0.000011378323002020352,
   "checks": [
     {
@@ -148,44 +148,6 @@
       "designConstraints": []
     },
     {
-      "name": "phone",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "phone-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "microphone",
-      "fixedParts": [
-        "microphone-stand",
-        "microphone-foot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "microphone-strong",
-      "fixedParts": [
-        "microphone-stand",
-        "microphone-foot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
       "name": "volume",
       "fixedParts": [
         "volume-speaker-frame"
@@ -219,94 +181,6 @@
       "name": "wifi-strong",
       "fixedParts": [
         "wifi-source"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "cloud",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "cloud-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "sun",
-      "fixedParts": [
-        "sun-disc-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "sun-strong",
-      "fixedParts": [
-        "sun-disc-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "moon",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "moon-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "location",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "location-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "compass",
-      "fixedParts": [
-        "compass-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "compass-strong",
-      "fixedParts": [
-        "compass-frame"
       ],
       "topology": true,
       "stateBoundaries": true,
@@ -376,6 +250,71 @@
       "stateBoundaries": true,
       "hold": true,
       "designConstraints": []
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "phone",
+      "spec": "specs/phone.icon.json",
+      "specSha256": "bfa46044b5d52b6a45ec3d710d5733f7c474de31828db4c2b7bd6e379b0d4d97",
+      "actions": [
+        "phone",
+        "phone-strong"
+      ]
+    },
+    {
+      "icon": "microphone",
+      "spec": "specs/microphone.icon.json",
+      "specSha256": "f2f4e8d4eb5c1739df7f32769b46e55fbf823782e032328a79b53ff5497cd38b",
+      "actions": [
+        "microphone",
+        "microphone-strong"
+      ]
+    },
+    {
+      "icon": "cloud",
+      "spec": "specs/cloud.icon.json",
+      "specSha256": "f41dd535714c00c5006a967c7c857068b4a642390f866d49317ba4a106448db3",
+      "actions": [
+        "cloud",
+        "cloud-strong"
+      ]
+    },
+    {
+      "icon": "sun",
+      "spec": "specs/sun.icon.json",
+      "specSha256": "b9dcfad3262d2c2038dfff03c1a51f984a5ecd39260f737c8983b8bce02a0a3e",
+      "actions": [
+        "sun",
+        "sun-strong"
+      ]
+    },
+    {
+      "icon": "moon",
+      "spec": "specs/moon.icon.json",
+      "specSha256": "e062379e4adf0ed07e30eb21a51b97b494d78f25a196f852049ee0affaf328d0",
+      "actions": [
+        "moon",
+        "moon-strong"
+      ]
+    },
+    {
+      "icon": "location",
+      "spec": "specs/location.icon.json",
+      "specSha256": "218ddbece2a6f139a85ab109dab69a63026730446d8e449100b51a2f01a4d0b8",
+      "actions": [
+        "location",
+        "location-strong"
+      ]
+    },
+    {
+      "icon": "compass",
+      "spec": "specs/compass.icon.json",
+      "specSha256": "c5d413b87c5372deabda0d53f4732a0a323ccb64c5508830e775bdb80d91ed01",
+      "actions": [
+        "compass",
+        "compass-strong"
+      ]
     }
   ]
 }

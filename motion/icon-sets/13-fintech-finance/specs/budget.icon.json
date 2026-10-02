@@ -1,0 +1,27 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "budget",
+  "label": "Budget",
+  "intent": "A share is set aside. Light: the allocation slice tucks back toward the pie, then springs out past its place and settles into its share with a small rebound. Strong: a deeper tuck, a longer spring out that makes the pie recoil, and two settle beats. Both parts stay rigid.",
+  "parts": {
+    "allocation": {"shape": {"path": "M17.3 13.95 L17.3 7.45 C17.3 6.7 17.997 6.73 17.997 6.73 C21.865 7.069 24.931 10.135 25.27 14.003 C25.27 14.003 25.3 14.7 24.55 14.7 L18.05 14.7 C17.3 14.7 17.3 14.7 17.3 13.95 Z"},
+                   "role": "surface",
+                   "solid": {"path": "M17.3 13.95 L17.3 6.35 C17.3 5.6 18.093 5.635 18.093 5.635 C22.492 6.02 25.98 9.508 26.365 13.907 C26.365 13.907 26.4 14.7 25.65 14.7 L18.05 14.7 C17.3 14.7 17.3 14.7 17.3 13.95 Z"},
+                   "//": "v1 Solid grows only the outer arc, so the cut between the slices stays open"},
+    "committed":  {"shape": {"path": "M14.25 18.5 L20.75 18.5 C21.5 18.5 21.47 19.197 21.47 19.197 C21.1 23.419 17.503 26.62 13.267 26.497 C9.032 26.373 5.627 22.968 5.503 18.733 C5.38 14.497 8.581 10.9 12.803 10.53 C12.803 10.53 13.5 10.5 13.5 11.25 L13.5 17.75 C13.5 18.5 13.5 18.5 14.25 18.5 Z"},
+                   "role": "surface",
+                   "solid": {"path": "M14.25 18.5 L21.85 18.5 C22.6 18.5 22.565 19.293 22.565 19.293 C22.145 24.095 18.054 27.736 13.235 27.596 C8.417 27.456 4.544 23.583 4.404 18.765 C4.264 13.946 7.905 9.855 12.707 9.435 C12.707 9.435 13.5 9.4 13.5 10.15 L13.5 17.75 C13.5 18.5 13.5 18.5 14.25 18.5 Z"}}
+  },
+  "motion": {
+    "allocation.x": {
+      "light":  [[0, 0], [0.1, -1.1, "out"], [0.22, 1], [0.32, -0.25], [0.4, 0]],
+      "strong": [[0, 0], [0.12, -1.2, "out"], [0.26, 1.5], [0.37, -0.45], [0.47, 0.15], [0.55, 0]]
+    },
+    "allocation.y": {"follow": "allocation.x", "scale": -1},
+    "committed.x": {
+      "strong": [[0, 0], [0.16, 0], [0.24, -0.5, "out"], [0.34, 0.15], [0.42, 0]]
+    },
+    "committed.y": {"follow": "committed.x", "scale": -1}
+  }
+}

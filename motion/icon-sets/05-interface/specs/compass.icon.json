@@ -1,0 +1,21 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "compass",
+  "label": "Compass",
+  "intent": "The needle seeks north. Light: the needle kicks 40 degrees off its bearing, swings back past it and settles in shrinking swings (40, -16, 7, -2.5). Strong: a bigger kick and two more swings (75, -36, 17, -8, 3) before it locks on. The case never moves.",
+  "preview": {"light": [0, 0.06, 0.12, 0.19, 0.25, 0.36, 0.45, 0.56], "strong": [0, 0.08, 0.16, 0.25, 0.33, 0.47, 0.59, 0.81]},
+  "parts": {
+    "compass": {"shape": {"circle": [[16, 16], 10.5]}, "role": "surface", "solid": "ring"},
+    "needle":  {"shape": {"path": "M17.977 10.465 C18.326 10.155 18.485 10.233 18.456 10.699 L18.041 17.351 C18.014 17.784 17.838 18.144 17.514 18.432 L14.023 21.535 C13.674 21.845 13.515 21.767 13.544 21.301 L13.959 14.649 C13.986 14.216 14.162 13.856 14.486 13.568 L17.977 10.465 Z"}, "role": "fill"}
+  },
+  "rigs": {
+    "needle": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "needle.rotate": {
+      "light":  [[0, 0], [0.12, 40, "out"], [0.25, -16], [0.36, 7], [0.45, -2.5], [0.52, 0]],
+      "strong": [[0, 0], [0.16, 75, "out"], [0.33, -36], [0.47, 17], [0.59, -8], [0.69, 3], [0.77, 0]]
+    }
+  }
+}

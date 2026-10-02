@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "bill-payment",
+  "label": "Bill payment",
+  "intent": "The bill is paid in. Light: the bill lifts slightly, drops into the payment tray with a hit and one small bounce, and stays seated; the tray gives under it and springs back. Strong: a higher lift, a harder drop that bounces twice, and a deeper give in the tray. The bill and its value move as one rigid object. The reset fades back to the bill above the tray.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "bill-value": {"shape": {"line": [[13, 12.5], [19, 12.5]]}},
+    "bill":       {"shape": {"rect": [7.5, 6.5, 17, 12], "r": 2.2}, "role": "surface",
+                   "knockout": [{"part": "bill-value", "gap": 0}]},
+    "tray":       {"shape": {"path": "M4.5 22 L4.5 23 C4.5 24.7 5.8 26 7.5 26 L24.5 26 C26.2 26 27.5 24.7 27.5 23 L27.5 22"}}
+  },
+  "rigs": {
+    "bill": {"carries": ["bill-value"]}
+  },
+  "reverse": {
+    "//": "v1 reset fades only the item; the tray only reacts, so it stays visible",
+    "light":  {"tray.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"tray.opacity": [[0, 1], [0.25, 1]]}
+  },
+  "motion": {
+    "bill.y": {
+      "light":  [[0, 0], [0.08, -0.8, "out"], [0.26, 2, "hit"], {"bounce": 0.35, "amp": 0.14}],
+      "strong": [[0, 0], [0.1, -1.5, "out"], [0.3, 2, "hit"], {"bounce": 0.4, "amp": 0.18}, {"bounce": 0.48, "amp": 0.3}]
+    },
+    "tray.y": {
+      "light":  [[0, 0], [0.26, 0], [0.31, 0.6, "out"], [0.4, -0.15], [0.47, 0]],
+      "strong": [[0, 0], [0.3, 0], [0.35, 0.9, "out"], [0.44, -0.25], [0.52, 0.08], [0.58, 0]]
+    }
+  }
+}

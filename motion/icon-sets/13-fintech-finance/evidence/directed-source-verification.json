@@ -2,51 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 64,
-  "nativeTransformNodes": 340,
-  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
+  "nativeTransformNodes": 244,
+  "nativeTransformMaxCoordinateError": 0.000009999999999621423,
   "checks": [
-    {
-      "name": "bank",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bank-pediment-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "bank-column-left"
-        },
-        {
-          "type": "fixed",
-          "part": "bank-plinth"
-        }
-      ]
-    },
-    {
-      "name": "bank-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bank-pediment-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "bank-column-left"
-        },
-        {
-          "type": "fixed",
-          "part": "bank-plinth"
-        }
-      ]
-    },
     {
       "name": "bank-account",
       "fixedParts": [],
@@ -88,48 +46,6 @@
           "type": "monotonic",
           "part": "bank-account-balance",
           "measure": "width"
-        }
-      ]
-    },
-    {
-      "name": "bank-transfer",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bank-transfer-account-left-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "bank-transfer-outgoing"
-        },
-        {
-          "type": "rigid",
-          "part": "bank-transfer-incoming"
-        }
-      ]
-    },
-    {
-      "name": "bank-transfer-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bank-transfer-account-left-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "bank-transfer-outgoing"
-        },
-        {
-          "type": "rigid",
-          "part": "bank-transfer-incoming"
         }
       ]
     },
@@ -206,40 +122,6 @@
         {
           "type": "rigid",
           "part": "savings-coin-new"
-        }
-      ]
-    },
-    {
-      "name": "deposit",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "deposit-tray"
-        },
-        {
-          "type": "rigid",
-          "part": "deposit-coin-frame"
-        }
-      ]
-    },
-    {
-      "name": "deposit-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "deposit-tray"
-        },
-        {
-          "type": "rigid",
-          "part": "deposit-coin-frame"
         }
       ]
     },
@@ -464,108 +346,6 @@
       ]
     },
     {
-      "name": "refund",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "refund-return"
-        },
-        {
-          "type": "rigid",
-          "part": "refund-coin-frame"
-        }
-      ]
-    },
-    {
-      "name": "refund-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "refund-return"
-        },
-        {
-          "type": "rigid",
-          "part": "refund-coin-frame"
-        }
-      ]
-    },
-    {
-      "name": "bill-payment",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bill-payment-tray"
-        },
-        {
-          "type": "rigid",
-          "part": "bill-payment-bill"
-        }
-      ]
-    },
-    {
-      "name": "bill-payment-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "bill-payment-tray"
-        },
-        {
-          "type": "rigid",
-          "part": "bill-payment-bill"
-        }
-      ]
-    },
-    {
-      "name": "budget",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "budget-committed-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "budget-allocation-frame"
-        }
-      ]
-    },
-    {
-      "name": "budget-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "budget-committed-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "budget-allocation-frame"
-        }
-      ]
-    },
-    {
       "name": "transaction-history",
       "fixedParts": [],
       "topology": true,
@@ -664,32 +444,6 @@
       ]
     },
     {
-      "name": "portfolio",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "portfolio-case-frame"
-        }
-      ]
-    },
-    {
-      "name": "portfolio-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "portfolio-case-frame"
-        }
-      ]
-    },
-    {
       "name": "calculator",
       "fixedParts": [],
       "topology": true,
@@ -771,6 +525,77 @@
           "type": "rigid",
           "part": "vault-spoke-0"
         }
+      ]
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "bank",
+      "spec": "specs/bank.icon.json",
+      "specSha256": "b989d0a24f7a7f932da6809a2e0243c255368bd7ec536cd70e9dda969495236c",
+      "actions": [
+        "bank",
+        "bank-reset",
+        "bank-strong",
+        "bank-reset-strong"
+      ]
+    },
+    {
+      "icon": "bank-transfer",
+      "spec": "specs/bank-transfer.icon.json",
+      "specSha256": "2a09f49d4b4db448ef9888d975f7d8f90e3877370831678758e9c0ba714db82b",
+      "actions": [
+        "bank-transfer",
+        "bank-transfer-strong"
+      ]
+    },
+    {
+      "icon": "deposit",
+      "spec": "specs/deposit.icon.json",
+      "specSha256": "9932e907883217cfce9e64aa83e7ffbf12d35486e258b9938095bfbd1a71357a",
+      "actions": [
+        "deposit",
+        "deposit-reset",
+        "deposit-strong",
+        "deposit-reset-strong"
+      ]
+    },
+    {
+      "icon": "refund",
+      "spec": "specs/refund.icon.json",
+      "specSha256": "0c73994f27e0df5733058483222d9fe0ba0f3a60059994abe4f5d4ffe9e1b215",
+      "actions": [
+        "refund",
+        "refund-strong"
+      ]
+    },
+    {
+      "icon": "bill-payment",
+      "spec": "specs/bill-payment.icon.json",
+      "specSha256": "26c9589938009fdc25eb372b46d3bec66ee61791d5b4709225a3f37f227daed7",
+      "actions": [
+        "bill-payment",
+        "bill-payment-reset",
+        "bill-payment-strong",
+        "bill-payment-reset-strong"
+      ]
+    },
+    {
+      "icon": "budget",
+      "spec": "specs/budget.icon.json",
+      "specSha256": "84063ae98fa99714e70e51c80e73814ec3c9f8f279df8db3d6dc1ff6bb0793e8",
+      "actions": [
+        "budget",
+        "budget-strong"
+      ]
+    },
+    {
+      "icon": "portfolio",
+      "spec": "specs/portfolio.icon.json",
+      "specSha256": "e7aabc2d5cf949c5aeecf16692ae16a2a7964caf22aa827ef850f8ace9572e5a",
+      "actions": [
+        "portfolio",
+        "portfolio-strong"
       ]
     }
   ]

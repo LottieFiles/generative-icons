@@ -1,0 +1,28 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "bank",
+  "label": "Bank",
+  "intent": "The bank opens. Light: the entrance swings open on its left hinge, knocks against its stop, rebounds a little and stays open. Strong: a first tug, then the door is flung open, bounces twice off its stop and stays open. The roof, columns and plinth never move. The reset fades back to the closed door.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "plinth":       {"shape": {"line": [[5, 26.5], [27, 26.5]]}},
+    "door":         {"//": "closed: v1's rounded door; open: v1's end frame, the free edge pulled in to 16.7 with chamfered corners (same command list for the morph)",
+                     "shape": {"morph": [
+                       {"path": "M14 14.5 L18 14.5 C18.828 14.5 19.5 15.172 19.5 16 L19.5 21.5 C19.5 22.328 18.828 23 18 23 L14 23 C13.172 23 12.5 22.328 12.5 21.5 L12.5 16 C12.5 15.172 13.172 14.5 14 14.5 Z"},
+                       {"path": "M14 14.5 L15.2 14.5 C15.7 15 16.2 15.5 16.7 16 L16.7 21.5 C16.2 22 15.7 22.5 15.2 23 L14 23 C13.5 22.5 13 22 12.5 21.5 L12.5 16 C13 15.5 13.5 15 14 14.5 Z"}
+                     ], "by": "open"},
+                     "role": "surface", "solid": {"grow": 1.15}},
+    "column-right": {"shape": {"line": [[24.5, 14.5], [24.5, 23]]}},
+    "column-left":  {"mirror": {"of": "column-right"}},
+    "pediment":     {"shape": {"path": "M15.136 5.204 C15.712 4.868 16.288 4.868 16.864 5.204 L25.936 10.496 C26.512 10.832 26.467 11 25.8 11 L6.2 11 C5.533 11 5.488 10.832 6.064 10.496 L15.136 5.204 Z"},
+                     "role": "surface",
+                     "solid": {"path": "M15.085 4.21 C15.695 3.803 16.305 3.803 16.915 4.21 L27.085 10.99 C27.695 11.397 27.633 11.6 26.9 11.6 L5.1 11.6 C4.367 11.6 4.305 11.397 4.915 10.99 L15.085 4.21 Z"}}
+  },
+  "motion": {
+    "open": {
+      "light":  [[0, 0], [0.06, 0], [0.3, 1, "hit"], {"bounce": 0.4, "amp": 0.15}],
+      "strong": [[0, 0], [0.07, 0.18, "out"], [0.13, 0, "hit"], [0.36, 1, "hit"], {"bounce": 0.46, "amp": 0.22}, {"bounce": 0.55, "amp": 0.35}]
+    }
+  }
+}

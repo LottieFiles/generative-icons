@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "cloud-sync",
+  "label": "Cloud sync",
+  "intent": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
+  "preview": {"light": [0, 0.07, 0.13, 0.18, 0.24, 0.3, 0.36, 0.46], "strong": [0, 0.08, 0.15, 0.21, 0.27, 0.34, 0.43, 0.64]},
+  "parts": {
+    "cloud":    {"shape": {"path": "M9 25 C5.4 25 3.5 21.4 3.5 17 C3.5 14 5.6 11.4 8.8 11 C9.6 6.8 12.3 4.8 16 4.8 C20.4 4.8 23.3 7.6 23.8 11.4 C27 11.9 28.5 14.1 28.5 17 C28.5 21.4 26.1 25 23 25 L9 25 Z"},
+                 "role": "surface", "solid": "ring"},
+    "upload":   {"shape": {"path": "M9.7 16.4 L12 14.1 L14.3 16.4 L12 14.1 L12 21"}},
+    "download": {"shape": {"path": "M17.7 17.7 L20 20 L22.3 17.7 L20 20 L20 11"}}
+  },
+  "motion": {
+    "upload.y": {
+      "//": "the spent arrow leaves upward; a fresh one rises from below into the rest pose",
+      "light":  [[0, 0], [0.17, -3, "in"], [0.18, 2, "step"], [0.34, 0, "out"]],
+      "strong": [[0, 0], [0.08, 0.8, "inOut"], [0.2, -3.2, "in"], [0.21, 2.2, "step"], [0.34, -0.45, "out"], [0.43, 0.15], [0.5, 0]]
+    },
+    "upload.opacity": {
+      "light":  [[0, 1], [0.07, 1], [0.17, 0, "in"], [0.19, 0], [0.33, 1, "out"]],
+      "strong": [[0, 1], [0.12, 1], [0.2, 0, "in"], [0.22, 0], [0.33, 1, "out"]]
+    },
+    "download.y": {
+      "//": "download answers: the same pass, downward",
+      "light":  {"follow": "upload.y", "lag": 0.12, "scale": -1},
+      "strong": {"follow": "upload.y", "lag": 0.14, "scale": -1}
+    },
+    "download.opacity": {
+      "light":  {"follow": "upload.opacity", "lag": 0.12},
+      "strong": {"follow": "upload.opacity", "lag": 0.14}
+    },
+    "cloud.scale": {
+      "//": "Strong only: the cloud takes the upload",
+      "strong": [[0, 1], [0.17, 1], [0.25, 1.05, "out"], [0.35, 0.985], [0.45, 1]]
+    }
+  }
+}

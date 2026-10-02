@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "headphones",
+  "label": "Headphones",
+  "intent": "Sound plays. Light: both ear cups give one beat, like a driver pumping, and a sound arc leaves the inner face of each cup and travels in toward the listener, fading on the way. Strong: two beats, the second harder, each sending its pair of arcs. The band never moves.",
+  "parts": {
+    "band":   {"shape": {"arc": [[16, 16], 9.5, 180, 360]}},
+    "cup-0":  {"shape": {"rect": [4, 16, 5, 9], "r": 2.2}, "role": "surface", "solid": "fill"},
+    "cup-1":  {"mirror": {"of": "cup-0"}},
+    "wave-l": {"//": "hidden at rest: sound only exists while it plays", "shape": {"arc": [[6.5, 20.5], 5.6, -28, 28]}, "hidden": true},
+    "wave-r": {"mirror": {"of": "wave-l"}}
+  },
+  "motion": {
+    "cup-0.scale": {
+      "light":  [[0, 1], [0.06, 1.13, "hit"], [0.15, 0.97], [0.25, 1]],
+      "strong": [[0, 1], [0.06, 1.12, "hit"], [0.14, 0.97], [0.22, 1], [0.3, 1], [0.36, 1.18, "hit"], [0.45, 0.95], [0.55, 1.02], [0.64, 1]]
+    },
+    "cup-1.scale": {"follow": "cup-0.scale"},
+    "wave-l.opacity": {
+      "light":  [[0, 0], [0.06, 0], [0.11, 1, "out"], [0.2, 1], [0.36, 0]],
+      "strong": [[0, 0], [0.06, 0], [0.1, 1, "out"], [0.17, 1], [0.29, 0], [0.36, 0], [0.4, 1, "out"], [0.48, 1], [0.62, 0]]
+    },
+    "wave-l.r": {
+      "light":  [[0, 0], [0.06, 0], [0.36, 1.8, "out"], [0.38, 0, "step"]],
+      "strong": [[0, 0], [0.06, 0], [0.29, 1.8, "out"], [0.3, 0, "step"], [0.36, 0], [0.62, 2.2, "out"], [0.64, 0, "step"]]
+    },
+    "wave-r.opacity": {"follow": "wave-l.opacity"},
+    "wave-r.r": {"follow": "wave-l.r"}
+  }
+}

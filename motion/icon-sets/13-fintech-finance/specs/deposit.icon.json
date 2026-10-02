@@ -1,0 +1,27 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "deposit",
+  "label": "Deposit",
+  "intent": "A coin is deposited. Light: the coin hops, falls into the tray, lands with a hit and one small bounce, and stays deposited; the tray gives under it and springs back. Strong: a higher toss, a landing that bounces twice, and a deeper give in the tray. The coin stays rigid. The reset fades back to the coin above the tray.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "coin": {"shape": {"circle": [[16, 8.3], 3.5]}, "role": "surface", "solid": {"grow": 1.15}},
+    "tray": {"shape": {"path": "M6 13 L6 20 C6 21.7 7.3 23 9 23 L23 23 C24.7 23 26 21.7 26 20 L26 13"}}
+  },
+  "reverse": {
+    "//": "v1 reset fades only the item; the tray only reacts, so it stays visible",
+    "light":  {"tray.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"tray.opacity": [[0, 1], [0.25, 1]]}
+  },
+  "motion": {
+    "coin.y": {
+      "light":  [[0, 0], [0.07, -0.9, "out"], [0.3, 7.7, "hit"], {"bounce": 0.4, "amp": 0.1}],
+      "strong": [[0, 0], [0.1, -1.6, "out"], [0.34, 7.7, "hit"], {"bounce": 0.46, "amp": 0.15}, {"bounce": 0.55, "amp": 0.3}]
+    },
+    "tray.y": {
+      "light":  [[0, 0], [0.3, 0], [0.35, 0.7, "out"], [0.44, -0.15], [0.51, 0]],
+      "strong": [[0, 0], [0.34, 0], [0.39, 1, "out"], [0.48, -0.3], [0.56, 0.1], [0.63, 0]]
+    }
+  }
+}

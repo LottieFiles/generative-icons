@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "moon",
+  "label": "Moon",
+  "intent": "Night falls. Light: the crescent rocks back on its curve and settles in two shrinking beats while two sparkle stars twinkle in beside it, one after the other, and fade. Strong: the crescent rocks deeper with more decaying beats, and each star twinkles twice before it fades.",
+  "preview": {"light": [0, 0.08, 0.14, 0.2, 0.26, 0.34, 0.42, 0.56], "strong": [0, 0.12, 0.2, 0.3, 0.4, 0.5, 0.62, 0.84]},
+  "parts": {
+    "moon":   {"shape": {"path": "M12.05 6.82 C7.917 8.591 5.474 12.902 6.079 17.357 C6.684 21.812 10.188 25.316 14.643 25.921 C19.098 26.526 23.409 24.083 25.18 19.95 C25.42 19.41 24.77 19.35 24.43 19.5 C21.049 20.543 17.367 19.621 14.878 17.106 C12.388 14.591 11.503 10.901 12.58 7.53 C12.77 7.16 12.6 6.57 12.05 6.82 Z"}, "role": "surface", "solid": "fill"},
+    "star-a": {"//": "hidden at rest: stars only come out while night falls", "shape": {"path": "M22 5.5 C22.9 7.6 22.9 7.6 25 8.5 C22.9 9.4 22.9 9.4 22 11.5 C21.1 9.4 21.1 9.4 19 8.5 C21.1 7.6 21.1 7.6 22 5.5 Z"}, "role": "fill", "hidden": true},
+    "star-b": {"shape": {"path": "M26.9 10.9 C27.56 12.44 27.56 12.44 29.1 13.1 C27.56 13.76 27.56 13.76 26.9 15.3 C26.24 13.76 26.24 13.76 24.7 13.1 C26.24 12.44 26.24 12.44 26.9 10.9 Z"}, "role": "fill", "hidden": true}
+  },
+  "rigs": {
+    "moon":   {"//": "the centre of the crescent's outer curve", "pivot": [16, 16]},
+    "star-a": {"pivot": [22, 8.5]},
+    "star-b": {"pivot": [26.9, 13.1]}
+  },
+  "motion": {
+    "moon.rotate": {
+      "light":  [[0, 0], [0.14, -12, "out"], [0.28, 5], [0.4, -1.5], [0.48, 0]],
+      "strong": [[0, 0], [0.16, -18, "out"], [0.34, 9], [0.5, -4.5], [0.63, 1.5], [0.74, 0]]
+    },
+    "star-a.opacity": {
+      "light":  [[0, 0], [0.06, 0], [0.12, 1, "out"], [0.3, 1], [0.42, 0, "in"]],
+      "strong": [[0, 0], [0.06, 0], [0.12, 1, "out"], [0.26, 1], [0.33, 0.35], [0.4, 1], [0.56, 1], [0.68, 0, "in"]]
+    },
+    "star-a.scale": {
+      "light":  [[0, 1], [0.06, 0.2, "step"], [0.18, 1.25, "out"], [0.28, 1], [0.42, 0.6, "in"], [0.44, 1, "step"]],
+      "strong": [[0, 1], [0.06, 0.2, "step"], [0.2, 1.35, "out"], [0.3, 0.8], [0.42, 1.2, "out"], [0.52, 1], [0.68, 0.6, "in"], [0.7, 1, "step"]]
+    },
+    "star-a.rotate": {
+      "light":  [[0, 0], [0.06, -45, "step"], [0.24, 0, "out"]],
+      "strong": [[0, 0], [0.06, -60, "step"], [0.28, 0, "out"]]
+    },
+    "star-b.opacity": {"light": {"follow": "star-a.opacity", "lag": 0.08}, "strong": {"follow": "star-a.opacity", "lag": 0.1}},
+    "star-b.scale":   {"light": {"follow": "star-a.scale", "lag": 0.08},   "strong": {"follow": "star-a.scale", "lag": 0.1}},
+    "star-b.rotate":  {"light": {"follow": "star-a.rotate", "lag": 0.08},  "strong": {"follow": "star-a.rotate", "lag": 0.1}}
+  }
+}

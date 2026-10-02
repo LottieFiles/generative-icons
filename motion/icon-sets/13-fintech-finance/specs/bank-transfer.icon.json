@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "bank-transfer",
+  "label": "Bank transfer",
+  "intent": "Money moves between two accounts. Light: the outgoing arrow winds back and shoots right, the receiving account takes the hit and settles; the incoming arrow answers left a beat later and the sending account takes a smaller hit. Strong: a deeper wind-up and longer shots, and each account is knocked, rebounds and settles. The arrows stay rigid.",
+  "parts": {
+    "incoming":      {"shape": {"polyline": [[19.8, 20.5], [13.6, 20.5], [15.7, 18.4], [13.6, 20.5], [15.7, 22.6]]}},
+    "outgoing":      {"shape": {"polyline": [[12.2, 11.5], [18.4, 11.5], [16.3, 9.4], [18.4, 11.5], [16.3, 13.6]]}},
+    "account-right": {"shape": {"rect": [23.7, 10.5, 3.6, 11], "r": 1.8}, "role": "surface"},
+    "account-left":  {"mirror": {"of": "account-right"}}
+  },
+  "motion": {
+    "outgoing.x": {
+      "light":  [[0, 0], [0.07, -0.6, "out"], [0.2, 2, "hit"], [0.31, -0.3], [0.4, 0]],
+      "strong": [[0, 0], [0.09, -1, "out"], [0.23, 2.3, "hit"], [0.36, -0.5], [0.46, 0.15], [0.54, 0]]
+    },
+    "account-right.x": {
+      "light":  [[0, 0], [0.2, 0], [0.25, 0.9, "out"], [0.34, -0.25], [0.43, 0]],
+      "strong": [[0, 0], [0.23, 0], [0.28, 1.3, "out"], [0.38, -0.45], [0.47, 0.15], [0.55, 0]]
+    },
+    "incoming.x": {
+      "light":  [[0, 0], [0.16, 0], [0.22, 0.5, "out"], [0.34, -1.8, "hit"], [0.44, 0.25], [0.52, 0]],
+      "strong": [[0, 0], [0.22, 0], [0.3, 1, "out"], [0.44, -2.3, "hit"], [0.56, 0.5], [0.65, -0.15], [0.73, 0]]
+    },
+    "account-left.x": {
+      "light":  [[0, 0], [0.34, 0], [0.39, -0.7, "out"], [0.47, 0.18], [0.55, 0]],
+      "strong": [[0, 0], [0.44, 0], [0.49, -1.2, "out"], [0.59, 0.4], [0.68, -0.12], [0.76, 0]]
+    }
+  }
+}

@@ -2,8 +2,8 @@
   "result": "PASS",
   "icons": 20,
   "actions": 60,
-  "nativeTransformNodes": 364,
-  "nativeTransformMaxCoordinateError": 0.000010477219870352883,
+  "nativeTransformNodes": 270,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
   "checks": [
     {
       "name": "add-remove",
@@ -42,42 +42,6 @@
         {
           "type": "rigid",
           "part": "add-remove-bar-v"
-        }
-      ]
-    },
-    {
-      "name": "close",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "close-stroke-a"
-        },
-        {
-          "type": "rigid",
-          "part": "close-stroke-b"
-        }
-      ]
-    },
-    {
-      "name": "close-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "close-stroke-a"
-        },
-        {
-          "type": "rigid",
-          "part": "close-stroke-b"
         }
       ]
     },
@@ -162,146 +126,6 @@
         {
           "type": "rigid",
           "part": "more-options-dot-3"
-        }
-      ]
-    },
-    {
-      "name": "external-link",
-      "fixedParts": [
-        "external-link-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "external-link-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "external-link-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "external-link-head"
-        }
-      ]
-    },
-    {
-      "name": "external-link-strong",
-      "fixedParts": [
-        "external-link-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "external-link-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "external-link-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "external-link-head"
-        }
-      ]
-    },
-    {
-      "name": "share",
-      "fixedParts": [
-        "share-hub-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "share-hub-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "share-node-top-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "share-link-top"
-        },
-        {
-          "type": "rigid",
-          "part": "share-node-bottom-frame"
-        }
-      ]
-    },
-    {
-      "name": "share-strong",
-      "fixedParts": [
-        "share-hub-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "share-hub-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "share-node-top-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "share-link-top"
-        },
-        {
-          "type": "rigid",
-          "part": "share-node-bottom-frame"
-        }
-      ]
-    },
-    {
-      "name": "cut",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cut-blade-a"
-        },
-        {
-          "type": "rigid",
-          "part": "cut-blade-b"
-        }
-      ]
-    },
-    {
-      "name": "cut-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "cut-blade-a"
-        },
-        {
-          "type": "rigid",
-          "part": "cut-blade-b"
         }
       ]
     },
@@ -738,56 +562,6 @@
       ]
     },
     {
-      "name": "archive",
-      "fixedParts": [
-        "archive-body-frame",
-        "archive-slot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "archive-body-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "archive-slot"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-lid-frame"
-        }
-      ]
-    },
-    {
-      "name": "archive-strong",
-      "fixedParts": [
-        "archive-body-frame",
-        "archive-slot"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "archive-body-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "archive-slot"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-lid-frame"
-        }
-      ]
-    },
-    {
       "name": "target",
       "fixedParts": [
         "target-dot"
@@ -868,5 +642,52 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "close",
+      "spec": "specs/close.icon.json",
+      "specSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
+      "actions": [
+        "close",
+        "close-strong"
+      ]
+    },
+    {
+      "icon": "external-link",
+      "spec": "specs/external-link.icon.json",
+      "specSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
+      "actions": [
+        "external-link",
+        "external-link-strong"
+      ]
+    },
+    {
+      "icon": "share",
+      "spec": "specs/share.icon.json",
+      "specSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
+      "actions": [
+        "share",
+        "share-strong"
+      ]
+    },
+    {
+      "icon": "cut",
+      "spec": "specs/cut.icon.json",
+      "specSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
+      "actions": [
+        "cut",
+        "cut-strong"
+      ]
+    },
+    {
+      "icon": "archive",
+      "spec": "specs/archive.icon.json",
+      "specSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
+      "actions": [
+        "archive",
+        "archive-strong"
+      ]
+    }
+  ]
 }

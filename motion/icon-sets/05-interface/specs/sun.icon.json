@@ -1,0 +1,62 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "sun",
+  "label": "Sun",
+  "intent": "The sun comes out. Light: a wave of light runs clockwise from the top ray: each ray pulls back into the disc and shines out again in turn, and the disc swells once as the light goes out. Strong: the rays shine out past their length and spring back in turn while the ring of rays turns a little with the light and springs back, and the disc swells harder.",
+  "preview": {"light": [0, 0.08, 0.14, 0.2, 0.26, 0.32, 0.38, 0.49], "strong": [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.77]},
+  "parts": {
+    "ray-0": {"shape": {"line": [[24.9, 16], [27.1, 16]]}},
+    "ray-1": {"shape": {"line": [[22.293, 22.293], [23.849, 23.849]]}},
+    "ray-2": {"shape": {"line": [[16, 24.9], [16, 27.1]]}},
+    "ray-3": {"shape": {"line": [[9.707, 22.293], [8.151, 23.849]]}},
+    "ray-4": {"shape": {"line": [[7.1, 16], [4.9, 16]]}},
+    "ray-5": {"shape": {"line": [[9.707, 9.707], [8.151, 8.151]]}},
+    "ray-6": {"shape": {"line": [[16, 7.1], [16, 4.9]]}},
+    "ray-7": {"shape": {"line": [[22.293, 9.707], [23.849, 8.151]]}},
+    "disc":  {"shape": {"circle": [[16, 16], 4.2]}, "role": "surface", "solid": {"grow": 0.6}}
+  },
+  "rigs": {
+    "rays":  {"//": "the ring of rays turns about the centre in Strong", "pivot": [16, 16], "carries": ["ray-0", "ray-1", "ray-2", "ray-3", "ray-4", "ray-5", "ray-6", "ray-7"]},
+    "ray-0": {"//": "each ray lengthens from its inner end", "pivot": [24.9, 16]},
+    "ray-1": {"pivot": [22.293, 22.293]},
+    "ray-2": {"pivot": [16, 24.9]},
+    "ray-3": {"pivot": [9.707, 22.293]},
+    "ray-4": {"pivot": [7.1, 16]},
+    "ray-5": {"pivot": [9.707, 9.707]},
+    "ray-6": {"pivot": [16, 7.1]},
+    "ray-7": {"pivot": [22.293, 9.707]}
+  },
+  "motion": {
+    "ray-6.draw": {
+      "//": "the top ray leads; the others follow clockwise",
+      "light":  [[0, 1], [0.08, 0, "in"], [0.24, 1, "out"]],
+      "strong": [[0, 1], [0.08, 0, "in"], [0.24, 1, "out"]]
+    },
+    "ray-7.draw": {"light": {"follow": "ray-6.draw", "lag": 0.03}, "strong": {"follow": "ray-6.draw", "lag": 0.035}},
+    "ray-0.draw": {"light": {"follow": "ray-6.draw", "lag": 0.06},  "strong": {"follow": "ray-6.draw", "lag": 0.07}},
+    "ray-1.draw": {"light": {"follow": "ray-6.draw", "lag": 0.09}, "strong": {"follow": "ray-6.draw", "lag": 0.105}},
+    "ray-2.draw": {"light": {"follow": "ray-6.draw", "lag": 0.12},   "strong": {"follow": "ray-6.draw", "lag": 0.14}},
+    "ray-3.draw": {"light": {"follow": "ray-6.draw", "lag": 0.15}, "strong": {"follow": "ray-6.draw", "lag": 0.175}},
+    "ray-4.draw": {"light": {"follow": "ray-6.draw", "lag": 0.18},  "strong": {"follow": "ray-6.draw", "lag": 0.21}},
+    "ray-5.draw": {"light": {"follow": "ray-6.draw", "lag": 0.21}, "strong": {"follow": "ray-6.draw", "lag": 0.245}},
+    "ray-6.scale": {
+      "//": "Strong only: the ray shoots past its length as it draws out, then springs back",
+      "strong": [[0, 1], [0.08, 1], [0.26, 1.4, "out"], [0.38, 0.92], [0.47, 1]]
+    },
+    "ray-7.scale": {"strong": {"follow": "ray-6.scale", "lag": 0.035}},
+    "ray-0.scale": {"strong": {"follow": "ray-6.scale", "lag": 0.07}},
+    "ray-1.scale": {"strong": {"follow": "ray-6.scale", "lag": 0.105}},
+    "ray-2.scale": {"strong": {"follow": "ray-6.scale", "lag": 0.14}},
+    "ray-3.scale": {"strong": {"follow": "ray-6.scale", "lag": 0.175}},
+    "ray-4.scale": {"strong": {"follow": "ray-6.scale", "lag": 0.21}},
+    "ray-5.scale": {"strong": {"follow": "ray-6.scale", "lag": 0.245}},
+    "rays.rotate": {
+      "strong": [[0, 0], [0.3, 15, "out"], [0.48, -3], [0.6, 1], [0.7, 0]]
+    },
+    "disc.scale": {
+      "light":  [[0, 1], [0.16, 1.14, "out"], [0.3, 0.97], [0.42, 1]],
+      "strong": [[0, 1], [0.16, 1.2, "out"], [0.32, 0.95], [0.44, 1.03], [0.54, 1]]
+    }
+  }
+}

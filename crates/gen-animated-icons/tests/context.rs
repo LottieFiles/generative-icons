@@ -38,7 +38,7 @@ fn library_mode_matches_the_generation_context_goldens() {
         ("package return", "003dcb0474c3fca846158c745d3fc2bcde40c21f84886d8722e1c9f00b31c7aa"),
         ("heart", "3cd3cc8129f42680b55f8c15daa7562ef713713b87aa0d87cfcce74fa9ef3dff"),
         ("loading spinner", "742e4f4f84fc495d31b5e7b56c10aab090b0a14aba7c66ef54aca30c0494e9fd"),
-        ("create a new icon for the payment", "dfe66e83fded86fc4182f2485a1c3a20aaa1bb1138d50b813327d761b0ef1a3a"),
+        ("create a new icon for the payment", "53e53d7f21f60058cb256d75639b0550d0ab7997f410c28ddf72b27548ed19a4"),
         ("zzzz", "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"),
         ("Café İstanbul key", "179bea1f58b086a9f4d740d69de33dde64d621b48d1463c9ebaf2f4e3b2b9423"),
     ] {

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "phone",
+  "label": "Phone",
+  "intent": "An incoming call: the phone rings. Light: two ring arcs flick out of the open corner beside the earpiece, inner then outer, and fade, while the rigid handset rattles about its centre in two decaying beats. Strong: two bursts of rings, ring, pause, ring, and the handset rattles through each burst.",
+  "parts": {
+    "phone":  {"shape": {"path": "M7.151 6.349 C7.717 5.783 8.4 5.5 9.2 5.5 L10.5 5.5 C11.167 5.5 11.629 5.807 11.887 6.422 L13.135 9.394 C13.445 10.131 13.317 10.783 12.751 11.349 L11.466 12.634 C11.089 13.011 11.045 13.424 11.334 13.872 L13.186 16.74 C13.729 17.58 14.42 18.271 15.26 18.814 L18.128 20.666 C18.576 20.955 18.989 20.911 19.366 20.534 L20.651 19.249 C21.217 18.683 21.869 18.555 22.606 18.865 L25.578 20.113 C26.193 20.371 26.5 20.833 26.5 21.5 L26.5 22.8 C26.5 23.6 26.255 24.233 25.765 24.7 L25.135 25.3 C24.645 25.767 23.9 26 22.9 26 L21.5 26 C20.5 26 19.565 25.754 18.694 25.262 L14.841 23.084 C13.68 22.428 12.645 21.657 11.735 20.77 L10.565 19.63 C9.655 18.743 8.881 17.714 8.244 16.543 L6.36 13.081 C5.787 12.027 5.5 11.092 5.5 10.275 L5.5 9.2 C5.5 8.4 5.783 7.717 6.349 7.151 L7.151 6.349 Z"},
+               "role": "surface", "solid": "fill"},
+    "ring-1": {"//": "hidden at rest: the ring only exists while the phone rings", "shape": {"arc": [[17, 15], 6, -80, -10]}, "hidden": true},
+    "ring-2": {"shape": {"arc": [[17, 15], 9.5, -80, -10]}, "hidden": true}
+  },
+  "rigs": {
+    "phone": {"pivot": [16, 15.75]}
+  },
+  "motion": {
+    "phone.rotate": {
+      "light":  [[0, 0], [0.05, -10], [0.12, 8], [0.19, -5], [0.26, 2.5], [0.33, 0]],
+      "strong": [[0, 0], [0.05, -11], [0.11, 10], [0.17, -7], [0.23, 4], [0.29, 0],
+                 [0.4, 0], [0.45, -13], [0.51, 11], [0.57, -8], [0.63, 5], [0.69, -2], [0.76, 0]]
+    },
+    "ring-1.opacity": {
+      "light":  [[0, 0], [0.04, 1, "out"], [0.18, 1], [0.3, 0, "in"]],
+      "strong": [[0, 0], [0.04, 1, "out"], [0.16, 1], [0.27, 0, "in"], [0.4, 0], [0.44, 1, "out"], [0.58, 1], [0.7, 0, "in"]]
+    },
+    "ring-1.r": {
+      "light":  [[0, 0], [0.3, 2, "out"], [0.32, 0, "step"]],
+      "strong": [[0, 0], [0.27, 2, "out"], [0.29, 0, "step"], [0.4, 0], [0.7, 2.5, "out"], [0.72, 0, "step"]]
+    },
+    "ring-2.opacity": {"follow": "ring-1.opacity", "lag": 0.07},
+    "ring-2.r": {"follow": "ring-1.r", "lag": 0.07}
+  }
+}

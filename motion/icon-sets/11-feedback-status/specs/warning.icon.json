@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "warning",
+  "label": "Warning",
+  "intent": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
+  "preview": {"light": [0, 0.07, 0.12, 0.17, 0.225, 0.3, 0.375, 0.48], "strong": [0, 0.07, 0.13, 0.225, 0.32, 0.415, 0.51, 0.72]},
+  "parts": {
+    "flash-l":  {"//": "hidden at rest: the alarm only shows while it goes off; drawn outward from the sign", "shape": {"line": [{"from": [16, 10], "angle": -150, "len": 8}, {"from": [16, 10], "angle": -150, "len": 10.5}]}, "hidden": true},
+    "flash-r":  {"mirror": {"of": "flash-l"}},
+    "boundary": {"shape": {"path": "M14.891 6.215 C15.63 4.872 16.37 4.872 17.109 6.215 L26.891 23.985 C27.63 25.328 27.233 26 25.7 26 L6.3 26 C4.767 26 4.37 25.328 5.109 23.985 L14.891 6.215 Z"},
+                 "//": "Solid: v1's body is its own wider triangle, not an even offset of the frame",
+                 "role": "surface",
+                 "solid": {"path": "M14.535 5.318 C15.512 3.573 16.488 3.573 17.465 5.318 L28.135 24.382 C29.112 26.127 28.6 27 26.6 27 L5.4 27 C3.4 27 2.888 26.127 3.865 24.382 L14.535 5.318 Z"},
+                 "knockout": [{"part": "stem", "gap": 0}, {"part": "dot", "gap": 0.25}]},
+    "stem":     {"shape": {"line": [[16, 12], [16, 17]]}},
+    "dot":      {"shape": {"circle": [[16, 21.8], 1.1]}, "role": "fill"}
+  },
+  "rigs": {
+    "sign": {"//": "the struck sign buzzes as one rigid piece; the first swing is right, so amp 1.8 keeps the Solid body (x 28.62 at rest) inside x 30.6", "carries": ["boundary", "stem", "dot"]}
+  },
+  "motion": {
+    "stem.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.04, 0], [0.15, 1, "hit"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.03, 0], [0.13, 1, "hit"]]
+    },
+    "sign.x": {
+      "light":  [[0, 0], {"wobble": 0.15, "amp": 1.6, "until": 0.45, "swings": 3}],
+      "strong": [[0, 0], {"wobble": 0.13, "amp": 1.8, "until": 0.7, "swings": 5}]
+    },
+    "flash-l.opacity": {
+      "light":  [[0, 0], [0.15, 0], [0.17, 1, "out"], [0.26, 1], [0.34, 0, "in"]],
+      "strong": [[0, 0], [0.13, 0], [0.15, 1, "out"], [0.22, 1], [0.29, 0, "in"], [0.34, 0], [0.36, 1, "out"], [0.43, 1], [0.51, 0, "in"]]
+    },
+    "flash-l.draw": {
+      "light":  [[0, 0], [0.15, 0], [0.24, 1, "out"]],
+      "strong": [[0, 0], [0.13, 0], [0.21, 1, "out"], [0.33, 1], [0.34, 0, "step"], [0.42, 1, "out"]]
+    },
+    "flash-r.opacity": {"follow": "flash-l.opacity"},
+    "flash-r.draw": {"follow": "flash-l.draw"}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "portfolio",
+  "label": "Portfolio",
+  "intent": "The case is picked up. Light: the handle pulls taut first, then the case lifts off and swings from the handle, and is set down with a thud and a small bounce. Strong: a harder pull, a higher lift with a wider swing, and a landing that bounces twice. The case, seam and latch stay rigid; only the handle stretches.",
+  "parts": {
+    "latch":  {"shape": {"line": [[16, 17.3], [16, 20.5]]}},
+    "seam":   {"shape": {"line": [[5, 18.5], [27, 18.5]]}},
+    "case":   {"shape": {"rect": [5, 12, 22, 15], "r": 3}, "role": "surface", "solid": "ring"},
+    "handle": {"//": "the handle takes the load before the case moves: its grip rises while its feet stay on the case",
+               "shape": {"morph": [
+                 {"path": "M12 12 L12 10 C12 8.62 13.12 7.5 14.5 7.5 L17.5 7.5 C18.88 7.5 20 8.62 20 10 L20 12"},
+                 {"path": "M12 12 L12 8.4 C12 7.02 13.12 5.9 14.5 5.9 L17.5 5.9 C18.88 5.9 20 7.02 20 8.4 L20 12"}
+               ], "by": "pull"}}
+  },
+  "rigs": {
+    "case": {"pivot": [16, 7.5], "carries": ["seam", "latch", "handle"]}
+  },
+  "motion": {
+    "pull": {
+      "light":  [[0, 0], [0.08, 0.75, "out"], [0.16, 0.75], [0.24, 0]],
+      "strong": [[0, 0], [0.1, 1, "out"], [0.2, 1], [0.28, 0]]
+    },
+    "case.y": {
+      "light":  [[0, 0], [0.08, 0], [0.24, -2.4, "out"], [0.36, 0, "hit"], {"bounce": 0.44, "amp": 0.16}],
+      "strong": [[0, 0], [0.1, 0], [0.28, -3, "out"], [0.34, -2.9], [0.46, 0, "hit"], {"bounce": 0.55, "amp": 0.2}, {"bounce": 0.63, "amp": 0.35}]
+    },
+    "case.rotate": {
+      "light":  [[0, 0], [0.12, 0], [0.22, -4], [0.32, 2.5], [0.4, -0.8], [0.48, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.26, -6], [0.38, 4], [0.48, -1.5], [0.56, 0.5], [0.64, 0]]
+    }
+  }
+}

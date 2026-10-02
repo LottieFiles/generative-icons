@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 54,
-  "nativeTransformNodes": 168,
+  "nativeTransformNodes": 136,
   "nativeTransformMaxCoordinateError": 0.000011017337453012033,
   "checks": [
     {
@@ -718,142 +718,6 @@
       ]
     },
     {
-      "name": "import-file",
-      "fixedParts": [
-        "import-file-sheet",
-        "import-file-sheet-fold",
-        "import-file-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "import-file-sheet"
-        },
-        {
-          "type": "fixed",
-          "part": "import-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "import-file-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "import-file-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "import-file-head"
-        }
-      ]
-    },
-    {
-      "name": "import-file-strong",
-      "fixedParts": [
-        "import-file-sheet",
-        "import-file-sheet-fold",
-        "import-file-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "import-file-sheet"
-        },
-        {
-          "type": "fixed",
-          "part": "import-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "import-file-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "import-file-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "import-file-head"
-        }
-      ]
-    },
-    {
-      "name": "export-file",
-      "fixedParts": [
-        "export-file-sheet",
-        "export-file-sheet-fold",
-        "export-file-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "export-file-sheet"
-        },
-        {
-          "type": "fixed",
-          "part": "export-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "export-file-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "export-file-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "export-file-head"
-        }
-      ]
-    },
-    {
-      "name": "export-file-strong",
-      "fixedParts": [
-        "export-file-sheet",
-        "export-file-sheet-fold",
-        "export-file-sheet-interior"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "export-file-sheet"
-        },
-        {
-          "type": "fixed",
-          "part": "export-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "export-file-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "export-file-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "export-file-head"
-        }
-      ]
-    },
-    {
       "name": "image-file",
       "fixedParts": [
         "image-file-sheet-page",
@@ -1188,5 +1052,25 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "import-file",
+      "spec": "specs/import-file.icon.json",
+      "specSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
+      "actions": [
+        "import-file",
+        "import-file-strong"
+      ]
+    },
+    {
+      "icon": "export-file",
+      "spec": "specs/export-file.icon.json",
+      "specSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
+      "actions": [
+        "export-file",
+        "export-file-strong"
+      ]
+    }
+  ]
 }

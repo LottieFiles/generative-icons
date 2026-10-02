@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "share",
+  "label": "Share",
+  "intent": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
+  "parts": {
+    "hub":         {"shape": {"circle": [[9, 16], 2.8]}, "role": "surface"},
+    "link-top":    {"shape": {"line": [[11.46, 14.67], [19.54, 10.33]]}},
+    "node-top":    {"shape": {"circle": [[22, 9], 2.8]}, "role": "surface"},
+    "link-bottom": {"shape": {"line": [[11.46, 17.33], [19.54, 21.67]]}},
+    "node-bottom": {"shape": {"circle": [[22, 23], 2.8]}, "role": "surface"}
+  },
+  "motion": {
+    "hub.scale": {
+      "light":  [[0, 1], [0.08, 0.86, "out"], [0.14, 1.14, "hit"], [0.24, 0.97], [0.32, 1]],
+      "strong": [[0, 1], [0.1, 0.8, "out"], [0.16, 1.2, "hit"], [0.26, 0.94], [0.36, 1.03], [0.44, 1]]
+    },
+    "link-top.draw": {
+      "light":  [[0, 1], [0.08, 0, "in"], [0.2, 1, "hit"]],
+      "strong": [[0, 1], [0.1, 0, "in"], [0.19, 1, "hit"]]
+    },
+    "link-bottom.draw": {
+      "light":  [[0, 1], [0.08, 0, "in"], [0.15, 0], [0.27, 1, "hit"]],
+      "strong": [[0, 1], [0.1, 0, "in"], [0.17, 0], [0.26, 1, "hit"]]
+    },
+    "node-top.scale": {
+      "light":  [[0, 1], [0.2, 1], [0.26, 1.28, "out"], [0.34, 0.94], [0.43, 1]],
+      "strong": [[0, 1], [0.19, 1], [0.25, 1.4, "out"], [0.34, 0.86], [0.43, 1.07], [0.52, 1]]
+    },
+    "node-bottom.scale": {"follow": "node-top.scale", "lag": 0.07},
+    "node-top.x": {
+      "//": "Strong only: the node is knocked out along its connector (0.88, -0.47) by the hand-off and comes back",
+      "strong": [[0, 0], [0.19, 0], [0.25, 1.06, "out"], [0.35, -0.2], [0.45, 0]]
+    },
+    "node-top.y": {"follow": "node-top.x", "scale": -0.537},
+    "node-bottom.x": {"follow": "node-top.x", "lag": 0.07},
+    "node-bottom.y": {"follow": "node-top.x", "lag": 0.07, "scale": 0.537}
+  }
+}

@@ -7072,38 +7072,35 @@
       "name": "warning",
       "icon": "warning",
       "motionId": "light",
-      "revision": "feedback-v1-codex",
+      "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Warning",
-      "description": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+      "description": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
       "label": "Warning",
-      "intent": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+      "intent": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.58,
-      "rest": 38,
+      "active": 0.45,
+      "rest": 30,
       "keyPoses": [
         0,
-        0.11599999999999999,
-        0.23199999999999998,
-        0.348,
-        0.46399999999999997,
-        0.58
+        0.09000000000000001,
+        0.18000000000000002,
+        0.27,
+        0.36000000000000004,
+        0.45
       ],
-      "layers": 11,
+      "layers": 21,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -7113,30 +7110,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "8849680bb5d7d6d194781c24e70861fa9ffc984d4ef51f2af85fe4b852295afc",
-      "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-      "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-      "authoringSources": {
-        "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-        "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-        "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-        "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-        "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-        "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-      },
-      "brief": "The warning stays anchored while its exclamation checks left and right, then aligns.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "warning-boundary"
-        },
-        {
-          "type": "rigid",
-          "part": "warning-stem"
-        }
-      ],
+      "nativeSha256": "a721246b9c90cbd7d84c5ba9e0eb8be892b82f6d255eff63d716650096f4ad0c",
+      "sourceSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
+      "planSha256": "1412a9b3154a3745f43e124bc4d62d543052d3bc68ae2d3dc2721347c826c7d6",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
+      "constraints": [],
       "category": "Feedback & status",
-      "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+      "definitionsSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -7163,38 +7144,35 @@
           "name": "warning",
           "icon": "warning",
           "motionId": "light",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Warning",
-          "description": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+          "description": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
           "label": "Warning",
-          "intent": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+          "intent": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.58,
-          "rest": 38,
+          "active": 0.45,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.11599999999999999,
-            0.23199999999999998,
-            0.348,
-            0.46399999999999997,
-            0.58
+            0.09000000000000001,
+            0.18000000000000002,
+            0.27,
+            0.36000000000000004,
+            0.45
           ],
-          "layers": 11,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7204,30 +7182,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "8849680bb5d7d6d194781c24e70861fa9ffc984d4ef51f2af85fe4b852295afc",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "The warning stays anchored while its exclamation checks left and right, then aligns.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "warning-boundary"
-            },
-            {
-              "type": "rigid",
-              "part": "warning-stem"
-            }
-          ],
+          "nativeSha256": "a721246b9c90cbd7d84c5ba9e0eb8be892b82f6d255eff63d716650096f4ad0c",
+          "sourceSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
+          "planSha256": "1412a9b3154a3745f43e124bc4d62d543052d3bc68ae2d3dc2721347c826c7d6",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7249,45 +7211,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 14358,
-          "sha256": "a7b0686a2392ed2a9017c3bad4b89a6e869b1fcd9624e40b1803fbf24763d72e"
+          "bytes": 4249,
+          "sha256": "17e36e06ec6326e31b06019d5c571fddbc0db2266099b16e9c4aaff984a6f942"
         },
         {
           "name": "warning-strong",
           "icon": "warning",
           "motionId": "strong",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Warning",
-          "description": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+          "description": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
           "label": "Warning",
-          "intent": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+          "intent": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.98,
-          "rest": 62.00000000000001,
+          "active": 0.7,
+          "rest": 45,
           "keyPoses": [
             0,
-            0.196,
-            0.392,
-            0.588,
-            0.784,
-            0.98
+            0.13999999999999999,
+            0.27999999999999997,
+            0.42,
+            0.5599999999999999,
+            0.7
           ],
-          "layers": 11,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7297,30 +7256,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4ab459d70218169f2770f8da2e8b1796062a653cced4466bbb9087c752ad37ba",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "The warning stays anchored while its exclamation checks left and right, then aligns.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "warning-boundary"
-            },
-            {
-              "type": "rigid",
-              "part": "warning-stem"
-            }
-          ],
+          "nativeSha256": "fb46ad7beafa93e9a560c27bacb5ab66acc24b91af8cd3e6a4f0f658680df76d",
+          "sourceSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
+          "planSha256": "1412a9b3154a3745f43e124bc4d62d543052d3bc68ae2d3dc2721347c826c7d6",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7342,8 +7285,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 14361,
-          "sha256": "53cc52e296aaa136518d453cf8f4f368188a3a03a161b69b3e12a1f6dfeaf173"
+          "bytes": 4252,
+          "sha256": "fd24f6c3386cb1d69b8cceda91498e98a77758ee7ca39ebb0cfbade2b16c407f"
         }
       ],
       "animations": [
@@ -7351,38 +7294,35 @@
           "name": "warning",
           "icon": "warning",
           "motionId": "light",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Warning",
-          "description": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+          "description": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
           "label": "Warning",
-          "intent": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+          "intent": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.58,
-          "rest": 38,
+          "active": 0.45,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.11599999999999999,
-            0.23199999999999998,
-            0.348,
-            0.46399999999999997,
-            0.58
+            0.09000000000000001,
+            0.18000000000000002,
+            0.27,
+            0.36000000000000004,
+            0.45
           ],
-          "layers": 11,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7392,30 +7332,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "8849680bb5d7d6d194781c24e70861fa9ffc984d4ef51f2af85fe4b852295afc",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "The warning stays anchored while its exclamation checks left and right, then aligns.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "warning-boundary"
-            },
-            {
-              "type": "rigid",
-              "part": "warning-stem"
-            }
-          ],
+          "nativeSha256": "a721246b9c90cbd7d84c5ba9e0eb8be892b82f6d255eff63d716650096f4ad0c",
+          "sourceSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
+          "planSha256": "1412a9b3154a3745f43e124bc4d62d543052d3bc68ae2d3dc2721347c826c7d6",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7437,45 +7361,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 14358,
-          "sha256": "a7b0686a2392ed2a9017c3bad4b89a6e869b1fcd9624e40b1803fbf24763d72e"
+          "bytes": 4249,
+          "sha256": "17e36e06ec6326e31b06019d5c571fddbc0db2266099b16e9c4aaff984a6f942"
         },
         {
           "name": "warning-strong",
           "icon": "warning",
           "motionId": "strong",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Warning",
-          "description": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+          "description": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
           "label": "Warning",
-          "intent": "The warning stays anchored while its exclamation checks left and right, then aligns.",
+          "intent": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.98,
-          "rest": 62.00000000000001,
+          "active": 0.7,
+          "rest": 45,
           "keyPoses": [
             0,
-            0.196,
-            0.392,
-            0.588,
-            0.784,
-            0.98
+            0.13999999999999999,
+            0.27999999999999997,
+            0.42,
+            0.5599999999999999,
+            0.7
           ],
-          "layers": 11,
+          "layers": 21,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7485,30 +7406,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4ab459d70218169f2770f8da2e8b1796062a653cced4466bbb9087c752ad37ba",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "The warning stays anchored while its exclamation checks left and right, then aligns.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "warning-boundary"
-            },
-            {
-              "type": "rigid",
-              "part": "warning-stem"
-            }
-          ],
+          "nativeSha256": "fb46ad7beafa93e9a560c27bacb5ab66acc24b91af8cd3e6a4f0f658680df76d",
+          "sourceSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
+          "planSha256": "1412a9b3154a3745f43e124bc4d62d543052d3bc68ae2d3dc2721347c826c7d6",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The alarm goes off. Light: the exclamation stem is struck down from the top and stops dead above its dot; the strike buzzes the whole sign in a quick decaying side-to-side shake while two alarm flashes draw out beside the apex and fade. Strong: a harder strike, a wider and longer buzz, and the flashes go off twice. The sign stays rigid.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7530,12 +7435,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 14361,
-          "sha256": "53cc52e296aaa136518d453cf8f4f368188a3a03a161b69b3e12a1f6dfeaf173"
+          "bytes": 4252,
+          "sha256": "fd24f6c3386cb1d69b8cceda91498e98a77758ee7ca39ebb0cfbade2b16c407f"
         }
       ],
-      "bytes": 14358,
-      "sha256": "a7b0686a2392ed2a9017c3bad4b89a6e869b1fcd9624e40b1803fbf24763d72e"
+      "bytes": 4249,
+      "sha256": "17e36e06ec6326e31b06019d5c571fddbc0db2266099b16e9c4aaff984a6f942"
     },
     {
       "name": "info",
@@ -8445,38 +8350,35 @@
       "name": "help",
       "icon": "help",
       "motionId": "light",
-      "revision": "feedback-v1-codex",
+      "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Help",
-      "description": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+      "description": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
       "label": "Help",
-      "intent": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+      "intent": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.68,
-      "rest": 44,
+      "active": 0.45,
+      "rest": 30,
       "keyPoses": [
         0,
-        0.136,
-        0.272,
-        0.40800000000000003,
-        0.544,
-        0.68
+        0.09000000000000001,
+        0.18000000000000002,
+        0.27,
+        0.36000000000000004,
+        0.45
       ],
-      "layers": 13,
+      "layers": 15,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -8486,30 +8388,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "6fbbb35418efcf2cc84af24121acac88c5d29cbabfe380ec50e061964d7a9cd2",
-      "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-      "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-      "authoringSources": {
-        "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-        "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-        "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-        "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-        "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-        "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-      },
-      "brief": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "help-rim-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "help-hook"
-        }
-      ],
+      "nativeSha256": "96c9feceac1b8c09041dfb8aad76aa34b8912b4c41bba709b7779816d1097a26",
+      "sourceSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
+      "planSha256": "4b8ae6e3c416bacfd0bd0d5511641dbd44529029f0445bd1cf84533c6c54fc3c",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
+      "constraints": [],
       "category": "Feedback & status",
-      "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+      "definitionsSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -8536,38 +8422,35 @@
           "name": "help",
           "icon": "help",
           "motionId": "light",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Help",
-          "description": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+          "description": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
           "label": "Help",
-          "intent": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+          "intent": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.68,
-          "rest": 44,
+          "active": 0.45,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.136,
-            0.272,
-            0.40800000000000003,
-            0.544,
-            0.68
+            0.09000000000000001,
+            0.18000000000000002,
+            0.27,
+            0.36000000000000004,
+            0.45
           ],
-          "layers": 13,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8577,30 +8460,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6fbbb35418efcf2cc84af24121acac88c5d29cbabfe380ec50e061964d7a9cd2",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "help-rim-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "help-hook"
-            }
-          ],
+          "nativeSha256": "96c9feceac1b8c09041dfb8aad76aa34b8912b4c41bba709b7779816d1097a26",
+          "sourceSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
+          "planSha256": "4b8ae6e3c416bacfd0bd0d5511641dbd44529029f0445bd1cf84533c6c54fc3c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8622,45 +8489,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4804,
-          "sha256": "ea77b057fe76b9db4eb04ffb293724a03b51bf73fb3e96cfe0f6f67f41588750"
+          "bytes": 3694,
+          "sha256": "2903d13543a4c12d1f04f37fdf114d352499eee5f3c5d5f93a573bd684dd1194"
         },
         {
           "name": "help-strong",
           "icon": "help",
           "motionId": "strong",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Help",
-          "description": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+          "description": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
           "label": "Help",
-          "intent": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+          "intent": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.07,
-          "rest": 67,
+          "active": 0.62,
+          "rest": 40,
           "keyPoses": [
             0,
-            0.21400000000000002,
-            0.42800000000000005,
-            0.642,
-            0.8560000000000001,
-            1.07
+            0.124,
+            0.248,
+            0.372,
+            0.496,
+            0.62
           ],
-          "layers": 13,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8670,30 +8534,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9a8fb573791dedc6deead65ab737370b8431570ed70da37713320261af06ee27",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "help-rim-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "help-hook"
-            }
-          ],
+          "nativeSha256": "f61dd191dbe3122232859cf994bb49d4d676fd6ed6514c54bcf94b27818258e3",
+          "sourceSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
+          "planSha256": "4b8ae6e3c416bacfd0bd0d5511641dbd44529029f0445bd1cf84533c6c54fc3c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8715,8 +8563,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4806,
-          "sha256": "81bb19baaa03b766e47c04ac92284c4ac58114652c384d251788eb300c7c8db5"
+          "bytes": 3696,
+          "sha256": "5fdc6a7de49f10c4d39bf541e956393bb6ca83bebc3c12b5c99c35dab182f262"
         }
       ],
       "animations": [
@@ -8724,38 +8572,35 @@
           "name": "help",
           "icon": "help",
           "motionId": "light",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Help",
-          "description": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+          "description": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
           "label": "Help",
-          "intent": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+          "intent": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.68,
-          "rest": 44,
+          "active": 0.45,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.136,
-            0.272,
-            0.40800000000000003,
-            0.544,
-            0.68
+            0.09000000000000001,
+            0.18000000000000002,
+            0.27,
+            0.36000000000000004,
+            0.45
           ],
-          "layers": 13,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8765,30 +8610,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6fbbb35418efcf2cc84af24121acac88c5d29cbabfe380ec50e061964d7a9cd2",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "help-rim-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "help-hook"
-            }
-          ],
+          "nativeSha256": "96c9feceac1b8c09041dfb8aad76aa34b8912b4c41bba709b7779816d1097a26",
+          "sourceSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
+          "planSha256": "4b8ae6e3c416bacfd0bd0d5511641dbd44529029f0445bd1cf84533c6c54fc3c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8810,45 +8639,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4804,
-          "sha256": "ea77b057fe76b9db4eb04ffb293724a03b51bf73fb3e96cfe0f6f67f41588750"
+          "bytes": 3694,
+          "sha256": "2903d13543a4c12d1f04f37fdf114d352499eee5f3c5d5f93a573bd684dd1194"
         },
         {
           "name": "help-strong",
           "icon": "help",
           "motionId": "strong",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Help",
-          "description": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+          "description": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
           "label": "Help",
-          "intent": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
+          "intent": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.07,
-          "rest": 67,
+          "active": 0.62,
+          "rest": 40,
           "keyPoses": [
             0,
-            0.21400000000000002,
-            0.42800000000000005,
-            0.642,
-            0.8560000000000001,
-            1.07
+            0.124,
+            0.248,
+            0.372,
+            0.496,
+            0.62
           ],
-          "layers": 13,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -8858,30 +8684,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9a8fb573791dedc6deead65ab737370b8431570ed70da37713320261af06ee27",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "The question hook lifts to ask; its dot follows, then both return to their own anchors.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "help-rim-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "help-hook"
-            }
-          ],
+          "nativeSha256": "f61dd191dbe3122232859cf994bb49d4d676fd6ed6514c54bcf94b27818258e3",
+          "sourceSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
+          "planSha256": "4b8ae6e3c416bacfd0bd0d5511641dbd44529029f0445bd1cf84533c6c54fc3c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -8903,12 +8713,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4806,
-          "sha256": "81bb19baaa03b766e47c04ac92284c4ac58114652c384d251788eb300c7c8db5"
+          "bytes": 3696,
+          "sha256": "5fdc6a7de49f10c4d39bf541e956393bb6ca83bebc3c12b5c99c35dab182f262"
         }
       ],
-      "bytes": 4804,
-      "sha256": "ea77b057fe76b9db4eb04ffb293724a03b51bf73fb3e96cfe0f6f67f41588750"
+      "bytes": 3694,
+      "sha256": "2903d13543a4c12d1f04f37fdf114d352499eee5f3c5d5f93a573bd684dd1194"
     },
     {
       "name": "no-results",
@@ -12700,38 +12510,35 @@
       "name": "cloud-sync",
       "icon": "cloud-sync",
       "motionId": "light",
-      "revision": "feedback-v1-codex",
+      "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Cloud sync",
-      "description": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+      "description": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
       "label": "Cloud sync",
-      "intent": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+      "intent": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.91,
-      "rest": 58,
+      "active": 0.46,
+      "rest": 30,
       "keyPoses": [
         0,
-        0.18200000000000002,
-        0.36400000000000005,
-        0.546,
-        0.7280000000000001,
-        0.91
+        0.09200000000000001,
+        0.18400000000000002,
+        0.276,
+        0.36800000000000005,
+        0.46
       ],
-      "layers": 13,
+      "layers": 16,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -12741,34 +12548,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "6e50162dbef4bb5fae63221f882495a5b3d1dc96f43a2a06cebf9738b3dc1a59",
-      "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-      "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-      "authoringSources": {
-        "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-        "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-        "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-        "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-        "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-        "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-      },
-      "brief": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "cloud-sync-cloud"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-sync-upload"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-sync-download"
-        }
-      ],
+      "nativeSha256": "7927940014a4bee1bbb6cd831a208f70bde76bbbf7d8a3ec0a2327b39ecc033c",
+      "sourceSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
+      "planSha256": "27e2152cdfa484eec1500fededc3af6e36e055d237f0ca20d6e7d2d7df2cedcc",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
+      "constraints": [],
       "category": "Feedback & status",
-      "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+      "definitionsSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -12795,38 +12582,35 @@
           "name": "cloud-sync",
           "icon": "cloud-sync",
           "motionId": "light",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cloud sync",
-          "description": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+          "description": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
           "label": "Cloud sync",
-          "intent": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+          "intent": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.91,
-          "rest": 58,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.18200000000000002,
-            0.36400000000000005,
-            0.546,
-            0.7280000000000001,
-            0.91
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 13,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12836,34 +12620,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6e50162dbef4bb5fae63221f882495a5b3d1dc96f43a2a06cebf9738b3dc1a59",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "cloud-sync-cloud"
-            },
-            {
-              "type": "rigid",
-              "part": "cloud-sync-upload"
-            },
-            {
-              "type": "rigid",
-              "part": "cloud-sync-download"
-            }
-          ],
+          "nativeSha256": "7927940014a4bee1bbb6cd831a208f70bde76bbbf7d8a3ec0a2327b39ecc033c",
+          "sourceSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
+          "planSha256": "27e2152cdfa484eec1500fededc3af6e36e055d237f0ca20d6e7d2d7df2cedcc",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12885,45 +12649,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4415,
-          "sha256": "4e55cdf25168842c0d4cf542a89155dea6065b9f6f21c2960d220f31508ecc21"
+          "bytes": 3872,
+          "sha256": "d6b078137212d409e99a0450614b55d6b5ada9f63e62fa3ac3ee3b677907676e"
         },
         {
           "name": "cloud-sync-strong",
           "icon": "cloud-sync",
           "motionId": "strong",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cloud sync",
-          "description": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+          "description": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
           "label": "Cloud sync",
-          "intent": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+          "intent": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.4,
-          "rest": 87,
+          "active": 0.64,
+          "rest": 41,
           "keyPoses": [
             0,
-            0.27999999999999997,
-            0.5599999999999999,
-            0.84,
-            1.1199999999999999,
-            1.4
+            0.128,
+            0.256,
+            0.384,
+            0.512,
+            0.64
           ],
-          "layers": 13,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12933,34 +12694,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "571e47dae900cb9329c37695871857a506e2d71f0c4899be1f2264742ff758e2",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "cloud-sync-cloud"
-            },
-            {
-              "type": "rigid",
-              "part": "cloud-sync-upload"
-            },
-            {
-              "type": "rigid",
-              "part": "cloud-sync-download"
-            }
-          ],
+          "nativeSha256": "8955bd59647be309eddaccd85f5a29ccbb8fc51adb1b8bfc78696a03f90c2933",
+          "sourceSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
+          "planSha256": "27e2152cdfa484eec1500fededc3af6e36e055d237f0ca20d6e7d2d7df2cedcc",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12982,8 +12723,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4416,
-          "sha256": "6ea0ffc0bda15a1db78d0c9b42b14ad427be5911972641ab5070a68946bed0f5"
+          "bytes": 3873,
+          "sha256": "0135dbd533542b356d4978e9438fcf4139bd3d47ccd13c14623f35d98767e6fe"
         }
       ],
       "animations": [
@@ -12991,38 +12732,35 @@
           "name": "cloud-sync",
           "icon": "cloud-sync",
           "motionId": "light",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cloud sync",
-          "description": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+          "description": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
           "label": "Cloud sync",
-          "intent": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+          "intent": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.91,
-          "rest": 58,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.18200000000000002,
-            0.36400000000000005,
-            0.546,
-            0.7280000000000001,
-            0.91
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 13,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13032,34 +12770,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6e50162dbef4bb5fae63221f882495a5b3d1dc96f43a2a06cebf9738b3dc1a59",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "cloud-sync-cloud"
-            },
-            {
-              "type": "rigid",
-              "part": "cloud-sync-upload"
-            },
-            {
-              "type": "rigid",
-              "part": "cloud-sync-download"
-            }
-          ],
+          "nativeSha256": "7927940014a4bee1bbb6cd831a208f70bde76bbbf7d8a3ec0a2327b39ecc033c",
+          "sourceSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
+          "planSha256": "27e2152cdfa484eec1500fededc3af6e36e055d237f0ca20d6e7d2d7df2cedcc",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13081,45 +12799,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4415,
-          "sha256": "4e55cdf25168842c0d4cf542a89155dea6065b9f6f21c2960d220f31508ecc21"
+          "bytes": 3872,
+          "sha256": "d6b078137212d409e99a0450614b55d6b5ada9f63e62fa3ac3ee3b677907676e"
         },
         {
           "name": "cloud-sync-strong",
           "icon": "cloud-sync",
           "motionId": "strong",
-          "revision": "feedback-v1-codex",
+          "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cloud sync",
-          "description": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+          "description": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
           "label": "Cloud sync",
-          "intent": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
+          "intent": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 1.4,
-          "rest": 87,
+          "active": 0.64,
+          "rest": 41,
           "keyPoses": [
             0,
-            0.27999999999999997,
-            0.5599999999999999,
-            0.84,
-            1.1199999999999999,
-            1.4
+            0.128,
+            0.256,
+            0.384,
+            0.512,
+            0.64
           ],
-          "layers": 13,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13129,34 +12844,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "571e47dae900cb9329c37695871857a506e2d71f0c4899be1f2264742ff758e2",
-          "sourceSha256": "b347613497bcaf19955f7935a173db61245167be6230445e58c410bfd0e13956",
-          "sharedBuilderSha256": "036ff230f4981046906695ecdb4374cbba5b289ceabe09d16809166446ff9abb",
-          "authoringSources": {
-            "set-config.json": "47acfe0ec717f0a51e73c6574b28af9409ea6aee1127962a4c29ada5c13fb8e2",
-            "batches/01.mjs": "5472feea8d2c3f9889e30051af8b07aaf53e6a791d6012847f7b27c7ee48483e",
-            "batches/02.mjs": "ceaddecd592ce2b189ff9339338a75f01bec10f4a3bb6a9774984dc84153828b",
-            "batches/03.mjs": "699f57489e13c577de3b8127acbbf5d0e5034b2959cd3f74f1f5601edf4573a3",
-            "batches/04.mjs": "972aaab06a097a05656516aea311e3d9ed23df9cfc37256e124e02afaa39bbba",
-            "batches/helpers.mjs": "efe3b185f13cfea2bd3af302ab7b55b46031d19cd6f8b9de3bf0efb48b45b0d9"
-          },
-          "brief": "Upload leads; download answers. Both arrows return to their own anchors inside a fixed cloud.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "cloud-sync-cloud"
-            },
-            {
-              "type": "rigid",
-              "part": "cloud-sync-upload"
-            },
-            {
-              "type": "rigid",
-              "part": "cloud-sync-download"
-            }
-          ],
+          "nativeSha256": "8955bd59647be309eddaccd85f5a29ccbb8fc51adb1b8bfc78696a03f90c2933",
+          "sourceSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
+          "planSha256": "27e2152cdfa484eec1500fededc3af6e36e055d237f0ca20d6e7d2d7df2cedcc",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Data goes up and comes back down. Light: the upload arrow rises away into the cloud and fades while a fresh one slides up into its place; 120 ms later the download arrow answers, dropping away and fading while a fresh one drops into place. Strong: the upload arrow dips before it launches, the cloud swells as it takes the upload, and each fresh arrow overshoots its place and settles. The cloud never moves in Light.",
+          "constraints": [],
           "category": "Feedback & status",
-          "definitionsSha256": "cb01bd3241e8f0c5ef7db95b4c918fa8c763099112eaffe396a9aa3684e48d01",
+          "definitionsSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13178,12 +12873,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4416,
-          "sha256": "6ea0ffc0bda15a1db78d0c9b42b14ad427be5911972641ab5070a68946bed0f5"
+          "bytes": 3873,
+          "sha256": "0135dbd533542b356d4978e9438fcf4139bd3d47ccd13c14623f35d98767e6fe"
         }
       ],
-      "bytes": 4415,
-      "sha256": "4e55cdf25168842c0d4cf542a89155dea6065b9f6f21c2960d220f31508ecc21"
+      "bytes": 3872,
+      "sha256": "d6b078137212d409e99a0450614b55d6b5ada9f63e62fa3ac3ee3b677907676e"
     },
     {
       "name": "saved",

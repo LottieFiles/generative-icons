@@ -3716,23 +3716,19 @@
       "name": "wake-word",
       "icon": "wake-word",
       "motionId": "light",
-      "revision": "voice-claude-reviewed-v1",
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Wake word",
-      "description": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+      "description": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
       "label": "Wake word",
-      "intent": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+      "intent": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
       "width": 32,
       "height": 32,
       "fps": 60,
@@ -3748,7 +3744,7 @@
         0.4,
         0.5
       ],
-      "layers": 13,
+      "layers": 20,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -3758,26 +3754,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "095383416fdc349aa119e9492b940338884c207da4cc94064942888a08404208",
-      "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-      "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-      "authoringSources": {
-        "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-        "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-        "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-        "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-        "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-        "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-      },
-      "brief": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "wake-word-puck-frame"
-        }
-      ],
+      "nativeSha256": "7c9f2015d82d3c22b61da1c0e50f16d2b8bdcc09d62b8c6b651db6437e857f85",
+      "sourceSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
+      "planSha256": "2f74bc3a6a229779f0ce964473f24b23ee4551f73570ce3b6fad817429d263fe",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
+      "constraints": [],
       "category": "Voice",
-      "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+      "definitionsSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -3805,23 +3789,19 @@
           "name": "wake-word",
           "icon": "wake-word",
           "motionId": "light",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Wake word",
-          "description": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+          "description": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
           "label": "Wake word",
-          "intent": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+          "intent": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -3837,7 +3817,7 @@
             0.4,
             0.5
           ],
-          "layers": 13,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3847,26 +3827,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "095383416fdc349aa119e9492b940338884c207da4cc94064942888a08404208",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "wake-word-puck-frame"
-            }
-          ],
+          "nativeSha256": "7c9f2015d82d3c22b61da1c0e50f16d2b8bdcc09d62b8c6b651db6437e857f85",
+          "sourceSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
+          "planSha256": "2f74bc3a6a229779f0ce964473f24b23ee4551f73570ce3b6fad817429d263fe",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3888,46 +3856,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3794,
-          "sha256": "0a576ad3dd81e1691b7b8902453c3b807f0e1dcb426d655c16eec1d4b25a79e0"
+          "bytes": 4460,
+          "sha256": "01f3354c4bd65ee152f196ff5b2146a6925e8d6727d00afbab2a709d734d6726"
         },
         {
           "name": "wake-word-strong",
           "icon": "wake-word",
           "motionId": "strong",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Wake word",
-          "description": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+          "description": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
           "label": "Wake word",
-          "intent": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+          "intent": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.81,
+          "rest": 52,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.16200000000000003,
+            0.32400000000000007,
+            0.486,
+            0.6480000000000001,
+            0.81
           ],
-          "layers": 13,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3937,26 +3901,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "dc77e7dd81daa49820f5551c207a0078c66a21a7de5a1e1e8cfcaf864b14cee2",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "wake-word-puck-frame"
-            }
-          ],
+          "nativeSha256": "4068665c17fbdd9c2756fb9a3d2b5e8014738c552173452ca5463d5000bd4777",
+          "sourceSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
+          "planSha256": "2f74bc3a6a229779f0ce964473f24b23ee4551f73570ce3b6fad817429d263fe",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3978,8 +3930,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3796,
-          "sha256": "0f4625e2cb4f46e5342170509864b7a10187709c17e6114cf5cdaa6d3d6b5709"
+          "bytes": 4462,
+          "sha256": "40c6d412c62d24215982a10a0719b06b9af873d26e6168937578ec8cec287b81"
         }
       ],
       "animations": [
@@ -3987,23 +3939,19 @@
           "name": "wake-word",
           "icon": "wake-word",
           "motionId": "light",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Wake word",
-          "description": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+          "description": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
           "label": "Wake word",
-          "intent": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+          "intent": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -4019,7 +3967,7 @@
             0.4,
             0.5
           ],
-          "layers": 13,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4029,26 +3977,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "095383416fdc349aa119e9492b940338884c207da4cc94064942888a08404208",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "wake-word-puck-frame"
-            }
-          ],
+          "nativeSha256": "7c9f2015d82d3c22b61da1c0e50f16d2b8bdcc09d62b8c6b651db6437e857f85",
+          "sourceSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
+          "planSha256": "2f74bc3a6a229779f0ce964473f24b23ee4551f73570ce3b6fad817429d263fe",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4070,46 +4006,42 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3794,
-          "sha256": "0a576ad3dd81e1691b7b8902453c3b807f0e1dcb426d655c16eec1d4b25a79e0"
+          "bytes": 4460,
+          "sha256": "01f3354c4bd65ee152f196ff5b2146a6925e8d6727d00afbab2a709d734d6726"
         },
         {
           "name": "wake-word-strong",
           "icon": "wake-word",
           "motionId": "strong",
-          "revision": "voice-claude-reviewed-v1",
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Wake word",
-          "description": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+          "description": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
           "label": "Wake word",
-          "intent": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
+          "intent": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.81,
+          "rest": 52,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.16200000000000003,
+            0.32400000000000007,
+            0.486,
+            0.6480000000000001,
+            0.81
           ],
-          "layers": 13,
+          "layers": 20,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4119,26 +4051,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "dc77e7dd81daa49820f5551c207a0078c66a21a7de5a1e1e8cfcaf864b14cee2",
-          "sourceSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "setBuilderSha256": "ee8ea2459db570ca564465eb11a2014414620b64277c847eb79faa82a294e546",
-          "authoringSources": {
-            "set-config.json": "bd8a804b298b191f78ffdfef0bf673a262b72b020a9aa4a187c6398cb4be0958",
-            "batches/01.mjs": "a0a5c930ba827b5fade4c8f418bc21cd2da80ab2b1146faa32e21be89b30097b",
-            "batches/02.mjs": "e975bd954f29107593b8b66c67d87b0e0cee596a7754157c4737440d09e7e7d1",
-            "batches/activity.mjs": "049413701bbb0ebaceb6c728a87811d3c19cf024dc51dc2c89fe41f5b2a07b12",
-            "batches/geometry.mjs": "97c46a6b44c87881329bbd037e9ca9caebe0d28c03cc36758d93c0399773ed3c",
-            "batches/helpers.mjs": "49d430c91da63afc2dd5ce4add1fdc1fa2538fb0a23bf30177e77d6b5fb504cf"
-          },
-          "brief": "A smart speaker acknowledges its wake word with an upward nod. Strong prepares, rises farther and settles once; the receive arc stays attached to the dot.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "wake-word-puck-frame"
-            }
-          ],
+          "nativeSha256": "4068665c17fbdd9c2756fb9a3d2b5e8014738c552173452ca5463d5000bd4777",
+          "sourceSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
+          "planSha256": "2f74bc3a6a229779f0ce964473f24b23ee4551f73570ce3b6fad817429d263fe",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A smart speaker hears its wake word. Light: the voice arrives as a wide arc travelling in from above and fades into the receive arc; the indicator light pops as it lands, the receive arc and light take the hit, and the speaker follows with one nod and settles. Strong: two words arrive in turn, the light pops twice, the second harder, and the speaker nods twice.",
+          "constraints": [],
           "category": "Voice",
-          "definitionsSha256": "bb234c293bb1e07e0f056a46e2b59b88d4bf04454f2e74f498b4515200890fd7",
+          "definitionsSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4160,12 +4080,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3796,
-          "sha256": "0f4625e2cb4f46e5342170509864b7a10187709c17e6114cf5cdaa6d3d6b5709"
+          "bytes": 4462,
+          "sha256": "40c6d412c62d24215982a10a0719b06b9af873d26e6168937578ec8cec287b81"
         }
       ],
-      "bytes": 3794,
-      "sha256": "0a576ad3dd81e1691b7b8902453c3b807f0e1dcb426d655c16eec1d4b25a79e0"
+      "bytes": 4460,
+      "sha256": "01f3354c4bd65ee152f196ff5b2146a6925e8d6727d00afbab2a709d734d6726"
     },
     {
       "name": "switch-voice",

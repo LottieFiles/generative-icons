@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "microphone",
+  "label": "Microphone",
+  "intent": "Sound arrives and the microphone takes it. Light: one pair of sound arcs travels in from the upper sides and fades into the capsule; the capsule dips in its cradle on arrival and settles. Strong: two waves arrive in turn and the shock-mounted capsule takes two decaying hits. The stand never moves.",
+  "parts": {
+    "cradle":  {"shape": {"path": "M7 13.5 L7 14 C7 18.97 11.03 23 16 23 C20.97 23 25 18.97 25 14 L25 13.5"}},
+    "stand":   {"shape": {"line": [[16, 23], [16, 27]]}},
+    "foot":    {"shape": {"line": [[11.5, 27], [20.5, 27]]}},
+    "capsule": {"shape": {"rect": [13.1, 5.5, 5.8, 11], "r": 2.9}, "role": "surface"},
+    "wave-l":  {"//": "hidden at rest: sound only exists while it travels", "shape": {"arc": [[16, 11], 8.5, 198, 236]}, "hidden": true},
+    "wave-r":  {"mirror": {"of": "wave-l"}}
+  },
+  "motion": {
+    "wave-l.opacity": {
+      "light":  [[0, 0], [0.06, 1, "out"], [0.19, 1], [0.27, 0, "in"]],
+      "strong": [[0, 0], [0.05, 1, "out"], [0.16, 1], [0.23, 0, "in"], [0.25, 0], [0.30, 1, "out"], [0.41, 1], [0.48, 0, "in"]]
+    },
+    "wave-l.r": {
+      "light":  [[0, 0], [0.27, -3, "in"], [0.29, 0, "step"]],
+      "strong": [[0, 0], [0.23, -3, "in"], [0.25, 0, "step"], [0.48, -3, "in"], [0.50, 0, "step"]]
+    },
+    "wave-r.opacity": {"follow": "wave-l.opacity"},
+    "wave-r.r": {"follow": "wave-l.r"},
+    "capsule.y": {
+      "light":  [[0, 0], [0.21, 0], [0.27, 1.5, "hit"], [0.36, -0.3], [0.46, 0]],
+      "strong": [[0, 0], [0.17, 0], [0.23, 1.6, "hit"], [0.31, -0.4], [0.42, 0.2], [0.48, 2.4, "hit"], [0.57, -0.6], [0.66, 0.2], [0.76, 0]]
+    }
+  }
+}

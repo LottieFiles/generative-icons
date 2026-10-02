@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 68,
-  "nativeTransformNodes": 230,
+  "nativeTransformNodes": 192,
   "nativeTransformMaxCoordinateError": 0.000011406358915166948,
   "checks": [
     {
@@ -310,40 +310,6 @@
       ]
     },
     {
-      "name": "warning",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "warning-boundary"
-        },
-        {
-          "type": "rigid",
-          "part": "warning-stem"
-        }
-      ]
-    },
-    {
-      "name": "warning-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "warning-boundary"
-        },
-        {
-          "type": "rigid",
-          "part": "warning-stem"
-        }
-      ]
-    },
-    {
       "name": "info",
       "fixedParts": [],
       "topology": true,
@@ -366,40 +332,6 @@
         {
           "type": "fixed",
           "part": "info-rim-frame"
-        }
-      ]
-    },
-    {
-      "name": "help",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "help-rim-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "help-hook"
-        }
-      ]
-    },
-    {
-      "name": "help-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "help-rim-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "help-hook"
         }
       ]
     },
@@ -542,48 +474,6 @@
       ]
     },
     {
-      "name": "cloud-sync",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "cloud-sync-cloud"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-sync-upload"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-sync-download"
-        }
-      ]
-    },
-    {
-      "name": "cloud-sync-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "cloud-sync-cloud"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-sync-upload"
-        },
-        {
-          "type": "rigid",
-          "part": "cloud-sync-download"
-        }
-      ]
-    },
-    {
       "name": "saved",
       "fixedParts": [],
       "topology": true,
@@ -679,6 +569,35 @@
           "measure": "width",
           "direction": -1
         }
+      ]
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "warning",
+      "spec": "specs/warning.icon.json",
+      "specSha256": "402dc0f611f7f919033365e8bca477b88c1f723500d9dd761ae230e1e30b504c",
+      "actions": [
+        "warning",
+        "warning-strong"
+      ]
+    },
+    {
+      "icon": "help",
+      "spec": "specs/help.icon.json",
+      "specSha256": "98b35c39524f87750e61bd9d1b08409402d5042acb6a5f34fd4c51757454d77a",
+      "actions": [
+        "help",
+        "help-strong"
+      ]
+    },
+    {
+      "icon": "cloud-sync",
+      "spec": "specs/cloud-sync.icon.json",
+      "specSha256": "b6d059d2ad7311e9c7fc2827b7f3f9dca98b0ec7076afd2c8a3a10190bef58f8",
+      "actions": [
+        "cloud-sync",
+        "cloud-sync-strong"
       ]
     }
   ]

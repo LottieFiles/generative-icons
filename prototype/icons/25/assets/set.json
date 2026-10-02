@@ -958,36 +958,33 @@
       "motionId": "light",
       "continuous": false,
       "previewReset": false,
-      "cycleDegrees": 90,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "cycleDegrees": 0,
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Close",
-      "description": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+      "description": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
       "label": "Close",
-      "intent": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+      "intent": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.5,
-      "rest": 33,
+      "active": 0.47,
+      "rest": 31,
       "keyPoses": [
         0,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5
+        0.094,
+        0.188,
+        0.282,
+        0.376,
+        0.47
       ],
-      "layers": 8,
+      "layers": 9,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -997,30 +994,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "08a4d6548091d78815ef906d4080c21b94556f8d695889af8a57b18aa9d78c24",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-        "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-        "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-        "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-      },
-      "brief": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "close-stroke-a"
-        },
-        {
-          "type": "rigid",
-          "part": "close-stroke-b"
-        }
-      ],
+      "nativeSha256": "f4f36324073d425e039498f54ca3b61c4b610d08fb4fc3955a9bf3a3e247ed4b",
+      "sourceSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
+      "planSha256": "8fda5291e7c03e00b7e89a22791e937374f19f1d831a2f796f6a3bd4c19e9d6c",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
+      "constraints": [],
       "category": "Everyday controls",
-      "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+      "definitionsSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -1050,36 +1031,33 @@
           "motionId": "light",
           "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 90,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Close",
-          "description": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+          "description": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
           "label": "Close",
-          "intent": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+          "intent": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.47,
+          "rest": 31,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.094,
+            0.188,
+            0.282,
+            0.376,
+            0.47
           ],
-          "layers": 8,
+          "layers": 9,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1089,30 +1067,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "08a4d6548091d78815ef906d4080c21b94556f8d695889af8a57b18aa9d78c24",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "close-stroke-a"
-            },
-            {
-              "type": "rigid",
-              "part": "close-stroke-b"
-            }
-          ],
+          "nativeSha256": "f4f36324073d425e039498f54ca3b61c4b610d08fb4fc3955a9bf3a3e247ed4b",
+          "sourceSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
+          "planSha256": "8fda5291e7c03e00b7e89a22791e937374f19f1d831a2f796f6a3bd4c19e9d6c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1134,8 +1096,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3515,
-          "sha256": "7b8df91d11ff50fee1c55658c5857b148f9ed3c8197043bdb9e4645ffc487eae"
+          "bytes": 3022,
+          "sha256": "4a449c3c7e900f52a5412e626a17c09cb0eb0bf27128b8fa3e178adcff0c7583"
         },
         {
           "name": "close-strong",
@@ -1143,36 +1105,33 @@
           "motionId": "strong",
           "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 90,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Close",
-          "description": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+          "description": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
           "label": "Close",
-          "intent": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+          "intent": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.6,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.12,
+            0.24,
+            0.36,
+            0.48,
+            0.6
           ],
-          "layers": 8,
+          "layers": 9,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1182,30 +1141,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "251cbb5f157b5c4ebb2010e1e9e3239dbe6c111707192b0b3f4da1856e9a0c66",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "close-stroke-a"
-            },
-            {
-              "type": "rigid",
-              "part": "close-stroke-b"
-            }
-          ],
+          "nativeSha256": "2a59f2be5ac5e83641253f7aaf5d66b0a08991224a05a92a8c161339fabc8356",
+          "sourceSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
+          "planSha256": "8fda5291e7c03e00b7e89a22791e937374f19f1d831a2f796f6a3bd4c19e9d6c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1227,8 +1170,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3517,
-          "sha256": "05c3ba63b0afb71669cb62884d0d6718e5acfce3e94d57fa14ed4a0b38211df7"
+          "bytes": 3024,
+          "sha256": "7b02618df7fe382efeab75bfcace415f5d1d3c780b38202993c310aae47880a2"
         }
       ],
       "animations": [
@@ -1238,36 +1181,33 @@
           "motionId": "light",
           "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 90,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Close",
-          "description": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+          "description": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
           "label": "Close",
-          "intent": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+          "intent": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
+          "active": 0.47,
+          "rest": 31,
           "keyPoses": [
             0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
+            0.094,
+            0.188,
+            0.282,
+            0.376,
+            0.47
           ],
-          "layers": 8,
+          "layers": 9,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1277,30 +1217,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "08a4d6548091d78815ef906d4080c21b94556f8d695889af8a57b18aa9d78c24",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "close-stroke-a"
-            },
-            {
-              "type": "rigid",
-              "part": "close-stroke-b"
-            }
-          ],
+          "nativeSha256": "f4f36324073d425e039498f54ca3b61c4b610d08fb4fc3955a9bf3a3e247ed4b",
+          "sourceSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
+          "planSha256": "8fda5291e7c03e00b7e89a22791e937374f19f1d831a2f796f6a3bd4c19e9d6c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1322,8 +1246,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3515,
-          "sha256": "7b8df91d11ff50fee1c55658c5857b148f9ed3c8197043bdb9e4645ffc487eae"
+          "bytes": 3022,
+          "sha256": "4a449c3c7e900f52a5412e626a17c09cb0eb0bf27128b8fa3e178adcff0c7583"
         },
         {
           "name": "close-strong",
@@ -1331,36 +1255,33 @@
           "motionId": "strong",
           "continuous": false,
           "previewReset": false,
-          "cycleDegrees": 90,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Close",
-          "description": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+          "description": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
           "label": "Close",
-          "intent": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
+          "intent": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.6,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.12,
+            0.24,
+            0.36,
+            0.48,
+            0.6
           ],
-          "layers": 8,
+          "layers": 9,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1370,30 +1291,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "251cbb5f157b5c4ebb2010e1e9e3239dbe6c111707192b0b3f4da1856e9a0c66",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "The X twists a quarter turn to dismiss; Strong winds back and whips through with one overshoot.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "close-stroke-a"
-            },
-            {
-              "type": "rigid",
-              "part": "close-stroke-b"
-            }
-          ],
+          "nativeSha256": "2a59f2be5ac5e83641253f7aaf5d66b0a08991224a05a92a8c161339fabc8356",
+          "sourceSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
+          "planSha256": "8fda5291e7c03e00b7e89a22791e937374f19f1d831a2f796f6a3bd4c19e9d6c",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The X strikes itself out. Light: both strokes vanish, the first slashes back on from top-left, the second follows 80 ms later from top-right, and the finished X pops once and settles. Strong: the X slashes on while turning into place, lands with a hit and pops harder with a rebound.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "b892e76cf467e5fa845a3d2640b0f91e6325f51e6d5c0c4bc71408fb54e99896",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1415,12 +1320,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3517,
-          "sha256": "05c3ba63b0afb71669cb62884d0d6718e5acfce3e94d57fa14ed4a0b38211df7"
+          "bytes": 3024,
+          "sha256": "7b02618df7fe382efeab75bfcace415f5d1d3c780b38202993c310aae47880a2"
         }
       ],
-      "bytes": 3515,
-      "sha256": "7b8df91d11ff50fee1c55658c5857b148f9ed3c8197043bdb9e4645ffc487eae"
+      "bytes": 3022,
+      "sha256": "4a449c3c7e900f52a5412e626a17c09cb0eb0bf27128b8fa3e178adcff0c7583"
     },
     {
       "name": "undo-redo",
@@ -2864,35 +2769,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "External link",
-      "description": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+      "description": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
       "label": "External link",
-      "intent": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+      "intent": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.52,
-      "rest": 34,
+      "active": 0.46,
+      "rest": 30,
       "keyPoses": [
         0,
-        0.10400000000000001,
-        0.20800000000000002,
-        0.312,
-        0.41600000000000004,
-        0.52
+        0.09200000000000001,
+        0.18400000000000002,
+        0.276,
+        0.36800000000000005,
+        0.46
       ],
-      "layers": 12,
+      "layers": 17,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -2902,34 +2804,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "2d874650d29b227d3abe724ce368a3367c3eaef176aac4ee4393e2eabfce5163",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-        "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-        "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-        "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-      },
-      "brief": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "external-link-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "external-link-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "external-link-head"
-        }
-      ],
+      "nativeSha256": "3d88e3f51188f4cbb903e64e3099afeabe2d852bf6463f457c27e8dd7c9a77a5",
+      "sourceSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
+      "planSha256": "49241d160e318ae29e97f052eac21f141ef95bd9a0eccabb7a5e6f55f007d8c5",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
+      "constraints": [],
       "category": "Everyday controls",
-      "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+      "definitionsSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -2960,35 +2842,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "External link",
-          "description": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+          "description": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
           "label": "External link",
-          "intent": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+          "intent": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 12,
+          "layers": 17,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2998,34 +2877,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2d874650d29b227d3abe724ce368a3367c3eaef176aac4ee4393e2eabfce5163",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "external-link-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "external-link-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "external-link-head"
-            }
-          ],
+          "nativeSha256": "3d88e3f51188f4cbb903e64e3099afeabe2d852bf6463f457c27e8dd7c9a77a5",
+          "sourceSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
+          "planSha256": "49241d160e318ae29e97f052eac21f141ef95bd9a0eccabb7a5e6f55f007d8c5",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3047,8 +2906,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4339,
-          "sha256": "4957f0094c3b92adebf86a4316dd2e546407c3ca228e2920d86dacfaf93c332c"
+          "bytes": 3398,
+          "sha256": "c2c9b2b089eb636c635c166cb25f6cb9eef12eb541f49c0e89f4f2b6f0fc9d33"
         },
         {
           "name": "external-link-strong",
@@ -3057,35 +2916,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "External link",
-          "description": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+          "description": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
           "label": "External link",
-          "intent": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+          "intent": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.72,
-          "rest": 46,
+          "active": 0.56,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.144,
-            0.288,
-            0.432,
-            0.576,
-            0.72
+            0.11200000000000002,
+            0.22400000000000003,
+            0.336,
+            0.44800000000000006,
+            0.56
           ],
-          "layers": 12,
+          "layers": 17,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3095,34 +2951,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "d3a6a29b921ef4d161e1caece47a9441afbd6d6aed1931dbb09b66b869091881",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "external-link-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "external-link-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "external-link-head"
-            }
-          ],
+          "nativeSha256": "3a877099f9a525224de16d9f41d442e6b8e7659751376f6739f8f84bad590d72",
+          "sourceSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
+          "planSha256": "49241d160e318ae29e97f052eac21f141ef95bd9a0eccabb7a5e6f55f007d8c5",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3144,8 +2980,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4342,
-          "sha256": "2c60e8d3318ae9a42f92426a4ff28704d52a12b8b8f14a9fbd693fb6c7d321af"
+          "bytes": 3401,
+          "sha256": "3e3f02318f97e12cfee553abdaea210b606aafadc3874f555d9accad973cad7a"
         }
       ],
       "animations": [
@@ -3156,35 +2992,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "External link",
-          "description": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+          "description": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
           "label": "External link",
-          "intent": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+          "intent": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 12,
+          "layers": 17,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3194,34 +3027,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2d874650d29b227d3abe724ce368a3367c3eaef176aac4ee4393e2eabfce5163",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "external-link-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "external-link-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "external-link-head"
-            }
-          ],
+          "nativeSha256": "3d88e3f51188f4cbb903e64e3099afeabe2d852bf6463f457c27e8dd7c9a77a5",
+          "sourceSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
+          "planSha256": "49241d160e318ae29e97f052eac21f141ef95bd9a0eccabb7a5e6f55f007d8c5",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3243,8 +3056,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4339,
-          "sha256": "4957f0094c3b92adebf86a4316dd2e546407c3ca228e2920d86dacfaf93c332c"
+          "bytes": 3398,
+          "sha256": "c2c9b2b089eb636c635c166cb25f6cb9eef12eb541f49c0e89f4f2b6f0fc9d33"
         },
         {
           "name": "external-link-strong",
@@ -3253,35 +3066,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "External link",
-          "description": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+          "description": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
           "label": "External link",
-          "intent": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
+          "intent": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.72,
-          "rest": 46,
+          "active": 0.56,
+          "rest": 37,
           "keyPoses": [
             0,
-            0.144,
-            0.288,
-            0.432,
-            0.576,
-            0.72
+            0.11200000000000002,
+            0.22400000000000003,
+            0.336,
+            0.44800000000000006,
+            0.56
           ],
-          "layers": 12,
+          "layers": 17,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3291,34 +3101,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "d3a6a29b921ef4d161e1caece47a9441afbd6d6aed1931dbb09b66b869091881",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "A fixed window frame with an open top-right corner; the arrow slides out through that opening and returns to rest.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "external-link-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "external-link-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "external-link-head"
-            }
-          ],
+          "nativeSha256": "3a877099f9a525224de16d9f41d442e6b8e7659751376f6739f8f84bad590d72",
+          "sourceSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
+          "planSha256": "49241d160e318ae29e97f052eac21f141ef95bd9a0eccabb7a5e6f55f007d8c5",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The link leaves. Light: the arrow winds back a touch, shoots out through the open corner and fades before the edge, then a new arrow glides in from inside the window and settles at rest. Strong: it leaves farther with a speed trail that retracts into the corner behind it, and the returning arrow overshoots toward the corner and rebounds. The window never moves.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "d79ce98243b8ba032c87748366161639e415bcffccb0bf4eede1ebaff537c60b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3340,12 +3130,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4342,
-          "sha256": "2c60e8d3318ae9a42f92426a4ff28704d52a12b8b8f14a9fbd693fb6c7d321af"
+          "bytes": 3401,
+          "sha256": "3e3f02318f97e12cfee553abdaea210b606aafadc3874f555d9accad973cad7a"
         }
       ],
-      "bytes": 4339,
-      "sha256": "4957f0094c3b92adebf86a4316dd2e546407c3ca228e2920d86dacfaf93c332c"
+      "bytes": 3398,
+      "sha256": "c2c9b2b089eb636c635c166cb25f6cb9eef12eb541f49c0e89f4f2b6f0fc9d33"
     },
     {
       "name": "share",
@@ -3354,19 +3144,16 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Share",
-      "description": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+      "description": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
       "label": "Share",
-      "intent": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+      "intent": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
       "width": 32,
       "height": 32,
       "fps": 60,
@@ -3382,7 +3169,7 @@
         0.4,
         0.5
       ],
-      "layers": 23,
+      "layers": 26,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -3392,38 +3179,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "63b1cac0d3567afc713f539e3ea8f14a440df56e3b3b6b118212506ab3e2e5c1",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-        "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-        "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-        "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-      },
-      "brief": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "share-hub-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "share-node-top-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "share-link-top"
-        },
-        {
-          "type": "rigid",
-          "part": "share-node-bottom-frame"
-        }
-      ],
+      "nativeSha256": "a2f7057712e64a399ab3c8f0725e12ed032abd6223a1b54b27e328bfcbaee836",
+      "sourceSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
+      "planSha256": "2d23e818ee2955047a21cc5c382ccd357508c625c354785f10d4f4d559ecfbfb",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
+      "constraints": [],
       "category": "Everyday controls",
-      "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+      "definitionsSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -3454,19 +3217,16 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Share",
-          "description": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+          "description": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
           "label": "Share",
-          "intent": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+          "intent": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -3482,7 +3242,7 @@
             0.4,
             0.5
           ],
-          "layers": 23,
+          "layers": 26,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3492,38 +3252,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "63b1cac0d3567afc713f539e3ea8f14a440df56e3b3b6b118212506ab3e2e5c1",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "share-hub-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "share-node-top-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "share-link-top"
-            },
-            {
-              "type": "rigid",
-              "part": "share-node-bottom-frame"
-            }
-          ],
+          "nativeSha256": "a2f7057712e64a399ab3c8f0725e12ed032abd6223a1b54b27e328bfcbaee836",
+          "sourceSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
+          "planSha256": "2d23e818ee2955047a21cc5c382ccd357508c625c354785f10d4f4d559ecfbfb",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3545,8 +3281,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5198,
-          "sha256": "9e10135fcb9110cc1680175f498c97f04b35ac6604fe4fea9f21d7f327a957e4"
+          "bytes": 4883,
+          "sha256": "8ca014b8b3170a7d07d5da2190a50cf59540be4a78ead7beb6fb607e0ea80600"
         },
         {
           "name": "share-strong",
@@ -3555,35 +3291,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Share",
-          "description": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+          "description": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
           "label": "Share",
-          "intent": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+          "intent": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.5900000000000001,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.11800000000000002,
+            0.23600000000000004,
+            0.35400000000000004,
+            0.4720000000000001,
+            0.5900000000000001
           ],
-          "layers": 23,
+          "layers": 26,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3593,38 +3326,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2f4a08268a9b3d97c5d06d8487c13b86efc335099f74bdf5698b829a2715f790",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "share-hub-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "share-node-top-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "share-link-top"
-            },
-            {
-              "type": "rigid",
-              "part": "share-node-bottom-frame"
-            }
-          ],
+          "nativeSha256": "b7c2f2bb3af60bcd2572f36f05a497a2f2001e159519febefde07ab7b9801dec",
+          "sourceSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
+          "planSha256": "2d23e818ee2955047a21cc5c382ccd357508c625c354785f10d4f4d559ecfbfb",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3646,8 +3355,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5200,
-          "sha256": "a15cf7b53edbc4b9c36231cca2e7d8a3d7604a3846a873c71c756dedbe1fb3c1"
+          "bytes": 4885,
+          "sha256": "d4ade85a861839332f0da7ce0baad6d2c9f26a4111b4ad6e8cd4266a649c881c"
         }
       ],
       "animations": [
@@ -3658,19 +3367,16 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Share",
-          "description": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+          "description": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
           "label": "Share",
-          "intent": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+          "intent": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -3686,7 +3392,7 @@
             0.4,
             0.5
           ],
-          "layers": 23,
+          "layers": 26,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3696,38 +3402,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "63b1cac0d3567afc713f539e3ea8f14a440df56e3b3b6b118212506ab3e2e5c1",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "share-hub-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "share-node-top-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "share-link-top"
-            },
-            {
-              "type": "rigid",
-              "part": "share-node-bottom-frame"
-            }
-          ],
+          "nativeSha256": "a2f7057712e64a399ab3c8f0725e12ed032abd6223a1b54b27e328bfcbaee836",
+          "sourceSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
+          "planSha256": "2d23e818ee2955047a21cc5c382ccd357508c625c354785f10d4f4d559ecfbfb",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3749,8 +3431,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5198,
-          "sha256": "9e10135fcb9110cc1680175f498c97f04b35ac6604fe4fea9f21d7f327a957e4"
+          "bytes": 4883,
+          "sha256": "8ca014b8b3170a7d07d5da2190a50cf59540be4a78ead7beb6fb607e0ea80600"
         },
         {
           "name": "share-strong",
@@ -3759,35 +3441,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Share",
-          "description": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+          "description": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
           "label": "Share",
-          "intent": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
+          "intent": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.5900000000000001,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.11800000000000002,
+            0.23600000000000004,
+            0.35400000000000004,
+            0.4720000000000001,
+            0.5900000000000001
           ],
-          "layers": 23,
+          "layers": 26,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3797,38 +3476,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2f4a08268a9b3d97c5d06d8487c13b86efc335099f74bdf5698b829a2715f790",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "Two branch nodes fan out from the source hub and settle back, a hand-off gesture.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "share-hub-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "share-node-top-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "share-link-top"
-            },
-            {
-              "type": "rigid",
-              "part": "share-node-bottom-frame"
-            }
-          ],
+          "nativeSha256": "b7c2f2bb3af60bcd2572f36f05a497a2f2001e159519febefde07ab7b9801dec",
+          "sourceSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
+          "planSha256": "2d23e818ee2955047a21cc5c382ccd357508c625c354785f10d4f4d559ecfbfb",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The hand-off travels from the source to both branches. Light: the hub draws its connectors in as it gathers, then sends: the top connector draws out to its node and the bottom one follows, and each node pops as the connector reaches it. Strong: a deeper gather, a harder send, and each node is knocked out along its connector as it pops bigger, then swings back to rest. The rest pose is the v1 drawing.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "bc3d3d28452e89790552cd945ad61cb04070315339a468db8f711f2e7414629c",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3850,12 +3505,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5200,
-          "sha256": "a15cf7b53edbc4b9c36231cca2e7d8a3d7604a3846a873c71c756dedbe1fb3c1"
+          "bytes": 4885,
+          "sha256": "d4ade85a861839332f0da7ce0baad6d2c9f26a4111b4ad6e8cd4266a649c881c"
         }
       ],
-      "bytes": 5198,
-      "sha256": "9e10135fcb9110cc1680175f498c97f04b35ac6604fe4fea9f21d7f327a957e4"
+      "bytes": 4883,
+      "sha256": "8ca014b8b3170a7d07d5da2190a50cf59540be4a78ead7beb6fb607e0ea80600"
     },
     {
       "name": "cut",
@@ -3864,35 +3519,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Cut",
-      "description": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
+      "description": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
       "label": "Cut",
-      "intent": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
+      "intent": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.4,
+      "rest": 27,
       "keyPoses": [
         0,
-        0.12,
+        0.08000000000000002,
+        0.16000000000000003,
         0.24,
-        0.36,
-        0.48,
-        0.6
+        0.32000000000000006,
+        0.4
       ],
-      "layers": 8,
+      "layers": 14,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -3902,30 +3554,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "73ff0d53d29367bc4f276fac7f5ead85e2f92d03cda7cebfe532e9f9b8876fbb",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-        "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-        "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-        "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-      },
-      "brief": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "cut-blade-a"
-        },
-        {
-          "type": "rigid",
-          "part": "cut-blade-b"
-        }
-      ],
+      "nativeSha256": "908cde7f839708b44d1341a5b23f3be2963dceecf1cce0acf70ff41ceed44998",
+      "sourceSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
+      "planSha256": "96cdbe987aa3a946b61f3e1ea6f2ab8ef20a39d35d67c744a2eaa4b8a6f4c147",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
+      "constraints": [],
       "category": "Everyday controls",
-      "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+      "definitionsSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -3956,19 +3592,90 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cut",
-          "description": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
+          "description": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
           "label": "Cut",
-          "intent": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
+          "intent": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
+          "width": 32,
+          "height": 32,
+          "fps": 60,
+          "frames": 144,
+          "duration": 2.4,
+          "active": 0.4,
+          "rest": 27,
+          "keyPoses": [
+            0,
+            0.08000000000000002,
+            0.16000000000000003,
+            0.24,
+            0.32000000000000006,
+            0.4
+          ],
+          "layers": 14,
+          "slots": [
+            "color.primary",
+            "style.outline.light",
+            "style.outline.regular",
+            "style.outline.bold",
+            "style.solid",
+            "style.tint",
+            "style.outline.width"
+          ],
+          "nativeSha256": "908cde7f839708b44d1341a5b23f3be2963dceecf1cce0acf70ff41ceed44998",
+          "sourceSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
+          "planSha256": "96cdbe987aa3a946b61f3e1ea6f2ab8ef20a39d35d67c744a2eaa4b8a6f4c147",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
+          "constraints": [],
+          "category": "Everyday controls",
+          "definitionsSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
+          "primary": {
+            "dark": "#00ddb3",
+            "light": "#008c76"
+          },
+          "duotoneFill": false,
+          "styles": [
+            "outline",
+            "solid",
+            "duotone"
+          ],
+          "strokeWidth": {
+            "min": 1.5,
+            "default": 2,
+            "max": 2.5,
+            "presets": [
+              1.5,
+              2,
+              2.5
+            ],
+            "units": "32-unit construction grid"
+          },
+          "bytes": 3279,
+          "sha256": "c68f62322dd24e65331dfbd843b30bc6bc58d5a6b5eb058496d989f0d956298b"
+        },
+        {
+          "name": "cut-strong",
+          "icon": "cut",
+          "motionId": "strong",
+          "continuous": false,
+          "previewReset": false,
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
+          "motionLabel": "Strong motion",
+          "direction": "forward",
+          "stateful": false,
+          "startState": "rest",
+          "endState": "rest",
+          "heading": "Cut",
+          "description": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
+          "label": "Cut",
+          "intent": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -3984,7 +3691,7 @@
             0.48,
             0.6
           ],
-          "layers": 8,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3994,30 +3701,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "73ff0d53d29367bc4f276fac7f5ead85e2f92d03cda7cebfe532e9f9b8876fbb",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "cut-blade-a"
-            },
-            {
-              "type": "rigid",
-              "part": "cut-blade-b"
-            }
-          ],
+          "nativeSha256": "c347440761846846d71da0410c1db38e381699dede19e6c4952ae9438e17bebf",
+          "sourceSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
+          "planSha256": "96cdbe987aa3a946b61f3e1ea6f2ab8ef20a39d35d67c744a2eaa4b8a6f4c147",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4039,101 +3730,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3726,
-          "sha256": "717830588a6a24b1d7f310e5eb8b7f84657d579e81a0e674af6150ae24e5babd"
-        },
-        {
-          "name": "cut-strong",
-          "icon": "cut",
-          "motionId": "strong",
-          "continuous": false,
-          "previewReset": false,
-          "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
-          "motionLabel": "Strong motion",
-          "direction": "forward",
-          "startState": "rest",
-          "endState": "rest",
-          "heading": "Cut",
-          "description": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
-          "label": "Cut",
-          "intent": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
-          "width": 32,
-          "height": 32,
-          "fps": 60,
-          "frames": 144,
-          "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
-          "keyPoses": [
-            0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
-          ],
-          "layers": 8,
-          "slots": [
-            "color.primary",
-            "style.outline.light",
-            "style.outline.regular",
-            "style.outline.bold",
-            "style.solid",
-            "style.tint",
-            "style.outline.width"
-          ],
-          "nativeSha256": "e8d8ca1207aff1e50fcfdf2a5dd8312591b5c31fe4ee40bbf2eda69fc1b43a14",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "cut-blade-a"
-            },
-            {
-              "type": "rigid",
-              "part": "cut-blade-b"
-            }
-          ],
-          "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
-          "primary": {
-            "dark": "#00ddb3",
-            "light": "#008c76"
-          },
-          "duotoneFill": false,
-          "styles": [
-            "outline",
-            "solid",
-            "duotone"
-          ],
-          "strokeWidth": {
-            "min": 1.5,
-            "default": 2,
-            "max": 2.5,
-            "presets": [
-              1.5,
-              2,
-              2.5
-            ],
-            "units": "32-unit construction grid"
-          },
-          "bytes": 3728,
-          "sha256": "07a89509a77d7e632d639edc458f6116e4b2a15ee94fa1e2621c8cfa41383083"
+          "bytes": 3281,
+          "sha256": "1d3898d904434233963e30fdcb30f2deace7e95eb7bbf27273496cf1ccd53d30"
         }
       ],
       "animations": [
@@ -4144,19 +3742,90 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Cut",
-          "description": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
+          "description": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
           "label": "Cut",
-          "intent": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
+          "intent": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
+          "width": 32,
+          "height": 32,
+          "fps": 60,
+          "frames": 144,
+          "duration": 2.4,
+          "active": 0.4,
+          "rest": 27,
+          "keyPoses": [
+            0,
+            0.08000000000000002,
+            0.16000000000000003,
+            0.24,
+            0.32000000000000006,
+            0.4
+          ],
+          "layers": 14,
+          "slots": [
+            "color.primary",
+            "style.outline.light",
+            "style.outline.regular",
+            "style.outline.bold",
+            "style.solid",
+            "style.tint",
+            "style.outline.width"
+          ],
+          "nativeSha256": "908cde7f839708b44d1341a5b23f3be2963dceecf1cce0acf70ff41ceed44998",
+          "sourceSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
+          "planSha256": "96cdbe987aa3a946b61f3e1ea6f2ab8ef20a39d35d67c744a2eaa4b8a6f4c147",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
+          "constraints": [],
+          "category": "Everyday controls",
+          "definitionsSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
+          "primary": {
+            "dark": "#00ddb3",
+            "light": "#008c76"
+          },
+          "duotoneFill": false,
+          "styles": [
+            "outline",
+            "solid",
+            "duotone"
+          ],
+          "strokeWidth": {
+            "min": 1.5,
+            "default": 2,
+            "max": 2.5,
+            "presets": [
+              1.5,
+              2,
+              2.5
+            ],
+            "units": "32-unit construction grid"
+          },
+          "bytes": 3279,
+          "sha256": "c68f62322dd24e65331dfbd843b30bc6bc58d5a6b5eb058496d989f0d956298b"
+        },
+        {
+          "name": "cut-strong",
+          "icon": "cut",
+          "motionId": "strong",
+          "continuous": false,
+          "previewReset": false,
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
+          "motionLabel": "Strong motion",
+          "direction": "forward",
+          "stateful": false,
+          "startState": "rest",
+          "endState": "rest",
+          "heading": "Cut",
+          "description": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
+          "label": "Cut",
+          "intent": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -4172,7 +3841,7 @@
             0.48,
             0.6
           ],
-          "layers": 8,
+          "layers": 14,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4182,30 +3851,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "73ff0d53d29367bc4f276fac7f5ead85e2f92d03cda7cebfe532e9f9b8876fbb",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "cut-blade-a"
-            },
-            {
-              "type": "rigid",
-              "part": "cut-blade-b"
-            }
-          ],
+          "nativeSha256": "c347440761846846d71da0410c1db38e381699dede19e6c4952ae9438e17bebf",
+          "sourceSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
+          "planSha256": "96cdbe987aa3a946b61f3e1ea6f2ab8ef20a39d35d67c744a2eaa4b8a6f4c147",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The scissors snip and the cut runs ahead of them. Light: the blades open and snap shut, a cut line draws out up between them as they close and fades, then a smaller second snip. Strong: three decaying snips, wider, and the cut extends further with each of the first two.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "9bdbc0d51f98ce18752685af7d979ee7b80e00a83e53369fdf33e7a4ba869c8f",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4227,105 +3880,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3726,
-          "sha256": "717830588a6a24b1d7f310e5eb8b7f84657d579e81a0e674af6150ae24e5babd"
-        },
-        {
-          "name": "cut-strong",
-          "icon": "cut",
-          "motionId": "strong",
-          "continuous": false,
-          "previewReset": false,
-          "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
-          "motionLabel": "Strong motion",
-          "direction": "forward",
-          "startState": "rest",
-          "endState": "rest",
-          "heading": "Cut",
-          "description": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
-          "label": "Cut",
-          "intent": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
-          "width": 32,
-          "height": 32,
-          "fps": 60,
-          "frames": 144,
-          "duration": 2.4,
-          "active": 0.5,
-          "rest": 33,
-          "keyPoses": [
-            0,
-            0.1,
-            0.2,
-            0.3,
-            0.4,
-            0.5
-          ],
-          "layers": 8,
-          "slots": [
-            "color.primary",
-            "style.outline.light",
-            "style.outline.regular",
-            "style.outline.bold",
-            "style.solid",
-            "style.tint",
-            "style.outline.width"
-          ],
-          "nativeSha256": "e8d8ca1207aff1e50fcfdf2a5dd8312591b5c31fe4ee40bbf2eda69fc1b43a14",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "Scissors open, then close decisively across the content; Strong opens wide, then snaps shut with one rebound.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "cut-blade-a"
-            },
-            {
-              "type": "rigid",
-              "part": "cut-blade-b"
-            }
-          ],
-          "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
-          "primary": {
-            "dark": "#00ddb3",
-            "light": "#008c76"
-          },
-          "duotoneFill": false,
-          "styles": [
-            "outline",
-            "solid",
-            "duotone"
-          ],
-          "strokeWidth": {
-            "min": 1.5,
-            "default": 2,
-            "max": 2.5,
-            "presets": [
-              1.5,
-              2,
-              2.5
-            ],
-            "units": "32-unit construction grid"
-          },
-          "bytes": 3728,
-          "sha256": "07a89509a77d7e632d639edc458f6116e4b2a15ee94fa1e2621c8cfa41383083"
+          "bytes": 3281,
+          "sha256": "1d3898d904434233963e30fdcb30f2deace7e95eb7bbf27273496cf1ccd53d30"
         }
       ],
-      "bytes": 3726,
-      "sha256": "717830588a6a24b1d7f310e5eb8b7f84657d579e81a0e674af6150ae24e5babd"
+      "bytes": 3279,
+      "sha256": "c68f62322dd24e65331dfbd843b30bc6bc58d5a6b5eb058496d989f0d956298b"
     },
     {
       "name": "paste",
@@ -12549,35 +12109,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-        "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Archive",
-      "description": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+      "description": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
       "label": "Archive",
-      "intent": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+      "intent": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.55,
-      "rest": 36,
+      "active": 0.38,
+      "rest": 26,
       "keyPoses": [
         0,
-        0.11000000000000001,
-        0.22000000000000003,
-        0.33,
-        0.44000000000000006,
-        0.55
+        0.07600000000000001,
+        0.15200000000000002,
+        0.22799999999999998,
+        0.30400000000000005,
+        0.38
       ],
-      "layers": 13,
+      "layers": 19,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -12587,34 +12144,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "6e9905942c9fc38c41c49deff5cfa9fa11e3ee8ac268e7030239a31127a9b546",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-        "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-        "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-        "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-        "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-        "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-      },
-      "brief": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "archive-body-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "archive-slot"
-        },
-        {
-          "type": "rigid",
-          "part": "archive-lid-frame"
-        }
-      ],
+      "nativeSha256": "b3c08c6c13b614353e02fb927dbdbb8c2d4482cfb4d45568da54be3fdde5dd6c",
+      "sourceSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
+      "planSha256": "d8c9dde82455ae9f29d3382f350c907d30ae14e2fc272f7a732aef239f04bb8b",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
+      "constraints": [],
       "category": "Everyday controls",
-      "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+      "definitionsSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -12645,35 +12182,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Archive",
-          "description": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+          "description": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
           "label": "Archive",
-          "intent": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+          "intent": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 13,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12683,34 +12217,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6e9905942c9fc38c41c49deff5cfa9fa11e3ee8ac268e7030239a31127a9b546",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "archive-body-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "archive-slot"
-            },
-            {
-              "type": "rigid",
-              "part": "archive-lid-frame"
-            }
-          ],
+          "nativeSha256": "b3c08c6c13b614353e02fb927dbdbb8c2d4482cfb4d45568da54be3fdde5dd6c",
+          "sourceSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
+          "planSha256": "d8c9dde82455ae9f29d3382f350c907d30ae14e2fc272f7a732aef239f04bb8b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12732,8 +12246,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3866,
-          "sha256": "2ac83f9170c5dc5578f2ed5188aca0265da46412acf2aa44496b799937e2e9e7"
+          "bytes": 4154,
+          "sha256": "2209ad1996ac87643ec7b1c7dea8dd2cb0c241a68ac470d521a14f952430b717"
         },
         {
           "name": "archive-strong",
@@ -12742,35 +12256,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Archive",
-          "description": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+          "description": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
           "label": "Archive",
-          "intent": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+          "intent": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.64,
+          "rest": 41,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.128,
+            0.256,
+            0.384,
+            0.512,
+            0.64
           ],
-          "layers": 13,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12780,34 +12291,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "3ba16eb4720f6b0a9c6324bf51988df02d391011ea6324b68612e16037a986ab",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "archive-body-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "archive-slot"
-            },
-            {
-              "type": "rigid",
-              "part": "archive-lid-frame"
-            }
-          ],
+          "nativeSha256": "b09b889d25ff4c29556219931d4bd6c5c660cd882203047e40d3130a96bb83b8",
+          "sourceSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
+          "planSha256": "d8c9dde82455ae9f29d3382f350c907d30ae14e2fc272f7a732aef239f04bb8b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12829,8 +12320,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3868,
-          "sha256": "7acef946874394ea18326fff7a6d8d2c264b2298b5b92cd2f92af56891610cbf"
+          "bytes": 4156,
+          "sha256": "5d58cf4d7aa443de6b8f635732cb4f343cfeb9783bd983a0f3473df8a207dda0"
         }
       ],
       "animations": [
@@ -12841,35 +12332,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Archive",
-          "description": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+          "description": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
           "label": "Archive",
-          "intent": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+          "intent": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.38,
+          "rest": 26,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.07600000000000001,
+            0.15200000000000002,
+            0.22799999999999998,
+            0.30400000000000005,
+            0.38
           ],
-          "layers": 13,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12879,34 +12367,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6e9905942c9fc38c41c49deff5cfa9fa11e3ee8ac268e7030239a31127a9b546",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "archive-body-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "archive-slot"
-            },
-            {
-              "type": "rigid",
-              "part": "archive-lid-frame"
-            }
-          ],
+          "nativeSha256": "b3c08c6c13b614353e02fb927dbdbb8c2d4482cfb4d45568da54be3fdde5dd6c",
+          "sourceSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
+          "planSha256": "d8c9dde82455ae9f29d3382f350c907d30ae14e2fc272f7a732aef239f04bb8b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12928,8 +12396,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3866,
-          "sha256": "2ac83f9170c5dc5578f2ed5188aca0265da46412acf2aa44496b799937e2e9e7"
+          "bytes": 4154,
+          "sha256": "2209ad1996ac87643ec7b1c7dea8dd2cb0c241a68ac470d521a14f952430b717"
         },
         {
           "name": "archive-strong",
@@ -12938,35 +12406,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07",
-            "ai-authoring.mjs": "4a0617c0e8bc443c01edfcba87bdf4c399e80ced0376912777cc8476b1d2c664"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Archive",
-          "description": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+          "description": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
           "label": "Archive",
-          "intent": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
+          "intent": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.55,
-          "rest": 36,
+          "active": 0.64,
+          "rest": 41,
           "keyPoses": [
             0,
-            0.11000000000000001,
-            0.22000000000000003,
-            0.33,
-            0.44000000000000006,
-            0.55
+            0.128,
+            0.256,
+            0.384,
+            0.512,
+            0.64
           ],
-          "layers": 13,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12976,34 +12441,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "3ba16eb4720f6b0a9c6324bf51988df02d391011ea6324b68612e16037a986ab",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "9c16ed1c40efc74a5fa35cc6da24b77f7ea1ef2eb236924ca0a6e9b03c3caeb2",
-            "batches/content.mjs": "09c7903b436be78e3cbc267142654390e61b2c760193400a647b749c00fbcfad",
-            "batches/helpers.mjs": "7a94e6677931fc7160e46da4a6815e5e129ecffcb2661afa8e8ceb708594c1c4",
-            "batches/layout.mjs": "629594c16083c91d8ba2db88ff6ee0ba9b87df29ff81fb15005bedbbca76be60",
-            "batches/pointers.mjs": "1352bb0960704da2ee46a0fcf178158450be5ddcdc0fb3090b5a5c6e8390602c",
-            "batches/symbols.mjs": "508a2f8e45771512d70e006975d6e31b24f099ae2d7f2eb22b14e24d6f68289b"
-          },
-          "brief": "The archive-box lid lifts to receive the item and closes over it; Strong opens wide and shuts with a slam.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "archive-body-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "archive-slot"
-            },
-            {
-              "type": "rigid",
-              "part": "archive-lid-frame"
-            }
-          ],
+          "nativeSha256": "b09b889d25ff4c29556219931d4bd6c5c660cd882203047e40d3130a96bb83b8",
+          "sourceSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
+          "planSha256": "d8c9dde82455ae9f29d3382f350c907d30ae14e2fc272f7a732aef239f04bb8b",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Something is filed. Light: the lid lifts, a document card slides out from under it and drops into the box (clipped at the rim), and the lid follows it down with a hit and a small bounce. Strong: the lid lifts with a tilt, two cards drop in turn, and the lid slams with a bounce and a settle. The box never moves.",
+          "constraints": [],
           "category": "Everyday controls",
-          "definitionsSha256": "e65078837a1a211bda0792a6de4d25da8bcf86300d4d0fc55255fa7aa66f034a",
+          "definitionsSha256": "7a2e6b90c449438cdabeab314baf70beb6e980522eec07007accca011252253b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13025,12 +12470,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3868,
-          "sha256": "7acef946874394ea18326fff7a6d8d2c264b2298b5b92cd2f92af56891610cbf"
+          "bytes": 4156,
+          "sha256": "5d58cf4d7aa443de6b8f635732cb4f343cfeb9783bd983a0f3473df8a207dda0"
         }
       ],
-      "bytes": 3866,
-      "sha256": "2ac83f9170c5dc5578f2ed5188aca0265da46412acf2aa44496b799937e2e9e7"
+      "bytes": 4154,
+      "sha256": "2209ad1996ac87643ec7b1c7dea8dd2cb0c241a68ac470d521a14f952430b717"
     },
     {
       "name": "target",

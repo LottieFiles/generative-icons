@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 21,
   "actions": 62,
-  "nativeTransformNodes": 184,
+  "nativeTransformNodes": 162,
   "nativeTransformMaxCoordinateError": 0.000010000000003174137,
   "checks": [
     {
@@ -288,26 +288,6 @@
       "designConstraints": []
     },
     {
-      "name": "credit-card",
-      "fixedParts": [
-        "credit-card-reader"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
-      "name": "credit-card-strong",
-      "fixedParts": [
-        "credit-card-reader"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "designConstraints": []
-    },
-    {
       "name": "wallet",
       "fixedParts": [
         "wallet-body"
@@ -422,6 +402,17 @@
       "stateBoundaries": true,
       "hold": true,
       "designConstraints": []
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "credit-card",
+      "spec": "specs/credit-card.icon.json",
+      "specSha256": "f520109f397c4fe905eafecbcfa0570d08958249f0d00299b7bcaed33d5585d0",
+      "actions": [
+        "credit-card",
+        "credit-card-strong"
+      ]
     }
   ]
 }

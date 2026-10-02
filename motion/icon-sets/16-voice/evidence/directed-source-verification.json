@@ -2,8 +2,8 @@
   "result": "PASS",
   "icons": 10,
   "actions": 28,
-  "nativeTransformNodes": 142,
-  "nativeTransformMaxCoordinateError": 0.000007000000001866624,
+  "nativeTransformNodes": 126,
+  "nativeTransformMaxCoordinateError": 0.000006000000002615025,
   "checks": [
     {
       "name": "voice-listening",
@@ -362,38 +362,6 @@
       ]
     },
     {
-      "name": "wake-word",
-      "fixedParts": [
-        "wake-word-puck-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "wake-word-puck-frame"
-        }
-      ]
-    },
-    {
-      "name": "wake-word-strong",
-      "fixedParts": [
-        "wake-word-puck-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "wake-word-puck-frame"
-        }
-      ]
-    },
-    {
       "name": "switch-voice",
       "fixedParts": [
         "switch-voice-body-a",
@@ -560,6 +528,17 @@
       "name": "voice-recording-strong",
       "maxSeamPositionError": 0,
       "maxVelocityRatio": 0.08760951188986177
+    }
+  ],
+  "adoptedSpecs": [
+    {
+      "icon": "wake-word",
+      "spec": "specs/wake-word.icon.json",
+      "specSha256": "33b0662a943a30eed69c595661bc79db4dac3fb083a8944043641568d91fe0cc",
+      "actions": [
+        "wake-word",
+        "wake-word-strong"
+      ]
     }
   ]
 }

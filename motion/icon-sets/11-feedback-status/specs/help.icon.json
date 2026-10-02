@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "help",
+  "label": "Help",
+  "intent": "A question is asked. Light: the question hook writes itself on from its top-left tip, over the curve and down the stem, and the dot pops in under it as the punctuation and settles. Strong: the question mark swings in from a quizzical tilt while it writes, overshoots upright and settles, and the dot pops harder with a second rebound. The ring never moves.",
+  "preview": {"light": [0, 0.06, 0.11, 0.17, 0.23, 0.28, 0.36, 0.48], "strong": [0, 0.06, 0.12, 0.18, 0.24, 0.3, 0.38, 0.5]},
+  "parts": {
+    "rim":  {"shape": {"circle": [[16, 16], 11]}, "role": "surface", "solid": "ring"},
+    "hook": {"//": "drawn in writing order: top-left tip, over the curve, down the stem", "shape": {"path": "M12 12 C12 7.8 20 7.8 20 12.5 C20 15.2 16 15.4 16 18.5"}},
+    "dot":  {"shape": {"circle": [[16, 22], 1.2]}, "role": "fill"}
+  },
+  "rigs": {
+    "mark": {"//": "the question mark tilts about its dot", "pivot": [16, 22], "carries": ["hook", "dot"]},
+    "dot":  {"pivot": [16, 22]}
+  },
+  "motion": {
+    "hook.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.24, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.21, 1, "out"]]
+    },
+    "dot.opacity": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.2, 0], [0.23, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.18, 0], [0.21, 1, "out"]]
+    },
+    "dot.scale": {
+      "light":  [[0, 1], [0.017, 0.3, "step"], [0.2, 0.3], [0.28, 1.35, "out"], [0.36, 0.92], [0.45, 1]],
+      "strong": [[0, 1], [0.017, 0.3, "step"], [0.18, 0.3], [0.26, 1.55, "out"], [0.34, 0.85], [0.42, 1.08], [0.5, 1]]
+    },
+    "mark.rotate": {
+      "//": "Strong: the first stroke is written at a quizzical tilt, then the mark swings upright past rest and settles",
+      "strong": [[0, 0], [0.017, -22, "step"], [0.08, -22], [0.26, 7, "inOut"], {"settle": 0.62, "to": 0}]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "location",
+  "label": "Location",
+  "intent": "The pin drops onto its place. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ground ripple spreads out from the tip and fades. Strong: a higher drop, a bounce and a second, smaller landing, with a ripple on each contact.",
+  "preview": {"light": [0, 0.12, 0.2, 0.24, 0.3, 0.36, 0.44, 0.54], "strong": [0, 0.15, 0.3, 0.36, 0.4, 0.5, 0.6, 0.78]},
+  "parts": {
+    "ripple":  {"//": "hidden at rest: the ground answers only on contact", "shape": {"path": "M12 27 C12 27.663 13.791 28.2 16 28.2 C18.209 28.2 20 27.663 20 27"}, "hidden": true},
+    "pin":     {"shape": {"path": "M16 27 C13.6 24.5 7.5 19.3 7.5 14.5 C7.5 10.08 11.3 6.5 16 6.5 C20.7 6.5 24.5 10.08 24.5 14.5 C24.5 19.3 18.4 24.5 16 27 Z"}, "role": "surface", "solid": "fill", "knockout": [{"part": "counter", "gap": 0}]},
+    "counter": {"shape": {"circle": [[16, 14.5], 2.9]}, "solid": {"circle": [[16, 14.5], 3.1]}}
+  },
+  "rigs": {
+    "pin":    {"//": "the pin and its counter drop together", "pivot": [16, 27], "carries": ["counter"]},
+    "ripple": {"//": "the ripple spreads from the tip", "pivot": [16, 27]}
+  },
+  "motion": {
+    "pin.y": {
+      "light":  [[0, 0], [0.12, -3, "out"], [0.24, 0, "hit"], [0.31, -0.6], [0.38, 0]],
+      "strong": [[0, 0], [0.15, -4, "out"], [0.3, 0, "hit"], [0.4, -1.5, "out"], [0.5, 0, "hit"], [0.57, -0.3], [0.63, 0]]
+    },
+    "ripple.opacity": {
+      "light":  [[0, 0], [0.24, 0], [0.26, 1, "out"], [0.34, 1], [0.48, 0, "in"]],
+      "strong": [[0, 0], [0.3, 0], [0.32, 1, "out"], [0.38, 1], [0.48, 0, "in"], [0.5, 0], [0.52, 0.85, "out"], [0.58, 0.85], [0.72, 0, "in"]]
+    },
+    "ripple.scale": {
+      "light":  [[0, 1], [0.24, 0.65, "step"], [0.48, 1.4, "out"], [0.5, 1, "step"]],
+      "strong": [[0, 1], [0.3, 0.65, "step"], [0.48, 1.6, "out"], [0.5, 0.65, "step"], [0.72, 1.2, "out"], [0.74, 1, "step"]]
+    }
+  }
+}

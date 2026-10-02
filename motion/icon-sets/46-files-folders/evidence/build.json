@@ -9819,34 +9819,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Import file",
-      "description": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
+      "description": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
       "label": "Import file",
-      "intent": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
+      "intent": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.48,
+      "rest": 32,
       "keyPoses": [
         0,
-        0.12,
-        0.24,
-        0.36,
-        0.48,
-        0.6
+        0.096,
+        0.192,
+        0.288,
+        0.384,
+        0.48
       ],
-      "layers": 16,
+      "layers": 22,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -9856,41 +9854,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "356f37e95e86ba164696979e667367c1888b8f4aaf78161660fcccd47ecae1cc",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-        "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-        "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-        "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-        "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-      },
-      "brief": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "import-file-sheet"
-        },
-        {
-          "type": "fixed",
-          "part": "import-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "import-file-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "import-file-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "import-file-head"
-        }
-      ],
+      "nativeSha256": "ea3cf557e4f76231e8ae144add598cce3ab75cdaf903bbe3306f91cf5e4efb21",
+      "sourceSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
+      "planSha256": "e1b909fd7e83bc357b18642ca0b3f720d501f972f5b4708364fc74b1d730aca6",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
+      "constraints": [],
       "category": "Files & folders",
-      "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+      "definitionsSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -9921,18 +9892,90 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Import file",
-          "description": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
+          "description": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
           "label": "Import file",
-          "intent": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
+          "intent": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
+          "width": 32,
+          "height": 32,
+          "fps": 60,
+          "frames": 144,
+          "duration": 2.4,
+          "active": 0.48,
+          "rest": 32,
+          "keyPoses": [
+            0,
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
+          ],
+          "layers": 22,
+          "slots": [
+            "color.primary",
+            "style.outline.light",
+            "style.outline.regular",
+            "style.outline.bold",
+            "style.solid",
+            "style.tint",
+            "style.outline.width"
+          ],
+          "nativeSha256": "ea3cf557e4f76231e8ae144add598cce3ab75cdaf903bbe3306f91cf5e4efb21",
+          "sourceSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
+          "planSha256": "e1b909fd7e83bc357b18642ca0b3f720d501f972f5b4708364fc74b1d730aca6",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
+          "constraints": [],
+          "category": "Files & folders",
+          "definitionsSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
+          "primary": {
+            "dark": "#00ddb3",
+            "light": "#008c76"
+          },
+          "duotoneFill": true,
+          "styles": [
+            "outline",
+            "solid",
+            "duotone"
+          ],
+          "strokeWidth": {
+            "min": 1.5,
+            "default": 2,
+            "max": 2.5,
+            "presets": [
+              1.5,
+              2,
+              2.5
+            ],
+            "units": "32-unit construction grid"
+          },
+          "bytes": 4370,
+          "sha256": "902520eb9950b3d109557bde0fec0c3d4df351dc5e789cfd5cbb9bba8dba1e22"
+        },
+        {
+          "name": "import-file-strong",
+          "icon": "import-file",
+          "motionId": "strong",
+          "continuous": false,
+          "previewReset": false,
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
+          "motionLabel": "Strong motion",
+          "direction": "forward",
+          "stateful": false,
+          "startState": "rest",
+          "endState": "rest",
+          "heading": "Import file",
+          "description": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
+          "label": "Import file",
+          "intent": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -9948,7 +9991,7 @@
             0.48,
             0.6
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -9958,41 +10001,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "356f37e95e86ba164696979e667367c1888b8f4aaf78161660fcccd47ecae1cc",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "import-file-sheet"
-            },
-            {
-              "type": "fixed",
-              "part": "import-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "import-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "import-file-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "import-file-head"
-            }
-          ],
+          "nativeSha256": "160329adc010f754f86c469b8efcd13a51362eef0c988886c1ebe7deb4bb6f2f",
+          "sourceSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
+          "planSha256": "e1b909fd7e83bc357b18642ca0b3f720d501f972f5b4708364fc74b1d730aca6",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10014,111 +10030,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4457,
-          "sha256": "3c5b81c143c26da06093b3e687835f5f970bc383f92eb5403e1b0bf3be741f6c"
-        },
-        {
-          "name": "import-file-strong",
-          "icon": "import-file",
-          "motionId": "strong",
-          "continuous": false,
-          "previewReset": false,
-          "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
-          "motionLabel": "Strong motion",
-          "direction": "forward",
-          "startState": "rest",
-          "endState": "rest",
-          "heading": "Import file",
-          "description": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
-          "label": "Import file",
-          "intent": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
-          "width": 32,
-          "height": 32,
-          "fps": 60,
-          "frames": 144,
-          "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
-          "keyPoses": [
-            0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
-          ],
-          "layers": 16,
-          "slots": [
-            "color.primary",
-            "style.outline.light",
-            "style.outline.regular",
-            "style.outline.bold",
-            "style.solid",
-            "style.tint",
-            "style.outline.width"
-          ],
-          "nativeSha256": "889b7e47d75e697391499faef51efaba8c21eb6280028d71158c2b0b05809275",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "import-file-sheet"
-            },
-            {
-              "type": "fixed",
-              "part": "import-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "import-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "import-file-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "import-file-head"
-            }
-          ],
-          "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
-          "primary": {
-            "dark": "#00ddb3",
-            "light": "#008c76"
-          },
-          "duotoneFill": true,
-          "styles": [
-            "outline",
-            "solid",
-            "duotone"
-          ],
-          "strokeWidth": {
-            "min": 1.5,
-            "default": 2,
-            "max": 2.5,
-            "presets": [
-              1.5,
-              2,
-              2.5
-            ],
-            "units": "32-unit construction grid"
-          },
-          "bytes": 4458,
-          "sha256": "d812f82e2cd0df3de4e5c6dcad1e378aeef61e058eee595d716494d6f0d7a80d"
+          "bytes": 4371,
+          "sha256": "3d88e10e8afc33aecc25078936abbc0ef9aa19580f59b9041adbbb822dc0d838"
         }
       ],
       "animations": [
@@ -10129,18 +10042,90 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Import file",
-          "description": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
+          "description": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
           "label": "Import file",
-          "intent": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
+          "intent": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
+          "width": 32,
+          "height": 32,
+          "fps": 60,
+          "frames": 144,
+          "duration": 2.4,
+          "active": 0.48,
+          "rest": 32,
+          "keyPoses": [
+            0,
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
+          ],
+          "layers": 22,
+          "slots": [
+            "color.primary",
+            "style.outline.light",
+            "style.outline.regular",
+            "style.outline.bold",
+            "style.solid",
+            "style.tint",
+            "style.outline.width"
+          ],
+          "nativeSha256": "ea3cf557e4f76231e8ae144add598cce3ab75cdaf903bbe3306f91cf5e4efb21",
+          "sourceSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
+          "planSha256": "e1b909fd7e83bc357b18642ca0b3f720d501f972f5b4708364fc74b1d730aca6",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
+          "constraints": [],
+          "category": "Files & folders",
+          "definitionsSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
+          "primary": {
+            "dark": "#00ddb3",
+            "light": "#008c76"
+          },
+          "duotoneFill": true,
+          "styles": [
+            "outline",
+            "solid",
+            "duotone"
+          ],
+          "strokeWidth": {
+            "min": 1.5,
+            "default": 2,
+            "max": 2.5,
+            "presets": [
+              1.5,
+              2,
+              2.5
+            ],
+            "units": "32-unit construction grid"
+          },
+          "bytes": 4370,
+          "sha256": "902520eb9950b3d109557bde0fec0c3d4df351dc5e789cfd5cbb9bba8dba1e22"
+        },
+        {
+          "name": "import-file-strong",
+          "icon": "import-file",
+          "motionId": "strong",
+          "continuous": false,
+          "previewReset": false,
+          "cycleDegrees": 0,
+          "source": "gai-icon/2",
+          "motionLabel": "Strong motion",
+          "direction": "forward",
+          "stateful": false,
+          "startState": "rest",
+          "endState": "rest",
+          "heading": "Import file",
+          "description": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
+          "label": "Import file",
+          "intent": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -10156,7 +10141,7 @@
             0.48,
             0.6
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10166,41 +10151,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "356f37e95e86ba164696979e667367c1888b8f4aaf78161660fcccd47ecae1cc",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "import-file-sheet"
-            },
-            {
-              "type": "fixed",
-              "part": "import-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "import-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "import-file-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "import-file-head"
-            }
-          ],
+          "nativeSha256": "160329adc010f754f86c469b8efcd13a51362eef0c988886c1ebe7deb4bb6f2f",
+          "sourceSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
+          "planSha256": "e1b909fd7e83bc357b18642ca0b3f720d501f972f5b4708364fc74b1d730aca6",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Content arrives. Light: the arrow drives through the opening into the sheet and stops dead; the sheet takes the knock, rebounds and settles, and a content line draws on inside it where the arrow points. The spent arrow fades and a fresh one slides in from the left to its rest pose, and the line fades as it lands. Strong: a short draw-back, a harder drive, a bigger knock that rebounds twice, and the line snaps on.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "66dc798f8c8de160ad6311da69289f3dc659596d3808f04662772924c270f77d",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10222,115 +10180,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4457,
-          "sha256": "3c5b81c143c26da06093b3e687835f5f970bc383f92eb5403e1b0bf3be741f6c"
-        },
-        {
-          "name": "import-file-strong",
-          "icon": "import-file",
-          "motionId": "strong",
-          "continuous": false,
-          "previewReset": false,
-          "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
-          "motionLabel": "Strong motion",
-          "direction": "forward",
-          "startState": "rest",
-          "endState": "rest",
-          "heading": "Import file",
-          "description": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
-          "label": "Import file",
-          "intent": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
-          "width": 32,
-          "height": 32,
-          "fps": 60,
-          "frames": 144,
-          "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
-          "keyPoses": [
-            0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
-          ],
-          "layers": 16,
-          "slots": [
-            "color.primary",
-            "style.outline.light",
-            "style.outline.regular",
-            "style.outline.bold",
-            "style.solid",
-            "style.tint",
-            "style.outline.width"
-          ],
-          "nativeSha256": "889b7e47d75e697391499faef51efaba8c21eb6280028d71158c2b0b05809275",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "An arrow drives into the opening on the sheet's left edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive through the opening with a hit, then a return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "import-file-sheet"
-            },
-            {
-              "type": "fixed",
-              "part": "import-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "import-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "import-file-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "import-file-head"
-            }
-          ],
-          "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
-          "primary": {
-            "dark": "#00ddb3",
-            "light": "#008c76"
-          },
-          "duotoneFill": true,
-          "styles": [
-            "outline",
-            "solid",
-            "duotone"
-          ],
-          "strokeWidth": {
-            "min": 1.5,
-            "default": 2,
-            "max": 2.5,
-            "presets": [
-              1.5,
-              2,
-              2.5
-            ],
-            "units": "32-unit construction grid"
-          },
-          "bytes": 4458,
-          "sha256": "d812f82e2cd0df3de4e5c6dcad1e378aeef61e058eee595d716494d6f0d7a80d"
+          "bytes": 4371,
+          "sha256": "3d88e10e8afc33aecc25078936abbc0ef9aa19580f59b9041adbbb822dc0d838"
         }
       ],
-      "bytes": 4457,
-      "sha256": "3c5b81c143c26da06093b3e687835f5f970bc383f92eb5403e1b0bf3be741f6c"
+      "bytes": 4370,
+      "sha256": "902520eb9950b3d109557bde0fec0c3d4df351dc5e789cfd5cbb9bba8dba1e22"
     },
     {
       "name": "export-file",
@@ -10339,34 +10194,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Export file",
-      "description": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+      "description": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
       "label": "Export file",
-      "intent": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+      "intent": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.6,
-      "rest": 39,
+      "active": 0.44,
+      "rest": 29,
       "keyPoses": [
         0,
-        0.12,
-        0.24,
-        0.36,
-        0.48,
-        0.6
+        0.08800000000000001,
+        0.17600000000000002,
+        0.264,
+        0.35200000000000004,
+        0.44
       ],
-      "layers": 16,
+      "layers": 22,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -10376,41 +10229,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "885b572487c2e8559a00265065d7343a6569b3e22426065f42de63f4d9923bff",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-        "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-        "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-        "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-        "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-      },
-      "brief": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "export-file-sheet"
-        },
-        {
-          "type": "fixed",
-          "part": "export-file-sheet-fold"
-        },
-        {
-          "type": "fixed",
-          "part": "export-file-sheet-interior"
-        },
-        {
-          "type": "rigid",
-          "part": "export-file-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "export-file-head"
-        }
-      ],
+      "nativeSha256": "57af7cfbef5f6cbbe4fc4f80cfe74834b8dd678acddfe26786ea1931f3ac36da",
+      "sourceSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
+      "planSha256": "f48d6fd2725780b0ed18e77ce6b9a07119abe99549883d6536a6f7b4690e4265",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
+      "constraints": [],
       "category": "Files & folders",
-      "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+      "definitionsSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -10441,34 +10267,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Export file",
-          "description": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+          "description": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
           "label": "Export file",
-          "intent": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+          "intent": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.44,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.08800000000000001,
+            0.17600000000000002,
+            0.264,
+            0.35200000000000004,
+            0.44
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10478,41 +10302,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "885b572487c2e8559a00265065d7343a6569b3e22426065f42de63f4d9923bff",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "export-file-sheet"
-            },
-            {
-              "type": "fixed",
-              "part": "export-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "export-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "export-file-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "export-file-head"
-            }
-          ],
+          "nativeSha256": "57af7cfbef5f6cbbe4fc4f80cfe74834b8dd678acddfe26786ea1931f3ac36da",
+          "sourceSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
+          "planSha256": "f48d6fd2725780b0ed18e77ce6b9a07119abe99549883d6536a6f7b4690e4265",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10534,8 +10331,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4455,
-          "sha256": "1586beed5605fc69054157dfd4eadb98d771d5a8bddb104136d577fd32da8bb4"
+          "bytes": 4393,
+          "sha256": "c35f9a87558d7401bfaab2540cb4f282d1a31134a1ccefab9b77d7bad0715b64"
         },
         {
           "name": "export-file-strong",
@@ -10544,34 +10341,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Export file",
-          "description": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+          "description": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
           "label": "Export file",
-          "intent": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+          "intent": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.59,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.118,
+            0.236,
+            0.354,
+            0.472,
+            0.59
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10581,41 +10376,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "545afdd71b044f5ea2d7b314854ebbe1e69716e55c173ebd8bf2c115a84c3384",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "export-file-sheet"
-            },
-            {
-              "type": "fixed",
-              "part": "export-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "export-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "export-file-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "export-file-head"
-            }
-          ],
+          "nativeSha256": "dd333b9629190c7b9faed40d22c2cd6507fd36c9d37790382e3d9c06d77166bd",
+          "sourceSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
+          "planSha256": "f48d6fd2725780b0ed18e77ce6b9a07119abe99549883d6536a6f7b4690e4265",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10637,8 +10405,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4457,
-          "sha256": "4accdb70c0b63a564ef8be0e0635f2bb45577c66b72093972aa704254eaa7244"
+          "bytes": 4395,
+          "sha256": "63b251898297779594d8f1b711fa1a3ad4649e685c2a1205b0bacf6d7e37e43f"
         }
       ],
       "animations": [
@@ -10649,34 +10417,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Export file",
-          "description": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+          "description": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
           "label": "Export file",
-          "intent": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+          "intent": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.6,
-          "rest": 39,
+          "active": 0.44,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.12,
-            0.24,
-            0.36,
-            0.48,
-            0.6
+            0.08800000000000001,
+            0.17600000000000002,
+            0.264,
+            0.35200000000000004,
+            0.44
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10686,41 +10452,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "885b572487c2e8559a00265065d7343a6569b3e22426065f42de63f4d9923bff",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "export-file-sheet"
-            },
-            {
-              "type": "fixed",
-              "part": "export-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "export-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "export-file-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "export-file-head"
-            }
-          ],
+          "nativeSha256": "57af7cfbef5f6cbbe4fc4f80cfe74834b8dd678acddfe26786ea1931f3ac36da",
+          "sourceSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
+          "planSha256": "f48d6fd2725780b0ed18e77ce6b9a07119abe99549883d6536a6f7b4690e4265",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10742,8 +10481,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4455,
-          "sha256": "1586beed5605fc69054157dfd4eadb98d771d5a8bddb104136d577fd32da8bb4"
+          "bytes": 4393,
+          "sha256": "c35f9a87558d7401bfaab2540cb4f282d1a31134a1ccefab9b77d7bad0715b64"
         },
         {
           "name": "export-file-strong",
@@ -10752,34 +10491,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Export file",
-          "description": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+          "description": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
           "label": "Export file",
-          "intent": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
+          "intent": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.59,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.118,
+            0.236,
+            0.354,
+            0.472,
+            0.59
           ],
-          "layers": 16,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10789,41 +10526,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "545afdd71b044f5ea2d7b314854ebbe1e69716e55c173ebd8bf2c115a84c3384",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "75b413b386dbfc4b4efcee95d46f349a2b12366c59ad5a574eb631bc57321f06",
-            "batches/badges.mjs": "4d8321d1bde43a9ef66d5c818e6d80885d43ee21dfd432f6a69d3115e6340101",
-            "batches/folders.mjs": "006fd0adf542872f385dbb3f37c35065eb2bd6740a1995283434284c7bf08dd0",
-            "batches/helpers.mjs": "f946ae0880b5c271482db1a42c21baa49fc17b926f74b596b9f63fa5d44a04d0",
-            "batches/types.mjs": "e3155f950864662ebe9b42899b902f2d9b2fc025a3e7b55538e7f51841f97ff9"
-          },
-          "brief": "An arrow leaves through the opening on the sheet's right edge and returns. Light: a 2.2-unit push. Strong: a short draw back, a fast 3.5-unit drive out of the sheet with a hit, then a return.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "export-file-sheet"
-            },
-            {
-              "type": "fixed",
-              "part": "export-file-sheet-fold"
-            },
-            {
-              "type": "fixed",
-              "part": "export-file-sheet-interior"
-            },
-            {
-              "type": "rigid",
-              "part": "export-file-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "export-file-head"
-            }
-          ],
+          "nativeSha256": "dd333b9629190c7b9faed40d22c2cd6507fd36c9d37790382e3d9c06d77166bd",
+          "sourceSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
+          "planSha256": "f48d6fd2725780b0ed18e77ce6b9a07119abe99549883d6536a6f7b4690e4265",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Content leaves. Light: the arrow launches out through the opening with a short trail streaking behind it and fades before the edge; the sheet recoils from the launch, rebounds and settles; a fresh arrow slides out of the sheet, just past its rest pose, and settles. Strong: the arrow draws back into the sheet first, then launches faster with a longer trail, the sheet recoils harder and settles in two beats, and the fresh arrow overshoots further and settles in two beats.",
+          "constraints": [],
           "category": "Files & folders",
-          "definitionsSha256": "8d567136416c5e85c0f6b677976cc50e60d406e8d548f45b55866d5334f16319",
+          "definitionsSha256": "01cfe28ece310a0758a822c1e970062dacb877d22a01a1d3617491453e2febb5",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10845,12 +10555,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4457,
-          "sha256": "4accdb70c0b63a564ef8be0e0635f2bb45577c66b72093972aa704254eaa7244"
+          "bytes": 4395,
+          "sha256": "63b251898297779594d8f1b711fa1a3ad4649e685c2a1205b0bacf6d7e37e43f"
         }
       ],
-      "bytes": 4455,
-      "sha256": "1586beed5605fc69054157dfd4eadb98d771d5a8bddb104136d577fd32da8bb4"
+      "bytes": 4393,
+      "sha256": "c35f9a87558d7401bfaab2540cb4f282d1a31134a1ccefab9b77d7bad0715b64"
     },
     {
       "name": "image-file",
