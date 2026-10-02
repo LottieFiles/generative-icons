@@ -1,0 +1,304 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "bell",
+  "label": "Bell",
+  "intent": "The bell rings. Light: the bell swings out from its mount, the clapper trails it and strikes, a ring arc flicks out on each side and fades as it spreads, and the swing decays back to rest in smaller beats. Strong: a wider swing that rings twice, once at each end of the swing, and the clapper chases the bell through a longer decay. The mount never moves.",
+  "parts": {
+    "mount": {
+      "shape": {
+        "line": [
+          [
+            15.75,
+            5.6
+          ],
+          [
+            16.25,
+            5.6
+          ]
+        ]
+      },
+      "solid": {
+        "circle": [
+          [
+            16,
+            5.6
+          ],
+          1
+        ]
+      }
+    },
+    "neck": {
+      "shape": {
+        "line": [
+          [
+            16,
+            5.6
+          ],
+          [
+            16,
+            8
+          ]
+        ]
+      },
+      "solid": {
+        "rect": [
+          15,
+          5.6,
+          2,
+          2.9
+        ],
+        "r": 0.4
+      }
+    },
+    "body": {
+      "shape": {
+        "path": "M16 8 C12.3 8 10 10.64 10 14 L10 16.2 C10 17.6 9.7 18 8.59 19.11 C7.708 19.992 8.333 21.5 9.58 21.5 L22.42 21.5 C23.667 21.5 24.292 19.992 23.41 19.11 C22.3 18 22 17.6 22 16.2 L22 14 C22 10.64 19.7 8 16 8 Z"
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M16 7.55 C12.14 7.55 9.48 10.28 9.48 14 L9.48 16.2 C9.48 18.25 8.63 19.17 7.634 20.166 C6.846 20.954 7.404 22.3 8.518 22.3 L23.482 22.3 C24.596 22.3 25.154 20.954 24.366 20.166 C23.37 19.17 22.52 18.25 22.52 16.2 L22.52 14 C22.52 10.28 19.86 7.55 16 7.55 Z"
+      }
+    },
+    "clapper": {
+      "shape": {
+        "path": "M13.8 25.8 C14.5 27.25 17.5 27.25 18.2 25.8"
+      },
+      "solid": {
+        "path": "M14.25 24.8 L17.75 24.8 C18.07 24.8 18.3 25.02 18.26 25.34 C18.08 26.53 17.18 27.25 16 27.25 C14.82 27.25 13.92 26.53 13.74 25.34 C13.7 25.02 13.93 24.8 14.25 24.8 Z"
+      }
+    },
+    "ring-l": {
+      "//": "hidden at rest: the ring only exists while the bell sounds",
+      "shape": {
+        "arc": [
+          [
+            16,
+            13
+          ],
+          11,
+          198,
+          232
+        ]
+      },
+      "hidden": true
+    },
+    "ring-r": {
+      "mirror": {
+        "of": "ring-l"
+      }
+    }
+  },
+  "rigs": {
+    "bell": {
+      "//": "the shell swings from its mount",
+      "pivot": [
+        16,
+        5.6
+      ],
+      "carries": [
+        "neck",
+        "body"
+      ]
+    },
+    "clapper": {
+      "//": "hangs from the same mount and trails the shell",
+      "pivot": [
+        16,
+        5.6
+      ]
+    }
+  },
+  "motion": {
+    "bell.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          12,
+          "out"
+        ],
+        [
+          0.21,
+          -7
+        ],
+        [
+          0.32,
+          3.5
+        ],
+        [
+          0.42,
+          -1.2
+        ],
+        [
+          0.5,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          16,
+          "out"
+        ],
+        [
+          0.25,
+          -13
+        ],
+        [
+          0.38,
+          8
+        ],
+        [
+          0.5,
+          -4
+        ],
+        [
+          0.61,
+          1.5
+        ],
+        [
+          0.7,
+          0
+        ]
+      ]
+    },
+    "clapper.rotate": {
+      "follow": "bell.rotate",
+      "lag": 0.06
+    },
+    "ring-l.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.11,
+          1,
+          "out"
+        ],
+        [
+          0.22,
+          1
+        ],
+        [
+          0.32,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.12,
+          1,
+          "out"
+        ],
+        [
+          0.2,
+          1
+        ],
+        [
+          0.28,
+          0,
+          "in"
+        ],
+        [
+          0.3,
+          0
+        ],
+        [
+          0.33,
+          1,
+          "out"
+        ],
+        [
+          0.41,
+          1
+        ],
+        [
+          0.5,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "ring-l.r": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.32,
+          1.5,
+          "out"
+        ],
+        [
+          0.34,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.28,
+          1.5,
+          "out"
+        ],
+        [
+          0.3,
+          0,
+          "step"
+        ],
+        [
+          0.5,
+          1.5,
+          "out"
+        ],
+        [
+          0.52,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "ring-r.opacity": {
+      "follow": "ring-l.opacity"
+    },
+    "ring-r.r": {
+      "follow": "ring-l.r"
+    }
+  }
+}

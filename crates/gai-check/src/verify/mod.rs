@@ -254,6 +254,8 @@ pub(crate) struct SetContext<'a> {
     /// Actions of icons adopted from spec v2: they have no scenes, so a stage that names
     /// one must skip it ([`SetContext::is_adopted`]) rather than read a stale scene.
     adopted: std::collections::HashSet<String>,
+    /// Every icon's `name`, adopted ones included, in `set.json` order.
+    pub(crate) full_names: Vec<Value>,
 }
 
 impl<'a> SetContext<'a> {
@@ -265,6 +267,7 @@ impl<'a> SetContext<'a> {
             hashes: Mutex::default(),
             scenes: Mutex::default(),
             adopted: Default::default(),
+            full_names: Vec::new(),
         }
     }
 
@@ -387,18 +390,22 @@ fn run_stages(
     let mut set = SetContext::new(paths, manifest, options);
     set.adopted = adopted
         .iter()
-        .flat_map(|icon| icon.get("animations").and_then(Value::as_array).into_iter().flatten())
+        // Frozen sets list every action under `motions`.
+        .flat_map(|icon| icon.get("animations").or_else(|| icon.get("motions")).and_then(Value::as_array).into_iter().flatten())
         .filter_map(|a| a.get("name").and_then(Value::as_str).map(str::to_string))
         .collect();
+    set.full_names = full.icons()?.iter().map(|i| i.get("name").cloned().unwrap_or(Value::Null)).collect();
     scope::check(&set)?;
     if let Some(tail) = &profile.rules {
         tail.check_set(&full)?;
     }
     let Some(mut directed) = generic::run(&set, &profile.generic)? else {
-        ensure(adopted.is_empty(), || {
-            format!("{}: a frozen set cannot hold adopted spec icons", run.set_id)
-        })?;
         // 01/02 write no evidence.
+        if !adopted.is_empty() {
+            adopted::check(&set, &adopted)?;
+            run.summary
+                .push(format!("PASS {}: {} adopted spec icons", run.set_id, adopted.len()));
+        }
         run.summary
             .push(format!("PASS {}: frozen legacy checks", run.set_id));
         return Ok(());

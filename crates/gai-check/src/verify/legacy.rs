@@ -386,10 +386,8 @@ pub(super) fn run_set(
     variant: &ActionVariant,
 ) -> Result<(), VerifyError> {
     let icons = set.manifest.icons()?;
-    let names: Vec<Value> = icons
-        .iter()
-        .map(|i| i.get("name").cloned().unwrap_or(Value::Null))
-        .collect();
+    // The set's icon list includes icons adopted from specs, which the adopted stage checks.
+    let names: Vec<Value> = set.full_names.clone();
     let heart_bell = generic == Generic::HeartBell;
     let expected = if heart_bell {
         json!(["heart", "bell"])
@@ -414,7 +412,7 @@ pub(super) fn run_set(
     }
     if heart_bell {
         let baseline = read_json(&set.paths.set_dir.join("evidence/light-baseline.json"))?;
-        for name in ["heart", "bell"] {
+        for name in ["heart", "bell"].into_iter().filter(|name| !set.is_adopted(name)) {
             let h = set.hash(&set.paths.assets_dir.join(format!("{name}.json")))?;
             let want = baseline.get(format!("prototype/icons/01/assets/{name}.json"));
             ensure(want.and_then(Value::as_str) == Some(h.as_str()), || {

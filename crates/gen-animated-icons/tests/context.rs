@@ -51,7 +51,7 @@ fn library_mode_matches_the_generation_context_goldens() {
     assert_eq!(inputs.as_array().unwrap().len(), 63);
     assert_eq!(
         gai_core::sha256_hex(sorted_py_json(&packet)),
-        "c665293650ccf1123ff4af460c0a6ded45b0fc657bd57968e2e71cfbecf67439"
+        "f0521027be419c9ad307f91924940e4538402949bce8cbd6e4c15f69d0b7d70d"
     );
 
     // The prompt embeds the packet after the skill's rules.
@@ -192,10 +192,10 @@ fn text_output_lists_candidates_and_references() {
         "Candidates (of 1005 library icons):",
         "References:",
         "  bell                         Bell · Essentials, set 01-heart-bell",
-        "    intent: The bell swings wider while its clapper follows with more energy, then settles upright.",
-        "    light: active 0.65 s, rest frame 40.8",
-        "    strong: active 0.72 s, rest frame 45.6",
-        "    initial outline geometry: 4 layers",
+        "    intent: The bell rings. Light: the bell swings out from its mount, the clapper trails it and strikes, a ring arc flicks out on each side and fades as it spreads, and the swing decays back to rest in smaller beats. Strong: a wider swing that rings twice, once at each end of the swing, and the clapper chases the bell through a longer decay. The mount never moves.",
+        "    light: active 0.56 s, rest frame 37, states rest to rest",
+        "    strong: active 0.76 s, rest frame 48, states rest to rest",
+        "    initial outline geometry: 6 layers",
         "The whole packet (the contract, and each reference's initial outline geometry) is JSON: add --json.",
     ] {
         assert!(lines.contains(&line), "{line:?} in\n{packet}");

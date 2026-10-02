@@ -32,12 +32,12 @@ fn legacy_projects_get_the_exact_lottie_icons_bytes() {
     run(app, &["add", "heart", "--library", dist]).ok();
     // cli.md §2.8, captured from packages/cli/dist/cli.mjs at 098688f.
     for (file, golden) in [
-        ("src/lottie-icons/heart.mjs", "982a4b0581dd127f15268b9bdee65a758baa69ce274d4a7e81abddbb6baf141c"),
+        ("src/lottie-icons/heart.mjs", "2aa7b22793d612d1c92f7c7c2bce6ce79aaff2383068b7bc01cdb6b695ec164e"),
         ("src/lottie-icons/heart.d.mts", "96b48dc9b307dcb964061ce36bd10811af76a7963f54504db20543a9cc2bb38e"),
         ("src/lottie-icons/settings.mjs", "4ba48edd3c7eb4345864d8988f91a9b2983c05bed0427193176681c3024939c3"),
         ("src/lottie-icons/settings.d.mts", "76d606dfd6a56c4abef4988d72253cef095e7d39f8152db5ab227d74fab3c937"),
         ("public/lottie-icons/heart.lottie", "bc042c12c7eee542bc34925c132e3ce46c298c2ac6a7387b714d50afcde1345a"),
-        (".lottie-icons/lock.json", "7d016a198b1aa6a2462b4fd612b9fa6700335e5188458a05008d2d36308220d9"),
+        (".lottie-icons/lock.json", "b414257902cff29650d7f1e4a4b6cc18e19961bf56dcd0ba61076c80e0a2808b"),
     ] {
         assert_eq!(sha(app, file), golden, "{file}");
     }
@@ -49,7 +49,7 @@ fn legacy_projects_get_the_exact_lottie_icons_bytes() {
     assert_eq!(result["icons"], json!(["heart", "menu", "heart"]));
     assert_eq!(
         sha(app, "src/lottie-icons/menu.mjs"),
-        "0cdf24f243921b7e073e3a1f7f263a299d674ed8ef4cb3a1e5f89271dca1709c"
+        "3f47a0f2875271c23a5574c2c5e86c5d7407d0cb478205780adf34e785aec418"
     );
     assert_eq!(
         sha(app, "src/lottie-icons/menu.d.mts"),
@@ -71,8 +71,8 @@ fn current_projects_differ_from_the_goldens_only_by_name() {
             .replace("Edit gen-animated-icons.json,", "Edit lottie-icons.json,")
     };
     for (file, golden) in [
-        ("src/gen-animated-icons/heart.mjs", "982a4b0581dd127f15268b9bdee65a758baa69ce274d4a7e81abddbb6baf141c"),
-        ("src/gen-animated-icons/menu.mjs", "0cdf24f243921b7e073e3a1f7f263a299d674ed8ef4cb3a1e5f89271dca1709c"),
+        ("src/gen-animated-icons/heart.mjs", "2aa7b22793d612d1c92f7c7c2bce6ce79aaff2383068b7bc01cdb6b695ec164e"),
+        ("src/gen-animated-icons/menu.mjs", "3f47a0f2875271c23a5574c2c5e86c5d7407d0cb478205780adf34e785aec418"),
         ("src/gen-animated-icons/settings.mjs", "4ba48edd3c7eb4345864d8988f91a9b2983c05bed0427193176681c3024939c3"),
     ] {
         assert_eq!(gai_core::sha256_hex(renamed(read(app, file))), golden, "{file}");

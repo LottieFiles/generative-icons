@@ -1,0 +1,379 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "search",
+  "label": "Search",
+  "intent": "The search finds something. Light: the magnifier glides out to the left, scanning, and comes back to land on its spot with a hit; the lens pops as it finds, and a glint draws on inside the lens and fades. Strong: it scans left and then right before landing, the lens pops harder with a rebound, and the glint snaps on.",
+  "parts": {
+    "body": {
+      "shape": {
+        "circle": [
+          [
+            13.8,
+            13.8
+          ],
+          7.6
+        ]
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M13.8 5.65 C18.301 5.65 21.95 9.299 21.95 13.8 C21.95 18.301 18.301 21.95 13.8 21.95 C9.299 21.95 5.65 18.301 5.65 13.8 C5.65 9.299 9.299 5.65 13.8 5.65 L13.8 8.15 C10.68 8.15 8.15 10.68 8.15 13.8 C8.15 16.92 10.68 19.45 13.8 19.45 C16.92 19.45 19.45 16.92 19.45 13.8 C19.45 10.68 16.92 8.15 13.8 8.15 L13.8 5.65 Z"
+      },
+      "//": "v1 Solid: a hollow ring, inset"
+    },
+    "handle": {
+      "shape": {
+        "line": [
+          [
+            19.174,
+            19.174
+          ],
+          [
+            25.15,
+            25.15
+          ]
+        ]
+      }
+    },
+    "glint": {
+      "//": "hidden at rest: the find, a shine drawn on inside the lens",
+      "shape": {
+        "arc": [
+          [
+            13.8,
+            13.8
+          ],
+          3.6,
+          195,
+          255
+        ]
+      },
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "search": {
+      "pivot": [
+        16,
+        16
+      ],
+      "carries": [
+        "lens",
+        "handle"
+      ]
+    },
+    "lens": {
+      "//": "the lens pops about its centre; the handle stays rigid",
+      "pivot": [
+        13.8,
+        13.8
+      ],
+      "carries": [
+        "body",
+        "glint"
+      ]
+    },
+    "handle": {
+      "//": "the handle stays on the lens rim as the lens pops: x = y = 5.374 (scale - 1)",
+      "pivot": [
+        19.174,
+        19.174
+      ]
+    }
+  },
+  "motion": {
+    "search.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -2.4,
+          "inOut"
+        ],
+        [
+          0.24,
+          0,
+          "hit"
+        ],
+        [
+          0.31,
+          0.4
+        ],
+        [
+          0.38,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.11,
+          -2.4,
+          "inOut"
+        ],
+        [
+          0.25,
+          2,
+          "inOut"
+        ],
+        [
+          0.36,
+          0,
+          "hit"
+        ],
+        [
+          0.43,
+          -0.5
+        ],
+        [
+          0.5,
+          0.15
+        ],
+        [
+          0.56,
+          0
+        ]
+      ]
+    },
+    "search.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -0.8,
+          "inOut"
+        ],
+        [
+          0.24,
+          0,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.11,
+          -0.8,
+          "inOut"
+        ],
+        [
+          0.18,
+          -1
+        ],
+        [
+          0.25,
+          -0.8,
+          "inOut"
+        ],
+        [
+          0.36,
+          0,
+          "hit"
+        ]
+      ]
+    },
+    "lens.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.24,
+          1
+        ],
+        [
+          0.3,
+          1.14,
+          "out"
+        ],
+        [
+          0.38,
+          0.97
+        ],
+        [
+          0.46,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.36,
+          1
+        ],
+        [
+          0.42,
+          1.22,
+          "out"
+        ],
+        [
+          0.51,
+          0.94
+        ],
+        [
+          0.6,
+          1.03
+        ],
+        [
+          0.68,
+          1
+        ]
+      ]
+    },
+    "glint.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.23,
+          0
+        ],
+        [
+          0.24,
+          1,
+          "step"
+        ],
+        [
+          0.4,
+          1
+        ],
+        [
+          0.5,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.35,
+          0
+        ],
+        [
+          0.36,
+          1,
+          "step"
+        ],
+        [
+          0.56,
+          1
+        ],
+        [
+          0.66,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "glint.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.23,
+          0,
+          "step"
+        ],
+        [
+          0.36,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.35,
+          0,
+          "step"
+        ],
+        [
+          0.43,
+          1,
+          "hit"
+        ]
+      ]
+    },
+    "handle.x": {
+      "light": [
+        [
+          0,
+          0.0
+        ],
+        [
+          0.24,
+          0.0
+        ],
+        [
+          0.3,
+          0.752,
+          "out"
+        ],
+        [
+          0.38,
+          -0.161
+        ],
+        [
+          0.46,
+          0.0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0.0
+        ],
+        [
+          0.36,
+          0.0
+        ],
+        [
+          0.42,
+          1.182,
+          "out"
+        ],
+        [
+          0.51,
+          -0.322
+        ],
+        [
+          0.6,
+          0.161
+        ],
+        [
+          0.68,
+          0.0
+        ]
+      ]
+    },
+    "handle.y": {
+      "follow": "handle.x"
+    }
+  }
+}

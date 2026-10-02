@@ -147,7 +147,7 @@ fn packages_match_the_built_dist_and_carry_the_sidecar() {
     assert_eq!(sidecar.as_object().unwrap().len(), 1005);
     assert_eq!(
         sidecar["bell"]["reference"]["intent"],
-        "The bell swings wider while its clapper follows with more energy, then settles upright."
+        "The bell rings. Light: the bell swings out from its mount, the clapper trails it and strikes, a ring arc flicks out on each side and fades as it spreads, and the swing decays back to rest in smaller beats. Strong: a wider swing that rings twice, once at each end of the swing, and the clapper chases the bell through a longer decay. The mount never moves."
     );
     assert!(compared > 3000, "{compared}");
 }

@@ -4,7 +4,8 @@
 //! the spec to the set's `specs/<id>.icon.json` and the actions into the set's assets,
 //! replaces the icon's `set.json` entry (keeping its number, category and labels), and
 //! packages the set. From then on `library build` keeps the icon as adopted, and
-//! `library verify` checks it against its spec.
+//! `library verify` checks it against its spec. Frozen sets (01, 02) are never rebuilt,
+//! so adopting there only replaces the icon's assets and entry.
 
 use super::{resolve_set, sets_dir};
 use crate::cli::LibraryAdoptArgs;
@@ -31,9 +32,6 @@ struct Adoption {
 pub fn run(repo: &Path, args: &LibraryAdoptArgs) -> Result<Report> {
     let set = resolve_set(repo, &args.set)?;
     let set_dir = sets_dir(repo).join(&set);
-    if !set_dir.join("definitions.mjs").is_file() {
-        return Err(CliError::usage(format!("{set} is frozen (no definitions.mjs); its icons cannot be adopted")));
-    }
     let paths = SetPaths::new(repo, &set).map_err(|e| CliError::new(ErrorCode::InvalidCatalog, e.to_string()))?;
     let set_json_path = paths.assets.join("set.json");
     let mut record: Value = read_json(&set_json_path)?;
@@ -118,9 +116,11 @@ fn read_build(dir: &Path, record: &Value, set: &str) -> Result<Adoption> {
         .find(|i| i.get("icon") == Some(&json!(id)))
         .ok_or_else(|| CliError::new(ErrorCode::UnknownIcon, format!("{set} has no icon {id}")).with_hint("A spec replaces a library icon of the same id"))?;
 
+    // Frozen sets (01, 02) list their actions under `motions` only.
     let names = |entry: &Value| -> Vec<String> {
         let mut v: Vec<String> = entry
             .get("animations")
+            .or_else(|| entry.get("motions"))
             .and_then(Value::as_array)
             .into_iter()
             .flatten()
@@ -145,7 +145,13 @@ fn read_build(dir: &Path, record: &Value, set: &str) -> Result<Adoption> {
             }
         }
     }
-    let entry = adopt_entry(old, new);
+    let mut entry = adopt_entry(old, new);
+    // Frozen sets list actions under `motions` only, and packaging hashes only those.
+    if old.get("animations").is_none()
+        && let Some(map) = entry.as_object_mut()
+    {
+        map.remove("animations");
+    }
     let actions = new
         .get("animations")
         .and_then(Value::as_array)
@@ -203,8 +209,12 @@ fn adopt_record(record: &Value, stateful: bool, category: Option<&Value>) -> Val
     for (key, value) in record.as_object().into_iter().flatten() {
         match key.as_str() {
             "bytes" | "sha256" | "stateful" | "motions" | "animations" | "reverse" => continue,
+            // The library's category, or none where the library records none: the build's
+            // own is its project's local set.
             "category" => {
-                out.insert(key.clone(), category.cloned().unwrap_or_else(|| value.clone()));
+                if let Some(category) = category {
+                    out.insert(key.clone(), category.clone());
+                }
             }
             _ => {
                 out.insert(key.clone(), value.clone());

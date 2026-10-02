@@ -71,8 +71,9 @@ fn check_icon(set: &SetContext<'_>, icon: Record<'_>) -> Result<Value, VerifyErr
         format!("{SPECS_DIR}/{id}.icon.json: id is not {id}")
     })?;
 
-    let animations = icon.list("animations")?;
     let motions = icon.list("motions")?;
+    // Frozen sets (01, 02) list every action under `motions`.
+    let animations = if icon.get("animations").is_some() { icon.list("animations")? } else { motions.clone() };
     let names: Vec<&str> = animations.iter().map(Record::name).collect::<Result<_, _>>()?;
     let want_forward = [id.to_string(), format!("{id}-strong")];
     let forward: Vec<&str> = motions.iter().map(Record::name).collect::<Result<_, _>>()?;
