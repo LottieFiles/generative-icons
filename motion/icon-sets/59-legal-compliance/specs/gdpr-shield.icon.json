@@ -1,0 +1,535 @@
+{
+ "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+ "format": "gai-icon/2",
+ "id": "gdpr-shield",
+ "label": "GDPR shield",
+ "intent": "Every principle is checked and the data is protected. Light: a pop runs once round the ring of stars, clockwise from the top, each star swelling and settling in turn; as the last one lands the shield swells once and settles. Strong: a quicker, bigger pop runs round the ring, then the whole ring pops together as the shield swells, rebounds and settles. The stars never leave their places.",
+ "parts": {
+  "shield": {
+   "//": "v1 Solid: the filled shield with the six stars cut out at a 0.15 gap (holes r 1.15); the stars carry no Solid paint, as in v1",
+   "shape": {
+    "path": "M16 4 C20.5 6.6 24 7.2 26.5 7.2 L26.5 15 C26.5 21.6 22 26 16 27.5 C10 26 5.5 21.6 5.5 15 L5.5 7.2 C8 7.2 11.5 6.6 16 4 Z"
+   },
+   "role": "surface",
+   "solid": "fill",
+   "knockout": [
+    {
+     "part": "star-0",
+     "gap": 0.15
+    },
+    {
+     "part": "star-1",
+     "gap": 0.15
+    },
+    {
+     "part": "star-2",
+     "gap": 0.15
+    },
+    {
+     "part": "star-3",
+     "gap": 0.15
+    },
+    {
+     "part": "star-4",
+     "gap": 0.15
+    },
+    {
+     "part": "star-5",
+     "gap": 0.15
+    }
+   ]
+  },
+  "star-0": {
+   "shape": {
+    "circle": [
+     [
+      16,
+      11.5
+     ],
+     1
+    ]
+   },
+   "role": "fill"
+  },
+  "star-1": {
+   "shape": {
+    "circle": [
+     [
+      19.464,
+      13.5
+     ],
+     1
+    ]
+   },
+   "role": "fill"
+  },
+  "star-2": {
+   "shape": {
+    "circle": [
+     [
+      19.464,
+      17.5
+     ],
+     1
+    ]
+   },
+   "role": "fill"
+  },
+  "star-3": {
+   "shape": {
+    "circle": [
+     [
+      16,
+      19.5
+     ],
+     1
+    ]
+   },
+   "role": "fill"
+  },
+  "star-4": {
+   "shape": {
+    "circle": [
+     [
+      12.536,
+      17.5
+     ],
+     1
+    ]
+   },
+   "role": "fill"
+  },
+  "star-5": {
+   "shape": {
+    "circle": [
+     [
+      12.536,
+      13.5
+     ],
+     1
+    ]
+   },
+   "role": "fill"
+  }
+ },
+ "rigs": {
+  "shield": {
+   "//": "the shield swells about its centre; the stars hold their places",
+   "pivot": [
+    16,
+    15.75
+   ],
+   "carries": [
+    "shield"
+   ]
+  }
+ },
+ "motion": {
+  "star-0.r": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.06,
+     0.6,
+     "out"
+    ],
+    [
+     0.15,
+     0,
+     "inOut"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.05,
+     0.75,
+     "out"
+    ],
+    [
+     0.13,
+     0,
+     "inOut"
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.45,
+     0.35,
+     "out"
+    ],
+    [
+     0.53,
+     -0.05,
+     "inOut"
+    ],
+    [
+     0.6,
+     0
+    ]
+   ]
+  },
+  "star-1.r": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.045,
+     0
+    ],
+    [
+     0.105,
+     0.6,
+     "out"
+    ],
+    [
+     0.195,
+     0,
+     "inOut"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.045,
+     0
+    ],
+    [
+     0.095,
+     0.75,
+     "out"
+    ],
+    [
+     0.175,
+     0,
+     "inOut"
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.45,
+     0.35,
+     "out"
+    ],
+    [
+     0.53,
+     -0.05,
+     "inOut"
+    ],
+    [
+     0.6,
+     0
+    ]
+   ]
+  },
+  "star-2.r": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.09,
+     0
+    ],
+    [
+     0.15,
+     0.6,
+     "out"
+    ],
+    [
+     0.24,
+     0,
+     "inOut"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.09,
+     0
+    ],
+    [
+     0.14,
+     0.75,
+     "out"
+    ],
+    [
+     0.22,
+     0,
+     "inOut"
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.45,
+     0.35,
+     "out"
+    ],
+    [
+     0.53,
+     -0.05,
+     "inOut"
+    ],
+    [
+     0.6,
+     0
+    ]
+   ]
+  },
+  "star-3.r": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.135,
+     0
+    ],
+    [
+     0.195,
+     0.6,
+     "out"
+    ],
+    [
+     0.285,
+     0,
+     "inOut"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.135,
+     0
+    ],
+    [
+     0.185,
+     0.75,
+     "out"
+    ],
+    [
+     0.265,
+     0,
+     "inOut"
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.45,
+     0.35,
+     "out"
+    ],
+    [
+     0.53,
+     -0.05,
+     "inOut"
+    ],
+    [
+     0.6,
+     0
+    ]
+   ]
+  },
+  "star-4.r": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.18,
+     0
+    ],
+    [
+     0.24,
+     0.6,
+     "out"
+    ],
+    [
+     0.33,
+     0,
+     "inOut"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.18,
+     0
+    ],
+    [
+     0.23,
+     0.75,
+     "out"
+    ],
+    [
+     0.31,
+     0,
+     "inOut"
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.45,
+     0.35,
+     "out"
+    ],
+    [
+     0.53,
+     -0.05,
+     "inOut"
+    ],
+    [
+     0.6,
+     0
+    ]
+   ]
+  },
+  "star-5.r": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.225,
+     0
+    ],
+    [
+     0.285,
+     0.6,
+     "out"
+    ],
+    [
+     0.375,
+     0,
+     "inOut"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.225,
+     0
+    ],
+    [
+     0.275,
+     0.75,
+     "out"
+    ],
+    [
+     0.355,
+     0,
+     "inOut"
+    ],
+    [
+     0.4,
+     0
+    ],
+    [
+     0.45,
+     0.35,
+     "out"
+    ],
+    [
+     0.53,
+     -0.05,
+     "inOut"
+    ],
+    [
+     0.6,
+     0
+    ]
+   ]
+  },
+  "shield.scale": {
+   "light": [
+    [
+     0,
+     1
+    ],
+    [
+     0.33,
+     1
+    ],
+    [
+     0.4,
+     1.06,
+     "out"
+    ],
+    [
+     0.48,
+     0.99,
+     "inOut"
+    ],
+    [
+     0.55,
+     1
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     1
+    ],
+    [
+     0.38,
+     1
+    ],
+    [
+     0.45,
+     1.08,
+     "out"
+    ],
+    [
+     0.54,
+     0.97,
+     "inOut"
+    ],
+    [
+     0.62,
+     1.01
+    ],
+    [
+     0.7,
+     1
+    ]
+   ]
+  }
+ }
+}

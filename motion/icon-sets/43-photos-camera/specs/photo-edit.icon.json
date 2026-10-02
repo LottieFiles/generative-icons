@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "photo-edit",
+  "label": "Photo edit",
+  "intent": "The photo is being edited: the pencil writes on it. Light: the pencil swoops down under the photo's corner, writes a short squiggle that draws on behind its tip, and lifts back to its place while the mark fades. Strong: the pencil comes down with a tap that bounces, writes the squiggle faster, then flicks off past its place and settles. The photo never moves.",
+  "parts": {
+    "card":    {"shape": {"rect": [3.5, 6.5, 15.5, 15], "r": 2.2}, "role": "surface", "solid": "ring"},
+    "hills":   {"shape": {"path": "M6 20 C5.6 20 5.516 19.837 5.747 19.51 L8.453 15.69 C8.684 15.363 8.935 15.347 9.205 15.642 L10.595 17.158 C10.865 17.453 11.141 17.459 11.424 17.176 L11.976 16.624 C12.259 16.341 12.557 16.324 12.87 16.572 L16.73 19.628 C17.043 19.876 17 20 16.6 20 L6 20 Z"}, "solid": "fill"},
+    "sun":     {"shape": {"circle": [[15.6, 11], 1.3]}, "role": "fill"},
+    "mark":    {"//": "hidden at rest: the stroke the pencil writes, low enough that the pencil clears the photo's corner; it draws on behind the tip and fades",
+                "shape": {"wave": {"x": [18, 23.1], "y": 27, "cycles": 1, "amp": 0.65}}, "hidden": true},
+    "pencil":  {"shape": {"path": "M22.892 21.933 C22.697 21.978 22.622 21.903 22.667 21.708 L23.146 19.632 C23.206 19.372 23.331 19.148 23.519 18.959 L25.782 16.697 C26.159 16.32 26.536 16.32 26.913 16.697 L27.903 17.687 C28.28 18.064 28.28 18.441 27.903 18.818 L25.641 21.081 C25.452 21.269 25.228 21.394 24.968 21.454 L22.892 21.933 Z"}, "solid": "fill"},
+    "ferrule": {"shape": {"line": [[23.236, 19.242], [25.358, 21.364]]}, "solid": "none"}
+  },
+  "rigs": {
+    "pencil": {"//": "rigid; its tip (about 22.1, 22.5 with the stroke) traces the mark. Right travel is capped at 1.0 by the canvas (the body's edge sits at 29.5 at Bold)",
+               "pivot": [22.7, 21.9], "carries": ["pencil", "ferrule"]}
+  },
+  "motion": {
+    "//": "While writing, pencil.x runs linearly over the mark (x offset -4.1 to 1.0) and pencil.y follows the wave: 4.5 - 0.65 sin(2 pi u).",
+    "pencil.x": {
+      "light":  [[0, 0], [0.12, -4.1, "inOut"], [0.34, 1, "linear"], [0.48, 0, "out"]],
+      "strong": [[0, 0], [0.11, -4.1, "inOut"], [0.16, -4.1], [0.36, 1, "linear"], [0.48, -0.5, "out"], [0.58, 0.12], [0.66, 0]]
+    },
+    "pencil.y": {
+      "light":  [[0, 0], [0.12, 4.5, "inOut"], [0.175, 3.85], [0.23, 4.5], [0.285, 5.15], [0.34, 4.5], [0.48, 0, "out"]],
+      "strong": [[0, 0], [0.11, 5.0, "hit"], [0.16, 4.5], [0.21, 3.85], [0.26, 4.5], [0.31, 5.15], [0.36, 4.5], [0.48, -1.2, "out"], [0.58, 0.25], [0.66, 0]]
+    },
+    "mark.draw": {
+      "light":  [[0, 1], [0.12, 0, "step"], [0.34, 1, "linear"]],
+      "strong": [[0, 1], [0.16, 0, "step"], [0.36, 1, "linear"]]
+    },
+    "mark.opacity": {
+      "light":  [[0, 0], [0.12, 1, "step"], [0.4, 1], [0.5, 0, "in"]],
+      "strong": [[0, 0], [0.16, 1, "step"], [0.52, 1], [0.62, 0, "in"]]
+    }
+  }
+}

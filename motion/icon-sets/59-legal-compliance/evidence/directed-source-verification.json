@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 60,
-  "nativeTransformNodes": 330,
+  "nativeTransformNodes": 234,
   "nativeTransformMaxCoordinateError": 0.000010221319380221416,
   "checks": [
     {
@@ -46,72 +46,6 @@
         {
           "type": "rigid",
           "part": "gavel-block"
-        }
-      ]
-    },
-    {
-      "name": "justice-scale",
-      "fixedParts": [
-        "justice-scale-post",
-        "justice-scale-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "justice-scale-post"
-        },
-        {
-          "type": "fixed",
-          "part": "justice-scale-base"
-        },
-        {
-          "type": "rigid",
-          "part": "justice-scale-beam"
-        },
-        {
-          "type": "rigid",
-          "part": "justice-scale-pan-l-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "justice-scale-pan-r-frame"
-        }
-      ]
-    },
-    {
-      "name": "justice-scale-strong",
-      "fixedParts": [
-        "justice-scale-post",
-        "justice-scale-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "justice-scale-post"
-        },
-        {
-          "type": "fixed",
-          "part": "justice-scale-base"
-        },
-        {
-          "type": "rigid",
-          "part": "justice-scale-beam"
-        },
-        {
-          "type": "rigid",
-          "part": "justice-scale-pan-l-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "justice-scale-pan-r-frame"
         }
       ]
     },
@@ -196,152 +130,6 @@
       "designConstraints": []
     },
     {
-      "name": "courthouse",
-      "fixedParts": [
-        "courthouse-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "courthouse-base"
-        },
-        {
-          "type": "rigid",
-          "part": "courthouse-pediment-frame"
-        }
-      ]
-    },
-    {
-      "name": "courthouse-strong",
-      "fixedParts": [
-        "courthouse-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "courthouse-base"
-        },
-        {
-          "type": "rigid",
-          "part": "courthouse-pediment-frame"
-        }
-      ]
-    },
-    {
-      "name": "gdpr-shield",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "gdpr-shield-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "audit",
-      "fixedParts": [
-        "audit-sheet-frame",
-        "audit-entry-0",
-        "audit-entry-1",
-        "audit-entry-2",
-        "audit-entry-3"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "audit-sheet-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "audit-entry-0"
-        },
-        {
-          "type": "fixed",
-          "part": "audit-entry-1"
-        },
-        {
-          "type": "fixed",
-          "part": "audit-entry-2"
-        },
-        {
-          "type": "fixed",
-          "part": "audit-entry-3"
-        },
-        {
-          "type": "rigid",
-          "part": "audit-lens-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "audit-grip"
-        }
-      ]
-    },
-    {
-      "name": "audit-strong",
-      "fixedParts": [
-        "audit-sheet-frame",
-        "audit-entry-0",
-        "audit-entry-1",
-        "audit-entry-2",
-        "audit-entry-3"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "audit-sheet-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "audit-entry-0"
-        },
-        {
-          "type": "fixed",
-          "part": "audit-entry-1"
-        },
-        {
-          "type": "fixed",
-          "part": "audit-entry-2"
-        },
-        {
-          "type": "fixed",
-          "part": "audit-entry-3"
-        },
-        {
-          "type": "rigid",
-          "part": "audit-lens-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "audit-grip"
-        }
-      ]
-    },
-    {
       "name": "policy",
       "fixedParts": [
         "policy-roll-top-frame",
@@ -380,76 +168,6 @@
         {
           "type": "fixed",
           "part": "policy-clause-0"
-        }
-      ]
-    },
-    {
-      "name": "terms-of-service",
-      "fixedParts": [
-        "terms-of-service-page-frame",
-        "terms-of-service-track",
-        "terms-of-service-clause-0",
-        "terms-of-service-clause-4"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "terms-of-service-page-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "terms-of-service-track"
-        },
-        {
-          "type": "fixed",
-          "part": "terms-of-service-clause-0"
-        },
-        {
-          "type": "fixed",
-          "part": "terms-of-service-clause-4"
-        },
-        {
-          "type": "rigid",
-          "part": "terms-of-service-thumb"
-        }
-      ]
-    },
-    {
-      "name": "terms-of-service-strong",
-      "fixedParts": [
-        "terms-of-service-page-frame",
-        "terms-of-service-track",
-        "terms-of-service-clause-0",
-        "terms-of-service-clause-4"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "terms-of-service-page-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "terms-of-service-track"
-        },
-        {
-          "type": "fixed",
-          "part": "terms-of-service-clause-0"
-        },
-        {
-          "type": "fixed",
-          "part": "terms-of-service-clause-4"
-        },
-        {
-          "type": "rigid",
-          "part": "terms-of-service-thumb"
         }
       ]
     },
@@ -652,76 +370,6 @@
       ]
     },
     {
-      "name": "disclaimer",
-      "fixedParts": [
-        "disclaimer-print-0",
-        "disclaimer-print-1",
-        "disclaimer-print-2"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "disclaimer-print-0"
-        },
-        {
-          "type": "fixed",
-          "part": "disclaimer-print-1"
-        },
-        {
-          "type": "fixed",
-          "part": "disclaimer-print-2"
-        }
-      ]
-    },
-    {
-      "name": "disclaimer-strong",
-      "fixedParts": [
-        "disclaimer-print-0",
-        "disclaimer-print-1",
-        "disclaimer-print-2"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "disclaimer-print-0"
-        },
-        {
-          "type": "fixed",
-          "part": "disclaimer-print-1"
-        },
-        {
-          "type": "fixed",
-          "part": "disclaimer-print-2"
-        }
-      ]
-    },
-    {
-      "name": "copyright",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "copyright-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "whistleblower",
       "fixedParts": [],
       "topology": true,
@@ -856,5 +504,72 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "justice-scale",
+      "spec": "specs/justice-scale.icon.json",
+      "specSha256": "f03e28b22b331da9412433f74e51c737c0e018c17b357b78758d6315c8398655",
+      "actions": [
+        "justice-scale",
+        "justice-scale-strong"
+      ]
+    },
+    {
+      "icon": "courthouse",
+      "spec": "specs/courthouse.icon.json",
+      "specSha256": "cef294aeadf179701d64c672dfa05bd6fd8e97c675f5b98e3bf9801cd9d0e050",
+      "actions": [
+        "courthouse",
+        "courthouse-strong"
+      ]
+    },
+    {
+      "icon": "gdpr-shield",
+      "spec": "specs/gdpr-shield.icon.json",
+      "specSha256": "eb6c61d8613cf33dbd82e4457f90a6ff3fcc5cd8cea51210a708b7dc40eaff90",
+      "actions": [
+        "gdpr-shield",
+        "gdpr-shield-strong"
+      ]
+    },
+    {
+      "icon": "audit",
+      "spec": "specs/audit.icon.json",
+      "specSha256": "044f0c67eef4bc8608215bf3666d55b18b6c37cc687ae891c11f18a8dd6a705d",
+      "actions": [
+        "audit",
+        "audit-strong"
+      ]
+    },
+    {
+      "icon": "terms-of-service",
+      "spec": "specs/terms-of-service.icon.json",
+      "specSha256": "fad92ce7aa41947580fb52b95659ad2534ebb942a5bdb026583b682a187a5124",
+      "actions": [
+        "terms-of-service",
+        "terms-of-service-reverse",
+        "terms-of-service-strong",
+        "terms-of-service-reverse-strong"
+      ]
+    },
+    {
+      "icon": "disclaimer",
+      "spec": "specs/disclaimer.icon.json",
+      "specSha256": "46755433f91307c1839f82d881f913180b46a32d9bd4155f0b1f8ca3a469d8a2",
+      "actions": [
+        "disclaimer",
+        "disclaimer-strong"
+      ]
+    },
+    {
+      "icon": "copyright",
+      "spec": "specs/copyright.icon.json",
+      "specSha256": "80caa653137733b3d22fa413f48714a32d4365a8cab0e6c6b5cea5a51bc0f5c3",
+      "actions": [
+        "copyright",
+        "copyright-strong"
+      ]
+    }
+  ]
 }

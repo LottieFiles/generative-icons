@@ -1,0 +1,50 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "thumbnail",
+  "label": "Thumbnail",
+  "intent": "A frame is picked for the thumbnail. Light: the picture scrubs: the scene (mountains and sun) slides out to the left and fades while the next frame slides in from the right, lands with a hard stop and a small knock, and stays (the two scenes cross-fade, so the card is never empty). Strong: the scene leans the other way first, the scrub is faster and longer, the new frame knocks twice, and the card clicks (a quick squeeze) as the frame is set. The rest pose is the v1 drawing.",
+  "parts": {
+    "card": {"shape": {"rect": [4, 6.5, 24, 19], "r": 2.5}, "role": "surface", "solid": "ring"},
+    "mountain": {
+      "shape": {"path": "M8.3 21.5 C7.767 21.5 7.644 21.276 7.933 20.827 L11.567 15.173 C11.856 14.724 12.189 14.689 12.566 15.066 L14.934 17.434 C15.311 17.811 15.705 17.829 16.115 17.488 L17.885 16.012 C18.295 15.671 18.689 15.689 19.066 16.066 L23.934 20.934 C24.311 21.311 24.233 21.5 23.7 21.5 L8.3 21.5 Z"},
+      "role": "surface", "solid": "fill"
+    },
+    "sun": {"shape": {"circle": [[21.5, 11], 1.8]}, "role": "fill"},
+    "mountain-next": {
+      "//": "hidden at rest: the next frame's scene, which slides in and hands over to the rest scene on the same pixels at the end",
+      "shape": {"path": "M8.3 21.5 C7.767 21.5 7.644 21.276 7.933 20.827 L11.567 15.173 C11.856 14.724 12.189 14.689 12.566 15.066 L14.934 17.434 C15.311 17.811 15.705 17.829 16.115 17.488 L17.885 16.012 C18.295 15.671 18.689 15.689 19.066 16.066 L23.934 20.934 C24.311 21.311 24.233 21.5 23.7 21.5 L8.3 21.5 Z"},
+      "role": "surface", "solid": "fill", "hidden": true
+    },
+    "sun-next": {"shape": {"circle": [[21.5, 11], 1.8]}, "role": "fill", "hidden": true}
+  },
+  "rigs": {
+    "card": {"pivot": [16, 16]},
+    "scene": {"pivot": [16, 16], "carries": ["mountain", "sun"]},
+    "next": {"pivot": [16, 16], "carries": ["mountain-next", "sun-next"]}
+  },
+  "motion": {
+    "scene.x": {
+      "light":  [[0, 0], [0.04, 0], [0.2, -2.8, "in"], [0.21, 0, "step"]],
+      "strong": [[0, 0], [0.08, 0.6, "out"], [0.11, 0.6], [0.23, -3.6, "in"], [0.24, 0, "step"]]
+    },
+    "mountain.opacity": {
+      "light":  [[0, 1], [0.06, 1], [0.2, 0, "in"], [0.4, 0], [0.41, 1, "step"]],
+      "strong": [[0, 1], [0.12, 1], [0.23, 0, "in"], [0.58, 0], [0.59, 1, "step"]]
+    },
+    "sun.opacity": {"follow": "mountain.opacity"},
+    "next.x": {
+      "light":  [[0, 0], [0.1, 3, "step"], [0.27, 0, "hit"], {"bounce": 0.35, "amp": 0.1}],
+      "strong": [[0, 0], [0.13, 3.6, "step"], [0.28, 0, "hit"], [0.34, 0.45], [0.4, 0, "hit"], [0.45, 0.12], [0.5, 0]]
+    },
+    "mountain-next.opacity": {
+      "light":  [[0, 0], [0.1, 0], [0.22, 1, "out"], [0.4, 1], [0.41, 0, "step"]],
+      "strong": [[0, 0], [0.13, 0], [0.24, 1, "out"], [0.58, 1], [0.59, 0, "step"]]
+    },
+    "sun-next.opacity": {"follow": "mountain-next.opacity"},
+    "card.scale": {
+      "//": "Strong only: the click as the frame is set",
+      "strong": [[0, 1], [0.28, 1], [0.32, 0.95, "out"], [0.4, 1.01], [0.46, 1]]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "shortcut-key",
+  "label": "Shortcut key",
+  "intent": "The shortcut fires. Light: the keycap is struck down into its base with a hit, holds for a beat and springs back past rest; as it bottoms out the bolt on it fires, popping bigger and settling. Strong: a harder strike after a small lift, a longer spring back, and the charged bolt crackles with a quick shaking twist as it pops. The base never moves.",
+  "preview": {"light": [0, 0.08, 0.13, 0.2, 0.26, 0.32, 0.42], "strong": [0, 0.06, 0.14, 0.22, 0.28, 0.34, 0.42, 0.56]},
+  "parts": {
+    "bolt": {"shape": {"path": "M17.031 7.971 C17.144 7.657 17.106 7.638 16.919 7.914 L13.681 12.686 C13.494 12.962 13.567 13.1 13.9 13.1 L15.7 13.1 C16.033 13.1 16.14 13.255 16.019 13.566 L14.981 16.234 C14.86 16.545 14.897 16.565 15.091 16.294 L18.309 11.806 C18.503 11.535 18.433 11.4 18.1 11.4 L16.3 11.4 C15.967 11.4 15.856 11.243 15.969 10.929 L17.031 7.971 Z"}, "role": "fill"},
+    "cap":  {"shape": {"path": "M10.2 4.5 L21.8 4.5 C23.566 4.5 25 5.934 25 7.7 L25 18.3 C25 20.066 23.566 21.5 21.8 21.5 L10.2 21.5 C8.434 21.5 7 20.066 7 18.3 L7 7.7 C7 5.934 8.434 4.5 10.2 4.5 Z"},
+             "role": "surface",
+             "solid": {"path": "M10.2 4.5 L21.8 4.5 C23.566 4.5 25 5.934 25 7.7 L25 18.3 C25 20.066 23.566 21.5 21.8 21.5 L10.2 21.5 C8.434 21.5 7 20.066 7 18.3 L7 7.7 C7 5.934 8.434 4.5 10.2 4.5 L10.2 4.5 L11.2 7.1 C10.317 7.1 9.6 7.817 9.6 8.7 L9.6 17.3 C9.6 18.183 10.317 18.9 11.2 18.9 L20.8 18.9 C21.683 18.9 22.4 18.183 22.4 17.3 L22.4 8.7 C22.4 7.817 21.683 7.1 20.8 7.1 L11.2 7.1 L10.2 4.5 Z"}},
+    "base": {"shape": {"path": "M7 18.5 L7 22 C7 23.7 8.3 25 10 25 L22 25 C23.7 25 25 23.7 25 22 L25 18.5"}}
+  },
+  "rigs": {
+    "key":  {"//": "the keycap carries its bolt", "pivot": [16, 13], "carries": ["cap", "bolt"]},
+    "bolt": {"//": "the bolt pops and twists about its own centre", "pivot": [15.9, 12.1]}
+  },
+  "motion": {
+    "key.y": {
+      "light":  [[0, 0], [0.08, 1.8, "hit"], [0.13, 1.8], [0.24, -0.35], [0.32, 0.1], [0.4, 0]],
+      "strong": [[0, 0], [0.06, -0.4, "out"], [0.14, 2.4, "hit"], [0.22, 2.4], [0.33, -0.55], [0.42, 0.18], [0.5, -0.05], [0.56, 0]]
+    },
+    "bolt.scale": {
+      "light":  [[0, 1], [0.1, 1], [0.2, 1.25, "out"], [0.3, 0.95], [0.38, 1]],
+      "strong": [[0, 1], [0.16, 1], [0.26, 1.3, "out"], [0.36, 0.92], [0.44, 1.04], [0.52, 1]]
+    },
+    "bolt.rotate": {
+      "//": "Strong only: the charge crackles",
+      "strong": [[0, 0], [0.2, 0], [0.24, -10], [0.29, 9], [0.34, -6], [0.39, 4], [0.44, -2], [0.5, 0]]
+    }
+  }
+}

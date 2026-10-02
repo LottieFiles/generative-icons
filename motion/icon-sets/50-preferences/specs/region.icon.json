@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "region",
+  "label": "Region",
+  "intent": "The world turns to your region and the pin marks it. Light: the globe turns one step (its meridian narrows to a line and opens out again) while the pin lifts off it, and as the globe stops the pin plants back on it with a hit; the globe dips under the impact and the pin settles. Strong: the globe spins two steps, the pin lifts higher, lands with a hit and bounces once, and the globe dips harder.",
+  "preview": {"light": [0, 0.08, 0.15, 0.21, 0.26, 0.31, 0.36, 0.42], "strong": [0, 0.1, 0.16, 0.24, 0.3, 0.37, 0.44, 0.56]},
+  "parts": {
+    "pin":      {"shape": {"path": "M19.159 14.332 L16.827 10.335 C16.165 9.201 16.415 7.754 17.42 6.909 C18.425 6.063 19.893 6.063 20.898 6.909 C21.902 7.754 22.153 9.201 21.491 10.335 L19.159 14.332 Z"},
+                 "role": "surface",
+                 "solid": {"path": "M19.159 14.332 L16.827 10.335 C16.165 9.201 16.415 7.754 17.42 6.909 C18.425 6.063 19.893 6.063 20.898 6.909 C21.902 7.754 22.153 9.201 21.491 10.335 L19.159 14.332 L19.159 7.874 C18.551 7.874 18.059 8.367 18.059 8.974 C18.059 9.582 18.551 10.074 19.159 10.074 C19.767 10.074 20.259 9.582 20.259 8.974 C20.259 8.367 19.767 7.874 19.159 7.874 L19.159 14.332 Z"}},
+    "equator":  {"shape": {"line": [[5, 19.5], [21, 19.5]]}},
+    "meridian": {"//": "the globe turns: the meridian narrows to a line and opens out again", "shape": {"morph": [
+                   {"path": "M13 11.5 C14.823 11.5 16.3 15.082 16.3 19.5 C16.3 23.918 14.823 27.5 13 27.5 C11.177 27.5 9.7 23.918 9.7 19.5 C9.7 15.082 11.177 11.5 13 11.5 Z"},
+                   {"path": "M13 11.5 C13.138 11.5 13.25 15.082 13.25 19.5 C13.25 23.918 13.138 27.5 13 27.5 C12.862 27.5 12.75 23.918 12.75 19.5 C12.75 15.082 12.862 11.5 13 11.5 Z"}
+                 ], "by": "spin"}},
+    "globe":    {"shape": {"path": "M13 11.5 C17.418 11.5 21 15.082 21 19.5 C21 23.918 17.418 27.5 13 27.5 C8.582 27.5 5 23.918 5 19.5 C5 15.082 8.582 11.5 13 11.5 Z"},
+                 "role": "surface",
+                 "solid": {"path": "M13 11.5 C17.418 11.5 21 15.082 21 19.5 C21 23.918 17.418 27.5 13 27.5 C8.582 27.5 5 23.918 5 19.5 C5 15.082 8.582 11.5 13 11.5 L13 11.5 L13 14.1 C10.018 14.1 7.6 16.518 7.6 19.5 C7.6 22.482 10.018 24.9 13 24.9 C15.982 24.9 18.4 22.482 18.4 19.5 C18.4 16.518 15.982 14.1 13 14.1 L13 11.5 Z"}}
+  },
+  "rigs": {
+    "world": {"//": "the globe dips under the pin's impact and carries the pin with it", "pivot": [13, 19.5], "carries": ["globe", "meridian", "equator", "pin"]},
+    "pin":   {"pivot": [19.159, 14.332]}
+  },
+  "motion": {
+    "spin": {
+      "light":  [[0, 0], [0.06, 0], [0.16, 1, "in"], [0.26, 0, "out"]],
+      "strong": [[0, 0], [0.05, 0], [0.13, 1, "in"], [0.2, 0, "linear"], [0.27, 1, "linear"], [0.38, 0, "out"]]
+    },
+    "pin.y": {
+      "light":  [[0, 0], [0.14, -2.4, "out"], [0.26, 0, "hit"], [0.32, -0.5], [0.4, 0]],
+      "strong": [[0, 0], [0.16, -3.2, "out"], [0.3, 0, "hit"], [0.37, -1, "out"], [0.44, 0, "hit"], [0.5, -0.2], [0.56, 0]]
+    },
+    "world.y": {
+      "light":  [[0, 0], [0.26, 0], [0.3, 0.4, "out"], [0.38, 0]],
+      "strong": [[0, 0], [0.3, 0], [0.34, 0.7, "out"], [0.41, 0], [0.44, 0], [0.47, 0.3, "out"], [0.54, 0]]
+    }
+  }
+}

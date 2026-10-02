@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 62,
-  "nativeTransformNodes": 508,
+  "nativeTransformNodes": 322,
   "nativeTransformMaxCoordinateError": 0.000011088192859887158,
   "checks": [
     {
@@ -58,58 +58,6 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "seat-map",
-      "fixedParts": [
-        "seat-map-stage-frame",
-        "seat-map-seat-0",
-        "seat-map-seat-11"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "seat-map-stage-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "seat-map-seat-0"
-        },
-        {
-          "type": "fixed",
-          "part": "seat-map-seat-11"
-        }
-      ]
-    },
-    {
-      "name": "seat-map-strong",
-      "fixedParts": [
-        "seat-map-stage-frame",
-        "seat-map-seat-0",
-        "seat-map-seat-11"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "seat-map-stage-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "seat-map-seat-0"
-        },
-        {
-          "type": "fixed",
-          "part": "seat-map-seat-11"
-        }
-      ]
     },
     {
       "name": "agenda",
@@ -172,64 +120,6 @@
       ]
     },
     {
-      "name": "event-badge",
-      "fixedParts": [
-        "event-badge-strap-l",
-        "event-badge-strap-r"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "event-badge-strap-l"
-        },
-        {
-          "type": "fixed",
-          "part": "event-badge-strap-r"
-        },
-        {
-          "type": "rigid",
-          "part": "event-badge-card-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "event-badge-clip"
-        }
-      ]
-    },
-    {
-      "name": "event-badge-strong",
-      "fixedParts": [
-        "event-badge-strap-l",
-        "event-badge-strap-r"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "event-badge-strap-l"
-        },
-        {
-          "type": "fixed",
-          "part": "event-badge-strap-r"
-        },
-        {
-          "type": "rigid",
-          "part": "event-badge-card-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "event-badge-clip"
-        }
-      ]
-    },
-    {
       "name": "check-in",
       "fixedParts": [],
       "topology": true,
@@ -240,78 +130,6 @@
     },
     {
       "name": "check-in-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "add-to-calendar",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "add-to-calendar-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "event-reminder",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "event-reminder-bell-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "event-reminder-rim"
-        }
-      ]
-    },
-    {
-      "name": "event-reminder-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "event-reminder-bell-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "event-reminder-rim"
-        }
-      ]
-    },
-    {
-      "name": "ticket-scan",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "ticket-scan-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -504,46 +322,6 @@
       ]
     },
     {
-      "name": "sponsor",
-      "fixedParts": [
-        "sponsor-rod"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "sponsor-rod"
-        },
-        {
-          "type": "rigid",
-          "part": "sponsor-banner-frame"
-        }
-      ]
-    },
-    {
-      "name": "sponsor-strong",
-      "fixedParts": [
-        "sponsor-rod"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "sponsor-rod"
-        },
-        {
-          "type": "rigid",
-          "part": "sponsor-banner-frame"
-        }
-      ]
-    },
-    {
       "name": "networking",
       "fixedParts": [],
       "topology": true,
@@ -578,35 +356,74 @@
           "part": "networking-right-body-frame"
         }
       ]
-    },
-    {
-      "name": "event-map",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "event-map-map-frame"
-        }
-      ]
-    },
-    {
-      "name": "event-map-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "event-map-map-frame"
-        }
-      ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "seat-map",
+      "spec": "specs/seat-map.icon.json",
+      "specSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+      "actions": [
+        "seat-map",
+        "seat-map-reverse",
+        "seat-map-strong",
+        "seat-map-reverse-strong"
+      ]
+    },
+    {
+      "icon": "event-badge",
+      "spec": "specs/event-badge.icon.json",
+      "specSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
+      "actions": [
+        "event-badge",
+        "event-badge-strong"
+      ]
+    },
+    {
+      "icon": "add-to-calendar",
+      "spec": "specs/add-to-calendar.icon.json",
+      "specSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
+      "actions": [
+        "add-to-calendar",
+        "add-to-calendar-strong"
+      ]
+    },
+    {
+      "icon": "event-reminder",
+      "spec": "specs/event-reminder.icon.json",
+      "specSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
+      "actions": [
+        "event-reminder",
+        "event-reminder-strong"
+      ]
+    },
+    {
+      "icon": "ticket-scan",
+      "spec": "specs/ticket-scan.icon.json",
+      "specSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
+      "actions": [
+        "ticket-scan",
+        "ticket-scan-strong"
+      ]
+    },
+    {
+      "icon": "sponsor",
+      "spec": "specs/sponsor.icon.json",
+      "specSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
+      "actions": [
+        "sponsor",
+        "sponsor-strong"
+      ]
+    },
+    {
+      "icon": "event-map",
+      "spec": "specs/event-map.icon.json",
+      "specSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
+      "actions": [
+        "event-map",
+        "event-map-strong"
+      ]
+    }
+  ]
 }

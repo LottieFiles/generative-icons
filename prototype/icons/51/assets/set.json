@@ -1514,35 +1514,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "drawn",
       "endState": "erased",
       "heading": "Eraser",
-      "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+      "description": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
       "label": "Eraser",
-      "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+      "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.64,
-      "rest": 41,
+      "active": 0.58,
+      "rest": 38,
       "keyPoses": [
         0,
-        0.128,
-        0.256,
-        0.384,
-        0.512,
-        0.64
+        0.11599999999999999,
+        0.23199999999999998,
+        0.348,
+        0.46399999999999997,
+        0.58
       ],
-      "layers": 11,
+      "layers": 13,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -1552,30 +1549,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "4aae546158dbca054cd1311a9bdc2299641b86421515f41d19df8061e1cdb52e",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-        "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-        "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-        "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-        "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-        "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-      },
-      "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "eraser-block"
-        },
-        {
-          "type": "rigid",
-          "part": "eraser-band"
-        }
-      ],
+      "nativeSha256": "250de59b0909a46d6a7985277740b70148957337e8784c082f0ee804fecffea4",
+      "sourceSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+      "planSha256": "8c992332793a2eb516ec02266acc1823220b29ec156f3da5d7f0c3f101927862",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+      "constraints": [],
       "category": "Drawing & design tools",
-      "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+      "definitionsSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -1597,97 +1578,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "eraser-reverse",
-        "icon": "eraser",
-        "motionId": "light",
-        "continuous": false,
-        "previewReset": false,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "erased",
-        "endState": "drawn",
-        "heading": "Eraser",
-        "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-        "label": "Eraser",
-        "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.58,
-        "rest": 38,
-        "keyPoses": [
-          0,
-          0.11599999999999999,
-          0.23199999999999998,
-          0.348,
-          0.46399999999999997,
-          0.58
-        ],
-        "layers": 11,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "00a3d1197ef0d86e33e00e1f1692be9bf8795719b33610add24980cb6ed4aa93",
-        "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "authoringSources": {
-          "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-          "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-          "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-          "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-          "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-          "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-        },
-        "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-        "constraints": [
-          {
-            "type": "rigid",
-            "part": "eraser-block"
-          },
-          {
-            "type": "rigid",
-            "part": "eraser-band"
-          }
-        ],
-        "category": "Drawing & design tools",
-        "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": false,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "number": 848,
       "forwardLabel": "erased",
       "reverseLabel": "drawn",
@@ -1699,35 +1589,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "drawn",
           "endState": "erased",
           "heading": "Eraser",
-          "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "description": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "label": "Eraser",
-          "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.64,
-          "rest": 41,
+          "active": 0.58,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.128,
-            0.256,
-            0.384,
-            0.512,
-            0.64
+            0.11599999999999999,
+            0.23199999999999998,
+            0.348,
+            0.46399999999999997,
+            0.58
           ],
-          "layers": 11,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1737,30 +1624,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4aae546158dbca054cd1311a9bdc2299641b86421515f41d19df8061e1cdb52e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "eraser-block"
-            },
-            {
-              "type": "rigid",
-              "part": "eraser-band"
-            }
-          ],
+          "nativeSha256": "250de59b0909a46d6a7985277740b70148957337e8784c082f0ee804fecffea4",
+          "sourceSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+          "planSha256": "8c992332793a2eb516ec02266acc1823220b29ec156f3da5d7f0c3f101927862",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1789,19 +1660,16 @@
             "continuous": false,
             "previewReset": false,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "erased",
             "endState": "drawn",
             "heading": "Eraser",
-            "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+            "description": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
             "label": "Eraser",
-            "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+            "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
             "width": 32,
             "height": 32,
             "fps": 60,
@@ -1817,7 +1685,7 @@
               0.46399999999999997,
               0.58
             ],
-            "layers": 11,
+            "layers": 13,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -1827,30 +1695,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "00a3d1197ef0d86e33e00e1f1692be9bf8795719b33610add24980cb6ed4aa93",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-              "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-              "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-              "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-              "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-              "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-            },
-            "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-            "constraints": [
-              {
-                "type": "rigid",
-                "part": "eraser-block"
-              },
-              {
-                "type": "rigid",
-                "part": "eraser-band"
-              }
-            ],
+            "nativeSha256": "91f4b45c6ab257cc9db376559f300b0066ab2e01cdf0d852149ed153812e5a09",
+            "sourceSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+            "planSha256": "8c992332793a2eb516ec02266acc1823220b29ec156f3da5d7f0c3f101927862",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+            "constraints": [],
             "category": "Drawing & design tools",
-            "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+            "definitionsSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -1872,11 +1724,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 10218,
-            "sha256": "f12f3ea4b2ca424109cfa569bb5f0c0183eaa2aa6a7171ea488d4f68c0e46b6d"
+            "bytes": 6585,
+            "sha256": "29fbe1e24134c413dd62a37e25879ed7a3aaae2283282dac675202297394bd2c"
           },
-          "bytes": 10217,
-          "sha256": "1309122d02720f08403eb69ba9d1bd350be9cedabcd064e585331bf40aca2152"
+          "bytes": 6584,
+          "sha256": "123fa806e31a21039f0750007c213a9245e937e1454f1f0a99948fbe43c8aa7a"
         },
         {
           "name": "eraser-strong",
@@ -1885,35 +1737,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "drawn",
           "endState": "erased",
           "heading": "Eraser",
-          "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "description": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "label": "Eraser",
-          "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.58,
-          "rest": 38,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.11599999999999999,
-            0.23199999999999998,
-            0.348,
-            0.46399999999999997,
-            0.58
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 11,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1923,30 +1772,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7948e4f37060bd7f21491d81f36df25d062ed2104717ccb375f1bf27ac61e10d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "eraser-block"
-            },
-            {
-              "type": "rigid",
-              "part": "eraser-band"
-            }
-          ],
+          "nativeSha256": "7058e8f6463e7fb67754015ac2ef0fd2e8dcc81361d1b679b9ffcfe85966d475",
+          "sourceSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+          "planSha256": "8c992332793a2eb516ec02266acc1823220b29ec156f3da5d7f0c3f101927862",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1975,35 +1808,32 @@
             "continuous": false,
             "previewReset": false,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "erased",
             "endState": "drawn",
             "heading": "Eraser",
-            "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+            "description": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
             "label": "Eraser",
-            "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+            "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.58,
-            "rest": 38,
+            "active": 0.8,
+            "rest": 51,
             "keyPoses": [
               0,
-              0.11599999999999999,
-              0.23199999999999998,
-              0.348,
-              0.46399999999999997,
-              0.58
+              0.16000000000000003,
+              0.32000000000000006,
+              0.48,
+              0.6400000000000001,
+              0.8
             ],
-            "layers": 11,
+            "layers": 13,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -2013,30 +1843,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "27bbb2ce1b5d7aec7205164b9b0e6f72dabbcd35fb739520febe46915e0fd5d4",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-              "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-              "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-              "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-              "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-              "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-            },
-            "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-            "constraints": [
-              {
-                "type": "rigid",
-                "part": "eraser-block"
-              },
-              {
-                "type": "rigid",
-                "part": "eraser-band"
-              }
-            ],
+            "nativeSha256": "d9e24dd69e82ca01d5d9170008f80aad254be8ae2c5abf7884ee03c5ce10b48c",
+            "sourceSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+            "planSha256": "8c992332793a2eb516ec02266acc1823220b29ec156f3da5d7f0c3f101927862",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+            "constraints": [],
             "category": "Drawing & design tools",
-            "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+            "definitionsSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -2058,11 +1872,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 10222,
-            "sha256": "9b7bd6ec8867f4f93ea38c629f238fb046f072879f25db3ed5e224542733b89d"
+            "bytes": 6589,
+            "sha256": "49964c3f064271a6dd812b3e2fb39b28256168e77dd7cd556bf068fd7442d6ff"
           },
-          "bytes": 10220,
-          "sha256": "53a4a330414f06ba90c516f89e349b9c0a94676fca3fc0afcd79098e658ff2fd"
+          "bytes": 6587,
+          "sha256": "c90f7c9616ecf1bc0f2931c939d061ebd277a3c1de0f880cc6fc6b1e688c7dbc"
         }
       ],
       "animations": [
@@ -2073,35 +1887,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "drawn",
           "endState": "erased",
           "heading": "Eraser",
-          "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "description": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "label": "Eraser",
-          "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.64,
-          "rest": 41,
+          "active": 0.58,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.128,
-            0.256,
-            0.384,
-            0.512,
-            0.64
+            0.11599999999999999,
+            0.23199999999999998,
+            0.348,
+            0.46399999999999997,
+            0.58
           ],
-          "layers": 11,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2111,30 +1922,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4aae546158dbca054cd1311a9bdc2299641b86421515f41d19df8061e1cdb52e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "eraser-block"
-            },
-            {
-              "type": "rigid",
-              "part": "eraser-band"
-            }
-          ],
+          "nativeSha256": "250de59b0909a46d6a7985277740b70148957337e8784c082f0ee804fecffea4",
+          "sourceSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+          "planSha256": "8c992332793a2eb516ec02266acc1823220b29ec156f3da5d7f0c3f101927862",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2156,8 +1951,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 10217,
-          "sha256": "1309122d02720f08403eb69ba9d1bd350be9cedabcd064e585331bf40aca2152"
+          "bytes": 6584,
+          "sha256": "123fa806e31a21039f0750007c213a9245e937e1454f1f0a99948fbe43c8aa7a"
         },
         {
           "name": "eraser-reverse",
@@ -2166,19 +1961,16 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "erased",
           "endState": "drawn",
           "heading": "Eraser",
-          "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "description": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "label": "Eraser",
-          "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -2194,7 +1986,7 @@
             0.46399999999999997,
             0.58
           ],
-          "layers": 11,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2204,30 +1996,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "00a3d1197ef0d86e33e00e1f1692be9bf8795719b33610add24980cb6ed4aa93",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "eraser-block"
-            },
-            {
-              "type": "rigid",
-              "part": "eraser-band"
-            }
-          ],
+          "nativeSha256": "91f4b45c6ab257cc9db376559f300b0066ab2e01cdf0d852149ed153812e5a09",
+          "sourceSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+          "planSha256": "8c992332793a2eb516ec02266acc1823220b29ec156f3da5d7f0c3f101927862",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2249,8 +2025,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 10218,
-          "sha256": "f12f3ea4b2ca424109cfa569bb5f0c0183eaa2aa6a7171ea488d4f68c0e46b6d"
+          "bytes": 6585,
+          "sha256": "29fbe1e24134c413dd62a37e25879ed7a3aaae2283282dac675202297394bd2c"
         },
         {
           "name": "eraser-strong",
@@ -2259,35 +2035,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "drawn",
           "endState": "erased",
           "heading": "Eraser",
-          "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "description": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "label": "Eraser",
-          "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.58,
-          "rest": 38,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.11599999999999999,
-            0.23199999999999998,
-            0.348,
-            0.46399999999999997,
-            0.58
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 11,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2297,30 +2070,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7948e4f37060bd7f21491d81f36df25d062ed2104717ccb375f1bf27ac61e10d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "eraser-block"
-            },
-            {
-              "type": "rigid",
-              "part": "eraser-band"
-            }
-          ],
+          "nativeSha256": "7058e8f6463e7fb67754015ac2ef0fd2e8dcc81361d1b679b9ffcfe85966d475",
+          "sourceSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+          "planSha256": "8c992332793a2eb516ec02266acc1823220b29ec156f3da5d7f0c3f101927862",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2342,8 +2099,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 10220,
-          "sha256": "53a4a330414f06ba90c516f89e349b9c0a94676fca3fc0afcd79098e658ff2fd"
+          "bytes": 6587,
+          "sha256": "c90f7c9616ecf1bc0f2931c939d061ebd277a3c1de0f880cc6fc6b1e688c7dbc"
         },
         {
           "name": "eraser-reverse-strong",
@@ -2352,35 +2109,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "erased",
           "endState": "drawn",
           "heading": "Eraser",
-          "description": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "description": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "label": "Eraser",
-          "intent": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
+          "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.58,
-          "rest": 38,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.11599999999999999,
-            0.23199999999999998,
-            0.348,
-            0.46399999999999997,
-            0.58
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 11,
+          "layers": 13,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2390,30 +2144,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "27bbb2ce1b5d7aec7205164b9b0e6f72dabbcd35fb739520febe46915e0fd5d4",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the eraser block slides left across the line in 0.56 s with a light rub and the line shortens behind its edge. Strong: it lifts, drops with a stop and scrubs harder and faster. Reverse slides it back while the line redraws.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "eraser-block"
-            },
-            {
-              "type": "rigid",
-              "part": "eraser-band"
-            }
-          ],
+          "nativeSha256": "d9e24dd69e82ca01d5d9170008f80aad254be8ae2c5abf7884ee03c5ce10b48c",
+          "sourceSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+          "planSha256": "8c992332793a2eb516ec02266acc1823220b29ec156f3da5d7f0c3f101927862",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2435,12 +2173,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 10222,
-          "sha256": "9b7bd6ec8867f4f93ea38c629f238fb046f072879f25db3ed5e224542733b89d"
+          "bytes": 6589,
+          "sha256": "49964c3f064271a6dd812b3e2fb39b28256168e77dd7cd556bf068fd7442d6ff"
         }
       ],
-      "bytes": 10217,
-      "sha256": "1309122d02720f08403eb69ba9d1bd350be9cedabcd064e585331bf40aca2152"
+      "bytes": 6584,
+      "sha256": "123fa806e31a21039f0750007c213a9245e937e1454f1f0a99948fbe43c8aa7a"
     },
     {
       "name": "corner-radius",
@@ -10589,34 +10327,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Lasso select",
-      "description": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+      "description": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
       "label": "Lasso select",
-      "intent": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+      "intent": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.62,
-      "rest": 40,
+      "active": 0.53,
+      "rest": 35,
       "keyPoses": [
         0,
-        0.124,
-        0.248,
-        0.372,
-        0.496,
-        0.62
+        0.10600000000000001,
+        0.21200000000000002,
+        0.318,
+        0.42400000000000004,
+        0.53
       ],
-      "layers": 13,
+      "layers": 15,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -10626,26 +10362,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "7a91e836aa2c3adbe98eb48510a2250ad7fa40d672c246321ac8d9df5c09fd0a",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-        "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-        "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-        "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-        "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-        "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-      },
-      "brief": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "lasso-select-object"
-        }
-      ],
+      "nativeSha256": "a30aab77874f7917f538071fe90d9ce394339382028b95795c6077ec85a3642d",
+      "sourceSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
+      "planSha256": "b1aa0b5f063cb9e17d75dbb3584823cc36417a1fcc04b1b1aec77bcbfca232e8",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
+      "constraints": [],
       "category": "Drawing & design tools",
-      "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+      "definitionsSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -10676,34 +10400,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Lasso select",
-          "description": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+          "description": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
           "label": "Lasso select",
-          "intent": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+          "intent": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.53,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.10600000000000001,
+            0.21200000000000002,
+            0.318,
+            0.42400000000000004,
+            0.53
           ],
-          "layers": 13,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10713,26 +10435,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7a91e836aa2c3adbe98eb48510a2250ad7fa40d672c246321ac8d9df5c09fd0a",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "lasso-select-object"
-            }
-          ],
+          "nativeSha256": "a30aab77874f7917f538071fe90d9ce394339382028b95795c6077ec85a3642d",
+          "sourceSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
+          "planSha256": "b1aa0b5f063cb9e17d75dbb3584823cc36417a1fcc04b1b1aec77bcbfca232e8",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10754,8 +10464,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11348,
-          "sha256": "8d2e78052864ecc7d5c2fd5193d65b8dfddd8ea01d1400f89ac9cbf8cf65c7bc"
+          "bytes": 4626,
+          "sha256": "ec2a428ee7256b95796c07fb7ecdd1e124da5ce18d128e7629956275c5b5353c"
         },
         {
           "name": "lasso-select-strong",
@@ -10764,18 +10474,16 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Lasso select",
-          "description": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+          "description": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
           "label": "Lasso select",
-          "intent": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+          "intent": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -10791,7 +10499,7 @@
             0.512,
             0.64
           ],
-          "layers": 13,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10801,26 +10509,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "add27e08dd9161cee11104dc44d988f071f2266acdd8212b9beb5a46ed9b5dec",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "lasso-select-object"
-            }
-          ],
+          "nativeSha256": "192d5b61bd9ab2b3c41acb35c55193a210a80a269db0b42240c8c7a5ff77fa03",
+          "sourceSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
+          "planSha256": "b1aa0b5f063cb9e17d75dbb3584823cc36417a1fcc04b1b1aec77bcbfca232e8",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10842,8 +10538,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11350,
-          "sha256": "96606cb967f213cf8c3c66200dde09ceff9bfe79851cbc9c1fc3fd8f52819f62"
+          "bytes": 4628,
+          "sha256": "7f875a3cf8494308b237bc926f1d9204fd2c4c6e1dd32b2baa531734d664c9eb"
         }
       ],
       "animations": [
@@ -10854,34 +10550,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Lasso select",
-          "description": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+          "description": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
           "label": "Lasso select",
-          "intent": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+          "intent": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.53,
+          "rest": 35,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.10600000000000001,
+            0.21200000000000002,
+            0.318,
+            0.42400000000000004,
+            0.53
           ],
-          "layers": 13,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10891,26 +10585,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "7a91e836aa2c3adbe98eb48510a2250ad7fa40d672c246321ac8d9df5c09fd0a",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "lasso-select-object"
-            }
-          ],
+          "nativeSha256": "a30aab77874f7917f538071fe90d9ce394339382028b95795c6077ec85a3642d",
+          "sourceSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
+          "planSha256": "b1aa0b5f063cb9e17d75dbb3584823cc36417a1fcc04b1b1aec77bcbfca232e8",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -10932,8 +10614,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11348,
-          "sha256": "8d2e78052864ecc7d5c2fd5193d65b8dfddd8ea01d1400f89ac9cbf8cf65c7bc"
+          "bytes": 4626,
+          "sha256": "ec2a428ee7256b95796c07fb7ecdd1e124da5ce18d128e7629956275c5b5353c"
         },
         {
           "name": "lasso-select-strong",
@@ -10942,18 +10624,16 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Lasso select",
-          "description": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+          "description": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
           "label": "Lasso select",
-          "intent": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
+          "intent": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -10969,7 +10649,7 @@
             0.512,
             0.64
           ],
-          "layers": 13,
+          "layers": 15,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -10979,26 +10659,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "add27e08dd9161cee11104dc44d988f071f2266acdd8212b9beb5a46ed9b5dec",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the lasso loop cinches 18% around the object while its tail is pulled 1.5 units, then relaxes. Strong: the loop widens first, snaps to 76% with a stop as the tail is yanked 3 units, then relaxes with a small rebound.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "lasso-select-object"
-            }
-          ],
+          "nativeSha256": "192d5b61bd9ab2b3c41acb35c55193a210a80a269db0b42240c8c7a5ff77fa03",
+          "sourceSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
+          "planSha256": "b1aa0b5f063cb9e17d75dbb3584823cc36417a1fcc04b1b1aec77bcbfca232e8",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11020,12 +10688,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11350,
-          "sha256": "96606cb967f213cf8c3c66200dde09ceff9bfe79851cbc9c1fc3fd8f52819f62"
+          "bytes": 4628,
+          "sha256": "7f875a3cf8494308b237bc926f1d9204fd2c4c6e1dd32b2baa531734d664c9eb"
         }
       ],
-      "bytes": 11348,
-      "sha256": "8d2e78052864ecc7d5c2fd5193d65b8dfddd8ea01d1400f89ac9cbf8cf65c7bc"
+      "bytes": 4626,
+      "sha256": "ec2a428ee7256b95796c07fb7ecdd1e124da5ce18d128e7629956275c5b5353c"
     },
     {
       "name": "transform-tool",
@@ -11939,34 +11607,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Mirror tool",
-      "description": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+      "description": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
       "label": "Mirror tool",
-      "intent": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+      "intent": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.66,
-      "rest": 43,
+      "active": 0.5,
+      "rest": 33,
       "keyPoses": [
         0,
-        0.132,
-        0.264,
-        0.396,
-        0.528,
-        0.66
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5
       ],
-      "layers": 22,
+      "layers": 31,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -11976,38 +11642,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "003c014efdb9a4f629e6f325d7440965efa4ac41ca4988b1380ae7da37af840e",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-        "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-        "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-        "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-        "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-        "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-      },
-      "brief": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "mirror-tool-axis-0"
-        },
-        {
-          "type": "fixed",
-          "part": "mirror-tool-axis-1"
-        },
-        {
-          "type": "fixed",
-          "part": "mirror-tool-axis-2"
-        },
-        {
-          "type": "fixed",
-          "part": "mirror-tool-left-frame"
-        }
-      ],
+      "nativeSha256": "999b7219a5b0ba4877280fca4a1b1023555e4828ba980a798809304d87f07a17",
+      "sourceSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
+      "planSha256": "d4785a293c966b382b52e8eb96acc82976092b23e5706f150b38128f7bbc9b38",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
+      "constraints": [],
       "category": "Drawing & design tools",
-      "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+      "definitionsSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -12038,34 +11680,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Mirror tool",
-          "description": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+          "description": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
           "label": "Mirror tool",
-          "intent": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+          "intent": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 22,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12075,38 +11715,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "003c014efdb9a4f629e6f325d7440965efa4ac41ca4988b1380ae7da37af840e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-0"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-1"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-2"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-left-frame"
-            }
-          ],
+          "nativeSha256": "999b7219a5b0ba4877280fca4a1b1023555e4828ba980a798809304d87f07a17",
+          "sourceSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
+          "planSha256": "d4785a293c966b382b52e8eb96acc82976092b23e5706f150b38128f7bbc9b38",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12128,8 +11744,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7611,
-          "sha256": "5b3ba46c5996d8d1e450747f610b92244afcab8ad9b449a8c77c71214b9e2c30"
+          "bytes": 4225,
+          "sha256": "0162a396a14c8fe9a68af844e18e093be1393e1af4f108b380cf3b95ac47d242"
         },
         {
           "name": "mirror-tool-strong",
@@ -12138,34 +11754,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Mirror tool",
-          "description": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+          "description": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
           "label": "Mirror tool",
-          "intent": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+          "intent": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.6,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.12,
+            0.24,
+            0.36,
+            0.48,
+            0.6
           ],
-          "layers": 22,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12175,38 +11789,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2c9a97b8fe8c6537a65bdf39289ebba42eb713efc3efbf3d44447076f6841565",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-0"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-1"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-2"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-left-frame"
-            }
-          ],
+          "nativeSha256": "287bf5c79a79594bb56e89a2272c92e9228bb7296796669e98d679c1ac1335c0",
+          "sourceSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
+          "planSha256": "d4785a293c966b382b52e8eb96acc82976092b23e5706f150b38128f7bbc9b38",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12228,8 +11818,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7613,
-          "sha256": "e5f524cc26d135973f517b68674d9259983c42b9ec6a5631ac96a94bc58627c1"
+          "bytes": 4227,
+          "sha256": "5311765e66a3625b18b54289710ee348195266878eed2716466e2175c9729963"
         }
       ],
       "animations": [
@@ -12240,34 +11830,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Mirror tool",
-          "description": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+          "description": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
           "label": "Mirror tool",
-          "intent": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+          "intent": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 22,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12277,38 +11865,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "003c014efdb9a4f629e6f325d7440965efa4ac41ca4988b1380ae7da37af840e",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-0"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-1"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-2"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-left-frame"
-            }
-          ],
+          "nativeSha256": "999b7219a5b0ba4877280fca4a1b1023555e4828ba980a798809304d87f07a17",
+          "sourceSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
+          "planSha256": "d4785a293c966b382b52e8eb96acc82976092b23e5706f150b38128f7bbc9b38",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12330,8 +11894,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7611,
-          "sha256": "5b3ba46c5996d8d1e450747f610b92244afcab8ad9b449a8c77c71214b9e2c30"
+          "bytes": 4225,
+          "sha256": "0162a396a14c8fe9a68af844e18e093be1393e1af4f108b380cf3b95ac47d242"
         },
         {
           "name": "mirror-tool-strong",
@@ -12340,34 +11904,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Mirror tool",
-          "description": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+          "description": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
           "label": "Mirror tool",
-          "intent": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
+          "intent": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.6,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.12,
+            0.24,
+            0.36,
+            0.48,
+            0.6
           ],
-          "layers": 22,
+          "layers": 31,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12377,38 +11939,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2c9a97b8fe8c6537a65bdf39289ebba42eb713efc3efbf3d44447076f6841565",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the right triangle flips over about its own centre in 0.58 s and lands mirrored again across the dashed axis. Strong: it lifts 10%, flips in 0.22 s with a stop and squashes back to size.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-0"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-1"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-axis-2"
-            },
-            {
-              "type": "fixed",
-              "part": "mirror-tool-left-frame"
-            }
-          ],
+          "nativeSha256": "287bf5c79a79594bb56e89a2272c92e9228bb7296796669e98d679c1ac1335c0",
+          "sourceSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
+          "planSha256": "d4785a293c966b382b52e8eb96acc82976092b23e5706f150b38128f7bbc9b38",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12430,12 +11968,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 7613,
-          "sha256": "e5f524cc26d135973f517b68674d9259983c42b9ec6a5631ac96a94bc58627c1"
+          "bytes": 4227,
+          "sha256": "5311765e66a3625b18b54289710ee348195266878eed2716466e2175c9729963"
         }
       ],
-      "bytes": 7611,
-      "sha256": "5b3ba46c5996d8d1e450747f610b92244afcab8ad9b449a8c77c71214b9e2c30"
+      "bytes": 4225,
+      "sha256": "0162a396a14c8fe9a68af844e18e093be1393e1af4f108b380cf3b95ac47d242"
     },
     {
       "name": "snap-to-grid",
@@ -12929,34 +12467,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Ruler guides",
-      "description": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+      "description": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
       "label": "Ruler guides",
-      "intent": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+      "intent": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.7,
-      "rest": 45,
+      "active": 0.34,
+      "rest": 23,
       "keyPoses": [
         0,
-        0.13999999999999999,
-        0.27999999999999997,
-        0.42,
-        0.5599999999999999,
-        0.7
+        0.068,
+        0.136,
+        0.20400000000000001,
+        0.272,
+        0.34
       ],
-      "layers": 37,
+      "layers": 39,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -12966,42 +12502,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "2c192be47ecd46330c8f9c8535f7640ce349a91b0958b03873c3d0ecb6528aa9",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-        "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-        "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-        "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-        "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-        "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-      },
-      "brief": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "ruler-guides-ruler-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "ruler-guides-tick-t13"
-        },
-        {
-          "type": "fixed",
-          "part": "ruler-guides-tick-l13"
-        },
-        {
-          "type": "rigid",
-          "part": "ruler-guides-guide-v"
-        },
-        {
-          "type": "rigid",
-          "part": "ruler-guides-guide-h"
-        }
-      ],
+      "nativeSha256": "5ac901506aa48fc03fb8b0693a23d4264f4114beec07edf50dce574725fb569f",
+      "sourceSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
+      "planSha256": "6666faf32b80cdb8f5ab3c0bf20856150855fc6724b25d97a787cf59a85b8952",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
+      "constraints": [],
       "category": "Drawing & design tools",
-      "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+      "definitionsSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -13032,34 +12540,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Ruler guides",
-          "description": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+          "description": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
           "label": "Ruler guides",
-          "intent": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+          "intent": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.34,
+          "rest": 23,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.068,
+            0.136,
+            0.20400000000000001,
+            0.272,
+            0.34
           ],
-          "layers": 37,
+          "layers": 39,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13069,42 +12575,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2c192be47ecd46330c8f9c8535f7640ce349a91b0958b03873c3d0ecb6528aa9",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "ruler-guides-ruler-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "ruler-guides-tick-t13"
-            },
-            {
-              "type": "fixed",
-              "part": "ruler-guides-tick-l13"
-            },
-            {
-              "type": "rigid",
-              "part": "ruler-guides-guide-v"
-            },
-            {
-              "type": "rigid",
-              "part": "ruler-guides-guide-h"
-            }
-          ],
+          "nativeSha256": "5ac901506aa48fc03fb8b0693a23d4264f4114beec07edf50dce574725fb569f",
+          "sourceSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
+          "planSha256": "6666faf32b80cdb8f5ab3c0bf20856150855fc6724b25d97a787cf59a85b8952",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13126,8 +12604,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5451,
-          "sha256": "d5a97ac53726e40665d3e6bac701bc18089ecee2e085623eef208507f08ae8a8"
+          "bytes": 4679,
+          "sha256": "a760434dbe8d336835c6bbc89cc87ab6ee9beecf1c3c03efdbc672501cc6f48b"
         },
         {
           "name": "ruler-guides-strong",
@@ -13136,34 +12614,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Ruler guides",
-          "description": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+          "description": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
           "label": "Ruler guides",
-          "intent": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+          "intent": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 37,
+          "layers": 39,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13173,42 +12649,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5d99d25acbb68626320c3d57181628e99389066f6dfca4d7abd203e2a91c7dda",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "ruler-guides-ruler-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "ruler-guides-tick-t13"
-            },
-            {
-              "type": "fixed",
-              "part": "ruler-guides-tick-l13"
-            },
-            {
-              "type": "rigid",
-              "part": "ruler-guides-guide-v"
-            },
-            {
-              "type": "rigid",
-              "part": "ruler-guides-guide-h"
-            }
-          ],
+          "nativeSha256": "f3360eb8fb875f1b44fa5c562611366f825f2f3398fc11cb92f2398209fa13bc",
+          "sourceSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
+          "planSha256": "6666faf32b80cdb8f5ab3c0bf20856150855fc6724b25d97a787cf59a85b8952",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13230,8 +12678,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5453,
-          "sha256": "29f9ef477d76d4ddfd14fcad77277109079e2c2688b4b93c73eac4c37f9bead2"
+          "bytes": 4681,
+          "sha256": "4f9496e7c63635c4095bd478347aa338e7c7287c5a3814e94bbe5bdfe564570a"
         }
       ],
       "animations": [
@@ -13242,34 +12690,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Ruler guides",
-          "description": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+          "description": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
           "label": "Ruler guides",
-          "intent": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+          "intent": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.7,
-          "rest": 45,
+          "active": 0.34,
+          "rest": 23,
           "keyPoses": [
             0,
-            0.13999999999999999,
-            0.27999999999999997,
-            0.42,
-            0.5599999999999999,
-            0.7
+            0.068,
+            0.136,
+            0.20400000000000001,
+            0.272,
+            0.34
           ],
-          "layers": 37,
+          "layers": 39,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13279,42 +12725,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2c192be47ecd46330c8f9c8535f7640ce349a91b0958b03873c3d0ecb6528aa9",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "ruler-guides-ruler-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "ruler-guides-tick-t13"
-            },
-            {
-              "type": "fixed",
-              "part": "ruler-guides-tick-l13"
-            },
-            {
-              "type": "rigid",
-              "part": "ruler-guides-guide-v"
-            },
-            {
-              "type": "rigid",
-              "part": "ruler-guides-guide-h"
-            }
-          ],
+          "nativeSha256": "5ac901506aa48fc03fb8b0693a23d4264f4114beec07edf50dce574725fb569f",
+          "sourceSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
+          "planSha256": "6666faf32b80cdb8f5ab3c0bf20856150855fc6724b25d97a787cf59a85b8952",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13336,8 +12754,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5451,
-          "sha256": "d5a97ac53726e40665d3e6bac701bc18089ecee2e085623eef208507f08ae8a8"
+          "bytes": 4679,
+          "sha256": "a760434dbe8d336835c6bbc89cc87ab6ee9beecf1c3c03efdbc672501cc6f48b"
         },
         {
           "name": "ruler-guides-strong",
@@ -13346,34 +12764,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Ruler guides",
-          "description": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+          "description": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
           "label": "Ruler guides",
-          "intent": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
+          "intent": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.66,
-          "rest": 43,
+          "active": 0.46,
+          "rest": 30,
           "keyPoses": [
             0,
-            0.132,
-            0.264,
-            0.396,
-            0.528,
-            0.66
+            0.09200000000000001,
+            0.18400000000000002,
+            0.276,
+            0.36800000000000005,
+            0.46
           ],
-          "layers": 37,
+          "layers": 39,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13383,42 +12799,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "5d99d25acbb68626320c3d57181628e99389066f6dfca4d7abd203e2a91c7dda",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the crossing guides are dragged 3 units right and down along the rulers, held for measuring and set back. Strong: they are dragged 5 units with a stop at the tick, held and returned with a spring.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "ruler-guides-ruler-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "ruler-guides-tick-t13"
-            },
-            {
-              "type": "fixed",
-              "part": "ruler-guides-tick-l13"
-            },
-            {
-              "type": "rigid",
-              "part": "ruler-guides-guide-v"
-            },
-            {
-              "type": "rigid",
-              "part": "ruler-guides-guide-h"
-            }
-          ],
+          "nativeSha256": "f3360eb8fb875f1b44fa5c562611366f825f2f3398fc11cb92f2398209fa13bc",
+          "sourceSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
+          "planSha256": "6666faf32b80cdb8f5ab3c0bf20856150855fc6724b25d97a787cf59a85b8952",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Guides are pulled out of the rulers and set on the 17 marks. Light: the vertical guide is drawn down out of the top ruler, and the horizontal guide follows a beat later, drawn across out of the left ruler; each stops at full length. Strong: each guide is also dragged out from its ruler while it draws, runs past its mark, snaps back onto it with a stop and settles; the horizontal one follows the vertical one. The rulers never move.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13440,12 +12828,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5453,
-          "sha256": "29f9ef477d76d4ddfd14fcad77277109079e2c2688b4b93c73eac4c37f9bead2"
+          "bytes": 4681,
+          "sha256": "4f9496e7c63635c4095bd478347aa338e7c7287c5a3814e94bbe5bdfe564570a"
         }
       ],
-      "bytes": 5451,
-      "sha256": "d5a97ac53726e40665d3e6bac701bc18089ecee2e085623eef208507f08ae8a8"
+      "bytes": 4679,
+      "sha256": "a760434dbe8d336835c6bbc89cc87ab6ee9beecf1c3c03efdbc672501cc6f48b"
     },
     {
       "name": "scissors",
@@ -13454,34 +12842,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Scissors",
-      "description": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+      "description": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
       "label": "Scissors",
-      "intent": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+      "intent": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.52,
-      "rest": 34,
+      "active": 0.34,
+      "rest": 23,
       "keyPoses": [
         0,
-        0.10400000000000001,
-        0.20800000000000002,
-        0.312,
-        0.41600000000000004,
-        0.52
+        0.068,
+        0.136,
+        0.20400000000000001,
+        0.272,
+        0.34
       ],
-      "layers": 20,
+      "layers": 22,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -13491,42 +12877,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "823f7d2a5fd6fe8478ee61fd4613290e629b3e70bb29da4ec9f79c9b8c9c1fd7",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-        "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-        "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-        "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-        "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-        "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-      },
-      "brief": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "scissors-hub"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-a-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-a-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-b-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-b-ring"
-        }
-      ],
+      "nativeSha256": "b3ee1651e88fda6cd0e0b85b671ab7f9a6e3ed74820b136807cf1e66d5a61dbd",
+      "sourceSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
+      "planSha256": "96ad0ace1deaf2960c6f4591738ff19cfca91c12ce1f6b80dc4bba8eb0d167ef",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
+      "constraints": [],
       "category": "Drawing & design tools",
-      "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+      "definitionsSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -13557,34 +12915,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Scissors",
-          "description": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+          "description": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
           "label": "Scissors",
-          "intent": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+          "intent": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.34,
+          "rest": 23,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.068,
+            0.136,
+            0.20400000000000001,
+            0.272,
+            0.34
           ],
-          "layers": 20,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13594,42 +12950,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "823f7d2a5fd6fe8478ee61fd4613290e629b3e70bb29da4ec9f79c9b8c9c1fd7",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "scissors-hub"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-a-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-a-ring"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-b-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-b-ring"
-            }
-          ],
+          "nativeSha256": "b3ee1651e88fda6cd0e0b85b671ab7f9a6e3ed74820b136807cf1e66d5a61dbd",
+          "sourceSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
+          "planSha256": "96ad0ace1deaf2960c6f4591738ff19cfca91c12ce1f6b80dc4bba8eb0d167ef",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13651,8 +12979,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4504,
-          "sha256": "cde3e27a9618e70df8b0981031be59f1d8731bce3d682de0865e1d9ddd2bcc24"
+          "bytes": 3336,
+          "sha256": "90a961cd18c05b1ffffc8ceac7d7d8a7a8ae4c6d0e58c25be9b8257851b9bbad"
         },
         {
           "name": "scissors-strong",
@@ -13661,18 +12989,16 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Scissors",
-          "description": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+          "description": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
           "label": "Scissors",
-          "intent": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+          "intent": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -13688,7 +13014,7 @@
             0.46399999999999997,
             0.58
           ],
-          "layers": 20,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13698,42 +13024,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2c818a3110280ab52a48cfdf0c8f8e6bbd6b198a6ed808515ea357629cdff376",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "scissors-hub"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-a-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-a-ring"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-b-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-b-ring"
-            }
-          ],
+          "nativeSha256": "3d162dfab86ebcdc0088881adbd2ac47888a9b49823577f2d17169f16c2dbaf5",
+          "sourceSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
+          "planSha256": "96ad0ace1deaf2960c6f4591738ff19cfca91c12ce1f6b80dc4bba8eb0d167ef",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13755,8 +13053,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4506,
-          "sha256": "f47bb3687798024999195fcac91d4fb97053a7ab7fa1e55040c8f8816a41cbf4"
+          "bytes": 3338,
+          "sha256": "85866b9bb9dde4120f812ab5bc1107754720870515298aee430db08b208d3b9b"
         }
       ],
       "animations": [
@@ -13767,34 +13065,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Scissors",
-          "description": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+          "description": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
           "label": "Scissors",
-          "intent": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+          "intent": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.52,
-          "rest": 34,
+          "active": 0.34,
+          "rest": 23,
           "keyPoses": [
             0,
-            0.10400000000000001,
-            0.20800000000000002,
-            0.312,
-            0.41600000000000004,
-            0.52
+            0.068,
+            0.136,
+            0.20400000000000001,
+            0.272,
+            0.34
           ],
-          "layers": 20,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13804,42 +13100,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "823f7d2a5fd6fe8478ee61fd4613290e629b3e70bb29da4ec9f79c9b8c9c1fd7",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "scissors-hub"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-a-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-a-ring"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-b-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-b-ring"
-            }
-          ],
+          "nativeSha256": "b3ee1651e88fda6cd0e0b85b671ab7f9a6e3ed74820b136807cf1e66d5a61dbd",
+          "sourceSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
+          "planSha256": "96ad0ace1deaf2960c6f4591738ff19cfca91c12ce1f6b80dc4bba8eb0d167ef",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13861,8 +13129,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4504,
-          "sha256": "cde3e27a9618e70df8b0981031be59f1d8731bce3d682de0865e1d9ddd2bcc24"
+          "bytes": 3336,
+          "sha256": "90a961cd18c05b1ffffc8ceac7d7d8a7a8ae4c6d0e58c25be9b8257851b9bbad"
         },
         {
           "name": "scissors-strong",
@@ -13871,18 +13139,16 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Scissors",
-          "description": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+          "description": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
           "label": "Scissors",
-          "intent": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
+          "intent": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
@@ -13898,7 +13164,7 @@
             0.46399999999999997,
             0.58
           ],
-          "layers": 20,
+          "layers": 22,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -13908,42 +13174,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "2c818a3110280ab52a48cfdf0c8f8e6bbd6b198a6ed808515ea357629cdff376",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "aea4f183586bb76a5b3d8647d6a8f3a863f1443202603db552e491db1cf219a5",
-            "batches/helpers.mjs": "4cef00a98b453668a5699b3e14c3c70ed09611b8a5946e7351b812c25dbc5d13",
-            "batches/tools-a.mjs": "74269430ecac5cf84a7a461af9b42a35b572cb6d3eafd0c74e88e66085af8d6a",
-            "batches/tools-b.mjs": "091ef67737c7cc13b3414f3994a95a4107a1adb4f7869672bd937eaf05981f09",
-            "batches/tools-c.mjs": "f3834db6972481214e730302a5cc6ecd653b56b2f1c3b967ab5f3108ddebcad6",
-            "batches/tools-d.mjs": "b1b2388e2b64ffdcd54ad3706d8e9603dd8e34ef0d26254e6a75cdb8d912ed96"
-          },
-          "brief": "Light: the scissors open 8\u00b0 about the hub and snip shut in 0.12 s. Strong: they open 15\u00b0, hold, and snap shut with a stop that overshoots 1.5\u00b0 before settling.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "scissors-hub"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-a-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-a-ring"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-b-shaft"
-            },
-            {
-              "type": "rigid",
-              "part": "scissors-blade-b-ring"
-            }
-          ],
+          "nativeSha256": "3d162dfab86ebcdc0088881adbd2ac47888a9b49823577f2d17169f16c2dbaf5",
+          "sourceSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
+          "planSha256": "96ad0ace1deaf2960c6f4591738ff19cfca91c12ce1f6b80dc4bba8eb0d167ef",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
+          "constraints": [],
           "category": "Drawing & design tools",
-          "definitionsSha256": "1adbcb70fde6f6ea1368c5b109a2f58887b2a7d57e250df3b12f8ee4cf340faa",
+          "definitionsSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13965,12 +13203,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 4506,
-          "sha256": "f47bb3687798024999195fcac91d4fb97053a7ab7fa1e55040c8f8816a41cbf4"
+          "bytes": 3338,
+          "sha256": "85866b9bb9dde4120f812ab5bc1107754720870515298aee430db08b208d3b9b"
         }
       ],
-      "bytes": 4504,
-      "sha256": "cde3e27a9618e70df8b0981031be59f1d8731bce3d682de0865e1d9ddd2bcc24"
+      "bytes": 3336,
+      "sha256": "90a961cd18c05b1ffffc8ceac7d7d8a7a8ae4c6d0e58c25be9b8257851b9bbad"
     }
   ]
 }

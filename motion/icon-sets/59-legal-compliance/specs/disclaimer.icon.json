@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "disclaimer",
+  "label": "Disclaimer",
+  "intent": "The fine print is attached. Light: the fine print clears, the asterisk clicks round a sixth of a turn and pops, and the three lines of fine print write themselves out beside it, top to bottom. Strong: the asterisk winds back, spins two sixths and stops dead, pops harder and settles in two beats while the lines write out in quicker succession.",
+  "parts": {
+    "arm-0": {"shape": {"line": [[10.5, 10.5], [10.5, 21.5]]}},
+    "arm-1": {"shape": {"line": [[5.737, 13.25], [15.263, 18.75]]}},
+    "arm-2": {"shape": {"line": [[15.263, 13.25], [5.737, 18.75]]}},
+    "print-0": {"shape": {"line": [[19, 12], [27.5, 12]]}},
+    "print-1": {"shape": {"line": [[19, 16], [27.5, 16]]}},
+    "print-2": {"shape": {"line": [[19, 20], [24.5, 20]]}}
+  },
+  "rigs": {
+    "asterisk": {"pivot": [10.5, 16], "carries": ["arm-0", "arm-1", "arm-2"]}
+  },
+  "motion": {
+    "asterisk.rotate": {
+      "//": "the asterisk repeats every 60 degrees: it lands on 60 (or 120) and steps back to 0 on the next frame, where the shape is the same",
+      "light":  [[0, 0], [0.16, 60, "hit"], [0.177, 0, "step"]],
+      "strong": [[0, 0], [0.08, -15, "out"], [0.24, 120, "hit"], [0.257, 0, "step"]]
+    },
+    "asterisk.scale": {
+      "light":  [[0, 1], [0.16, 1], [0.22, 1.15, "out"], [0.3, 0.98, "inOut"], [0.36, 1]],
+      "strong": [[0, 1], [0.24, 1], [0.3, 1.18, "out"], [0.38, 0.95, "inOut"], [0.45, 1.02], [0.52, 1]]
+    },
+    "print-0.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.14, 0], [0.27, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.2, 0], [0.31, 1, "out"]]
+    },
+    "print-1.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.2, 0], [0.33, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.25, 0], [0.36, 1, "out"]]
+    },
+    "print-2.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.26, 0], [0.37, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.3, 0], [0.39, 1, "out"]]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "haptic-feedback",
+  "label": "Haptic feedback",
+  "intent": "The phone buzzes in your hand. Light: the rigid phone rattles side to side in a quick decaying buzz, and a ripple of vibration leaves each arc and fades as it spreads. Strong: two bursts, buzz, pause, buzz, with a twist in the rattle and a ripple on each burst. The phone never bends.",
+  "parts": {
+    "arc-r":    {"shape": {"arc": [[16, 16], 9.8, -30, 30]}},
+    "arc-l":    {"shape": {"arc": [[16, 16], 9.8, 150, 210]}},
+    "ripple-r": {"//": "hidden at rest: the vibration only exists while the phone buzzes", "shape": {"arc": [[16, 16], 9.8, -30, 30]}, "hidden": true},
+    "ripple-l": {"shape": {"arc": [[16, 16], 9.8, 150, 210]}, "hidden": true},
+    "speaker":  {"//": "v1 leaves the speaker out of Solid", "shape": {"line": [[14.5, 9.2], [17.5, 9.2]]}, "solid": "none"},
+    "phone":    {"shape": {"path": "M13.7 5.5 L18.3 5.5 C19.514 5.5 20.5 6.486 20.5 7.7 L20.5 24.3 C20.5 25.514 19.514 26.5 18.3 26.5 L13.7 26.5 C12.486 26.5 11.5 25.514 11.5 24.3 L11.5 7.7 C11.5 6.486 12.486 5.5 13.7 5.5 Z"}, "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "handset": {"pivot": [16, 16], "carries": ["phone", "speaker"]}
+  },
+  "motion": {
+    "handset.x": {
+      "light":  [[0, 0], [0.03, -1.2], [0.07, 1.2], [0.11, -1], [0.15, 0.75], [0.19, -0.45], [0.23, 0.2], [0.27, 0]],
+      "strong": [[0, 0], [0.03, -1.3], [0.07, 1.3], [0.11, -1.1], [0.15, 0.85], [0.19, -0.45], [0.23, 0],
+                 [0.33, 0], [0.36, -1.5], [0.4, 1.5], [0.44, -1.3], [0.48, 1.1], [0.52, -0.75], [0.56, 0.4], [0.6, -0.15], [0.64, 0]]
+    },
+    "handset.rotate": {
+      "//": "Strong only: the rattle twists a little with the buzz",
+      "strong": {"follow": "handset.x", "scale": 3}
+    },
+    "ripple-r.opacity": {
+      "light":  [[0, 0], [0.04, 0], [0.08, 1, "out"], [0.2, 0.7], [0.36, 0, "in"]],
+      "strong": [[0, 0], [0.04, 0], [0.07, 1, "out"], [0.16, 0.7], [0.29, 0, "in"], [0.36, 0], [0.39, 1, "out"], [0.5, 0.7], [0.66, 0, "in"]]
+    },
+    "ripple-r.r": {
+      "light":  [[0, 0], [0.04, 0.4], [0.36, 2.9, "out"], [0.38, 0, "step"]],
+      "strong": [[0, 0], [0.04, 0.4], [0.29, 2.6, "out"], [0.31, 0, "step"], [0.36, 0.4], [0.66, 3, "out"], [0.68, 0, "step"]]
+    },
+    "ripple-l.opacity": {"follow": "ripple-r.opacity"},
+    "ripple-l.r": {"follow": "ripple-r.r"}
+  }
+}

@@ -1,0 +1,328 @@
+{
+ "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+ "format": "gai-icon/2",
+ "id": "justice-scale",
+ "label": "Justice scale",
+ "intent": "Something is weighed and the scale finds balance. Light: a weight drops onto the left pan's hanger and vanishes into it; the beam tips under it, swings back through level once and settles, the pans hanging plumb from its ends. Strong: the weight lands harder, the beam tips further and rings down through three shrinking swings to level. The post and base never move.",
+ "parts": {
+  "base": {
+   "shape": {
+    "line": [
+     [
+      10,
+      27.5
+     ],
+     [
+      22,
+      27.5
+     ]
+    ]
+   }
+  },
+  "post": {
+   "shape": {
+    "line": [
+     [
+      16,
+      9.5
+     ],
+     [
+      16,
+      27.5
+     ]
+    ]
+   }
+  },
+  "beam": {
+   "shape": {
+    "line": [
+     [
+      7.5,
+      9.5
+     ],
+     [
+      24.5,
+      9.5
+     ]
+    ]
+   }
+  },
+  "pan-l-string-l": {
+   "shape": {
+    "line": [
+     [
+      7.5,
+      9.5
+     ],
+     [
+      4.9,
+      17.5
+     ]
+    ]
+   }
+  },
+  "pan-l-string-r": {
+   "shape": {
+    "line": [
+     [
+      7.5,
+      9.5
+     ],
+     [
+      10.1,
+      17.5
+     ]
+    ]
+   }
+  },
+  "pan-l": {
+   "shape": {
+    "path": "M4.1 17.5 L10.9 17.5 C10.9 19.2 9.4 20.3 7.5 20.3 C5.6 20.3 4.1 19.2 4.1 17.5 Z"
+   },
+   "role": "surface",
+   "solid": "fill"
+  },
+  "pan-r-string-l": {
+   "shape": {
+    "line": [
+     [
+      24.5,
+      9.5
+     ],
+     [
+      21.9,
+      17.5
+     ]
+    ]
+   }
+  },
+  "pan-r-string-r": {
+   "shape": {
+    "line": [
+     [
+      24.5,
+      9.5
+     ],
+     [
+      27.1,
+      17.5
+     ]
+    ]
+   }
+  },
+  "pan-r": {
+   "shape": {
+    "path": "M21.1 17.5 L27.9 17.5 C27.9 19.2 26.4 20.3 24.5 20.3 C22.6 20.3 21.1 19.2 21.1 17.5 Z"
+   },
+   "role": "surface",
+   "solid": "fill"
+  },
+  "weight": {
+   "//": "hidden at rest: the thing being weighed, only while it lands",
+   "shape": {
+    "circle": [
+     [
+      7.5,
+      4.2
+     ],
+     1.4
+    ]
+   },
+   "role": "fill",
+   "hidden": true
+  }
+ },
+ "rigs": {
+  "beam": {
+   "pivot": [
+    16,
+    9.5
+   ],
+   "carries": [
+    "beam",
+    "hang-l",
+    "hang-r"
+   ]
+  },
+  "hang-l": {
+   "//": "counter-turns so the pan hangs plumb",
+   "pivot": [
+    7.5,
+    9.5
+   ],
+   "carries": [
+    "pan-l-string-l",
+    "pan-l-string-r",
+    "pan-l",
+    "weight"
+   ]
+  },
+  "hang-r": {
+   "pivot": [
+    24.5,
+    9.5
+   ],
+   "carries": [
+    "pan-r-string-l",
+    "pan-r-string-r",
+    "pan-r"
+   ]
+  }
+ },
+ "motion": {
+  "weight.opacity": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.04,
+     1,
+     "out"
+    ],
+    [
+     0.14,
+     1
+    ],
+    [
+     0.2,
+     0,
+     "in"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.03,
+     1,
+     "out"
+    ],
+    [
+     0.12,
+     1
+    ],
+    [
+     0.18,
+     0,
+     "in"
+    ]
+   ]
+  },
+  "weight.y": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.14,
+     3.2,
+     "in"
+    ],
+    [
+     0.2,
+     3.2
+    ],
+    [
+     0.217,
+     0,
+     "step"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.12,
+     3.4,
+     "in"
+    ],
+    [
+     0.18,
+     3.4
+    ],
+    [
+     0.197,
+     0,
+     "step"
+    ]
+   ]
+  },
+  "beam.rotate": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.14,
+     0
+    ],
+    [
+     0.23,
+     -10,
+     "out"
+    ],
+    [
+     0.37,
+     2.5,
+     "inOut"
+    ],
+    [
+     0.47,
+     0,
+     "inOut"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.12,
+     0
+    ],
+    [
+     0.21,
+     -15,
+     "out"
+    ],
+    [
+     0.34,
+     7,
+     "inOut"
+    ],
+    [
+     0.45,
+     -3,
+     "inOut"
+    ],
+    [
+     0.55,
+     1,
+     "inOut"
+    ],
+    [
+     0.63,
+     0,
+     "inOut"
+    ]
+   ]
+  },
+  "hang-l.rotate": {
+   "follow": "beam.rotate",
+   "scale": -1
+  },
+  "hang-r.rotate": {
+   "follow": "beam.rotate",
+   "scale": -1
+  }
+ }
+}

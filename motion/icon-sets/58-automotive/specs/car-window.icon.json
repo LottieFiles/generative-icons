@@ -1,0 +1,52 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "car-window",
+  "label": "Car window",
+  "intent": "The window rolls down. Light: the glass runs down 5 units inside the window, lands on its bottom stop with a hit, rebounds almost a unit and seats. Strong: one-touch express down: the glass breaks free of the top seal with a short jerk, drops fast onto its stop, and bounces twice before it seats. The reverse runs the glass up into the top seal with a hit and a small rebound. The door, window frame and handle never move; the glass holds open.",
+  "state": {"from": "closed", "to": "open", "labels": ["Roll down", "Roll up"], "reverse": "auto"},
+  "preview": {
+    "light": [0, 0.1, 0.2, 0.26, 0.3, 0.36, 0.42, 0.46],
+    "strong": [0, 0.06, 0.12, 0.22, 0.3, 0.37, 0.44, 0.55]
+  },
+  "parts": {
+    "door": {
+      "shape": {"path": "M5.2 7 C5.2 5.667 5.867 5 7.2 5 L19.5 5 C20.833 5 21.927 5.512 22.78 6.536 L25.22 9.464 C26.073 10.488 26.5 11.667 26.5 13 L26.5 24.5 C26.5 25.833 25.833 26.5 24.5 26.5 L7.2 26.5 C5.867 26.5 5.2 25.833 5.2 24.5 L5.2 7 Z"},
+      "role": "surface",
+      "tint": false,
+      "solid": {"path": "M5.2 7 C5.2 5.667 5.867 5 7.2 5 L19.5 5 C20.833 5 21.927 5.512 22.78 6.536 L25.22 9.464 C26.073 10.488 26.5 11.667 26.5 13 L26.5 24.5 C26.5 25.833 25.833 26.5 24.5 26.5 L7.2 26.5 C5.867 26.5 5.2 25.833 5.2 24.5 L5.2 7 L9 9.75 L9 16.5 C9 17.167 9.333 17.5 10 17.5 L21.7 17.5 C22.367 17.5 22.7 17.167 22.7 16.5 L22.7 14 C22.7 13.333 22.512 12.725 22.136 12.174 L20.364 9.576 C19.988 9.025 19.467 8.75 18.8 8.75 L10 8.75 C9.333 8.75 9 9.083 9 9.75 L5.2 7 Z"},
+      "//": "v1 Solid: the door filled with the window left open, one bridged subpath; v1 has no tint on the door"
+    },
+    "window": {
+      "shape": {"path": "M9 9.75 C9 9.083 9.333 8.75 10 8.75 L18.8 8.75 C19.467 8.75 19.988 9.025 20.364 9.576 L22.136 12.174 C22.512 12.725 22.7 13.333 22.7 14 L22.7 16.5 C22.7 17.167 22.367 17.5 21.7 17.5 L10 17.5 C9.333 17.5 9 17.167 9 16.5 L9 9.75 Z"},
+      "solid": "none"
+    },
+    "glass": {
+      "//": "the pane: tint in Duotone, filled in Solid, no outline; v1's closed and open shapes share one command list",
+      "shape": {"morph": [
+        {"path": "M9 9.35 C9 8.95 9.2 8.75 9.6 8.75 L19.2 8.75 C19.6 8.75 19.913 8.915 20.138 9.246 L22.362 12.504 C22.587 12.835 22.7 13.2 22.7 13.6 L22.7 16.9 C22.7 17.3 22.5 17.5 22.1 17.5 L9.6 17.5 C9.2 17.5 9 17.3 9 16.9 L9 9.35 Z"},
+        {"path": "M9 14.35 C9 13.95 9.2 13.75 9.6 13.75 L22.1 13.75 C22.5 13.75 22.7 13.75 22.7 13.75 L22.7 13.75 C22.7 13.75 22.7 13.95 22.7 14.35 L22.7 16.9 C22.7 17.3 22.5 17.5 22.1 17.5 L9.6 17.5 C9.2 17.5 9 17.3 9 16.9 L9 14.35 Z"}
+      ], "by": "roll"},
+      "role": "surface",
+      "outline": "none",
+      "solid": "fill"
+    },
+    "glass-edge": {
+      "//": "the top of the pane; it lengthens as it passes the slanted corner, as in v1",
+      "shape": {"morph": [{"line": [[9, 8.75], [19.8, 8.75]]}, {"line": [[9, 13.75], [22.7, 13.75]]}], "by": "roll"}
+    },
+    "handle": {"shape": {"line": [[17, 22.2], [22, 22.2]]}}
+  },
+  "reverse": {
+    "//": "written out: the glass rises into the top seal with a hit; it can never go past open, so no wind-up below the stop",
+    "light": {"roll": [[0, 1], [0.3, 0, "hit"], [0.35, 0.1, "out"], [0.4, 0, "hit"]]},
+    "strong": {"roll": [[0, 1], [0.24, 0, "hit"], [0.3, 0.18, "out"], [0.36, 0, "hit"], [0.41, 0.06, "out"], [0.46, 0, "hit"]]}
+  },
+  "motion": {
+    "roll": {
+      "//": "0 = closed (v1 frame 0), 1 = open (v1's end state); the pane never goes past either stop",
+      "light": [[0, 0], [0.3, 1, "hit"], [0.36, 0.82, "out"], [0.42, 1, "hit"]],
+      "strong": [[0, 0], [0.06, 0.16, "out"], [0.12, 0.16], [0.3, 1, "hit"], [0.37, 0.7, "out"], [0.44, 1, "hit"], [0.49, 0.88, "out"], [0.55, 1, "hit"]]
+    }
+  }
+}

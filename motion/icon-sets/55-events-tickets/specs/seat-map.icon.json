@@ -1,0 +1,66 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "seat-map",
+  "label": "Seat map",
+  "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+  "state": {"from": "available", "to": "selected", "labels": ["Select seat", "Clear seat"], "reverse": "auto"},
+  "parts": {
+    "stage":   {"shape": {"rect": [5, 4, 22, 6], "r": 3}, "role": "surface", "solid": "fill"},
+    "seat-0":  {"shape": {"rect": [6.8, 12.6, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-1":  {"shape": {"rect": [12, 12.6, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-2":  {"shape": {"rect": [17.2, 12.6, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-3":  {"shape": {"rect": [22.4, 12.6, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-4":  {"shape": {"rect": [6.8, 18, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-5":  {"shape": {"rect": [12, 18, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-6":  {"shape": {"rect": [17.2, 18, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-7":  {"shape": {"rect": [22.4, 18, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-8":  {"shape": {"rect": [6.8, 23.4, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-9":  {"shape": {"rect": [12, 23.4, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-10": {"shape": {"rect": [17.2, 23.4, 2.8, 2.8], "r": 0.9}, "role": "fill"},
+    "seat-11": {"shape": {"rect": [22.4, 23.4, 2.8, 2.8], "r": 0.9}, "role": "fill"}
+  },
+  "rigs": {
+    "seat-6": {"//": "the chosen seat grows about its own centre", "pivot": [18.6, 19.4]}
+  },
+  "motion": {
+    "seat-6.scale": {
+      "light":  [[0, 1], [0.07, 0.78, "out"], [0.2, 1.72, "out"], [0.29, 1.42], [0.36, 1.53], [0.42, 1.5]],
+      "strong": [[0, 1], [0.09, 0.68, "out"], [0.24, 1.85, "out"], [0.34, 1.38], [0.42, 1.56], [0.49, 1.48], [0.55, 1.5]]
+    },
+    "seat-2.scale": {
+      "//": "the ripple: the four seats beside the chosen one dip as it pops",
+      "strong": [[0, 1], [0.2, 1], [0.27, 0.6, "out"], [0.4, 1, "inOut"]]
+    },
+    "seat-5.scale":  {"follow": "seat-2.scale"},
+    "seat-7.scale":  {"follow": "seat-2.scale"},
+    "seat-10.scale": {"follow": "seat-2.scale"},
+    "seat-1.scale":  {"//": "the diagonal seats a beat later and less", "follow": "seat-2.scale", "lag": 0.05, "scale": 0.65, "offset": 0.35},
+    "seat-3.scale":  {"follow": "seat-2.scale", "lag": 0.05, "scale": 0.65, "offset": 0.35},
+    "seat-9.scale":  {"follow": "seat-2.scale", "lag": 0.05, "scale": 0.65, "offset": 0.35},
+    "seat-11.scale": {"follow": "seat-2.scale", "lag": 0.05, "scale": 0.65, "offset": 0.35},
+    "seat-0.scale":  {"//": "the far column last and least", "follow": "seat-2.scale", "lag": 0.1, "scale": 0.45, "offset": 0.55},
+    "seat-4.scale":  {"follow": "seat-2.scale", "lag": 0.1, "scale": 0.45, "offset": 0.55},
+    "seat-8.scale":  {"follow": "seat-2.scale", "lag": 0.1, "scale": 0.45, "offset": 0.55}
+  },
+  "reverse": {
+    "//": "deselect: a small swell, then the seat shrinks back past its size and settles; the ripple does not replay",
+    "light": {
+      "seat-6.scale": [[0, 1.5], [0.06, 1.62, "out"], [0.2, 0.86, "out"], [0.28, 1.05], [0.34, 1]]
+    },
+    "strong": {
+      "seat-6.scale": [[0, 1.5], [0.07, 1.66, "out"], [0.22, 0.78, "out"], [0.31, 1.08], [0.38, 0.97], [0.43, 1]],
+      "seat-2.scale": [[0, 1]],
+      "seat-5.scale": [[0, 1]],
+      "seat-7.scale": [[0, 1]],
+      "seat-10.scale": [[0, 1]],
+      "seat-1.scale": [[0, 1]],
+      "seat-3.scale": [[0, 1]],
+      "seat-9.scale": [[0, 1]],
+      "seat-11.scale": [[0, 1]],
+      "seat-0.scale": [[0, 1]],
+      "seat-4.scale": [[0, 1]],
+      "seat-8.scale": [[0, 1]]
+    }
+  }
+}

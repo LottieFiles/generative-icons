@@ -1,0 +1,51 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "streak-flame",
+  "label": "Streak flame",
+  "intent": "The streak flares up. Light: the flame gathers low and wide, then flares 14 percent taller and narrower on its base, rebounds and settles, and an ember rises off its right shoulder and fades. Strong: a deeper gather, a 16 percent flare with a lean that swings back through two smaller beats, and two embers rise in turn. The inner tongue rides with the flame.",
+  "parts": {
+    "flame":  {"shape": {"path": "M16 6.5 C20 10.8 23 14.4 23 19 C23 23.7 19.9 27.5 16 27.5 C12.1 27.5 9 23.7 9 19 C9 15.2 11 12.4 12.4 10.6 C12.6 13.2 13.8 14.4 15 14.2 C14.2 11.6 14.8 8.8 16 6.5 Z"},
+               "role": "surface",
+               "solid": {"path": "M16 6.5 C20 10.8 23 14.4 23 19 C23 23.7 19.9 27.5 16 27.5 C12.1 27.5 9 23.7 9 19 C9 15.2 11 12.4 12.4 10.6 C12.6 13.2 13.8 14.4 15 14.2 C14.2 11.6 14.8 8.8 16 6.5 L16 6.5 L16.2 16.4 C14.6 18.2 13.4 19.8 13.4 21.4 C13.4 23.1 14.5 24.2 16 24.2 C17.5 24.2 18.6 23.1 18.6 21.4 C18.6 19.8 17.6 18.2 16.2 16.4 L16 6.5 Z"},
+               "//": "v1 Solid: the flame filled with the tongue's shape open, one bridged subpath"},
+    "tongue": {"shape": {"path": "M16.2 16.4 C17.6 18.2 18.6 19.8 18.6 21.4 C18.6 23.1 17.5 24.2 16 24.2 C14.5 24.2 13.4 23.1 13.4 21.4 C13.4 19.8 14.6 18.2 16.2 16.4 Z"}, "solid": "none"},
+    "ember-a": {"//": "hidden at rest: an ember clear of the right shoulder, rising and shrinking as it fades", "shape": {"circle": [[20.4, 8.6], 0.9]}, "role": "fill", "hidden": true},
+    "ember-b": {"//": "Strong only: a second ember off the left shoulder", "shape": {"circle": [[10.6, 8.8], 0.9]}, "role": "fill", "hidden": true}
+  },
+  "rigs": {
+    "fire":    {"//": "flares on its base: taller and narrower", "pivot": [16, 27.5], "carries": ["flame", "tongue"], "squash": {"base": 27.5, "widen": 0.5}},
+    "ember-a": {"pivot": [20.4, 8.6]},
+    "ember-b": {"pivot": [10.6, 8.8]}
+  },
+  "motion": {
+    "fire.squash": {
+      "light":  [[0, 1], [0.08, 0.92, "out"], [0.22, 1.14, "out"], [0.34, 0.96], [0.44, 1.02], [0.52, 1]],
+      "strong": [[0, 1], [0.1, 0.88, "out"], [0.26, 1.16, "out"], [0.38, 0.95], [0.48, 1.05], [0.58, 0.98], [0.66, 1]]
+    },
+    "fire.rotate": {
+      "strong": [[0, 0], [0.1, 2, "out"], [0.26, -5, "out"], [0.4, 3], [0.52, -1.5], [0.62, 0]]
+    },
+    "ember-a.opacity": {
+      "light":  [[0, 0], [0.18, 0], [0.19, 1, "step"], [0.34, 1], [0.46, 0, "in"]],
+      "strong": [[0, 0], [0.22, 0], [0.23, 1, "step"], [0.4, 1], [0.54, 0, "in"]]
+    },
+    "ember-a.y": {
+      "light":  [[0, 0], [0.18, 0], [0.46, -3, "out"], [0.48, 0, "step"]],
+      "strong": [[0, 0], [0.22, 0], [0.54, -3.6, "out"], [0.56, 0, "step"]]
+    },
+    "ember-a.x": {
+      "light":  [[0, 0], [0.18, 0], [0.46, 0.8, "out"], [0.48, 0, "step"]],
+      "strong": [[0, 0], [0.22, 0], [0.54, 1, "out"], [0.56, 0, "step"]]
+    },
+    "ember-a.scale": {
+      "light":  [[0, 1], [0.18, 1], [0.46, 0.5], [0.48, 1, "step"]],
+      "strong": [[0, 1], [0.22, 1], [0.54, 0.5], [0.56, 1, "step"]]
+    },
+    "ember-b.opacity": {"strong": {"follow": "ember-a.opacity", "lag": 0.08}},
+    "ember-b.y": {"strong": {"follow": "ember-a.y", "lag": 0.08, "scale": 0.85}},
+    "ember-b.x": {"strong": {"follow": "ember-a.x", "lag": 0.08, "scale": -0.8}},
+    "ember-b.scale": {"strong": {"follow": "ember-a.scale", "lag": 0.08}}
+  },
+  "preview": {"light": [0, 0.08, 0.16, 0.22, 0.28, 0.34, 0.42, 0.52], "strong": [0, 0.1, 0.2, 0.26, 0.34, 0.42, 0.52, 0.66]}
+}

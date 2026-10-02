@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "tripod",
+  "label": "Tripod",
+  "intent": "The camera is set down on the tripod and the tripod takes its weight. Light: the stand lifts a little with its legs drawn in, then plants: the hub drops and the feet splay out on the ground as the head lands, and the stand springs back once. Strong: a higher lift, a harder plant with the feet spreading wider, two decaying rebounds, and the camera head rocks forward on its mount as it lands and levels again. The feet never leave the ground line.",
+  "parts": {
+    "head":   {"shape": {"rect": [10.5, 5.5, 11, 6], "r": 1.8}, "role": "surface", "solid": "fill",
+               "knockout": [{"part": "lens", "gap": 0.1}],
+               "//": "v1 Solid: the head filled to its frame line with the lens open (r 1.6)"},
+    "lens":   {"shape": {"circle": [[16, 8.5], 1.5]}, "role": "fill"},
+    "column": {"shape": {"line": [[16, 11.5], [16, 28]]}},
+    "leg-l":  {"shape": {"line": [[16, 16.5], [7.5, 28]]}},
+    "leg-r":  {"shape": {"line": [[16, 16.5], [24.5, 28]]}}
+  },
+  "rigs": {
+    "stand": {"//": "squash about the ground line: the hub drops and the feet spread while they stay on y 28; strokes keep their weight",
+              "pivot": [16, 28], "squash": {"base": 28, "widen": 0.6}, "carries": ["column", "leg-l", "leg-r"]},
+    "head":  {"//": "rides the column top (y offset = 16.5 x (1 - squash)); turns on its mount", "pivot": [16, 11.5], "carries": ["head", "lens"]}
+  },
+  "motion": {
+    "//": "head.y is keyed with the same times and eases as stand.squash and values 16.5 x (1 - k), so the head stays seated on the column top in every frame.",
+    "stand.squash": {
+      "light":  [[0, 1], [0.12, 1.06, "out"], [0.24, 0.9, "hit"], [0.34, 1.025], [0.44, 1]],
+      "strong": [[0, 1], [0.14, 1.09, "out"], [0.27, 0.86, "hit"], [0.38, 1.04], [0.48, 0.985], [0.57, 1]]
+    },
+    "head.y": {
+      "light":  [[0, 0], [0.12, -0.99, "out"], [0.24, 1.65, "hit"], [0.34, -0.4125], [0.44, 0]],
+      "strong": [[0, 0], [0.14, -1.485, "out"], [0.27, 2.31, "hit"], [0.38, -0.66], [0.48, 0.2475], [0.57, 0]]
+    },
+    "head.rotate": {
+      "strong": [[0, 0], [0.27, 0], [0.36, -8, "out"], [0.47, 3.5], [0.56, -1.2], [0.64, 0]]
+    }
+  }
+}

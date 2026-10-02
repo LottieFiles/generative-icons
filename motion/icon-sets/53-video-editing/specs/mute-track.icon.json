@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "mute-track",
+  "label": "Mute track",
+  "intent": "The track goes silent. Light: the waveform is cut down left to right: each bar drops to a dot on the centre line in turn, 50 ms after the one before, and stops dead there. Strong: the waveform swells into one last loud beat that rolls across the bars, then each is cut to a dot in the same left-to-right order with a hard stop. The dots stay: the track is muted. The reverse raises the bars back out of the dots in the same order. The track frame never moves.",
+  "state": {"from": "live", "to": "muted", "labels": ["Mute", "Unmute"], "reverse": "auto"},
+  "parts": {
+    "track": {"shape": {"rect": [4.5, 7, 23, 18], "r": 2.5}, "role": "surface", "solid": "ring"},
+    "bar-0": {"shape": {"line": [[8.75, 14], [8.75, 18]]}},
+    "bar-1": {"shape": {"line": [[12.375, 12.5], [12.375, 19.5]]}},
+    "bar-2": {"shape": {"line": [[16, 13.5], [16, 18.5]]}},
+    "bar-3": {"shape": {"line": [[19.625, 12], [19.625, 20]]}},
+    "bar-4": {"shape": {"line": [[23.25, 14.25], [23.25, 17.75]]}}
+  },
+  "rigs": {
+    "bar-0": {"pivot": [8.75, 16]},
+    "bar-1": {"pivot": [12.375, 16]},
+    "bar-2": {"pivot": [16, 16]},
+    "bar-3": {"pivot": [19.625, 16]},
+    "bar-4": {"pivot": [23.25, 16]}
+  },
+  "reverse": {
+    "//": "by hand for Strong: the bars rise right to left and overshoot 15% (v1's reverse), not the 40% the mirrored swell would give",
+    "strong": {
+      "bar-0.scale": [[0, 0], [0.26, 0], [0.38, 1.15, "out"], [0.46, 0.97], [0.52, 1]],
+      "bar-1.scale": [[0, 0], [0.195, 0], [0.315, 1.15, "out"], [0.395, 0.97], [0.455, 1]],
+      "bar-2.scale": [[0, 0], [0.13, 0], [0.25, 1.15, "out"], [0.33, 0.97], [0.39, 1]],
+      "bar-3.scale": [[0, 0], [0.065, 0], [0.185, 1.15, "out"], [0.265, 0.97], [0.325, 1]],
+      "bar-4.scale": [[0, 0], [0.12, 1.15, "out"], [0.2, 0.97], [0.26, 1]]
+    }
+  },
+  "motion": {
+    "bar-0.scale": {
+      "//": "scale 0 is v1's end state: a zero-length line, a dot on the centre line; a level, so no overshoot below it",
+      "light":  [[0, 1], [0.03, 1], [0.15, 0, "hit"]],
+      "strong": [[0, 1], [0.12, 1.4, "out"], [0.17, 1.4], [0.3, 0, "hit"]]
+    },
+    "bar-1.scale": {"light": {"follow": "bar-0.scale", "lag": 0.05}, "strong": {"follow": "bar-0.scale", "lag": 0.065}},
+    "bar-2.scale": {"light": {"follow": "bar-0.scale", "lag": 0.1}, "strong": {"follow": "bar-0.scale", "lag": 0.13}},
+    "bar-3.scale": {"light": {"follow": "bar-0.scale", "lag": 0.15}, "strong": {"follow": "bar-0.scale", "lag": 0.195}},
+    "bar-4.scale": {"light": {"follow": "bar-0.scale", "lag": 0.2}, "strong": {"follow": "bar-0.scale", "lag": 0.26}}
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "pointer-speed",
+  "label": "Pointer speed",
+  "intent": "The pointer goes fast. Light: the pointer draws back, then dashes to the right and stops dead; its speed lines are dragged after it a beat later and stretch out behind it, top line first, then everything glides home. Strong: a deeper draw-back and a longer dash that stops with a bounce, and the speed lines stretch further.",
+  "preview": {"light": [0, 0.06, 0.14, 0.18, 0.24, 0.32, 0.4, 0.5], "strong": [0, 0.08, 0.18, 0.22, 0.27, 0.34, 0.5, 0.7]},
+  "parts": {
+    "trail-2": {"shape": {"line": [[4, 17.5], [8, 17.5]]}},
+    "trail-1": {"shape": {"line": [[4, 13.5], [8, 13.5]]}},
+    "trail-0": {"shape": {"line": [[4, 9.5], [8, 9.5]]}},
+    "cursor":  {"shape": {"path": "M12.535 6.452 C12.178 6.151 12 6.233 12 6.7 L12 20.3 C12 20.767 12.178 20.85 12.535 20.549 L15.418 18.122 C15.673 17.907 15.871 17.951 16.012 18.253 L18.545 23.657 C18.715 24.019 18.981 24.115 19.343 23.945 L21.657 22.855 C22.019 22.685 22.114 22.419 21.942 22.058 L19.415 16.751 C19.272 16.45 19.367 16.3 19.7 16.3 L23.5 16.3 C23.967 16.3 24.022 16.149 23.665 15.848 L12.535 6.452 Z"},
+                "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "pointer": {"pivot": [12, 6.7], "carries": ["cursor"]},
+    "trails":  {"//": "the speed lines are dragged after the pointer as a group", "pivot": [6, 13.5], "carries": ["trail-0", "trail-1", "trail-2"]},
+    "trail-0": {"//": "each line stretches from its left end", "pivot": [4, 9.5]},
+    "trail-1": {"pivot": [4, 13.5]},
+    "trail-2": {"pivot": [4, 17.5]}
+  },
+  "motion": {
+    "pointer.x": {
+      "light":  [[0, 0], [0.06, -0.8, "out"], [0.18, 3.8, "hit"], [0.25, 3.5], [0.5, 0, "inOut"]],
+      "strong": [[0, 0], [0.08, -1.2, "out"], [0.22, 4.6, "hit"], {"bounce": 0.3, "amp": 0.15}, [0.36, 4.6], [0.7, 0, "inOut"]]
+    },
+    "trails.x": {
+      "light":  {"follow": "pointer.x", "scale": 0.6, "lag": 0.05},
+      "strong": {"follow": "pointer.x", "scale": 0.45, "lag": 0.06}
+    },
+    "trail-0.scale": {
+      "light":  [[0, 1], [0.08, 1], [0.22, 1.55, "out"], [0.32, 1.38], [0.5, 1, "inOut"]],
+      "strong": [[0, 1], [0.1, 1], [0.26, 1.7, "out"], [0.38, 1.52], [0.68, 1, "inOut"]]
+    },
+    "trail-1.scale": {"light": {"follow": "trail-0.scale", "lag": 0.025}, "strong": {"follow": "trail-0.scale", "lag": 0.03}},
+    "trail-2.scale": {"light": {"follow": "trail-0.scale", "lag": 0.05}, "strong": {"follow": "trail-0.scale", "lag": 0.06}}
+  }
+}

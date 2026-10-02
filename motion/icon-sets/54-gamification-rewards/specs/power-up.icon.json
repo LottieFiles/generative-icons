@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "power-up",
+  "label": "Power up",
+  "intent": "The power-up charges and strikes. Light: the bolt draws up 1.5 units and squeezes in to gather charge, then strikes down past its seat with a surge to 1.2, rebounds and settles. Strong: the bolt crackles (a quick buzz of turns) as it draws up higher, strikes harder with a bigger surge, and settles through two smaller beats. The capsule never moves and the bolt keeps at least 2.3 from the capsule's centreline (set 54's one-unit painted gap).",
+  "parts": {
+    "shell": {
+      "shape": {"rect": [7, 4.5, 18, 23], "r": 7.5},
+      "role": "surface",
+      "solid": "ring",
+      "//": "v1 Solid is the outline at 2.6, hollow"
+    },
+    "bolt": {
+      "shape": {"path": "M17 11.4 C17 11.133 16.923 11.108 16.767 11.325 L12.232 17.675 C12.078 17.892 12.133 18 12.4 18 L15.6 18 C15.867 18 15.974 18.131 15.922 18.392 L15.078 22.608 C15.026 22.869 15.08 22.893 15.24 22.68 L20.76 15.32 C20.92 15.107 20.867 15 20.6 15 L17.4 15 C17.133 15 17 14.867 17 14.6 L17 11.4 Z"},
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "bolt": {
+      "//": "the bolt's own centre",
+      "pivot": [16.5, 17]
+    }
+  },
+  "motion": {
+    "bolt.y": {
+      "light": [[0, 0], [0.12, -1.5, "out"], [0.2, 0.6, "hit"], [0.3, -0.2], [0.4, 0]],
+      "strong": [[0, 0], [0.14, -2.2, "out"], [0.24, 0.6, "hit"], [0.33, -0.4], [0.44, 0.15], [0.56, 0]]
+    },
+    "bolt.scale": {
+      "light": [[0, 1], [0.12, 0.9, "out"], [0.2, 1.2, "hit"], [0.3, 0.97], [0.4, 1]],
+      "strong": [[0, 1], [0.14, 0.86, "out"], [0.24, 1.26, "hit"], [0.33, 0.95], [0.44, 1.06], [0.58, 1]]
+    },
+    "bolt.rotate": {
+      "strong": [[0, 0], [0.025, 6], [0.05, -6], [0.075, 5], [0.1, -4], [0.125, 2], [0.15, 0]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.06, 0.12, 0.16, 0.2, 0.25, 0.3, 0.4],
+    "strong": [0, 0.05, 0.1, 0.14, 0.2, 0.24, 0.33, 0.42]
+  }
+}

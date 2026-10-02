@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "speedometer",
+  "label": "Speedometer",
+  "intent": "The car accelerates and the speedometer reads it. Light: the needle sweeps up to the top mark, each mark it passes flares inward, it holds the reading a beat and drops back to its stop quicker than it rose. Strong: the car pulls through the gears: the needle climbs in three surges with a pause at each change, the marks flare in turn and the red-line mark flares hardest on arrival, then the needle drops back to its stop. The needle never overshoots its reading.",
+  "preview": {
+    "light": [0, 0.04, 0.1, 0.2, 0.3, 0.36, 0.42, 0.46],
+    "strong": [0, 0.06, 0.16, 0.24, 0.32, 0.46, 0.6, 0.72]
+  },
+  "parts": {
+    "dial": {"shape": {"arc": [[16, 20], 10.5, -180, 0]}},
+    "tick-0": {"shape": {"line": [[6.907, 14.75], [8.292, 15.55]]}},
+    "tick-1": {"shape": {"line": [[16, 9.5], [16, 11.1]]}},
+    "tick-2": {"shape": {"line": [[25.093, 14.75], [23.708, 15.55]]}},
+    "needle": {"shape": {"line": [[16, 20], [10.879, 19.097]]}},
+    "hub": {"shape": {"circle": [[16, 20], 1.6]}, "role": "fill"}
+  },
+  "rigs": {
+    "needle": {"pivot": [16, 20]},
+    "tick-0": {"//": "each mark flares inward from its root on the dial", "pivot": [6.907, 14.75]},
+    "tick-1": {"pivot": [16, 9.5]},
+    "tick-2": {"pivot": [25.093, 14.75]}
+  },
+  "motion": {
+    "needle.rotate": {
+      "//": "marks at +20 (tick-0), +80 (tick-1), +140 (tick-2); each surge arrives dead on its value",
+      "light": [[0, 0], [0.2, 80, "out"], [0.3, 80], [0.42, 0, "hit"]],
+      "strong": [[0, 0], [0.12, 45, "out"], [0.16, 45], [0.28, 95, "out"], [0.32, 95], [0.44, 140, "out"], [0.54, 140], [0.68, 0, "hit"]]
+    },
+    "tick-0.scale": {"light": [[0, 1], [0.01, 1], [0.07, 1.8, "out"], [0.17, 1]], "strong": [[0, 1], [0.01, 1], [0.07, 1.8, "out"], [0.17, 1]]},
+    "tick-1.scale": {"light": [[0, 1], [0.1, 1], [0.18, 1.6, "out"], [0.3, 1]], "strong": [[0, 1], [0.18, 1], [0.24, 1.6, "out"], [0.34, 1]]},
+    "tick-2.scale": {"strong": [[0, 1], [0.38, 1], [0.46, 1.9, "out"], [0.6, 1]]}
+  }
+}

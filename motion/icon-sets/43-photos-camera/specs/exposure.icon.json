@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "exposure",
+  "label": "Exposure",
+  "intent": "Exposure goes up a stop. Light: the light side grows: the divider clicks a full stop toward the minus corner, pushing the shadow back, bounces a little off the stop and holds, then the exposure eases back. Strong: two clicks, each landing with a bounce, the second deeper into the corner than Light's one, before it eases back. The divider's ends stay on the frame the whole way; the frame, plus and minus never move.",
+  "parts": {
+    "dark":     {"//": "v1's Duotone tint of the shadow side; 'stop' moves its divider edge with the divider (at 1 it is two stops, on the line x + y = 33.2)",
+                 "shape": {"morph": [
+                   {"path": "M4 25.2 L4 25.2 L25.2 4 L25.2 4 L27.02 4 C27.673 4 28 4.933 28 6.8 L28 25.2 C28 27.067 27.067 28 25.2 28 L6.8 28 C4.933 28 4 27.673 4 27.02 L4 25.2 Z"},
+                   {"path": "M5.513 27.687 L5.513 27.687 L27.687 5.513 L27.687 5.513 L27.02 4 C27.673 4 28 4.933 28 6.8 L28 25.2 C28 27.067 27.067 28 25.2 28 L6.8 28 C4.933 28 4 27.673 4 27.02 L5.513 27.687 Z"}],
+                   "by": "stop"},
+                 "role": "surface", "outline": "none", "solid": "none"},
+    "exposure": {"shape": {"rect": [4, 4, 24, 24], "r": 2.8}, "role": "surface", "tint": false,
+                 "//": "v1 Solid: the frame filled to 1.25 outside its line (r 4), with the plus, the minus and the divider slot cut out",
+                 "solid": {"rect": [2.75, 2.75, 26.5, 26.5], "r": 4},
+                 "knockout": [{"part": "plus-v", "gap": 0}, {"part": "minus", "gap": 0}, {"part": "divider", "gap": 0}]},
+    "divider":  {"shape": {"line": [[4, 25.2], [25.2, 4]]},
+                 "solid": {"path": "M5.493 22.293 C5.103 22.683 5.103 23.317 5.493 23.707 L5.493 23.707 C5.883 24.097 6.517 24.097 6.907 23.707 L23.707 6.907 C24.097 6.517 24.097 5.883 23.707 5.493 L23.707 5.493 C23.317 5.103 22.683 5.103 22.293 5.493 L5.493 22.293 Z"}},
+    "plus-h":   {"shape": {"line": [[7.8, 9.6], [11.4, 9.6]]}, "solid": "none"},
+    "plus-v":   {"//": "carries the whole plus cut-out of v1's Solid",
+                 "shape": {"line": [[9.6, 7.8], [9.6, 11.4]]},
+                 "solid": {"path": "M8.6 8.08 L8.6 8.4 C8.6 8.533 8.533 8.6 8.4 8.6 L8.08 8.6 C7.893 8.6 7.8 8.767 7.8 9.1 L7.8 10.1 C7.8 10.433 7.893 10.6 8.08 10.6 L8.4 10.6 C8.533 10.6 8.6 10.667 8.6 10.8 L8.6 11.12 C8.6 11.307 8.767 11.4 9.1 11.4 L10.1 11.4 C10.433 11.4 10.6 11.307 10.6 11.12 L10.6 10.8 C10.6 10.667 10.667 10.6 10.8 10.6 L11.12 10.6 C11.307 10.6 11.4 10.433 11.4 10.1 L11.4 9.1 C11.4 8.767 11.307 8.6 11.12 8.6 L10.8 8.6 C10.667 8.6 10.6 8.533 10.6 8.4 L10.6 8.08 C10.6 7.893 10.433 7.8 10.1 7.8 L9.1 7.8 C8.767 7.8 8.6 7.893 8.6 8.08 Z"}},
+    "minus":    {"shape": {"line": [[20.6, 22.4], [24.2, 22.4]]},
+                 "solid": {"path": "M20.6 21.4 C20.048 21.4 19.6 21.848 19.6 22.4 L19.6 22.4 C19.6 22.952 20.048 23.4 20.6 23.4 L24.2 23.4 C24.752 23.4 25.2 22.952 25.2 22.4 L25.2 22.4 C25.2 21.848 24.752 21.4 24.2 21.4 L20.6 21.4 Z"}}
+  },
+  "rigs": {
+    "divider": {"//": "slides along its normal (x = y) and lengthens a touch so both ends stay on the frame's rounded corners: x 1 needs scale 1.0508, x 1.5 needs 1.0544, x 2 needs 1.0459",
+                "pivot": [14.6, 14.6], "carries": ["divider"]}
+  },
+  "motion": {
+    "divider.x": {
+      "light":  [[0, 0], [0.16, 1.5, "hit"], [0.21, 1.35], [0.27, 1.5], [0.34, 1.5], [0.5, 0, "inOut"]],
+      "strong": [[0, 0], [0.14, 1, "hit"], [0.19, 0.9], [0.25, 1], [0.39, 2, "hit"], [0.45, 1.86], [0.52, 2], [0.58, 2], [0.76, 0, "inOut"]]
+    },
+    "divider.y": {"follow": "divider.x"},
+    "stop": {"follow": "divider.x", "scale": 0.5},
+    "divider.scale": {
+      "//": "same times and eases as divider.x; values from the frame's corner arcs",
+      "light":  [[0, 1], [0.16, 1.0544, "hit"], [0.21, 1.0533], [0.27, 1.0544], [0.34, 1.0544], [0.5, 1, "inOut"]],
+      "strong": [[0, 1], [0.14, 1.0508, "hit"], [0.19, 1.0457], [0.25, 1.0508], [0.39, 1.0459, "hit"], [0.45, 1.0466], [0.52, 1.0459], [0.58, 1.0459], [0.76, 1, "inOut"]]
+    }
+  }
+}

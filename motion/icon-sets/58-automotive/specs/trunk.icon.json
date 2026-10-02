@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "trunk",
+  "label": "Trunk",
+  "intent": "The trunk opens. Light: the latch releases and the lid pops up a few degrees and catches, then the gas struts lift it to 70 degrees open; it overshoots a little and settles. Strong: the latch pops harder with a thunk through the car, the struts fling the lid 12 degrees past open, it swings back under and settles. The reverse swings the lid down and slams it shut: it bounces on the seal and the car dips on its springs. The wheels stay planted; the lid holds open.",
+  "state": {"from": "closed", "to": "open", "labels": ["Open trunk", "Close trunk"], "reverse": "auto"},
+  "preview": {
+    "light": [0, 0.05, 0.1, 0.2, 0.3, 0.37, 0.43, 0.47],
+    "strong": [0, 0.05, 0.11, 0.24, 0.34, 0.43, 0.5, 0.57]
+  },
+  "parts": {
+    "body": {
+      "//": "v1's tint and Solid: the car's silhouette closed along the shut lid",
+      "shape": {"path": "M25.642 16.155 C26.547 16.718 27 17.397 27 18.19 L27 19.21 C27 20.003 26.467 20.4 25.4 20.4 L6.6 20.4 C5.533 20.4 5 19.98 5 19.14 L5 18.06 C5 17.22 5.35 16.753 6.05 16.66 L6.95 16.54 C7.65 16.447 8.298 15.958 8.893 15.073 L10.607 12.527 C11.202 11.642 12.033 11.2 13.1 11.2 L17.4 11.2 C18.467 11.2 19.405 11.547 20.215 12.241 L21.285 13.159 C22.095 13.853 22.953 14.482 23.858 15.045 L25.642 16.155 Z"},
+      "role": "surface",
+      "outline": "none",
+      "solid": "fill"
+    },
+    "frame": {
+      "//": "v1's outline: the body stroked open where the lid sits",
+      "shape": {"path": "M27 17 L27 19.21 C27 20.003 26.467 20.4 25.4 20.4 L6.6 20.4 C5.533 20.4 5 19.98 5 19.14 L5 18.06 C5 17.22 5.35 16.753 6.05 16.66 L6.95 16.54 C7.65 16.447 8.298 15.958 8.893 15.073 L10.607 12.527 C11.202 11.642 12.033 11.2 13.1 11.2 L17.4 11.2 C18.467 11.2 19.405 11.547 20.215 12.241 L22.5 14.2"},
+      "solid": "none"
+    },
+    "wheel-rear": {"shape": {"circle": [[22.2, 22.2], 3]}, "solid": {"circle": [[22.2, 22.2], 4.3]}},
+    "wheel-front": {"shape": {"circle": [[9.8, 22.2], 3]}, "solid": {"circle": [[9.8, 22.2], 4.3]}},
+    "lid": {"shape": {"line": [[22.5, 14.2], [27, 17]]}}
+  },
+  "rigs": {
+    "car": {"//": "the body dips on its springs when the lid slams; the wheels stay planted", "pivot": [16, 20.4], "carries": ["body", "frame", "lid"]},
+    "lid": {"//": "the hinge; -70 lands exactly on v1's open lid", "pivot": [22.5, 14.2]}
+  },
+  "reverse": {
+    "//": "written out: the lid is pulled down and slams shut, bouncing on the seal, and the car dips with the slam",
+    "light": {
+      "lid.rotate": [[0, -70], [0.06, -73, "out"], [0.22, 0, "hit"], [0.27, -4, "out"], [0.32, 0, "hit"]],
+      "car.y": [[0, 0], [0.22, 0], [0.27, 0.9, "out"], [0.34, -0.25], [0.4, 0]]
+    },
+    "strong": {
+      "lid.rotate": [[0, -70], [0.07, -76, "out"], [0.2, 0, "hit"], [0.25, -7, "out"], [0.3, 0, "hit"], [0.34, -2, "out"], [0.38, 0, "hit"]],
+      "car.y": [[0, 0], [0.2, 0], [0.25, 1.3, "out"], [0.32, -0.4], [0.39, 0.5], [0.46, -0.1], [0.52, 0]]
+    }
+  },
+  "motion": {
+    "lid.rotate": {
+      "light": [[0, 0], [0.05, -12, "out"], [0.1, -10], [0.3, -74, "out"], [0.37, -68.5], [0.43, -70]],
+      "strong": [[0, 0], [0.05, -15, "out"], [0.11, -10], [0.14, -10], [0.34, -82, "out"], [0.43, -65], [0.5, -72.5], [0.57, -70]]
+    },
+    "car.y": {
+      "strong": [[0, 0], [0.05, 0.6, "out"], [0.12, 0]]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "wiper",
+  "label": "Wiper",
+  "intent": "Rain lands on the windscreen and the wiper clears it. Light: two drops land on the glass, then the arm sweeps 80 degrees across and each drop vanishes as the blade crosses it; the arm comes back to park quicker, stops with a hit and settles. Strong: three drops land in turn, the arm whips 95 degrees across to a hard stop, wiping them in order, slams back to park and settles. The screen and pivot never move; the drops are hidden at rest and gone before the end.",
+  "preview": {
+    "light": [0, 0.1, 0.17, 0.2, 0.24, 0.3, 0.44, 0.56],
+    "strong": [0, 0.12, 0.22, 0.26, 0.29, 0.38, 0.45, 0.62]
+  },
+  "parts": {
+    "shield": {
+      "shape": {
+        "path": "M5.829 9.493 C5.943 8.164 6.667 7.5 8 7.5 L24 7.5 C25.333 7.5 26.057 8.164 26.171 9.493 L27.329 23.007 C27.443 24.336 26.833 25 25.5 25 L6.5 25 C5.167 25 4.557 24.336 4.671 23.007 L5.829 9.493 Z"
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M5.829 9.493 C5.943 8.164 6.667 7.5 8 7.5 L24 7.5 C25.333 7.5 26.057 8.164 26.171 9.493 L27.329 23.007 C27.443 24.336 26.833 25 25.5 25 L6.5 25 C5.167 25 4.557 24.336 4.671 23.007 L5.829 9.493 L8.419 10.797 L7.481 22.303 C7.427 22.968 7.733 23.3 8.4 23.3 L23.6 23.3 C24.267 23.3 24.573 22.968 24.519 22.303 L23.581 10.797 C23.527 10.132 23.167 9.8 22.5 9.8 L9.5 9.8 C8.833 9.8 8.473 10.132 8.419 10.797 L5.829 9.493 Z"
+      },
+      "//": "v1 Solid: the frame as a band with the glass left open, one bridged subpath"
+    },
+    "drop-1": {
+      "//": "hidden at rest: rain on the glass, inside the arc the blade sweeps (pivot 16,25; -75 deg, r 7.6)",
+      "shape": {"line": [[17.967, 17.31], [17.967, 18.01]]},
+      "hidden": true
+    },
+    "drop-2": {"//": "-100 deg, r 4.4", "shape": {"line": [[15.236, 20.317], [15.236, 21.017]]}, "hidden": true},
+    "drop-3": {"//": "Strong only: -125 deg, r 7.2", "shape": {"line": [[11.87, 18.752], [11.87, 19.452]]}, "hidden": true},
+    "arm": {"shape": {"line": [[16, 25], [22.01, 18.99]]}},
+    "pivot": {"shape": {"circle": [[16, 25], 1.5]}, "role": "fill"}
+  },
+  "rigs": {
+    "arm": {"pivot": [16, 25]},
+    "drop-1": {"//": "a wiped drop is dragged a few degrees along the blade's arc as it fades", "pivot": [16, 25]},
+    "drop-2": {"pivot": [16, 25]},
+    "drop-3": {"pivot": [16, 25]}
+  },
+  "motion": {
+    "arm.rotate": {
+      "//": "the blade crosses drop-1 at -30, drop-2 at -55, drop-3 at -80: Light at 0.184 / 0.224 s (sine), Strong at 0.213 / 0.25 / 0.282 s (hit from a hold)",
+      "light": [[0, 0], [0.1, 0], [0.3, -80, "sine"], [0.44, 0, "hit"], [0.5, -5], [0.56, 0]],
+      "strong": [[0, 0], [0.12, 0], [0.3, -95, "hit"], [0.45, 0, "hit"], [0.5, -7], [0.56, 2], [0.62, 0]]
+    },
+    "drop-1.opacity": {
+      "light": [[0, 0], [0.02, 0], [0.05, 1, "out"], [0.184, 1], [0.214, 0]],
+      "strong": [[0, 0], [0.01, 0], [0.04, 1, "out"], [0.213, 1], [0.243, 0]]
+    },
+    "drop-1.y": {"light": [[0, 0], [0.02, -1.2, "step"], [0.07, 0, "hit"]], "strong": [[0, 0], [0.01, -1.2, "step"], [0.06, 0, "hit"]]},
+    "drop-1.rotate": {
+      "light": [[0, 0], [0.184, 0], [0.214, -14, "linear"], [0.234, 0, "step"]],
+      "strong": [[0, 0], [0.213, 0], [0.243, -16, "linear"], [0.263, 0, "step"]]
+    },
+    "drop-2.opacity": {
+      "light": [[0, 0], [0.06, 0], [0.09, 1, "out"], [0.224, 1], [0.254, 0]],
+      "strong": [[0, 0], [0.04, 0], [0.07, 1, "out"], [0.25, 1], [0.28, 0]]
+    },
+    "drop-2.y": {"light": [[0, 0], [0.06, -1.2, "step"], [0.11, 0, "hit"]], "strong": [[0, 0], [0.04, -1.2, "step"], [0.09, 0, "hit"]]},
+    "drop-2.rotate": {
+      "light": [[0, 0], [0.224, 0], [0.254, -12, "linear"], [0.274, 0, "step"]],
+      "strong": [[0, 0], [0.25, 0], [0.28, -14, "linear"], [0.3, 0, "step"]]
+    },
+    "drop-3.opacity": {"strong": [[0, 0], [0.07, 0], [0.1, 1, "out"], [0.282, 1], [0.302, 0]]},
+    "drop-3.y": {"strong": [[0, 0], [0.07, -1.2, "step"], [0.12, 0, "hit"]]},
+    "drop-3.rotate": {"strong": [[0, 0], [0.282, 0], [0.3, -13, "linear"], [0.32, 0, "step"]]}
+  }
+}

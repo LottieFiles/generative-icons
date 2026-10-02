@@ -1,0 +1,26 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "scissors",
+  "label": "Scissors",
+  "intent": "The scissors snip. Light: the blades ease a touch wider, then snap shut about the hub with a stop (12 degrees each, the handles squeezing together) and spring back open past rest before settling. Strong: snip-snip, two cuts in a row, the second shallower, then a small settle. The rest pose is the open pair; the hub never moves.",
+  "parts": {
+    "hub":           {"shape": {"circle": [[16, 17], 1.3]}, "role": "fill"},
+    "blade-b-ring":  {"shape": {"circle": [[11.178, 23.633], 2.8]}},
+    "blade-b-shaft": {"shape": {"line": [[23.056, 7.294], [12.531, 21.772]]}},
+    "blade-a-ring":  {"shape": {"circle": [[20.822, 23.633], 2.8]}},
+    "blade-a-shaft": {"shape": {"line": [[8.944, 7.294], [19.469, 21.772]]}}
+  },
+  "rigs": {
+    "blade-a": {"//": "tip upper left, ring lower right; positive closes", "pivot": [16, 17], "carries": ["blade-a-shaft", "blade-a-ring"]},
+    "blade-b": {"pivot": [16, 17], "carries": ["blade-b-shaft", "blade-b-ring"]}
+  },
+  "motion": {
+    "blade-a.rotate": {
+      "light":  [[0, 0], [0.06, -3, "out"], [0.15, 12, "hit"], [0.25, -1.5], [0.34, 0]],
+      "strong": [[0, 0], [0.07, -4, "out"], [0.15, 13, "hit"], [0.24, -1], [0.31, 9, "hit"], [0.4, -1.2], [0.48, 0.3], [0.58, 0]]
+    },
+    "blade-b.rotate": {"follow": "blade-a.rotate", "scale": -1}
+  },
+  "preview": {"light": [0, 0.06, 0.1, 0.15, 0.2, 0.25, 0.3, 0.38], "strong": [0, 0.07, 0.15, 0.24, 0.31, 0.4, 0.48, 0.62]}
+}

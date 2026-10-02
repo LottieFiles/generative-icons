@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "medal",
+  "label": "Medal",
+  "intent": "The medal is won and gleams. Light: the medal swings out 20 degrees on its ribbon knot and, at the top of the swing, its star flashes larger and turns one point before the medal settles. Strong: the medal is knocked back, swings out 30 degrees and rings down through decaying swings while the star flashes twice and turns two points. The ribbon never moves.",
+  "parts": {
+    "ribbon-l": {"shape": {"line": [[11.6, 4.8], [16, 13.6]]}},
+    "ribbon-r": {"shape": {"line": [[20.4, 4.8], [16, 13.6]]}},
+    "disc":     {"shape": {"circle": [[16, 20.2], 6.4]}, "role": "surface", "solid": "fill", "knockout": [{"part": "star", "gap": 0}],
+                 "//": "v1 Solid: the disc filled with the star cut out exactly"},
+    "star":     {"shape": {"path": "M15.866 17.623 C15.955 17.408 16.045 17.408 16.134 17.623 L16.633 18.821 C16.722 19.037 16.883 19.154 17.116 19.172 L18.409 19.276 C18.642 19.295 18.669 19.38 18.492 19.532 L17.507 20.376 C17.33 20.527 17.268 20.717 17.322 20.944 L17.623 22.206 C17.678 22.433 17.605 22.485 17.406 22.364 L16.299 21.687 C16.1 21.566 15.9 21.566 15.701 21.687 L14.594 22.364 C14.395 22.485 14.322 22.433 14.377 22.206 L14.678 20.944 C14.732 20.717 14.67 20.527 14.493 20.376 L13.508 19.532 C13.331 19.38 13.358 19.295 13.591 19.276 L14.884 19.172 C15.117 19.154 15.278 19.037 15.367 18.821 L15.866 17.623 Z"}, "role": "fill"}
+  },
+  "rigs": {
+    "medal": {"//": "hangs from the ribbon knot", "pivot": [16, 13.6], "carries": ["disc", "star"]},
+    "star":  {"//": "the star's centre is the disc's; one point is 72 degrees", "pivot": [16, 20.2]}
+  },
+  "motion": {
+    "medal.rotate": {
+      "light":  [[0, 0], [0.14, 20, "out"], [0.3, -6], [0.42, 2], [0.52, 0]],
+      "strong": [[0, 0], [0.08, -8, "out"], [0.24, 30, "out"], [0.4, -13], [0.54, 6], [0.66, -2], [0.76, 0]]
+    },
+    "star.scale": {
+      "light":  [[0, 1], [0.08, 1], [0.18, 1.45, "out"], [0.3, 0.9], [0.38, 1]],
+      "strong": [[0, 1], [0.14, 1], [0.26, 1.5, "out"], [0.36, 0.9], [0.44, 1.15, "out"], [0.54, 0.97], [0.62, 1]]
+    },
+    "star.rotate": {
+      "//": "ends on a whole point (two points), then steps back to 0: the same drawing, exact pixels",
+      "light":  [[0, 0], [0.08, 0], [0.3, 72, "out"], [0.32, 0, "step"]],
+      "strong": [[0, 0], [0.14, 0], [0.44, 144, "out"], [0.46, 0, "step"]]
+    }
+  },
+  "preview": {"light": [0, 0.08, 0.14, 0.2, 0.26, 0.32, 0.42, 0.52], "strong": [0, 0.08, 0.18, 0.26, 0.34, 0.44, 0.56, 0.7]}
+}

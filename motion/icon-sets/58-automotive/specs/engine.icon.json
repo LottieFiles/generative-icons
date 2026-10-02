@@ -1,0 +1,90 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "engine",
+  "label": "Engine",
+  "intent": "The engine fires up. Light: the block jolts up as it fires, rocking a little, and a vibration mark flicks out from each shoulder; it drops back with a hit and rattles down in two smaller bounces as the marks fade. Strong: the starter cranks twice (two small jolts), then the engine catches: a bigger jolt and rock, marks flick out from both shoulders and the top, and it rattles down in three decaying bounces. The block stays rigid; the marks ride with it and are gone before the end.",
+  "preview": {
+    "light": [0, 0.08, 0.13, 0.17, 0.23, 0.29, 0.34, 0.43],
+    "strong": [0, 0.06, 0.17, 0.31, 0.36, 0.44, 0.52, 0.67]
+  },
+  "parts": {
+    "block": {
+      "shape": {
+        "path": "M8.7 23 C8.233 23 8 22.767 8 22.3 L8 20.7 C8 20.233 7.767 20 7.3 20 L6.2 20 C5.733 20 5.5 19.767 5.5 19.3 L5.5 16.2 C5.5 15.733 5.733 15.5 6.2 15.5 L7.3 15.5 C7.767 15.5 8 15.267 8 14.8 L8 13.2 C8 12.733 8.233 12.5 8.7 12.5 L11.8 12.5 C12.267 12.5 12.5 12.267 12.5 11.8 L12.5 10.2 C12.5 9.733 12.733 9.5 13.2 9.5 L18.8 9.5 C19.267 9.5 19.5 9.733 19.5 10.2 L19.5 11.8 C19.5 12.267 19.733 12.5 20.2 12.5 L22.8 12.5 C23.267 12.5 23.5 12.733 23.5 13.2 L23.5 14.8 C23.5 15.267 23.733 15.5 24.2 15.5 L25.8 15.5 C26.267 15.5 26.5 15.733 26.5 16.2 L26.5 19.3 C26.5 19.767 26.267 20 25.8 20 L24.2 20 C23.733 20 23.5 20.233 23.5 20.7 L23.5 22.3 C23.5 22.767 23.267 23 22.8 23 L8.7 23 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "mark-l": {
+      "//": "hidden at rest: a vibration mark off the left shoulder corner, inner end first",
+      "shape": {"line": [[5.95, 10.45], [4.4, 8.9]]},
+      "hidden": true
+    },
+    "mark-r": {"mirror": {"of": "mark-l"}},
+    "mark-t": {"//": "Strong only: a mark off the top", "shape": {"line": [[16, 6.9], [16, 5]]}, "hidden": true}
+  },
+  "rigs": {
+    "block": {
+      "//": "the engine jolts and rocks about the middle of its base; the marks ride with it",
+      "pivot": [16, 23],
+      "carries": ["block", "mark-l", "mark-r", "mark-t"]
+    }
+  },
+  "motion": {
+    "block.y": {
+      "light": [[0, 0], [0.08, -1.5, "out"], [0.17, 0, "hit"], [0.23, -0.5], [0.29, 0, "hit"], [0.34, -0.18], [0.39, 0]],
+      "strong": [
+        [0, 0],
+        [0.06, -1, "out"],
+        [0.11, 0, "hit"],
+        [0.17, -1, "out"],
+        [0.22, 0, "hit"],
+        [0.31, -1.6, "out"],
+        [0.39, 0, "hit"],
+        [0.44, -0.6],
+        [0.49, 0, "hit"],
+        [0.53, -0.25],
+        [0.57, 0, "hit"],
+        [0.6, -0.1],
+        [0.63, 0]
+      ]
+    },
+    "block.rotate": {
+      "light": [[0, 0], [0.08, -3, "out"], [0.17, 0, "hit"], [0.24, 1.5], [0.31, -0.6], [0.39, 0]],
+      "strong": [
+        [0, 0],
+        [0.06, 1.5, "out"],
+        [0.11, 0, "hit"],
+        [0.17, -1.5, "out"],
+        [0.22, 0, "hit"],
+        [0.31, -3.5, "out"],
+        [0.39, 0, "hit"],
+        [0.45, 1.8],
+        [0.51, -0.8],
+        [0.57, 0.3],
+        [0.63, 0]
+      ]
+    },
+    "mark-l.draw": {"light": [[0, 1], [0.05, 0, "step"], [0.13, 1, "out"]], "strong": [[0, 1], [0.28, 0, "step"], [0.36, 1, "out"]]},
+    "mark-l.opacity": {
+      "light": [[0, 0], [0.05, 0], [0.07, 1], [0.22, 1], [0.34, 0, "in"]],
+      "strong": [[0, 0], [0.28, 0], [0.3, 1], [0.44, 1], [0.55, 0, "in"]]
+    },
+    "mark-l.x": {
+      "light": [[0, 0], [0.05, 0], [0.34, -0.35, "out"], [0.36, 0, "step"]],
+      "strong": [[0, 0], [0.28, 0], [0.55, -0.45, "out"], [0.57, 0, "step"]]
+    },
+    "mark-l.y": {
+      "light": [[0, 0], [0.05, 0], [0.34, -0.35, "out"], [0.36, 0, "step"]],
+      "strong": [[0, 0], [0.28, 0], [0.55, -0.45, "out"], [0.57, 0, "step"]]
+    },
+    "mark-r.draw": {"follow": "mark-l.draw"},
+    "mark-r.opacity": {"follow": "mark-l.opacity"},
+    "mark-r.x": {"follow": "mark-l.x", "scale": -1},
+    "mark-r.y": {"follow": "mark-l.y"},
+    "mark-t.draw": {"strong": [[0, 1], [0.29, 0, "step"], [0.37, 1, "out"]]},
+    "mark-t.opacity": {"strong": [[0, 0], [0.29, 0], [0.31, 1], [0.45, 1], [0.56, 0, "in"]]},
+    "mark-t.y": {"strong": [[0, 0], [0.29, 0], [0.56, -0.3, "out"], [0.58, 0, "step"]]}
+  }
+}

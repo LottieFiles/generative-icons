@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "mirror-tool",
+  "label": "Mirror tool",
+  "intent": "The left shape is reflected across the axis. Light: the old reflection clears, a copy peels off the left triangle and folds over the dashed axis like a page, flattening to a line on the axis and opening out on the right, where it lands with a stop and is pushed out a little before it settles. Strong: the source triangle pulls back and pushes into the mirror, the copy folds across faster, the axis dashes ripple apart as it passes through, and the landed reflection recoils further and settles in two beats.",
+  "parts": {
+    "right": {"shape": {"path": "M25.741 10.651 C26.247 10.217 26.5 10.333 26.5 11 L26.5 21 C26.5 21.667 26.247 21.783 25.741 21.349 L20.411 16.781 C19.804 16.26 19.804 15.74 20.411 15.219 L25.741 10.651 Z"}, "role": "surface", "solid": "fill"},
+    "left":  {"shape": {"path": "M6.259 10.651 C5.753 10.217 5.5 10.333 5.5 11 L5.5 21 C5.5 21.667 5.753 21.783 6.259 21.349 L11.589 16.781 C12.196 16.26 12.196 15.74 11.589 15.219 L6.259 10.651 Z"}, "role": "surface", "solid": "fill"},
+    "ghost": {"//": "hidden at rest: the copy in flight. Every point goes from x to 32 - x, so the morph is the exact reflection about the axis; at 0 it lies on the left triangle, at 1 on the right one",
+              "shape": {"morph": [
+                {"path": "M6.259 10.651 C5.753 10.217 5.5 10.333 5.5 11 L5.5 21 C5.5 21.667 5.753 21.783 6.259 21.349 L11.589 16.781 C12.196 16.26 12.196 15.74 11.589 15.219 L6.259 10.651 Z"},
+                {"path": "M25.741 10.651 C26.247 10.217 26.5 10.333 26.5 11 L26.5 21 C26.5 21.667 26.247 21.783 25.741 21.349 L20.411 16.781 C19.804 16.26 19.804 15.74 20.411 15.219 L25.741 10.651 Z"}
+              ], "by": "fold"}, "role": "surface", "solid": "fill", "hidden": true},
+    "axis-2": {"shape": {"line": [[16, 21.5], [16, 26]]}},
+    "axis-1": {"shape": {"line": [[16, 13.75], [16, 18.25]]}},
+    "axis-0": {"shape": {"line": [[16, 6], [16, 10.5]]}}
+  },
+  "rigs": {
+    "left":  {"//": "the source; the copy starts on it, so it rides along", "pivot": [9, 16], "carries": ["left", "ghost"]},
+    "right": {"pivot": [23, 16]}
+  },
+  "motion": {
+    "fold": {
+      "//": "back to 0 a frame after the ghost is hidden",
+      "light":  [[0, 0], [0.06, 0], [0.3, 1, "hit"], [0.32, 0, "step"]],
+      "strong": [[0, 0], [0.12, 0], [0.3, 1, "hit"], [0.32, 0, "step"]]
+    },
+    "ghost.opacity": {
+      "//": "swaps with the right triangle on the landing frame, where they coincide exactly",
+      "light":  [[0, 0], [0.06, 1, "step"], [0.3, 0, "step"]],
+      "strong": [[0, 0], [0.12, 1, "step"], [0.3, 0, "step"]]
+    },
+    "right.opacity": {
+      "light":  [[0, 1], [0.03, 1], [0.09, 0, "out"], [0.3, 1, "step"]],
+      "strong": [[0, 1], [0.06, 1], [0.12, 0, "out"], [0.3, 1, "step"]]
+    },
+    "right.x": {
+      "light":  [[0, 0], [0.3, 0], [0.36, 0.9, "out"], [0.44, -0.15], [0.5, 0]],
+      "strong": [[0, 0], [0.3, 0], [0.36, 1.5, "out"], [0.45, -0.4], [0.53, 0.15], [0.6, 0]]
+    },
+    "left.x": {
+      "light":  [[0, 0]],
+      "strong": [[0, 0], [0.07, -1.0, "out"], [0.13, 0.5, "hit"], [0.19, 0]]
+    },
+    "axis-0.y": {
+      "light":  [[0, 0]],
+      "strong": [[0, 0], [0.19, 0], [0.24, -1.5, "out"], [0.32, 0.25], [0.39, 0]]
+    },
+    "axis-2.y": {"follow": "axis-0.y", "scale": -1}
+  },
+  "preview": {"light": [0, 0.08, 0.16, 0.22, 0.27, 0.3, 0.36, 0.5], "strong": [0, 0.07, 0.13, 0.2, 0.24, 0.28, 0.36, 0.6]}
+}

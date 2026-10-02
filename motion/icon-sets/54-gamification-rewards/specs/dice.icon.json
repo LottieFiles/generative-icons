@@ -1,0 +1,47 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "dice",
+  "label": "Dice",
+  "intent": "The die is rolled. Light: it is tossed 2.4 units, tumbles a half turn in the air (the three-pip diagonal lands on itself), lands flat with a hit and one small bounce, and two impact dashes flash at its feet. Strong: a dip to gather, a 3.2-unit toss with a full tumble, a hard landing with dashes and two decaying bounces with a small rock. The die stays rigid.",
+  "parts": {
+    "die":   {"shape": {"rect": [8, 8, 16, 16], "r": 3.8}, "role": "surface", "solid": "fill",
+              "knockout": [{"part": "pip-0", "gap": 0.1}, {"part": "pip-1", "gap": 0.1}, {"part": "pip-2", "gap": 0.1}],
+              "//": "v1 Solid: the die filled with r 1.6 holes for the r 1.5 pips"},
+    "pip-0": {"shape": {"circle": [[12, 12], 1.5]}, "role": "fill"},
+    "pip-1": {"shape": {"circle": [[16, 16], 1.5]}, "role": "fill"},
+    "pip-2": {"shape": {"circle": [[20, 20], 1.5]}, "role": "fill"},
+    "dust-l": {"//": "hidden at rest: an impact dash at the left foot, inner end first", "shape": {"line": [[8.4, 26.7], [6.6, 27.6]]}, "hidden": true},
+    "dust-r": {"mirror": {"of": "dust-l"}}
+  },
+  "rigs": {
+    "die": {"pivot": [16, 16], "carries": ["die", "pip-0", "pip-1", "pip-2"]}
+  },
+  "motion": {
+    "die.y": {
+      "light":  [[0, 0], [0.18, -2.4, "out"], [0.32, 0, "hit"], [0.38, -0.5, "out"], [0.44, 0, "hit"]],
+      "strong": [[0, 0], [0.08, 0.8, "out"], [0.26, -3.2, "out"], [0.42, 0, "hit"], [0.5, -0.9, "out"], [0.58, 0, "hit"], [0.63, -0.25, "out"], [0.68, 0, "hit"]]
+    },
+    "die.rotate": {
+      "//": "ends on a whole half (full) turn at the landing, then steps back to 0: the same drawing, exact pixels",
+      "light":  [[0, 0], [0.04, 0], [0.31, 180, "inOut"], [0.33, 0, "step"]],
+      "strong": [[0, 0], [0.1, -8, "out"], [0.41, 360, "inOut"], [0.43, 0, "step"], [0.5, 5], [0.58, -2], [0.66, 0]]
+    },
+    "dust-l.opacity": {
+      "light":  [[0, 0], [0.32, 0], [0.33, 1, "step"], [0.4, 1], [0.48, 0, "in"]],
+      "strong": [[0, 0], [0.42, 0], [0.43, 1, "step"], [0.51, 1], [0.6, 0, "in"]]
+    },
+    "dust-l.draw": {
+      "light":  [[0, 1], [0.32, 0, "step"], [0.39, 1, "out"]],
+      "strong": [[0, 1], [0.42, 0, "step"], [0.5, 1, "out"]]
+    },
+    "dust-l.x": {
+      "light":  [[0, 0], [0.32, 0], [0.48, -0.5, "out"], [0.5, 0, "step"]],
+      "strong": [[0, 0], [0.42, 0], [0.6, -0.7, "out"], [0.62, 0, "step"]]
+    },
+    "dust-r.opacity": {"follow": "dust-l.opacity"},
+    "dust-r.draw": {"follow": "dust-l.draw"},
+    "dust-r.x": {"follow": "dust-l.x", "scale": -1}
+  },
+  "preview": {"light": [0, 0.1, 0.18, 0.26, 0.33, 0.38, 0.44, 0.52], "strong": [0, 0.08, 0.18, 0.26, 0.34, 0.43, 0.5, 0.6]}
+}

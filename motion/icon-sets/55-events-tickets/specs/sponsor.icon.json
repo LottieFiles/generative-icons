@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "sponsor",
+  "label": "Sponsor",
+  "intent": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
+  "parts": {
+    "rod":    {"shape": {"line": [[5, 6.5], [27, 6.5]]}},
+    "banner": {"shape": {"path": "M8.5 6.8 C8.5 6.6 8.6 6.5 8.8 6.5 L23.2 6.5 C23.4 6.5 23.5 6.6 23.5 6.8 L23.5 24.5 C23.5 25.167 23.201 25.353 22.603 25.058 L16.897 22.242 C16.299 21.947 15.701 21.947 15.103 22.242 L9.397 25.058 C8.799 25.353 8.5 25.167 8.5 24.5 L8.5 6.8 Z"}, "role": "surface", "solid": "fill", "knockout": [{"part": "star", "gap": 0.2}]},
+    "star":   {"shape": {"path": "M15.873 10.926 C15.958 10.709 16.042 10.709 16.127 10.926 L16.99 13.137 C17.074 13.354 17.233 13.47 17.466 13.483 L19.835 13.62 C20.068 13.634 20.094 13.714 19.914 13.862 L18.078 15.365 C17.897 15.513 17.837 15.7 17.896 15.926 L18.497 18.221 C18.557 18.447 18.488 18.497 18.292 18.371 L16.295 17.089 C16.098 16.963 15.902 16.963 15.705 17.089 L13.708 18.371 C13.512 18.497 13.443 18.447 13.502 18.221 L14.104 15.926 C14.163 15.7 14.103 15.513 13.922 15.365 L12.086 13.862 C11.906 13.714 11.932 13.634 12.165 13.62 L14.534 13.483 C14.767 13.47 14.926 13.354 15.01 13.137 L15.873 10.926 Z"}, "role": "fill"}
+  },
+  "rigs": {
+    "hang":  {"//": "rod and banner jolt together when the unfurling cloth catches in Strong", "pivot": [16, 6.5], "carries": ["rod", "cloth", "star"]},
+    "cloth": {"//": "the cloth rolls up toward the rod and unfurls; it bunches a little wider when rolled", "pivot": [16, 6.5], "squash": {"base": 6.5, "widen": 0.2}, "carries": ["banner"]},
+    "star":  {"//": "the star pops and twists about its own centre", "pivot": [16, 14.9]}
+  },
+  "motion": {
+    "cloth.squash": {
+      "light":  [[0, 1], [0.08, 0.3, "in"], [0.24, 1.06, "out"], [0.31, 0.98], [0.37, 1]],
+      "strong": [[0, 1], [0.08, 0.25, "in"], [0.25, 1.1, "out"], [0.34, 0.95], [0.41, 1.03], [0.47, 1]]
+    },
+    "star.opacity": {
+      "//": "the star is rolled up with the cloth, so it is hidden while the banner is short",
+      "light":  [[0, 1], [0.055, 0, "in"], [0.22, 0], [0.26, 1, "out"]],
+      "strong": [[0, 1], [0.05, 0, "in"], [0.23, 0], [0.27, 1, "out"]]
+    },
+    "star.scale": {
+      "light":  [[0, 1], [0.22, 0.5, "step"], [0.31, 1.25, "out"], [0.38, 0.95], [0.44, 1]],
+      "strong": [[0, 1], [0.23, 0.4, "step"], [0.33, 1.32, "out"], [0.41, 0.92], [0.47, 1.04], [0.52, 1]]
+    },
+    "star.rotate": {
+      "strong": [[0, 0], [0.23, -40, "step"], [0.36, 6, "out"], [0.44, -2], [0.5, 0]]
+    },
+    "hang.y": {
+      "strong": [[0, 0], [0.22, 0], [0.27, 0.9, "out"], [0.35, -0.25], [0.42, 0]]
+    }
+  }
+}

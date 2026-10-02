@@ -1,0 +1,24 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "steering-wheel",
+  "label": "Steering wheel",
+  "intent": "Steer into a bend and let go: the wheel self-centres. Light: the driver turns the wheel 36 degrees, holds it a beat, and releases; it spins back faster than it went, swings 6 degrees past centre and settles. Strong: a short counter-steer, a hard 92-degree turn, a hold, then the release spins it back through centre with two settling swings. The rigid wheel turns about its hub.",
+  "parts": {
+    "rim":     {"shape": {"circle": [[16, 16], 10.5]}, "role": "surface", "solid": "ring"},
+    "spoke-0": {"shape": {"line": [[14, 16], [5.5, 16]]}},
+    "spoke-1": {"shape": {"line": [[18, 16], [26.5, 16]]}},
+    "spoke-2": {"shape": {"line": [[16, 18], [16, 26.5]]}},
+    "hub":     {"shape": {"circle": [[16, 16], 2.9]}, "role": "fill"}
+  },
+  "rigs": {
+    "wheel": {"pivot": [16, 16], "carries": ["rim", "spoke-0", "spoke-1", "spoke-2", "hub"]}
+  },
+  "motion": {
+    "wheel.rotate": {
+      "//": "the turn is driven (ease out); the release is a spring, quicker than the turn, and swings past centre",
+      "light":  [[0, 0], [0.2, 36, "out"], [0.25, 36], [0.37, -6], [0.45, 2], [0.52, 0]],
+      "strong": [[0, 0], [0.08, -10, "out"], [0.3, 92, "out"], [0.36, 92], [0.5, -14], [0.6, 5], [0.68, -1.5], [0.75, 0]]
+    }
+  }
+}

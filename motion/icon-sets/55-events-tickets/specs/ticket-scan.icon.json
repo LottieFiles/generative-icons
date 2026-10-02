@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "ticket-scan",
+  "label": "Ticket scan",
+  "intent": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
+  "parts": {
+    "ticket":         {"shape": {"path": "M6 9 L18.6 9 C18.6 10.325 19.675 11.4 21 11.4 C22.325 11.4 23.4 10.325 23.4 9 L26 9 C27.105 9 28 9.895 28 11 L28 21 C28 22.105 27.105 23 26 23 L23.4 23 C23.4 21.675 22.325 20.6 21 20.6 C19.675 20.6 18.6 21.675 18.6 23 L6 23 C4.895 23 4 22.105 4 21 L4 11 C4 9.895 4.895 9 6 9 Z"}, "role": "surface",
+                       "solid": {"path": "M6 7.7 L17.3 7.7 C17.3 9.743 18.957 11.4 21 11.4 C23.043 11.4 24.7 9.743 24.7 7.7 L26 7.7 C27.823 7.7 29.3 9.177 29.3 11 L29.3 21 C29.3 22.823 27.823 24.3 26 24.3 L24.7 24.3 C24.7 22.257 23.043 20.6 21 20.6 C18.957 20.6 17.3 22.257 17.3 24.3 L6 24.3 C4.177 24.3 2.7 22.823 2.7 21 L2.7 11 C2.7 9.177 4.177 7.7 6 7.7 L6.3 10.3 C5.748 10.3 5.3 10.748 5.3 11.3 L5.3 20.7 C5.3 21.252 5.748 21.7 6.3 21.7 L14.576 21.7 C17.724 21.7 20.276 19.148 20.276 16 C20.276 12.852 17.724 10.3 14.576 10.3 L6.3 10.3 L6 7.7 Z"}},
+    "ticket-divider": {"shape": {"line": [[21, 12.2], [21, 19.8]]}},
+    "code-0":         {"shape": {"rect": [7.4, 13.4, 2.4, 2.4], "r": 0.6}, "role": "fill"},
+    "code-1":         {"shape": {"rect": [11, 13.4, 2.4, 2.4], "r": 0.6}, "role": "fill"},
+    "code-2":         {"shape": {"rect": [7.4, 17, 2.4, 2.4], "r": 0.6}, "role": "fill"},
+    "code-3":         {"shape": {"rect": [11.5, 17.5, 1.4, 1.4], "r": 0.4}, "role": "fill"},
+    "beam":           {"shape": {"line": [[7, 12.1], [16, 12.1]]}}
+  },
+  "rigs": {
+    "pass":   {"//": "the whole ticket is admitted in Strong", "pivot": [16, 23], "carries": ["ticket", "ticket-divider", "code-0", "code-1", "code-2", "code-3", "beam"]},
+    "code-0": {"pivot": [8.6, 14.6]},
+    "code-1": {"pivot": [12.2, 14.6]},
+    "code-2": {"pivot": [8.6, 18.2]},
+    "code-3": {"pivot": [12.2, 18.2]}
+  },
+  "motion": {
+    "beam.y": {
+      "//": "a steady read down to just above the frame, then a quick flick back",
+      "light":  [[0, 0], [0.05, 0], [0.31, 8, "linear"], [0.42, 0, "inOut"]],
+      "strong": [[0, 0], [0.05, 0], [0.31, 8, "linear"], [0.41, 0, "inOut"]]
+    },
+    "code-0.scale": {
+      "//": "each block blinks just after the bar crosses its row, left then right",
+      "light":  [[0, 1], [0.12, 1], [0.165, 1.3, "out"], [0.24, 1]],
+      "strong": [[0, 1], [0.12, 1], [0.165, 1.42, "out"], [0.22, 0.94], [0.27, 1]]
+    },
+    "code-1.scale": {"follow": "code-0.scale", "lag": 0.025},
+    "code-2.scale": {"follow": "code-0.scale", "lag": 0.115},
+    "code-3.scale": {"follow": "code-0.scale", "lag": 0.14},
+    "pass.y": {
+      "strong": [[0, 0], [0.33, 0], [0.42, -1.6, "out"], [0.51, 0, "hit"], {"bounce": 0.58, "amp": 0.2}]
+    }
+  }
+}

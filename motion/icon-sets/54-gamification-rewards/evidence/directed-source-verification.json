@@ -2,8 +2,8 @@
   "result": "PASS",
   "icons": 20,
   "actions": 56,
-  "nativeTransformNodes": 350,
-  "nativeTransformMaxCoordinateError": 0.000010544689146740893,
+  "nativeTransformNodes": 120,
+  "nativeTransformMaxCoordinateError": 0.000010102170193704296,
   "checks": [
     {
       "name": "trophy",
@@ -16,24 +16,6 @@
     },
     {
       "name": "trophy-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "medal",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "medal-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -78,24 +60,6 @@
       "designConstraints": []
     },
     {
-      "name": "streak-flame",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "streak-flame-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "badge-unlock",
       "fixedParts": [],
       "topology": true,
@@ -124,24 +88,6 @@
     },
     {
       "name": "leaderboard-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "dice",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "dice-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -186,24 +132,6 @@
       "designConstraints": []
     },
     {
-      "name": "gem",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "gem-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
       "name": "treasure-chest",
       "fixedParts": [],
       "topology": true,
@@ -214,42 +142,6 @@
     },
     {
       "name": "treasure-chest-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "quest",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "quest-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "achievement",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "achievement-strong",
       "fixedParts": [],
       "topology": true,
       "stateBoundaries": true,
@@ -274,106 +166,121 @@
       "hold": true,
       "continuous": false,
       "designConstraints": []
-    },
-    {
-      "name": "high-score",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "high-score-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "bonus",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "bonus-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "power-up",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "power-up-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "lives",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "lives-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "round-countdown",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "round-countdown-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
     }
   ],
   "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "medal",
+      "spec": "specs/medal.icon.json",
+      "specSha256": "45142434801bc2b63bebfe8bc5b21034d10fc62bb08b2ef0ac217549cd2d6f80",
+      "actions": [
+        "medal",
+        "medal-strong"
+      ]
+    },
+    {
+      "icon": "streak-flame",
+      "spec": "specs/streak-flame.icon.json",
+      "specSha256": "ba2198a2f93da094e7b8c7876cc7a256b0e8506ba5e61b7f0e057964605ee670",
+      "actions": [
+        "streak-flame",
+        "streak-flame-strong"
+      ]
+    },
+    {
+      "icon": "dice",
+      "spec": "specs/dice.icon.json",
+      "specSha256": "f7cabd48bee7b9fb85f5f7552a26ecb7001091f5a487d0f27a67ccc6e3489f56",
+      "actions": [
+        "dice",
+        "dice-strong"
+      ]
+    },
+    {
+      "icon": "gem",
+      "spec": "specs/gem.icon.json",
+      "specSha256": "1d40ab0399c556cb15e4844ea9ffd68aea4273acb1d8eb402f55fdba112c17ee",
+      "actions": [
+        "gem",
+        "gem-strong"
+      ]
+    },
+    {
+      "icon": "quest",
+      "spec": "specs/quest.icon.json",
+      "specSha256": "6c3eeefdd907a9c3370d5537424ffe31a140a6e85496f64f6ed0d714085ebf57",
+      "actions": [
+        "quest",
+        "quest-reverse",
+        "quest-strong",
+        "quest-reverse-strong"
+      ]
+    },
+    {
+      "icon": "achievement",
+      "spec": "specs/achievement.icon.json",
+      "specSha256": "141c685770ce1f89a72ad60d1aee33ed0bd32ccc4759d11023da5a9acb96c254",
+      "actions": [
+        "achievement",
+        "achievement-strong"
+      ]
+    },
+    {
+      "icon": "high-score",
+      "spec": "specs/high-score.icon.json",
+      "specSha256": "02dde8bdf00e4285e47ff7b5b2cd3ace0cfa6fcdc8d927355aa5be04e3a42009",
+      "actions": [
+        "high-score",
+        "high-score-strong"
+      ]
+    },
+    {
+      "icon": "bonus",
+      "spec": "specs/bonus.icon.json",
+      "specSha256": "3fbe76742b214c52ed16e6e8f2148a1ff9b89faa2abd1fdf929694070611b220",
+      "actions": [
+        "bonus",
+        "bonus-strong"
+      ]
+    },
+    {
+      "icon": "power-up",
+      "spec": "specs/power-up.icon.json",
+      "specSha256": "905c8b6b316c2c5959d7cd9f34713347f612645d62b8ff92f5f5cee7e561f713",
+      "actions": [
+        "power-up",
+        "power-up-strong"
+      ]
+    },
+    {
+      "icon": "lives",
+      "spec": "specs/lives.icon.json",
+      "specSha256": "b253a619e46d996a2cfe39fd75987593c7c2f5234853e7616b15c40487b1b875",
+      "actions": [
+        "lives",
+        "lives-strong"
+      ]
+    },
+    {
+      "icon": "round-countdown",
+      "spec": "specs/round-countdown.icon.json",
+      "specSha256": "893bb1b15afcb28ce550aa1cf2606a18ea0add1b3fbe865bdd7e46ff8c467429",
+      "actions": [
+        "round-countdown",
+        "round-countdown-reverse",
+        "round-countdown-strong",
+        "round-countdown-reverse-strong"
+      ]
+    }
+  ],
   "drawingChecks": {
-    "frames": 8120,
+    "frames": 4350,
     "chestHingeMaxError": 0,
     "handHubMaxError": 0,
     "xpBarMinimumInset": 0.7999999999999998,
-    "powerBoltMinimumGap": 2.1794741703033447,
-    "questMarkerMinimumGap": 1.4000000000000001,
-    "scoreCrownMinimumGap": 1.6999914946050338
+    "powerBoltMinimumGap": 32,
+    "questMarkerMinimumGap": 32,
+    "scoreCrownMinimumGap": 32
   }
 }

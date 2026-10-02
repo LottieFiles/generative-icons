@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "eraser",
+  "label": "Eraser",
+  "intent": "The eraser rubs the line out. Light: the eraser presses down onto the line with a stop, sweeps left 11 units in one pass while the line disappears under it, and lifts off at the far end, leaving the short line (v1's end state). Strong: it lifts first, slams down with a bounce, scrubs back and forth in three decaying strokes as it travels, and lifts off with a small hop. The erased length never grows back; the reverse slides it back while the line redraws.",
+  "state": {"from": "drawn", "to": "erased", "labels": ["Erase", "Restore"], "reverse": "auto"},
+  "parts": {
+    "band":  {"//": "v1's sleeve line; in Solid it is the slot in the block, so it draws nothing there", "shape": {"line": [[20.908, 13.621], [22.973, 17.506]]}, "solid": "none"},
+    "block": {"shape": {"path": "M19.318 14.466 L24.616 11.649 C25.201 11.338 25.928 11.56 26.239 12.145 L27.178 13.911 C27.489 14.496 27.267 15.223 26.682 15.534 L21.384 18.351 C20.799 18.662 20.072 18.44 19.761 17.855 L18.822 16.089 C18.511 15.504 18.733 14.777 19.318 14.466 Z"},
+              "role": "surface", "tint": false,
+              "//": "v1 Solid: the block filled with the sleeve slot left open, one bridged subpath",
+              "solid": {"path": "M19.318 14.466 L24.616 11.649 C25.201 11.338 25.928 11.56 26.239 12.145 L27.178 13.911 C27.489 14.496 27.267 15.223 26.682 15.534 L21.384 18.351 C20.799 18.662 20.072 18.44 19.761 17.855 L18.822 16.089 C18.511 15.504 18.733 14.777 19.318 14.466 L19.318 14.466 L21.901 13.999 C21.72 13.657 21.296 13.528 20.955 13.709 L20.955 13.709 C20.613 13.891 20.484 14.315 20.665 14.656 L21.98 17.128 C22.161 17.469 22.585 17.599 22.926 17.418 L22.926 17.418 C23.268 17.236 23.397 16.812 23.216 16.471 L21.901 13.999 L19.318 14.466 Z"}},
+    "line":  {"shape": {"line": [[5.5, 22.5], [26, 22.5]]}}
+  },
+  "rigs": {
+    "eraser": {"//": "the travel along the line and the press onto it", "pivot": [23, 15], "carries": ["rub"]},
+    "rub":    {"//": "the scrub strokes, on top of the travel", "pivot": [23, 15], "carries": ["block", "band"]}
+  },
+  "motion": {
+    "eraser.y": {
+      "light":  [[0, 0], [0.1, 2.0, "hit"], [0.15, 1.7], [0.2, 1.8], [0.42, 1.8], [0.52, -0.3, "out"], [0.58, 0]],
+      "strong": [[0, 0], [0.08, -1.2, "out"], [0.16, 2.2, "hit"], [0.21, 1.6], [0.26, 1.9], [0.6, 1.9], [0.7, -0.6, "out"], [0.76, 0.15], [0.8, 0]]
+    },
+    "eraser.x": {
+      "//": "monotonic: the line's erased end tracks it",
+      "light":  [[0, 0], [0.08, 0], [0.46, -11, "inOut"]],
+      "strong": [[0, 0], [0.16, 0], [0.64, -11, "inOut"]]
+    },
+    "line.draw": {
+      "//": "the right end follows the eraser: 26 -> 13.5 (v1's end state, 8 / 20.5 of the line); same keys as eraser.x, never grows back",
+      "light":  [[0, 1], [0.08, 1], [0.46, 0.3902439, "inOut"]],
+      "strong": [[0, 1], [0.16, 1], [0.64, 0.3902439, "inOut"]]
+    },
+    "rub.x": {
+      "light":  [[0, 0]],
+      "strong": [[0, 0], [0.18, 0], [0.26, 1.4], [0.35, -1.5], [0.44, 1.1], [0.52, -0.8], [0.6, 0.3], [0.66, 0]]
+    }
+  }
+}

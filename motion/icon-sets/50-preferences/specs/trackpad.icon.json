@@ -1,0 +1,458 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "trackpad",
+  "label": "Trackpad",
+  "intent": "A two-finger swipe. Light: the two fingertips swipe across the pad to the right and lift off, shrinking and fading, while two fresh fingertips touch down where they started, left then right, each landing with a small pop. Strong: a longer swipe and a bouncier touch-down. The pad never moves, and there is always a pair of fingertips on it.",
+  "preview": {
+    "light": [
+      0,
+      0.08,
+      0.14,
+      0.19,
+      0.23,
+      0.28,
+      0.34,
+      0.45
+    ],
+    "strong": [
+      0,
+      0.1,
+      0.18,
+      0.24,
+      0.29,
+      0.35,
+      0.45,
+      0.62
+    ]
+  },
+  "parts": {
+    "swipe-1": {
+      "//": "hidden at rest: the swiping fingertips, which take over from the real ones on the first frame",
+      "shape": {
+        "circle": [
+          [
+            16.5,
+            14.5
+          ],
+          1.9
+        ]
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "swipe-0": {
+      "shape": {
+        "circle": [
+          [
+            11.5,
+            14.5
+          ],
+          1.9
+        ]
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "finger-1": {
+      "shape": {
+        "circle": [
+          [
+            16.5,
+            14.5
+          ],
+          1.9
+        ]
+      },
+      "role": "fill"
+    },
+    "finger-0": {
+      "shape": {
+        "circle": [
+          [
+            11.5,
+            14.5
+          ],
+          1.9
+        ]
+      },
+      "role": "fill"
+    },
+    "divider": {
+      "shape": {
+        "line": [
+          [
+            4,
+            20.2
+          ],
+          [
+            28,
+            20.2
+          ]
+        ]
+      }
+    },
+    "pad": {
+      "shape": {
+        "path": "M7 7 L25 7 C26.656 7 28 8.344 28 10 L28 22 C28 23.656 26.656 25 25 25 L7 25 C5.344 25 4 23.656 4 22 L4 10 C4 8.344 5.344 7 7 7 Z"
+      },
+      "role": "surface",
+      "solid": {
+        "path": "M7 7 L25 7 C26.656 7 28 8.344 28 10 L28 22 C28 23.656 26.656 25 25 25 L7 25 C5.344 25 4 23.656 4 22 L4 10 C4 8.344 5.344 7 7 7 L7 7 L8 9.6 C7.227 9.6 6.6 10.227 6.6 11 L6.6 21 C6.6 21.773 7.227 22.4 8 22.4 L24 22.4 C24.773 22.4 25.4 21.773 25.4 21 L25.4 11 C25.4 10.227 24.773 9.6 24 9.6 L8 9.6 L7 7 Z"
+      }
+    }
+  },
+  "rigs": {
+    "swipe": {
+      "pivot": [
+        14,
+        14.5
+      ],
+      "carries": [
+        "swipe-0",
+        "swipe-1"
+      ]
+    },
+    "swipe-0": {
+      "//": "each lifting fingertip shrinks about its own centre",
+      "pivot": [
+        11.5,
+        14.5
+      ]
+    },
+    "swipe-1": {
+      "pivot": [
+        16.5,
+        14.5
+      ]
+    }
+  },
+  "motion": {
+    "//": "On the first frame the real fingertips step off and the identical copies step on, so the hand-off is invisible; the real ones touch down again at rest.",
+    "swipe.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.03,
+          0
+        ],
+        [
+          0.24,
+          5,
+          "inOut"
+        ],
+        [
+          0.27,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.3,
+          6.4,
+          "inOut"
+        ],
+        [
+          0.34,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "swipe-1.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.017,
+          1,
+          "step"
+        ],
+        [
+          0.14,
+          1
+        ],
+        [
+          0.24,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.017,
+          1,
+          "step"
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          0.3,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "swipe-0.opacity": {
+      "follow": "swipe-1.opacity"
+    },
+    "swipe-1.scale": {
+      "//": "lifting off",
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.12,
+          1
+        ],
+        [
+          0.24,
+          0.6,
+          "in"
+        ],
+        [
+          0.27,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.16,
+          1
+        ],
+        [
+          0.3,
+          0.48,
+          "in"
+        ],
+        [
+          0.34,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "swipe-0.scale": {
+      "follow": "swipe-1.scale"
+    },
+    "finger-0.opacity": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.17,
+          0
+        ],
+        [
+          0.25,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.32,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "finger-1.opacity": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.22,
+          0
+        ],
+        [
+          0.3,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.29,
+          0
+        ],
+        [
+          0.37,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "finger-0.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.17,
+          0.5,
+          "step"
+        ],
+        [
+          0.27,
+          1.12,
+          "out"
+        ],
+        [
+          0.34,
+          0.97
+        ],
+        [
+          0.4,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.24,
+          0.4,
+          "step"
+        ],
+        [
+          0.35,
+          1.18,
+          "out"
+        ],
+        [
+          0.43,
+          0.93
+        ],
+        [
+          0.5,
+          1.03
+        ],
+        [
+          0.57,
+          1
+        ]
+      ]
+    },
+    "finger-1.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.22,
+          0.5,
+          "step"
+        ],
+        [
+          0.32,
+          1.12,
+          "out"
+        ],
+        [
+          0.39,
+          0.97
+        ],
+        [
+          0.45,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.29,
+          0.4,
+          "step"
+        ],
+        [
+          0.4,
+          1.18,
+          "out"
+        ],
+        [
+          0.48,
+          0.93
+        ],
+        [
+          0.55,
+          1.03
+        ],
+        [
+          0.62,
+          1
+        ]
+      ]
+    }
+  }
+}

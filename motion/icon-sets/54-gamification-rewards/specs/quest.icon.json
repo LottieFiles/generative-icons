@@ -1,0 +1,99 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "quest",
+  "label": "Quest",
+  "intent": "The quest goal is reached. Light: the marker crouches, leaps across the map from the lower-left start to the upper-right goal while the route is traced on the map beneath it, lands with a squash and stays; the route fades once it has arrived. Strong: the marker reaches the goal in two hops, stopping at the halfway point, the route tracing in two legs, and lands harder. Reverse: the route reappears and the marker hops back to the start along it (twice in Strong) as it retracts, landing with a squash.",
+  "state": {
+    "from": "started",
+    "to": "reached",
+    "labels": ["Reach goal", "Restart quest"],
+    "reverse": "auto"
+  },
+  "parts": {
+    "map": {
+      "shape": {"path": "M5 8.7 C5 8.233 5.214 7.908 5.643 7.724 L11.357 5.276 C11.786 5.092 12.218 5.082 12.655 5.246 L19.345 7.754 C19.782 7.918 20.214 7.908 20.643 7.724 L26.357 5.276 C26.786 5.092 27 5.233 27 5.7 L27 23.3 C27 23.767 26.786 24.092 26.357 24.276 L20.643 26.724 C20.214 26.908 19.782 26.918 19.345 26.754 L12.655 24.246 C12.218 24.082 11.786 24.092 11.357 24.276 L5.643 26.724 C5.214 26.908 5 26.767 5 26.3 L5 8.7 Z"},
+      "role": "surface",
+      "solid": "ring",
+      "//": "v1 Solid is the outline at 2.6, hollow"
+    },
+    "fold-top": {
+      "shape": {"line": [[12, 5.5], [12, 10]]}
+    },
+    "fold-bottom": {
+      "shape": {"line": [[20, 22], [20, 26.5]]}
+    },
+    "route": {
+      "//": "hidden at rest: the route traced under the marker, start first; gone again in both states",
+      "shape": {"line": [[9.5, 20], [22, 12.5]]},
+      "hidden": true
+    },
+    "marker": {
+      "shape": {"circle": [[9.5, 20], 1.8]},
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "travel": {
+      "//": "progress along the route: y = -0.6 x",
+      "pivot": [9.5, 20],
+      "carries": ["hop"]
+    },
+    "hop": {
+      "//": "the leap's height and the crouch and landing squash, on the marker's bottom",
+      "pivot": [9.5, 20],
+      "carries": ["marker"],
+      "squash": {"base": 21.8, "widen": 0.5}
+    }
+  },
+  "motion": {
+    "travel.x": {
+      "light": [[0, 0], [0.08, 0], [0.36, 12.5, "inOut"]],
+      "strong": [[0, 0], [0.1, 0], [0.3, 6.25, "inOut"], [0.36, 6.25], [0.56, 12.5, "inOut"]]
+    },
+    "travel.y": {
+      "follow": "travel.x",
+      "scale": -0.6
+    },
+    "hop.y": {
+      "light": [[0, 0], [0.08, 0], [0.22, -2.6, "out"], [0.36, 0, "hit"]],
+      "strong": [[0, 0], [0.1, 0], [0.2, -2.2, "out"], [0.3, 0, "hit"], [0.36, 0], [0.46, -2.6, "out"], [0.56, 0, "hit"]]
+    },
+    "hop.squash": {
+      "light": [[0, 1], [0.08, 0.8, "out"], [0.14, 1.1, "out"], [0.28, 1], [0.36, 1], [0.4, 0.72, "out"], [0.48, 1.06], [0.54, 1]],
+      "strong": [[0, 1], [0.1, 0.78, "out"], [0.15, 1.1, "out"], [0.26, 1], [0.3, 1], [0.33, 0.8, "out"], [0.38, 1.1, "out"], [0.5, 1], [0.56, 1], [0.6, 0.68, "out"], [0.68, 1.06], [0.76, 1]]
+    },
+    "route.opacity": {
+      "light": [[0, 0], [0.08, 0], [0.09, 1, "step"], [0.4, 1], [0.54, 0, "in"]],
+      "strong": [[0, 0], [0.1, 0], [0.11, 1, "step"], [0.6, 1], [0.76, 0, "in"]]
+    },
+    "route.draw": {
+      "//": "same times and eases as travel.x, so the traced line keeps pace under the marker",
+      "light": [[0, 1], [0.08, 0, "step"], [0.36, 1, "inOut"]],
+      "strong": [[0, 1], [0.1, 0, "step"], [0.3, 0.5, "inOut"], [0.36, 0.5], [0.56, 1, "inOut"]]
+    }
+  },
+  "preview": {
+    "light": [0, 0.08, 0.16, 0.22, 0.3, 0.36, 0.4, 0.54],
+    "strong": [0, 0.1, 0.2, 0.3, 0.36, 0.46, 0.6, 0.76]
+  },
+  "reverse": {
+    "//": "written out: the automatic reflection turned the leap into a dip below the route. The marker hops back as the route retracts under it, and the route hides at the start.",
+    "light": {
+      "travel.x": [[0, 12.5], [0.06, 12.5], [0.32, 0, "inOut"]],
+      "travel.y": [[0, -7.5], [0.06, -7.5], [0.32, 0, "inOut"]],
+      "hop.y": [[0, 0], [0.06, 0], [0.19, -2.6, "out"], [0.32, 0, "hit"]],
+      "hop.squash": [[0, 1], [0.06, 0.8, "out"], [0.12, 1.1, "out"], [0.24, 1], [0.32, 1], [0.36, 0.72, "out"], [0.44, 1.06], [0.5, 1]],
+      "route.opacity": [[0, 0], [0.06, 1, "out"], [0.32, 1], [0.33, 0, "step"]],
+      "route.draw": [[0, 1], [0.06, 1], [0.32, 0, "inOut"], [0.34, 1, "step"]]
+    },
+    "strong": {
+      "travel.x": [[0, 12.5], [0.08, 12.5], [0.26, 6.25, "inOut"], [0.32, 6.25], [0.5, 0, "inOut"]],
+      "travel.y": [[0, -7.5], [0.08, -7.5], [0.26, -3.75, "inOut"], [0.32, -3.75], [0.5, 0, "inOut"]],
+      "hop.y": [[0, 0], [0.08, 0], [0.17, -2.4, "out"], [0.26, 0, "hit"], [0.32, 0], [0.41, -2.2, "out"], [0.5, 0, "hit"]],
+      "hop.squash": [[0, 1], [0.08, 0.78, "out"], [0.13, 1.1, "out"], [0.22, 1], [0.26, 1], [0.29, 0.8, "out"], [0.34, 1.1, "out"], [0.44, 1], [0.5, 1], [0.54, 0.72, "out"], [0.62, 1.05], [0.68, 1]],
+      "route.opacity": [[0, 0], [0.08, 1, "out"], [0.5, 1], [0.51, 0, "step"]],
+      "route.draw": [[0, 1], [0.08, 1], [0.26, 0.5, "inOut"], [0.32, 0.5], [0.5, 0, "inOut"], [0.52, 1, "step"]]
+    }
+  }
+}

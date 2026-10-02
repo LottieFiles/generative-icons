@@ -489,9 +489,21 @@ impl RuleDoc {
             return Ok(TailOutcome::default());
         };
         let outcome = engine::run(program, set)?;
+        // Contracts only icons adopted from spec v2 hold: those icons are checked against
+        // their specs instead, so the count holds them as met.
+        let held = |adopted: bool| -> std::collections::HashSet<&String> {
+            program
+                .icons
+                .iter()
+                .filter(|(id, _)| set.is_adopted(id) == adopted)
+                .flat_map(|(_, rules)| rules.iter().filter_map(|r| r.contract.as_ref()))
+                .collect()
+        };
+        let kept = held(false);
+        let adopted = held(true).into_iter().filter(|c| !kept.contains(c)).count();
         for a in &self.set_asserts {
             if let SetAssertKind::ContractCount(c) = a.kind {
-                ensure(c.holds(outcome.contracts), || a.message.clone())?;
+                ensure(c.holds(outcome.contracts + adopted), || a.message.clone())?;
             }
         }
         Ok(outcome)

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "reverse-clip",
+  "label": "Reverse clip",
+  "intent": "The clip now plays backwards. Light: the play mark flips through its axis to point left with a hard stop, then kicks backward 1.6 units with two speed streaks trailing behind it on the right, and eases back to its place as the streaks fade. Strong: it stretches forward first, snaps through past the mirror and settles, kicks back farther with longer streaks, overshoots its place and settles. It stays pointing left. The reverse flips it forward again and it kicks forward once, without streaks. The clip frame never moves.",
+  "state": {"from": "forward", "to": "reversed", "labels": ["Reverse", "Play forward"], "reverse": "auto"},
+  "parts": {
+    "clip": {"shape": {"rect": [4.5, 8, 23, 16], "r": 2.5}, "role": "surface", "solid": "ring"},
+    "streak-t": {"//": "hidden at rest: speed lines trailing behind the mark as it runs backward", "shape": {"line": [[21.2, 14.2], [24.6, 14.2]]}, "hidden": true},
+    "streak-b": {"shape": {"line": [[21.2, 17.8], [24.6, 17.8]]}, "hidden": true},
+    "play": {
+      "//": "v1 play mark; turn 0 -> 1 is v1's rest -> end path, a mirror about x 16.7 (the morph passes through a vertical line, a flip)",
+      "shape": {"morph": [
+        {"path": "M13.2 12.9 C13.2 12.3 13.46 12.149 13.981 12.447 L19.419 15.553 C19.94 15.851 19.94 16.149 19.419 16.447 L13.981 19.553 C13.46 19.851 13.2 19.7 13.2 19.1 L13.2 12.9 Z"},
+        {"path": "M20.2 12.9 C20.2 12.3 19.94 12.149 19.419 12.447 L13.981 15.553 C13.46 15.851 13.46 16.149 13.981 16.447 L19.419 19.553 C19.94 19.851 20.2 19.7 20.2 19.1 L20.2 12.9 Z"}
+      ], "by": "turn"},
+      "role": "fill"
+    }
+  },
+  "reverse": {
+    "//": "by hand: it flips forward and kicks forward (right) once; the streaks stay hidden, since they trail on the right",
+    "light": {
+      "turn": [[0, 1], [0.04, 1], [0.18, 0, "hit"]],
+      "play.x": [[0, 0], [0.18, 0], [0.26, 1.4, "out"], [0.4, 0, "inOut"]],
+      "streak-t.opacity": [[0, 0], [0.4, 0]],
+      "streak-b.opacity": [[0, 0], [0.4, 0]]
+    },
+    "strong": {
+      "turn": [[0, 1], [0.1, 1.12, "out"], [0.14, 1.12], [0.26, -0.1, "hit"], [0.33, 0]],
+      "play.x": [[0, 0], [0.26, 0], [0.34, 2, "out"], [0.48, -0.3, "inOut"], [0.56, 0]],
+      "streak-t.opacity": [[0, 0], [0.56, 0]],
+      "streak-b.opacity": [[0, 0], [0.56, 0]]
+    }
+  },
+  "motion": {
+    "turn": {
+      "light":  [[0, 0], [0.04, 0], [0.18, 1, "hit"]],
+      "strong": [[0, 0], [0.1, -0.12, "out"], [0.14, -0.12], [0.26, 1.1, "hit"], [0.33, 1]]
+    },
+    "play.x": {
+      "light":  [[0, 0], [0.18, 0], [0.26, -1.6, "out"], [0.4, 0, "inOut"]],
+      "strong": [[0, 0], [0.26, 0], [0.34, -2.4, "out"], [0.48, 0.3, "inOut"], [0.56, 0]]
+    },
+    "streak-t.opacity": {
+      "light":  [[0, 0], [0.18, 0], [0.19, 1, "step"], [0.28, 1], [0.36, 0, "in"]],
+      "strong": [[0, 0], [0.26, 0], [0.27, 1, "step"], [0.38, 1], [0.47, 0, "in"]]
+    },
+    "streak-t.draw": {
+      "light":  [[0, 1], [0.18, 0, "step"], [0.27, 1, "out"]],
+      "strong": [[0, 1], [0.26, 0, "step"], [0.35, 1, "out"]]
+    },
+    "streak-b.opacity": {"follow": "streak-t.opacity", "lag": 0.03},
+    "streak-b.draw": {"follow": "streak-t.draw", "lag": 0.03}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "lasso-select",
+  "label": "Lasso select",
+  "intent": "A lasso is drawn around the object and the object is selected. Light: the loop is drawn freehand from where the tail joins it, up the right side, over the top and back round the bottom, closing on itself; the object inside pops once as it is caught. Strong: the tail is drawn in first, the loop sweeps round faster and closes hard, then it cinches tight around the object and springs back while the object pops and settles in two beats.",
+  "parts": {
+    "object": {"shape": {"rect": [12, 12.5, 4, 4], "r": 0.9}, "role": "fill"},
+    "tail":   {"//": "v1's tail, written from its free end so it draws in toward the loop", "shape": {"path": "M24.5 25 C20 23.5 22.849 20.815 20.849 17.815"}},
+    "loop":   {"//": "v1's loop, the same curve restarted where the tail joins it (its first segment split at t 0.5) and run the other way, so the drawing starts at the tail", "shape": {"path": "M20.84925 17.815375 C22.1055 16.32725 22.693 14.5155 22.314 12.733 C21.556 9.167 17.22 7.068 12.628 8.044 C8.036 9.02 4.928 12.702 5.686 16.267 C6.444 19.833 10.78 21.932 15.372 20.956 C17.668 20.468 19.593 19.3035 20.84925 17.815375 Z"}, "role": "surface", "solid": "ring"}
+  },
+  "rigs": {
+    "object": {"pivot": [14, 14.5]},
+    "lasso":  {"//": "the cinch: the rope tightens about the object", "pivot": [14, 14.5], "carries": ["loop", "tail"]}
+  },
+  "motion": {
+    "loop.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.34, 1, "inOut"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.1, 0], [0.32, 1, "in"]]
+    },
+    "tail.draw": {
+      "light":  [[0, 1]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.11, 1, "out"]]
+    },
+    "lasso.scale": {
+      "light":  [[0, 1]],
+      "strong": [[0, 1], [0.32, 1], [0.39, 0.86, "hit"], [0.48, 1.04], [0.56, 1]]
+    },
+    "object.scale": {
+      "light":  [[0, 1], [0.32, 1], [0.39, 1.3, "out"], [0.46, 0.94], [0.53, 1]],
+      "strong": [[0, 1], [0.34, 1], [0.41, 1.36, "out"], [0.49, 0.9], [0.57, 1.08], [0.64, 1]]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "export-video",
+  "label": "Export video",
+  "intent": "The video goes out. Light: the arrow presses into the clip, then launches up and leaves through the top, fading as it accelerates; the clip recoils down from the push and springs back, and a fresh arrow rises out of the clip, overshoots a little and seats (the two arrows cross-fade, so no frame is empty). Strong: a deeper press, a harder launch, a bigger recoil that rebounds twice, and the fresh arrow overshoots more and settles in two beats. The rest pose is the v1 drawing.",
+  "parts": {
+    "clip": {"shape": {"rect": [4.5, 21, 23, 6.5], "r": 2.2}, "role": "surface", "solid": "fill"},
+    "arrow": {"//": "v1 stem + head as one part, so they leave as one", "shape": [{"line": [[16, 17], [16, 7.5]]}, {"polyline": [[11.5, 12], [16, 7.5], [20.5, 12]]}]},
+    "arrow-next": {"//": "hidden at rest: the fresh arrow that rises out of the clip; it hands over to 'arrow' on the same pixels at the end", "shape": [{"line": [[16, 17], [16, 7.5]]}, {"polyline": [[11.5, 12], [16, 7.5], [20.5, 12]]}], "hidden": true}
+  },
+  "motion": {
+    "arrow.y": {
+      "light":  [[0, 0], [0.06, 0.8, "out"], [0.24, -3.4, "in"], [0.25, 0, "step"]],
+      "strong": [[0, 0], [0.1, 1.3, "out"], [0.14, 1.3], [0.3, -4.4, "in"], [0.31, 0, "step"]]
+    },
+    "arrow.opacity": {
+      "light":  [[0, 1], [0.12, 1], [0.24, 0, "in"], [0.42, 0], [0.43, 1, "step"]],
+      "strong": [[0, 1], [0.19, 1], [0.3, 0, "in"], [0.58, 0], [0.59, 1, "step"]]
+    },
+    "arrow-next.y": {
+      "light":  [[0, 0], [0.16, 2.6, "step"], [0.34, -0.4, "out"], [0.42, 0]],
+      "strong": [[0, 0], [0.23, 3, "step"], [0.42, -0.7, "out"], [0.49, 0.2], [0.54, -0.06], [0.58, 0]]
+    },
+    "arrow-next.opacity": {
+      "light":  [[0, 0], [0.16, 0], [0.26, 1, "out"], [0.42, 1], [0.43, 0, "step"]],
+      "strong": [[0, 0], [0.23, 0], [0.33, 1, "out"], [0.58, 1], [0.59, 0, "step"]]
+    },
+    "clip.y": {
+      "light":  [[0, 0], [0.06, 0], [0.12, 1, "out"], [0.2, -0.2], [0.27, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.2, 1.3, "out"], [0.28, -0.3], [0.35, 0.12], [0.41, 0]]
+    }
+  }
+}

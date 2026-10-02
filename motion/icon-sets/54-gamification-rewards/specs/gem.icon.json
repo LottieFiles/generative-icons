@@ -1,0 +1,52 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "gem",
+  "label": "Gem",
+  "intent": "The gem catches the light. Light: a four-point sparkle twinkles off the upper-right corner, swelling and turning as it fades, and the stone flashes with a pop, rebounds and settles. Strong: the stone gathers, the first sparkle is answered by a second off the upper-left corner, and the stone pops with each, the second pop smaller. Facets stay joined to the rim.",
+  "parts": {
+    "stone": {"shape": {"path": "M8.639 8.541 C8.88 8.18 9.217 8 9.65 8 L22.35 8 C22.783 8 23.12 8.18 23.361 8.541 L26.639 13.459 C26.88 13.82 26.854 14.16 26.561 14.479 L16.439 25.521 C16.146 25.84 15.854 25.84 15.561 25.521 L5.439 14.479 C5.146 14.16 5.12 13.82 5.361 13.459 L8.639 8.541 Z"},
+              "role": "surface",
+              "solid": {"path": "M8.639 8.541 C8.88 8.18 9.217 8 9.65 8 L22.35 8 C22.783 8 23.12 8.18 23.361 8.541 L26.639 13.459 C26.88 13.82 26.854 14.16 26.561 14.479 L16.439 25.521 C16.146 25.84 15.854 25.84 15.561 25.521 L5.439 14.479 C5.146 14.16 5.12 13.82 5.361 13.459 L8.639 8.541 L12.4 15.747 L15.8 21.653 C15.933 21.884 16.067 21.884 16.2 21.653 L19.6 15.747 C19.733 15.516 19.667 15.4 19.4 15.4 L12.6 15.4 C12.333 15.4 12.267 15.516 12.4 15.747 L8.639 8.541 Z"},
+              "//": "v1 Solid: the stone filled with the lower facet triangle open, one bridged subpath"},
+    "facet-cross": {"shape": {"line": [[5.3, 14], [26.7, 14]]}, "solid": "none"},
+    "facet-v":     {"shape": {"polyline": [[10.7, 8], [16, 25.5], [21.3, 8]]}, "solid": "none"},
+    "sparkle-a": {"//": "hidden at rest: the glint, a four-point star clear of the corner even at the stone's largest pop",
+                  "shape": {"polygon": [[27, 2.2], [27.65, 3.95], [29.4, 4.6], [27.65, 5.25], [27, 7], [26.35, 5.25], [24.6, 4.6], [26.35, 3.95]], "r": 0.2},
+                  "role": "fill", "hidden": true},
+    "sparkle-b": {"//": "Strong only: the answering glint off the upper-left corner", "mirror": {"of": "sparkle-a"}}
+  },
+  "rigs": {
+    "gem":       {"pivot": [16, 16.8], "carries": ["stone", "facet-cross", "facet-v"]},
+    "sparkle-a": {"pivot": [27, 4.6]},
+    "sparkle-b": {"pivot": [5, 4.6]}
+  },
+  "motion": {
+    "sparkle-a.opacity": {
+      "light":  [[0, 0], [0.03, 0], [0.04, 1, "step"], [0.3, 1], [0.31, 0, "step"]],
+      "strong": [[0, 0], [0.05, 0], [0.06, 1, "step"], [0.3, 1], [0.31, 0, "step"]]
+    },
+    "sparkle-a.scale": {
+      "light":  [[0, 1], [0.03, 0.1, "step"], [0.15, 1.2, "out"], [0.3, 0.1, "in"], [0.32, 1, "step"]],
+      "strong": [[0, 1], [0.05, 0.1, "step"], [0.16, 1.25, "out"], [0.3, 0.1, "in"], [0.32, 1, "step"]]
+    },
+    "sparkle-a.rotate": {
+      "light":  [[0, 0], [0.03, 0], [0.3, 60, "inOut"], [0.32, 0, "step"]],
+      "strong": [[0, 0], [0.05, 0], [0.3, 70, "inOut"], [0.32, 0, "step"]]
+    },
+    "sparkle-b.opacity": {
+      "strong": [[0, 0], [0.19, 0], [0.2, 1, "step"], [0.42, 1], [0.43, 0, "step"]]
+    },
+    "sparkle-b.scale": {
+      "strong": [[0, 1], [0.19, 0.1, "step"], [0.3, 1.05, "out"], [0.42, 0.1, "in"], [0.44, 1, "step"]]
+    },
+    "sparkle-b.rotate": {
+      "strong": [[0, 0], [0.19, 0], [0.42, -60, "inOut"], [0.44, 0, "step"]]
+    },
+    "gem.scale": {
+      "light":  [[0, 1], [0.1, 1], [0.2, 1.1, "out"], [0.3, 0.97], [0.4, 1]],
+      "strong": [[0, 1], [0.08, 0.95], [0.2, 1.12, "out"], [0.28, 0.99], [0.35, 1.06, "out"], [0.46, 0.98], [0.58, 1]]
+    }
+  },
+  "preview": {"light": [0, 0.06, 0.12, 0.17, 0.22, 0.28, 0.34, 0.42], "strong": [0, 0.1, 0.16, 0.22, 0.3, 0.36, 0.46, 0.6]}
+}

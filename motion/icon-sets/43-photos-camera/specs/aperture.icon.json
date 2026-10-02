@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "aperture",
+  "label": "Aperture",
+  "intent": "Open to stopped down: the six blades sweep in together and close the iris to a small opening, like an aperture ring clicking to a smaller f-stop. Light: one decisive close that stops dead on the stop, bounces open a little off it and settles. Strong: the iris stops down in two clicks, half way and then fully, each landing with a bounce, the second harder. The ring never moves. Reverse opens the blades again.",
+  "state": {"from": "open", "to": "stopped", "labels": ["Stop down", "Open up"], "reverse": "auto"},
+  "parts": {
+    "ring":    {"shape": {"circle": [[16, 16], 11.5]}, "role": "surface", "solid": "ring"},
+    "blade-0": {"//": "each blade is v1's open line and v1's stopped-down line; the one 'iris' driver moves all six together, as the linked blades of a real iris do",
+                "shape": {"morph": [{"line": [[15.805, 4.849], [12.683, 10.449]]}, {"line": [[15.91, 4.89], [13.807, 13.95]]}], "by": "iris"}},
+    "blade-1": {"shape": {"morph": [{"line": [[25.559, 10.256], [19.149, 10.352]]}, {"line": [[25.577, 10.367], [16.679, 13.076]]}], "by": "iris"}},
+    "blade-2": {"shape": {"morph": [{"line": [[25.754, 21.407], [22.466, 15.903]]}, {"line": [[25.667, 21.477], [18.872, 15.126]]}], "by": "iris"}},
+    "blade-3": {"shape": {"morph": [{"line": [[16.195, 27.151], [19.317, 21.551]]}, {"line": [[16.09, 27.11], [18.193, 18.05]]}], "by": "iris"}},
+    "blade-4": {"shape": {"morph": [{"line": [[6.441, 21.744], [12.851, 21.648]]}, {"line": [[6.423, 21.634], [15.321, 18.924]]}], "by": "iris"}},
+    "blade-5": {"shape": {"morph": [{"line": [[6.246, 10.593], [9.534, 16.097]]}, {"line": [[6.333, 10.523], [13.128, 16.874]]}], "by": "iris"}}
+  },
+  "motion": {
+    "iris": {
+      "//": "0 open, 1 stopped down; the bounces only reopen a little off the stop, never past it",
+      "light":  [[0, 0], [0.04, 0], [0.3, 1, "hit"], [0.37, 0.88], [0.45, 1]],
+      "strong": [[0, 0], [0.15, 0.5, "hit"], [0.2, 0.44], [0.27, 0.5], [0.41, 1, "hit"], [0.48, 0.82], [0.57, 1]]
+    }
+  }
+}

@@ -2399,35 +2399,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
       "stateful": true,
       "startState": "available",
       "endState": "selected",
       "heading": "Seat map",
-      "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+      "description": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
       "label": "Seat map",
-      "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+      "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.45,
-      "rest": 30,
+      "active": 0.42,
+      "rest": 28,
       "keyPoses": [
         0,
-        0.09000000000000001,
-        0.18000000000000002,
-        0.27,
-        0.36000000000000004,
-        0.45
+        0.084,
+        0.168,
+        0.252,
+        0.336,
+        0.42
       ],
-      "layers": 53,
+      "layers": 65,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -2437,29 +2434,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "b5b38ace56c94ca6e308ccd9a882bf1c6919827be0683dce6e505c5989b64b04",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-      },
-      "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "seat-map-stage-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "seat-map-seat-0"
-        },
-        {
-          "type": "fixed",
-          "part": "seat-map-seat-11"
-        }
-      ],
+      "nativeSha256": "12e1f9d7ae20019381e73458757576233d89cd12fad8aff1390a92c76c818113",
+      "sourceSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+      "planSha256": "a2c3e096cc14465def1e3401a017d3bf796f6b15810c675584d271fe6f670ae3",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+      "constraints": [],
       "category": "Events & tickets",
-      "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+      "definitionsSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -2481,96 +2463,6 @@
         ],
         "units": "32-unit construction grid"
       },
-      "reverse": {
-        "name": "seat-map-reverse",
-        "icon": "seat-map",
-        "motionId": "light",
-        "continuous": false,
-        "previewReset": false,
-        "cycleDegrees": 0,
-        "directionSources": {
-          "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-          "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-        },
-        "motionLabel": "Light motion",
-        "direction": "reverse",
-        "stateful": true,
-        "startState": "selected",
-        "endState": "available",
-        "heading": "Seat map",
-        "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-        "label": "Seat map",
-        "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-        "width": 32,
-        "height": 32,
-        "fps": 60,
-        "frames": 144,
-        "duration": 2.4,
-        "active": 0.4,
-        "rest": 27,
-        "keyPoses": [
-          0,
-          0.08000000000000002,
-          0.16000000000000003,
-          0.24,
-          0.32000000000000006,
-          0.4
-        ],
-        "layers": 53,
-        "slots": [
-          "color.primary",
-          "style.outline.light",
-          "style.outline.regular",
-          "style.outline.bold",
-          "style.solid",
-          "style.tint",
-          "style.outline.width"
-        ],
-        "nativeSha256": "110e95c47460688d553f989676c89c251cb354a1828e2b045344277546eaa66a",
-        "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-        "authoringSources": {
-          "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-        },
-        "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-        "constraints": [
-          {
-            "type": "fixed",
-            "part": "seat-map-stage-frame"
-          },
-          {
-            "type": "fixed",
-            "part": "seat-map-seat-0"
-          },
-          {
-            "type": "fixed",
-            "part": "seat-map-seat-11"
-          }
-        ],
-        "category": "Events & tickets",
-        "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
-        "primary": {
-          "dark": "#00ddb3",
-          "light": "#008c76"
-        },
-        "duotoneFill": true,
-        "styles": [
-          "outline",
-          "solid",
-          "duotone"
-        ],
-        "strokeWidth": {
-          "min": 1.5,
-          "default": 2,
-          "max": 2.5,
-          "presets": [
-            1.5,
-            2,
-            2.5
-          ],
-          "units": "32-unit construction grid"
-        }
-      },
       "number": 929,
       "forwardLabel": "selected",
       "reverseLabel": "available",
@@ -2582,35 +2474,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "available",
           "endState": "selected",
           "heading": "Seat map",
-          "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "description": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "label": "Seat map",
-          "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.45,
-          "rest": 30,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.09000000000000001,
-            0.18000000000000002,
-            0.27,
-            0.36000000000000004,
-            0.45
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 53,
+          "layers": 65,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2620,29 +2509,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "b5b38ace56c94ca6e308ccd9a882bf1c6919827be0683dce6e505c5989b64b04",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "seat-map-stage-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-0"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-11"
-            }
-          ],
+          "nativeSha256": "12e1f9d7ae20019381e73458757576233d89cd12fad8aff1390a92c76c818113",
+          "sourceSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+          "planSha256": "a2c3e096cc14465def1e3401a017d3bf796f6b15810c675584d271fe6f670ae3",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2671,35 +2545,32 @@
             "continuous": false,
             "previewReset": false,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Light motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "selected",
             "endState": "available",
             "heading": "Seat map",
-            "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+            "description": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
             "label": "Seat map",
-            "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+            "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.4,
-            "rest": 27,
+            "active": 0.34,
+            "rest": 23,
             "keyPoses": [
               0,
-              0.08000000000000002,
-              0.16000000000000003,
-              0.24,
-              0.32000000000000006,
-              0.4
+              0.068,
+              0.136,
+              0.20400000000000001,
+              0.272,
+              0.34
             ],
-            "layers": 53,
+            "layers": 65,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -2709,29 +2580,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "110e95c47460688d553f989676c89c251cb354a1828e2b045344277546eaa66a",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-            },
-            "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "seat-map-stage-frame"
-              },
-              {
-                "type": "fixed",
-                "part": "seat-map-seat-0"
-              },
-              {
-                "type": "fixed",
-                "part": "seat-map-seat-11"
-              }
-            ],
+            "nativeSha256": "5cc6f0c5bbdd8c542ccab3e93a665343412412fe65683fa7e4d2234b37f1cb3f",
+            "sourceSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+            "planSha256": "a2c3e096cc14465def1e3401a017d3bf796f6b15810c675584d271fe6f670ae3",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+            "constraints": [],
             "category": "Events & tickets",
-            "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+            "definitionsSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -2753,11 +2609,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 17406,
-            "sha256": "fedf7c0b4575771f87b782d13873cb2195d88f6ac1149c38f58f0ca1f5ff207d"
+            "bytes": 12608,
+            "sha256": "a028956eca1c07487fd7444fb71e324d33dec33a38a6469753ea97caf080072b"
           },
-          "bytes": 17405,
-          "sha256": "e12e475f495eb889ce8dac61c2be075519a72e5556644fc5ee1732bbdb399a47"
+          "bytes": 12607,
+          "sha256": "7734386fd74d6cff6c2975301a890fa9f68097d41cfde23f45e8cdab5abc2a42"
         },
         {
           "name": "seat-map-strong",
@@ -2766,35 +2622,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "available",
           "endState": "selected",
           "heading": "Seat map",
-          "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "description": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "label": "Seat map",
-          "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.46,
-          "rest": 30,
+          "active": 0.55,
+          "rest": 36,
           "keyPoses": [
             0,
-            0.09200000000000001,
-            0.18400000000000002,
-            0.276,
-            0.36800000000000005,
-            0.46
+            0.11000000000000001,
+            0.22000000000000003,
+            0.33,
+            0.44000000000000006,
+            0.55
           ],
-          "layers": 53,
+          "layers": 65,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2804,29 +2657,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6bdbab73e3f03350cb2e0229a8997eade011c04c9c5d231fa6462ad32926c7f3",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "seat-map-stage-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-0"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-11"
-            }
-          ],
+          "nativeSha256": "5df897d8a8d3e0fd5985ee679309b2e6c5dbc3feee912e6c10755316d7b0b8bf",
+          "sourceSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+          "planSha256": "a2c3e096cc14465def1e3401a017d3bf796f6b15810c675584d271fe6f670ae3",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2855,35 +2693,32 @@
             "continuous": false,
             "previewReset": false,
             "cycleDegrees": 0,
-            "directionSources": {
-              "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-              "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-            },
+            "source": "gai-icon/2",
             "motionLabel": "Strong motion",
             "direction": "reverse",
             "stateful": true,
             "startState": "selected",
             "endState": "available",
             "heading": "Seat map",
-            "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+            "description": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
             "label": "Seat map",
-            "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+            "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
             "width": 32,
             "height": 32,
             "fps": 60,
             "frames": 144,
             "duration": 2.4,
-            "active": 0.32,
-            "rest": 22,
+            "active": 0.43,
+            "rest": 29,
             "keyPoses": [
               0,
-              0.064,
-              0.128,
-              0.192,
-              0.256,
-              0.32
+              0.08600000000000001,
+              0.17200000000000001,
+              0.258,
+              0.34400000000000003,
+              0.43
             ],
-            "layers": 53,
+            "layers": 65,
             "slots": [
               "color.primary",
               "style.outline.light",
@@ -2893,29 +2728,14 @@
               "style.tint",
               "style.outline.width"
             ],
-            "nativeSha256": "a54271008e457950c3c6760416be60d9228c7a214c5abecb1d6b81ba103e33b2",
-            "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-            "authoringSources": {
-              "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-            },
-            "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-            "constraints": [
-              {
-                "type": "fixed",
-                "part": "seat-map-stage-frame"
-              },
-              {
-                "type": "fixed",
-                "part": "seat-map-seat-0"
-              },
-              {
-                "type": "fixed",
-                "part": "seat-map-seat-11"
-              }
-            ],
+            "nativeSha256": "b206f1a8a6f0d9c4e401444d6d3341cd60e704d5c3ce6fae0fa342e58028758c",
+            "sourceSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+            "planSha256": "a2c3e096cc14465def1e3401a017d3bf796f6b15810c675584d271fe6f670ae3",
+            "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+            "brief": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+            "constraints": [],
             "category": "Events & tickets",
-            "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+            "definitionsSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
             "primary": {
               "dark": "#00ddb3",
               "light": "#008c76"
@@ -2937,11 +2757,11 @@
               ],
               "units": "32-unit construction grid"
             },
-            "bytes": 17410,
-            "sha256": "6c7e64d2b977364367085a2479440967f55f90bb6aaf88182435b5f71b20532e"
+            "bytes": 12612,
+            "sha256": "1935727f6b73326868e21eea6c7f7fa02c079b399cc38cdf8eb2cb823167a155"
           },
-          "bytes": 17407,
-          "sha256": "b41dc651bb12bc43e45af1f54e85cdcacb83e7911018153dc4b61f34f7986a3c"
+          "bytes": 12609,
+          "sha256": "6b82f9bde290378d89812d59a5ae79bec36e389460c88c1887c70c2b51ba8927"
         }
       ],
       "animations": [
@@ -2952,35 +2772,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
           "stateful": true,
           "startState": "available",
           "endState": "selected",
           "heading": "Seat map",
-          "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "description": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "label": "Seat map",
-          "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.45,
-          "rest": 30,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.09000000000000001,
-            0.18000000000000002,
-            0.27,
-            0.36000000000000004,
-            0.45
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 53,
+          "layers": 65,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2990,29 +2807,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "b5b38ace56c94ca6e308ccd9a882bf1c6919827be0683dce6e505c5989b64b04",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "seat-map-stage-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-0"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-11"
-            }
-          ],
+          "nativeSha256": "12e1f9d7ae20019381e73458757576233d89cd12fad8aff1390a92c76c818113",
+          "sourceSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+          "planSha256": "a2c3e096cc14465def1e3401a017d3bf796f6b15810c675584d271fe6f670ae3",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3034,8 +2836,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17405,
-          "sha256": "e12e475f495eb889ce8dac61c2be075519a72e5556644fc5ee1732bbdb399a47"
+          "bytes": 12607,
+          "sha256": "7734386fd74d6cff6c2975301a890fa9f68097d41cfde23f45e8cdab5abc2a42"
         },
         {
           "name": "seat-map-reverse",
@@ -3044,35 +2846,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "selected",
           "endState": "available",
           "heading": "Seat map",
-          "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "description": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "label": "Seat map",
-          "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.4,
-          "rest": 27,
+          "active": 0.34,
+          "rest": 23,
           "keyPoses": [
             0,
-            0.08000000000000002,
-            0.16000000000000003,
-            0.24,
-            0.32000000000000006,
-            0.4
+            0.068,
+            0.136,
+            0.20400000000000001,
+            0.272,
+            0.34
           ],
-          "layers": 53,
+          "layers": 65,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3082,29 +2881,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "110e95c47460688d553f989676c89c251cb354a1828e2b045344277546eaa66a",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "seat-map-stage-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-0"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-11"
-            }
-          ],
+          "nativeSha256": "5cc6f0c5bbdd8c542ccab3e93a665343412412fe65683fa7e4d2234b37f1cb3f",
+          "sourceSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+          "planSha256": "a2c3e096cc14465def1e3401a017d3bf796f6b15810c675584d271fe6f670ae3",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3126,8 +2910,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17406,
-          "sha256": "fedf7c0b4575771f87b782d13873cb2195d88f6ac1149c38f58f0ca1f5ff207d"
+          "bytes": 12608,
+          "sha256": "a028956eca1c07487fd7444fb71e324d33dec33a38a6469753ea97caf080072b"
         },
         {
           "name": "seat-map-strong",
@@ -3136,35 +2920,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
           "stateful": true,
           "startState": "available",
           "endState": "selected",
           "heading": "Seat map",
-          "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "description": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "label": "Seat map",
-          "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.46,
-          "rest": 30,
+          "active": 0.55,
+          "rest": 36,
           "keyPoses": [
             0,
-            0.09200000000000001,
-            0.18400000000000002,
-            0.276,
-            0.36800000000000005,
-            0.46
+            0.11000000000000001,
+            0.22000000000000003,
+            0.33,
+            0.44000000000000006,
+            0.55
           ],
-          "layers": 53,
+          "layers": 65,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3174,29 +2955,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "6bdbab73e3f03350cb2e0229a8997eade011c04c9c5d231fa6462ad32926c7f3",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "seat-map-stage-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-0"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-11"
-            }
-          ],
+          "nativeSha256": "5df897d8a8d3e0fd5985ee679309b2e6c5dbc3feee912e6c10755316d7b0b8bf",
+          "sourceSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+          "planSha256": "a2c3e096cc14465def1e3401a017d3bf796f6b15810c675584d271fe6f670ae3",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3218,8 +2984,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17407,
-          "sha256": "b41dc651bb12bc43e45af1f54e85cdcacb83e7911018153dc4b61f34f7986a3c"
+          "bytes": 12609,
+          "sha256": "6b82f9bde290378d89812d59a5ae79bec36e389460c88c1887c70c2b51ba8927"
         },
         {
           "name": "seat-map-reverse-strong",
@@ -3228,35 +2994,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "reverse",
           "stateful": true,
           "startState": "selected",
           "endState": "available",
           "heading": "Seat map",
-          "description": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "description": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "label": "Seat map",
-          "intent": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
+          "intent": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.32,
-          "rest": 22,
+          "active": 0.43,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.064,
-            0.128,
-            0.192,
-            0.256,
-            0.32
+            0.08600000000000001,
+            0.17200000000000001,
+            0.258,
+            0.34400000000000003,
+            0.43
           ],
-          "layers": 53,
+          "layers": 65,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -3266,29 +3029,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "a54271008e457950c3c6760416be60d9228c7a214c5abecb1d6b81ba103e33b2",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the chosen seat grows to 1.5\u00d7 and settles. Strong: it crouches, hops 1.6 units, lands larger and settles to the same selected size. Reverse shrinks it back.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "seat-map-stage-frame"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-0"
-            },
-            {
-              "type": "fixed",
-              "part": "seat-map-seat-11"
-            }
-          ],
+          "nativeSha256": "b206f1a8a6f0d9c4e401444d6d3341cd60e704d5c3ce6fae0fa342e58028758c",
+          "sourceSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
+          "planSha256": "a2c3e096cc14465def1e3401a017d3bf796f6b15810c675584d271fe6f670ae3",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A seat is picked on the map. Light: the chosen seat presses in as it is tapped, pops past its selected size and settles at 1.5x. Strong: a deeper press and a bigger pop with a two-beat settle, and the pop sends a ripple through the other seats, nearest first, each dipping and recovering. Deselect: the seat swells slightly, shrinks back past its seat size and settles; the others stay still. The stage never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "875eb111c3f6235fd5c29cba543d6228b1dec5ef7a379503a1f6f3ce6d14d1e7",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -3310,12 +3058,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 17410,
-          "sha256": "6c7e64d2b977364367085a2479440967f55f90bb6aaf88182435b5f71b20532e"
+          "bytes": 12612,
+          "sha256": "1935727f6b73326868e21eea6c7f7fa02c079b399cc38cdf8eb2cb823167a155"
         }
       ],
-      "bytes": 17405,
-      "sha256": "e12e475f495eb889ce8dac61c2be075519a72e5556644fc5ee1732bbdb399a47"
+      "bytes": 12607,
+      "sha256": "7734386fd74d6cff6c2975301a890fa9f68097d41cfde23f45e8cdab5abc2a42"
     },
     {
       "name": "agenda",
@@ -4559,34 +4307,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Event badge",
-      "description": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+      "description": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
       "label": "Event badge",
-      "intent": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+      "intent": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.62,
-      "rest": 40,
+      "active": 0.43,
+      "rest": 29,
       "keyPoses": [
         0,
-        0.124,
-        0.248,
-        0.372,
-        0.496,
-        0.62
+        0.08600000000000001,
+        0.17200000000000001,
+        0.258,
+        0.34400000000000003,
+        0.43
       ],
-      "layers": 25,
+      "layers": 28,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -4596,33 +4342,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "50d5cd3094cfcaab467d4dfe899fe5a47fa3658dbc9cd753bfd6d4a31cd10bf2",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-      },
-      "brief": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "event-badge-strap-l"
-        },
-        {
-          "type": "fixed",
-          "part": "event-badge-strap-r"
-        },
-        {
-          "type": "rigid",
-          "part": "event-badge-card-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "event-badge-clip"
-        }
-      ],
+      "nativeSha256": "69ed043e3fd752b4e99bff4053a7d29f69c2a8ef0b7923b13733ff9d1a55df02",
+      "sourceSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
+      "planSha256": "7307f37c6a3145ca10dedc4e94c2b46509373e3d6fddcb2294dc2e79ceb91e3e",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
+      "constraints": [],
       "category": "Events & tickets",
-      "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+      "definitionsSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -4653,34 +4380,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event badge",
-          "description": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+          "description": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
           "label": "Event badge",
-          "intent": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+          "intent": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.43,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.08600000000000001,
+            0.17200000000000001,
+            0.258,
+            0.34400000000000003,
+            0.43
           ],
-          "layers": 25,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4690,33 +4415,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "50d5cd3094cfcaab467d4dfe899fe5a47fa3658dbc9cd753bfd6d4a31cd10bf2",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "event-badge-strap-l"
-            },
-            {
-              "type": "fixed",
-              "part": "event-badge-strap-r"
-            },
-            {
-              "type": "rigid",
-              "part": "event-badge-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "event-badge-clip"
-            }
-          ],
+          "nativeSha256": "69ed043e3fd752b4e99bff4053a7d29f69c2a8ef0b7923b13733ff9d1a55df02",
+          "sourceSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
+          "planSha256": "7307f37c6a3145ca10dedc4e94c2b46509373e3d6fddcb2294dc2e79ceb91e3e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4738,8 +4444,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5382,
-          "sha256": "1b516cf53cbe96886b9a93afe4039ce54e4065752950d677750b6fdcdb363e1b"
+          "bytes": 4323,
+          "sha256": "364396295706857b14cb5f2c7c312882adb658b98c5ae5c99c078d583fc8ff53"
         },
         {
           "name": "event-badge-strong",
@@ -4748,34 +4454,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event badge",
-          "description": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+          "description": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
           "label": "Event badge",
-          "intent": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+          "intent": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.78,
-          "rest": 50,
+          "active": 0.61,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.15600000000000003,
-            0.31200000000000006,
-            0.46799999999999997,
-            0.6240000000000001,
-            0.78
+            0.122,
+            0.244,
+            0.366,
+            0.488,
+            0.61
           ],
-          "layers": 25,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4785,33 +4489,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "53700207b0dfed0cdd8df0c88f7c150aeb867935f94fb13a6756c47e23cf7112",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "event-badge-strap-l"
-            },
-            {
-              "type": "fixed",
-              "part": "event-badge-strap-r"
-            },
-            {
-              "type": "rigid",
-              "part": "event-badge-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "event-badge-clip"
-            }
-          ],
+          "nativeSha256": "aa8183e6c0c8d4657bf4d87c3c0b2a14246f917c4a10ecef8e974a8f289084be",
+          "sourceSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
+          "planSha256": "7307f37c6a3145ca10dedc4e94c2b46509373e3d6fddcb2294dc2e79ceb91e3e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4833,8 +4518,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5384,
-          "sha256": "ab7a69aa0f6d879df04668d4826c1692827963c30f956f41b09f3b6679d51ed8"
+          "bytes": 4325,
+          "sha256": "ddd951a121d2a37884a862271bdbbf2e5f3cf8650300f24a0921e6ce95614262"
         }
       ],
       "animations": [
@@ -4845,34 +4530,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event badge",
-          "description": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+          "description": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
           "label": "Event badge",
-          "intent": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+          "intent": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.62,
-          "rest": 40,
+          "active": 0.43,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.124,
-            0.248,
-            0.372,
-            0.496,
-            0.62
+            0.08600000000000001,
+            0.17200000000000001,
+            0.258,
+            0.34400000000000003,
+            0.43
           ],
-          "layers": 25,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4882,33 +4565,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "50d5cd3094cfcaab467d4dfe899fe5a47fa3658dbc9cd753bfd6d4a31cd10bf2",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "event-badge-strap-l"
-            },
-            {
-              "type": "fixed",
-              "part": "event-badge-strap-r"
-            },
-            {
-              "type": "rigid",
-              "part": "event-badge-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "event-badge-clip"
-            }
-          ],
+          "nativeSha256": "69ed043e3fd752b4e99bff4053a7d29f69c2a8ef0b7923b13733ff9d1a55df02",
+          "sourceSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
+          "planSha256": "7307f37c6a3145ca10dedc4e94c2b46509373e3d6fddcb2294dc2e79ceb91e3e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -4930,8 +4594,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5382,
-          "sha256": "1b516cf53cbe96886b9a93afe4039ce54e4065752950d677750b6fdcdb363e1b"
+          "bytes": 4323,
+          "sha256": "364396295706857b14cb5f2c7c312882adb658b98c5ae5c99c078d583fc8ff53"
         },
         {
           "name": "event-badge-strong",
@@ -4940,34 +4604,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event badge",
-          "description": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+          "description": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
           "label": "Event badge",
-          "intent": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
+          "intent": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.78,
-          "rest": 50,
+          "active": 0.61,
+          "rest": 39,
           "keyPoses": [
             0,
-            0.15600000000000003,
-            0.31200000000000006,
-            0.46799999999999997,
-            0.6240000000000001,
-            0.78
+            0.122,
+            0.244,
+            0.366,
+            0.488,
+            0.61
           ],
-          "layers": 25,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -4977,33 +4639,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "53700207b0dfed0cdd8df0c88f7c150aeb867935f94fb13a6756c47e23cf7112",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the badge swings 5\u00b0 on its lanyard and settles. Strong: it winds up, swings 16\u00b0 and rocks to rest with a damped decay.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "event-badge-strap-l"
-            },
-            {
-              "type": "fixed",
-              "part": "event-badge-strap-r"
-            },
-            {
-              "type": "rigid",
-              "part": "event-badge-card-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "event-badge-clip"
-            }
-          ],
+          "nativeSha256": "aa8183e6c0c8d4657bf4d87c3c0b2a14246f917c4a10ecef8e974a8f289084be",
+          "sourceSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
+          "planSha256": "7307f37c6a3145ca10dedc4e94c2b46509373e3d6fddcb2294dc2e79ceb91e3e",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The badge is shown at the door and its holder is recognised. Light: the badge is flicked up on its lanyard, the attendee's head pops at the top of the swing as they are recognised, and the badge swings back and settles. Strong: a small wind-up, a wider flick, the head pops harder and the shoulders lift with it a beat later, and the badge rocks to rest in decaying swings. The lanyard never moves; the card stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "2027d3aa74f8bf2b500910f587fdede74fb1171a74f656f5cd48eab966a6058e",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5025,12 +4668,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5384,
-          "sha256": "ab7a69aa0f6d879df04668d4826c1692827963c30f956f41b09f3b6679d51ed8"
+          "bytes": 4325,
+          "sha256": "ddd951a121d2a37884a862271bdbbf2e5f3cf8650300f24a0921e6ce95614262"
         }
       ],
-      "bytes": 5382,
-      "sha256": "1b516cf53cbe96886b9a93afe4039ce54e4065752950d677750b6fdcdb363e1b"
+      "bytes": 4323,
+      "sha256": "364396295706857b14cb5f2c7c312882adb658b98c5ae5c99c078d583fc8ff53"
     },
     {
       "name": "check-in",
@@ -5834,34 +5477,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Add to calendar",
-      "description": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+      "description": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
       "label": "Add to calendar",
-      "intent": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+      "intent": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.44,
-      "rest": 29,
+      "active": 0.47,
+      "rest": 31,
       "keyPoses": [
         0,
-        0.08800000000000001,
-        0.17600000000000002,
-        0.264,
-        0.35200000000000004,
-        0.44
+        0.094,
+        0.188,
+        0.282,
+        0.376,
+        0.47
       ],
-      "layers": 25,
+      "layers": 27,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -5871,16 +5512,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "9518a50c8b33e7fbc1854bc6ac2f6983734fc893364ef92bb38b21ee5d411dbf",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-      },
-      "brief": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+      "nativeSha256": "89523a238c780bbdbf50073592a8b89b60452108a6b7ad4376262f1d1af67eed",
+      "sourceSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
+      "planSha256": "b373662c5503fbd8876f98dc1f610f39072b1e096dc9db266a648120ab456712",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
       "constraints": [],
       "category": "Events & tickets",
-      "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+      "definitionsSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -5911,34 +5550,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Add to calendar",
-          "description": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "description": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "label": "Add to calendar",
-          "intent": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "intent": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.44,
-          "rest": 29,
+          "active": 0.47,
+          "rest": 31,
           "keyPoses": [
             0,
-            0.08800000000000001,
-            0.17600000000000002,
-            0.264,
-            0.35200000000000004,
-            0.44
+            0.094,
+            0.188,
+            0.282,
+            0.376,
+            0.47
           ],
-          "layers": 25,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -5948,16 +5585,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9518a50c8b33e7fbc1854bc6ac2f6983734fc893364ef92bb38b21ee5d411dbf",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "nativeSha256": "89523a238c780bbdbf50073592a8b89b60452108a6b7ad4376262f1d1af67eed",
+          "sourceSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
+          "planSha256": "b373662c5503fbd8876f98dc1f610f39072b1e096dc9db266a648120ab456712",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -5979,8 +5614,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5777,
-          "sha256": "2020016f2d203ce534cda440878c1e1c341f82f6d39ab55981705e7bfab19f87"
+          "bytes": 3868,
+          "sha256": "602de98b6a53b700fab196a51762e9d46d0235e72aa448941b2dc5983c44bf35"
         },
         {
           "name": "add-to-calendar-strong",
@@ -5989,34 +5624,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Add to calendar",
-          "description": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "description": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "label": "Add to calendar",
-          "intent": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "intent": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.48,
-          "rest": 32,
+          "active": 0.59,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.096,
-            0.192,
-            0.288,
-            0.384,
-            0.48
+            0.118,
+            0.236,
+            0.354,
+            0.472,
+            0.59
           ],
-          "layers": 25,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6026,16 +5659,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "117e8152aeb3e5b7ea46754f283fb031e80f7a98c2c11f9a3e15ef1544c869bc",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "nativeSha256": "5cc84ab9a9f3284ab0ec88c528c7a54b83e60ef0e3962a1007cdc5f4e90889cb",
+          "sourceSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
+          "planSha256": "b373662c5503fbd8876f98dc1f610f39072b1e096dc9db266a648120ab456712",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6057,8 +5688,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5779,
-          "sha256": "3ba0bf902c56ad615c4f66c0d94b96e33981d8b94703e13c0c8c60bca44ebc6d"
+          "bytes": 3870,
+          "sha256": "2a4e8fd08da8f0d2a530879af83e57a435463ac22f566d7d04e4e4f515c9b287"
         }
       ],
       "animations": [
@@ -6069,34 +5700,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Add to calendar",
-          "description": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "description": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "label": "Add to calendar",
-          "intent": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "intent": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.44,
-          "rest": 29,
+          "active": 0.47,
+          "rest": 31,
           "keyPoses": [
             0,
-            0.08800000000000001,
-            0.17600000000000002,
-            0.264,
-            0.35200000000000004,
-            0.44
+            0.094,
+            0.188,
+            0.282,
+            0.376,
+            0.47
           ],
-          "layers": 25,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6106,16 +5735,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9518a50c8b33e7fbc1854bc6ac2f6983734fc893364ef92bb38b21ee5d411dbf",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "nativeSha256": "89523a238c780bbdbf50073592a8b89b60452108a6b7ad4376262f1d1af67eed",
+          "sourceSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
+          "planSha256": "b373662c5503fbd8876f98dc1f610f39072b1e096dc9db266a648120ab456712",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6137,8 +5764,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5777,
-          "sha256": "2020016f2d203ce534cda440878c1e1c341f82f6d39ab55981705e7bfab19f87"
+          "bytes": 3868,
+          "sha256": "602de98b6a53b700fab196a51762e9d46d0235e72aa448941b2dc5983c44bf35"
         },
         {
           "name": "add-to-calendar-strong",
@@ -6147,34 +5774,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Add to calendar",
-          "description": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "description": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "label": "Add to calendar",
-          "intent": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "intent": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.48,
-          "rest": 32,
+          "active": 0.59,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.096,
-            0.192,
-            0.288,
-            0.384,
-            0.48
+            0.118,
+            0.236,
+            0.354,
+            0.472,
+            0.59
           ],
-          "layers": 25,
+          "layers": 27,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6184,16 +5809,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "117e8152aeb3e5b7ea46754f283fb031e80f7a98c2c11f9a3e15ef1544c869bc",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the plus pops to 1.2\u00d7 and settles on the calendar leaf. Strong: it lifts 2.6 units, stamps down with a squash and the leaf thumps once.",
+          "nativeSha256": "5cc84ab9a9f3284ab0ec88c528c7a54b83e60ef0e3962a1007cdc5f4e90889cb",
+          "sourceSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
+          "planSha256": "b373662c5503fbd8876f98dc1f610f39072b1e096dc9db266a648120ab456712",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
           "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "af5849766d3022db2c90d24328da6014d73fdcc3f6c3b399f9e8e1cf5aedb74b",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6215,12 +5838,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5779,
-          "sha256": "3ba0bf902c56ad615c4f66c0d94b96e33981d8b94703e13c0c8c60bca44ebc6d"
+          "bytes": 3870,
+          "sha256": "2a4e8fd08da8f0d2a530879af83e57a435463ac22f566d7d04e4e4f515c9b287"
         }
       ],
-      "bytes": 5777,
-      "sha256": "2020016f2d203ce534cda440878c1e1c341f82f6d39ab55981705e7bfab19f87"
+      "bytes": 3868,
+      "sha256": "602de98b6a53b700fab196a51762e9d46d0235e72aa448941b2dc5983c44bf35"
     },
     {
       "name": "event-reminder",
@@ -6229,34 +5852,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Event reminder",
-      "description": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+      "description": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
       "label": "Event reminder",
-      "intent": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+      "intent": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.56,
-      "rest": 37,
+      "active": 0.52,
+      "rest": 34,
       "keyPoses": [
         0,
-        0.11200000000000002,
-        0.22400000000000003,
-        0.336,
-        0.44800000000000006,
-        0.56
+        0.10400000000000001,
+        0.20800000000000002,
+        0.312,
+        0.41600000000000004,
+        0.52
       ],
-      "layers": 30,
+      "layers": 40,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -6266,25 +5887,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "8d004c9fa62abd6448bcfb9bb88fe69d0fc07ca13c39e59075f818b79e14f26c",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-      },
-      "brief": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "event-reminder-bell-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "event-reminder-rim"
-        }
-      ],
+      "nativeSha256": "c6b0c565e07285b63c1218a4c3073a3e519a26d8b160316e686cbe544d1e1977",
+      "sourceSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
+      "planSha256": "256ab50fdc4a9e70bf60859356a0b619959dd088d2a748168775478c5f765636",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
+      "constraints": [],
       "category": "Events & tickets",
-      "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+      "definitionsSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -6315,34 +5925,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event reminder",
-          "description": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+          "description": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
           "label": "Event reminder",
-          "intent": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+          "intent": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.56,
-          "rest": 37,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.11200000000000002,
-            0.22400000000000003,
-            0.336,
-            0.44800000000000006,
-            0.56
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 30,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6352,25 +5960,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "8d004c9fa62abd6448bcfb9bb88fe69d0fc07ca13c39e59075f818b79e14f26c",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "event-reminder-bell-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "event-reminder-rim"
-            }
-          ],
+          "nativeSha256": "c6b0c565e07285b63c1218a4c3073a3e519a26d8b160316e686cbe544d1e1977",
+          "sourceSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
+          "planSha256": "256ab50fdc4a9e70bf60859356a0b619959dd088d2a748168775478c5f765636",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6392,8 +5989,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5046,
-          "sha256": "35fd942d0024c22a441298e538789c810690b7799d9fbb09bca78edebc4cda0a"
+          "bytes": 4873,
+          "sha256": "d4d0e6ef7832ccdb5c1f5e3c8d5f1b2523df25c23a7fdf91393eb354b549cd88"
         },
         {
           "name": "event-reminder-strong",
@@ -6402,34 +5999,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event reminder",
-          "description": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+          "description": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
           "label": "Event reminder",
-          "intent": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+          "intent": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.74,
-          "rest": 47,
+          "active": 0.7100000000000001,
+          "rest": 46,
           "keyPoses": [
             0,
-            0.148,
-            0.296,
-            0.444,
-            0.592,
-            0.74
+            0.14200000000000002,
+            0.28400000000000003,
+            0.42600000000000005,
+            0.5680000000000001,
+            0.7100000000000001
           ],
-          "layers": 30,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6439,25 +6034,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9644e231cc70ba94b7efa7ab554d26de5da3a63bf698ed194352195807eaa9c7",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "event-reminder-bell-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "event-reminder-rim"
-            }
-          ],
+          "nativeSha256": "354c38e2757b879a5fea5c18c206359ba40ab81d75f2eeba92c05768a88e4723",
+          "sourceSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
+          "planSha256": "256ab50fdc4a9e70bf60859356a0b619959dd088d2a748168775478c5f765636",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6479,8 +6063,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5048,
-          "sha256": "aa83c33396086785e297b62eb1fc2eff98e8a73dafe8803c67878d63079942fb"
+          "bytes": 4875,
+          "sha256": "66e24ee1f31887dbe343291e2ed54654625a57c107e58f189c894719b9254d7c"
         }
       ],
       "animations": [
@@ -6491,34 +6075,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event reminder",
-          "description": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+          "description": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
           "label": "Event reminder",
-          "intent": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+          "intent": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.56,
-          "rest": 37,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.11200000000000002,
-            0.22400000000000003,
-            0.336,
-            0.44800000000000006,
-            0.56
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 30,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6528,25 +6110,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "8d004c9fa62abd6448bcfb9bb88fe69d0fc07ca13c39e59075f818b79e14f26c",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "event-reminder-bell-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "event-reminder-rim"
-            }
-          ],
+          "nativeSha256": "c6b0c565e07285b63c1218a4c3073a3e519a26d8b160316e686cbe544d1e1977",
+          "sourceSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
+          "planSha256": "256ab50fdc4a9e70bf60859356a0b619959dd088d2a748168775478c5f765636",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6568,8 +6139,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5046,
-          "sha256": "35fd942d0024c22a441298e538789c810690b7799d9fbb09bca78edebc4cda0a"
+          "bytes": 4873,
+          "sha256": "d4d0e6ef7832ccdb5c1f5e3c8d5f1b2523df25c23a7fdf91393eb354b549cd88"
         },
         {
           "name": "event-reminder-strong",
@@ -6578,34 +6149,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event reminder",
-          "description": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+          "description": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
           "label": "Event reminder",
-          "intent": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
+          "intent": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.74,
-          "rest": 47,
+          "active": 0.7100000000000001,
+          "rest": 46,
           "keyPoses": [
             0,
-            0.148,
-            0.296,
-            0.444,
-            0.592,
-            0.74
+            0.14200000000000002,
+            0.28400000000000003,
+            0.42600000000000005,
+            0.5680000000000001,
+            0.7100000000000001
           ],
-          "layers": 30,
+          "layers": 40,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6615,25 +6184,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "9644e231cc70ba94b7efa7ab554d26de5da3a63bf698ed194352195807eaa9c7",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the bell on the calendar leaf swings 7\u00b0 and settles. Strong: it strikes 20\u00b0 and rings down with a damped decay.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "event-reminder-bell-frame"
-            },
-            {
-              "type": "rigid",
-              "part": "event-reminder-rim"
-            }
-          ],
+          "nativeSha256": "354c38e2757b879a5fea5c18c206359ba40ab81d75f2eeba92c05768a88e4723",
+          "sourceSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
+          "planSha256": "256ab50fdc4a9e70bf60859356a0b619959dd088d2a748168775478c5f765636",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The reminder goes off: the bell on the calendar rings. Light: the bell swings out from the top of its dome, the clapper trails it, and a ring arc flicks out beside the bell on the open side of each of the first two swings and fades as it spreads; the swing decays to rest in smaller beats. Strong: a wind-up, a wider swing and a longer ring-down with three dings that alternate sides and fade. The calendar never moves.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "d62056e43136294c88f14a9e37f31662fa8e0499ae9cb4228ace3939c2d74d90",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6655,12 +6213,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5048,
-          "sha256": "aa83c33396086785e297b62eb1fc2eff98e8a73dafe8803c67878d63079942fb"
+          "bytes": 4875,
+          "sha256": "66e24ee1f31887dbe343291e2ed54654625a57c107e58f189c894719b9254d7c"
         }
       ],
-      "bytes": 5046,
-      "sha256": "35fd942d0024c22a441298e538789c810690b7799d9fbb09bca78edebc4cda0a"
+      "bytes": 4873,
+      "sha256": "d4d0e6ef7832ccdb5c1f5e3c8d5f1b2523df25c23a7fdf91393eb354b549cd88"
     },
     {
       "name": "ticket-scan",
@@ -6669,34 +6227,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Ticket scan",
-      "description": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+      "description": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
       "label": "Ticket scan",
-      "intent": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+      "intent": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.75,
-      "rest": 48,
+      "active": 0.42,
+      "rest": 28,
       "keyPoses": [
         0,
-        0.15000000000000002,
-        0.30000000000000004,
-        0.44999999999999996,
-        0.6000000000000001,
-        0.75
+        0.084,
+        0.168,
+        0.252,
+        0.336,
+        0.42
       ],
-      "layers": 29,
+      "layers": 35,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -6706,16 +6262,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "4d64dc4c327f2284698e9eccb9f3a800b43fc1deef857d1dad0244a16e8b9d0d",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-      },
-      "brief": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+      "nativeSha256": "ca2728d70f99eee9366a801f736c29bfe92e8e4a8758be1f9b286865bc6525e1",
+      "sourceSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
+      "planSha256": "e45c38dfc0d20611d2b0e3e0d693224d9a0ffd1435f1e5704c904be9f661ef74",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
       "constraints": [],
       "category": "Events & tickets",
-      "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+      "definitionsSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -6746,34 +6300,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Ticket scan",
-          "description": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "description": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "label": "Ticket scan",
-          "intent": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "intent": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 29,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6783,16 +6335,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4d64dc4c327f2284698e9eccb9f3a800b43fc1deef857d1dad0244a16e8b9d0d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "nativeSha256": "ca2728d70f99eee9366a801f736c29bfe92e8e4a8758be1f9b286865bc6525e1",
+          "sourceSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
+          "planSha256": "e45c38dfc0d20611d2b0e3e0d693224d9a0ffd1435f1e5704c904be9f661ef74",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6814,8 +6364,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5531,
-          "sha256": "c140fcaf248561dd2feb0bd5f3553cedc564b0ad7c4f0a16da43daa42a4ad292"
+          "bytes": 6111,
+          "sha256": "89bd9e7e03807bd95547f6fd4723137bb137378cad84d0f43b03e70f2e27570d"
         },
         {
           "name": "ticket-scan-strong",
@@ -6824,34 +6374,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Ticket scan",
-          "description": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "description": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "label": "Ticket scan",
-          "intent": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "intent": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.46,
-          "rest": 30,
+          "active": 0.58,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.09200000000000001,
-            0.18400000000000002,
-            0.276,
-            0.36800000000000005,
-            0.46
+            0.11599999999999999,
+            0.23199999999999998,
+            0.348,
+            0.46399999999999997,
+            0.58
           ],
-          "layers": 29,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6861,16 +6409,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "841dc2e38dd93b347b7c8b934829ef5adc24e9b761464d411e78c48a012a4d3f",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "nativeSha256": "05e5b084971da90d8421f5dbca4f6a0a9b0c518ae1881279dfec3d81a6e90b31",
+          "sourceSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
+          "planSha256": "e45c38dfc0d20611d2b0e3e0d693224d9a0ffd1435f1e5704c904be9f661ef74",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6892,8 +6438,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5533,
-          "sha256": "565621dc6d516f58b3f6520328c1b2985813eeb0db148d494cb92793a3c6ab69"
+          "bytes": 6113,
+          "sha256": "42932584994a4560c04ffeeddcd028e850deae1f80cc8200f53a04468fc2c517"
         }
       ],
       "animations": [
@@ -6904,34 +6450,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Ticket scan",
-          "description": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "description": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "label": "Ticket scan",
-          "intent": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "intent": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.75,
-          "rest": 48,
+          "active": 0.42,
+          "rest": 28,
           "keyPoses": [
             0,
-            0.15000000000000002,
-            0.30000000000000004,
-            0.44999999999999996,
-            0.6000000000000001,
-            0.75
+            0.084,
+            0.168,
+            0.252,
+            0.336,
+            0.42
           ],
-          "layers": 29,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -6941,16 +6485,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4d64dc4c327f2284698e9eccb9f3a800b43fc1deef857d1dad0244a16e8b9d0d",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "nativeSha256": "ca2728d70f99eee9366a801f736c29bfe92e8e4a8758be1f9b286865bc6525e1",
+          "sourceSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
+          "planSha256": "e45c38dfc0d20611d2b0e3e0d693224d9a0ffd1435f1e5704c904be9f661ef74",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -6972,8 +6514,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5531,
-          "sha256": "c140fcaf248561dd2feb0bd5f3553cedc564b0ad7c4f0a16da43daa42a4ad292"
+          "bytes": 6111,
+          "sha256": "89bd9e7e03807bd95547f6fd4723137bb137378cad84d0f43b03e70f2e27570d"
         },
         {
           "name": "ticket-scan-strong",
@@ -6982,34 +6524,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Ticket scan",
-          "description": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "description": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "label": "Ticket scan",
-          "intent": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "intent": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.46,
-          "rest": 30,
+          "active": 0.58,
+          "rest": 38,
           "keyPoses": [
             0,
-            0.09200000000000001,
-            0.18400000000000002,
-            0.276,
-            0.36800000000000005,
-            0.46
+            0.11599999999999999,
+            0.23199999999999998,
+            0.348,
+            0.46399999999999997,
+            0.58
           ],
-          "layers": 29,
+          "layers": 35,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -7019,16 +6559,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "841dc2e38dd93b347b7c8b934829ef5adc24e9b761464d411e78c48a012a4d3f",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: a scan bar sweeps down over the ticket's code and glides back. Strong: it makes two hard passes and the ticket dips at the first turn.",
+          "nativeSha256": "05e5b084971da90d8421f5dbca4f6a0a9b0c518ae1881279dfec3d81a6e90b31",
+          "sourceSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
+          "planSha256": "e45c38dfc0d20611d2b0e3e0d693224d9a0ffd1435f1e5704c904be9f661ef74",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The ticket's code is read at the gate. Light: the scan bar sweeps down over the code at a steady speed, each block of the code blinks in reading order as the bar crosses it, and the bar flicks back up to its start, quicker than it went. Strong: the same read with harder blinks, and as the bar flicks back the ticket is admitted: it hops once and lands with a small bounce. The ticket stays rigid with all its print.",
           "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "54acc4a3ee2b05be2bf7a7048670c3f46cc38713e58c66a4e0be2952393cfc68",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -7050,12 +6588,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5533,
-          "sha256": "565621dc6d516f58b3f6520328c1b2985813eeb0db148d494cb92793a3c6ab69"
+          "bytes": 6113,
+          "sha256": "42932584994a4560c04ffeeddcd028e850deae1f80cc8200f53a04468fc2c517"
         }
       ],
-      "bytes": 5531,
-      "sha256": "c140fcaf248561dd2feb0bd5f3553cedc564b0ad7c4f0a16da43daa42a4ad292"
+      "bytes": 6111,
+      "sha256": "89bd9e7e03807bd95547f6fd4723137bb137378cad84d0f43b03e70f2e27570d"
     },
     {
       "name": "ticket-transfer",
@@ -11304,34 +10842,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Sponsor",
-      "description": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+      "description": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
       "label": "Sponsor",
-      "intent": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+      "intent": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.64,
-      "rest": 41,
+      "active": 0.44,
+      "rest": 29,
       "keyPoses": [
         0,
-        0.128,
-        0.256,
-        0.384,
-        0.512,
-        0.64
+        0.08800000000000001,
+        0.17600000000000002,
+        0.264,
+        0.35200000000000004,
+        0.44
       ],
-      "layers": 12,
+      "layers": 16,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -11341,25 +10877,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "a63fc8e44d803ae56ed61db5471b15d0ef74cd6dcf21ec1f9178db1dc97f4047",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-      },
-      "brief": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "sponsor-rod"
-        },
-        {
-          "type": "rigid",
-          "part": "sponsor-banner-frame"
-        }
-      ],
+      "nativeSha256": "6d536c149a945163f37567a35d71ad43448b2139c64bb7185cb1344db5d2a73d",
+      "sourceSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
+      "planSha256": "ce3e80ab06965d7bb527ef946f1562fc540249cada00a90d60b2e2bba4fd4ada",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
+      "constraints": [],
       "category": "Events & tickets",
-      "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+      "definitionsSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -11390,34 +10915,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Sponsor",
-          "description": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+          "description": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
           "label": "Sponsor",
-          "intent": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+          "intent": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.64,
-          "rest": 41,
+          "active": 0.44,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.128,
-            0.256,
-            0.384,
-            0.512,
-            0.64
+            0.08800000000000001,
+            0.17600000000000002,
+            0.264,
+            0.35200000000000004,
+            0.44
           ],
-          "layers": 12,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11427,25 +10950,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "a63fc8e44d803ae56ed61db5471b15d0ef74cd6dcf21ec1f9178db1dc97f4047",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "sponsor-rod"
-            },
-            {
-              "type": "rigid",
-              "part": "sponsor-banner-frame"
-            }
-          ],
+          "nativeSha256": "6d536c149a945163f37567a35d71ad43448b2139c64bb7185cb1344db5d2a73d",
+          "sourceSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
+          "planSha256": "ce3e80ab06965d7bb527ef946f1562fc540249cada00a90d60b2e2bba4fd4ada",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11467,8 +10979,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5449,
-          "sha256": "02608a84c6cba7c8cd281c3bacece9cd4e4e42c83450176f4d846b4fe86cdfdd"
+          "bytes": 7749,
+          "sha256": "6c2486f884bdaf7613ad8692ccb1659687f0a2571cc8937878065cbb5a2820ca"
         },
         {
           "name": "sponsor-strong",
@@ -11477,34 +10989,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Sponsor",
-          "description": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+          "description": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
           "label": "Sponsor",
-          "intent": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+          "intent": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.78,
-          "rest": 50,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.15600000000000003,
-            0.31200000000000006,
-            0.46799999999999997,
-            0.6240000000000001,
-            0.78
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 12,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11514,25 +11024,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "70c33dbab35d92f25efe36644bd03f41d143ea9b8bdc8d4ecd7da2fc69d29ff8",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "sponsor-rod"
-            },
-            {
-              "type": "rigid",
-              "part": "sponsor-banner-frame"
-            }
-          ],
+          "nativeSha256": "04deaa3e8d33194b58575e7796b7f3dc596d01f53dd75c52ea5ded4735616c0b",
+          "sourceSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
+          "planSha256": "ce3e80ab06965d7bb527ef946f1562fc540249cada00a90d60b2e2bba4fd4ada",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11554,8 +11053,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5451,
-          "sha256": "34b2a4465dda187e63f73ee6dae885fd7995567e4ee5b0c20f68ba09a5de1094"
+          "bytes": 7751,
+          "sha256": "a264ad617933e2064ccd0f81d1336eb32ed9f2e411a75d89356d48173d994b1a"
         }
       ],
       "animations": [
@@ -11566,34 +11065,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Sponsor",
-          "description": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+          "description": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
           "label": "Sponsor",
-          "intent": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+          "intent": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.64,
-          "rest": 41,
+          "active": 0.44,
+          "rest": 29,
           "keyPoses": [
             0,
-            0.128,
-            0.256,
-            0.384,
-            0.512,
-            0.64
+            0.08800000000000001,
+            0.17600000000000002,
+            0.264,
+            0.35200000000000004,
+            0.44
           ],
-          "layers": 12,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11603,25 +11100,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "a63fc8e44d803ae56ed61db5471b15d0ef74cd6dcf21ec1f9178db1dc97f4047",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "sponsor-rod"
-            },
-            {
-              "type": "rigid",
-              "part": "sponsor-banner-frame"
-            }
-          ],
+          "nativeSha256": "6d536c149a945163f37567a35d71ad43448b2139c64bb7185cb1344db5d2a73d",
+          "sourceSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
+          "planSha256": "ce3e80ab06965d7bb527ef946f1562fc540249cada00a90d60b2e2bba4fd4ada",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11643,8 +11129,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5449,
-          "sha256": "02608a84c6cba7c8cd281c3bacece9cd4e4e42c83450176f4d846b4fe86cdfdd"
+          "bytes": 7749,
+          "sha256": "6c2486f884bdaf7613ad8692ccb1659687f0a2571cc8937878065cbb5a2820ca"
         },
         {
           "name": "sponsor-strong",
@@ -11653,34 +11139,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Sponsor",
-          "description": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+          "description": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
           "label": "Sponsor",
-          "intent": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
+          "intent": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.78,
-          "rest": 50,
+          "active": 0.52,
+          "rest": 34,
           "keyPoses": [
             0,
-            0.15600000000000003,
-            0.31200000000000006,
-            0.46799999999999997,
-            0.6240000000000001,
-            0.78
+            0.10400000000000001,
+            0.20800000000000002,
+            0.312,
+            0.41600000000000004,
+            0.52
           ],
-          "layers": 12,
+          "layers": 16,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11690,25 +11174,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "70c33dbab35d92f25efe36644bd03f41d143ea9b8bdc8d4ecd7da2fc69d29ff8",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the star banner sways 4\u00b0 on its rod and settles. Strong: a gust swings it 13\u00b0 and it rocks back to rest.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "sponsor-rod"
-            },
-            {
-              "type": "rigid",
-              "part": "sponsor-banner-frame"
-            }
-          ],
+          "nativeSha256": "04deaa3e8d33194b58575e7796b7f3dc596d01f53dd75c52ea5ded4735616c0b",
+          "sourceSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
+          "planSha256": "ce3e80ab06965d7bb527ef946f1562fc540249cada00a90d60b2e2bba4fd4ada",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The sponsor's banner is unveiled. Light: the banner snaps up into a roll under its rod and unfurls down again, catching with a small stretch and settling, and the sponsor's star pops back onto the cloth a beat later. Strong: a quicker snap and a harder unfurl that stretches and bounces twice, the rod and banner jolt down together as the cloth catches, and the star twists in as it pops. The rod stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "748be3a227dae82a8cfd7b2e0ed1881ac8b73fc640951208ea0c201311b406fc",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11730,12 +11203,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 5451,
-          "sha256": "34b2a4465dda187e63f73ee6dae885fd7995567e4ee5b0c20f68ba09a5de1094"
+          "bytes": 7751,
+          "sha256": "a264ad617933e2064ccd0f81d1336eb32ed9f2e411a75d89356d48173d994b1a"
         }
       ],
-      "bytes": 5449,
-      "sha256": "02608a84c6cba7c8cd281c3bacece9cd4e4e42c83450176f4d846b4fe86cdfdd"
+      "bytes": 7749,
+      "sha256": "6c2486f884bdaf7613ad8692ccb1659687f0a2571cc8937878065cbb5a2820ca"
     },
     {
       "name": "networking",
@@ -12629,34 +12102,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Event map",
-      "description": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+      "description": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
       "label": "Event map",
-      "intent": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+      "intent": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.42,
-      "rest": 28,
+      "active": 0.48,
+      "rest": 32,
       "keyPoses": [
         0,
-        0.084,
-        0.168,
-        0.252,
-        0.336,
-        0.42
+        0.096,
+        0.192,
+        0.288,
+        0.384,
+        0.48
       ],
-      "layers": 21,
+      "layers": 28,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -12666,21 +12137,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "faaeb03449141c6b89fbbff4427d245661a35662e1e9ed0ece166038a5baf478",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-      },
-      "brief": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
-      "constraints": [
-        {
-          "type": "rigid",
-          "part": "event-map-map-frame"
-        }
-      ],
+      "nativeSha256": "f6d6fbfea0043cd5755121e096ce60d7cc01ce827e7d32b56ff1d43b866b4159",
+      "sourceSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
+      "planSha256": "2f8ab8317cb20367148e4f1ff30d1b4d646437a7a001acf8d630e71bb19be137",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
+      "constraints": [],
       "category": "Events & tickets",
-      "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+      "definitionsSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -12711,34 +12175,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event map",
-          "description": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+          "description": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
           "label": "Event map",
-          "intent": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+          "intent": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.42,
-          "rest": 28,
+          "active": 0.48,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.084,
-            0.168,
-            0.252,
-            0.336,
-            0.42
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
           ],
-          "layers": 21,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12748,21 +12210,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "faaeb03449141c6b89fbbff4427d245661a35662e1e9ed0ece166038a5baf478",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "event-map-map-frame"
-            }
-          ],
+          "nativeSha256": "f6d6fbfea0043cd5755121e096ce60d7cc01ce827e7d32b56ff1d43b866b4159",
+          "sourceSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
+          "planSha256": "2f8ab8317cb20367148e4f1ff30d1b4d646437a7a001acf8d630e71bb19be137",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12784,8 +12239,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11245,
-          "sha256": "538fe86a6a55b2ca542f67131fc219465293172d35d6b15b9773399fcbe943fc"
+          "bytes": 4707,
+          "sha256": "99e39c164bb518a1d82fc7e908611fee5fe0e7ba4084ef27cfddd6d5f2ecefdb"
         },
         {
           "name": "event-map-strong",
@@ -12794,34 +12249,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event map",
-          "description": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+          "description": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
           "label": "Event map",
-          "intent": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+          "intent": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.58,
-          "rest": 38,
+          "active": 0.72,
+          "rest": 46,
           "keyPoses": [
             0,
-            0.11599999999999999,
-            0.23199999999999998,
-            0.348,
-            0.46399999999999997,
-            0.58
+            0.144,
+            0.288,
+            0.432,
+            0.576,
+            0.72
           ],
-          "layers": 21,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12831,21 +12284,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "adc8f6be400baef84ca324b188891bf99cda335d626ddfbb3d9954b6577fd888",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "event-map-map-frame"
-            }
-          ],
+          "nativeSha256": "4da596fcdda99226d56f393bb184349064419a8ae7700b10372eb1bb27c4d695",
+          "sourceSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
+          "planSha256": "2f8ab8317cb20367148e4f1ff30d1b4d646437a7a001acf8d630e71bb19be137",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12867,8 +12313,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11247,
-          "sha256": "915cd4662f6c3477061d28c70eefff07f6f717d587ac7dda6b5171f7df798428"
+          "bytes": 4709,
+          "sha256": "274609902fd66e6e0fe56787ea6152d03bbfb7a4e5c5474b34f628f1d0d8f29e"
         }
       ],
       "animations": [
@@ -12879,34 +12325,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event map",
-          "description": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+          "description": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
           "label": "Event map",
-          "intent": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+          "intent": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.42,
-          "rest": 28,
+          "active": 0.48,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.084,
-            0.168,
-            0.252,
-            0.336,
-            0.42
+            0.096,
+            0.192,
+            0.288,
+            0.384,
+            0.48
           ],
-          "layers": 21,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12916,21 +12360,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "faaeb03449141c6b89fbbff4427d245661a35662e1e9ed0ece166038a5baf478",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "event-map-map-frame"
-            }
-          ],
+          "nativeSha256": "f6d6fbfea0043cd5755121e096ce60d7cc01ce827e7d32b56ff1d43b866b4159",
+          "sourceSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
+          "planSha256": "2f8ab8317cb20367148e4f1ff30d1b4d646437a7a001acf8d630e71bb19be137",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -12952,8 +12389,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11245,
-          "sha256": "538fe86a6a55b2ca542f67131fc219465293172d35d6b15b9773399fcbe943fc"
+          "bytes": 4707,
+          "sha256": "99e39c164bb518a1d82fc7e908611fee5fe0e7ba4084ef27cfddd6d5f2ecefdb"
         },
         {
           "name": "event-map-strong",
@@ -12962,34 +12399,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Event map",
-          "description": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+          "description": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
           "label": "Event map",
-          "intent": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
+          "intent": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.58,
-          "rest": 38,
+          "active": 0.72,
+          "rest": 46,
           "keyPoses": [
             0,
-            0.11599999999999999,
-            0.23199999999999998,
-            0.348,
-            0.46399999999999997,
-            0.58
+            0.144,
+            0.288,
+            0.432,
+            0.576,
+            0.72
           ],
-          "layers": 21,
+          "layers": 28,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -12999,21 +12434,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "adc8f6be400baef84ca324b188891bf99cda335d626ddfbb3d9954b6577fd888",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "3aca1d4448a2214d7b5349b47ca27add8b24109c9c153ebba68411f21b297ff4"
-          },
-          "brief": "Light: the pin lifts 1.4 units off the folded map and settles back. Strong: it jumps 4.6 units, lands with a squash and the map jolts under it.",
-          "constraints": [
-            {
-              "type": "rigid",
-              "part": "event-map-map-frame"
-            }
-          ],
+          "nativeSha256": "4da596fcdda99226d56f393bb184349064419a8ae7700b10372eb1bb27c4d695",
+          "sourceSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
+          "planSha256": "2f8ab8317cb20367148e4f1ff30d1b4d646437a7a001acf8d630e71bb19be137",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "The venue is pinned on the map. Light: the rigid pin lifts, drops and lands on its tip with a hit and a small rebound, and a ripple spreads out across the map from the tip and fades. Strong: a higher drop that jolts the folded map down under it, a bounce and a second, smaller landing, with a ripple on each contact. The map stays rigid.",
+          "constraints": [],
           "category": "Events & tickets",
-          "definitionsSha256": "f281dfca63e16dc228450d8665ca62b1d501032a4327a4ff7093c88c97d98085",
+          "definitionsSha256": "7341e4a1d5d7e7ec74bc5837824a6a9d2867762417a2e38f8ba4e7a0c3b854af",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -13035,12 +12463,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11247,
-          "sha256": "915cd4662f6c3477061d28c70eefff07f6f717d587ac7dda6b5171f7df798428"
+          "bytes": 4709,
+          "sha256": "274609902fd66e6e0fe56787ea6152d03bbfb7a4e5c5474b34f628f1d0d8f29e"
         }
       ],
-      "bytes": 11245,
-      "sha256": "538fe86a6a55b2ca542f67131fc219465293172d35d6b15b9773399fcbe943fc"
+      "bytes": 4707,
+      "sha256": "99e39c164bb518a1d82fc7e908611fee5fe0e7ba4084ef27cfddd6d5f2ecefdb"
     }
   ]
 }

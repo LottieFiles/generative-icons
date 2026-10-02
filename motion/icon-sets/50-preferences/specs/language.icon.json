@@ -1,0 +1,49 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "language",
+  "label": "Language",
+  "intent": "The language switches. Light: the A slides out to the left as a 文 slides in from the right and holds for a moment, then the 文 slides on out and the A comes back in from the right and settles, like flipping through a list of languages. Strong: the A pulls back before it leaves, each glyph lands with an overshoot, the 文 holds longer, and the bubble puffs about its tail as each one arrives. The glyphs cross-fade, so the bubble is never empty.",
+  "preview": {"light": [0, 0.1, 0.16, 0.22, 0.3, 0.4, 0.46, 0.57], "strong": [0, 0.16, 0.24, 0.32, 0.45, 0.56, 0.66, 0.8]},
+  "parts": {
+    "bar":    {"shape": {"line": [[13.75, 15.4], [18.25, 15.4]]}},
+    "legs":   {"shape": {"polyline": [[12.6, 18.2], [16, 9.8], [19.4, 18.2]]}},
+    "wen":    {"//": "hidden at rest: the other language's glyph, a simple 文 the size of the A", "shape": [
+                {"line": [[15.7, 9.1], [16.3, 10.3]]},
+                {"line": [[12, 12.2], [20, 12.2]]},
+                {"path": "M18.4 13.4 C17.5 16 15.4 17.8 12.4 18.6"},
+                {"path": "M13.6 13.4 C14.5 16 16.6 17.8 19.6 18.6"}
+              ], "hidden": true},
+    "bubble": {"shape": {"path": "M5 8.5 C5 6.167 6.167 5 8.5 5 L23.5 5 C25.833 5 27 6.167 27 8.5 L27 19.5 C27 21.833 25.833 23 23.5 23 L14.8 23 C14.267 23 13.794 23.169 13.381 23.507 L9.042 27.057 C8.681 27.352 8.5 27.267 8.5 26.8 L8.5 23.4 C8.5 23.133 8.367 23 8.1 23 L6.225 23 C5.408 23 5 21.833 5 19.5 L5 8.5 Z"},
+               "role": "surface",
+               "solid": {"path": "M5 8.5 C5 6.167 6.167 5 8.5 5 L23.5 5 C25.833 5 27 6.167 27 8.5 L27 19.5 C27 21.833 25.833 23 23.5 23 L14.8 23 C14.267 23 13.794 23.169 13.381 23.507 L9.042 27.057 C8.681 27.352 8.5 27.267 8.5 26.8 L8.5 23.4 C8.5 23.133 8.367 23 8.1 23 L6.225 23 C5.408 23 5 21.833 5 19.5 L5 8.5 L9.8 7.6 C8.586 7.6 7.6 8.586 7.6 9.8 L7.6 18.2 C7.6 19.414 8.586 20.4 9.8 20.4 L22.2 20.4 C23.414 20.4 24.4 19.414 24.4 18.2 L24.4 9.8 C24.4 8.586 23.414 7.6 22.2 7.6 L9.8 7.6 L5 8.5 Z"}}
+  },
+  "rigs": {
+    "glyph":  {"pivot": [16, 14], "carries": ["legs", "bar"]},
+    "bubble": {"//": "puffs about its tail, as v1 did", "pivot": [8.7, 27], "carries": ["bubble"]}
+  },
+  "motion": {
+    "//": "The A leaves left and steps to the right while invisible; the 文 steps to the right before it shows and to 0 after it has gone.",
+    "glyph.x": {
+      "light":  [[0, 0], [0.04, 0], [0.18, -3.4, "in"], [0.19, 3.4, "step"], [0.34, 3.4], [0.5, -0.3, "out"], [0.57, 0]],
+      "strong": [[0, 0], [0.06, 0.6, "out"], [0.2, -3.6, "in"], [0.21, 3.6, "step"], [0.5, 3.6], [0.64, -0.6, "out"], [0.73, 0.2], [0.8, 0]]
+    },
+    "legs.opacity": {
+      "light":  [[0, 1], [0.1, 1], [0.18, 0, "in"], [0.36, 0], [0.46, 1, "out"]],
+      "strong": [[0, 1], [0.12, 1], [0.2, 0, "in"], [0.52, 0], [0.6, 1, "out"]]
+    },
+    "bar.opacity": {"follow": "legs.opacity"},
+    "wen.x": {
+      "light":  [[0, 0], [0.02, 3.4, "step"], [0.12, 3.4], [0.28, 0, "out"], [0.33, 0], [0.47, -3.4, "in"], [0.48, 0, "step"]],
+      "strong": [[0, 0], [0.02, 3.6, "step"], [0.14, 3.6], [0.28, -0.5, "out"], [0.35, 0.15], [0.4, 0], [0.46, 0], [0.6, -3.6, "in"], [0.61, 0, "step"]]
+    },
+    "wen.opacity": {
+      "light":  [[0, 0], [0.12, 0], [0.22, 1, "out"], [0.37, 1], [0.46, 0, "in"]],
+      "strong": [[0, 0], [0.14, 0], [0.23, 1, "out"], [0.5, 1], [0.59, 0, "in"]]
+    },
+    "bubble.scale": {
+      "//": "Strong only: the bubble puffs as each glyph arrives",
+      "strong": [[0, 1], [0.24, 1], [0.3, 1.05, "out"], [0.37, 0.99], [0.43, 1], [0.6, 1], [0.66, 1.06, "out"], [0.74, 0.98], [0.81, 1.01], [0.87, 1]]
+    }
+  }
+}

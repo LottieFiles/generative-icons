@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "advanced-settings",
+  "label": "Advanced settings",
+  "intent": "Something gets tightened. Light: the wrench winds back a little, cranks hard clockwise about the nut held in its jaw and stops dead, three short marks flash out of the jaw as it bites, and the wrench swings back and settles. Strong: it ratchets twice, crank, swing back, a harder crank, with a flash of marks on each bite. The wrench stays rigid and turns about the nut.",
+  "preview": {"light": [0, 0.08, 0.16, 0.22, 0.27, 0.33, 0.4, 0.48], "strong": [0, 0.07, 0.2, 0.27, 0.34, 0.46, 0.56, 0.8]},
+  "parts": {
+    "sparks": {"//": "hidden at rest: the bite only shows while the wrench is turning", "shape": [
+                {"line": [[26.363, 6.237], [27.106, 5.568]]},
+                {"line": [[27.321, 7.74], [28.241, 7.349]]},
+                {"line": [[27.737, 9.473], [28.735, 9.404]]}
+              ], "hidden": true},
+    "wrench": {"shape": {"path": "M22.363 6.422 C19.784 5.246 16.749 5.767 14.709 7.734 C12.67 9.702 12.041 12.717 13.123 15.336 L7.872 20.588 L7.872 20.588 C6.839 21.621 6.839 23.295 7.872 24.328 C8.905 25.361 10.579 25.361 11.612 24.328 L16.864 19.077 L16.864 19.077 C19.483 20.159 22.498 19.53 24.466 17.491 C26.433 15.451 26.954 12.416 25.778 9.837 L22.346 13.269 L18.931 9.854 L22.363 6.422 Z"},
+               "role": "surface", "solid": "fill"}
+  },
+  "rigs": {
+    "wrench": {"//": "the nut sits in the jaw at (22.35, 9.85); the wrench turns about it", "pivot": [22.35, 9.85], "carries": ["wrench"]},
+    "sparks": {"//": "the marks spread from the nut", "pivot": [22.35, 9.85], "carries": ["sparks"]}
+  },
+  "motion": {
+    "wrench.rotate": {
+      "light":  [[0, 0], [0.08, -6, "out"], [0.22, 22, "hit"], [0.28, 22], [0.4, -2], [0.48, 0]],
+      "strong": [[0, 0], [0.07, -8, "out"], [0.2, 20, "hit"], [0.25, 20], [0.34, 2], [0.46, 24, "hit"], [0.52, 24], [0.66, -3], [0.74, 1], [0.8, 0]]
+    },
+    "sparks.opacity": {
+      "light":  [[0, 0], [0.21, 0], [0.23, 1, "out"], [0.3, 1], [0.38, 0, "in"]],
+      "strong": [[0, 0], [0.19, 0], [0.21, 1, "out"], [0.26, 1], [0.32, 0, "in"], [0.45, 0], [0.47, 1, "out"], [0.54, 1], [0.64, 0, "in"]]
+    },
+    "sparks.scale": {
+      "light":  [[0, 1], [0.21, 0.96, "step"], [0.38, 1.08, "out"], [0.39, 1, "step"]],
+      "strong": [[0, 1], [0.19, 0.96, "step"], [0.32, 1.04, "out"], [0.45, 0.96, "step"], [0.64, 1.08, "out"], [0.65, 1, "step"]]
+    }
+  }
+}

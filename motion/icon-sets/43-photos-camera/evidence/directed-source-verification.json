@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 64,
-  "nativeTransformNodes": 314,
+  "nativeTransformNodes": 234,
   "nativeTransformMaxCoordinateError": 0.000011207512333299974,
   "checks": [
     {
@@ -96,82 +96,6 @@
         {
           "type": "rigid",
           "part": "switch-camera-head-a"
-        }
-      ]
-    },
-    {
-      "name": "tripod",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "tripod-head-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "tripod-column"
-        },
-        {
-          "type": "rigid",
-          "part": "tripod-leg-l"
-        }
-      ]
-    },
-    {
-      "name": "tripod-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "tripod-head-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "tripod-column"
-        },
-        {
-          "type": "rigid",
-          "part": "tripod-leg-l"
-        }
-      ]
-    },
-    {
-      "name": "aperture",
-      "fixedParts": [
-        "aperture-ring-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "aperture-ring-frame"
-        }
-      ]
-    },
-    {
-      "name": "aperture-strong",
-      "fixedParts": [
-        "aperture-ring-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "aperture-ring-frame"
         }
       ]
     },
@@ -272,68 +196,6 @@
       "designConstraints": []
     },
     {
-      "name": "exposure",
-      "fixedParts": [
-        "exposure-frame",
-        "exposure-plus-h",
-        "exposure-plus-v",
-        "exposure-minus"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "exposure-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "exposure-plus-h"
-        },
-        {
-          "type": "fixed",
-          "part": "exposure-plus-v"
-        },
-        {
-          "type": "fixed",
-          "part": "exposure-minus"
-        }
-      ]
-    },
-    {
-      "name": "exposure-strong",
-      "fixedParts": [
-        "exposure-frame",
-        "exposure-plus-h",
-        "exposure-plus-v",
-        "exposure-minus"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "exposure-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "exposure-plus-h"
-        },
-        {
-          "type": "fixed",
-          "part": "exposure-plus-v"
-        },
-        {
-          "type": "fixed",
-          "part": "exposure-minus"
-        }
-      ]
-    },
-    {
       "name": "photo-gallery",
       "fixedParts": [],
       "topology": true,
@@ -388,42 +250,6 @@
       "designConstraints": []
     },
     {
-      "name": "photo-edit",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "photo-edit-pencil"
-        },
-        {
-          "type": "rigid",
-          "part": "photo-edit-ferrule"
-        }
-      ]
-    },
-    {
-      "name": "photo-edit-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "photo-edit-pencil"
-        },
-        {
-          "type": "rigid",
-          "part": "photo-edit-ferrule"
-        }
-      ]
-    },
-    {
       "name": "rotate-photo",
       "fixedParts": [],
       "topology": true,
@@ -458,84 +284,6 @@
           "part": "rotate-photo-arrow"
         }
       ]
-    },
-    {
-      "name": "flip-photo",
-      "fixedParts": [
-        "flip-photo-axis-top",
-        "flip-photo-axis-bottom"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "flip-photo-axis-top"
-        },
-        {
-          "type": "fixed",
-          "part": "flip-photo-axis-bottom"
-        }
-      ]
-    },
-    {
-      "name": "flip-photo-strong",
-      "fixedParts": [
-        "flip-photo-axis-top",
-        "flip-photo-axis-bottom"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "flip-photo-axis-top"
-        },
-        {
-          "type": "fixed",
-          "part": "flip-photo-axis-bottom"
-        }
-      ]
-    },
-    {
-      "name": "brightness",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "brightness-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "saturation",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "saturation-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
     },
     {
       "name": "red-eye-fix",
@@ -634,5 +382,76 @@
       ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "tripod",
+      "spec": "specs/tripod.icon.json",
+      "specSha256": "60314387fedfb55e0112e58cf27f8722cf455c8f5fc716eb4318e02c537fc5f9",
+      "actions": [
+        "tripod",
+        "tripod-strong"
+      ]
+    },
+    {
+      "icon": "aperture",
+      "spec": "specs/aperture.icon.json",
+      "specSha256": "2a77d25ef241c102ee5a9e2e93515740b4413b7235ac99bc0fe0c44124cd6438",
+      "actions": [
+        "aperture",
+        "aperture-reverse",
+        "aperture-strong",
+        "aperture-reverse-strong"
+      ]
+    },
+    {
+      "icon": "exposure",
+      "spec": "specs/exposure.icon.json",
+      "specSha256": "20bcfcf774494b445c7639c019758bfb737db55e4b4b28a8b1a893bc7fdd667c",
+      "actions": [
+        "exposure",
+        "exposure-strong"
+      ]
+    },
+    {
+      "icon": "photo-edit",
+      "spec": "specs/photo-edit.icon.json",
+      "specSha256": "c62028ac3f6b826f1c3701dfb52b98bcf9cd0927176c9b91c369471dc9289e72",
+      "actions": [
+        "photo-edit",
+        "photo-edit-strong"
+      ]
+    },
+    {
+      "icon": "flip-photo",
+      "spec": "specs/flip-photo.icon.json",
+      "specSha256": "d649958bfeb2d8cd49bb06b5a5bd3814e3822d7f570e2ee30fdc439792586a33",
+      "actions": [
+        "flip-photo",
+        "flip-photo-reverse",
+        "flip-photo-strong",
+        "flip-photo-reverse-strong"
+      ]
+    },
+    {
+      "icon": "brightness",
+      "spec": "specs/brightness.icon.json",
+      "specSha256": "122f09dffcbfbbeafd76143be6a5df9f7377769b77143641918177aaac5ce2ed",
+      "actions": [
+        "brightness",
+        "brightness-strong"
+      ]
+    },
+    {
+      "icon": "saturation",
+      "spec": "specs/saturation.icon.json",
+      "specSha256": "cb6db253ce3fb78d316f6a3b2892c040c7e771036e5bc6062d68e1f870dcf027",
+      "actions": [
+        "saturation",
+        "saturation-reverse",
+        "saturation-strong",
+        "saturation-reverse-strong"
+      ]
+    }
+  ]
 }

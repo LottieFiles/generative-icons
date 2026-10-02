@@ -1,0 +1,36 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "add-to-calendar",
+  "label": "Add to calendar",
+  "intent": "A new event is written onto the calendar. Light: the plus draws on, the upright stroke first and the crossbar a beat later, then it pops once as the entry is set and settles. Strong: the plus draws on with crisp stops, pops harder, and the calendar takes the new entry with a thump, a rebound and a settle. The leaf stays rigid.",
+  "parts": {
+    "leaf":   {"shape": {"rect": [5, 6, 22, 21], "r": 2.7}, "role": "surface", "solid": "ring"},
+    "header": {"shape": {"line": [[5.5, 11.5], [26.5, 11.5]]}},
+    "peg-l":  {"shape": {"line": [[11, 4], [11, 8]]}},
+    "peg-r":  {"shape": {"line": [[21, 4], [21, 8]]}},
+    "plus-v": {"shape": {"line": [[16, 15.6], [16, 22.8]]}},
+    "plus-h": {"shape": {"line": [[12.4, 19.2], [19.6, 19.2]]}}
+  },
+  "rigs": {
+    "calendar": {"//": "the whole calendar takes the entry in Strong", "pivot": [16, 27], "carries": ["leaf", "header", "peg-l", "peg-r", "plus"]},
+    "plus":     {"//": "the plus pops about its own centre once it is written", "pivot": [16, 19.2], "carries": ["plus-v", "plus-h"]}
+  },
+  "motion": {
+    "plus-v.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.04, 0], [0.2, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.04, 0], [0.18, 1, "hit"]]
+    },
+    "plus-h.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.12, 0], [0.28, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.12, 0], [0.26, 1, "hit"]]
+    },
+    "plus.scale": {
+      "light":  [[0, 1], [0.28, 1], [0.34, 1.22, "out"], [0.41, 0.96], [0.47, 1]],
+      "strong": [[0, 1], [0.26, 1], [0.32, 1.32, "out"], [0.4, 0.92], [0.47, 1.04], [0.53, 1]]
+    },
+    "calendar.y": {
+      "strong": [[0, 0], [0.33, 0], [0.38, 1.2, "hit"], [0.46, -0.3], [0.53, 0.1], [0.59, 0]]
+    }
+  }
+}

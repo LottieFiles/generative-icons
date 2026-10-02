@@ -1,0 +1,57 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "gear-shift",
+  "label": "Gear shift",
+  "intent": "Shift from first into second. Light: the knob is drawn down the left slot, catches for a beat at neutral where the crossbar meets it, then clunks into second with a hit, rebounds and seats. Strong: the knob is tugged up out of first, runs down to neutral, catches, slams into second and bounces twice before it seats. The reverse runs it back up through neutral and clunks it into first. The gate never moves; the knob holds in second.",
+  "state": {
+    "from": "first",
+    "to": "second",
+    "labels": ["Shift up", "Shift down"],
+    "reverse": "auto"
+  },
+  "preview": {
+    "light": [0, 0.08, 0.15, 0.2, 0.28, 0.32, 0.37, 0.42],
+    "strong": [0, 0.08, 0.2, 0.26, 0.35, 0.41, 0.47, 0.57]
+  },
+  "parts": {
+    "slot-0": {"shape": {"line": [[10, 7.5], [10, 24.5]]}},
+    "slot-1": {"shape": {"line": [[22, 7.5], [22, 24.5]]}},
+    "bar": {"shape": {"line": [[10, 16], [22, 16]]}},
+    "knob": {"shape": {"circle": [[10, 9.5], 2.6]}, "role": "fill"}
+  },
+  "reverse": {
+    "//": "written out so the reverse also catches at neutral and lands with its hit in first, rebounding down the slot",
+    "light": {"knob.y": [[0, 13], [0.15, 6.5, "out"], [0.2, 6.5], [0.32, 0, "hit"], [0.37, 1.3, "out"], [0.42, 0, "hit"]]},
+    "strong": {
+      "knob.y": [
+        [0, 13],
+        [0.08, 14.2, "out"],
+        [0.2, 6.5, "out"],
+        [0.26, 6.5],
+        [0.35, 0, "hit"],
+        [0.41, 1.6, "out"],
+        [0.47, 0, "hit"],
+        [0.52, 0.5, "out"],
+        [0.57, 0, "hit"]
+      ]
+    }
+  },
+  "motion": {
+    "knob.y": {
+      "//": "13 = v1's travel from first (y 9.5) to second (y 22.5); neutral is the crossbar at +6.5",
+      "light": [[0, 0], [0.15, 6.5, "out"], [0.2, 6.5], [0.32, 13, "hit"], [0.37, 11.7, "out"], [0.42, 13, "hit"]],
+      "strong": [
+        [0, 0],
+        [0.08, -1.2, "out"],
+        [0.2, 6.5, "out"],
+        [0.26, 6.5],
+        [0.35, 13, "hit"],
+        [0.41, 11.4, "out"],
+        [0.47, 13, "hit"],
+        [0.52, 12.5, "out"],
+        [0.57, 13, "hit"]
+      ]
+    }
+  }
+}

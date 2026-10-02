@@ -2,79 +2,9 @@
   "result": "PASS",
   "icons": 20,
   "actions": 58,
-  "nativeTransformNodes": 356,
-  "nativeTransformMaxCoordinateError": 0.000010868541632902406,
+  "nativeTransformNodes": 176,
+  "nativeTransformMaxCoordinateError": 0.000010000000003174137,
   "checks": [
-    {
-      "name": "language",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "language-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "region",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "region-globe-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "region-meridian"
-        },
-        {
-          "type": "rigid",
-          "part": "region-equator"
-        },
-        {
-          "type": "rigid",
-          "part": "region-pin"
-        }
-      ]
-    },
-    {
-      "name": "region-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "region-globe-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "region-meridian"
-        },
-        {
-          "type": "rigid",
-          "part": "region-equator"
-        },
-        {
-          "type": "rigid",
-          "part": "region-pin"
-        }
-      ]
-    },
     {
       "name": "currency",
       "fixedParts": [],
@@ -208,98 +138,6 @@
         {
           "type": "rigid",
           "part": "privacy-shield-shield-frame"
-        }
-      ]
-    },
-    {
-      "name": "shortcut-key",
-      "fixedParts": [
-        "shortcut-key-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "shortcut-key-base"
-        },
-        {
-          "type": "rigid",
-          "part": "shortcut-key-cap-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "shortcut-key-bolt"
-        }
-      ]
-    },
-    {
-      "name": "shortcut-key-strong",
-      "fixedParts": [
-        "shortcut-key-base"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "shortcut-key-base"
-        },
-        {
-          "type": "rigid",
-          "part": "shortcut-key-cap-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "shortcut-key-bolt"
-        }
-      ]
-    },
-    {
-      "name": "mouse",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "mouse-body-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "mouse-divider"
-        },
-        {
-          "type": "rigid",
-          "part": "mouse-wheel"
-        }
-      ]
-    },
-    {
-      "name": "mouse-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "mouse-body-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "mouse-divider"
-        },
-        {
-          "type": "rigid",
-          "part": "mouse-wheel"
         }
       ]
     },
@@ -486,50 +324,6 @@
       "designConstraints": []
     },
     {
-      "name": "haptic-feedback",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "haptic-feedback-phone-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "haptic-feedback-arc-l"
-        },
-        {
-          "type": "rigid",
-          "part": "haptic-feedback-arc-r"
-        }
-      ]
-    },
-    {
-      "name": "haptic-feedback-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "haptic-feedback-phone-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "haptic-feedback-arc-l"
-        },
-        {
-          "type": "rigid",
-          "part": "haptic-feedback-arc-r"
-        }
-      ]
-    },
-    {
       "name": "reset-settings",
       "fixedParts": [
         "reset-settings-track-0",
@@ -596,50 +390,6 @@
       ]
     },
     {
-      "name": "auto-update",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "auto-update-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "auto-update-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "auto-update-head"
-        }
-      ]
-    },
-    {
-      "name": "auto-update-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "auto-update-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "auto-update-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "auto-update-head"
-        }
-      ]
-    },
-    {
       "name": "startup-apps",
       "fixedParts": [],
       "topology": true,
@@ -682,136 +432,97 @@
           "part": "startup-apps-fin-r"
         }
       ]
-    },
-    {
-      "name": "pointer-speed",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "pointer-speed-cursor-frame"
-        }
-      ]
-    },
-    {
-      "name": "pointer-speed-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "pointer-speed-cursor-frame"
-        }
-      ]
-    },
-    {
-      "name": "advanced-settings",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "advanced-settings-wrench-frame"
-        }
-      ]
-    },
-    {
-      "name": "advanced-settings-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "advanced-settings-wrench-frame"
-        }
-      ]
-    },
-    {
-      "name": "trackpad",
-      "fixedParts": [
-        "trackpad-pad-frame",
-        "trackpad-divider"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "trackpad-pad-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "trackpad-divider"
-        },
-        {
-          "type": "rigid",
-          "part": "trackpad-finger-0"
-        },
-        {
-          "type": "rigid",
-          "part": "trackpad-finger-1"
-        }
-      ]
-    },
-    {
-      "name": "trackpad-strong",
-      "fixedParts": [
-        "trackpad-pad-frame",
-        "trackpad-divider"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "trackpad-pad-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "trackpad-divider"
-        },
-        {
-          "type": "rigid",
-          "part": "trackpad-finger-0"
-        },
-        {
-          "type": "rigid",
-          "part": "trackpad-finger-1"
-        }
-      ]
     }
   ],
   "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "language",
+      "spec": "specs/language.icon.json",
+      "specSha256": "47c7e62cbe79bccde1ecca507fcc45abdcf404deb6dd62a2039dec4a5efec05a",
+      "actions": [
+        "language",
+        "language-strong"
+      ]
+    },
+    {
+      "icon": "region",
+      "spec": "specs/region.icon.json",
+      "specSha256": "1508153bb444f80c6f8ed064aa0686bbf1bbd90663b7e6992715d714b5696410",
+      "actions": [
+        "region",
+        "region-strong"
+      ]
+    },
+    {
+      "icon": "shortcut-key",
+      "spec": "specs/shortcut-key.icon.json",
+      "specSha256": "622e6948059a1bb733868f41cc50c7609e9ae64dd1c55891c294cbf6a9f286d6",
+      "actions": [
+        "shortcut-key",
+        "shortcut-key-strong"
+      ]
+    },
+    {
+      "icon": "mouse",
+      "spec": "specs/mouse.icon.json",
+      "specSha256": "ee021217372aebcb9f6d256ae72f28a55e1046ce436bfd457811a1f26665325f",
+      "actions": [
+        "mouse",
+        "mouse-strong"
+      ]
+    },
+    {
+      "icon": "haptic-feedback",
+      "spec": "specs/haptic-feedback.icon.json",
+      "specSha256": "708067bf75f1263f59296ac1b57365c021c2dcf37ccf39bddff0f561f38d1b4b",
+      "actions": [
+        "haptic-feedback",
+        "haptic-feedback-strong"
+      ]
+    },
+    {
+      "icon": "auto-update",
+      "spec": "specs/auto-update.icon.json",
+      "specSha256": "a7f4cee0a2ff4aedb56400874413dc7a8e79744ee56e4274ca3a762c302cce49",
+      "actions": [
+        "auto-update",
+        "auto-update-strong"
+      ]
+    },
+    {
+      "icon": "pointer-speed",
+      "spec": "specs/pointer-speed.icon.json",
+      "specSha256": "436d2afb17bed4323d40c331200cda9b5ce71c57dec75a72df796aa553f5eee2",
+      "actions": [
+        "pointer-speed",
+        "pointer-speed-strong"
+      ]
+    },
+    {
+      "icon": "advanced-settings",
+      "spec": "specs/advanced-settings.icon.json",
+      "specSha256": "25579024972d92dc8f7e00573e1c4a6030151c8535ad1a17a6c640a20d328a56",
+      "actions": [
+        "advanced-settings",
+        "advanced-settings-strong"
+      ]
+    },
+    {
+      "icon": "trackpad",
+      "spec": "specs/trackpad.icon.json",
+      "specSha256": "4a312bef2b5a433ab4887701a9d0d7dd81be9c9ac54c5bbd770926980bcd1c8e",
+      "actions": [
+        "trackpad",
+        "trackpad-strong"
+      ]
+    }
+  ],
   "clearance": {
-    "rules": 102,
+    "rules": 66,
     "minimums": {
-      "language letter legs / bubble wall": 1.4430800000000001,
-      "language letter bar / bubble wall": 4.720979999999997,
-      "region pin tip seated on the globe rim at rest": 0.041173442953759784,
-      "region pin tip never sinks inside the globe": 7.96144652375637,
       "appearance handle clear of the band": 3.9700208369308614,
       "privacy-shield eye clear of the shield wall at Bold": 2.5,
-      "shortcut-key cap never drops below the base skirt": 0.8999999999999986,
-      "shortcut-key bolt clear of the cap wall at Bold": 1.1670741744995112,
-      "mouse wheel / divider": 0.8499999999999996,
-      "mouse wheel inside the top half at Bold": 0.5833300000000001,
       "auto-rotate phone / arrow-a": 1.6737538908291265,
       "auto-rotate phone / arrow-b": 1.6318574598326716,
       "auto-rotate phone / head-a": 1.0792397863323244,
@@ -822,19 +533,9 @@
       "mobile-data down arrow / bar-0": 1.5,
       "mobile-data up arrow / down head": 1.9675600000000006,
       "mobile-data bar-0 / bar-1": 1.5,
-      "haptic-feedback phone / arc-l": 1.1559403528289276,
-      "haptic-feedback phone / arc-r": 1.1719717464116406,
       "reset-settings knob-0 / ring": 2.245088225241424,
       "reset-settings knob-1 / ring": 1.8271498264277484,
-      "reset-settings knob-0 / knob-1": 2.3999999999999986,
-      "auto-update arrow head / ring": 1.4980778935167929,
-      "auto-update shaft / ring": 1.4980778935167929,
-      "pointer-speed cursor / trail-0": 1.3076600000000003,
-      "pointer-speed cursor / trail-1": 1.3076600000000003,
-      "pointer-speed cursor / trail-2": 1.3076600000000003,
-      "trackpad finger-0 / finger-1": 1.1999999999999993,
-      "trackpad fingers stay on the pad at Bold": 2.3500000000000014,
-      "trackpad fingers / divider": 2.5500000000000007
+      "reset-settings knob-0 / knob-1": 2.3999999999999986
     },
     "errors": []
   }

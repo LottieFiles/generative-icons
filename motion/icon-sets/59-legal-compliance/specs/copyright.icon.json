@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "copyright",
+  "label": "Copyright",
+  "intent": "The work is claimed: the C is written into the ring and the mark is stamped. Light: the C clears and writes itself round from its top end like a pen stroke; as it closes, the whole mark stamps once (swells and settles). Strong: the mark lifts while the C writes faster, then stamps down hard, rebounds and settles. The ring never redraws.",
+  "parts": {
+    "ring": {"shape": {"circle": [[16, 16], 11]}, "role": "surface", "solid": "ring"},
+    "c": {"//": "v1's C reversed so draw-on runs from the top end round to the bottom, like a pen",
+          "shape": {"path": "M19.677 12.323 C18.19 10.836 15.953 10.391 14.01 11.196 C12.067 12.001 10.8 13.897 10.8 16 C10.8 18.103 12.067 19.999 14.01 20.804 C15.953 21.609 18.19 21.164 19.677 19.677"}}
+  },
+  "rigs": {
+    "mark": {"pivot": [16, 16], "carries": ["ring", "c"]}
+  },
+  "motion": {
+    "c.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.05, 0], [0.3, 1, "inOut"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.04, 0], [0.24, 1, "inOut"]]
+    },
+    "mark.scale": {
+      "light":  [[0, 1], [0.28, 1], [0.34, 1.08, "out"], [0.42, 0.98, "inOut"], [0.5, 1]],
+      "strong": [[0, 1], [0.04, 1], [0.22, 1.1, "out"], [0.3, 0.92, "hit"], [0.38, 1.03], [0.46, 0.99], [0.54, 1]]
+    }
+  }
+}

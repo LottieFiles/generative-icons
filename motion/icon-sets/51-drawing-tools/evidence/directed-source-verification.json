@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 60,
-  "nativeTransformNodes": 218,
+  "nativeTransformNodes": 156,
   "nativeTransformMaxCoordinateError": 0.000010535892222662824,
   "checks": [
     {
@@ -114,42 +114,6 @@
         {
           "type": "rigid",
           "part": "brush-handle"
-        }
-      ]
-    },
-    {
-      "name": "eraser",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "eraser-block"
-        },
-        {
-          "type": "rigid",
-          "part": "eraser-band"
-        }
-      ]
-    },
-    {
-      "name": "eraser-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "eraser-block"
-        },
-        {
-          "type": "rigid",
-          "part": "eraser-band"
         }
       ]
     },
@@ -472,38 +436,6 @@
       ]
     },
     {
-      "name": "lasso-select",
-      "fixedParts": [
-        "lasso-select-object"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "lasso-select-object"
-        }
-      ]
-    },
-    {
-      "name": "lasso-select-strong",
-      "fixedParts": [
-        "lasso-select-object"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "lasso-select-object"
-        }
-      ]
-    },
-    {
       "name": "transform-tool",
       "fixedParts": [],
       "topology": true,
@@ -572,68 +504,6 @@
       ]
     },
     {
-      "name": "mirror-tool",
-      "fixedParts": [
-        "mirror-tool-axis-0",
-        "mirror-tool-axis-1",
-        "mirror-tool-axis-2",
-        "mirror-tool-left-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "mirror-tool-axis-0"
-        },
-        {
-          "type": "fixed",
-          "part": "mirror-tool-axis-1"
-        },
-        {
-          "type": "fixed",
-          "part": "mirror-tool-axis-2"
-        },
-        {
-          "type": "fixed",
-          "part": "mirror-tool-left-frame"
-        }
-      ]
-    },
-    {
-      "name": "mirror-tool-strong",
-      "fixedParts": [
-        "mirror-tool-axis-0",
-        "mirror-tool-axis-1",
-        "mirror-tool-axis-2",
-        "mirror-tool-left-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "mirror-tool-axis-0"
-        },
-        {
-          "type": "fixed",
-          "part": "mirror-tool-axis-1"
-        },
-        {
-          "type": "fixed",
-          "part": "mirror-tool-axis-2"
-        },
-        {
-          "type": "fixed",
-          "part": "mirror-tool-left-frame"
-        }
-      ]
-    },
-    {
       "name": "snap-to-grid",
       "fixedParts": [
         "snap-to-grid-dot-7-7",
@@ -682,139 +552,56 @@
           "part": "snap-to-grid-object-frame"
         }
       ]
-    },
-    {
-      "name": "ruler-guides",
-      "fixedParts": [
-        "ruler-guides-ruler-frame",
-        "ruler-guides-tick-t13",
-        "ruler-guides-tick-l13"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "ruler-guides-ruler-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "ruler-guides-tick-t13"
-        },
-        {
-          "type": "fixed",
-          "part": "ruler-guides-tick-l13"
-        },
-        {
-          "type": "rigid",
-          "part": "ruler-guides-guide-v"
-        },
-        {
-          "type": "rigid",
-          "part": "ruler-guides-guide-h"
-        }
-      ]
-    },
-    {
-      "name": "ruler-guides-strong",
-      "fixedParts": [
-        "ruler-guides-ruler-frame",
-        "ruler-guides-tick-t13",
-        "ruler-guides-tick-l13"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "ruler-guides-ruler-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "ruler-guides-tick-t13"
-        },
-        {
-          "type": "fixed",
-          "part": "ruler-guides-tick-l13"
-        },
-        {
-          "type": "rigid",
-          "part": "ruler-guides-guide-v"
-        },
-        {
-          "type": "rigid",
-          "part": "ruler-guides-guide-h"
-        }
-      ]
-    },
-    {
-      "name": "scissors",
-      "fixedParts": [
-        "scissors-hub"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "scissors-hub"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-a-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-a-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-b-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-b-ring"
-        }
-      ]
-    },
-    {
-      "name": "scissors-strong",
-      "fixedParts": [
-        "scissors-hub"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "scissors-hub"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-a-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-a-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-b-shaft"
-        },
-        {
-          "type": "rigid",
-          "part": "scissors-blade-b-ring"
-        }
-      ]
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "eraser",
+      "spec": "specs/eraser.icon.json",
+      "specSha256": "0c2b20196e827630aa25fc8515c1aeda119f6ae1d1c0c1a6ca85274113ff8bac",
+      "actions": [
+        "eraser",
+        "eraser-reverse",
+        "eraser-strong",
+        "eraser-reverse-strong"
+      ]
+    },
+    {
+      "icon": "lasso-select",
+      "spec": "specs/lasso-select.icon.json",
+      "specSha256": "3dbbb10a3efdd92a86af698fbd774a9bda69b837ed8836adcc1de6b6fb9e18bb",
+      "actions": [
+        "lasso-select",
+        "lasso-select-strong"
+      ]
+    },
+    {
+      "icon": "mirror-tool",
+      "spec": "specs/mirror-tool.icon.json",
+      "specSha256": "9f69f2fc35a6d5cefa75d9e4602b4b922c05e38546b8f41020f3a6403fb11a10",
+      "actions": [
+        "mirror-tool",
+        "mirror-tool-strong"
+      ]
+    },
+    {
+      "icon": "ruler-guides",
+      "spec": "specs/ruler-guides.icon.json",
+      "specSha256": "08fabfcaae0ce82f0f8b97c0a8466da5973ff4dec58e40f37153f1b53415e338",
+      "actions": [
+        "ruler-guides",
+        "ruler-guides-strong"
+      ]
+    },
+    {
+      "icon": "scissors",
+      "spec": "specs/scissors.icon.json",
+      "specSha256": "8b0ce50a0caa62448eecac05deef3f98cd89e297664b2fdc6cf93b1e4670d810",
+      "actions": [
+        "scissors",
+        "scissors-strong"
+      ]
+    }
+  ]
 }

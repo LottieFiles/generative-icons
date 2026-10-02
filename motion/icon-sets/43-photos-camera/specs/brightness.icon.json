@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "brightness",
+  "label": "Brightness",
+  "intent": "Brightness turns up. Light: the lit half of the disc spreads across the dark half until the disc is full, and the light pours out through the rays: each ray shoots out in turn, clockwise from the top, and springs back; then the disc eases back to half. Strong: the brightness steps up in two clicks: the disc fills to three quarters with a first, shorter wave of rays, then to full with a second, longer wave that overshoots and settles, before the disc dims back to half.",
+  "parts": {
+    "disc":    {"shape": {"circle": [[16, 16], 4.2]}, "role": "surface"},
+    "half":    {"//": "v1's lit half; the right edge is two flat curves on x 16 that bulge out to the full disc as 'light' goes 0 to 1 (a terminator sweeping across)",
+                "shape": {"morph": [
+                  {"path": "M16 20.2 C13.68 20.2 11.8 18.32 11.8 16 C11.8 13.68 13.68 11.8 16 11.8 C16 11.8 16 13.68 16 16 C16 18.32 16 20.2 16 20.2 Z"},
+                  {"path": "M16 20.2 C13.68 20.2 11.8 18.32 11.8 16 C11.8 13.68 13.68 11.8 16 11.8 C18.32 11.8 20.2 13.68 20.2 16 C20.2 18.32 18.32 20.2 16 20.2 Z"}],
+                  "by": "light"},
+                "role": "fill", "solid": "none"},
+    "ray-270": {"shape": {"line": [[16, 7.6], [16, 5.4]]}},
+    "ray-315": {"shape": {"line": [[21.94, 10.06], [23.495, 8.505]]}},
+    "ray-0":   {"shape": {"line": [[24.4, 16], [26.6, 16]]}},
+    "ray-45":  {"shape": {"line": [[21.94, 21.94], [23.495, 23.495]]}},
+    "ray-90":  {"shape": {"line": [[16, 24.4], [16, 26.6]]}},
+    "ray-135": {"shape": {"line": [[10.06, 21.94], [8.505, 23.495]]}},
+    "ray-180": {"shape": {"line": [[7.6, 16], [5.4, 16]]}},
+    "ray-225": {"shape": {"line": [[10.06, 10.06], [8.505, 8.505]]}}
+  },
+  "rigs": {
+    "ray-270": {"//": "each ray lengthens outward from its inner end", "pivot": [16, 7.6]},
+    "ray-315": {"pivot": [21.94, 10.06]},
+    "ray-0":   {"pivot": [24.4, 16]},
+    "ray-45":  {"pivot": [21.94, 21.94]},
+    "ray-90":  {"pivot": [16, 24.4]},
+    "ray-135": {"pivot": [10.06, 21.94]},
+    "ray-180": {"pivot": [7.6, 16]},
+    "ray-225": {"pivot": [10.06, 10.06]}
+  },
+  "motion": {
+    "light": {
+      "//": "a level: it never goes past full",
+      "light":  [[0, 0], [0.15, 1, "out"], [0.3, 1], [0.44, 0, "inOut"]],
+      "strong": [[0, 0], [0.1, 0.5, "hit"], [0.2, 0.5], [0.3, 1, "hit"], [0.5, 1], [0.66, 0, "inOut"]]
+    },
+    "ray-270.scale": {
+      "//": "the top ray leads; the others follow clockwise",
+      "light":  [[0, 1], [0.07, 1], [0.17, 1.45, "out"], [0.3, 1]],
+      "strong": [[0, 1], [0.05, 1], [0.13, 1.22, "out"], [0.22, 1], [0.25, 1], [0.35, 1.55, "out"], [0.46, 0.93], [0.54, 1]]
+    },
+    "ray-315.scale": {"light": {"follow": "ray-270.scale", "lag": 0.025}, "strong": {"follow": "ray-270.scale", "lag": 0.02}},
+    "ray-0.scale":   {"light": {"follow": "ray-270.scale", "lag": 0.05},  "strong": {"follow": "ray-270.scale", "lag": 0.04}},
+    "ray-45.scale":  {"light": {"follow": "ray-270.scale", "lag": 0.075}, "strong": {"follow": "ray-270.scale", "lag": 0.06}},
+    "ray-90.scale":  {"light": {"follow": "ray-270.scale", "lag": 0.1},   "strong": {"follow": "ray-270.scale", "lag": 0.08}},
+    "ray-135.scale": {"light": {"follow": "ray-270.scale", "lag": 0.125}, "strong": {"follow": "ray-270.scale", "lag": 0.1}},
+    "ray-180.scale": {"light": {"follow": "ray-270.scale", "lag": 0.15},  "strong": {"follow": "ray-270.scale", "lag": 0.12}},
+    "ray-225.scale": {"light": {"follow": "ray-270.scale", "lag": 0.175}, "strong": {"follow": "ray-270.scale", "lag": 0.14}}
+  }
+}

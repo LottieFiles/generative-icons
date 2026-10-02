@@ -1,0 +1,48 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "clapperboard",
+  "label": "Clapperboard",
+  "intent": "The take is marked with a clap. Light: the clapper snaps open 14 degrees on its hinge, then claps shut with a hard stop; the board jolts down on the clap and springs back, the clapper bounces once, and three short clap lines flick out above its free end and fade. Strong: it opens 20 degrees and holds, then slams shut, bounces twice in decaying beats, and the board takes a bigger jolt. The rest pose is the v1 drawing.",
+  "parts": {
+    "slate": {
+      "shape": {"rect": [4.5, 17, 23, 11], "r": 2}, "role": "surface",
+      "solid": {"rect": [4.5, 16.8, 23, 11.2], "r": 2}
+    },
+    "clapper": {"shape": {"rect": [4.5, 10.5, 23, 6.5], "r": 1.8}, "role": "surface", "solid": "ring"},
+    "stripe-0": {"shape": {"line": [[9, 17], [12.5, 10.5]]}},
+    "stripe-1": {"shape": {"line": [[15.5, 17], [19, 10.5]]}},
+    "stripe-2": {"shape": {"line": [[22, 17], [25.5, 10.5]]}},
+    "clap": {
+      "//": "hidden at rest: three short lines that flick out above the clapper's free end on the clap",
+      "shape": [
+        {"line": [{"from": [25, 10.5], "angle": -135, "len": 3}, {"from": [25, 10.5], "angle": -135, "len": 5}]},
+        {"line": [{"from": [25, 10.5], "angle": -90, "len": 3}, {"from": [25, 10.5], "angle": -90, "len": 5}]},
+        {"line": [{"from": [25, 10.5], "angle": -45, "len": 3}, {"from": [25, 10.5], "angle": -45, "len": 5}]}
+      ],
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "board": {"//": "the whole board takes the jolt of the clap", "pivot": [16, 28], "carries": ["slate", "clapper"]},
+    "clapper": {"//": "v1's hinge", "pivot": [5.5, 17], "carries": ["clapper", "stripe-0", "stripe-1", "stripe-2"]}
+  },
+  "motion": {
+    "clapper.rotate": {
+      "light":  [[0, 0], [0.1, -14, "out"], [0.14, -14], [0.22, 0, "hit"], [0.28, -2.5], [0.34, 0, "hit"]],
+      "strong": [[0, 0], [0.14, -20, "out"], [0.26, -20], [0.34, 0, "hit"], [0.4, -4], [0.47, 0, "hit"], [0.52, -1], [0.57, 0]]
+    },
+    "board.y": {
+      "light":  [[0, 0], [0.22, 0], [0.27, 0.9, "out"], [0.34, -0.15], [0.4, 0]],
+      "strong": [[0, 0], [0.34, 0], [0.39, 1.2, "out"], [0.46, -0.25], [0.52, 0.1], [0.58, 0]]
+    },
+    "clap.opacity": {
+      "light":  [[0, 0], [0.22, 0], [0.23, 1, "step"], [0.32, 1], [0.42, 0, "in"]],
+      "strong": [[0, 0], [0.34, 0], [0.35, 1, "step"], [0.46, 1], [0.58, 0, "in"]]
+    },
+    "clap.draw": {
+      "light":  [[0, 1], [0.22, 0, "step"], [0.3, 1, "out"]],
+      "strong": [[0, 1], [0.34, 0, "step"], [0.41, 1, "out"]]
+    }
+  }
+}

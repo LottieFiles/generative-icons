@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 70,
-  "nativeTransformNodes": 206,
+  "nativeTransformNodes": 78,
   "nativeTransformMaxCoordinateError": 0.000011172699664996344,
   "checks": [
     {
@@ -46,138 +46,6 @@
         {
           "type": "rigid",
           "part": "cut-clip-blade-stem"
-        }
-      ]
-    },
-    {
-      "name": "trim-clip",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "trim-clip-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "transition",
-      "fixedParts": [
-        "transition-clip-a-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "transition-clip-a-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "transition-clip-b-frame"
-        }
-      ]
-    },
-    {
-      "name": "transition-strong",
-      "fixedParts": [
-        "transition-clip-a-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "transition-clip-a-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "transition-clip-b-frame"
-        }
-      ]
-    },
-    {
-      "name": "speed-ramp",
-      "fixedParts": [
-        "speed-ramp-clip-frame",
-        "speed-ramp-curve"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "speed-ramp-clip-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "speed-ramp-curve"
-        }
-      ]
-    },
-    {
-      "name": "speed-ramp-strong",
-      "fixedParts": [
-        "speed-ramp-clip-frame",
-        "speed-ramp-curve"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "speed-ramp-clip-frame"
-        },
-        {
-          "type": "fixed",
-          "part": "speed-ramp-curve"
-        }
-      ]
-    },
-    {
-      "name": "reverse-clip",
-      "fixedParts": [
-        "reverse-clip-clip-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "reverse-clip-clip-frame"
-        }
-      ]
-    },
-    {
-      "name": "reverse-clip-strong",
-      "fixedParts": [
-        "reverse-clip-clip-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "reverse-clip-clip-frame"
         }
       ]
     },
@@ -260,118 +128,6 @@
       ]
     },
     {
-      "name": "stabilize",
-      "fixedParts": [
-        "stabilize-ring"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "stabilize-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "stabilize-frame-frame"
-        }
-      ]
-    },
-    {
-      "name": "stabilize-strong",
-      "fixedParts": [
-        "stabilize-ring"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "stabilize-ring"
-        },
-        {
-          "type": "rigid",
-          "part": "stabilize-frame-frame"
-        }
-      ]
-    },
-    {
-      "name": "thumbnail",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "thumbnail-card-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "thumbnail-mountain-frame"
-        }
-      ]
-    },
-    {
-      "name": "thumbnail-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "thumbnail-card-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "thumbnail-mountain-frame"
-        }
-      ]
-    },
-    {
-      "name": "export-video",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "export-video-arrow-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "export-video-arrow-head"
-        }
-      ]
-    },
-    {
-      "name": "export-video-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "export-video-arrow-stem"
-        },
-        {
-          "type": "rigid",
-          "part": "export-video-arrow-head"
-        }
-      ]
-    },
-    {
       "name": "resolution",
       "fixedParts": [
         "resolution-frame-frame",
@@ -420,56 +176,6 @@
         {
           "type": "fixed",
           "part": "resolution-axis-h"
-        }
-      ]
-    },
-    {
-      "name": "aspect-ratio",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "aspect-ratio-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": []
-    },
-    {
-      "name": "mute-track",
-      "fixedParts": [
-        "mute-track-track-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "mute-track-track-frame"
-        }
-      ]
-    },
-    {
-      "name": "mute-track-strong",
-      "fixedParts": [
-        "mute-track-track-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "mute-track-track-frame"
         }
       ]
     },
@@ -562,86 +268,6 @@
       ]
     },
     {
-      "name": "clapperboard",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "clapperboard-clapper-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "clapperboard-stripe-0"
-        },
-        {
-          "type": "rigid",
-          "part": "clapperboard-slate-frame"
-        }
-      ]
-    },
-    {
-      "name": "clapperboard-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "clapperboard-clapper-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "clapperboard-stripe-0"
-        },
-        {
-          "type": "rigid",
-          "part": "clapperboard-slate-frame"
-        }
-      ]
-    },
-    {
-      "name": "merge-clips",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "merge-clips-clip-a-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "merge-clips-clip-b-frame"
-        }
-      ]
-    },
-    {
-      "name": "merge-clips-strong",
-      "fixedParts": [],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "rigid",
-          "part": "merge-clips-clip-a-frame"
-        },
-        {
-          "type": "rigid",
-          "part": "merge-clips-clip-b-frame"
-        }
-      ]
-    },
-    {
       "name": "add-caption",
       "fixedParts": [
         "add-caption-frame-frame"
@@ -670,38 +296,6 @@
         {
           "type": "fixed",
           "part": "add-caption-frame-frame"
-        }
-      ]
-    },
-    {
-      "name": "video-filter",
-      "fixedParts": [
-        "video-filter-frame-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "video-filter-frame-frame"
-        }
-      ]
-    },
-    {
-      "name": "video-filter-strong",
-      "fixedParts": [
-        "video-filter-frame-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "video-filter-frame-frame"
         }
       ]
     },
@@ -749,17 +343,140 @@
     }
   ],
   "drawingChecks": {
-    "frames": 5800,
+    "frames": 2900,
     "contracts": [
       "cut-clip: blade handle remains joined to stem",
-      "trim-clip: handle follows the moving clip edge",
-      "export-video: arrow joint and 1.5-unit painted clip clearance",
-      "mute-track: centred waveform bars with 1-unit painted clearance",
       "voiceover: centred waveform bars with 1-unit painted clearance",
       "screen-record: monitor stand joins screen and foot"
     ],
-    "minimumArrowClipGap": 1.5,
-    "minimumWaveformGap": 1.0249999999999986
+    "minimumArrowClipGap": null,
+    "minimumWaveformGap": 1.3999999999999986
   },
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "trim-clip",
+      "spec": "specs/trim-clip.icon.json",
+      "specSha256": "62ac3b4b1820e98314cfad2a9f3df73bb520819932071fe06d7c5b7eb8f8db1f",
+      "actions": [
+        "trim-clip",
+        "trim-clip-reverse",
+        "trim-clip-strong",
+        "trim-clip-reverse-strong"
+      ]
+    },
+    {
+      "icon": "transition",
+      "spec": "specs/transition.icon.json",
+      "specSha256": "98e0018752c0dc9330c4aa78e3bd0e83c28025bcabaadb1d9c568a5d68ee0117",
+      "actions": [
+        "transition",
+        "transition-reverse",
+        "transition-strong",
+        "transition-reverse-strong"
+      ]
+    },
+    {
+      "icon": "speed-ramp",
+      "spec": "specs/speed-ramp.icon.json",
+      "specSha256": "4fa62abd9d17d7239486eee261600d6cbb95ecc72d69a1b2b76cc11db144aa4a",
+      "actions": [
+        "speed-ramp",
+        "speed-ramp-reset",
+        "speed-ramp-strong",
+        "speed-ramp-reset-strong"
+      ]
+    },
+    {
+      "icon": "reverse-clip",
+      "spec": "specs/reverse-clip.icon.json",
+      "specSha256": "9a8772a73ad312866acea32c2306769de57bfc0c681c7cdae39dacbf20166f38",
+      "actions": [
+        "reverse-clip",
+        "reverse-clip-reverse",
+        "reverse-clip-strong",
+        "reverse-clip-reverse-strong"
+      ]
+    },
+    {
+      "icon": "stabilize",
+      "spec": "specs/stabilize.icon.json",
+      "specSha256": "0487b008caf06a18d33f9eb133a65e1ee838074cc833169a6a99b2ab938dab8a",
+      "actions": [
+        "stabilize",
+        "stabilize-strong"
+      ]
+    },
+    {
+      "icon": "thumbnail",
+      "spec": "specs/thumbnail.icon.json",
+      "specSha256": "3e4e13b8b18f6b464cfe2e95620061ae83bb486d76ae9ac518c8ff0451fcfc63",
+      "actions": [
+        "thumbnail",
+        "thumbnail-strong"
+      ]
+    },
+    {
+      "icon": "export-video",
+      "spec": "specs/export-video.icon.json",
+      "specSha256": "a3f6d96fa19c3a945ab84f828bf7fed3031ee93391aab9f9336754563f568527",
+      "actions": [
+        "export-video",
+        "export-video-strong"
+      ]
+    },
+    {
+      "icon": "aspect-ratio",
+      "spec": "specs/aspect-ratio.icon.json",
+      "specSha256": "976aab06757a762cd0e4269634c90c37409f2be42ec99025af1128dbb8a81df0",
+      "actions": [
+        "aspect-ratio",
+        "aspect-ratio-reverse",
+        "aspect-ratio-strong",
+        "aspect-ratio-reverse-strong"
+      ]
+    },
+    {
+      "icon": "mute-track",
+      "spec": "specs/mute-track.icon.json",
+      "specSha256": "acdc3f4946c239b9282428ce5b2533fbcc5cef19176d75cc086b851d5deae6d9",
+      "actions": [
+        "mute-track",
+        "mute-track-reverse",
+        "mute-track-strong",
+        "mute-track-reverse-strong"
+      ]
+    },
+    {
+      "icon": "clapperboard",
+      "spec": "specs/clapperboard.icon.json",
+      "specSha256": "cb61b7eba57eb91af78ce9a06e2514ed3947bbce833f067f10d78395abdbea01",
+      "actions": [
+        "clapperboard",
+        "clapperboard-strong"
+      ]
+    },
+    {
+      "icon": "merge-clips",
+      "spec": "specs/merge-clips.icon.json",
+      "specSha256": "e1afa37e8ec9a501d355cafac8244c4438305ea8e3e191e6e8ed0a9f70946ed9",
+      "actions": [
+        "merge-clips",
+        "merge-clips-reverse",
+        "merge-clips-strong",
+        "merge-clips-reverse-strong"
+      ]
+    },
+    {
+      "icon": "video-filter",
+      "spec": "specs/video-filter.icon.json",
+      "specSha256": "8ab90a0be12f275114c106f6353723f4ad1878297a2127ed2390026a38b4f040",
+      "actions": [
+        "video-filter",
+        "video-filter-reverse",
+        "video-filter-strong",
+        "video-filter-reverse-strong"
+      ]
+    }
+  ]
 }

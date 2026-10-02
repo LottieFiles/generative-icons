@@ -1,0 +1,59 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "saturation",
+  "label": "Saturation",
+  "intent": "Low to high: colour is added and the saturation rises. Light: a drop of colour forms under the tip, falls through the drop and lands in the colour; on contact the level rises from a fifth to just above half in one decisive fill while the surface sloshes and settles level. Strong: two drops land in turn and the level climbs in two clicks that stop dead, each landing sloshing the surface harder. The level never overshoots and the drop never moves. Reverse drains the colour back down with a small slosh as it lands.",
+  "state": {"from": "low", "to": "high", "labels": ["Saturate", "Desaturate"], "reverse": "auto"},
+  "parts": {
+    "drop":    {"shape": {"path": "M15.34 5.92 C15.78 5.17 16.22 5.17 16.66 5.92 L22.02 14.93 L22.019 14.926 C23.304 17.09 23.328 19.776 22.083 21.963 C20.839 24.15 18.516 25.5 16 25.5 C13.484 25.5 11.161 24.15 9.917 21.963 C8.672 19.776 8.696 17.09 9.981 14.926 L15.34 5.92 Z"},
+                "role": "surface", "solid": "ring"},
+    "droplet": {"//": "hidden at rest: the colour that arrives; behind the level so the colour swallows it",
+                "shape": {"path": "M16 9.6 C16.95 11.05 17.55 12 17.55 12.8 C17.55 13.66 16.86 14.35 16 14.35 C15.14 14.35 14.45 13.66 14.45 12.8 C14.45 12 15.05 11.05 16 9.6 Z"},
+                "role": "fill", "hidden": true},
+    "level":   {"//": "v1's low and high colour levels (chords at y 23.4 and 15.6) cut from the bowl circle at r 7.5 instead of v1's 7: the extra 0.5 lies under the drop's stroke (0.75 at Light) and in front of it in the same colour, so rest and end look exactly like v1, and mid-rise the linear morph stays at most 0.62 inside the wall, still under the stroke; the 'fill' driver raises it",
+                "shape": {"morph": [
+                  {"path": "M21.678 23.4 L21.678 23.4 C20.974 24.216 20.102 24.87 19.122 25.319 C18.143 25.768 17.078 26 16 26 C14.922 26 13.857 25.768 12.878 25.319 C11.898 24.87 11.026 24.216 10.322 23.4 L21.678 23.4 Z"},
+                  {"path": "M22.917 15.6 L22.917 15.6 C23.887 17.915 23.635 20.563 22.245 22.653 C20.855 24.744 18.511 26 16 26 C13.489 26 11.145 24.744 9.755 22.653 C8.365 20.563 8.113 17.915 9.083 15.6 L22.917 15.6 Z"}],
+                  "by": "fill"},
+                "role": "fill"}
+  },
+  "rigs": {
+    "liquid": {"//": "the centre of the drop's round bowl (r 7): a slosh keeps the colour's edge on the wall", "pivot": [16, 18.5], "carries": ["level"]}
+  },
+  "motion": {
+    "droplet.opacity": {
+      "light":  [[0, 0], [0.05, 1, "out"], [0.2, 1], [0.24, 0, "in"]],
+      "strong": [[0, 0], [0.04, 1, "out"], [0.17, 1], [0.21, 0, "in"], [0.28, 0], [0.32, 1, "out"], [0.45, 1], [0.49, 0, "in"]]
+    },
+    "droplet.y": {
+      "//": "falls from under the tip into the colour: 9.3 down to the low level, 5.5 to the half level",
+      "light":  [[0, 0], [0.04, 0], [0.21, 9.3, "in"], [0.26, 0, "step"]],
+      "strong": [[0, 0], [0.03, 0], [0.18, 9.3, "in"], [0.23, 0, "step"], [0.31, 0], [0.46, 5.5, "in"], [0.51, 0, "step"]]
+    },
+    "fill": {
+      "//": "a data value: it stops on its level and never goes past it",
+      "light":  [[0, 0], [0.21, 0], [0.5, 1, "out"]],
+      "strong": [[0, 0], [0.18, 0], [0.32, 0.5, "hit"], [0.46, 0.5], [0.62, 1, "hit"]]
+    },
+    "liquid.rotate": {
+      "light":  [[0, 0], [0.21, 0], [0.29, 6, "out"], [0.39, -3], [0.48, 1], [0.56, 0]],
+      "strong": [[0, 0], [0.18, 0], [0.25, 8, "out"], [0.35, -3.5], [0.46, 0], [0.53, -10, "out"], [0.63, 5], [0.72, -2], [0.8, 0.6], [0.87, 0]]
+    }
+  },
+  "reverse": {
+    "//": "the colour drains straight back down (no droplet rises out), and the surface sloshes once as it lands",
+    "light": {
+      "droplet.opacity": [[0, 0]],
+      "droplet.y": [[0, 0]],
+      "fill": [[0, 1], [0.32, 0, "inOut"]],
+      "liquid.rotate": [[0, 0], [0.26, 0], [0.33, -5, "out"], [0.42, 2], [0.5, 0]]
+    },
+    "strong": {
+      "droplet.opacity": [[0, 0]],
+      "droplet.y": [[0, 0]],
+      "fill": [[0, 1], [0.24, 0, "hit"]],
+      "liquid.rotate": [[0, 0], [0.24, 0], [0.31, -8, "out"], [0.41, 3.5], [0.5, -1.2], [0.58, 0]]
+    }
+  }
+}
