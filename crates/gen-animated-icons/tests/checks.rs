@@ -36,7 +36,7 @@ fn project(dir: &Path) -> (PathBuf, String) {
     web_app(&app);
     let library = fixture_library(&dir.join("library")).display().to_string();
     run(&app, &["init"]).ok();
-    run(&app, &["create", "bell-nudge", "--library", &library]).ok();
+    run(&app, &["create", "bell-nudge", "--batch", "--library", &library]).ok();
     (app, library)
 }
 
@@ -204,7 +204,7 @@ fn check_compares_library_ids_with_the_cached_catalog_only() {
     std::fs::create_dir(&app).unwrap();
     web_app(&app);
     run(&app, &["init"]).ok();
-    run(&app, &["create", "heart-pulse", "--library", &url]).ok();
+    run(&app, &["create", "heart-pulse", "--batch", "--library", &url]).ok();
     // "heart" is a library id; create refuses it, so the batch is written by hand.
     write(&app, "gen-animated-icons/icons/batches/heart-pulse.mjs", ICON.replace("ID", "heart"));
 
@@ -292,7 +292,7 @@ export const icons = [
 
     // Another icon's broken source does not hide this icon's findings.
     write(&app, BATCH, &late);
-    run(&app, &["create", "bell-two", "--library", &library]).ok();
+    run(&app, &["create", "bell-two", "--batch", "--library", &library]).ok();
     let two = ICON
         .replace("ID", "bell-two")
         .replace("    .6, .5)\n];", "    .6, .5)\n].map(icon => ({...icon, duotoneFill: false}));");

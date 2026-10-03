@@ -499,12 +499,12 @@ fn info_and_doctor_describe_the_setup() {
     assert_eq!((info["localIcons"].clone(), info["local"]["icons"].clone()), (json!([]), json!([])));
 
     // Icons created but not built yet are work in progress a new session must find.
-    run(app, &["create", "watering-can", "--library", &library]).ok();
+    run(app, &["create", "watering-can", "--batch", "--library", &library]).ok();
     let info = run(app, &["info", "--library", &library]).ok();
     assert_eq!(info["localIcons"], json!(["watering-can"]));
     assert_eq!(
         info["local"],
-        json!({"source": "gen-animated-icons/icons", "icons": [{"id": "watering-can",
+        json!({"source": "gen-animated-icons/icons", "icons": [{"id": "watering-can", "spec": null,
             "batch": "gen-animated-icons/icons/batches/watering-can.mjs", "build": "not-built", "installed": false}]})
     );
     let text = run(app, &["info", "--library", &library, "--format", "text"]).stdout;

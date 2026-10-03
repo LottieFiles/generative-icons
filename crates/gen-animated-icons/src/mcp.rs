@@ -58,9 +58,10 @@ const INVALID_REQUEST: i64 = -32600;
 
 const INSTRUCTIONS: &str = "gen-animated-icons finds, creates and builds animated icons (dotLottie) for the project in the working folder. \
 Look for an existing icon first: search, then add. To make a missing icon: context (read the contract and the nearest references), \
-create (scaffold a batch, optionally --from a close library icon), edit the batch file it names, check, build, then preview and look at the images. \
+create (a JSON spec, optionally from a close library icon's spec), edit the spec it names, check it offline, \
+draft (one engine call returns a review sheet as images, nothing stored), build, then preview and look at the images. \
 Revise and rebuild until the sheets look right. Never claim a visual review you did not do. \
-Prototype: an icon can instead be a JSON spec (create with spec: true); check it offline, then draft (one engine call returns a review sheet as images, nothing stored) before you build.";
+For what specs cannot express yet (continuous loaders), create with batch: true writes a JS batch instead.";
 
 /// The MCP settings entry that starts this server; `init` prints it for the user to add
 /// and never writes it.
@@ -585,14 +586,15 @@ fn tools() -> Vec<ToolSpec> {
             tool: tool(
                 "create",
                 "Create a local icon",
-                "Scaffold a new icon in the project's own icon set (gen-animated-icons/icons): a batch file to edit, definitions.mjs updated to import it, and a saved context packet. It draws nothing. With `from`, the batch starts from that library icon's source (a working drawing and motion to adapt; needs a library checkout); otherwise it is a commented template that fails `check` until you draw parts. Returns {id, files, context, references, nearest, next}: `references` are the icons the saved packet embeds, and `nearest` lists the closest library icons only when you chose no references (no `from` or `neighbors`). Edit the batch path in `next`, then call `check`.",
+                "Scaffold a new icon in the project's own icon set as a spec (gen-animated-icons/icons/<id>.icon.json: plain JSON shapes, roles, rigs and eased keys, no code), and save a context packet. With `from`, the spec is that library icon's (one reanimated as a spec, which `search` marks `spec: true` in a library checkout; needs a checkout): its parts, rigs, motion, state and reverse to adapt. Otherwise it is a starter that checks clean. Returns {id, label, format, spec, from, files, context, references, nearest, next}: `references` are the icons the saved packet embeds, and `nearest` lists the closest library icons only when you chose no references (no `from` or `neighbors`). Edit the spec, then call `check`, `draft` and `build`. With `batch`, it writes a v1 JS batch instead (gen-animated-icons/icons/batches/<id>.mjs, imported by definitions.mjs), for what specs cannot express yet; `from` then copies the library icon's set source.",
                 json!({
                     "id": { "type": "string", "pattern": ICON_ID_PATTERN, "description": "New kebab-case id; must not be a library id or a Windows device name (con, prn, aux, nul, com1 to com9, lpt1 to lpt9)" },
-                    "from": { "type": "string", "description": "Library icon to start from" },
+                    "from": { "type": "string", "description": "Library icon to start from: its spec, or with `batch` its set source" },
                     "label": { "type": "string", "description": "Display label (default: from the id)" },
                     "intent": { "type": "string", "description": "What the motion communicates" },
                     "neighbors": { "type": "array", "items": { "type": "string" }, "maxItems": 4, "description": "Reference icons for the saved context packet, as chosen with `context` (default: `from`, else the nearest by label and intent)" },
-                    "spec": { "type": "boolean", "description": "Prototype: write a spec v2 icon instead (gen-animated-icons/icons/<id>.icon.json: plain JSON shapes, roles, rigs and eased keys, no code), a starter that checks clean; `from` and `neighbors` do not apply. Then check, draft and build it." }
+                    "batch": { "type": "boolean", "description": "Write a v1 JS batch instead of a spec, for what specs cannot express yet: continuous loaders, parts resting at partial opacity, geometry that changes with the weight" },
+                    "spec": { "type": "boolean", "description": "A spec, the default; accepted so older calls still work" }
                 }),
                 &["id"],
                 annotations(false, false, false, true),
@@ -600,6 +602,7 @@ fn tools() -> Vec<ToolSpec> {
             argv: |args| {
                 let id = string(args, "id")?.ok_or("id is required")?;
                 let mut options = Vec::new();
+                push_flag(&mut options, "--batch", flag(args, "batch"));
                 push_flag(&mut options, "--spec", flag(args, "spec"));
                 push_value(&mut options, "--from", string(args, "from")?);
                 push_value(&mut options, "--label", string(args, "label")?);
@@ -644,7 +647,7 @@ fn tools() -> Vec<ToolSpec> {
             tool: tool(
                 "draft",
                 "Draft a spec v2 icon",
-                "Prototype, spec v2 icons only (gen-animated-icons/icons/<id>.icon.json). Validates the spec, then makes ONE hosted-engine call that builds every motion and renders a review sheet with the engine's renderer: rows are Light, then Strong in Regular, Bold, Solid and Duotone, then the reverses; columns are the beats of each motion (contacts, turns, holds, rest), labelled with their times. Nothing is exported or stored on the engine. Returns {status, sheets, rows, diagnostics, engine} plus the sheets as images (4x, and the real 24 px size enlarged): look at them before you build. A spec with errors stops before the engine (status FAIL, stage spec). Needs the user's sign-in (on NOT_LOGGED_IN ask them to run `gen-animated-icons login`) and the network. The engine's renderer is not the player: `build` ends with dotlottie-rs sheets.",
+                "Spec icons only (gen-animated-icons/icons/<id>.icon.json). Validates the spec, then makes ONE hosted-engine call that builds every motion and renders a review sheet with the engine's renderer: rows are Light, then Strong in Regular, Bold, Solid and Duotone, then the reverses; columns are the beats of each motion (contacts, turns, holds, rest), labelled with their times. Nothing is exported or stored on the engine. Returns {status, sheets, rows, diagnostics, engine} plus the sheets as images (4x, and the real 24 px size enlarged): look at them before you build. A spec with errors stops before the engine (status FAIL, stage spec). Needs the user's sign-in (on NOT_LOGGED_IN ask them to run `gen-animated-icons login`) and the network. The engine's renderer is not the player: `build` ends with dotlottie-rs sheets.",
                 json!({
                     "id": { "type": "string", "pattern": ICON_ID_PATTERN, "description": "A local spec v2 icon id" }
                 }),

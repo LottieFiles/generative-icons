@@ -86,7 +86,7 @@ fn a_local_icon_builds_to_the_library_bytes() {
     run(app, &["init"]).ok();
 
     let created =
-        run(app, &["create", LOCAL, "--from", REFERENCE, "--label", "Folder open", "--library-root", &repo_arg]).ok();
+        run(app, &["create", LOCAL, "--batch", "--from", REFERENCE, "--label", "Folder open", "--library-root", &repo_arg]).ok();
     assert_eq!(created["from"], json!({"id": REFERENCE, "set": SET}));
     assert_eq!(created["context"], format!(".gen-animated-icons/context/{LOCAL}.json"));
     assert_eq!(created["references"], json!([REFERENCE]));
@@ -105,8 +105,8 @@ fn a_local_icon_builds_to_the_library_bytes() {
     write(app, helper, "export const nudge = 0;\n");
     write(app, &batch_path, format!("import {{nudge}} from './shared/nudge.mjs';\n{batch}"));
     // A second create of the same id is refused; a library id collides.
-    run(app, &["create", LOCAL, "--library-root", &repo_arg]).fails(3, "EXISTS");
-    run(app, &["create", REFERENCE, "--library-root", &repo_arg]).fails(3, "ID_COLLISION");
+    run(app, &["create", LOCAL, "--batch", "--library-root", &repo_arg]).fails(3, "EXISTS");
+    run(app, &["create", REFERENCE, "--batch", "--library-root", &repo_arg]).fails(3, "ID_COLLISION");
 
     // The library set's identity, so composition names and meta.set match its assets.
     write(
@@ -314,7 +314,7 @@ fn a_local_icon_builds_to_the_library_bytes() {
     assert_eq!(sources(&bundle), expected);
 
     // Creating another icon rewrites definitions.mjs and adds a batch; this build stays current.
-    run(app, &["create", "zz-other", "--library-root", &repo_arg]).ok();
+    run(app, &["create", "zz-other", "--batch", "--library-root", &repo_arg]).ok();
     let check = run(app, &["check", "--native"]).ok();
     assert_eq!(check["checks"][0]["diagnostics"], json!([]), "{check}");
     assert_eq!((check["status"].as_str(), check.get("stale")), (Some("PASS"), None), "{check}");
@@ -408,7 +408,7 @@ fn builds_need_a_session_and_a_passing_source() {
     web_app(app);
     let library = fixture_library(&dir.path().join("library")).display().to_string();
     run(app, &["init"]).ok();
-    let created = run(app, &["create", "rocket-launch", "--intent", "A rocket lifts off.", "--library", &library]).ok();
+    let created = run(app, &["create", "rocket-launch", "--batch", "--intent", "A rocket lifts off.", "--library", &library]).ok();
     assert_eq!(created["from"], Value::Null);
     let batch = read(app, "gen-animated-icons/icons/batches/rocket-launch.mjs");
     assert!(
@@ -426,7 +426,7 @@ fn builds_need_a_session_and_a_passing_source() {
     write(app, "gen-animated-icons/library/drawing.mjs", "export const edited = true;\n");
     let check = run(app, &["check", "--source", "--library", &library]);
     assert_eq!(check.json()["checks"][0]["diagnostics"][0]["code"], "MODIFIED_FILE");
-    run(app, &["create", "second", "--library", &library]).fails(3, "MODIFIED_FILE");
+    run(app, &["create", "second", "--batch", "--library", &library]).fails(3, "MODIFIED_FILE");
     let build = run_with(app, &["build", "--library", &library], &[("GAI_ENGINE_TOKEN", "token")]);
     let error = build.fails(3, "MODIFIED_FILE");
     assert_eq!(
@@ -466,7 +466,7 @@ fn icons_built_before_a_failed_one_are_still_installed() {
     web_app(app);
     run(app, &["init"]).ok();
     for id in [LOCAL, "zz-folder"] {
-        run(app, &["create", id, "--from", REFERENCE, "--library-root", &repo_arg]).ok();
+        run(app, &["create", id, "--batch", "--from", REFERENCE, "--library-root", &repo_arg]).ok();
     }
     write(
         app,
@@ -498,7 +498,7 @@ fn create_saves_the_references_chosen_with_context() {
     let library = fixture_library(&dir.path().join("library")).display().to_string();
     run(app, &["init"]).ok();
     let created =
-        run(app, &["create", "alarm-nudge", "--neighbor", "menu", "--neighbor", "heart", "--library", &library]).ok();
+        run(app, &["create", "alarm-nudge", "--batch", "--neighbor", "menu", "--neighbor", "heart", "--library", &library]).ok();
     assert_eq!(created["context"], ".gen-animated-icons/context/alarm-nudge.json");
     let packet: Value = serde_json::from_str(&read(app, ".gen-animated-icons/context/alarm-nudge.json")).unwrap();
     let references: Vec<&str> =
@@ -507,13 +507,13 @@ fn create_saves_the_references_chosen_with_context() {
     // The output names the references chosen, not a lexical list that ignores them.
     assert_eq!(created["references"], json!(["menu", "heart"]));
     assert!(created.get("nearest").is_none(), "{created}");
-    let lexical = run(app, &["create", "bell-swing", "--intent", "The bell swings.", "--library", &library]).ok();
+    let lexical = run(app, &["create", "bell-swing", "--batch", "--intent", "The bell swings.", "--library", &library]).ok();
     let packet: Value = serde_json::from_str(&read(app, ".gen-animated-icons/context/bell-swing.json")).unwrap();
     let embedded: Vec<&Value> = packet["references"].as_array().unwrap().iter().map(|r| &r["id"]).collect();
     assert_eq!(lexical["references"], json!(embedded));
     assert_eq!(lexical["nearest"][0]["id"], packet["candidates"][0]["id"], "{lexical}");
     // An unknown reference stops create before anything is written.
-    let error = run(app, &["create", "other", "--neighbor", "no-such", "--library", &library]).fails(3, "UNKNOWN_ICON");
+    let error = run(app, &["create", "other", "--batch", "--neighbor", "no-such", "--library", &library]).fails(3, "UNKNOWN_ICON");
     assert!(error["hint"].as_str().unwrap().contains("--neighbor"), "{error}");
     assert!(!app.join("gen-animated-icons/icons/batches/other.mjs").exists());
 }
@@ -528,7 +528,7 @@ fn create_refuses_ids_submit_could_never_bundle() {
     run(app, &["init"]).ok();
     // Kebab-case, but Windows device names: submit refuses their files on every platform.
     for id in ["con", "aux", "nul", "prn", "com1", "lpt9"] {
-        let error = run(app, &["create", id, "--library", &library]).fails(2, "USAGE");
+        let error = run(app, &["create", id, "--batch", "--library", &library]).fails(2, "USAGE");
         assert_eq!(
             error["message"],
             format!(
@@ -539,5 +539,5 @@ fn create_refuses_ids_submit_could_never_bundle() {
         assert!(!app.join(format!("gen-animated-icons/icons/batches/{id}.mjs")).exists());
     }
     assert!(!app.join("gen-animated-icons/icons/definitions.mjs").exists());
-    run(app, &["create", "con-icon", "--library", &library]).ok();
+    run(app, &["create", "con-icon", "--batch", "--library", &library]).ok();
 }

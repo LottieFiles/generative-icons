@@ -6,7 +6,7 @@
 //! - `build <id>` makes ONE engine call that builds and exports every motion as one bundle,
 //!   then binds slots and themes, packs the `.lottie`, verifies it in dotlottie-rs, renders
 //!   the review sheets and installs it, as a v1 build does.
-//! - `create <id> --spec` writes a starter spec.
+//! - `create <id>` writes a spec: the starter, or a library icon's (`--from`).
 //!
 //! v1 icons (`batches/*.mjs`) are not touched: a command takes this path only when every icon
 //! it names has a spec.
@@ -250,7 +250,7 @@ pub fn draft(ctx: &Context, args: &DraftArgs) -> Result<Report> {
     let set = LocalSet::of(&config);
     let id = args.id.as_str();
     if !has_spec(root, &set, id)? {
-        let hint = if inside(root, &set.batch(id))?.is_file() { format!("{id} is a v1 icon; use gen-animated-icons preview after a build") } else { format!("Run gen-animated-icons create {id} --spec") };
+        let hint = if inside(root, &set.batch(id))?.is_file() { format!("{id} is a v1 icon; use gen-animated-icons preview after a build") } else { format!("Run gen-animated-icons create {id}") };
         return Err(CliError::new(ErrorCode::UnknownIcon, format!("No spec {}", spec_file(&set, id))).with_id(id).with_hint(hint));
     }
     let loaded = load(root, &set, id)?;
@@ -833,7 +833,7 @@ fn install<'a>(root: &Path, config: &Config, icons: impl Iterator<Item = (&'a st
     batch.plan(root, &lock.expected())?.apply()
 }
 
-/// The starter spec `create --spec` writes: a bell that swings on its hook, with a clapper
+/// The starter spec `create` writes: a bell that swings on its hook, with a clapper
 /// that lags behind, valid, lint-clean and buildable as written. Compact, one entry per line,
 /// like the reference examples, so an agent edits it in place.
 pub fn starter(id: &str, label: &str, intent: &str) -> String {
@@ -914,7 +914,7 @@ fn spec_from(source: &str, id: &str, label: &str, intent: Option<&str>) -> std::
     serde_json::to_string_pretty(&value).map(|t| t + "\n").map_err(|e| e.to_string())
 }
 
-/// `create <id> --spec`.
+/// `create <id>`: a spec, the starter or a library icon's (`--from`), and the context packet.
 pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     let root = ctx.cwd.as_path();
     let config = Config::require(root, ctx.platform)?;
@@ -933,6 +933,17 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
             return Err(CliError::new(ErrorCode::Exists, format!("{id} already exists: {existing}")).with_path(existing).with_id(id).with_hint(format!("Edit it, then run gen-animated-icons check {id}")));
         }
     }
+    let mut warnings = Vec::new();
+    let library = ctx.library().and_then(|library| Ok((library.catalog()?, library)));
+    match &library {
+        Ok((catalog, _)) if catalog.get(id).is_some() => {
+            return Err(CliError::new(ErrorCode::IdCollision, format!("{id} is already a library icon"))
+                .with_id(id)
+                .with_hint(format!("Install it with gen-animated-icons add {id}, or choose a distinct id")));
+        }
+        Ok(_) => {}
+        Err(error) => warnings.push(format!("Library unavailable, so {id} was not checked against library ids: {}", error.message)),
+    }
     let label = args.label.clone().unwrap_or_else(|| {
         let mut words: Vec<String> = id.split('-').map(str::to_string).collect();
         if let Some(first) = words.first_mut() {
@@ -946,21 +957,19 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
             (starter(id, &label, &intent), None)
         }
         Some(reference) => {
-            let library = ctx.library().ok();
-            let checkout = ctx.checkout()?.or_else(|| library.as_ref().and_then(|l| l.checkout().map(Path::to_path_buf))).ok_or_else(|| {
-                CliError::usage("--from with --spec copies a library icon's spec, which needs a library checkout")
+            let catalog = library.as_ref().ok().map(|(catalog, _)| catalog);
+            let checkout = ctx.checkout()?.or_else(|| library.as_ref().ok().and_then(|(_, l)| l.checkout().map(Path::to_path_buf))).ok_or_else(|| {
+                CliError::usage("--from copies a library icon's spec, which needs a library checkout")
                     .with_hint("Pass --library <checkout> (or --library-root <checkout>); the published library has no specs, so without a checkout leave out --from")
             })?;
             let specs = library_specs(&checkout);
-            let Some((set_id, path)) = specs.get(reference.as_str()) else {
-                let catalog = library.as_ref().and_then(|l| l.catalog().ok());
-                let known = catalog.as_ref().is_none_or(|c| c.get(reference).is_some());
-                if !known {
+            let Some((set_id, spec_path)) = specs.get(reference.as_str()) else {
+                if catalog.is_some_and(|c| c.get(reference).is_none()) {
                     return Err(CliError::new(ErrorCode::UnknownIcon, format!("Unknown library icon: {reference}")).with_id(reference));
                 }
-                let category = catalog.as_ref().and_then(|c| c.get(reference)).and_then(|i| i.category.clone());
+                let category = catalog.and_then(|c| c.get(reference)).and_then(|i| i.category.clone());
                 let mut near: Vec<&str> = catalog
-                    .iter()
+                    .into_iter()
                     .flat_map(|c| &c.icons)
                     .filter(|i| i.category.is_some() && i.category == category && specs.contains_key(i.id.as_str()))
                     .map(|i| i.id.as_str())
@@ -971,13 +980,17 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
                 }
                 return Err(CliError::new(ErrorCode::UnsupportedReference, format!("{reference} has no spec: it was not reanimated as one"))
                     .with_id(reference)
-                    .with_hint(format!("Start from an icon with a spec, such as {}, or leave out --from for the starter", near.join(", "))));
+                    .with_hint(format!(
+                        "Start from an icon with a spec, such as {}; leave out --from for the starter; or start a JS batch from its source with --batch --from {reference}",
+                        near.join(", ")
+                    )));
             };
-            let source = std::fs::read_to_string(path).map_err(|e| CliError::io("read", path, &e))?;
-            let text = spec_from(&source, id, &label, args.intent.as_deref()).map_err(|e| CliError::new(ErrorCode::InvalidCatalog, format!("{}: {e}", path.display())))?;
+            let source = std::fs::read_to_string(spec_path).map_err(|e| CliError::io("read", spec_path, &e))?;
+            let text = spec_from(&source, id, &label, args.intent.as_deref()).map_err(|e| CliError::new(ErrorCode::InvalidCatalog, format!("{}: {e}", spec_path.display())))?;
             (text, Some(json!({"id": reference, "set": set_id})))
         }
     };
+    let packet = super::create::make_packet(ctx, &label, args, &mut warnings)?;
     let mut batch = Batch::new();
     batch.write(path.clone(), text);
     let set_config = set.file("set-config.json");
@@ -986,19 +999,28 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     }
     let lock = Lock::load(root, config.layout)?;
     let changed = batch.plan(root, &lock.expected())?.apply()?;
-    let mut out = format!("Created {path} (spec v2).\n");
+    let saved = super::create::save_packet(root, id, packet, args)?;
+    let next = [format!("edit {path}"), format!("gen-animated-icons check {id}"), format!("gen-animated-icons draft {id}"), format!("gen-animated-icons build {id}"), format!("gen-animated-icons preview {id}")];
+    let mut out = format!("Created {id} in {path} (spec).\n");
     if let Some(from) = &from {
         let _ = writeln!(
             out,
-            "It starts from library icon {} (set {}): its parts, rigs, motion, state and reverse. Redraw what the new meaning needs, rename the state and labels if it has them, and keep the motion's craft: the event, the beats, the clearance and the endings.",
+            "It starts from library icon {} (set {}): its parts, rigs, motion, state and reverse. Redraw what the new meaning needs, rewrite the intent, rename the state and labels if it has them, and keep the motion's craft: the event, the beats, the clearance and the endings.",
             from["id"].as_str().unwrap_or_default(),
             from["set"].as_str().unwrap_or_default()
         );
     }
-    out.push_str(&format!("Next:\n  gen-animated-icons check {id}\n  gen-animated-icons draft {id}   # one engine call, a review sheet, nothing stored\n  gen-animated-icons build {id}\n"));
+    saved.describe(&mut out);
     text_list(&mut out, "Changed", &changed);
-    let value = json!({"id": id, "format": gai_spec::FORMAT, "spec": path, "from": from, "changed": changed, "next": [format!("gen-animated-icons check {id}"), format!("gen-animated-icons draft {id}"), format!("gen-animated-icons build {id}")]});
-    Ok(Report::new(value, out))
+    text_list(&mut out, "Next", &next);
+    let mut value = json!({
+        "id": id, "label": label, "format": gai_spec::FORMAT, "spec": path, "from": from, "files": changed,
+        "context": saved.path, "references": saved.references, "next": next,
+    });
+    if let (Some(nearest), Value::Object(map)) = (saved.nearest, &mut value) {
+        map.shift_insert(8, "nearest".into(), Value::Array(nearest));
+    }
+    Ok(Report { warnings, ..Report::new(value, out) })
 }
 
 #[cfg(test)]

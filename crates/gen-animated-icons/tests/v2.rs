@@ -55,12 +55,38 @@ fn create_spec_from_a_library_spec_keeps_its_craft() {
     let found = run(&app, &["search", "send", "--library-only", "--library-root", &root]).ok();
     assert_eq!(found.as_array().unwrap().iter().find(|r| r["id"] == "send").unwrap()["spec"], true);
     // A reanimated icon's set source is the motion its spec replaced: a JS batch refuses it.
-    let refused = run(&app, &["create", "paper-plane-2", "--from", "send", "--library-root", &root]).fails(3, "UNSUPPORTED_REFERENCE");
-    assert!(refused["hint"].as_str().unwrap().contains("create paper-plane-2 --spec --from send"), "{refused}");
+    let refused = run(&app, &["create", "paper-plane-2", "--batch", "--from", "send", "--library-root", &root]).fails(3, "UNSUPPORTED_REFERENCE");
+    assert!(refused["hint"].as_str().unwrap().contains("create paper-plane-2 --from send"), "{refused}");
     // An icon kept as it was has no spec; the hint names icons that have one.
     let none = run(&app, &["create", "spinner-2", "--spec", "--from", "rotate-tool", "--library-root", &root]).fails(3, "UNSUPPORTED_REFERENCE");
-    assert!(none["hint"].as_str().unwrap().starts_with("Start from an icon with a spec, such as "), "{none}");
+    let hint = none["hint"].as_str().unwrap();
+    assert!(hint.starts_with("Start from an icon with a spec, such as ") && hint.ends_with("--batch --from rotate-tool"), "{none}");
     run(&app, &["create", "x-2", "--spec", "--from", "no-such-icon", "--library-root", &root]).fails(3, "UNKNOWN_ICON");
+}
+
+#[test]
+fn create_writes_a_spec_by_default_with_a_context_packet() {
+    let (_dir, app) = app();
+    let root = repo_root().to_string_lossy().into_owned();
+    let created = run(&app, &["create", "alarm-nudge", "--neighbor", "menu", "--neighbor", "heart", "--library-root", &root]).ok();
+    assert_eq!((created["format"].as_str(), created["spec"].as_str()), (Some("gai-icon/2"), Some("gen-animated-icons/icons/alarm-nudge.icon.json")));
+    assert_eq!(created["context"], ".gen-animated-icons/context/alarm-nudge.json");
+    assert_eq!(created["references"], json!(["menu", "heart"]));
+    assert!(created.get("nearest").is_none());
+    assert!(app.join(".gen-animated-icons/context/alarm-nudge.json").is_file());
+    assert!(!app.join("gen-animated-icons/icons/batches/alarm-nudge.mjs").exists());
+    assert_eq!(run(&app, &["check", "alarm-nudge"]).ok()["status"], "PASS");
+    // A new session finds it as work in progress.
+    let info = run(&app, &["info", "--offline"]).ok();
+    let mine = info["local"]["icons"].as_array().unwrap().iter().find(|i| i["id"] == "alarm-nudge").unwrap().clone();
+    assert_eq!(mine, json!({"id": "alarm-nudge", "spec": "gen-animated-icons/icons/alarm-nudge.icon.json", "batch": null, "build": "not-built", "installed": false}));
+    // Without references, the closest library icons are listed.
+    let lexical = run(&app, &["create", "bell-swing", "--intent", "The bell swings.", "--library-root", &root]).ok();
+    assert!(!lexical["nearest"].as_array().unwrap().is_empty(), "{lexical}");
+    // A library id is taken, and --spec (the old opt-in) still works.
+    run(&app, &["create", "bell", "--library-root", &root]).fails(3, "ID_COLLISION");
+    assert_eq!(run(&app, &["create", "bell-twice", "--spec", "--library-root", &root]).ok()["format"], "gai-icon/2");
+    run(&app, &["create", "x-3", "--spec", "--batch"]).fails(2, "USAGE");
 }
 
 #[test]
@@ -169,17 +195,18 @@ fn local_builds(app: &Path) -> Vec<(String, String)> {
 #[test]
 fn info_calls_a_v2_build_current_until_its_spec_changes() {
     let (_dir, app) = built_app();
-    let current = vec![("alarm-clock".to_string(), "current".to_string())];
-    assert_eq!(local_builds(&app), current);
+    // The unbuilt bell-ring spec is listed too: work in progress a new session must find.
+    let builds = |alarm: &str| vec![("alarm-clock".to_string(), alarm.to_string()), ("bell-ring".to_string(), "not-built".to_string())];
+    assert_eq!(local_builds(&app), builds("current"));
     // Another spec is not this build's source.
     write(&app, "gen-animated-icons/icons/bell-ring.icon.json", read(&app, "gen-animated-icons/icons/bell-ring.icon.json") + "\n");
-    assert_eq!(local_builds(&app), current);
+    assert_eq!(local_builds(&app), builds("current"));
 
     let spec = read(&app, SPEC);
     write(&app, SPEC, spec.replacen("\"label\"", "\"label\" ", 1));
-    assert_eq!(local_builds(&app), [("alarm-clock".to_string(), "stale".to_string())]);
+    assert_eq!(local_builds(&app), builds("stale"));
     write(&app, SPEC, &spec);
-    assert_eq!(local_builds(&app), current);
+    assert_eq!(local_builds(&app), builds("current"));
 }
 
 #[test]

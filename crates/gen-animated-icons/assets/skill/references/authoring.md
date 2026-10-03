@@ -1,6 +1,6 @@
-# Author a local icon
+# Author a local icon as a JS batch
 
-A local icon is JavaScript source in `gen-animated-icons/icons/`, laid out like a library set (keep its files regular files: a symlinked source keeps the build `STALE_BUILD`, and `submit` refuses it):
+An icon is a spec by default ([authoring-v2.md](authoring-v2.md)). For what a spec cannot express yet, `create <id> --batch` makes it JavaScript source in `gen-animated-icons/icons/`, laid out like a library set (keep its files regular files: a symlinked source keeps the build `STALE_BUILD`, and `submit` refuses it):
 
 | File | What it is |
 | --- | --- |

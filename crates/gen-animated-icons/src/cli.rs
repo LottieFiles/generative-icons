@@ -84,7 +84,7 @@ pub enum Command {
     Logout,
     /// Show the engine account and check the session
     Whoami,
-    /// Scaffold a new local icon (optionally from a library icon's source)
+    /// Scaffold a new local icon as a spec (optionally from a library icon's spec)
     Create(CreateArgs),
     /// Print the reference packet an AI reads before drawing an icon
     Context(ContextArgs),
@@ -210,8 +210,8 @@ pub struct CreateArgs {
     /// New icon id, kebab-case, not a library id
     #[arg(value_name = "ID")]
     pub id: String,
-    /// Start from this library icon's source, or with --spec from its spec (an icon
-    /// reanimated as a spec). Needs a library checkout
+    /// Start from this library icon's spec (an icon reanimated as one; `search` marks them
+    /// in a checkout), or with --batch from its set's JS source. Needs a library checkout
     #[arg(long, value_name = "LIBRARY_ICON")]
     pub from: Option<String>,
     /// Display label [default: from the id]
@@ -224,8 +224,12 @@ pub struct CreateArgs {
     /// [default: the --from icon, else the nearest by label and intent]
     #[arg(long, value_name = "ID")]
     pub neighbor: Vec<String>,
-    /// Write a spec v2 icon (`icons/<ID>.icon.json`, plain JSON) instead of a JS batch
-    #[arg(long, conflicts_with = "neighbor")]
+    /// Write a v1 JS batch (`icons/batches/<ID>.mjs`) instead of a spec, for what specs
+    /// cannot express yet (continuous loaders, parts resting at partial opacity)
+    #[arg(long)]
+    pub batch: bool,
+    /// A spec icon (`icons/<ID>.icon.json`), the default; kept so older scripts still run
+    #[arg(long, hide = true, conflicts_with = "batch")]
     pub spec: bool,
 }
 

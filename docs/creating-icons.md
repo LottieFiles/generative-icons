@@ -1,6 +1,6 @@
 # Create an icon
 
-When the library has no icon for your meaning, your coding AI can create one in your own project with the `gen-animated-icons` CLI. You can also author the source yourself; the rules and checks are the same either way. The new icon is drawn with the family's authoring kit, exported as native Lottie, verified and installed beside the library icons you use.
+When the library has no icon for your meaning, your coding AI can create one in your own project with the `gen-animated-icons` CLI. You can also write it yourself; the rules and checks are the same either way. A new icon is a spec: a JSON file of shapes, roles, rigs and eased keys, which the hosted engine exports as native Lottie in one call. It is verified and installed beside the library icons you use.
 
 **You need a LottieFiles sign-in to build.** Export runs on LottieFiles' hosted engine. Run `gen-animated-icons login` once in your terminal; agents never sign in for you. The hosted engine is internal until launch, so building may not work for your account yet. Everything up to `build`, and `preview` of library icons, works without signing in.
 
@@ -10,7 +10,7 @@ When the library has no icon for your meaning, your coding AI can create one in 
 npx gen-animated-icons init
 ```
 
-`init` installs the agent skill (`.claude/skills/gen-animated-icons/` and `.agents/skills/gen-animated-icons/`) and a read-only copy of the authoring kit in `gen-animated-icons/library/`. Your icons' source lives in `gen-animated-icons/icons/`. The commands below assume `gen-animated-icons` is on your `PATH`; otherwise prefix them with `npx`.
+`init` installs the agent skill (`.claude/skills/gen-animated-icons/` and `.agents/skills/gen-animated-icons/`) and a read-only copy of the authoring kit in `gen-animated-icons/library/` (for JS batches). Your icons' specs live in `gen-animated-icons/icons/`. The commands below assume `gen-animated-icons` is on your `PATH`; otherwise prefix them with `npx`.
 
 ## 2. Search and choose references
 
@@ -30,26 +30,28 @@ Use these existing neighbors: [...].
 Preserve: [...]. Avoid: [...].
 Follow the gen-animated-icons skill. Draw editable named parts with pivots,
 and write distinct Light and Strong motion briefs before keyframing.
-Run check, build and preview; open every preview sheet and fix what you see.
+Run check and draft, then build and preview; open every sheet and fix what you see.
 Report any check you could not run.
 ```
 
-The installed skill carries the authoring kit API, the family rules and the review checklist, so the agent needs no access to this repository.
+The installed skill carries the spec format, the family rules, what the build's visual check fails and the review checklist, so the agent needs no access to this repository.
 
 ## 4. Author, check, build and review
 
 ```sh
 gen-animated-icons create return-box --label "Return box" --intent "The box slides back to the sender" --neighbor return-package
-# draw and animate in gen-animated-icons/icons/batches/return-box.mjs
-gen-animated-icons check return-box     # offline source checks
-gen-animated-icons build return-box     # hosted export, package, verify, preview sheets, install
+# edit gen-animated-icons/icons/return-box.icon.json
+gen-animated-icons check return-box     # offline, in milliseconds: structure, names, motion, lints
+gen-animated-icons draft return-box     # one engine call: a review sheet, nothing stored
+gen-animated-icons build return-box     # one engine call: export, package, verify, preview sheets, install
 gen-animated-icons preview return-box   # re-render the sheets after a change
 ```
 
-- `create --from <library-id>` starts from a library icon's working source instead of a template. It needs a checkout of this repository (`--library <checkout>`), because the hosted library carries no sources.
-- `check` samples every part at every frame, in both directions and at every outline weight, and runs the checks verification applies after export: holds after rest, gestures that end where they start, matching Light and Strong endpoints, and reverse actions that undo their action. Fix every error before building.
-- `build` runs the same source checks first and exports nothing while one fails. It installs only icons that verify, and writes preview sheets to `.gen-animated-icons/previews/<id>/`.
-- Look at every sheet: each style and weight, both themes, and Light against Strong at the same elapsed times. Name each flaw, fix it in the batch file, then check, build and preview again. Stop when a round finds nothing new or the same flaw repeats; report what remains.
+- `create --from <library-id>` starts from a library icon's spec instead of the starter: over 400 library icons are specs, and `search` marks them `"spec": true` in a checkout. It needs a checkout of this repository (`--library <checkout>`), because the hosted library carries no specs.
+- `check` validates, compiles and lints the spec offline, with a JSON Pointer and a hint for every finding: names, rest values, timing, paint past or near the canvas, parts too small at 24 px, details lost in Solid. Fix every error before drafting.
+- `draft` renders every motion on the engine without exporting; `build` exports, verifies every action in the player at every size, style, weight and theme, installs only icons that pass, and writes preview sheets to `.gen-animated-icons/previews/<id>/`.
+- Look at every sheet: each style and weight, both themes, and Light against Strong at the same elapsed times. Name each flaw, fix it in the spec, then check, draft, build and preview again. Stop when a round finds nothing new or the same flaw repeats; report what remains.
+- For what a spec cannot express yet (continuous loaders, parts resting at partial opacity), `create <id> --batch` writes a JavaScript batch drawn with the authoring kit instead.
 
 Review the silhouette, exposed surfaces, optical spacing and motion against the [drawing](design-principles.md) and [motion](motion-principles.md) principles. A passing check proves the file is valid, not that the icon is good.
 

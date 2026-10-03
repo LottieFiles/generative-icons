@@ -77,7 +77,7 @@ fn a_created_icon_that_is_not_built_says_how_to_build_it() {
     web_app(&app);
     let library = fixture_library(&dir.path().join("library")).display().to_string();
     run(&app, &["init"]).ok();
-    run(&app, &["create", "watering-can", "--library", &library]).ok();
+    run(&app, &["create", "watering-can", "--batch", "--library", &library]).ok();
     // No library is needed to say so.
     let error = run(&app, &["preview", "watering-can", "--offline"]).fails(3, "UNKNOWN_ICON");
     assert_eq!(error["message"], "watering-can is a local icon that is not built yet, so there is nothing to render");

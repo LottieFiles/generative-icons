@@ -47,14 +47,15 @@ iOS and Android apps play the installed `.lottie` files with dotLottie for iOS a
 
 ```sh
 gen-animated-icons context "mailbox: a letter drops in"   # family rules and the nearest references
-gen-animated-icons create mailbox --label "Mailbox"       # scaffold the icon's source in your project
-# the agent draws named parts and authors Light and Strong motion in gen-animated-icons/icons/batches/mailbox.mjs
-gen-animated-icons check mailbox                          # offline source checks
+gen-animated-icons create mailbox --label "Mailbox"       # scaffold the icon's spec in your project
+# the agent draws named parts and authors Light and Strong motion in gen-animated-icons/icons/mailbox.icon.json
+gen-animated-icons check mailbox                          # offline checks, in milliseconds
+gen-animated-icons draft mailbox                          # a review sheet from the engine, nothing stored
 gen-animated-icons build mailbox                          # export, package, verify, preview and install
 gen-animated-icons preview mailbox                        # contact sheets the agent opens and reviews
 ```
 
-**`build` needs a LottieFiles sign-in.** Native Lottie export runs on LottieFiles' hosted engine, so run `gen-animated-icons login` once in your terminal. `build` sends the icon's sampled shapes and motion to the engine; your app's code stays on your machine. The hosted engine is internal until launch, so building may not work for your account yet. Searching, installing, `check` and `preview` need no sign-in.
+**`draft` and `build` need a LottieFiles sign-in.** Native Lottie export runs on LottieFiles' hosted engine, so run `gen-animated-icons login` once in your terminal. `draft` and `build` send the icon's spec (its shapes and motion) to the engine; your app's code stays on your machine. The hosted engine is internal until launch, so building may not work for your account yet. Searching, installing, `check` and `preview` need no sign-in.
 
 Icons you create stay in your project. To offer one to the library, `gen-animated-icons submit <id>` sends the verified build for review. See [creating icons](docs/creating-icons.md).
 

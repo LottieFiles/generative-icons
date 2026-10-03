@@ -674,10 +674,10 @@ The [creating icons](https://github.com/LottieFiles/lottie-generative-icons/blob
 
 ## Reanimate a library icon with a spec
 
-A library icon can be replaced by a spec v2 icon of the same id. Author and build it in any project, then adopt the build into its set:
+A library icon can be replaced by a spec v2 icon of the same id. Author and build it in any project, then adopt the build into its set. `create` refuses library ids, so write the spec as `gen-animated-icons/icons/airplane.icon.json` yourself (start from `create airplane-draft`, or a reanimated icon's spec, and set its `id`):
 
 ```sh
-gen-animated-icons create airplane --spec          # in a scratch project: port the drawing, write the motion
+# in a scratch project: gen-animated-icons/icons/airplane.icon.json, the ported drawing and the new motion
 gen-animated-icons check airplane && gen-animated-icons draft airplane
 gen-animated-icons build airplane --no-install
 gen-animated-icons library adopt 14 path/to/project/.gen-animated-icons/build/airplane

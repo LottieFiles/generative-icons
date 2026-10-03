@@ -2,8 +2,8 @@
 //! project fields are `null`; only an invalid config or lock is an error.
 //!
 //! `localIcons` lists every local icon: installed, built or only created. `local` says
-//! for each where its batch is, whether its build is current, stale or missing, and
-//! whether it is installed, so a new session finds work in progress.
+//! for each where its spec (or v1 batch) is, whether its build is current, stale or
+//! missing, and whether it is installed, so a new session finds work in progress.
 
 use crate::Context;
 use crate::config::{Config, Layout};
@@ -114,9 +114,11 @@ pub fn run(ctx: &Context) -> Result<Report> {
     Ok(Report { warnings, ..Report::new(value, text) })
 }
 
-/// One local icon: its batch, its build's state and whether it is installed.
+/// One local icon: its spec or batch, its build's state and whether it is installed.
 struct LocalIcon {
     id: String,
+    /// Project-relative spec file, when it exists.
+    spec: Option<String>,
     /// Project-relative batch file, when it exists.
     batch: Option<String>,
     /// `current`, `stale` or `not-built`.
@@ -126,7 +128,7 @@ struct LocalIcon {
 
 impl LocalIcon {
     fn to_json(&self) -> Value {
-        json!({ "id": self.id, "batch": self.batch, "build": self.build, "installed": self.installed })
+        json!({ "id": self.id, "spec": self.spec, "batch": self.batch, "build": self.build, "installed": self.installed })
     }
 
     /// `id (not built)`, `id (stale build, installed)`, …
@@ -144,7 +146,7 @@ impl LocalIcon {
     }
 }
 
-/// Every local icon of the project, by id: those with a batch, a build or an install.
+/// Every local icon of the project, by id: those with a spec, a batch, a build or an install.
 fn local_icons(
     root: &std::path::Path,
     set: &LocalSet,
@@ -157,9 +159,18 @@ fn local_icons(
         unreadable(error);
         Vec::new()
     });
+    let specs = super::v2::spec_ids(root, set).unwrap_or_else(|error| {
+        unreadable(error);
+        Vec::new()
+    });
     let built = crate::commands::check::built_ids(root).unwrap_or_default();
-    let mut ids: Vec<String> =
-        batches.iter().chain(&built).cloned().chain(installed.iter().map(|id| id.to_string())).collect();
+    let mut ids: Vec<String> = specs
+        .iter()
+        .chain(&batches)
+        .chain(&built)
+        .cloned()
+        .chain(installed.iter().map(|id| id.to_string()))
+        .collect();
     ids.sort();
     ids.dedup();
     let icons_dir = set.icons_dir(root).map_err(&mut unreadable).ok();
@@ -178,7 +189,8 @@ fn local_icons(
             };
             let batch = set.batch(&id);
             let batch = inside(root, &batch).is_ok_and(|path| path.is_file()).then_some(batch);
-            LocalIcon { installed: installed.contains(&id.as_str()), id, batch, build }
+            let spec = specs.contains(&id).then(|| super::v2::spec_file(set, &id));
+            LocalIcon { installed: installed.contains(&id.as_str()), id, spec, batch, build }
         })
         .collect()
 }

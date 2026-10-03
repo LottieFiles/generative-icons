@@ -32,7 +32,7 @@ const DESIGN_REVIEW: &str = "# Design and review record\n\nRecord meaning, refer
 
 /// Runs `create`.
 pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
-    if args.spec {
+    if !args.batch {
         return super::v2::create(ctx, args);
     }
     let root = ctx.cwd.as_path();
@@ -88,7 +88,7 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
                     format!("{reference} was reanimated as a spec; its set source is the motion the spec replaced"),
                 )
                 .with_id(reference)
-                .with_hint(format!("Start from its spec: gen-animated-icons create {id} --spec --from {reference}")));
+                .with_hint(format!("Start from its spec: gen-animated-icons create {id} --from {reference}")));
             }
             let copy = reference_copy(&checkout, reference).map_err(|error| match &library {
                 Ok((catalog, _)) if error.code == ErrorCode::UnsupportedReference => {
@@ -153,47 +153,10 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     }
     batch.write(next.path, next.to_bytes());
 
-    // The packet is made before anything is written, so an unknown --neighbor stops create.
-    let context_path = format!("{CONTEXT_DIR}/{id}.json");
-    let query = nearest_query(&label, args.intent.as_deref());
-    let neighbors: Vec<String> = args.from.iter().chain(&args.neighbor).cloned().collect();
-    let packet = match context::packet(
-        ctx,
-        &query,
-        &super::unique(&neighbors).into_iter().map(str::to_string).collect::<Vec<_>>(),
-    ) {
-        Ok(packet) => Some(packet),
-        Err(error) if !args.neighbor.is_empty() && matches!(error.code, ErrorCode::UnknownIcon | ErrorCode::Usage) => {
-            return Err(
-                error.with_hint("Choose up to four --neighbor ids from gen-animated-icons search or context --search")
-            );
-        }
-        Err(error) => {
-            warnings.push(format!("No context packet was saved: {}", error.message));
-            None
-        }
-    };
+    let packet = make_packet(ctx, &label, args, &mut warnings)?;
     let changed = batch.plan(root, &lock.expected())?.apply()?;
-    let context = match packet {
-        Some(packet) => {
-            let text = gai_core::to_js_json_pretty(&packet, 2) + "\n";
-            write_inside(root, &context_path, text.as_bytes())?;
-            Some((context_path, packet))
-        }
-        None => None,
-    };
-    // The references the packet embeds; the closest candidates only when they chose them.
-    let packet = context.as_ref().map(|(_, packet)| packet);
-    let references: Vec<Value> = packet
-        .and_then(|packet| packet.get("references").and_then(Value::as_array))
-        .map(|references| references.iter().filter_map(|reference| reference.get("id").cloned()).collect())
-        .unwrap_or_default();
-    let nearest: Option<Vec<Value>> = neighbors.is_empty().then(|| {
-        packet
-            .and_then(|packet| packet.get("candidates").and_then(Value::as_array))
-            .map(|candidates| candidates.iter().take(3).cloned().collect())
-            .unwrap_or_default()
-    });
+    let saved = save_packet(root, id, packet, args)?;
+    let (context, references, nearest) = (&saved.path, saved.references.clone(), saved.nearest.clone());
     next_steps.extend([
         format!("edit {batch_path}"),
         format!("gen-animated-icons check {id}"),
@@ -205,7 +168,7 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
         "label": label,
         "from": from,
         "files": changed,
-        "context": context.as_ref().map(|(path, _)| path),
+        "context": context,
         "references": references,
         "next": next_steps,
     });
@@ -218,14 +181,69 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
         let _ =
             writeln!(text, "It starts from library icon {reference}; its set source sits beside it as _*.mjs files.");
     }
-    if let Some((path, _)) = &context {
-        let ids: Vec<&str> = references.iter().filter_map(Value::as_str).collect();
-        let listed = if ids.is_empty() { String::new() } else { format!(" (references: {})", ids.join(", ")) };
-        let _ = writeln!(text, "Context packet: {path}{listed}");
-    }
+    saved.describe(&mut text);
     text_list(&mut text, "Changed", &changed);
     text_list(&mut text, "Next", &next_steps);
     Ok(Report { warnings, ..Report::new(value, text) })
+}
+
+/// The context packet `create` saves for a new icon: made before anything is written, so
+/// an unknown `--neighbor` stops create, and `None` (with a warning) when the library
+/// cannot be read.
+pub(super) fn make_packet(ctx: &Context, label: &str, args: &CreateArgs, warnings: &mut Vec<String>) -> Result<Option<Value>> {
+    let query = nearest_query(label, args.intent.as_deref());
+    let neighbors: Vec<String> = args.from.iter().chain(&args.neighbor).cloned().collect();
+    match context::packet(ctx, &query, &super::unique(&neighbors).into_iter().map(str::to_string).collect::<Vec<_>>()) {
+        Ok(packet) => Ok(Some(packet)),
+        Err(error) if !args.neighbor.is_empty() && matches!(error.code, ErrorCode::UnknownIcon | ErrorCode::Usage) => {
+            Err(error.with_hint("Choose up to four --neighbor ids from gen-animated-icons search or context --search"))
+        }
+        Err(error) => {
+            warnings.push(format!("No context packet was saved: {}", error.message));
+            Ok(None)
+        }
+    }
+}
+
+/// A saved context packet: its path, the references it embeds, and the closest library
+/// icons only when no reference was chosen (no `--from` or `--neighbor`).
+pub(super) struct SavedPacket {
+    pub path: Option<String>,
+    pub references: Vec<Value>,
+    pub nearest: Option<Vec<Value>>,
+}
+
+impl SavedPacket {
+    pub(super) fn describe(&self, text: &mut String) {
+        if let Some(path) = &self.path {
+            let ids: Vec<&str> = self.references.iter().filter_map(Value::as_str).collect();
+            let listed = if ids.is_empty() { String::new() } else { format!(" (references: {})", ids.join(", ")) };
+            let _ = writeln!(text, "Context packet: {path}{listed}");
+        }
+    }
+}
+
+/// Writes the packet to `.gen-animated-icons/context/<id>.json`.
+pub(super) fn save_packet(root: &Path, id: &str, packet: Option<Value>, args: &CreateArgs) -> Result<SavedPacket> {
+    let chose = args.from.is_some() || !args.neighbor.is_empty();
+    let path = format!("{CONTEXT_DIR}/{id}.json");
+    if let Some(packet) = &packet {
+        let text = gai_core::to_js_json_pretty(packet, 2) + "\n";
+        write_inside(root, &path, text.as_bytes())?;
+    }
+    let references: Vec<Value> = packet
+        .as_ref()
+        .and_then(|packet| packet.get("references").and_then(Value::as_array))
+        .map(|references| references.iter().filter_map(|reference| reference.get("id").cloned()).collect())
+        .unwrap_or_default();
+    let nearest: Option<Vec<Value>> = (!chose).then(|| {
+        packet
+            .as_ref()
+            .and_then(|packet| packet.get("candidates").and_then(Value::as_array))
+            .map(|candidates| candidates.iter().take(3).cloned().collect())
+            .unwrap_or_default()
+    });
+    Ok(SavedPacket { path: packet.is_some().then_some(path), references, nearest })
 }
 
 /// `payment-sent` → `Payment sent`.

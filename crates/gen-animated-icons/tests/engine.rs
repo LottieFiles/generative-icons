@@ -105,7 +105,7 @@ fn offline_builds_refuse_before_any_export() {
     web_app(app);
     let library = fixture_library(&dir.path().join("library")).display().to_string();
     run(app, &["init"]).ok();
-    run(app, &["create", "rocket-launch", "--library", &library]).ok();
+    run(app, &["create", "rocket-launch", "--batch", "--library", &library]).ok();
     let listener = std::net::TcpListener::bind("127.0.0.1:0").unwrap();
     listener.set_nonblocking(true).unwrap();
     let url = format!("http://{}/mcp", listener.local_addr().unwrap());
@@ -203,7 +203,7 @@ fn live_build_through_the_hosted_engine() {
         serde_json::from_slice::<serde_json::Value>(&output.stdout).unwrap()
     };
     live(&["init"]);
-    live(&["create", "live-folder", "--from", "folder-open"]);
+    live(&["create", "live-folder", "--batch", "--from", "folder-open"]);
     let started = std::time::Instant::now();
     let built = live(&["build", "live-folder"]);
     eprintln!("hosted build of 4 actions: {:.1} s", started.elapsed().as_secs_f64());

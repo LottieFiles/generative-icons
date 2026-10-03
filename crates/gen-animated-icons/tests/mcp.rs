@@ -198,7 +198,7 @@ fn a_call_stuck_in_icon_code_leaves_the_server_answering() {
     web_app(&app);
     let library = fixture_library(&dir.path().join("library")).display().to_string();
     run(&app, &["init"]).ok();
-    run(&app, &["create", "spin", "--library", &library]).ok();
+    run(&app, &["create", "spin", "--batch", "--library", &library]).ok();
     write(&app, "gen-animated-icons/icons/batches/spin.mjs", SPIN);
     let mut session = Session::start(&app, &library);
     session.initialize();
@@ -246,7 +246,7 @@ fn arguments_outside_a_tools_schema_are_refused() {
     let library = fixture_library(&dir.path().join("library")).display().to_string();
     run(&app, &["init"]).ok();
     for id in ["mailbox", "plant-sprout"] {
-        run(&app, &["create", id, "--library", &library]).ok();
+        run(&app, &["create", id, "--batch", "--library", &library]).ok();
     }
     let mut session = Session::start(&app, &library);
     session.initialize();
@@ -337,7 +337,7 @@ fn an_offline_server_never_builds() {
     web_app(&app);
     let library = fixture_library(&dir.path().join("library")).display().to_string();
     run(&app, &["init"]).ok();
-    run(&app, &["create", "rocket-launch", "--library", &library]).ok();
+    run(&app, &["create", "rocket-launch", "--batch", "--library", &library]).ok();
     let listener = std::net::TcpListener::bind("127.0.0.1:0").unwrap();
     listener.set_nonblocking(true).unwrap();
     let url = format!("http://{}/mcp", listener.local_addr().unwrap());

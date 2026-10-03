@@ -39,7 +39,7 @@ gai-build::post_export ─► assets, themes, manifests ─► gai-build::record
        gai-check (preflight, verify, paint, contracts)   gai-render (dotlottie-rs: visual checks, sheets)
 ```
 
-### Spec v2 (prototype)
+### Spec v2
 
 ```
 icons/<id>.icon.json ─► gai-spec: parse + names + motion + lints (offline, ms) ─► plan (gai-plan/1)
@@ -48,7 +48,7 @@ icons/<id>.icon.json ─► gai-spec: parse + names + motion + lints (offline, m
       gai-build::post_export_v2 (slots by paint name, themes, markers) ─► gai-package .lottie ─► verify ─► install
 ```
 
-v1 code paths are unchanged; `check`, `draft`, `build`, `submit` and `create --spec` take the v2 path only for icons with a spec (`check` without ids checks every spec as well), and the MCP server adds a `draft` tool that returns the sheets as images. A draft or build reports its engine round trip split at the script's own `startedAt` (`engine.phases`: before, in and after the script). Authoring reference: `gen-animated-icons/assets/skill/references/authoring-v2.md`. A build's verification includes the library's renderer checks (`gai-render::verify_action` at every size, style, weight and theme).
+v1 code paths are unchanged; `create` writes a spec unless given `--batch`; `check`, `draft`, `build` and `submit` take the v2 path only for icons with a spec (`check` without ids checks every spec as well), and the MCP server adds a `draft` tool that returns the sheets as images. A draft or build reports its engine round trip split at the script's own `startedAt` (`engine.phases`: before, in and after the script). Authoring reference: `gen-animated-icons/assets/skill/references/authoring-v2.md`. A build's verification includes the library's renderer checks (`gai-render::verify_action` at every size, style, weight and theme).
 
 Library icons can be replaced by specs: `library adopt <set> <build>…` copies a build's spec to the set's `specs/<id>.icon.json` and its actions into the assets, replaces the `set.json` entry (records with `source: "gai-icon/2"`) and repackages. `library build` keeps adopted icons as they are (`gai-build` splices their committed entries back), and `library verify` runs the legacy stages without them and checks them against their spec (`gai-check::verify::adopted`).
 
@@ -63,7 +63,7 @@ Library icons can be replaced by specs: `library adopt <set> <build>…` copies 
 | `gai-check` | Preflight, set verification (generic checks plus rule data in `rules/`), paint contract, geometry contracts, motion measurement |
 | `gai-render` | dotlottie-rs rendering, the visual checks that replace `verify.html`, review sheets |
 | `gai-engine` | Hosted Creator MCP client: OAuth sign-in, token storage, export, downloads, native normalization; `PlanRunner` for spec v2 (one call per icon, draft images, bundle split) |
-| `gai-spec` | Icon spec v2 (`gai-icon/2`, prototype): JSON validation with pointer diagnostics, the compiler to a plan (`gai-plan/1`), lints, and the engine script `assets/build-v2.js` |
+| `gai-spec` | Icon spec v2 (`gai-icon/2`): JSON validation with pointer diagnostics, the compiler to a plan (`gai-plan/1`), lints, and the engine script `assets/build-v2.js` |
 | `gen-animated-icons` | The CLI: app commands, `library` maintainer commands, the `mcp` server, and the agent skill it installs (`assets/skill/`, the one source of that skill) |
 
 ## Build

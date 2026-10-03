@@ -1,10 +1,10 @@
-# Author an icon as a spec (v2, prototype)
+# Author an icon as a spec
 
-A v2 icon is one JSON file, `gen-animated-icons/icons/<id>.icon.json`, with `"format": "gai-icon/2"`. It is data: shapes, roles, rigs and eased keys. Nothing in it is a function of time, so there is no pose math to write and no SVG to hand-build. The hosted engine builds every motion from it in one call: native shapes, rigs chained by layer parenting, eased keys, masks, mattes, trims and markers. v1 icons (`batches/*.mjs`) keep working; a command takes the v2 path only when every icon it names has a spec.
+A v2 icon is one JSON file, `gen-animated-icons/icons/<id>.icon.json`, with `"format": "gai-icon/2"`. It is data: shapes, roles, rigs and eased keys. Nothing in it is a function of time, so there is no pose math to write and no SVG to hand-build. The hosted engine builds every motion from it in one call: native shapes, rigs chained by layer parenting, eased keys, masks, mattes, trims and markers. `create` writes one by default. v1 JS batches (`create <id> --batch`, `batches/*.mjs`) keep working for what a spec cannot express yet (the last section); a command takes the spec path only when every icon it names has a spec.
 
 ```sh
-gen-animated-icons create <id> --spec      # a starter spec that checks clean
-gen-animated-icons create <id> --spec --from <library-id>   # start from a library icon's spec
+gen-animated-icons create <id>            # a starter spec that checks clean
+gen-animated-icons create <id> --from <library-id>   # start from a library icon's spec
 gen-animated-icons check <id>              # offline: structure, names, motion, lints (milliseconds)
 gen-animated-icons draft <id>              # one engine call: a review sheet, nothing stored
 gen-animated-icons build <id>              # one engine call: export, slots, themes, .lottie, verify, install
@@ -12,7 +12,7 @@ gen-animated-icons build <id>              # one engine call: export, slots, the
 
 Fix every `check` error before you draft. A draft is about 4 s and stores nothing, so draft after each change you cannot judge from the numbers; build once the draft looks right. `check` and `draft` never need a build first.
 
-Over 400 library icons are specs that passed every check below. When one is close to what you need (the same object, or the same kind of event), start from it: `create <id> --spec --from <library-id>` copies its parts, rigs, motion, state and reverse under your id. In a library checkout, `search` marks those icons `"spec": true`. Redraw what the new meaning needs, rewrite the intent, rename the state and labels, and keep the craft: the event, the beats, the clearance and the endings.
+Over 400 library icons are specs that passed every check below. When one is close to what you need (the same object, or the same kind of event), start from it: `create <id> --from <library-id>` copies its parts, rigs, motion, state and reverse under your id. In a library checkout, `search` marks those icons `"spec": true`. Redraw what the new meaning needs, rewrite the intent, rename the state and labels, and keep the craft: the event, the beats, the clearance and the endings.
 
 ## Conventions
 
@@ -173,7 +173,7 @@ Timing is derived: the action ends at the motion's last key, and rest comes one 
 | `CANVAS_MARGIN` | error / warning | Paint past the canvas in any of 145 frames per motion / within 1.4 of the edge at Bold while at least 30% opaque, where `build`'s visual check would see it on the outer pixel at 24 px |
 | `SMALL_AT_24`, `LIGHT_STRONG`, `TRAILING_HOLD`, `LIVE_ANCHOR` | warning | Under 3 px at 24 px (a part hidden at rest: under 2 px); Strong not stronger than Light; a last key that only stretches the action; an anchor resolved at rest |
 | `SOLID_HIDDEN`, `HOLE_OUTSIDE`, `MORPH_KNOCKOUT` | warning | A part drawn inside another part's Solid fill, which vanishes in Solid; a hole or knockout that misses its surface at rest; a morphing knockout cut at its rest shape |
-| `NOT_IMPLEMENTED` | error | A term of the format this prototype cannot build yet (below) |
+| `NOT_IMPLEMENTED` | error | A term of the format that cannot be built yet (below) |
 
 With MCP, the `draft` tool returns the same sheets as images. `draft` writes `.gen-animated-icons/drafts/<id>.png` (rows: Light, then Strong in Regular, Bold, Solid and Duotone, then the reverses; columns: the beats of each motion) and `<id>-24px.png` (the real size, enlarged). The engine's renderer is not the player: `build` ends with dotlottie-rs sheets of every style and both themes in `.gen-animated-icons/previews/<id>/`. Look at both. Solid cut-outs made by a matte (a knockout that moves, draws on or fades) are where they differ: the draft can leave a drawn-on cut-out out entirely or show a matte beside a mask as a different shape. Judge Solid cut-outs on the build's sheets; `build <id> --no-install` renders them without installing.
 
@@ -189,6 +189,6 @@ With MCP, the `draft` tool returns the same sheets as images. `draft` writes `.g
 | Insufficient animation states | Too few distinct frames for the action's length (half its frames, 6 to 16) | Ease keys instead of `step`-only motion; a typing caret slides each stroke in 40–50 ms |
 | Hold is not still | Something moves after rest | No key after the action ends |
 
-## Not in this prototype
+## Not in the format yet
 
-`swing`, `flip`, `minus`, a keyed wave `phase` and connectors (anchors that follow another rig) stop with `NOT_IMPLEMENTED`. Also not supported yet: `scale` or `squash` on a rig that carries rigs, two path-changing tracks on one shape, a negative Solid `grow`, and one pulse per track and motion. Parts that collapse are not hidden automatically: key their `opacity`. Clearance and counter-width lints are not run yet, so check counters at Bold in the draft. Continuous loaders (motion through the whole 2.4 s, trim start or offset) are not in the format yet: keep them in v1. A part rests at full opacity or hidden, never in between (a 24% band of a ramp cannot be drawn yet). Geometry cannot change with the outline weight (a dot whose radius is the weight). Several cut-outs moving on different rigs in one Solid surface cannot all follow (`KNOCKOUT_RIGS`): one surface has one matte.
+`swing`, `flip`, `minus`, a keyed wave `phase` and connectors (anchors that follow another rig) stop with `NOT_IMPLEMENTED`. Also not supported yet: `scale` or `squash` on a rig that carries rigs, two path-changing tracks on one shape, a negative Solid `grow`, and one pulse per track and motion. Parts that collapse are not hidden automatically: key their `opacity`. Clearance and counter-width lints are not run yet, so check counters at Bold in the draft. Continuous loaders (motion through the whole 2.4 s, trim start or offset) are not in the format yet. A part rests at full opacity or hidden, never in between (a 24% band of a ramp cannot be drawn yet). Geometry cannot change with the outline weight (a dot whose radius is the weight). Several cut-outs moving on different rigs in one Solid surface cannot all follow (`KNOCKOUT_RIGS`): one surface has one matte. For an icon that needs one of these, write a JS batch: `create <id> --batch`.
