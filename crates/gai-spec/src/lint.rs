@@ -13,10 +13,17 @@ use std::collections::HashMap;
 
 /// Frames per motion: 0 to 144 at 60 fps.
 pub const FRAMES: usize = 145;
-/// Painted outlines closer than this to the canvas edge warn.
-pub const MARGIN: f64 = 0.5;
+/// Painted outlines closer than this to the canvas edge warn: at 24 px the outer pixel is
+/// 1.33 units wide, and ink on it fails the build's visual check ("Clipped icon").
+pub const MARGIN: f64 = 1.4;
+/// Opacity under which a part's edge cannot reach the visual check's visibility threshold
+/// on the outer pixel, so `CANVAS_MARGIN` does not warn about it.
+pub const FAINT: f64 = 0.3;
 /// Parts whose painted box at Regular is under this many pixels at 24 px warn.
 pub const SMALL_PX: f64 = 3.0;
+/// Parts hidden at rest are seen in motion, as a flick: under this many pixels at 24 px
+/// they read as a speck.
+pub const SPECK_PX: f64 = 2.0;
 
 /// `x' = a·x + c·y + e`, `y' = b·x + d·y + f`.
 #[derive(Debug, Clone, Copy)]
@@ -236,17 +243,26 @@ fn part_path(c: &Compiled, part: &str) -> String {
 
 fn canvas(c: &Compiled, d: &mut Diagnostics) {
     for (mi, m) in c.plan.motions.iter().enumerate() {
-        // part -> (overflow, time); positive overflow is paint past the edge.
+        // part -> (overflow, time); positive overflow is paint past the edge. `near` counts
+        // only frames where the part is at least FAINT opaque: a fading edge near the canvas
+        // stays under the visual check's visibility threshold.
         let mut worst: HashMap<String, (f64, f64)> = HashMap::new();
+        let mut near: HashMap<String, (f64, f64)> = HashMap::new();
         for f in 0..FRAMES {
             let t = f as f64 / 60.0;
             let frame = Frame::new(&c.plan, mi, t);
             for layer in &c.plan.layers {
                 let Some(b) = frame.painted(layer) else { continue };
                 let over = [-b.x0, -b.y0, b.x1 - 32.0, b.y1 - 32.0].into_iter().fold(f64::MIN, f64::max);
-                let entry = worst.entry(layer.part.clone()).or_insert((f64::MIN, 0.0));
-                if over > entry.0 {
-                    *entry = (over, t);
+                let keep = |map: &mut HashMap<String, (f64, f64)>| {
+                    let entry = map.entry(layer.part.clone()).or_insert((f64::MIN, 0.0));
+                    if over > entry.0 {
+                        *entry = (over, t);
+                    }
+                };
+                keep(&mut worst);
+                if frame.opacity(layer) >= FAINT {
+                    keep(&mut near);
                 }
             }
         }
@@ -259,10 +275,10 @@ fn canvas(c: &Compiled, d: &mut Diagnostics) {
                     Diagnostic::error("CANVAS_MARGIN", path, format!("{part}'s paint leaves the 32-unit canvas by {:.2} at {:.3} s in {}", over, t, m.name))
                         .hint("move it in, or hide it while it is outside (opacity)"),
                 );
-            } else if over > -MARGIN {
+            } else if let Some(&(over, t)) = near.get(part.as_str()).filter(|(over, _)| *over > -MARGIN) {
                 d.push(
                     Diagnostic::warning("CANVAS_MARGIN", path, format!("{part}'s paint comes within {:.2} of the canvas edge at {:.3} s in {}", -over, t, m.name))
-                        .hint(format!("keep painted outlines {MARGIN} clear of the edge at Bold 2.5")),
+                        .hint(format!("keep paint {MARGIN} clear of the edge at Bold 2.5 in every frame, travel and overshoot included: at 24 px, ink on the outer pixel fails build's visual check (\"Clipped icon\")")),
                 );
             }
         }
@@ -274,13 +290,18 @@ fn small(c: &Compiled, d: &mut Diagnostics) {
         return;
     }
     let frame = Frame::new(&c.plan, 0, 0.0);
+    // Parts hidden at rest (sparks, drops, arcs) are measured as drawn: a transient that small
+    // reads as a speck when it shows.
     for layer in c.plan.layers.iter().filter(|l| l.style == Some("outline.regular")) {
-        if layer.opacity == Some(0.0) {
-            continue;
-        }
-        let Some(b) = frame.painted(layer) else { continue };
+        let transient = layer.opacity == Some(0.0);
+        let Some(b) = frame.painted(&Layer { opacity: None, vis: None, ..layer.clone() }) else { continue };
         let size = b.w().max(b.h()) * 24.0 / 32.0;
-        if size < SMALL_PX {
+        if transient && size < SPECK_PX {
+            d.push(
+                Diagnostic::warning("SMALL_AT_24", part_path(c, &layer.part), format!("{} is {:.1} px across at 24 px when it shows", layer.part, size))
+                    .hint(format!("a part hidden at rest under {SPECK_PX} px reads as a speck; make the spark, drop or arc bigger, or show the cause another way")),
+            );
+        } else if !transient && size < SMALL_PX {
             d.push(
                 Diagnostic::warning("SMALL_AT_24", part_path(c, &layer.part), format!("{} is {:.1} px across at 24 px", layer.part, size))
                     .hint(format!("parts under {SMALL_PX} px read as noise at real size; make it bigger or merge it")),

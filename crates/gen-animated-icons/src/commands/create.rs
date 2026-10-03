@@ -81,6 +81,15 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
                 CliError::usage("--from copies a library icon's source, which needs a library checkout")
                     .with_hint("Pass --library <checkout> (or --library-root <checkout>); the published library has no sources, so without a checkout leave out --from")
             })?;
+            // A reanimated icon's set source is the motion its spec replaced.
+            if super::v2::library_specs(&checkout).contains_key(reference.as_str()) {
+                return Err(CliError::new(
+                    ErrorCode::UnsupportedReference,
+                    format!("{reference} was reanimated as a spec; its set source is the motion the spec replaced"),
+                )
+                .with_id(reference)
+                .with_hint(format!("Start from its spec: gen-animated-icons create {id} --spec --from {reference}")));
+            }
             let copy = reference_copy(&checkout, reference).map_err(|error| match &library {
                 Ok((catalog, _)) if error.code == ErrorCode::UnsupportedReference => {
                     let others = eligible_references(catalog, reference);

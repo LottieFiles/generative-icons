@@ -95,8 +95,13 @@ pub fn run(ctx: &Context, args: &SearchArgs) -> Result<Report> {
     }
     let mut warnings = Vec::new();
     let mut entries = Vec::new();
+    // In a checkout, icons reanimated as specs say so: `create --spec --from` starts from one.
+    let mut specs = std::collections::BTreeMap::new();
     if !args.local_only {
         let library = ctx.library()?;
+        if let Some(checkout) = library.checkout() {
+            specs = super::v2::library_specs(checkout);
+        }
         let catalog = library.catalog()?;
         let index = library.search_index(&catalog)?;
         entries.extend(catalog.icons.into_iter().map(|icon| Entry {
@@ -124,7 +129,18 @@ pub fn run(ctx: &Context, args: &SearchArgs) -> Result<Report> {
         }
     };
 
-    let value = Value::Array(hits.iter().map(|(index, score)| entries[*index].to_json(score.as_ref())).collect());
+    let value = Value::Array(
+        hits.iter()
+            .map(|(index, score)| {
+                let entry = &entries[*index];
+                let mut item = entry.to_json(score.as_ref());
+                if entry.origin == "library" && specs.contains_key(entry.id.as_str()) {
+                    item["spec"] = json!(true);
+                }
+                item
+            })
+            .collect(),
+    );
     let mut text = String::new();
     if hits.is_empty() {
         let _ = writeln!(text, "No icons match \"{}\". Try a synonym or the underlying object.", query.trim());

@@ -871,6 +871,49 @@ pub fn starter(id: &str, label: &str, intent: &str) -> String {
     )
 }
 
+/// Library icons reanimated as specs in the checkout at `root`: id → (set, spec path).
+pub(crate) fn library_specs(root: &Path) -> std::collections::BTreeMap<String, (String, std::path::PathBuf)> {
+    let mut out = std::collections::BTreeMap::new();
+    let Ok(sets) = std::fs::read_dir(root.join("motion/icon-sets")) else { return out };
+    for set in sets.flatten() {
+        let Ok(specs) = std::fs::read_dir(set.path().join(gai_check::verify::adopted::SPECS_DIR)) else { continue };
+        for spec in specs.flatten() {
+            let name = spec.file_name().to_string_lossy().into_owned();
+            if let Some(id) = name.strip_suffix(gai_spec::SUFFIX) {
+                out.insert(id.to_string(), (set.file_name().to_string_lossy().into_owned(), spec.path()));
+            }
+        }
+    }
+    out
+}
+
+/// A library spec as a new icon's: its id, label and (when given) intent replaced. The
+/// spec's own layout is kept where those values are written plainly, so it stays as
+/// compact as the library's.
+fn spec_from(source: &str, id: &str, label: &str, intent: Option<&str>) -> std::result::Result<String, String> {
+    let mut value: Value = serde_json::from_str(source).map_err(|e| e.to_string())?;
+    let mut text = source.to_string();
+    let mut plain = true;
+    let mut swap = |key: &str, new: Value| {
+        let old = value.get(key).cloned().unwrap_or(Value::Null);
+        let needle = format!("\"{key}\": {old}");
+        match text.find(&needle) {
+            Some(at) => text.replace_range(at..at + needle.len(), &format!("\"{key}\": {new}")),
+            None => plain = false,
+        }
+        value[key] = new;
+    };
+    swap("id", json!(id));
+    swap("label", json!(label));
+    if let Some(intent) = intent {
+        swap("intent", json!(intent));
+    }
+    if plain && serde_json::from_str::<Value>(&text).ok().as_ref() == Some(&value) {
+        return Ok(text);
+    }
+    serde_json::to_string_pretty(&value).map(|t| t + "\n").map_err(|e| e.to_string())
+}
+
 /// `create <id> --spec`.
 pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     let root = ctx.cwd.as_path();
@@ -897,8 +940,44 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
         }
         words.join(" ")
     });
-    let intent = args.intent.clone().unwrap_or_else(|| "Light: the bell swings once on its hook. Strong: it winds up, is struck hard and rings down, the clapper lagging behind.".into());
-    let text = starter(id, &label, &intent);
+    let (text, from) = match &args.from {
+        None => {
+            let intent = args.intent.clone().unwrap_or_else(|| "Light: the bell swings once on its hook. Strong: it winds up, is struck hard and rings down, the clapper lagging behind.".into());
+            (starter(id, &label, &intent), None)
+        }
+        Some(reference) => {
+            let library = ctx.library().ok();
+            let checkout = ctx.checkout()?.or_else(|| library.as_ref().and_then(|l| l.checkout().map(Path::to_path_buf))).ok_or_else(|| {
+                CliError::usage("--from with --spec copies a library icon's spec, which needs a library checkout")
+                    .with_hint("Pass --library <checkout> (or --library-root <checkout>); the published library has no specs, so without a checkout leave out --from")
+            })?;
+            let specs = library_specs(&checkout);
+            let Some((set_id, path)) = specs.get(reference.as_str()) else {
+                let catalog = library.as_ref().and_then(|l| l.catalog().ok());
+                let known = catalog.as_ref().is_none_or(|c| c.get(reference).is_some());
+                if !known {
+                    return Err(CliError::new(ErrorCode::UnknownIcon, format!("Unknown library icon: {reference}")).with_id(reference));
+                }
+                let category = catalog.as_ref().and_then(|c| c.get(reference)).and_then(|i| i.category.clone());
+                let mut near: Vec<&str> = catalog
+                    .iter()
+                    .flat_map(|c| &c.icons)
+                    .filter(|i| i.category.is_some() && i.category == category && specs.contains_key(i.id.as_str()))
+                    .map(|i| i.id.as_str())
+                    .take(3)
+                    .collect();
+                if near.is_empty() {
+                    near = specs.keys().map(String::as_str).take(3).collect();
+                }
+                return Err(CliError::new(ErrorCode::UnsupportedReference, format!("{reference} has no spec: it was not reanimated as one"))
+                    .with_id(reference)
+                    .with_hint(format!("Start from an icon with a spec, such as {}, or leave out --from for the starter", near.join(", "))));
+            };
+            let source = std::fs::read_to_string(path).map_err(|e| CliError::io("read", path, &e))?;
+            let text = spec_from(&source, id, &label, args.intent.as_deref()).map_err(|e| CliError::new(ErrorCode::InvalidCatalog, format!("{}: {e}", path.display())))?;
+            (text, Some(json!({"id": reference, "set": set_id})))
+        }
+    };
     let mut batch = Batch::new();
     batch.write(path.clone(), text);
     let set_config = set.file("set-config.json");
@@ -907,9 +986,18 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     }
     let lock = Lock::load(root, config.layout)?;
     let changed = batch.plan(root, &lock.expected())?.apply()?;
-    let mut out = format!("Created {path} (spec v2).\nNext:\n  gen-animated-icons check {id}\n  gen-animated-icons draft {id}   # one engine call, a review sheet, nothing stored\n  gen-animated-icons build {id}\n");
+    let mut out = format!("Created {path} (spec v2).\n");
+    if let Some(from) = &from {
+        let _ = writeln!(
+            out,
+            "It starts from library icon {} (set {}): its parts, rigs, motion, state and reverse. Redraw what the new meaning needs, rename the state and labels if it has them, and keep the motion's craft: the event, the beats, the clearance and the endings.",
+            from["id"].as_str().unwrap_or_default(),
+            from["set"].as_str().unwrap_or_default()
+        );
+    }
+    out.push_str(&format!("Next:\n  gen-animated-icons check {id}\n  gen-animated-icons draft {id}   # one engine call, a review sheet, nothing stored\n  gen-animated-icons build {id}\n"));
     text_list(&mut out, "Changed", &changed);
-    let value = json!({"id": id, "format": gai_spec::FORMAT, "spec": path, "changed": changed, "next": [format!("gen-animated-icons check {id}"), format!("gen-animated-icons draft {id}"), format!("gen-animated-icons build {id}")]});
+    let value = json!({"id": id, "format": gai_spec::FORMAT, "spec": path, "from": from, "changed": changed, "next": [format!("gen-animated-icons check {id}"), format!("gen-animated-icons draft {id}"), format!("gen-animated-icons build {id}")]});
     Ok(Report::new(value, out))
 }
 

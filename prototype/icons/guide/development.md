@@ -89,6 +89,16 @@ gen-animated-icons library verify-visual 14
 - From then on the spec is the icon's source. `library build` keeps adopted icons as they are (their old definitions stay for the legacy checks but no longer export), and `library verify` checks them against their spec: hashes, format, paint, themes and markers. Their motion checks run in `build`, and `verify-visual` renders them like every other action.
 - Frozen sets 01 and 02 can adopt: they are still never rebuilt, so adopting only replaces the icon's assets and entry, and their legacy checks skip it.
 
+What the library-wide reanimation (Oct 2026, 412 icons) learned about porting, beyond [authoring-v2.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/crates/gen-animated-icons/assets/skill/references/authoring-v2.md):
+
+- Decide first: keep an icon whose motion already is its meaning, with rhythm in Strong, readable at 24 px (a dial indexing to its next stop, a refresh arrow's full turn, a toggle knob landing). Reanimate generic nudges, lifts and tilts, and moves under a pixel at 24 px.
+- Port the rest drawing exactly, vertex for vertex, and match the icon's Solid (`"solid": "fill"` or `"ring"`): the default Solid adds a rim the library drawing does not have.
+- A stateful icon ends on the library's end state (compare the build's last frame with the old one) and keeps its animation ids. v2 always names the reverse `<id>-reverse`: lock (`lock-unlock`), reconnect (`reconnect-disconnect`), suitcase (`suitcase-retract`) and menu (`menu-open`) keep their v1 motion until the format can name it.
+- A `previewReset` icon uses `"reverse": "fade"` with states `prepared` → `result`.
+- Some sets protect openings (counters, ring holes, Solid openings) in every frame: read the set's entry in `crates/gai-render/src/rules.rs` before designing, so the motion never shrinks, fills or covers one.
+- `build` runs the visual rules every set shares; a set's own rules run only in `library verify-visual NN`, so run it after adopting and before you commit.
+- Not portable yet: a part resting at partial opacity (gradient-stops), geometry that changes with the weight (more-options).
+
 ## Local gallery
 
 `npm run dev` (or `python3 scripts/serve.py`) serves `prototype/` on port 4189; the gallery is at `/icons/01/`. Pass `-- --port 4190` to change the port. The gallery vendors its player and fonts and needs no build step.

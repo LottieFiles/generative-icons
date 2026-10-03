@@ -4,12 +4,15 @@ A v2 icon is one JSON file, `gen-animated-icons/icons/<id>.icon.json`, with `"fo
 
 ```sh
 gen-animated-icons create <id> --spec      # a starter spec that checks clean
+gen-animated-icons create <id> --spec --from <library-id>   # start from a library icon's spec
 gen-animated-icons check <id>              # offline: structure, names, motion, lints (milliseconds)
 gen-animated-icons draft <id>              # one engine call: a review sheet, nothing stored
 gen-animated-icons build <id>              # one engine call: export, slots, themes, .lottie, verify, install
 ```
 
 Fix every `check` error before you draft. A draft is about 4 s and stores nothing, so draft after each change you cannot judge from the numbers; build once the draft looks right. `check` and `draft` never need a build first.
+
+Over 400 library icons are specs that passed every check below. When one is close to what you need (the same object, or the same kind of event), start from it: `create <id> --spec --from <library-id>` copies its parts, rigs, motion, state and reverse under your id. In a library checkout, `search` marks those icons `"spec": true`. Redraw what the new meaning needs, rewrite the intent, rename the state and labels, and keep the craft: the event, the beats, the clearance and the endings.
 
 ## Conventions
 
@@ -34,7 +37,13 @@ Give every action an event, not a nudge that comes back:
 - Hit, rebound, settle: two or three beats, each smaller (`hit`, `settle`, `bounce`). Make the return quicker than the action.
 - Move the driver first and followers 60–120 ms later (`follow` with `lag`).
 - Light plays the event once; Strong adds beats or travel. Think 1.5–4 units of travel or 10–40° of turn: a move you cannot see at 24 px does not count.
-- Keep every part at least 1.4 units inside the canvas at Bold in every frame, travel and overshoot included: at 24 px, ink on the outer pixel fails the visual check `build` runs.
+- Keep every part at least 1.4 units inside the canvas at Bold in every frame, travel and overshoot included: at 24 px, ink on the outer pixel fails the visual check `build` runs. `check` warns within 1.4.
+- A reading stops dead on its value: a gauge needle, a level, a score or a chart point never overshoots what it reads. Strong adds a step (a second click, a second milestone) instead of travel; `LIGHT_STRONG` may warn, and that is expected.
+- A turn of a shape that looks the same turned (a hexagon, a gear, a ring of dots) is invisible: give it a press, a pop or a cue around it instead.
+- A squash about a line reads as a turn or a flip (a key, a coin) at large sizes, and as a squeeze at 24 px: confirm it on the 24 px sheet.
+- A part that leaves and comes back (flies off, then a new one arrives) is two parts: cross-fade the leaving copy and the arriving one, so no frame is empty.
+- Transient parts must read when they show: a spark, drop or arc under 2 px at 24 px is a speck (`SMALL_AT_24`).
+- Icons that do the same thing get the same treatment: every arrow of a set, every lock, every selector.
 
 ## Parts
 
@@ -78,7 +87,9 @@ Each part expands into the style layers the runtime switches: outline at 1.5 / 2
 
 - `"holes": [S, …]`: real counters. They are stroked in Outline and cut from tint and Solid by subtract masks, so overlapping counters stay open. On a part that `scale` or `squash` reshapes, the masks follow.
 - `"knockout": ["hand", {"part": "knob", "gap": 0.8}]` on a surface: in Solid, those parts are cut out of it with a clearance (default 0.6, or the part's `"gap": number`) instead of drawn. A part that sits still on the surface's rig is cut by masks. One that moves on another rig, is reshaped, draws on, fades or starts hidden is cut by a matte that follows it, trim included, so the cut-out draws on with the part. A surface's moving knockouts must share one rig (`KNOCKOUT_RIGS`), and a part with its own trim or visibility must be its surface's only moving knockout (`KNOCKOUT_TRACKS`).
+- A morphing knockout is cut by a matte that follows the morph, when it is its surface's only moving knockout. If another part already holds the matte, it is cut at its rest shape and `MORPH_KNOCKOUT` warns.
 - In Solid every part is one colour: a detail drawn inside a filled Solid body disappears unless it is knocked out (`SOLID_HIDDEN`), or the body's Solid is `"ring"`.
+- A surface's default Solid is filled with a 2.6 rim, so it reads a little bigger than its outline. `"solid": "fill"` fills the outline's shape exactly.
 - `"gap": {"other": d}`: cut this part wherever it comes within `d` of another part's shape at rest, in every style.
 
 ## Rigs
@@ -133,7 +144,7 @@ Presets expand to keys:
 | `{"loop": KEYS, "period": p, "until"?}` | Repeat keys that end where they start |
 | `{"follow": "<target>", "lag"?, "scale"?, "offset"?}` | value = scale × source + offset, delayed by lag. `scale` is from -4 to 4 (default 1; -1 mirrors), `lag` from 0 to 1 s. As a whole track it applies to both motions. |
 
-Timing is derived: the action ends at the motion's last key, and rest comes one rounded frame after `active + 0.04 s`. `"timing": {"light": s, "strong": s, "reverse": s, "reverseStrong": s}` overrides it (at most 2.3 s), but no key may come after it (`MOVES_AFTER_REST`). A rotation may end a whole turn (or a multiple of `"cycle": deg`) from where it started.
+Timing is derived: the action ends at the motion's last key, and rest comes one rounded frame after `active + 0.04 s`. `"timing": {"light": s, "strong": s, "reverse": s, "reverseStrong": s}` overrides it (at most 2.3 s), but no key may come after it (`MOVES_AFTER_REST`). A gesture's rotation may end a whole turn (or a multiple of `"cycle": deg`, such as 60 on a hexagon) from where it started. The same pose rasterises a little differently there, and the build compares the rest frame with the first pixel for pixel, so the compiler adds an invisible step back to 0 one frame after the turn's last key. Every other track must end exactly on its rest value, in Light and Strong alike.
 
 ## State and reverse
 
@@ -144,8 +155,10 @@ Timing is derived: the action ends at the motion's last key, and rest comes one 
 
 - `auto` (default): each track's beats replay in mirrored order. Inside a beat, values reflect about its ends, and times and eases are kept. A wind-up stays a wind-up the other way. It reproduces v1's authored toggle-switch reverse key for key.
 - `mirror`: an exact time reversal. A hold or step jumps up to one frame later.
-- `fade`: the preview reset. States must be `prepared` → `result` and labels `["Play action", "Reset preview"]`; the animations are `<id>-reset` and `<id>-reset-strong`.
-- `reverse.light` / `reverse.strong` replace any track of a reverse with explicit keys: use them where a reflection would pass through another part, or a reaction must not replay.
+- `fade`: the preview reset. States must be `prepared` → `result` and labels `["Play action", "Reset preview"]`; the animations are `<id>-reset` and `<id>-reset-strong`. Only the parts the action leaves changed fade out and back; a part that moved and came back stays.
+- `reverse.light` / `reverse.strong` replace any track of a reverse with explicit keys. A track that follows an overridden one follows the override.
+- Look at the reverse in the draft every time. `auto` replays a landing reaction (a `hit`, `bounce` or `settle` at the end state) at the start of the reverse and reflects it to the other side: a seat that dips before it moves, a flag that flutters below the pole. Override those tracks so the reverse has its own event (a lock pops open, a lid slams shut) and reacts where it lands. Most stateful icons with a landing need this.
+- State names are kebab-case (`checkpoint-saved`). Labels are short verbs (`["Lock", "Unlock"]`). The animations are always `<id>`, `<id>-strong` and `<id>-reverse`, `<id>-reverse-strong` (or the two `-reset` ones).
 
 ## What check and draft tell you
 
@@ -157,13 +170,25 @@ Timing is derived: the action ends at the motion's last key, and rest comes one 
 | `KEY_ORDER`, `TIMELINE`, `NO_MOTION`, `MOVES_AFTER_REST` | error | Times |
 | `REST_VALUE` | error | A track that does not start (or, for a gesture, end) at rest; `scale` keyed as 0 is the classic one |
 | `PIVOT`, `MORPH_TOPOLOGY`, `KNOCKOUT_RIGS`, `KNOCKOUT_TRACKS`, `COMBINED_PATH_TRACKS`, `PARAM_UNSUPPORTED`, `FADE_STATE` | error | Things the engine cannot build as written |
-| `CANVAS_MARGIN` | error / warning | Paint past the canvas in any of 145 frames per motion / within 0.5 of the edge |
-| `SMALL_AT_24`, `LIGHT_STRONG`, `TRAILING_HOLD`, `LIVE_ANCHOR` | warning | Too small at 24 px; Strong not stronger than Light; a last key that only stretches the action; an anchor resolved at rest |
-| `SOLID_HIDDEN`, `HOLE_OUTSIDE` | warning | A part drawn inside another part's Solid fill, which vanishes in Solid; a hole or knockout that misses its surface at rest |
+| `CANVAS_MARGIN` | error / warning | Paint past the canvas in any of 145 frames per motion / within 1.4 of the edge at Bold while at least 30% opaque, where `build`'s visual check would see it on the outer pixel at 24 px |
+| `SMALL_AT_24`, `LIGHT_STRONG`, `TRAILING_HOLD`, `LIVE_ANCHOR` | warning | Under 3 px at 24 px (a part hidden at rest: under 2 px); Strong not stronger than Light; a last key that only stretches the action; an anchor resolved at rest |
+| `SOLID_HIDDEN`, `HOLE_OUTSIDE`, `MORPH_KNOCKOUT` | warning | A part drawn inside another part's Solid fill, which vanishes in Solid; a hole or knockout that misses its surface at rest; a morphing knockout cut at its rest shape |
 | `NOT_IMPLEMENTED` | error | A term of the format this prototype cannot build yet (below) |
 
 With MCP, the `draft` tool returns the same sheets as images. `draft` writes `.gen-animated-icons/drafts/<id>.png` (rows: Light, then Strong in Regular, Bold, Solid and Duotone, then the reverses; columns: the beats of each motion) and `<id>-24px.png` (the real size, enlarged). The engine's renderer is not the player: `build` ends with dotlottie-rs sheets of every style and both themes in `.gen-animated-icons/previews/<id>/`. Look at both. Solid cut-outs made by a matte (a knockout that moves, draws on or fades) are where they differ: the draft can leave a drawn-on cut-out out entirely or show a matte beside a mask as a different shape. Judge Solid cut-outs on the build's sheets; `build <id> --no-install` renders them without installing.
 
+## What build's visual check fails
+
+`build` renders every action in dotlottie-rs at every size, style, weight and theme, frame by frame, and fails the icon on any of these. `check` cannot see most of them, so design against them from the start.
+
+| Failure | Cause | Avoid it |
+|---|---|---|
+| Clipped icon | Ink on the outermost pixel, in any frame | Keep paint 1.4 inside the canvas at Bold, overshoot included (`CANVAS_MARGIN` warns) |
+| Invisible main action | A frame with nothing drawn | Cross-fade a part that leaves and returns; never fade everything at once |
+| Loop or state boundary is incorrect | A gesture's last frame differs from its first, or a toggle ends where it started | End every track exactly on rest; whole turns step back (above). Light and Strong end on the same pixels |
+| Insufficient animation states | Too few distinct frames for the action's length (half its frames, 6 to 16) | Ease keys instead of `step`-only motion; a typing caret slides each stroke in 40–50 ms |
+| Hold is not still | Something moves after rest | No key after the action ends |
+
 ## Not in this prototype
 
-`swing`, `flip`, `minus`, a keyed wave `phase` and connectors (anchors that follow another rig) stop with `NOT_IMPLEMENTED`. Also not supported yet: `scale` or `squash` on a rig that carries rigs, two path-changing tracks on one shape, a negative Solid `grow`, and one pulse per track and motion. Parts that collapse are not hidden automatically: key their `opacity`. Clearance and counter-width lints are not run yet, so check counters at Bold in the draft. Continuous loaders (motion through the whole 2.4 s, trim start or offset) are not in the format yet: keep them in v1.
+`swing`, `flip`, `minus`, a keyed wave `phase` and connectors (anchors that follow another rig) stop with `NOT_IMPLEMENTED`. Also not supported yet: `scale` or `squash` on a rig that carries rigs, two path-changing tracks on one shape, a negative Solid `grow`, and one pulse per track and motion. Parts that collapse are not hidden automatically: key their `opacity`. Clearance and counter-width lints are not run yet, so check counters at Bold in the draft. Continuous loaders (motion through the whole 2.4 s, trim start or offset) are not in the format yet: keep them in v1. A part rests at full opacity or hidden, never in between (a 24% band of a ramp cannot be drawn yet). Geometry cannot change with the outline weight (a dot whose radius is the weight). Several cut-outs moving on different rigs in one Solid surface cannot all follow (`KNOCKOUT_RIGS`): one surface has one matte.

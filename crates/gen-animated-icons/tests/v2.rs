@@ -38,6 +38,32 @@ fn create_spec_writes_a_starter_that_checks_clean() {
 }
 
 #[test]
+fn create_spec_from_a_library_spec_keeps_its_craft() {
+    let (_dir, app) = app();
+    let root = repo_root().to_string_lossy().into_owned();
+    let created = run(&app, &["create", "paper-plane", "--spec", "--from", "send", "--library-root", &root]).ok();
+    assert_eq!(created["from"]["id"], "send");
+    let path = repo_root().join(format!("motion/icon-sets/{}/specs/send.icon.json", created["from"]["set"].as_str().unwrap()));
+    let library: Value = serde_json::from_slice(&std::fs::read(path).unwrap()).unwrap();
+    let copy: Value = serde_json::from_slice(&std::fs::read(app.join("gen-animated-icons/icons/paper-plane.icon.json")).unwrap()).unwrap();
+    assert_eq!((copy["id"].as_str(), copy["label"].as_str()), (Some("paper-plane"), Some("Paper plane")));
+    for key in ["intent", "parts", "rigs", "motion", "state", "reverse"] {
+        assert_eq!(copy.get(key), library.get(key), "{key}");
+    }
+    assert_eq!(run(&app, &["check", "paper-plane"]).ok()["status"], "PASS");
+    // In a checkout, search says which icons have a spec to start from.
+    let found = run(&app, &["search", "send", "--library-only", "--library-root", &root]).ok();
+    assert_eq!(found.as_array().unwrap().iter().find(|r| r["id"] == "send").unwrap()["spec"], true);
+    // A reanimated icon's set source is the motion its spec replaced: a JS batch refuses it.
+    let refused = run(&app, &["create", "paper-plane-2", "--from", "send", "--library-root", &root]).fails(3, "UNSUPPORTED_REFERENCE");
+    assert!(refused["hint"].as_str().unwrap().contains("create paper-plane-2 --spec --from send"), "{refused}");
+    // An icon kept as it was has no spec; the hint names icons that have one.
+    let none = run(&app, &["create", "spinner-2", "--spec", "--from", "rotate-tool", "--library-root", &root]).fails(3, "UNSUPPORTED_REFERENCE");
+    assert!(none["hint"].as_str().unwrap().starts_with("Start from an icon with a spec, such as "), "{none}");
+    run(&app, &["create", "x-2", "--spec", "--from", "no-such-icon", "--library-root", &root]).fails(3, "UNKNOWN_ICON");
+}
+
+#[test]
 fn check_reports_pointers_codes_and_hints() {
     let (_dir, app) = app();
     write(&app, "gen-animated-icons/icons/broken.icon.json", r#"{"format": "gai-icon/2", "id": "broken", "label": "Broken", "intent": "Light: one swing. Strong: a bigger one.",

@@ -357,3 +357,118 @@ fn a_follow_takes_a_comment_and_a_bounded_scale() {
     assert!(errors(bars(json!({"follow": "a.rotate", "scale": 4}))).is_empty());
     assert_eq!(errors(bars(json!({"follow": "a.rotate", "scale": -4.5}))), [("V2_SCHEMA".to_string(), "/motion/b.rotate/scale".to_string())]);
 }
+
+#[test]
+fn whole_turns_step_back_to_rest_a_frame_later() {
+    // A turn that ends on a whole turn draws the same pose but rasterises a little
+    // differently; the players compare the rest frame with the first pixel for pixel.
+    let turn = |extra: Value| {
+        let mut s = json!({
+            "parts": {"star": {"shape": {"polygon": [[16, 8], [23, 20], [9, 20]]}}},
+            "rigs": {"star": {"pivot": [16, 16]}},
+            "motion": {"star.rotate": {"light": [[0, 0], [0.4, 360, "hit"]], "strong": [[0, 0], [0.3, -120], {"hold": 0.35}, [0.5, -240, "hit"]]}}
+        });
+        for (k, v) in extra.as_object().unwrap() {
+            s[k] = v.clone();
+        }
+        load(&spec(s))
+    };
+    let c = turn(json!({"cycle": 120})).unwrap();
+    for (m, end) in [(0, 0.4), (1, 0.5)] {
+        let keys = &c.motions[m].raw[0].keys;
+        let (last, before) = (keys[keys.len() - 1], keys[keys.len() - 2]);
+        assert_eq!((last.v, last.ease), (0.0, gai_spec::spec::Ease::Step), "{keys:?}");
+        assert!((last.t - (end + 1.0 / 60.0)).abs() < 1e-9 && before.v.abs() > 1.0, "{keys:?}");
+        assert!((c.motions[m].active - last.t).abs() < 1e-9);
+    }
+    // Without `cycle`, a third of a turn is not the same pose: Strong must end at rest.
+    let e = turn(json!({})).unwrap_err();
+    assert_eq!(e.errors().map(|d| d.code).collect::<Vec<_>>(), ["REST_VALUE"]);
+    // A timing that leaves no frame for the step says so.
+    let e = turn(json!({"cycle": 120, "timing": {"light": 0.4}})).unwrap_err();
+    let first = e.errors().next().unwrap();
+    assert_eq!((first.code, first.path.as_str()), ("MOVES_AFTER_REST", "/motion/star.rotate/light"));
+}
+
+#[test]
+fn a_preview_reset_fades_only_what_the_action_changed() {
+    let c = load(&spec(json!({
+        "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+        "parts": {"bar": line(), "dot": {"shape": {"circle": [[16, 22], 1.5]}, "role": "fill"}, "spark": {"shape": {"line": [[22, 10], [24, 8]]}, "hidden": true}},
+        "motion": {
+            "bar.y": {"light": [[0, 0], [0.3, -3]], "strong": [[0, 0], [0.2, -4], [0.35, -3, "hit"]]},
+            "dot.y": {"light": [[0, 0], [0.15, 1.5], [0.3, 0]], "strong": [[0, 0], [0.15, 2], [0.35, 0]]},
+            "spark.opacity": {"light": [[0.1, 0], [0.15, 1], [0.3, 0]], "strong": [[0.1, 0], [0.15, 1], [0.35, 0]]}
+        }
+    })))
+    .unwrap();
+    for reset in &c.motions[2..] {
+        let faded: Vec<String> = reset.tracks.iter().filter(|t| t.target.prop == Some(gai_spec::spec::Prop::Opacity)).map(|t| t.target.to_string()).collect();
+        assert_eq!(faded, ["bar.opacity"], "{}", reset.name);
+    }
+}
+
+#[test]
+fn morphing_knockouts_ride_a_matte_unless_another_part_holds_it() {
+    let face = |knockouts: Value| json!({"shape": {"circle": [[16, 16], 11]}, "role": "surface", "knockout": knockouts});
+    let mouth = json!({"shape": {"morph": [{"path": "M11 19 C13 20 19 20 21 19"}, {"path": "M11 18 C13 22 19 22 21 18"}], "by": "smile"}});
+    let smile = json!({"light": [[0, 0], [0.3, 1], [0.5, 0]], "strong": [[0, 0], [0.2, 1], [0.4, 1], [0.55, 0]]});
+    let c = load(&spec(json!({"parts": {"face": face(json!(["mouth"])), "mouth": mouth}, "motion": {"smile": smile}}))).unwrap();
+    let solid = c.plan.layers.iter().find(|l| l.part == "face" && l.variant == "solid").unwrap();
+    assert!(solid.masks.is_empty(), "{:?}", solid.masks);
+    assert_eq!(solid.matte.as_ref().expect("a matte").geos, ["mouth/0"]);
+    // An eye that turns on its own rig takes the one matte: the mouth is cut at rest, with a warning.
+    let eye = json!({"shape": {"circle": [[12, 12], 1.3]}, "role": "fill"});
+    let c = load(&spec(json!({
+        "parts": {"face": face(json!(["mouth", "eye"])), "mouth": mouth, "eye": eye},
+        "rigs": {"eye": {"pivot": [12, 14]}},
+        "motion": {"smile": smile, "eye.rotate": {"light": [[0, 0], [0.2, 20], [0.4, 0]], "strong": [[0, 0], [0.2, 30], [0.45, 0]]}}
+    })))
+    .unwrap();
+    let solid = c.plan.layers.iter().find(|l| l.part == "face" && l.variant == "solid").unwrap();
+    assert_eq!(solid.matte.as_ref().expect("a matte").geos, ["eye/0"]);
+    assert!(!solid.masks.is_empty());
+    assert!(c.diagnostics.0.iter().any(|d| d.code == "MORPH_KNOCKOUT" && d.level == Level::Warning), "{:?}", c.diagnostics);
+}
+
+#[test]
+fn followers_follow_a_reverse_override() {
+    let c = load(&spec(json!({
+        "state": {"from": "closed", "to": "open", "labels": ["Open", "Close"]},
+        "parts": {"lid": line(), "latch": {"shape": {"line": [[20, 18], [20, 21]]}}},
+        "rigs": {"lid": {"pivot": [10, 16]}, "latch": {"pivot": [20, 18]}},
+        "motion": {
+            "lid.rotate": {"light": [[0, 0], [0.3, -40, "hit"]], "strong": [[0, 0], [0.1, 5], [0.35, -40, "hit"], {"settle": 0.6}]},
+            "latch.rotate": {"follow": "lid.rotate", "lag": 0.05, "scale": 0.5}
+        },
+        "reverse": {"light": {"lid.rotate": [[0, -40], [0.25, 0, "hit"]]}}
+    })))
+    .unwrap();
+    let reverse = c.motions.iter().find(|m| m.name == "x-reverse").unwrap();
+    let latch = reverse.raw.iter().find(|t| t.target.to_string() == "latch.rotate").unwrap();
+    let keys: Vec<(f64, f64)> = latch.keys.iter().map(|k| ((k.t * 1e6).round() / 1e6, k.v)).collect();
+    assert_eq!(keys, [(0.05, -20.0), (0.3, 0.0)]);
+}
+
+#[test]
+fn lints_warn_near_the_edge_unless_faint_and_about_specks() {
+    let warnings = |extra: Value| -> Vec<String> {
+        let c = load(&spec(extra)).unwrap();
+        c.diagnostics.0.iter().filter(|d| d.level == Level::Warning).map(|d| d.code.to_string()).collect()
+    };
+    // 1.0 from the edge at Bold: the outer pixel at 24 px is 1.33 units.
+    let near = json!({"parts": {"bar": line()}, "motion": {"bar.x": {"light": [[0, 0], [0.2, 7.75], [0.4, 0]], "strong": [[0, 0], [0.2, 7.75], [0.45, 0]]}}});
+    assert!(warnings(near).contains(&"CANVAS_MARGIN".to_string()));
+    // The same reach while fading out stays under the visual check's visibility threshold.
+    let fading = json!({"parts": {"bar": line()}, "motion": {
+        "bar.x": {"light": [[0, 0], [0.2, 7.75], [0.21, 0, "step"]], "strong": [[0, 0], [0.2, 7.75], [0.21, 0, "step"]]},
+        "bar.opacity": {"light": [[0, 1], [0.1, 0.1], [0.21, 0.1], [0.4, 1]], "strong": [[0, 1], [0.1, 0.1], [0.21, 0.1], [0.45, 1]]}
+    }});
+    assert!(!warnings(fading).contains(&"CANVAS_MARGIN".to_string()));
+    // A spark hidden at rest under 2 px reads as a speck when it shows.
+    let speck = json!({"parts": {"bar": line(), "spark": {"shape": {"line": [[24, 10], [24.5, 9.5]]}, "hidden": true}}, "motion": {
+        "bar.y": {"light": [[0, 0], [0.2, 2], [0.4, 0]], "strong": [[0, 0], [0.2, 3], [0.45, 0]]},
+        "spark.opacity": {"light": [[0.1, 0], [0.15, 1], [0.3, 0]], "strong": [[0.1, 0], [0.15, 1], [0.35, 0]]}
+    }});
+    assert!(warnings(speck).contains(&"SMALL_AT_24".to_string()));
+}

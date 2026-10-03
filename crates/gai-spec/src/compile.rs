@@ -8,7 +8,7 @@ use crate::ease::{self, CKey};
 use crate::geom::{self, BBox, Contour, Geo, PolyVertex, Pt};
 use crate::motion::{self, CTrack, Motion, ReverseInput, Track, Which};
 use crate::plan::{self, KeyValue, Layer, Mask, PKey, Paint, Plan};
-use crate::spec::{Knockout, Outline, PartBody, PartSrc, Pivot, Point, Prop, ReverseMode, Role, Shape, Solid, Spec, Squash, Target, TrackSrc};
+use crate::spec::{Ease, Follow, Knockout, MotionValue, Outline, PartBody, PartSrc, Pivot, Point, Prop, ReverseMode, Role, Shape, Solid, Spec, Squash, Target, TrackSrc};
 use indexmap::{IndexMap, IndexSet};
 use serde_json::{Value, json};
 use std::collections::{HashMap, HashSet};
@@ -778,8 +778,7 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
     let mut motions: Vec<Motion> = Vec::new();
     for which in [Which::Light, Which::Strong] {
         let errors_before = d.errors().count();
-        let raw = motion::resolve(spec, which, &hidden, &mut d);
-        let tracks = motion::compile_tracks(&raw);
+        let mut raw = motion::resolve(spec, which, &hidden, &mut d);
         let name = match which {
             Which::Light => spec.id.clone(),
             Which::Strong => format!("{}-strong", spec.id),
@@ -788,6 +787,28 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
             Which::Light => spec.timing.light,
             Which::Strong => spec.timing.strong,
         };
+        // A gesture's turn that ends a whole turn (or a `cycle`) from rest draws the same
+        // pose, but rasterises a little differently, and the players' checks compare the rest
+        // frame with the first pixel for pixel: step back to rest, invisibly, a frame later.
+        if spec.state.is_none() {
+            for t in raw.iter_mut().filter(|t| t.target.prop == Some(Prop::Rotate)) {
+                let Some(&last) = t.keys.last() else { continue };
+                let turn = |period: f64| (last.v / period - (last.v / period).round()).abs() < 1e-9;
+                if last.v.abs() < 1e-9 || !(turn(360.0) || spec.cycle.is_some_and(turn)) {
+                    continue;
+                }
+                let step = last.t + 1.0 / 60.0;
+                if timing.is_some_and(|end| step > end + 1e-9) {
+                    d.push(
+                        Diagnostic::error("MOVES_AFTER_REST", t.path.clone(), format!("{} ends a whole turn at {} s; its step back to rest comes a frame later, after {name}'s action ends", t.target, motion::r4(last.t)))
+                            .hint(format!("end the turn by {} s, or lengthen timing", motion::r4(timing.unwrap_or(step) - 1.0 / 60.0))),
+                    );
+                    continue;
+                }
+                t.keys.push(ease::Key::new(step, 0.0, Ease::Step));
+            }
+        }
+        let tracks = motion::compile_tracks(&raw);
         if tracks.is_empty() {
             if d.errors().count() == errors_before {
                 d.push(Diagnostic::error("NO_MOTION", "/motion", format!("{} has no keys", which.id())).hint(format!("every icon has Light and Strong: add \"{}\" keys to a track", which.id())));
@@ -847,18 +868,51 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
                 Which::Light => (&spec.reverse_light, spec.timing.reverse),
                 Which::Strong => (&spec.reverse_strong, spec.timing.reverse_strong),
             };
-            let mut overrides = Vec::new();
+            let mut overrides: Vec<Track> = Vec::new();
             for o in overrides_src {
                 let rest = motion::rest_value(o.target.prop, hidden(&o.target.name));
                 if let Some(keys) = motion::expand(&o.keys, rest, &mut d) {
                     overrides.push(Track { target: o.target.clone(), keys, path: o.path.clone() });
                 }
             }
+            // A track that follows an overridden one follows the override, as it follows its
+            // source forward, unless the reverse overrides it too.
+            let follows: Vec<(&Target, &Follow)> = spec
+                .motion
+                .iter()
+                .filter_map(|e| match (&e.track, forward.which) {
+                    (TrackSrc::Follow(f), _)
+                    | (TrackSrc::PerMotion { light: Some((MotionValue::Follow(f), _)), .. }, Which::Light)
+                    | (TrackSrc::PerMotion { strong: Some((MotionValue::Follow(f), _)), .. }, Which::Strong) => Some((&e.target, f)),
+                    _ => None,
+                })
+                .collect();
+            loop {
+                let derived: Vec<Track> = follows
+                    .iter()
+                    .filter(|(target, _)| !overrides.iter().any(|o| o.target == **target))
+                    .filter_map(|(target, f)| {
+                        let source = overrides.iter().find(|o| o.target == f.target)?;
+                        let keys = source.keys.iter().map(|k| ease::Key::new(k.t + f.lag, f.scale * k.v + f.offset, k.ease)).collect();
+                        Some(Track { target: (*target).clone(), keys, path: source.path.clone() })
+                    })
+                    .collect();
+                if derived.is_empty() {
+                    break;
+                }
+                overrides.extend(derived);
+            }
             let mut fading = Vec::new();
             if state.reverse == ReverseMode::Fade {
+                // Only parts the action leaves changed fade: a part that moves and comes back
+                // (a dip, a pop, a transient shown and hidden) is already at its start.
                 let mut seen: IndexSet<String> = IndexSet::new();
                 for t in &forward.tracks {
-                    seen.extend(changed_parts(&t.target));
+                    if let (Some(first), Some(last)) = (t.keys.first(), t.keys.last())
+                        && (first.v - last.v).abs() > 1e-9
+                    {
+                        seen.extend(changed_parts(&t.target));
+                    }
                 }
                 for name in seen {
                     let target = Target { name: name.clone(), prop: Some(Prop::Opacity) };
@@ -992,6 +1046,7 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
     let mut duotone_fill = false;
     let mut opacity_targets: HashSet<String> = HashSet::new();
     let mut draw_parts: HashSet<String> = HashSet::new();
+    let mut morph_parts: HashSet<String> = HashSet::new();
     for m in &motions {
         for t in &m.tracks {
             match t.target.prop {
@@ -1001,13 +1056,17 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
                 Some(Prop::Opacity) => {
                     opacity_targets.extend(changed_parts(&t.target));
                 }
+                None => {
+                    morph_parts.extend(changed_parts(&t.target));
+                }
                 _ => {}
             }
         }
     }
     // A knockout is a static mask only when nothing but its surface's rig moves it: a part
-    // that is reshaped, drawn on, faded or hidden at rest needs a matte that follows it.
-    let dynamic = |k: &str| path_form(k) || draw_parts.contains(k) || opacity_targets.contains(k) || hidden(k);
+    // that is reshaped (a morph included), drawn on, faded or hidden at rest needs a matte
+    // that follows it.
+    let dynamic = |k: &str| path_form(k) || morph_parts.contains(k) || draw_parts.contains(k) || opacity_targets.contains(k) || hidden(k);
     for p in &parts {
         let rig = plan_rig_of(&p.name);
         let hide = hidden(&p.name);
@@ -1075,6 +1134,29 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
             } else {
                 moving.push((kp, *gap));
             }
+        }
+        // A morph's cut-out follows it only while the surface's one matte is free for it;
+        // otherwise it is cut at its rest shape, as a static mask.
+        let morph_only = |k: &str| plan_rig_of(k) == rig && morph_parts.contains(k) && !(path_form(k) || draw_parts.contains(k) || opacity_targets.contains(k) || hidden(k));
+        let clash = |moving: &[(&Part, f64)]| {
+            let rigs_used: IndexSet<Option<String>> = moving.iter().map(|(kp, _)| plan_rig_of(&kp.name)).collect();
+            let own = moving.iter().any(|(kp, _)| draw_parts.contains(&kp.name) || opacity_targets.contains(&kp.name) || hidden(&kp.name));
+            rigs_used.len() > 1 || (moving.len() > 1 && own)
+        };
+        if clash(&moving) && moving.iter().any(|(kp, _)| morph_only(&kp.name)) {
+            let (still, keep): (Vec<_>, Vec<_>) = moving.into_iter().partition(|(kp, _)| morph_only(&kp.name));
+            let followed: Vec<&str> = keep.iter().map(|(kp, _)| kp.name.as_str()).collect();
+            for (kp, gap) in &still {
+                let (kd, half, filled) = solid_drawing(kp).expect("checked");
+                for id in &kd.geos {
+                    masks.extend(geom::grown(&rest_geo(id), filled, half + gap).into_iter().map(Mask::fixed));
+                }
+                d.push(
+                    Diagnostic::warning("MORPH_KNOCKOUT", at(&p.path, "knockout"), format!("in Solid, {} is cut out of {} at its rest shape: the surface's one matte follows {}", kp.name, p.name, followed.join(" and ")))
+                        .hint("knock out one moving part per surface, or give the surface \"solid\": \"ring\" so nothing needs cutting"),
+                );
+            }
+            moving = keep;
         }
         let mut solid = layer("solid", Some("solid"), drawing, masks);
         if !moving.is_empty() {

@@ -210,7 +210,8 @@ pub struct CreateArgs {
     /// New icon id, kebab-case, not a library id
     #[arg(value_name = "ID")]
     pub id: String,
-    /// Start from this library icon's source (needs a library checkout)
+    /// Start from this library icon's source, or with --spec from its spec (an icon
+    /// reanimated as a spec). Needs a library checkout
     #[arg(long, value_name = "LIBRARY_ICON")]
     pub from: Option<String>,
     /// Display label [default: from the id]
@@ -224,7 +225,7 @@ pub struct CreateArgs {
     #[arg(long, value_name = "ID")]
     pub neighbor: Vec<String>,
     /// Write a spec v2 icon (`icons/<ID>.icon.json`, plain JSON) instead of a JS batch
-    #[arg(long, conflicts_with_all = ["from", "neighbor"])]
+    #[arg(long, conflicts_with = "neighbor")]
     pub spec: bool,
 }
 
