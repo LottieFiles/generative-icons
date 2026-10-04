@@ -518,7 +518,7 @@
         "path": {
           "type": "string",
           "pattern": "^\\s*[Mm][^MmZz]*([Zz]\\s*)?$",
-          "maxLength": 2000
+          "maxLength": 8000
         }
       }
     },
@@ -630,7 +630,7 @@
             "open",
             "none"
           ],
-          "description": "surface and fill only. open leaves out the closing edge (a rect's bottom, an arc's chord)."
+          "description": "open (surfaces) leaves out the closing edge (a rect's bottom, an arc's chord); none draws no outline, on a surface or a stroke (a stroke then shows only in Solid)."
         },
         "tint": {
           "type": "boolean",
@@ -730,6 +730,12 @@
         "hidden": {
           "type": "boolean",
           "description": "Invisible at rest; motion (opacity, pulse) shows it."
+        },
+        "opacity": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "description": "The opacity the part rests at (default 1); its opacity track starts and, for a gesture, ends there."
         }
       }
     },

@@ -31,6 +31,7 @@
     "dist/release.json",
     "dist/docs/*.md",
     "dist/schemas/*.json",
+    "dist/specs/*.json",
     "README.md",
     "LICENSE",
     "THIRD_PARTY_NOTICES.md"
@@ -44,7 +45,8 @@
     "./catalog.json": "./dist/catalog.json",
     "./release.json": "./dist/release.json",
     "./docs/*": "./dist/docs/*",
-    "./schemas/*": "./dist/schemas/*"
+    "./schemas/*": "./dist/schemas/*",
+    "./specs/*": "./dist/specs/*"
   },
   "engines": {
     "node": ">=22"

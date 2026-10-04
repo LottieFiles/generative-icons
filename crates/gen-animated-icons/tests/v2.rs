@@ -65,6 +65,63 @@ fn create_spec_from_a_library_spec_keeps_its_craft() {
 }
 
 #[test]
+fn create_from_a_packaged_spec_without_a_checkout() {
+    let dir = tempfile::tempdir().unwrap();
+    // A package dist as npm installs it: the catalog, release.json and one spec.
+    let dist = dir.path().join("dist");
+    let built = repo_root().join("packages/icons/dist");
+    std::fs::create_dir_all(dist.join("specs")).unwrap();
+    for file in ["catalog.json", "release.json", "specs/send.icon.json"] {
+        std::fs::copy(built.join(file), dist.join(file)).unwrap();
+    }
+    let app = dir.path().join("app");
+    std::fs::create_dir(&app).unwrap();
+    web_app(&app);
+    run(&app, &["init", "--agents", "none", "--offline"]).ok();
+    let library = dist.to_string_lossy().into_owned();
+    let found = run(&app, &["search", "send", "--library-only", "--library", &library]).ok();
+    assert_eq!(found.as_array().unwrap().iter().find(|r| r["id"] == "send").unwrap()["spec"], true);
+    let created = run(&app, &["create", "paper-plane", "--from", "send", "--library", &library]).ok();
+    assert_eq!(created["from"], json!({"id": "send", "set": "04-actions"}));
+    assert_eq!(run(&app, &["check", "paper-plane", "--library", &library]).ok()["status"], "PASS");
+    // The hosted library serves the same files; the spec is checked against release.json.
+    let url = serve(dist.clone());
+    run(&app, &["create", "paper-plane-2", "--from", "send", "--library", &url]).ok();
+    // An icon without a spec, and a spec that does not match release.json.
+    run(&app, &["create", "x-1", "--from", "rotate-tool", "--library", &library]).fails(3, "UNSUPPORTED_REFERENCE");
+    let spec = std::fs::read_to_string(dist.join("specs/send.icon.json")).unwrap();
+    std::fs::write(dist.join("specs/send.icon.json"), spec.replacen("\"label\"", "\"label\" ", 1)).unwrap();
+    run(&app, &["create", "x-2", "--from", "send", "--library", &library]).fails(6, "HASH_MISMATCH");
+}
+
+#[test]
+fn create_replace_starts_a_reanimation_of_a_library_icon() {
+    let (_dir, app) = app();
+    let root = repo_root().to_string_lossy().into_owned();
+    // An icon not reanimated yet starts from its v1 drawing, ported, with no motion.
+    let created = run(&app, &["create", "rotate-tool", "--replace", "--library-root", &root]).ok();
+    assert_eq!(created["replace"], json!({"set": "51-drawing-tools", "start": "v1"}));
+    assert_eq!(created["references"], json!(["rotate-tool"]));
+    let spec: Value = serde_json::from_slice(&std::fs::read(app.join("gen-animated-icons/icons/rotate-tool.icon.json")).unwrap()).unwrap();
+    let parts: Vec<&str> = spec["parts"].as_object().unwrap().keys().map(String::as_str).collect();
+    assert_eq!(parts, ["arc", "head", "square"]);
+    assert_eq!((spec["parts"]["square"]["role"].as_str(), spec["parts"]["square"]["solid"].as_str()), (Some("surface"), Some("fill")));
+    assert_eq!(spec["motion"], json!({}));
+    let checked = run(&app, &["check", "rotate-tool"]);
+    assert_eq!(checked.code, 1, "{}", checked.stderr);
+    let found: Vec<String> = checked.json()["icons"][0]["diagnostics"].as_array().unwrap().iter().map(|d| format!("{} {}", d["code"].as_str().unwrap(), d["path"].as_str().unwrap())).collect();
+    assert_eq!(found, ["V2_SCHEMA /motion"]);
+    // A reanimated icon starts from its own spec.
+    let again = run(&app, &["create", "send", "--replace", "--library-root", &root]).ok();
+    assert_eq!(again["replace"]["start"], "spec");
+    let library = std::fs::read(repo_root().join("motion/icon-sets/04-actions/specs/send.icon.json")).unwrap();
+    assert_eq!(std::fs::read(app.join("gen-animated-icons/icons/send.icon.json")).unwrap(), library);
+    run(&app, &["create", "no-such-icon", "--replace", "--library-root", &root]).fails(3, "UNKNOWN_ICON");
+    let taken = run(&app, &["create", "bell", "--library-root", &root]).fails(3, "ID_COLLISION");
+    assert!(taken["hint"].as_str().unwrap().contains("--replace"), "{taken}");
+}
+
+#[test]
 fn create_writes_a_spec_by_default_with_a_context_packet() {
     let (_dir, app) = app();
     let root = repo_root().to_string_lossy().into_owned();

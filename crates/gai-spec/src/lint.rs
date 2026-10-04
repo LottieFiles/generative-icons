@@ -319,8 +319,8 @@ fn light_strong(c: &Compiled, d: &mut Diagnostics) {
             continue;
         }
         let Some(l) = light.raw.iter().find(|l| l.target == s.target) else { continue };
-        let hidden = c.parts.iter().any(|p| p.name == s.target.name && p.hidden);
-        let rest = motion::rest_value(s.target.prop, hidden);
+        let opacity = c.parts.iter().find(|p| p.name == s.target.name).map_or(1.0, |p| if p.hidden { 0.0 } else { p.opacity });
+        let rest = motion::rest_value(s.target.prop, opacity);
         let peak = |keys: &[ease::Key]| keys.iter().map(|k| (k.v - rest).abs()).fold(0.0, f64::max);
         // Moves: runs between direction changes. A Strong with an extra beat (a wind-up, an
         // overshoot) is stronger even when its peak is bounded (a switch's travel).

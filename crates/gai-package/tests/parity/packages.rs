@@ -111,6 +111,13 @@ fn package_inputs(repo: &Path) -> Vec<PathBuf> {
             }
         }
     }
+    // Specs of icons reanimated as specs ship in the icons package.
+    for entry in std::fs::read_dir(repo.join("motion/icon-sets")).unwrap() {
+        let specs = entry.unwrap().path().join("specs");
+        if specs.is_dir() {
+            parts.push(specs.strip_prefix(repo).unwrap().to_path_buf());
+        }
+    }
     for relative in gai_package::Catalog::load(repo).unwrap().sets {
         let folder = Path::new("prototype/icons")
             .join(&relative)

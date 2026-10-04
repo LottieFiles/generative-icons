@@ -61,16 +61,10 @@ pub fn rest_of(active: f64) -> f64 {
 
 /// The rest value of a property: offsets are 0, factors 1, opacity 1 (0 for a hidden part),
 /// draw 1.
-pub fn rest_value(prop: Option<Prop>, hidden: bool) -> f64 {
+pub fn rest_value(prop: Option<Prop>, opacity: f64) -> f64 {
     match prop {
         Some(Prop::Scale | Prop::Squash | Prop::Draw) => 1.0,
-        Some(Prop::Opacity) => {
-            if hidden {
-                0.0
-            } else {
-                1.0
-            }
-        }
+        Some(Prop::Opacity) => opacity,
         _ => 0.0,
     }
 }
@@ -166,7 +160,8 @@ pub fn expand(items: &Items, rest: f64, d: &mut Diagnostics) -> Option<Vec<Key>>
 
 /// The resolved forward tracks of one motion. `hidden` says which parts start hidden;
 /// `pulsed` collects the parts a pulse shows.
-pub fn resolve(spec: &Spec, which: Which, hidden: &dyn Fn(&str) -> bool, d: &mut Diagnostics) -> Vec<Track> {
+/// `rest_opacity` is each part's opacity at rest (0 when hidden).
+pub fn resolve(spec: &Spec, which: Which, rest_opacity: &dyn Fn(&str) -> f64, d: &mut Diagnostics) -> Vec<Track> {
     let mut done: IndexMap<Target, Track> = IndexMap::new();
     let mut follows: Vec<(Target, Follow, String)> = Vec::new();
     let add = |done: &mut IndexMap<Target, Track>, track: Track, d: &mut Diagnostics| {
@@ -188,7 +183,7 @@ pub fn resolve(spec: &Spec, which: Which, hidden: &dyn Fn(&str) -> bool, d: &mut
             },
         };
         let Some((value, path)) = value else { continue };
-        let rest = rest_value(entry.target.prop, hidden(&entry.target.name));
+        let rest = rest_value(entry.target.prop, rest_opacity(&entry.target.name));
         match value {
             MotionValue::Keys(items) => {
                 if let Some(keys) = expand(items, rest, d) {
@@ -536,7 +531,7 @@ mod tests {
         let text = include_str!("../tests/fixtures/in-room-safe.icon.json");
         let spec = parse(text).unwrap();
         let mut d = Diagnostics::default();
-        let tracks = resolve(&spec, Which::Strong, &|_| false, &mut d);
+        let tracks = resolve(&spec, Which::Strong, &|_| 1.0, &mut d);
         assert!(d.0.is_empty(), "{d:?}");
         let door = &tracks[0];
         let got: Vec<(f64, f64)> = door.keys.iter().map(|k| (r4(k.t), r4(k.v))).collect();
@@ -559,7 +554,7 @@ mod tests {
         let text = include_str!("../tests/fixtures/alarm-clock.icon.json");
         let spec = parse(text).unwrap();
         let mut d = Diagnostics::default();
-        let tracks = resolve(&spec, Which::Light, &|_| false, &mut d);
+        let tracks = resolve(&spec, Which::Light, &|_| 1.0, &mut d);
         let right = tracks.iter().find(|t| t.target.name == "bell-r").unwrap();
         assert_eq!(right.keys[1].v, 6.0);
     }

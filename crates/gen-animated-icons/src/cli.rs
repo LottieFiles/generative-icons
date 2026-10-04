@@ -210,8 +210,8 @@ pub struct CreateArgs {
     /// New icon id, kebab-case, not a library id
     #[arg(value_name = "ID")]
     pub id: String,
-    /// Start from this library icon's spec (an icon reanimated as one; `search` marks them
-    /// in a checkout), or with --batch from its set's JS source. Needs a library checkout
+    /// Start from this library icon's spec (an icon reanimated as one; `search` marks them),
+    /// or with --batch from its set's JS source (which needs a library checkout)
     #[arg(long, value_name = "LIBRARY_ICON")]
     pub from: Option<String>,
     /// Display label [default: from the id]
@@ -225,12 +225,16 @@ pub struct CreateArgs {
     #[arg(long, value_name = "ID")]
     pub neighbor: Vec<String>,
     /// Write a v1 JS batch (`icons/batches/<ID>.mjs`) instead of a spec, for what specs
-    /// cannot express yet (continuous loaders, parts resting at partial opacity)
+    /// cannot express yet (continuous loaders, geometry that changes with the weight)
     #[arg(long)]
     pub batch: bool,
     /// A spec icon (`icons/<ID>.icon.json`), the default; kept so older scripts still run
     #[arg(long, hide = true, conflicts_with = "batch")]
     pub spec: bool,
+    /// Reanimate this library icon (maintainers): keep its id and start from its spec, or
+    /// from its v1 drawing ported to a spec; `library adopt` takes the build
+    #[arg(long, conflicts_with_all = ["from", "batch"])]
+    pub replace: bool,
 }
 
 /// Arguments of `draft`.

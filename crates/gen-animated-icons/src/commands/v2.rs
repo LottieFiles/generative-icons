@@ -871,20 +871,58 @@ pub fn starter(id: &str, label: &str, intent: &str) -> String {
     )
 }
 
-/// Library icons reanimated as specs in the checkout at `root`: id → (set, spec path).
-pub(crate) fn library_specs(root: &Path) -> std::collections::BTreeMap<String, (String, std::path::PathBuf)> {
-    let mut out = std::collections::BTreeMap::new();
-    let Ok(sets) = std::fs::read_dir(root.join("motion/icon-sets")) else { return out };
-    for set in sets.flatten() {
-        let Ok(specs) = std::fs::read_dir(set.path().join(gai_check::verify::adopted::SPECS_DIR)) else { continue };
-        for spec in specs.flatten() {
-            let name = spec.file_name().to_string_lossy().into_owned();
-            if let Some(id) = name.strip_suffix(gai_spec::SUFFIX) {
-                out.insert(id.to_string(), (set.file_name().to_string_lossy().into_owned(), spec.path()));
-            }
-        }
+/// The spec that starts a reanimation of library icon `id`: its own spec, else its v1
+/// drawing ported (the Light animation at frame 0). Returns the text, `spec` or `v1`, and
+/// the icon's set.
+fn reanimation(ctx: &Context, catalog: &crate::library::Catalog, source: &dyn crate::library::LibrarySource, id: &str, label: &str, warnings: &mut Vec<String>) -> Result<(String, &'static str, String)> {
+    let icon = catalog.get(id).expect("checked");
+    let set_id = icon.descriptor.pointer("/source/set").and_then(Value::as_str).unwrap_or_default().to_string();
+    let checkout = ctx.checkout()?.or_else(|| source.checkout().map(Path::to_path_buf));
+    let own = match checkout.as_ref().and_then(|c| crate::library::checkout_specs(c).remove(id)) {
+        Some((_, file)) => Some(std::fs::read(&file).map_err(|e| CliError::io("read", &file, &e))?),
+        None => source.spec(id)?,
+    };
+    if let Some(bytes) = own {
+        let text = String::from_utf8(bytes).map_err(|_| CliError::new(ErrorCode::InvalidCatalog, format!("{id}'s spec is not UTF-8")))?;
+        return Ok((text, "spec", set_id));
     }
-    out
+    let d = &icon.descriptor;
+    let motions = d.get("motions").and_then(Value::as_array).cloned().unwrap_or_default();
+    let light = motions.iter().find(|m| m.get("motionId").and_then(Value::as_str) == Some("light")).and_then(|m| m.get("name")).and_then(Value::as_str).unwrap_or(id).to_string();
+    let archive = source.asset(icon)?;
+    let files = gai_package::zip::read_zip(&archive).map_err(|e| CliError::new(ErrorCode::CorruptArchive, format!("{id}: {e}")))?;
+    // dotLottie 2 keeps animations in `a/`, version 1 in `animations/`.
+    let animation = gai_package::zip::find_file(&files, &format!("a/{light}.json"))
+        .or_else(|| gai_package::zip::find_file(&files, &format!("animations/{light}.json")))
+        .ok_or_else(|| CliError::new(ErrorCode::CorruptArchive, format!("{id}'s asset has no animation {light}")))?;
+    let lottie: Value = serde_json::from_slice(animation).map_err(|e| CliError::new(ErrorCode::CorruptArchive, format!("{id}: {e}")))?;
+    let text = |key: &str| d.get(key).and_then(Value::as_str).unwrap_or_default().to_string();
+    let stateful = d.get("stateful").and_then(Value::as_bool).unwrap_or(false);
+    let preview_reset = d.get("previewReset").and_then(Value::as_bool).unwrap_or(false);
+    let state = stateful.then(|| {
+        // The set's own labels where a checkout has them, else the states' names.
+        let entry = checkout.as_ref().and_then(|c| {
+            let manifest = c.join("prototype/icons").join(d.pointer("/source/manifest").and_then(Value::as_str)?);
+            let set: Value = serde_json::from_slice(&std::fs::read(manifest).ok()?).ok()?;
+            set.get("icons")?.as_array()?.iter().find(|i| i.get("icon").and_then(Value::as_str) == Some(id)).cloned()
+        });
+        let title = |s: &str| {
+            let mut c = s.chars();
+            c.next().map(|f| f.to_uppercase().chain(c).collect::<String>()).unwrap_or_default()
+        };
+        let label_of = |key: &str, state: &str| entry.as_ref().and_then(|e| e.get(key)).and_then(Value::as_str).map(&title).unwrap_or_else(|| title(state));
+        let (from, to) = (text("startState"), text("endState"));
+        (from.clone(), to.clone(), [label_of("forwardLabel", &to), label_of("reverseLabel", &from)])
+    });
+    // v2 names the reverse `<id>-reverse` (or `<id>-reset`); adopt needs the library's names.
+    let want = if preview_reset { format!("{id}-reset") } else { format!("{id}-reverse") };
+    if let Some(name) = motions.iter().filter_map(|m| m.pointer("/reverse/name").and_then(Value::as_str)).find(|n| !n.starts_with(&want)) {
+        warnings.push(format!("{id}'s reverse is named {name}; a spec names it {want}, so library adopt refuses it until the format can name it"));
+    }
+    let port = gai_spec::port::port(&lottie, &gai_spec::port::Icon { id: id.to_string(), label: label.to_string(), intent: text("intent"), state, preview_reset })
+        .map_err(|e| CliError::new(ErrorCode::CorruptArchive, format!("{id}: {e}")))?;
+    warnings.extend(port.notes.iter().map(|n| format!("{id}: {n}")));
+    Ok((serde_json::to_string_pretty(&port.spec).expect("json") + "\n", "v1", set_id))
 }
 
 /// A library spec as a new icon's: its id, label and (when given) intent replaced. The
@@ -936,61 +974,88 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     let mut warnings = Vec::new();
     let library = ctx.library().and_then(|library| Ok((library.catalog()?, library)));
     match &library {
-        Ok((catalog, _)) if catalog.get(id).is_some() => {
+        Ok((catalog, _)) if catalog.get(id).is_some() && !args.replace => {
             return Err(CliError::new(ErrorCode::IdCollision, format!("{id} is already a library icon"))
                 .with_id(id)
-                .with_hint(format!("Install it with gen-animated-icons add {id}, or choose a distinct id")));
+                .with_hint(format!("Install it with gen-animated-icons add {id}, or choose a distinct id (maintainers reanimating it: --replace)")));
+        }
+        Ok((catalog, _)) if catalog.get(id).is_none() && args.replace => {
+            return Err(CliError::new(ErrorCode::UnknownIcon, format!("--replace reanimates a library icon, and {id} is not one")).with_id(id));
         }
         Ok(_) => {}
+        Err(error) if args.replace => {
+            return Err(CliError::new(error.code, format!("--replace reads the library icon, and the library is unavailable: {}", error.message)));
+        }
         Err(error) => warnings.push(format!("Library unavailable, so {id} was not checked against library ids: {}", error.message)),
     }
-    let label = args.label.clone().unwrap_or_else(|| {
+    let label = args.label.clone().or_else(|| args.replace.then(|| library.as_ref().ok().and_then(|(c, _)| c.get(id)).map(|i| i.label.clone())).flatten()).unwrap_or_else(|| {
         let mut words: Vec<String> = id.split('-').map(str::to_string).collect();
         if let Some(first) = words.first_mut() {
             *first = first[..1].to_uppercase() + &first[1..];
         }
         words.join(" ")
     });
+    let mut replaced = None;
     let (text, from) = match &args.from {
+        None if args.replace => {
+            let (catalog, source) = library.as_ref().map_err(|e| CliError::new(e.code, e.message.clone()))?;
+            let (text, how, set_id) = reanimation(ctx, catalog, source.as_ref(), id, &label, &mut warnings)?;
+            replaced = Some(json!({"set": set_id, "start": how}));
+            (text, None)
+        }
         None => {
             let intent = args.intent.clone().unwrap_or_else(|| "Light: the bell swings once on its hook. Strong: it winds up, is struck hard and rings down, the clapper lagging behind.".into());
             (starter(id, &label, &intent), None)
         }
         Some(reference) => {
-            let catalog = library.as_ref().ok().map(|(catalog, _)| catalog);
-            let checkout = ctx.checkout()?.or_else(|| library.as_ref().ok().and_then(|(_, l)| l.checkout().map(Path::to_path_buf))).ok_or_else(|| {
-                CliError::usage("--from copies a library icon's spec, which needs a library checkout")
-                    .with_hint("Pass --library <checkout> (or --library-root <checkout>); the published library has no specs, so without a checkout leave out --from")
-            })?;
-            let specs = library_specs(&checkout);
-            let Some((set_id, spec_path)) = specs.get(reference.as_str()) else {
-                if catalog.is_some_and(|c| c.get(reference).is_none()) {
-                    return Err(CliError::new(ErrorCode::UnknownIcon, format!("Unknown library icon: {reference}")).with_id(reference));
+            let (catalog, source) = match &library {
+                Ok((catalog, source)) => (catalog, source),
+                Err(error) => {
+                    return Err(CliError::new(error.code, format!("--from reads the library icon's spec, and the library is unavailable: {}", error.message))
+                        .with_hint("Pass --library <dir|url> (a package dist, a checkout or the hosted library)"));
                 }
-                let category = catalog.and_then(|c| c.get(reference)).and_then(|i| i.category.clone());
+            };
+            let Some(icon) = catalog.get(reference) else {
+                return Err(CliError::new(ErrorCode::UnknownIcon, format!("Unknown library icon: {reference}")).with_id(reference));
+            };
+            // A checkout's specs are the source; a package carries copies under specs/.
+            let checkout = ctx.checkout()?.or_else(|| source.checkout().map(Path::to_path_buf));
+            let (source_text, origin) = match checkout.as_ref().and_then(|c| crate::library::checkout_specs(c).remove(reference.as_str())) {
+                Some((_, file)) => (std::fs::read_to_string(&file).map_err(|e| CliError::io("read", &file, &e))?, file.display().to_string()),
+                None if checkout.is_some() => (String::new(), String::new()),
+                None => match source.spec(reference)? {
+                    Some(bytes) => (String::from_utf8(bytes).map_err(|_| CliError::new(ErrorCode::InvalidCatalog, format!("{reference}'s spec is not UTF-8")))?, format!("{}{}", source.location(), crate::library::spec_path(reference))),
+                    None => (String::new(), String::new()),
+                },
+            };
+            if source_text.is_empty() {
+                let with_spec = match &checkout {
+                    Some(c) => crate::library::checkout_specs(c).into_keys().collect(),
+                    None => source.spec_ids().unwrap_or_default(),
+                };
                 let mut near: Vec<&str> = catalog
-                    .into_iter()
-                    .flat_map(|c| &c.icons)
-                    .filter(|i| i.category.is_some() && i.category == category && specs.contains_key(i.id.as_str()))
+                    .icons
+                    .iter()
+                    .filter(|i| i.category.is_some() && i.category == icon.category && with_spec.contains(&i.id))
                     .map(|i| i.id.as_str())
                     .take(3)
                     .collect();
                 if near.is_empty() {
-                    near = specs.keys().map(String::as_str).take(3).collect();
+                    near = with_spec.iter().map(String::as_str).take(3).collect();
                 }
-                return Err(CliError::new(ErrorCode::UnsupportedReference, format!("{reference} has no spec: it was not reanimated as one"))
-                    .with_id(reference)
-                    .with_hint(format!(
-                        "Start from an icon with a spec, such as {}; leave out --from for the starter; or start a JS batch from its source with --batch --from {reference}",
-                        near.join(", ")
-                    )));
-            };
-            let source = std::fs::read_to_string(spec_path).map_err(|e| CliError::io("read", spec_path, &e))?;
-            let text = spec_from(&source, id, &label, args.intent.as_deref()).map_err(|e| CliError::new(ErrorCode::InvalidCatalog, format!("{}: {e}", spec_path.display())))?;
+                let hint = match near.is_empty() {
+                    true => format!("This library carries no specs; leave out --from for the starter, or start a JS batch from its source with --batch --from {reference}"),
+                    false => format!("Start from an icon with a spec, such as {}; leave out --from for the starter; or start a JS batch from its source with --batch --from {reference}", near.join(", ")),
+                };
+                return Err(CliError::new(ErrorCode::UnsupportedReference, format!("{reference} has no spec: it was not reanimated as one")).with_id(reference).with_hint(hint));
+            }
+            let text = spec_from(&source_text, id, &label, args.intent.as_deref()).map_err(|e| CliError::new(ErrorCode::InvalidCatalog, format!("{origin}: {e}")))?;
+            let set_id = icon.descriptor.pointer("/source/set").and_then(Value::as_str).unwrap_or_default().to_string();
             (text, Some(json!({"id": reference, "set": set_id})))
         }
     };
-    let packet = super::create::make_packet(ctx, &label, args, &mut warnings)?;
+    let reference = if args.replace { Some(id) } else { args.from.as_deref() };
+    let packet = super::create::make_packet(ctx, &label, args, reference, &mut warnings)?;
     let mut batch = Batch::new();
     batch.write(path.clone(), text);
     let set_config = set.file("set-config.json");
@@ -999,7 +1064,7 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     }
     let lock = Lock::load(root, config.layout)?;
     let changed = batch.plan(root, &lock.expected())?.apply()?;
-    let saved = super::create::save_packet(root, id, packet, args)?;
+    let saved = super::create::save_packet(root, id, packet, args, reference)?;
     let next = [format!("edit {path}"), format!("gen-animated-icons check {id}"), format!("gen-animated-icons draft {id}"), format!("gen-animated-icons build {id}"), format!("gen-animated-icons preview {id}")];
     let mut out = format!("Created {id} in {path} (spec).\n");
     if let Some(from) = &from {
@@ -1010,6 +1075,14 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
             from["set"].as_str().unwrap_or_default()
         );
     }
+    if let Some(replaced) = &replaced {
+        let set_id = replaced["set"].as_str().unwrap_or_default();
+        let _ = match replaced["start"].as_str() {
+            Some("spec") => writeln!(out, "It reanimates library icon {id} (set {set_id}) from its spec: rework the motion, keep the drawing and the actions."),
+            _ => writeln!(out, "It reanimates library icon {id} (set {set_id}) from its v1 drawing, ported to a spec with no motion: keep the drawing, write the motion (check reports an empty motion until you do)."),
+        };
+        let _ = writeln!(out, "When it builds, adopt it in the library checkout: gen-animated-icons library adopt {} {}/{BUILD_DIR}/{id}", &set_id[..2.min(set_id.len())], root.display());
+    }
     saved.describe(&mut out);
     text_list(&mut out, "Changed", &changed);
     text_list(&mut out, "Next", &next);
@@ -1017,6 +1090,9 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
         "id": id, "label": label, "format": gai_spec::FORMAT, "spec": path, "from": from, "files": changed,
         "context": saved.path, "references": saved.references, "next": next,
     });
+    if let (Some(replaced), Value::Object(map)) = (replaced, &mut value) {
+        map.shift_insert(5, "replace".into(), replaced);
+    }
     if let (Some(nearest), Value::Object(map)) = (saved.nearest, &mut value) {
         map.shift_insert(8, "nearest".into(), Value::Array(nearest));
     }

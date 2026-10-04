@@ -145,6 +145,8 @@ pub struct PartSrc {
     /// `gap` as an object: cut this part within `d` of another part at rest.
     pub gaps: Option<Vec<(String, f64)>>,
     pub hidden: Option<bool>,
+    /// The opacity the part rests at (0 to 1, not 0: that is `hidden`).
+    pub opacity: Option<f64>,
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -838,8 +840,8 @@ impl Parser {
             "path" => {
                 self.object(v, path, "path", &["path"], &["path"])?;
                 let d = self.string(&map["path"], &field("path"), "path")?;
-                if d.len() > 2000 {
-                    self.err(&field("path"), "path data is longer than 2000 characters");
+                if d.len() > 8000 {
+                    self.err(&field("path"), "path data is longer than 8000 characters");
                     return None;
                 }
                 if let Err(problem) = check_one_subpath(&d) {
@@ -914,7 +916,7 @@ impl Parser {
     }
 
     fn part(&mut self, name: &str, v: &Value, path: &str) -> Option<PartSrc> {
-        const FIELDS: [&str; 11] = ["//", "shape", "mirror", "role", "outline", "tint", "solid", "holes", "knockout", "gap", "hidden"];
+        const FIELDS: [&str; 12] = ["//", "shape", "mirror", "role", "outline", "tint", "solid", "holes", "knockout", "gap", "hidden", "opacity"];
         let map = self.object(v, path, "a part", &FIELDS, &[])?;
         let body = match (map.get("shape"), map.get("mirror")) {
             (Some(s), None) => PartBody::Shapes(self.shapes(s, &at(path, "shape"))?),
@@ -1052,7 +1054,18 @@ impl Parser {
             Some(b) => Some(self.boolean(b, &at(path, "hidden"))?),
             None => None,
         };
-        Some(PartSrc { name: name.to_string(), path: path.to_string(), body, role, outline, tint, solid, holes, knockout, knockout_gap, gaps, hidden })
+        let opacity = match map.get("opacity") {
+            Some(v) => {
+                let o = self.number(v, &at(path, "opacity"), "opacity (the part's rest opacity)", 0.0, 1.0)?;
+                if o == 0.0 || hidden == Some(true) {
+                    self.err_hint(&at(path, "opacity"), "a part resting at opacity 0 is hidden", "use \"hidden\": true, and leave out opacity");
+                    return None;
+                }
+                Some(o)
+            }
+            None => None,
+        };
+        Some(PartSrc { name: name.to_string(), path: path.to_string(), body, role, outline, tint, solid, holes, knockout, knockout_gap, gaps, hidden, opacity })
     }
 
     fn rigs(&mut self, v: &Value) -> Vec<RigSrc> {

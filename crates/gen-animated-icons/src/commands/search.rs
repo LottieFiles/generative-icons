@@ -95,13 +95,14 @@ pub fn run(ctx: &Context, args: &SearchArgs) -> Result<Report> {
     }
     let mut warnings = Vec::new();
     let mut entries = Vec::new();
-    // In a checkout, icons reanimated as specs say so: `create --spec --from` starts from one.
-    let mut specs = std::collections::BTreeMap::new();
+    // Icons reanimated as specs say so: `create --from` starts from one.
+    let mut specs = std::collections::BTreeSet::new();
     if !args.local_only {
         let library = ctx.library()?;
-        if let Some(checkout) = library.checkout() {
-            specs = super::v2::library_specs(checkout);
-        }
+        specs = library.spec_ids().unwrap_or_else(|error| {
+            warnings.push(format!("Cannot tell which icons have specs: {}", error.message));
+            Default::default()
+        });
         let catalog = library.catalog()?;
         let index = library.search_index(&catalog)?;
         entries.extend(catalog.icons.into_iter().map(|icon| Entry {
@@ -134,7 +135,7 @@ pub fn run(ctx: &Context, args: &SearchArgs) -> Result<Report> {
             .map(|(index, score)| {
                 let entry = &entries[*index];
                 let mut item = entry.to_json(score.as_ref());
-                if entry.origin == "library" && specs.contains_key(entry.id.as_str()) {
+                if entry.origin == "library" && specs.contains(&entry.id) {
                     item["spec"] = json!(true);
                 }
                 item

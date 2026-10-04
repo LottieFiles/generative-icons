@@ -472,3 +472,18 @@ fn lints_warn_near_the_edge_unless_faint_and_about_specks() {
     }});
     assert!(warnings(speck).contains(&"SMALL_AT_24".to_string()));
 }
+
+#[test]
+fn parts_can_rest_translucent() {
+    let base = |part: Value, track: Value| load(&spec(json!({"parts": {"track": part, "dot": line()}, "motion": {"track.opacity": track, "dot.y": {"light": [[0, 0], [0.2, 2], [0.4, 0]], "strong": [[0, 0], [0.2, 3], [0.45, 0]]}}})));
+    let track = |o: f64| json!({"light": [[0, o], [0.2, 1], [0.4, o]], "strong": [[0, o], [0.15, 1], [0.45, o]]});
+    let c = base(json!({"shape": {"line": [[8, 22], [24, 22]]}, "opacity": 0.32}), track(0.32)).unwrap();
+    let layer = c.plan.layers.iter().find(|l| l.part == "track" && l.style == Some("outline.regular")).unwrap();
+    assert_eq!(layer.opacity, Some(0.32));
+    // Its opacity track starts and ends at the rest opacity, not 1.
+    let e = base(json!({"shape": {"line": [[8, 22], [24, 22]]}, "opacity": 0.32}), track(1.0)).unwrap_err();
+    assert_eq!(e.errors().map(|d| d.code).collect::<Vec<_>>(), ["REST_VALUE", "REST_VALUE"]);
+    // Opacity 0 is `hidden`.
+    let e = base(json!({"shape": {"line": [[8, 22], [24, 22]]}, "opacity": 0}), track(0.0)).unwrap_err();
+    assert_eq!(e.errors().next().unwrap().path, "/parts/track/opacity");
+}

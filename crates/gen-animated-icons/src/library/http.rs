@@ -63,6 +63,26 @@ impl Http {
     }
 }
 
+impl Http {
+    /// The published specs and their hashes, from `release.json` (cached for --offline).
+    fn release_specs(&self) -> Result<std::collections::BTreeMap<String, String>> {
+        let cached = self.catalog_cache().map(|dir| dir.join("release.json"));
+        let bytes = if self.offline {
+            cached.and_then(|file| std::fs::read(file).ok())
+        } else {
+            let bytes = self.get("release.json")?;
+            if let (Some(file), Some(bytes)) = (&cached, &bytes) {
+                store(file, bytes);
+            }
+            bytes
+        };
+        match bytes {
+            Some(bytes) => super::release_specs(&bytes, &format!("{}release.json", self.base)),
+            None => Ok(Default::default()),
+        }
+    }
+}
+
 /// `error` and each cause it wraps, `: `-joined, skipping a cause whose text is already
 /// shown: the client's own message never says why a request failed (DNS, refused, TLS).
 fn with_causes(error: &dyn std::error::Error) -> String {
@@ -159,6 +179,30 @@ impl LibrarySource for Http {
             Some(bytes) => SearchIndex::parse(&bytes, &format!("{}search-index.json", self.base)),
             None => Ok(SearchIndex::default()),
         }
+    }
+
+    fn spec_ids(&self) -> Result<std::collections::BTreeSet<String>> {
+        Ok(self.release_specs()?.into_keys().collect())
+    }
+
+    fn spec(&self, id: &str) -> Result<Option<Vec<u8>>> {
+        let Some(sha256) = self.release_specs()?.remove(id) else { return Ok(None) };
+        let cached = self.cached(&format!("specs/{sha256}.icon.json"));
+        if let Some(bytes) = cached.as_ref().and_then(|file| std::fs::read(file).ok())
+            && gai_core::sha256_hex(&bytes) == sha256
+        {
+            return Ok(Some(bytes));
+        }
+        if self.offline {
+            return Err(self.offline_error(&format!("the spec of {id}")).with_id(id));
+        }
+        let path = super::spec_path(id);
+        let bytes = self.get(&path)?.ok_or_else(|| CliError::new(ErrorCode::Network, format!("No spec at {}{path}", self.base)).with_id(id))?;
+        let bytes = super::verify_spec(id, &sha256, bytes)?;
+        if let Some(file) = cached {
+            store(&file, &bytes);
+        }
+        Ok(Some(bytes))
     }
 
     fn asset(&self, icon: &LibraryIcon) -> Result<Vec<u8>> {

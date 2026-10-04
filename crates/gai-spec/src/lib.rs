@@ -15,6 +15,7 @@ pub mod geom;
 pub mod lint;
 pub mod motion;
 pub mod plan;
+pub mod port;
 pub mod spec;
 
 pub use compile::{Compiled, compile};

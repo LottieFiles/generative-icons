@@ -1,6 +1,7 @@
 //! A library on disk: a built package `dist` or a library checkout.
 
-use super::{Catalog, LibraryIcon, LibrarySource, SearchIndex, verify_asset};
+use super::{Catalog, LibraryIcon, LibrarySource, SearchIndex, checkout_specs, release_specs, spec_path, verify_asset, verify_spec};
+use std::collections::BTreeSet;
 use crate::error::{CliError, ErrorCode, Result};
 use crate::managed::{inside, read_optional};
 use std::path::{Path, PathBuf};
@@ -93,5 +94,34 @@ impl LibrarySource for LocalDir {
 
     fn checkout(&self) -> Option<&Path> {
         self.checkout.as_deref()
+    }
+
+    fn spec_ids(&self) -> Result<BTreeSet<String>> {
+        match &self.checkout {
+            Some(checkout) => Ok(checkout_specs(checkout).into_keys().collect()),
+            None => Ok(self.release_specs()?.into_keys().collect()),
+        }
+    }
+
+    fn spec(&self, id: &str) -> Result<Option<Vec<u8>>> {
+        if let Some(checkout) = &self.checkout {
+            let Some((_, file)) = checkout_specs(checkout).remove(id) else { return Ok(None) };
+            return std::fs::read(&file).map(Some).map_err(|error| CliError::io("read", &file, &error));
+        }
+        let Some(sha256) = self.release_specs()?.remove(id) else { return Ok(None) };
+        let file = inside(&self.dist, &spec_path(id)).map_err(|error| CliError::new(ErrorCode::InvalidCatalog, error.message).with_id(id))?;
+        let bytes = std::fs::read(&file).map_err(|error| CliError::new(ErrorCode::InvalidCatalog, format!("Cannot read {}: {error}", file.display())).with_id(id))?;
+        verify_spec(id, &sha256, bytes).map(Some)
+    }
+}
+
+impl LocalDir {
+    /// The package's specs and their hashes, from `release.json` (none without one).
+    fn release_specs(&self) -> Result<std::collections::BTreeMap<String, String>> {
+        let file = self.dist.join("release.json");
+        match read_optional(&file)? {
+            Some(bytes) => release_specs(&bytes, &file.display().to_string()),
+            None => Ok(Default::default()),
+        }
     }
 }

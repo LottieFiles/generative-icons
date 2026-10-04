@@ -82,7 +82,7 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
                     .with_hint("Pass --library <checkout> (or --library-root <checkout>); the published library has no sources, so without a checkout leave out --from")
             })?;
             // A reanimated icon's set source is the motion its spec replaced.
-            if super::v2::library_specs(&checkout).contains_key(reference.as_str()) {
+            if crate::library::checkout_specs(&checkout).contains_key(reference.as_str()) {
                 return Err(CliError::new(
                     ErrorCode::UnsupportedReference,
                     format!("{reference} was reanimated as a spec; its set source is the motion the spec replaced"),
@@ -153,9 +153,9 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     }
     batch.write(next.path, next.to_bytes());
 
-    let packet = make_packet(ctx, &label, args, &mut warnings)?;
+    let packet = make_packet(ctx, &label, args, args.from.as_deref(), &mut warnings)?;
     let changed = batch.plan(root, &lock.expected())?.apply()?;
-    let saved = save_packet(root, id, packet, args)?;
+    let saved = save_packet(root, id, packet, args, args.from.as_deref())?;
     let (context, references, nearest) = (&saved.path, saved.references.clone(), saved.nearest.clone());
     next_steps.extend([
         format!("edit {batch_path}"),
@@ -190,9 +190,10 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
 /// The context packet `create` saves for a new icon: made before anything is written, so
 /// an unknown `--neighbor` stops create, and `None` (with a warning) when the library
 /// cannot be read.
-pub(super) fn make_packet(ctx: &Context, label: &str, args: &CreateArgs, warnings: &mut Vec<String>) -> Result<Option<Value>> {
+/// `from` is the icon the new one starts from (`--from`, or the icon `--replace` reworks).
+pub(super) fn make_packet(ctx: &Context, label: &str, args: &CreateArgs, from: Option<&str>, warnings: &mut Vec<String>) -> Result<Option<Value>> {
     let query = nearest_query(label, args.intent.as_deref());
-    let neighbors: Vec<String> = args.from.iter().chain(&args.neighbor).cloned().collect();
+    let neighbors: Vec<String> = from.map(str::to_string).into_iter().chain(args.neighbor.iter().cloned()).collect();
     match context::packet(ctx, &query, &super::unique(&neighbors).into_iter().map(str::to_string).collect::<Vec<_>>()) {
         Ok(packet) => Ok(Some(packet)),
         Err(error) if !args.neighbor.is_empty() && matches!(error.code, ErrorCode::UnknownIcon | ErrorCode::Usage) => {
@@ -224,8 +225,8 @@ impl SavedPacket {
 }
 
 /// Writes the packet to `.gen-animated-icons/context/<id>.json`.
-pub(super) fn save_packet(root: &Path, id: &str, packet: Option<Value>, args: &CreateArgs) -> Result<SavedPacket> {
-    let chose = args.from.is_some() || !args.neighbor.is_empty();
+pub(super) fn save_packet(root: &Path, id: &str, packet: Option<Value>, args: &CreateArgs, from: Option<&str>) -> Result<SavedPacket> {
+    let chose = from.is_some() || !args.neighbor.is_empty();
     let path = format!("{CONTEXT_DIR}/{id}.json");
     if let Some(packet) = &packet {
         let text = gai_core::to_js_json_pretty(packet, 2) + "\n";

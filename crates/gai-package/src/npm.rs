@@ -175,6 +175,22 @@ pub fn build_packages(repo: &Path, options: &BuildPackagesOptions) -> Result<Pac
                 format!("declare const icon: {text};\nexport default icon;\n").into_bytes(),
             );
             descriptors.push(descriptor);
+            // An icon reanimated as a spec ships it, for `create --from` without a checkout.
+            let spec = repo
+                .join("motion/icon-sets")
+                .join(set_id.as_str().unwrap_or_default())
+                .join("specs")
+                .join(format!("{identity}.icon.json"));
+            if is_symlink(&spec) {
+                return Err(invalid(format!("Invalid spec path: {identity}")));
+            }
+            if spec.is_file() {
+                let bytes = read(&spec)?;
+                stage
+                    .get_mut("icons")
+                    .expect("known package")
+                    .insert(format!("specs/{identity}.icon.json"), bytes);
+            }
         }
     }
 

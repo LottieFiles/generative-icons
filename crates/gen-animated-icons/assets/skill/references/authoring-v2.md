@@ -12,7 +12,7 @@ gen-animated-icons build <id>              # one engine call: export, slots, the
 
 Fix every `check` error before you draft. A draft is about 4 s and stores nothing, so draft after each change you cannot judge from the numbers; build once the draft looks right. `check` and `draft` never need a build first.
 
-Over 400 library icons are specs that passed every check below. When one is close to what you need (the same object, or the same kind of event), start from it: `create <id> --from <library-id>` copies its parts, rigs, motion, state and reverse under your id. In a library checkout, `search` marks those icons `"spec": true`. Redraw what the new meaning needs, rewrite the intent, rename the state and labels, and keep the craft: the event, the beats, the clearance and the endings.
+Over 400 library icons are specs that passed every check below. When one is close to what you need (the same object, or the same kind of event), start from it: `create <id> --from <library-id>` copies its parts, rigs, motion, state and reverse under your id. `search` marks those icons `"spec": true`, and every library carries their specs. Redraw what the new meaning needs, rewrite the intent, rename the state and labels, and keep the craft: the event, the beats, the clearance and the endings.
 
 ## Conventions
 
@@ -21,7 +21,7 @@ Over 400 library icons are specs that passed every check below. When one is clos
 | Grid | 32 units, y down. A point is `[x, y]`, an anchor name, or `{"from": P, "angle": deg, "len": r}`. |
 | Angles | Degrees, positive = clockwise on screen. Polar and arc angles: 0 = +x (3 o'clock), -90 = up. |
 | Times | Seconds on the 2.4 s timeline. Fractional times are kept. |
-| Values | `x`, `y`, `rotate`, `r`, `grow`, `amp` are offsets from the drawn pose (rest 0). `opacity` and `draw` are absolute 0–1 (rest 1). `scale` and `squash` are factors (rest 1). |
+| Values | `x`, `y`, `rotate`, `r`, `grow`, `amp` are offsets from the drawn pose (rest 0). `opacity` and `draw` are absolute 0–1 (rest 1; a part's `"opacity"` sets the opacity it rests at, `"hidden": true` rests it at 0). `scale` and `squash` are factors (rest 1). |
 | Draw order | The order of `parts`, back to front. |
 | Comments | A `"//"` key on the spec, a part, a rig, a track (a `follow` included) or `reverse`. |
 
@@ -77,7 +77,7 @@ Each part expands into the style layers the runtime switches: outline at 1.5 / 2
 
 | Role | Outline | Tint | Solid (`auto`) |
 |---|---|---|---|
-| `stroke` (default) | stroked | none | the centerline at 2.6 |
+| `stroke` (default) | stroked; `"outline": "none"` draws none, so the part shows only in Solid | none | the centerline at 2.6 |
 | `surface` | the frame stroked; `"outline": "open"` leaves out the closing edge, `"none"` draws none | the interior (`"tint": false` for none) | filled, plus a 2.6 rim |
 | `fill` | filled in every weight | none | filled |
 
@@ -191,4 +191,4 @@ With MCP, the `draft` tool returns the same sheets as images. `draft` writes `.g
 
 ## Not in the format yet
 
-`swing`, `flip`, `minus`, a keyed wave `phase` and connectors (anchors that follow another rig) stop with `NOT_IMPLEMENTED`. Also not supported yet: `scale` or `squash` on a rig that carries rigs, two path-changing tracks on one shape, a negative Solid `grow`, and one pulse per track and motion. Parts that collapse are not hidden automatically: key their `opacity`. Clearance and counter-width lints are not run yet, so check counters at Bold in the draft. Continuous loaders (motion through the whole 2.4 s, trim start or offset) are not in the format yet. A part rests at full opacity or hidden, never in between (a 24% band of a ramp cannot be drawn yet). Geometry cannot change with the outline weight (a dot whose radius is the weight). Several cut-outs moving on different rigs in one Solid surface cannot all follow (`KNOCKOUT_RIGS`): one surface has one matte. For an icon that needs one of these, write a JS batch: `create <id> --batch`.
+`swing`, `flip`, `minus`, a keyed wave `phase` and connectors (anchors that follow another rig) stop with `NOT_IMPLEMENTED`. Also not supported yet: `scale` or `squash` on a rig that carries rigs, two path-changing tracks on one shape, a negative Solid `grow`, and one pulse per track and motion. Parts that collapse are not hidden automatically: key their `opacity`. Clearance and counter-width lints are not run yet, so check counters at Bold in the draft. Continuous loaders (motion through the whole 2.4 s, trim start or offset) are not in the format yet. Geometry cannot change with the outline weight (a dot whose radius is the weight). Several cut-outs moving on different rigs in one Solid surface cannot all follow (`KNOCKOUT_RIGS`): one surface has one matte. For an icon that needs one of these, write a JS batch: `create <id> --batch`.

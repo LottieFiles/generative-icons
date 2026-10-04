@@ -582,7 +582,8 @@ The `@lottiefiles/generative-icons*` packages share one version and are released
 | Catalog | `schemaVersion`, package `version`, categories and the complete descriptor list |
 | Project (`gen-animated-icons.json`, written by the CLI) | `schemaVersion`, platform, detected framework and package manager, relative asset and descriptor folders, public URL base (web), default appearance, agent skill folders and local icon settings. `schemas/project.schema.json` describes only the original web fields; it does not yet cover the newer fields, native configs or weights between 1 and 3. |
 | Lock (`.gen-animated-icons/lock.json`) | Selected IDs and versions, installed paths and hashes of managed files; local edits block replacement |
-| Release (`release.json`) | Source commit and dirty status, catalog/asset/docs hashes, runtime, CLI and player versions, and the `exporter` note (export is needed for authoring only and is not bundled) |
+| Release (`release.json`) | Source commit and dirty status, catalog/asset/docs/spec hashes, runtime, CLI and player versions, and the `exporter` note (export is needed for authoring only and is not bundled) |
+| Specs (`specs/<id>.icon.json`) | The editable spec (`gai-icon/2`) of every icon reanimated as one, hashed in `release.json`; `gen-animated-icons create <new-id> --from <id>` starts a new icon from it. Icons without a spec have none. |
 
 ## How packages are built
 
@@ -674,10 +675,11 @@ The [creating icons](https://github.com/LottieFiles/lottie-generative-icons/blob
 
 ## Reanimate a library icon with a spec
 
-A library icon can be replaced by a spec v2 icon of the same id. Author and build it in any project, then adopt the build into its set. `create` refuses library ids, so write the spec as `gen-animated-icons/icons/airplane.icon.json` yourself (start from `create airplane-draft`, or a reanimated icon's spec, and set its `id`):
+A library icon can be replaced by a spec v2 icon of the same id. Start it in any project with `create <id> --replace`, author and build it there, then adopt the build into its set:
 
 ```sh
-# in a scratch project: gen-animated-icons/icons/airplane.icon.json, the ported drawing and the new motion
+gen-animated-icons create airplane --replace       # in a scratch project: the icon's spec, or its v1 drawing ported
+# write the motion in gen-animated-icons/icons/airplane.icon.json
 gen-animated-icons check airplane && gen-animated-icons draft airplane
 gen-animated-icons build airplane --no-install
 gen-animated-icons library adopt 14 path/to/project/.gen-animated-icons/build/airplane
@@ -685,6 +687,7 @@ gen-animated-icons library verify 14
 gen-animated-icons library verify-visual 14
 ```
 
+- `create --replace` keeps the library id. An icon already reanimated starts from its own spec. Any other starts from its v1 drawing, ported from the Light animation at frame 0: one part per outline layer, and the tint and Solid layers as the part's own where the geometry matches, else as parts that draw only in that style, so every style keeps v1's shapes. The port has no motion (`check` reports an empty `motion`), and its warnings name what it could not carry: per-weight geometry, a Solid-only open stroke, a custom reverse name `adopt` would refuse.
 - `adopt` copies the spec to `motion/icon-sets/NN-…/specs/<id>.icon.json` and the actions into the set's assets, replaces the icon's `set.json` entry (keeping its number, category and state labels) and repackages the set. The build must have the icon's actions: the same reverse or reset actions for a stateful icon.
 - The rest pose and, for a stateful icon, the end state must stay the library drawing, so apps that switch versions see no jump.
 - From then on the spec is the icon's source. `library build` keeps adopted icons as they are (their old definitions stay for the legacy checks but no longer export), and `library verify` checks them against their spec: hashes, format, paint, themes and markers. Their motion checks run in `build`, and `verify-visual` renders them like every other action.
@@ -698,7 +701,7 @@ What the library-wide reanimation (Oct 2026, 412 icons) learned about porting, b
 - A `previewReset` icon uses `"reverse": "fade"` with states `prepared` → `result`.
 - Some sets protect openings (counters, ring holes, Solid openings) in every frame: read the set's entry in `crates/gai-render/src/rules.rs` before designing, so the motion never shrinks, fills or covers one.
 - `build` runs the visual rules every set shares; a set's own rules run only in `library verify-visual NN`, so run it after adopting and before you commit.
-- Not portable yet: a part resting at partial opacity (gradient-stops), geometry that changes with the weight (more-options).
+- Not portable yet: geometry that changes with the weight (more-options). A part resting translucent takes `"opacity"` (gradient-stops' ramp bands), and a stroke drawn only in Solid takes `"outline": "none"`.
 
 ## Local gallery
 

@@ -23,6 +23,8 @@ handle.play();
 
 Without the CLI, import one descriptor from `@lottiefiles/generative-icons/icons/heart` and resolve `@lottiefiles/generative-icons/assets/heart.lottie` with your bundler. A descriptor import loads only that icon's metadata.
 
+Icons reanimated as specs also ship their editable spec, `@lottiefiles/generative-icons/specs/<id>.icon.json`; `gen-animated-icons create <new-id> --from <id>` starts a new icon from one.
+
 Keep all `@lottiefiles/generative-icons*` packages on the same version.
 
 ## Docs

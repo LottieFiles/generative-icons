@@ -89,6 +89,12 @@ def build():
                                   asset=dict(path=f'assets/{identity}.lottie', sha256=sha(data), bytes=len(data)))
                 icons.append(descriptor)
                 copy(asset, stage / 'icons' / descriptor['asset']['path'])
+                # An icon reanimated as a spec ships it, for `create --from` without a checkout.
+                spec = ROOT / 'motion/icon-sets' / metadata['id'] / 'specs' / f'{identity}.icon.json'
+                if spec.is_symlink():
+                    raise ValueError(f'Invalid spec path: {identity}')
+                if spec.is_file():
+                    copy(spec, stage / 'icons/specs' / f'{identity}.icon.json')
                 output = stage / 'icons/icons'
                 output.mkdir(exist_ok=True)
                 (output / f'{identity}.mjs').write_text('export default ' + json.dumps(descriptor) + ';\n')

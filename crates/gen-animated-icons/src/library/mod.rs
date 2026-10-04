@@ -16,6 +16,7 @@ pub use local::{LocalDir, is_checkout};
 pub use search_index::SearchIndex;
 
 use crate::error::{CliError, ErrorCode, Result};
+use std::collections::{BTreeMap, BTreeSet};
 use std::path::{Path, PathBuf};
 
 /// A source of released icons.
@@ -36,6 +37,63 @@ pub trait LibrarySource {
     fn checkout(&self) -> Option<&Path> {
         None
     }
+
+    /// Icons reanimated as specs: a package's `specs/<id>.icon.json` (hashed in its
+    /// `release.json`), a checkout's `motion/icon-sets/<set>/specs/`.
+    fn spec_ids(&self) -> Result<BTreeSet<String>> {
+        Ok(BTreeSet::new())
+    }
+
+    /// An icon's spec, verified against `release.json`; `None` when it has none.
+    fn spec(&self, _id: &str) -> Result<Option<Vec<u8>>> {
+        Ok(None)
+    }
+}
+
+/// The package file of an icon's spec.
+pub fn spec_path(id: &str) -> String {
+    format!("specs/{id}{}", gai_spec::SUFFIX)
+}
+
+/// Spec ids and hashes from a package's `release.json` `files`.
+fn release_specs(release: &[u8], location: &str) -> Result<BTreeMap<String, String>> {
+    let value: serde_json::Value = serde_json::from_slice(release)
+        .map_err(|error| CliError::new(ErrorCode::InvalidCatalog, format!("Invalid release.json at {location}: {error}")))?;
+    Ok(value
+        .get("files")
+        .and_then(serde_json::Value::as_object)
+        .into_iter()
+        .flatten()
+        .filter_map(|(path, sha)| {
+            let id = path.strip_prefix("specs/")?.strip_suffix(gai_spec::SUFFIX)?;
+            Some((id.to_string(), sha.as_str()?.to_string()))
+        })
+        .collect())
+}
+
+/// `bytes` when their sha256 is `sha256`, else `HASH_MISMATCH`.
+fn verify_spec(id: &str, sha256: &str, bytes: Vec<u8>) -> Result<Vec<u8>> {
+    if gai_core::sha256_hex(&bytes) == sha256 {
+        Ok(bytes)
+    } else {
+        Err(CliError::new(ErrorCode::HashMismatch, format!("Package spec hash mismatch: {id}")).with_id(id).with_path(spec_path(id)))
+    }
+}
+
+/// Specs of a library checkout: id → (set folder, spec file).
+pub fn checkout_specs(root: &Path) -> BTreeMap<String, (String, PathBuf)> {
+    let mut out = BTreeMap::new();
+    let Ok(sets) = std::fs::read_dir(root.join("motion/icon-sets")) else { return out };
+    for set in sets.flatten() {
+        let Ok(specs) = std::fs::read_dir(set.path().join(gai_check::verify::adopted::SPECS_DIR)) else { continue };
+        for spec in specs.flatten() {
+            let name = spec.file_name().to_string_lossy().into_owned();
+            if let Some(id) = name.strip_suffix(gai_spec::SUFFIX) {
+                out.insert(id.to_string(), (set.file_name().to_string_lossy().into_owned(), spec.path()));
+            }
+        }
+    }
+    out
 }
 
 /// Returns `bytes` when their sha256 matches the catalog, else `HASH_MISMATCH`.

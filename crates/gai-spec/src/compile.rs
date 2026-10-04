@@ -181,6 +181,8 @@ pub struct Part {
     pub knockouts: Vec<(String, f64)>,
     pub gaps: Vec<(String, f64)>,
     pub hidden: bool,
+    /// Rest opacity when not hidden (1 unless the spec sets `opacity`).
+    pub opacity: f64,
     pub shapes: Vec<RShape>,
 }
 
@@ -299,8 +301,10 @@ impl<'a> Resolver<'a> {
             None => inherit.map(|p| p.gaps.clone()).unwrap_or_default(),
         };
         let hidden = src.hidden.or(inherit.map(|p| p.hidden)).unwrap_or(false);
-        if outline != Outline::Closed && role != Role::Surface {
-            self.d.push(Diagnostic::error("V2_SCHEMA", at(&src.path, "outline"), "outline is for surface parts").hint("set \"role\": \"surface\", or drop outline"));
+        let opacity = src.opacity.or(inherit.map(|p| p.opacity)).unwrap_or(1.0);
+        // A stroke with no outline draws only in Solid (its centerline at 2.6).
+        if (outline == Outline::Open && role != Role::Surface) || (outline == Outline::None && role == Role::Fill) {
+            self.d.push(Diagnostic::error("V2_SCHEMA", at(&src.path, "outline"), "outline \"open\" is for surfaces; \"none\" for surfaces and strokes").hint("set \"role\": \"surface\", or drop outline"));
         }
         if role == Role::Surface && !shapes.iter().all(RShape::closed) && outline != Outline::None {
             self.d.push(
@@ -311,7 +315,7 @@ impl<'a> Resolver<'a> {
         if outline == Outline::Open && shapes.iter().any(|s| matches!(s, RShape::Circle { .. } | RShape::Ellipse { .. })) {
             self.d.push(Diagnostic::error("V2_SCHEMA", at(&src.path, "outline"), "a circle or ellipse has no closing edge to leave out"));
         }
-        Some(Part { name: name.to_string(), path: src.path.clone(), role, outline, tint, solid, holes, knockouts, gaps, hidden, shapes })
+        Some(Part { name: name.to_string(), path: src.path.clone(), role, outline, tint, solid, holes, knockouts, gaps, hidden, opacity, shapes })
     }
 
     fn unknown(&mut self, path: &str, name: &str, what: &str) {
@@ -775,10 +779,15 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
         .map(|e| e.target.name.clone())
         .collect();
     let hidden = |name: &str| part_index.get(name).is_some_and(|&i| parts[i].hidden) || pulsed.contains(name);
+    // A part's rest opacity: 0 when hidden, else its `opacity` (1 by default); a rig's is 1.
+    let rest_opacity = |name: &str| match hidden(name) {
+        true => 0.0,
+        false => part_index.get(name).map_or(1.0, |&i| parts[i].opacity),
+    };
     let mut motions: Vec<Motion> = Vec::new();
     for which in [Which::Light, Which::Strong] {
         let errors_before = d.errors().count();
-        let mut raw = motion::resolve(spec, which, &hidden, &mut d);
+        let mut raw = motion::resolve(spec, which, &rest_opacity, &mut d);
         let name = match which {
             Which::Light => spec.id.clone(),
             Which::Strong => format!("{}-strong", spec.id),
@@ -819,14 +828,15 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
         motion::check_timing(&name, active, &tracks, &at("/timing", which.id()), &mut d);
         // Rest values: offsets start at 0, factors at 1; a gesture also ends there.
         for t in &raw {
-            let rest = motion::rest_value(t.target.prop, hidden(&t.target.name));
+            let rest = motion::rest_value(t.target.prop, rest_opacity(&t.target.name));
             let (Some(first), Some(last)) = (t.keys.first(), t.keys.last()) else { continue };
             let starts = !matches!(t.target.prop, Some(Prop::Opacity | Prop::Draw));
             let what = match t.target.prop {
-                Some(Prop::Scale | Prop::Squash) => " (a factor: rest is 1)",
-                Some(Prop::Opacity) if rest == 0.0 => " (the part is hidden at rest)",
-                Some(Prop::Opacity | Prop::Draw) => " (absolute: rest is 1)",
-                _ => " (an offset from the drawn pose: rest is 0)",
+                Some(Prop::Scale | Prop::Squash) => " (a factor: rest is 1)".to_string(),
+                Some(Prop::Opacity) if rest == 0.0 => " (the part is hidden at rest)".to_string(),
+                Some(Prop::Opacity) if rest < 1.0 => format!(" (the part rests at opacity {rest})"),
+                Some(Prop::Opacity | Prop::Draw) => " (absolute: rest is 1)".to_string(),
+                _ => " (an offset from the drawn pose: rest is 0)".to_string(),
             };
             if starts && (first.v - rest).abs() > 1e-9 {
                 d.push(Diagnostic::error("REST_VALUE", t.path.clone(), format!("{} starts at {}, not its rest value {}{what}", t.target, first.v, rest)).hint("the drawing is the rest pose; key offsets from it"));
@@ -870,7 +880,7 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
             };
             let mut overrides: Vec<Track> = Vec::new();
             for o in overrides_src {
-                let rest = motion::rest_value(o.target.prop, hidden(&o.target.name));
+                let rest = motion::rest_value(o.target.prop, rest_opacity(&o.target.name));
                 if let Some(keys) = motion::expand(&o.keys, rest, &mut d) {
                     overrides.push(Track { target: o.target.clone(), keys, path: o.path.clone() });
                 }
@@ -916,7 +926,7 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
                 }
                 for name in seen {
                     let target = Target { name: name.clone(), prop: Some(Prop::Opacity) };
-                    let rest = motion::rest_value(Some(Prop::Opacity), hidden(&name));
+                    let rest = motion::rest_value(Some(Prop::Opacity), rest_opacity(&name));
                     let own = forward.tracks.iter().find(|t| t.target == target);
                     let start = own.and_then(|t| t.keys.first()).map_or(rest, |k| k.v);
                     let stop = own.and_then(|t| t.keys.last()).map_or(rest, |k| k.v);
@@ -1066,10 +1076,10 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
     // A knockout is a static mask only when nothing but its surface's rig moves it: a part
     // that is reshaped (a morph included), drawn on, faded or hidden at rest needs a matte
     // that follows it.
-    let dynamic = |k: &str| path_form(k) || morph_parts.contains(k) || draw_parts.contains(k) || opacity_targets.contains(k) || hidden(k);
+    let dynamic = |k: &str| path_form(k) || morph_parts.contains(k) || draw_parts.contains(k) || opacity_targets.contains(k) || rest_opacity(k) < 1.0;
     for p in &parts {
         let rig = plan_rig_of(&p.name);
-        let hide = hidden(&p.name);
+        let rest = rest_opacity(&p.name);
         let gap_masks: Vec<Mask> = p
             .gaps
             .iter()
@@ -1095,7 +1105,7 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
             masks,
             vis: Some(format!("{}.opacity", p.name)),
             trim: draw_parts.contains(&p.name).then(|| format!("{}.draw", p.name)),
-            opacity: hide.then_some(0.0),
+            opacity: (rest < 1.0).then_some(rest),
             matte: None,
         };
         let shapes = shape_ids[&p.name].clone();
@@ -1108,6 +1118,7 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
         }
         for (variant, style, width) in WEIGHTS {
             let drawing = match (p.role, p.outline) {
+                (Role::Stroke, Outline::None) => continue,
                 (Role::Stroke, _) => Drawing { geos: [shapes.clone(), holes.clone()].concat(), paints: vec![Paint::Stroke(width)] },
                 (Role::Surface, Outline::None) => continue,
                 (Role::Surface, Outline::Open) => Drawing { geos: [open_ids[&p.name].clone(), holes.clone()].concat(), paints: vec![Paint::Stroke(width)] },
@@ -1199,7 +1210,7 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
                 masks: Vec::new(),
                 vis: Some(format!("{}.opacity", first.name)),
                 trim: draw_parts.contains(&first.name).then(|| format!("{}.draw", first.name)),
-                opacity: hidden(&first.name).then_some(0.0),
+                opacity: Some(rest_opacity(&first.name)).filter(|o| *o < 1.0),
                 matte: None,
             }));
         }

@@ -8,7 +8,8 @@ The `@lottiefiles/generative-icons*` packages share one version and are released
 | Catalog | `schemaVersion`, package `version`, categories and the complete descriptor list |
 | Project (`gen-animated-icons.json`, written by the CLI) | `schemaVersion`, platform, detected framework and package manager, relative asset and descriptor folders, public URL base (web), default appearance, agent skill folders and local icon settings. `schemas/project.schema.json` describes only the original web fields; it does not yet cover the newer fields, native configs or weights between 1 and 3. |
 | Lock (`.gen-animated-icons/lock.json`) | Selected IDs and versions, installed paths and hashes of managed files; local edits block replacement |
-| Release (`release.json`) | Source commit and dirty status, catalog/asset/docs hashes, runtime, CLI and player versions, and the `exporter` note (export is needed for authoring only and is not bundled) |
+| Release (`release.json`) | Source commit and dirty status, catalog/asset/docs/spec hashes, runtime, CLI and player versions, and the `exporter` note (export is needed for authoring only and is not bundled) |
+| Specs (`specs/<id>.icon.json`) | The editable spec (`gai-icon/2`) of every icon reanimated as one, hashed in `release.json`; `gen-animated-icons create <new-id> --from <id>` starts a new icon from it. Icons without a spec have none. |
 
 ## How packages are built
 
