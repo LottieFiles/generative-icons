@@ -361,6 +361,8 @@ pub struct ReverseInput<'a> {
     /// For `fade`: the opacity target of every part the forward motion changes, with its
     /// forward opacity at the start and the end.
     pub fading: Vec<(Target, f64, f64)>,
+    /// `state.reverseName`, replacing `<id>-reverse` (or `<id>-reset`).
+    pub name: Option<String>,
 }
 
 /// The reverse of a forward motion.
@@ -414,11 +416,10 @@ pub fn reverse(id: &str, input: ReverseInput<'_>, d: &mut Diagnostics) -> Motion
         }
     }
     let fade = input.mode == ReverseMode::Fade;
-    let suffix = match (fade, forward.which) {
-        (true, Which::Light) => "-reset".to_string(),
-        (true, Which::Strong) => "-reset-strong".to_string(),
-        (false, Which::Light) => "-reverse".to_string(),
-        (false, Which::Strong) => "-reverse-strong".to_string(),
+    let base = input.name.clone().unwrap_or_else(|| format!("{id}{}", if fade { "-reset" } else { "-reverse" }));
+    let suffix = match forward.which {
+        Which::Light => String::new(),
+        Which::Strong => "-strong".to_string(),
     };
     let derived = if fade {
         if forward.which == Which::Light { 0.28 } else { 0.30 }
@@ -426,7 +427,7 @@ pub fn reverse(id: &str, input: ReverseInput<'_>, d: &mut Diagnostics) -> Motion
         last_key(&tracks)
     };
     let active = input.active.unwrap_or(derived);
-    let name = format!("{id}{suffix}");
+    let name = format!("{base}{suffix}");
     check_timing(&name, active, &tracks, "/timing", d);
     Motion { name, which: forward.which, reverse: true, active, rest: rest_of(active), raw, tracks }
 }

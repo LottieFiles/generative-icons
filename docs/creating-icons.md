@@ -51,7 +51,7 @@ gen-animated-icons preview return-box   # re-render the sheets after a change
 - `check` validates, compiles and lints the spec offline, with a JSON Pointer and a hint for every finding: names, rest values, timing, paint past or near the canvas, parts too small at 24 px, details lost in Solid. Fix every error before drafting.
 - `draft` renders every motion on the engine without exporting; `build` exports, verifies every action in the player at every size, style, weight and theme, installs only icons that pass, and writes preview sheets to `.gen-animated-icons/previews/<id>/`.
 - Look at every sheet: each style and weight, both themes, and Light against Strong at the same elapsed times. Name each flaw, fix it in the spec, then check, draft, build and preview again. Stop when a round finds nothing new or the same flaw repeats; report what remains.
-- For what a spec cannot express yet (continuous loaders, geometry that changes with the weight), `create <id> --batch` writes a JavaScript batch drawn with the authoring kit instead.
+- For what a spec cannot express yet (continuous loaders), `create <id> --batch` writes a JavaScript batch drawn with the authoring kit instead.
 
 Review the silhouette, exposed surfaces, optical spacing and motion against the [drawing](design-principles.md) and [motion](motion-principles.md) principles. A passing check proves the file is valid, not that the icon is good.
 

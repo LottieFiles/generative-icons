@@ -111,6 +111,15 @@ fn create_replace_starts_a_reanimation_of_a_library_icon() {
     assert_eq!(checked.code, 1, "{}", checked.stderr);
     let found: Vec<String> = checked.json()["icons"][0]["diagnostics"].as_array().unwrap().iter().map(|d| format!("{} {}", d["code"].as_str().unwrap(), d["path"].as_str().unwrap())).collect();
     assert_eq!(found, ["V2_SCHEMA /motion"]);
+    // The port keeps what v1 drew and how apps play it: lock's reverse is lock-unlock, and
+    // more-options' dots grow with the weight.
+    run(&app, &["create", "lock", "--replace", "--library-root", &root]).ok();
+    let lock: Value = serde_json::from_slice(&std::fs::read(app.join("gen-animated-icons/icons/lock.icon.json")).unwrap()).unwrap();
+    assert_eq!(lock["state"]["reverseName"], "lock-unlock");
+    run(&app, &["create", "more-options", "--replace", "--library-root", &root]).ok();
+    let dots: Value = serde_json::from_slice(&std::fs::read(app.join("gen-animated-icons/icons/more-options.icon.json")).unwrap()).unwrap();
+    let weights: Vec<&str> = dots["parts"]["dot-1"]["weights"].as_object().unwrap().keys().map(String::as_str).collect();
+    assert_eq!(weights, ["light", "bold"]);
     // A reanimated icon starts from its own spec.
     let again = run(&app, &["create", "send", "--replace", "--library-root", &root]).ok();
     assert_eq!(again["replace"]["start"], "spec");

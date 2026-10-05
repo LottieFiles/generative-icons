@@ -736,6 +736,15 @@
           "exclusiveMinimum": 0,
           "maximum": 1,
           "description": "The opacity the part rests at (default 1); its opacity track starts and, for a gesture, ends there."
+        },
+        "weights": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Shapes of its own for the Light and Bold outline weights (shape draws Regular, Solid and tint): a dot that grows with the weight. Static: the part moves only with its rig.",
+          "properties": {
+            "light": {"oneOf": [{"$ref": "#/$defs/shape"}, {"type": "array", "items": {"$ref": "#/$defs/shape"}, "minItems": 2, "maxItems": 8}]},
+            "bold": {"oneOf": [{"$ref": "#/$defs/shape"}, {"type": "array", "items": {"$ref": "#/$defs/shape"}, "minItems": 2, "maxItems": 8}]}
+          }
         }
       }
     },
@@ -1228,6 +1237,10 @@
           ],
           "default": "auto",
           "description": "auto: replay the beats in mirrored order, each from its end to its start with its own arrival ease and preset (not a time reversal). mirror: exact time reversal of the forward keys. fade: today's preview reset."
+        },
+        "reverseName": {
+          "$ref": "#/$defs/name",
+          "description": "The reverse animations' name when apps already use one (lock-unlock): it starts with the icon id and Strong's adds -strong. Default <id>-reverse (<id>-reset for fade)."
         }
       }
     },

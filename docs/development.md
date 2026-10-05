@@ -95,11 +95,11 @@ What the library-wide reanimation (Oct 2026, 412 icons) learned about porting, b
 
 - Decide first: keep an icon whose motion already is its meaning, with rhythm in Strong, readable at 24 px (a dial indexing to its next stop, a refresh arrow's full turn, a toggle knob landing). Reanimate generic nudges, lifts and tilts, and moves under a pixel at 24 px.
 - Port the rest drawing exactly, vertex for vertex, and match the icon's Solid (`"solid": "fill"` or `"ring"`): the default Solid adds a rim the library drawing does not have.
-- A stateful icon ends on the library's end state (compare the build's last frame with the old one) and keeps its animation ids. v2 always names the reverse `<id>-reverse`: lock (`lock-unlock`), reconnect (`reconnect-disconnect`), suitcase (`suitcase-retract`) and menu (`menu-open`) keep their v1 motion until the format can name it.
+- A stateful icon ends on the library's end state (compare the build's last frame with the old one) and keeps its animation ids: a reverse apps play under another name (`lock-unlock`, `reconnect-disconnect`, `suitcase-retract`, `menu-open`, `check-reset`) keeps it with `state.reverseName`, which `create --replace` fills in.
 - A `previewReset` icon uses `"reverse": "fade"` with states `prepared` → `result`.
 - Some sets protect openings (counters, ring holes, Solid openings) in every frame: read the set's entry in `crates/gai-render/src/rules.rs` before designing, so the motion never shrinks, fills or covers one.
 - `build` runs the visual rules every set shares; a set's own rules run only in `library verify-visual NN`, so run it after adopting and before you commit.
-- Not portable yet: geometry that changes with the weight (more-options). A part resting translucent takes `"opacity"` (gradient-stops' ramp bands), and a stroke drawn only in Solid takes `"outline": "none"`.
+- The port carries what v1 drew: a part resting translucent takes `"opacity"` (gradient-stops' ramp bands), a stroke drawn only in Solid `"outline": "none"`, and geometry that changes with the weight `"weights"` (more-options' dots). Continuous loaders stay v1.
 
 ## Local gallery
 

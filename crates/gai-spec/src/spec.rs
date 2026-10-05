@@ -147,6 +147,9 @@ pub struct PartSrc {
     pub hidden: Option<bool>,
     /// The opacity the part rests at (0 to 1, not 0: that is `hidden`).
     pub opacity: Option<f64>,
+    /// Shapes of its own for the Light and Bold outline weights (`shape` draws Regular, Solid
+    /// and tint): a dot that grows with the weight.
+    pub weights: Option<Vec<(String, Vec<Shape>)>>,
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -322,6 +325,9 @@ pub struct State {
     pub to: String,
     pub labels: [String; 2],
     pub reverse: ReverseMode,
+    /// The reverse animations' name when it is not `<id>-reverse` (`-reset` for `fade`): an
+    /// icon whose apps already play `lock-unlock`. Strong's adds `-strong`.
+    pub reverse_name: Option<String>,
 }
 
 /// Explicit keys replacing one track of a reverse motion.
@@ -574,7 +580,7 @@ impl Parser {
     }
 
     fn state(&mut self, v: &Value) -> Option<State> {
-        let map = self.object(v, "/state", "state", &["from", "to", "labels", "reverse"], &["from", "to", "labels"])?;
+        let map = self.object(v, "/state", "state", &["from", "to", "labels", "reverse", "reverseName"], &["from", "to", "labels"])?;
         let from = map.get("from").and_then(|v| self.name(v, "/state/from", "state.from"));
         let to = map.get("to").and_then(|v| self.name(v, "/state/to", "state.to"));
         let labels = map.get("labels").and_then(|v| {
@@ -601,7 +607,11 @@ impl Parser {
                 None
             }
         };
-        Some(State { from: from?, to: to?, labels: labels?, reverse: reverse? })
+        let reverse_name = match map.get("reverseName") {
+            Some(v) => Some(self.name(v, "/state/reverseName", "state.reverseName")?),
+            None => None,
+        };
+        Some(State { from: from?, to: to?, labels: labels?, reverse: reverse?, reverse_name })
     }
 
     fn anchors(&mut self, v: &Value) -> IndexMap<String, (f64, f64)> {
@@ -916,7 +926,7 @@ impl Parser {
     }
 
     fn part(&mut self, name: &str, v: &Value, path: &str) -> Option<PartSrc> {
-        const FIELDS: [&str; 12] = ["//", "shape", "mirror", "role", "outline", "tint", "solid", "holes", "knockout", "gap", "hidden", "opacity"];
+        const FIELDS: [&str; 13] = ["//", "shape", "mirror", "role", "outline", "tint", "solid", "holes", "knockout", "gap", "hidden", "opacity", "weights"];
         let map = self.object(v, path, "a part", &FIELDS, &[])?;
         let body = match (map.get("shape"), map.get("mirror")) {
             (Some(s), None) => PartBody::Shapes(self.shapes(s, &at(path, "shape"))?),
@@ -1065,7 +1075,21 @@ impl Parser {
             }
             None => None,
         };
-        Some(PartSrc { name: name.to_string(), path: path.to_string(), body, role, outline, tint, solid, holes, knockout, knockout_gap, gaps, hidden, opacity })
+        let weights = match map.get("weights") {
+            Some(v) => {
+                let wp = at(path, "weights");
+                let wm = self.object(v, &wp, "weights", &["light", "bold"], &[])?;
+                let mut out = Vec::new();
+                for weight in ["light", "bold"] {
+                    if let Some(s) = wm.get(weight) {
+                        out.push((weight.to_string(), self.shapes(s, &at(&wp, weight))?));
+                    }
+                }
+                Some(out)
+            }
+            None => None,
+        };
+        Some(PartSrc { name: name.to_string(), path: path.to_string(), body, role, outline, tint, solid, holes, knockout, knockout_gap, gaps, hidden, opacity, weights })
     }
 
     fn rigs(&mut self, v: &Value) -> Vec<RigSrc> {

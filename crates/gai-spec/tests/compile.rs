@@ -487,3 +487,41 @@ fn parts_can_rest_translucent() {
     let e = base(json!({"shape": {"line": [[8, 22], [24, 22]]}, "opacity": 0}), track(0.0)).unwrap_err();
     assert_eq!(e.errors().next().unwrap().path, "/parts/track/opacity");
 }
+
+#[test]
+fn light_and_bold_can_draw_their_own_shapes() {
+    // more-options: a dot whose radius is the outline weight.
+    let dot = |r: f64| json!({"circle": [[16, 16], r]});
+    let c = load(&spec(json!({
+        "parts": {"dot": {"shape": dot(2.0), "role": "fill", "weights": {"light": dot(1.5), "bold": dot(2.5)}}},
+        "rigs": {"dot": {"pivot": [16, 16]}},
+        "motion": {"dot.y": {"light": [[0, 0], [0.2, -2], [0.4, 0]], "strong": [[0, 0], [0.2, -3], [0.45, 0]]}}
+    })))
+    .unwrap();
+    let geos = |style: &str| c.plan.layers.iter().find(|l| l.part == "dot" && l.style == Some(style)).unwrap().geos.clone();
+    assert_eq!((geos("outline.light"), geos("outline.regular"), geos("outline.bold")), (vec!["dot/light/0".to_string()], vec!["dot/0".to_string()], vec!["dot/bold/0".to_string()]));
+    assert_eq!(geos("solid"), ["dot/0"]);
+    // Per-weight shapes are static: a part reshaped by motion cannot have them.
+    let e = errors(json!({
+        "parts": {"dot": {"shape": dot(2.0), "role": "fill", "weights": {"bold": dot(2.5)}}},
+        "motion": {"dot.r": {"light": [[0, 0], [0.2, 1], [0.4, 0]], "strong": [[0, 0], [0.2, 1.5], [0.45, 0]]}}
+    }));
+    assert_eq!(e, [("NOT_IMPLEMENTED".to_string(), "/parts/dot/weights".to_string())]);
+}
+
+#[test]
+fn a_reverse_can_keep_the_name_apps_already_play() {
+    let base = |name: &str| {
+        load(&spec(json!({
+            "state": {"from": "unlocked", "to": "locked", "labels": ["Lock", "Unlock"], "reverseName": name},
+            "parts": {"bar": line()},
+            "motion": {"bar.y": {"light": [[0, 0], [0.3, 3]], "strong": [[0, 0], [0.15, -1], [0.3, 4], {"settle": 0.5}]}}
+        })))
+    };
+    let names: Vec<String> = base("x-unlock").unwrap().motions.iter().map(|m| m.name.clone()).collect();
+    assert_eq!(names, ["x", "x-strong", "x-unlock", "x-unlock-strong"]);
+    for bad in ["unlock", "x-unlock-strong"] {
+        let e = base(bad).unwrap_err();
+        assert_eq!(e.errors().next().unwrap().path, "/state/reverseName", "{bad}");
+    }
+}

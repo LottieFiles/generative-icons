@@ -49,6 +49,11 @@ const FILE_VERSION: u32 = 2;
 const DEFAULT_ACCESS_LIFETIME: u64 = 300;
 /// The longest pause between two tries of a held lock.
 const MAX_LOCK_PAUSE: Duration = Duration::from_millis(100);
+/// How long a keychain call runs before the user hears that a prompt may be waiting, and
+/// before the command gives up instead of hanging (macOS asks before a binary it has not seen
+/// uses the item, and waits for an answer).
+const KEYCHAIN_NOTICE: Duration = Duration::from_secs(3);
+const KEYCHAIN_LIMIT: Duration = Duration::from_secs(120);
 
 /// Everything stored for one engine.
 #[derive(Clone, Serialize, Deserialize)]
@@ -141,38 +146,73 @@ pub(crate) trait Keychain: Send + Sync {
 }
 
 /// The OS keychain (macOS Keychain, Windows Credential Manager, Secret Service). Unit tests
-/// use a fake instead.
+/// use a fake instead. Every call is [`patient`]: a prompt waiting for the user is announced,
+/// and an unanswered one ends the command.
 #[cfg_attr(test, allow(dead_code))]
-struct OsKeychain;
+struct OsKeychain {
+    notices: Option<NoticeSink>,
+}
 
 #[cfg_attr(test, allow(dead_code))]
 impl OsKeychain {
     fn entry(account: &str) -> Result<keyring::Entry> {
         keyring::Entry::new(KEYCHAIN_SERVICE, account).map_err(keychain_error)
     }
+
+    fn patient<T: Send + 'static>(&self, call: impl FnOnce() -> Result<T> + Send + 'static) -> Result<T> {
+        patient(self.notices.as_ref(), KEYCHAIN_NOTICE, KEYCHAIN_LIMIT, call)
+    }
 }
 
 impl Keychain for OsKeychain {
     fn get(&self, account: &str) -> Result<Option<String>> {
-        match Self::entry(account)?.get_password() {
+        let account = account.to_string();
+        self.patient(move || match Self::entry(&account)?.get_password() {
             Ok(secret) => Ok(Some(secret)),
             Err(keyring::Error::NoEntry) => Ok(None),
             Err(e) => Err(keychain_error(e)),
-        }
+        })
     }
 
     fn set(&self, account: &str, secret: &str) -> Result<()> {
-        Self::entry(account)?
-            .set_password(secret)
-            .map_err(keychain_error)
+        let (account, secret) = (account.to_string(), secret.to_string());
+        self.patient(move || Self::entry(&account)?.set_password(&secret).map_err(keychain_error))
     }
 
     fn delete(&self, account: &str) -> Result<()> {
-        match Self::entry(account)?.delete_credential() {
+        let account = account.to_string();
+        self.patient(move || match Self::entry(&account)?.delete_credential() {
             Ok(()) | Err(keyring::Error::NoEntry) => Ok(()),
             Err(e) => Err(keychain_error(e)),
-        }
+        })
     }
+}
+
+/// Runs a keychain `call` on its own thread: after `notice_after` the user hears that a
+/// prompt may be waiting, and after `limit` the command fails instead of hanging (the call
+/// itself cannot be cancelled; it ends when the prompt is answered).
+fn patient<T: Send + 'static>(
+    notices: Option<&NoticeSink>,
+    notice_after: Duration,
+    limit: Duration,
+    call: impl FnOnce() -> Result<T> + Send + 'static,
+) -> Result<T> {
+    use std::sync::mpsc::RecvTimeoutError;
+    let (tx, rx) = std::sync::mpsc::channel();
+    std::thread::spawn(move || {
+        let _ = tx.send(call());
+    });
+    match rx.recv_timeout(notice_after) {
+        Ok(result) => return result,
+        Err(RecvTimeoutError::Disconnected) => return Err(Error::Store("keychain: the call ended without an answer".into())),
+        Err(RecvTimeoutError::Timeout) => notify(notices, Notice::WaitingForKeychain),
+    }
+    rx.recv_timeout(limit.saturating_sub(notice_after)).unwrap_or_else(|_| {
+        Err(Error::Store(format!(
+            "keychain: no answer after {} s; a prompt may be asking to allow this program to use its sign-in. Answer it (Always Allow), then run the command again",
+            limit.as_secs()
+        )))
+    })
 }
 
 #[cfg_attr(test, allow(dead_code))]
@@ -182,10 +222,10 @@ fn keychain_error(error: keyring::Error) -> Error {
 
 /// The keychain an `Auto` store uses: the OS one when it is available.
 #[cfg(not(test))]
-fn auto_keychain(_config: &EngineConfig) -> Option<Arc<dyn Keychain>> {
+fn auto_keychain(config: &EngineConfig) -> Option<Arc<dyn Keychain>> {
     keyring::Entry::store_status()
         .is_ok()
-        .then(|| Arc::new(OsKeychain) as Arc<dyn Keychain>)
+        .then(|| Arc::new(OsKeychain { notices: config.notices.clone() }) as Arc<dyn Keychain>)
 }
 
 /// Unit tests never touch the OS keychain: an `Auto` store uses the config's fake, if any.
@@ -956,6 +996,7 @@ mod tests {
     fn reading_the_keychain_is_announced_as_a_detail() {
         assert!(Notice::ReadingKeychain.is_detail());
         assert!(!Notice::WaitingForSignInLock.is_detail());
+        assert!(!Notice::WaitingForKeychain.is_detail());
         let dir = tempfile::tempdir().unwrap();
         let keychain = Arc::new(FakeKeychain::default());
         let mut config = EngineConfig::new("https://engine.example/mcp", dir.path()).unwrap();
@@ -1028,5 +1069,31 @@ mod tests {
         assert_eq!(next.account.as_deref(), Some("a@b.c"));
         assert!(next.valid_for(200) && !next.valid_for(400));
         assert!(!format!("{next:?}").contains("rt-1"));
+    }
+
+    #[test]
+    fn a_slow_keychain_call_is_announced_and_then_ends_the_command() {
+        let heard = Arc::new(Mutex::new(Vec::new()));
+        let sink: NoticeSink = {
+            let heard = heard.clone();
+            Arc::new(move |n: Notice| heard.lock().unwrap().push(n))
+        };
+        let (short, long) = (Duration::from_millis(20), Duration::from_millis(200));
+        // A quick answer: nothing to say.
+        assert_eq!(patient(Some(&sink), short, long, || Ok(7)).unwrap(), 7);
+        assert!(heard.lock().unwrap().is_empty());
+        // A prompt answered late: announced once, then the answer.
+        let late = patient(Some(&sink), short, long, || {
+            std::thread::sleep(Duration::from_millis(60));
+            Ok("token")
+        });
+        assert_eq!(late.unwrap(), "token");
+        assert_eq!(*heard.lock().unwrap(), [Notice::WaitingForKeychain]);
+        // A prompt nobody answers: a clear error instead of a hang.
+        let never = patient(Some(&sink), short, long, || {
+            std::thread::sleep(Duration::from_secs(2));
+            Ok(())
+        });
+        assert!(matches!(never, Err(Error::Store(ref m)) if m.contains("Always Allow")), "{never:?}");
     }
 }

@@ -32,6 +32,7 @@ fn every_v1_library_icon_ports_to_a_spec_that_compiles() {
                 intent: entry["intent"].as_str().unwrap_or("x").to_string(),
                 state,
                 preview_reset: entry["previewReset"].as_bool().unwrap_or(false),
+                reverse_name: None,
             };
             // The port has no motion yet; one fade of a visible part lets every part compile.
             let result = port(&lottie, &icon).map_err(|e| vec![e]).and_then(|p| {

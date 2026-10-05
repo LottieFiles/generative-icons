@@ -593,7 +593,7 @@ fn tools() -> Vec<ToolSpec> {
                     "label": { "type": "string", "description": "Display label (default: from the id)" },
                     "intent": { "type": "string", "description": "What the motion communicates" },
                     "neighbors": { "type": "array", "items": { "type": "string" }, "maxItems": 4, "description": "Reference icons for the saved context packet, as chosen with `context` (default: `from`, else the nearest by label and intent)" },
-                    "batch": { "type": "boolean", "description": "Write a v1 JS batch instead of a spec, for what specs cannot express yet: continuous loaders and geometry that changes with the weight" },
+                    "batch": { "type": "boolean", "description": "Write a v1 JS batch instead of a spec, for what specs cannot express yet: continuous loaders" },
                     "spec": { "type": "boolean", "description": "A spec, the default; accepted so older calls still work" }
                 }),
                 &["id"],

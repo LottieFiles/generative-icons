@@ -225,7 +225,7 @@ pub struct CreateArgs {
     #[arg(long, value_name = "ID")]
     pub neighbor: Vec<String>,
     /// Write a v1 JS batch (`icons/batches/<ID>.mjs`) instead of a spec, for what specs
-    /// cannot express yet (continuous loaders, geometry that changes with the weight)
+    /// cannot express yet (continuous loaders)
     #[arg(long)]
     pub batch: bool,
     /// A spec icon (`icons/<ID>.icon.json`), the default; kept so older scripts still run

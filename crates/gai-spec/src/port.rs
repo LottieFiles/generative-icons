@@ -20,6 +20,8 @@ pub struct Icon {
     pub state: Option<(String, String, [String; 2])>,
     /// A preview reset (`fade`) instead of a reverse.
     pub preview_reset: bool,
+    /// The library's reverse animation name when it is not the default (`lock-unlock`).
+    pub reverse_name: Option<String>,
 }
 
 /// A ported spec and what to check by hand.
@@ -62,6 +64,8 @@ struct Part {
     solid: Option<Value>,
     hidden: bool,
     opacity: f64,
+    /// Light and Bold geometry where it differs from Regular.
+    weights: Vec<(String, Vec<String>)>,
 }
 
 /// Ports `lottie` (the icon's Light animation) to a spec.
@@ -97,13 +101,21 @@ pub fn port(lottie: &Value, icon: &Icon) -> Result<Port, String> {
             (Paint::Stroke(_), true) if all_closed(&l.paths) => "surface",
             (Paint::Stroke(_), _) => "stroke",
         };
-        parts.push(Part { name, index: l.index, paths: l.paths.clone(), role, outline_none: false, tint: false, solid: None, hidden: !l.visible, opacity: l.opacity });
+        parts.push(Part { name, index: l.index, paths: l.paths.clone(), role, outline_none: false, tint: false, solid: None, hidden: !l.visible, opacity: l.opacity, weights: Vec::new() });
     }
+    // Light and Bold layers draw their part's geometry, or (a dot that grows with the weight)
+    // geometry of their own, which becomes the part's `weights`.
     for weight in ["light", "bold"] {
         let style = format!("style.outline.{weight}");
         for l in layers.iter().filter(|l| style_of(l, &style).is_some()) {
-            if !parts.iter().any(|p| p.paths == l.paths) {
-                notes.push(format!("{} ({weight}) has geometry no Regular layer has; specs draw one geometry at every weight", l.name));
+            if parts.iter().any(|p| p.paths == l.paths) {
+                continue;
+            }
+            let base = l.name.strip_suffix(&format!("-{weight}")).unwrap_or(&l.name);
+            let base = base.strip_suffix("-frame").unwrap_or(base);
+            match parts.iter_mut().find(|p| p.name == base) {
+                Some(p) => p.weights.push((weight.to_string(), l.paths.clone())),
+                None => notes.push(format!("{} ({weight}) has geometry no Regular layer has", l.name)),
             }
         }
     }
@@ -121,7 +133,7 @@ pub fn port(lottie: &Value, icon: &Icon) -> Result<Port, String> {
                     p.tint = true;
                 }
                 Some(p) if p.role == "fill" => {}
-                _ => extras.push(Part { name: format!("{}-tint", l.name), index: l.index, paths: closed(&l.paths), role: "surface", outline_none: true, tint: true, solid: Some(json!("none")), hidden: !l.visible, opacity: l.opacity }),
+                _ => extras.push(Part { name: styled(&l.name, "tint"), index: l.index, paths: closed(&l.paths), role: "surface", outline_none: true, tint: true, solid: Some(json!("none")), hidden: !l.visible, opacity: l.opacity, weights: Vec::new() }),
             }
         }
     }
@@ -157,7 +169,7 @@ pub fn port(lottie: &Value, icon: &Icon) -> Result<Port, String> {
                         Paint::Fill { .. } => ("surface", "fill", closed(&l.paths)),
                         Paint::Stroke(_) => ("stroke", "auto", l.paths.clone()),
                     };
-                    extras.push(Part { name: format!("{}-solid", l.name), index: l.index, paths, role, outline_none: true, tint: false, solid: Some(json!(solid)), hidden: !l.visible, opacity: l.opacity });
+                    extras.push(Part { name: styled(&l.name, "solid"), index: l.index, paths, role, outline_none: true, tint: false, solid: Some(json!(solid)), hidden: !l.visible, opacity: l.opacity, weights: Vec::new() });
                 }
             }
         }
@@ -189,6 +201,13 @@ pub fn port(lottie: &Value, icon: &Icon) -> Result<Port, String> {
         if let Some(solid) = p.solid.as_ref().filter(|s| *s != "auto") {
             part.insert("solid".into(), solid.clone());
         }
+        if !p.weights.is_empty() {
+            let shapes = |paths: &[String]| -> Value {
+                let list: Vec<Value> = paths.iter().map(|d| json!({"path": d})).collect();
+                if list.len() == 1 { list[0].clone() } else { Value::Array(list) }
+            };
+            part.insert("weights".into(), Value::Object(p.weights.iter().map(|(w, paths)| (w.clone(), shapes(paths))).collect()));
+        }
         if p.hidden {
             part.insert("hidden".into(), json!(true));
         } else if p.opacity < 1.0 {
@@ -215,7 +234,11 @@ pub fn port(lottie: &Value, icon: &Icon) -> Result<Port, String> {
             true => ("prepared".to_string(), "result".to_string(), ["Play action".to_string(), "Reset preview".to_string()], "fade"),
             false => (kebab(from).trim_start_matches("part-").to_string(), kebab(to).trim_start_matches("part-").to_string(), labels.clone(), "auto"),
         };
-        spec.insert("state".into(), json!({"from": from, "to": to, "labels": labels, "reverse": reverse}));
+        let mut state = json!({"from": from, "to": to, "labels": labels, "reverse": reverse});
+        if let Some(name) = &icon.reverse_name {
+            state["reverseName"] = json!(name);
+        }
+        spec.insert("state".into(), state);
     }
     spec.insert("parts".into(), Value::Object(out));
     spec.insert("motion".into(), json!({}));
@@ -363,6 +386,13 @@ fn svg_path(shape: &Value, m: &[f64; 6]) -> Option<String> {
         d.push_str(" Z");
     }
     Some(d)
+}
+
+/// A style-only part's name: the layer's, with the style added unless the layer names it
+/// (`solid-body`, `dot-2-solid` and `interior` stay as they are).
+fn styled(layer: &str, style: &str) -> String {
+    let named = layer.split('-').any(|w| w == style || (style == "tint" && matches!(w, "interior" | "field" | "surface")));
+    if named { layer.to_string() } else { format!("{layer}-{style}") }
 }
 
 /// Whether every path is closed.

@@ -914,12 +914,16 @@ fn reanimation(ctx: &Context, catalog: &crate::library::Catalog, source: &dyn cr
         let (from, to) = (text("startState"), text("endState"));
         (from.clone(), to.clone(), [label_of("forwardLabel", &to), label_of("reverseLabel", &from)])
     });
-    // v2 names the reverse `<id>-reverse` (or `<id>-reset`); adopt needs the library's names.
-    let want = if preview_reset { format!("{id}-reset") } else { format!("{id}-reverse") };
-    if let Some(name) = motions.iter().filter_map(|m| m.pointer("/reverse/name").and_then(Value::as_str)).find(|n| !n.starts_with(&want)) {
-        warnings.push(format!("{id}'s reverse is named {name}; a spec names it {want}, so library adopt refuses it until the format can name it"));
-    }
-    let port = gai_spec::port::port(&lottie, &gai_spec::port::Icon { id: id.to_string(), label: label.to_string(), intent: text("intent"), state, preview_reset })
+    // The library's reverse name, where it is not the default (`lock-unlock`): adopt needs it.
+    let default = if preview_reset { format!("{id}-reset") } else { format!("{id}-reverse") };
+    let reverse_name = motions
+        .iter()
+        .find(|m| m.get("motionId").and_then(Value::as_str) == Some("light"))
+        .and_then(|m| m.pointer("/reverse/name"))
+        .and_then(Value::as_str)
+        .filter(|n| *n != default)
+        .map(str::to_string);
+    let port = gai_spec::port::port(&lottie, &gai_spec::port::Icon { id: id.to_string(), label: label.to_string(), intent: text("intent"), state, preview_reset, reverse_name })
         .map_err(|e| CliError::new(ErrorCode::CorruptArchive, format!("{id}: {e}")))?;
     warnings.extend(port.notes.iter().map(|n| format!("{id}: {n}")));
     Ok((serde_json::to_string_pretty(&port.spec).expect("json") + "\n", "v1", set_id))

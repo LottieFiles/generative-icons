@@ -86,6 +86,9 @@ pub enum Notice {
     /// The refresh token is about to be read from the OS keychain, which may ask the user to
     /// allow it (macOS does for a binary it has not seen).
     ReadingKeychain,
+    /// A keychain call has not answered for a few seconds: a prompt is likely waiting for the
+    /// user to allow this program.
+    WaitingForKeychain,
 }
 
 impl Notice {
@@ -100,6 +103,12 @@ impl Notice {
             }
             Notice::ReadingKeychain => {
                 "Reading the sign-in from the system keychain, which may ask you to allow access"
+            }
+            Notice::WaitingForKeychain if cfg!(target_os = "macos") => {
+                "Waiting for the macOS Keychain: a prompt asks to allow this program to use its sign-in. Choose Always Allow (a new or rebuilt binary asks once), or Deny to stop."
+            }
+            Notice::WaitingForKeychain => {
+                "Waiting for the system keychain, which may be asking to allow this program to use its sign-in"
             }
         }
     }

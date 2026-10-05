@@ -69,6 +69,8 @@ Give every action an event, not a nudge that comes back:
 | `morph` | `{"morph": [A, B], "by": "<driver>"}`: two shapes with the same command list; key the driver 0 → 1 |
 | list | `"shape": [S, S, …]`: several subpaths painted as one layer per style |
 
+A part rests visible, translucent (`"opacity": 0.3`, which its opacity track starts and, for a gesture, ends at) or hidden (`"hidden": true`). `"weights": {"light": S, "bold": S}` gives the Light and Bold outlines shapes of their own, for a dot that grows with the weight (`shape` draws Regular, Solid and tint; such a part moves only with its rig).
+
 `mirror` copies another part across x = 16 (or `"x"`/`"y"`), with its options unless you set them. Anchors: `"anchors": {"name": [x, y]}`, plus derived ones on every part: `<part>.c`, `.top`, `.bottom`, `.left`, `.right`, `.tl`, `.tr`, `.bl`, `.br` (bounding box at rest) and `.start`, `.end` (open shapes). Polar points replace hand trigonometry: a hand at 2 o'clock is `{"from": "dial", "angle": -30, "len": 4}`.
 
 ### Roles: one drawing, every style
@@ -158,7 +160,7 @@ Timing is derived: the action ends at the motion's last key, and rest comes one 
 - `fade`: the preview reset. States must be `prepared` → `result` and labels `["Play action", "Reset preview"]`; the animations are `<id>-reset` and `<id>-reset-strong`. Only the parts the action leaves changed fade out and back; a part that moved and came back stays.
 - `reverse.light` / `reverse.strong` replace any track of a reverse with explicit keys. A track that follows an overridden one follows the override.
 - Look at the reverse in the draft every time. `auto` replays a landing reaction (a `hit`, `bounce` or `settle` at the end state) at the start of the reverse and reflects it to the other side: a seat that dips before it moves, a flag that flutters below the pole. Override those tracks so the reverse has its own event (a lock pops open, a lid slams shut) and reacts where it lands. Most stateful icons with a landing need this.
-- State names are kebab-case (`checkpoint-saved`). Labels are short verbs (`["Lock", "Unlock"]`). The animations are always `<id>`, `<id>-strong` and `<id>-reverse`, `<id>-reverse-strong` (or the two `-reset` ones).
+- State names are kebab-case (`checkpoint-saved`). Labels are short verbs (`["Lock", "Unlock"]`). The animations are `<id>`, `<id>-strong` and `<id>-reverse`, `<id>-reverse-strong` (or the two `-reset` ones); `"reverseName": "<id>-unlock"` in `state` keeps a name apps already play (Strong's adds `-strong`).
 
 ## What check and draft tell you
 
@@ -191,4 +193,4 @@ With MCP, the `draft` tool returns the same sheets as images. `draft` writes `.g
 
 ## Not in the format yet
 
-`swing`, `flip`, `minus`, a keyed wave `phase` and connectors (anchors that follow another rig) stop with `NOT_IMPLEMENTED`. Also not supported yet: `scale` or `squash` on a rig that carries rigs, two path-changing tracks on one shape, a negative Solid `grow`, and one pulse per track and motion. Parts that collapse are not hidden automatically: key their `opacity`. Clearance and counter-width lints are not run yet, so check counters at Bold in the draft. Continuous loaders (motion through the whole 2.4 s, trim start or offset) are not in the format yet. Geometry cannot change with the outline weight (a dot whose radius is the weight). Several cut-outs moving on different rigs in one Solid surface cannot all follow (`KNOCKOUT_RIGS`): one surface has one matte. For an icon that needs one of these, write a JS batch: `create <id> --batch`.
+`swing`, `flip`, `minus`, a keyed wave `phase` and connectors (anchors that follow another rig) stop with `NOT_IMPLEMENTED`. Also not supported yet: `scale` or `squash` on a rig that carries rigs, two path-changing tracks on one shape, a negative Solid `grow`, and one pulse per track and motion. Parts that collapse are not hidden automatically: key their `opacity`. Clearance and counter-width lints are not run yet, so check counters at Bold in the draft. Continuous loaders (motion through the whole 2.4 s, trim start or offset) are not in the format yet. Several cut-outs moving on different rigs in one Solid surface cannot all follow (`KNOCKOUT_RIGS`): one surface has one matte. For an icon that needs one of these, write a JS batch: `create <id> --batch`.

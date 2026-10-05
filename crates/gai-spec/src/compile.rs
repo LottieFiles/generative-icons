@@ -183,6 +183,8 @@ pub struct Part {
     pub hidden: bool,
     /// Rest opacity when not hidden (1 unless the spec sets `opacity`).
     pub opacity: f64,
+    /// Light and Bold outline shapes of their own (`weights`).
+    pub weights: Vec<(String, Vec<RShape>)>,
     pub shapes: Vec<RShape>,
 }
 
@@ -259,6 +261,7 @@ impl<'a> Resolver<'a> {
                 let shapes = base.shapes.iter().map(m).collect();
                 let mirrored = Part {
                     holes: base.holes.iter().map(m).collect(),
+                    weights: base.weights.iter().map(|(w, list)| (w.clone(), list.iter().map(m).collect())).collect(),
                     solid: match &base.solid {
                         SolidR::Shape(s) => SolidR::Shape(m(s)),
                         other => other.clone(),
@@ -302,6 +305,23 @@ impl<'a> Resolver<'a> {
         };
         let hidden = src.hidden.or(inherit.map(|p| p.hidden)).unwrap_or(false);
         let opacity = src.opacity.or(inherit.map(|p| p.opacity)).unwrap_or(1.0);
+        let weights = match &src.weights {
+            Some(list) => {
+                let mut out = Vec::new();
+                for (weight, shapes) in list {
+                    let mut resolved = Vec::new();
+                    for (i, s) in shapes.iter().enumerate() {
+                        resolved.push(self.shape(s, name, &at(&at(&at(&src.path, "weights"), weight), i))?);
+                    }
+                    out.push((weight.clone(), resolved));
+                }
+                out
+            }
+            None => inherit.map(|p| p.weights.clone()).unwrap_or_default(),
+        };
+        if !weights.is_empty() && outline == Outline::Open {
+            self.d.push(Diagnostic::error("NOT_IMPLEMENTED", at(&src.path, "weights"), "weights on an open outline are not implemented").hint("close the outline, or drop weights"));
+        }
         // A stroke with no outline draws only in Solid (its centerline at 2.6).
         if (outline == Outline::Open && role != Role::Surface) || (outline == Outline::None && role == Role::Fill) {
             self.d.push(Diagnostic::error("V2_SCHEMA", at(&src.path, "outline"), "outline \"open\" is for surfaces; \"none\" for surfaces and strokes").hint("set \"role\": \"surface\", or drop outline"));
@@ -315,7 +335,7 @@ impl<'a> Resolver<'a> {
         if outline == Outline::Open && shapes.iter().any(|s| matches!(s, RShape::Circle { .. } | RShape::Ellipse { .. })) {
             self.d.push(Diagnostic::error("V2_SCHEMA", at(&src.path, "outline"), "a circle or ellipse has no closing edge to leave out"));
         }
-        Some(Part { name: name.to_string(), path: src.path.clone(), role, outline, tint, solid, holes, knockouts, gaps, hidden, opacity, shapes })
+        Some(Part { name: name.to_string(), path: src.path.clone(), role, outline, tint, solid, holes, knockouts, gaps, hidden, opacity, weights, shapes })
     }
 
     fn unknown(&mut self, path: &str, name: &str, what: &str) {
@@ -933,8 +953,16 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
                     fading.push((target, start, stop));
                 }
             }
-            let reverse = motion::reverse(&spec.id, ReverseInput { mode: state.reverse, forward, overrides, active, fading }, &mut d);
+            let reverse = motion::reverse(&spec.id, ReverseInput { mode: state.reverse, forward, overrides, active, fading, name: state.reverse_name.clone() }, &mut d);
             motions.push(reverse);
+        }
+        if let Some(name) = &state.reverse_name
+            && (!name.starts_with(&format!("{}-", spec.id)) || name.ends_with("-strong") || *name == format!("{}-strong", spec.id))
+        {
+            d.push(
+                Diagnostic::error("V2_SCHEMA", "/state/reverseName", format!("state.reverseName `{name}` must start with `{}-` and not end with -strong", spec.id))
+                    .hint(format!("name the Light reverse, such as {}-undo; Strong's adds -strong", spec.id)),
+            );
         }
         if state.reverse == ReverseMode::Fade && (state.from != "prepared" || state.to != "result" || state.labels != ["Play action".to_string(), "Reset preview".to_string()]) {
             d.push(
@@ -977,6 +1005,7 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
     let mut open_ids: HashMap<String, Vec<String>> = HashMap::new();
     let mut hole_ids: HashMap<String, Vec<String>> = HashMap::new();
     let mut solid_ids: HashMap<String, String> = HashMap::new();
+    let mut weight_ids: HashMap<(String, String), Vec<String>> = HashMap::new();
     for p in &parts {
         let form = if path_form(&p.name) { Form::Path } else { Form::Native };
         let ids: Vec<String> = p
@@ -990,6 +1019,24 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
             })
             .collect();
         shape_ids.insert(p.name.clone(), ids);
+        // Light and Bold shapes of their own: static outlines on the part's rig.
+        for (weight, shapes) in &p.weights {
+            let reshaped = form == Form::Path || p.shapes.iter().any(|s| s.driver().is_some());
+            if reshaped {
+                d.push(Diagnostic::error("NOT_IMPLEMENTED", at(&p.path, "weights"), format!("{} has weights and is reshaped by motion; per-weight shapes are static", p.name)).hint("move it with its rig (x, y, rotate), or drop weights"));
+                continue;
+            }
+            let ids: Vec<String> = shapes
+                .iter()
+                .enumerate()
+                .map(|(i, s)| {
+                    let id = format!("{}/{weight}/{i}", p.name);
+                    geo_defs.insert(id.clone(), GeoDef { part: p.name.clone(), shape: s.clone(), form: Form::Native, hole: false });
+                    id
+                })
+                .collect();
+            weight_ids.insert((p.name.clone(), weight.clone()), ids);
+        }
         if p.role == Role::Surface && p.outline == Outline::Open {
             let ids = p
                 .shapes
@@ -1117,6 +1164,7 @@ pub fn compile(spec: &Spec) -> Result<Compiled, Diagnostics> {
             layers.push(layer("tint", Some("tint"), Drawing { geos: shapes.clone(), paints: vec![Paint::Fill { even_odd: false }] }, masks));
         }
         for (variant, style, width) in WEIGHTS {
+            let shapes = weight_ids.get(&(p.name.clone(), variant.to_string())).cloned().unwrap_or_else(|| shapes.clone());
             let drawing = match (p.role, p.outline) {
                 (Role::Stroke, Outline::None) => continue,
                 (Role::Stroke, _) => Drawing { geos: [shapes.clone(), holes.clone()].concat(), paints: vec![Paint::Stroke(width)] },
