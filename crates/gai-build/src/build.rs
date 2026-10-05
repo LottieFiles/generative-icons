@@ -282,7 +282,12 @@ pub fn build(target: &Target, mode: Mode<'_>, options: &BuildOptions<'_>) -> Res
     // spec in a project and adopted again, never from the definitions.
     let committed = committed_assets(layout, profile);
     let adopted = adopted_entries(layout, committed.as_deref(), &description)?;
+    // Icons a set gained as specs only (no definition) follow the defined ones, as committed.
+    let added = added_entries(layout, committed.as_deref(), &description)?;
     let selected: Vec<usize> = match icon {
+        Some(name) if added.iter().any(|entry| entry.get("icon").and_then(Value::as_str) == Some(name)) => {
+            return Err(BuildError::Adopted(name.to_owned()));
+        }
         Some(name) => {
             let index = icon_index(&description, name)?;
             if adopted.contains_key(&index) {
@@ -315,11 +320,11 @@ pub fn build(target: &Target, mode: Mode<'_>, options: &BuildOptions<'_>) -> Res
     // A build written somewhere other than the set's committed assets carries the adopted
     // icons' outputs with it, so its folder is a whole set.
     if let Some(committed) = committed.as_deref().filter(|dir| *dir != layout.out.as_path())
-        && !adopted.is_empty()
+        && !(adopted.is_empty() && added.is_empty())
         && !matches!(mode, Mode::OfflineScenes)
     {
         run.output.directory(&layout.out)?;
-        for entry in adopted.values() {
+        for entry in adopted.values().chain(&added) {
             for name in entry.get("animations").and_then(Value::as_array).into_iter().flatten().filter_map(|a| a.get("name").and_then(Value::as_str)) {
                 for suffix in [".json", ".manifest.json", ".theme-dark.json", ".theme-light.json"] {
                     let path = committed.join(format!("{name}{suffix}"));
@@ -366,13 +371,14 @@ pub fn build(target: &Target, mode: Mode<'_>, options: &BuildOptions<'_>) -> Res
     }
 
     let set_json = run.provenance.is_some().then(|| {
-        let icons = selected
+        let mut icons: Vec<Value> = selected
             .iter()
             .map(|&i| match adopted.get(&i) {
                 Some(entry) => entry.clone(),
                 None => set_json::icon_entry(&description.icons[i], &run.records[i]),
             })
             .collect();
+        icons.extend(added.iter().cloned());
         set_json::assemble(profile, icons)
     });
     if let (Some(set), None) = (&set_json, icon) {
@@ -417,6 +423,39 @@ fn adopted_entries(layout: &Layout, committed: Option<&Path>, description: &Desc
         out.insert(index, entry.clone());
     }
     Ok(out)
+}
+
+/// The committed `set.json` entries of icons the set gained as specs only: a
+/// `specs/<name>.icon.json` that no definition names, adopted with `library adopt --add`.
+/// They keep their committed order after the defined icons.
+fn added_entries(layout: &Layout, committed: Option<&Path>, description: &Description) -> Result<Vec<Value>, BuildError> {
+    let specs = layout.root.join("specs");
+    let Ok(listing) = fs::read_dir(&specs) else { return Ok(Vec::new()) };
+    let defined: std::collections::HashSet<&str> = description.icons.iter().map(|icon| icon.name.as_str()).collect();
+    let mut names: Vec<String> = listing
+        .flatten()
+        .filter_map(|entry| entry.file_name().to_str().and_then(|n| n.strip_suffix(".icon.json")).map(str::to_owned))
+        .filter(|name| !defined.contains(name.as_str()))
+        .collect();
+    if names.is_empty() {
+        return Ok(Vec::new());
+    }
+    names.sort();
+    let path = committed.unwrap_or(&layout.out).join("set.json");
+    let bytes = fs::read(&path).map_err(|source| BuildError::Read { path: path.clone(), source })?;
+    let committed: Value = serde_json::from_slice(&bytes).map_err(|source| BuildError::Json { path, source })?;
+    let entries: Vec<&Value> = committed.get("icons").and_then(Value::as_array).into_iter().flatten().collect();
+    for name in &names {
+        let adopted = entries.iter().any(|e| e.get("icon").and_then(Value::as_str) == Some(name) && e.get("source").and_then(Value::as_str) == Some(ADOPTED_SOURCE));
+        if !adopted {
+            return Err(BuildError::NotAdopted(name.clone()));
+        }
+    }
+    Ok(entries
+        .into_iter()
+        .filter(|e| e.get("icon").and_then(Value::as_str).is_some_and(|n| names.iter().any(|m| m == n)))
+        .cloned()
+        .collect())
 }
 
 /// The `source` of records adopted from a spec.

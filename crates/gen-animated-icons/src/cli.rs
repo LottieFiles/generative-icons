@@ -574,6 +574,9 @@ pub struct LibraryAdoptArgs {
     /// Build folders that `gen-animated-icons build <id>` wrote (`.gen-animated-icons/build/<id>`)
     #[arg(value_name = "BUILD", required = true)]
     pub builds: Vec<std::path::PathBuf>,
+    /// Add new icons to the set (ids no library icon has) instead of replacing its icons
+    #[arg(long)]
+    pub add: bool,
 }
 
 /// Arguments of `library verify`.

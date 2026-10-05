@@ -36,9 +36,14 @@ pub fn run(repo: &Path, args: &LibraryAdoptArgs) -> Result<Report> {
     let set_json_path = paths.assets.join("set.json");
     let mut record: Value = read_json(&set_json_path)?;
 
+    // New icons take the library's next numbers, in the order given.
+    let mut next_number = if args.add { library_numbers(repo)?.into_iter().max().unwrap_or(0) + 1 } else { 0 };
     let mut adoptions = Vec::new();
     for dir in &args.builds {
-        let adoption = read_build(dir, &record, &set)?;
+        let adoption = match args.add {
+            true => read_addition(repo, dir, &record, &mut next_number)?,
+            false => read_build(dir, &record, &set)?,
+        };
         if adoptions.iter().any(|a: &Adoption| a.id == adoption.id) {
             return Err(CliError::usage(format!("{} is named twice", adoption.id)));
         }
@@ -61,9 +66,12 @@ pub fn run(repo: &Path, args: &LibraryAdoptArgs) -> Result<Report> {
             }
         }
         let icons = record["icons"].as_array_mut().expect("checked in read_build");
-        let slot = icons.iter_mut().find(|i| i["icon"] == json!(a.id)).expect("checked in read_build");
-        *slot = a.entry.clone();
-        let _ = writeln!(text, "adopted {} into {set}: {}", a.id, a.actions.join(", "));
+        match icons.iter_mut().find(|i| i["icon"] == json!(a.id)) {
+            Some(slot) => *slot = a.entry.clone(),
+            None => icons.push(a.entry.clone()),
+        }
+        let verb = if args.add { "added" } else { "adopted" };
+        let _ = writeln!(text, "{verb} {} into {set}: {}", a.id, a.actions.join(", "));
         adopted.push(json!({"icon": a.id, "spec": format!("{SPECS_DIR}/{}.icon.json", a.id), "actions": a.actions}));
     }
     std::fs::write(&set_json_path, encode_set_json(&record)).map_err(|e| CliError::io("write", &set_json_path, &e))?;
@@ -162,6 +170,103 @@ fn read_build(dir: &Path, record: &Value, set: &str) -> Result<Adoption> {
     Ok(Adoption { id, dir: dir.to_path_buf(), spec, entry, actions })
 }
 
+/// Every icon number the library uses, across all sets.
+fn library_numbers(repo: &Path) -> Result<Vec<u64>> {
+    let mut out = Vec::new();
+    let root = repo.join("prototype/icons");
+    for entry in std::fs::read_dir(&root).map_err(|e| CliError::io("read", &root, &e))?.flatten() {
+        let Ok(bytes) = std::fs::read(entry.path().join("assets/set.json")) else { continue };
+        let Ok(set): std::result::Result<Value, _> = serde_json::from_slice(&bytes) else { continue };
+        for icon in set.get("icons").and_then(Value::as_array).into_iter().flatten() {
+            if let Some(n) = icon.get("number").and_then(|n| n.as_u64().or_else(|| n.as_str().and_then(|s| s.parse().ok()))) {
+                out.push(n);
+            }
+        }
+    }
+    Ok(out)
+}
+
+/// A build of a new icon for the set: its id is no library icon's, and its entry takes the
+/// set's category and the library's next number.
+fn read_addition(repo: &Path, dir: &Path, record: &Value, next_number: &mut u64) -> Result<Adoption> {
+    let (id, spec, new, actions) = read_spec_build(dir)?;
+    let taken = std::fs::read_dir(repo.join("prototype/icons")).map_err(|e| CliError::io("read", &repo.join("prototype/icons"), &e))?.flatten().any(|entry| {
+        std::fs::read(entry.path().join("assets/set.json"))
+            .ok()
+            .and_then(|b| serde_json::from_slice::<Value>(&b).ok())
+            .is_some_and(|s| s.get("icons").and_then(Value::as_array).into_iter().flatten().any(|i| i.get("icon") == Some(&json!(id))))
+    });
+    if taken {
+        return Err(CliError::new(ErrorCode::IdCollision, format!("{id} is already a library icon")).with_hint("--add takes new ids; without it, adopt replaces the icon of that id"));
+    }
+    let category = record.get("category").cloned();
+    let stateful = new.get("motions").and_then(Value::as_array).into_iter().flatten().any(|m| m.get("reverse").is_some());
+    let mut entry = adopt_record(&new, stateful, category.as_ref());
+    let map = entry.as_object_mut().expect("an object");
+    for key in ["motions", "animations"] {
+        if let Some(Value::Array(list)) = new.get(key) {
+            let records = list
+                .iter()
+                .map(|r| {
+                    let mut record = adopt_record(r, stateful, category.as_ref());
+                    if let Some(reverse) = r.get("reverse") {
+                        record["reverse"] = adopt_record(reverse, stateful, category.as_ref());
+                    }
+                    record
+                })
+                .collect();
+            map.insert(key.into(), Value::Array(records));
+        }
+    }
+    // The number goes where the library's entries keep it: before `motions`.
+    let mut out = Map::new();
+    for (key, value) in std::mem::take(map) {
+        if key == "motions" {
+            out.insert("number".into(), json!(*next_number));
+        }
+        if key != "number" {
+            out.insert(key, value);
+        }
+    }
+    *next_number += 1;
+    Ok(Adoption { id, dir: dir.to_path_buf(), spec, entry: Value::Object(out), actions })
+}
+
+/// A build folder's spec id, spec bytes, `set.json` entry and action names, checked.
+fn read_spec_build(dir: &Path) -> Result<(String, Vec<u8>, Value, Vec<String>)> {
+    let entries = std::fs::read_dir(dir).map_err(|e| CliError::io("read", dir, &e))?;
+    let mut specs: Vec<PathBuf> = entries.flatten().map(|e| e.path()).filter(|p| p.file_name().and_then(|n| n.to_str()).is_some_and(|n| n.ends_with(".icon.json"))).collect();
+    let spec_path = match specs.len() {
+        1 => specs.remove(0),
+        n => return Err(CliError::usage(format!("{} holds {n} specs; name a build folder (.gen-animated-icons/build/<id>) that holds one", dir.display()))),
+    };
+    let id = spec_path.file_name().and_then(|n| n.to_str()).and_then(|n| n.strip_suffix(".icon.json")).unwrap_or_default().to_string();
+    let spec = std::fs::read(&spec_path).map_err(|e| CliError::io("read", &spec_path, &e))?;
+    let parsed: Value = serde_json::from_slice(&spec).map_err(|e| CliError::new(ErrorCode::InvalidConfig, format!("{}: {e}", spec_path.display())))?;
+    if parsed.get("format").and_then(Value::as_str) != Some(SOURCE) || parsed.get("id").and_then(Value::as_str) != Some(id.as_str()) {
+        return Err(CliError::new(ErrorCode::InvalidConfig, format!("{}: not a {SOURCE} spec with id {id}", spec_path.display())));
+    }
+    let built: Value = read_json(&dir.join("set.json"))?;
+    let new = built
+        .get("icons")
+        .and_then(Value::as_array)
+        .into_iter()
+        .flatten()
+        .find(|i| i.get("icon") == Some(&json!(id)))
+        .cloned()
+        .ok_or_else(|| CliError::new(ErrorCode::InvalidCatalog, format!("{}: set.json has no entry for {id}", dir.display())))?;
+    let actions: Vec<String> = new.get("animations").and_then(Value::as_array).into_iter().flatten().filter_map(|a| a.get("name").and_then(Value::as_str).map(str::to_string)).collect();
+    for name in &actions {
+        for suffix in ACTION_FILES {
+            let file = dir.join(format!("{name}{suffix}"));
+            if !file.is_file() {
+                return Err(CliError::new(ErrorCode::InvalidPath, format!("{} is missing; rebuild {id}", file.display())));
+            }
+        }
+    }
+    Ok((id, spec, new, actions))
+}
+
 /// The library entry for a build's entry: the build's records, with the library's
 /// `stateful` flag and category, and the icon's number and labels kept.
 fn adopt_entry(old: &Value, new: &Value) -> Value {
@@ -235,6 +340,42 @@ fn read_json(path: &Path) -> Result<Value> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn additions_take_the_set_category_and_the_next_number_and_refuse_taken_ids() {
+        let repo = tempfile::tempdir().unwrap();
+        let write = |path: &str, text: &str| {
+            let file = repo.path().join(path);
+            std::fs::create_dir_all(file.parent().unwrap()).unwrap();
+            std::fs::write(file, text).unwrap();
+        };
+        write("prototype/icons/23/assets/set.json", r#"{"id": "23-get-help", "category": "Get help", "icons": [{"icon": "callback", "number": 386}]}"#);
+        write("prototype/icons/63/assets/set.json", r#"{"id": "63-voice", "category": "Voice", "icons": [{"icon": "on-hold", "number": "1105"}]}"#);
+        let build = |id: &str| {
+            let dir = repo.path().join("build").join(id);
+            std::fs::create_dir_all(&dir).unwrap();
+            std::fs::write(dir.join(format!("{id}.icon.json")), format!(r#"{{"format": "{SOURCE}", "id": "{id}"}}"#)).unwrap();
+            let rec = |name: &str| json!({"name": name, "icon": id, "direction": "forward", "source": SOURCE, "category": "Local icons"});
+            let entry = json!({"name": id, "icon": id, "direction": "forward", "source": SOURCE, "category": "Local icons", "label": "X",
+                "motions": [rec(id)], "animations": [rec(id), rec(&format!("{id}-strong"))]});
+            std::fs::write(dir.join("set.json"), json!({"icons": [entry]}).to_string()).unwrap();
+            for name in [id.to_string(), format!("{id}-strong")] {
+                for suffix in ACTION_FILES {
+                    std::fs::write(dir.join(format!("{name}{suffix}")), "{}").unwrap();
+                }
+            }
+            dir
+        };
+        let record: Value = serde_json::from_str(&std::fs::read_to_string(repo.path().join("prototype/icons/23/assets/set.json")).unwrap()).unwrap();
+        let mut next = library_numbers(repo.path()).unwrap().into_iter().max().unwrap() + 1;
+        assert_eq!(next, 1106);
+        let added = read_addition(repo.path(), &build("faq"), &record, &mut next).unwrap();
+        assert_eq!((added.entry["number"].as_u64(), added.entry["category"].as_str(), next), (Some(1106), Some("Get help"), 1107));
+        assert_eq!(added.entry["animations"][1]["category"], "Get help");
+        assert_eq!(added.actions, ["faq", "faq-strong"]);
+        let Err(taken) = read_addition(repo.path(), &build("on-hold"), &record, &mut next) else { panic!("on-hold is taken") };
+        assert_eq!(taken.code, ErrorCode::IdCollision);
+    }
 
     #[test]
     fn entries_keep_the_library_number_category_and_labels() {
