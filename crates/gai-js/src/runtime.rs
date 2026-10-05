@@ -86,11 +86,16 @@ impl From<rquickjs::Error> for Fail {
     }
 }
 
+/// How long a stopped call has to unwind before the interrupt handler stops it again.
+const RESTOP: Duration = Duration::from_millis(50);
+
 /// The deadline the interrupt handler enforces, whether it fired, and the time the
 /// set's calls have used.
 struct Clock {
     deadline: Cell<Instant>,
     fired: Cell<bool>,
+    /// When the handler last stopped the call.
+    stopped_at: Cell<Option<Instant>>,
     spent: Cell<Duration>,
 }
 
@@ -100,13 +105,20 @@ impl Clock {
         let deadline = Instant::now() + limit;
         self.deadline.set(deadline);
         self.fired.set(false);
+        self.stopped_at.set(None);
         deadline
     }
 
-    fn expired(&self) -> bool {
-        let expired = Instant::now() > self.deadline.get();
+    /// Whether the interrupt handler stops the call: once its deadline has passed, and then
+    /// again only [`RESTOP`] after the last stop. A stop throws while QuickJS unwinds and
+    /// settles the call's promises; a second stop in between (the watchdog's poll request
+    /// landing just after the handler's own poll stopped the call) throws over the first
+    /// error and loses where the call stopped.
+    fn expired(&self, now: Instant) -> bool {
+        let expired = now > self.deadline.get() && self.stopped_at.get().is_none_or(|at| now - at >= RESTOP);
         if expired {
             self.fired.set(true);
+            self.stopped_at.set(Some(now));
         }
         expired
     }
@@ -158,6 +170,7 @@ impl SetRuntime {
             clock: Rc::new(Clock {
                 deadline: Cell::new(Instant::now()),
                 fired: Cell::new(false),
+                stopped_at: Cell::new(None),
                 spent: Cell::new(Duration::ZERO),
             }),
             refusals: Refusals::default(),
@@ -168,7 +181,7 @@ impl SetRuntime {
         runtime.set_memory_limit(limits.memory);
         runtime.set_max_stack_size(crate::worker::usable_stack(limits));
         let clock = Rc::clone(&guard.clock);
-        runtime.set_interrupt_handler(Some(Box::new(move || clock.expired())));
+        runtime.set_interrupt_handler(Some(Box::new(move || clock.expired(Instant::now()))));
         let (entry, roots) = match source {
             SetSource::Legacy(set) => (Entry::Shim(set.module()), Roots::new(&[])),
             SetSource::Definitions { set_dir, library_dir, .. } => {
@@ -519,4 +532,32 @@ where
 /// A JS array of strings (`String(v)` for anything else).
 fn strings(object: &Object<'_>, key: &str) -> rquickjs::Result<Vec<String>> {
     Ok(object.get::<_, Vec<Coerced<String>>>(key)?.into_iter().map(|s| s.0).collect())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn a_stopped_call_has_time_to_unwind_before_the_next_stop() {
+        let clock = Clock {
+            deadline: Cell::new(Instant::now()),
+            fired: Cell::new(false),
+            stopped_at: Cell::new(None),
+            spent: Cell::new(Duration::ZERO),
+        };
+        let deadline = clock.arm(Duration::from_millis(200));
+        let after = |ms| deadline + Duration::from_millis(ms);
+        assert!(!clock.expired(deadline));
+        assert!(clock.expired(after(1)));
+        assert!(clock.fired.get());
+        // The watchdog's request can make QuickJS poll again while the first stop unwinds.
+        assert!(!clock.expired(after(2)));
+        assert!(!clock.expired(after(50)));
+        // Code that still runs after that is stopped again.
+        assert!(clock.expired(after(51)));
+        // A new call starts clean.
+        clock.arm(Duration::from_millis(200));
+        assert!(!clock.fired.get() && clock.stopped_at.get().is_none());
+    }
 }
