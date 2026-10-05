@@ -355,13 +355,15 @@ fn sampling_failures_and_paint_policy_say_where_and_how_to_fix() {
     assert_eq!((code, report["status"].as_str()), (0, Some("PASS")), "{report}");
 }
 
-/// What the CLI reports for the project's source stopped at a 200 ms limit.
+/// What the CLI reports for the project's source stopped at a 2 s limit. The limit also
+/// covers loading the kit, which an unoptimized build on a busy CI runner can spend most of
+/// 200 ms on; stopped there, the error has no user file to name.
 fn stopped(app: &Path) -> gen_animated_icons::error::CliError {
     use gai_js::{Limits, SetRuntime, SetSource, run_on_worker};
     use gen_animated_icons::commands::check::{Origin, source_error_in};
     let root = app.canonicalize().unwrap();
     let icons = root.join("gen-animated-icons/icons");
-    let limits = Limits { call_timeout: std::time::Duration::from_millis(200), ..Limits::default() };
+    let limits = Limits { call_timeout: std::time::Duration::from_secs(2), ..Limits::default() };
     let source = SetSource::user_project(&icons);
     let error = run_on_worker(&limits.clone(), move || {
         let mut runtime = SetRuntime::load(&source, &limits)?;
@@ -382,7 +384,7 @@ fn code_stopped_at_its_time_limit_names_the_file() {
     let error = stopped(&app);
     assert_eq!((error.code.as_str(), error.path.as_deref()), ("SOURCE_ERROR", Some(BATCH)), "{error:?}");
     // QuickJS places module code at the module's first line.
-    assert_eq!(error.message, format!("{BATCH}: stopped after 200ms (running at or after line 1)"));
+    assert_eq!(error.message, format!("{BATCH}: stopped after 2s (running at or after line 1)"));
     assert!(error.hint.unwrap().starts_with("The icon code ran too long"));
 
     // A loop in a part's callback, while an action is sampled.
@@ -392,7 +394,7 @@ fn code_stopped_at_its_time_limit_names_the_file() {
     assert_eq!(error.path.as_deref(), Some(BATCH), "{error:?}");
     assert_eq!(
         error.message,
-        format!("{BATCH}: stopped after 200ms (icon bell-nudge, variant bell-nudge) (running at or after line 8)")
+        format!("{BATCH}: stopped after 2s (icon bell-nudge, variant bell-nudge) (running at or after line 8)")
     );
 }
 
