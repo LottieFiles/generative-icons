@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 12,
-  "actions": 38,
+  "icons": 20,
+  "actions": 58,
   "nativeTransformNodes": 182,
   "nativeTransformMaxCoordinateError": 0.00001000000000139778,
   "checks": [
@@ -415,6 +415,82 @@
       "actions": [
         "cookie-preferences",
         "cookie-preferences-strong"
+      ]
+    },
+    {
+      "icon": "verified-badge",
+      "spec": "specs/verified-badge.icon.json",
+      "specSha256": "41a36b97eb25ce35d0352676a9d63f7743421bc9f75031434b767fe2476e4850",
+      "actions": [
+        "verified-badge",
+        "verified-badge-strong"
+      ]
+    },
+    {
+      "icon": "account-settings",
+      "spec": "specs/account-settings.icon.json",
+      "specSha256": "1e3f9bfad59e5cdca9f5e2f0a4721b5a63f57a75e71b803abf9617bb3cadefa4",
+      "actions": [
+        "account-settings",
+        "account-settings-strong"
+      ]
+    },
+    {
+      "icon": "edit-profile",
+      "spec": "specs/edit-profile.icon.json",
+      "specSha256": "8da919489ea8c4ee7b1aa252054fa5c848799300ef932e7b48ecfbcf104f9c6f",
+      "actions": [
+        "edit-profile",
+        "edit-profile-strong"
+      ]
+    },
+    {
+      "icon": "reset-password",
+      "spec": "specs/reset-password.icon.json",
+      "specSha256": "f2ad0f44af9583d89ac6be3d4303c1114aa3d724135108d2de8e711888e54209",
+      "actions": [
+        "reset-password",
+        "reset-password-strong"
+      ]
+    },
+    {
+      "icon": "block-trackers",
+      "spec": "specs/block-trackers.icon.json",
+      "specSha256": "2c7a26119cc916aa084e02dae3be1078684845f78cbc258720209cc6db12c065",
+      "actions": [
+        "block-trackers",
+        "block-trackers-reverse",
+        "block-trackers-strong",
+        "block-trackers-reverse-strong"
+      ]
+    },
+    {
+      "icon": "vpn",
+      "spec": "specs/vpn.icon.json",
+      "specSha256": "e672ce318f06b5d8766d7907baea227cf417587ee8d104e160f196584a8b2bc1",
+      "actions": [
+        "vpn",
+        "vpn-strong"
+      ]
+    },
+    {
+      "icon": "private-account",
+      "spec": "specs/private-account.icon.json",
+      "specSha256": "1041d48341b1c5e69f98327f9e49c0382653f4595edbf5490a6e7b6d132d0818",
+      "actions": [
+        "private-account",
+        "private-account-reverse",
+        "private-account-strong",
+        "private-account-reverse-strong"
+      ]
+    },
+    {
+      "icon": "delete-account",
+      "spec": "specs/delete-account.icon.json",
+      "specSha256": "f70cd0677c2a9404ca6dd241c45e94931eeaba51ebf4dfca3d6034f742c6a39a",
+      "actions": [
+        "delete-account",
+        "delete-account-strong"
       ]
     }
   ]

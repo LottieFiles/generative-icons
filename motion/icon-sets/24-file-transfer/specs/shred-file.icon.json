@@ -1,0 +1,64 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "shred-file",
+  "label": "Shred file",
+  "intent": "A file is shredded. Light: the shredder pulls the sheet down into its slot, its top edge sinking until it is gone, while the body rattles and the cut strips push out longer underneath. Strong: the shredder grabs the sheet in two hard pulls with a pause between, rattling harder each time, and the strips lurch out in two steps. The preview reset draws the strips back up and fades the sheet back in, waiting at the slot.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "sheet": {
+      "//": "open at the bottom, where it goes into the slot; it feeds in by its top edge coming down. It stops 1.5 short of the body so Solid keeps them apart",
+      "shape": {
+        "morph": [
+          {"polygon": [[9.5, 12.25], [9.5, 4.75], [19, 4.75], [22.5, 8.25], [22.5, 12.25]], "r": 1.4},
+          {"polygon": [[9.5, 12.25], [9.5, 11.65], [19, 11.65], [22.5, 11.85], [22.5, 12.25]], "r": 0.2}
+        ],
+        "by": "feed"
+      },
+      "role": "surface",
+      "outline": "open",
+      "solid": "fill"
+    },
+    "fold": {
+      "shape": {
+        "morph": [{"polyline": [[19, 5.15], [19, 8.25], [22.1, 8.25]], "r": 0.8}, {"polyline": [[19, 11.65], [19, 11.85], [22.1, 11.85]], "r": 0.1}],
+        "by": "feed"
+      },
+      "solid": "none"
+    },
+    "body": {"shape": {"rect": [4.5, 13.75, 23, 8.5], "r": 2.5}, "role": "surface", "solid": "fill"},
+    "strip-1": {"shape": {"morph": [{"line": [[10, 22.25], [10, 26.25]]}, {"line": [[10, 22.25], [10, 28.2]]}], "by": "cut"}},
+    "strip-2": {"shape": {"morph": [{"line": [[14, 22.25], [14, 26.25]]}, {"line": [[14, 22.25], [14, 28.2]]}], "by": "cut"}},
+    "strip-3": {"shape": {"morph": [{"line": [[18, 22.25], [18, 26.25]]}, {"line": [[18, 22.25], [18, 28.2]]}], "by": "cut"}},
+    "strip-4": {"shape": {"morph": [{"line": [[22, 22.25], [22, 26.25]]}, {"line": [[22, 22.25], [22, 28.2]]}], "by": "cut"}}
+  },
+  "rigs": {"shredder": {"pivot": [16, 22.25], "carries": ["body", "strip-1", "strip-2", "strip-3", "strip-4"]}},
+  "motion": {
+    "feed": {"light": [[0, 0], [0.08, 0], [0.44, 1, "in"]], "strong": [[0, 0], [0.06, 0], [0.17, 0.45, "in"], [0.27, 0.45], [0.38, 1, "in"]]},
+    "sheet.opacity": {"light": [[0, 1], [0.42, 1], [0.46, 0]], "strong": [[0, 1], [0.36, 1], [0.4, 0]]},
+    "fold.opacity": {"follow": "sheet.opacity"},
+    "cut": {"light": [[0, 0], [0.14, 0], [0.5, 1, "out"]], "strong": [[0, 0], [0.1, 0], [0.22, 0.5, "out"], [0.3, 0.5], [0.42, 1, "out"]]},
+    "shredder.x": {
+      "light": [[0, 0], {"wobble": 0.1, "amp": 0.35, "until": 0.5, "swings": 6}],
+      "strong": [[0, 0], {"wobble": 0.07, "amp": 0.55, "until": 0.46, "swings": 6}]
+    },
+    "shredder.y": {"light": [[0, 0]], "strong": [[0, 0], [0.17, 0], [0.2, 0.5, "out"], [0.25, 0], [0.38, 0], [0.41, 0.6, "out"], [0.47, 0]]}
+  },
+  "reverse": {
+    "//": "the strips draw back up instead of fading",
+    "light": {
+      "cut": [[0, 1], [0.26, 0, "inOut"]],
+      "strip-1.opacity": [[0, 1], [0.26, 1]],
+      "strip-2.opacity": [[0, 1], [0.26, 1]],
+      "strip-3.opacity": [[0, 1], [0.26, 1]],
+      "strip-4.opacity": [[0, 1], [0.26, 1]]
+    },
+    "strong": {
+      "cut": [[0, 1], [0.22, 0, "inOut"]],
+      "strip-1.opacity": [[0, 1], [0.22, 1]],
+      "strip-2.opacity": [[0, 1], [0.22, 1]],
+      "strip-3.opacity": [[0, 1], [0.22, 1]],
+      "strip-4.opacity": [[0, 1], [0.22, 1]]
+    }
+  }
+}

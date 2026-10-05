@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 13,
-  "actions": 42,
+  "icons": 20,
+  "actions": 66,
   "nativeTransformNodes": 34,
   "nativeTransformMaxCoordinateError": 0.000007313881166481906,
   "checks": [
@@ -407,6 +407,79 @@
       "actions": [
         "regular-expression",
         "regular-expression-strong"
+      ]
+    },
+    {
+      "icon": "cherry-pick",
+      "spec": "specs/cherry-pick.icon.json",
+      "specSha256": "a51c2504d32e2cbd567cca752e68f11876ee5d5d5b274e3df4621601d3263ff8",
+      "actions": [
+        "cherry-pick",
+        "cherry-pick-reset",
+        "cherry-pick-strong",
+        "cherry-pick-reset-strong"
+      ]
+    },
+    {
+      "icon": "git-rebase",
+      "spec": "specs/git-rebase.icon.json",
+      "specSha256": "f2612dc92ac18553b6181b01438fb6610c55a8c9b9bf601593f340358cf105fd",
+      "actions": [
+        "git-rebase",
+        "git-rebase-reset",
+        "git-rebase-strong",
+        "git-rebase-reset-strong"
+      ]
+    },
+    {
+      "icon": "git-compare",
+      "spec": "specs/git-compare.icon.json",
+      "specSha256": "6d8686b2e4fc92618a1db1feb567e84cdd0f954e4ee065c55b247a1d2e7bf2d5",
+      "actions": [
+        "git-compare",
+        "git-compare-strong"
+      ]
+    },
+    {
+      "icon": "code-diff",
+      "spec": "specs/code-diff.icon.json",
+      "specSha256": "807e28dd68740395320dbb3dea8ef9ebd10f330fa437ddb4fdcc9e0d416ec16a",
+      "actions": [
+        "code-diff",
+        "code-diff-reset",
+        "code-diff-strong",
+        "code-diff-reset-strong"
+      ]
+    },
+    {
+      "icon": "logs",
+      "spec": "specs/logs.icon.json",
+      "specSha256": "6fb8fd0225e06a844895bcafca5ad959f67abad55540b0405f54a90096fb98eb",
+      "actions": [
+        "logs",
+        "logs-reset",
+        "logs-strong",
+        "logs-reset-strong"
+      ]
+    },
+    {
+      "icon": "feature-flag",
+      "spec": "specs/feature-flag.icon.json",
+      "specSha256": "1482353ee9ec2b7548d138c97034397dd87a482fea63464f411a4d94a601946e",
+      "actions": [
+        "feature-flag",
+        "feature-flag-reverse",
+        "feature-flag-strong",
+        "feature-flag-reverse-strong"
+      ]
+    },
+    {
+      "icon": "build",
+      "spec": "specs/build.icon.json",
+      "specSha256": "c787c368520f7da2f1289cde69c62ce488fdd50b370bece8c2c1071e92495a1e",
+      "actions": [
+        "build",
+        "build-strong"
       ]
     }
   ]

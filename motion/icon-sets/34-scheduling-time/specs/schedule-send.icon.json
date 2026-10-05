@@ -1,0 +1,392 @@
+{
+ "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+ "format": "gai-icon/2",
+ "id": "schedule-send",
+ "label": "Schedule send",
+ "intent": "The message is sent at its scheduled time. Light: the clock's minute hand runs round to the send time, and as it lands the paper plane draws back and launches off along its nose, fading out, while a fresh plane slides into its place. Strong: the hand winds back and runs round hard, the clock jolts as the time hits, and the plane pulls back further and shoots off faster before the fresh one slides in.",
+ "parts": {
+  "dial": {
+   "shape": {
+    "circle": [
+     [
+      21.6,
+      21.2
+     ],
+     6
+    ]
+   },
+   "role": "surface",
+   "solid": "ring"
+  },
+  "hour": {
+   "shape": {
+    "line": [
+     [
+      21.6,
+      21.2
+     ],
+     [
+      23.9,
+      21.2
+     ]
+    ]
+   }
+  },
+  "minute": {
+   "shape": {
+    "line": [
+     [
+      21.6,
+      21.2
+     ],
+     [
+      21.6,
+      17.9
+     ]
+    ]
+   }
+  },
+  "plane-b": {
+   "//": "hidden at rest: the fresh plane that slides in behind the one that leaves",
+   "shape": {
+    "path": "M 4.654 8.596 C 4.018 8.199 4.058 7.890 4.776 7.671 L 16.124 4.204 C 16.841 3.984 17.090 4.233 16.872 4.951 L 13.403 16.299 C 13.184 17.017 12.882 17.053 12.496 16.410 L 10.009 12.264 C 9.803 11.922 9.530 11.644 9.191 11.432 L 4.654 8.596 Z"
+   },
+   "role": "surface",
+   "solid": {
+    "path": "M 4.589 8.559 C 3.996 8.186 4.035 7.898 4.704 7.693 L 16.124 4.204 C 16.841 3.984 17.090 4.233 16.872 4.951 L 13.382 16.371 C 13.177 17.040 12.895 17.075 12.535 16.475 L 9.970 12.200 C 9.790 11.900 9.821 11.623 10.061 11.370 L 13.869 7.366 C 13.990 7.239 13.977 7.223 13.831 7.319 L 8.663 10.719 C 8.454 10.856 8.244 10.858 8.033 10.726 L 4.589 8.559 Z"
+   },
+   "hidden": true
+  },
+  "fold-b": {
+   "shape": {
+    "line": [
+     [
+      9.7,
+      11.75
+     ],
+     [
+      16.45,
+      4.625
+     ]
+    ]
+   },
+   "hidden": true,
+   "solid": "none"
+  },
+  "plane-a": {
+   "shape": {
+    "path": "M 4.654 8.596 C 4.018 8.199 4.058 7.890 4.776 7.671 L 16.124 4.204 C 16.841 3.984 17.090 4.233 16.872 4.951 L 13.403 16.299 C 13.184 17.017 12.882 17.053 12.496 16.410 L 10.009 12.264 C 9.803 11.922 9.530 11.644 9.191 11.432 L 4.654 8.596 Z"
+   },
+   "role": "surface",
+   "solid": {
+    "path": "M 4.589 8.559 C 3.996 8.186 4.035 7.898 4.704 7.693 L 16.124 4.204 C 16.841 3.984 17.090 4.233 16.872 4.951 L 13.382 16.371 C 13.177 17.040 12.895 17.075 12.535 16.475 L 9.970 12.200 C 9.790 11.900 9.821 11.623 10.061 11.370 L 13.869 7.366 C 13.990 7.239 13.977 7.223 13.831 7.319 L 8.663 10.719 C 8.454 10.856 8.244 10.858 8.033 10.726 L 4.589 8.559 Z"
+   },
+   "//": "the library send plane at 0.75; Solid is its filled dart with the fold cut in as a notch"
+  },
+  "fold-a": {
+   "shape": {
+    "line": [
+     [
+      9.7,
+      11.75
+     ],
+     [
+      16.45,
+      4.625
+     ]
+    ]
+   },
+   "solid": "none",
+   "//": "the fold shows in Outline and Duotone; Solid is the plain dart"
+  }
+ },
+ "rigs": {
+  "clock": {
+   "//": "the clock jolts as the send time hits in Strong",
+   "pivot": [
+    21.6,
+    27.2
+   ],
+   "carries": [
+    "dial",
+    "hour",
+    "minute"
+   ]
+  },
+  "minute": {
+   "pivot": [
+    21.6,
+    21.2
+   ]
+  },
+  "plane-a": {
+   "//": "the leaving plane travels along its nose, 45 degrees up and right",
+   "pivot": [
+    10.6,
+    10.4
+   ],
+   "carries": [
+    "plane-a",
+    "fold-a"
+   ]
+  },
+  "plane-b": {
+   "pivot": [
+    10.6,
+    10.4
+   ],
+   "carries": [
+    "plane-b",
+    "fold-b"
+   ]
+  }
+ },
+ "motion": {
+  "minute.rotate": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.04,
+     0
+    ],
+    [
+     0.3,
+     360,
+     "inOut"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.08,
+     -25,
+     "out"
+    ],
+    [
+     0.28,
+     360,
+     "hit"
+    ]
+   ]
+  },
+  "clock.y": {
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.28,
+     0
+    ],
+    [
+     0.32,
+     0.6,
+     "hit"
+    ],
+    [
+     0.38,
+     -0.15
+    ],
+    [
+     0.43,
+     0
+    ]
+   ]
+  },
+  "plane-a.x": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.3,
+     0
+    ],
+    [
+     0.36,
+     -0.8,
+     "out"
+    ],
+    [
+     0.46,
+     2.4,
+     "in"
+    ],
+    [
+     0.6,
+     0,
+     "step"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.28,
+     0
+    ],
+    [
+     0.35,
+     -1.3,
+     "out"
+    ],
+    [
+     0.44,
+     2.4,
+     "in"
+    ],
+    [
+     0.6,
+     0,
+     "step"
+    ]
+   ]
+  },
+  "plane-a.y": {
+   "follow": "plane-a.x",
+   "scale": -1
+  },
+  "plane-a.opacity": {
+   "light": [
+    [
+     0,
+     1
+    ],
+    [
+     0.37,
+     1
+    ],
+    [
+     0.45,
+     0,
+     "in"
+    ],
+    [
+     0.6,
+     1,
+     "step"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     1
+    ],
+    [
+     0.35,
+     1
+    ],
+    [
+     0.43,
+     0,
+     "in"
+    ],
+    [
+     0.6,
+     1,
+     "step"
+    ]
+   ]
+  },
+  "fold-a.opacity": {
+   "follow": "plane-a.opacity"
+  },
+  "plane-b.x": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.44,
+     -1.5,
+     "step"
+    ],
+    [
+     0.58,
+     0,
+     "out"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.42,
+     -1.5,
+     "step"
+    ],
+    [
+     0.53,
+     0.3,
+     "out"
+    ],
+    [
+     0.58,
+     0
+    ]
+   ]
+  },
+  "plane-b.y": {
+   "follow": "plane-b.x",
+   "scale": -1
+  },
+  "plane-b.opacity": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.44,
+     0
+    ],
+    [
+     0.54,
+     1,
+     "out"
+    ],
+    [
+     0.6,
+     0,
+     "step"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.42,
+     0
+    ],
+    [
+     0.5,
+     1,
+     "out"
+    ],
+    [
+     0.6,
+     0,
+     "step"
+    ]
+   ]
+  },
+  "fold-b.opacity": {
+   "follow": "plane-b.opacity"
+  }
+ }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "cooling-fan",
+  "label": "Cooling fan",
+  "intent": "The cooling fan spins up. Light: the rotor sweeps through one full turn with a blur of blades trailing behind it, overruns a little and settles back. Strong: a short wind-back, then two fast turns with a heavier blur, a bigger overrun and a damped settle. The square frame never moves.",
+  "parts": {
+    "blur":  {"//": "hidden at rest: the trailing blur only exists while the rotor spins; not drawn in Solid",
+              "shape": [
+                {"path": "M16 13 C15.58 10.01 19.04 7.64 21.53 9.41"},
+                {"path": "M18.85 15.07 C21.56 13.75 24.89 16.31 23.97 19.22"},
+                {"path": "M17.76 18.43 C19.86 20.6 18.45 24.56 15.4 24.58"},
+                {"path": "M14.24 18.43 C12.82 21.09 8.62 20.98 7.66 18.08"},
+                {"path": "M13.15 15.07 C10.18 14.55 8.99 10.52 11.44 8.71"}
+              ], "hidden": true, "solid": "none"},
+    "blades": {"shape": [
+                {"path": "M16 13 C15.58 10.01 19.04 7.64 21.53 9.41"},
+                {"path": "M18.85 15.07 C21.56 13.75 24.89 16.31 23.97 19.22"},
+                {"path": "M17.76 18.43 C19.86 20.6 18.45 24.56 15.4 24.58"},
+                {"path": "M14.24 18.43 C12.82 21.09 8.62 20.98 7.66 18.08"},
+                {"path": "M13.15 15.07 C10.18 14.55 8.99 10.52 11.44 8.71"}
+              ]},
+    "hub":   {"shape": {"circle": [[16, 16], 2.2]}, "role": "fill"},
+    "frame": {"shape": {"rect": [4.5, 4.5, 23, 23], "r": 4}, "role": "surface",
+              "knockout": [{"part": "blades", "gap": 0.3}, {"part": "hub", "gap": 0.3}]}
+  },
+  "rigs": {
+    "rotor": {"pivot": [16, 16], "carries": ["blades", "hub"]},
+    "blur":  {"pivot": [16, 16]}
+  },
+  "motion": {
+    "rotor.rotate": {
+      "light":  [[0, 0], [0.42, 378, "inOut"], [0.56, 360, "inOut"]],
+      "strong": [[0, 0], [0.1, -24, "inOut"], [0.62, 740, "inOut"], {"settle": 0.86, "to": 720}]
+    },
+    "blur.rotate": {"follow": "rotor.rotate", "lag": 0.05},
+    "blur.opacity": {
+      "light":  [[0, 0], [0.06, 0], [0.16, 0.4], [0.3, 0.4], [0.42, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.24, 0.5], [0.5, 0.5], [0.62, 0]]
+    }
+  }
+}

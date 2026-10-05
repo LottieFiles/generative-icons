@@ -1,0 +1,374 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "sitemap",
+  "label": "Sitemap",
+  "intent": "The sitemap branches out from its root page. Light: the root page is pressed and sends a link down: the stem draws down from it, the two branches draw out to the sides, and each child page pops as its branch reaches it, the left one first. Strong: a deeper press with a pop of the root as it sends, the links draw faster, and the child pages pop bigger and settle in two beats.",
+  "parts": {
+    "root": {
+      "shape": {
+        "rect": [
+          11.5,
+          4.5,
+          9,
+          7
+        ],
+        "r": 1.8
+      },
+      "role": "surface"
+    },
+    "stem": {
+      "shape": {
+        "line": [
+          [
+            16,
+            12.5
+          ],
+          [
+            16,
+            15.75
+          ]
+        ]
+      },
+      "//": "the links end a unit short of the boxes so their round caps stay inside the box strokes while the boxes move"
+    },
+    "branch-l": {
+      "shape": {
+        "polyline": [
+          [
+            16,
+            15.75
+          ],
+          [
+            9,
+            15.75
+          ],
+          [
+            9,
+            19
+          ]
+        ],
+        "r": 1.6
+      }
+    },
+    "branch-r": {
+      "mirror": {
+        "of": "branch-l"
+      }
+    },
+    "child-l": {
+      "shape": {
+        "rect": [
+          4.5,
+          20,
+          9,
+          7
+        ],
+        "r": 1.8
+      },
+      "role": "surface"
+    },
+    "child-r": {
+      "shape": {
+        "rect": [
+          18.5,
+          20,
+          9,
+          7
+        ],
+        "r": 1.8
+      },
+      "role": "surface"
+    }
+  },
+  "rigs": {
+    "root": {
+      "pivot": [
+        16,
+        8
+      ]
+    },
+    "child-l": {
+      "pivot": [
+        9,
+        23.5
+      ]
+    },
+    "child-r": {
+      "pivot": [
+        23,
+        23.5
+      ]
+    }
+  },
+  "motion": {
+    "root.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0.7,
+          "hit"
+        ],
+        [
+          0.16,
+          0,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.07,
+          1.1,
+          "hit"
+        ],
+        [
+          0.17,
+          0,
+          "out"
+        ]
+      ]
+    },
+    "root.scale": {
+      "light": [
+        [
+          0,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.07,
+          0.94,
+          "out"
+        ],
+        [
+          0.15,
+          1.08,
+          "out"
+        ],
+        [
+          0.24,
+          1
+        ]
+      ]
+    },
+    "stem.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.05,
+          0,
+          "step"
+        ],
+        [
+          0.14,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.13,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "branch-l.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.05,
+          0,
+          "step"
+        ],
+        [
+          0.12,
+          0
+        ],
+        [
+          0.25,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.11,
+          0
+        ],
+        [
+          0.21,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "branch-r.draw": {
+      "follow": "branch-l.draw"
+    },
+    "child-l.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.21,
+          1
+        ],
+        [
+          0.29,
+          1.12,
+          "out"
+        ],
+        [
+          0.37,
+          0.95
+        ],
+        [
+          0.45,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          0.26,
+          1.16,
+          "out"
+        ],
+        [
+          0.34,
+          0.93
+        ],
+        [
+          0.42,
+          1.04
+        ],
+        [
+          0.5,
+          1
+        ]
+      ]
+    },
+    "child-r.scale": {
+      "follow": "child-l.scale",
+      "lag": 0.05
+    },
+    "stem.opacity": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.05,
+          0,
+          "step"
+        ],
+        [
+          0.07,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.08,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "branch-l.opacity": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.05,
+          0,
+          "step"
+        ],
+        [
+          0.13,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.12,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "branch-r.opacity": {
+      "follow": "branch-l.opacity"
+    }
+  }
+}

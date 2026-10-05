@@ -1,0 +1,27 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "gantt-chart",
+  "label": "Gantt chart",
+  "intent": "The project schedule is laid out on the Gantt chart: each task bar extends from its start date to its end date, in order. Light: the three bars grow out one after another, each starting while the one above is still running, and stop dead on their end dates. Strong: the bars run as a dependency chain: each one shoots out and stops with a hit, and the next starts only when the one above lands. The axis never moves.",
+  "parts": {
+    "axis": {"shape": {"line": [[5, 5], [5, 27]]}},
+    "bar-1": {"//": "b1 1 = the bar collapsed to a dot at its start date", "shape": {"morph": [{"rect": [8.5, 6.4, 9.5, 4.2], "r": 2.1}, {"rect": [8.5, 6.4, 4.2, 4.2], "r": 2.1}], "by": "b1"}, "role": "fill"},
+    "bar-2": {"shape": {"morph": [{"rect": [13, 13.9, 10, 4.2], "r": 2.1}, {"rect": [13, 13.9, 4.2, 4.2], "r": 2.1}], "by": "b2"}, "role": "fill"},
+    "bar-3": {"shape": {"morph": [{"rect": [18, 21.4, 9, 4.2], "r": 2.1}, {"rect": [18, 21.4, 4.2, 4.2], "r": 2.1}], "by": "b3"}, "role": "fill"}
+  },
+  "motion": {
+    "b1": {
+      "light":  [[0, 0], [0.017, 1, "step"], [0.04, 1], [0.22, 0, "out"]],
+      "strong": [[0, 0], [0.017, 1, "step"], [0.04, 1], [0.14, 0, "hit"]]
+    },
+    "b2": {
+      "light":  [[0, 0], [0.017, 1, "step"], [0.13, 1], [0.31, 0, "out"]],
+      "strong": [[0, 0], [0.017, 1, "step"], [0.14, 1], [0.24, 0, "hit"]]
+    },
+    "b3": {
+      "light":  [[0, 0], [0.017, 1, "step"], [0.22, 1], [0.4, 0, "out"]],
+      "strong": [[0, 0], [0.017, 1, "step"], [0.24, 1], [0.34, 0, "hit"]]
+    }
+  }
+}

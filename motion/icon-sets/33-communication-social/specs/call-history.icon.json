@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "call-history",
+  "label": "Call history",
+  "intent": "The call log winds back to the last call. Light: the clock's minute hand winds back one full turn, stops dead on the hour with a hit and a small recoil, and the handset rings once in answer, rattling in two decaying beats. Strong: the clock pops as the hand winds back two fast turns, stops harder and recoils twice, and the handset rattles longer.",
+  "parts": {
+    "phone": {
+      "shape": {"path": "M7.151 6.349 C7.717 5.783 8.4 5.5 9.2 5.5 L10.5 5.5 C11.167 5.5 11.629 5.807 11.887 6.422 L13.135 9.394 C13.445 10.131 13.317 10.783 12.751 11.349 L11.466 12.634 C11.089 13.011 11.045 13.424 11.334 13.872 L13.186 16.74 C13.729 17.58 14.42 18.271 15.26 18.814 L18.128 20.666 C18.576 20.955 18.989 20.911 19.366 20.534 L20.651 19.249 C21.217 18.683 21.869 18.555 22.606 18.865 L25.578 20.113 C26.193 20.371 26.5 20.833 26.5 21.5 L26.5 22.8 C26.5 23.6 26.255 24.233 25.765 24.7 L25.135 25.3 C24.645 25.767 23.9 26 22.9 26 L21.5 26 C20.5 26 19.565 25.754 18.694 25.262 L14.841 23.084 C13.68 22.428 12.645 21.657 11.735 20.77 L10.565 19.63 C9.655 18.743 8.881 17.714 8.244 16.543 L6.36 13.081 C5.787 12.027 5.5 11.092 5.5 10.275 L5.5 9.2 C5.5 8.4 5.783 7.717 6.349 7.151 L7.151 6.349 Z"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "dial": {"shape": {"circle": [[23, 9], 4.75]}, "role": "surface", "solid": "ring"},
+    "hour": {"shape": {"line": [[23, 9], [25, 10.3]]}},
+    "minute": {"shape": {"line": [[23, 9], [23, 6.2]]}}
+  },
+  "rigs": {
+    "phone": {"pivot": [16, 15.75]},
+    "clock": {"pivot": [23, 9], "carries": ["dial", "hour"]},
+    "minute": {"pivot": [23, 9]}
+  },
+  "motion": {
+    "minute.rotate": {
+      "light": [[0, 0], [0.05, 10, "out"], [0.36, -360, "hit"], [0.41, -350], [0.46, -360]],
+      "strong": [[0, 0], [0.06, 14, "out"], [0.42, -720, "hit"], [0.47, -706], [0.52, -720, "hit"], [0.56, -716], [0.6, -720]]
+    },
+    "clock.scale": {
+      "light": [[0, 1], [0.36, 1], [0.4, 1.06, "out"], [0.47, 1]],
+      "strong": [[0, 1], [0.08, 1.1, "out"], [0.36, 1.1], [0.42, 0.97, "hit"], [0.5, 1]]
+    },
+    "minute.scale": {"follow": "clock.scale"},
+    "phone.rotate": {
+      "light": [[0, 0], [0.36, 0], [0.4, -7], [0.45, 5], [0.5, -2.5], [0.55, 0]],
+      "strong": [[0, 0], [0.42, 0], [0.46, -9], [0.51, 7], [0.56, -4.5], [0.61, 2.5], [0.66, -1.2], [0.71, 0]]
+    }
+  }
+}

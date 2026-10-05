@@ -1,0 +1,338 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "annotation-wave",
+  "label": "Wavy pointer",
+  "intent": "A wavy arrow writes from its source dot to the target. Light: the stroke writes on crest by crest from the dot, then the head opens at the tip. Strong: the dot presses as the pen lands, the wave writes fast while its crests swell and ripple back, and the head snaps open past its angle and settles. The preview reset fades the arrow back to the dot.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "anchors": {
+    "tip": [
+      28.93,
+      11.86
+    ]
+  },
+  "parts": {
+    "route": {
+      "//": "hidden at rest: the wave writes on from the dot",
+      "shape": {
+        "morph": [
+          {
+            "path": "M5.17 21.19 C6.22 21.08 6.94 19.34 7.7 17.51 C8.46 15.68 9.19 13.93 10.23 13.82 C11.27 13.71 12.35 15.27 13.47 16.9 C14.59 18.54 15.67 20.09 16.71 19.98 C17.75 19.87 18.48 18.13 19.24 16.3 C20 14.46 20.72 12.72 21.77 12.61 L28.93 11.86"
+          },
+          {
+            "path": "M5.17 21.19 C6.22 21.08 6.94 19.34 7.7 17.51 C8.39 14.98 9.04 12.58 10.09 12.47 C11.13 12.36 12.27 14.58 13.47 16.9 C14.67 19.23 15.81 21.44 16.85 21.33 C17.9 21.22 18.55 18.82 19.24 16.3 C20 14.46 20.72 12.72 21.77 12.61 L28.93 11.86"
+          }
+        ],
+        "by": "flex"
+      },
+      "hidden": true
+    },
+    "barb-a": {
+      "shape": {
+        "line": [
+          "tip",
+          [
+            25.04,
+            8.71
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "barb-b": {
+      "shape": {
+        "line": [
+          "tip",
+          [
+            25.78,
+            15.74
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "origin": {
+      "shape": {
+        "circle": [
+          [
+            5.17,
+            21.19
+          ],
+          2.1
+        ]
+      },
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "barb-a": {
+      "pivot": "tip"
+    },
+    "barb-b": {
+      "pivot": "tip"
+    }
+  },
+  "motion": {
+    "origin.scale": {
+      "light": [
+        [
+          0,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0.78,
+          "in"
+        ],
+        [
+          0.16,
+          1.1,
+          "out"
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    },
+    "route.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "route.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          1.0,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.52,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "flex": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.3,
+          1,
+          "out"
+        ],
+        [
+          0.48,
+          -0.45,
+          "inOut"
+        ],
+        [
+          0.64,
+          0.15,
+          "inOut"
+        ],
+        [
+          0.8,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "barb-a.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          1.0,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.52,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "barb-a.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          1.0,
+          0,
+          "step"
+        ],
+        [
+          1.24,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.52,
+          0,
+          "step"
+        ],
+        [
+          0.62,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "barb-a.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.52,
+          -20,
+          "step"
+        ],
+        [
+          0.64,
+          10.0,
+          "out"
+        ],
+        [
+          0.76,
+          -4.0,
+          "inOut"
+        ],
+        [
+          0.88,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "barb-b.opacity": {
+      "follow": "barb-a.opacity"
+    },
+    "barb-b.draw": {
+      "follow": "barb-a.draw"
+    },
+    "barb-b.rotate": {
+      "follow": "barb-a.rotate",
+      "scale": -1
+    }
+  },
+  "reverse": {
+    "//": "the reset fades only the written arrow; the source dot stays",
+    "light": {
+      "origin.opacity": [
+        [
+          0,
+          1
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    },
+    "strong": {
+      "origin.opacity": [
+        [
+          0,
+          1
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    }
+  }
+}

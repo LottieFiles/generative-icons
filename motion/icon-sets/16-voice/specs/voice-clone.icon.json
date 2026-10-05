@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "voice-clone",
+  "label": "Voice clone",
+  "intent": "A voice is cloned and the copy speaks. Light: the front card carrying the waveform presses back into the original voice behind it, then peels out diagonally to its own place, overshoots and settles; as it lands, its waveform bars swell one after another, the cloned voice saying a word. Strong: a deeper press, a longer peel that settles in two beats, and the clone says two words, the second louder. The original never moves.",
+  "parts": {
+    "source": {"//": "the original voice: the card behind, only its top and left edges show", "shape": {"path": "M21 5.5 L8 5.5 C6.62 5.5 5.5 6.62 5.5 8 L5.5 21.5"}},
+    "card":   {"shape": {"rect": [10, 10, 15.5, 16], "r": 2.2}, "role": "surface", "solid": "ring"},
+    "bar-1":  {"//": "the cloned waveform", "shape": {"line": [[14.25, 15.5], [14.25, 20.5]]}},
+    "bar-2":  {"shape": {"line": [[17.75, 14], [17.75, 22]]}},
+    "bar-3":  {"shape": {"line": [[21.25, 16], [21.25, 20]]}}
+  },
+  "rigs": {
+    "card":  {"//": "the clone: the card and its waveform move as one", "pivot": [17.75, 18], "carries": ["card", "bar-1", "bar-2", "bar-3"]},
+    "bar-1": {"pivot": [14.25, 18], "carries": ["bar-1"]},
+    "bar-2": {"pivot": [17.75, 18], "carries": ["bar-2"]},
+    "bar-3": {"pivot": [21.25, 18], "carries": ["bar-3"]}
+  },
+  "motion": {
+    "card.x": {
+      "light":  [[0, 0], [0.08, -2.5, "out"], [0.24, 1.2, "out"], [0.34, 0, "inOut"]],
+      "strong": [[0, 0], [0.1, -3, "out"], [0.28, 1.6, "out"], [0.37, -0.4, "inOut"], [0.45, 0, "inOut"]]
+    },
+    "card.y": {"follow": "card.x"},
+    "bar-1.scale": {
+      "light":  [[0, 1], [0.24, 1], [0.31, 1.5, "out"], [0.42, 1, "inOut"]],
+      "strong": [[0, 1], [0.28, 1], [0.34, 1.4, "out"], [0.43, 1, "inOut"], [0.46, 1], [0.53, 1.6, "out"], [0.65, 1, "inOut"]]
+    },
+    "bar-2.scale": {"follow": "bar-1.scale", "lag": 0.05, "scale": 0.3, "offset": 0.7},
+    "bar-3.scale": {"follow": "bar-1.scale", "lag": 0.1, "scale": 1.2, "offset": -0.2}
+  }
+}

@@ -1,0 +1,599 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "annotation-emphasis",
+  "label": "Emphasis pointer",
+  "intent": "An arrow points at a spot and bursts emphasis marks around its tip: look here. Light: the stroke writes from the source dot, the head opens, and three short marks draw out around the tip one after another. Strong: the dot presses as the pen lands, the stroke writes fast and the head snaps open, then the marks burst out past their place and settle. The preview reset fades the arrow and marks back to the dot.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "anchors": {
+    "tip": [
+      17.5,
+      14
+    ]
+  },
+  "parts": {
+    "route": {
+      "//": "hidden at rest: the stroke writes on from the dot",
+      "shape": {
+        "morph": [
+          {
+            "path": "M6 25 C6.4 19.6 12.9 17.86 17.5 14"
+          },
+          {
+            "path": "M6 25 C5.6 18.6 11.4 16.4 17.5 14"
+          }
+        ],
+        "by": "flex"
+      },
+      "hidden": true
+    },
+    "barb-a": {
+      "shape": {
+        "line": [
+          "tip",
+          [
+            13.12,
+            13.62
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "barb-b": {
+      "shape": {
+        "line": [
+          "tip",
+          [
+            17.12,
+            18.38
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "mark-1": {
+      "shape": {
+        "line": [
+          [
+            16.56,
+            8.68
+          ],
+          [
+            16.06,
+            5.83
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "mark-2": {
+      "shape": {
+        "line": [
+          [
+            21.64,
+            10.53
+          ],
+          [
+            23.86,
+            8.66
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "mark-3": {
+      "shape": {
+        "line": [
+          [
+            22.57,
+            15.85
+          ],
+          [
+            25.3,
+            16.84
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "origin": {
+      "shape": {
+        "circle": [
+          [
+            6,
+            25
+          ],
+          2.1
+        ]
+      },
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "barb-a": {
+      "pivot": "tip"
+    },
+    "barb-b": {
+      "pivot": "tip"
+    },
+    "marks": {
+      "pivot": "tip",
+      "carries": [
+        "mark-1",
+        "mark-2",
+        "mark-3"
+      ]
+    }
+  },
+  "motion": {
+    "origin.scale": {
+      "light": [
+        [
+          0,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0.78,
+          "in"
+        ],
+        [
+          0.16,
+          1.1,
+          "out"
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    },
+    "route.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "route.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.9,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.46,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "flex": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.28,
+          1,
+          "out"
+        ],
+        [
+          0.44,
+          -0.45,
+          "inOut"
+        ],
+        [
+          0.58,
+          0.15,
+          "inOut"
+        ],
+        [
+          0.72,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "barb-a.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.46,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "barb-a.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.9,
+          0,
+          "step"
+        ],
+        [
+          1.12,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.46,
+          0,
+          "step"
+        ],
+        [
+          0.56,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "barb-a.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.46,
+          -20,
+          "step"
+        ],
+        [
+          0.5800000000000001,
+          10.0,
+          "out"
+        ],
+        [
+          0.69,
+          -4.0,
+          "inOut"
+        ],
+        [
+          0.8,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "barb-b.opacity": {
+      "follow": "barb-a.opacity"
+    },
+    "barb-b.draw": {
+      "follow": "barb-a.draw"
+    },
+    "barb-b.rotate": {
+      "follow": "barb-a.rotate",
+      "scale": -1
+    },
+    "mark-1.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          1.08,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "mark-1.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          1.08,
+          0,
+          "step"
+        ],
+        [
+          1.22,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0,
+          "step"
+        ],
+        [
+          0.58,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "mark-2.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          1.15,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.54,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "mark-2.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          1.15,
+          0,
+          "step"
+        ],
+        [
+          1.29,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.54,
+          0,
+          "step"
+        ],
+        [
+          0.62,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "mark-3.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          1.22,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.58,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "mark-3.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          1.22,
+          0,
+          "step"
+        ],
+        [
+          1.36,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.58,
+          0,
+          "step"
+        ],
+        [
+          0.66,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "marks.scale": {
+      "light": [
+        [
+          0,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0.72,
+          "step"
+        ],
+        [
+          0.66,
+          1.16,
+          "out"
+        ],
+        [
+          0.78,
+          0.96,
+          "inOut"
+        ],
+        [
+          0.9,
+          1,
+          "inOut"
+        ]
+      ]
+    }
+  },
+  "reverse": {
+    "//": "the reset fades only the written arrow and marks; the source dot stays",
+    "light": {
+      "origin.opacity": [
+        [
+          0,
+          1
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    },
+    "strong": {
+      "origin.opacity": [
+        [
+          0,
+          1
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    }
+  }
+}

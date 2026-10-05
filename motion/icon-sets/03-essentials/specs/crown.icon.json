@@ -1,0 +1,573 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "crown",
+  "label": "Crown",
+  "intent": "The crown is placed and gleams, for premium. Light: the crown lifts off its band with a slight tilt, drops back onto it with a hit and a squash, the band gives under it, and a glint flashes off its upper right as it lands. Strong: a dip first, then the crown is raised higher, tilts one way and the other, lands with a hit and a smaller second bounce, and glints flash on both sides in turn.",
+  "parts": {
+    "band": {
+      "shape": {
+        "line": [
+          [
+            9,
+            26
+          ],
+          [
+            23,
+            26
+          ]
+        ]
+      }
+    },
+    "body": {
+      "shape": {
+        "polygon": [
+          {
+            "p": [
+              6.5,
+              11
+            ],
+            "r": 1
+          },
+          {
+            "p": [
+              11.5,
+              16
+            ],
+            "r": 0.6
+          },
+          {
+            "p": [
+              16,
+              8.5
+            ],
+            "r": 1
+          },
+          {
+            "p": [
+              20.5,
+              16
+            ],
+            "r": 0.6
+          },
+          {
+            "p": [
+              25.5,
+              11
+            ],
+            "r": 1
+          },
+          {
+            "p": [
+              23.5,
+              22
+            ],
+            "r": 1.2
+          },
+          {
+            "p": [
+              8.5,
+              22
+            ],
+            "r": 1.2
+          }
+        ]
+      },
+      "role": "surface"
+    },
+    "glint-r": {
+      "//": "hidden at rest: a four-point glint that flashes as the crown lands",
+      "shape": {
+        "polygon": [
+          [
+            25.4,
+            3.5
+          ],
+          [
+            26.213,
+            5.787
+          ],
+          [
+            28.5,
+            6.6
+          ],
+          [
+            26.213,
+            7.413
+          ],
+          [
+            25.4,
+            9.7
+          ],
+          [
+            24.587,
+            7.413
+          ],
+          [
+            22.3,
+            6.6
+          ],
+          [
+            24.587,
+            5.787
+          ]
+        ],
+        "r": 0.3
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "glint-l": {
+      "shape": {
+        "polygon": [
+          [
+            6.6,
+            4.3
+          ],
+          [
+            7.272,
+            6.128
+          ],
+          [
+            9.1,
+            6.8
+          ],
+          [
+            7.272,
+            7.472
+          ],
+          [
+            6.6,
+            9.3
+          ],
+          [
+            5.928,
+            7.472
+          ],
+          [
+            4.1,
+            6.8
+          ],
+          [
+            5.928,
+            6.128
+          ]
+        ],
+        "r": 0.3
+      },
+      "role": "fill",
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "crown": {
+      "//": "tilts about the middle of its base",
+      "pivot": [
+        16,
+        22
+      ],
+      "carries": [
+        "body"
+      ],
+      "squash": {
+        "base": 22,
+        "widen": 0.5
+      }
+    },
+    "glint-r": {
+      "pivot": [
+        25.4,
+        6.6
+      ]
+    },
+    "glint-l": {
+      "pivot": [
+        6.6,
+        6.8
+      ]
+    }
+  },
+  "motion": {
+    "crown.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -2.4,
+          "out"
+        ],
+        [
+          0.24,
+          0,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.07,
+          0.4,
+          "out"
+        ],
+        [
+          0.22,
+          -3.2,
+          "out"
+        ],
+        [
+          0.34,
+          0,
+          "hit"
+        ],
+        [
+          0.42,
+          -0.8,
+          "out"
+        ],
+        [
+          0.5,
+          0,
+          "hit"
+        ]
+      ]
+    },
+    "crown.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -6,
+          "out"
+        ],
+        [
+          0.24,
+          0,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.07,
+          0
+        ],
+        [
+          0.18,
+          -8,
+          "out"
+        ],
+        [
+          0.27,
+          5
+        ],
+        [
+          0.34,
+          0,
+          "hit"
+        ]
+      ]
+    },
+    "crown.squash": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.24,
+          1
+        ],
+        [
+          0.29,
+          0.88,
+          "out"
+        ],
+        [
+          0.37,
+          1.04
+        ],
+        [
+          0.46,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.07,
+          0.92,
+          "out"
+        ],
+        [
+          0.15,
+          1.03
+        ],
+        [
+          0.22,
+          1
+        ],
+        [
+          0.34,
+          1
+        ],
+        [
+          0.38,
+          0.85,
+          "out"
+        ],
+        [
+          0.44,
+          1.03
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          0.53,
+          0.94,
+          "out"
+        ],
+        [
+          0.62,
+          1
+        ]
+      ]
+    },
+    "band.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.28,
+          0.6,
+          "out"
+        ],
+        [
+          0.38,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.34,
+          0
+        ],
+        [
+          0.38,
+          0.75,
+          "out"
+        ],
+        [
+          0.46,
+          0
+        ],
+        [
+          0.5,
+          0
+        ],
+        [
+          0.53,
+          0.3,
+          "out"
+        ],
+        [
+          0.6,
+          0
+        ]
+      ]
+    },
+    "glint-r.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0
+        ],
+        [
+          0.29,
+          1,
+          "out"
+        ],
+        [
+          0.37,
+          1
+        ],
+        [
+          0.47,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.35,
+          0
+        ],
+        [
+          0.39,
+          1,
+          "out"
+        ],
+        [
+          0.47,
+          1
+        ],
+        [
+          0.57,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "glint-r.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.25,
+          0.4,
+          "step"
+        ],
+        [
+          0.34,
+          1.05,
+          "out"
+        ],
+        [
+          0.47,
+          0.8
+        ],
+        [
+          0.49,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.35,
+          0.4,
+          "step"
+        ],
+        [
+          0.44,
+          1.05,
+          "out"
+        ],
+        [
+          0.57,
+          0.8
+        ],
+        [
+          0.59,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "glint-l.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.45,
+          0
+        ],
+        [
+          0.49,
+          1,
+          "out"
+        ],
+        [
+          0.56,
+          1
+        ],
+        [
+          0.66,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "glint-l.scale": {
+      "light": [
+        [
+          0,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.45,
+          0.4,
+          "step"
+        ],
+        [
+          0.53,
+          1.15,
+          "out"
+        ],
+        [
+          0.66,
+          0.8
+        ],
+        [
+          0.68,
+          1,
+          "step"
+        ]
+      ]
+    }
+  }
+}

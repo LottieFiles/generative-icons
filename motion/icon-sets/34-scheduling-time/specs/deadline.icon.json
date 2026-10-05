@@ -1,0 +1,289 @@
+{
+ "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+ "format": "gai-icon/2",
+ "id": "deadline",
+ "label": "Deadline",
+ "intent": "A deadline flag is planted on the calendar. Light: the pole shoots up from the date, then the pennant unfurls from the top of the pole, overshoots a little as it catches the wind and settles. Strong: the pole strikes up with a dead stop and the calendar takes the hit with a thump and a rebound; the pennant snaps out harder and flutters twice before it settles. The leaf stays rigid.",
+ "parts": {
+  "leaf": {
+   "shape": {
+    "rect": [
+     5,
+     6,
+     22,
+     21
+    ],
+    "r": 2.7
+   },
+   "role": "surface",
+   "solid": "ring"
+  },
+  "header": {
+   "shape": {
+    "line": [
+     [
+      5.5,
+      11.5
+     ],
+     [
+      26.5,
+      11.5
+     ]
+    ]
+   }
+  },
+  "peg-l": {
+   "shape": {
+    "line": [
+     [
+      11,
+      4
+     ],
+     [
+      11,
+      8
+     ]
+    ]
+   }
+  },
+  "peg-r": {
+   "shape": {
+    "line": [
+     [
+      21,
+      4
+     ],
+     [
+      21,
+      8
+     ]
+    ]
+   }
+  },
+  "pole": {
+   "//": "drawn from the foot up, so it grows out of the date",
+   "shape": {
+    "line": [
+     [
+      11.8,
+      23.6
+     ],
+     [
+      11.8,
+      15.3
+     ]
+    ]
+   }
+  },
+  "cloth": {
+   "//": "a pennant, so the pole and cloth never read as a letter P at 24 px; furl 1 = the cloth wrapped round the pole, and the driver swings past 0 for the snap and flutter",
+   "shape": {
+    "morph": [
+     {
+      "path": "M11.8 15.3 L21.4 17.9 L11.8 20.5 Z"
+     },
+     {
+      "path": "M11.8 15.3 L13.4 17.9 L11.8 20.5 Z"
+     }
+    ],
+    "by": "furl"
+   },
+   "role": "surface",
+   "solid": "fill"
+  }
+ },
+ "rigs": {
+  "calendar": {
+   "//": "the whole calendar takes the strike in Strong",
+   "pivot": [
+    16,
+    27
+   ],
+   "carries": [
+    "leaf",
+    "header",
+    "peg-l",
+    "peg-r",
+    "pole",
+    "cloth"
+   ]
+  }
+ },
+ "motion": {
+  "pole.draw": {
+   "light": [
+    [
+     0,
+     1
+    ],
+    [
+     0.017,
+     0,
+     "step"
+    ],
+    [
+     0.04,
+     0
+    ],
+    [
+     0.16,
+     1,
+     "out"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     1
+    ],
+    [
+     0.017,
+     0,
+     "step"
+    ],
+    [
+     0.04,
+     0
+    ],
+    [
+     0.12,
+     1,
+     "hit"
+    ]
+   ]
+  },
+  "cloth.opacity": {
+   "light": [
+    [
+     0,
+     1
+    ],
+    [
+     0.017,
+     0,
+     "step"
+    ],
+    [
+     0.15,
+     0
+    ],
+    [
+     0.167,
+     1,
+     "step"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     1
+    ],
+    [
+     0.017,
+     0,
+     "step"
+    ],
+    [
+     0.117,
+     0
+    ],
+    [
+     0.133,
+     1,
+     "step"
+    ]
+   ]
+  },
+  "calendar.y": {
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.12,
+     0
+    ],
+    [
+     0.16,
+     0.9,
+     "hit"
+    ],
+    [
+     0.23,
+     -0.2
+    ],
+    [
+     0.29,
+     0.06
+    ],
+    [
+     0.34,
+     0
+    ]
+   ]
+  },
+  "furl": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.017,
+     1,
+     "step"
+    ],
+    [
+     0.15,
+     1
+    ],
+    [
+     0.29,
+     -0.12,
+     "out"
+    ],
+    [
+     0.37,
+     0.04
+    ],
+    [
+     0.44,
+     0
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.017,
+     1,
+     "step"
+    ],
+    [
+     0.12,
+     1
+    ],
+    [
+     0.22,
+     -0.2,
+     "out"
+    ],
+    [
+     0.3,
+     0.1
+    ],
+    [
+     0.37,
+     -0.05
+    ],
+    [
+     0.44,
+     0
+    ]
+   ]
+  }
+ }
+}

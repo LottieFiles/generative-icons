@@ -1,0 +1,541 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "building",
+  "label": "Building",
+  "intent": "The office building lights up, for a company or organization. Light: the windows light up floor by floor from the ground, each pair popping bigger and settling a beat after the floor below. Strong: the same wave runs up faster and harder, then a second, smaller wave runs back down from the top floor. The building and door never move.",
+  "parts": {
+    "body": {
+      "//": "an office block; Solid keeps it hollow so the windows and door stay readable while the windows pop",
+      "shape": {
+        "rect": [
+          8,
+          5,
+          16,
+          22
+        ],
+        "r": 2
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "door": {
+      "shape": {
+        "polyline": [
+          [
+            13.5,
+            27
+          ],
+          [
+            13.5,
+            21.5
+          ],
+          [
+            18.5,
+            21.5
+          ],
+          [
+            18.5,
+            27
+          ]
+        ],
+        "r": 1
+      }
+    },
+    "win-1l": {
+      "shape": {
+        "rect": [
+          10.5,
+          15.7,
+          4,
+          2.6
+        ],
+        "r": 0.7
+      },
+      "role": "fill",
+      "//": "six windows, two per floor; they light up floor by floor from the ground"
+    },
+    "win-1r": {
+      "shape": {
+        "rect": [
+          17.5,
+          15.7,
+          4,
+          2.6
+        ],
+        "r": 0.7
+      },
+      "role": "fill"
+    },
+    "win-2l": {
+      "shape": {
+        "rect": [
+          10.5,
+          11.7,
+          4,
+          2.6
+        ],
+        "r": 0.7
+      },
+      "role": "fill"
+    },
+    "win-2r": {
+      "shape": {
+        "rect": [
+          17.5,
+          11.7,
+          4,
+          2.6
+        ],
+        "r": 0.7
+      },
+      "role": "fill"
+    },
+    "win-3l": {
+      "shape": {
+        "rect": [
+          10.5,
+          7.7,
+          4,
+          2.6
+        ],
+        "r": 0.7
+      },
+      "role": "fill"
+    },
+    "win-3r": {
+      "shape": {
+        "rect": [
+          17.5,
+          7.7,
+          4,
+          2.6
+        ],
+        "r": 0.7
+      },
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "win-1l": {
+      "pivot": [
+        12.5,
+        17
+      ]
+    },
+    "win-1r": {
+      "pivot": [
+        19.5,
+        17
+      ]
+    },
+    "win-2l": {
+      "pivot": [
+        12.5,
+        13
+      ]
+    },
+    "win-2r": {
+      "pivot": [
+        19.5,
+        13
+      ]
+    },
+    "win-3l": {
+      "pivot": [
+        12.5,
+        9
+      ]
+    },
+    "win-3r": {
+      "pivot": [
+        19.5,
+        9
+      ]
+    }
+  },
+  "motion": {
+    "win-1l.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          1.4,
+          "out"
+        ],
+        [
+          0.17,
+          0.9
+        ],
+        [
+          0.25,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.07,
+          1.5,
+          "out"
+        ],
+        [
+          0.15,
+          0.86
+        ],
+        [
+          0.22,
+          1.0
+        ],
+        [
+          0.578,
+          1
+        ],
+        [
+          0.637,
+          1.22,
+          "out"
+        ],
+        [
+          0.708,
+          0.94
+        ],
+        [
+          0.768,
+          1
+        ]
+      ]
+    },
+    "win-1r.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.03,
+          1
+        ],
+        [
+          0.11,
+          1.4,
+          "out"
+        ],
+        [
+          0.2,
+          0.9
+        ],
+        [
+          0.28,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.022,
+          1
+        ],
+        [
+          0.092,
+          1.5,
+          "out"
+        ],
+        [
+          0.172,
+          0.86
+        ],
+        [
+          0.242,
+          1.0
+        ],
+        [
+          0.555,
+          1
+        ],
+        [
+          0.615,
+          1.22,
+          "out"
+        ],
+        [
+          0.685,
+          0.94
+        ],
+        [
+          0.745,
+          1
+        ]
+      ]
+    },
+    "win-2l.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.09,
+          1
+        ],
+        [
+          0.17,
+          1.4,
+          "out"
+        ],
+        [
+          0.26,
+          0.9
+        ],
+        [
+          0.34,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.068,
+          1
+        ],
+        [
+          0.138,
+          1.5,
+          "out"
+        ],
+        [
+          0.217,
+          0.86
+        ],
+        [
+          0.287,
+          1.0
+        ],
+        [
+          0.51,
+          1
+        ],
+        [
+          0.57,
+          1.22,
+          "out"
+        ],
+        [
+          0.64,
+          0.94
+        ],
+        [
+          0.7,
+          1
+        ]
+      ]
+    },
+    "win-2r.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.12,
+          1
+        ],
+        [
+          0.2,
+          1.4,
+          "out"
+        ],
+        [
+          0.29,
+          0.9
+        ],
+        [
+          0.37,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.09,
+          1
+        ],
+        [
+          0.16,
+          1.5,
+          "out"
+        ],
+        [
+          0.24,
+          0.86
+        ],
+        [
+          0.31,
+          1.0
+        ],
+        [
+          0.487,
+          1
+        ],
+        [
+          0.547,
+          1.22,
+          "out"
+        ],
+        [
+          0.617,
+          0.94
+        ],
+        [
+          0.677,
+          1
+        ]
+      ]
+    },
+    "win-3l.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          0.26,
+          1.4,
+          "out"
+        ],
+        [
+          0.35,
+          0.9
+        ],
+        [
+          0.43,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.135,
+          1
+        ],
+        [
+          0.205,
+          1.5,
+          "out"
+        ],
+        [
+          0.285,
+          0.86
+        ],
+        [
+          0.355,
+          1.0
+        ],
+        [
+          0.443,
+          1
+        ],
+        [
+          0.502,
+          1.22,
+          "out"
+        ],
+        [
+          0.573,
+          0.94
+        ],
+        [
+          0.633,
+          1
+        ]
+      ]
+    },
+    "win-3r.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.21,
+          1
+        ],
+        [
+          0.29,
+          1.4,
+          "out"
+        ],
+        [
+          0.38,
+          0.9
+        ],
+        [
+          0.46,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.158,
+          1
+        ],
+        [
+          0.228,
+          1.5,
+          "out"
+        ],
+        [
+          0.307,
+          0.86
+        ],
+        [
+          0.378,
+          1.0
+        ],
+        [
+          0.42,
+          1
+        ],
+        [
+          0.48,
+          1.22,
+          "out"
+        ],
+        [
+          0.55,
+          0.94
+        ],
+        [
+          0.61,
+          1
+        ]
+      ]
+    }
+  }
+}

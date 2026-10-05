@@ -1,0 +1,471 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "app-grid",
+  "label": "Apps",
+  "intent": "The app launcher opens. Light: the centre dot of the three-by-three grid pops, and the pop ripples out to the four edge dots and then to the four corner dots, each a beat later, before all settle. Strong: the whole grid first gathers in toward its centre, then bursts back out past its place as the pop ripples outward, and settles in two beats.",
+  "parts": {
+    "d-tl-core": {
+      "shape": {
+        "circle": [
+          [
+            8.5,
+            8.5
+          ],
+          1.4
+        ]
+      },
+      "role": "fill"
+    },
+    "d-tl": {
+      "shape": {
+        "circle": [
+          [
+            8.5,
+            8.5
+          ],
+          0.75
+        ]
+      }
+    },
+    "d-t-core": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            8.5
+          ],
+          1.4
+        ]
+      },
+      "role": "fill"
+    },
+    "d-t": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            8.5
+          ],
+          0.75
+        ]
+      }
+    },
+    "d-tr-core": {
+      "shape": {
+        "circle": [
+          [
+            23.5,
+            8.5
+          ],
+          1.4
+        ]
+      },
+      "role": "fill"
+    },
+    "d-tr": {
+      "shape": {
+        "circle": [
+          [
+            23.5,
+            8.5
+          ],
+          0.75
+        ]
+      }
+    },
+    "d-l-core": {
+      "shape": {
+        "circle": [
+          [
+            8.5,
+            16
+          ],
+          1.4
+        ]
+      },
+      "role": "fill"
+    },
+    "d-l": {
+      "shape": {
+        "circle": [
+          [
+            8.5,
+            16
+          ],
+          0.75
+        ]
+      }
+    },
+    "d-c-core": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            16
+          ],
+          1.4
+        ]
+      },
+      "role": "fill",
+      "//": "each app dot is a tiny stroked circle (it grows with the outline weight) over a small filled core that keeps its centre solid; the centre dot drives the ripple"
+    },
+    "d-c": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            16
+          ],
+          0.75
+        ]
+      }
+    },
+    "d-r-core": {
+      "shape": {
+        "circle": [
+          [
+            23.5,
+            16
+          ],
+          1.4
+        ]
+      },
+      "role": "fill"
+    },
+    "d-r": {
+      "shape": {
+        "circle": [
+          [
+            23.5,
+            16
+          ],
+          0.75
+        ]
+      }
+    },
+    "d-bl-core": {
+      "shape": {
+        "circle": [
+          [
+            8.5,
+            23.5
+          ],
+          1.4
+        ]
+      },
+      "role": "fill"
+    },
+    "d-bl": {
+      "shape": {
+        "circle": [
+          [
+            8.5,
+            23.5
+          ],
+          0.75
+        ]
+      }
+    },
+    "d-b-core": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            23.5
+          ],
+          1.4
+        ]
+      },
+      "role": "fill"
+    },
+    "d-b": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            23.5
+          ],
+          0.75
+        ]
+      }
+    },
+    "d-br-core": {
+      "shape": {
+        "circle": [
+          [
+            23.5,
+            23.5
+          ],
+          1.4
+        ]
+      },
+      "role": "fill"
+    },
+    "d-br": {
+      "shape": {
+        "circle": [
+          [
+            23.5,
+            23.5
+          ],
+          0.75
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "d-tl": {
+      "pivot": [
+        8.5,
+        8.5
+      ],
+      "carries": [
+        "d-tl-core"
+      ]
+    },
+    "d-t": {
+      "pivot": [
+        16,
+        8.5
+      ],
+      "carries": [
+        "d-t-core"
+      ]
+    },
+    "d-tr": {
+      "pivot": [
+        23.5,
+        8.5
+      ],
+      "carries": [
+        "d-tr-core"
+      ]
+    },
+    "d-l": {
+      "pivot": [
+        8.5,
+        16
+      ],
+      "carries": [
+        "d-l-core"
+      ]
+    },
+    "d-c": {
+      "pivot": [
+        16,
+        16
+      ],
+      "carries": [
+        "d-c-core"
+      ]
+    },
+    "d-r": {
+      "pivot": [
+        23.5,
+        16
+      ],
+      "carries": [
+        "d-r-core"
+      ]
+    },
+    "d-bl": {
+      "pivot": [
+        8.5,
+        23.5
+      ],
+      "carries": [
+        "d-bl-core"
+      ]
+    },
+    "d-b": {
+      "pivot": [
+        16,
+        23.5
+      ],
+      "carries": [
+        "d-b-core"
+      ]
+    },
+    "d-br": {
+      "pivot": [
+        23.5,
+        23.5
+      ],
+      "carries": [
+        "d-br-core"
+      ]
+    }
+  },
+  "motion": {
+    "d-c.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.07,
+          0.72,
+          "out"
+        ],
+        [
+          0.17,
+          1.32,
+          "out"
+        ],
+        [
+          0.28,
+          0.92
+        ],
+        [
+          0.38,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.1,
+          0.7,
+          "out"
+        ],
+        [
+          0.22,
+          1.4,
+          "out"
+        ],
+        [
+          0.33,
+          0.88
+        ],
+        [
+          0.43,
+          1.05
+        ],
+        [
+          0.52,
+          1
+        ]
+      ]
+    },
+    "d-t.scale": {
+      "follow": "d-c.scale",
+      "lag": 0.07
+    },
+    "d-l.scale": {
+      "follow": "d-c.scale",
+      "lag": 0.07
+    },
+    "d-r.scale": {
+      "follow": "d-c.scale",
+      "lag": 0.07
+    },
+    "d-b.scale": {
+      "follow": "d-c.scale",
+      "lag": 0.07
+    },
+    "d-tl.scale": {
+      "follow": "d-c.scale",
+      "lag": 0.14
+    },
+    "d-tr.scale": {
+      "follow": "d-c.scale",
+      "lag": 0.14
+    },
+    "d-bl.scale": {
+      "follow": "d-c.scale",
+      "lag": 0.14
+    },
+    "d-br.scale": {
+      "follow": "d-c.scale",
+      "lag": 0.14
+    },
+    "d-l.x": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          1.3,
+          "out"
+        ],
+        [
+          0.24,
+          -0.9,
+          "out"
+        ],
+        [
+          0.36,
+          0.35
+        ],
+        [
+          0.46,
+          0
+        ]
+      ]
+    },
+    "d-t.y": {
+      "follow": "d-l.x"
+    },
+    "d-r.x": {
+      "follow": "d-l.x",
+      "scale": -1
+    },
+    "d-b.y": {
+      "follow": "d-l.x",
+      "scale": -1
+    },
+    "d-tl.x": {
+      "follow": "d-l.x",
+      "scale": 1,
+      "lag": 0.03
+    },
+    "d-tl.y": {
+      "follow": "d-l.x",
+      "scale": 1,
+      "lag": 0.03
+    },
+    "d-tr.x": {
+      "follow": "d-l.x",
+      "scale": -1,
+      "lag": 0.03
+    },
+    "d-tr.y": {
+      "follow": "d-l.x",
+      "scale": 1,
+      "lag": 0.03
+    },
+    "d-bl.x": {
+      "follow": "d-l.x",
+      "scale": 1,
+      "lag": 0.03
+    },
+    "d-bl.y": {
+      "follow": "d-l.x",
+      "scale": -1,
+      "lag": 0.03
+    },
+    "d-br.x": {
+      "follow": "d-l.x",
+      "scale": -1,
+      "lag": 0.03
+    },
+    "d-br.y": {
+      "follow": "d-l.x",
+      "scale": -1,
+      "lag": 0.03
+    }
+  }
+}

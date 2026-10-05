@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "projector",
+  "label": "Projector",
+  "intent": "The projector switches on and throws its light. Light: the lens gathers, then flares, and a burst of three light rays shoots out above it and fades. Strong: two flashes, a small one then a big one, each with its burst, the second thrown further. The case, vents and feet never move.",
+  "anchors": {"lens": [20.5, 17.5]},
+  "parts": {
+    "feet":  {"shape": [{"line": [[8, 24], [8, 26]]}, {"line": [[24, 24], [24, 26]]}]},
+    "vents": {"shape": [{"line": [[8, 15.5], [12, 15.5]]}, {"line": [[8, 19.5], [12, 19.5]]}]},
+    "lens":  {"shape": {"circle": ["lens", 3]}},
+    "body":  {"shape": {"rect": [4, 11, 24, 13], "r": 3}, "role": "surface",
+              "knockout": [{"part": "vents", "gap": 0.3}, {"part": "lens", "gap": 0.3}]},
+    "rays":  {"//": "hidden at rest: the light only exists while it is thrown",
+              "shape": [
+                {"line": [{"from": "lens", "angle": -118, "len": 10.5}, {"from": "lens", "angle": -118, "len": 13}]},
+                {"line": [{"from": "lens", "angle": -90, "len": 10.5}, {"from": "lens", "angle": -90, "len": 13}]},
+                {"line": [{"from": "lens", "angle": -62, "len": 10.5}, {"from": "lens", "angle": -62, "len": 13}]}
+              ], "hidden": true}
+  },
+  "rigs": {
+    "lens":  {"pivot": "lens"},
+    "burst": {"pivot": "lens", "carries": ["rays"]}
+  },
+  "motion": {
+    "lens.scale": {
+      "light":  [[0, 1], [0.07, 0.88], [0.15, 1.18, "out"], [0.24, 0.96], [0.32, 1]],
+      "strong": [[0, 1], [0.07, 0.9], [0.14, 1.12, "out"], [0.21, 0.97], [0.27, 1], [0.32, 0.84], [0.41, 1.24, "out"], [0.51, 0.94], [0.59, 1.02], [0.65, 1]]
+    },
+    "rays.opacity": {
+      "light":  [[0, 0], [0.12, 0], [0.15, 1, "out"], [0.26, 1], [0.36, 0, "in"]],
+      "strong": [[0, 0], [0.11, 0], [0.14, 1, "out"], [0.21, 1], [0.28, 0, "in"], [0.38, 0], [0.41, 1, "out"], [0.53, 1], [0.63, 0, "in"]]
+    },
+    "burst.scale": {
+      "light":  [[0, 1], [0.12, 1], [0.36, 1.1, "out"], [0.38, 1, "step"]],
+      "strong": [[0, 1], [0.11, 1], [0.28, 1.05, "out"], [0.3, 1, "step"], [0.38, 1], [0.63, 1.13, "out"], [0.65, 1, "step"]]
+    }
+  }
+}

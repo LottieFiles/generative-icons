@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "report-spam",
+  "label": "Report spam",
+  "intent": "The email is reported as spam. Light: the exclamation mark in the envelope's open corner lifts and strikes down above its dot, which pops on the impact, and the strike buzzes the envelope in a quick, decaying side-to-side shake. Strong: the stem lifts higher and strikes twice, the dot pops on each strike, and the envelope buzzes harder and longer.",
+  "parts": {
+    "env-fill": {
+      "//": "the envelope's surface for tint and Solid: the open corner is notched out so the mark sits clear of it",
+      "shape": {"path": "M26 11.5 L26 8 C26 6.9 25.1 6 24 6 L6 6 C4.9 6 4 6.9 4 8 L4 21 C4 22.1 4.9 23 6 23 L17.5 23 L17.5 11.5 Z"},
+      "role": "surface",
+      "outline": "none",
+      "solid": "fill",
+      "knockout": ["flap"]
+    },
+    "env-line": {"shape": {"path": "M26 11.5 L26 8 C26 6.9 25.1 6 24 6 L6 6 C4.9 6 4 6.9 4 8 L4 21 C4 22.1 4.9 23 6 23 L17.5 23"}},
+    "flap": {"shape": {"polyline": [[4.8, 7.8], [15, 13.4], [25.2, 7.8]]}},
+    "stem": {"shape": {"line": [[22.5, 16], [22.5, 21.5]]}},
+    "dot": {"shape": {"circle": [[22.5, 25.5], 1.3]}, "role": "fill"}
+  },
+  "rigs": {
+    "mail": {"pivot": [15, 14.5], "carries": ["env-fill", "env-line", "flap"]},
+    "dot": {"pivot": [22.5, 25.5]}
+  },
+  "motion": {
+    "stem.y": {
+      "light": [[0, 0], [0.1, -2.2, "out"], [0.2, 0, "hit"], [0.25, -0.4], [0.3, 0]],
+      "strong": [[0, 0], [0.1, -2.6, "out"], [0.19, 0, "hit"], [0.23, -0.5], [0.33, -2, "out"], [0.41, 0, "hit"], [0.45, -0.3], [0.5, 0]]
+    },
+    "dot.scale": {
+      "light": [[0, 1], [0.2, 1], [0.25, 1.35, "out"], [0.33, 1]],
+      "strong": [[0, 1], [0.19, 1], [0.24, 1.4, "out"], [0.31, 1], [0.41, 1], [0.46, 1.3, "out"], [0.53, 1]]
+    },
+    "mail.x": {
+      "light": [[0, 0], [0.2, 0], [0.24, -0.9], [0.29, 0.7], [0.34, -0.35], [0.39, 0]],
+      "strong": [[0, 0], [0.19, 0], [0.23, -1.1], [0.28, 0.9], [0.33, -0.6], [0.41, 0], [0.45, -0.9], [0.5, 0.6], [0.55, -0.3], [0.6, 0]]
+    }
+  }
+}

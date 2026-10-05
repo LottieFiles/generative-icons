@@ -1,0 +1,213 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "puzzle-piece",
+  "label": "Extension",
+  "intent": "An extension snaps into place. Light: the puzzle piece is lifted out up and to the right with a slight tilt, then driven back down into its slot and stops with a hit and a small rebound. Strong: it is pulled out further, worked back in with a wiggle one way and the other, and pressed home with a hit, a rebound and a second, smaller hit.",
+  "parts": {
+    "piece": {
+      "//": "a jigsaw piece: knobs on top and right, a socket on the left",
+      "shape": {
+        "path": "M8.5 25.5 C7.395 25.5 6.5 24.605 6.5 23.5 L6.5 20.191 C7.588 20.886 9.022 20.678 9.866 19.701 C10.711 18.724 10.711 17.276 9.866 16.299 C9.022 15.322 7.588 15.114 6.5 15.809 L6.5 12.5 C6.5 11.395 7.395 10.5 8.5 10.5 L11.809 10.5 C11.114 9.412 11.322 7.978 12.299 7.134 C13.276 6.289 14.724 6.289 15.701 7.134 C16.678 7.978 16.886 9.412 16.191 10.5 L19.5 10.5 C20.605 10.5 21.5 11.395 21.5 12.5 L21.5 15.809 C22.588 15.114 24.022 15.322 24.866 16.299 C25.711 17.276 25.711 18.724 24.866 19.701 C24.022 20.678 22.588 20.886 21.5 20.191 L21.5 23.5 C21.5 24.605 20.605 25.5 19.5 25.5 L8.5 25.5 Z"
+      },
+      "role": "surface"
+    }
+  },
+  "rigs": {
+    "piece": {
+      "//": "turns about the middle of the square",
+      "pivot": [
+        14.0,
+        18.0
+      ]
+    }
+  },
+  "motion": {
+    "piece.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          1.5,
+          "out"
+        ],
+        [
+          0.24,
+          0,
+          "hit"
+        ],
+        [
+          0.31,
+          0.3,
+          "out"
+        ],
+        [
+          0.38,
+          0,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          1.9,
+          "out"
+        ],
+        [
+          0.24,
+          1.2
+        ],
+        [
+          0.34,
+          0.6
+        ],
+        [
+          0.42,
+          0,
+          "hit"
+        ],
+        [
+          0.49,
+          0.35,
+          "out"
+        ],
+        [
+          0.56,
+          0,
+          "hit"
+        ],
+        [
+          0.61,
+          0.12,
+          "out"
+        ],
+        [
+          0.66,
+          0,
+          "hit"
+        ]
+      ]
+    },
+    "piece.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -1.5,
+          "out"
+        ],
+        [
+          0.24,
+          0,
+          "hit"
+        ],
+        [
+          0.31,
+          -0.3,
+          "out"
+        ],
+        [
+          0.38,
+          0,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          -1.9,
+          "out"
+        ],
+        [
+          0.24,
+          -1.2
+        ],
+        [
+          0.34,
+          -0.6
+        ],
+        [
+          0.42,
+          0,
+          "hit"
+        ],
+        [
+          0.49,
+          -0.35,
+          "out"
+        ],
+        [
+          0.56,
+          0,
+          "hit"
+        ],
+        [
+          0.61,
+          -0.12,
+          "out"
+        ],
+        [
+          0.66,
+          0,
+          "hit"
+        ]
+      ]
+    },
+    "piece.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          8,
+          "out"
+        ],
+        [
+          0.24,
+          0,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          10,
+          "out"
+        ],
+        [
+          0.24,
+          -7
+        ],
+        [
+          0.34,
+          5
+        ],
+        [
+          0.42,
+          0,
+          "hit"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "end-call",
+  "label": "End call",
+  "intent": "The call is ended: the receiver is hung up. Light: the receiver lifts and tips, then slams back down flat with a hit, two impact marks flash out from under its ends, and it gives one small bounce. Strong: the receiver dips before it lifts higher and tips further, slams down harder, bounces twice, and the impact marks flash on each landing.",
+  "parts": {
+    "receiver": {
+      "shape": {"path": "M5.075 15.54 C7.72 12.435 11.515 10.94 16 10.94 C20.485 10.94 24.28 12.435 26.925 15.54 C27.615 16.345 27.615 17.38 27.04 18.185 L25.66 20.14 C25.2 20.83 24.28 21.06 23.59 20.6 L20.37 18.645 C19.795 18.3 19.565 17.61 19.68 16.92 L20.025 15.425 C17.38 14.505 14.62 14.505 11.975 15.425 L12.32 16.92 C12.435 17.61 12.205 18.3 11.63 18.645 L8.41 20.6 C7.72 21.06 6.8 20.83 6.34 20.14 L4.96 18.185 C4.385 17.38 4.385 16.345 5.075 15.54 Z"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "tick-l": {"//": "hidden at rest: the impact only shows when the receiver lands", "shape": {"line": [[6.5, 23.5], [4.75, 26.25]]}, "hidden": true},
+    "tick-r": {"mirror": {"of": "tick-l"}}
+  },
+  "rigs": {
+    "receiver": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "receiver.y": {
+      "light": [[0, 0], [0.12, -2, "out"], [0.22, 0, "hit"], [0.28, -0.5, "out"], [0.33, 0, "hit"]],
+      "strong": [[0, 0], [0.06, 0.5, "out"], [0.18, -2.6, "out"], [0.27, 0, "hit"], [0.33, -0.9, "out"], [0.39, 0, "hit"], [0.43, -0.25], [0.47, 0]]
+    },
+    "receiver.rotate": {
+      "light": [[0, 0], [0.12, -12, "out"], [0.22, 0, "hit"], [0.28, 1.5], [0.33, 0]],
+      "strong": [[0, 0], [0.06, 2, "out"], [0.18, -16, "out"], [0.27, 0, "hit"], [0.33, 2.5], [0.39, 0, "hit"], [0.43, -0.6], [0.47, 0]]
+    },
+    "tick-l.opacity": {
+      "light": [[0, 0], [0.22, 0], [0.23, 1], [0.37, 0, "in"]],
+      "strong": [[0, 0], [0.27, 0], [0.28, 1], [0.36, 0, "in"], [0.39, 0], [0.4, 0.8], [0.48, 0, "in"]]
+    },
+    "tick-l.x": {
+      "light": [[0, 0], [0.22, 0], [0.37, -0.8, "out"], [0.38, 0, "step"]],
+      "strong": [[0, 0], [0.27, 0], [0.36, -1, "out"], [0.37, 0, "step"], [0.39, 0], [0.48, -0.7, "out"], [0.49, 0, "step"]]
+    },
+    "tick-l.y": {
+      "light": [[0, 0], [0.22, 0], [0.37, 0.8, "out"], [0.38, 0, "step"]],
+      "strong": [[0, 0], [0.27, 0], [0.36, 1, "out"], [0.37, 0, "step"], [0.39, 0], [0.48, 0.7, "out"], [0.49, 0, "step"]]
+    },
+    "tick-r.opacity": {"follow": "tick-l.opacity"},
+    "tick-r.x": {"follow": "tick-l.x", "scale": -1},
+    "tick-r.y": {"follow": "tick-l.y"}
+  }
+}

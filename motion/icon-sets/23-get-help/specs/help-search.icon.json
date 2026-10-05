@@ -1,0 +1,45 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "help-search",
+  "label": "Search help",
+  "intent": "The help center is searched for an answer: a magnifier with a question mark in its lens. Light: the magnifier glides out to the left, scanning, with the question mark tilting as it looks, then lands back on its spot with a hit; the question sits upright and the lens pops as the answer is found. Strong: it scans left and then right with the question tilting each way, lands harder, and the lens pops bigger with a rebound.",
+  "parts": {
+    "body": {"shape": {"circle": [[14, 14], 8.5]}, "role": "surface", "solid": "ring"},
+    "handle": {"shape": {"line": [[20.01, 20.01], [26, 26]]}},
+    "q": {
+      "//": "the question mark: the hook and its dot (a round-capped point, so it keeps the stroke's weight)",
+      "shape": [{"path": "M11.3 11.8 C11.3 8.8 16.7 8.8 16.7 12 C16.7 13.9 14 14.1 14 15.6"}, {"line": [[14, 18.95], [14, 19.05]]}]
+    }
+  },
+  "rigs": {
+    "search": {"pivot": [16, 16], "carries": ["lens", "q", "handle"]},
+    "lens": {"//": "the lens pops about its centre; the handle stays rigid", "pivot": [14, 14], "carries": ["body"]},
+    "q": {"//": "the question tilts about the lens centre and pops with the lens", "pivot": [14, 14]},
+    "handle": {"//": "the handle stays on the lens rim as the lens pops: x = y = 6.01 (scale - 1)", "pivot": [20.01, 20.01]}
+  },
+  "motion": {
+    "search.x": {
+      "light": [[0, 0], [0.12, -2.4, "inOut"], [0.24, 0, "hit"], [0.31, 0.4], [0.38, 0]],
+      "strong": [[0, 0], [0.11, -2.4, "inOut"], [0.25, 2, "inOut"], [0.36, 0, "hit"], [0.43, -0.5], [0.5, 0.15], [0.56, 0]]
+    },
+    "search.y": {
+      "light": [[0, 0], [0.12, -0.8, "inOut"], [0.24, 0, "hit"]],
+      "strong": [[0, 0], [0.11, -0.8, "inOut"], [0.18, -1], [0.25, -0.8, "inOut"], [0.36, 0, "hit"]]
+    },
+    "q.rotate": {
+      "light": [[0, 0], [0.12, -14, "inOut"], [0.24, 0, "hit"]],
+      "strong": [[0, 0], [0.11, -14, "inOut"], [0.25, 12, "inOut"], [0.36, 0, "hit"]]
+    },
+    "lens.scale": {
+      "light": [[0, 1], [0.24, 1], [0.3, 1.14, "out"], [0.38, 0.97], [0.46, 1]],
+      "strong": [[0, 1], [0.36, 1], [0.42, 1.22, "out"], [0.51, 0.94], [0.6, 1.03], [0.68, 1]]
+    },
+    "q.scale": {"follow": "lens.scale"},
+    "handle.x": {
+      "light": [[0, 0], [0.24, 0], [0.3, 0.841, "out"], [0.38, -0.18], [0.46, 0]],
+      "strong": [[0, 0], [0.36, 0], [0.42, 1.322, "out"], [0.51, -0.361], [0.6, 0.18], [0.68, 0]]
+    },
+    "handle.y": {"follow": "handle.x"}
+  }
+}

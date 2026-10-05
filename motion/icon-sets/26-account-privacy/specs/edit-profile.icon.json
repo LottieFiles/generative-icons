@@ -1,0 +1,372 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "edit-profile",
+  "label": "Edit profile",
+  "intent": "The profile is edited: the pencil writes. Light: the pencil beside the person lifts and slides back to the start of a line, touches down with a hit and writes a short scribble along the bottom back to where it rests; the scribble fades once the pencil stops. Strong: the pencil winds up first, stabs down harder and bounces on the line, writes the scribble, lifts off with a flick and lands, and the person perks up as the edit is saved.",
+  "preview": {
+    "light": [
+      0,
+      0.06,
+      0.14,
+      0.2,
+      0.26,
+      0.32,
+      0.4,
+      0.48
+    ],
+    "strong": [
+      0,
+      0.08,
+      0.2,
+      0.26,
+      0.34,
+      0.42,
+      0.52,
+      0.62
+    ]
+  },
+  "parts": {
+    "head": {
+      "shape": {
+        "circle": [
+          [
+            13,
+            9.5
+          ],
+          4.5
+        ]
+      },
+      "role": "surface"
+    },
+    "shoulders": {
+      "//": "the set's person; the right shoulder stops short of the pencil's path",
+      "shape": {
+        "path": "M5 26 C5 21 8.5 18 13 18 C13.3 18 13.6 18 13.9 18.05"
+      }
+    },
+    "ink": {
+      "//": "hidden at rest: the scribble the nib writes, left to right back to its rest point",
+      "shape": {
+        "wave": {
+          "x": [
+            13,
+            18.6
+          ],
+          "y": 27.6,
+          "cycles": 2,
+          "amp": 0.9
+        }
+      },
+      "hidden": true
+    },
+    "pencil": {
+      "//": "a diagonal pencil, nib down-left at the end of the line it writes",
+      "shape": {
+        "polygon": [
+          {
+            "p": [
+              18.6,
+              27.6
+            ],
+            "r": 0.3
+          },
+          [
+            22.348,
+            26.822
+          ],
+          [
+            28.217,
+            20.953
+          ],
+          [
+            25.247,
+            17.983
+          ],
+          [
+            19.378,
+            23.852
+          ]
+        ],
+        "r": 0.7
+      },
+      "role": "surface",
+      "solid": "fill"
+    }
+  },
+  "rigs": {
+    "pencil": {
+      "//": "moves rigidly; its nib is the point that writes",
+      "pivot": [
+        18.6,
+        27.6
+      ],
+      "carries": [
+        "pencil"
+      ]
+    },
+    "person": {
+      "pivot": [
+        10,
+        26
+      ],
+      "carries": [
+        "head",
+        "shoulders"
+      ]
+    }
+  },
+  "motion": {
+    "pencil.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -5.6,
+          "out"
+        ],
+        [
+          0.14,
+          -5.6
+        ],
+        [
+          0.36,
+          0,
+          "sine"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0.4,
+          "out"
+        ],
+        [
+          0.2,
+          -5.6,
+          "out"
+        ],
+        [
+          0.23,
+          -5.6
+        ],
+        [
+          0.45,
+          0,
+          "sine"
+        ]
+      ]
+    },
+    "pencil.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          -0.5,
+          "out"
+        ],
+        [
+          0.11,
+          -0.5
+        ],
+        [
+          0.14,
+          0,
+          "hit"
+        ],
+        [
+          0.36,
+          0
+        ],
+        [
+          0.42,
+          -0.5,
+          "out"
+        ],
+        [
+          0.48,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -1.2,
+          "out"
+        ],
+        [
+          0.15,
+          -0.4
+        ],
+        [
+          0.19,
+          -0.4
+        ],
+        [
+          0.23,
+          0.4,
+          "hit"
+        ],
+        [
+          0.27,
+          0
+        ],
+        [
+          0.45,
+          0
+        ],
+        [
+          0.51,
+          -1,
+          "out"
+        ],
+        [
+          0.58,
+          0.2,
+          "hit"
+        ],
+        [
+          0.62,
+          0
+        ]
+      ]
+    },
+    "ink.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.13,
+          0,
+          "step"
+        ],
+        [
+          0.14,
+          0
+        ],
+        [
+          0.36,
+          1,
+          "sine"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.22,
+          0,
+          "step"
+        ],
+        [
+          0.23,
+          0
+        ],
+        [
+          0.45,
+          1,
+          "sine"
+        ]
+      ]
+    },
+    "ink.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.13,
+          0
+        ],
+        [
+          0.14,
+          1,
+          "step"
+        ],
+        [
+          0.42,
+          1
+        ],
+        [
+          0.52,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.22,
+          0
+        ],
+        [
+          0.23,
+          1,
+          "step"
+        ],
+        [
+          0.58,
+          1
+        ],
+        [
+          0.68,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "person.y": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.52,
+          0
+        ],
+        [
+          0.59,
+          -1.2,
+          "out"
+        ],
+        [
+          0.66,
+          0.2
+        ],
+        [
+          0.72,
+          0
+        ]
+      ]
+    }
+  }
+}

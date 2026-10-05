@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "help-article",
+  "label": "Help article",
+  "intent": "A help article is pulled up to answer a question: a page with a folded corner and a question mark. Light: the page lifts as it is opened, the question mark writes itself on across it, and the page lands with a hit and one small bounce. Strong: the page lifts higher with a slight tilt, the question writes on faster, and the page lands harder and bounces twice.",
+  "parts": {
+    "page": {
+      "shape": {"polygon": [
+        {"p": [7, 5], "r": 2.5},
+        {"p": [19, 5], "r": 0.3},
+        {"p": [25, 11], "r": 0.3},
+        {"p": [25, 28], "r": 2.5},
+        {"p": [7, 28], "r": 2.5}
+      ]},
+      "role": "surface",
+      "knockout": [{"part": "fold", "gap": 0.3}, "q"]
+    },
+    "fold": {"shape": {"polyline": [[19, 5], [19, 11], [25, 11]], "r": 2}},
+    "q": {
+      "//": "the question mark, written from the hook's top-left tip down to its dot",
+      "shape": [{"path": "M12.9 16.4 C12.9 12.9 19.1 12.9 19.1 16.7 C19.1 18.8 16 19 16 20.6"}, {"line": [[16, 23.95], [16, 24.05]]}]
+    }
+  },
+  "rigs": {
+    "page": {"//": "the page lifts and lands on its bottom edge", "pivot": [16, 28], "carries": ["page", "fold", "q"]}
+  },
+  "motion": {
+    "page.y": {
+      "light": [[0, 0], [0.1, -1.5, "out"], [0.22, 0, "hit"], [0.28, -0.4], [0.33, 0, "hit"]],
+      "strong": [[0, 0], [0.11, -1.9, "out"], [0.24, 0, "hit"], [0.3, -0.7], [0.35, 0, "hit"], [0.39, -0.2], [0.42, 0, "hit"]]
+    },
+    "page.rotate": {
+      "strong": [[0, 0], [0.11, -4, "out"], [0.24, 0, "hit"]]
+    },
+    "q.draw": {
+      "light": [[0, 1], [0.02, 0, "step"], [0.05, 0], [0.22, 1, "out"]],
+      "strong": [[0, 1], [0.02, 0, "step"], [0.05, 0], [0.18, 1, "out"]]
+    }
+  }
+}

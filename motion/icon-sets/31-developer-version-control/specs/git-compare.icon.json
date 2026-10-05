@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "git-compare",
+  "label": "Git compare",
+  "intent": "Two branches are compared, each route reaching across to the other. Light: the top branch's route pulls back toward its commit, which swells as it gathers it, then draws out again down and across; its arrowhead rides in on the tip, lands with a hit, thrusts toward the other branch, recoils and settles; the bottom branch answers a beat later the opposite way, up and across. Strong: both commits gather longer, the routes shoot out faster and the arrowheads thrust further and settle in two beats. The commits never shrink.",
+  "parts": {
+    "head-a":  {"shape": {"polyline": [[14.5, 21], [17.5, 24], [14.5, 27]]}},
+    "route-a": {"//": "drawn from ring-a to the arrowhead, so draw retracts it into the ring", "shape": {"path": "M7 9.5 L7 21 C7 22.66 8.34 24 10 24 L17.5 24"}},
+    "ring-a":  {"shape": {"circle": [[7, 7], 2.5]}},
+    "head-b":  {"shape": {"polyline": [[17.5, 5], [14.5, 8], [17.5, 11]]}},
+    "route-b": {"shape": {"path": "M25 22.5 L25 11 C25 9.34 23.66 8 22 8 L14.5 8"}},
+    "ring-b":  {"shape": {"circle": [[25, 25], 2.5]}}
+  },
+  "motion": {
+    "//": "Each route pulls back part way and draws out at constant speed, so its head rides the tip over the last 2 units, the straight end of the route. The b side mirrors the a side a beat later.",
+    "route-a.draw": {
+      "light":  [[0, 1], [0.09, 0.3, "in"], [0.27, 1, "linear"]],
+      "strong": [[0, 1], [0.1, 0.2, "in"], [0.15, 0.2], [0.27, 1, "linear"]]
+    },
+    "head-a.opacity": {
+      "light":  [[0, 1], [0.05, 0, "in"], [0.25, 0], [0.26, 1, "out"]],
+      "strong": [[0, 1], [0.05, 0, "in"], [0.255, 0], [0.265, 1, "out"]]
+    },
+    "head-a.x": {
+      "light":  [[0, 0], [0.05, -1.5, "in"], [0.25, -2, "step"], [0.27, 0, "linear"], [0.33, 1.2, "out"], [0.4, -0.25, "inOut"], [0.46, 0, "inOut"]],
+      "strong": [[0, 0], [0.05, -1.5, "in"], [0.255, -2, "step"], [0.27, 0, "linear"], [0.33, 1.6, "out"], [0.41, -0.45, "inOut"], [0.48, 0.15, "inOut"], [0.55, 0, "inOut"]]
+    },
+    "ring-a.scale": {
+      "light":  [[0, 1], [0.09, 1.12, "out"], [0.16, 1, "in"], [0.2, 1.03, "out"], [0.24, 1, "in"]],
+      "strong": [[0, 1], [0.1, 1.15, "out"], [0.15, 1.15], [0.2, 1, "in"], [0.24, 1.04, "out"], [0.28, 1, "in"]]
+    },
+    "route-b.draw":   {"light": {"follow": "route-a.draw", "lag": 0.08}, "strong": {"follow": "route-a.draw", "lag": 0.1}},
+    "head-b.opacity": {"light": {"follow": "head-a.opacity", "lag": 0.08}, "strong": {"follow": "head-a.opacity", "lag": 0.1}},
+    "head-b.x":       {"light": {"follow": "head-a.x", "scale": -1, "lag": 0.08}, "strong": {"follow": "head-a.x", "scale": -1, "lag": 0.1}},
+    "ring-b.scale":   {"light": {"follow": "ring-a.scale", "lag": 0.08}, "strong": {"follow": "ring-a.scale", "lag": 0.1}}
+  }
+}

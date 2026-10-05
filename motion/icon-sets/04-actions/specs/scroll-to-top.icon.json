@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "scroll-to-top",
+  "label": "Scroll to top",
+  "intent": "The page jumps back to the top. Light: the arrow dips to load, then shoots up and stops dead against the top bar; the bar takes the knock, rebounds and settles. The spent arrow fades at the top and a fresh one rises from below into its place. Strong: a deeper load, the same hard stop, and a bigger knock that rebounds twice.",
+  "parts": {
+    "bar":   {"//": "the top of the page", "shape": {"line": [[8.5, 6.5], [23.5, 6.5]]}},
+    "shaft": {"shape": {"line": [[16, 26], [16, 12]]}},
+    "head":  {"shape": {"polyline": [[10.8, 17.2], [16, 12], [21.2, 17.2]]}}
+  },
+  "rigs": {
+    "bar":   {"pivot": [16, 6.5]},
+    "arrow": {"pivot": [16, 19], "carries": ["shaft", "head"]}
+  },
+  "motion": {
+    "//": "-3.5 brings the arrow's tip to the bar: at every weight the tip's ink meets the bar's.",
+    "arrow.y": {
+      "light":  [[0, 0], [0.07, 1.0, "out"], [0.17, -3.5, "hit"], [0.23, -3.5], [0.24, 3, "step"], [0.37, 0, "out"]],
+      "strong": [[0, 0], [0.1, 1.6, "out"], [0.2, -3.5, "hit"], [0.27, -3.5], [0.28, 3, "step"], [0.42, 0, "out"]]
+    },
+    "shaft.opacity": {
+      "light":  [[0, 1], [0.18, 1], [0.23, 0, "in"], [0.25, 0], [0.33, 1, "out"]],
+      "strong": [[0, 1], [0.21, 1], [0.27, 0, "in"], [0.29, 0], [0.38, 1, "out"]]
+    },
+    "head.opacity": {"follow": "shaft.opacity"},
+    "bar.y": {
+      "light":  [[0, 0], [0.17, 0], [0.21, -1.2, "out"], [0.28, 0.3], [0.34, 0]],
+      "strong": [[0, 0], [0.2, 0], [0.24, -2, "out"], [0.31, 0.5], [0.37, -0.2], [0.43, 0]]
+    }
+  }
+}

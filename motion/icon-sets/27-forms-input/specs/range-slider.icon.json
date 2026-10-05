@@ -1,0 +1,56 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "range-slider",
+  "label": "Range slider",
+  "intent": "A range slider is widened. Light: both handles are pressed, drag apart along the track with the selected band stretching between them, stop dead on their new values and are released; the outer bars of the histogram above light up as the range takes them in. Strong: the handles drag apart in two clicks, stopping dead at a midpoint and again at the new values, the newly included bars hop as they light up, and the handles spring on release. The values never overshoot; the reverse drags the handles back together.",
+  "state": {"from": "narrow-range", "to": "wide-range", "labels": ["Widen range", "Narrow range"], "reverse": "auto"},
+  "parts": {
+    "bar-1": {"//": "outside the range at rest: faint", "shape": {"line": [[8, 17.5], [8, 13.5]]}, "opacity": 0.3},
+    "bar-2": {"shape": {"line": [[12, 17.5], [12, 9.5]]}},
+    "bar-3": {"shape": {"line": [[16, 17.5], [16, 6.5]]}},
+    "bar-4": {"shape": {"line": [[20, 17.5], [20, 10.5]]}},
+    "bar-5": {"shape": {"line": [[24, 17.5], [24, 13.5]]}, "opacity": 0.3},
+    "track": {"shape": {"line": [[4.5, 23.5], [27.5, 23.5]]}},
+    "band": {"//": "the selected range: its ends sit under the handles",
+             "shape": {"morph": [{"rect": [10, 21.7, 12, 3.6], "r": 1.8}, {"rect": [6.5, 21.7, 19, 3.6], "r": 1.8}], "by": "span"},
+             "role": "fill"},
+    "knob-l": {"shape": {"circle": [[10, 23.5], 3.2]}, "role": "fill"},
+    "knob-r": {"shape": {"circle": [[22, 23.5], 3.2]}, "role": "fill"}
+  },
+  "rigs": {
+    "knob-l": {"pivot": [10, 23.5]},
+    "knob-r": {"pivot": [22, 23.5]},
+    "bar-1": {"pivot": [8, 17.5]},
+    "bar-5": {"pivot": [24, 17.5]}
+  },
+  "motion": {
+    "span": {
+      "light":  [[0, 0], [0.08, 0], [0.36, 1, "inOut"]],
+      "strong": [[0, 0], [0.1, 0], [0.24, 0.5, "hit"], [0.32, 0.5], [0.44, 1, "hit"]]
+    },
+    "knob-r.x": {
+      "light":  [[0, 0], [0.08, 0], [0.36, 3.5, "inOut"]],
+      "strong": [[0, 0], [0.1, 0], [0.24, 1.75, "hit"], [0.32, 1.75], [0.44, 3.5, "hit"]]
+    },
+    "knob-l.x": {"follow": "knob-r.x", "scale": -1},
+    "knob-r.scale": {
+      "light":  [[0, 1], [0.07, 1.14, "out"], [0.36, 1.14], [0.44, 0.96, "inOut"], [0.5, 1, "inOut"]],
+      "strong": [[0, 1], [0.09, 1.18, "out"], [0.44, 1.18], [0.5, 0.92, "inOut"], [0.56, 1.04, "inOut"], [0.62, 1, "inOut"]]
+    },
+    "knob-l.scale": {"follow": "knob-r.scale"},
+    "bar-5.opacity": {
+      "light":  [[0, 0.3], [0.26, 0.3], [0.32, 1, "out"]],
+      "strong": [[0, 0.3], [0.38, 0.3], [0.43, 1, "out"]]
+    },
+    "bar-1.opacity": {"follow": "bar-5.opacity"},
+    "bar-5.y": {
+      "strong": [[0, 0], [0.4, 0], [0.47, -1.4, "out"], [0.54, 0, "in"], [0.58, -0.3, "out"], [0.62, 0, "in"]]
+    },
+    "bar-1.y": {"follow": "bar-5.y"}
+  },
+  "reverse": {
+    "//": "the hop belongs to bars joining the range; on the way back they only dim",
+    "strong": {"bar-5.y": [[0, 0], [0.1, 0]]}
+  }
+}

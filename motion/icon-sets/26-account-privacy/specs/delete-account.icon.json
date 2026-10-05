@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "delete-account",
+  "label": "Delete account",
+  "intent": "The account is deleted: it goes in the bin. Light: the bin's lid flips open on its left-hand hinge, the person tips toward the open bin, and the lid slams shut with a hit and a small rebound; the bin jolts and the person snaps back upright. Strong: the lid winds down, flips open wider and slams twice, the bin jolts on each slam, and the person tips further and rocks back in two beats before it settles.",
+  "parts": {
+    "head": {"shape": {"circle": [[13, 9.5], 4.5]}, "role": "surface"},
+    "shoulders": {"//": "the set's person; the right shoulder stops short of the bin", "shape": {"path": "M5 26 C5 21 8.5 18 13 18 C13.7 18 14.3 18.1 14.8 18.2"}},
+    "body": {"//": "the trash bin at badge size", "shape": {"path": "M19.9 20.9 L20.6 26.3 C20.72 27.13 21.3 27.6 22.1 27.6 L24.7 27.6 C25.5 27.6 26.08 27.13 26.2 26.3 L26.9 20.9 Z"}, "role": "surface", "solid": "fill"},
+    "handle": {"shape": {"path": "M21.7 19.6 L21.7 18.3 C21.7 17.99 21.95 17.8 22.25 17.8 L24.55 17.8 C24.85 17.8 25.1 17.99 25.1 18.3 L25.1 19.6"}},
+    "lid": {"shape": {"line": [[18.9, 19.6], [27.9, 19.6]]}}
+  },
+  "rigs": {
+    "bin": {"//": "the whole bin jolts when the lid slams", "pivot": [23.4, 27.6], "carries": ["body", "lid"]},
+    "lid": {"//": "hinged at its left-hand end, away from the person; negative turns lift the right end", "pivot": [18.9, 19.6], "carries": ["lid", "handle"]},
+    "person": {"//": "tips about the foot of the shoulders; positive leans toward the bin", "pivot": [10, 26], "carries": ["head", "shoulders"]}
+  },
+  "motion": {
+    "lid.rotate": {
+      "light":  [[0, 0], [0.1, -30, "out"], [0.18, -30], [0.28, 0, "hit"], {"bounce": 0.34, "amp": 0.1}],
+      "strong": [[0, 0], [0.04, 3, "out"], [0.14, -36, "out"], [0.22, -36], [0.32, 0, "hit"], [0.38, -10, "out"], [0.44, 0, "hit"]]
+    },
+    "person.rotate": {
+      "light":  [[0, 0], [0.06, 0], [0.17, 5, "out"], [0.27, 5], [0.36, -1, "out"], [0.42, 0]],
+      "strong": [[0, 0], [0.06, 0], [0.19, 7, "out"], [0.31, 7], [0.4, -1.5, "out"], [0.48, 0.6], [0.55, 0]]
+    },
+    "bin.y": {
+      "light":  [[0, 0], [0.28, 0], [0.32, 0.8, "out"], [0.39, 0]],
+      "strong": [[0, 0], [0.32, 0], [0.36, 1, "out"], [0.41, 0], [0.44, 0], [0.47, 0.5, "out"], [0.53, 0]]
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "wheel-picker",
+  "label": "Wheel picker",
+  "intent": "A scroll wheel picker moves to the next value. Light: the wheel rolls up one row: the selected value leaves the selection band and dims, the value below rises into the band and brightens, the top value rolls away and a new value fades in at the bottom. Strong: the wheel is pulled down first, then flicked up, runs a little past the detent and springs back into it. The reverse rolls the wheel back down one row.",
+  "state": {"from": "first-value", "to": "next-value", "labels": ["Scroll up", "Scroll back"], "reverse": "auto"},
+  "parts": {
+    "lens": {"//": "the selection band", "shape": {"rect": [4, 11, 24, 10], "r": 3}, "role": "surface", "solid": "ring"},
+    "row-a": {"shape": {"line": [[10, 6], [22, 6]]}, "opacity": 0.4},
+    "row-b": {"shape": {"line": [[9, 16], [23, 16]]}},
+    "row-c": {"shape": {"line": [[12, 26], [20, 26]]}, "opacity": 0.4},
+    "row-d": {"//": "hidden at first: the value that rolls in at the bottom", "shape": {"line": [[10.5, 26], [21.5, 26]]}, "hidden": true}
+  },
+  "rigs": {
+    "wheel": {"pivot": [16, 16], "carries": ["row-b", "row-c"]}
+  },
+  "motion": {
+    "wheel.y": {
+      "light":  [[0, 0], [0.04, 0], [0.34, -10, "out"]],
+      "strong": [[0, 0], [0.1, 1.3, "out"], [0.3, -11.4, "out"], [0.42, -9.7, "inOut"], [0.5, -10, "inOut"]]
+    },
+    "row-a.y": {
+      "light":  [[0, 0], [0.04, 0], [0.2, -3.2, "out"]],
+      "strong": [[0, 0], [0.1, 1.3, "out"], [0.22, -3.2, "out"]]
+    },
+    "row-a.opacity": {
+      "light":  [[0, 0.4], [0.06, 0.4], [0.18, 0, "out"]],
+      "strong": [[0, 0.4], [0.13, 0.4], [0.21, 0, "out"]]
+    },
+    "row-b.opacity": {
+      "light":  [[0, 1], [0.08, 1], [0.26, 0.4, "out"]],
+      "strong": [[0, 1], [0.14, 1], [0.28, 0.4, "out"]]
+    },
+    "row-c.opacity": {
+      "light":  [[0, 0.4], [0.12, 0.4], [0.3, 1, "out"]],
+      "strong": [[0, 0.4], [0.15, 0.4], [0.28, 1, "out"]]
+    },
+    "row-d.y": {
+      "light":  [[0, 0], [0.01, 3.2, "step"], [0.16, 3.2], [0.34, 0, "out"]],
+      "strong": [[0, 0], [0.01, 3.2, "step"], [0.18, 3.2], [0.32, -0.9, "out"], [0.42, 0.2, "inOut"], [0.5, 0, "inOut"]]
+    },
+    "row-d.opacity": {
+      "light":  [[0, 0], [0.16, 0], [0.32, 0.4, "out"]],
+      "strong": [[0, 0], [0.18, 0], [0.3, 0.4, "out"]]
+    }
+  },
+  "reverse": {
+    "//": "the wheel rolls back down one row: the top value returns, the bottom one rolls away",
+    "light": {
+      "wheel.y": [[0, -10], [0.04, -10], [0.34, 0, "out"]],
+      "row-b.opacity": [[0, 0.4], [0.12, 0.4], [0.3, 1, "out"]],
+      "row-c.opacity": [[0, 1], [0.08, 1], [0.26, 0.4, "out"]],
+      "row-d.y": [[0, 0], [0.04, 0], [0.2, 3.2, "out"], [0.21, 0, "step"]],
+      "row-d.opacity": [[0, 0.4], [0.06, 0.4], [0.18, 0, "out"]],
+      "row-a.y": [[0, -3.2], [0.16, -3.2], [0.34, 0, "out"]],
+      "row-a.opacity": [[0, 0], [0.16, 0], [0.32, 0.4, "out"]]
+    },
+    "strong": {
+      "wheel.y": [[0, -10], [0.1, -11.3, "out"], [0.3, 1.4, "out"], [0.42, -0.3, "inOut"], [0.5, 0, "inOut"]],
+      "row-b.opacity": [[0, 0.4], [0.15, 0.4], [0.28, 1, "out"]],
+      "row-c.opacity": [[0, 1], [0.14, 1], [0.28, 0.4, "out"]],
+      "row-d.y": [[0, 0], [0.1, -1.3, "out"], [0.22, 3.2, "out"], [0.23, 0, "step"]],
+      "row-d.opacity": [[0, 0.4], [0.13, 0.4], [0.21, 0, "out"]],
+      "row-a.y": [[0, -3.2], [0.18, -3.2], [0.32, 0.9, "out"], [0.42, -0.2, "inOut"], [0.5, 0, "inOut"]],
+      "row-a.opacity": [[0, 0], [0.18, 0], [0.3, 0.4, "out"]]
+    }
+  }
+}

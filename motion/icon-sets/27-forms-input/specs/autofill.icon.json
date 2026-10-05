@@ -1,0 +1,73 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "autofill",
+  "label": "Autofill",
+  "intent": "Saved details autofill a form. Light: the lightning bolt beside two empty fields kicks up and strikes down, and both fields fill at once: the top value writes in fast and the bottom one follows a beat behind. Strong: the bolt winds up higher and strikes harder with a rebound, each value snaps in and its field pops as it lands. The values stay filled; the reverse clears them bottom first.",
+  "state": {"from": "empty", "to": "filled", "labels": ["Autofill", "Clear"], "reverse": "auto"},
+  "parts": {
+    "field-1": {"shape": {"rect": [4, 5, 15, 9], "r": 2.5}, "role": "surface", "solid": "ring"},
+    "field-2": {"shape": {"rect": [4, 18, 15, 9], "r": 2.5}, "role": "surface", "solid": "ring"},
+    "value-1": {"//": "hidden while empty", "shape": {"line": [[7.5, 9.5], [14.5, 9.5]]}, "hidden": true},
+    "value-2": {"shape": {"line": [[7.5, 22.5], [12.5, 22.5]]}, "hidden": true},
+    "bolt": {"shape": {"polygon": [[25.7, 8], [21, 17.6], [25.25, 17.6], [24.8, 24], [29.5, 14.4], [25.25, 14.4]], "r": 0.5}, "role": "fill"}
+  },
+  "rigs": {
+    "bolt": {"pivot": [25.25, 16]},
+    "field-1": {"pivot": [11.5, 9.5], "carries": ["value-1"]},
+    "field-2": {"pivot": [11.5, 22.5], "carries": ["value-2"]}
+  },
+  "motion": {
+    "bolt.y": {
+      "light":  [[0, 0], [0.07, -1.2, "out"], [0.13, 0.5, "hit"], [0.21, 0, "inOut"]],
+      "strong": [[0, 0], [0.09, -1.8, "out"], [0.15, 0.8, "hit"], [0.21, -0.4, "inOut"], [0.27, 0, "inOut"]]
+    },
+    "bolt.scale": {
+      "light":  [[0, 1], [0.07, 1.06, "out"], [0.13, 0.94, "hit"], [0.21, 1, "inOut"]],
+      "strong": [[0, 1], [0.09, 1.1, "out"], [0.15, 0.88, "hit"], [0.21, 1.03, "inOut"], [0.27, 1, "inOut"]]
+    },
+    "value-1.opacity": {
+      "light":  [[0, 0], [0.12, 0], [0.13, 1]],
+      "strong": [[0, 0], [0.14, 0], [0.15, 1]]
+    },
+    "value-1.draw": {
+      "light":  [[0, 1], [0.01, 0, "step"], [0.12, 0], [0.26, 1, "out"]],
+      "strong": [[0, 1], [0.01, 0, "step"], [0.14, 0], [0.22, 1, "hit"]]
+    },
+    "value-2.opacity": {
+      "light":  [[0, 0], [0.2, 0], [0.21, 1]],
+      "strong": [[0, 0], [0.2, 0], [0.21, 1]]
+    },
+    "value-2.draw": {
+      "light":  [[0, 1], [0.01, 0, "step"], [0.2, 0], [0.34, 1, "out"]],
+      "strong": [[0, 1], [0.01, 0, "step"], [0.2, 0], [0.28, 1, "hit"]]
+    },
+    "field-1.scale": {
+      "strong": [[0, 1], [0.22, 1], [0.27, 1.05, "out"], [0.34, 1, "inOut"]]
+    },
+    "field-2.scale": {
+      "strong": [[0, 1], [0.28, 1], [0.33, 1.05, "out"], [0.4, 1, "inOut"]]
+    }
+  },
+  "reverse": {
+    "//": "clearing: the values wipe out bottom first; the bolt and fields hold still",
+    "light": {
+      "value-2.draw": [[0, 1], [0.12, 0, "in"], [0.13, 1, "step"]],
+      "value-2.opacity": [[0, 1], [0.11, 1], [0.12, 0]],
+      "value-1.draw": [[0, 1], [0.08, 1], [0.2, 0, "in"], [0.21, 1, "step"]],
+      "value-1.opacity": [[0, 1], [0.19, 1], [0.2, 0]],
+      "bolt.y": [[0, 0], [0.2, 0]],
+      "bolt.scale": [[0, 1], [0.2, 1]]
+    },
+    "strong": {
+      "value-2.draw": [[0, 1], [0.08, 0, "hit"], [0.09, 1, "step"]],
+      "value-2.opacity": [[0, 1], [0.075, 1], [0.08, 0]],
+      "value-1.draw": [[0, 1], [0.06, 1], [0.14, 0, "hit"], [0.15, 1, "step"]],
+      "value-1.opacity": [[0, 1], [0.135, 1], [0.14, 0]],
+      "bolt.y": [[0, 0], [0.15, 0]],
+      "bolt.scale": [[0, 1], [0.15, 1]],
+      "field-1.scale": [[0, 1], [0.15, 1]],
+      "field-2.scale": [[0, 1], [0.15, 1]]
+    }
+  }
+}

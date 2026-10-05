@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 16,
-  "actions": 50,
+  "icons": 20,
+  "actions": 58,
   "nativeTransformNodes": 138,
   "nativeTransformMaxCoordinateError": 0.00000900000000214618,
   "checks": [
@@ -577,6 +577,42 @@
         "radar-chart-reset",
         "radar-chart-strong",
         "radar-chart-reset-strong"
+      ]
+    },
+    {
+      "icon": "merge-cells",
+      "spec": "specs/merge-cells.icon.json",
+      "specSha256": "9cb8e90ae1a7c1f3bdcc2bd3957c23c5753d238aee093071a46c996467ccfc7b",
+      "actions": [
+        "merge-cells",
+        "merge-cells-strong"
+      ]
+    },
+    {
+      "icon": "insert-row",
+      "spec": "specs/insert-row.icon.json",
+      "specSha256": "b6e54ed37e9d25c7b48621ec506a41764b892bc624387f1476d78ed46e5d117a",
+      "actions": [
+        "insert-row",
+        "insert-row-strong"
+      ]
+    },
+    {
+      "icon": "forecast",
+      "spec": "specs/forecast.icon.json",
+      "specSha256": "1fa6f29e16cd1d32036af8bb369db0ecd0917f6fd4dd7d6f0095678dfdca5b41",
+      "actions": [
+        "forecast",
+        "forecast-strong"
+      ]
+    },
+    {
+      "icon": "candlestick-chart",
+      "spec": "specs/candlestick-chart.icon.json",
+      "specSha256": "7eb5c9866f8592f966b5c5b2b19461ff218a5f9594dca45e4217936b79b91d88",
+      "actions": [
+        "candlestick-chart",
+        "candlestick-chart-strong"
       ]
     }
   ]

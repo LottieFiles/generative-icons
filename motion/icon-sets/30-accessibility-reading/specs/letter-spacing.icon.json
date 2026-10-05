@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "letter-spacing",
+  "label": "Letter spacing",
+  "intent": "The letter spacing opens up, driven by the double arrow. Light: the arrow stretches, its heads pushing out 2.2 and stopping dead, and 60 ms later the letters A and V are pushed apart the same distance; the spread rebounds a touch, then everything closes back quicker with a small settle. Strong: the arrow and letters squeeze in first, then the arrow throws its heads out 3.2 and the letters follow to a hit, rebound twice and close back with a settle.",
+  "//": "The horizontal twin of line-spacing: the same keys, with the letters as its rows.",
+  "parts": {
+    "letter-a": {"shape": {"polyline": [[7.5, 18], [11, 8], [14.5, 18]], "r": 0.6}},
+    "bar-a":    {"shape": {"line": [[8.9, 14.5], [13.1, 14.5]]}},
+    "letter-v": {"shape": {"polyline": [[17.5, 8], [21, 18], [24.5, 8]], "r": 0.6}},
+    "shaft":    {"shape": {"line": [[10, 24.5], [22, 24.5]]}},
+    "head-l":   {"shape": {"polyline": [[12.5, 22], [10, 24.5], [12.5, 27]]}},
+    "head-r":   {"mirror": {"of": "head-l"}}
+  },
+  "rigs": {
+    "a":     {"pivot": [11, 13], "carries": ["letter-a", "bar-a"]},
+    "v":     {"pivot": [21, 13], "carries": ["letter-v"]},
+    "shaft": {"pivot": [16, 24.5]}
+  },
+  "motion": {
+    "head-r.x": {
+      "light":  [[0, 0], [0.15, 2.2, "hit"], [0.22, 1.6], [0.28, 1.9], [0.40, -0.3, "inOut"], [0.47, 0]],
+      "strong": [[0, 0], [0.09, -0.9, "out"], [0.22, 3.2, "hit"], [0.29, 2.4], [0.35, 2.9], [0.41, 2.7], [0.53, -0.4, "inOut"], [0.60, 0.1], [0.66, 0]]
+    },
+    "head-l.x": {"follow": "head-r.x", "scale": -1},
+    "shaft.scale": {"//": "shaft half-length 6: scale = 1 + x/6 keeps the shaft meeting the heads", "follow": "head-r.x", "scale": 0.166667, "offset": 1},
+    "v.x": {"follow": "head-r.x", "lag": 0.06},
+    "a.x": {"follow": "head-r.x", "lag": 0.06, "scale": -1}
+  }
+}

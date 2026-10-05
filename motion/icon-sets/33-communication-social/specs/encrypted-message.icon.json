@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "encrypted-message",
+  "label": "Encrypted message",
+  "intent": "The message is sealed with a lock. Light: the padlock's shackle inside the speech bubble swings open about its right leg, then snaps shut with a hit and a small click back, and the bubble dips under the snap. Strong: the shackle swings open wider, slams shut and clicks twice, and the bubble takes two decaying dips. The lock body never moves on the bubble.",
+  "parts": {
+    "bubble": {
+      "shape": {"path": "M8 4.5 L24 4.5 C25.9 4.5 27.5 6.1 27.5 8 L27.5 19 C27.5 20.9 25.9 22.5 24 22.5 L13 22.5 L8.6 26.2 C7.9 26.8 7 26.3 7.2 25.4 L7.8 22.4 C5.9 22.2 4.5 20.7 4.5 19 L4.5 8 C4.5 6.1 6.1 4.5 8 4.5 Z"},
+      "role": "surface",
+      "solid": "ring",
+      "//": "a ring in Solid, so the solid padlock reads inside it instead of a cut-out blob"
+    },
+    "body": {"shape": {"rect": [11.5, 13, 9, 6], "r": 1.5}, "role": "surface"},
+    "shackle": {"shape": {"path": "M13 13 L13 11.8 C13 10.14 14.34 8.8 16 8.8 C17.66 8.8 19 10.14 19 11.8 L19 13"}}
+  },
+  "rigs": {
+    "chat": {"pivot": [16, 22.5], "carries": ["bubble", "body", "shackle"]},
+    "shackle": {"pivot": [19, 13]}
+  },
+  "motion": {
+    "shackle.rotate": {
+      "light": [[0, 0], [0.12, 22, "out"], [0.24, 0, "hit"], [0.29, 2.5], [0.34, 0]],
+      "strong": [[0, 0], [0.14, 30, "out"], [0.26, 0, "hit"], [0.31, 4], [0.36, 0, "hit"], [0.4, 1], [0.44, 0]]
+    },
+    "chat.y": {
+      "light": [[0, 0], [0.24, 0], [0.28, 0.6, "out"], [0.36, 0]],
+      "strong": [[0, 0], [0.26, 0], [0.3, 0.9, "out"], [0.36, 0], [0.39, 0.35, "out"], [0.45, 0]]
+    }
+  }
+}

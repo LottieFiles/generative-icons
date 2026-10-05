@@ -1,0 +1,48 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "eye-off",
+  "label": "Hide",
+  "intent": "The view is hidden. Light: a slash strikes down across the eye from top-left to bottom-right, and the eye flinches shut as it is struck, then reopens behind the slash with a small widening and settles; the slash stays. Strong: the eye squeezes fully shut first, the slash strikes across it and snaps a little past its length before settling, and the eye reopens with a flutter. Show reverses it: the slash retracts to the top-left and the eye pops wide open and settles.",
+  "state": {"from": "visible", "to": "hidden", "labels": ["Hide", "Show"], "reverse": "auto"},
+  "parts": {
+    "lids":  {"//": "the eye's almond, as the set's eye draws it", "shape": {"path": "M6 14.9 C11.1 7.1 20.9 7.1 26 14.9 C26.45 15.58 26.45 16.42 26 17.1 C20.9 24.9 11.1 24.9 6 17.1 C5.55 16.42 5.55 15.58 6 14.9 Z"}, "role": "surface", "solid": "ring"},
+    "pupil": {"shape": {"circle": [[16, 16], 2.7]}, "role": "fill"},
+    "slash": {"//": "hidden in the visible state: the strike that hides the view", "shape": {"line": [[7, 7], [25, 25]]}, "hidden": true}
+  },
+  "rigs": {
+    "eye":   {"//": "the lids close and open about the eye's centre line", "pivot": [16, 16], "carries": ["lids", "pupil"], "squash": {"base": 16, "widen": 0}},
+    "slash": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "slash.opacity": {
+      "light":  [[0, 0], [0.05, 0], [0.06, 1, "step"]],
+      "strong": [[0, 0], [0.1, 0], [0.11, 1, "step"]]
+    },
+    "slash.draw": {
+      "light":  [[0, 1], [0.05, 0, "step"], [0.2, 1, "out"]],
+      "strong": [[0, 1], [0.1, 0, "step"], [0.2, 1, "out"]]
+    },
+    "slash.scale": {
+      "strong": [[0, 1], [0.2, 1], [0.24, 1.08, "out"], [0.31, 0.98], [0.37, 1]]
+    },
+    "eye.squash": {
+      "light":  [[0, 1], [0.06, 1], [0.11, 0.3, "in"], [0.2, 1.06, "out"], [0.27, 0.98], [0.32, 1]],
+      "strong": [[0, 1], [0.08, 0.08, "in"], [0.15, 0.08], [0.23, 1.08, "out"], [0.29, 0.82], [0.35, 1.03], [0.41, 1]]
+    }
+  },
+  "reverse": {
+    "//": "Show: the slash pulls back to where it started and the eye opens wide, instead of replaying the flinch",
+    "light": {
+      "slash.draw":    [[0, 1], [0.14, 0, "in"], [0.15, 1, "step"]],
+      "slash.opacity": [[0, 1], [0.14, 1], [0.15, 0, "step"]],
+      "eye.squash":    [[0, 1], [0.1, 1], [0.19, 1.16, "out"], [0.27, 0.95], [0.33, 1]]
+    },
+    "strong": {
+      "slash.scale":   [[0, 1], [0.06, 1.06, "out"], [0.12, 1]],
+      "slash.draw":    [[0, 1], [0.06, 1], [0.18, 0, "in"], [0.19, 1, "step"]],
+      "slash.opacity": [[0, 1], [0.18, 1], [0.19, 0, "step"]],
+      "eye.squash":    [[0, 1], [0.14, 1], [0.23, 1.2, "out"], [0.3, 0.9], [0.36, 1.04], [0.42, 1]]
+    }
+  }
+}

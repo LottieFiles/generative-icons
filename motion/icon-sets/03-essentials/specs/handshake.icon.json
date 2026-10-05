@@ -1,0 +1,323 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "handshake",
+  "label": "Handshake",
+  "intent": "Two hands shake on a deal, for a partnership or agreement. Light: the clasped hands and cuffs pump up, come down firmly with a hit, and three short rays flash above the clasp on the downbeat before everything settles. Strong: two pumps, the second smaller, with the rays flashing on each downbeat.",
+  "parts": {
+    "cuff-l": {
+      "shape": {
+        "rect": [
+          3,
+          11,
+          3.5,
+          9
+        ],
+        "r": 1
+      },
+      "role": "surface",
+      "//": "two sleeve cuffs, the clasped hands between them"
+    },
+    "cuff-r": {
+      "mirror": {
+        "of": "cuff-l"
+      }
+    },
+    "hands": {
+      "shape": {
+        "path": "M6.5 12.5 C10 11.4 12.4 9.6 16 9.6 C19.6 9.6 22 11.4 25.5 12.5 L25.5 18.5 C23.8 18.8 21.819 18.65 20.519 19.55 C20.96 20.315 20.876 21.274 20.309 21.95 C19.741 22.626 18.811 22.875 17.982 22.573 C17.152 22.271 16.6 21.483 16.6 20.6 L16.6 20.6 C16.6 21.76 15.66 22.7 14.5 22.7 C13.34 22.7 12.4 21.76 12.4 20.6 C11.4 20 8.6 19 6.5 18.5 Z"
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "seam-cut",
+          "gap": 0.4
+        }
+      ],
+      "//": "the clasped hands as one outline: two fingers wrap underneath; the thumb and the edge of the top hand are lines on it. Solid stops short of the cuffs so they stay separate",
+      "solid": {
+        "path": "M9 11.6 C12.5 10.5 12.4 8.7 16 8.7 C19.6 8.7 19.5 10.5 23 11.6 L23 19.3 C21.3 19.6 21.819 19.05 20.519 19.95 C20.96 20.715 20.876 21.674 20.309 22.35 C19.741 23.026 18.811 23.275 17.982 22.973 C17.152 22.671 16.6 21.883 16.6 21 L16.6 21 C16.6 22.16 15.66 23.1 14.5 23.1 C13.34 23.1 12.4 22.16 12.4 21 C11.4 20.8 11.1 19.8 9 19.3 Z"
+      }
+    },
+    "thumb": {
+      "shape": {
+        "path": "M16.4 9.8 C15 11.6 13.4 12.8 11.2 13.4"
+      },
+      "solid": "none"
+    },
+    "seam": {
+      "shape": {
+        "path": "M22 12.8 C20.2 14.6 17.2 16.6 16.6 19.4"
+      },
+      "solid": "none"
+    },
+    "seam-cut": {
+      "//": "Solid only: a shorter seam cut into the filled hands, clear of their edges",
+      "shape": {
+        "line": [
+          [
+            20.4,
+            14.6
+          ],
+          [
+            17.2,
+            18.6
+          ]
+        ]
+      },
+      "outline": "none"
+    },
+    "ray-c": {
+      "//": "hidden at rest: three short rays flash above the clasp on the downbeat",
+      "shape": {
+        "line": [
+          [
+            16,
+            5.2
+          ],
+          [
+            16,
+            7.0
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "ray-l": {
+      "shape": {
+        "line": [
+          [
+            11.4,
+            6.3
+          ],
+          [
+            12.5,
+            7.8
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "ray-r": {
+      "mirror": {
+        "of": "ray-l"
+      }
+    }
+  },
+  "rigs": {
+    "shake": {
+      "//": "the clasp and both cuffs pump together",
+      "pivot": [
+        16,
+        16
+      ],
+      "carries": [
+        "cuff-l",
+        "cuff-r",
+        "hands",
+        "thumb",
+        "seam",
+        "seam-cut"
+      ]
+    },
+    "rays": {
+      "pivot": [
+        16,
+        10
+      ],
+      "carries": [
+        "ray-c",
+        "ray-l",
+        "ray-r"
+      ]
+    }
+  },
+  "motion": {
+    "shake.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -1.6,
+          "out"
+        ],
+        [
+          0.2,
+          0.8,
+          "hit"
+        ],
+        [
+          0.32,
+          0,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -2,
+          "out"
+        ],
+        [
+          0.2,
+          1,
+          "hit"
+        ],
+        [
+          0.31,
+          -1.1,
+          "out"
+        ],
+        [
+          0.41,
+          0.6,
+          "hit"
+        ],
+        [
+          0.5,
+          -0.25,
+          "out"
+        ],
+        [
+          0.58,
+          0
+        ]
+      ]
+    },
+    "ray-c.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.19,
+          0
+        ],
+        [
+          0.21,
+          1,
+          "out"
+        ],
+        [
+          0.29,
+          1
+        ],
+        [
+          0.39,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.19,
+          0
+        ],
+        [
+          0.21,
+          1,
+          "out"
+        ],
+        [
+          0.27,
+          1
+        ],
+        [
+          0.34,
+          0,
+          "in"
+        ],
+        [
+          0.4,
+          0
+        ],
+        [
+          0.42,
+          1,
+          "out"
+        ],
+        [
+          0.48,
+          1
+        ],
+        [
+          0.56,
+          0,
+          "in"
+        ]
+      ]
+    },
+    "ray-l.opacity": {
+      "follow": "ray-c.opacity"
+    },
+    "ray-r.opacity": {
+      "follow": "ray-c.opacity"
+    },
+    "rays.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.19,
+          0.75,
+          "step"
+        ],
+        [
+          0.39,
+          1.15,
+          "out"
+        ],
+        [
+          0.41,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.19,
+          0.75,
+          "step"
+        ],
+        [
+          0.34,
+          1.12,
+          "out"
+        ],
+        [
+          0.41,
+          0.75,
+          "step"
+        ],
+        [
+          0.56,
+          1.15,
+          "out"
+        ],
+        [
+          0.58,
+          1,
+          "step"
+        ]
+      ]
+    }
+  }
+}

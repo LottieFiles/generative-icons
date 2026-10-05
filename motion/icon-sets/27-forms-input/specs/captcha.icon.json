@@ -1,0 +1,71 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "captcha",
+  "label": "Captcha",
+  "intent": "A captcha check verifies that the person is human. Light: the empty checkbox on the captcha card gives way to a spinner that sweeps one turn while it verifies, then a check mark draws on in its place. Strong: the box is pressed in first, the spinner sweeps one and a half turns, and the check snaps on and pops. The verified check stays; the reverse erases it and the empty box returns. The refresh mark on the card never moves.",
+  "state": {"from": "unverified", "to": "verified", "labels": ["Verify", "Reset"], "reverse": "auto"},
+  "parts": {
+    "card": {"shape": {"rect": [3, 8.5, 26, 15], "r": 3}, "role": "surface", "solid": "ring"},
+    "box": {"shape": {"rect": [7, 12.75, 6.5, 6.5], "r": 1.6}},
+    "spinner": {"//": "hidden at rest: shows only while verifying", "shape": {"arc": [[10.25, 16], 3, -90, 180]}, "hidden": true},
+    "check": {"//": "hidden until verified", "shape": {"polyline": [[7.2, 16.3], [9.6, 18.7], [13.9, 13.4]]}, "hidden": true},
+    "logo": {"//": "a refresh mark: an open ring with its arrowhead",
+             "shape": [{"arc": [[22.5, 16], 2.8, -60, 200]},
+                       {"polyline": [[18.27, 15.51], [20.04, 14.57], [20.79, 16.43]]}]}
+  },
+  "rigs": {
+    "box": {"pivot": [10.25, 16]},
+    "spinner": {"pivot": [10.25, 16]},
+    "check": {"pivot": [10.5, 16]}
+  },
+  "motion": {
+    "box.scale": {
+      "light":  [[0, 1], [0.1, 0.55, "in"], [0.11, 1, "step"]],
+      "strong": [[0, 1], [0.07, 0.82, "hit"], [0.15, 0.5, "in"], [0.16, 1, "step"]]
+    },
+    "box.opacity": {
+      "light":  [[0, 1], [0.04, 1], [0.1, 0, "in"]],
+      "strong": [[0, 1], [0.08, 1], [0.15, 0, "in"]]
+    },
+    "spinner.opacity": {
+      "light":  [[0, 0], [0.05, 0], [0.1, 1, "out"], [0.36, 1], [0.41, 0, "in"]],
+      "strong": [[0, 0], [0.1, 0], [0.14, 1, "out"], [0.4, 1], [0.44, 0, "in"]]
+    },
+    "spinner.rotate": {
+      "light":  [[0, 0], [0.05, 0], [0.41, 360, "linear"], [0.42, 0, "step"]],
+      "strong": [[0, 0], [0.1, 0], [0.44, 540, "linear"], [0.45, 0, "step"]]
+    },
+    "check.opacity": {
+      "light":  [[0, 0], [0.37, 0], [0.38, 1]],
+      "strong": [[0, 0], [0.4, 0], [0.41, 1]]
+    },
+    "check.draw": {
+      "light":  [[0, 1], [0.01, 0, "step"], [0.37, 0], [0.5, 1, "out"]],
+      "strong": [[0, 1], [0.01, 0, "step"], [0.4, 0], [0.47, 1, "hit"]]
+    },
+    "check.scale": {
+      "strong": [[0, 1], [0.47, 1], [0.53, 1.2, "out"], [0.6, 0.95, "inOut"], [0.65, 1, "inOut"]]
+    }
+  },
+  "reverse": {
+    "//": "the check is erased and the empty box pops back; the spinner stays hidden",
+    "light": {
+      "check.draw": [[0, 1], [0.12, 0, "in"], [0.13, 1, "step"]],
+      "check.opacity": [[0, 1], [0.11, 1], [0.12, 0]],
+      "box.scale": [[0, 1], [0.1, 1], [0.11, 0.6, "step"], [0.24, 1, "out"]],
+      "box.opacity": [[0, 0], [0.11, 0], [0.16, 1, "out"]],
+      "spinner.opacity": [[0, 0], [0.24, 0]],
+      "spinner.rotate": [[0, 0], [0.24, 0]]
+    },
+    "strong": {
+      "check.draw": [[0, 1], [0.08, 0, "hit"], [0.09, 1, "step"]],
+      "check.opacity": [[0, 1], [0.075, 1], [0.08, 0]],
+      "check.scale": [[0, 1], [0.08, 1]],
+      "box.scale": [[0, 1], [0.08, 1], [0.09, 0.6, "step"], [0.17, 1.15, "out"], [0.24, 0.96, "inOut"], [0.3, 1, "inOut"]],
+      "box.opacity": [[0, 0], [0.09, 0], [0.13, 1, "out"]],
+      "spinner.opacity": [[0, 0], [0.3, 0]],
+      "spinner.rotate": [[0, 0], [0.3, 0]]
+    }
+  }
+}

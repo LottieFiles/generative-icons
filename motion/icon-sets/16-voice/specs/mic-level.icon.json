@@ -1,0 +1,36 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "mic-level",
+  "label": "Mic level",
+  "intent": "The microphone's input level meter reacts to sound. Light: a pair of sound arcs travels in from the upper sides and fades into the capsule; as it lands, the level bar inside the capsule jumps up and stops dead, holds for a beat, then sinks back to its resting tick. Strong: two sounds arrive in turn; the first lifts the level part way and it starts to fall, the second, louder, drives it to the top, where it holds before sinking back. The microphone itself never moves.",
+  "parts": {
+    "cradle":  {"shape": {"path": "M7 13.5 L7 14 C7 18.97 11.03 23 16 23 C20.97 23 25 18.97 25 14 L25 13.5"}},
+    "stand":   {"shape": {"line": [[16, 23], [16, 27]]}},
+    "foot":    {"shape": {"line": [[11.5, 27], [20.5, 27]]}},
+    "capsule": {"//": "wider than the plain microphone's, to hold the meter", "shape": {"rect": [11.5, 4.5, 9, 14], "r": 4.5}, "role": "surface", "knockout": [{"part": "level", "gap": 0.5}]},
+    "level":   {"//": "the input level: a short tick at rest that rises from its base", "shape": {"line": [[16, 14.8], [16, 12.8]]}},
+    "wave-l":  {"//": "hidden at rest: sound only exists while it travels in", "shape": {"arc": [[16, 11], 10, 200, 230]}, "hidden": true},
+    "wave-r":  {"mirror": {"of": "wave-l"}}
+  },
+  "rigs": {
+    "level": {"//": "the bar grows up from its base", "pivot": [16, 14.8], "carries": ["level"]}
+  },
+  "motion": {
+    "wave-l.opacity": {
+      "light":  [[0, 0], [0.06, 1, "out"], [0.15, 1], [0.22, 0, "in"]],
+      "strong": [[0, 0], [0.05, 1, "out"], [0.13, 1], [0.19, 0, "in"], [0.26, 0], [0.31, 1, "out"], [0.39, 1], [0.45, 0, "in"]]
+    },
+    "wave-l.r": {
+      "light":  [[0, 0], [0.22, -3, "in"], [0.24, 0, "step"]],
+      "strong": [[0, 0], [0.19, -3, "in"], [0.21, 0, "step"], [0.26, 0], [0.45, -3, "in"], [0.47, 0, "step"]]
+    },
+    "wave-r.opacity": {"follow": "wave-l.opacity"},
+    "wave-r.r": {"follow": "wave-l.r"},
+    "level.scale": {
+      "//": "a reading: it stops dead on each value, never overshoots",
+      "light":  [[0, 1], [0.17, 1], [0.24, 2.6, "hit"], [0.36, 2.6], [0.62, 1, "inOut"]],
+      "strong": [[0, 1], [0.14, 1], [0.2, 2, "hit"], [0.26, 2], [0.38, 1.5, "in"], [0.44, 3.15, "hit"], [0.58, 3.15], [0.86, 1, "inOut"]]
+    }
+  }
+}

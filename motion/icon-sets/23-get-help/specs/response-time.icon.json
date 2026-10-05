@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "response-time",
+  "label": "Response time",
+  "intent": "The wait for a reply is timed: a round chat bubble with clock hands. Light: the minute hand sweeps one full turn at a steady pace and stops dead on the hour, and the bubble hops as the reply lands, then settles. Strong: the hand winds back first, sweeps round faster and stops dead, and the bubble hops higher and lands with two bounces.",
+  "parts": {
+    "bubble": {
+      "shape": {"path": "M6.984 19.437 C4.830 14.819 6.303 9.322 10.477 6.399 C14.652 3.476 20.321 3.972 23.925 7.575 C27.528 11.179 28.024 16.848 25.101 21.023 C22.178 25.197 16.681 26.670 12.063 24.516 L5.2 26.8 Z"},
+      "role": "surface",
+      "knockout": ["minute", "hour"]
+    },
+    "minute": {"shape": {"line": [[16.5, 15], [16.5, 8.6]]}},
+    "hour": {"shape": {"line": [[16.5, 15], [20.8, 15]]}}
+  },
+  "rigs": {
+    "bubble": {"//": "the bubble hops as the reply lands, carrying the clock", "pivot": [16.5, 15], "carries": ["bubble", "minute", "hour"]},
+    "minute": {"pivot": [16.5, 15]}
+  },
+  "motion": {
+    "minute.rotate": {
+      "//": "a whole turn, then a step from 360 back to the identical 0 so the rest pose is pixel-exact",
+      "light": [[0, 0], [0.28, 360, "linear"], [0.29, 0, "step"]],
+      "strong": [[0, 0], [0.07, -30, "out"], [0.3, 360, "linear"], [0.31, 0, "step"]]
+    },
+    "bubble.y": {
+      "light": [[0, 0], [0.27, 0], [0.34, -1.3, "out"], [0.41, 0, "hit"], [0.46, -0.3], [0.5, 0]],
+      "strong": [[0, 0], [0.29, 0], [0.36, -1.6, "out"], [0.43, 0, "hit"], [0.48, -0.5], [0.52, 0, "hit"], [0.55, -0.12], [0.58, 0]]
+    }
+  }
+}

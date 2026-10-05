@@ -1,0 +1,42 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "audiobook",
+  "label": "Audiobook",
+  "intent": "The open book reads itself aloud. Light: the book lifts a touch and drops back with a hit as it sends one wave up: the large sound arc travels on upward and fades, the small arc swells into its place and a new small arc grows in from the spine. Strong: the book pushes out two waves, one after the other, with two decaying bumps. The arcs end exactly where they started.",
+  "//": "The waves roll like hearing-assistance's, outward from the spine instead of into the ear.",
+  "parts": {
+    "page-l":    {"shape": {"polygon": [[16, 18], [4.5, 16], [4.5, 24.5], [16, 26.5]], "r": 1}, "role": "surface",
+                  "knockout": [{"part": "spine", "gap": 0.2}]},
+    "page-r":    {"mirror": {"of": "page-l"}, "knockout": [{"part": "spine", "gap": 0.2}]},
+    "spine":     {"shape": {"line": [[16, 18], [16, 26.5]]}},
+    "arc-small": {"//": "concentric with arc-large about (16, 16.5): r 4.5 + 4 is exactly arc-large", "shape": {"arc": [[16, 16.5], 4.5, -135, -45]}},
+    "arc-large": {"shape": {"arc": [[16, 16.5], 8.5, -135, -45]}}
+  },
+  "rigs": {
+    "book": {"pivot": [16, 26.5], "carries": ["page-l", "page-r", "spine"]}
+  },
+  "motion": {
+    "arc-large.r": {
+      "//": "travels on upward, fading; it is back at rest (unseen behind arc-small) the frame it jumps home",
+      "light":  [[0, 0], [0.24, 4, "inOut"], [0.25, 0, "step"]],
+      "strong": [[0, 0], [0.2, 4, "inOut"], [0.21, 0, "step"], [0.41, 4, "inOut"], [0.42, 0, "step"]]
+    },
+    "arc-large.opacity": {
+      "light":  [[0, 1], [0.1, 1], [0.24, 0, "in"], [0.25, 1, "step"]],
+      "strong": [[0, 1], [0.08, 1], [0.2, 0, "in"], [0.21, 1, "step"], [0.29, 1], [0.41, 0, "in"], [0.42, 1, "step"]]
+    },
+    "arc-small.r": {
+      "light":  [[0, 0], [0.24, 4, "inOut"], [0.25, -1.5, "step"], [0.38, 0, "out"]],
+      "strong": [[0, 0], [0.2, 4, "inOut"], [0.21, -1.5, "step"], [0.41, 4, "inOut"], [0.42, -1.5, "step"], [0.55, 0, "out"]]
+    },
+    "arc-small.opacity": {
+      "light":  [[0, 1], [0.25, 0, "step"], [0.35, 1, "out"]],
+      "strong": [[0, 1], [0.21, 0, "step"], [0.29, 1, "out"], [0.42, 0, "step"], [0.52, 1, "out"]]
+    },
+    "book.y": {
+      "light":  [[0, 0], [0.08, -0.8, "out"], [0.18, 0, "hit"], [0.24, -0.2], [0.3, 0]],
+      "strong": [[0, 0], [0.07, -0.9, "out"], [0.16, 0, "hit"], [0.21, -0.2], [0.27, -0.7, "out"], [0.36, 0, "hit"], [0.42, -0.15], [0.48, 0]]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "toolbox",
+  "label": "Toolbox",
+  "intent": "The toolbox is opened. Light: the lid pops up off the box, tipping back on its left hinge and carrying the handle, then claps shut with a hit and a small bounce. Strong: the lid rattles twice first, then is thrown open higher and slams shut, bouncing twice while the box jolts under it. The two latches stay on the box.",
+  "parts": {
+    "body": {
+      "shape": {"rect": [4.5, 15.5, 23, 11], "r": [0, 0, 2, 2]},
+      "role": "surface",
+      "solid": {"rect": [3.2, 16.3, 25.6, 11.5], "r": [0, 0, 3.3, 3.3]},
+      "knockout": ["latch-l", "latch-r"]
+    },
+    "lid": {
+      "//": "a tapered lid; its own bottom edge is left out, the box's top edge is the seam",
+      "shape": {"polygon": [
+        {"p": [4.5, 15.5], "r": 0},
+        {"p": [6.8, 11.5], "r": 1.2},
+        {"p": [25.2, 11.5], "r": 1.2},
+        {"p": [27.5, 15.5], "r": 0}
+      ]},
+      "role": "surface",
+      "outline": "open",
+      "solid": {"polygon": [
+        {"p": [3.0, 14.7], "r": 0},
+        {"p": [5.8, 10.2], "r": 1.6},
+        {"p": [26.2, 10.2], "r": 1.6},
+        {"p": [29.0, 14.7], "r": 0}
+      ]}
+    },
+    "handle": {"shape": {"polyline": [[10.5, 11.5], [10.5, 7.5], [21.5, 7.5], [21.5, 11.5]], "r": 1.6}},
+    "latch-l": {"shape": {"line": [[10, 17.8], [10, 20.2]]}},
+    "latch-r": {"shape": {"line": [[22, 17.8], [22, 20.2]]}}
+  },
+  "rigs": {
+    "box": {"pivot": [16, 26.5], "carries": ["body", "latch-l", "latch-r", "lid-rig"]},
+    "lid-rig": {"//": "the lid hinges at the left end of the seam", "pivot": [4.5, 15.5], "carries": ["lid", "handle"]}
+  },
+  "motion": {
+    "lid-rig.y": {
+      "light": [[0, 0], [0.13, -2, "out"], [0.2, -2], [0.29, 0, "hit"], {"bounce": 0.37, "amp": 0.15}],
+      "strong": [[0, 0], [0.05, -0.6, "out"], [0.09, 0, "hit"], [0.14, -0.7, "out"], [0.18, 0, "hit"], [0.31, -2.6, "out"], [0.37, -2.6], [0.46, 0, "hit"], {"bounce": 0.54, "amp": 0.18}, {"bounce": 0.61, "amp": 0.3}]
+    },
+    "lid-rig.rotate": {
+      "light": [[0, 0], [0.13, -5, "out"], [0.2, -5], [0.29, 0, "hit"]],
+      "strong": [[0, 0], [0.05, -1.5, "out"], [0.09, 0, "hit"], [0.14, -1.5, "out"], [0.18, 0, "hit"], [0.31, -7, "out"], [0.37, -7], [0.46, 0, "hit"]]
+    },
+    "box.y": {
+      "light": [[0, 0]],
+      "strong": [[0, 0], [0.46, 0], [0.49, 0.6, "out"], [0.57, 0]]
+    }
+  }
+}

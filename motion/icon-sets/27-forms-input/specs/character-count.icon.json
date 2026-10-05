@@ -1,0 +1,56 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "character-count",
+  "label": "Character count",
+  "intent": "A text field counts characters toward its limit. Light: more text is typed into the field and the counter ring beside it fills in step with it, from a third of the way round to most of the way, and stops dead. Strong: the text is typed in two quick bursts, the ring clicks forward with each, and it pops once as it nears the limit. The count never overshoots; the reverse deletes the text and the ring empties back.",
+  "state": {"from": "short-text", "to": "long-text", "labels": ["Type", "Delete"], "reverse": "auto"},
+  "parts": {
+    "field": {"shape": {"rect": [3.5, 9.5, 25, 13], "r": 3}, "role": "surface", "solid": "ring"},
+    "text-1": {"shape": {"line": [[7.5, 16], [11, 16]]}},
+    "text-2": {"//": "hidden at first: the text still to be typed", "shape": {"line": [[11, 16], [15.5, 16]]}, "hidden": true},
+    "ring-track": {"//": "the limit, faint", "shape": {"circle": [[22.4, 16], 2.7]}, "opacity": 0.3},
+    "ring-a": {"shape": {"arc": [[22.4, 16], 2.7, -90, 20]}},
+    "ring-b": {"//": "hidden at first: the count still to come", "shape": {"arc": [[22.4, 16], 2.7, 20, 200]}, "hidden": true}
+  },
+  "rigs": {
+    "counter": {"pivot": [22.4, 16], "carries": ["ring-track", "ring-a", "ring-b"]}
+  },
+  "motion": {
+    "text-2.opacity": {
+      "light":  [[0, 0], [0.05, 0], [0.06, 1]],
+      "strong": [[0, 0], [0.05, 0], [0.06, 1]]
+    },
+    "text-2.draw": {
+      "light":  [[0, 1], [0.01, 0, "step"], [0.05, 0], [0.3, 1, "out"]],
+      "strong": [[0, 1], [0.01, 0, "step"], [0.05, 0], [0.13, 0.5, "hit"], [0.22, 0.5], [0.3, 1, "hit"]]
+    },
+    "ring-b.opacity": {
+      "light":  [[0, 0], [0.08, 0], [0.09, 1]],
+      "strong": [[0, 0], [0.07, 0], [0.08, 1]]
+    },
+    "ring-b.draw": {
+      "light":  [[0, 1], [0.01, 0, "step"], [0.08, 0], [0.34, 1, "out"]],
+      "strong": [[0, 1], [0.01, 0, "step"], [0.07, 0], [0.15, 0.5, "hit"], [0.24, 0.5], [0.32, 1, "hit"]]
+    },
+    "counter.scale": {
+      "strong": [[0, 1], [0.32, 1], [0.38, 1.18, "out"], [0.45, 0.95, "inOut"], [0.5, 1, "inOut"]]
+    }
+  },
+  "reverse": {
+    "//": "the typed text is deleted and the ring empties with it",
+    "light": {
+      "text-2.draw": [[0, 1], [0.04, 1], [0.24, 0, "in"], [0.25, 1, "step"]],
+      "text-2.opacity": [[0, 1], [0.23, 1], [0.24, 0]],
+      "ring-b.draw": [[0, 1], [0.06, 1], [0.27, 0, "in"], [0.28, 1, "step"]],
+      "ring-b.opacity": [[0, 1], [0.26, 1], [0.27, 0]]
+    },
+    "strong": {
+      "text-2.draw": [[0, 1], [0.03, 1], [0.13, 0, "hit"], [0.14, 1, "step"]],
+      "text-2.opacity": [[0, 1], [0.125, 1], [0.13, 0]],
+      "ring-b.draw": [[0, 1], [0.05, 1], [0.15, 0, "hit"], [0.16, 1, "step"]],
+      "ring-b.opacity": [[0, 1], [0.145, 1], [0.15, 0]],
+      "counter.scale": [[0, 1], [0.15, 1], [0.2, 0.9, "out"], [0.26, 1, "inOut"]]
+    }
+  }
+}

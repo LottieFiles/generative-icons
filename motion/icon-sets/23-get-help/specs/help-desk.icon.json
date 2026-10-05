@@ -1,0 +1,47 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "help-desk",
+  "label": "Help desk",
+  "intent": "The service bell on the help desk is rung for assistance. Light: the plunger is pressed down with a hit and springs back, the dome gives under the strike, and a ding mark flicks out from each shoulder of the bell and fades. Strong: ding-ding: two presses, the second harder, each ringing out its own pair of ding marks, and the dome gives more on the second.",
+  "parts": {
+    "dome": {
+      "shape": {"path": "M6 24.5 C6 17.873 10.477 12.5 16 12.5 C21.523 12.5 26 17.873 26 24.5 Z"},
+      "role": "surface",
+      "outline": "open"
+    },
+    "base": {"shape": {"line": [[4.5, 24.5], [27.5, 24.5]]}},
+    "stem": {"shape": {"line": [[16, 9.3], [16, 11.9]]}},
+    "knob": {"shape": {"line": [[14, 9.3], [18, 9.3]]}},
+    "ding-l": {
+      "//": "hidden at rest: the ring of the bell, flicking out from its shoulder",
+      "shape": {"line": [[9.2, 12.4], [7.2, 10.4]]},
+      "hidden": true
+    },
+    "ding-r": {"mirror": {"of": "ding-l"}}
+  },
+  "rigs": {
+    "plunger": {"//": "the plunger is pressed into the dome", "pivot": [16, 9.3], "carries": ["stem", "knob"]},
+    "dome": {"//": "the dome gives under the strike, down onto the base", "pivot": [16, 24.5], "carries": ["dome"], "squash": {"base": 24.5, "widen": 0.5}}
+  },
+  "motion": {
+    "plunger.y": {
+      "light": [[0, 0], [0.06, 1.6, "hit"], [0.14, -0.3, "out"], [0.2, 0]],
+      "strong": [[0, 0], [0.05, 1.6, "hit"], [0.11, -0.2, "out"], [0.16, 0], [0.22, 1.9, "hit"], [0.3, -0.35, "out"], [0.37, 0.1], [0.42, 0]]
+    },
+    "dome.squash": {
+      "light": [[0, 1], [0.06, 1], [0.09, 0.95, "out"], [0.15, 1.02], [0.2, 1]],
+      "strong": [[0, 1], [0.05, 1], [0.08, 0.96, "out"], [0.13, 1.01], [0.22, 1], [0.25, 0.93, "out"], [0.32, 1.03], [0.38, 0.99], [0.43, 1]]
+    },
+    "ding-l.opacity": {
+      "light": [[0, 0], [0.06, 0], [0.07, 1, "step"], [0.2, 1], [0.3, 0, "in"]],
+      "strong": [[0, 0], [0.05, 0], [0.06, 1, "step"], [0.13, 1], [0.18, 0, "in"], [0.22, 0], [0.23, 1, "step"], [0.36, 1], [0.46, 0, "in"]]
+    },
+    "ding-l.draw": {
+      "light": [[0, 1], [0.06, 0, "step"], [0.15, 1, "out"]],
+      "strong": [[0, 1], [0.05, 0, "step"], [0.12, 1, "out"], [0.22, 0, "step"], [0.3, 1, "out"]]
+    },
+    "ding-r.opacity": {"follow": "ding-l.opacity"},
+    "ding-r.draw": {"follow": "ding-l.draw"}
+  }
+}

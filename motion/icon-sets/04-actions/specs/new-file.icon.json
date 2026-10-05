@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "new-file",
+  "label": "New file",
+  "intent": "A new file is created. Light: the page gathers in, then springs out past its size and settles, and the plus on it is drawn on again from its top and left ends as it springs. Strong: the page gathers in deeper and springs out farther in two beats, and the plus snaps on.",
+  "parts": {
+    "page": {"//": "the set's document page", "shape": {"path": "M8 7.2 C8 6.07 8.57 5.5 9.7 5.5 L17.6 5.5 C18.2 5.5 18.71 5.71 19.14 6.14 L23.36 10.36 C23.79 10.79 24 11.3 24 11.9 L24 24.8 C24 25.93 23.43 26.5 22.3 26.5 L9.7 26.5 C8.57 26.5 8 25.93 8 24.8 Z"}, "role": "surface", "knockout": ["plus", "fold"]},
+    "fold": {"shape": {"path": "M18.5 6 L18.5 10 C18.5 10.6 18.9 11 19.5 11 L23.5 11"}, "solid": "none"},
+    "plus": {"//": "one part, so one matte cuts it in Solid while it draws on", "shape": [{"line": [[16, 14.8], [16, 22.2]]}, {"line": [[12.3, 18.5], [19.7, 18.5]]}]}
+  },
+  "rigs": {
+    "page": {"pivot": [16, 16], "carries": ["page", "fold", "plus"]}
+  },
+  "motion": {
+    "page.scale": {
+      "light":  [[0, 1], [0.08, 0.92, "out"], [0.2, 1.06, "out"], [0.28, 0.98], [0.34, 1]],
+      "strong": [[0, 1], [0.1, 0.86, "out"], [0.22, 1.1, "out"], [0.3, 0.96], [0.37, 1.03], [0.43, 1]]
+    },
+    "plus.draw": {
+      "light":  [[0, 1], [0.08, 0, "step"], [0.24, 1, "out"]],
+      "strong": [[0, 1], [0.1, 0, "step"], [0.2, 1, "hit"]]
+    }
+  }
+}

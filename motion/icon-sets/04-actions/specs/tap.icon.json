@@ -1,0 +1,315 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "tap",
+  "label": "Tap",
+  "intent": "A finger taps the screen. Light: the hand presses in toward its fingertip and stops with a hit, the touch ring above the fingertip spreads out and fades as it lands, and the hand springs back while a fresh ring grows back in place. Strong: a double tap, two quick presses, the second deeper, each sending a ring out wider.",
+  "parts": {
+    "palm": {
+      "//": "the set's hand (welcome-wave): a rounded palm with stroked fingers",
+      "shape": {
+        "rect": [
+          11,
+          17,
+          13,
+          10
+        ],
+        "r": 3
+      },
+      "role": "surface"
+    },
+    "index": {
+      "shape": {
+        "line": [
+          [
+            14.5,
+            17
+          ],
+          [
+            14.5,
+            9.5
+          ]
+        ]
+      }
+    },
+    "finger-2": {
+      "//": "curled fingers: short stubs",
+      "shape": {
+        "line": [
+          [
+            18,
+            17
+          ],
+          [
+            18,
+            14.5
+          ]
+        ]
+      }
+    },
+    "finger-3": {
+      "shape": {
+        "line": [
+          [
+            21.5,
+            17
+          ],
+          [
+            21.5,
+            15
+          ]
+        ]
+      }
+    },
+    "thumb": {
+      "shape": {
+        "line": [
+          [
+            11,
+            21
+          ],
+          [
+            8.2,
+            18.2
+          ]
+        ]
+      }
+    },
+    "ring": {
+      "//": "the touch ring over the fingertip",
+      "shape": {
+        "arc": [
+          [
+            14.5,
+            9.5
+          ],
+          4.4,
+          -145,
+          -35
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "hand": {
+      "//": "presses in toward the fingertip, where it touches",
+      "pivot": [
+        14.5,
+        9.5
+      ],
+      "carries": [
+        "palm",
+        "index",
+        "finger-2",
+        "finger-3",
+        "thumb"
+      ]
+    },
+    "ring": {
+      "pivot": [
+        14.5,
+        9.5
+      ]
+    }
+  },
+  "motion": {
+    "hand.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.1,
+          0.88,
+          "hit"
+        ],
+        [
+          0.16,
+          0.88
+        ],
+        [
+          0.26,
+          1.04,
+          "out"
+        ],
+        [
+          0.33,
+          0.99
+        ],
+        [
+          0.38,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          0.9,
+          "hit"
+        ],
+        [
+          0.14,
+          1,
+          "out"
+        ],
+        [
+          0.22,
+          0.84,
+          "hit"
+        ],
+        [
+          0.28,
+          0.84
+        ],
+        [
+          0.37,
+          1.05,
+          "out"
+        ],
+        [
+          0.44,
+          0.98
+        ],
+        [
+          0.5,
+          1
+        ]
+      ]
+    },
+    "ring.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.1,
+          1
+        ],
+        [
+          0.28,
+          1.45,
+          "out"
+        ],
+        [
+          0.29,
+          0.75,
+          "step"
+        ],
+        [
+          0.4,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          1
+        ],
+        [
+          0.2,
+          1.35,
+          "out"
+        ],
+        [
+          0.21,
+          0.8,
+          "step"
+        ],
+        [
+          0.4,
+          1.5,
+          "out"
+        ],
+        [
+          0.41,
+          0.75,
+          "step"
+        ],
+        [
+          0.5,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "ring.opacity": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.1,
+          1
+        ],
+        [
+          0.28,
+          0,
+          "in"
+        ],
+        [
+          0.29,
+          0
+        ],
+        [
+          0.38,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          1
+        ],
+        [
+          0.2,
+          0.15,
+          "in"
+        ],
+        [
+          0.21,
+          0.15
+        ],
+        [
+          0.24,
+          1,
+          "out"
+        ],
+        [
+          0.27,
+          1
+        ],
+        [
+          0.4,
+          0,
+          "in"
+        ],
+        [
+          0.41,
+          0
+        ],
+        [
+          0.49,
+          1,
+          "out"
+        ]
+      ]
+    }
+  }
+}

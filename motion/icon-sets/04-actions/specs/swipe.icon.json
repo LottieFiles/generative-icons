@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "swipe",
+  "label": "Swipe",
+  "intent": "A finger swipes across the screen. Light: the hand eases back a touch, then swipes left under the arrow, runs a little past and settles; the arrow's left head kicks out as the finger reaches it, and the hand glides back to the middle. Strong: the hand swipes left and then all the way right, each head kicking out in turn as the finger reaches it, before the hand settles back in the middle.",
+  "parts": {
+    "shaft":    {"shape": {"line": [[9, 6], [23, 6]]}},
+    "head-l":   {"shape": {"polyline": [[11.5, 3.5], [9, 6], [11.5, 8.5]]}},
+    "head-r":   {"mirror": {"of": "head-l"}},
+    "palm":     {"//": "the hand of tap, a little lower", "shape": {"rect": [11, 18, 13, 9.5], "r": 3}, "role": "surface"},
+    "index":    {"shape": {"line": [[14.5, 18], [14.5, 11]]}},
+    "finger-2": {"shape": {"line": [[18, 18], [18, 15.5]]}},
+    "finger-3": {"shape": {"line": [[21.5, 18], [21.5, 16]]}},
+    "thumb":    {"shape": {"line": [[11, 22], [8.2, 19.2]]}}
+  },
+  "rigs": {
+    "hand": {"pivot": [16, 22], "carries": ["palm", "index", "finger-2", "finger-3", "thumb"]}
+  },
+  "motion": {
+    "hand.x": {
+      "light":  [[0, 0], [0.06, 0.6, "out"], [0.17, -3.8, "out"], [0.22, -3.4], [0.34, 0.3, "inOut"], [0.4, 0]],
+      "strong": [[0, 0], [0.06, 0.8, "out"], [0.16, -3.8, "out"], [0.21, -3.4], [0.34, 3.8, "inOut"], [0.39, 3.4], [0.5, -0.3, "inOut"], [0.56, 0]]
+    },
+    "head-l.x": {
+      "light":  [[0, 0], [0.14, 0], [0.19, -1.1, "out"], [0.27, 0.2], [0.32, 0]],
+      "strong": [[0, 0], [0.13, 0], [0.18, -1.2, "out"], [0.25, 0.2], [0.3, 0]]
+    },
+    "head-r.x": {
+      "strong": [[0, 0], [0.31, 0], [0.36, 1.2, "out"], [0.43, -0.2], [0.48, 0]]
+    }
+  }
+}

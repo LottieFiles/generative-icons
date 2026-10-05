@@ -1,0 +1,35 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "schedule-call",
+  "label": "Schedule a call",
+  "intent": "A support call booked on the calendar comes due: a calendar page with a phone handset on it. Light: the handset rings, rattling about its centre in beats that die away, and the calendar jolts as the first ring hits. Strong: it rings twice, ring, pause, ring, each ring jolting the calendar, the second rattle wider.",
+  "parts": {
+    "page": {
+      "shape": {"rect": [4.5, 6, 23, 22], "r": 3},
+      "role": "surface",
+      "knockout": ["header", "handset", {"part": "ring-l", "gap": 0.3}, {"part": "ring-r", "gap": 0.3}]
+    },
+    "header": {"shape": {"line": [[4.5, 12], [27.5, 12]]}},
+    "ring-l": {"shape": {"line": [[11, 3.6], [11, 8.4]]}},
+    "ring-r": {"shape": {"line": [[21, 3.6], [21, 8.4]]}},
+    "handset": {
+      "shape": {"path": "M11.399 15.111 C11.693 14.817 12.048 14.670 12.464 14.670 L13.140 14.670 C13.487 14.670 13.727 14.830 13.861 15.149 L14.510 16.695 C14.671 17.078 14.605 17.417 14.311 17.711 L13.642 18.380 C13.446 18.576 13.423 18.790 13.574 19.023 L14.537 20.515 C14.819 20.952 15.178 21.311 15.615 21.593 L17.107 22.556 C17.340 22.707 17.554 22.684 17.750 22.488 L18.419 21.819 C18.713 21.525 19.052 21.459 19.435 21.620 L20.981 22.269 C21.300 22.403 21.460 22.643 21.460 22.990 L21.460 23.666 C21.460 24.082 21.333 24.411 21.078 24.654 L20.750 24.966 C20.495 25.209 20.108 25.330 19.588 25.330 L18.860 25.330 C18.340 25.330 17.854 25.202 17.401 24.946 L15.397 23.814 C14.794 23.473 14.255 23.072 13.782 22.610 L13.174 22.018 C12.701 21.556 12.298 21.021 11.967 20.412 L10.987 18.612 C10.689 18.064 10.540 17.578 10.540 17.153 L10.540 16.594 C10.540 16.178 10.687 15.823 10.981 15.529 L11.399 15.111 Z"},
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "calendar": {"pivot": [16, 28], "carries": ["page", "header", "ring-l", "ring-r", "handset"]},
+    "handset": {"//": "the handset rattles about its centre as it rings", "pivot": [16, 20]}
+  },
+  "motion": {
+    "handset.rotate": {
+      "light": [[0, 0], [0.05, 8, "out"], [0.1, -7], [0.15, 6], [0.2, -4], [0.25, 2], [0.3, 0]],
+      "strong": [[0, 0], [0.05, 8, "out"], [0.1, -7], [0.15, 5], [0.2, -3], [0.24, 0], [0.33, 0], [0.38, 9, "out"], [0.43, -8], [0.48, 6], [0.53, -4], [0.58, 2], [0.62, 0]]
+    },
+    "calendar.y": {
+      "light": [[0, 0], [0.05, 0.6, "out"], [0.13, -0.15], [0.19, 0]],
+      "strong": [[0, 0], [0.05, 0.6, "out"], [0.13, -0.15], [0.19, 0], [0.33, 0], [0.38, 0.8, "out"], [0.46, -0.2], [0.52, 0]]
+    }
+  }
+}

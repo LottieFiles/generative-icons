@@ -1,0 +1,60 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "forecast",
+  "label": "Forecast",
+  "intent": "The trend is projected forward. Light: the dashed projection dims, then a pen redraws it from the latest value out into the future, dash by dash, and stops dead on the predicted value, which flashes a point. Strong: a new data point lands on the latest value first, then the projection is redrawn faster and the predicted point pops bigger with a rebound. The axes and the history line never move; values never overshoot.",
+  "parts": {
+    "axes":    {"shape": {"polyline": [[6, 5], [6, 26], [27, 26]]}},
+    "history": {"shape": {"polyline": [[10, 22], [13, 17.5], [16, 20]]}},
+    "dash-1":  {"//": "the projection runs from the latest value (16, 20) to the predicted one (26.76, 8.16): dashes at 4-8 and 12-16 along it",
+                "shape": {"line": [[18.69, 17.04], [21.38, 14.08]]}},
+    "dash-2":  {"shape": {"line": [[24.07, 11.12], [26.76, 8.16]]}},
+    "trace-1": {"//": "hidden at rest: the pen stroke over the dimmed dash; it hands back to the dash at full draw (same pixels)",
+                "shape": {"line": [[18.69, 17.04], [21.38, 14.08]]}, "hidden": true},
+    "trace-2": {"shape": {"line": [[24.07, 11.12], [26.76, 8.16]]}, "hidden": true},
+    "now":     {"//": "hidden: the new data point on the latest value, Strong only", "shape": {"circle": [[16, 20], 1.8]}, "role": "fill", "hidden": true},
+    "tip":     {"//": "hidden: the predicted value's flash", "shape": {"circle": [[26.76, 8.16], 2]}, "role": "fill", "hidden": true}
+  },
+  "motion": {
+    "//": "The pen moves at one speed along the projection, so it crosses the gap between the dashes before drawing the second.",
+    "dash-1.opacity": {
+      "light":  [[0, 1], [0.06, 0.3, "out"], [0.14, 0.3], [0.15, 1, "step"]],
+      "strong": [[0, 1], [0.1, 1], [0.14, 0.3, "out"], [0.21, 0.3], [0.22, 1, "step"]]
+    },
+    "dash-2.opacity": {
+      "light":  [[0, 1], [0.06, 0.3, "out"], [0.28, 0.3], [0.29, 1, "step"]],
+      "strong": [[0, 1], [0.1, 1], [0.14, 0.3, "out"], [0.33, 0.3], [0.34, 1, "step"]]
+    },
+    "trace-1.opacity": {
+      "light":  [[0, 0], [0.06, 1, "step"], [0.14, 1], [0.15, 0, "step"]],
+      "strong": [[0, 0], [0.14, 1, "step"], [0.21, 1], [0.22, 0, "step"]]
+    },
+    "trace-1.draw": {
+      "light":  [[0, 1], [0.05, 0, "step"], [0.06, 0], [0.14, 1, "linear"]],
+      "strong": [[0, 1], [0.13, 0, "step"], [0.14, 0], [0.2, 1, "linear"]]
+    },
+    "trace-2.opacity": {
+      "light":  [[0, 0], [0.06, 1, "step"], [0.28, 1], [0.29, 0, "step"]],
+      "strong": [[0, 0], [0.14, 1, "step"], [0.33, 1], [0.34, 0, "step"]]
+    },
+    "trace-2.draw": {
+      "light":  [[0, 1], [0.05, 0, "step"], [0.2, 0], [0.28, 1, "hit"]],
+      "strong": [[0, 1], [0.13, 0, "step"], [0.26, 0], [0.33, 1, "hit"]]
+    },
+    "now.opacity": {
+      "strong": [[0, 0], [0.01, 1, "step"], [0.12, 1], [0.2, 0, "in"]]
+    },
+    "now.r": {
+      "strong": [[0, 0], [0.01, -1, "step"], [0.07, 0.4, "out"], [0.12, 0]]
+    },
+    "tip.opacity": {
+      "light":  [[0, 0], [0.28, 0], [0.29, 1, "step"], [0.4, 1], [0.5, 0, "in"]],
+      "strong": [[0, 0], [0.33, 0], [0.34, 1, "step"], [0.5, 1], [0.6, 0, "in"]]
+    },
+    "tip.r": {
+      "light":  [[0, 0], [0.28, -1, "step"], [0.34, 0.3, "out"], [0.4, 0]],
+      "strong": [[0, 0], [0.33, -1.2, "step"], [0.39, 0.6, "out"], [0.45, -0.2, "inOut"], [0.5, 0, "inOut"]]
+    }
+  }
+}

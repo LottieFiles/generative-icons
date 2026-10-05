@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "nearby-share",
+  "label": "Nearby share",
+  "intent": "A file is shared with nearby devices over the air. Light: the sheet dips to load, then the signal arcs above it pulse out one after the other, inner then outer, each swelling past its place and settling, while the sheet springs back up. Strong: two pulses, the second bigger, and the sheet lifts higher as it sends.",
+  "parts": {
+    "sheet": {
+      "shape": {
+        "path": "M10 17.1 C10 16.217 10.717 15.5 11.6 15.5 L17.7 15.5 C18.142 15.5 18.753 15.753 19.066 16.066 L21.434 18.434 C21.747 18.747 22 19.358 22 19.8 L22 26.4 C22 27.283 21.283 28 20.4 28 L11.6 28 C10.717 28 10 27.283 10 26.4 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "fold": {"shape": {"polyline": [[18.5, 15.9], [18.5, 19], [21.6, 19]], "r": 0.7}, "solid": "none"},
+    "wave-1": {"shape": {"arc": [[16, 15], 5.5, -135, -45]}},
+    "wave-2": {"shape": {"arc": [[16, 15], 9.5, -140, -40]}}
+  },
+  "rigs": {"doc": {"pivot": [16, 28], "carries": ["sheet", "fold"]}, "wave-1": {"pivot": [16, 15]}, "wave-2": {"pivot": [16, 15]}},
+  "motion": {
+    "doc.y": {
+      "light": [[0, 0], [0.07, 0.6, "out"], [0.17, -0.7, "out"], [0.25, 0.15], [0.31, 0]],
+      "strong": [[0, 0], [0.07, 0.6, "out"], [0.16, -0.6, "out"], [0.24, 0.7, "out"], [0.34, -1.2, "out"], [0.43, 0.25], [0.5, 0]]
+    },
+    "wave-1.scale": {
+      "light": [[0, 1], [0.07, 0.86, "out"], [0.18, 1.12, "out"], [0.27, 0.97], [0.33, 1]],
+      "strong": [[0, 1], [0.07, 0.86, "out"], [0.16, 1.08, "out"], [0.24, 0.86, "out"], [0.34, 1.16, "out"], [0.43, 0.96], [0.5, 1]]
+    },
+    "wave-2.scale": {
+      "light": [[0, 1], [0.12, 1], [0.25, 1.09, "out"], [0.34, 0.98], [0.4, 1]],
+      "strong": [[0, 1], [0.11, 1], [0.22, 1.06, "out"], [0.3, 1], [0.41, 1.11, "out"], [0.5, 0.97], [0.57, 1]]
+    }
+  }
+}

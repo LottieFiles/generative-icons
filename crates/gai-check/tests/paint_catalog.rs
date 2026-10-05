@@ -86,7 +86,7 @@ fn whole_catalog_matches_committed_evidence() {
     let recorded: serde_json::Value = serde_json::from_str(&expected).unwrap();
     assert_eq!(
         (report.icons, report.actions, report.stroke_paints),
-        (1005, 3094, recorded["strokePaints"].as_u64().unwrap())
+        (1141, 3432, recorded["strokePaints"].as_u64().unwrap())
     );
     assert!(
         report.to_json() == expected,

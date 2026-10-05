@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "unlink",
+  "label": "Unlink",
+  "intent": "The link breaks. Light: the two halves of the chain slide together along their axis until they hook into each other like a link, then snap apart past their place with a jolt, rebound and settle; the break marks burst out on both sides of the gap as they part. Strong: they hook together and tug once against each other, then tear apart harder, overshoot farther and settle in two beats, and the break marks burst out wider. The halves are rigid; they only slide along their shared axis.",
+  "parts": {
+    "half-1": {"//": "the upper-right half of the broken chain", "shape": {"path": "M22.01 14.232 L26.607 9.636 C27.778 8.464 27.778 6.565 26.607 5.393 C25.435 4.222 23.536 4.222 22.364 5.393 L17.768 9.99 C16.596 11.161 16.596 13.061 17.768 14.232 C18.939 15.404 20.839 15.404 22.01 14.232 Z"}, "role": "surface", "solid": "ring"},
+    "half-0": {"shape": {"path": "M9.99 17.768 L5.393 22.364 C4.222 23.536 4.222 25.435 5.393 26.607 C6.565 27.778 8.464 27.778 9.636 26.607 L14.232 22.01 C15.404 20.839 15.404 18.939 14.232 17.768 C13.061 16.596 11.161 16.596 9.99 17.768 Z"}, "role": "surface", "solid": "ring"},
+    "ticks": {"//": "the break marks: two pairs square to the chain on both sides of the gap, like link's click marks", "shape": [
+      {"line": [{"from": [16, 16], "angle": -113, "len": 5.5}, {"from": [16, 16], "angle": -113, "len": 7.7}]},
+      {"line": [{"from": [16, 16], "angle": -157, "len": 5.5}, {"from": [16, 16], "angle": -157, "len": 7.7}]},
+      {"line": [{"from": [16, 16], "angle": 67, "len": 5.5}, {"from": [16, 16], "angle": 67, "len": 7.7}]},
+      {"line": [{"from": [16, 16], "angle": 23, "len": 5.5}, {"from": [16, 16], "angle": 23, "len": 7.7}]}
+    ]}
+  },
+  "rigs": {
+    "ticks": {"//": "the marks burst outward from the break", "pivot": [16, 16]}
+  },
+  "motion": {
+    "//": "The chain runs along (1, -1): half-1 slides up-right (x +, y -), half-0 the opposite way, so every track follows half-1.x. -3.18 in x is 4.5 along the chain: the halves hook together.",
+    "half-1.x": {
+      "light":  [[0, 0], [0.14, -3.18, "inOut"], [0.19, -3.18], [0.27, 0.57, "out"], [0.34, -0.18], [0.4, 0]],
+      "strong": [[0, 0], [0.13, -3.18, "inOut"], [0.17, -3.18], [0.21, -2.6, "out"], [0.25, -3.18, "hit"], [0.29, -3.18], [0.37, 0.99, "out"], [0.44, -0.35], [0.5, 0.12], [0.55, 0]]
+    },
+    "half-1.y": {"follow": "half-1.x", "scale": -1},
+    "half-0.x": {"follow": "half-1.x", "scale": -1},
+    "half-0.y": {"follow": "half-1.x"},
+    "ticks.opacity": {
+      "light":  [[0, 1], [0.03, 1], [0.09, 0, "in"], [0.22, 0], [0.23, 1, "step"]],
+      "strong": [[0, 1], [0.03, 1], [0.09, 0, "in"], [0.32, 0], [0.33, 1, "step"]]
+    },
+    "ticks.scale": {
+      "light":  [[0, 1], [0.22, 1], [0.23, 0.9, "step"], [0.31, 1.15, "out"], [0.39, 1]],
+      "strong": [[0, 1], [0.32, 1], [0.33, 0.85, "step"], [0.42, 1.25, "out"], [0.48, 0.95], [0.54, 1]]
+    }
+  }
+}

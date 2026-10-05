@@ -1,0 +1,68 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "merge-files",
+  "label": "Merge files",
+  "intent": "Two files are merged into one. Light: the two sheets slide together, the right one a beat behind the left, and meet in the middle, where one larger sheet takes their place with a pop and settles; its two content lines draw on, one for each file. Strong: the sheets pull apart first, then slam together; the merged sheet pops bigger and settles in two beats. The preview reset fades it back to the two sheets.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "left": {"shape": {"polygon": [[3.5, 6], [9.5, 6], [13.5, 10], [13.5, 26], [3.5, 26]], "r": 1.6}, "role": "surface", "solid": "fill"},
+    "left-fold": {"shape": {"polyline": [[9.5, 6.4], [9.5, 10], [13.1, 10]], "r": 0.8}, "solid": "none"},
+    "right": {"shape": {"polygon": [[18.5, 6], [24.5, 6], [28.5, 10], [28.5, 26], [18.5, 26]], "r": 1.6}, "role": "surface", "solid": "fill"},
+    "right-fold": {"shape": {"polyline": [[24.5, 6.4], [24.5, 10], [28.1, 10]], "r": 0.8}, "solid": "none"},
+    "merged": {
+      "//": "hidden at rest: the one file the two become",
+      "shape": {"polygon": [[9, 4.5], [18, 4.5], [23, 9.5], [23, 27.5], [9, 27.5]], "r": 1.6},
+      "role": "surface",
+      "solid": "fill",
+      "hidden": true,
+      "knockout": [{"part": "lines", "gap": 0.6}]
+    },
+    "merged-fold": {"shape": {"polyline": [[18, 4.9], [18, 9.5], [22.6, 9.5]], "r": 0.8}, "solid": "none", "hidden": true},
+    "lines": {"shape": [{"line": [[12.5, 16], [19.5, 16]]}, {"line": [[12.5, 21], [19.5, 21]]}], "hidden": true}
+  },
+  "rigs": {
+    "left": {"pivot": [8.5, 16], "carries": ["left", "left-fold"]},
+    "right": {"pivot": [23.5, 16], "carries": ["right", "right-fold"]},
+    "merged": {"pivot": [16, 16], "carries": ["merged", "merged-fold", "lines"]}
+  },
+  "motion": {
+    "left.x": {"light": [[0, 0], [0.2, 7.5, "in"]], "strong": [[0, 0], [0.1, -0.6, "out"], [0.2, 7.5, "in"]]},
+    "right.x": {"light": [[0, 0], [0.04, 0], [0.24, -7.5, "in"]], "strong": [[0, 0], [0.04, 0], [0.14, 0.6, "out"], [0.24, -7.5, "in"]]},
+    "left.opacity": {"light": [[0, 1], [0.2, 1], [0.26, 0, "out"]], "strong": [[0, 1], [0.2, 1], [0.25, 0, "out"]]},
+    "left-fold.opacity": {"follow": "left.opacity"},
+    "right.opacity": {"light": [[0, 1], [0.23, 1], [0.28, 0, "out"]], "strong": [[0, 1], [0.23, 1], [0.27, 0, "out"]]},
+    "right-fold.opacity": {"follow": "right.opacity"},
+    "merged.opacity": {"light": [[0, 0], [0.2, 0], [0.26, 1, "out"]], "strong": [[0, 0], [0.2, 0], [0.25, 1, "out"]]},
+    "merged-fold.opacity": {"follow": "merged.opacity"},
+    "merged.scale": {
+      "light": [[0, 1], [0.19, 0.86, "step"], [0.29, 1.05, "out"], [0.37, 0.99], [0.43, 1]],
+      "strong": [[0, 1], [0.19, 0.84, "step"], [0.27, 1.1, "out"], [0.35, 0.96], [0.42, 1.02], [0.48, 1]]
+    },
+    "lines.opacity": {"light": [[0, 0], [0.28, 0], [0.29, 1, "step"]], "strong": [[0, 0], [0.26, 0], [0.27, 1, "step"]]},
+    "lines.draw": {"light": [[0, 1], [0.28, 0, "step"], [0.42, 1, "out"]], "strong": [[0, 1], [0.26, 0, "step"], [0.36, 1, "out"]]}
+  },
+  "reverse": {
+    "//": "a cross-fade, so no frame is empty: the merged sheet fades while the two sheets come back",
+    "light": {
+      "left.x": [[0, 7.5], [0.02, 0, "step"]],
+      "right.x": [[0, -7.5], [0.02, 0, "step"]],
+      "left.opacity": [[0, 0], [0.06, 0], [0.2, 1, "out"]],
+      "right.opacity": [[0, 0], [0.06, 0], [0.2, 1, "out"]],
+      "merged.opacity": [[0, 1], [0.14, 0, "in"]],
+      "lines.opacity": [[0, 1], [0.14, 0, "in"]],
+      "merged.scale": [[0, 1], [0.14, 1]],
+      "lines.draw": [[0, 1], [0.14, 1]]
+    },
+    "strong": {
+      "left.x": [[0, 7.5], [0.02, 0, "step"]],
+      "right.x": [[0, -7.5], [0.02, 0, "step"]],
+      "left.opacity": [[0, 0], [0.06, 0], [0.2, 1, "out"]],
+      "right.opacity": [[0, 0], [0.06, 0], [0.2, 1, "out"]],
+      "merged.opacity": [[0, 1], [0.14, 0, "in"]],
+      "lines.opacity": [[0, 1], [0.14, 0, "in"]],
+      "merged.scale": [[0, 1], [0.14, 1]],
+      "lines.draw": [[0, 1], [0.14, 1]]
+    }
+  }
+}

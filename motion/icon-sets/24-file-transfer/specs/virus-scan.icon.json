@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "virus-scan",
+  "label": "Virus scan",
+  "intent": "A file is scanned for viruses and comes out safe. Light: a scan line sweeps down the sheet from top to bottom and fades, and as it finishes the shield beside the file stamps down, popping up from its point and settling. Strong: the scan line sweeps down and back up, and the shield stamps harder and settles in two beats.",
+  "parts": {
+    "page": {
+      "shape": {
+        "path": "M4 6.1 C4 5.217 4.717 4.5 5.6 4.5 L12.2 4.5 C12.642 4.5 13.253 4.753 13.566 5.066 L17.434 8.934 C17.747 9.247 18 9.858 18 10.3 L18 25.4 C18 26.283 17.283 27 16.4 27 L5.6 27 C4.717 27 4 26.283 4 25.4 Z"
+      },
+      "role": "surface",
+      "solid": "fill",
+      "knockout": [{"part": "beam", "gap": 0.6}]
+    },
+    "fold": {"shape": {"polyline": [[13, 4.9], [13, 9.5], [17.6, 9.5]], "r": 0.8}, "solid": "none"},
+    "beam": {"//": "hidden at rest: the scan passing over the file", "shape": {"line": [[7.5, 13], [14.5, 13]]}, "hidden": true},
+    "shield": {
+      "shape": {
+        "path": "M24.25 13.5 C25.9 14.6 27.1 15 28.5 15.1 L28.5 20 C28.5 23.3 26.6 25.6 24.25 27 C21.9 25.6 20 23.3 20 20 L20 15.1 C21.4 15 22.6 14.6 24.25 13.5 Z"
+      },
+      "role": "surface"
+    }
+  },
+  "rigs": {"beam": {"pivot": [11, 13], "carries": ["beam"]}, "shield": {"pivot": [24.25, 27], "carries": ["shield"]}},
+  "motion": {
+    "beam.y": {
+      "light": [[0, 0], [0.05, 0], [0.36, 10.8, "inOut"], [0.43, 10.8], [0.44, 0, "step"]],
+      "strong": [[0, 0], [0.04, 0], [0.26, 10.8, "inOut"], [0.48, 0, "inOut"], [0.5, 0]]
+    },
+    "beam.opacity": {"light": [[0, 0], [0.06, 1, "out"], [0.34, 1], [0.42, 0, "in"]], "strong": [[0, 0], [0.05, 1, "out"], [0.44, 1], [0.5, 0, "in"]]},
+    "shield.scale": {
+      "light": [[0, 1], [0.33, 1], [0.4, 1.12, "out"], [0.47, 0.98], [0.53, 1]],
+      "strong": [[0, 1], [0.46, 1], [0.52, 1.14, "out"], [0.59, 0.95], [0.65, 1.03], [0.71, 1]]
+    }
+  }
+}

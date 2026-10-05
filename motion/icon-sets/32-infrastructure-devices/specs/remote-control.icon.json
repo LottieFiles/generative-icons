@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "remote-control",
+  "label": "Remote control",
+  "intent": "A button press on the remote control sends a signal. Light: the power button at the top presses in and springs back, and an infrared signal of two arcs leaves the top of the remote, travels outward and fades. Strong: the remote tips forward to aim, the button is pressed twice, each press sends a signal, the second further, and the remote tips back and settles. The remote stays rigid.",
+  "parts": {
+    "sig-b": {"shape": {"arc": [[16, 10.5], 5.6, -128, -52]}, "hidden": true},
+    "sig-a": {"//": "hidden at rest: the signal only exists while it travels", "shape": {"arc": [[16, 10.5], 3, -135, -45]}, "hidden": true},
+    "keys":  {"shape": [{"line": [[13.5, 20], [18.5, 20]]}, {"line": [[13.5, 24], [18.5, 24]]}]},
+    "power": {"shape": {"circle": [[16, 14.5], 2]}, "role": "fill"},
+    "body":  {"shape": {"rect": [11, 10.5, 10, 18], "r": 3}, "role": "surface",
+              "knockout": [{"part": "power", "gap": 0.3}, {"part": "keys", "gap": 0.3}]}
+  },
+  "rigs": {
+    "remote": {"pivot": [16, 28], "carries": ["body", "keys", "power", "sig-a", "sig-b"]},
+    "power":  {"pivot": [16, 14.5]}
+  },
+  "motion": {
+    "power.scale": {
+      "light":  [[0, 1], [0.06, 0.65, "hit"], [0.12, 0.65], [0.2, 1.08], [0.26, 1]],
+      "strong": [[0, 1], [0.16, 1], [0.21, 0.62, "hit"], [0.25, 0.62], [0.3, 1.06], [0.34, 1], [0.38, 0.6, "hit"], [0.42, 0.6], [0.48, 1.08], [0.54, 1]]
+    },
+    "sig-a.opacity": {
+      "light":  [[0, 0], [0.08, 0], [0.11, 1, "out"], [0.22, 1], [0.34, 0, "in"]],
+      "strong": [[0, 0], [0.22, 0], [0.25, 1, "out"], [0.32, 1], [0.4, 0, "in"], [0.41, 0], [0.43, 1, "out"], [0.52, 1], [0.64, 0, "in"]]
+    },
+    "sig-a.r": {
+      "light":  [[0, 0], [0.08, 0], [0.34, 1.6, "out"], [0.36, 0, "step"]],
+      "strong": [[0, 0], [0.22, 0], [0.4, 1.2, "out"], [0.41, 0, "step"], [0.64, 1.8, "out"], [0.66, 0, "step"]]
+    },
+    "sig-b.opacity": {"follow": "sig-a.opacity", "lag": 0.05},
+    "sig-b.r":       {"follow": "sig-a.r", "lag": 0.05},
+    "remote.rotate": {
+      "strong": [[0, 0], [0.12, 9, "out"], [0.18, 8], [0.58, 8], [0.7, -1, "inOut"], [0.78, 0]]
+    }
+  }
+}

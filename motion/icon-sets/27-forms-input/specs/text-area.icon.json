@@ -1,0 +1,59 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "text-area",
+  "label": "Text area",
+  "intent": "A multi-line text area is resized taller. Light: the resize grip in the bottom corner is pulled down, the box's bottom edge follows it, and the line of text that was cut off writes in as the room opens. Strong: the grip is pressed, yanked down past the new size and springs back to it, and the hidden line snaps in. The top edge and the first two lines never move; the reverse pushes the grip back up and the third line is hidden again.",
+  "state": {"from": "compact", "to": "expanded", "labels": ["Expand", "Shrink"], "reverse": "auto"},
+  "parts": {
+    "box": {"//": "the bottom edge travels with the grip",
+            "shape": {"morph": [{"rect": [4, 5, 24, 16], "r": 3}, {"rect": [4, 5, 24, 22], "r": 3}], "by": "size"},
+            "role": "surface", "solid": "ring"},
+    "line-1": {"shape": {"line": [[8, 10], [24, 10]]}},
+    "line-2": {"shape": {"line": [[8, 14.5], [18, 14.5]]}},
+    "line-3": {"//": "cut off while compact", "shape": {"line": [[8, 19], [15.5, 19]]}, "hidden": true},
+    "grip": {"//": "the resize handle in the bottom corner", "shape": {"polygon": [[25.3, 14.4], [25.3, 18.6], [21.1, 18.6]], "r": 0.6}, "role": "fill"}
+  },
+  "rigs": {
+    "grip": {"pivot": [23.9, 17.2]}
+  },
+  "motion": {
+    "grip.y": {
+      "light":  [[0, 0], [0.07, 0], [0.34, 6, "inOut"]],
+      "strong": [[0, 0], [0.09, 0], [0.28, 7.3, "out"], [0.37, 5.6, "inOut"], [0.44, 6.2, "inOut"], [0.5, 6, "inOut"]]
+    },
+    "size": {
+      "light":  [[0, 0], [0.07, 0], [0.34, 1, "inOut"]],
+      "strong": [[0, 0], [0.09, 0], [0.28, 1.2167, "out"], [0.37, 0.9333, "inOut"], [0.44, 1.0333, "inOut"], [0.5, 1, "inOut"]]
+    },
+    "grip.scale": {
+      "light":  [[0, 1], [0.06, 1.15, "out"], [0.34, 1.15], [0.42, 1, "inOut"]],
+      "strong": [[0, 1], [0.08, 1.28, "out"], [0.28, 1.28], [0.36, 0.92, "inOut"], [0.44, 1, "inOut"]]
+    },
+    "line-3.opacity": {
+      "light":  [[0, 0], [0.22, 0], [0.23, 1]],
+      "strong": [[0, 0], [0.22, 0], [0.23, 1]]
+    },
+    "line-3.draw": {
+      "light":  [[0, 1], [0.01, 0, "step"], [0.22, 0], [0.4, 1, "out"]],
+      "strong": [[0, 1], [0.01, 0, "step"], [0.22, 0], [0.3, 1, "hit"]]
+    }
+  },
+  "reverse": {
+    "//": "the third line hides first, then the grip pushes the bottom edge back up",
+    "light": {
+      "line-3.draw": [[0, 1], [0.1, 0, "in"], [0.11, 1, "step"]],
+      "line-3.opacity": [[0, 1], [0.09, 1], [0.1, 0]],
+      "grip.y": [[0, 6], [0.08, 6], [0.34, 0, "inOut"]],
+      "size": [[0, 1], [0.08, 1], [0.34, 0, "inOut"]],
+      "grip.scale": [[0, 1], [0.06, 1.15, "out"], [0.34, 1.15], [0.42, 1, "inOut"]]
+    },
+    "strong": {
+      "line-3.draw": [[0, 1], [0.06, 0, "hit"], [0.07, 1, "step"]],
+      "line-3.opacity": [[0, 1], [0.055, 1], [0.06, 0]],
+      "grip.y": [[0, 6], [0.08, 6], [0.24, -1, "out"], [0.33, 0.4, "inOut"], [0.4, 0, "inOut"]],
+      "size": [[0, 1], [0.08, 1], [0.24, -0.1667, "out"], [0.33, 0.0667, "inOut"], [0.4, 0, "inOut"]],
+      "grip.scale": [[0, 1], [0.06, 1.28, "out"], [0.24, 1.28], [0.32, 0.92, "inOut"], [0.4, 1, "inOut"]]
+    }
+  }
+}

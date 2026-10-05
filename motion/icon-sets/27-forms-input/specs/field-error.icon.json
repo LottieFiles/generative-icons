@@ -1,0 +1,32 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "field-error",
+  "label": "Field error",
+  "intent": "A form field rejects its value. Light: the exclamation mark beside the field strikes down onto its dot, and a beat later the field shakes its head: it jolts left, swings back right and settles, carrying the typed value with it. Strong: the stem lifts first and strikes harder, the dot is knocked down and rebounds, and the field shakes three times, each smaller. The exclamation stays beside the field.",
+  "parts": {
+    "field": {"shape": {"rect": [4.5, 10, 17.5, 12], "r": 3}, "role": "surface", "solid": "ring"},
+    "value": {"shape": {"line": [[8.5, 16], [14, 16]]}},
+    "stem": {"shape": {"line": [[26.5, 10.5], [26.5, 16.2]]}},
+    "dot": {"shape": {"circle": [[26.5, 20.6], 1.5]}, "role": "fill"}
+  },
+  "rigs": {
+    "field": {"pivot": [13.25, 16], "carries": ["value"]},
+    "stem": {"pivot": [26.5, 16.2]},
+    "dot": {"pivot": [26.5, 20.6]}
+  },
+  "motion": {
+    "stem.y": {
+      "light":  [[0, 0], [0.09, 1.3, "hit"], [0.2, 0, "out"]],
+      "strong": [[0, 0], [0.08, -1.1, "out"], [0.16, 1.7, "hit"], [0.28, 0, "out"]]
+    },
+    "dot.y": {
+      "light":  [[0, 0], [0.09, 0], [0.13, 0.5, "out"], [0.22, 0, "inOut"]],
+      "strong": [[0, 0], [0.16, 0], [0.2, 0.9, "out"], [0.27, -0.3, "inOut"], [0.33, 0, "inOut"]]
+    },
+    "field.x": {
+      "light":  [[0, 0], [0.1, 0], [0.16, -1.3, "out"], [0.25, 1.0, "inOut"], [0.33, -0.4, "inOut"], [0.4, 0, "inOut"]],
+      "strong": [[0, 0], [0.17, 0], [0.22, -1.4, "out"], [0.3, 1.3, "inOut"], [0.37, -0.9, "inOut"], [0.44, 0.5, "inOut"], [0.5, -0.2, "inOut"], [0.55, 0, "inOut"]]
+    }
+  }
+}

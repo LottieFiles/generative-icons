@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "voice-pitch",
+  "label": "Voice pitch",
+  "intent": "The voice's pitch is raised. Light: the pitch knob slides up its track and stops dead on the higher setting, and a beat behind it the voice wave tightens from long, low swells into short, quick ones. Strong: the knob dips to gather, then climbs in two steps, stopping dead on each, while the wave tightens behind it. The knob stays high and the wave stays tight. The reverse lowers the knob and relaxes the wave the same way.",
+  "state": {"from": "normal-pitch", "to": "higher-pitch", "labels": ["Raise pitch", "Normal pitch"], "reverse": "auto"},
+  "parts": {
+    "wave": {
+      "//": "the voice: long low swells at normal pitch, short quick ones when raised; both crest at the centre so the in-between frames taper instead of tangling",
+      "shape": {"morph": [
+        {"polyline": [[4.0, 16.0], [4.354, 16.78], [4.708, 17.531], [5.062, 18.222], [5.417, 18.828], [5.771, 19.326], [6.125, 19.696], [6.479, 19.923], [6.833, 20.0], [7.188, 19.923], [7.542, 19.696], [7.896, 19.326], [8.25, 18.828], [8.604, 18.222], [8.958, 17.531], [9.312, 16.78], [9.667, 16.0], [10.021, 15.22], [10.375, 14.469], [10.729, 13.778], [11.083, 13.172], [11.438, 12.674], [11.792, 12.304], [12.146, 12.077], [12.5, 12.0], [12.854, 12.077], [13.208, 12.304], [13.562, 12.674], [13.917, 13.172], [14.271, 13.778], [14.625, 14.469], [14.979, 15.22], [15.333, 16.0], [15.688, 16.78], [16.042, 17.531], [16.396, 18.222], [16.75, 18.828], [17.104, 19.326], [17.458, 19.696], [17.812, 19.923], [18.167, 20.0], [18.521, 19.923], [18.875, 19.696], [19.229, 19.326], [19.583, 18.828], [19.938, 18.222], [20.292, 17.531], [20.646, 16.78], [21.0, 16.0]]},
+        {"polyline": [[4.0, 16.0], [4.354, 14.714], [4.708, 13.565], [5.062, 12.674], [5.417, 12.136], [5.771, 12.009], [6.125, 12.304], [6.479, 12.993], [6.833, 14.0], [7.188, 15.22], [7.542, 16.522], [7.896, 17.769], [8.25, 18.828], [8.604, 19.587], [8.958, 19.966], [9.312, 19.923], [9.667, 19.464], [10.021, 18.637], [10.375, 17.531], [10.729, 16.262], [11.083, 14.965], [11.438, 13.778], [11.792, 12.827], [12.146, 12.212], [12.5, 12.0], [12.854, 12.212], [13.208, 12.827], [13.562, 13.778], [13.917, 14.965], [14.271, 16.262], [14.625, 17.531], [14.979, 18.637], [15.333, 19.464], [15.688, 19.923], [16.042, 19.966], [16.396, 19.587], [16.75, 18.828], [17.104, 17.769], [17.458, 16.522], [17.812, 15.22], [18.167, 14.0], [18.521, 12.993], [18.875, 12.304], [19.229, 12.009], [19.583, 12.136], [19.938, 12.674], [20.292, 13.565], [20.646, 14.714], [21.0, 16.0]]}
+      ], "by": "pitch"}
+    },
+    "track": {"shape": {"line": [[26, 9], [26, 23]]}},
+    "knob": {"//": "the pitch setting", "shape": {"circle": [[26, 19], 2.2]}, "role": "fill"}
+  },
+  "motion": {
+    "knob.y": {
+      "//": "a setting: it stops dead on its value, never overshoots",
+      "light": [[0, 0], [0.2, -6, "hit"]],
+      "strong": [[0, 0], [0.08, 0.8, "out"], [0.2, -3, "hit"], [0.28, -3], [0.38, -6, "hit"]]
+    },
+    "pitch": {
+      "light": [[0, 0], [0.06, 0], [0.28, 1, "inOut"]],
+      "strong": [[0, 0], [0.14, 0], [0.46, 1, "inOut"]]
+    }
+  },
+  "reverse": {
+    "//": "the knob leads back down and the wave relaxes a beat behind it, as in the forward action",
+    "light": {
+      "knob.y": [[0, -6], [0.2, 0, "hit"]],
+      "pitch": [[0, 1], [0.06, 1], [0.28, 0, "inOut"]]
+    },
+    "strong": {
+      "knob.y": [[0, -6], [0.08, -6.8, "out"], [0.2, -3, "hit"], [0.28, -3], [0.38, 0, "hit"]],
+      "pitch": [[0, 1], [0.14, 1], [0.46, 0, "inOut"]]
+    }
+  }
+}

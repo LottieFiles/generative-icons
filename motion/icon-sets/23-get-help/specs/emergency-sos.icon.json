@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "emergency-sos",
+  "label": "Emergency SOS",
+  "intent": "The emergency siren light goes off to call for help. Light: the beacon turns once, its beam sweeping from left to right: each ray flashes out from the dome in turn and the glint inside the dome flashes as the beam passes the front. Strong: the beacon turns twice, sweeping across two times in quick succession.",
+  "parts": {
+    "dome": {
+      "shape": {"path": "M9.5 22 L9.5 15.5 C9.5 11.91 12.41 9 16 9 C19.59 9 22.5 11.91 22.5 15.5 L22.5 22 Z"},
+      "role": "surface",
+      "outline": "open",
+      "knockout": ["glint"]
+    },
+    "glint": {"//": "the reflector's highlight inside the dome", "shape": {"arc": [[16, 16.5], 3, 180, 270]}},
+    "base": {"shape": {"rect": [6.5, 22, 19, 4.5], "r": 1.5}, "role": "surface"},
+    "ray-l": {"shape": {"line": [[5.8, 15.5], [2.8, 15.5]]}},
+    "ray-ul": {"shape": {"line": [[8.79, 8.29], [6.6, 6.1]]}},
+    "ray-t": {"shape": {"line": [[16, 5.6], [16, 3]]}},
+    "ray-ur": {"mirror": {"of": "ray-ul"}},
+    "ray-r": {"mirror": {"of": "ray-l"}}
+  },
+  "motion": {
+    "ray-l.draw": {
+      "//": "the beam passes: each ray flashes out from the dome, left to right",
+      "light": [[0, 1], [0.02, 0, "step"], [0.12, 1, "out"]],
+      "strong": [[0, 1], [0.02, 0, "step"], [0.1, 1, "out"], [0.22, 1], [0.23, 0, "step"], [0.31, 1, "out"]]
+    },
+    "ray-ul.draw": {"follow": "ray-l.draw", "lag": 0.04},
+    "ray-t.draw": {"follow": "ray-l.draw", "lag": 0.08},
+    "glint.draw": {"follow": "ray-l.draw", "lag": 0.08},
+    "ray-ur.draw": {"follow": "ray-l.draw", "lag": 0.12},
+    "ray-r.draw": {"follow": "ray-l.draw", "lag": 0.16}
+  }
+}

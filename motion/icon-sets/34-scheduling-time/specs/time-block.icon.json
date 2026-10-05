@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "time-block",
+  "label": "Time block",
+  "intent": "A block of time is drawn on the day: the event block is pulled down from its start hour to its end hour. Light: the block starts as a thin slab at the start hour, and its bottom edge is dragged down in one move and stops dead on the end hour. Strong: the edge is dragged in two snaps, stopping dead on the middle hour first, then on the end hour, and the calendar takes the last snap with a small thump. The hour marks and the leaf stay put.",
+  "parts": {
+    "leaf":   {"shape": {"rect": [5, 6, 22, 21], "r": 2.7}, "role": "surface", "solid": "ring"},
+    "header": {"shape": {"line": [[5.5, 11.5], [26.5, 11.5]]}},
+    "peg-l":  {"shape": {"line": [[11, 4], [11, 8]]}},
+    "peg-r":  {"shape": {"line": [[21, 4], [21, 8]]}},
+    "hour-1": {"shape": {"line": [[8.6, 15.6], [10.6, 15.6]]}},
+    "hour-2": {"shape": {"line": [[8.6, 19.6], [10.6, 19.6]]}},
+    "hour-3": {"shape": {"line": [[8.6, 23.6], [10.6, 23.6]]}},
+    "block":  {"shape": {"rect": [13.4, 14.6, 10.2, 9.8], "r": 1.8}, "role": "fill"}
+  },
+  "rigs": {
+    "calendar": {"//": "the whole calendar takes the last snap in Strong", "pivot": [16, 27], "carries": ["leaf", "header", "peg-l", "peg-r", "hour-1", "hour-2", "hour-3", "block"]},
+    "block":    {"//": "the block stretches down from its start hour; its top edge never moves", "pivot": [18.5, 14.6], "squash": {"base": 14.6, "widen": 0}}
+  },
+  "motion": {
+    "block.squash": {
+      "light":  [[0, 1], [0.017, 0.24, "step"], [0.06, 0.24], [0.3, 1, "hit"]],
+      "strong": [[0, 1], [0.017, 0.24, "step"], [0.05, 0.24], [0.19, 0.6, "hit"], [0.27, 0.6], [0.38, 1, "hit"]]
+    },
+    "calendar.y": {
+      "strong": [[0, 0], [0.38, 0], [0.42, 0.7, "hit"], [0.49, -0.15], [0.55, 0]]
+    }
+  }
+}

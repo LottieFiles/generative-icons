@@ -1,0 +1,59 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "faq",
+  "label": "FAQ",
+  "intent": "A frequently asked question gets its answer: a question bubble and an answer bubble. Light: the question mark tilts as the question is asked, then the answer bubble pops out of its tail in reply and its two lines of answer write on. Strong: the question mark tilts one way and the other, the answer bubble ducks deeper and pops bigger with a rebound, and the answer writes on as it lands.",
+  "parts": {
+    "q-bubble": {
+      "shape": {"polygon": [
+        {"p": [3.5, 3], "r": 3},
+        {"p": [20, 3], "r": 3},
+        {"p": [20, 17.5], "r": 3},
+        {"p": [8.5, 17.5], "r": 1},
+        {"p": [3.5, 21.5], "r": 0.6}
+      ]},
+      "role": "surface",
+      "//": "its corner just overlaps the answer bubble's corner; the gap cuts it there",
+      "knockout": [{"part": "q", "gap": 0.2}],
+      "gap": {"a-bubble": 1.4}
+    },
+    "q": {
+      "//": "the question mark: the hook and its dot (a round-capped point)",
+      "shape": [{"path": "M9.25 8.6 C9.25 5.6 14.25 5.6 14.25 8.8 C14.25 10.4 11.75 10.5 11.75 11.4"}, {"line": [[11.75, 14.45], [11.75, 14.55]]}]
+    },
+    "a-bubble": {
+      "shape": {"polygon": [
+        {"p": [17.5, 15.5], "r": 3},
+        {"p": [28.5, 15.5], "r": 3},
+        {"p": [28.5, 29], "r": 0.6},
+        {"p": [24, 26], "r": 1},
+        {"p": [17.5, 26], "r": 3}
+      ]},
+      "role": "surface",
+      "knockout": [{"part": "answer", "gap": 0.2}]
+    },
+    "answer": {
+      "//": "two lines of answer, written on left to right",
+      "shape": [{"line": [[21, 19], [25.3, 19]]}, {"line": [[21, 22.7], [23.4, 22.7]]}]
+    }
+  },
+  "rigs": {
+    "q": {"//": "the question mark tilts about its dot", "pivot": [11.75, 14.5]},
+    "a-bubble": {"//": "the answer pops out of its tail", "pivot": [28.5, 29], "carries": ["answer"]}
+  },
+  "motion": {
+    "q.rotate": {
+      "light": [[0, 0], [0.09, -14, "out"], [0.18, 4], [0.24, 0]],
+      "strong": [[0, 0], [0.08, -16, "out"], [0.17, 11, "inOut"], [0.25, -4], [0.31, 0]]
+    },
+    "a-bubble.scale": {
+      "light": [[0, 1], [0.12, 1], [0.18, 0.93, "out"], [0.28, 1.04, "out"], [0.35, 0.99], [0.41, 1]],
+      "strong": [[0, 1], [0.16, 1], [0.23, 0.89, "out"], [0.33, 1.06, "out"], [0.4, 0.97], [0.47, 1.01], [0.53, 1]]
+    },
+    "answer.draw": {
+      "light": [[0, 1], [0.12, 1], [0.13, 0, "step"], [0.2, 0], [0.34, 1, "out"]],
+      "strong": [[0, 1], [0.16, 1], [0.17, 0, "step"], [0.25, 0], [0.38, 1, "out"]]
+    }
+  }
+}

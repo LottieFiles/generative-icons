@@ -1,0 +1,26 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "repost",
+  "label": "Repost",
+  "intent": "The post is reshared: the two repost arrows fire round their loop. Light: both arrows pull back along their legs and fire forward, the left arrow up and the right arrow down a beat behind, each head landing on its mark with a hit and a small rebound. Strong: a deeper pull-back, a harder fire and two rebounds.",
+  "parts": {
+    "shaft-a": {"//": "starts at the bottom middle, so draw trims the end under the head", "shape": {"polyline": [[17.5, 24], [9, 24], [9, 8]], "r": 2.5}},
+    "head-a": {"shape": {"polyline": [[5.5, 11.5], [9, 8], [12.5, 11.5]]}},
+    "shaft-b": {"shape": {"polyline": [[14.5, 8], [23, 8], [23, 24]], "r": 2.5}},
+    "head-b": {"shape": {"polyline": [[19.5, 20.5], [23, 24], [26.5, 20.5]]}}
+  },
+  "motion": {
+    "//": "The head rides the shaft's end: shaft length is 23.43, so head offset = 23.43 * (1 - draw), with the same keys and eases.",
+    "shaft-a.draw": {
+      "light": [[0, 1], [0.12, 0.7866, "out"], [0.28, 1, "hit"], [0.34, 0.9744], [0.4, 1]],
+      "strong": [[0, 1], [0.14, 0.7225, "out"], [0.3, 1, "hit"], [0.36, 0.9573], [0.42, 1, "hit"], [0.46, 0.9915], [0.5, 1]]
+    },
+    "head-a.y": {
+      "light": [[0, 0], [0.12, 5, "out"], [0.28, 0, "hit"], [0.34, 0.6], [0.4, 0]],
+      "strong": [[0, 0], [0.14, 6.5, "out"], [0.3, 0, "hit"], [0.36, 1], [0.42, 0, "hit"], [0.46, 0.2], [0.5, 0]]
+    },
+    "shaft-b.draw": {"follow": "shaft-a.draw", "lag": 0.07},
+    "head-b.y": {"follow": "head-a.y", "lag": 0.07, "scale": -1}
+  }
+}

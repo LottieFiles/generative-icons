@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "reply-all",
+  "label": "Reply all",
+  "intent": "The reply goes to everyone. Light: the reply arrow pulls back to the right, then fires left and stops with a hit; a beat later the outer chevron is knocked on ahead of it, and both spring back into place. Strong: a deeper pull-back, a harder fire, and the outer chevron is knocked further and settles in two beats.",
+  "parts": {
+    "outer": {"shape": {"polyline": [[10, 8], [4, 14], [10, 20]]}},
+    "head": {"shape": {"polyline": [[17, 8], [11, 14], [17, 20]]}},
+    "shaft": {"shape": {"path": "M11 14 L19.5 14 C23.6 14 27 17.4 27 21.5 L27 25"}}
+  },
+  "rigs": {
+    "reply": {"pivot": [16, 16], "carries": ["head", "shaft"]}
+  },
+  "motion": {
+    "reply.x": {
+      "light": [[0, 0], [0.1, 1.4, "out"], [0.2, -0.8, "hit"], [0.28, 0.2], [0.34, 0]],
+      "strong": [[0, 0], [0.12, 2, "out"], [0.21, -1, "hit"], [0.28, 0.3], [0.34, -0.1], [0.39, 0]]
+    },
+    "outer.x": {
+      "light": [[0, 0], [0.2, 0], [0.26, -1, "out"], [0.34, 0.2], [0.4, 0]],
+      "strong": [[0, 0], [0.21, 0], [0.27, -1.1, "out"], [0.35, 0.3], [0.41, -0.1], [0.46, 0]]
+    }
+  }
+}

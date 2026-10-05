@@ -110,7 +110,7 @@ fn whole_catalog_rebuilds_byte_identical() {
         "{:?}",
         &tally.failures[..tally.failures.len().min(20)]
     );
-    assert_eq!(tally.lotties, 3094);
+    assert_eq!(tally.lotties, 3432);
 }
 
 /// `package_set` on a copy of each set whose `set.json` is the pre-packaging record the

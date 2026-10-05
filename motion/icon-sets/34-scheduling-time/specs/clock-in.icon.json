@@ -1,0 +1,354 @@
+{
+ "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+ "format": "gai-icon/2",
+ "id": "clock-in",
+ "label": "Clock in",
+ "intent": "The time card is punched into the time clock to clock in, and pops back out to clock out. Light: the card is pushed down into the slot on top of the time clock and stops dead, and the clock dips with the punch and settles. Strong: the card lifts a little first, then is slammed into the slot; the clock thumps, rebounds and settles. The reverse clocks out: the clock gives a small kick and the card springs back up out of the slot, overshoots a little and settles.",
+ "state": {
+  "from": "clocked-out",
+  "to": "clocked-in",
+  "labels": [
+   "Clock in",
+   "Clock out"
+  ],
+  "reverse": "auto"
+ },
+ "parts": {
+  "card": {
+   "shape": {
+    "rect": [
+     13.9,
+     3.6,
+     8,
+     7.4
+    ],
+    "r": 1.2
+   },
+   "role": "surface",
+   "knockout": [
+    "card-line"
+   ]
+  },
+  "card-line": {
+   "//": "the line written on the card; it goes into the slot with the card",
+   "shape": {
+    "line": [
+     [
+      17.1,
+      6.7
+     ],
+     [
+      18.7,
+      6.7
+     ]
+    ]
+   }
+  },
+  "body": {
+   "shape": {
+    "rect": [
+     6,
+     11,
+     20,
+     16.8
+    ],
+    "r": 2.6
+   },
+   "role": "surface",
+   "solid": "ring"
+  },
+  "dial": {
+   "shape": {
+    "circle": [
+     [
+      16,
+      19.4
+     ],
+     4.8
+    ]
+   }
+  },
+  "hands": {
+   "shape": {
+    "polyline": [
+     [
+      16,
+      16.9
+     ],
+     [
+      16,
+      19.4
+     ],
+     [
+      17.9,
+      20.5
+     ]
+    ]
+   }
+  }
+ },
+ "rigs": {
+  "machine": {
+   "pivot": [
+    16,
+    27.8
+   ],
+   "carries": [
+    "body",
+    "dial",
+    "hands",
+    "card"
+   ]
+  },
+  "card": {
+   "//": "the card sinks into the slot on the body's top edge",
+   "pivot": [
+    17.9,
+    11
+   ],
+   "squash": {
+    "base": 11,
+    "widen": 0
+   },
+   "carries": [
+    "card",
+    "card-line"
+   ]
+  }
+ },
+ "reverse": {
+  "//": "clocking out has its own event: a kick from the clock, then the card springs up and lands",
+  "light": {
+   "machine.y": [
+    [
+     0,
+     0
+    ],
+    [
+     0.05,
+     0.4,
+     "out"
+    ],
+    [
+     0.13,
+     0,
+     "inOut"
+    ]
+   ],
+   "card.squash": [
+    [
+     0,
+     0.35
+    ],
+    [
+     0.05,
+     0.35
+    ],
+    [
+     0.18,
+     1.06,
+     "out"
+    ],
+    [
+     0.25,
+     0.98
+    ],
+    [
+     0.31,
+     1
+    ]
+   ],
+   "card-line.opacity": [
+    [
+     0,
+     0
+    ],
+    [
+     0.12,
+     0
+    ],
+    [
+     0.2,
+     1,
+     "out"
+    ]
+   ]
+  },
+  "strong": {
+   "machine.y": [
+    [
+     0,
+     0
+    ],
+    [
+     0.05,
+     0.6,
+     "out"
+    ],
+    [
+     0.13,
+     -0.2,
+     "inOut"
+    ],
+    [
+     0.19,
+     0
+    ]
+   ],
+   "card.squash": [
+    [
+     0,
+     0.35
+    ],
+    [
+     0.05,
+     0.35
+    ],
+    [
+     0.16,
+     1.07,
+     "out"
+    ],
+    [
+     0.23,
+     0.97
+    ],
+    [
+     0.29,
+     1.01
+    ],
+    [
+     0.34,
+     1
+    ]
+   ],
+   "card-line.opacity": [
+    [
+     0,
+     0
+    ],
+    [
+     0.1,
+     0
+    ],
+    [
+     0.18,
+     1,
+     "out"
+    ]
+   ]
+  }
+ },
+ "motion": {
+  "card.squash": {
+   "light": [
+    [
+     0,
+     1
+    ],
+    [
+     0.2,
+     0.35,
+     "hit"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     1
+    ],
+    [
+     0.1,
+     1.08,
+     "out"
+    ],
+    [
+     0.22,
+     0.35,
+     "hit"
+    ]
+   ]
+  },
+  "machine.y": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.2,
+     0
+    ],
+    [
+     0.25,
+     0.5,
+     "hit"
+    ],
+    [
+     0.33,
+     0,
+     "inOut"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.22,
+     0
+    ],
+    [
+     0.26,
+     0.9,
+     "hit"
+    ],
+    [
+     0.33,
+     -0.2
+    ],
+    [
+     0.39,
+     0.06
+    ],
+    [
+     0.44,
+     0
+    ]
+   ]
+  },
+  "card-line.opacity": {
+   "light": [
+    [
+     0,
+     1
+    ],
+    [
+     0.06,
+     1
+    ],
+    [
+     0.14,
+     0,
+     "in"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     1
+    ],
+    [
+     0.14,
+     1
+    ],
+    [
+     0.2,
+     0,
+     "in"
+    ]
+   ]
+  }
+ }
+}

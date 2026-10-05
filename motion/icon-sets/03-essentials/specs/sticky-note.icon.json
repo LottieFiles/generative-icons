@@ -1,0 +1,219 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "sticky-note",
+  "label": "Sticky note",
+  "intent": "A sticky note is jotted down. Light: the two lines of writing are written out across the note from the left, and the note dips under the pen and comes back. Strong: the note is slapped on first, swinging in from a tilt about its top corner and landing with a hit and a small bounce, then the two lines are written out.",
+  "parts": {
+    "body": {
+      "//": "a square note with its lower right corner folded over",
+      "shape": {
+        "polygon": [
+          {
+            "p": [
+              6.5,
+              6.5
+            ],
+            "r": 2
+          },
+          {
+            "p": [
+              25.5,
+              6.5
+            ],
+            "r": 2
+          },
+          {
+            "p": [
+              25.5,
+              19
+            ],
+            "r": 0.8
+          },
+          {
+            "p": [
+              19,
+              25.5
+            ],
+            "r": 0.8
+          },
+          {
+            "p": [
+              6.5,
+              25.5
+            ],
+            "r": 2
+          }
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "fold",
+          "gap": 0.4
+        },
+        {
+          "part": "lines",
+          "gap": 0.4
+        }
+      ]
+    },
+    "fold": {
+      "shape": {
+        "polyline": [
+          [
+            19,
+            25.5
+          ],
+          [
+            19,
+            19
+          ],
+          [
+            25.5,
+            19
+          ]
+        ],
+        "r": 1.6
+      }
+    },
+    "lines": {
+      "shape": [
+        {
+          "line": [
+            [
+              10.5,
+              11
+            ],
+            [
+              21.5,
+              11
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              10.5,
+              16.5
+            ],
+            [
+              17,
+              16.5
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "rigs": {
+    "note": {
+      "//": "the note hangs from its top left corner",
+      "pivot": [
+        6.5,
+        6.5
+      ],
+      "carries": [
+        "body",
+        "fold",
+        "lines"
+      ]
+    }
+  },
+  "motion": {
+    "lines.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.03,
+          0,
+          "step"
+        ],
+        [
+          0.32,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.03,
+          0,
+          "step"
+        ],
+        [
+          0.26,
+          0
+        ],
+        [
+          0.56,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "note.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0.6,
+          "out"
+        ],
+        [
+          0.16,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "note.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -9,
+          "out"
+        ],
+        [
+          0.2,
+          0,
+          "hit"
+        ],
+        {
+          "bounce": 0.28,
+          "amp": 0.2
+        },
+        {
+          "bounce": 0.34,
+          "amp": 0.3
+        }
+      ]
+    }
+  }
+}

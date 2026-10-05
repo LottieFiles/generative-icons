@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "satellite-dish",
+  "label": "Satellite dish",
+  "intent": "The satellite dish receives a signal. Light: a signal wave arrives from the sky, closes in on the receiver at the tip of the feed arm and fades, and the receiver flashes as it lands. Strong: the dish swings up to lock on first, two waves arrive in turn and the receiver flashes twice, the second time bigger, then the dish swings back and settles. The dish stays rigid.",
+  "parts": {
+    "wave-b":   {"shape": {"arc": [[22, 10], 5.5, -85, -5]}, "hidden": true},
+    "wave":     {"//": "hidden at rest: the signal only exists while it arrives", "shape": {"arc": [[22, 10], 5.5, -85, -5]}, "hidden": true},
+    "arm":      {"shape": {"line": [[17.4, 14.6], [21, 11]]}},
+    "receiver": {"shape": {"circle": [[22, 10], 2]}, "role": "fill"},
+    "dish":     {"shape": {"arc": [[17.4, 14.6], 9.5, 45, 225], "closed": true}, "role": "surface"}
+  },
+  "rigs": {
+    "mount":    {"pivot": [13, 19], "carries": ["dish", "arm", "receiver", "wave", "wave-b"]},
+    "receiver": {"pivot": [22, 10]}
+  },
+  "motion": {
+    "wave.opacity": {
+      "light":  [[0, 0], [0.04, 1, "out"], [0.16, 1], [0.24, 0, "in"]],
+      "strong": [[0, 0], [0.16, 0], [0.2, 1, "out"], [0.3, 1], [0.38, 0, "in"]]
+    },
+    "wave.r": {
+      "light":  [[0, 0], [0.24, -3.5, "in"], [0.26, 0, "step"]],
+      "strong": [[0, 0], [0.16, 0], [0.38, -3.5, "in"], [0.4, 0, "step"]]
+    },
+    "wave-b.opacity": {"strong": {"follow": "wave.opacity", "lag": 0.14}},
+    "wave-b.r":       {"strong": {"follow": "wave.r", "lag": 0.14}},
+    "receiver.scale": {
+      "light":  [[0, 1], [0.2, 1], [0.25, 1.4, "out"], [0.33, 0.92], [0.4, 1]],
+      "strong": [[0, 1], [0.34, 1], [0.38, 1.3, "out"], [0.45, 0.92], [0.48, 1], [0.52, 1.55, "out"], [0.6, 0.9], [0.68, 1]]
+    },
+    "mount.rotate": {
+      "strong": [[0, 0], [0.14, -11, "out"], [0.2, -10], [0.62, -10], [0.75, 1.5, "inOut"], [0.84, 0]]
+    }
+  }
+}

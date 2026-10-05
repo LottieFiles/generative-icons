@@ -1,0 +1,272 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "timesheet",
+  "label": "Timesheet",
+  "intent": "Hours are logged on the timesheet. Light: the clock's minute hand runs one full hour, and as it lands the new entry is written on the sheet, its line drawing out from the left. Strong: the hand runs two hours: the first lap lands and writes one entry with a hard stop, the second lap writes the next, and the clock takes the last entry with a thump. The sheet stays rigid.",
+  "parts": {
+    "sheet": {
+      "//": "the sheet's outline stops short of the clock badge",
+      "shape": {
+        "polyline": [
+          [
+            20.5,
+            11.7
+          ],
+          [
+            20.5,
+            4.5
+          ],
+          [
+            5,
+            4.5
+          ],
+          [
+            5,
+            27.5
+          ],
+          [
+            14.4,
+            27.5
+          ]
+        ],
+        "r": 2.5
+      }
+    },
+    "row-1": {
+      "shape": {
+        "line": [
+          [
+            9,
+            9.5
+          ],
+          [
+            16.5,
+            9.5
+          ]
+        ]
+      }
+    },
+    "row-2": {
+      "shape": {
+        "line": [
+          [
+            9,
+            14
+          ],
+          [
+            15,
+            14
+          ]
+        ]
+      }
+    },
+    "row-3": {
+      "shape": {
+        "line": [
+          [
+            9,
+            18.5
+          ],
+          [
+            12.4,
+            18.5
+          ]
+        ]
+      }
+    },
+    "dial": {
+      "shape": {
+        "circle": [
+          [
+            21.6,
+            21.2
+          ],
+          6.2
+        ]
+      },
+      "role": "surface",
+      "solid": "ring"
+    },
+    "hour": {
+      "shape": {
+        "line": [
+          [
+            21.6,
+            21.2
+          ],
+          [
+            24,
+            21.2
+          ]
+        ]
+      }
+    },
+    "minute": {
+      "shape": {
+        "line": [
+          [
+            21.6,
+            21.2
+          ],
+          [
+            21.6,
+            18.1
+          ]
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "clock": {
+      "//": "the clock badge takes the last entry in Strong",
+      "pivot": [
+        21.6,
+        27.4
+      ],
+      "carries": [
+        "dial",
+        "hour",
+        "minute"
+      ]
+    },
+    "minute": {
+      "pivot": [
+        21.6,
+        21.2
+      ]
+    }
+  },
+  "motion": {
+    "minute.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.32,
+          360,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.24,
+          360,
+          "hit"
+        ],
+        [
+          0.29,
+          360
+        ],
+        [
+          0.47,
+          720,
+          "hit"
+        ]
+      ]
+    },
+    "row-3.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.32,
+          0
+        ],
+        [
+          0.44,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.47,
+          0
+        ],
+        [
+          0.55,
+          1,
+          "hit"
+        ]
+      ]
+    },
+    "row-2.draw": {
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.017,
+          0,
+          "step"
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.34,
+          1,
+          "hit"
+        ]
+      ]
+    },
+    "clock.y": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.55,
+          0
+        ],
+        [
+          0.59,
+          0.5,
+          "hit"
+        ],
+        [
+          0.66,
+          -0.15
+        ],
+        [
+          0.72,
+          0
+        ]
+      ]
+    }
+  }
+}

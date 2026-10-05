@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "block-trackers",
+  "label": "Block trackers",
+  "intent": "Trackers are blocked: a slash strikes through the tracking reticle. Light: the reticle closes in to lock on, a slash strikes across it from top-left to bottom-right, and the reticle is thrown back open with a small rebound; the slash stays. Strong: the ticks swing off searching, snap back and close in harder, the slash strikes and snaps a little past its length, and the reticle is thrown wider and settles in two beats. Allow trackers retracts the slash to the top-left and the reticle locks on once again.",
+  "state": {"from": "allowed", "to": "blocked", "labels": ["Block trackers", "Allow trackers"], "reverse": "auto"},
+  "parts": {
+    "tick-right": {"shape": {"line": [[22, 16], [26, 16]]}},
+    "tick-left": {"shape": {"line": [[6, 16], [10, 16]]}},
+    "tick-down": {"shape": {"line": [[16, 22], [16, 26]]}},
+    "tick-up": {"shape": {"line": [[16, 6], [16, 10]]}},
+    "ring": {"//": "the set's targeting reticle, without its centre dot so the slash crosses clean", "shape": {"circle": [[16, 16], 6.5]}},
+    "slash": {"//": "hidden while trackers are allowed: the strike that blocks them, between the ticks", "shape": {"line": [[7, 7], [25, 25]]}, "hidden": true}
+  },
+  "rigs": {
+    "ticks": {"pivot": [16, 16], "carries": ["tick-right", "tick-left", "tick-down", "tick-up"]},
+    "ring": {"pivot": [16, 16]},
+    "slash": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "ticks.scale": {
+      "light":  [[0, 1], [0.12, 0.8, "in"], [0.16, 0.8], [0.27, 1.12, "out"], [0.35, 0.97], [0.42, 1]],
+      "strong": [[0, 1], [0.12, 1.1, "out"], [0.26, 0.74, "hit"], [0.3, 0.74], [0.42, 1.15, "out"], [0.5, 0.95], [0.58, 1.03], [0.65, 1]]
+    },
+    "ticks.rotate": {"//": "Strong only: the tracker searches before it tries to lock on", "strong": [[0, 0], [0.12, -30, "out"], [0.26, 0, "hit"]]},
+    "ring.scale": {"follow": "ticks.scale", "lag": 0.04, "scale": 0.5, "offset": 0.5},
+    "slash.opacity": {
+      "light":  [[0, 0], [0.13, 0], [0.14, 1, "step"]],
+      "strong": [[0, 0], [0.28, 0], [0.29, 1, "step"]]
+    },
+    "slash.draw": {
+      "light":  [[0, 1], [0.13, 0, "step"], [0.27, 1, "out"]],
+      "strong": [[0, 1], [0.28, 0, "step"], [0.4, 1, "out"]]
+    },
+    "slash.scale": {"strong": [[0, 1], [0.4, 1], [0.44, 1.08, "out"], [0.5, 0.98], [0.55, 1]]}
+  },
+  "reverse": {
+    "//": "Allow: the slash pulls back to where it started and the reticle locks on again, instead of replaying the throw",
+    "light": {
+      "slash.draw": [[0, 1], [0.14, 0, "in"], [0.15, 1, "step"]],
+      "slash.opacity": [[0, 1], [0.14, 1], [0.15, 0, "step"]],
+      "ticks.scale": [[0, 1], [0.1, 1], [0.2, 0.82, "hit"], [0.28, 1.03], [0.34, 1]]
+    },
+    "strong": {
+      "slash.scale": [[0, 1], [0.06, 1.06, "out"], [0.12, 1]],
+      "slash.draw": [[0, 1], [0.06, 1], [0.18, 0, "in"], [0.19, 1, "step"]],
+      "slash.opacity": [[0, 1], [0.18, 1], [0.19, 0, "step"]],
+      "ticks.rotate": [[0, 0], [0.46, 0]],
+      "ticks.scale": [[0, 1], [0.14, 1], [0.25, 0.76, "hit"], [0.33, 1.05], [0.4, 0.98], [0.46, 1]]
+    }
+  }
+}

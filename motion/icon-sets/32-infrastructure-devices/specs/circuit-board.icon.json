@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "circuit-board",
+  "label": "Circuit board",
+  "intent": "Current runs through the circuit board. Light: the current enters each trace at the board's edge and runs along it to its pad, one trace after another, and each pad flashes as the current reaches it. Strong: two pulses run through the traces in turn, the second faster, and the pads flash twice, the second time bigger. The board never moves.",
+  "parts": {
+    "trace-1": {"shape": {"polyline": [[10.5, 5], [10.5, 10], [20, 10]], "r": 2}},
+    "trace-2": {"shape": {"line": [[5, 16], [15, 16]]}},
+    "trace-3": {"shape": {"polyline": [[21.5, 27], [21.5, 22], [12, 22]], "r": 2}},
+    "pad-1":   {"shape": {"circle": [[21, 10], 2]}, "role": "fill"},
+    "pad-2":   {"shape": {"circle": [[16, 16], 2]}, "role": "fill"},
+    "pad-3":   {"shape": {"circle": [[11, 22], 2]}, "role": "fill"},
+    "board":   {"//": "Solid is a ring so the traces can draw and the pads flash on it", "shape": {"rect": [4, 4, 24, 24], "r": 3}, "role": "surface", "solid": "ring"}
+  },
+  "motion": {
+    "trace-1.draw": {
+      "light":  [[0, 1], [0.02, 0, "step"], [0.18, 1, "in"]],
+      "strong": [[0, 1], [0.02, 0, "step"], [0.17, 1, "in"], [0.32, 0, "step"], [0.44, 1, "in"]]
+    },
+    "trace-2.draw": {"follow": "trace-1.draw", "lag": 0.07},
+    "trace-3.draw": {"follow": "trace-1.draw", "lag": 0.14},
+    "pad-1.scale": {
+      "light":  [[0, 1], [0.17, 1], [0.21, 1.4, "out"], [0.29, 0.92], [0.35, 1]],
+      "strong": [[0, 1], [0.16, 1], [0.2, 1.3, "out"], [0.27, 0.95], [0.31, 1], [0.43, 1], [0.47, 1.5, "out"], [0.55, 0.9], [0.61, 1.04], [0.67, 1]]
+    },
+    "pad-2.scale": {"follow": "pad-1.scale", "lag": 0.07},
+    "pad-3.scale": {"follow": "pad-1.scale", "lag": 0.14}
+  }
+}

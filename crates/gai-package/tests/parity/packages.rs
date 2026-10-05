@@ -83,7 +83,7 @@ fn packages_match_checkout_dist() {
         "{} ({files} files identical to packages/*/dist)",
         report.summary()
     );
-    assert_eq!(report.icons, 1005);
+    assert_eq!(report.icons, 1141);
 }
 
 /// The inputs `build-packages.py` and `pack-release.mjs` read.

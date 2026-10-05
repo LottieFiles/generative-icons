@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 10,
-  "actions": 28,
+  "icons": 20,
+  "actions": 50,
   "nativeTransformNodes": 64,
   "nativeTransformMaxCoordinateError": 0.000006000000002615025,
   "checks": [
@@ -486,6 +486,98 @@
         "voice-speed-reverse",
         "voice-speed-strong",
         "voice-speed-reverse-strong"
+      ]
+    },
+    {
+      "icon": "voice-id",
+      "spec": "specs/voice-id.icon.json",
+      "specSha256": "fe8f0e2589dffa5544392666c2ec13f3c9722b46f26780287d946e43adeafb5b",
+      "actions": [
+        "voice-id",
+        "voice-id-strong"
+      ]
+    },
+    {
+      "icon": "mic-level",
+      "spec": "specs/mic-level.icon.json",
+      "specSha256": "a6035cc74fc924ec9f87b6c00627d598b9ebfb5f9cd4720c271e6ba9cc85047a",
+      "actions": [
+        "mic-level",
+        "mic-level-strong"
+      ]
+    },
+    {
+      "icon": "active-speaker",
+      "spec": "specs/active-speaker.icon.json",
+      "specSha256": "450c4fa57ac45942ff8027dd68bfa24bff4964da50aac8e31ac81e97d0fbf1b3",
+      "actions": [
+        "active-speaker",
+        "active-speaker-strong"
+      ]
+    },
+    {
+      "icon": "voice-clone",
+      "spec": "specs/voice-clone.icon.json",
+      "specSha256": "6b3f1112ce2c8a245acd6a93a90f36be47698930ef1a8621930070d594c57586",
+      "actions": [
+        "voice-clone",
+        "voice-clone-strong"
+      ]
+    },
+    {
+      "icon": "voice-pitch",
+      "spec": "specs/voice-pitch.icon.json",
+      "specSha256": "064d0ccda0ef7d69616ffcd55ba33be92631c1ee92e3c1f3e636ffdbd3fa37f8",
+      "actions": [
+        "voice-pitch",
+        "voice-pitch-reverse",
+        "voice-pitch-strong",
+        "voice-pitch-reverse-strong"
+      ]
+    },
+    {
+      "icon": "discard-recording",
+      "spec": "specs/discard-recording.icon.json",
+      "specSha256": "797eab824a7e6752b9ebaec620766113bb97c7243792676bfca2d8b5f127cd99",
+      "actions": [
+        "discard-recording",
+        "discard-recording-strong"
+      ]
+    },
+    {
+      "icon": "mic-access",
+      "spec": "specs/mic-access.icon.json",
+      "specSha256": "fe57605e24b142d7e5fd6e9212feb6fd648775cc0423a2b741a48835f07c1ab8",
+      "actions": [
+        "mic-access",
+        "mic-access-strong"
+      ]
+    },
+    {
+      "icon": "voice-command",
+      "spec": "specs/voice-command.icon.json",
+      "specSha256": "c035fa16f77183a33f5ba86649a244412e0ad66b4699acfb9705fcd00662b94d",
+      "actions": [
+        "voice-command",
+        "voice-command-strong"
+      ]
+    },
+    {
+      "icon": "karaoke",
+      "spec": "specs/karaoke.icon.json",
+      "specSha256": "e3fa32fecb8b554ede1a2c83e686bc146254709aff98c22dc3c4dc9f6f964e3b",
+      "actions": [
+        "karaoke",
+        "karaoke-strong"
+      ]
+    },
+    {
+      "icon": "pronunciation",
+      "spec": "specs/pronunciation.icon.json",
+      "specSha256": "9cce8c94ff203492d2c8b154d3b25cac3663bd3f0946b77a543c2ae443e5a399",
+      "actions": [
+        "pronunciation",
+        "pronunciation-strong"
       ]
     }
   ]

@@ -1,0 +1,194 @@
+{
+ "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+ "format": "gai-icon/2",
+ "id": "audio-description",
+ "label": "Audio description",
+ "intent": "Audio description turns on: a narration waveform opens beneath the AD letters on the caption plate. Light: the wave draws in from left to right as its swing grows, overshoots a touch and settles on. Strong: the wave writes faster, swings wider and rings twice before it settles. The plate and letters never move; the reverse flattens the wave and draws it away.",
+ "//": "The plate matches closed-captions (4.5-27.5 x 7.5-24.5, r 3) and the wave sits on its caption line (y 20.5), so the two media toggles read as a pair.",
+ "state": {
+  "from": "off",
+  "to": "on",
+  "labels": [
+   "Turn on",
+   "Turn off"
+  ],
+  "reverse": "auto"
+ },
+ "parts": {
+  "plate": {
+   "shape": {
+    "rect": [
+     4.5,
+     7.5,
+     23,
+     17
+    ],
+    "r": 3
+   },
+   "role": "surface",
+   "solid": "fill",
+   "knockout": [
+    {
+     "part": "letter-a",
+     "gap": 0.15
+    },
+    {
+     "part": "bar-a",
+     "gap": 0.15
+    },
+    {
+     "part": "letter-d",
+     "gap": 0.15
+    },
+    {
+     "part": "wave",
+     "gap": 0.15
+    }
+   ]
+  },
+  "letter-a": {
+   "shape": {
+    "polyline": [
+     [
+      8.7,
+      16
+     ],
+     [
+      11.1,
+      11
+     ],
+     [
+      13.5,
+      16
+     ]
+    ],
+    "r": 0.6
+   }
+  },
+  "bar-a": {
+   "shape": {
+    "line": [
+     [
+      9.6,
+      14.3
+     ],
+     [
+      12.6,
+      14.3
+     ]
+    ]
+   }
+  },
+  "letter-d": {
+   "shape": {
+    "path": "M18 11 L18 16 L19.4 16 C21.3 16 22.6 14.9 22.6 13.5 C22.6 12.1 21.3 11 19.4 11 Z"
+   }
+  },
+  "wave": {
+   "//": "hidden while off, and flat: a two-swing narration wave on the caption line, drawn from the left; its swing (amp) is keyed to 1 when on",
+   "shape": {
+    "wave": {
+     "x": [
+      10,
+      22
+     ],
+     "y": 20.5,
+     "cycles": 2,
+     "amp": 0
+    }
+   },
+   "hidden": true
+  }
+ },
+ "motion": {
+  "wave.opacity": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.04,
+     1,
+     "out"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.03,
+     1,
+     "out"
+    ]
+   ]
+  },
+  "wave.draw": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.3,
+     1,
+     "out"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.22,
+     1,
+     "out"
+    ]
+   ]
+  },
+  "wave.amp": {
+   "//": "the swing grows from flat as it writes, overshoots and settles at 1",
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.3,
+     1.35,
+     "out"
+    ],
+    [
+     0.42,
+     1
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.22,
+     1.45,
+     "out"
+    ],
+    [
+     0.32,
+     0.7
+    ],
+    [
+     0.41,
+     1.12
+    ],
+    [
+     0.5,
+     1
+    ]
+   ]
+  }
+ }
+}

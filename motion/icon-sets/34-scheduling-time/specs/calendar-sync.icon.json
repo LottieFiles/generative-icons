@@ -1,0 +1,31 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "calendar-sync",
+  "label": "Calendar sync",
+  "intent": "The calendar syncs: the two sync arrows on it chase each other round. Light: the arrows turn half a turn clockwise, each taking the other's place, stop with a hit and settle. Strong: the arrows wind back first, then drive a full turn fast, stop hard, and the calendar takes the stop with a thump, a rebound and a settle. The leaf stays rigid.",
+  "cycle": 180,
+  "parts": {
+    "leaf":   {"shape": {"rect": [5, 6, 22, 21], "r": 2.7}, "role": "surface", "solid": "ring"},
+    "header": {"shape": {"line": [[5.5, 11.5], [26.5, 11.5]]}},
+    "peg-l":  {"shape": {"line": [[11, 4], [11, 8]]}},
+    "peg-r":  {"shape": {"line": [[21, 4], [21, 8]]}},
+    "arc-a":  {"shape": {"arc": [[16, 19.3], 4.3, 230, 360]}},
+    "head-a": {"shape": {"polyline": [[18.74, 17.74], [20.3, 19.3], [21.86, 17.74]]}},
+    "arc-b":  {"shape": {"arc": [[16, 19.3], 4.3, 50, 180]}},
+    "head-b": {"shape": {"polyline": [[13.26, 20.86], [11.7, 19.3], [10.14, 20.86]]}}
+  },
+  "rigs": {
+    "calendar": {"//": "the whole calendar takes the stop in Strong", "pivot": [16, 27], "carries": ["leaf", "header", "peg-l", "peg-r", "arrows"]},
+    "arrows":   {"//": "both arrows turn together about their shared centre", "pivot": [16, 19.3], "carries": ["arc-a", "head-a", "arc-b", "head-b"]}
+  },
+  "motion": {
+    "arrows.rotate": {
+      "light":  [[0, 0], [0.32, 180, "hit"], [0.39, 172], [0.45, 180]],
+      "strong": [[0, 0], [0.1, -25, "out"], [0.4, 360, "hit"], [0.47, 350], [0.53, 360]]
+    },
+    "calendar.y": {
+      "strong": [[0, 0], [0.4, 0], [0.44, 1.0, "hit"], [0.51, -0.25], [0.57, 0.08], [0.62, 0]]
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "split-file",
+  "label": "Split file",
+  "intent": "One file is split into two. Light: the sheet parts along its seam and the two halves pull apart, each growing into a whole sheet of its own; the left one gains its folded corner as it lands, and both rebound once and settle. Strong: the halves crack open from the top first, then snap apart harder and settle in two beats. The preview reset slides the two sheets back together into the single sheet.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "seam": {"//": "Solid only: the cut between the halves", "shape": {"rect": [15.7, 3, 0.6, 26], "r": 0}, "outline": "none"},
+    "left": {
+      "shape": {
+        "morph": [
+          {
+            "path": "M9 6.1 C9 5.217 9.717 4.5 10.6 4.5 L12.99 4.5 C12.996 4.5 13.004 4.5 13.01 4.5 L15.99 4.5 C15.996 4.5 16 4.504 16 4.51 L16 27.49 C16 27.496 15.996 27.5 15.99 27.5 L10.6 27.5 C9.717 27.5 9 26.783 9 25.9 Z"
+          },
+          {
+            "path": "M3.5 7.6 C3.5 6.717 4.217 6 5.1 6 L8.7 6 C9.142 6 9.753 6.253 10.066 6.566 L12.934 9.434 C13.247 9.747 13.5 10.358 13.5 10.8 L13.5 24.4 C13.5 25.283 12.783 26 11.9 26 L5.1 26 C4.217 26 3.5 25.283 3.5 24.4 Z"
+          }
+        ],
+        "by": "split"
+      },
+      "role": "surface",
+      "solid": "fill",
+      "knockout": [{"part": "seam", "gap": 0}]
+    },
+    "left-fold": {
+      "//": "hidden at rest: the left half becomes a whole sheet",
+      "shape": {"polyline": [[9.5, 6.4], [9.5, 10], [13.1, 10]], "r": 0.8},
+      "solid": "none",
+      "hidden": true
+    },
+    "right": {
+      "shape": {
+        "morph": [
+          {
+            "path": "M16 4.51 C16 4.504 16.004 4.5 16.01 4.5 L17.2 4.5 C17.642 4.5 18.253 4.753 18.566 5.066 L22.434 8.934 C22.747 9.247 23 9.858 23 10.3 L23 25.9 C23 26.783 22.283 27.5 21.4 27.5 L16.01 27.5 C16.004 27.5 16 27.496 16 27.49 Z"
+          },
+          {
+            "path": "M18.5 7.6 C18.5 6.717 19.217 6 20.1 6 L23.7 6 C24.142 6 24.753 6.253 25.066 6.566 L27.934 9.434 C28.247 9.747 28.5 10.358 28.5 10.8 L28.5 24.4 C28.5 25.283 27.783 26 26.9 26 L20.1 26 C19.217 26 18.5 25.283 18.5 24.4 Z"
+          }
+        ],
+        "by": "split"
+      },
+      "role": "surface",
+      "solid": "fill",
+      "knockout": [{"part": "seam", "gap": 0}]
+    },
+    "right-fold": {
+      "shape": {
+        "morph": [{"polyline": [[18, 4.9], [18, 9.5], [22.6, 9.5]], "r": 0.8}, {"polyline": [[24.5, 6.4], [24.5, 10], [28.1, 10]], "r": 0.8}],
+        "by": "split"
+      },
+      "solid": "none"
+    }
+  },
+  "rigs": {"left": {"pivot": [16, 27.5], "carries": ["left", "left-fold"]}, "right": {"pivot": [16, 27.5], "carries": ["right", "right-fold"]}},
+  "motion": {
+    "split": {"light": [[0, 0], [0.26, 1, "inOut"]], "strong": [[0, 0], [0.12, 0], [0.26, 1, "out"]]},
+    "left.x": {"light": [[0, 0], [0.24, 0], [0.29, -0.5, "out"], [0.36, 0]], "strong": [[0, 0], [0.22, 0], [0.27, -0.6, "out"], [0.33, 0.2], [0.39, 0]]},
+    "right.x": {"follow": "left.x", "scale": -1},
+    "left.rotate": {"light": [[0, 0]], "strong": [[0, 0], [0.1, -5, "out"], [0.2, 0, "in"]]},
+    "right.rotate": {"follow": "left.rotate", "scale": -1},
+    "left-fold.opacity": {"light": [[0, 0], [0.2, 0], [0.21, 1, "step"]], "strong": [[0, 0], [0.18, 0], [0.19, 1, "step"]]},
+    "left-fold.draw": {"light": [[0, 1], [0.2, 0, "step"], [0.3, 1, "out"]], "strong": [[0, 1], [0.18, 0, "step"], [0.27, 1, "out"]]}
+  },
+  "reverse": {
+    "//": "the reset slides the two sheets back together into one, so no frame is empty",
+    "light": {
+      "split": [[0, 1], [0.26, 0, "inOut"]],
+      "left-fold.opacity": [[0, 1], [0.08, 0, "in"]],
+      "left-fold.draw": [[0, 1], [0.08, 1]],
+      "left.opacity": [[0, 1], [0.26, 1]],
+      "right.opacity": [[0, 1], [0.26, 1]],
+      "right-fold.opacity": [[0, 1], [0.26, 1]],
+      "left.x": [[0, 0], [0.26, 0]],
+      "left.rotate": [[0, 0], [0.26, 0]]
+    },
+    "strong": {
+      "split": [[0, 1], [0.2, 0, "inOut"]],
+      "left-fold.opacity": [[0, 1], [0.08, 0, "in"]],
+      "left-fold.draw": [[0, 1], [0.08, 1]],
+      "left.opacity": [[0, 1], [0.2, 1]],
+      "right.opacity": [[0, 1], [0.2, 1]],
+      "right-fold.opacity": [[0, 1], [0.2, 1]],
+      "left.x": [[0, 0], [0.2, 0]],
+      "left.rotate": [[0, 0], [0.2, 0]]
+    }
+  }
+}

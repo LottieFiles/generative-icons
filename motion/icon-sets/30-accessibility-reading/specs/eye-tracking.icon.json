@@ -1,0 +1,33 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "eye-tracking",
+  "label": "Eye tracking",
+  "intent": "The tracker follows the eye's gaze. Light: the pupil darts right and stops dead; a beat later the corner brackets slide after it and lock on with a small squeeze, then gaze and brackets return to centre. Strong: the pupil darts right, then across to the left, and the brackets chase and lock on each time before everything returns to centre with a small settle. The eye never moves; only the gaze does.",
+  "parts": {
+    "corner-tl": {"shape": {"polyline": [[4, 9.5], [4, 4], [9.5, 4]], "r": 2}},
+    "corner-tr": {"mirror": {"of": "corner-tl"}},
+    "corner-bl": {"mirror": {"of": "corner-tl", "y": 16}},
+    "corner-br": {"mirror": {"of": "corner-tr", "y": 16}},
+    "eye":   {"shape": {"path": "M5.5 16 C8.8 10.3 23.2 10.3 26.5 16 C23.2 21.7 8.8 21.7 5.5 16 Z"}, "role": "surface", "solid": "ring"},
+    "pupil": {"shape": {"circle": [[16, 16], 2.3]}, "role": "fill"}
+  },
+  "rigs": {
+    "frame": {"//": "the four brackets follow the gaze as one", "pivot": [16, 16], "carries": ["corner-tl", "corner-tr", "corner-bl", "corner-br"]}
+  },
+  "motion": {
+    "pupil.x": {
+      "light":  [[0, 0], [0.1, 3, "hit"], [0.3, 3], [0.42, 0, "inOut"]],
+      "strong": [[0, 0], [0.09, 3, "hit"], [0.24, 3], [0.36, -3, "hit"], [0.5, -3], [0.6, 0, "out"], [0.65, 0.4], [0.7, 0]]
+    },
+    "frame.x": {
+      "light":  {"follow": "pupil.x", "scale": 0.33, "lag": 0.07},
+      "strong": {"follow": "pupil.x", "scale": 0.33, "lag": 0.07}
+    },
+    "frame.scale": {
+      "//": "the lock-on squeeze as the brackets arrive",
+      "light":  [[0, 1], [0.15, 1], [0.21, 0.93, "hit"], [0.28, 1]],
+      "strong": [[0, 1], [0.14, 1], [0.2, 0.92, "hit"], [0.27, 1], [0.41, 1], [0.47, 0.92, "hit"], [0.54, 1]]
+    }
+  }
+}

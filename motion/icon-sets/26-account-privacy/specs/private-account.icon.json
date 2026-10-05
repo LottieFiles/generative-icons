@@ -1,0 +1,49 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "private-account",
+  "label": "Private account",
+  "intent": "The account is made private: the padlock beside the person locks. Light: the raised shackle swings shut and slams down into the padlock with a hit, the padlock jolts, and a beat later the person ducks and settles, out of public view. Strong: the shackle lifts and opens a little first, snaps shut and slams in, the padlock jolts harder, and the person ducks twice, each smaller. Make public pops the shackle up and swings it open with a small overshoot while the person perks up.",
+  "state": {"from": "public", "to": "private", "labels": ["Make private", "Make public"], "reverse": "auto"},
+  "parts": {
+    "head": {"shape": {"circle": [[13, 9.5], 4.5]}, "role": "surface"},
+    "shoulders": {"//": "the set's person, as block-user draws it", "shape": {"path": "M5 26 C5 21 8.5 18 13 18 C14.1 18 15.1 18.2 16 18.5"}},
+    "pad": {"shape": {"rect": [18.7, 21.6, 8.8, 6.4], "r": 1.6}, "role": "fill"},
+    "shackle": {
+      "//": "the open shackle: the closed one (legs at x 20.9 and 25.3, top at 16.8) turned 26 degrees about its right leg and raised 1.2",
+      "shape": {"path": "M21.345 18.271 L22.397 16.114 C22.93 15.022 24.247 14.568 25.339 15.101 C26.431 15.634 26.885 16.951 26.352 18.043 L25.3 20.2"}
+    }
+  },
+  "rigs": {
+    "lock": {"//": "the padlock as a whole jolts when the shackle seats", "pivot": [23.1, 28], "carries": ["pad", "shackle"]},
+    "shackle": {"//": "rotate -26 and drop 1.2 lands exactly on the closed shackle", "pivot": [25.3, 20.2]},
+    "person": {"pivot": [10, 26], "carries": ["head", "shoulders"]}
+  },
+  "motion": {
+    "shackle.rotate": {"light": [[0, 0], [0.14, -26, "out"]], "strong": [[0, 0], [0.06, 4, "out"], [0.16, -26, "hit"]]},
+    "shackle.y": {"light": [[0, 0], [0.13, 0], [0.21, 1.2, "hit"]], "strong": [[0, 0], [0.06, -0.5, "out"], [0.16, -0.5], [0.22, 1.2, "hit"]]},
+    "lock.y": {
+      "light":  [[0, 0], [0.21, 0], [0.25, 0.9, "out"], [0.31, 0]],
+      "strong": [[0, 0], [0.22, 0], [0.26, 1.1, "out"], [0.32, -0.2], [0.37, 0]]
+    },
+    "person.y": {
+      "light":  [[0, 0], [0.23, 0], [0.3, 1.2, "out"], [0.38, -0.2], [0.44, 0]],
+      "strong": [[0, 0], [0.24, 0], [0.31, 1.5, "out"], [0.39, -0.3], [0.46, 0.5, "out"], [0.52, 0]]
+    }
+  },
+  "reverse": {
+    "//": "written out: making the account public pops the shackle and swings it open, and the person perks up instead of ducking",
+    "light": {
+      "shackle.y": [[0, 1.2], [0.1, 0, "out"]],
+      "shackle.rotate": [[0, -26], [0.06, -26], [0.27, 3, "out"], [0.36, 0]],
+      "lock.y": [[0, 0], [0.36, 0]],
+      "person.y": [[0, 0], [0.12, 0], [0.2, -1.2, "out"], [0.28, 0.2], [0.34, 0]]
+    },
+    "strong": {
+      "shackle.y": [[0, 1.2], [0.08, -0.4, "out"], [0.16, 0]],
+      "shackle.rotate": [[0, -26], [0.08, -26], [0.28, 4, "out"], [0.36, -1.2], [0.44, 0]],
+      "lock.y": [[0, 0], [0.44, 0]],
+      "person.y": [[0, 0], [0.14, 0], [0.22, -1.6, "out"], [0.3, 0.3], [0.36, -0.4], [0.42, 0]]
+    }
+  }
+}

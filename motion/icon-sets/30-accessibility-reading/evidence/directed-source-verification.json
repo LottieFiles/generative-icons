@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 10,
-  "actions": 28,
+  "icons": 20,
+  "actions": 52,
   "nativeTransformNodes": 16,
   "nativeTransformMaxCoordinateError": 0.000005999999999062311,
   "checks": [
@@ -203,6 +203,100 @@
       "actions": [
         "keyboard-shortcuts",
         "keyboard-shortcuts-strong"
+      ]
+    },
+    {
+      "icon": "braille",
+      "spec": "specs/braille.icon.json",
+      "specSha256": "1c9081bba191b605a04bb01e6f9c5cfc3fbbcc8a93d103a51f286ae9f2f68164",
+      "actions": [
+        "braille",
+        "braille-strong"
+      ]
+    },
+    {
+      "icon": "audio-description",
+      "spec": "specs/audio-description.icon.json",
+      "specSha256": "c6ce506353474a0c10f6d27213eb7c2fb10dcb5b950b373d5793926cdd374874",
+      "actions": [
+        "audio-description",
+        "audio-description-reverse",
+        "audio-description-strong",
+        "audio-description-reverse-strong"
+      ]
+    },
+    {
+      "icon": "eye-tracking",
+      "spec": "specs/eye-tracking.icon.json",
+      "specSha256": "f8bf6865e036ab2399c9f32478788941fd6ebe2496e9cced76a9139bb2019abd",
+      "actions": [
+        "eye-tracking",
+        "eye-tracking-strong"
+      ]
+    },
+    {
+      "icon": "letter-spacing",
+      "spec": "specs/letter-spacing.icon.json",
+      "specSha256": "05e302213ba9df8e4e07987305c2042419cad51db92a3555330001dadeb9ae2d",
+      "actions": [
+        "letter-spacing",
+        "letter-spacing-strong"
+      ]
+    },
+    {
+      "icon": "audiobook",
+      "spec": "specs/audiobook.icon.json",
+      "specSha256": "49079e3053c9b68fe9279f789c1813fc33b8a36cc63f40f7994fe47385d2e1ed",
+      "actions": [
+        "audiobook",
+        "audiobook-strong"
+      ]
+    },
+    {
+      "icon": "dwell-click",
+      "spec": "specs/dwell-click.icon.json",
+      "specSha256": "5d66101a2683ad74ac585f6d047b071face69226d367e3553d8d0e41ae77396c",
+      "actions": [
+        "dwell-click",
+        "dwell-click-strong"
+      ]
+    },
+    {
+      "icon": "pointer-size",
+      "spec": "specs/pointer-size.icon.json",
+      "specSha256": "92c8afa8cf15472f16993c78128df7aca54a1a1d72abed2937c7ca35bc9f448a",
+      "actions": [
+        "pointer-size",
+        "pointer-size-reverse",
+        "pointer-size-strong",
+        "pointer-size-reverse-strong"
+      ]
+    },
+    {
+      "icon": "low-vision",
+      "spec": "specs/low-vision.icon.json",
+      "specSha256": "10093a71f84091c0eb8945aa2b266443a530c84ccdc2da325ef0853c2eb062f4",
+      "actions": [
+        "low-vision",
+        "low-vision-strong"
+      ]
+    },
+    {
+      "icon": "color-filters",
+      "spec": "specs/color-filters.icon.json",
+      "specSha256": "a564d309f495d43f98155256f091d94a9bc2af46698bb744d3f9df11d79827ff",
+      "actions": [
+        "color-filters",
+        "color-filters-strong"
+      ]
+    },
+    {
+      "icon": "glasses",
+      "spec": "specs/glasses.icon.json",
+      "specSha256": "582c4534229ca61e197aaaba24a16cf6b1d14fdd2cb65a0a44316198b31eaad8",
+      "actions": [
+        "glasses",
+        "glasses-strong"
       ]
     }
   ]

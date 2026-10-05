@@ -1,0 +1,338 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "annotation-spiral",
+  "label": "Spiral pointer",
+  "intent": "A spiral arrow unwinds from its source dot and shoots off to the target. Light: the stroke winds out from the dot at its heart in widening turns, runs off along the last turn, then the head opens at the tip. Strong: the dot presses as the pen lands, the spiral whips out fast while its coils swell and spring back, and the head snaps open past its angle and settles. The preview reset fades the arrow back to the dot.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "anchors": {
+    "tip": [
+      24.53,
+      14.44
+    ]
+  },
+  "parts": {
+    "route": {
+      "//": "hidden at rest: the spiral writes out from the dot at its inner end",
+      "shape": {
+        "morph": [
+          {
+            "path": "M9.5 16.9 C9.82 17.47 10.43 17.97 11.2 18.16 C11.97 18.35 12.91 18.21 13.69 17.69 C14.47 17.17 15.09 16.27 15.28 15.2 C15.47 14.13 15.21 12.91 14.48 11.92 C13.75 10.93 12.56 10.19 11.2 10 C9.84 9.81 8.33 10.19 7.13 11.13 C5.93 12.06 5.07 13.55 4.88 15.2 C4.69 16.85 5.19 18.66 6.34 20.06 C7.48 21.47 9.25 22.45 11.2 22.64 C13.15 22.83 15.24 22.21 16.86 20.86 L24.53 14.44"
+          },
+          {
+            "path": "M9.5 16.9 C9.79 17.5 10.39 18.05 11.2 18.29 C12.01 18.52 13.02 18.43 13.89 17.89 C14.77 17.36 15.5 16.39 15.74 15.2 C15.99 14.01 15.73 12.62 14.92 11.48 C14.11 10.34 12.75 9.48 11.2 9.27 C9.65 9.06 7.92 9.51 6.58 10.58 C5.25 11.66 4.32 13.36 4.16 15.2 C4.01 17.04 4.64 19 5.93 20.47 C7.23 21.93 9.17 22.87 11.2 22.96 C13.23 23.05 15.33 22.29 16.86 20.86 L24.53 14.44"
+          }
+        ],
+        "by": "flex"
+      },
+      "hidden": true
+    },
+    "barb-a": {
+      "shape": {
+        "line": [
+          "tip",
+          [
+            19.55,
+            14.0
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "barb-b": {
+      "shape": {
+        "line": [
+          "tip",
+          [
+            24.08,
+            19.42
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "origin": {
+      "shape": {
+        "circle": [
+          [
+            9.5,
+            16.9
+          ],
+          2.0
+        ]
+      },
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "barb-a": {
+      "pivot": "tip"
+    },
+    "barb-b": {
+      "pivot": "tip"
+    }
+  },
+  "motion": {
+    "origin.scale": {
+      "light": [
+        [
+          0,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0.78,
+          "in"
+        ],
+        [
+          0.16,
+          1.1,
+          "out"
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    },
+    "route.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "route.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          1.08,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.56,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "flex": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.32,
+          1,
+          "out"
+        ],
+        [
+          0.5,
+          -0.45,
+          "inOut"
+        ],
+        [
+          0.66,
+          0.15,
+          "inOut"
+        ],
+        [
+          0.82,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "barb-a.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          1.08,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.56,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "barb-a.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          1.08,
+          0,
+          "step"
+        ],
+        [
+          1.32,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.56,
+          0,
+          "step"
+        ],
+        [
+          0.66,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "barb-a.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.56,
+          -20,
+          "step"
+        ],
+        [
+          0.68,
+          10.0,
+          "out"
+        ],
+        [
+          0.8,
+          -4.0,
+          "inOut"
+        ],
+        [
+          0.92,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "barb-b.opacity": {
+      "follow": "barb-a.opacity"
+    },
+    "barb-b.draw": {
+      "follow": "barb-a.draw"
+    },
+    "barb-b.rotate": {
+      "follow": "barb-a.rotate",
+      "scale": -1
+    }
+  },
+  "reverse": {
+    "//": "the reset fades only the written arrow; the source dot stays",
+    "light": {
+      "origin.opacity": [
+        [
+          0,
+          1
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    },
+    "strong": {
+      "origin.opacity": [
+        [
+          0,
+          1
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "glasses",
+  "label": "Glasses",
+  "intent": "Reading glasses settle on and the lenses catch the light, for vision and reading settings. Light: the glasses hop up and land with a hit and a small rebound, and a glint sweeps across the left lens, then the right. Strong: a higher hop, a landing that rocks the frame side to side before it settles, and a brighter glint in each lens. The glints are gone again and the frame ends exactly at rest.",
+  "//": "Lenses r 5.4, 13.4 apart; the bridge is an r 2.6 arc ending exactly on both lens circles (-130 to -50 degrees); the glints are concentric r 2.6 arcs inside the lenses.",
+  "parts": {
+    "temple-l": {"shape": {"path": "M4.62 15.8 L6.9 10.2 C7.5 8.9 8.6 8.2 10.3 8.2"}},
+    "temple-r": {"mirror": {"of": "temple-l"}},
+    "lens-l":   {"shape": {"circle": [[9.3, 18.5], 5.4]}, "role": "surface", "solid": "ring"},
+    "lens-r":   {"mirror": {"of": "lens-l"}},
+    "bridge":   {"shape": {"arc": [[16, 18.5], 2.6, -130, -50]}},
+    "glint-l":  {"//": "hidden at rest: drawn across the lens from its lower end", "shape": {"arc": [[9.3, 18.5], 2.6, -100, -165]}, "hidden": true},
+    "glint-r":  {"shape": {"arc": [[22.7, 18.5], 2.6, -100, -165]}, "hidden": true}
+  },
+  "rigs": {
+    "glasses": {"pivot": [16, 18.5], "carries": ["temple-l", "temple-r", "lens-l", "lens-r", "bridge", "glint-l", "glint-r"]}
+  },
+  "motion": {
+    "glasses.y": {
+      "light":  [[0, 0], [0.1, -1.6, "out"], [0.22, 0, "hit"], [0.28, -0.35], [0.34, 0]],
+      "strong": [[0, 0], [0.06, 0.5, "out"], [0.17, -2.2, "out"], [0.3, 0, "hit"], [0.36, -0.6], [0.42, 0, "hit"], [0.46, -0.15], [0.5, 0]]
+    },
+    "glasses.rotate": {
+      "strong": [[0, 0], [0.29, 0], [0.36, -5, "out"], [0.44, 3], [0.51, -1.2], [0.57, 0]]
+    },
+    "glint-l.opacity": {
+      "light":  [[0, 0], [0.21, 0], [0.23, 1, "out"], [0.33, 1], [0.42, 0, "in"]],
+      "strong": [[0, 0], [0.29, 0], [0.31, 1, "out"], [0.43, 1], [0.53, 0, "in"]]
+    },
+    "glint-l.draw": {
+      "light":  [[0, 1], [0.21, 0, "step"], [0.32, 1, "out"]],
+      "strong": [[0, 1], [0.29, 0, "step"], [0.41, 1, "out"]]
+    },
+    "glint-r.opacity": {"light": {"follow": "glint-l.opacity", "lag": 0.06}, "strong": {"follow": "glint-l.opacity", "lag": 0.07}},
+    "glint-r.draw":    {"light": {"follow": "glint-l.draw", "lag": 0.06}, "strong": {"follow": "glint-l.draw", "lag": 0.07}}
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "ask-question",
+  "label": "Ask a question",
+  "intent": "A question is posted in a speech bubble. Light: the bubble ducks into its tail and pops out as the question posts, and the question mark inside tilts quizzically and swings back upright. Strong: a deeper duck and a bigger pop with a rebound, and the question mark tilts one way, then the other, settling in smaller swings.",
+  "parts": {
+    "bubble": {
+      "shape": {
+        "polygon": [
+          {
+            "p": [
+              4.5,
+              4
+            ],
+            "r": 3.5
+          },
+          {
+            "p": [
+              27.5,
+              4
+            ],
+            "r": 3.5
+          },
+          {
+            "p": [
+              27.5,
+              22
+            ],
+            "r": 3.5
+          },
+          {
+            "p": [
+              12,
+              22
+            ],
+            "r": 1
+          },
+          {
+            "p": [
+              4.5,
+              27
+            ],
+            "r": 0.6
+          }
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        "hook"
+      ]
+    },
+    "hook": {
+      "//": "the question mark: the hook, from its top-left tip over the curve and down the stem, and its dot (a round-capped point, so it keeps the stroke's weight)",
+      "shape": [
+        {
+          "path": "M12.9 10.4 C12.9 6.9 19.1 6.9 19.1 10.7 C19.1 12.8 16 13 16 14.6"
+        },
+        {
+          "line": [
+            [
+              16,
+              17.95
+            ],
+            [
+              16,
+              18.05
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "rigs": {
+    "bubble": {
+      "//": "the bubble pops out of its tail",
+      "pivot": [
+        4.5,
+        27
+      ]
+    },
+    "mark": {
+      "//": "the question mark tilts about its dot",
+      "pivot": [
+        16,
+        18
+      ],
+      "carries": [
+        "pop"
+      ]
+    },
+    "pop": {
+      "//": "the mark scales with the bubble about the same tail point, so it stays inside it",
+      "pivot": [
+        4.5,
+        27
+      ],
+      "carries": [
+        "hook"
+      ]
+    }
+  },
+  "motion": {
+    "bubble.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.07,
+          0.88,
+          "out"
+        ],
+        [
+          0.17,
+          1.05,
+          "out"
+        ],
+        [
+          0.25,
+          0.98
+        ],
+        [
+          0.32,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          0.82,
+          "out"
+        ],
+        [
+          0.19,
+          1.05,
+          "out"
+        ],
+        [
+          0.27,
+          0.97
+        ],
+        [
+          0.34,
+          1.02
+        ],
+        [
+          0.4,
+          1
+        ]
+      ]
+    },
+    "pop.scale": {
+      "follow": "bubble.scale"
+    },
+    "mark.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.16,
+          0
+        ],
+        [
+          0.26,
+          -14,
+          "out"
+        ],
+        [
+          0.36,
+          4
+        ],
+        [
+          0.43,
+          -1
+        ],
+        [
+          0.49,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          0
+        ],
+        [
+          0.27,
+          -18,
+          "out"
+        ],
+        [
+          0.37,
+          12,
+          "inOut"
+        ],
+        [
+          0.46,
+          -5
+        ],
+        [
+          0.53,
+          2
+        ],
+        [
+          0.59,
+          0
+        ]
+      ]
+    }
+  }
+}

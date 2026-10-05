@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "discard-recording",
+  "label": "Discard recording",
+  "intent": "A voice recording is thrown away. Light: the bin's lid flips open on its right-hand hinge, the recording, a microphone capsule, appears in the opening and drops into the bin, vanishing inside, and the lid drops shut with a hit and one chatter while the bin, marked with a waveform, dips on contact. Strong: the lid flips wider and holds longer, the capsule teeters before it tumbles in, and the lid slams with two chatters and a deeper dip.",
+  "parts": {
+    "capsule": {
+      "//": "hidden at rest: the recording being discarded, released from under the raised lid and dropped in",
+      "shape": {"rect": [8.9, 7.4, 3.2, 5.2], "r": 1.6},
+      "role": "fill",
+      "hidden": true
+    },
+    "bar-1": {"//": "the waveform on the bin says what is thrown away", "shape": {"line": [[12, 18.5], [12, 21.5]]}},
+    "bar-2": {"shape": {"line": [[16, 16.5], [16, 23]]}},
+    "bar-3": {"shape": {"line": [[20, 18], [20, 22]]}},
+    "body": {
+      "shape": {"path": "M8 12.8 L9 24 C9.17 25.42 10.38 26.5 11.8 26.5 L20.2 26.5 C21.62 26.5 22.83 25.42 23 24 L24 12.8 L8 12.8 Z"},
+      "role": "surface",
+      "solid": "fill",
+      "knockout": [{"part": "bar-1", "gap": 0}, {"part": "bar-2", "gap": 0}, {"part": "bar-3", "gap": 0}]
+    },
+    "handle": {
+      "shape": {"path": "M12.75 11.5 L12.75 8 C12.75 7.45 13.2 7 13.75 7 L18.25 7 C18.8 7 19.25 7.45 19.25 8 L19.25 11.5"},
+      "solid": {"path": "M11.55 11.5 L11.55 8 C11.55 6.79 12.54 5.8 13.75 5.8 L18.25 5.8 C19.46 5.8 20.45 6.79 20.45 8 L20.45 11.5 L18.05 11.5 L18.05 8.2 L13.95 8.2 L13.95 11.5 L11.55 11.5 Z"}
+    },
+    "lid": {"shape": {"line": [[6.5, 11.5], [25.5, 11.5]]}}
+  },
+  "rigs": {
+    "bin": {"//": "the whole bin dips when the lid lands", "pivot": [16, 26.5], "carries": ["body", "bar-1", "bar-2", "bar-3", "lid"]},
+    "lid": {"//": "hinged at its right-hand end; positive turns lift the left end", "pivot": [25.5, 11.5], "carries": ["lid", "handle"]},
+    "capsule": {"pivot": [10.5, 10]}
+  },
+  "motion": {
+    "lid.rotate": {
+      "light": [[0, 0], [0.1, 20, "out"], [0.3, 20], [0.37, 0, "hit"], {"bounce": 0.45, "amp": 0.16}],
+      "strong": [[0, 0], [0.1, 22, "out"], [0.38, 22], [0.45, 0, "hit"], {"bounce": 0.53, "amp": 0.18}, {"bounce": 0.6, "amp": 0.35}]
+    },
+    "bin.y": {
+      "light": [[0, 0], [0.37, 0], [0.41, 0.8, "out"], [0.48, -0.2], [0.54, 0]],
+      "strong": [[0, 0], [0.45, 0], [0.49, 1.2, "out"], [0.56, -0.3], [0.62, 0.1], [0.68, 0]]
+    },
+    "capsule.y": {
+      "light": [[0, 0], [0.14, 0], [0.28, 9, "in"], [0.29, 0, "step"]],
+      "strong": [[0, 0], [0.18, 0], [0.32, 9, "in"], [0.33, 0, "step"]]
+    },
+    "capsule.rotate": {"strong": [[0, 0], [0.14, 0], [0.18, 12, "out"], [0.32, -45, "in"], [0.33, 0, "step"]]},
+    "capsule.opacity": {
+      "light": [[0, 0], [0.07, 0], [0.11, 1, "out"], [0.23, 1], [0.28, 0, "in"]],
+      "strong": [[0, 0], [0.07, 0], [0.11, 1, "out"], [0.27, 1], [0.32, 0, "in"]]
+    }
+  }
+}

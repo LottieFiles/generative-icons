@@ -1,0 +1,23 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "color-filters",
+  "label": "Color filters",
+  "intent": "Three overlapping color filters separate and blend again, the colour-vision filter setting. Light: the top filter pulls away from the centre, the lower two follow a beat apart, then all three slide back together and land overlapped with a hit and a small rebound. Strong: they squeeze in first, then spread further, hold apart for a beat and snap back together with a harder hit and two settling swings. They end exactly where they started.",
+  "//": "Three r 6.2 circles at the corners of a triangle with 9.4 sides; each moves straight out from the triangle's centre (16, 17.37). The driver is top.y (negative is outward); the others follow along their own directions.",
+  "parts": {
+    "c-top":   {"shape": {"circle": [[16, 11.9], 6.2]}, "role": "surface", "solid": "ring"},
+    "c-left":  {"shape": {"circle": [[11.3, 20.1], 6.2]}, "role": "surface", "solid": "ring"},
+    "c-right": {"shape": {"circle": [[20.7, 20.1], 6.2]}, "role": "surface", "solid": "ring"}
+  },
+  "motion": {
+    "c-top.y": {
+      "light":  [[0, 0], [0.13, -2, "out"], [0.2, -2], [0.31, 0, "hit"], [0.37, 0.35], [0.43, 0]],
+      "strong": [[0, 0], [0.08, 0.6, "out"], [0.2, -2.6, "out"], [0.3, -2.6], [0.4, 0, "hit"], [0.46, 0.5], [0.52, -0.15], [0.58, 0]]
+    },
+    "c-left.x":  {"light": {"follow": "c-top.y", "scale": 0.866, "lag": 0.04}, "strong": {"follow": "c-top.y", "scale": 0.866, "lag": 0.05}},
+    "c-left.y":  {"light": {"follow": "c-top.y", "scale": -0.5, "lag": 0.04}, "strong": {"follow": "c-top.y", "scale": -0.5, "lag": 0.05}},
+    "c-right.x": {"light": {"follow": "c-top.y", "scale": -0.866, "lag": 0.08}, "strong": {"follow": "c-top.y", "scale": -0.866, "lag": 0.1}},
+    "c-right.y": {"light": {"follow": "c-top.y", "scale": -0.5, "lag": 0.08}, "strong": {"follow": "c-top.y", "scale": -0.5, "lag": 0.1}}
+  }
+}

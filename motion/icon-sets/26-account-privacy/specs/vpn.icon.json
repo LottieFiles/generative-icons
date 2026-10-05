@@ -1,0 +1,50 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "vpn",
+  "label": "VPN",
+  "intent": "The VPN connects: the padlock clicks shut and the globe's traffic turns through it. Light: the shackle snaps open on its right leg and slams back shut with a hit, the padlock jolts, and a beat later the globe turns one meridian spacing, coasts a little past and settles. Strong: the shackle swings wider, slams and bounces once, the padlock jolts harder, and the globe spins two spacings, picking up speed through the first and settling after the second. The sphere outline and the equator never move.",
+  "parts": {
+    "sphere": {"//": "the travel globe at badge size, without its stand", "shape": {"circle": [[12, 12], 7.8]}, "role": "surface", "solid": "ring"},
+    "equator": {"shape": {"line": [[4.2, 12], [19.8, 12]]}},
+    "mer-l": {"//": "the left half of the meridian; it crosses to the right half's place as the globe turns one spacing",
+              "shape": {"morph": [{"path": "M12 4.2 C10.054 4.2 8.477 7.689 8.477 12 C8.477 16.311 10.054 19.8 12 19.8"},
+                                  {"path": "M12 4.2 C14.378 4.2 16.305 7.689 16.305 12 C16.305 16.311 14.378 19.8 12 19.8"}], "by": "spin"}},
+    "mer-r": {"//": "the right half of the meridian; it runs off at the right limb and fades there",
+              "shape": {"morph": [{"path": "M12 4.2 C13.946 4.2 15.523 7.689 15.523 12 C15.523 16.311 13.946 19.8 12 19.8"},
+                                  {"path": "M12 4.2 C16.504 4.2 20.154 7.689 20.154 12 C20.154 16.311 16.504 19.8 12 19.8"}], "by": "spin"}},
+    "mer-n": {"//": "hidden at rest: the next meridian, coming round from the left limb to the left half's place",
+              "shape": {"morph": [{"path": "M12 4.2 C7.692 4.2 4.2 7.689 4.2 12 C4.2 16.311 7.692 19.8 12 19.8"},
+                                  {"path": "M12 4.2 C10.317 4.2 8.953 7.689 8.953 12 C8.953 16.311 10.317 19.8 12 19.8"}], "by": "spin"},
+              "hidden": true},
+    "pad": {"shape": {"rect": [19.6, 22.2, 8, 5.8], "r": 1.5}, "role": "fill"},
+    "shackle": {"//": "the closed shackle; its legs end just inside the pad's top edge", "shape": {"path": "M21.4 22 L21.4 19.4 C21.4 18.185 22.385 17.2 23.6 17.2 C24.815 17.2 25.8 18.185 25.8 19.4 L25.8 22"}}
+  },
+  "rigs": {
+    "lock": {"//": "the padlock as a whole jolts when the shackle seats", "pivot": [23.6, 28], "carries": ["pad", "shackle"]},
+    "shackle": {"//": "swings open on its right leg, away from the globe", "pivot": [25.8, 22]}
+  },
+  "motion": {
+    "shackle.rotate": {
+      "light":  [[0, 0], [0.1, 24, "out"], [0.2, 0, "hit"]],
+      "strong": [[0, 0], [0.04, -3, "out"], [0.16, 32, "out"], [0.27, 0, "hit"], {"bounce": 0.34, "amp": 0.15}]
+    },
+    "lock.y": {
+      "light":  [[0, 0], [0.2, 0], [0.24, 0.9, "out"], [0.31, 0]],
+      "strong": [[0, 0], [0.27, 0], [0.31, 1.1, "out"], [0.37, -0.2], [0.42, 0]]
+    },
+    "spin": {
+      "//": "the globe's spin, a beat after the click: 0.9 is one meridian spacing, where the pattern equals rest, so the step back to 0 is invisible; 1 is the coast past it",
+      "light":  [[0, 0], [0.12, 0], [0.38, 1, "out"], [0.52, 0.9, "inOut"], [0.54, 0, "step"]],
+      "strong": [[0, 0], [0.16, 0], [0.33, 0.9, "in"], [0.34, 0, "step"], [0.58, 1, "out"], [0.72, 0.9, "inOut"], [0.74, 0, "step"]]
+    },
+    "mer-n.opacity": {
+      "light":  [[0, 0], [0.12, 0], [0.17, 1, "out"], [0.54, 0, "step"]],
+      "strong": [[0, 0], [0.16, 0], [0.24, 1, "out"], [0.34, 0, "step"], [0.37, 1, "out"], [0.74, 0, "step"]]
+    },
+    "mer-r.opacity": {
+      "light":  [[0, 1], [0.2, 1], [0.27, 0, "in"], [0.54, 1, "step"]],
+      "strong": [[0, 1], [0.29, 1], [0.325, 0, "in"], [0.34, 1, "step"], [0.42, 1], [0.49, 0, "in"], [0.74, 1, "step"]]
+    }
+  }
+}

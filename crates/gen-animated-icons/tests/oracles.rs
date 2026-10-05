@@ -49,7 +49,7 @@ fn legacy_projects_get_the_exact_lottie_icons_bytes() {
     assert_eq!(result["icons"], json!(["heart", "menu", "heart"]));
     assert_eq!(
         sha(app, "src/lottie-icons/menu.mjs"),
-        "7e5ecb5a5e720ae8d875769cea91abb9a39e175151251f63de0963c54ab3152f"
+        "2c452ed9975eaa493b08c2dcfa6f40174eb9849db00c50a7a6f87fb7b7ab5022"
     );
     assert_eq!(
         sha(app, "src/lottie-icons/menu.d.mts"),
@@ -72,7 +72,7 @@ fn current_projects_differ_from_the_goldens_only_by_name() {
     };
     for (file, golden) in [
         ("src/gen-animated-icons/heart.mjs", "2aa7b22793d612d1c92f7c7c2bce6ce79aaff2383068b7bc01cdb6b695ec164e"),
-        ("src/gen-animated-icons/menu.mjs", "7e5ecb5a5e720ae8d875769cea91abb9a39e175151251f63de0963c54ab3152f"),
+        ("src/gen-animated-icons/menu.mjs", "2c452ed9975eaa493b08c2dcfa6f40174eb9849db00c50a7a6f87fb7b7ab5022"),
         ("src/gen-animated-icons/settings.mjs", "4ba48edd3c7eb4345864d8988f91a9b2983c05bed0427193176681c3024939c3"),
     ] {
         assert_eq!(gai_core::sha256_hex(renamed(read(app, file))), golden, "{file}");

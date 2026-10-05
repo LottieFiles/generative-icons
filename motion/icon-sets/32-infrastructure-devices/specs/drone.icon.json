@@ -1,0 +1,34 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "drone",
+  "label": "Drone",
+  "intent": "The drone takes off and lands. Light: the rotors spin up into a blur, the drone lifts off, hovers a moment and drops back onto its legs with a small bounce as the rotors stop. Strong: a higher climb, a bank to one side and back while it hovers, then a firmer landing with a bounce. The frame stays rigid.",
+  "parts": {
+    "rotor-l": {"shape": {"line": [[3.5, 10], [9.5, 10]]}},
+    "rotor-r": {"mirror": {"of": "rotor-l"}},
+    "arm-l":   {"shape": {"polyline": [[12, 15], [6.5, 15], [6.5, 10]], "r": 1}},
+    "arm-r":   {"mirror": {"of": "arm-l"}},
+    "legs":    {"shape": [{"line": [[13.5, 19], [11.5, 23]]}, {"line": [[18.5, 19], [20.5, 23]]}]},
+    "body":    {"shape": {"rect": [12, 13, 8, 6], "r": 2}, "role": "surface"}
+  },
+  "rigs": {
+    "drone":   {"pivot": [16, 16], "carries": ["body", "arm-l", "arm-r", "legs", "rotor-l", "rotor-r"]},
+    "rotor-l": {"pivot": [6.5, 10]},
+    "rotor-r": {"pivot": [25.5, 10]}
+  },
+  "motion": {
+    "rotor-l.scale": {
+      "light":  [[0, 1], [0.02, 1], [0.05, 0.3], [0.08, 1], [0.11, 0.3], [0.14, 1], [0.17, 0.3], [0.2, 1], [0.23, 0.3], [0.26, 1], [0.29, 0.3], [0.32, 1], [0.35, 0.3], [0.38, 1], [0.41, 0.3], [0.44, 1], [0.47, 0.3], [0.5, 1]],
+      "strong": [[0, 1], [0.02, 1], [0.05, 0.3], [0.08, 1], [0.11, 0.3], [0.14, 1], [0.17, 0.3], [0.2, 1], [0.23, 0.3], [0.26, 1], [0.29, 0.3], [0.32, 1], [0.35, 0.3], [0.38, 1], [0.41, 0.3], [0.44, 1], [0.47, 0.3], [0.5, 1], [0.53, 0.3], [0.56, 1], [0.59, 0.3], [0.62, 1], [0.65, 0.3], [0.68, 1], [0.71, 0.3], [0.74, 1]]
+    },
+    "rotor-r.scale": {"follow": "rotor-l.scale", "lag": 0.03},
+    "drone.y": {
+      "light":  [[0, 0], [0.08, 0], [0.26, -2.6, "out"], [0.32, -2.4], [0.44, 0, "hit"], {"bounce": 0.54, "amp": 0.15}],
+      "strong": [[0, 0], [0.08, 0], [0.3, -4, "out"], [0.5, -3.6], [0.64, 0, "hit"], {"bounce": 0.74, "amp": 0.15}]
+    },
+    "drone.rotate": {
+      "strong": [[0, 0], [0.3, 0], [0.38, -6], [0.47, 5], [0.55, -2], [0.62, 0]]
+    }
+  }
+}

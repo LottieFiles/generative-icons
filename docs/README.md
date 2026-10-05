@@ -24,3 +24,4 @@
 - [Governance](maintainers/governance.md): roles and approval flows.
 - [Releasing](maintainers/releasing.md): package and CLI release runbook.
 - [Distribution](maintainers/distribution.md): what ships and what stays out.
+- [Authoring benchmarks](maintainers/benchmarks.md): measured runs of agents authoring library icons.

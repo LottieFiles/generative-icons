@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "merge-cells",
+  "label": "Merge cells",
+  "intent": "Two table cells are merged into one. Light: the boundary between the two lower cells draws down, the merge arrows on either side push in toward it and squeeze it out, then ease back into the merged cell. Strong: the arrows pull back first, slam in harder so the boundary pops away, rebound and close in a second time before they settle. The table frame and the top row never move.",
+  "parts": {
+    "frame":    {"shape": {"rect": [4, 6, 24, 20], "r": 2.4}, "role": "surface", "solid": "ring",
+                 "//": "as freeze-column: Solid is the frame ring, so the rules and arrows stay open inside it"},
+    "row-rule": {"shape": {"line": [[4, 13], [28, 13]]}},
+    "col-rule": {"//": "the top row keeps its two cells", "shape": {"line": [[16, 6], [16, 13]]}},
+    "split":    {"//": "hidden at rest: the boundary between the two lower cells before they merge",
+                 "shape": {"line": [[16, 13], [16, 26]]}, "hidden": true},
+    "arrow-l":  {"shape": {"polyline": [[9.5, 17], [12, 19.5], [9.5, 22]]}},
+    "arrow-r":  {"mirror": {"of": "arrow-l"}}
+  },
+  "motion": {
+    "//": "The arrows tips sit 4 from the boundary; they come within 1.7 of it as it vanishes, and never cross at Bold.",
+    "split.opacity": {
+      "light":  [[0, 0], [0.01, 1, "step"], [0.15, 1], [0.21, 0, "in"]],
+      "strong": [[0, 0], [0.01, 1, "step"], [0.17, 1], [0.22, 0, "in"]]
+    },
+    "split.draw": {
+      "light":  [[0, 1], [0.01, 0, "step"], [0.1, 1, "out"]],
+      "strong": [[0, 1], [0.01, 0, "step"], [0.08, 1, "out"]]
+    },
+    "split.scale": {
+      "light":  [[0, 1], [0.15, 1], [0.21, 0.2, "in"], [0.22, 1, "step"]],
+      "strong": [[0, 1], [0.17, 1], [0.22, 0.1, "in"], [0.23, 1, "step"]]
+    },
+    "arrow-l.x": {
+      "light":  [[0, 0], [0.08, 0], [0.21, 2.0, "hit"], [0.26, 2.0], [0.38, 0, "inOut"]],
+      "strong": [[0, 0], [0.1, -0.8, "out"], [0.22, 2.3, "hit"], [0.3, 0.9, "out"], [0.37, 1.7, "hit"], [0.41, 1.7], [0.52, 0, "inOut"]]
+    },
+    "arrow-r.x": {"follow": "arrow-l.x", "scale": -1}
+  }
+}

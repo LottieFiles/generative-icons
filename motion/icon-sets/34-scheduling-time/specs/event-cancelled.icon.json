@@ -1,0 +1,36 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "event-cancelled",
+  "label": "Cancel event",
+  "intent": "An X is struck across the calendar to cancel the event. Light: the first stroke slashes down from the top left, the second crosses it a beat later from the top right, and the X pops once. Strong: both strokes slash on fast with hard stops, the X pops harder, and the calendar shakes side to side, no, in smaller swings until it settles. The leaf stays rigid.",
+  "parts": {
+    "leaf":   {"shape": {"rect": [5, 6, 22, 21], "r": 2.7}, "role": "surface", "solid": "ring"},
+    "header": {"shape": {"line": [[5.5, 11.5], [26.5, 11.5]]}},
+    "peg-l":  {"shape": {"line": [[11, 4], [11, 8]]}},
+    "peg-r":  {"shape": {"line": [[21, 4], [21, 8]]}},
+    "x-a":    {"shape": {"line": [[12.7, 15.9], [19.3, 22.5]]}},
+    "x-b":    {"shape": {"line": [[19.3, 15.9], [12.7, 22.5]]}}
+  },
+  "rigs": {
+    "calendar": {"//": "the whole calendar shakes its head in Strong", "pivot": [16, 27], "carries": ["leaf", "header", "peg-l", "peg-r", "x"]},
+    "x":        {"//": "the X pops about its own centre once it is struck", "pivot": [16, 19.2], "carries": ["x-a", "x-b"]}
+  },
+  "motion": {
+    "x-a.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.04, 0], [0.17, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.04, 0], [0.12, 1, "hit"]]
+    },
+    "x-b.draw": {
+      "light":  [[0, 1], [0.017, 0, "step"], [0.15, 0], [0.28, 1, "out"]],
+      "strong": [[0, 1], [0.017, 0, "step"], [0.13, 0], [0.21, 1, "hit"]]
+    },
+    "x.scale": {
+      "light":  [[0, 1], [0.28, 1], [0.34, 1.2, "out"], [0.41, 0.96], [0.47, 1]],
+      "strong": [[0, 1], [0.21, 1], [0.27, 1.3, "out"], [0.35, 0.92], [0.42, 1.04], [0.48, 1]]
+    },
+    "calendar.x": {
+      "strong": [[0, 0], [0.22, 0], [0.27, -1.3, "out"], [0.33, 1.1, "inOut"], [0.39, -0.7, "inOut"], [0.45, 0.35, "inOut"], [0.51, 0, "inOut"]]
+    }
+  }
+}

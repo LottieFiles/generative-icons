@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "feature-flag",
+  "label": "Feature flag",
+  "intent": "A feature flag is switched on. Light: the knob in the flag's toggle-shaped banner draws back a little, snaps across to the far end and stops with a hit, and the banner dips on the pole from the knock and springs back. Strong: the knob draws back further and slams across, rebounding off the end, and the banner swings and settles in two beats. Turning it off snaps the knob back to the pole end, and the banner lifts and settles.",
+  "state": {"from": "off", "to": "on", "labels": ["Enable", "Disable"], "reverse": "auto"},
+  "parts": {
+    "pole":   {"shape": {"line": [[6, 3.5], [6, 28]]}},
+    "banner": {"//": "the flag's cloth is a toggle track, hung square from the pole, rounded at its free end", "shape": {"rect": [6, 5.5, 22, 9], "r": [1.5, 4.5, 4.5, 1.5]}, "role": "surface", "solid": "fill", "knockout": [{"part": "knob", "gap": 0.8}]},
+    "knob":   {"shape": {"circle": [[10.5, 10], 2.4]}, "role": "fill"}
+  },
+  "rigs": {
+    "flag": {"pivot": [6, 10], "carries": ["banner", "knob"]},
+    "knob": {"pivot": [10.5, 10]}
+  },
+  "motion": {
+    "knob.x": {
+      "light":  [[0, 0], [0.06, -0.3, "out"], [0.2, 13, "hit"], [0.26, 12.5, "out"], [0.32, 13, "inOut"]],
+      "strong": [[0, 0], [0.08, -0.5, "out"], [0.11, -0.5], [0.2, 13.4, "hit"], [0.27, 12.6, "inOut"], [0.33, 13.1, "inOut"], [0.39, 13, "inOut"]]
+    },
+    "flag.rotate": {
+      "light":  [[0, 0], [0.2, 0], [0.28, 3.5, "out"], [0.37, -0.8, "inOut"], [0.45, 0, "inOut"]],
+      "strong": [[0, 0], [0.2, 0], [0.27, 5, "out"], {"settle": 0.62, "to": 0}]
+    }
+  },
+  "reverse": {
+    "//": "turning off has its own event: the knob snaps back to the pole end and the banner lifts, instead of the landing replayed backwards",
+    "light": {
+      "knob.x":      [[0, 13], [0.06, 13.3, "out"], [0.2, 0, "hit"], [0.26, 0.4, "out"], [0.32, 0, "inOut"]],
+      "flag.rotate": [[0, 0], [0.2, 0], [0.28, -2.5, "out"], [0.37, 0.6, "inOut"], [0.45, 0, "inOut"]]
+    },
+    "strong": {
+      "knob.x":      [[0, 13], [0.08, 13.4, "out"], [0.11, 13.4], [0.2, -0.4, "hit"], [0.27, 0.3, "inOut"], [0.33, -0.1, "inOut"], [0.39, 0, "inOut"]],
+      "flag.rotate": [[0, 0], [0.2, 0], [0.27, -4.5, "out"], {"settle": 0.62, "to": 0}]
+    }
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "annotation-circled",
+  "label": "Circled pointer",
+  "intent": "An arrow points at a spot and a hand-drawn circle rings it. Light: the stroke writes from the source dot, the head opens, then one loose loop circles the spot and overlaps its start. Strong: the dot presses as the pen lands, the stroke writes fast and the head snaps open, then the loop whips round the spot, swelling past its size and settling. The preview reset fades the arrow and circle back to the dot.",
+  "state": {
+    "from": "prepared",
+    "to": "result",
+    "labels": [
+      "Play action",
+      "Reset preview"
+    ],
+    "reverse": "fade"
+  },
+  "anchors": {
+    "tip": [
+      15,
+      15.6
+    ],
+    "spot": [
+      21.8,
+      10.2
+    ]
+  },
+  "parts": {
+    "route": {
+      "//": "hidden at rest: the stroke writes on from the dot",
+      "shape": {
+        "morph": [
+          {
+            "path": "M6 25 C6.4 19.8 10.8 18.9 15 15.6"
+          },
+          {
+            "path": "M6 25 C5.5 18.6 9.6 17.6 15 15.6"
+          }
+        ],
+        "by": "flex"
+      },
+      "hidden": true
+    },
+    "barb-a": {
+      "shape": {
+        "line": [
+          "tip",
+          [
+            10.63,
+            15.08
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "barb-b": {
+      "shape": {
+        "line": [
+          "tip",
+          [
+            14.48,
+            19.97
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "ring": {
+      "//": "hidden at rest: the loop is drawn round the spot, overlapping where it began",
+      "shape": {
+        "path": "M17.38 8.88 C17.82 7.83 18.84 6.95 20.12 6.54 C21.39 6.12 22.9 6.18 24.13 6.71 C25.37 7.24 26.3 8.24 26.62 9.37 C26.94 10.5 26.62 11.75 25.77 12.7 C24.91 13.64 23.53 14.27 22.08 14.36 C20.62 14.44 19.12 13.98 18.08 13.12 C17.04 12.26 16.48 11.01 16.6 9.78 C16.72 8.55 17.53 7.37 18.76 6.64"
+      },
+      "hidden": true
+    },
+    "origin": {
+      "shape": {
+        "circle": [
+          [
+            6,
+            25
+          ],
+          2.1
+        ]
+      },
+      "role": "fill"
+    }
+  },
+  "rigs": {
+    "barb-a": {
+      "pivot": "tip"
+    },
+    "barb-b": {
+      "pivot": "tip"
+    },
+    "ring": {
+      "pivot": "spot"
+    }
+  },
+  "motion": {
+    "origin.scale": {
+      "light": [
+        [
+          0,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0.78,
+          "in"
+        ],
+        [
+          0.16,
+          1.1,
+          "out"
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    },
+    "route.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "route.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.8,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0,
+          "step"
+        ],
+        [
+          0.42,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "flex": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.26,
+          1,
+          "out"
+        ],
+        [
+          0.42,
+          -0.45,
+          "inOut"
+        ],
+        [
+          0.56,
+          0.15,
+          "inOut"
+        ],
+        [
+          0.7,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "barb-a.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.8,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.42,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "barb-a.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.8,
+          0,
+          "step"
+        ],
+        [
+          1.02,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.42,
+          0,
+          "step"
+        ],
+        [
+          0.52,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "barb-a.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.42,
+          -20,
+          "step"
+        ],
+        [
+          0.54,
+          10.0,
+          "out"
+        ],
+        [
+          0.66,
+          -4.0,
+          "inOut"
+        ],
+        [
+          0.78,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "barb-b.opacity": {
+      "follow": "barb-a.opacity"
+    },
+    "barb-b.draw": {
+      "follow": "barb-a.draw"
+    },
+    "barb-b.rotate": {
+      "follow": "barb-a.rotate",
+      "scale": -1
+    },
+    "ring.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.98,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.46,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "ring.draw": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.98,
+          0,
+          "step"
+        ],
+        [
+          1.46,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.46,
+          0,
+          "step"
+        ],
+        [
+          0.72,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "ring.scale": {
+      "light": [
+        [
+          0,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.46,
+          0.84,
+          "step"
+        ],
+        [
+          0.7,
+          1.08,
+          "out"
+        ],
+        [
+          0.82,
+          0.97,
+          "inOut"
+        ],
+        [
+          0.94,
+          1,
+          "inOut"
+        ]
+      ]
+    }
+  },
+  "reverse": {
+    "//": "the reset fades only the arrow and the circle; the source dot stays",
+    "light": {
+      "origin.opacity": [
+        [
+          0,
+          1
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    },
+    "strong": {
+      "origin.opacity": [
+        [
+          0,
+          1
+        ],
+        [
+          0.28,
+          1
+        ]
+      ]
+    }
+  }
+}

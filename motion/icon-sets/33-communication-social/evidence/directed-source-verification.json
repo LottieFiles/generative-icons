@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 9,
-  "actions": 22,
+  "icons": 20,
+  "actions": 46,
   "nativeTransformNodes": 72,
   "nativeTransformMaxCoordinateError": 0.000011377123968259184,
   "checks": [
@@ -367,6 +367,107 @@
       "actions": [
         "announcement",
         "announcement-strong"
+      ]
+    },
+    {
+      "icon": "repost",
+      "spec": "specs/repost.icon.json",
+      "specSha256": "45d53d2eec02076e457878617b98ebb02c180bf81375571a40ee7b7e45aefdfe",
+      "actions": [
+        "repost",
+        "repost-strong"
+      ]
+    },
+    {
+      "icon": "follow-user",
+      "spec": "specs/follow-user.icon.json",
+      "specSha256": "2676752e6a5c0625df30c4cba8cd47c3d405a909f396ce7e02161f0f5aec9893",
+      "actions": [
+        "follow-user",
+        "follow-user-reverse",
+        "follow-user-strong",
+        "follow-user-reverse-strong"
+      ]
+    },
+    {
+      "icon": "newspaper",
+      "spec": "specs/newspaper.icon.json",
+      "specSha256": "dcda79dd73ab036ad91b67dbe90267a30524f057a9ce72d303485768a1fa13be",
+      "actions": [
+        "newspaper",
+        "newspaper-strong"
+      ]
+    },
+    {
+      "icon": "missed-call",
+      "spec": "specs/missed-call.icon.json",
+      "specSha256": "ce8ee3e9009ff0b6caec91371e3697a5c46f22136f0174bc3651d9a325e698ed",
+      "actions": [
+        "missed-call",
+        "missed-call-strong"
+      ]
+    },
+    {
+      "icon": "end-call",
+      "spec": "specs/end-call.icon.json",
+      "specSha256": "0868abd604711d249b02dd7eb12c0e267f0b723189432a7b1e5d95a0fb8b3021",
+      "actions": [
+        "end-call",
+        "end-call-strong"
+      ]
+    },
+    {
+      "icon": "call-history",
+      "spec": "specs/call-history.icon.json",
+      "specSha256": "42e9e1f7f80d57f3ccc03f56044525934613407a19a48d2d49b40d3fc269a12c",
+      "actions": [
+        "call-history",
+        "call-history-strong"
+      ]
+    },
+    {
+      "icon": "add-call",
+      "spec": "specs/add-call.icon.json",
+      "specSha256": "d5535f899d85b13870b817568e2920807215ae36fcf6f61d12eb37f072ec5679",
+      "actions": [
+        "add-call",
+        "add-call-strong"
+      ]
+    },
+    {
+      "icon": "outbox",
+      "spec": "specs/outbox.icon.json",
+      "specSha256": "f8b183970aa490897045574118c4d764d84948c62668e2a147f3d3fad466da5b",
+      "actions": [
+        "outbox",
+        "outbox-strong"
+      ]
+    },
+    {
+      "icon": "report-spam",
+      "spec": "specs/report-spam.icon.json",
+      "specSha256": "065ecf49925d7e6443dc4d52b9a313c91822d278ce78cda2999cb8463edb86be",
+      "actions": [
+        "report-spam",
+        "report-spam-strong"
+      ]
+    },
+    {
+      "icon": "reply-all",
+      "spec": "specs/reply-all.icon.json",
+      "specSha256": "324863216a583347e358b69001a33ac95e563d83e9b909fed0e536f6da473860",
+      "actions": [
+        "reply-all",
+        "reply-all-strong"
+      ]
+    },
+    {
+      "icon": "encrypted-message",
+      "spec": "specs/encrypted-message.icon.json",
+      "specSha256": "9eed9e13fabe4291b9342dd5e617dafe9f1e52bddfb46de8bb1344a533483c1e",
+      "actions": [
+        "encrypted-message",
+        "encrypted-message-strong"
       ]
     }
   ]

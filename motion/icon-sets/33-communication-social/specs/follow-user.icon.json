@@ -1,0 +1,80 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "follow-user",
+  "label": "Follow",
+  "intent": "You follow the person: the plus beside them becomes a check and they perk up. Light: the plus twists an eighth of a turn and shrinks away, a check draws in where it was and pops, and the person hops once and lands with a small bounce. Strong: the plus winds back before it twists away, the check snaps in and pops bigger with a settle, and the person hops higher, then once more, smaller. Reverse (unfollow): the check undraws, the plus spins back in with a small pop, and the person sinks a little and recovers.",
+  "state": {"from": "not-following", "to": "following", "labels": ["Follow", "Unfollow"], "reverse": "auto"},
+  "parts": {
+    "head": {"shape": {"circle": [[12.5, 10], 3.7]}, "role": "surface", "solid": {"grow": 0.8}},
+    "shoulders": {
+      "shape": {"path": "M4 26 L4 24 C4 20.2 7.8 18 12.5 18 C17.2 18 21 20.2 21 24 L21 26 C21 26.6 20.6 27 20 27 L5 27 C4.4 27 4 26.6 4 26 Z"},
+      "role": "surface",
+      "solid": "fill"
+    },
+    "plus": {"shape": [{"line": [[24.5, 8], [24.5, 15]]}, {"line": [[21, 11.5], [28, 11.5]]}]},
+    "check": {"//": "hidden at rest: following is the end state", "shape": {"polyline": [[21.25, 11.75], [23.6, 14.1], [27.75, 9.25]]}, "hidden": true}
+  },
+  "rigs": {
+    "plus": {"pivot": [24.5, 11.5]},
+    "check": {"pivot": [24.5, 11.75]},
+    "shoulders": {"pivot": [12.5, 27], "squash": {"base": 27, "widen": 0.5}}
+  },
+  "motion": {
+    "plus.rotate": {
+      "light": [[0, 0], [0.14, 45, "in"]],
+      "strong": [[0, 0], [0.07, -12, "out"], [0.18, 45, "in"]]
+    },
+    "plus.scale": {
+      "light": [[0, 1], [0.14, 0.4, "in"]],
+      "strong": [[0, 1], [0.07, 1.06, "out"], [0.18, 0.4, "in"]]
+    },
+    "plus.opacity": {
+      "light": [[0, 1], [0.06, 1], [0.14, 0, "in"]],
+      "strong": [[0, 1], [0.1, 1], [0.18, 0, "in"]]
+    },
+    "check.opacity": {
+      "light": [[0, 0], [0.1, 0], [0.12, 1]],
+      "strong": [[0, 0], [0.14, 0], [0.16, 1]]
+    },
+    "check.draw": {
+      "light": [[0, 0], [0.1, 0], [0.28, 1, "out"]],
+      "strong": [[0, 0], [0.14, 0], [0.27, 1, "hit"]]
+    },
+    "check.scale": {
+      "light": [[0, 1], [0.26, 1], [0.32, 1.12, "out"], [0.4, 1]],
+      "strong": [[0, 1], [0.27, 1], [0.32, 1.18, "out"], [0.39, 0.96], [0.46, 1]]
+    },
+    "head.y": {
+      "light": [[0, 0], [0.24, 0], [0.3, 0.8, "out"], [0.4, -1.8, "out"], [0.5, 0, "hit"], {"bounce": 0.57, "amp": 0.15}],
+      "strong": [[0, 0], [0.25, 0], [0.31, 1.2, "out"], [0.42, -2.5, "out"], [0.53, 0, "hit"], [0.57, 0.4], [0.63, -1, "out"], [0.7, 0, "hit"], {"bounce": 0.76, "amp": 0.18}]
+    },
+    "shoulders.squash": {
+      "light": [[0, 1], [0.24, 1], [0.3, 0.92, "out"], [0.4, 1.05, "out"], [0.5, 0.94, "hit"], [0.58, 1]],
+      "strong": [[0, 1], [0.25, 1], [0.31, 0.88, "out"], [0.42, 1.07, "out"], [0.53, 0.91, "hit"], [0.6, 1.03], [0.7, 0.95, "hit"], [0.77, 1]]
+    }
+  },
+  "reverse": {
+    "//": "unfollow has its own event: the check undraws, the plus spins back in, and the person sinks a little and recovers instead of replaying the hop",
+    "light": {
+      "check.draw": [[0, 1], [0.12, 0, "in"]],
+      "check.opacity": [[0, 1], [0.11, 1], [0.13, 0]],
+      "check.scale": [[0, 1], [0.13, 1]],
+      "plus.opacity": [[0, 0], [0.1, 0], [0.15, 1, "out"]],
+      "plus.rotate": [[0, 45], [0.1, 45], [0.28, 0, "out"]],
+      "plus.scale": [[0, 0.4], [0.1, 0.4], [0.24, 1.08, "out"], [0.31, 1]],
+      "head.y": [[0, 0], [0.12, 0], [0.22, 0.9, "out"], [0.34, 0]],
+      "shoulders.squash": [[0, 1], [0.12, 1], [0.22, 0.94, "out"], [0.34, 1]]
+    },
+    "strong": {
+      "check.draw": [[0, 1], [0.04, 1], [0.13, 0, "in"]],
+      "check.opacity": [[0, 1], [0.12, 1], [0.14, 0]],
+      "check.scale": [[0, 1], [0.04, 1.08, "out"], [0.13, 1]],
+      "plus.opacity": [[0, 0], [0.11, 0], [0.16, 1, "out"]],
+      "plus.rotate": [[0, 45], [0.11, 45], [0.27, -8, "out"], [0.36, 0]],
+      "plus.scale": [[0, 0.4], [0.11, 0.4], [0.25, 1.14, "out"], [0.32, 0.97], [0.38, 1]],
+      "head.y": [[0, 0], [0.12, 0], [0.22, 1.3, "out"], [0.34, -0.3], [0.42, 0]],
+      "shoulders.squash": [[0, 1], [0.12, 1], [0.22, 0.91, "out"], [0.34, 1.02], [0.42, 1]]
+    }
+  }
+}

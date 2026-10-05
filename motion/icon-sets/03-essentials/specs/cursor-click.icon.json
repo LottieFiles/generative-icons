@@ -1,0 +1,41 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "cursor-click",
+  "label": "Click",
+  "intent": "The pointer clicks. Light: the arrow presses in toward its tip and stops with a hit, the three click rays blink out and burst back from the tip past their length, and the arrow springs back and settles. Strong: a double click, a first quick press with a small burst, then a deeper press with a bigger burst and a two-beat settle.",
+  "parts": {
+    "arrow": {
+      "shape": {"polygon": [
+        {"p": [12.5, 12.5], "r": 1.2},
+        {"p": [26.5, 18], "r": 1},
+        {"p": [20, 20], "r": 0.6},
+        {"p": [18, 26.5], "r": 1}
+      ]},
+      "role": "surface"
+    },
+    "ray-up": {"//": "the click rays fan out from the arrow's tip", "shape": {"line": [[12.5, 5.5], [12.5, 8.3]]}},
+    "ray-diag": {"shape": {"line": [[7.4, 7.4], [9.4, 9.4]]}},
+    "ray-left": {"shape": {"line": [[5.5, 12.5], [8.3, 12.5]]}}
+  },
+  "rigs": {
+    "arrow": {"//": "the pointer presses in about its tip", "pivot": [12.5, 12.5]},
+    "rays": {"pivot": [12.5, 12.5], "carries": ["ray-up", "ray-diag", "ray-left"]}
+  },
+  "motion": {
+    "arrow.scale": {
+      "light": [[0, 1], [0.08, 0.84, "hit"], [0.18, 1.05, "out"], [0.28, 1]],
+      "strong": [[0, 1], [0.07, 0.86, "hit"], [0.15, 1.02, "out"], [0.2, 1], [0.27, 0.8, "hit"], [0.37, 1.07, "out"], [0.47, 0.98], [0.55, 1]]
+    },
+    "ray-up.opacity": {
+      "light": [[0, 1], [0.05, 0, "in"], [0.08, 0], [0.1, 1, "out"]],
+      "strong": [[0, 1], [0.04, 0, "in"], [0.07, 0], [0.09, 1, "out"], [0.22, 1], [0.25, 0, "in"], [0.27, 0], [0.29, 1, "out"]]
+    },
+    "ray-diag.opacity": {"follow": "ray-up.opacity"},
+    "ray-left.opacity": {"follow": "ray-up.opacity"},
+    "rays.scale": {
+      "light": [[0, 1], [0.08, 0.7, "step"], [0.2, 1.22, "out"], [0.32, 1]],
+      "strong": [[0, 1], [0.07, 0.75, "step"], [0.16, 1.1, "out"], [0.22, 1], [0.27, 0.65, "step"], [0.4, 1.2, "out"], [0.52, 0.96], [0.6, 1]]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "git-rebase",
+  "label": "Git rebase",
+  "intent": "A branch is rebased onto the latest commit. Light: the newest commit at the top of the trunk pops, then the branch lifts off its old base and slides up the trunk, its fork running along the line, and lands higher with a hit and a small rebound; a faint copy of the old branch is left behind and fades. Strong: the top commit pops harder, the branch dips first to wind up, shoots up past its new base and settles onto it in damped swings while the old copy fades. The branch stays rebased until the preview reset.",
+  "state": {"from": "prepared", "to": "result", "labels": ["Play action", "Reset preview"], "reverse": "fade"},
+  "parts": {
+    "ghost-lane": {"//": "hidden at rest: the old branch left behind as it is replayed", "shape": {"path": "M9 22 C9 17 14 14 20.5 14"}, "hidden": true},
+    "ghost-tip":  {"shape": {"circle": [[23, 14], 2.5]}, "hidden": true},
+    "trunk":      {"shape": {"line": [[9, 8.5], [9, 23.5]]}},
+    "base":       {"shape": {"circle": [[9, 26], 2.5]}},
+    "root":       {"//": "the newest commit on the trunk", "shape": {"circle": [[9, 6], 2.5]}},
+    "lane":       {"//": "forks from the trunk line, so its start slides along it", "shape": {"path": "M9 22 C9 17 14 14 20.5 14"}},
+    "tip":        {"shape": {"circle": [[23, 14], 2.5]}}
+  },
+  "rigs": {
+    "branch": {"pivot": [16, 18], "carries": ["lane", "tip"]}
+  },
+  "motion": {
+    "root.scale": {
+      "light":  [[0, 1], [0.06, 1.14, "out"], [0.14, 1, "in"]],
+      "strong": [[0, 1], [0.06, 1.2, "hit"], [0.14, 1, "in"], [0.18, 1.05, "out"], [0.22, 1, "in"]]
+    },
+    "branch.y": {
+      "light":  [[0, 0], [0.08, 0], [0.3, -8, "hit"], [0.36, -7.5, "out"], [0.43, -8, "inOut"]],
+      "strong": [[0, 0], [0.06, 0], [0.14, 0.8, "out"], [0.3, -8.7, "in"], {"settle": 0.58, "to": -8}]
+    },
+    "ghost-lane.opacity": {
+      "light":  [[0, 0], [0.1, 0], [0.11, 0.35, "step"], [0.34, 0, "in"]],
+      "strong": [[0, 0], [0.15, 0], [0.16, 0.4, "step"], [0.42, 0, "in"]]
+    },
+    "ghost-tip.opacity": {"follow": "ghost-lane.opacity"}
+  },
+  "reverse": {
+    "//": "the trunk and its commits end at rest, so only the branch fades back to its old base",
+    "light":  {"trunk.opacity": [[0, 1], [0.25, 1]], "base.opacity": [[0, 1], [0.25, 1]], "root.opacity": [[0, 1], [0.25, 1]]},
+    "strong": {"trunk.opacity": [[0, 1], [0.25, 1]], "base.opacity": [[0, 1], [0.25, 1]], "root.opacity": [[0, 1], [0.25, 1]]}
+  }
+}

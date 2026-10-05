@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 12,
-  "actions": 48,
+  "icons": 20,
+  "actions": 80,
   "nativeTransformNodes": 0,
   "nativeTransformMaxCoordinateError": 0,
   "checks": [
@@ -222,5 +222,95 @@
       "designConstraints": []
     }
   ],
-  "loopChecks": []
+  "loopChecks": [],
+  "adoptedSpecs": [
+    {
+      "icon": "annotation-zigzag",
+      "spec": "specs/annotation-zigzag.icon.json",
+      "specSha256": "efc045f9b8dde40bc178b0e2192a594e48eab35a4c78493ab4f03d7f8eb11801",
+      "actions": [
+        "annotation-zigzag",
+        "annotation-zigzag-reset",
+        "annotation-zigzag-strong",
+        "annotation-zigzag-reset-strong"
+      ]
+    },
+    {
+      "icon": "annotation-wave",
+      "spec": "specs/annotation-wave.icon.json",
+      "specSha256": "cb997218c330b19c2def55b5d77cb1f64bbc78341b648d3760fdfd4b6c9bf75b",
+      "actions": [
+        "annotation-wave",
+        "annotation-wave-reset",
+        "annotation-wave-strong",
+        "annotation-wave-reset-strong"
+      ]
+    },
+    {
+      "icon": "annotation-spiral",
+      "spec": "specs/annotation-spiral.icon.json",
+      "specSha256": "627699ce450589ec45e7e6122cafc7b5804226c9aa186c8b31b72389ce05cd16",
+      "actions": [
+        "annotation-spiral",
+        "annotation-spiral-reset",
+        "annotation-spiral-strong",
+        "annotation-spiral-reset-strong"
+      ]
+    },
+    {
+      "icon": "annotation-dashed",
+      "spec": "specs/annotation-dashed.icon.json",
+      "specSha256": "e3a838d45f5b1b3388b6574b9b3964b1e9c7aa394a13b830a01f0a1b9fb9cc3d",
+      "actions": [
+        "annotation-dashed",
+        "annotation-dashed-reset",
+        "annotation-dashed-strong",
+        "annotation-dashed-reset-strong"
+      ]
+    },
+    {
+      "icon": "annotation-bounce",
+      "spec": "specs/annotation-bounce.icon.json",
+      "specSha256": "41f400f46c044b60938dbd8c5017933dbeb85655c90b27ca24a990418adee20a",
+      "actions": [
+        "annotation-bounce",
+        "annotation-bounce-reset",
+        "annotation-bounce-strong",
+        "annotation-bounce-reset-strong"
+      ]
+    },
+    {
+      "icon": "annotation-emphasis",
+      "spec": "specs/annotation-emphasis.icon.json",
+      "specSha256": "58276292fee6a3d23b5e558c57bf6ea5604ad1d2d8a49d37d7cab1365458282a",
+      "actions": [
+        "annotation-emphasis",
+        "annotation-emphasis-reset",
+        "annotation-emphasis-strong",
+        "annotation-emphasis-reset-strong"
+      ]
+    },
+    {
+      "icon": "annotation-numbered",
+      "spec": "specs/annotation-numbered.icon.json",
+      "specSha256": "45115ec026ad112e887c4035796fd786e78aae0aa5d3214d0ca3e5405a4ba919",
+      "actions": [
+        "annotation-numbered",
+        "annotation-numbered-reset",
+        "annotation-numbered-strong",
+        "annotation-numbered-reset-strong"
+      ]
+    },
+    {
+      "icon": "annotation-circled",
+      "spec": "specs/annotation-circled.icon.json",
+      "specSha256": "6a196551403c7ea0a3efd347e66b068775bd3aeb0d6478d14bd30e1e133ae590",
+      "actions": [
+        "annotation-circled",
+        "annotation-circled-reset",
+        "annotation-circled-strong",
+        "annotation-circled-reset-strong"
+      ]
+    }
+  ]
 }

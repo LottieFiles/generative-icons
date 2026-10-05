@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 11,
-  "actions": 42,
+  "icons": 20,
+  "actions": 74,
   "nativeTransformNodes": 84,
   "nativeTransformMaxCoordinateError": 0.000009999999999621423,
   "checks": [
@@ -595,6 +595,101 @@
         "number-field-reset",
         "number-field-strong",
         "number-field-reset-strong"
+      ]
+    },
+    {
+      "icon": "required-field",
+      "spec": "specs/required-field.icon.json",
+      "specSha256": "a373b2f72dbd4dbfb7ec6fbff0d0392e3c6dcbb54e26af804d8009fe94940b71",
+      "actions": [
+        "required-field",
+        "required-field-strong"
+      ]
+    },
+    {
+      "icon": "field-error",
+      "spec": "specs/field-error.icon.json",
+      "specSha256": "d6fa0a23e5fa4312c4705bfc24be133c6fd8e50fab07aa4f2efb18609bd682ec",
+      "actions": [
+        "field-error",
+        "field-error-strong"
+      ]
+    },
+    {
+      "icon": "password-strength",
+      "spec": "specs/password-strength.icon.json",
+      "specSha256": "33cfbf948e5e4d8f2320252f9e79f7cbf2f3f075c226159d95a58bd00bbb67f0",
+      "actions": [
+        "password-strength",
+        "password-strength-reverse",
+        "password-strength-strong",
+        "password-strength-reverse-strong"
+      ]
+    },
+    {
+      "icon": "range-slider",
+      "spec": "specs/range-slider.icon.json",
+      "specSha256": "8e5f0761c02ab7b50ec08671dce97e13908fb2c2871508cc8d53be17cf563110",
+      "actions": [
+        "range-slider",
+        "range-slider-reverse",
+        "range-slider-strong",
+        "range-slider-reverse-strong"
+      ]
+    },
+    {
+      "icon": "wheel-picker",
+      "spec": "specs/wheel-picker.icon.json",
+      "specSha256": "13e47a78def4397d6ee2374e74abbf442ea1d13820a05ededa75077595323885",
+      "actions": [
+        "wheel-picker",
+        "wheel-picker-reverse",
+        "wheel-picker-strong",
+        "wheel-picker-reverse-strong"
+      ]
+    },
+    {
+      "icon": "autofill",
+      "spec": "specs/autofill.icon.json",
+      "specSha256": "872a141b713618ab51be7aec2b925efe29b932d37539ff3bec40a9a10e9b4fb0",
+      "actions": [
+        "autofill",
+        "autofill-reverse",
+        "autofill-strong",
+        "autofill-reverse-strong"
+      ]
+    },
+    {
+      "icon": "text-area",
+      "spec": "specs/text-area.icon.json",
+      "specSha256": "673c7064599eca01cbe5c9d689a18b3a885d09ba0bd9d2c0de02637a13ef7dc0",
+      "actions": [
+        "text-area",
+        "text-area-reverse",
+        "text-area-strong",
+        "text-area-reverse-strong"
+      ]
+    },
+    {
+      "icon": "captcha",
+      "spec": "specs/captcha.icon.json",
+      "specSha256": "8deb8017fb86c0bbf1a24e434f54a5898afcdfd98ae9ff8ccfd0225873b54781",
+      "actions": [
+        "captcha",
+        "captcha-reverse",
+        "captcha-strong",
+        "captcha-reverse-strong"
+      ]
+    },
+    {
+      "icon": "character-count",
+      "spec": "specs/character-count.icon.json",
+      "specSha256": "55958502f7323b9aaa2a844b91ec262f1adb8695bfa1cedcd4d305d2f080f2c9",
+      "actions": [
+        "character-count",
+        "character-count-reverse",
+        "character-count-strong",
+        "character-count-reverse-strong"
       ]
     }
   ]

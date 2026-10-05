@@ -1,0 +1,247 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "cube",
+  "label": "Cube",
+  "intent": "The cube turns to show its depth, for a 3D object or model. Light: it turns a quarter of the way to its right, its front edge sweeping across as the left face widens and the right face narrows, then swings back square with a hit and a small rebound. Strong: it hops and turns further, swings back as it lands with a hit, then turns again a little less and settles.",
+  "parts": {
+    "shell": {
+      "//": "the outline of an isometric cube, morphed toward a turned view by the driver 'turn'",
+      "shape": {
+        "morph": [
+          {
+            "polygon": [
+              [
+                16.0,
+                4.5
+              ],
+              [
+                26.0,
+                10.0
+              ],
+              [
+                26.0,
+                22.0
+              ],
+              [
+                16.0,
+                27.5
+              ],
+              [
+                6.0,
+                22.0
+              ],
+              [
+                6.0,
+                10.0
+              ]
+            ],
+            "r": 1.2
+          },
+          {
+            "polygon": [
+              [
+                11.774,
+                5.015
+              ],
+              [
+                25.063,
+                7.676
+              ],
+              [
+                25.063,
+                19.676
+              ],
+              [
+                20.226,
+                26.985
+              ],
+              [
+                6.937,
+                24.324
+              ],
+              [
+                6.937,
+                12.324
+              ]
+            ],
+            "r": 1.2
+          }
+        ],
+        "by": "turn"
+      },
+      "role": "surface",
+      "knockout": [
+        "edges"
+      ]
+    },
+    "edges": {
+      "//": "the three front edges as one stroke (the vertical edge is traced down and back)",
+      "shape": {
+        "morph": [
+          {
+            "polyline": [
+              [
+                6.0,
+                10.0
+              ],
+              [
+                16.0,
+                15.5
+              ],
+              [
+                16.0,
+                27.5
+              ],
+              [
+                16.0,
+                15.5
+              ],
+              [
+                26.0,
+                10.0
+              ]
+            ]
+          },
+          {
+            "polyline": [
+              [
+                6.937,
+                12.324
+              ],
+              [
+                20.226,
+                14.985
+              ],
+              [
+                20.226,
+                26.985
+              ],
+              [
+                20.226,
+                14.985
+              ],
+              [
+                25.063,
+                7.676
+              ]
+            ]
+          }
+        ],
+        "by": "turn"
+      }
+    }
+  },
+  "rigs": {
+    "cube": {
+      "pivot": [
+        16,
+        27.5
+      ],
+      "carries": [
+        "shell",
+        "edges"
+      ]
+    }
+  },
+  "motion": {
+    "turn": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          1,
+          "out"
+        ],
+        [
+          0.3,
+          0,
+          "hit"
+        ],
+        [
+          0.37,
+          0.18,
+          "out"
+        ],
+        [
+          0.44,
+          0,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          1,
+          "out"
+        ],
+        [
+          0.32,
+          0,
+          "hit"
+        ],
+        [
+          0.44,
+          0.55,
+          "out"
+        ],
+        [
+          0.55,
+          0,
+          "hit"
+        ],
+        [
+          0.61,
+          0.1,
+          "out"
+        ],
+        [
+          0.67,
+          0,
+          "hit"
+        ]
+      ]
+    },
+    "cube.y": {
+      "light": [
+        [
+          0,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          -1.1,
+          "out"
+        ],
+        [
+          0.32,
+          0,
+          "hit"
+        ],
+        [
+          0.37,
+          -0.3,
+          "out"
+        ],
+        [
+          0.42,
+          0,
+          "hit"
+        ]
+      ]
+    }
+  }
+}

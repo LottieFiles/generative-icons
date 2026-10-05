@@ -1,0 +1,39 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "voice-id",
+  "label": "Voice ID",
+  "intent": "A spoken passphrase is captured and the voiceprint is recognised. Light: the voiceprint bars swell one after another from left to right as the phrase is spoken; as the last bar settles, the four corner brackets snap in onto the voiceprint (hit), rebound and settle. Strong: two words ripple through the bars, the second taller, and the brackets lock on harder with a bounce.",
+  "parts": {
+    "bracket-tl": {"shape": {"path": "M6 10.5 L6 8.2 C6 6.8 6.8 6 8.2 6 L10.5 6"}},
+    "bracket-tr": {"shape": {"path": "M21.5 6 L23.8 6 C25.2 6 26 6.8 26 8.2 L26 10.5"}},
+    "bracket-bl": {"shape": {"path": "M10.5 26 L8.2 26 C6.8 26 6 25.2 6 23.8 L6 21.5"}},
+    "bracket-br": {"shape": {"path": "M26 21.5 L26 23.8 C26 25.2 25.2 26 23.8 26 L21.5 26"}},
+    "bar-1": {"//": "the voiceprint: five bars of uneven height, tallest in the middle where no bracket reaches", "shape": {"line": [[8, 15], [8, 17]]}},
+    "bar-2": {"shape": {"line": [[12, 12.5], [12, 19.5]]}},
+    "bar-3": {"shape": {"line": [[16, 9.5], [16, 22.5]]}},
+    "bar-4": {"shape": {"line": [[20, 11.5], [20, 20.5]]}},
+    "bar-5": {"shape": {"line": [[24, 15], [24, 17]]}}
+  },
+  "motion": {
+    "bar-1.scale": {
+      "light":  [[0, 1], [0.07, 2, "out"], [0.19, 1, "inOut"]],
+      "strong": [[0, 1], [0.06, 1.8, "out"], [0.16, 1, "inOut"], [0.2, 1], [0.27, 2.2, "out"], [0.4, 1, "inOut"]]
+    },
+    "bar-2.scale": {"follow": "bar-1.scale", "lag": 0.05, "scale": 0.4, "offset": 0.6},
+    "bar-3.scale": {"follow": "bar-1.scale", "lag": 0.1, "scale": 0.2, "offset": 0.8},
+    "bar-4.scale": {"follow": "bar-1.scale", "lag": 0.15, "scale": 0.35, "offset": 0.65},
+    "bar-5.scale": {"follow": "bar-1.scale", "lag": 0.2},
+    "bracket-tl.x": {
+      "light":  [[0, 0], [0.27, 0], [0.35, 1.1, "hit"], [0.44, -0.25], [0.53, 0]],
+      "strong": [[0, 0], [0.54, 0], [0.62, 1.4, "hit"], {"bounce": 0.72, "amp": 0.3}, [0.82, -0.3], [0.94, 0]]
+    },
+    "bracket-tl.y": {"follow": "bracket-tl.x"},
+    "bracket-tr.x": {"follow": "bracket-tl.x", "scale": -1},
+    "bracket-tr.y": {"follow": "bracket-tl.x"},
+    "bracket-bl.x": {"follow": "bracket-tl.x"},
+    "bracket-bl.y": {"follow": "bracket-tl.x", "scale": -1},
+    "bracket-br.x": {"follow": "bracket-tl.x", "scale": -1},
+    "bracket-br.y": {"follow": "bracket-tl.x", "scale": -1}
+  }
+}

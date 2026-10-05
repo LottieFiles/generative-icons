@@ -120,7 +120,7 @@ fn packages_match_the_built_dist_and_carry_the_sidecar() {
         &["--library-root", repo.to_str().unwrap(), "library", "packages", "--output", out.to_str().unwrap()],
     )
     .ok();
-    assert_eq!(result["icons"], 1005);
+    assert_eq!(result["icons"], 1141);
     let built = out.join("icons/dist");
     let mut compared = 0;
     for file in files_below(&dist) {
@@ -144,7 +144,7 @@ fn packages_match_the_built_dist_and_carry_the_sidecar() {
     };
     assert_eq!(strip(&dist.join("release.json")), strip(&built.join("release.json")));
     let sidecar: Value = serde_json::from_slice(&std::fs::read(built.join("search-index.json")).unwrap()).unwrap();
-    assert_eq!(sidecar.as_object().unwrap().len(), 1005);
+    assert_eq!(sidecar.as_object().unwrap().len(), 1141);
     assert_eq!(
         sidecar["bell"]["reference"]["intent"],
         "The bell rings. Light: the bell swings out from its mount, the clapper trails it and strikes, a ring arc flicks out on each side and fades as it spreads, and the swing decays back to rest in smaller beats. Strong: a wider swing that rings twice, once at each end of the swing, and the clapper chases the bell through a longer decay. The mount never moves."

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "build",
+  "label": "Build",
+  "intent": "A build runs: the hammer strikes. Light: the claw hammer swings back about its grip, then strikes forward and stops dead with a hit, sparks burst off its face and fade, and it rebounds a little and settles. Strong: the hammer winds back further and holds, strikes harder with a bigger burst of sparks, rebounds and strikes a second, smaller blow with a smaller burst, then settles.",
+  "parts": {
+    "handle": {"shape": {"line": [[4.8, 25.6], [16.47, 13.93]]}},
+    "head": {"//": "the face (down and right) leads the strike; the claw curls back toward the handle, up and left", "shape": {"path": "M25.66 16.05 L18.59 8.98 C16.47 6.86 13.64 6.15 9.75 8.63 C12.08 9.12 13.29 10.75 15.05 12.52 L22.12 19.59 Z"}, "role": "surface"},
+    "spark-1": {"//": "hidden at rest: sparks off the face, fanned at 25, 62 and 100 degrees about the strike direction", "shape": {"line": [[25.7, 18.67], [27.97, 19.72]]}, "hidden": true},
+    "spark-2": {"shape": {"line": [[24.83, 19.59], [26.0, 21.79]]}, "hidden": true},
+    "spark-3": {"shape": {"line": [[23.54, 19.79], [23.11, 22.25]]}, "hidden": true}
+  },
+  "rigs": {
+    "hammer": {"pivot": [4.8, 25.6], "carries": ["handle", "head"]},
+    "sparks": {"pivot": [23.89, 17.82], "carries": ["spark-1", "spark-2", "spark-3"]}
+  },
+  "motion": {
+    "hammer.rotate": {"light": [[0, 0], [0.14, -15, "out"], [0.26, 0, "hit"], [0.32, -2.5, "out"], [0.4, 0, "inOut"]], "strong": [[0, 0], [0.12, -20, "out"], [0.18, -20], [0.27, 0, "hit"], [0.34, -8, "out"], [0.42, 0, "hit"], [0.47, -1.5, "out"], [0.53, 0, "inOut"]]},
+    "spark-1.opacity": {"light": [[0, 0], [0.26, 0], [0.27, 1, "step"], [0.4, 0, "in"]], "strong": [[0, 0], [0.27, 0], [0.28, 1, "step"], [0.38, 0, "in"], [0.42, 0], [0.43, 0.8, "step"], [0.52, 0, "in"]]},
+    "spark-2.opacity": {"follow": "spark-1.opacity"},
+    "spark-3.opacity": {"follow": "spark-1.opacity"},
+    "sparks.scale": {"light": [[0, 1], [0.26, 0.8, "step"], [0.4, 1.2, "out"], [0.41, 1, "step"]], "strong": [[0, 1], [0.27, 0.8, "step"], [0.38, 1.3, "out"], [0.42, 0.7, "step"], [0.52, 1.1, "out"], [0.53, 1, "step"]]}
+  }
+}

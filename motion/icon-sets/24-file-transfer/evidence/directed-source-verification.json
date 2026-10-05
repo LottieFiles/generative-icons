@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 10,
-  "actions": 40,
+  "icons": 20,
+  "actions": 68,
   "nativeTransformNodes": 132,
   "nativeTransformMaxCoordinateError": 0.000006000000002615025,
   "checks": [
@@ -308,6 +308,104 @@
         "cloud-download-reset",
         "cloud-download-strong",
         "cloud-download-reset-strong"
+      ]
+    },
+    {
+      "icon": "upload-failed",
+      "spec": "specs/upload-failed.icon.json",
+      "specSha256": "067cf697e2bb4aad07f5203caf0bcb02f8fb23b2d482d2c2da40169f5c21f36d",
+      "actions": [
+        "upload-failed",
+        "upload-failed-strong"
+      ]
+    },
+    {
+      "icon": "send-to-device",
+      "spec": "specs/send-to-device.icon.json",
+      "specSha256": "d6efa4c4ae122513949bf4c6355f806e0406ff1c59324fef444532cfdb820a05",
+      "actions": [
+        "send-to-device",
+        "send-to-device-strong"
+      ]
+    },
+    {
+      "icon": "save-offline",
+      "spec": "specs/save-offline.icon.json",
+      "specSha256": "40d3eb12cb6e8285b48c86dc7d028bcdd6c37429f45e76865885bb49534feaae",
+      "actions": [
+        "save-offline",
+        "save-offline-reverse",
+        "save-offline-strong",
+        "save-offline-reverse-strong"
+      ]
+    },
+    {
+      "icon": "merge-files",
+      "spec": "specs/merge-files.icon.json",
+      "specSha256": "236fdf1ad82d4bc4408e4fbed54075890d6acddec726bc8b5a22b208e3c1956a",
+      "actions": [
+        "merge-files",
+        "merge-files-reset",
+        "merge-files-strong",
+        "merge-files-reset-strong"
+      ]
+    },
+    {
+      "icon": "split-file",
+      "spec": "specs/split-file.icon.json",
+      "specSha256": "6263ef046680d300201da319554123c4f99cb71700fbc3204bb5845ed7839156",
+      "actions": [
+        "split-file",
+        "split-file-reset",
+        "split-file-strong",
+        "split-file-reset-strong"
+      ]
+    },
+    {
+      "icon": "virus-scan",
+      "spec": "specs/virus-scan.icon.json",
+      "specSha256": "4a6089bb8d6cbc839efbe3c824324bcf1a1e5134f26e1bb871e4e77376290baa",
+      "actions": [
+        "virus-scan",
+        "virus-scan-strong"
+      ]
+    },
+    {
+      "icon": "shred-file",
+      "spec": "specs/shred-file.icon.json",
+      "specSha256": "7842129e9a412715701b1af67215df0471d835c8d3b6a8577d2d2f464b31316f",
+      "actions": [
+        "shred-file",
+        "shred-file-reset",
+        "shred-file-strong",
+        "shred-file-reset-strong"
+      ]
+    },
+    {
+      "icon": "cloud-backup",
+      "spec": "specs/cloud-backup.icon.json",
+      "specSha256": "99cd625bad93249a11bdc004a7a915d9eb2a8e632db8cf6d55251c3675fa8cf6",
+      "actions": [
+        "cloud-backup",
+        "cloud-backup-strong"
+      ]
+    },
+    {
+      "icon": "nearby-share",
+      "spec": "specs/nearby-share.icon.json",
+      "specSha256": "27144c7b024c36a64302ee0c076d9176a9dd414c1a1b51b2c4ba54de9f2de0d1",
+      "actions": [
+        "nearby-share",
+        "nearby-share-strong"
+      ]
+    },
+    {
+      "icon": "blocked-file",
+      "spec": "specs/blocked-file.icon.json",
+      "specSha256": "936cc050b865480bd6ff8d7e8956dc266801596b1d0a5ff354f2c5c109a65be9",
+      "actions": [
+        "blocked-file",
+        "blocked-file-strong"
       ]
     }
   ]

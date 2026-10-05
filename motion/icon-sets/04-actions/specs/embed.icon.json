@@ -1,0 +1,30 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "embed",
+  "label": "Embed",
+  "intent": "A code snippet is embedded. Light: the slash lifts out and the brackets part to make room, then the slash drops back in between them from above and stops dead, and the brackets clamp shut on it, close a little past their place and settle. Strong: the brackets part wider, the slash drops from higher and lands with a bounce, and the brackets slam shut and rebound twice.",
+  "parts": {
+    "bracket-l": {"shape": {"polyline": [[10.5, 10], [4.8, 16], [10.5, 22]]}},
+    "bracket-r": {"mirror": {"of": "bracket-l"}},
+    "slash":     {"shape": {"line": [[17.7, 9.5], [14.3, 22.5]]}}
+  },
+  "rigs": {
+    "slash": {"pivot": [16, 16]}
+  },
+  "motion": {
+    "bracket-l.x": {
+      "light":  [[0, 0], [0.1, -1.3, "out"], [0.19, -1.3], [0.26, 0.3, "in"], [0.32, -0.1], [0.37, 0]],
+      "strong": [[0, 0], [0.12, -1.6, "out"], [0.22, -1.6], [0.28, 0.4, "in"], [0.34, -0.2], [0.4, 0.08], [0.45, 0]]
+    },
+    "bracket-r.x": {"follow": "bracket-l.x", "scale": -1},
+    "slash.y": {
+      "light":  [[0, 0], [0.06, -1.5, "in"], [0.07, -4, "step"], [0.19, 0, "hit"], {"bounce": 0.25, "amp": 0.1}],
+      "strong": [[0, 0], [0.07, -1.8, "in"], [0.08, -4.5, "step"], [0.21, 0, "hit"], {"bounce": 0.28, "amp": 0.16}, {"bounce": 0.33, "amp": 0.3}]
+    },
+    "slash.opacity": {
+      "light":  [[0, 1], [0.06, 0, "in"], [0.08, 0], [0.14, 1, "out"]],
+      "strong": [[0, 1], [0.07, 0, "in"], [0.09, 0], [0.15, 1, "out"]]
+    }
+  }
+}

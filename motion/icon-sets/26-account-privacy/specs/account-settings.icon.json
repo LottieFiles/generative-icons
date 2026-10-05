@@ -1,0 +1,37 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "account-settings",
+  "label": "Account settings",
+  "intent": "The account's settings are adjusted. Light: the gear beside the person presses in, turns one tooth clockwise and clicks into place with a hit and a small rebound, popping back out as it locks; a beat later the person nods. Strong: the gear winds back first, presses in harder and turns two teeth, clicks in with a two-beat settle, and the person nods deeper, then once more, smaller.",
+  "parts": {
+    "head": {"shape": {"circle": [[13, 9.5], 4.5]}, "role": "surface"},
+    "shoulders": {"//": "the set's person; the right shoulder stops short of the gear", "shape": {"path": "M5 26 C5 21 8.5 18 13 18 C13.7 18 14.3 18.1 14.8 18.2"}},
+    "gear": {
+      "//": "six rounded teeth, the settings gear's profile at badge size; Solid fills it, rim included, and cuts the hub out",
+      "shape": {"polygon": [[27.17, 20.45], [27.68, 21.743], [28.927, 21.877], [28.927, 23.723], [27.68, 23.857], [27.17, 25.15], [26.305, 26.237], [26.813, 27.385], [25.214, 28.308], [24.474, 27.295], [23.1, 27.5], [21.726, 27.295], [20.986, 28.308], [19.387, 27.385], [19.895, 26.237], [19.03, 25.15], [18.52, 23.857], [17.273, 23.723], [17.273, 21.877], [18.52, 21.743], [19.03, 20.45], [19.895, 19.363], [19.387, 18.215], [20.986, 17.292], [21.726, 18.305], [23.1, 18.1], [24.474, 18.305], [25.214, 17.292], [26.813, 18.215], [26.305, 19.363]], "r": 0.45},
+      "role": "surface",
+      "knockout": [{"part": "hub", "gap": 0.3}]
+    },
+    "hub": {"shape": {"circle": [[23.1, 22.8], 2]}, "role": "fill"}
+  },
+  "rigs": {
+    "gear": {"//": "turns and presses about its own centre; six teeth, so 60 degrees is one tooth", "pivot": [23.1, 22.8], "carries": ["gear", "hub"]},
+    "person": {"pivot": [10, 26], "carries": ["head", "shoulders"]}
+  },
+  "motion": {
+    "gear.rotate": {
+      "//": "a whole number of teeth, then an invisible step back to 0 (the six-fold gear looks the same)",
+      "light":  [[0, 0], [0.06, 0], [0.27, 60, "hit"], [0.34, 56], [0.4, 60], [0.41, 0, "step"]],
+      "strong": [[0, 0], [0.1, -14, "out"], [0.4, 120, "hit"], [0.48, 114], [0.55, 122], [0.61, 120], [0.62, 0, "step"]]
+    },
+    "gear.scale": {
+      "light":  [[0, 1], [0.08, 0.9, "out"], [0.25, 0.9], [0.32, 1.04, "out"], [0.4, 1]],
+      "strong": [[0, 1], [0.1, 0.86, "out"], [0.38, 0.86], [0.46, 1.05, "out"], [0.54, 0.98], [0.61, 1]]
+    },
+    "person.y": {
+      "light":  [[0, 0], [0.28, 0], [0.34, 0.9, "out"], [0.41, -0.2], [0.47, 0]],
+      "strong": [[0, 0], [0.41, 0], [0.47, 1.3, "out"], [0.54, -0.3], [0.6, 0.6, "out"], [0.66, 0]]
+    }
+  }
+}

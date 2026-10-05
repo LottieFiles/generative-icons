@@ -1,0 +1,43 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "voice-command",
+  "label": "Voice command",
+  "intent": "A spoken command triggers an action. Light: a pair of sound arcs travels in from the upper sides and fades into the microphone capsule, and as it lands the lightning bolt beside it fires: it pops bigger with a quick twist and settles. Strong: two words arrive in turn; the bolt crouches on the first and fires on the second, popping bigger with a crackling shake before it settles. The microphone never moves.",
+  "parts": {
+    "cradle": {"shape": {"path": "M4 13.5 L4 14 C4 17.31 6.69 20 10 20 C13.31 20 16 17.31 16 14 L16 13.5"}},
+    "stand": {"shape": {"line": [[10, 20], [10, 23.5]]}},
+    "foot": {"shape": {"line": [[7, 23.5], [13, 23.5]]}},
+    "capsule": {"shape": {"rect": [7.25, 6.75, 5.5, 10], "r": 2.75}, "role": "surface"},
+    "bolt": {
+      "//": "the action the command runs",
+      "shape": {"polygon": [[23.5, 6.22], [27.32, 6.22], [24.77, 13.45], [27.75, 13.45], [20.95, 25.77], [22.65, 17.27], [19.25, 17.27]], "r": 0.8},
+      "role": "surface"
+    },
+    "wave-l": {"//": "hidden at rest: the spoken command arriving at the microphone", "shape": {"arc": [[10, 11.75], 7.7, 202, 234]}, "hidden": true},
+    "wave-r": {"mirror": {"of": "wave-l", "x": 10}}
+  },
+  "rigs": {
+    "bolt": {"//": "the bolt pops and twists about its own centre", "pivot": [23.5, 16], "carries": ["bolt"]}
+  },
+  "motion": {
+    "wave-l.opacity": {
+      "light": [[0, 0], [0.05, 1, "out"], [0.13, 1], [0.2, 0, "in"]],
+      "strong": [[0, 0], [0.05, 1, "out"], [0.12, 1], [0.18, 0, "in"], [0.22, 0], [0.27, 1, "out"], [0.34, 1], [0.4, 0, "in"]]
+    },
+    "wave-l.r": {
+      "light": [[0, 0], [0.2, -2.5, "in"], [0.21, 0, "step"]],
+      "strong": [[0, 0], [0.18, -2.5, "in"], [0.19, 0, "step"], [0.22, 0], [0.4, -2.5, "in"], [0.41, 0, "step"]]
+    },
+    "wave-r.opacity": {"follow": "wave-l.opacity"},
+    "wave-r.r": {"follow": "wave-l.r"},
+    "bolt.scale": {
+      "light": [[0, 1], [0.18, 1], [0.25, 1.1, "out"], [0.34, 0.97], [0.43, 1]],
+      "strong": [[0, 1], [0.16, 1], [0.22, 0.9, "out"], [0.36, 0.9], [0.43, 1.14, "out"], [0.53, 0.96], [0.62, 1.01], [0.7, 1]]
+    },
+    "bolt.rotate": {
+      "light": [[0, 0], [0.18, 0], [0.25, -9, "out"], [0.34, 3], [0.43, 0]],
+      "strong": [[0, 0], [0.36, 0], {"wobble": 0.36, "amp": 7, "until": 0.7, "swings": 4}]
+    }
+  }
+}

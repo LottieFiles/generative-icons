@@ -1,0 +1,440 @@
+{
+ "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+ "format": "gai-icon/2",
+ "id": "low-vision",
+ "label": "Low vision",
+ "intent": "A person who is blind or has low vision walks with a white cane and taps the way ahead. Light: the cane swings its tip up and forward, then taps down on the ground with a hit and a small rebound, and two tap marks flash out from the tip; the head nods a beat later. Strong: tap-tap: two sweeps and two taps, each with its marks, while the walker leans into the step and settles back. The walker and cane end exactly at rest; the marks are gone again.",
+ "//": "The figure follows wheelchair-access and accessibility: a filled head, single strokes for body and limbs. The arm reaches forward almost level so the long cane reads apart from the legs.",
+ "parts": {
+  "head": {
+   "shape": {
+    "circle": [
+     [
+      10.6,
+      6.4
+     ],
+     2
+    ]
+   },
+   "role": "fill"
+  },
+  "torso": {
+   "shape": {
+    "line": [
+     [
+      10.8,
+      10.8
+     ],
+     [
+      9.2,
+      18.6
+     ]
+    ]
+   }
+  },
+  "arm": {
+   "shape": {
+    "line": [
+     [
+      10.6,
+      12.6
+     ],
+     [
+      16.5,
+      13.6
+     ]
+    ]
+   }
+  },
+  "leg-back": {
+   "shape": {
+    "line": [
+     [
+      9.2,
+      18.6
+     ],
+     [
+      5.6,
+      27.2
+     ]
+    ]
+   }
+  },
+  "leg": {
+   "shape": {
+    "polyline": [
+     [
+      9.2,
+      18.6
+     ],
+     [
+      12,
+      22.6
+     ],
+     [
+      12.2,
+      27.2
+     ]
+    ],
+    "r": 0.6
+   }
+  },
+  "cane": {
+   "shape": {
+    "line": [
+     [
+      16.5,
+      13.6
+     ],
+     [
+      24.4,
+      27.2
+     ]
+    ]
+   }
+  },
+  "tap-a": {
+   "//": "hidden at rest: tap marks, drawn outward from the cane's tip",
+   "shape": {
+    "line": [
+     [
+      26.3,
+      26.4
+     ],
+     [
+      28.9,
+      25.5
+     ]
+    ]
+   },
+   "hidden": true
+  },
+  "tap-b": {
+   "shape": {
+    "line": [
+     [
+      25.8,
+      24.4
+     ],
+     [
+      27.8,
+      22.4
+     ]
+    ]
+   },
+   "hidden": true
+  }
+ },
+ "rigs": {
+  "walker": {
+   "//": "leans forward on the front foot (Strong only)",
+   "pivot": [
+    12.2,
+    27.2
+   ],
+   "carries": [
+    "torso",
+    "arm",
+    "leg-back",
+    "leg",
+    "cane"
+   ]
+  },
+  "cane": {
+   "pivot": [
+    16.5,
+    13.6
+   ]
+  },
+  "head": {
+   "pivot": [
+    12.2,
+    27.2
+   ]
+  }
+ },
+ "motion": {
+  "cane.rotate": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.13,
+     -11,
+     "out"
+    ],
+    [
+     0.25,
+     0,
+     "hit"
+    ],
+    [
+     0.31,
+     -2.5
+    ],
+    [
+     0.37,
+     0
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.12,
+     -12,
+     "out"
+    ],
+    [
+     0.23,
+     0,
+     "hit"
+    ],
+    [
+     0.27,
+     -2
+    ],
+    [
+     0.37,
+     -10,
+     "out"
+    ],
+    [
+     0.48,
+     0,
+     "hit"
+    ],
+    [
+     0.54,
+     -2.5
+    ],
+    [
+     0.6,
+     0
+    ]
+   ]
+  },
+  "tap-a.opacity": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.24,
+     0
+    ],
+    [
+     0.26,
+     1,
+     "out"
+    ],
+    [
+     0.34,
+     1
+    ],
+    [
+     0.42,
+     0,
+     "in"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.22,
+     0
+    ],
+    [
+     0.24,
+     1,
+     "out"
+    ],
+    [
+     0.3,
+     1
+    ],
+    [
+     0.36,
+     0,
+     "in"
+    ],
+    [
+     0.47,
+     0
+    ],
+    [
+     0.49,
+     1,
+     "out"
+    ],
+    [
+     0.56,
+     1
+    ],
+    [
+     0.64,
+     0,
+     "in"
+    ]
+   ]
+  },
+  "tap-a.draw": {
+   "light": [
+    [
+     0,
+     1
+    ],
+    [
+     0.24,
+     0,
+     "step"
+    ],
+    [
+     0.33,
+     1,
+     "out"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     1
+    ],
+    [
+     0.22,
+     0,
+     "step"
+    ],
+    [
+     0.3,
+     1,
+     "out"
+    ],
+    [
+     0.47,
+     0,
+     "step"
+    ],
+    [
+     0.55,
+     1,
+     "out"
+    ]
+   ]
+  },
+  "tap-b.opacity": {
+   "follow": "tap-a.opacity",
+   "lag": 0.02
+  },
+  "tap-b.draw": {
+   "follow": "tap-a.draw",
+   "lag": 0.02
+  },
+  "walker.rotate": {
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.1,
+     2.5,
+     "out"
+    ],
+    [
+     0.24,
+     2.5
+    ],
+    [
+     0.36,
+     3.5,
+     "out"
+    ],
+    [
+     0.5,
+     3.5
+    ],
+    [
+     0.62,
+     0,
+     "inOut"
+    ],
+    [
+     0.68,
+     -0.6
+    ],
+    [
+     0.74,
+     0
+    ]
+   ]
+  },
+  "head.rotate": {
+   "//": "the head rides the lean a beat late and nods at each tap",
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.25,
+     0
+    ],
+    [
+     0.31,
+     2,
+     "out"
+    ],
+    [
+     0.4,
+     0
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.14,
+     2.5,
+     "out"
+    ],
+    [
+     0.3,
+     3.2
+    ],
+    [
+     0.4,
+     3.5
+    ],
+    [
+     0.54,
+     4.5,
+     "out"
+    ],
+    [
+     0.68,
+     0,
+     "inOut"
+    ],
+    [
+     0.74,
+     -0.8
+    ],
+    [
+     0.8,
+     0
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "chat-widget",
+  "label": "Chat widget",
+  "intent": "The support chat launcher is clicked open. Light: the round launcher presses in and springs back, its chat bubble turns away and fades, and the close cross spins in a quarter turn in its place, overshoots and settles; the cross stays while the chat is open. Strong: a deeper press with a rebound, and the cross spins in a half turn with a bigger overshoot. The reverse spins the cross out and the bubble pops back in.",
+  "state": {"from": "closed", "to": "open", "labels": ["Open chat", "Close chat"], "reverse": "auto"},
+  "parts": {
+    "launcher": {"shape": {"circle": [[16, 16], 11]}, "role": "surface", "solid": "ring"},
+    "glyph": {
+      "//": "the chat bubble on the closed launcher",
+      "shape": {"polygon": [
+        {"p": [11, 11.5], "r": 2.5},
+        {"p": [21, 11.5], "r": 2.5},
+        {"p": [21, 18.5], "r": 2.5},
+        {"p": [14.5, 18.5], "r": 0.8},
+        {"p": [11, 21.2], "r": 0.5}
+      ]}
+    },
+    "cross": {
+      "//": "hidden at rest: the close cross of the open launcher",
+      "shape": [{"line": [[12.6, 12.6], [19.4, 19.4]]}, {"line": [[19.4, 12.6], [12.6, 19.4]]}],
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "launcher": {"pivot": [16, 16]},
+    "glyph": {"pivot": [16, 16]},
+    "cross": {"pivot": [16, 16]}
+  },
+  "reverse": {
+    "//": "the cross spins out and fades, then the bubble spins back in and lands with a small overshoot as the launcher presses",
+    "light": {
+      "launcher.scale": [[0, 1], [0.06, 0.9, "out"], [0.16, 1.04, "out"], [0.23, 0.99], [0.28, 1]],
+      "cross.rotate": [[0, 0], [0.1, -90, "in"], [0.11, 0, "step"]],
+      "cross.scale": [[0, 1], [0.1, 0.6, "in"], [0.11, 1, "step"]],
+      "cross.opacity": [[0, 1], [0.04, 1], [0.1, 0, "in"]],
+      "glyph.rotate": [[0, 90], [0.08, 90], [0.2, -8, "out"], [0.26, 2], [0.31, 0]],
+      "glyph.scale": [[0, 0.5], [0.08, 0.5], [0.2, 1.06, "out"], [0.27, 1]],
+      "glyph.opacity": [[0, 0], [0.08, 0], [0.15, 1, "out"]]
+    },
+    "strong": {
+      "launcher.scale": [[0, 1], [0.07, 0.86, "out"], [0.18, 1.06, "out"], [0.25, 0.97], [0.31, 1.01], [0.36, 1]],
+      "cross.rotate": [[0, 0], [0.1, -120, "in"], [0.11, 0, "step"]],
+      "cross.scale": [[0, 1], [0.1, 0.5, "in"], [0.11, 1, "step"]],
+      "cross.opacity": [[0, 1], [0.04, 1], [0.1, 0, "in"]],
+      "glyph.rotate": [[0, 90], [0.08, 90], [0.22, -14, "out"], [0.3, 5], [0.36, -1.5], [0.41, 0]],
+      "glyph.scale": [[0, 0.5], [0.08, 0.5], [0.22, 1.1, "out"], [0.3, 0.97], [0.36, 1]],
+      "glyph.opacity": [[0, 0], [0.08, 0], [0.15, 1, "out"]]
+    }
+  },
+  "motion": {
+    "launcher.scale": {
+      "light": [[0, 1], [0.06, 0.9, "out"], [0.16, 1.04, "out"], [0.23, 0.99], [0.28, 1]],
+      "strong": [[0, 1], [0.07, 0.86, "out"], [0.18, 1.06, "out"], [0.25, 0.97], [0.31, 1.01], [0.36, 1]]
+    },
+    "glyph.rotate": {
+      "light": [[0, 0], [0.04, 0], [0.14, 90, "in"]],
+      "strong": [[0, 0], [0.04, 0], [0.14, 90, "in"]]
+    },
+    "glyph.scale": {
+      "light": [[0, 1], [0.04, 0.92], [0.14, 0.5, "in"]],
+      "strong": [[0, 1], [0.04, 0.9], [0.14, 0.5, "in"]]
+    },
+    "glyph.opacity": {
+      "light": [[0, 1], [0.06, 1], [0.13, 0, "in"]],
+      "strong": [[0, 1], [0.06, 1], [0.13, 0, "in"]]
+    },
+    "cross.rotate": {
+      "light": [[0, 0], [0.08, -90, "step"], [0.2, 10, "out"], [0.27, -3], [0.32, 0]],
+      "strong": [[0, 0], [0.08, -180, "step"], [0.22, 16, "out"], [0.3, -6], [0.36, 2], [0.41, 0]]
+    },
+    "cross.scale": {
+      "light": [[0, 1], [0.08, 0.6, "step"], [0.2, 1.06, "out"], [0.27, 1]],
+      "strong": [[0, 1], [0.08, 0.5, "step"], [0.22, 1.1, "out"], [0.3, 0.97], [0.36, 1]]
+    },
+    "cross.opacity": {
+      "light": [[0, 0], [0.08, 0], [0.15, 1, "out"]],
+      "strong": [[0, 0], [0.08, 0], [0.15, 1, "out"]]
+    }
+  }
+}

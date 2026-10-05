@@ -1,0 +1,5284 @@
+{
+ "categories": [
+  {
+   "category": "accessibility-reading",
+   "set": "30-accessibility-reading",
+   "target": 10,
+   "delivered": 10,
+   "wallMinutes": 32.6,
+   "commands": {
+    "init": 1,
+    "search": 82,
+    "preview": 31,
+    "context": 6,
+    "create": 10,
+    "check": 33,
+    "draft": 14,
+    "build": 16,
+    "vcheck": 14
+   },
+   "engineSeconds": 114.6,
+   "lockWaitSeconds": 34.1,
+   "buildsPerIcon": 1.6,
+   "draftsPerIcon": 1.4,
+   "dropped": [
+    {
+     "concept": "reading-guide (reading ruler / line focus)",
+     "reason": "Rejected before drawing: a band stepping between text lines would draw and move almost exactly like focus-indicator (brackets stepping between lines)."
+    },
+    {
+     "concept": "screen-reader",
+     "reason": "Rejected before drawing: text-to-speech (AI \u00b7 Creation) already covers turning text into speech."
+    },
+    {
+     "concept": "page-turn",
+     "reason": "Rejected before drawing: book (Tools) already animates a page turn."
+    },
+    {
+     "concept": "alt-text",
+     "reason": "Rejected before drawing: image-caption (AI \u00b7 Creation) covers describing an image."
+    },
+    {
+     "concept": "sign-language",
+     "reason": "Not attempted: two signing hands could not be drawn legibly at 24 px within the draft budget."
+    }
+   ]
+  },
+  {
+   "category": "account-privacy",
+   "set": "26-account-privacy",
+   "target": 8,
+   "delivered": 8,
+   "wallMinutes": 31.9,
+   "commands": {
+    "init": 1,
+    "search": 92,
+    "preview": 19,
+    "context": 1,
+    "create": 9,
+    "check": 15,
+    "draft": 10,
+    "build": 8,
+    "vcheck": 8
+   },
+   "engineSeconds": 59.8,
+   "lockWaitSeconds": 0.9,
+   "buildsPerIcon": 1.0,
+   "draftsPerIcon": 1.25,
+   "dropped": [
+    {
+     "id": "password-manager",
+     "label": "Password manager",
+     "reason": "Drawn as a keychain (ring with two hanging keys); the first draft read as a cluster of three small circles with splayed legs (an \"A\"/molecule) at 24 px and Bold. Replaced by private-account; the claim was released. One draft, no build."
+    }
+   ]
+  },
+  {
+   "category": "actions",
+   "set": "04-actions",
+   "target": 10,
+   "delivered": 10,
+   "wallMinutes": 31.5,
+   "commands": {
+    "init": 1,
+    "search": 45,
+    "preview": 25,
+    "context": 7,
+    "create": 10,
+    "check": 25,
+    "draft": 16,
+    "build": 13,
+    "vcheck": 23
+   },
+   "engineSeconds": 0,
+   "lockWaitSeconds": 78.1,
+   "buildsPerIcon": 1.3,
+   "draftsPerIcon": 1.6,
+   "dropped": [
+    {
+     "id": "minimize",
+     "reason": "Claimed, then dropped before drawing. There is no strong, recognisable glyph (a bar or a shrinking window), and arrows-collapse and picture-in-picture already cover most of its uses. Replaced by swipe."
+    }
+   ]
+  },
+  {
+   "category": "annotation-arrows",
+   "set": "21-annotation-arrows",
+   "target": 8,
+   "delivered": 8,
+   "wallMinutes": 34.1,
+   "commands": {
+    "init": 1,
+    "search": 58,
+    "preview": 14,
+    "context": 2,
+    "create": 1,
+    "check": 16,
+    "draft": 13,
+    "build": 8,
+    "vcheck": 8
+   },
+   "engineSeconds": 63.1,
+   "lockWaitSeconds": 22.4,
+   "buildsPerIcon": 1.0,
+   "draftsPerIcon": 1.62,
+   "dropped": [
+    {
+     "id": "annotation-hop",
+     "label": "Hop-over pointer",
+     "reason": "An arc arrow over a box reads as rotate-tool (Drawing & design tools), which is drawn the same way; one draft spent, no build."
+    },
+    {
+     "id": "annotation-underline",
+     "label": "Underline pointer",
+     "reason": "Dropped at the sketch stage: the underlined text could not be shown at 24 px without reading as text-wrap or a list (bars) or as signature (cursive); no engine runs spent. The claim in claims.txt is left in place, unused."
+    },
+    {
+     "id": "(considered) dimension line",
+     "reason": "Rejected at search: distance (Maps) and ruler already cover measuring."
+    },
+    {
+     "id": "(considered) u-turn / hook pointer",
+     "reason": "Rejected at search: arrow-u-turn covers it."
+    }
+   ]
+  },
+  {
+   "category": "communication-social",
+   "set": "33-communication-social",
+   "target": 11,
+   "delivered": 11,
+   "wallMinutes": 34.5,
+   "commands": {
+    "init": 1,
+    "search": 143,
+    "preview": 19,
+    "create": 12,
+    "context": 1,
+    "check": 24,
+    "draft": 16,
+    "build": 15,
+    "vcheck": 14
+   },
+   "engineSeconds": 22.1,
+   "lockWaitSeconds": 24.7,
+   "buildsPerIcon": 1.36,
+   "draftsPerIcon": 1.45,
+   "dropped": []
+  },
+  {
+   "category": "developer-version-control",
+   "set": "31-developer-version-control",
+   "target": 7,
+   "delivered": 7,
+   "wallMinutes": 28.1,
+   "commands": {
+    "init": 1,
+    "search": 103,
+    "preview": 8,
+    "context": 2,
+    "create": 7,
+    "check": 27,
+    "draft": 10,
+    "build": 11,
+    "vcheck": 18
+   },
+   "engineSeconds": 84.1,
+   "lockWaitSeconds": 0,
+   "buildsPerIcon": 1.57,
+   "draftsPerIcon": 1.43,
+   "dropped": [
+    {
+     "id": "ci-pipeline",
+     "reason": "Claimed and then released before drawing. A row of stage rings duplicates progress-steps (Feedback & status), and a DAG of stage boxes duplicates agent-workflow (AI Agents). Replaced by git-compare."
+    }
+   ]
+  },
+  {
+   "category": "essentials",
+   "set": "03-essentials",
+   "target": 12,
+   "delivered": 12,
+   "wallMinutes": 46.0,
+   "commands": {
+    "init": 1,
+    "search": 82,
+    "preview": 4,
+    "context": 1,
+    "create": 1,
+    "check": 36,
+    "draft": 17,
+    "build": 20,
+    "vcheck": 30,
+    "info": 1
+   },
+   "engineSeconds": 53.3,
+   "lockWaitSeconds": 76.9,
+   "buildsPerIcon": 1.67,
+   "draftsPerIcon": 1.42,
+   "dropped": []
+  },
+  {
+   "category": "file-transfer",
+   "set": "24-file-transfer",
+   "target": 10,
+   "delivered": 10,
+   "wallMinutes": 39.2,
+   "commands": {
+    "init": 1,
+    "search": 70,
+    "preview": 8,
+    "context": 2,
+    "create": 10,
+    "check": 31,
+    "draft": 19,
+    "build": 16,
+    "vcheck": 16,
+    "info": 1
+   },
+   "engineSeconds": 52.2,
+   "lockWaitSeconds": 14.4,
+   "buildsPerIcon": 1.6,
+   "draftsPerIcon": 1.9,
+   "dropped": [
+    {
+     "id": "storage-full",
+     "reason": "No standard glyph. A drive with a usage bar reads as a battery at 24 px, and usage-meter and api-quota already cover usage and quota meters. Released the claim before drawing."
+    },
+    {
+     "id": "convert-file",
+     "reason": "Two file sheets and two curved arrows don't fit in 32 units: sheets 9 units wide, arrowheads under 3 px and clearances under 1 unit at Bold. Released the claim before drawing."
+    },
+    {
+     "id": "email-file",
+     "reason": "Rejected at search: mail already shows a letter in an envelope, and attach-file covers attaching. Never claimed."
+    },
+    {
+     "id": "virus-scan (first layout)",
+     "reason": "A shield inside the sheet meant the scan line crossed the shield the whole way down. Redrawn with the shield beside the sheet, not dropped."
+    },
+    {
+     "id": "nearby-share (first layout)",
+     "reason": "Arcs on both sides of a narrow sheet read as vibrate-alert or haptic-feedback. Redrawn with the arcs above the sheet, not dropped."
+    }
+   ]
+  },
+  {
+   "category": "forms-input",
+   "set": "27-forms-input",
+   "target": 9,
+   "delivered": 9,
+   "wallMinutes": 27.7,
+   "commands": {
+    "init": 1,
+    "search": 43,
+    "preview": 4,
+    "context": 3,
+    "create": 9,
+    "check": 15,
+    "draft": 14,
+    "build": 9,
+    "vcheck": 9
+   },
+   "engineSeconds": 66.7,
+   "lockWaitSeconds": 0,
+   "buildsPerIcon": 1.0,
+   "draftsPerIcon": 1.56,
+   "dropped": [
+    {
+     "id": "segmented-control",
+     "reason": "considered before drawing: three segments, dividers and a sliding pill do not fit with 1.4-unit clearances at Bold, and a two-segment version duplicates toggle-switch; never claimed"
+    }
+   ]
+  },
+  {
+   "category": "get-help",
+   "set": "23-get-help",
+   "target": 15,
+   "delivered": 15,
+   "wallMinutes": 47.5,
+   "commands": {
+    "init": 1,
+    "search": 53,
+    "preview": 13,
+    "create": 16,
+    "check": 37,
+    "draft": 25,
+    "build": 27,
+    "vcheck": 41,
+    "info": 1
+   },
+   "engineSeconds": 74.6,
+   "lockWaitSeconds": 33.4,
+   "buildsPerIcon": 1.8,
+   "draftsPerIcon": 1.67,
+   "dropped": [
+    {
+     "id": "service-status",
+     "reason": "A status card with uptime bars read as an equalizer or app window at 24 px, and the usual status glyph (a heartbeat line) is already model-status. Claim released after 1 draft; replaced by tech-support."
+    },
+    {
+     "id": "rate-support",
+     "reason": "Dropped before drawing: a satisfaction face is covered by emoji-picker and sentiment-meter, and a star by star-rating; a bubble with a star would be a sixth chat bubble. Claim released; replaced by submit-request."
+    }
+   ]
+  },
+  {
+   "category": "infrastructure-devices",
+   "set": "32-infrastructure-devices",
+   "target": 10,
+   "delivered": 10,
+   "wallMinutes": 29.8,
+   "commands": {
+    "init": 1,
+    "search": 30,
+    "preview": 20,
+    "context": 1,
+    "create": 10,
+    "check": 24,
+    "draft": 13,
+    "build": 10,
+    "vcheck": 10
+   },
+   "engineSeconds": 0,
+   "lockWaitSeconds": 28.0,
+   "buildsPerIcon": 1.0,
+   "draftsPerIcon": 1.3,
+   "dropped": [
+    {
+     "id": "cell-tower",
+     "reason": "Rejected before drawing: live-broadcast (an antenna mast with waves to both sides) already covers the meaning."
+    },
+    {
+     "id": "sim-card",
+     "reason": "Claimed, then released before drawing: it shares the SD card's clipped-card silhouette and had no event of its own beyond SD card's."
+    },
+    {
+     "id": "vr-headset",
+     "reason": "Claimed, then released before drawing: no clear event beyond a nudge; replaced by remote-control and circuit-board."
+    },
+    {
+     "id": "graphics-card",
+     "reason": "Rejected after search: gpu-cluster covers GPU hardware."
+    },
+    {
+     "id": "webcam",
+     "reason": "Rejected after search: camera, security-camera and video-call cover it closely."
+    }
+   ]
+  },
+  {
+   "category": "scheduling-time",
+   "set": "34-scheduling-time",
+   "target": 12,
+   "delivered": 12,
+   "wallMinutes": 33.9,
+   "commands": {
+    "init": 1,
+    "search": 70,
+    "preview": 19,
+    "context": 1,
+    "create": 1,
+    "check": 29,
+    "draft": 17,
+    "build": 17,
+    "vcheck": 17
+   },
+   "engineSeconds": 28.9,
+   "lockWaitSeconds": 48.5,
+   "buildsPerIcon": 1.42,
+   "draftsPerIcon": 1.42,
+   "dropped": [
+    {
+     "id": "schedule-conflict",
+     "reason": "Dropped before drawing: two overlapping event blocks read as copy/layers at 24 px, and no clear one-shot event; replaced by overdue."
+    },
+    {
+     "id": "shift-swap",
+     "reason": "Dropped before drawing: two swapping shift pills did not read as a swap at rest without a sort-like arrow glyph and looked like availability; replaced by extend-time."
+    },
+    {
+     "id": "history / time-off / focus-timer / time-zone",
+     "reason": "Rejected at search: recent-searches, beach-umbrella, countdown-timer and world-clock already cover those meanings."
+    }
+   ]
+  },
+  {
+   "category": "tables-analytics",
+   "set": "28-tables-analytics",
+   "target": 4,
+   "delivered": 4,
+   "wallMinutes": 15.5,
+   "commands": {
+    "init": 1,
+    "search": 29,
+    "preview": 14,
+    "context": 1,
+    "create": 4,
+    "check": 8,
+    "draft": 5,
+    "build": 4,
+    "vcheck": 4
+   },
+   "engineSeconds": 28.1,
+   "lockWaitSeconds": 4.5,
+   "buildsPerIcon": 1.0,
+   "draftsPerIcon": 1.25,
+   "dropped": []
+  },
+  {
+   "category": "voice",
+   "set": "16-voice",
+   "target": 10,
+   "delivered": 10,
+   "wallMinutes": 41.3,
+   "commands": {
+    "init": 1,
+    "preview": 67,
+    "search": 54,
+    "context": 1,
+    "create": 10,
+    "check": 32,
+    "draft": 20,
+    "build": 18,
+    "vcheck": 18
+   },
+   "engineSeconds": 78.4,
+   "lockWaitSeconds": 12.6,
+   "buildsPerIcon": 1.8,
+   "draftsPerIcon": 2.0,
+   "dropped": [
+    {
+     "concept": "speakerphone",
+     "reason": "Dropped before drawing (claim released). A handset with arcs reads as the phone ringing, and the call-screen speaker glyph duplicates volume and loudspeaker."
+    },
+    {
+     "concept": "voice-effects / voice changer",
+     "reason": "Too close to switch-voice (16): both change the voice you hear."
+    },
+    {
+     "concept": "deafen",
+     "reason": "Too close to mute-audio (44): both mute incoming audio."
+    },
+    {
+     "concept": "request-to-speak",
+     "reason": "raise-hand already exists."
+    },
+    {
+     "concept": "headset",
+     "reason": "support-agent (23) already draws a person with a boom headset."
+    },
+    {
+     "concept": "dictation / read aloud",
+     "reason": "Covered by speech-to-text and text-to-speech (09)."
+    },
+    {
+     "concept": "voice-mode",
+     "reason": "Too close to voice-chat (09) and to the bar icons voice-activity and voice-isolation."
+    }
+   ]
+  }
+ ],
+ "icons": [
+  {
+   "id": "audio-description",
+   "category": "accessibility-reading",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 15.5,
+   "engineSeconds": 17.2,
+   "notes": {
+    "label": "Audio description",
+    "categoryId": "accessibility-reading",
+    "stateful": true,
+    "concept": "The AD caption-plate toggle that turns narrated audio description on and off in media players.",
+    "searchedFor": [
+     "audio description",
+     "audio description narration AD",
+     "audio described video",
+     "closed captions subtitles cc",
+     "screen reader read aloud text to speech"
+    ],
+    "nearestExisting": "closed-captions (Media & playback) is the CC plate that opens a caption line; this is its AD twin on the same plate, opening a narration waveform. text-to-speech (AI \u00b7 Creation) is an A with sound arcs, so I kept the arcs off this icon to tell the two apart.",
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "audiobook",
+   "category": "accessibility-reading",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 10.8,
+   "engineSeconds": 7.9,
+   "notes": {
+    "label": "Audiobook",
+    "categoryId": "accessibility-reading",
+    "stateful": false,
+    "concept": "An open book sending sound waves up from its spine, for audiobooks and listen-to-book features.",
+    "searchedFor": [
+     "audiobook",
+     "audio book listen",
+     "audiobook book headphones listen",
+     "spoken book narration",
+     "book open read ebook"
+    ],
+    "nearestExisting": "book (Tools) turns a page; headphones (Media & playback) plays sound; text-to-speech (AI \u00b7 Creation) is a letter that speaks. None shows a book being listened to.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "braille",
+   "category": "accessibility-reading",
+   "checks": 8,
+   "drafts": 1,
+   "builds": 6,
+   "vchecks": 4,
+   "firstBuildPass": false,
+   "firstVcheckPass": true,
+   "minutes": 22.5,
+   "engineSeconds": 38.4,
+   "notes": {
+    "label": "Braille",
+    "categoryId": "accessibility-reading",
+    "stateful": false,
+    "concept": "Two braille cells of raised dots, for braille display and braille output settings.",
+    "searchedFor": [
+     "braille dots tactile",
+     "braille blind",
+     "braille display",
+     "dots grid drag handle"
+    ],
+    "nearestExisting": "drag-handle (Everyday controls) is a regular 2x3 dot grid for dragging; braille is two irregular cells (the word 'on') whose dots pop in reading order. loading-dots and wave-dots are loaders in a row. No library icon means braille.",
+    "drafts": 1,
+    "builds": 6
+   }
+  },
+  {
+   "id": "color-filters",
+   "category": "accessibility-reading",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 3.1,
+   "engineSeconds": 6.9,
+   "notes": {
+    "label": "Color filters",
+    "categoryId": "accessibility-reading",
+    "stateful": false,
+    "concept": "Three overlapping colour filters, for colour-filter and colour-blind display modes.",
+    "searchedFor": [
+     "color filters color blindness",
+     "colorblind mode venn circles",
+     "colour filter grayscale",
+     "color filters overlapping circles"
+    ],
+    "nearestExisting": "high-contrast (this set) flips a half-filled dial for contrast; filter (Tools), video-filter and search-filter are funnels and effects. None means colour-vision filters.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "dwell-click",
+   "category": "accessibility-reading",
+   "checks": 4,
+   "drafts": 3,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 9.4,
+   "engineSeconds": 7.0,
+   "notes": {
+    "label": "Dwell click",
+    "categoryId": "accessibility-reading",
+    "stateful": false,
+    "concept": "A pointer with a timer ring that clicks by itself after resting still (dwell or auto click, for motor accessibility).",
+    "searchedFor": [
+     "dwell click hover click timer",
+     "auto click automatic click",
+     "cursor pointer arrow"
+    ],
+    "nearestExisting": "pointer-speed (Preferences) dashes the pointer sideways; countdown-timer and self-timer are clocks; cursor-click (claimed by essentials) is an ordinary click. Here a timer sweeps the ring and then triggers the click.",
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "eye-tracking",
+   "category": "accessibility-reading",
+   "checks": 4,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 7.8,
+   "notes": {
+    "label": "Eye tracking",
+    "categoryId": "accessibility-reading",
+    "stateful": false,
+    "concept": "An eye inside tracking corner brackets, for eye-tracking and gaze-control accessibility settings.",
+    "searchedFor": [
+     "eye tracking gaze control",
+     "gaze pupil",
+     "eye vision low vision"
+    ],
+    "nearestExisting": "eye (Actions) is show/visibility and blinks; here the corner brackets track the gaze and only the pupil moves. face-authentication uses brackets around a face for identity.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "glasses",
+   "category": "accessibility-reading",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.8,
+   "engineSeconds": 7.2,
+   "notes": {
+    "label": "Glasses",
+    "categoryId": "accessibility-reading",
+    "stateful": false,
+    "concept": "A pair of reading glasses, for vision, reading and magnification settings.",
+    "searchedFor": [
+     "glasses vision spectacles",
+     "glasses eyeglasses reading glasses",
+     "eye vision low vision"
+    ],
+    "nearestExisting": "eye (Actions) is visibility and reading-mode (this set) is a reader page; no library icon draws glasses.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "letter-spacing",
+   "category": "accessibility-reading",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 12.5,
+   "engineSeconds": 8.5,
+   "notes": {
+    "label": "Letter spacing",
+    "categoryId": "accessibility-reading",
+    "stateful": false,
+    "concept": "AV with a double arrow, for letter and character spacing (text-spacing) settings.",
+    "searchedFor": [
+     "letter spacing kerning tracking",
+     "character spacing",
+     "font spacing text spacing",
+     "dyslexia"
+    ],
+    "nearestExisting": "line-spacing (Text & document editing) spaces rows vertically; this is its horizontal twin with the same keys, spacing letters apart. text-size changes the size, not the spacing.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "low-vision",
+   "category": "accessibility-reading",
+   "checks": 4,
+   "drafts": 3,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 5.3,
+   "engineSeconds": 6.9,
+   "notes": {
+    "label": "Low vision",
+    "categoryId": "accessibility-reading",
+    "stateful": false,
+    "concept": "A person walking with a white cane, the access symbol for blind and low-vision visitors.",
+    "searchedFor": [
+     "white cane low vision blind person",
+     "visually impaired",
+     "cane walking",
+     "braille blind",
+     "eye vision low vision"
+    ],
+    "nearestExisting": "wheelchair-access and accessibility (this set) are the other access figures; walking-route (Maps) is a route. No library icon shows the white cane.",
+    "drafts": 3,
+    "builds": 1
+   }
+  },
+  {
+   "id": "pointer-size",
+   "category": "accessibility-reading",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 7.2,
+   "engineSeconds": 6.9,
+   "notes": {
+    "label": "Pointer size",
+    "categoryId": "accessibility-reading",
+    "stateful": true,
+    "concept": "The pointer grows to a large size and holds, for the pointer/cursor size accessibility setting.",
+    "searchedFor": [
+     "pointer size large cursor",
+     "cursor size bigger mouse pointer",
+     "pointer size cursor size"
+    ],
+    "nearestExisting": "pointer-speed (Preferences) is about speed; text-size (this set) grows a letter. This applies text-size's small-to-large toggle to the pointer.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "account-settings",
+   "category": "account-privacy",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 8.6,
+   "engineSeconds": 7.3,
+   "notes": {
+    "label": "Account settings",
+    "categoryId": "account-privacy",
+    "stateful": false,
+    "concept": "Settings for the signed-in account: the set's person with a settings gear badge.",
+    "searchedFor": [
+     "account settings user gear profile preferences",
+     "user settings",
+     "user cog",
+     "gear cog"
+    ],
+    "nearestExisting": [
+     {
+      "id": "settings",
+      "why": "the app-wide gear; this pairs the gear with the person, meaning the account's own settings"
+     },
+     {
+      "id": "advanced-settings",
+      "why": "a wrench for advanced options, not account"
+     },
+     {
+      "id": "block-user",
+      "why": "same person-plus-badge construction, but the badge blocks contact"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "block-trackers",
+   "category": "account-privacy",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.3,
+   "engineSeconds": 7.1,
+   "notes": {
+    "label": "Block trackers",
+    "categoryId": "account-privacy",
+    "stateful": true,
+    "concept": "Tracking protection toggle: a slash strikes through the tracking reticle and stays.",
+    "searchedFor": [
+     "block trackers anti tracking tracking protection crosshair",
+     "tracking protection anti tracking tracker blocked",
+     "tracker",
+     "crosshair target reticle"
+    ],
+    "nearestExisting": [
+     {
+      "id": "target",
+      "why": "the same reticle locking on (aim/target); this one is struck through and means trackers are blocked"
+     },
+     {
+      "id": "privacy-shield",
+      "why": "a shield with an eye: general privacy protection, not a tracking toggle"
+     },
+     {
+      "id": "block-user",
+      "why": "blocks a person, not trackers"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "delete-account",
+   "category": "account-privacy",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 19.5,
+   "engineSeconds": 8.0,
+   "notes": {
+    "label": "Delete account",
+    "categoryId": "account-privacy",
+    "stateful": false,
+    "concept": "Delete the account: the set's person beside a trash bin whose lid flips open and slams shut while the person tips toward it.",
+    "searchedFor": [
+     "delete account remove user trash user",
+     "remove user delete account user minus",
+     "delete account",
+     "user minus remove member"
+    ],
+    "nearestExisting": [
+     {
+      "id": "trash",
+      "why": "a generic bin with a scrap thrown in; no account meaning"
+     },
+     {
+      "id": "block-user",
+      "why": "blocks a person; does not delete the account"
+     },
+     {
+      "id": "photo-delete",
+      "why": "deleting a photo"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "edit-profile",
+   "category": "account-privacy",
+   "checks": 4,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.0,
+   "engineSeconds": 6.8,
+   "notes": {
+    "label": "Edit profile",
+    "categoryId": "account-privacy",
+    "stateful": false,
+    "concept": "Edit the account's profile: the set's person with a pencil badge that writes.",
+    "searchedFor": [
+     "edit profile user pencil",
+     "edit profile",
+     "profile photo avatar camera",
+     "profile"
+    ],
+    "nearestExisting": [
+     {
+      "id": "edit-access",
+      "why": "a pencil over a line meaning edit permission on content, no person"
+     },
+     {
+      "id": "edit",
+      "why": "a generic edit pencil, no account meaning"
+     },
+     {
+      "id": "user",
+      "why": "the plain person; this adds the edit action"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "private-account",
+   "category": "account-privacy",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.0,
+   "engineSeconds": 7.5,
+   "notes": {
+    "label": "Private account",
+    "categoryId": "account-privacy",
+    "stateful": true,
+    "concept": "Account visibility toggle (public to private): the padlock beside the person locks and the person ducks out of view.",
+    "searchedFor": [
+     "private account protected account profile visibility",
+     "make account private lock profile",
+     "public private toggle account",
+     "user lock",
+     "account locked lockout"
+    ],
+    "nearestExisting": [
+     {
+      "id": "private-browsing",
+      "why": "incognito glasses for a browsing session, not the account's visibility"
+     },
+     {
+      "id": "lock",
+      "why": "a plain padlock toggle with no person"
+     },
+     {
+      "id": "car-lock",
+      "why": "the same shackle mechanics (open shackle turned about its right leg) on a car"
+     },
+     {
+      "id": "block-user",
+      "why": "person-plus-badge construction, but it blocks one person"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "reset-password",
+   "category": "account-privacy",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 12.2,
+   "engineSeconds": 8.2,
+   "notes": {
+    "label": "Reset password",
+    "categoryId": "account-privacy",
+    "stateful": false,
+    "concept": "Reset or recover a password: a key inside a counter-clockwise arrow ring, the key cut anew as the ring comes round.",
+    "searchedFor": [
+     "reset password forgot password key circular arrow",
+     "reset password",
+     "key rotate circular arrow",
+     "password strength"
+    ],
+    "nearestExisting": [
+     {
+      "id": "password",
+      "why": "a dotted password field (its \"password-reset\" animation is only a preview reset, not this meaning)"
+     },
+     {
+      "id": "reset-settings",
+      "why": "a circular arrow round sliders: resetting preferences, not credentials"
+     },
+     {
+      "id": "auto-update",
+      "why": "the same ring construction (mirrored here) around a download arrow"
+     },
+     {
+      "id": "key",
+      "why": "a plain key with no reset meaning"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "verified-badge",
+   "category": "account-privacy",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 7.0,
+   "engineSeconds": 7.6,
+   "notes": {
+    "label": "Verified",
+    "categoryId": "account-privacy",
+    "stateful": false,
+    "concept": "The account-verification badge: a soft scalloped seal with a check, as shown next to verified profiles.",
+    "searchedFor": [
+     "verified badge checkmark seal verified account blue tick",
+     "verified",
+     "verified user",
+     "seal badge rosette"
+    ],
+    "nearestExisting": [
+     {
+      "id": "new-badge",
+      "why": "a sharp-pointed seal with a star that means \"new\"; this one means the account is verified, with rounder scallops and a check that writes in"
+     },
+     {
+      "id": "official-seal",
+      "why": "an award rosette with ribbons (legal/compliance seal), not account verification"
+     },
+     {
+      "id": "check",
+      "why": "a bare check mark; no badge, no account meaning"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "vpn",
+   "category": "account-privacy",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 14.8,
+   "engineSeconds": 7.3,
+   "notes": {
+    "label": "VPN",
+    "categoryId": "account-privacy",
+    "stateful": false,
+    "concept": "Connect through a VPN: a globe with a padlock that clicks shut, then the globe turns.",
+    "searchedFor": [
+     "vpn virtual private network secure tunnel globe lock",
+     "vpn",
+     "secure connection https",
+     "globe network internet"
+    ],
+    "nearestExisting": [
+     {
+      "id": "globe",
+      "why": "the travel globe on a stand that spins; this one is a smaller sphere without the stand, paired with a padlock"
+     },
+     {
+      "id": "car-lock",
+      "why": "the same padlock-click mechanics on a car"
+     },
+     {
+      "id": "lock",
+      "why": "a plain padlock; no network meaning"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "backspace",
+   "category": "actions",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 9.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Backspace",
+    "categoryId": "actions",
+    "stateful": false,
+    "concept": "Delete backwards: the backspace key, a left-pointing tag with a cross.",
+    "searchedFor": [
+     "backspace clear input delete left",
+     "keypad delete key erase character",
+     "backspace"
+    ],
+    "nearestExisting": [
+     "search-clear (41): clears a search field",
+     "close (25): a bare X that dismisses",
+     "trash / delete-message / photo-delete: deleting whole items rather than characters",
+     "keyboard, hotkey-hint (30, 49): keys being pressed, with no delete meaning"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "embed",
+   "category": "actions",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 6.6,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Embed",
+    "categoryId": "actions",
+    "stateful": false,
+    "concept": "Get or insert embed code: the </> brackets.",
+    "searchedFor": [
+     "embed code snippet",
+     "embed"
+    ],
+    "nearestExisting": [
+     "code-file (46): a document sheet holding < >, which is a code file",
+     "code-generate / code-review / code-explain (09): AI code actions"
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "eye-off",
+   "category": "actions",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 23.2,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Hide",
+    "categoryId": "actions",
+    "stateful": true,
+    "concept": "Hide something from view: an eye struck through by a slash, a real Hide / Show toggle.",
+    "searchedFor": [
+     "hide eye off visibility",
+     "eye off hidden invisible",
+     "hide eye off visibility slash"
+    ],
+    "nearestExisting": [
+     "eye (04-actions): an open eye that blinks, a view/preview gesture with no hidden state",
+     "camera-off, bell-off, microphone-muted: the same slash-through treatment on other objects; none hides content",
+     "private-browsing (26): incognito glasses, a browsing mode rather than hiding an item"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "new-file",
+   "category": "actions",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 10.2,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "New file",
+    "categoryId": "actions",
+    "stateful": false,
+    "concept": "Create a new file or document: a page with a plus.",
+    "searchedFor": [
+     "new file create document plus",
+     "new document blank page",
+     "new file"
+    ],
+    "nearestExisting": [
+     "new-folder (46): a folder with a plus",
+     "document (06-tools): a page that ink writes onto, with no create meaning",
+     "add-remove (25): a bare plus/minus",
+     "import-file / file-upload: bringing in an existing file"
+    ],
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "restart",
+   "category": "actions",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 4.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Restart",
+    "categoryId": "actions",
+    "stateful": false,
+    "concept": "Restart a device or app: a power symbol whose ring carries a clockwise arrowhead.",
+    "searchedFor": [
+     "restart reboot power cycle",
+     "restart"
+    ],
+    "nearestExisting": [
+     "power (25): a power on/off toggle with no cycle",
+     "refresh (04-actions): two arrows that reload content",
+     "reset-settings (50): sliders return to their defaults"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "screenshot",
+   "category": "actions",
+   "checks": 3,
+   "drafts": 4,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.6,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Screenshot",
+    "categoryId": "actions",
+    "stateful": false,
+    "concept": "Capture the screen: a monitor with two capture brackets on its screen.",
+    "searchedFor": [
+     "screenshot capture screen",
+     "screenshot",
+     "camera capture snapshot flash corners"
+    ],
+    "nearestExisting": [
+     "scan (05-interface): four corners with a scan line, which scans rather than captures",
+     "screen-record (53): a monitor with a record dot, which records video",
+     "smart-crop (09): crop corners around a person, an AI crop",
+     "camera (05): a photo camera"
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "scroll-to-top",
+   "category": "actions",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.2,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Scroll to top",
+    "categoryId": "actions",
+    "stateful": false,
+    "concept": "Jump back to the top of a page or list: an up arrow under a top bar.",
+    "searchedFor": [
+     "scroll to top back to top",
+     "scroll top",
+     "reorder move up move down"
+    ],
+    "nearestExisting": [
+     "upload (04-actions): an arrow leaving a tray, which sends a file",
+     "arrow-up (20-arrows): a bare direction with no target",
+     "download (04-actions): the same arrow-and-landing treatment in the other direction, which this icon follows on purpose"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "swipe",
+   "category": "actions",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Swipe",
+    "categoryId": "actions",
+    "stateful": false,
+    "concept": "Swipe across a touch screen: the pointing hand under a left-right arrow.",
+    "searchedFor": [
+     "swipe gesture hand",
+     "swipe"
+    ],
+    "nearestExisting": [
+     "arrows-horizontal (20): a bare double arrow",
+     "drag-and-drop (24), drag-handle (25): moving items, not a touch gesture",
+     "tap (this batch): the same hand pressing in place"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "tap",
+   "category": "actions",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 3.1,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Tap",
+    "categoryId": "actions",
+    "stateful": false,
+    "concept": "Tap on a touch screen: a pointing hand with a touch ring over the fingertip.",
+    "searchedFor": [
+     "tap click finger touch gesture",
+     "tap",
+     "hand gesture tap finger",
+     "click pointer cursor"
+    ],
+    "nearestExisting": [
+     "mouse (50): a mouse click on a device",
+     "live-cursors (22): collaborators' cursors",
+     "object-select (09): an AI pointer that selects an object",
+     "welcome-wave / raise-hand: hands that greet or ask, whose hand construction this one reuses"
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "unlink",
+   "category": "actions",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 3,
+   "vchecks": 4,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 16.1,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Unlink",
+    "categoryId": "actions",
+    "stateful": false,
+    "concept": "Remove a link: two halves of a chain held apart with break marks in the gap.",
+    "searchedFor": [
+     "unlink break link detach",
+     "unlink",
+     "copy link"
+    ],
+    "nearestExisting": [
+     "link (05-interface): the joined chain that snaps together; unlink is its opposite, and its rest pose is the broken chain",
+     "detach-file (24), detach-instance (62): detaching files or components, not hyperlinks",
+     "reconnect (11): a network connection, not a link"
+    ],
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "annotation-bounce",
+   "category": "annotation-arrows",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.1,
+   "engineSeconds": 7.7,
+   "notes": {
+    "label": "Bouncing pointer",
+    "categoryId": "annotation-arrows",
+    "stateful": true,
+    "concept": "A bouncing arrow that hops from a source dot in two shrinking arcs and lands on the target.",
+    "searchedFor": [
+     "annotation arrow",
+     "bounce hop skip jump arrow",
+     "bounce",
+     "jump over leapfrog hop"
+    ],
+    "nearestExisting": [
+     {
+      "id": "annotation-swoop-up",
+      "why": "one broad bend; ours is two ball-flight hops that touch a baseline between them"
+     },
+     {
+      "id": "annotation-double-ended",
+      "why": "one arch with a head at each end"
+     },
+     {
+      "id": "bounce-ball",
+      "why": "a loader ball compressing on contact, not a pointer"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "annotation-circled",
+   "category": "annotation-arrows",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 2.8,
+   "engineSeconds": 7.7,
+   "notes": {
+    "label": "Circled pointer",
+    "categoryId": "annotation-arrows",
+    "stateful": true,
+    "concept": "An arrow points at a spot and a hand-drawn loop circles it, the circle-and-arrow mark used on screenshots.",
+    "searchedFor": [
+     "annotation arrow",
+     "circle highlight encircle lasso ring around",
+     "circle highlight"
+    ],
+    "nearestExisting": [
+     {
+      "id": "lasso-select",
+      "why": "a selection tool: a loop whose rope tail hangs off it around an object; ours is an arrow with its own head pointing at a separate loose circle"
+     },
+     {
+      "id": "target",
+      "why": "a reticle with ticks that lock on"
+     },
+     {
+      "id": "annotation-emphasis",
+      "why": "(this batch) radiating marks at the tip instead of a ring around the spot"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "annotation-dashed",
+   "category": "annotation-arrows",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 10.9,
+   "engineSeconds": 8.4,
+   "notes": {
+    "label": "Dashed pointer",
+    "categoryId": "annotation-arrows",
+    "stateful": true,
+    "concept": "A dashed curved arrow for a suggested or optional path between a source and a target.",
+    "searchedFor": [
+     "annotation arrow",
+     "dashed arrow dotted path route",
+     "dashed",
+     "dotted line"
+    ],
+    "nearestExisting": [
+     {
+      "id": "annotation-curve-right",
+      "why": "the same family of curve but solid; dashed marks a proposed or optional route"
+     },
+     {
+      "id": "motion-path",
+      "why": "a marker travelling its keyframe path in motion design, not a pointer"
+     },
+     {
+      "id": "route",
+      "why": "a travel journey with a traveller; ours is an annotation mark"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "annotation-emphasis",
+   "category": "annotation-arrows",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.3,
+   "engineSeconds": 8.1,
+   "notes": {
+    "label": "Emphasis pointer",
+    "categoryId": "annotation-arrows",
+    "stateful": true,
+    "concept": "An arrow that points at a spot and bursts three short emphasis marks around its tip: look here.",
+    "searchedFor": [
+     "annotation arrow",
+     "attention emphasis look here burst",
+     "emphasis marks sparkle highlight point"
+    ],
+    "nearestExisting": [
+     {
+      "id": "cursor-click",
+      "why": "(claimed by another agent) a cursor with click rays; ours is a hand-drawn annotation arrow whose marks mean 'look here'"
+     },
+     {
+      "id": "sparkle",
+      "why": "decorative stars, not a pointer"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "annotation-numbered",
+   "category": "annotation-arrows",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.5,
+   "engineSeconds": 7.9,
+   "notes": {
+    "label": "Numbered pointer",
+    "categoryId": "annotation-arrows",
+    "stateful": true,
+    "concept": "A numbered step badge whose leader arrow points at the detail it marks, as in step-by-step screenshot guides.",
+    "searchedFor": [
+     "annotation arrow",
+     "numbered step marker counter",
+     "step marker badge number",
+     "pointer"
+    ],
+    "nearestExisting": [
+     {
+      "id": "annotation-callout",
+      "why": "a label box with a leader; ours is a numbered step badge (step 1 of a guide), so the mark carries order, not a label"
+     },
+     {
+      "id": "numbered-list",
+      "why": "a text list format control"
+     },
+     {
+      "id": "next-step",
+      "why": "an onboarding button that advances a flow"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "annotation-spiral",
+   "category": "annotation-arrows",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 10.7,
+   "engineSeconds": 7.8,
+   "notes": {
+    "label": "Spiral pointer",
+    "categoryId": "annotation-arrows",
+    "stateful": true,
+    "concept": "A spiral arrow that unwinds from a source dot at its heart and shoots off toward the target.",
+    "searchedFor": [
+     "annotation arrow",
+     "spiral arrow coil swirl",
+     "spiral",
+     "swirl",
+     "coil",
+     "refresh repeat rotate circular arrow"
+    ],
+    "nearestExisting": [
+     {
+      "id": "annotation-loop",
+      "why": "one curl that crosses its own stem; ours is a non-crossing coil of 1.25 widening turns that starts at its centre"
+     },
+     {
+      "id": "refresh",
+      "why": "a circular arrow that returns round a centre to mean reload; ours coils outward once from a dot and leaves in a straight line toward a target"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "annotation-wave",
+   "category": "annotation-arrows",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 10.5,
+   "engineSeconds": 7.4,
+   "notes": {
+    "label": "Wavy pointer",
+    "categoryId": "annotation-arrows",
+    "stateful": true,
+    "concept": "A hand-drawn wavy arrow that ripples from a source dot to a target, the soft squiggle style of annotation arrow.",
+    "searchedFor": [
+     "annotation arrow",
+     "wavy arrow wave squiggle",
+     "wave",
+     "squiggle"
+    ],
+    "nearestExisting": [
+     {
+      "id": "annotation-s-curve",
+      "why": "a single S bend; ours is a regular 1.5-cycle wave with a straight shaft into the head"
+     },
+     {
+      "id": "travel-wave",
+      "why": "a continuous loader waveform, not a pointer"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "annotation-zigzag",
+   "category": "annotation-arrows",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.7,
+   "engineSeconds": 8.2,
+   "notes": {
+    "label": "Zigzag pointer",
+    "categoryId": "annotation-arrows",
+    "stateful": true,
+    "concept": "A hand-drawn zigzag arrow that runs from a source dot to a target, the sharp jagged style used to call attention on screenshots and slides.",
+    "searchedFor": [
+     "annotation arrow",
+     "zigzag arrow lightning squiggle",
+     "zigzag",
+     "trending up growth chart"
+    ],
+    "nearestExisting": [
+     {
+      "id": "trending-up",
+      "why": "a chart trend line that breaks upward; ours is an annotation stroke whose zigs cross its own axis (spring-like), starts at a source dot and only points"
+     },
+     {
+      "id": "annotation-s-curve",
+      "why": "one smooth S between two levels; ours is a sharp multi-zig stroke"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "add-call",
+   "category": "communication-social",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 21.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Add call",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "Add another call or participant to the current call, as on dialer call screens.",
+    "searchedFor": [
+     "add call",
+     "merge call",
+     "conference call",
+     "group call",
+     "plus phone",
+     "add participant",
+     "participant",
+     "invite call",
+     "call add"
+    ],
+    "nearestExisting": [
+     {
+      "id": "phone",
+      "why": "An incoming call."
+     },
+     {
+      "id": "transfer-call",
+      "why": "Moves the call to someone else instead of adding a line."
+     },
+     {
+      "id": "concurrent-calls",
+      "why": "Abstract parallel call lanes for voice agents."
+     },
+     {
+      "id": "add-comment",
+      "why": "The same plus, but on a comment bubble."
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "call-history",
+   "category": "communication-social",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 21.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Call history",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "Recent calls or the call log: a handset with a clock.",
+    "searchedFor": [
+     "call history",
+     "recent calls",
+     "call log",
+     "history",
+     "rewind",
+     "recent",
+     "clock"
+    ],
+    "nearestExisting": [
+     {
+      "id": "conversation-history",
+      "why": "A chat transcript replaying, not the list of calls."
+     },
+     {
+      "id": "phone",
+      "why": "An incoming call."
+     },
+     {
+      "id": "clock",
+      "why": "Plain time."
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "encrypted-message",
+   "category": "communication-social",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 21.3,
+   "engineSeconds": 15.1,
+   "notes": {
+    "label": "Encrypted message",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "An end-to-end encrypted or secure message: a padlock in a speech bubble.",
+    "searchedFor": [
+     "encrypted",
+     "secure message",
+     "private message",
+     "end to end",
+     "lock message",
+     "lock chat",
+     "secure chat",
+     "privacy"
+    ],
+    "nearestExisting": [
+     {
+      "id": "lock",
+      "why": "A generic lock."
+     },
+     {
+      "id": "lock-file",
+      "why": "Locks a file."
+     },
+     {
+      "id": "disappearing-message",
+      "why": "A message with a timer, not encryption."
+     },
+     {
+      "id": "private-browsing",
+      "why": "Private web browsing."
+     }
+    ],
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "end-call",
+   "category": "communication-social",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 21.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "End call",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "Hang up or end the call: the classic receiver-down button of call screens.",
+    "searchedFor": [
+     "end call",
+     "hang up",
+     "decline call",
+     "leave call",
+     "hang",
+     "disconnect",
+     "phone down"
+    ],
+    "nearestExisting": [
+     {
+      "id": "on-hold",
+      "why": "The same receiver set down, but with pause bars, meaning the call is parked rather than ended."
+     },
+     {
+      "id": "callback",
+      "why": "The receiver with a return arrow, meaning call back."
+     },
+     {
+      "id": "phone",
+      "why": "An incoming call."
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "follow-user",
+   "category": "communication-social",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 23.3,
+   "engineSeconds": 7.0,
+   "notes": {
+    "label": "Follow",
+    "categoryId": "communication-social",
+    "stateful": true,
+    "concept": "Follow a person or account, a real two-state toggle: Follow and Unfollow (also covers add friend).",
+    "searchedFor": [
+     "follow",
+     "follow user",
+     "add friend",
+     "friend request",
+     "add user",
+     "user plus",
+     "unfollow",
+     "user check",
+     "following",
+     "subscribe"
+    ],
+    "nearestExisting": [
+     {
+      "id": "user",
+      "why": "A single person saying hello, with no relationship state."
+     },
+     {
+      "id": "invite-teammate",
+      "why": "Sends an invitation envelope to a teammate, not a follow."
+     },
+     {
+      "id": "block-user",
+      "why": "The opposite relationship: a slash over the person."
+     },
+     {
+      "id": "follow-collaborator",
+      "why": "Your viewport follows a collaborator's cursor; this is about following a live session, not a social follow."
+     }
+    ],
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "missed-call",
+   "category": "communication-social",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 2,
+   "vchecks": 1,
+   "firstBuildPass": false,
+   "firstVcheckPass": true,
+   "minutes": 21.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Missed call",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "A call that rang unanswered, as shown in call logs and notifications.",
+    "searchedFor": [
+     "missed call",
+     "missed",
+     "call",
+     "decline call",
+     "decline",
+     "reject"
+    ],
+    "nearestExisting": [
+     {
+      "id": "phone",
+      "why": "An incoming call ringing. Missed-call reuses its handset and ring, then adds the missed-call arrow."
+     },
+     {
+      "id": "callback",
+      "why": "Returning a call, shown as an arrow that lands on the receiver."
+     },
+     {
+      "id": "transfer-call",
+      "why": "Routing a call onward."
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "newspaper",
+   "category": "communication-social",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 21.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Newspaper",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "News: a folded newspaper for news feeds and news sections.",
+    "searchedFor": [
+     "news",
+     "newspaper",
+     "article",
+     "headline",
+     "news feed",
+     "magazine",
+     "publish",
+     "post",
+     "blog"
+    ],
+    "nearestExisting": [
+     {
+      "id": "rss-feed",
+      "why": "The feed signal (a dot and waves), not the news itself."
+     },
+     {
+      "id": "announcement",
+      "why": "A megaphone broadcast."
+     },
+     {
+      "id": "document",
+      "why": "A generic page."
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "outbox",
+   "category": "communication-social",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 21.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Outbox",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "The outbox: outgoing mail waiting to send, the counterpart of the set's inbox.",
+    "searchedFor": [
+     "outbox",
+     "sent mail",
+     "outgoing mail",
+     "out tray",
+     "tray",
+     "sent",
+     "send mail"
+    ],
+    "nearestExisting": [
+     {
+      "id": "inbox",
+      "why": "The same tray, but for incoming mail."
+     },
+     {
+      "id": "upload",
+      "why": "An arrow over a bracket tray, meaning file upload."
+     },
+     {
+      "id": "send",
+      "why": "A paper plane, meaning send now."
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "reply-all",
+   "category": "communication-social",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 21.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Reply all",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "Reply to all recipients of an email.",
+    "searchedFor": [
+     "reply all",
+     "reply",
+     "reply arrow",
+     "respond",
+     "answer"
+    ],
+    "nearestExisting": [
+     {
+      "id": "reply-thread",
+      "why": "A reply inside a comment thread."
+     },
+     {
+      "id": "forward-message",
+      "why": "Sends the message on, pointing forward."
+     },
+     {
+      "id": "undo-redo",
+      "why": "Curved history arrows."
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "report-spam",
+   "category": "communication-social",
+   "checks": 6,
+   "drafts": 3,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 21.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Report spam",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "Report or flag an email as spam or junk.",
+    "searchedFor": [
+     "spam",
+     "junk",
+     "report",
+     "spam folder",
+     "block sender",
+     "phishing",
+     "flag mail",
+     "spam mail",
+     "mail warning",
+     "mail alert",
+     "warning",
+     "exclamation",
+     "octagon"
+    ],
+    "nearestExisting": [
+     {
+      "id": "mail",
+      "why": "A plain envelope opening."
+     },
+     {
+      "id": "warning",
+      "why": "A generic alert sign."
+     },
+     {
+      "id": "block-user",
+      "why": "Blocks a person, not a message."
+     },
+     {
+      "id": "priority-alert",
+      "why": "An urgent notification bell."
+     }
+    ],
+    "drafts": 3,
+    "builds": 2
+   }
+  },
+  {
+   "id": "repost",
+   "category": "communication-social",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 25.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Repost",
+    "categoryId": "communication-social",
+    "stateful": false,
+    "concept": "Reshare a post to your own followers (the social repost / retweet action).",
+    "searchedFor": [
+     "repost",
+     "retweet",
+     "reshare",
+     "boost",
+     "share post",
+     "loop arrows",
+     "cycle",
+     "swap",
+     "sync",
+     "repeat"
+    ],
+    "nearestExisting": [
+     {
+      "id": "repeat",
+      "why": "Media playback loop: the same two-arrow loop, but with horizontal heads and a playback meaning; repost uses the social glyph with vertical heads, and its arrows fire along their legs instead of the loop turning."
+     },
+     {
+      "id": "share",
+      "why": "Hands content off to other nodes; it does not mean resharing into your own feed."
+     },
+     {
+      "id": "forward-message",
+      "why": "Sends one chat message on to another chat, not a public reshare."
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "build",
+   "category": "developer-version-control",
+   "checks": 5,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 15.6,
+   "engineSeconds": 7.6,
+   "notes": {
+    "label": "Build",
+    "categoryId": "developer-version-control",
+    "stateful": false,
+    "concept": "A build runs, shown as a claw hammer striking.",
+    "searchedFor": [
+     "hammer build",
+     "build hammer",
+     "compile",
+     "construction",
+     "gavel judge",
+     "tools wrench",
+     "rocket launch",
+     "deploy"
+    ],
+    "nearestExisting": [
+     "gavel (Legal): a mallet head striking a block; build is a claw hammer with a curled claw and no block",
+     "model-deploy (AI Agents): a model unit docking, not a build",
+     "toolbox (claimed in Essentials): a container of tools"
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "cherry-pick",
+   "category": "developer-version-control",
+   "checks": 4,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 19.0,
+   "engineSeconds": 15.1,
+   "notes": {
+    "label": "Cherry-pick",
+    "categoryId": "developer-version-control",
+    "stateful": true,
+    "concept": "A commit is copied from one branch and applied onto another branch.",
+    "searchedFor": [
+     "cherry-pick commit copy apply",
+     "cherry pick",
+     "git commit",
+     "copy"
+    ],
+    "nearestExisting": [
+     "git-commit: a single commit landing on one lane; cherry-pick copies a commit across two branches",
+     "copy (Actions) / duplicate-file: generic copy, not version control",
+     "git-merge: joins a whole lane, not one commit"
+    ],
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "code-diff",
+   "category": "developer-version-control",
+   "checks": 4,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 15.6,
+   "engineSeconds": 15.9,
+   "notes": {
+    "label": "Code diff",
+    "categoryId": "developer-version-control",
+    "stateful": true,
+    "concept": "A diff of code: a removed line marked minus and an added line marked plus.",
+    "searchedFor": [
+     "diff compare changes",
+     "diff additions deletions plus minus",
+     "code",
+     "code brackets source code"
+    ],
+    "nearestExisting": [
+     "add-remove (Everyday controls): a plus/minus stepper with no lines of code",
+     "compare-revisions (Teamwork): a before/after slider",
+     "code-file / code-review / embed: the </> code sign, not added and removed lines"
+    ],
+    "drafts": 1,
+    "builds": 3
+   }
+  },
+  {
+   "id": "feature-flag",
+   "category": "developer-version-control",
+   "checks": 4,
+   "drafts": 3,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 15.6,
+   "engineSeconds": 7.9,
+   "notes": {
+    "label": "Feature flag",
+    "categoryId": "developer-version-control",
+    "stateful": true,
+    "concept": "A feature flag, drawn as a flag whose banner is a toggle, switched on and off.",
+    "searchedFor": [
+     "feature flag toggle rollout",
+     "flag",
+     "toggle switch"
+    ],
+    "nearestExisting": [
+     "flag (Tools): a planted flag with a waving cloth and no on/off state",
+     "toggle-switch (Forms): a bare switch with no flag",
+     "milestone / escalation-flag: flags as markers, not a switch"
+    ],
+    "drafts": 3,
+    "builds": 1
+   }
+  },
+  {
+   "id": "git-compare",
+   "category": "developer-version-control",
+   "checks": 5,
+   "drafts": 1,
+   "builds": 3,
+   "vchecks": 4,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 15.6,
+   "engineSeconds": 21.7,
+   "notes": {
+    "label": "Git compare",
+    "categoryId": "developer-version-control",
+    "stateful": false,
+    "concept": "Two branches are compared, each reaching across to the other.",
+    "searchedFor": [
+     "diff compare changes",
+     "compare branches swap arrows",
+     "git compare"
+    ],
+    "nearestExisting": [
+     "compare-revisions (Teamwork): a before/after slider on documents, not branches",
+     "arrows-swap (Arrows): plain arrows with no commits",
+     "pull-request: one route from a branch toward the trunk; git-compare has two opposed routes"
+    ],
+    "drafts": 1,
+    "builds": 3
+   }
+  },
+  {
+   "id": "git-rebase",
+   "category": "developer-version-control",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 15.6,
+   "engineSeconds": 8.4,
+   "notes": {
+    "label": "Git rebase",
+    "categoryId": "developer-version-control",
+    "stateful": true,
+    "concept": "A branch is moved from its old base up onto the newest commit of the trunk.",
+    "searchedFor": [
+     "rebase",
+     "rebase branch move base replay",
+     "git branch"
+    ],
+    "nearestExisting": [
+     "git-branch: a lane grows out of the trunk; rebase moves an existing lane to a new base",
+     "conversation-branch (AI): branching a chat, not git history",
+     "move-file / move-tool: generic moves"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "logs",
+   "category": "developer-version-control",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 15.6,
+   "engineSeconds": 7.5,
+   "notes": {
+    "label": "Logs",
+    "categoryId": "developer-version-control",
+    "stateful": true,
+    "concept": "A log viewer whose entries stream in at the bottom while older entries scroll up.",
+    "searchedFor": [
+     "logs",
+     "logs log stream console output lines",
+     "history log",
+     "terminal command line",
+     "terminal console shell prompt"
+    ],
+    "nearestExisting": [
+     "terminal-agent (Agent operations): a prompt where a command is typed and run",
+     "bulleted-list (Text editing): bullets appear on a list, with no panel and no scrolling",
+     "response-stream (AI): an AI answer streaming in",
+     "decision-log (Teamwork): a stamp strikes one entry"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "app-grid",
+   "category": "essentials",
+   "checks": 8,
+   "drafts": 4,
+   "builds": 5,
+   "vchecks": 4,
+   "firstBuildPass": false,
+   "firstVcheckPass": true,
+   "minutes": 29.6,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Apps",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "A three-by-three grid of dots: the app launcher, or all apps.",
+    "searchedFor": [
+     "apps grid launcher",
+     "apps",
+     "launcher"
+    ],
+    "nearestExisting": "grid-list-view (a 2x2 tile view-mode switch), startup-apps (a rocket for login items), snap-to-grid (a design tool). None is the nine-dot apps launcher.",
+    "drafts": 2,
+    "builds": 5
+   }
+  },
+  {
+   "id": "building",
+   "category": "essentials",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 17.1,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Building",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "An office block with windows and a door: company, organization, workspace.",
+    "searchedFor": [
+     "building office company",
+     "organization office enterprise",
+     "company",
+     "office building"
+    ],
+    "nearestExisting": "hotel, hospital, bank, storefront and warehouse (specific kinds of building). None is a generic office building or company.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "crown",
+   "category": "essentials",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 3,
+   "firstBuildPass": false,
+   "firstVcheckPass": false,
+   "minutes": 36.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Crown",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "A crown for premium, pro or VIP features.",
+    "searchedFor": [
+     "crown premium pro",
+     "crown premium",
+     "crown",
+     "premium upgrade"
+    ],
+    "nearestExisting": "high-score (a crown over a score display, for a game record), medal and trophy (awards), gem (gamification). None is a plain crown meaning premium.",
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "cube",
+   "category": "essentials",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.6,
+   "engineSeconds": 6.7,
+   "notes": {
+    "label": "Cube",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "An isometric cube: 3D object, model, product.",
+    "searchedFor": [
+     "cube 3d box",
+     "cube",
+     "box",
+     "sandbox"
+    ],
+    "nearestExisting": "subscription-box, open-package and inventory (cardboard parcels), agent-sandbox (a container). None is a 3D cube.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "cursor-click",
+   "category": "essentials",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 27.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Click",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "An arrow pointer with click rays: click, or interact.",
+    "searchedFor": [
+     "cursor click pointer",
+     "click",
+     "tap touch"
+    ],
+    "nearestExisting": "pointer-speed (a pointer with speed lines, a preference), live-cursors (two collaborators' cursors), browser-agent (an agent using a page). None is a single pointer clicking.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "handshake",
+   "category": "essentials",
+   "checks": 4,
+   "drafts": 1,
+   "builds": 3,
+   "vchecks": 4,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 3.9,
+   "engineSeconds": 23.0,
+   "notes": {
+    "label": "Handshake",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "Two clasped hands between their cuffs: partnership, deal, agreement.",
+    "searchedFor": [
+     "handshake deal partner",
+     "partnership agreement"
+    ],
+    "nearestExisting": "contract and consent (legal documents), endpoint (a plug), invite-teammate. None is a handshake.",
+    "drafts": 1,
+    "builds": 3
+   }
+  },
+  {
+   "id": "infinity",
+   "category": "essentials",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 8.7,
+   "engineSeconds": 7.1,
+   "notes": {
+    "label": "Infinity",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "An infinity sign: unlimited, endless, forever.",
+    "searchedFor": [
+     "infinity unlimited",
+     "unlimited"
+    ],
+    "nearestExisting": "infinity-run, a continuous loading indicator in set 12. It is a loader, not a static symbol for unlimited.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "puzzle-piece",
+   "category": "essentials",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 22.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Extension",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "A jigsaw piece (knobs on top and right, a socket on the left) for extensions, plugins and integrations.",
+    "searchedFor": [
+     "puzzle piece extension plugin",
+     "puzzle",
+     "extension add-on integration"
+    ],
+    "nearestExisting": "plug (tools) and endpoint (a plug into a socket), both about connecting. Nothing in the library is a puzzle piece.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "shapes",
+   "category": "essentials",
+   "checks": 5,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 15.6,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Shapes",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "A triangle, a square and a circle: shapes, categories, design elements.",
+    "searchedFor": [
+     "shapes category",
+     "category categories"
+    ],
+    "nearestExisting": "polygon-tool, rectangle-tool and ellipse-tool (single drawing tools), and the boolean-* icons (combining paths). None groups the three basic shapes.",
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "sitemap",
+   "category": "essentials",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 10.4,
+   "engineSeconds": 8.2,
+   "notes": {
+    "label": "Sitemap",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "A root page linked down to two child pages: sitemap, hierarchy, structure.",
+    "searchedFor": [
+     "sitemap hierarchy",
+     "tree structure"
+    ],
+    "nearestExisting": "system-instructions (a rule tree), git-branch, team-roles and agent-handoff. None is a page hierarchy or sitemap.",
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "sticky-note",
+   "category": "essentials",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 20.0,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Sticky note",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "A square sticky note with a folded corner and two lines of writing: notes, memos.",
+    "searchedFor": [
+     "sticky note memo",
+     "note notes",
+     "memo"
+    ],
+    "nearestExisting": "music-note and voice-note (different meanings), notebook (a bound book), clipboard and document (sheets). None is a sticky note.",
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "toolbox",
+   "category": "essentials",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.5,
+   "engineSeconds": 8.3,
+   "notes": {
+    "label": "Toolbox",
+    "categoryId": "essentials",
+    "stateful": false,
+    "concept": "A toolbox with a tapered lid, a wide handle and two latches: tools, utilities.",
+    "searchedFor": [
+     "toolbox tools",
+     "wrench tool repair"
+    ],
+    "nearestExisting": "portfolio (a briefcase), first-aid-kit (a case with a cross), tool-call and advanced-settings (a wrench). None is a toolbox.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "blocked-file",
+   "category": "file-transfer",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 4.8,
+   "engineSeconds": 15.3,
+   "notes": {
+    "label": "Blocked file",
+    "categoryId": "file-transfer",
+    "stateful": false,
+    "concept": "A file that is blocked as unsafe or disallowed (blocked attachments in Gmail, Slack or Teams, or a dangerous download in a browser): a prohibition sign on a sheet, whose slash strikes again while the sheet shakes its refusal.",
+    "searchedFor": [
+     "blocked file file blocked unsafe dangerous download",
+     "block blocked ban prohibited"
+    ],
+    "nearestExisting": [
+     {
+      "id": "block-user",
+      "why": "blocks a person"
+     },
+     {
+      "id": "cancelled",
+      "why": "a generic cancellation cross"
+     },
+     {
+      "id": "lock-file",
+      "why": "a file protected by its owner, not refused"
+     },
+     {
+      "id": "error",
+      "why": "a generic exclamation"
+     }
+    ],
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "cloud-backup",
+   "category": "file-transfer",
+   "checks": 4,
+   "drafts": 3,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 6.2,
+   "engineSeconds": 15.1,
+   "notes": {
+    "label": "Cloud backup",
+    "categoryId": "file-transfer",
+    "stateful": false,
+    "concept": "Back up files to the cloud (iCloud Backup or Google One backup): a backup loop inside a cloud runs one turn, and the cloud takes the copy.",
+    "searchedFor": [
+     "backup",
+     "backup copy drive safe",
+     "backup restore copy",
+     "cloud backup icloud backup",
+     "storage cloud drive space"
+    ],
+    "nearestExisting": [
+     {
+      "id": "cloud-upload",
+      "why": "a single upload arrow going up"
+     },
+     {
+      "id": "cloud-sync",
+      "why": "up and down arrows: two-way sync"
+     },
+     {
+      "id": "restore-file",
+      "why": "a restore arrow on a sheet: rolling back, not backing up"
+     },
+     {
+      "id": "file-sync",
+      "why": "two sync arrows on a sheet"
+     }
+    ],
+    "drafts": 3,
+    "builds": 2
+   }
+  },
+  {
+   "id": "merge-files",
+   "category": "file-transfer",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 0.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Merge files",
+    "categoryId": "file-transfer",
+    "stateful": true,
+    "concept": "Combine two files into one (as in PDF merge tools): two sheets slide together and become one larger sheet with two content lines. Preview reset.",
+    "searchedFor": [
+     "merge combine files",
+     "merge files combine pdf"
+    ],
+    "nearestExisting": [
+     {
+      "id": "compress-files",
+      "why": "sheets pressed into an archive"
+     },
+     {
+      "id": "git-merge",
+      "why": "merges code branches"
+     },
+     {
+      "id": "merge-clips",
+      "why": "merges video clips"
+     },
+     {
+      "id": "merge-results",
+      "why": "merges agent results"
+     },
+     {
+      "id": "duplicate-file",
+      "why": "the opposite: one sheet becomes two copies"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "nearby-share",
+   "category": "file-transfer",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 4.6,
+   "engineSeconds": 7.0,
+   "notes": {
+    "label": "Nearby share",
+    "categoryId": "file-transfer",
+    "stateful": false,
+    "concept": "Share a file wirelessly with nearby devices (AirDrop or Quick Share): signal arcs above a sheet pulse out.",
+    "searchedFor": [
+     "airdrop nearby share wireless",
+     "nearby share airdrop wireless",
+     "nfc tap contactless"
+    ],
+    "nearestExisting": [
+     {
+      "id": "share",
+      "why": "generic share nodes"
+     },
+     {
+      "id": "wifi",
+      "why": "connectivity, with no file"
+     },
+     {
+      "id": "bluetooth",
+      "why": "a radio rune"
+     },
+     {
+      "id": "vibrate-alert",
+      "why": "arcs beside a tall shape; the first layout was too close to it and was redrawn"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "save-offline",
+   "category": "file-transfer",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.0,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Save offline",
+    "categoryId": "file-transfer",
+    "stateful": true,
+    "concept": "A real toggle that keeps a local copy for offline use (Drive's 'Available offline' or Spotify's download toggle): the download arrow in the badge lands and folds into a check. States online-only \u2192 available-offline, labels Save offline / Remove download.",
+    "searchedFor": [
+     "available offline save offline",
+     "offline download available"
+    ],
+    "nearestExisting": [
+     {
+      "id": "offline-map",
+      "why": "downloads a map. It is a map, not a file toggle"
+     },
+     {
+      "id": "download",
+      "why": "a one-way download action into a tray"
+     },
+     {
+      "id": "offline",
+      "why": "a no-connection status shown with signal bars"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "send-to-device",
+   "category": "file-transfer",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 0.9,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Send to device",
+    "categoryId": "file-transfer",
+    "stateful": false,
+    "concept": "Send a file or link to your phone (Material's send_to_mobile): an arrow that shoots into a phone, which confirms with a check.",
+    "searchedFor": [
+     "send to device phone laptop",
+     "send to phone cast device",
+     "phone mobile smartphone",
+     "laptop computer desktop monitor"
+    ],
+    "nearestExisting": [
+     {
+      "id": "send",
+      "why": "a paper plane leaving, with no destination device"
+     },
+     {
+      "id": "cast",
+      "why": "a signal to a display, which streams media"
+     },
+     {
+      "id": "export-file",
+      "why": "an arrow leaving a sheet, with no receiving device"
+     },
+     {
+      "id": "smartphone",
+      "why": "the device alone, scrolling content"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "shred-file",
+   "category": "file-transfer",
+   "checks": 7,
+   "drafts": 4,
+   "builds": 4,
+   "vchecks": 4,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 12.6,
+   "engineSeconds": 7.6,
+   "notes": {
+    "label": "Shred file",
+    "categoryId": "file-transfer",
+    "stateful": true,
+    "concept": "Shred a file securely: a paper shredder pulls the sheet into its slot, and the cut strips push out underneath. Preview reset.",
+    "searchedFor": [
+     "shred file secure delete",
+     "shredder shred",
+     "shredder shred destroy"
+    ],
+    "nearestExisting": [
+     {
+      "id": "trash",
+      "why": "discards a scrap into a bin, an ordinary delete"
+     },
+     {
+      "id": "printer",
+      "why": "feeds a page out, the opposite direction, with no strips"
+     },
+     {
+      "id": "photo-delete",
+      "why": "deletes a photo"
+     }
+    ],
+    "drafts": 2,
+    "builds": 4
+   }
+  },
+  {
+   "id": "split-file",
+   "category": "file-transfer",
+   "checks": 5,
+   "drafts": 2,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 18.5,
+   "engineSeconds": 7.2,
+   "notes": {
+    "label": "Split file",
+    "categoryId": "file-transfer",
+    "stateful": true,
+    "concept": "Split one file into two (as in PDF split tools): a sheet with a centre seam parts, and each half grows into a whole sheet. Preview reset.",
+    "searchedFor": [
+     "split file",
+     "split pages separate"
+    ],
+    "nearestExisting": [
+     {
+      "id": "split-view",
+      "why": "a panel divider in the interface"
+     },
+     {
+      "id": "annotation-split",
+      "why": "an arrow diagram"
+     },
+     {
+      "id": "split-layer",
+      "why": "a motion-design layer"
+     },
+     {
+      "id": "extract-files",
+      "why": "a card lifted out of an archive box"
+     }
+    ],
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "upload-failed",
+   "category": "file-transfer",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.1,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Upload failed",
+    "categoryId": "file-transfer",
+    "stateful": false,
+    "concept": "Status for an upload that did not go through: a cloud with an exclamation mark, whose stem tries to go up as an arrow and falls back.",
+    "searchedFor": [
+     "upload failed error",
+     "cloud alert cloud error cloud off",
+     "retry upload",
+     "file error invalid corrupt"
+    ],
+    "nearestExisting": [
+     {
+      "id": "cloud-upload",
+      "why": "a successful upload; the arrow stays up in the cloud"
+     },
+     {
+      "id": "error",
+      "why": "a generic exclamation with no object or transfer"
+     },
+     {
+      "id": "warning",
+      "why": "a generic triangle alert"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "virus-scan",
+   "category": "file-transfer",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 0.6,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Virus scan",
+    "categoryId": "file-transfer",
+    "stateful": false,
+    "concept": "Scan a file for malware (as attachments are scanned in Gmail, Drive or Slack): a scan line sweeps down the sheet, and the shield beside it stamps the file safe.",
+    "searchedFor": [
+     "virus scan malware",
+     "virus scan antivirus malware safe file",
+     "bug virus",
+     "shield check protected"
+    ],
+    "nearestExisting": [
+     {
+      "id": "file-search",
+      "why": "a magnifier finding a match on a sheet"
+     },
+     {
+      "id": "scan",
+      "why": "scanner brackets and a bar, with no file or security verdict"
+     },
+     {
+      "id": "shield",
+      "why": "a generic protection shield"
+     },
+     {
+      "id": "lock-file",
+      "why": "locks a file; it does not scan it"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "autofill",
+   "category": "forms-input",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 7.9,
+   "engineSeconds": 7.3,
+   "notes": {
+    "label": "Autofill",
+    "categoryId": "forms-input",
+    "stateful": true,
+    "concept": "Saved details fill two empty form fields at once, triggered by a lightning bolt.",
+    "searchedFor": [
+     "autofill saved details fill form",
+     "autocomplete",
+     "generative fill"
+    ],
+    "nearestExisting": [
+     {
+      "id": "autocomplete",
+      "why": "autocomplete (ai-conversation) accepts a ghost suggestion while typing; autofill fills whole form fields from saved data"
+     },
+     {
+      "id": "form-builder",
+      "why": "adds a new field to a form being built"
+     },
+     {
+      "id": "generative-fill",
+      "why": "AI image fill"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "captcha",
+   "category": "forms-input",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.4,
+   "engineSeconds": 7.1,
+   "notes": {
+    "label": "Captcha",
+    "categoryId": "forms-input",
+    "stateful": true,
+    "concept": "An 'I am not a robot' captcha card: the checkbox turns into a verifying spinner and resolves to a check.",
+    "searchedFor": [
+     "captcha verify human not robot",
+     "checkbox",
+     "consent"
+    ],
+    "nearestExisting": [
+     {
+      "id": "checkbox",
+      "why": "a plain checkbox tick; captcha shows the verification step (spinner) on a captcha card with a refresh mark"
+     },
+     {
+      "id": "consent",
+      "why": "agreement tick in a consent box"
+     },
+     {
+      "id": "human-input",
+      "why": "an agent waiting for human guidance"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "character-count",
+   "category": "forms-input",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 12.6,
+   "engineSeconds": 7.7,
+   "notes": {
+    "label": "Character count",
+    "categoryId": "forms-input",
+    "stateful": true,
+    "concept": "A text field with a circular counter that fills toward its character limit as text is typed.",
+    "searchedFor": [
+     "character count limit counter",
+     "token counter",
+     "max tokens"
+    ],
+    "nearestExisting": [
+     {
+      "id": "token-counter",
+      "why": "an abacus counting tokens for a model"
+     },
+     {
+      "id": "max-tokens",
+      "why": "setting an output-length bracket"
+     },
+     {
+      "id": "text-field",
+      "why": "text entry, with no count or limit"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "field-error",
+   "category": "forms-input",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.0,
+   "engineSeconds": 7.2,
+   "notes": {
+    "label": "Field error",
+    "categoryId": "forms-input",
+    "stateful": false,
+    "concept": "A form field that has rejected its value: the field shakes and an exclamation mark beside it strikes.",
+    "searchedFor": [
+     "field error invalid input validation",
+     "error",
+     "warning"
+    ],
+    "nearestExisting": [
+     {
+      "id": "error",
+      "why": "error (feedback-status) is a general octagon alert; this is a form field rejecting its own value with the familiar invalid-input shake"
+     },
+     {
+      "id": "text-field",
+      "why": "text entry, with no validation state"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "password-strength",
+   "category": "forms-input",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 2.8,
+   "engineSeconds": 7.8,
+   "notes": {
+    "label": "Password strength",
+    "categoryId": "forms-input",
+    "stateful": true,
+    "concept": "A password field with a three-bar strength meter that goes from weak to strong as a character is added.",
+    "searchedFor": [
+     "password strength meter weak strong",
+     "password",
+     "meter"
+    ],
+    "nearestExisting": [
+     {
+      "id": "password",
+      "why": "password types masked characters into a field; this shows the strength meter rating it"
+     },
+     {
+      "id": "two-factor-code",
+      "why": "code cells, not a strength rating"
+     },
+     {
+      "id": "usage-meter / latency-meter",
+      "why": "gauges for usage and latency, not password quality"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "range-slider",
+   "category": "forms-input",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 4.8,
+   "engineSeconds": 7.7,
+   "notes": {
+    "label": "Range slider",
+    "categoryId": "forms-input",
+    "stateful": true,
+    "concept": "A two-handle range slider over a value histogram (a price-range filter); widening the handles brings the outer bars into the range.",
+    "searchedFor": [
+     "slider range adjust value",
+     "range slider min max handles",
+     "slider/range keyword grep of the catalog"
+    ],
+    "nearestExisting": [
+     {
+      "id": "sliders",
+      "why": "sliders (essentials) is the adjust or settings icon with separate tracks; this selects a min to max range on one track"
+     },
+     {
+      "id": "date-range",
+      "why": "a range on a calendar"
+     },
+     {
+      "id": "filter / search-filter",
+      "why": "funnel narrowing, not a range input"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "required-field",
+   "category": "forms-input",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.4,
+   "engineSeconds": 7.3,
+   "notes": {
+    "label": "Required field",
+    "categoryId": "forms-input",
+    "stateful": false,
+    "concept": "A labelled form field whose asterisk marks it as mandatory.",
+    "searchedFor": [
+     "required field asterisk mandatory",
+     "form keyword grep of the catalog (field, input, asterisk, star)"
+    ],
+    "nearestExisting": [
+     {
+      "id": "text-field",
+      "why": "text-field is plain text entry with a caret; this marks a field as mandatory with a label asterisk"
+     },
+     {
+      "id": "star",
+      "why": "a favourite star, not the required-field asterisk"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "text-area",
+   "category": "forms-input",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 9.5,
+   "engineSeconds": 7.0,
+   "notes": {
+    "label": "Text area",
+    "categoryId": "forms-input",
+    "stateful": true,
+    "concept": "A multi-line text box with a resize grip; dragging the grip makes it taller and shows the line that was cut off.",
+    "searchedFor": [
+     "text area multiline resize",
+     "resize column",
+     "word wrap"
+    ],
+    "nearestExisting": [
+     {
+      "id": "text-field",
+      "why": "single-line field (Short answer); this is the multi-line box with a resize grip (Paragraph)"
+     },
+     {
+      "id": "resize-column",
+      "why": "a table column boundary, not a text box"
+     },
+     {
+      "id": "clipboard / paste",
+      "why": "clipboard content, not an input"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "wheel-picker",
+   "category": "forms-input",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 6.3,
+   "engineSeconds": 7.4,
+   "notes": {
+    "label": "Wheel picker",
+    "categoryId": "forms-input",
+    "stateful": true,
+    "concept": "A scroll-wheel (drum) picker with a selection band; the wheel rolls up one row to the next value.",
+    "searchedFor": [
+     "wheel picker scroll drum time spinner",
+     "date picker calendar input",
+     "picker keyword grep of the catalog"
+    ],
+    "nearestExisting": [
+     {
+      "id": "select-field",
+      "why": "a dropdown select; this is the mobile wheel picker control"
+     },
+     {
+      "id": "model-picker / emoji-picker / gif-picker",
+      "why": "picking specific content, not a value wheel"
+     },
+     {
+      "id": "number-field",
+      "why": "stepper buttons on a numeric field"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "ask-question",
+   "category": "get-help",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 41.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Ask a question",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Ask a question: a speech bubble with a question mark, for \"ask us\" / \"ask the community\" entry points.",
+    "searchedFor": [
+     "ask question bubble chat question mark",
+     "ask question speech bubble",
+     "question mark",
+     "help question"
+    ],
+    "nearestExisting": [
+     {
+      "id": "help",
+      "why": "a bare question mark in a ring that writes itself on; this is a posted chat question (bubble pops from its tail)"
+     },
+     {
+      "id": "live-support",
+      "why": "two bubbles with typing dots for a live agent chat, not a question being asked"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "chat-widget",
+   "category": "get-help",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 20.2,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Chat widget",
+    "categoryId": "get-help",
+    "stateful": true,
+    "concept": "Chat widget: the round support-chat launcher that toggles between a chat bubble (closed) and a close cross (open).",
+    "searchedFor": [
+     "chat widget launcher messenger",
+     "chat widget launcher open chat panel"
+    ],
+    "nearestExisting": [
+     {
+      "id": "live-support",
+      "why": "the conversation itself; this is the launcher control"
+     },
+     {
+      "id": "message",
+      "why": "a message bubble with typing dots"
+     },
+     {
+      "id": "close",
+      "why": "a bare close cross"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "context-help",
+   "category": "get-help",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.5,
+   "engineSeconds": 7.4,
+   "notes": {
+    "label": "Context help",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Context help (\"What's this?\"): a pointer arrow with a question mark beside it, for help mode that explains whatever you click.",
+    "searchedFor": [
+     "context help cursor pointer what is this"
+    ],
+    "nearestExisting": [
+     {
+      "id": "help",
+      "why": "question mark only"
+     },
+     {
+      "id": "tooltip",
+      "why": "a hovered target popping a hint bubble"
+     },
+     {
+      "id": "live-cursors",
+      "why": "collaborators' cursors"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "customer-care",
+   "category": "get-help",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 8.4,
+   "engineSeconds": 8.2,
+   "notes": {
+    "label": "Customer care",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Customer care: an open hand holding up a heart.",
+    "searchedFor": [
+     "customer care hand heart",
+     "customer care hand heart support",
+     "hand"
+    ],
+    "nearestExisting": [
+     {
+      "id": "heart",
+      "why": "a heart alone (like/favourite)"
+     },
+     {
+      "id": "raise-hand",
+      "why": "a raised hand asking for the floor"
+     },
+     {
+      "id": "message-reaction",
+      "why": "a heart reaction on a message"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "emergency-sos",
+   "category": "get-help",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 22.4,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Emergency SOS",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Emergency SOS: a siren beacon light for emergency or urgent help.",
+    "searchedFor": [
+     "emergency sos siren beacon",
+     "emergency sos alarm siren urgent",
+     "siren"
+    ],
+    "nearestExisting": [
+     {
+      "id": "smoke-alarm",
+      "why": "a ceiling smoke detector"
+     },
+     {
+      "id": "priority-alert",
+      "why": "a bell with an exclamation badge"
+     },
+     {
+      "id": "warning",
+      "why": "a warning sign"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "faq",
+   "category": "get-help",
+   "checks": 8,
+   "drafts": 3,
+   "builds": 10,
+   "vchecks": 10,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 34.5,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "FAQ",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "FAQ: a question bubble and an answer bubble, for frequently asked questions.",
+    "searchedFor": [
+     "faq frequently asked questions accordion",
+     "faq questions answers accordion expand"
+    ],
+    "nearestExisting": [
+     {
+      "id": "live-support",
+      "why": "customer and agent bubbles with typing dots (live chat); here the question is answered with written lines"
+     },
+     {
+      "id": "help",
+      "why": "question mark only"
+     }
+    ],
+    "drafts": 3,
+    "builds": 6
+   }
+  },
+  {
+   "id": "help-article",
+   "category": "get-help",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 2,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 14.7,
+   "engineSeconds": 13.8,
+   "notes": {
+    "label": "Help article",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Help article: a page with a folded corner and a question mark, for a help-center article or docs page.",
+    "searchedFor": [
+     "user guide manual documentation help article",
+     "help article document guide page"
+    ],
+    "nearestExisting": [
+     {
+      "id": "document",
+      "why": "a plain document whose lines write"
+     },
+     {
+      "id": "knowledge-base",
+      "why": "a shelf of volumes"
+     },
+     {
+      "id": "help",
+      "why": "question mark only"
+     }
+    ],
+    "drafts": 2,
+    "builds": 2
+   }
+  },
+  {
+   "id": "help-desk",
+   "category": "get-help",
+   "checks": 3,
+   "drafts": 3,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 24.4,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Help desk",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Help desk: a service (desk) bell rung for assistance.",
+    "searchedFor": [
+     "help desk service bell concierge",
+     "desk bell service ring concierge reception"
+    ],
+    "nearestExisting": [
+     {
+      "id": "bell",
+      "why": "a notification bell that swings"
+     },
+     {
+      "id": "school-bell",
+      "why": "a hand bell"
+     },
+     {
+      "id": "bell-ring",
+      "why": "notification bell"
+     },
+     {
+      "id": "help-center",
+      "why": "a lifebuoy; a different help object"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "help-search",
+   "category": "get-help",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 36.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Search help",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Search help: a magnifier with a question mark in its lens, for the help-center search box.",
+    "searchedFor": [
+     "search help find answers",
+     "search help find answer magnifier question",
+     "help question"
+    ],
+    "nearestExisting": [
+     {
+      "id": "search",
+      "why": "plain magnifier; this one carries the question and uses the same scan-and-land motion on purpose"
+     },
+     {
+      "id": "help",
+      "why": "question mark only"
+     },
+     {
+      "id": "file-search",
+      "why": "searching a file, not help"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "report-problem",
+   "category": "get-help",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 38.0,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Report a problem",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Report a problem (or send feedback): a speech bubble with an exclamation mark.",
+    "searchedFor": [
+     "report problem issue warning message",
+     "report problem issue bug flag",
+     "exclamation",
+     "send feedback"
+    ],
+    "nearestExisting": [
+     {
+      "id": "error",
+      "why": "a bare exclamation that strikes down; this is a message being reported"
+     },
+     {
+      "id": "warning",
+      "why": "a warning sign; no message"
+     },
+     {
+      "id": "escalation-flag",
+      "why": "escalating a call issue with a flag on a pole"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "response-time",
+   "category": "get-help",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 17.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Response time",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Response time: a round chat bubble with clock hands, for \"we usually reply in N minutes\" / SLA.",
+    "searchedFor": [
+     "response time reply sla",
+     "response time reply wait clock"
+    ],
+    "nearestExisting": [
+     {
+      "id": "clock",
+      "why": "a plain clock"
+     },
+     {
+      "id": "stopwatch",
+      "why": "timing a lap"
+     },
+     {
+      "id": "reply-thread",
+      "why": "a reply arrow under a message"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "saved-replies",
+   "category": "get-help",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 16.5,
+   "engineSeconds": 7.0,
+   "notes": {
+    "label": "Saved replies",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Saved replies: a speech bubble with a lightning bolt, for macros / canned responses.",
+    "searchedFor": [
+     "saved replies canned response macro quick reply",
+     "saved replies canned quick reply shortcut"
+    ],
+    "nearestExisting": [
+     {
+      "id": "autocomplete",
+      "why": "AI text completion"
+     },
+     {
+      "id": "prompt-template",
+      "why": "an AI prompt template"
+     },
+     {
+      "id": "composing-message",
+      "why": "typing a message"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "schedule-call",
+   "category": "get-help",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 2.9,
+   "engineSeconds": 14.6,
+   "notes": {
+    "label": "Schedule a call",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Schedule a call: a calendar page with a phone handset, for booking a support call.",
+    "searchedFor": [
+     "schedule call book appointment phone calendar",
+     "schedule call book appointment"
+    ],
+    "nearestExisting": [
+     {
+      "id": "callback",
+      "why": "requesting a callback (same set)"
+     },
+     {
+      "id": "calendar",
+      "why": "a plain calendar whose leaf flips"
+     },
+     {
+      "id": "phone",
+      "why": "a ringing phone"
+     },
+     {
+      "id": "add-to-calendar",
+      "why": "adding an event"
+     }
+    ],
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "submit-request",
+   "category": "get-help",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 2,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 5.7,
+   "engineSeconds": 15.0,
+   "notes": {
+    "label": "Submit a request",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Submit a request: a support ticket with a plus, for opening a new support request.",
+    "searchedFor": [
+     "submit request new ticket add",
+     "new support ticket create case"
+    ],
+    "nearestExisting": [
+     {
+      "id": "support-ticket",
+      "why": "the ticket torn off (same set); this one is creating a new request, like new-folder next to folder"
+     },
+     {
+      "id": "ticket",
+      "why": "a travel/admission ticket torn"
+     },
+     {
+      "id": "add-to-calendar",
+      "why": "adding an event; the same plus-draws-on treatment"
+     }
+    ],
+    "drafts": 2,
+    "builds": 2
+   }
+  },
+  {
+   "id": "tech-support",
+   "category": "get-help",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 10.3,
+   "engineSeconds": 8.5,
+   "notes": {
+    "label": "Tech support",
+    "categoryId": "get-help",
+    "stateful": false,
+    "concept": "Tech support: a monitor with a spanner on its screen, for IT / technical support.",
+    "searchedFor": [
+     "tech support it help desk computer repair",
+     "wrench monitor fix device"
+    ],
+    "nearestExisting": [
+     {
+      "id": "advanced-settings",
+      "why": "a bare wrench tightening a nut (settings); this is device repair support. The crank treatment is shared on purpose"
+     },
+     {
+      "id": "monitor",
+      "why": "a plain display"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "circuit-board",
+   "category": "infrastructure-devices",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Circuit board",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "A printed circuit board with traces running from its edges to pads, through which current flows.",
+    "searchedFor": [
+     "circuit board",
+     "pcb",
+     "electronics",
+     "hardware"
+    ],
+    "nearestExisting": "processor (a chip package with pins that runs a clock cycle), memory-chip (a RAM module), local-model (a chip). The board-and-traces drawing means electronics or hardware in general, not a CPU.",
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "cooling-fan",
+   "category": "infrastructure-devices",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Cooling fan",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "A square-framed computer cooling fan whose five-blade rotor spins up.",
+    "searchedFor": [
+     "cooling fan",
+     "cpu fan",
+     "computer fan",
+     "thermal"
+    ],
+    "nearestExisting": "ceiling-fan (Smart home: a hanging household fan whose blades foreshorten); hard-drive (a platter that spins). Neither is the hardware cooling fan used for thermals and system health.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "drone",
+   "category": "infrastructure-devices",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Drone",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "A quadcopter drone that spins up its rotors, takes off, hovers and lands.",
+    "searchedFor": [
+     "drone",
+     "quadcopter",
+     "aerial",
+     "uav"
+    ],
+    "nearestExisting": "airplane and satellite (aircraft and spacecraft), robot-vacuum (an autonomous device). No drone existed.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "network-switch",
+   "category": "infrastructure-devices",
+   "checks": 4,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 18.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Network switch",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "A rack network switch with a row of ports that forwards a data packet in at one port and out at another.",
+    "searchedFor": [
+     "network switch",
+     "ethernet switch",
+     "switch ports",
+     "hub"
+    ],
+    "nearestExisting": "router (wireless box that broadcasts from antennas), load-balancer (hub dispatching down a trunk tree), ethernet (a single plug seating), server (rack units flashing lights); none shows a multi-port switch forwarding between ports. The 'switch' search hits (toggle-switch, switch-account, provider-switch) are UI toggles, not network hardware.",
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "projector",
+   "category": "infrastructure-devices",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Projector",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "A video projector with an offset lens that switches on and throws light.",
+    "searchedFor": [
+     "projector",
+     "beamer",
+     "presentation",
+     "projection screen"
+    ],
+    "nearestExisting": "cast and screen-share (sending content to a display), monitor, lightbulb. None is the projector device.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "remote-control",
+   "category": "infrastructure-devices",
+   "checks": 2,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Remote control",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "A handheld remote control whose power button press sends an infrared signal.",
+    "searchedFor": [
+     "remote control",
+     "tv remote",
+     "infrared",
+     "remote"
+    ],
+    "nearestExisting": "game-controller (a gamepad), smart-speaker and loudspeaker (the first draft's dot-and-ring face looked like a speaker, so it was redrawn with a power button and two key bars), router and live-broadcast (signal arcs from a fixed source).",
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "satellite-dish",
+   "category": "infrastructure-devices",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Satellite dish",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "A ground satellite dish with a feed arm and receiver that catches an incoming signal.",
+    "searchedFor": [
+     "satellite dish",
+     "antenna dish",
+     "receiver",
+     "parabolic",
+     "tv dish"
+    ],
+    "nearestExisting": "satellite (Maps: the spacecraft in orbit sending a downlink), live-broadcast (an antenna mast sending waves out), router. The dish is the receiving ground station, and its waves travel inward.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "sd-card",
+   "category": "infrastructure-devices",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "SD card",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "An SD memory card with a clipped corner and contacts, written to when a data packet drops in.",
+    "searchedFor": [
+     "sd card",
+     "memory card",
+     "flash card",
+     "storage card",
+     "microsd"
+    ],
+    "nearestExisting": "usb-drive (a stick plugging into a port), memory-chip (a RAM module seating), hard-drive, database (packet drops into a cylinder). The SD card is removable flash media; the write event matches database's treatment on purpose.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "smartwatch",
+   "category": "infrastructure-devices",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Smartwatch",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "A square-faced smartwatch with straps and a crown that buzzes on the wrist with a notification.",
+    "searchedFor": [
+     "smartwatch",
+     "smart watch",
+     "wearable",
+     "wrist watch",
+     "watch"
+    ],
+    "nearestExisting": "haptic-feedback (a phone buzzing), clock, stopwatch, alarm-clock (time devices without straps). No wearable device existed. The buzz deliberately matches haptic-feedback, because devices that vibrate get the same treatment.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "tablet",
+   "category": "infrastructure-devices",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 13.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Tablet",
+    "categoryId": "infrastructure-devices",
+    "stateful": false,
+    "concept": "A tablet computer that wakes when tapped.",
+    "searchedFor": [
+     "tablet",
+     "ipad",
+     "tablet touchscreen",
+     "device"
+    ],
+    "nearestExisting": "smartphone (a narrow phone with content scrolling), laptop (opens and wakes), monitor (wakes its content). The tablet is the missing device class for desktop, tablet and mobile pickers; its wake glint matches laptop's.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "booking-confirmed",
+   "category": "scheduling-time",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 21.4,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Booking confirmed",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Calendar with a check: a booking or appointment is confirmed (calendar-check / event available).",
+    "searchedFor": [
+     "booking confirmed appointment confirmed",
+     "calendar check booked confirmed",
+     "calendar"
+    ],
+    "nearestExisting": "add-to-calendar (55, calendar + plus: create an event), order-confirmed (15, check on an order sheet), rsvp (55, check on a reply card), calendar (05). None confirms a calendar booking; this is the check member of the calendar-plus/check/X family and reuses add-to-calendar's leaf and treatment.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "calendar-sync",
+   "category": "scheduling-time",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 17.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Calendar sync",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Calendar with two sync arrows: the calendar syncs with another account or service.",
+    "searchedFor": [
+     "calendar sync",
+     "sync calendar import subscribe",
+     "sync"
+    ],
+    "nearestExisting": "cloud-sync (11), file-sync (46), sync-arrows (12, a loader), calendar (05). None syncs a calendar.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "clock-in",
+   "category": "scheduling-time",
+   "checks": 7,
+   "drafts": 2,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 8.4,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Clock in",
+    "categoryId": "scheduling-time",
+    "stateful": true,
+    "concept": "Clock in / clock out: a time card punched into a time clock, the shift attendance toggle.",
+    "searchedFor": [
+     "clock in punch time card",
+     "punch clock",
+     "time card punch clock in clock out"
+    ],
+    "nearestExisting": "check-in (55, a ticket feeds into a reader), sign-in-out (26), alarm-clock (34). None records a work shift; the time clock carries a clock face so it reads as attendance, not ticketing.",
+    "drafts": 2,
+    "builds": 2
+   }
+  },
+  {
+   "id": "deadline",
+   "category": "scheduling-time",
+   "checks": 4,
+   "drafts": 3,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 20.1,
+   "engineSeconds": 7.3,
+   "notes": {
+    "label": "Deadline",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Calendar with a planted pennant flag: a due date or deadline is set on the calendar.",
+    "searchedFor": [
+     "due date deadline",
+     "flag finish goal",
+     "overdue late past due"
+    ],
+    "nearestExisting": "flag (06) and milestone (22) are free-standing flags (mark a spot, a milestone); date-range and calendar (05) have no due marker. Deadline puts the flag on a calendar date.",
+    "drafts": 3,
+    "builds": 2
+   }
+  },
+  {
+   "id": "event-cancelled",
+   "category": "scheduling-time",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 20.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Cancel event",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Calendar with an X: an event or booking is cancelled (calendar-x / event busy).",
+    "searchedFor": [
+     "cancel event calendar cancelled",
+     "calendar cancel remove x",
+     "calendar"
+    ],
+    "nearestExisting": "cancelled (11, a generic cross mark), add-to-calendar (55, calendar + plus), calendar (05). No calendar-specific cancel exists; same leaf and draw-on treatment as add-to-calendar.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "extend-time",
+   "category": "scheduling-time",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 3,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 10.4,
+   "engineSeconds": 13.9,
+   "notes": {
+    "label": "Extend time",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Extend time: a clock with a plus, add more time to a meeting, booking, timer or session.",
+    "searchedFor": [
+     "extend add time more time",
+     "snooze later postpone",
+     "overtime extra hours"
+    ],
+    "nearestExisting": "add-to-calendar (55, calendar + plus), countdown-timer (34), alarm-clock (34), bell-snooze (40). None adds time to a running clock.",
+    "drafts": 1,
+    "builds": 3
+   }
+  },
+  {
+   "id": "gantt-chart",
+   "category": "scheduling-time",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Gantt chart",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Gantt chart: staggered task bars on a time axis, the project schedule or timeline view.",
+    "searchedFor": [
+     "gantt chart project timeline",
+     "gantt",
+     "kanban sprint",
+     "plan planner"
+    ],
+    "nearestExisting": "timeline (18, a playhead over clip tracks), task-plan (10, plan steps unroll), kanban-board (22), team-poll (22, option bars fill). None is a schedule of tasks over time.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "overdue",
+   "category": "scheduling-time",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Overdue",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Overdue: a clock with an exclamation mark, a task, invoice or booking past its due time.",
+    "searchedFor": [
+     "overdue late",
+     "late overdue past due",
+     "pending waiting"
+    ],
+    "nearestExisting": "request-timeout (60, a request runs out of time), silence-timeout (63, the clock rings), alarm-clock (34), warning (11). None marks an item past due.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "recurring-event",
+   "category": "scheduling-time",
+   "checks": 2,
+   "drafts": 1,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 19.5,
+   "engineSeconds": 7.7,
+   "notes": {
+    "label": "Recurring event",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Calendar with a single repeat loop arrow: an event that recurs (repeat weekly, recurring meeting).",
+    "searchedFor": [
+     "recurring event repeat weekly",
+     "recurring repeat",
+     "loop repeat cycle"
+    ],
+    "nearestExisting": "recurring-payment (13, a payment clock on a calendar), repeat (17, media repeat arrows), sprint-cycle (22). Recurring-payment is about money; this is the calendar's repeat rule.",
+    "drafts": 1,
+    "builds": 2
+   }
+  },
+  {
+   "id": "schedule-send",
+   "category": "scheduling-time",
+   "checks": 4,
+   "drafts": 3,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 8.4,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Schedule send",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Schedule send: a paper plane with a clock, a message queued to send at a set time.",
+    "searchedFor": [
+     "schedule send later",
+     "scheduled message send later timer",
+     "send"
+    ],
+    "nearestExisting": "send (04, the plane leaves), scheduled-agent (19, a timer releases an agent run), message-sent (45). None sends a message at a scheduled time; the plane is the library send plane at 0.75.",
+    "drafts": 3,
+    "builds": 1
+   }
+  },
+  {
+   "id": "time-block",
+   "category": "scheduling-time",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.8,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Time block",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Time block: an event block dragged out to its end hour on a day calendar (time blocking, timeboxing).",
+    "searchedFor": [
+     "time blocking focus block",
+     "event block duration resize",
+     "time slots booking slot picker"
+    ],
+    "nearestExisting": "availability (34, free/busy slot pills), date-range (34, a range across dates), reschedule (34, an event chip moves dates), agenda (55). None sets an event's duration on a day.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "timesheet",
+   "category": "scheduling-time",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 11.3,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Timesheet",
+    "categoryId": "scheduling-time",
+    "stateful": false,
+    "concept": "Timesheet: a time log sheet with a clock badge where worked hours are entered.",
+    "searchedFor": [
+     "timesheet hours logged",
+     "timesheet time entry",
+     "time card punch clock in clock out"
+    ],
+    "nearestExisting": "clock (05), stopwatch (34), transaction-history (13, a ledger), agenda (55). None logs hours worked.",
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "candlestick-chart",
+   "category": "tables-analytics",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 7.0,
+   "engineSeconds": 7.0,
+   "notes": {
+    "label": "Candlestick chart",
+    "categoryId": "tables-analytics",
+    "stateful": false,
+    "concept": "Candlestick chart: price candles (bodies with high and low wicks) on axes, the trading-chart view.",
+    "searchedFor": [
+     "candlestick chart stock ohlc",
+     "candle candles trading stock price",
+     "market price volatility",
+     "bar chart column chart",
+     "waterfall chart cumulative change",
+     "histogram distribution bins"
+    ],
+    "nearestExisting": [
+     "chart (tools): three plain bars rise; candlestick-chart is the OHLC trading chart with wicks and open/close bodies",
+     "investment (fintech): a coin growing a stem, no chart",
+     "line-chart, scatter-plot (this set): other chart types"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "forecast",
+   "category": "tables-analytics",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 7.0,
+   "engineSeconds": 6.5,
+   "notes": {
+    "label": "Forecast",
+    "categoryId": "tables-analytics",
+    "stateful": false,
+    "concept": "Forecast: a line chart whose solid history continues as a dashed projection to a predicted value.",
+    "searchedFor": [
+     "forecast prediction projection",
+     "predict future trend estimate",
+     "projected growth outlook",
+     "trend line regression fit",
+     "area chart stacked area"
+    ],
+    "nearestExisting": [
+     "line-chart (this set): plots historical values; forecast adds the dashed projection beyond the latest value and redraws it",
+     "trending-up (search & discovery): an arrow breaking upward, no axes or prediction",
+     "cost-estimate (matched 'estimate'): a cost estimate, not a chart",
+     "loss-curve (model training): a training loss trace dropping"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "insert-row",
+   "category": "tables-analytics",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 7.0,
+   "engineSeconds": 7.4,
+   "notes": {
+    "label": "Insert row",
+    "categoryId": "tables-analytics",
+    "stateful": false,
+    "concept": "Insert row: a new row slides out of a plus into the middle of a table while the rows below shift down one slot.",
+    "searchedFor": [
+     "insert row add row new row",
+     "row table add",
+     "spreadsheet insert",
+     "delete row remove row",
+     "insert column add column new column"
+    ],
+    "nearestExisting": [
+     "dataset (AI knowledge): a framed table that grows a row at the bottom as a picture of a dataset; insert-row is the table edit command, a row pushed in between existing rows next to a plus",
+     "add-to-queue (media): lines plus a plus for queueing media items, not table rows",
+     "group-rows (this set): groups existing rows under a bracket; nothing is added"
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "merge-cells",
+   "category": "tables-analytics",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 7.3,
+   "engineSeconds": 7.1,
+   "notes": {
+    "label": "Merge cells",
+    "categoryId": "tables-analytics",
+    "stateful": false,
+    "concept": "Merge cells: the boundary between two table cells is squeezed out by inward arrows so they become one cell.",
+    "searchedFor": [
+     "merge cells combine cells join cells",
+     "merge combine cells table",
+     "split cells unmerge",
+     "unmerge cell span"
+    ],
+    "nearestExisting": [
+     "merge-files (claimed, file-transfer): merges documents, not table cells",
+     "merge-results (agent operations) / git-merge / merge-clips / annotation-merge: merge flows, tool results, branches or clips, never cells in a grid",
+     "freeze-column, show-columns, resize-column (this set): same table frame and rules, but they act on columns, not on cell spans"
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "active-speaker",
+   "category": "voice",
+   "checks": 2,
+   "drafts": 3,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 2.4,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Active speaker",
+    "categoryId": "voice",
+    "stateful": false,
+    "concept": "The participant who is speaking right now in a call or meeting: a person with voice arcs on both sides of the head.",
+    "searchedFor": [
+     "active speaker speaking avatar ring",
+     "speaking head person talking",
+     "avatar profile user circle",
+     "raise hand request to speak"
+    ],
+    "nearestExisting": [
+     {
+      "id": "user",
+      "set": "06",
+      "why": "a person with no voice"
+     },
+     {
+      "id": "support-agent",
+      "set": "23",
+      "why": "a person wearing a headset who takes a call"
+     },
+     {
+      "id": "voice-speaking",
+      "set": "16",
+      "why": "a speech bubble with a wave: the assistant speaking, not a participant"
+     },
+     {
+      "id": "speaker-diarization",
+      "set": "63",
+      "why": "labels who spoke when on a timeline"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "discard-recording",
+   "category": "voice",
+   "checks": 3,
+   "drafts": 2,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 14.2,
+   "engineSeconds": 7.3,
+   "notes": {
+    "label": "Discard recording",
+    "categoryId": "voice",
+    "stateful": false,
+    "concept": "Discard a voice recording: a microphone capsule drops into a bin marked with a waveform, and the lid slams.",
+    "searchedFor": [
+     "discard recording delete voice note cancel",
+     "trash delete bin",
+     "pause recording",
+     "lock recording hands-free"
+    ],
+    "nearestExisting": [
+     {
+      "id": "trash",
+      "set": "04",
+      "why": "a generic bin, with nothing about audio"
+     },
+     {
+      "id": "delete-message",
+      "set": "45",
+      "why": "deletes a chat message"
+     },
+     {
+      "id": "photo-delete",
+      "set": "43",
+      "why": "deletes a photo"
+     },
+     {
+      "id": "voice-note",
+      "set": "45",
+      "why": "plays a voice message"
+     },
+     {
+      "id": "voice-recording",
+      "set": "16",
+      "why": "records voice"
+     }
+    ],
+    "drafts": 2,
+    "builds": 2
+   }
+  },
+  {
+   "id": "karaoke",
+   "category": "voice",
+   "checks": 4,
+   "drafts": 2,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 5.9,
+   "engineSeconds": 16.0,
+   "notes": {
+    "label": "Karaoke",
+    "categoryId": "voice",
+    "stateful": false,
+    "concept": "Sing along: a handheld microphone rocks on the beat, a sound arc flicks off it, and a music note hops.",
+    "searchedFor": [
+     "karaoke sing singing lyrics",
+     "sing microphone handheld",
+     "audiobook listen book"
+    ],
+    "nearestExisting": [
+     {
+      "id": "lyrics",
+      "set": "44",
+      "why": "song lyrics text"
+     },
+     {
+      "id": "microphone",
+      "set": "05",
+      "why": "a stand microphone taking sound"
+     },
+     {
+      "id": "music-note",
+      "set": "44",
+      "why": "a note alone"
+     },
+     {
+      "id": "event-speaker",
+      "set": "55",
+      "why": "a speaker at a podium"
+     }
+    ],
+    "drafts": 2,
+    "builds": 2
+   }
+  },
+  {
+   "id": "mic-access",
+   "category": "voice",
+   "checks": 4,
+   "drafts": 1,
+   "builds": 3,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 12.0,
+   "engineSeconds": 8.1,
+   "notes": {
+    "label": "Mic access",
+    "categoryId": "voice",
+    "stateful": false,
+    "concept": "Microphone permission is granted: the check badge on the microphone redraws and the microphone goes live.",
+    "searchedFor": [
+     "microphone permission access allow",
+     "microphone test mic check input level"
+    ],
+    "nearestExisting": [
+     {
+      "id": "microphone",
+      "set": "05",
+      "why": "the plain microphone"
+     },
+     {
+      "id": "microphone-muted",
+      "set": "16",
+      "why": "a mute toggle with a slash"
+     },
+     {
+      "id": "recording-consent",
+      "set": "63",
+      "why": "a caller consenting to call recording, not OS microphone access"
+     }
+    ],
+    "drafts": 1,
+    "builds": 3
+   }
+  },
+  {
+   "id": "mic-level",
+   "category": "voice",
+   "checks": 3,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.2,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Mic level",
+    "categoryId": "voice",
+    "stateful": false,
+    "concept": "A microphone's input level meter, as in mic test and input-sensitivity settings.",
+    "searchedFor": [
+     "microphone test mic check input level",
+     "microphone gain sensitivity input volume",
+     "select microphone input device audio input"
+    ],
+    "nearestExisting": [
+     {
+      "id": "microphone",
+      "set": "05",
+      "why": "sound arrives and the capsule dips; it has no meter"
+     },
+     {
+      "id": "voice-activity",
+      "set": "16",
+      "why": "free-standing bars showing generic voice activity, with no microphone"
+     },
+     {
+      "id": "voiceover",
+      "set": "53",
+      "why": "a microphone with bars for recording narration, not an input level"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "pronunciation",
+   "category": "voice",
+   "checks": 4,
+   "drafts": 2,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 3.5,
+   "engineSeconds": 14.4,
+   "notes": {
+    "label": "Pronunciation",
+    "categoryId": "voice",
+    "stateful": false,
+    "concept": "Say a word aloud: the lips open on a syllable while sound arcs swell in front of the mouth (pronunciation practice, dictionaries, language apps).",
+    "searchedFor": [
+     "pronunciation",
+     "mouth lips speak say",
+     "language learning",
+     "speech bubble lightning"
+    ],
+    "nearestExisting": [
+     {
+      "id": "text-to-speech",
+      "set": "09",
+      "why": "an 'A' read aloud by the system"
+     },
+     {
+      "id": "language-learning",
+      "set": "38",
+      "why": "a book with an 'A' bubble"
+     },
+     {
+      "id": "voice-speaking",
+      "set": "16",
+      "why": "a speech bubble for the assistant speaking"
+     }
+    ],
+    "drafts": 2,
+    "builds": 2
+   }
+  },
+  {
+   "id": "voice-clone",
+   "category": "voice",
+   "checks": 1,
+   "drafts": 1,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 1.6,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Voice clone",
+    "categoryId": "voice",
+    "stateful": false,
+    "concept": "Clone a voice: a copy card carrying a waveform peels out of the original voice and speaks (voice cloning, personal voice).",
+    "searchedFor": [
+     "voice clone cloning copy voice",
+     "clone duplicate",
+     "voice effects filter changer robot"
+    ],
+    "nearestExisting": [
+     {
+      "id": "copy",
+      "set": "04",
+      "why": "copies a sheet; it has no voice"
+     },
+     {
+      "id": "duplicate-file",
+      "set": "46",
+      "why": "duplicates a file"
+     },
+     {
+      "id": "switch-voice",
+      "set": "16",
+      "why": "hands the voice from one speaker to another; it doesn't create a new voice"
+     }
+    ],
+    "drafts": 1,
+    "builds": 1
+   }
+  },
+  {
+   "id": "voice-command",
+   "category": "voice",
+   "checks": 5,
+   "drafts": 2,
+   "builds": 2,
+   "vchecks": 2,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 8.6,
+   "engineSeconds": 16.2,
+   "notes": {
+    "label": "Voice command",
+    "categoryId": "voice",
+    "stateful": false,
+    "concept": "A spoken command triggers an action: sound reaches the microphone and the lightning bolt beside it fires.",
+    "searchedFor": [
+     "voice command",
+     "voice shortcut command lightning bolt action",
+     "voice assistant orb siri"
+    ],
+    "nearestExisting": [
+     {
+      "id": "wake-word",
+      "set": "16",
+      "why": "a hotword wakes the speaker; nothing runs"
+     },
+     {
+      "id": "shortcut-key",
+      "set": "50",
+      "why": "a keyboard shortcut (keycap and bolt)"
+     },
+     {
+      "id": "microphone",
+      "set": "05",
+      "why": "the plain microphone"
+     },
+     {
+      "id": "search-voice",
+      "set": "41",
+      "why": "voice search"
+     }
+    ],
+    "drafts": 2,
+    "builds": 2
+   }
+  },
+  {
+   "id": "voice-id",
+   "category": "voice",
+   "checks": 2,
+   "drafts": 3,
+   "builds": 1,
+   "vchecks": 1,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 4.0,
+   "engineSeconds": 0,
+   "notes": {
+    "label": "Voice ID",
+    "categoryId": "voice",
+    "stateful": false,
+    "concept": "Voice biometrics: a spoken passphrase is captured as a voiceprint and recognised (voice match, voice unlock).",
+    "searchedFor": [
+     "voice id voiceprint biometric authentication",
+     "voice biometrics verify speaker",
+     "face authentication scan",
+     "voice pitch tone high low"
+    ],
+    "nearestExisting": [
+     {
+      "id": "face-authentication",
+      "set": "26",
+      "why": "scans and recognises a face, not a voice"
+     },
+     {
+      "id": "fingerprint",
+      "set": "26",
+      "why": "a touch biometric"
+     },
+     {
+      "id": "speaker-diarization",
+      "set": "63",
+      "why": "separates who spoke when; it doesn't verify identity"
+     },
+     {
+      "id": "voice-isolation",
+      "set": "16",
+      "why": "bars that isolate a voice from noise; nothing is recognised"
+     }
+    ],
+    "drafts": 2,
+    "builds": 1
+   }
+  },
+  {
+   "id": "voice-pitch",
+   "category": "voice",
+   "checks": 4,
+   "drafts": 3,
+   "builds": 3,
+   "vchecks": 3,
+   "firstBuildPass": true,
+   "firstVcheckPass": true,
+   "minutes": 17.9,
+   "engineSeconds": 16.5,
+   "notes": {
+    "label": "Voice pitch",
+    "categoryId": "voice",
+    "stateful": true,
+    "concept": "A voice pitch setting: the pitch knob rises and the voice wave tightens into a higher pitch (TTS and voice-changer settings).",
+    "searchedFor": [
+     "voice pitch tone high low",
+     "pitch"
+    ],
+    "nearestExisting": [
+     {
+      "id": "voice-speed",
+      "set": "16",
+      "why": "the sibling setting for speaking rate"
+     },
+     {
+      "id": "tuner",
+      "set": "44",
+      "why": "a gauge for tuning an instrument"
+     },
+     {
+      "id": "tone-control",
+      "set": "07",
+      "why": "the tone or style of AI writing"
+     },
+     {
+      "id": "fine-tune",
+      "set": "10",
+      "why": "fine-tuning an AI model"
+     }
+    ],
+    "drafts": 3,
+    "builds": 3
+   }
+  }
+ ],
+ "summary": {
+  "icons": 136,
+  "target": 136,
+  "agents": 14,
+  "wallMinutes": 68.6,
+  "commands": 2358,
+  "checks": 352,
+  "drafts": 209,
+  "builds": 192,
+  "vchecks": 230,
+  "buildsPerIcon": 1.41,
+  "draftsPerIcon": 1.54,
+  "firstBuildPassRate": 0.97,
+  "firstVcheckPassRate": 0.99,
+  "medianIconMinutes": 11.9,
+  "medianBuildEngineSeconds": 8.43,
+  "medianDraftEngineSeconds": 3.96,
+  "medianPhaseSeconds": {
+   "build.afterScriptMs": 3.82,
+   "build.beforeScriptMs": 1.2,
+   "build.roundTripMs": 5.23,
+   "build.scriptMs": 0.09,
+   "draft.afterScriptMs": 2.3,
+   "draft.beforeScriptMs": 1.21,
+   "draft.roundTripMs": 3.96,
+   "draft.scriptMs": 0.38
+  },
+  "checkErrorCodes": {
+   "V2_SCHEMA": 4,
+   "NOT_IMPLEMENTED": 3,
+   "REST_VALUE": 3,
+   "COMBINED_PATH_TRACKS": 3,
+   "MOVES_AFTER_REST": 2,
+   "KNOCKOUT_TRACKS": 1,
+   "KEY_ORDER": 1,
+   "KNOCKOUT_RIGS": 1,
+   "MORPH_TOPOLOGY": 1,
+   "UNKNOWN_NAME": 1,
+   "CARRIED_TWICE": 1
+  },
+  "baseline": {
+   "name": "HotelOS dogfood (2026-10-02, v1 JS batches)",
+   "icons": 12,
+   "wallMinutes": 19,
+   "builds": 24,
+   "buildsPerIcon": 2.0
+  }
+ },
+ "method": {
+  "agents": 14,
+  "maxConcurrentAgents": 8,
+  "engineSlots": 4,
+  "brief": "one agent per category; search, claim, draw, animate, check, draft, build, library visual check",
+  "date": "2026-10-05"
+ }
+}

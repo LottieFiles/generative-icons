@@ -51,7 +51,7 @@ fn library_mode_matches_the_generation_context_goldens() {
     assert_eq!(inputs.as_array().unwrap().len(), 63);
     assert_eq!(
         gai_core::sha256_hex(sorted_py_json(&packet)),
-        "f0521027be419c9ad307f91924940e4538402949bce8cbd6e4c15f69d0b7d70d"
+        "5615c6146de8c11c9f5c9f62ccf6fef01ccdcd6f79cbaaddbbd2b6694f084130"
     );
 
     // The prompt embeds the packet after the skill's rules.
@@ -189,7 +189,7 @@ fn text_output_lists_candidates_and_references() {
     assert_eq!(lines[0], "Context for \"notification feedback\" (Agent-selected neighbors)", "{packet}");
     for line in [
         "Contract: 32-unit grid, outline weights 1.5, 2, 2.5 (light, regular, bold; 1 to 3), 60 fps, 2.4 s timeline",
-        "Candidates (of 1005 library icons):",
+        "Candidates (of 1141 library icons):",
         "References:",
         "  bell                         Bell · Essentials, set 01-heart-bell",
         "    intent: The bell rings. Light: the bell swings out from its mount, the clapper trails it and strikes, a ring arc flicks out on each side and fades as it spreads, and the swing decays back to rest in smaller beats. Strong: a wider swing that rings twice, once at each end of the swing, and the clapper chases the bell through a longer decay. The mount never moves.",

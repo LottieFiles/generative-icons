@@ -1,7 +1,7 @@
 {
   "result": "PASS",
-  "icons": 8,
-  "actions": 30,
+  "icons": 20,
+  "actions": 56,
   "nativeTransformNodes": 70,
   "nativeTransformMaxCoordinateError": 0.000011400813239248464,
   "checks": [
@@ -279,6 +279,116 @@
         "availability-reverse",
         "availability-strong",
         "availability-reverse-strong"
+      ]
+    },
+    {
+      "icon": "booking-confirmed",
+      "spec": "specs/booking-confirmed.icon.json",
+      "specSha256": "059a690b39c8c3b0f739eb3302571805edc2e4daca2bfbf473eb1891b21cdb74",
+      "actions": [
+        "booking-confirmed",
+        "booking-confirmed-strong"
+      ]
+    },
+    {
+      "icon": "event-cancelled",
+      "spec": "specs/event-cancelled.icon.json",
+      "specSha256": "3eada65601c115770e5c24a6add727f37b201a6e735a2412d2696d0573f2bbfa",
+      "actions": [
+        "event-cancelled",
+        "event-cancelled-strong"
+      ]
+    },
+    {
+      "icon": "deadline",
+      "spec": "specs/deadline.icon.json",
+      "specSha256": "1c89be98ef26123cf93a1806b8a523e46ae299dfc122b96a1e8f4375eb8c4463",
+      "actions": [
+        "deadline",
+        "deadline-strong"
+      ]
+    },
+    {
+      "icon": "recurring-event",
+      "spec": "specs/recurring-event.icon.json",
+      "specSha256": "fdec7af58a4925d6634005ea8a40341e37ae63bca7eee329169de5718c7c0e80",
+      "actions": [
+        "recurring-event",
+        "recurring-event-strong"
+      ]
+    },
+    {
+      "icon": "calendar-sync",
+      "spec": "specs/calendar-sync.icon.json",
+      "specSha256": "ab6bb9bb88fd592241de40102ea8685d697bcfe50171d9dd5cae638686355485",
+      "actions": [
+        "calendar-sync",
+        "calendar-sync-strong"
+      ]
+    },
+    {
+      "icon": "gantt-chart",
+      "spec": "specs/gantt-chart.icon.json",
+      "specSha256": "8d22e219db259f4432530a361825bfb6dd1abe05f011d3f89bb530bfd02351ef",
+      "actions": [
+        "gantt-chart",
+        "gantt-chart-strong"
+      ]
+    },
+    {
+      "icon": "time-block",
+      "spec": "specs/time-block.icon.json",
+      "specSha256": "b6052abe6fba333cfdd1ac18c9b4ae5e43f24c02b97f2260b6e383fa1edb97bc",
+      "actions": [
+        "time-block",
+        "time-block-strong"
+      ]
+    },
+    {
+      "icon": "timesheet",
+      "spec": "specs/timesheet.icon.json",
+      "specSha256": "864e015bae06dd6505e69034f5137738d2f478abb3cfbdaa0c5a42db799128be",
+      "actions": [
+        "timesheet",
+        "timesheet-strong"
+      ]
+    },
+    {
+      "icon": "overdue",
+      "spec": "specs/overdue.icon.json",
+      "specSha256": "df23f61f30052a6579546d1a101c619b793cb1ceb845842e9f87d5d2b957c3b9",
+      "actions": [
+        "overdue",
+        "overdue-strong"
+      ]
+    },
+    {
+      "icon": "schedule-send",
+      "spec": "specs/schedule-send.icon.json",
+      "specSha256": "21a4af5bb0326978f36f9a301ebe9e9e2488c3437197bf6cfcb6b12edcc7de55",
+      "actions": [
+        "schedule-send",
+        "schedule-send-strong"
+      ]
+    },
+    {
+      "icon": "extend-time",
+      "spec": "specs/extend-time.icon.json",
+      "specSha256": "8000d60c9a79e889f39b0c57b4af7ebd30b91f863c634f461a29bba8f371bf32",
+      "actions": [
+        "extend-time",
+        "extend-time-strong"
+      ]
+    },
+    {
+      "icon": "clock-in",
+      "spec": "specs/clock-in.icon.json",
+      "specSha256": "c81b0911ad44fafd879ec1f7fe8268898b99a683de65b33fd0f4db096f136f78",
+      "actions": [
+        "clock-in",
+        "clock-in-reverse",
+        "clock-in-strong",
+        "clock-in-reverse-strong"
       ]
     }
   ]
