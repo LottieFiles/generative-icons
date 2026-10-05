@@ -11377,34 +11377,32 @@
       "continuous": false,
       "previewReset": false,
       "cycleDegrees": 0,
-      "directionSources": {
-        "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-        "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-      },
+      "source": "gai-icon/2",
       "motionLabel": "Light motion",
       "direction": "forward",
+      "stateful": false,
       "startState": "rest",
       "endState": "rest",
       "heading": "Gradient stops",
-      "description": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+      "description": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
       "label": "Gradient stops",
-      "intent": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+      "intent": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.9,
-      "rest": 57,
+      "active": 0.49,
+      "rest": 32,
       "keyPoses": [
         0,
-        0.18000000000000002,
-        0.36000000000000004,
-        0.54,
-        0.7200000000000001,
-        0.9
+        0.098,
+        0.196,
+        0.294,
+        0.392,
+        0.49
       ],
-      "layers": 44,
+      "layers": 46,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -11414,26 +11412,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "acba7a2e1d5f004c4f27b35d4ff5af94e607ad0883297c43d344a8583f099ddf",
-      "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-      "authoringSources": {
-        "set-config.json": "769e7043d907c684334ed00bc7c7843abf7dd8728ff35c30164c7ba654e77a43",
-        "batches/boolean.mjs": "38373035dfb68be0a8f130d0fdbf40e83a529d01383bf7921037aa2770bd3584",
-        "batches/design.mjs": "33c12afde4f955a4f280f740166c29e8facedf3d70bdde0799500c181fe5b022",
-        "batches/helpers.mjs": "5478469b9e5719c6f3691e59a48870d4b9f40df31ee0d1e4c5b2bb65a5bed154",
-        "batches/layout.mjs": "578be02df7cbdd5e3ae368aa5c2c3ebf3fe5b122b11909e6a96af6f472bd56f1",
-        "batches/paths.mjs": "8dd4fbc05c7f10db5cfb0e97f3d24d48a2769e9ff65747fe83a2d32e4b7440f4"
-      },
-      "brief": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
-      "constraints": [
-        {
-          "type": "fixed",
-          "part": "gradient-stops-ramp-frame"
-        }
-      ],
+      "nativeSha256": "107e1292cbdffc6ad11fabeea9e43d52eeed5601d8eaab642fb52f926b429083",
+      "sourceSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
+      "planSha256": "ba747e1224f3a851746ed2c2f385e14aa9502ed4d04283ca153d81c273351362",
+      "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+      "brief": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
+      "constraints": [],
       "category": "Vector editing & design",
-      "definitionsSha256": "a9ec985563a14314d0f792cfe2503d7c9bb754376cb8f92abb07af6b1fd20ad5",
+      "definitionsSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -11464,34 +11450,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Gradient stops",
-          "description": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+          "description": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
           "label": "Gradient stops",
-          "intent": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+          "intent": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.49,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.098,
+            0.196,
+            0.294,
+            0.392,
+            0.49
           ],
-          "layers": 44,
+          "layers": 46,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11501,26 +11485,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "acba7a2e1d5f004c4f27b35d4ff5af94e607ad0883297c43d344a8583f099ddf",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "769e7043d907c684334ed00bc7c7843abf7dd8728ff35c30164c7ba654e77a43",
-            "batches/boolean.mjs": "38373035dfb68be0a8f130d0fdbf40e83a529d01383bf7921037aa2770bd3584",
-            "batches/design.mjs": "33c12afde4f955a4f280f740166c29e8facedf3d70bdde0799500c181fe5b022",
-            "batches/helpers.mjs": "5478469b9e5719c6f3691e59a48870d4b9f40df31ee0d1e4c5b2bb65a5bed154",
-            "batches/layout.mjs": "578be02df7cbdd5e3ae368aa5c2c3ebf3fe5b122b11909e6a96af6f472bd56f1",
-            "batches/paths.mjs": "8dd4fbc05c7f10db5cfb0e97f3d24d48a2769e9ff65747fe83a2d32e4b7440f4"
-          },
-          "brief": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "gradient-stops-ramp-frame"
-            }
-          ],
+          "nativeSha256": "107e1292cbdffc6ad11fabeea9e43d52eeed5601d8eaab642fb52f926b429083",
+          "sourceSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
+          "planSha256": "ba747e1224f3a851746ed2c2f385e14aa9502ed4d04283ca153d81c273351362",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
+          "constraints": [],
           "category": "Vector editing & design",
-          "definitionsSha256": "a9ec985563a14314d0f792cfe2503d7c9bb754376cb8f92abb07af6b1fd20ad5",
+          "definitionsSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11542,8 +11514,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11464,
-          "sha256": "08a8b82f3797661e0a77e8f48d7ef206c371aae56303c3d277d0541212ff880a"
+          "bytes": 5911,
+          "sha256": "c923e7f60ec6329bad57f7175c7683b4be949f3500ded3417e6a1cfdbc65df1f"
         },
         {
           "name": "gradient-stops-strong",
@@ -11552,34 +11524,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Gradient stops",
-          "description": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+          "description": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
           "label": "Gradient stops",
-          "intent": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+          "intent": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.71,
+          "rest": 45,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.142,
+            0.284,
+            0.426,
+            0.568,
+            0.71
           ],
-          "layers": 44,
+          "layers": 46,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11589,26 +11559,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4cf8bf56361952658b6feabb08bbe88de18dae73636ffeb304a4a7b7de38c581",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "769e7043d907c684334ed00bc7c7843abf7dd8728ff35c30164c7ba654e77a43",
-            "batches/boolean.mjs": "38373035dfb68be0a8f130d0fdbf40e83a529d01383bf7921037aa2770bd3584",
-            "batches/design.mjs": "33c12afde4f955a4f280f740166c29e8facedf3d70bdde0799500c181fe5b022",
-            "batches/helpers.mjs": "5478469b9e5719c6f3691e59a48870d4b9f40df31ee0d1e4c5b2bb65a5bed154",
-            "batches/layout.mjs": "578be02df7cbdd5e3ae368aa5c2c3ebf3fe5b122b11909e6a96af6f472bd56f1",
-            "batches/paths.mjs": "8dd4fbc05c7f10db5cfb0e97f3d24d48a2769e9ff65747fe83a2d32e4b7440f4"
-          },
-          "brief": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "gradient-stops-ramp-frame"
-            }
-          ],
+          "nativeSha256": "4f9770cd97ab1753341652b62ad9b7a77d955d06b9205889c25d0b2ee4de3a22",
+          "sourceSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
+          "planSha256": "ba747e1224f3a851746ed2c2f385e14aa9502ed4d04283ca153d81c273351362",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
+          "constraints": [],
           "category": "Vector editing & design",
-          "definitionsSha256": "a9ec985563a14314d0f792cfe2503d7c9bb754376cb8f92abb07af6b1fd20ad5",
+          "definitionsSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11630,8 +11588,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11465,
-          "sha256": "70e7127decd99859f58624622b28aaaa320da461e302e871cd67f991d8596b00"
+          "bytes": 5912,
+          "sha256": "eaff0d79dd261a2622435a77f5717b8699423c58271f0c3201c653cd5975bbae"
         }
       ],
       "animations": [
@@ -11642,34 +11600,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Light motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Gradient stops",
-          "description": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+          "description": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
           "label": "Gradient stops",
-          "intent": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+          "intent": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.49,
+          "rest": 32,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.098,
+            0.196,
+            0.294,
+            0.392,
+            0.49
           ],
-          "layers": 44,
+          "layers": 46,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11679,26 +11635,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "acba7a2e1d5f004c4f27b35d4ff5af94e607ad0883297c43d344a8583f099ddf",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "769e7043d907c684334ed00bc7c7843abf7dd8728ff35c30164c7ba654e77a43",
-            "batches/boolean.mjs": "38373035dfb68be0a8f130d0fdbf40e83a529d01383bf7921037aa2770bd3584",
-            "batches/design.mjs": "33c12afde4f955a4f280f740166c29e8facedf3d70bdde0799500c181fe5b022",
-            "batches/helpers.mjs": "5478469b9e5719c6f3691e59a48870d4b9f40df31ee0d1e4c5b2bb65a5bed154",
-            "batches/layout.mjs": "578be02df7cbdd5e3ae368aa5c2c3ebf3fe5b122b11909e6a96af6f472bd56f1",
-            "batches/paths.mjs": "8dd4fbc05c7f10db5cfb0e97f3d24d48a2769e9ff65747fe83a2d32e4b7440f4"
-          },
-          "brief": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "gradient-stops-ramp-frame"
-            }
-          ],
+          "nativeSha256": "107e1292cbdffc6ad11fabeea9e43d52eeed5601d8eaab642fb52f926b429083",
+          "sourceSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
+          "planSha256": "ba747e1224f3a851746ed2c2f385e14aa9502ed4d04283ca153d81c273351362",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
+          "constraints": [],
           "category": "Vector editing & design",
-          "definitionsSha256": "a9ec985563a14314d0f792cfe2503d7c9bb754376cb8f92abb07af6b1fd20ad5",
+          "definitionsSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11720,8 +11664,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11464,
-          "sha256": "08a8b82f3797661e0a77e8f48d7ef206c371aae56303c3d277d0541212ff880a"
+          "bytes": 5911,
+          "sha256": "c923e7f60ec6329bad57f7175c7683b4be949f3500ded3417e6a1cfdbc65df1f"
         },
         {
           "name": "gradient-stops-strong",
@@ -11730,34 +11674,32 @@
           "continuous": false,
           "previewReset": false,
           "cycleDegrees": 0,
-          "directionSources": {
-            "drawing.mjs": "15a80b73dd5bccdd3735e6d01b76f1d88fee5b6a4c0a9ee130bf4b6e9b8e5e93",
-            "direction.mjs": "2f32403dcf96eba37de9f32d2ae4328aaa94b3bccabbad5066cd851cf052de07"
-          },
+          "source": "gai-icon/2",
           "motionLabel": "Strong motion",
           "direction": "forward",
+          "stateful": false,
           "startState": "rest",
           "endState": "rest",
           "heading": "Gradient stops",
-          "description": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+          "description": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
           "label": "Gradient stops",
-          "intent": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
+          "intent": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.9,
-          "rest": 57,
+          "active": 0.71,
+          "rest": 45,
           "keyPoses": [
             0,
-            0.18000000000000002,
-            0.36000000000000004,
-            0.54,
-            0.7200000000000001,
-            0.9
+            0.142,
+            0.284,
+            0.426,
+            0.568,
+            0.71
           ],
-          "layers": 44,
+          "layers": 46,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -11767,26 +11709,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "4cf8bf56361952658b6feabb08bbe88de18dae73636ffeb304a4a7b7de38c581",
-          "sourceSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "setBuilderSha256": "37496c02bf774e2c5b2d3d72a317d3343137bcfbd88955333787e519ce0a224c",
-          "authoringSources": {
-            "set-config.json": "769e7043d907c684334ed00bc7c7843abf7dd8728ff35c30164c7ba654e77a43",
-            "batches/boolean.mjs": "38373035dfb68be0a8f130d0fdbf40e83a529d01383bf7921037aa2770bd3584",
-            "batches/design.mjs": "33c12afde4f955a4f280f740166c29e8facedf3d70bdde0799500c181fe5b022",
-            "batches/helpers.mjs": "5478469b9e5719c6f3691e59a48870d4b9f40df31ee0d1e4c5b2bb65a5bed154",
-            "batches/layout.mjs": "578be02df7cbdd5e3ae368aa5c2c3ebf3fe5b122b11909e6a96af6f472bd56f1",
-            "batches/paths.mjs": "8dd4fbc05c7f10db5cfb0e97f3d24d48a2769e9ff65747fe83a2d32e4b7440f4"
-          },
-          "brief": "Adjust a middle color stop on a closed tonal ramp. Light: the middle stop moves 1.7 units. Strong: it prepares left, sweeps four units right, and settles. Its dividing boundary follows the stop, with the two end stops fixed.",
-          "constraints": [
-            {
-              "type": "fixed",
-              "part": "gradient-stops-ramp-frame"
-            }
-          ],
+          "nativeSha256": "4f9770cd97ab1753341652b62ad9b7a77d955d06b9205889c25d0b2ee4de3a22",
+          "sourceSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
+          "planSha256": "ba747e1224f3a851746ed2c2f385e14aa9502ed4d04283ca153d81c273351362",
+          "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
+          "brief": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
+          "constraints": [],
           "category": "Vector editing & design",
-          "definitionsSha256": "a9ec985563a14314d0f792cfe2503d7c9bb754376cb8f92abb07af6b1fd20ad5",
+          "definitionsSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -11808,12 +11738,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 11465,
-          "sha256": "70e7127decd99859f58624622b28aaaa320da461e302e871cd67f991d8596b00"
+          "bytes": 5912,
+          "sha256": "eaff0d79dd261a2622435a77f5717b8699423c58271f0c3201c653cd5975bbae"
         }
       ],
-      "bytes": 11464,
-      "sha256": "08a8b82f3797661e0a77e8f48d7ef206c371aae56303c3d277d0541212ff880a"
+      "bytes": 5911,
+      "sha256": "c923e7f60ec6329bad57f7175c7683b4be949f3500ded3417e6a1cfdbc65df1f"
     },
     {
       "name": "convert-to-curves",

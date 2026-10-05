@@ -1,0 +1,234 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "gradient-stops",
+  "label": "Gradient stops",
+  "intent": "Dragging the middle colour stop re-flows the gradient. Light: the stop is grabbed (it swells), dragged 4 units right along the ramp and stops dead; the colour boundary above follows a beat later, so the mid tone spreads, then both ease home as the stop is let go. Strong: a small tug left, a longer drag right that stops dead, and on release the stop snaps home past its place and settles in two decaying beats, the boundary a beat behind. The frame and the two end stops never move.",
+  "//": "Ported from the library's v1 drawing (its Light animation at frame 0); geometry and rest opacities unchanged. The middle stop and its stem ride the handle rig; the boundary between the mid and high bands is a morph that follows it.",
+  "parts": {
+    "ramp": {
+      "shape": {
+        "path": "M6.4 7 L25.6 7 C26.373 7 27 7.627 27 8.4 L27 16.6 C27 17.373 26.373 18 25.6 18 L6.4 18 C5.627 18 5 17.373 5 16.6 L5 8.4 C5 7.627 5.627 7 6.4 7 Z"
+      },
+      "role": "surface",
+      "solid": "none"
+    },
+    "ramp-solid": {
+      "shape": {
+        "path": "M6.4 5.7 L25.6 5.7 C27.09 5.7 28.3 6.91 28.3 8.4 L28.3 16.6 C28.3 18.09 27.09 19.3 25.6 19.3 L6.4 19.3 C4.91 19.3 3.7 18.09 3.7 16.6 L3.7 8.4 C3.7 6.91 4.91 5.7 6.4 5.7 L6.4 5.7 L6.5 8.3 C6.39 8.3 6.3 8.39 6.3 8.5 L6.3 16.5 C6.3 16.61 6.39 16.7 6.5 16.7 L25.5 16.7 C25.61 16.7 25.7 16.61 25.7 16.5 L25.7 8.5 C25.7 8.39 25.61 8.3 25.5 8.3 L6.5 8.3 L6.4 5.7 Z"
+      },
+      "role": "surface",
+      "outline": "none",
+      "tint": false,
+      "solid": "fill"
+    },
+    "ramp-low": {
+      "shape": {
+        "path": "M6.7 8.4 L10.8 8.4 C10.966 8.4 11.1 8.534 11.1 8.7 L11.1 16.3 C11.1 16.466 10.966 16.6 10.8 16.6 L6.7 16.6 C6.534 16.6 6.4 16.466 6.4 16.3 L6.4 8.7 C6.4 8.534 6.534 8.4 6.7 8.4 Z"
+      },
+      "role": "fill",
+      "opacity": 0.24
+    },
+    "ramp-mid": {
+      "shape": {
+        "morph": [
+          {
+            "path": "M11.4 8.4 L13.7 8.4 C13.866 8.4 14 8.534 14 8.7 L14 16.3 C14 16.466 13.866 16.6 13.7 16.6 L11.4 16.6 C11.234 16.6 11.1 16.466 11.1 16.3 L11.1 8.7 C11.1 8.534 11.234 8.4 11.4 8.4 Z"
+          },
+          {
+            "path": "M11.4 8.4 L17.7 8.4 C17.866 8.4 18 8.534 18 8.7 L18 16.3 C18 16.466 17.866 16.6 17.7 16.6 L11.4 16.6 C11.234 16.6 11.1 16.466 11.1 16.3 L11.1 8.7 C11.1 8.534 11.234 8.4 11.4 8.4 Z"
+          }
+        ],
+        "by": "flow"
+      },
+      "role": "fill",
+      "opacity": 0.52,
+      "//": "the colour boundary: a morph between its rest shape (0) and its right edge 4 units further right (1), driven by flow"
+    },
+    "ramp-high": {
+      "shape": {
+        "morph": [
+          {
+            "path": "M14.3 8.4 L25.3 8.4 C25.466 8.4 25.6 8.534 25.6 8.7 L25.6 16.3 C25.6 16.466 25.466 16.6 25.3 16.6 L14.3 16.6 C14.134 16.6 14 16.466 14 16.3 L14 8.7 C14 8.534 14.134 8.4 14.3 8.4 Z"
+          },
+          {
+            "path": "M18.3 8.4 L25.3 8.4 C25.466 8.4 25.6 8.534 25.6 8.7 L25.6 16.3 C25.6 16.466 25.466 16.6 25.3 16.6 L18.3 16.6 C18.134 16.6 18 16.466 18 16.3 L18 8.7 C18 8.534 18.134 8.4 18.3 8.4 Z"
+          }
+        ],
+        "by": "flow"
+      },
+      "role": "fill",
+      "//": "its left edge is the same boundary, moved by the same driver"
+    },
+    "stem-0": {
+      "shape": {
+        "path": "M6 18 L6 22"
+      }
+    },
+    "stop-0": {
+      "shape": {
+        "path": "M5 22 L7 22 C7.386 22 7.7 22.314 7.7 22.7 L7.7 25.6 C7.7 25.986 7.386 26.3 7 26.3 L5 26.3 C4.614 26.3 4.3 25.986 4.3 25.6 L4.3 22.7 C4.3 22.314 4.614 22 5 22 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "stem-1": {
+      "shape": {
+        "path": "M14 18 L14 22"
+      }
+    },
+    "stop-1": {
+      "shape": {
+        "path": "M13 22 L15 22 C15.386 22 15.7 22.314 15.7 22.7 L15.7 25.6 C15.7 25.986 15.386 26.3 15 26.3 L13 26.3 C12.614 26.3 12.3 25.986 12.3 25.6 L12.3 22.7 C12.3 22.314 12.614 22 13 22 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "stem-2": {
+      "shape": {
+        "path": "M26 18 L26 22"
+      }
+    },
+    "stop-2": {
+      "shape": {
+        "path": "M25 22 L27 22 C27.386 22 27.7 22.314 27.7 22.7 L27.7 25.6 C27.7 25.986 27.386 26.3 27 26.3 L25 26.3 C24.614 26.3 24.3 25.986 24.3 25.6 L24.3 22.7 C24.3 22.314 24.614 22 25 22 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    }
+  },
+  "motion": {
+    "knob.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          1.25,
+          "out"
+        ],
+        [
+          0.3,
+          1.25
+        ],
+        [
+          0.36,
+          1
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          1.3,
+          "out"
+        ],
+        [
+          0.36,
+          1.3
+        ],
+        [
+          0.42,
+          1
+        ]
+      ]
+    },
+    "handle.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.05,
+          0
+        ],
+        [
+          0.22,
+          4,
+          "hit"
+        ],
+        [
+          0.3,
+          4
+        ],
+        [
+          0.42,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.07,
+          -0.8,
+          "out"
+        ],
+        [
+          0.27,
+          4.5,
+          "hit"
+        ],
+        [
+          0.36,
+          4.5
+        ],
+        [
+          0.46,
+          0,
+          "hit"
+        ],
+        [
+          0.52,
+          -0.7
+        ],
+        [
+          0.58,
+          0.3
+        ],
+        [
+          0.64,
+          0
+        ]
+      ]
+    },
+    "flow": {
+      "//": "the boundary follows the stop 70 ms behind, 1 per 4 units",
+      "follow": "handle.x",
+      "scale": 0.25,
+      "lag": 0.07
+    }
+  },
+  "rigs": {
+    "handle": {
+      "//": "the middle stop and its stem slide together along the ramp",
+      "pivot": [
+        14,
+        22
+      ],
+      "carries": [
+        "stem-1",
+        "knob"
+      ]
+    },
+    "knob": {
+      "//": "the stop swells from where it hangs on its stem (its top edge), so the stem never shows inside it",
+      "pivot": [
+        14,
+        22
+      ],
+      "carries": [
+        "stop-1"
+      ]
+    }
+  }
+}

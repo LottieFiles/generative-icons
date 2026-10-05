@@ -405,11 +405,12 @@ fn closed(paths: &[String]) -> Vec<String> {
     paths.iter().map(|d| if d.ends_with('Z') { d.clone() } else { format!("{d} Z") }).collect()
 }
 
-/// A coordinate with at most 3 decimals (a thousandth of a unit) and no trailing zeros.
+/// A coordinate with at most 4 decimals and no trailing zeros: 3 leave small circles' handles
+/// a level off v1 on anti-aliased edges.
 fn num(x: f64) -> String {
-    let r = (x * 1_000.0).round() / 1_000.0;
+    let r = (x * 10_000.0).round() / 10_000.0;
     let r = if r == 0.0 { 0.0 } else { r };
-    let s = format!("{r:.3}");
+    let s = format!("{r:.4}");
     s.trim_end_matches('0').trim_end_matches('.').to_string()
 }
 

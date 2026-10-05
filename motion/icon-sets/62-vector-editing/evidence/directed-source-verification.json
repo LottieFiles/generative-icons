@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 60,
-  "nativeTransformNodes": 426,
+  "nativeTransformNodes": 354,
   "nativeTransformMaxCoordinateError": 0.000006000000002615025,
   "checks": [
     {
@@ -284,38 +284,6 @@
       "designConstraints": []
     },
     {
-      "name": "gradient-stops",
-      "fixedParts": [
-        "gradient-stops-ramp-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "gradient-stops-ramp-frame"
-        }
-      ]
-    },
-    {
-      "name": "gradient-stops-strong",
-      "fixedParts": [
-        "gradient-stops-ramp-frame"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "gradient-stops-ramp-frame"
-        }
-      ]
-    },
-    {
       "name": "convert-to-curves",
       "fixedParts": [
         "convert-to-curves-letter"
@@ -422,6 +390,15 @@
       "actions": [
         "blend-steps",
         "blend-steps-strong"
+      ]
+    },
+    {
+      "icon": "gradient-stops",
+      "spec": "specs/gradient-stops.icon.json",
+      "specSha256": "4006ca51c5dafddfe731b7b325e77f668852582f931c3335d026ef10ffea1f40",
+      "actions": [
+        "gradient-stops",
+        "gradient-stops-strong"
       ]
     },
     {

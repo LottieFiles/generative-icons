@@ -1,0 +1,215 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "more-options",
+  "label": "More options",
+  "intent": "Tapping the button opens the overflow menu. Light: the centre dot is pressed down with a hit, and 70 ms later the outer dots are pushed apart, then spring back in and land with a hit and a small rebound while the centre dot rises back. Strong: a deeper press, the outer dots pushed farther apart, the centre dot rebounding above the row, and the outer dots landing with two decaying rebounds. The dots only translate: the filled-ellipsis contract fixes each dot's diameter to the outline weight in every key, so nothing scales, morphs or is added.",
+  "//": "Ported from the library's v1 drawing (create --replace): per-weight dots (r 1.5/2/2.5) plus Solid-only dots (r 2.6). Each dot pair moves on one rig. Circle handles at full precision (kappa x r, 7 decimals): the port's 3-decimal handles drew Light 1 level off v1 on anti-aliased edges.",
+  "parts": {
+    "dot-2": {
+      "shape": {
+        "path": "M16 14 C17.1045695 14 18 14.8954305 18 16 C18 17.1045695 17.1045695 18 16 18 C14.8954305 18 14 17.1045695 14 16 C14 14.8954305 14.8954305 14 16 14 Z"
+      },
+      "role": "fill",
+      "solid": "none",
+      "weights": {
+        "light": {
+          "path": "M16 14.5 C16.8284271 14.5 17.5 15.1715729 17.5 16 C17.5 16.8284271 16.8284271 17.5 16 17.5 C15.1715729 17.5 14.5 16.8284271 14.5 16 C14.5 15.1715729 15.1715729 14.5 16 14.5 Z"
+        },
+        "bold": {
+          "path": "M16 13.5 C17.3807119 13.5 18.5 14.6192881 18.5 16 C18.5 17.3807119 17.3807119 18.5 16 18.5 C14.6192881 18.5 13.5 17.3807119 13.5 16 C13.5 14.6192881 14.6192881 13.5 16 13.5 Z"
+        }
+      }
+    },
+    "dot-2-solid": {
+      "shape": {
+        "path": "M16 13.4 C17.4359403 13.4 18.6 14.5640597 18.6 16 C18.6 17.4359403 17.4359403 18.6 16 18.6 C14.5640597 18.6 13.4 17.4359403 13.4 16 C13.4 14.5640597 14.5640597 13.4 16 13.4 Z"
+      },
+      "role": "surface",
+      "outline": "none",
+      "tint": false,
+      "solid": "fill"
+    },
+    "dot-1": {
+      "shape": {
+        "path": "M8 14 C9.1045695 14 10 14.8954305 10 16 C10 17.1045695 9.1045695 18 8 18 C6.8954305 18 6 17.1045695 6 16 C6 14.8954305 6.8954305 14 8 14 Z"
+      },
+      "role": "fill",
+      "solid": "none",
+      "weights": {
+        "light": {
+          "path": "M8 14.5 C8.8284271 14.5 9.5 15.1715729 9.5 16 C9.5 16.8284271 8.8284271 17.5 8 17.5 C7.1715729 17.5 6.5 16.8284271 6.5 16 C6.5 15.1715729 7.1715729 14.5 8 14.5 Z"
+        },
+        "bold": {
+          "path": "M8 13.5 C9.3807119 13.5 10.5 14.6192881 10.5 16 C10.5 17.3807119 9.3807119 18.5 8 18.5 C6.6192881 18.5 5.5 17.3807119 5.5 16 C5.5 14.6192881 6.6192881 13.5 8 13.5 Z"
+        }
+      }
+    },
+    "dot-1-solid": {
+      "shape": {
+        "path": "M8 13.4 C9.4359403 13.4 10.6 14.5640597 10.6 16 C10.6 17.4359403 9.4359403 18.6 8 18.6 C6.5640597 18.6 5.4 17.4359403 5.4 16 C5.4 14.5640597 6.5640597 13.4 8 13.4 Z"
+      },
+      "role": "surface",
+      "outline": "none",
+      "tint": false,
+      "solid": "fill"
+    },
+    "dot-3": {
+      "shape": {
+        "path": "M24 14 C25.1045695 14 26 14.8954305 26 16 C26 17.1045695 25.1045695 18 24 18 C22.8954305 18 22 17.1045695 22 16 C22 14.8954305 22.8954305 14 24 14 Z"
+      },
+      "role": "fill",
+      "solid": "none",
+      "weights": {
+        "light": {
+          "path": "M24 14.5 C24.8284271 14.5 25.5 15.1715729 25.5 16 C25.5 16.8284271 24.8284271 17.5 24 17.5 C23.1715729 17.5 22.5 16.8284271 22.5 16 C22.5 15.1715729 23.1715729 14.5 24 14.5 Z"
+        },
+        "bold": {
+          "path": "M24 13.5 C25.3807119 13.5 26.5 14.6192881 26.5 16 C26.5 17.3807119 25.3807119 18.5 24 18.5 C22.6192881 18.5 21.5 17.3807119 21.5 16 C21.5 14.6192881 22.6192881 13.5 24 13.5 Z"
+        }
+      }
+    },
+    "dot-3-solid": {
+      "shape": {
+        "path": "M24 13.4 C25.4359403 13.4 26.6 14.5640597 26.6 16 C26.6 17.4359403 25.4359403 18.6 24 18.6 C22.5640597 18.6 21.4 17.4359403 21.4 16 C21.4 14.5640597 22.5640597 13.4 24 13.4 Z"
+      },
+      "role": "surface",
+      "outline": "none",
+      "tint": false,
+      "solid": "fill"
+    }
+  },
+  "motion": {
+    "centre.y": {
+      "//": "the tap: the driver",
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          1.8,
+          "hit"
+        ],
+        [
+          0.24,
+          0,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          2.4,
+          "hit"
+        ],
+        [
+          0.25,
+          -0.7,
+          "out"
+        ],
+        [
+          0.36,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "left.x": {
+      "//": "pushed apart 70-90 ms after the press, then snapped back, quicker than it left, with a hit",
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.07,
+          0
+        ],
+        [
+          0.21,
+          -2.6,
+          "out"
+        ],
+        [
+          0.31,
+          0,
+          "hit"
+        ],
+        {
+          "bounce": 0.39,
+          "amp": 0.15
+        }
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.25,
+          -3.6,
+          "out"
+        ],
+        [
+          0.37,
+          0,
+          "hit"
+        ],
+        {
+          "bounce": 0.47,
+          "amp": 0.22
+        },
+        {
+          "bounce": 0.56,
+          "amp": 0.4
+        }
+      ]
+    },
+    "right.x": {
+      "follow": "left.x",
+      "scale": -1
+    }
+  },
+  "rigs": {
+    "left": {
+      "pivot": [
+        8,
+        16
+      ],
+      "carries": [
+        "dot-1",
+        "dot-1-solid"
+      ]
+    },
+    "centre": {
+      "pivot": [
+        16,
+        16
+      ],
+      "carries": [
+        "dot-2",
+        "dot-2-solid"
+      ]
+    },
+    "right": {
+      "pivot": [
+        24,
+        16
+      ],
+      "carries": [
+        "dot-3",
+        "dot-3-solid"
+      ]
+    }
+  }
+}

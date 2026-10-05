@@ -2,7 +2,7 @@
   "result": "PASS",
   "icons": 20,
   "actions": 60,
-  "nativeTransformNodes": 60,
+  "nativeTransformNodes": 56,
   "nativeTransformMaxCoordinateError": 0.0000093822157989365,
   "checks": [
     {
@@ -78,54 +78,6 @@
         {
           "type": "rigid",
           "part": "undo-redo-head"
-        }
-      ]
-    },
-    {
-      "name": "more-options",
-      "fixedParts": [
-        "more-options-dot-2"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "more-options-dot-2"
-        },
-        {
-          "type": "rigid",
-          "part": "more-options-dot-1"
-        },
-        {
-          "type": "rigid",
-          "part": "more-options-dot-3"
-        }
-      ]
-    },
-    {
-      "name": "more-options-strong",
-      "fixedParts": [
-        "more-options-dot-2"
-      ],
-      "topology": true,
-      "stateBoundaries": true,
-      "hold": true,
-      "continuous": false,
-      "designConstraints": [
-        {
-          "type": "fixed",
-          "part": "more-options-dot-2"
-        },
-        {
-          "type": "rigid",
-          "part": "more-options-dot-1"
-        },
-        {
-          "type": "rigid",
-          "part": "more-options-dot-3"
         }
       ]
     },
@@ -297,6 +249,15 @@
       "actions": [
         "close",
         "close-strong"
+      ]
+    },
+    {
+      "icon": "more-options",
+      "spec": "specs/more-options.icon.json",
+      "specSha256": "33fc5182941a538299318853c49475547c5f9af6d6515096e4ff93666b3ce86e",
+      "actions": [
+        "more-options",
+        "more-options-strong"
       ]
     },
     {
