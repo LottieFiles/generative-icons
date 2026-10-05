@@ -182,10 +182,11 @@ fn search_uses_synonyms_and_a_relevance_floor() {
         let results = run(dir.path(), &["search", query, "--limit", "40", "--library", library]).ok();
         ids(&results).into_iter().map(String::from).collect()
     };
+    // Icons named for the query come first (the library gains more over time), then synonyms.
     let delete = search("delete");
-    let mut named = delete[..2].to_vec();
-    named.sort();
-    assert_eq!(named, ["delete-message", "photo-delete"], "{delete:?}");
+    let named = delete.iter().take_while(|id| id.contains("delete")).count();
+    assert!(["delete-message", "photo-delete"].iter().all(|id| delete[..named].contains(&id.to_string())), "{delete:?}");
+    assert!(delete[named..].iter().all(|id| !id.contains("delete")), "{delete:?}");
     assert!(delete.contains(&"trash".to_string()), "{delete:?}");
     let remove = search("remove");
     assert!(!remove.contains(&"agent-checkpoint".to_string()) && remove.contains(&"trash".to_string()), "{remove:?}");
