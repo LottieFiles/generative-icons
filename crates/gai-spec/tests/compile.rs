@@ -359,6 +359,24 @@ fn a_follow_takes_a_comment_and_a_bounded_scale() {
 }
 
 #[test]
+fn a_loop_replaces_the_key_list_and_the_hint_says_so_when_it_is_an_item() {
+    let flicker = |light: Value| {
+        json!({
+            "parts": {"bar": line()},
+            "rigs": {"bar": {"pivot": [16, 16]}},
+            "motion": {"bar.scale": {"light": light, "strong": [[0, 1], [0.1, 0.5], [0.2, 1]]}}
+        })
+    };
+    let loop_ = json!({"loop": [[0, 1], [0.03, 0.5], [0.06, 1]], "period": 0.06, "until": 0.3});
+    assert_eq!(errors(flicker(loop_.clone())), []);
+    // An agent put it inside a key list, where the hint listed only the key presets.
+    let d = load(&spec(flicker(json!([[0, 1], loop_])))).unwrap_err();
+    let e = d.0.iter().find(|x| x.level == Level::Error).unwrap();
+    assert_eq!((e.code, e.path.as_str()), ("V2_SCHEMA", "/motion/bar.scale/light/1"));
+    assert!(e.hint.as_deref().unwrap_or_default().contains("replaces the whole key list"), "{e:?}");
+}
+
+#[test]
 fn whole_turns_step_back_to_rest_a_frame_later() {
     // A turn that ends on a whole turn draws the same pose but rasterises a little
     // differently; the players compare the rest frame with the first pixel for pixel.

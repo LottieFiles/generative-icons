@@ -1380,7 +1380,11 @@ impl Parser {
                     }
                     [] => {
                         let first = o.keys().next().cloned().unwrap_or_default();
-                        let hint = did_you_mean(&first, &PRESETS).map_or(format!("presets: {}", list(&PRESETS)), |c| format!("did you mean `{c}`?"));
+                        let hint = if matches!(first.as_str(), "loop" | "pulse" | "follow") {
+                            format!("`{first}` replaces the whole key list: write \"light\": {{\"{first}\": …}} instead of putting it in [[t, v], …]")
+                        } else {
+                            did_you_mean(&first, &PRESETS).map_or(format!("presets: {}", list(&PRESETS)), |c| format!("did you mean `{c}`?"))
+                        };
                         self.err_hint(path, format!("unknown key preset `{first}`"), hint);
                         None
                     }

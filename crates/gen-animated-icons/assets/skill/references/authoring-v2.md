@@ -134,7 +134,7 @@ A key is `[t, value]` or `[t, value, ease]`. The ease says how the motion arrive
 | `step` | Hold the previous value, jump at this key |
 | `[x1, y1, x2, y2]` | A cubic-bezier, x in 0–1 |
 
-Presets expand to keys:
+Presets expand to keys. `hold`, `settle`, `bounce` and `wobble` are items in a key list; `pulse`, `loop` and `follow` replace the whole list (`"light": {"loop": …}`):
 
 | Preset | Form |
 |---|---|
