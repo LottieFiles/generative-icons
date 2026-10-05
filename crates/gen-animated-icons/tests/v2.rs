@@ -39,6 +39,7 @@ fn create_spec_writes_a_starter_that_checks_clean() {
 
 #[test]
 fn create_spec_from_a_library_spec_keeps_its_craft() {
+    require!(packages_dist(), "packages/icons/dist");
     let (_dir, app) = app();
     let root = repo_root().to_string_lossy().into_owned();
     let created = run(&app, &["create", "paper-plane", "--spec", "--from", "send", "--library-root", &root]).ok();
@@ -66,6 +67,7 @@ fn create_spec_from_a_library_spec_keeps_its_craft() {
 
 #[test]
 fn create_from_a_packaged_spec_without_a_checkout() {
+    require!(packages_dist(), "packages/icons/dist");
     let dir = tempfile::tempdir().unwrap();
     // A package dist as npm installs it: the catalog, release.json and one spec.
     let dist = dir.path().join("dist");
@@ -96,6 +98,7 @@ fn create_from_a_packaged_spec_without_a_checkout() {
 
 #[test]
 fn create_replace_starts_a_reanimation_of_a_library_icon() {
+    require!(packages_dist(), "packages/icons/dist");
     let (_dir, app) = app();
     let root = repo_root().to_string_lossy().into_owned();
     // An icon not reanimated yet starts from its v1 drawing, ported, with no motion.
@@ -149,10 +152,12 @@ fn create_writes_a_spec_by_default_with_a_context_packet() {
     // Without references, the closest library icons are listed.
     let lexical = run(&app, &["create", "bell-swing", "--intent", "The bell swings.", "--library-root", &root]).ok();
     assert!(!lexical["nearest"].as_array().unwrap().is_empty(), "{lexical}");
-    // A library id is taken, and --spec (the old opt-in) still works.
-    run(&app, &["create", "bell", "--library-root", &root]).fails(3, "ID_COLLISION");
+    // --spec (the old opt-in) still works.
     assert_eq!(run(&app, &["create", "bell-twice", "--spec", "--library-root", &root]).ok()["format"], "gai-icon/2");
     run(&app, &["create", "x-3", "--spec", "--batch"]).fails(2, "USAGE");
+    // A library id is taken; the ids come from the built packages.
+    require!(packages_dist(), "packages/icons/dist");
+    run(&app, &["create", "bell", "--library-root", &root]).fails(3, "ID_COLLISION");
 }
 
 #[test]
