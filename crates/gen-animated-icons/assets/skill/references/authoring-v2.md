@@ -191,6 +191,8 @@ With MCP, the `draft` tool returns the same sheets as images. `draft` writes `.g
 | Insufficient animation states | Too few distinct frames for the action's length (half its frames, 6 to 16) | Ease keys instead of `step`-only motion; a typing caret slides each stroke in 40–50 ms |
 | Hold is not still | Something moves after rest | No key after the action ends |
 
+Before rendering, `build`'s paint check fails an icon drawn only with fills (`paint: <id>: outline presets []`): the Outline weights need at least one stroked part. For small dots, stroke a circle over a filled core (braille, app-grid); a stroked circle alone shows pinholes in the player at small sizes.
+
 ## Not in the format yet
 
 `swing`, `flip`, `minus`, a keyed wave `phase` and connectors (anchors that follow another rig) stop with `NOT_IMPLEMENTED`. Also not supported yet: `scale` or `squash` on a rig that carries rigs, two path-changing tracks on one shape, a negative Solid `grow`, and one pulse per track and motion. Parts that collapse are not hidden automatically: key their `opacity`. Clearance and counter-width lints are not run yet, so check counters at Bold in the draft. Continuous loaders (motion through the whole 2.4 s, trim start or offset) are not in the format yet. Several cut-outs moving on different rigs in one Solid surface cannot all follow (`KNOCKOUT_RIGS`): one surface has one matte. For an icon that needs one of these, write a JS batch: `create <id> --batch`.
