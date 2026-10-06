@@ -7,4 +7,5 @@ mod common;
 mod library;
 mod lottie;
 mod packages;
+mod search_terms;
 mod set_zip;

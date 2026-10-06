@@ -44,6 +44,23 @@ export function loadCatalog(root = projectRoot) {
   return { icons, inputs };
 }
 
+// Gives each icon its set's search terms (motion/icon-sets/<set>/search-terms.json) as its
+// keywords, and records each file read.
+export function addSearchTerms({ icons, inputs }, root = projectRoot) {
+  const bySet = new Map();
+  for (const icon of icons) {
+    if (!bySet.has(icon.set)) {
+      const file = path.join(root, 'motion/icon-sets', String(icon.set), 'search-terms.json');
+      let terms = {};
+      if (fs.existsSync(file)) { const data = fs.readFileSync(file); inputs.push({ path: file, sha256: sha(data) }); terms = JSON.parse(data); }
+      bySet.set(icon.set, terms);
+    }
+    const words = bySet.get(icon.set)[icon.id];
+    if (words) icon.keywords = words;
+  }
+  return { icons, inputs };
+}
+
 export function searchIcons(icons, query, limit = 6) {
   const direct = tokens(query), expanded = new Set(direct);
   for (const group of aliases) if (group.some(t => expanded.has(t))) group.forEach(t => expanded.add(t));
@@ -68,7 +85,7 @@ function referenceGeometry(data) {
 }
 
 export function buildPacket(query, neighbors = [], root = projectRoot) {
-  const { icons, inputs } = loadCatalog(root), candidates = searchIcons(icons, query);
+  const { icons, inputs } = addSearchTerms(loadCatalog(root), root), candidates = searchIcons(icons, query);
   const byId = new Map(icons.map(i => [i.id, i]));
   for (const id of neighbors) if (!byId.has(id)) throw Error(`Unknown neighbor ${id}; choose an existing catalog ID`);
   const selected = neighbors.length ? [...new Set(neighbors)] : candidates.slice(0, 2).map(i => i.id);
@@ -115,7 +132,7 @@ if (process.argv[1] && fs.realpathSync(process.argv[1]) === fileURLToPath(import
     const { values } = parseArgs({ options: { query: { type: 'string' }, 'query-file': { type: 'string' }, neighbor: { type: 'string', multiple: true, default: [] }, search: { type: 'boolean', default: false } } });
     if ((!values.query && !values['query-file']) || (values.query && values['query-file'])) throw Error('Supply --query text OR --query-file brief.md; optional --neighbor ID or --search');
     const query = values['query-file'] ? fs.readFileSync(path.resolve(values['query-file']), 'utf8') : values.query;
-    const result = values.search ? searchIcons(loadCatalog().icons, query) : buildPacket(query, values.neighbor);
+    const result = values.search ? searchIcons(addSearchTerms(loadCatalog()).icons, query) : buildPacket(query, values.neighbor);
     console.log(JSON.stringify(result, null, 2));
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

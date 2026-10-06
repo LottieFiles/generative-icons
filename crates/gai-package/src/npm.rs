@@ -128,6 +128,8 @@ pub fn build_packages(repo: &Path, options: &BuildPackagesOptions) -> Result<Pac
             .category_of(relative)
             .ok_or_else(|| invalid(format!("No catalog category lists {relative}")))?;
         let set_id = field(&set.record, "id", relative)?;
+        let terms = search_terms(repo, set_id.as_str().unwrap_or_default(), &mut inputs)?;
+        let mut set_ids = HashSet::new();
         for icon in set.icons()? {
             let name = field(icon, "name", relative)?;
             let identity = icon
@@ -139,6 +141,7 @@ pub fn build_packages(repo: &Path, options: &BuildPackagesOptions) -> Result<Pac
             if !is_icon_id(&identity) || !ids.insert(identity.clone()) {
                 return Err(invalid(format!("Invalid or duplicate ID {identity}")));
             }
+            set_ids.insert(identity.clone());
             let context = format!("icon {identity}");
             let motions = array_field(icon, "motions", &context)?;
             let strong = motions
@@ -162,7 +165,10 @@ pub fn build_packages(repo: &Path, options: &BuildPackagesOptions) -> Result<Pac
                 manifest: relative,
                 manifest_sha256: &source_sha,
             };
-            let descriptor = icon_descriptor(&identity, icon, &data, &asset, &source)?;
+            let mut descriptor = icon_descriptor(&identity, icon, &data, &asset, &source)?;
+            if let Some(words) = terms.get(&identity) {
+                descriptor["aliases"] = words.clone();
+            }
             let text = py_compact(&descriptor);
             let icons = stage.get_mut("icons").expect("known package");
             icons.insert(format!("assets/{identity}.lottie"), data);
@@ -191,6 +197,9 @@ pub fn build_packages(repo: &Path, options: &BuildPackagesOptions) -> Result<Pac
                     .expect("known package")
                     .insert(format!("specs/{identity}.icon.json"), bytes);
             }
+        }
+        if let Some(stray) = terms.keys().find(|id| !set_ids.contains(*id)) {
+            return Err(invalid(format!("{}: {stray} is not an icon of this set", terms_path(set_id.as_str().unwrap_or_default()))));
         }
     }
 
@@ -359,6 +368,55 @@ pub fn icon_descriptor(
     });
     validate_descriptor(&descriptor)?;
     Ok(descriptor)
+}
+
+/// `motion/icon-sets/<set>/search-terms.json`, relative to the repository.
+fn terms_path(set_id: &str) -> String {
+    format!("motion/icon-sets/{set_id}/search-terms.json")
+}
+
+/// A set's search terms (`search-terms.json`): icon id to the words and phrases that should
+/// find it, shipped as each descriptor's `aliases`. The file is a build input; a set
+/// without one keeps its `keywords`.
+fn search_terms(repo: &Path, set_id: &str, inputs: &mut Map<String, Value>) -> Result<Map<String, Value>> {
+    let relative = terms_path(set_id);
+    let path = repo.join(&relative);
+    if is_symlink(&path) {
+        return Err(invalid(format!("Invalid search terms path: {relative}")));
+    }
+    if !path.is_file() {
+        return Ok(Map::new());
+    }
+    let bytes = read(&path)?;
+    inputs.insert(relative.clone(), Value::String(sha256_hex(&bytes)));
+    let Ok(Value::Object(terms)) = serde_json::from_slice::<Value>(&bytes) else {
+        return Err(invalid(format!("{relative}: expected an object of icon id to terms")));
+    };
+    for (id, words) in &terms {
+        let valid = words.as_array().is_some_and(|words| {
+            (1..=MAX_TERMS).contains(&words.len()) && words.iter().all(|w| w.as_str().is_some_and(is_search_term))
+        });
+        if !valid {
+            return Err(invalid(format!(
+                "{relative}: {id} needs 1 to {MAX_TERMS} terms of lowercase letters, digits, single spaces and hyphens"
+            )));
+        }
+    }
+    Ok(terms)
+}
+
+/// The most search terms one icon carries.
+const MAX_TERMS: usize = 24;
+
+/// A search term: 1–40 characters of `[a-z0-9 -]`, starting and ending with a letter or digit,
+/// with no doubled space.
+fn is_search_term(term: &str) -> bool {
+    let edge = |c: Option<char>| c.is_some_and(|c| c.is_ascii_lowercase() || c.is_ascii_digit());
+    (1..=40).contains(&term.len())
+        && term.chars().all(|c| c.is_ascii_lowercase() || c.is_ascii_digit() || c == ' ' || c == '-')
+        && edge(term.chars().next())
+        && edge(term.chars().last())
+        && !term.contains("  ")
 }
 
 /// A build input's bytes; symlinks and non-files are refused.

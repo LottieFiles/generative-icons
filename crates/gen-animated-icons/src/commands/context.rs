@@ -78,7 +78,11 @@ pub fn run(ctx: &Context, args: &ContextArgs) -> Result<Report> {
     if args.search {
         let limit = args.limit.map_or(CANDIDATES, |n| n as usize);
         let results = match ctx.checkout()? {
-            Some(root) => library_search(&load_catalog(&root)?, &query, limit),
+            Some(root) => {
+                let mut catalog = load_catalog(&root)?;
+                add_search_terms(&root, &mut catalog, &mut Vec::new())?;
+                library_search(&catalog, &query, limit)
+            }
             None => {
                 let library = ctx.library()?;
                 let catalog = library.catalog()?;
@@ -303,6 +307,32 @@ fn load_catalog(root: &Path) -> Result<Catalog> {
     })
 }
 
+/// `addSearchTerms`: each icon's set search terms (`motion/icon-sets/<set>/search-terms.json`)
+/// become its record's `keywords`, and each file read joins `inputs`.
+fn add_search_terms(root: &Path, catalog: &mut Catalog, inputs: &mut Vec<Value>) -> Result<()> {
+    let mut by_set: HashMap<String, Map<String, Value>> = HashMap::new();
+    for icon in &mut catalog.icons {
+        // `String(icon.set)`
+        let set = icon.set.as_ref().map_or_else(|| "undefined".to_string(), to_js_string);
+        if !by_set.contains_key(&set) {
+            let file = root.join("motion/icon-sets").join(&set).join("search-terms.json");
+            let mut terms = Map::new();
+            if file.is_file() {
+                let bytes = read_reference(&file)?;
+                inputs.push(input(&file, &bytes));
+                if let Value::Object(map) = parse_json(&bytes, &file)? {
+                    terms = map;
+                }
+            }
+            by_set.insert(set.clone(), terms);
+        }
+        if let Some(words) = icon.id.as_ref().map(to_js_string).and_then(|id| by_set[&set].get(&id)) {
+            icon.record.insert("keywords".into(), words.clone());
+        }
+    }
+    Ok(())
+}
+
 /// `searchIcons` over checkout records.
 fn library_search(catalog: &Catalog, query: &str, limit: usize) -> Vec<Value> {
     let texts: Vec<SearchText> = catalog.icons.iter().map(|icon| SearchText::of_record(&icon.record)).collect();
@@ -400,8 +430,9 @@ impl SearchText {
 
 /// The packet from a checkout (`buildPacket`).
 fn library_packet(root: &Path, query: &str, neighbors: &[String]) -> Result<Value> {
-    let catalog = load_catalog(root)?;
+    let mut catalog = load_catalog(root)?;
     let mut inputs: Vec<Value> = catalog.inputs.iter().map(|input| input.to_json()).collect();
+    add_search_terms(root, &mut catalog, &mut inputs)?;
     let candidates = library_search(&catalog, query, CANDIDATES);
     let by_id: HashMap<String, &CatalogIcon> = catalog
         .icons

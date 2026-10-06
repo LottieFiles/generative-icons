@@ -32,12 +32,12 @@ fn legacy_projects_get_the_exact_lottie_icons_bytes() {
     run(app, &["add", "heart", "--library", dist]).ok();
     // cli.md §2.8, captured from packages/cli/dist/cli.mjs at 098688f.
     for (file, golden) in [
-        ("src/lottie-icons/heart.mjs", "2aa7b22793d612d1c92f7c7c2bce6ce79aaff2383068b7bc01cdb6b695ec164e"),
+        ("src/lottie-icons/heart.mjs", "c206fdc78fbe3fde9de506ead5dd0a69bb53b545906600fd5478fed1239f4ddf"),
         ("src/lottie-icons/heart.d.mts", "96b48dc9b307dcb964061ce36bd10811af76a7963f54504db20543a9cc2bb38e"),
         ("src/lottie-icons/settings.mjs", "4ba48edd3c7eb4345864d8988f91a9b2983c05bed0427193176681c3024939c3"),
         ("src/lottie-icons/settings.d.mts", "76d606dfd6a56c4abef4988d72253cef095e7d39f8152db5ab227d74fab3c937"),
         ("public/lottie-icons/heart.lottie", "bc042c12c7eee542bc34925c132e3ce46c298c2ac6a7387b714d50afcde1345a"),
-        (".lottie-icons/lock.json", "b414257902cff29650d7f1e4a4b6cc18e19961bf56dcd0ba61076c80e0a2808b"),
+        (".lottie-icons/lock.json", "2f22cb4a3c695ac62fe5be5e1d7ff5a8b4919df216feb36a1d215a624ead0ead"),
     ] {
         assert_eq!(sha(app, file), golden, "{file}");
     }
@@ -49,7 +49,7 @@ fn legacy_projects_get_the_exact_lottie_icons_bytes() {
     assert_eq!(result["icons"], json!(["heart", "menu", "heart"]));
     assert_eq!(
         sha(app, "src/lottie-icons/menu.mjs"),
-        "2c452ed9975eaa493b08c2dcfa6f40174eb9849db00c50a7a6f87fb7b7ab5022"
+        "ee235137675ea656be39907ee45261e71d518eaf4f072dbf0260a0e35e4ea4e1"
     );
     assert_eq!(
         sha(app, "src/lottie-icons/menu.d.mts"),
@@ -71,8 +71,8 @@ fn current_projects_differ_from_the_goldens_only_by_name() {
             .replace("Edit gen-animated-icons.json,", "Edit lottie-icons.json,")
     };
     for (file, golden) in [
-        ("src/gen-animated-icons/heart.mjs", "2aa7b22793d612d1c92f7c7c2bce6ce79aaff2383068b7bc01cdb6b695ec164e"),
-        ("src/gen-animated-icons/menu.mjs", "2c452ed9975eaa493b08c2dcfa6f40174eb9849db00c50a7a6f87fb7b7ab5022"),
+        ("src/gen-animated-icons/heart.mjs", "c206fdc78fbe3fde9de506ead5dd0a69bb53b545906600fd5478fed1239f4ddf"),
+        ("src/gen-animated-icons/menu.mjs", "ee235137675ea656be39907ee45261e71d518eaf4f072dbf0260a0e35e4ea4e1"),
         ("src/gen-animated-icons/settings.mjs", "4ba48edd3c7eb4345864d8988f91a9b2983c05bed0427193176681c3024939c3"),
     ] {
         assert_eq!(gai_core::sha256_hex(renamed(read(app, file))), golden, "{file}");
@@ -113,11 +113,11 @@ fn baked_weights_match_the_runtime_bridge() {
 
 /// `generation-context.mjs --search` goldens (cli.md §4.3): sha256 of stdout.
 const SEARCHES: [(&str, &str); 7] = [
-    ("notification bell", "4dc3ca333bfc1c33715e7041460adacd4c5d0265a36ca30baaf2c2489c35f786"),
-    ("package return", "f4204788f9a6e1a82c539b308b6ef8c9facd3504b715b44cb503a0e23a6f527c"),
-    ("heart", "3cd3cc8129f42680b55f8c15daa7562ef713713b87aa0d87cfcce74fa9ef3dff"),
-    ("loading spinner", "742e4f4f84fc495d31b5e7b56c10aab090b0a14aba7c66ef54aca30c0494e9fd"),
-    ("create a new icon for the payment", "53e53d7f21f60058cb256d75639b0550d0ab7997f410c28ddf72b27548ed19a4"),
+    ("notification bell", "bfa75b501485aa7ec269846dcc21cf834d6d5ed8c17eb7a51c299fd0961e9e0c"),
+    ("package return", "4317e61baae2facbd0a0c22a882dc7f477be3c444277dc04f3838e4ef0532863"),
+    ("heart", "c2c19c1d8eadd12ff35c5bf1606d66cdaa9a97be64accfeec5d56a4ca487c274"),
+    ("loading spinner", "bf0dd7668d7de991eb67960c094f0c6f06e29e69b8cdf4ead98e173dd36c110e"),
+    ("create a new icon for the payment", "e5f0a650d481e6d4f56dd3d247862e2ee5b1f23290084baf14e298d5f51a1998"),
     ("zzzz", "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"),
     ("Café İstanbul key", "179bea1f58b086a9f4d740d69de33dde64d621b48d1463c9ebaf2f4e3b2b9423"),
 ];
@@ -154,22 +154,25 @@ fn ranked_search_matches_generation_context() {
         match query {
             "notification bell" => {}
             "package return" => {
-                assert_eq!(shown[..3], ranked[..3], "{query}");
+                assert_eq!(shown[..5], ranked[..5], "{query}");
                 // A description-only "return" (air-conditioner, announcement) gives way to
                 // icons of the delivery category, which the query's "package" names.
-                assert_eq!(shown[3..], ["inventory", "pickup-locker", "subscription-box"], "{query}");
+                assert_eq!(shown[5..], ["arrow-turn-left"], "{query}");
             }
-            // Two keyframe icons matched only the stray token "i" in their descriptions.
-            "Café İstanbul key" => assert_eq!(shown, ranked[..4], "{query}"),
+            // The keyframe icons match "key" through their search terms (auto key, set key).
+            "Café İstanbul key" => assert_eq!(shown, ranked, "{query}"),
             _ => assert_eq!(gai_core::sha256_hex(as_generation_context(&searched)), golden, "{query}"),
         }
     }
     let searched = run(dir.path(), &["search", "notification bell", "--limit", "3", "--library", library]).ok();
     let ids: Vec<&str> = searched.as_array().unwrap().iter().map(|r| r["id"].as_str().unwrap()).collect();
-    assert_eq!(ids, ["bell", "notification-settings", "bell-off"]);
-    // Its score is raised to match, so ordering by score keeps it first.
-    let scores: Vec<u64> = searched.as_array().unwrap().iter().map(|r| r["score"].as_u64().unwrap()).collect();
-    assert!(scores.windows(2).all(|pair| pair[0] > pair[1]), "{scores:?}");
+    assert_eq!(ids, ["bell", "bell-ring", "notification-settings"]);
+    // Scores are raised where needed, so ordering by score, then by id (the ranking's
+    // tie-break), gives the same order.
+    let mut by_score: Vec<(u64, &str)> =
+        searched.as_array().unwrap().iter().map(|r| (r["score"].as_u64().unwrap(), r["id"].as_str().unwrap())).collect();
+    by_score.sort_by(|a, b| b.0.cmp(&a.0).then(a.1.cmp(b.1)));
+    assert_eq!(by_score.iter().map(|(_, id)| *id).collect::<Vec<_>>(), ids, "{by_score:?}");
 }
 
 #[test]
@@ -223,7 +226,8 @@ fn every_label_ranks_like_generation_context() {
             .map(|i| i.split(' ').take(3).collect::<Vec<_>>().join(" ")),
     );
     let script = format!(
-        "import fs from 'node:fs';\nimport {{ loadCatalog, searchIcons }} from '{}/motion/icon-sets/library/generation-context.mjs';\nconst {{ icons }} = loadCatalog('{}/');\nconst queries = JSON.parse(fs.readFileSync(0, 'utf8'));\nprocess.stdout.write(JSON.stringify(queries.map(q => searchIcons(icons, q, 20))));",
+        "import fs from 'node:fs';\nimport {{ addSearchTerms, loadCatalog, searchIcons }} from '{}/motion/icon-sets/library/generation-context.mjs';\nconst {{ icons }} = addSearchTerms(loadCatalog('{}/'), '{}/');\nconst queries = JSON.parse(fs.readFileSync(0, 'utf8'));\nprocess.stdout.write(JSON.stringify(queries.map(q => searchIcons(icons, q, 20))));",
+        repo.display(),
         repo.display(),
         repo.display()
     );

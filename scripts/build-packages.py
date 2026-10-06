@@ -60,6 +60,17 @@ def build():
             inputs[str(file.relative_to(ROOT))] = sha(file.read_bytes())
             metadata = json.loads(file.read_text())
             category = next(c for c in source_catalog['categories'] if relative in c['sets'])
+            # The set's search terms ship as each descriptor's aliases.
+            terms_file = ROOT / 'motion/icon-sets' / metadata['id'] / 'search-terms.json'
+            terms = {}
+            if terms_file.is_symlink():
+                raise ValueError('Invalid search terms path')
+            if terms_file.is_file():
+                inputs[str(terms_file.relative_to(ROOT))] = sha(terms_file.read_bytes())
+                terms = json.loads(terms_file.read_text())
+                stray = [k for k in terms if k not in {i.get('icon', i['name']) for i in metadata['icons']}]
+                if stray:
+                    raise ValueError(f'{terms_file.relative_to(ROOT)}: {stray[0]} is not an icon of this set')
             for icon in metadata['icons']:
                 identity = icon.get('icon', icon['name'])
                 if identity in ids or not __import__('re').fullmatch(r'[a-z][a-z0-9-]*', identity):
@@ -84,7 +95,7 @@ def build():
                                   stateful=bool(icon.get('stateful', False)), previewReset=bool(icon.get('previewReset', False)),
                                   startState=icon.get('startState', 'rest'), endState=icon.get('endState', 'rest'),
                                   width=icon['width'], height=icon['height'], styles=icon['styles'], weights=icon['strokeWidth']['presets'],
-                                  motions=motions, license='MIT', aliases=icon.get('keywords', []),
+                                  motions=motions, license='MIT', aliases=terms.get(identity, icon.get('keywords', [])),
                                   source=dict(set=metadata['id'], manifest=relative, sha256=inputs[str(file.relative_to(ROOT))]),
                                   asset=dict(path=f'assets/{identity}.lottie', sha256=sha(data), bytes=len(data)))
                 icons.append(descriptor)

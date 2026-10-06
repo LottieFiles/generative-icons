@@ -90,7 +90,7 @@ gen-animated-icons library verify-visual 14
 - The rest pose and, for a stateful icon, the end state must stay the library drawing, so apps that switch versions see no jump.
 - From then on the spec is the icon's source. `library build` keeps adopted icons as they are (their old definitions stay for the legacy checks but no longer export), and `library verify` checks them against their spec: hashes, format, paint, themes and markers. Their motion checks run in `build`, and `verify-visual` renders them like every other action.
 - Frozen sets 01 and 02 can adopt: they are still never rebuilt, so adopting only replaces the icon's assets and entry, and their legacy checks skip it.
-- A new icon joins a set the same way with `library adopt NN --add <build>`: `create <new-id>` (not a library id), build it, then add it. It takes the set's category and the number after the library's last icon, and `library build` keeps it. New icons also change the catalog size that some tests pin (see [crates/README.md](../crates/README.md)), so update those counts in the same commit.
+- A new icon joins a set the same way with `library adopt NN --add <build>`: `create <new-id>` (not a library id), build it, then add it, and give it search terms (below). It takes the set's category and the number after the library's last icon, and `library build` keeps it. New icons also change the catalog size that some tests pin (see [crates/README.md](../crates/README.md)), so update those counts in the same commit.
 
 What the library-wide reanimation (Oct 2026, 412 icons) learned about porting, beyond [authoring-v2.md](../crates/gen-animated-icons/assets/skill/references/authoring-v2.md):
 
@@ -101,6 +101,15 @@ What the library-wide reanimation (Oct 2026, 412 icons) learned about porting, b
 - Some sets protect openings (counters, ring holes, Solid openings) in every frame: read the set's entry in `crates/gai-render/src/rules.rs` before designing, so the motion never shrinks, fills or covers one.
 - `build` runs the visual rules every set shares; a set's own rules run only in `library verify-visual NN`, so run it after adopting and before you commit.
 - The port carries what v1 drew: a part resting translucent takes `"opacity"` (gradient-stops' ramp bands), a stroke drawn only in Solid `"outline": "none"`, and geometry that changes with the weight `"weights"` (more-options' dots). Continuous loaders stay v1.
+
+## Search terms
+
+Each set's `search-terms.json` maps every icon id to the words and short phrases people type to find it: other names for what is drawn (bin, garbage), the action in UI words (delete, remove), button text (log out, add to cart), what an object stands for (doctor on stethoscope) and real abbreviations (2fa, otp). The packages ship them as the descriptor's `aliases`, so the website, `search` and apps all find the icon by them.
+
+- Every library icon needs at least 3 terms, none of them its own label or id; a test checks the whole catalog.
+- Terms are lowercase letters, digits, single spaces and hyphens, 1 to 40 characters, at most 24 per icon.
+- Leave a term to the icon that is the better answer for it, and skip words that would match hundreds of icons (icon, button, outline) or describe the motion.
+- The website's search is judged on the queries in the website repository (`search/queries.json`, `npm run search:eval`); check a batch of new terms there.
 
 ## Local gallery
 

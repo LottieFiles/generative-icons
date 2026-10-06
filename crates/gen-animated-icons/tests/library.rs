@@ -190,8 +190,11 @@ fn search_uses_synonyms_and_a_relevance_floor() {
     assert!(delete.contains(&"trash".to_string()), "{delete:?}");
     let remove = search("remove");
     assert!(!remove.contains(&"agent-checkpoint".to_string()) && remove.contains(&"trash".to_string()), "{remove:?}");
-    assert!(search("plant grow").is_empty());
+    // Nothing in the library, by name, description or search term: nothing pads the results.
+    assert!(search("penguin glacier").is_empty());
     assert!(search("envelope").contains(&"mail".to_string()));
-    // Ranked as before where the query names the icon.
-    assert_eq!(search("notification bell")[..3], ["bell", "notification-settings", "bell-off"]);
+    // Icons the query names come first; search terms (alert, notifications) rank the rest.
+    assert_eq!(search("notification bell")[..3], ["bell", "bell-ring", "notification-settings"]);
+    // Search terms find icons by words their names don't use.
+    assert_eq!(search("garbage")[0], "trash");
 }

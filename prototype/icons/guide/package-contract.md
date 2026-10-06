@@ -4,7 +4,7 @@ The `@lottiefiles/generative-icons*` packages share one version and are released
 
 | Surface | Contract |
 | --- | --- |
-| Icon descriptor | Stable `id`; readable `label` and `intent`; family and category; start and end state; Light/Strong actions and optional authored reverse; supported styles and authored weights (any weight from 1 to 3 renders through the `style.outline.width` token); native asset path, bytes and SHA-256 |
+| Icon descriptor | Stable `id`; readable `label` and `intent`; search terms (`aliases`: other words and short phrases that should find the icon); family and category; start and end state; Light/Strong actions and optional authored reverse; supported styles and authored weights (any weight from 1 to 3 renders through the `style.outline.width` token); native asset path, bytes and SHA-256 |
 | Catalog | `schemaVersion`, package `version`, categories and the complete descriptor list |
 | Project (`gen-animated-icons.json`, written by the CLI) | `schemaVersion`, platform, detected framework and package manager, relative asset and descriptor folders, public URL base (web), default appearance, agent skill folders and local icon settings. `schemas/project.schema.json` describes only the original web fields; it does not yet cover the newer fields, native configs or weights between 1 and 3. |
 | Lock (`.gen-animated-icons/lock.json`) | Selected IDs and versions, installed paths and hashes of managed files; local edits block replacement |
@@ -13,7 +13,7 @@ The `@lottiefiles/generative-icons*` packages share one version and are released
 
 ## How packages are built
 
-`gen-animated-icons library packages` builds the catalog and assets from registered source sets. It rejects duplicate IDs, checks source package hashes and confirms the required animation IDs inside each native bundle. Each icon gets its own descriptor module. A Strong bundle contains both Light and Strong actions, plus reverse actions where applicable; the runtime selects the requested action. Native bundles are copied unchanged.
+`gen-animated-icons library packages` builds the catalog and assets from registered source sets. It rejects duplicate IDs, checks source package hashes and confirms the required animation IDs inside each native bundle. Each icon's `aliases` come from its set's `motion/icon-sets/NN-…/search-terms.json`, a build input hashed in `release.json`. Each icon gets its own descriptor module. A Strong bundle contains both Light and Strong actions, plus reverse actions where applicable; the runtime selects the requested action. Native bundles are copied unchanged.
 
 The runtime package ships the gallery's controller as its canonical implementation; the build copies that exact file and parity tests guard it. Apps should use the runtime package rather than copying the controller.
 
