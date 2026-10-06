@@ -2,7 +2,9 @@
 
 When the library has no icon for your meaning, your coding AI can create one in your own project with the `gen-animated-icons` CLI. You can also write it yourself; the rules and checks are the same either way. A new icon is a spec: a JSON file of shapes, roles, rigs and eased keys, which the hosted engine exports as native Lottie in one call. It is verified and installed beside the library icons you use.
 
-**You need a LottieFiles sign-in to build.** Export runs on LottieFiles' hosted engine. Run `gen-animated-icons login` once in your terminal; agents never sign in for you. The hosted engine is internal until launch, so building may not work for your account yet. Everything up to `build`, and `preview` of library icons, works without signing in.
+**You need a LottieFiles sign-in to build.** Export runs on LottieFiles' hosted engine. Run `gen-animated-icons login` once in your terminal; agents never sign in for you. Everything up to `build`, and `preview` of library icons, works without signing in.
+
+**Before launch:** the npm package behind `npx gen-animated-icons`, the hosted library behind `search` and the submission service go live at launch, and the hosted engine is internal until then, so these steps don't work for every account yet. [Known limitations](limitations.md) has the details.
 
 ## 1. Set up the project
 
@@ -47,7 +49,7 @@ gen-animated-icons build return-box     # one engine call: export, package, veri
 gen-animated-icons preview return-box   # re-render the sheets after a change
 ```
 
-- `create --from <library-id>` starts from a library icon's spec instead of the starter: over 400 library icons are specs, and `search` marks them `"spec": true`. The icons package ships them under `specs/`, verified against its `release.json`, so this works with the installed package, the hosted library or a checkout.
+- `create --from <library-id>` starts from a library icon's spec instead of the starter: many library icons are specs, and `search` marks them `"spec": true`. The icons package ships them under `specs/`, verified against its `release.json`, so this works with the installed package, the hosted library or a checkout.
 - `check` validates, compiles and lints the spec offline, with a JSON Pointer and a hint for every finding: names, rest values, timing, paint past or near the canvas, parts too small at 24 px, details lost in Solid. Fix every error before drafting.
 - `draft` renders every motion on the engine without exporting; `build` exports, verifies every action in the player at every size, style, weight and theme, installs only icons that pass, and writes preview sheets to `.gen-animated-icons/previews/<id>/`.
 - Look at every sheet: each style and weight, both themes, and Light against Strong at the same elapsed times. Name each flaw, fix it in the spec, then check, draft, build and preview again. Stop when a round finds nothing new or the same flaw repeats; report what remains.
@@ -66,6 +68,6 @@ gen-animated-icons submit return-box --license MIT                              
 
 `submit` accepts only verified builds of the current source, and every submission is reviewed. The submission service goes live at launch.
 
-## Library sets in this repository
+## Library sets
 
-Maintainers add whole sets to the library with `gen-animated-icons library new-set`, `build`, `verify`, `verify-visual` and `register`; see [development](development.md#author-and-build-a-library-set). The family workflow for those sets is the [AI operating guide](https://github.com/LottieFiles/gen-animated-icons/blob/main/prototype/icons/guide/ai-operating-guide.md), which bundles the canonical rules in one file.
+Icons for your app need none of this. Maintainers add whole sets to the library itself, in a checkout of the library repository, with `gen-animated-icons library new-set`, `build`, `verify`, `verify-visual` and `register`; see [development](development.md#author-and-build-a-library-set). The family workflow for those sets is the [AI operating guide](../prototype/icons/guide/ai-operating-guide.md), which bundles the canonical rules in one file.
