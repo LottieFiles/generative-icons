@@ -490,21 +490,37 @@ Keep the `@lottiefiles/generative-icons*` packages on the same version.
 
 ## Install
 
+### 1. Install the runtime
+
 ```sh
 npm install @lottiefiles/generative-icons-runtime
-# React or Next.js:
+# React or Next.js, also:
 npm install @lottiefiles/generative-icons-react
+```
 
+### 2. Set up the project
+
+```sh
 npx gen-animated-icons init
+```
+
+In a monorepo, pass `--cwd apps/web` to target the app. If your app uses a base URL, include it in `publicPath` in `gen-animated-icons.json`.
+
+### 3. Add icons
+
+```sh
 npx gen-animated-icons search heart
 npx gen-animated-icons add heart
 ```
 
-In a monorepo, pass `--cwd apps/web` to target the app.
+Commit `gen-animated-icons.json`, the added files and `.gen-animated-icons/lock.json`.
 
-`init` reads the app's package metadata and creates `gen-animated-icons.json`, the agent skill in `.claude/skills/gen-animated-icons/` and `.agents/skills/gen-animated-icons/`, and a copy of the authoring kit. It does not edit `AGENTS.md`, global agent settings or components. If your app uses a base URL, include it in `publicPath`.
+### What gets installed
 
-`add` copies native files to `public/gen-animated-icons/` and descriptors to `src/gen-animated-icons/` (or `gen-animated-icons/` without a `src` folder), and records hashes in `.gen-animated-icons/lock.json`. Commit the config, assets, descriptors and lock. `diff` reports local changes, `add` refuses to overwrite modified managed files, and `remove` uninstalls icons whose files are unedited. A project set up by the earlier `lottie-icons` command moves over with `npx gen-animated-icons init --migrate`.
+- `init` reads the app's package metadata and creates `gen-animated-icons.json`, the agent skill in `.claude/skills/gen-animated-icons/` and `.agents/skills/gen-animated-icons/`, and a copy of the authoring kit. It does not edit `AGENTS.md`, global agent settings or components.
+- `add` copies native files to `public/gen-animated-icons/` and descriptors to `src/gen-animated-icons/` (or `gen-animated-icons/` without a `src` folder), and records their hashes in `.gen-animated-icons/lock.json`.
+- `diff` reports local changes, `add` refuses to overwrite modified managed files, and `remove` uninstalls icons whose files are unedited.
+- A project set up by the earlier `lottie-icons` command moves over with `npx gen-animated-icons init --migrate`.
 
 ## Vanilla JavaScript
 
