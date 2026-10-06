@@ -1,8 +1,8 @@
 # Production and verification
 
-Run commands from the repository root with the `gen-animated-icons` CLI and confirm paths against the checkout. Use [polish-review.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) for acceptance criteria and the per-icon record. Derive the expected icons and forward/reverse/reset actions from the current catalog and set metadata, never from a fixed count.
+Run commands from the repository root with the `gen-animated-icons` CLI and confirm paths against the checkout. Use [polish-review.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) for acceptance criteria and the per-icon record. Derive the expected icons and forward/reverse/reset actions from the current catalog and set metadata, never from a fixed count.
 
-Follow [generation-harness.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/generation-harness.md) before export. `gen-animated-icons library build SET-ID` runs source preflight, then exports every action on LottieFiles' hosted engine, post-processes the native files, and packages the set: `.lottie` files, `set.json`, `evidence/build.json` and the set zip. A failing preflight stops it before anything is exported. A clean source report does not replace any native or delivery gate.
+Follow [generation-harness.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/references/generation-harness.md) before export. `gen-animated-icons library build SET-ID` runs source preflight, then exports every action on LottieFiles' hosted engine, post-processes the native files, and packages the set: `.lottie` files, `set.json`, `evidence/build.json` and the set zip. A failing preflight stops it before anything is exported. A clean source report does not replace any native or delivery gate.
 
 ## Source layout
 

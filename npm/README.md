@@ -22,8 +22,7 @@ Set `GEN_ANIMATED_ICONS_BINARY` to run a local build through the shim. Binaries 
 The manifests, the package README and the shim use the intended launch addresses. None of
 them works yet:
 
-- the repository `github.com/LottieFiles/gen-animated-icons` is private (the docs still
-  link its earlier name, `lottie-generative-icons`);
+- the repository `github.com/LottieFiles/gen-animated-icons` is private;
 - the site `gen-animated-icons.lottiefiles.com` is not live, including the `/install` page
   the shim names when it cannot run the binary;
 - none of these packages is on npm.

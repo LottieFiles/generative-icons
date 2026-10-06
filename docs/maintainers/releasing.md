@@ -15,12 +15,12 @@ Runbook for publishing the `gen-animated-icons` CLI and the web packages `@lotti
    grep -rn '"@lottiefiles/gen' packages/*/package.json npm/*/package.json npm/platforms/*/package.json
    ```
 
-3. In [CHANGELOG.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/CHANGELOG.md), move the `Unreleased` entries under `## [X.Y.Z] - YYYY-MM-DD`.
+3. In [CHANGELOG.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/CHANGELOG.md), move the `Unreleased` entries under `## [X.Y.Z] - YYYY-MM-DD`.
 4. Open the PR. A maintainer approves and merges it once CI is green.
 
 ## 2. Preflight on the merged commit
 
-Start from a clean checkout of the merged `main`, with the parity oracles unpacked (see [crates/README.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/crates/README.md#tests)):
+Start from a clean checkout of the merged `main`, with the parity oracles unpacked (see [crates/README.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/crates/README.md#tests)):
 
 ```sh
 git switch main && git pull
@@ -48,7 +48,7 @@ Then confirm:
 - `packages/icons/dist/release.json` has `"sourceDirty": false` and `sourceCommit` equals `git rev-parse HEAD`. A dirty tree means the build does not match the tag; clean up and rebuild.
 - `dist/packages-vX.Y.Z/release.json` lists every tarball at version X.Y.Z. The pack also contains `packages/cli`, the retired `lottie-icons` command that `gen-animated-icons` supersedes; leave it unpublished unless the maintainers decide otherwise.
 - Tarball contents (`tar -tzf <file>.tgz`) contain nothing from `.local/` or other unreleased work (see [distribution](distribution.md)).
-- License and [third-party notices](https://github.com/LottieFiles/lottie-generative-icons/blob/main/THIRD_PARTY_NOTICES.md) cover the shipped files. For the CLI binaries, the Release workflow adds the generated `THIRD_PARTY_LICENSES.txt` (step 3).
+- License and [third-party notices](https://github.com/LottieFiles/gen-animated-icons/blob/main/THIRD_PARTY_NOTICES.md) cover the shipped files. For the CLI binaries, the Release workflow adds the generated `THIRD_PARTY_LICENSES.txt` (step 3).
 
 ## 3. Build the CLI release
 

@@ -17,7 +17,7 @@ cargo build --release -p gen-animated-icons
 target/release/gen-animated-icons --version
 ```
 
-Put `target/release` on your `PATH`, or set `GEN_ANIMATED_ICONS_BINARY` to the binary so the npm shim runs it (`node npm/gen-animated-icons/bin/gen-animated-icons.js` in this checkout; `npx gen-animated-icons` once the package is published at launch). The [CLI reference](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/cli.md) lists every command.
+Put `target/release` on your `PATH`, or set `GEN_ANIMATED_ICONS_BINARY` to the binary so the npm shim runs it (`node npm/gen-animated-icons/bin/gen-animated-icons.js` in this checkout; `npx gen-animated-icons` once the package is published at launch). The [CLI reference](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/cli.md) lists every command.
 
 ## Test
 
@@ -69,7 +69,7 @@ gen-animated-icons library package --icon-library   # refresh icon-library.zip a
 - Builders replace a set's outputs. Build complete sets and confirm that unrelated asset hashes are unchanged. Do not rebuild only to preview existing files: `gen-animated-icons preview <id>` renders any icon.
 - Intermediate `scenes/` and `native/` folders are rebuildable and ignored by Git; final assets under `prototype/icons/NN/assets/` are tracked.
 
-The [creating icons](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/creating-icons.md) guide covers the design loop; [verification](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/verification.md) covers the checks.
+The [creating icons](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/creating-icons.md) guide covers the design loop; [verification](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/verification.md) covers the checks.
 
 ## Reanimate a library icon with a spec
 
@@ -90,9 +90,9 @@ gen-animated-icons library verify-visual 14
 - The rest pose and, for a stateful icon, the end state must stay the library drawing, so apps that switch versions see no jump.
 - From then on the spec is the icon's source. `library build` keeps adopted icons as they are (their old definitions stay for the legacy checks but no longer export), and `library verify` checks them against their spec: hashes, format, paint, themes and markers. Their motion checks run in `build`, and `verify-visual` renders them like every other action.
 - Frozen sets 01 and 02 can adopt: they are still never rebuilt, so adopting only replaces the icon's assets and entry, and their legacy checks skip it.
-- A new icon joins a set the same way with `library adopt NN --add <build>`: `create <new-id>` (not a library id), build it, then add it. It takes the set's category and the number after the library's last icon, and `library build` keeps it. New icons also change the catalog size that some tests pin (see [crates/README.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/crates/README.md)), so update those counts in the same commit.
+- A new icon joins a set the same way with `library adopt NN --add <build>`: `create <new-id>` (not a library id), build it, then add it. It takes the set's category and the number after the library's last icon, and `library build` keeps it. New icons also change the catalog size that some tests pin (see [crates/README.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/crates/README.md)), so update those counts in the same commit.
 
-What the library-wide reanimation (Oct 2026, 412 icons) learned about porting, beyond [authoring-v2.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/crates/gen-animated-icons/assets/skill/references/authoring-v2.md):
+What the library-wide reanimation (Oct 2026, 412 icons) learned about porting, beyond [authoring-v2.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/crates/gen-animated-icons/assets/skill/references/authoring-v2.md):
 
 - Decide first: keep an icon whose motion already is its meaning, with rhythm in Strong, readable at 24 px (a dial indexing to its next stop, a refresh arrow's full turn, a toggle knob landing). Reanimate generic nudges, lifts and tilts, and moves under a pixel at 24 px.
 - Port the rest drawing exactly, vertex for vertex, and match the icon's Solid (`"solid": "fill"` or `"ring"`): the default Solid adds a rim the library drawing does not have.
@@ -115,7 +115,7 @@ gen-animated-icons library release --output dist/packages-vX.Y.Z
 npm run test:consumers -- dist/packages-vX.Y.Z   # install the tarballs into vanilla, React and Next.js fixtures
 ```
 
-`npm run build:packages` and `npm run pack:release` are the legacy equivalents. See the [package contract](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/package-contract.md) and the [release runbook](https://github.com/LottieFiles/lottie-generative-icons/blob/main/docs/maintainers/releasing.md).
+`npm run build:packages` and `npm run pack:release` are the legacy equivalents. See the [package contract](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/package-contract.md) and the [release runbook](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/maintainers/releasing.md).
 
 ## AI guide
 

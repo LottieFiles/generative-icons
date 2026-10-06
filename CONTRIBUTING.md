@@ -4,8 +4,8 @@ Thanks for helping grow Generative Animated Icons. Code and library changes arri
 
 ## Before you start
 
-- **Missing icon?** Search with `npx gen-animated-icons search "your meaning"`. If nothing fits, create it in your own project (see [creating icons](docs/creating-icons.md)) or open an [icon request](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=icon_request.yml).
-- **Something broken?** Open a [bug report](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=bug_report.yml) with the icon ID, motion profile, style and steps to reproduce, or the CLI command, its output and `gen-animated-icons --version`.
+- **Missing icon?** Search with `npx gen-animated-icons search "your meaning"`. If nothing fits, create it in your own project (see [creating icons](docs/creating-icons.md)) or open an [icon request](https://github.com/LottieFiles/gen-animated-icons/issues/new?template=icon_request.yml).
+- **Something broken?** Open a [bug report](https://github.com/LottieFiles/gen-animated-icons/issues/new?template=bug_report.yml) with the icon ID, motion profile, style and steps to reproduce, or the CLI command, its output and `gen-animated-icons --version`.
 - Keep unrelated changes in separate pull requests.
 
 **Building icons needs a LottieFiles sign-in.** Native export runs on LottieFiles' hosted engine (`gen-animated-icons login`). The hosted engine is internal until launch, so building may not work for your account yet. Authoring, the source checks and the test suites work without it.
@@ -26,8 +26,8 @@ Only verified builds of the current source are accepted, and every submission is
 1. **Fork and build the CLI.** You need Rust 1.89+, clang, Node 22+ and Python 3; see [development](docs/development.md).
 
    ```sh
-   git clone https://github.com/<you>/lottie-generative-icons.git
-   cd lottie-generative-icons
+   git clone https://github.com/<you>/gen-animated-icons.git
+   cd gen-animated-icons
    cargo build --release -p gen-animated-icons
    ```
 

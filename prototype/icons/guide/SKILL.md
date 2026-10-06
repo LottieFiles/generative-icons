@@ -13,11 +13,11 @@ Run everything from the repository root with the `gen-animated-icons` CLI (build
 
 1. **Check tools:** `gen-animated-icons doctor`. At the repository root its app checks fail because the repository is not an app; the cpu, quickjs, renderer, sign-in and engine checks are the ones that matter here.
 2. **Search:** `gen-animated-icons context "<meaning>" --search`, then rerun without `--search` and with `--neighbor <id>` (up to four) to get the reference packet.
-3. **Brief:** per icon, write meaning, states, neighbors and a **cause → action → response → final state** plan for Light and Strong. Read [polish-review.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) first.
+3. **Brief:** per icon, write meaning, states, neighbors and a **cause → action → response → final state** plan for Light and Strong. Read [polish-review.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) first.
 4. **Author:** new set: `gen-animated-icons library new-set <slug> --name "Display name"`. Draw and animate in `motion/icon-sets/SET-ID/definitions.mjs` and its `batches/`.
 5. **Preflight (no sign-in needed):** `gen-animated-icons library preflight SET-ID`
 6. **Build and verify:** `gen-animated-icons library build SET-ID`, then `gen-animated-icons library verify SET-ID` and `gen-animated-icons library verify --paint`.
-7. **Inspect:** `gen-animated-icons library verify-visual SET-ID` renders every action and writes review sheets; `gen-animated-icons preview <id>` renders one icon's motions at chosen times. Review native playback in the local gallery (`npm run dev`, `/icons/01/`); see [production.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md).
+7. **Inspect:** `gen-animated-icons library verify-visual SET-ID` renders every action and writes review sheets; `gen-animated-icons preview <id>` renders one icon's motions at chosen times. Review native playback in the local gallery (`npm run dev`, `/icons/01/`); see [production.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md).
 8. **Register:** `gen-animated-icons library register SET-ID` after the first complete build and verification.
 9. **Finish:** `npm test`, then open a pull request.
 
@@ -33,7 +33,7 @@ Apply this workflow to the requested scope and complete the authorized work with
 
 - Gallery: `prototype/icons/01/index.html`, served by `npm run dev` on port 4189 at `/icons/01/`. All icons belong on that page; it starts each icon in **Strong** and Light stays selectable.
 - Sources: `motion/icon-sets/SET-ID/`. Catalog: `prototype/icons/catalog.json`; each set is registered in a named browse category.
-- Rules: [polish-review.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) (rejection criteria and per-icon record), [generation-harness.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/generation-harness.md) (reference retrieval and preflight), [production.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md) (build and evidence), `docs/design-principles.md`, and `motion/icon-sets/library/motion-directions.json` for existing motion intent.
+- Rules: [polish-review.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) (rejection criteria and per-icon record), [generation-harness.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/references/generation-harness.md) (reference retrieval and preflight), [production.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md) (build and evidence), `docs/design-principles.md`, and `motion/icon-sets/library/motion-directions.json` for existing motion intent.
 
 ## 1. Establish the change
 
@@ -74,7 +74,7 @@ A whole-library review must leave a per-icon ledger: first design proposal, desi
 
 ## 4. Author and review a complete cycle
 
-Read [references/production.md](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md) for the current build and evidence procedure. Export only through `gen-animated-icons library build`, which exports on the hosted engine. Do not claim one tool produced an asset when another did.
+Read [references/production.md](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md) for the current build and evidence procedure. Export only through `gen-animated-icons library build`, which exports on the hosted engine. Do not claim one tool produced an asset when another did.
 
 Integrate the reviewed design. If a check or render exposes a flaw, record the diagnostic or observed frame, revise the affected geometry or motion, and rerun the affected checks in the same agent session. Stop an unproductive loop when the same failure repeats without new evidence; change the approach or report the unresolved issue. Missing export or visual inspection tools leave those gates incomplete. Keep one writer per production file.
 

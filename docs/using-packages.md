@@ -88,4 +88,4 @@ The same commands work in iOS and Android apps: `add` installs the `.lottie` fil
 
 ## Missing an icon?
 
-Create it with your coding AI in your own project (`gen-animated-icons create`, then `build`; building needs a LottieFiles sign-in), or [request it](https://github.com/LottieFiles/lottie-generative-icons/issues/new?template=icon_request.yml). See [creating icons](creating-icons.md).
+Create it with your coding AI in your own project (`gen-animated-icons create`, then `build`; building needs a LottieFiles sign-in), or [request it](https://github.com/LottieFiles/gen-animated-icons/issues/new?template=icon_request.yml). See [creating icons](creating-icons.md).

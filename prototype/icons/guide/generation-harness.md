@@ -23,7 +23,7 @@ The context command makes no model call; read the packet directly. Use repeatabl
 
 Read the relevant source excerpts too. The initial path snapshot is not the motion source and may show an incomplete starting state. Save `generation-context.json` and the design review findings beside the proposal.
 
-The numeric contract is [family-contract.json](https://github.com/LottieFiles/lottie-generative-icons/blob/main/motion/icon-sets/library/family-contract.json). The prompt and preflight read the same file. It holds the 32-unit grid, 1.5/2/2.5 Outline weights, 18% eligible Duotone, Strong default, and existing timeline. The CLI's tests check its agreement with every current catalog entry. Versioned exporters keep their constants to preserve prior provenance; a future numeric change requires coordinated authoring/export/paint/render validation. This file is not permission to rescale existing artwork.
+The numeric contract is [family-contract.json](https://github.com/LottieFiles/gen-animated-icons/blob/main/motion/icon-sets/library/family-contract.json). The prompt and preflight read the same file. It holds the 32-unit grid, 1.5/2/2.5 Outline weights, 18% eligible Duotone, Strong default, and existing timeline. The CLI's tests check its agreement with every current catalog entry. Versioned exporters keep their constants to preserve prior provenance; a future numeric change requires coordinated authoring/export/paint/render validation. This file is not permission to rescale existing artwork.
 
 ## Before native export
 
@@ -54,4 +54,4 @@ Assert actual render size before accepting size evidence. Record requested CSS s
 
 Optical mass and centering estimates can flag a review. Do not apply automatic median corrections or grid snapping to animated points.
 
-Preflight is source screening only: painted contacts, closed Duotone surfaces, timing, continuous-loop velocity, player behavior and downloads are checked by the [production gates](https://github.com/LottieFiles/lottie-generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md). Generation-context hashes record inputs; final review evidence must still refer to the current final packages.
+Preflight is source screening only: painted contacts, closed Duotone surfaces, timing, continuous-loop velocity, player behavior and downloads are checked by the [production gates](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md). Generation-context hashes record inputs; final review evidence must still refer to the current final packages.

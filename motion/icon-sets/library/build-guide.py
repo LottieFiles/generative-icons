@@ -5,7 +5,7 @@ root=Path(__file__).resolve().parents[3]
 skill=root/'.agents/skills/animated-icon-workflow'
 out=root/'prototype/icons/guide';out.mkdir(exist_ok=True)
 files=[skill/'SKILL.md',*[skill/'references'/n for n in ['polish-review.md','generation-harness.md','production.md']],root/'motion/icon-sets/library/family-contract.json',root/'docs/using-packages.md',root/'docs/package-contract.md',root/'docs/development.md']
-base='https://github.com/LottieFiles/lottie-generative-icons/blob/main/'
+base='https://github.com/LottieFiles/gen-animated-icons/blob/main/'
 def public_links(text,source):
  def replace(m):
   label,target=m.groups()
@@ -19,7 +19,7 @@ preamble='''# Generative Animated Icons — AI operating guide
 
 Give this file to your coding agent to create or revise icons that match the Generative Animated Icons family by LottieFiles. It bundles the canonical workflow, rules and contract from the source repository into one file.
 
-Repository: https://github.com/LottieFiles/lottie-generative-icons
+Repository: https://github.com/LottieFiles/gen-animated-icons
 
 ## Quickstart
 

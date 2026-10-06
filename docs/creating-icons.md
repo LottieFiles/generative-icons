@@ -68,4 +68,4 @@ gen-animated-icons submit return-box --license MIT                              
 
 ## Library sets in this repository
 
-Maintainers add whole sets to the library with `gen-animated-icons library new-set`, `build`, `verify`, `verify-visual` and `register`; see [development](development.md#author-and-build-a-library-set). The family workflow for those sets is the [AI operating guide](https://github.com/LottieFiles/lottie-generative-icons/blob/main/prototype/icons/guide/ai-operating-guide.md), which bundles the canonical rules in one file.
+Maintainers add whole sets to the library with `gen-animated-icons library new-set`, `build`, `verify`, `verify-visual` and `register`; see [development](development.md#author-and-build-a-library-set). The family workflow for those sets is the [AI operating guide](https://github.com/LottieFiles/gen-animated-icons/blob/main/prototype/icons/guide/ai-operating-guide.md), which bundles the canonical rules in one file.
