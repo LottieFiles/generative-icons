@@ -1079,13 +1079,21 @@ mod tests {
             Arc::new(move |n: Notice| heard.lock().unwrap().push(n))
         };
         let (short, long) = (Duration::from_millis(20), Duration::from_millis(200));
-        // A quick answer: nothing to say.
-        assert_eq!(patient(Some(&sink), short, long, || Ok(7)).unwrap(), 7);
+        // A quick answer: nothing to say. (A generous threshold, so a busy machine can't
+        // delay the answer past it.)
+        assert_eq!(patient(Some(&sink), Duration::from_secs(5), Duration::from_secs(10), || Ok(7)).unwrap(), 7);
         assert!(heard.lock().unwrap().is_empty());
-        // A prompt answered late: announced once, then the answer.
-        let late = patient(Some(&sink), short, long, || {
-            std::thread::sleep(Duration::from_millis(60));
-            Ok("token")
+        // A prompt answered late: announced once, then the answer. The call answers only
+        // once the wait has been announced, so a slow machine can't skip the notice.
+        let late = patient(Some(&sink), short, Duration::from_secs(10), {
+            let heard = heard.clone();
+            move || {
+                let deadline = std::time::Instant::now() + Duration::from_secs(5);
+                while heard.lock().unwrap().is_empty() && std::time::Instant::now() < deadline {
+                    std::thread::sleep(Duration::from_millis(5));
+                }
+                Ok("token")
+            }
         });
         assert_eq!(late.unwrap(), "token");
         assert_eq!(*heard.lock().unwrap(), [Notice::WaitingForKeychain]);
