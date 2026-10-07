@@ -1,11 +1,11 @@
 ---
 version: "1.0"
 system-version: "0.1.0"
-name: Generative Animated Icons
+name: Generative Icons
 register: expressive
 overshoot: spatial-only
 summary: Physical, causal motion. Something causes the action, the icon responds with material-true movement, then holds a meaningful final state.
-description: Motion system for the Generative Animated Icons family of 32 × 32 animated icons, exported as dotLottie with Light and Strong profiles, light/dark themes and style slots. It describes the shipped library. The numeric source of truth is motion/icon-sets/library/family-contract.json.
+description: Motion system for the Generative Icons family of 32 × 32 animated icons, exported as dotLottie with Light and Strong profiles, light/dark themes and style slots. It describes the shipped library. The numeric source of truth is motion/icon-sets/library/family-contract.json.
 
 durations:
   timeline: 2400ms
@@ -76,7 +76,7 @@ vector:
     segment: rest
 ---
 
-# Generative Animated Icons — Motion
+# Generative Icons — Motion
 
 ## Overview
 
@@ -123,7 +123,7 @@ The engine's Lottie export of the `definitions.mjs` sets writes motion as sample
 - **Profiles:** each `.lottie` holds a Light animation (`<name>`) and a Strong one (`<name>-strong`), with `dark` and `light` themes.
 - **Slots:** `color.primary` plus the five style slots (`style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`) and the `style.outline.width` stroke-width token bound to every Regular outline stroke, which switch weight and style at runtime.
 - **Features:** shape layers and path animation only. No expressions, effects, masks, mattes, precomps, image or text layers.
-- **Authoring:** don't hand-write Lottie JSON. Author the icon's source with the authoring kit, build it with `gen-animated-icons` (which exports on LottieFiles' hosted engine) and run its verification (see [creating icons](docs/creating-icons.md)).
+- **Authoring:** don't hand-write Lottie JSON. Author the icon's source with the authoring kit, build it with `generative-icons` (which exports on LottieFiles' hosted engine) and run its verification (see [creating icons](docs/creating-icons.md)).
 
 ## Accessibility & Reduced Motion
 

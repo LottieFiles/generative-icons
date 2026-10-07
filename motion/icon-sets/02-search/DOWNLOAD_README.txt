@@ -1,4 +1,4 @@
-SEARCH — Generative Animated Icons by LottieFiles
+SEARCH — Generative Icons by LottieFiles
 
 1 animated vector icons: One clear sweep..
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

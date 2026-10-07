@@ -1,4 +1,4 @@
-FEEDBACK & STATUS — Generative Animated Icons by LottieFiles
+FEEDBACK & STATUS — Generative Icons by LottieFiles
 
 20 animated vector icons: Loading spinner, Loading dots, Progress ring, Progress steps, Hourglass, Queued, Paused, Cancelled, Error, Warning, Info, Help, No results, Empty state, Offline, Reconnect, Cloud sync, Saved, Notification dot, Session expired.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

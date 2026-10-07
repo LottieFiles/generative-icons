@@ -1,4 +1,4 @@
-WEATHER — Generative Animated Icons by LottieFiles
+WEATHER — Generative Icons by LottieFiles
 
 20 animated vector icons: Partly cloudy, Rain, Snow, Hail, Thunderstorm, Snowflake, Wind, Fog, Tornado, Hurricane, Rainbow, Sunrise, Sunset, Moon phase, Temperature, Humidity, UV index, Umbrella, Windsock, Weather radar.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -1,7 +1,7 @@
 # rquickjs-sys 0.9.0, patched for V8-exact Math and bounded builtins
 
 This is the crates.io package `rquickjs-sys 0.9.0` (QuickJS-NG 0.8.0). The root
-`Cargo.toml` substitutes it through `[patch.crates-io]`. gen-animated-icons runs icon
+`Cargo.toml` substitutes it through `[patch.crates-io]`. generative-icons runs icon
 authoring code in QuickJS, and its committed outputs were produced by Node (V8 14.6,
 arm64). Stock QuickJS calls the platform libm, which differs from V8 by up to 20 ULP in
 `Math.sin`, `cos`, `tan`, `asin`, `acos`, `exp`, `atan2`, `hypot` and `**`, and that

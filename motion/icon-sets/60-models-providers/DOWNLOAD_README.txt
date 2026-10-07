@@ -1,4 +1,4 @@
-MODELS & PROVIDERS — Generative Animated Icons by LottieFiles
+MODELS & PROVIDERS — Generative Icons by LottieFiles
 
 20 animated vector icons: API key, Endpoint, Rate limit, Token counter, Request timeout, Model card, Open weights, Model picker, Provider switch, Latency meter, Cost estimate, Temperature dial, Top P, Max tokens, Seed lock, API quota, Model status, Fallback model, Prompt cache hit, Multimodal input.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

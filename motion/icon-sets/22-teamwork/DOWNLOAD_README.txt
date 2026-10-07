@@ -1,4 +1,4 @@
-TEAMWORK — Generative Animated Icons by LottieFiles
+TEAMWORK — Generative Icons by LottieFiles
 
 40 animated vector icons: Invite teammate, Join team, Team directory, Team roles, Team presence, Assign task, Delegate task, Task handoff, Task dependency, Shared goal, Kanban board, Sprint cycle, Team roadmap, Milestone, Team workload, Shared document, Co-edit, Live cursors, Follow collaborator, Suggested edit, Add comment, Reply thread, Mention teammate, Resolve thread, Reopen thread, Request review, Approve change, Request changes, Compare revisions, Version history, Share workspace, Invite link, Guest access, View access, Edit access, Standup, Raise hand, Team poll, Decision log, Team celebration.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -1,4 +1,4 @@
-AGENT OPERATIONS — Generative Animated Icons by LottieFiles
+AGENT OPERATIONS — Generative Icons by LottieFiles
 
 20 animated vector icons: Agent skills, Tool discovery, MCP tools, Browser agent, Terminal agent, Sandbox, Agent permissions, Human input, Agent checkpoint, Resume run, Retry step, Execution trace, Parallel tools, Merge results, Background run, Scheduled agent, Event trigger, Context compaction, Agent artifact, Budget limit.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

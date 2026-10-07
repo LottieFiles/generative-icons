@@ -1,4 +1,4 @@
-GET HELP — Generative Animated Icons by LottieFiles
+GET HELP — Generative Icons by LottieFiles
 
 5 animated vector icons: Support agent, Help center, Support ticket, Live support, Callback.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

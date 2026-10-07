@@ -1,4 +1,4 @@
-//! Icons adopted from spec v2 (`gen-animated-icons library adopt`). Their source is the
+//! Icons adopted from spec v2 (`generative-icons library adopt`). Their source is the
 //! set's `specs/<icon>.icon.json`, exported by the hosted engine in one call, so they
 //! have no sampled scenes and no legacy natives. The legacy stages verify the set
 //! without them; this stage checks what they ship: the spec each record names, every

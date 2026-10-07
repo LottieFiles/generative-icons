@@ -1,4 +1,4 @@
-TABLES & ANALYTICS — Generative Animated Icons by LottieFiles
+TABLES & ANALYTICS — Generative Icons by LottieFiles
 
 16 animated vector icons: Sort order, Show columns, Resize column, Group rows, Freeze column, Pivot table, Formula, Sum, Percentage, Line chart, Pie chart, Scatter plot, Heatmap, Funnel chart, Radar chart, Dashboard.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -2,7 +2,7 @@
 
 ## Use the icons
 
-- [The gen-animated-icons CLI](cli.md): install, commands, sign-in, files and settings.
+- [The generative-icons CLI](cli.md): install, commands, sign-in, files and settings.
 - [Install the packages](using-packages.md): the CLI in a web app, vanilla JavaScript and React.
 - [Use an icon file](using-icons.md): download, render, customize styles and respect reduced motion.
 - [Package contract](package-contract.md): descriptor, catalog, project lock and release formats.

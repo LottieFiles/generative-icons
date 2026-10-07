@@ -19,7 +19,7 @@
 //!
 //! The watchdog ends the whole process, so install it only in a process that runs one
 //! job, such as a CLI command. A server stays up by running each job in a child process
-//! that installs it, as `gen-animated-icons mcp` runs each tool call as a one-shot
+//! that installs it, as `generative-icons mcp` runs each tool call as a one-shot
 //! command of the same binary.
 
 use crate::Error;

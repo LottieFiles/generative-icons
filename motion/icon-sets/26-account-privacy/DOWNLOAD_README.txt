@@ -1,4 +1,4 @@
-ACCOUNT & PRIVACY — Generative Animated Icons by LottieFiles
+ACCOUNT & PRIVACY — Generative Icons by LottieFiles
 
 12 animated vector icons: Sign in / out, Switch account, ID card, Password, Passkey, Fingerprint, Face authentication, Two-factor code, Recovery codes, Private browsing, Cookie preferences, Block user.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

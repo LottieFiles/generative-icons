@@ -4,7 +4,7 @@ Use this sequence to retrieve current family geometry and screen editable source
 
 ## Setup before design
 
-Use `gen-animated-icons doctor` to check the binary, its math, the renderer, the sign-in and the engine. Use `gen-animated-icons library new-set <slug> --name "Display name"` for a new set. It supplies the source, config and review record without choosing geometry or motion. Keep an unbuilt set out of the catalog; use `gen-animated-icons library register <SET-ID>` after the first complete build and verification. This preserves retrieval and preflight while the asset manifest does not yet exist.
+Use `generative-icons doctor` to check the binary, its math, the renderer, the sign-in and the engine. Use `generative-icons library new-set <slug> --name "Display name"` for a new set. It supplies the source, config and review record without choosing geometry or motion. Keep an unbuilt set out of the catalog; use `generative-icons library register <SET-ID>` after the first complete build and verification. This preserves retrieval and preflight while the asset manifest does not yet exist.
 
 ## Before the design proposal
 
@@ -13,8 +13,8 @@ Search by shape, meaning and mechanism. Preserve existing public IDs. Decide whe
 From the project root:
 
 ```bash
-gen-animated-icons context "package return" --search
-gen-animated-icons context "package return" --neighbor return-package --neighbor delivery-truck
+generative-icons context "package return" --search
+generative-icons context "package return" --neighbor return-package --neighbor delivery-truck
 ```
 
 The second command prints a reference packet. It contains the current family contract, candidate matches, selected icons, Light/Strong metadata, the initial native Outline geometry with its local transforms, and input hashes. It verifies the selected Strong package hash against the catalog and the loose animation against the packaged animation. A missing/stale reference fails rather than silently supplying old geometry. No generated assets are written; `--output <dir>` saves the packet, and `--prompt` prints a design prompt that embeds it.
@@ -30,8 +30,8 @@ The numeric contract is [family-contract.json](../../../../motion/icon-sets/libr
 Integrate the reviewed design into trusted local `definitions.mjs` sources. Then run:
 
 ```bash
-gen-animated-icons library preflight 15-commerce-delivery
-gen-animated-icons library build 15-commerce-delivery
+generative-icons library preflight 15-commerce-delivery
+generative-icons library build 15-commerce-delivery
 ```
 
 `library build` completes source screening before it exports anything. A failing check prevents the export. The screen covers both profiles, forward/reverse actions, all three Outline widths, every frame including the analytic endpoint, authored key poses, active time and rest time.
@@ -41,7 +41,7 @@ Hard failures include malformed/nonfinite paths or poses, changing normalized pa
 Warnings include ambiguous layer labels and a control-point hull crossing the canvas (the hull can overestimate a cubic's painted bounds; inspect actual swept paint before editing geometry). Missing legacy Duotone declarations and set-specific reverse naming are informational; existing native checks still apply.
 
 ```bash
-gen-animated-icons library preflight --all
+generative-icons library preflight --all
 ```
 
 The all-source command discloses inline legacy builders that cannot be screened without executing exports. Heart, Bell and Search currently use that route: retain their existing source/native checks. Do not import an inline `build.mjs` to obtain definitions.

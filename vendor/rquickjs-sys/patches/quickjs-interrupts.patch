@@ -4,7 +4,7 @@
  #define LRE_FLAG_NAMED_GROUPS (1 << 7) /* named groups are present in the regexp */
  #define LRE_FLAG_UNICODE_SETS (1 << 8)
  
-+/* lre_exec() errors (gen-animated-icons: LRE_RET_TIMEOUT backported from QuickJS) */
++/* lre_exec() errors (generative-icons: LRE_RET_TIMEOUT backported from QuickJS) */
 +#define LRE_RET_MEMORY_ERROR (-1)
 +#define LRE_RET_TIMEOUT      (-2)
 +
@@ -26,7 +26,7 @@
  
  #define CAPTURE_COUNT_MAX 255
  #define STACK_SIZE_MAX 255
-+/* gen-animated-icons: execution steps between lre_check_timeout() calls */
++/* generative-icons: execution steps between lre_check_timeout() calls */
 +#define INTERRUPT_COUNTER_INIT 10000
  
  /* unicode code points */
@@ -44,7 +44,7 @@
  }
  
 -/* return 1 if match, 0 if not match or -1 if error. */
-+/* gen-animated-icons: lets the embedder stop a runaway execution (backported from
++/* generative-icons: lets the embedder stop a runaway execution (backported from
 +   QuickJS 2024-01-13). */
 +static inline int lre_poll_timeout(REExecContext *s)
 +{
@@ -135,7 +135,7 @@
      }
 +}
 +
-+/* gen-animated-icons: polls after about `cost` interpreter steps of native work, so
++/* generative-icons: polls after about `cost` interpreter steps of native work, so
 +   builtins whose loop steps are expensive still stop at the interrupt handler. */
 +static inline __exception int js_poll_interrupts_cost(JSContext *ctx, int64_t cost)
 +{
@@ -145,7 +145,7 @@
 +    return 0;
  }
  
-+/* gen-animated-icons: the error __js_poll_interrupts throws, for native code that asked
++/* generative-icons: the error __js_poll_interrupts throws, for native code that asked
 +   the interrupt handler itself. */
 +static void js_throw_interrupted(JSContext *ctx)
 +{
@@ -160,7 +160,7 @@
          if (js_get_fast_array_element(ctx, p, idx, pval))
              return true;
      }
-+    /* gen-animated-icons: builtins loop up to an array-like's length here */
++    /* generative-icons: builtins loop up to an array-like's length here */
 +    if (js_poll_interrupts(ctx)) {
 +        *pval = JS_EXCEPTION;
 +        return -1;
@@ -172,7 +172,7 @@
          if (js_get_fast_array_element(ctx, p, idx, &val))
              return val;
      }
-+    /* gen-animated-icons: builtins loop up to an array-like's length here */
++    /* generative-icons: builtins loop up to an array-like's length here */
 +    if (js_poll_interrupts(ctx))
 +        return JS_EXCEPTION;
      prop = JS_NewAtomInt64(ctx, idx);
@@ -182,7 +182,7 @@
      JSAtom prop;
      int res;
  
-+    /* gen-animated-icons: builtins loop up to an array-like's length here */
++    /* generative-icons: builtins loop up to an array-like's length here */
 +    if (js_poll_interrupts(ctx)) {
 +        JS_FreeValue(ctx, val);
 +        return -1;
@@ -195,7 +195,7 @@
      if (psc->exception)
          return 0;
 +
-+    /* gen-animated-icons: a default-order sort calls no function that would poll */
++    /* generative-icons: a default-order sort calls no function that would poll */
 +    if (js_poll_interrupts(ctx))
 +        goto exception;
  
@@ -206,7 +206,7 @@
  }
  
 -static int string_indexof(JSString *p1, JSString *p2, int from)
-+/* gen-animated-icons: returns -2 (exception) when the interrupt handler stops it */
++/* generative-icons: returns -2 (exception) when the interrupt handler stops it */
 +static int string_indexof(JSContext *ctx, JSString *p1, JSString *p2, int from)
  {
      /* assuming 0 <= from <= p1->len */
@@ -224,7 +224,7 @@
              }
              if (i == stop)
                  break;
-+            /* gen-animated-icons: the search is O(len * v_len) */
++            /* generative-icons: the search is O(len * v_len) */
 +            if (js_poll_interrupts_cost(ctx, 1 + (v_len >> 8)))
 +                goto fail;
          }
@@ -234,7 +234,7 @@
              }
              if (i == stop)
                  break;
-+            /* gen-animated-icons: the search is O(len * v_len) */
++            /* generative-icons: the search is O(len * v_len) */
 +            if (js_poll_interrupts_cost(ctx, 1 + (v_len >> 8)))
 +                goto fail;
          }
@@ -266,7 +266,7 @@
      return js_check_stack_overflow(ctx->rt, alloca_size);
  }
  
-+/* gen-animated-icons: a runaway regexp execution stops at the interrupt handler
++/* generative-icons: a runaway regexp execution stops at the interrupt handler
 +   (backported from QuickJS 2024-01-13). */
 +bool lre_check_timeout(void *opaque)
 +{

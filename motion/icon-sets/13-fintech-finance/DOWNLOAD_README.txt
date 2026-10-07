@@ -1,4 +1,4 @@
-FINTECH & FINANCE — Generative Animated Icons by LottieFiles
+FINTECH & FINANCE — Generative Icons by LottieFiles
 
 20 animated vector icons: Bank, Bank account, Bank transfer, Currency exchange, Savings, Deposit, Withdraw, Payment terminal, Contactless payment, Recurring payment, Receipt, Invoice, Refund, Bill payment, Budget, Transaction history, Investment, Portfolio, Calculator, Vault.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

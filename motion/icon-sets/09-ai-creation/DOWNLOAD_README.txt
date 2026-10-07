@@ -1,4 +1,4 @@
-CREATION AND MULTIMODAL — Generative Animated Icons by LottieFiles
+CREATION AND MULTIMODAL — Generative Icons by LottieFiles
 
 20 animated vector icons: Picture painted onto a blank easel canvas, Missing quadrant of a photo is filled by a generated tile, Backdrop splits and slides away from a cut-out subject, Pointer touches an object and a selection ring settles around it, Frame grows from a small original, led by a corner arrow, Style transfer, Smart crop, Image caption, Text to speech, Speech to text, Voice chat, Audio generate, Audio clean, Music generate, Video generate, Storyboard, Motion generate, Code generate, Code explain, Code review.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

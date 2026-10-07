@@ -1,4 +1,4 @@
-FILES & FOLDERS — Generative Animated Icons by LottieFiles
+FILES & FOLDERS — Generative Icons by LottieFiles
 
 20 animated vector icons: New folder, Folder open, Move file, Rename file, Duplicate file, Restore file, Approve file, Lock file, File search, File preview, File tag, File star, File sync, Import file, Export file, Image file, Code file, Spreadsheet file, Audio file, Video file.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

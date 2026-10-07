@@ -1,4 +1,4 @@
-LEGAL & COMPLIANCE — Generative Animated Icons by LottieFiles
+LEGAL & COMPLIANCE — Generative Icons by LottieFiles
 
 20 animated vector icons: Gavel, Justice scale, Contract, Rubber stamp, Official seal, Courthouse, GDPR shield, Audit, Policy, Terms of service, Compliance check, Redact, Consent, Cookie banner, Data retention, Disclaimer, Copyright, Whistleblower, Evidence bag, Legal hold.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

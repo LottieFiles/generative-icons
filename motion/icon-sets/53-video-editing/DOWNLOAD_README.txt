@@ -1,4 +1,4 @@
-VIDEO EDITING — Generative Animated Icons by LottieFiles
+VIDEO EDITING — Generative Icons by LottieFiles
 
 20 animated vector icons: Cut clip, Trim clip, Transition, Speed ramp, Reverse clip, Rotate clip, Green screen, Stabilize, Thumbnail, Export video, Resolution, Aspect ratio, Mute track, Voiceover, Screen record, Clapperboard, Merge clips, Add caption, Video filter, Render progress.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -1,4 +1,4 @@
-/* V8-exact Math for QuickJS-NG (gen-animated-icons patch).
+/* V8-exact Math for QuickJS-NG (generative-icons patch).
  *
  * quickjs.c calls these instead of the platform libm so Math.* and the **
  * operator return the same doubles as Node's V8 14.6 on arm64. */

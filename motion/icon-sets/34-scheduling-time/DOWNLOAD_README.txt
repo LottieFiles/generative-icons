@@ -1,4 +1,4 @@
-SCHEDULING & TIME TOOLS — Generative Animated Icons by LottieFiles
+SCHEDULING & TIME TOOLS — Generative Icons by LottieFiles
 
 8 animated vector icons: Date range, Calendar view, Reschedule, Alarm clock, Stopwatch, Countdown timer, World clock, Availability.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

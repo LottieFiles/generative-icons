@@ -43,7 +43,7 @@ extern "C" {
 #define LRE_FLAG_NAMED_GROUPS (1 << 7) /* named groups are present in the regexp */
 #define LRE_FLAG_UNICODE_SETS (1 << 8)
 
-/* lre_exec() errors (gen-animated-icons: LRE_RET_TIMEOUT backported from QuickJS) */
+/* lre_exec() errors (generative-icons: LRE_RET_TIMEOUT backported from QuickJS) */
 #define LRE_RET_MEMORY_ERROR (-1)
 #define LRE_RET_TIMEOUT      (-2)
 

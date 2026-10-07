@@ -1,4 +1,4 @@
-SMART HOME — Generative Animated Icons by LottieFiles
+SMART HOME — Generative Icons by LottieFiles
 
 20 animated vector icons: Smart bulb, Thermostat, Smart lock, Door sensor, Garage door, Ceiling fan, Air conditioner, Smart speaker, Video doorbell, Security camera, Window blinds, Robot vacuum, Washing machine, Refrigerator, Oven, Smoke alarm, Water leak, Power outlet, Energy usage, Motion sensor.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

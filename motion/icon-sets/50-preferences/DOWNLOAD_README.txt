@@ -1,4 +1,4 @@
-PREFERENCES — Generative Animated Icons by LottieFiles
+PREFERENCES — Generative Icons by LottieFiles
 
 20 animated vector icons: Language, Region, Currency, Appearance, Dark mode, Quiet hours, Privacy shield, Shortcut key, Mouse, Auto-rotate, Sound toggle, Battery saver, Mobile data, Haptic feedback, Reset settings, Auto-update, Startup apps, Pointer speed, Advanced settings, Trackpad.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

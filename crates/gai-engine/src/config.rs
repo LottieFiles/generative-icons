@@ -96,7 +96,7 @@ impl Notice {
     pub fn message(self) -> &'static str {
         match self {
             Notice::WaitingForSignInLock => {
-                "Waiting for another gen-animated-icons process that holds the sign-in lock…"
+                "Waiting for another generative-icons process that holds the sign-in lock…"
             }
             Notice::ReadingKeychain if cfg!(target_os = "macos") => {
                 "Reading the sign-in from the macOS Keychain; macOS may ask you to allow access"
@@ -174,7 +174,7 @@ impl EngineConfig {
     }
 
     /// Settings from the environment: [`ENGINE_URL_ENV`] (default [`DEFAULT_ENGINE_URL`]),
-    /// [`HOME_ENV`] (default `<config dir>/gen-animated-icons`) and [`ENGINE_TOKEN_ENV`].
+    /// [`HOME_ENV`] (default `<config dir>/generative-icons`) and [`ENGINE_TOKEN_ENV`].
     pub fn from_env() -> Result<Self> {
         let url = non_empty_env(ENGINE_URL_ENV).unwrap_or_else(|| DEFAULT_ENGINE_URL.to_owned());
         let home = match non_empty_env(HOME_ENV) {
@@ -274,7 +274,7 @@ fn non_empty_env(name: &str) -> Option<String> {
 
 fn default_home() -> Result<PathBuf> {
     dirs::config_dir()
-        .map(|dir| dir.join("gen-animated-icons"))
+        .map(|dir| dir.join("generative-icons"))
         .ok_or_else(|| Error::Config(format!("no home directory; set {HOME_ENV}")))
 }
 

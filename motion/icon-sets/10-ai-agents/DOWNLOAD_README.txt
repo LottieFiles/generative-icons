@@ -1,4 +1,4 @@
-AGENTS AND MODEL OPERATIONS — Generative Animated Icons by LottieFiles
+AGENTS AND MODEL OPERATIONS — Generative Icons by LottieFiles
 
 20 animated vector icons: AI agent, Agent team, Tool call, Agent workflow, Task plan, Agent handoff, Approval step, Guardrails, Model router, Model training, Fine-tune, Model evaluation, Confidence score, Inference, Batch inference, Local model, Model deploy, Model version, Usage meter, AI connection.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

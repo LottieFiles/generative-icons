@@ -1,4 +1,4 @@
-ARROWS — Generative Animated Icons by LottieFiles
+ARROWS — Generative Icons by LottieFiles
 
 20 animated vector icons: Arrow right, Arrow left, Arrow up, Arrow down, Arrow up right, Arrow up left, Arrow down right, Arrow down left, Chevron right, Chevron left, Chevron up, Chevron down, Horizontal arrows, Vertical arrows, Swap arrows, Turn right, Turn left, U-turn, Expand arrows, Collapse arrows.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

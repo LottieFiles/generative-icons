@@ -1,4 +1,4 @@
-MODEL TRAINING & FINE-TUNING — Generative Animated Icons by LottieFiles
+MODEL TRAINING & FINE-TUNING — Generative Icons by LottieFiles
 
 20 animated vector icons: Epoch counter, Loss curve, Learning rate, Gradient step, Overfitting, Validation split, Data augmentation, Data labeling, GPU cluster, Hyperparameter, Early stopping, Distillation, Adapter layer, Reward model, Benchmark score, Tokenizer, Quantize, Pretrained weights, Data shuffle, Convergence.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

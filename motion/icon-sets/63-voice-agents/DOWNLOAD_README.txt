@@ -1,4 +1,4 @@
-VOICE AGENTS — Generative Animated Icons by LottieFiles
+VOICE AGENTS — Generative Icons by LottieFiles
 
 20 animated vector icons: Turn taking, Barge in, End of turn detection, Backchannel, Speaker diarization, Live transcript, Call summary, Sentiment meter, Intent confirmation, Language detection, Silence timeout, DTMF input, On hold, Recording consent, IVR menu, Speech buffer, Agent persona, Concurrent calls, Escalation flag, Voicemail detection.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

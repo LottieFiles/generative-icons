@@ -1,4 +1,4 @@
-GAMIFICATION & REWARDS — Generative Animated Icons by LottieFiles
+GAMIFICATION & REWARDS — Generative Icons by LottieFiles
 
 20 animated vector icons: Trophy, Medal, Level up, XP gain, Streak flame, Badge unlock, Leaderboard, Dice, Game controller, Coin, Gem, Treasure chest, Quest, Achievement, Star rating, High score, Bonus, Power up, Lives, Round countdown.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

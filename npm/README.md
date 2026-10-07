@@ -1,6 +1,6 @@
 # npm distribution
 
-- `gen-animated-icons/`: the package people run with `npx gen-animated-icons`. It holds a
+- `generative-icons/`: the package people run with `npx generative-icons`. It holds a
   small Node shim and lists one optional dependency per platform.
 - `platforms/<target>/`: one package per release target (macOS and Linux for now; Windows
   follows once its build passes the parity tests). The Release workflow
@@ -23,7 +23,7 @@ The manifests, the package README and the shim use the intended launch addresses
 them works yet:
 
 - the repository `github.com/LottieFiles/gen-animated-icons` is private;
-- the site `gen-animated-icons.lottiefiles.com` is not live, including the `/install` page
+- the site `generativeicons.lottiefiles.com` is not live, including the `/install` page
   the shim names when it cannot run the binary;
 - none of these packages is on npm.
 

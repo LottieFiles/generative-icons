@@ -38,7 +38,7 @@ export const icons = [
 ];
 ";
 
-/// `gen-animated-icons/{icons,library}` and a build folder in a temporary directory.
+/// `generative-icons/{icons,library}` and a build folder in a temporary directory.
 struct Project {
     dir: tempfile::TempDir,
 }
@@ -47,14 +47,14 @@ impl Project {
     fn new(config: Value) -> Project {
         let dir = tempfile::tempdir().expect("temporary folder");
         let files = [
-            ("gen-animated-icons/library/timing.mjs", TIMING.to_owned()),
-            ("gen-animated-icons/icons/batches/shapes.mjs", SHAPES.to_owned()),
-            ("gen-animated-icons/icons/batches/.gitkeep", String::new()),
+            ("generative-icons/library/timing.mjs", TIMING.to_owned()),
+            ("generative-icons/icons/batches/shapes.mjs", SHAPES.to_owned()),
+            ("generative-icons/icons/batches/.gitkeep", String::new()),
             (
-                "gen-animated-icons/icons/definitions.mjs",
+                "generative-icons/icons/definitions.mjs",
                 "import {icons as shapes} from './batches/shapes.mjs';\nexport const icons = shapes;\n".to_owned(),
             ),
-            ("gen-animated-icons/icons/set-config.json", config.to_string()),
+            ("generative-icons/icons/set-config.json", config.to_string()),
         ];
         for (path, text) in files {
             let path = dir.path().join(path);
@@ -70,11 +70,11 @@ impl Project {
     }
 
     fn icons(&self) -> PathBuf {
-        self.dir.path().join("gen-animated-icons/icons")
+        self.dir.path().join("generative-icons/icons")
     }
 
     fn build_dir(&self) -> PathBuf {
-        self.dir.path().join(".gen-animated-icons/build")
+        self.dir.path().join(".generative-icons/build")
     }
 
     fn target(&self) -> Target {
@@ -282,7 +282,7 @@ fn guards() {
     assert!(matches!(&error, BuildError::UnknownIcon(name) if name == "missing"), "{error}");
 
     // run-ai.mjs: a set in the AI scope must define exactly the scope's icons.
-    let scope = project.dir.path().join("gen-animated-icons/library/design-reviews/ai-category/scope.json");
+    let scope = project.dir.path().join("generative-icons/library/design-reviews/ai-category/scope.json");
     fs::create_dir_all(scope.parent().unwrap()).unwrap();
     fs::write(&scope, r#"{"sets":[{"id":"70-fixture","icons":["switch","dot"]}]}"#).unwrap();
     let error = build(&project.target(), Mode::ReuseNative, &options(None)).unwrap_err();

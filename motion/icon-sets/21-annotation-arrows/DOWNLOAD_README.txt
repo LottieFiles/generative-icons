@@ -1,4 +1,4 @@
-ANNOTATION ARROWS — Generative Animated Icons by LottieFiles
+ANNOTATION ARROWS — Generative Icons by LottieFiles
 
 12 animated vector icons: Curved pointer right, Curved pointer left, S-curve pointer, Swoop up, Swoop down, Curled pointer, Elbow callout, Bracket callout, Callout pointer, Split connector, Merge connector, Curved double pointer.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

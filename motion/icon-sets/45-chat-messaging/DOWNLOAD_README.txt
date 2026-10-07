@@ -1,4 +1,4 @@
-CHAT & MESSAGING — Generative Animated Icons by LottieFiles
+CHAT & MESSAGING — Generative Icons by LottieFiles
 
 20 animated vector icons: Composing message, Message sent, Message delivered, Message read, Message reaction, Quoted message, Forward message, Pin message, Conversation history, Mute chat, Group chat, Voice note, Sticker, GIF picker, Edit message, Delete message, Unread divider, Archive chat, Disappearing message, Chat search.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

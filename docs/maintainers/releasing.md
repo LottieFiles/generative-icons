@@ -1,6 +1,6 @@
 # Releasing
 
-Runbook for publishing the `gen-animated-icons` CLI and the web packages `@lottiefiles/generative-icons`, `-runtime` and `-react`. They share one version. Approvals are described in [governance](governance.md). Nothing is published without an explicit go from the maintainers; no workflow publishes to npm.
+Runbook for publishing the `generative-icons` CLI and the web packages `@lottiefiles/generative-icons`, `-runtime` and `-react`. They share one version. Approvals are described in [governance](governance.md). Nothing is published without an explicit go from the maintainers; no workflow publishes to npm.
 
 ## 1. Open a release PR
 
@@ -10,7 +10,7 @@ Runbook for publishing the `gen-animated-icons` CLI and the web packages `@lotti
    ```sh
    npm version X.Y.Z --workspaces --no-git-tag-version          # packages/*
    # Cargo.toml [workspace.package] version = "X.Y.Z"
-   # npm/gen-animated-icons/package.json: version and every optionalDependencies pin
+   # npm/generative-icons/package.json: version and every optionalDependencies pin
    # npm/platforms/*/package.json: version
    grep -rn '"@lottiefiles/gen' packages/*/package.json npm/*/package.json npm/platforms/*/package.json
    ```
@@ -35,9 +35,9 @@ npm run check:docs
 npm run check:assets
 npm run check:source
 npm run check:paint
-gen-animated-icons library packages
+generative-icons library packages
 npm run test:packages
-gen-animated-icons library release --output dist/packages-vX.Y.Z
+generative-icons library release --output dist/packages-vX.Y.Z
 npm run test:consumers -- dist/packages-vX.Y.Z
 ```
 
@@ -46,7 +46,7 @@ Every command must pass. Fix failures in a PR; never weaken a check to pass.
 Then confirm:
 
 - `packages/icons/dist/release.json` has `"sourceDirty": false` and `sourceCommit` equals `git rev-parse HEAD`. A dirty tree means the build does not match the tag; clean up and rebuild.
-- `dist/packages-vX.Y.Z/release.json` lists every tarball at version X.Y.Z. The pack also contains `packages/cli`, the retired `lottie-icons` command that `gen-animated-icons` supersedes; leave it unpublished unless the maintainers decide otherwise.
+- `dist/packages-vX.Y.Z/release.json` lists every tarball at version X.Y.Z. The pack also contains `packages/cli`, the retired `lottie-icons` command that `generative-icons` supersedes; leave it unpublished unless the maintainers decide otherwise.
 - Tarball contents (`tar -tzf <file>.tgz`) contain nothing from `.local/` or other unreleased work (see [distribution](distribution.md)).
 - License and [third-party notices](https://github.com/LottieFiles/gen-animated-icons/blob/main/THIRD_PARTY_NOTICES.md) cover the shipped files. For the CLI binaries, the Release workflow adds the generated `THIRD_PARTY_LICENSES.txt` (step 3).
 
@@ -61,7 +61,7 @@ Run the **Release** workflow (Actions → Release → Run workflow) on the merge
 
 The license step pins the license files of the workspace crates, the vendored `rquickjs-sys` and the pinned `dotlottie-rs` by SHA-256 in the workflow's inline `about.toml`. If it stops because a checksum no longer matches, a license file changed (for example after a renderer bump): review the new text, then update the checksum in `.github/workflows/release.yml`.
 
-Download the artifact and check a platform tarball (`tar -tvzf`): `package/bin/gen-animated-icons` must be executable, and `package/LICENSE`, `package/THIRD_PARTY_NOTICES.md` and `package/THIRD_PARTY_LICENSES.txt` must be present. The workflow checks both, but look before you publish.
+Download the artifact and check a platform tarball (`tar -tvzf`): `package/bin/generative-icons` must be executable, and `package/LICENSE`, `package/THIRD_PARTY_NOTICES.md` and `package/THIRD_PARTY_LICENSES.txt` must be present. The workflow checks both, but look before you publish.
 
 ## 4. Publish
 
@@ -69,11 +69,11 @@ Download the artifact and check a platform tarball (`tar -tvzf`): `package/bin/g
 2. Publish the npm packages from the reviewed tarballs: the platform packages first, then the wrapper, then the web packages in dependency order. `--provenance` requires publishing from GitHub Actions with `id-token: write`.
 
    ```sh
-   npm publish lottiefiles-gen-animated-icons-darwin-arm64-X.Y.Z.tgz --access public
-   npm publish lottiefiles-gen-animated-icons-darwin-x64-X.Y.Z.tgz --access public
-   npm publish lottiefiles-gen-animated-icons-linux-arm64-gnu-X.Y.Z.tgz --access public
-   npm publish lottiefiles-gen-animated-icons-linux-x64-gnu-X.Y.Z.tgz --access public
-   npm publish gen-animated-icons-X.Y.Z.tgz --access public
+   npm publish lottiefiles-generative-icons-darwin-arm64-X.Y.Z.tgz --access public
+   npm publish lottiefiles-generative-icons-darwin-x64-X.Y.Z.tgz --access public
+   npm publish lottiefiles-generative-icons-linux-arm64-gnu-X.Y.Z.tgz --access public
+   npm publish lottiefiles-generative-icons-linux-x64-gnu-X.Y.Z.tgz --access public
+   npm publish generative-icons-X.Y.Z.tgz --access public
 
    cd dist/packages-vX.Y.Z
    npm publish lottiefiles-generative-icons-runtime-X.Y.Z.tgz --access public
@@ -83,7 +83,7 @@ Download the artifact and check a platform tarball (`tar -tvzf`): `package/bin/g
 
    For a prerelease (`X.Y.Z-next.N`), add `--tag next` to every command so `latest` is untouched.
 
-3. Verify: `npm view gen-animated-icons@X.Y.Z version`, then in a scratch app run `npx gen-animated-icons@X.Y.Z init` and `add heart`.
+3. Verify: `npm view generative-icons@X.Y.Z version`, then in a scratch app run `npx generative-icons@X.Y.Z init` and `add heart`.
 
 ## 5. Update the website
 

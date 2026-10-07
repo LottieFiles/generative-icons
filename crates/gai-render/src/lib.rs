@@ -39,7 +39,7 @@
 //!
 //! 1. The parent checks [`probe::require_browser_parity`] once, then drives a
 //!    [`SetRun`]: `start_action(name)`, then spawns
-//!    `gen-animated-icons __verify-action --assets DIR --set NN --action NAME --out TMP`.
+//!    `generative-icons __verify-action --assets DIR --set NN --action NAME --out TMP`.
 //! 2. The child calls [`verify_action`] with [`SetRules::for_set`] and writes
 //!    the result with [`ActionRun::write_to`]`(TMP)`, exiting 0.
 //! 3. On exit 0 the parent reads [`ActionRun::read_from`]`(TMP)`; if the child

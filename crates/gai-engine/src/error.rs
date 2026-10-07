@@ -223,7 +223,7 @@ mod tests {
         );
         assert_eq!(not_logged_in.code(), "NOT_LOGGED_IN");
         let expired = Error::SessionExpired("revoked".into());
-        assert!(!expired.to_string().contains("gen-animated-icons"));
+        assert!(!expired.to_string().contains("generative-icons"));
         assert_eq!(expired.kind(), ErrorKind::SessionExpired);
         let scene = serde_json::from_str::<serde_json::Value>("{").unwrap_err();
         assert_eq!(Error::InvalidScene(scene).code(), "INVALID_SCENE");

@@ -1,4 +1,4 @@
-ONBOARDING & TIPS — Generative Animated Icons by LottieFiles
+ONBOARDING & TIPS — Generative Icons by LottieFiles
 
 20 animated vector icons: Sparkle, Lightbulb, Product tour, Tooltip, Hotspot, New badge, Confetti, Welcome wave, Progress checklist, Skip step, Next step, Spark wand, Hotkey hint, Spotlight, Coachmark, Getting started, Tip of the day, Welcome gift, First run, Dismiss tip.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

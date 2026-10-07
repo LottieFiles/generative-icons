@@ -2,7 +2,7 @@
 //!
 //! `<home>/credentials.json` (mode 0600, in a 0700 home) holds, per engine origin, the
 //! discovered endpoints, the registered client and the current session. The long-lived refresh
-//! token goes to the OS keychain (service `gen-animated-icons`, account = engine origin plus a
+//! token goes to the OS keychain (service `generative-icons`, account = engine origin plus a
 //! hash of the home folder, so each home has its own) when one is available; otherwise it stays
 //! in the file. The access token lives five minutes and stays in the file.
 //!
@@ -39,7 +39,7 @@ use crate::error::{Error, Result};
 use crate::oauth::{AuthServer, RegisteredClient, TokenResponse, account_from_jwt, now};
 
 #[cfg_attr(test, allow(dead_code))]
-const KEYCHAIN_SERVICE: &str = "gen-animated-icons";
+const KEYCHAIN_SERVICE: &str = "generative-icons";
 const CREDENTIALS_FILE: &str = "credentials.json";
 const LOCK_FILE: &str = "refresh.lock";
 /// The credentials file format. Version 2 files were written by builds that keep the refresh
@@ -135,7 +135,7 @@ struct CredentialsFile {
     engines: BTreeMap<String, EngineRecord>,
 }
 
-/// Secrets by account name, under the service `gen-animated-icons`.
+/// Secrets by account name, under the service `generative-icons`.
 pub(crate) trait Keychain: Send + Sync {
     /// The secret stored for `account`, if any.
     fn get(&self, account: &str) -> Result<Option<String>>;

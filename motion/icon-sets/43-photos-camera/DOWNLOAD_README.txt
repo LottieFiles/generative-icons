@@ -1,4 +1,4 @@
-PHOTOS & CAMERA — Generative Animated Icons by LottieFiles
+PHOTOS & CAMERA — Generative Icons by LottieFiles
 
 20 animated vector icons: Flash toggle, Self-timer, Switch camera, Tripod, Aperture, Portrait mode, Live photo, Burst mode, Panorama, Exposure, Photo gallery, Photo album, Photo edit, Rotate photo, Flip photo, Brightness, Saturation, Red-eye fix, Photo delete, Photo favorite.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

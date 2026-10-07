@@ -2,7 +2,7 @@
 
 Original icon artwork, authoring code and documentation are provided under the [MIT License](https://github.com/LottieFiles/gen-animated-icons/blob/main/LICENSE). Third-party components keep their own licenses.
 
-Components bundled in this repository, its preview site and the `gen-animated-icons` binary:
+Components bundled in this repository, its preview site and the `generative-icons` binary:
 
 | Component | Where | License |
 | --- | --- | --- |
@@ -18,8 +18,8 @@ Components bundled in this repository, its preview site and the `gen-animated-ic
 
 npm dependencies are installed, not bundled. Exact versions are pinned in `package-lock.json` and `motion/package-lock.json`; each package carries its own license.
 
-Rust crates other than `rquickjs-sys` are fetched by Cargo, not vendored. Exact versions are pinned in `Cargo.lock`, and each crate carries its own license. The `gen-animated-icons` binary links them statically, including rquickjs and rquickjs-core 0.9.0 (MIT) and dotlottie-rs with ThorVG (MIT).
+Rust crates other than `rquickjs-sys` are fetched by Cargo, not vendored. Exact versions are pinned in `Cargo.lock`, and each crate carries its own license. The `generative-icons` binary links them statically, including rquickjs and rquickjs-core 0.9.0 (MIT) and dotlottie-rs with ThorVG (MIT).
 
-Native Lottie export runs as a service on LottieFiles' hosted engine. No engine code is part of this repository or the `gen-animated-icons` binary.
+Native Lottie export runs as a service on LottieFiles' hosted engine. No engine code is part of this repository or the `generative-icons` binary.
 
 LottieFiles names and logos identify the project. The MIT License does not grant trademark rights.

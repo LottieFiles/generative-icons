@@ -1,4 +1,4 @@
-COMMERCE & DELIVERY — Generative Animated Icons by LottieFiles
+COMMERCE & DELIVERY — Generative Icons by LottieFiles
 
 20 animated vector icons: Storefront, Shopping bag, Basket, Product tag, Product variants, Discount, Coupon, Loyalty points, Gift card, Subscription box, Checkout, Order confirmed, Open package, Packing tape, Return package, Delivery truck, Order tracking, Pickup locker, Warehouse, Inventory.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

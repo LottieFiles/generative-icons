@@ -1,4 +1,4 @@
-DRAWING & DESIGN TOOLS — Generative Animated Icons by LottieFiles
+DRAWING & DESIGN TOOLS — Generative Icons by LottieFiles
 
 20 animated vector icons: Pen tool, Brush, Eraser, Corner radius, Line tool, Rectangle tool, Ellipse tool, Polygon tool, Fill bucket, Eyedropper, Group objects, Align objects, Magic wand, Lasso select, Transform tool, Rotate tool, Mirror tool, Snap to grid, Ruler guides, Scissors.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -1,6 +1,6 @@
-# gen-animated-icons (Rust workspace)
+# generative-icons (Rust workspace)
 
-`gen-animated-icons` is one binary that finds, creates, builds, checks and packages animated icons. It replaces the Node, Python and browser pipeline in `motion/`, `scripts/` and `prototype/icons/*/verify.html`, and the earlier npm command `lottie-icons` (`packages/cli`). User docs: [docs/cli.md](../docs/cli.md); contributor setup: [docs/development.md](../docs/development.md).
+`generative-icons` is one binary that finds, creates, builds, checks and packages animated icons. It replaces the Node, Python and browser pipeline in `motion/`, `scripts/` and `prototype/icons/*/verify.html`, and the earlier npm command `lottie-icons` (`packages/cli`). User docs: [docs/cli.md](../docs/cli.md); contributor setup: [docs/development.md](../docs/development.md).
 
 ## Status
 
@@ -49,7 +49,7 @@ icons/<id>.icon.json ─► gai-spec: parse + names + motion + lints (offline, m
       gai-build::post_export_v2 (slots by paint name, themes, markers) ─► gai-package .lottie ─► verify ─► install
 ```
 
-v1 code paths are unchanged; `create` writes a spec unless given `--batch`; `check`, `draft`, `build` and `submit` take the v2 path only for icons with a spec (`check` without ids checks every spec as well), and the MCP server adds a `draft` tool that returns the sheets as images. A draft or build reports its engine round trip split at the script's own `startedAt` (`engine.phases`: before, in and after the script). Authoring reference: `gen-animated-icons/assets/skill/references/authoring-v2.md`. A build's verification includes the library's renderer checks (`gai-render::verify_action` at every size, style, weight and theme).
+v1 code paths are unchanged; `create` writes a spec unless given `--batch`; `check`, `draft`, `build` and `submit` take the v2 path only for icons with a spec (`check` without ids checks every spec as well), and the MCP server adds a `draft` tool that returns the sheets as images. A draft or build reports its engine round trip split at the script's own `startedAt` (`engine.phases`: before, in and after the script). Authoring reference: `generative-icons/assets/skill/references/authoring-v2.md`. A build's verification includes the library's renderer checks (`gai-render::verify_action` at every size, style, weight and theme).
 
 Library icons can be replaced by specs: `library adopt <set> <build>…` copies a build's spec to the set's `specs/<id>.icon.json` and its actions into the assets, replaces the `set.json` entry (records with `source: "gai-icon/2"`) and repackages. `library build` keeps adopted icons as they are (`gai-build` splices their committed entries back), and `library verify` runs the legacy stages without them and checks them against their spec (`gai-check::verify::adopted`).
 
@@ -65,7 +65,7 @@ Library icons can be replaced by specs: `library adopt <set> <build>…` copies 
 | `gai-render` | dotlottie-rs rendering, the visual checks that replace `verify.html`, review sheets |
 | `gai-engine` | Hosted Creator MCP client: OAuth sign-in, token storage, export, downloads, native normalization; `PlanRunner` for spec v2 (one call per icon, draft images, bundle split) |
 | `gai-spec` | Icon spec v2 (`gai-icon/2`): JSON validation with pointer diagnostics, the compiler to a plan (`gai-plan/1`), lints, and the engine script `assets/build-v2.js` |
-| `gen-animated-icons` | The CLI: app commands, `library` maintainer commands, the `mcp` server, and the agent skill it installs (`assets/skill/`, the one source of that skill) |
+| `generative-icons` | The CLI: app commands, `library` maintainer commands, the `mcp` server, and the agent skill it installs (`assets/skill/`, the one source of that skill) |
 
 ## Build
 
@@ -75,7 +75,7 @@ Library icons can be replaced by specs: `library adopt <set> <build>…` copies 
 - **x86_64 needs FMA at run time.** gai-js checks for it before running JS; Rosetta has none.
 
 ```sh
-cargo build --release -p gen-animated-icons
+cargo build --release -p generative-icons
 cargo clippy --workspace --all-targets -- -D warnings
 ```
 
@@ -115,12 +115,12 @@ cargo test --workspace --release -- --ignored --skip live_   # whole-catalog par
 - **Renderer is the one users run.** dotlottie-rs at `e112d3f`, the commit dotlottie-web 0.80.0 was built from. The player reloads for every paint change, because a second slot flush after a render crashes natively.
 - **Frozen sets.** 01 and 02 are never rebuilt (their assets are verified as they are). 03–06 build through built-in legacy profiles.
 - **Formats kept for now.** `set.json` and dotLottie manifests stay in Python `json.dumps` format, and the `.lottie` ZIP bytes stay exact (classic zlib level 9, fixed dates). Changing a format is a deliberate, separate step.
-- **One skill source.** The app skill is `gen-animated-icons/assets/skill/`, embedded in the binary. `skills/lottie-icons/` is the retired skill, frozen byte for byte because `init --migrate` recognizes it by hash and the legacy package build copies it.
+- **One skill source.** The app skill is `generative-icons/assets/skill/`, embedded in the binary. `skills/lottie-icons/` is the retired skill, frozen byte for byte because `init --migrate` recognizes it by hash and the legacy package build copies it.
 
 ## Known limits
 
 - **Targets.** Parity was measured on aarch64-apple-darwin only. x86_64 and Linux are checked first by CI (the renderer probe and the math self-test run in the tests and in `doctor`). Windows is unsupported: CORE-MATH needs `__int128`, and the build passes GNU-style flags. Linux arm64 release builds need hosted arm64 runners, which a private repository must have enabled.
-- **Before launch.** The hosted engine is internal; the default library (`gen-animated-icons.lottiefiles.com/library/v1/`) and the submission endpoint do not resolve yet, so `search`, `add` and `submit` need `--library <checkout>` or `--dry-run`. The engine has no device-code flow or API keys: `login --no-browser` pastes the redirect, and `GAI_ENGINE_TOKEN` only carries a short-lived access token.
+- **Before launch.** The hosted engine is internal; the default library (`generativeicons.lottiefiles.com/library/v1/`) and the submission endpoint do not resolve yet, so `search`, `add` and `submit` need `--library <checkout>` or `--dry-run`. The engine has no device-code flow or API keys: `login --no-browser` pastes the redirect, and `GAI_ENGINE_TOKEN` only carries a short-lived access token.
 - **Legacy evidence.** Sets 01–20 wrote older browser-evidence schemas. The tests validate them on shared keys only, and running `verify-visual` on them would rewrite their evidence in the current schema. Motion measurement for sets 18–21 is not ported (their legacy scripts used other algorithms); their committed evidence carries forward.
 - **Not ported.** `ai-icons.zip` (`package-ai.py`), `merge-render-evidence.py`, filmstrip PNGs next to natives, the gallery server and site build, the docs build and check, and an exact `lottie-icons` compat mode (legacy projects already get the old file bytes). The asset audit is ported (`gai_package::audit_assets`) but has no command yet, so `npm run check:assets` stays.
 - **Outputs.** Stale outputs are never deleted (for example set 50's `do-not-disturb*` files), matching the old builders. Set zips still list the JS pipeline in `REBUILD.txt` and their source bundles, for parity with Python.

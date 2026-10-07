@@ -1,4 +1,4 @@
-FIVE USEFUL ACTIONS — Generative Animated Icons by LottieFiles
+FIVE USEFUL ACTIONS — Generative Icons by LottieFiles
 
 5 animated vector icons: A turn toward attention., Confirmation that stays., A deliberate adjustment., A latch with intent., Open the folder..
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

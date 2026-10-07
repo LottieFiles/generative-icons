@@ -891,7 +891,7 @@ JS_EXTERN void JS_SetHostPromiseRejectionTracker(JSRuntime *rt, JSHostPromiseRej
 /* return != 0 if the JS code needs to be interrupted */
 typedef int JSInterruptHandler(JSRuntime *rt, void *opaque);
 JS_EXTERN void JS_SetInterruptHandler(JSRuntime *rt, JSInterruptHandler *cb, void *opaque);
-/* gen-animated-icons: makes the next interrupt poll call the interrupt handler, so code
+/* generative-icons: makes the next interrupt poll call the interrupt handler, so code
    that polls rarely for its run time (a loop of slow builtins, each counted as one step)
    still stops promptly. Safe to call from any thread while rt is alive. */
 JS_EXTERN void JS_RequestInterrupt(JSRuntime *rt);

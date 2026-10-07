@@ -1,4 +1,4 @@
-EVERYDAY CONTROLS — Generative Animated Icons by LottieFiles
+EVERYDAY CONTROLS — Generative Icons by LottieFiles
 
 20 animated vector icons: Add / remove, Close, Undo / redo, More options, External link, Share, Cut, Paste, Zoom in / out, Select all, Move tool, Grid / list view, Sidebar toggle, Split view, Tab switcher, Command menu, Drag handle, Archive, Target, Power.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

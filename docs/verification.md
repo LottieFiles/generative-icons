@@ -2,7 +2,7 @@
 
 ## Icons in your app
 
-`gen-animated-icons check` runs offline: the source preflight for local icons, the installed descriptors, the config and lock, and the verification of each current build. `build` runs the same source checks before it exports, verifies the native result before it installs anything, and renders preview sheets. See [creating icons](creating-icons.md) for the review loop.
+`generative-icons check` runs offline: the source preflight for local icons, the installed descriptors, the config and lock, and the verification of each current build. `build` runs the same source checks before it exports, verifies the native result before it installs anything, and renders preview sheets. See [creating icons](creating-icons.md) for the review loop.
 
 ## The library
 
@@ -10,11 +10,11 @@ Run from the repository root:
 
 | Command | Checks | Needs sign-in |
 | --- | --- | --- |
-| `gen-animated-icons library preflight --all` | Source definitions across frames, profiles, directions and weights (legacy sets reported separately) | No |
-| `gen-animated-icons library verify SET-ID` | Set gates on the native build: provenance, format, paint and slots, holds, Light/Strong and reverse pairing, set-specific geometry and clearance | No |
-| `gen-animated-icons library verify --paint` | The shared native paint contract across the catalog | No |
-| `gen-animated-icons library verify-visual SET-ID` | Every action rendered with the players' dotLottie core at each size, style, weight and theme (the checks the old browser page ran), plus review sheets | No |
-| `gen-animated-icons library build SET-ID` | Preflight, hosted export and packaging | Yes |
+| `generative-icons library preflight --all` | Source definitions across frames, profiles, directions and weights (legacy sets reported separately) | No |
+| `generative-icons library verify SET-ID` | Set gates on the native build: provenance, format, paint and slots, holds, Light/Strong and reverse pairing, set-specific geometry and clearance | No |
+| `generative-icons library verify --paint` | The shared native paint contract across the catalog | No |
+| `generative-icons library verify-visual SET-ID` | Every action rendered with the players' dotLottie core at each size, style, weight and theme (the checks the old browser page ran), plus review sheets | No |
+| `generative-icons library build SET-ID` | Preflight, hosted export and packaging | Yes |
 | `cargo test --workspace` | The CLI and its parity with the committed outputs | No |
 | `npm test` | Gallery controller, generation harness and set scaffold | No |
 | `npm run check:assets` | Unique catalog IDs, package hashes, ZIP integrity, loose JSON presence | No |
@@ -26,7 +26,7 @@ CI runs the Rust build, lints and tests on macOS (arm64) and Linux (x64), and th
 
 ## Rendered review
 
-`gen-animated-icons library verify-visual SET-ID` renders every action with the same dotLottie core the players use and writes `evidence/browser-verification.json` with rest, style and pose sheets. `gen-animated-icons preview <id>` renders any icon's motions to contact sheets for a closer look (`--times` puts columns on chosen moments).
+`generative-icons library verify-visual SET-ID` renders every action with the same dotLottie core the players use and writes `evidence/browser-verification.json` with rest, style and pose sheets. `generative-icons preview <id>` renders any icon's motions to contact sheets for a closer look (`--times` puts columns on chosen moments).
 
 Review:
 

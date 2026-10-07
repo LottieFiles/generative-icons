@@ -1,4 +1,4 @@
-HEART & BELL — Generative Animated Icons by LottieFiles
+HEART & BELL — Generative Icons by LottieFiles
 
 2 animated vector icons: One clear beat., A considered ring..
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

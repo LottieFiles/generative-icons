@@ -1,4 +1,4 @@
-VOICE — Generative Animated Icons by LottieFiles
+VOICE — Generative Icons by LottieFiles
 
 10 animated vector icons: Listening, Speaking, Voice activity, Voice recording, Push to talk, Microphone muted, Wake word, Switch voice, Voice isolation, Voice speed.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

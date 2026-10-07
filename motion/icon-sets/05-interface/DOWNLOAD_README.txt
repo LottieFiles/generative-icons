@@ -1,4 +1,4 @@
-TWENTY INTERFACE ACTIONS — Generative Animated Icons by LottieFiles
+TWENTY INTERFACE ACTIONS — Generative Icons by LottieFiles
 
 20 animated vector icons: Home, Calendar, Clock, Camera, Image, Mail, Message, Phone, Microphone, Volume, Wi-Fi, Cloud, Sun, Moon, Location, Compass, Link, Shield, Cart, Settings.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -11,5 +11,5 @@ class Handler(SimpleHTTPRequestHandler):
  def __init__(self,*args,**kwargs):super().__init__(*args,directory=str(root),**kwargs)
  def log_message(self,*args):pass
  def end_headers(self):self.send_header('Cache-Control','no-store');super().end_headers()
-print(f'Generative Animated Icons: http://127.0.0.1:{a.port}/icons/01/',flush=True)
+print(f'Generative Icons: http://127.0.0.1:{a.port}/icons/01/',flush=True)
 ThreadingHTTPServer(('127.0.0.1',a.port),Handler).serve_forever()

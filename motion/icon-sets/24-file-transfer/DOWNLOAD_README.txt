@@ -1,4 +1,4 @@
-FILES & TRANSFERS — Generative Animated Icons by LottieFiles
+FILES & TRANSFERS — Generative Icons by LottieFiles
 
 10 animated vector icons: File upload, File download, Attach file, Detach file, Cloud upload, Cloud download, Drag and drop, Batch upload, Compress files, Extract files.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

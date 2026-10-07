@@ -90,8 +90,8 @@ impl SetSource {
         Ok(SetSource::Definitions { set_dir, library_dir, profile })
     }
 
-    /// A user project's icon source (`gen-animated-icons/icons`), a `build-set.mjs`-style set
-    /// whose managed kit copy is `gen-animated-icons/library`.
+    /// A user project's icon source (`generative-icons/icons`), a `build-set.mjs`-style set
+    /// whose managed kit copy is `generative-icons/library`.
     pub fn user_project(icons_dir: impl Into<PathBuf>) -> Self {
         let set_dir = icons_dir.into();
         let library_dir = set_dir.join("..").join("library");
@@ -143,12 +143,12 @@ mod tests {
 
     #[test]
     fn user_projects_resolve_the_kit_next_to_the_icons() {
-        let source = SetSource::user_project("/p/gen-animated-icons/icons");
+        let source = SetSource::user_project("/p/generative-icons/icons");
         assert_eq!(
             source,
             SetSource::Definitions {
-                set_dir: "/p/gen-animated-icons/icons".into(),
-                library_dir: "/p/gen-animated-icons/icons/../library".into(),
+                set_dir: "/p/generative-icons/icons".into(),
+                library_dir: "/p/generative-icons/icons/../library".into(),
                 profile: ModernProfile::SHARED,
             }
         );

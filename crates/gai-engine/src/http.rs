@@ -28,7 +28,7 @@ pub(crate) fn client() -> Result<Client> {
 /// [`client`] with requests that time out after `timeout`.
 pub(crate) fn client_with_timeout(timeout: Duration) -> Result<Client> {
     Ok(Client::builder()
-        .user_agent(concat!("gen-animated-icons/", env!("CARGO_PKG_VERSION")))
+        .user_agent(concat!("generative-icons/", env!("CARGO_PKG_VERSION")))
         .timeout(timeout)
         .connect_timeout(CONNECT_TIMEOUT.min(timeout))
         .redirect(Policy::none())
@@ -60,7 +60,7 @@ impl Downloader {
             }
         });
         let client = Client::builder()
-            .user_agent(concat!("gen-animated-icons/", env!("CARGO_PKG_VERSION")))
+            .user_agent(concat!("generative-icons/", env!("CARGO_PKG_VERSION")))
             .timeout(timeout)
             .connect_timeout(CONNECT_TIMEOUT.min(timeout))
             .redirect(redirects)

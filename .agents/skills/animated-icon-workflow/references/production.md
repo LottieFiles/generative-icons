@@ -1,8 +1,8 @@
 # Production and verification
 
-Run commands from the repository root with the `gen-animated-icons` CLI and confirm paths against the checkout. Use [polish-review.md](polish-review.md) for acceptance criteria and the per-icon record. Derive the expected icons and forward/reverse/reset actions from the current catalog and set metadata, never from a fixed count.
+Run commands from the repository root with the `generative-icons` CLI and confirm paths against the checkout. Use [polish-review.md](polish-review.md) for acceptance criteria and the per-icon record. Derive the expected icons and forward/reverse/reset actions from the current catalog and set metadata, never from a fixed count.
 
-Follow [generation-harness.md](generation-harness.md) before export. `gen-animated-icons library build SET-ID` runs source preflight, then exports every action on LottieFiles' hosted engine, post-processes the native files, and packages the set: `.lottie` files, `set.json`, `evidence/build.json` and the set zip. A failing preflight stops it before anything is exported. A clean source report does not replace any native or delivery gate.
+Follow [generation-harness.md](generation-harness.md) before export. `generative-icons library build SET-ID` runs source preflight, then exports every action on LottieFiles' hosted engine, post-processes the native files, and packages the set: `.lottie` files, `set.json`, `evidence/build.json` and the set zip. A failing preflight stops it before anything is exported. A clean source report does not replace any native or delivery gate.
 
 ## Source layout
 
@@ -21,7 +21,7 @@ The per-set `build.mjs`, `verify.mjs`, `verify-clearance.mjs` and `package.py` f
 
 Build complete sets: a set build regenerates the set manifest and packages all its records. Rebuild the complete affected set and confirm that unaffected native asset hashes are unchanged.
 
-Use `gen-animated-icons library new-set <slug> --name "Display name"` to scaffold a new set. Supply unique icon names and custom geometry/motion. After a successful complete build and verification, run `gen-animated-icons library register SET-ID` to check and register it. Do not hardcode an icon or action count into a new acceptance test.
+Use `generative-icons library new-set <slug> --name "Display name"` to scaffold a new set. Supply unique icon names and custom geometry/motion. After a successful complete build and verification, run `generative-icons library register SET-ID` to check and register it. Do not hardcode an icon or action count into a new acceptance test.
 
 ## Paint and styles
 
@@ -35,11 +35,11 @@ For filled Outline marks, the weight is in the geometry. The More options check 
 
 1. Snapshot affected current JSON, dotLottie, metadata, and pose images, plus hashes for untouched assets.
 2. Build affected sets with `library build`, run `library verify SET-ID` for each, and run `library verify --paint` across the catalog. Source checks must compare actual exported geometry/paint with the intended constraints.
-3. Run `gen-animated-icons library verify-visual SET-ID` (`--icons name1,name2` for a focused run). It renders every action in a child process with the players' renderer and writes `evidence/browser-verification.json` plus rest, style and pose sheets to both the set's `evidence/` and its served `assets/`. A focused run keeps the earlier records of the other icons. Check results and errors; a failed aggregate stays failed.
+3. Run `generative-icons library verify-visual SET-ID` (`--icons name1,name2` for a focused run). It renders every action in a child process with the players' renderer and writes `evidence/browser-verification.json` plus rest, style and pose sheets to both the set's `evidence/` and its served `assets/`. A focused run keeps the earlier records of the other icons. Check results and errors; a failed aggregate stays failed.
 4. Use the available browser skill to inspect the real gallery (`npm run dev`, `/icons/01/`). Do not control a second browser through an unrelated automation stack. Leave the user's gallery server running, and stop only processes you started.
-5. Look at the sheets, and at `gen-animated-icons preview <id> --times …` for the moments that matter. Feed observed flaws into the next correction.
+5. Look at the sheets, and at `generative-icons preview <id> --times …` for the moments that matter. Feed observed flaws into the next correction.
 6. Run `npm test` for catalog/state/controller changes, or a focused live interaction check for an asset-only correction. Keep new visual tests proportional to the actual risk.
-7. Package the affected set after its final render proof with `gen-animated-icons library package SET-ID`, then refresh the aggregate download with `gen-animated-icons library package --icon-library`. Verify ZIP integrity, catalog action coverage, every selected initial animation, embedded sibling JSON, per-action hashes, and actual HTTP download bytes. Include current shared authoring dependencies, instructions and review evidence in source archives.
+7. Package the affected set after its final render proof with `generative-icons library package SET-ID`, then refresh the aggregate download with `generative-icons library package --icon-library`. Verify ZIP integrity, catalog action coverage, every selected initial animation, embedded sibling JSON, per-action hashes, and actual HTTP download bytes. Include current shared authoring dependencies, instructions and review evidence in source archives.
 
 Keep current evidence separate from failed attempts. Report source correctness, all-frame rendering, sampled visual review, live interaction and delivery bytes as separate evidence.
 

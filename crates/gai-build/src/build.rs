@@ -242,9 +242,9 @@ pub enum BuildError {
     NotInLibrary(PathBuf),
     #[error("no icon named {0}")]
     UnknownIcon(String),
-    #[error("{0} is adopted from specs/{0}.icon.json: build it with `gen-animated-icons build` in a project and run `library adopt`")]
+    #[error("{0} is adopted from specs/{0}.icon.json: build it with `generative-icons build` in a project and run `library adopt`")]
     Adopted(String),
-    #[error("specs/{0}.icon.json exists, but set.json's entry for {0} was not adopted from it: run `gen-animated-icons library adopt`")]
+    #[error("specs/{0}.icon.json exists, but set.json's entry for {0} was not adopted from it: run `generative-icons library adopt`")]
     NotAdopted(String),
     #[error("animation name {0:?} cannot be used as a file name")]
     InvalidName(String),

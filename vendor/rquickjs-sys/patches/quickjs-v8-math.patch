@@ -4,7 +4,7 @@
  #include "cutils.h"
  #include "list.h"
  #include "quickjs.h"
-+#include "gai_math.h" /* gen-animated-icons: V8-exact Math */
++#include "gai_math.h" /* generative-icons: V8-exact Math */
 +
  #include "libregexp.h"
  #include "libbf.h"
@@ -13,7 +13,7 @@
      }
  }
  
-+/* gen-animated-icons: Math.pow and the ** operator use V8's pow semantics. */
++/* generative-icons: Math.pow and the ** operator use V8's pow semantics. */
  static double js_math_pow(double a, double b)
  {
 -    if (unlikely(!isfinite(b)) && fabs(a) == 1) {
@@ -32,7 +32,7 @@
  {
 -    double r, a;
 -    int i;
-+    /* gen-animated-icons: V8's MathHypot (src/builtins/math.tq): convert
++    /* generative-icons: V8's MathHypot (src/builtins/math.tq): convert
 +       every argument first, then Kahan-sum the squares normalized by the
 +       largest magnitude. The products must stay unfused, as in V8. */
 +#if defined(__clang__)
@@ -112,7 +112,7 @@
 -static double js_math_log(double d) { return log(d); }
 -static double js_math_sin(double d) { return sin(d); }
 -static double js_math_tan(double d) { return tan(d); }
-+/* gen-animated-icons: V8 fdlibm (gai_math.h) instead of the platform libm. */
++/* generative-icons: V8 fdlibm (gai_math.h) instead of the platform libm. */
 +static double js_math_acos(double d) { return gai_acos(d); }
 +static double js_math_asin(double d) { return gai_asin(d); }
 +static double js_math_atan(double d) { return gai_atan(d); }

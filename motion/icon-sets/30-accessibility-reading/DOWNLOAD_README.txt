@@ -1,4 +1,4 @@
-ACCESSIBILITY & READING — Generative Animated Icons by LottieFiles
+ACCESSIBILITY & READING — Generative Icons by LottieFiles
 
 10 animated vector icons: Accessibility, Wheelchair access, Hearing assistance, High contrast, Reduced motion, Text size, Keyboard, Keyboard shortcuts, Focus indicator, Reading mode.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

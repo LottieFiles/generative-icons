@@ -2,11 +2,11 @@
 
 ## Creating icons needs a LottieFiles sign-in
 
-`gen-animated-icons build` exports native Lottie on LottieFiles' hosted engine, so it needs a sign-in (`gen-animated-icons login`). The hosted engine is internal until launch, so building may not work for your account yet. Sign-in uses the browser, or a pasted redirect address with `--no-browser`; there is no API key or device code for unattended machines yet. Searching, installing, checking and previewing need no sign-in, and existing icons, the packages and the local gallery work without one.
+`generative-icons build` exports native Lottie on LottieFiles' hosted engine, so it needs a sign-in (`generative-icons login`). The hosted engine is internal until launch, so building may not work for your account yet. Sign-in uses the browser, or a pasted redirect address with `--no-browser`; there is no API key or device code for unattended machines yet. Searching, installing, checking and previewing need no sign-in, and existing icons, the packages and the local gallery work without one.
 
 ## Before launch
 
-The npm packages, the hosted library behind `search` and `add`, and the submission service behind `submit` go live at launch. Until then, build the CLI from the repository, build the packages in the checkout (`gen-animated-icons library packages`) and pass `--library <checkout>`; `submit --dry-run` writes the bundle without sending it.
+The npm packages, the hosted library behind `search` and `add`, and the submission service behind `submit` go live at launch. Until then, build the CLI from the repository, build the packages in the checkout (`generative-icons library packages`) and pass `--library <checkout>`; `submit --dry-run` writes the bundle without sending it.
 
 ## Platforms
 
@@ -19,7 +19,7 @@ The npm packages, the hosted library behind `search` and `add`, and the submissi
 
 Heart/Bell (set 01) and Search (set 02) use legacy inline builders and are not covered by the separate-definition preflight. Their assets are verified as they are and never rebuilt. Some legacy review records refer to historical comparison evidence; missing evidence is not a pass.
 
-The set archives (`<set-id>.zip`, in `source/REBUILD.txt`) and the per-set READMEs under `motion/icon-sets/` still give the retired local build steps: a locally installed exporter, the set's own build script and a `doctor` npm script. Those steps no longer work. Rebuild a set with `gen-animated-icons library build` and check it with `gen-animated-icons library verify`.
+The set archives (`<set-id>.zip`, in `source/REBUILD.txt`) and the per-set READMEs under `motion/icon-sets/` still give the retired local build steps: a locally installed exporter, the set's own build script and a `doctor` npm script. Those steps no longer work. Rebuild a set with `generative-icons library build` and check it with `generative-icons library verify`.
 
 ## Verification scope
 

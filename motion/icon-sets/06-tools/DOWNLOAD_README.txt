@@ -1,4 +1,4 @@
-TOOLS AND CONTROLS — Generative Animated Icons by LottieFiles
+TOOLS AND CONTROLS — Generative Icons by LottieFiles
 
 21 animated vector icons: User, Users, Key, Scan, Battery, Plug, Bluetooth, Monitor, Smartphone, Laptop, Printer, Document, Clipboard, Book, Credit card, Wallet, Gift, Flag, Chart, Filter, Keyframes.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -1,4 +1,4 @@
-DEVELOPER & VERSION CONTROL — Generative Animated Icons by LottieFiles
+DEVELOPER & VERSION CONTROL — Generative Icons by LottieFiles
 
 13 animated vector icons: Repository, Git branch, Git commit, Git merge, Pull request, Repository fork, Merge conflict, Git stash, Debug, Breakpoint, Debug step, Regular expression, Webhook.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

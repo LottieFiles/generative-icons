@@ -1,4 +1,4 @@
-MAPS & NAVIGATION — Generative Animated Icons by LottieFiles
+MAPS & NAVIGATION — Generative Icons by LottieFiles
 
 20 animated vector icons: Pin cluster, Current location, Directions, Turn by turn, Route recalculate, Traffic light, Map layers, Satellite, Street view, Geofence, Distance, Elevation, Parking, Fuel station, EV charger, Transit stop, Walking route, Roundabout, Offline map, Toll gate.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -214,7 +214,7 @@ fn main() {
         builder.file(out_dir.join(src));
     }
 
-    // gen-animated-icons: quickjs.c calls the V8-exact Math in gai/ (see PATCHED.md).
+    // generative-icons: quickjs.c calls the V8-exact Math in gai/ (see PATCHED.md).
     // Its own arithmetic must never be contracted into FMAs (Math.hypot above all),
     // whatever the host compiler's default is.
     let target_arch = env::var("CARGO_CFG_TARGET_ARCH").unwrap();
@@ -257,7 +257,7 @@ fn gai_math_objects(gai_dir: &Path, target_arch: &str) -> Vec<PathBuf> {
         .flag("-fno-rtti");
     if !v8.get_compiler().is_like_clang() {
         panic!(
-            "rquickjs-sys (gen-animated-icons): V8's ieee754.cc must be compiled by clang to \
+            "rquickjs-sys (generative-icons): V8's ieee754.cc must be compiled by clang to \
              reproduce Node's Math results; set CXX=clang++"
         );
     }

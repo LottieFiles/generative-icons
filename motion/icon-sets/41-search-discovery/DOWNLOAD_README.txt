@@ -1,4 +1,4 @@
-SEARCH & DISCOVERY — Generative Animated Icons by LottieFiles
+SEARCH & DISCOVERY — Generative Icons by LottieFiles
 
 20 animated vector icons: Search suggest, Recent searches, Search clear, Search voice, Search image, Search filter, Sort ascending, Sort descending, Hashtag, Tag add, Tag remove, Trending up, Trending down, Telescope, Related items, Saved search, Web search, Search match, Search scope, Searching.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

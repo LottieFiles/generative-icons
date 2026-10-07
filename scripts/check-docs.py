@@ -8,7 +8,7 @@ from pathlib import Path
 import hashlib,json,re,subprocess
 root=Path(__file__).resolve().parents[1]
 files=[*root.glob('*.md'),*(root/'docs').rglob('*.md'),*(root/'.agents').rglob('*.md'),*(root/'skills').rglob('*.md'),*root.glob('packages/*/README.md'),
- *root.glob('npm/**/README.md'),*root.glob('crates/README.md'),*(root/'crates/gen-animated-icons/assets/skill').rglob('*.md')]
+ *root.glob('npm/**/README.md'),*root.glob('crates/README.md'),*(root/'crates/generative-icons/assets/skill').rglob('*.md')]
 errors=[]
 for p in files:
  text=p.read_text();plain=re.sub(r'```.*?```','',text,flags=re.S)
@@ -17,7 +17,7 @@ for p in files:
   target=target.split('#')[0]
   if not (p.parent/target).exists():errors.append(f'{p.relative_to(root)}: missing {target}')
 # Machine-specific paths and retired product names, as (fast literal needle, pattern).
-# The public product name is "Generative Animated Icons".
+# The public product name is "Generative Icons".
 PUBLIC=[('/Users/',r'/Users/[^/\s"]+/'),('/home/',r'/home/[^/\s"]+/'),('Users\\',r'[A-Za-z]:\\{1,2}Users\\'),
  ('/private/',r'/private/(?:tmp|var)/'),('/var/folders/',r'/var/folders/'),
  ('Lottie Generative Icons',r'Lottie Generative Icons'),('Motion for Developers',r'Motion for Developers'),
@@ -31,13 +31,15 @@ try:
 except (OSError,subprocess.CalledProcessError):
  public=files
 # Retired setup, local-exporter, CLI and repository names. Maintained docs, templates and the generated
-# AI guide point at gen-animated-icons, its repository and the hosted engine. The retired lottie-icons skill and package README
+# AI guide point at generative-icons, its repository and the hosted engine. The retired lottie-icons skill and package README
 # are frozen, and the changelog keeps history, so they are exempt.
 RETIRED=[('CREATOR_MCP_BIN',r'CREATOR_MCP_BIN'),('ENGINE_MCP_ROOT',r'ENGINE_MCP_ROOT'),('Engine exporter',r'Engine exporter'),
  ('npm run ',r'npm run (?:setup|doctor|test:tooling)\b'),('generative-icons-cli',r'@lottiefiles/generative-icons-cli'),
  ('lottie-icons',r'npx lottie-icons\b|\blottie-icons (?:init|info|search|add|diff|author)\b'),
  ('127.0.0.1',r'127\.0\.0\.1'),('localhost',r'\blocalhost\b'),('exporter-config',r'exporter-config|motion/src/doctor'),
- ('lottie-generative-icons',r'LottieFiles/lottie-generative-icons')]
+ ('lottie-generative-icons',r'LottieFiles/lottie-generative-icons'),
+ ('Generative Animated Icons',r'Generative Animated Icons'),
+ ('gen-animated-icons',r'npx gen-animated-icons\b|\bgen-animated-icons (?:init|info|search|add|diff|remove|create|check|draft|build|preview|login|logout|whoami|library|doctor|submit|context|mcp)\b')]
 EXEMPT=('skills/lottie-icons/','packages/cli/README.md','CHANGELOG.md')
 templates=[*(root/'.github').rglob('*.md'),*(root/'.github').rglob('*.yml'),*root.glob('prototype/icons/guide/*.md'),root/'prototype/icons/guide/index.html']
 retired=[(n,re.compile(p)) for n,p in RETIRED]
@@ -46,7 +48,7 @@ for p in [*files,*templates]:
  if rel.startswith(EXEMPT) or not p.is_file():continue
  text=p.read_text()
  for needle,pattern in retired:
-  if needle in text and (m:=pattern.search(text)):errors.append(f'{rel}: retired name {m.group(0)!r}; use gen-animated-icons and the hosted engine')
+  if needle in text and (m:=pattern.search(text)):errors.append(f'{rel}: retired name {m.group(0)!r}; use generative-icons and the hosted engine')
 checks=[(n,re.compile(p),p) for n,p in PUBLIC]
 if PRIVATE:checks.append((None,re.compile('|'.join(f'(?:{p})' for p in PRIVATE),re.I),'a private term from .local/publication-blocklist.txt'))
 scanned=0

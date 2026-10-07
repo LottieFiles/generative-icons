@@ -1,4 +1,4 @@
-MEDIA & PLAYBACK — Generative Animated Icons by LottieFiles
+MEDIA & PLAYBACK — Generative Icons by LottieFiles
 
 20 animated vector icons: Play / Pause, Stop, Next track, Previous track, Replay 10 seconds, Forward 10 seconds, Shuffle, Repeat, Playlist, Add to queue, Headphones, Podcast, Live broadcast, Cast, Screen share, Video call, Closed captions, Fullscreen, Picture-in-picture, Camera off.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

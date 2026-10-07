@@ -1,4 +1,4 @@
-NOTIFICATIONS — Generative Animated Icons by LottieFiles
+NOTIFICATIONS — Generative Icons by LottieFiles
 
 20 animated vector icons: Bell ring, Bell off, Bell snooze, Notification badge, Toast message, Banner alert, Push notification, Inbox zero, Mark all read, Notification stack, Mention alert, Priority alert, Do not disturb, Reminder ping, Daily digest, Notification settings, Alert dismiss, Alert expand, Sound alert, Vibrate alert.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

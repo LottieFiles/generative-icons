@@ -1,0 +1,45 @@
+[package]
+name = "generative-icons"
+description = "Find, create and build animated icons for your project with your AI"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+# std `File::lock` (1.89) serializes concurrent runs in one project.
+rust-version = "1.89"
+repository.workspace = true
+
+[lib]
+name = "generative_icons"
+path = "src/lib.rs"
+
+[[bin]]
+name = "generative-icons"
+path = "src/main.rs"
+
+[dependencies]
+gai-core.workspace = true
+gai-js = { path = "../gai-js" }
+gai-build = { path = "../gai-build" }
+gai-check = { path = "../gai-check" }
+gai-package = { path = "../gai-package" }
+gai-render = { path = "../gai-render" }
+gai-engine = { path = "../gai-engine" }
+gai-spec = { path = "../gai-spec" }
+anyhow.workspace = true
+base64 = "0.22"
+clap = { version = "4.6", features = ["derive", "env"] }
+crc32fast = "1.5"
+dirs = "6.0"
+indexmap.workspace = true
+miniz_oxide = "0.8"
+png = "0.17"
+rmcp = { version = "3.1", default-features = false, features = ["server", "transport-io"] }
+serde.workspace = true
+serde_json.workspace = true
+tempfile.workspace = true
+tokio = { version = "1", features = ["rt", "process", "io-std", "io-util", "sync", "time"] }
+url = "2.5"
+
+[dev-dependencies]
+png = "0.17"
+tempfile.workspace = true

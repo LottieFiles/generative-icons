@@ -1,6 +1,6 @@
 # Shared icon library
 
-Shared authoring code for every source set: the family contract and the authoring kit, which the `gen-animated-icons` CLI embeds. The build, verification and packaging scripts here are the legacy pipeline; the CLI reproduces their outputs and its parity tests still run them. Current counts come from `prototype/icons/catalog.json` and its set manifests.
+Shared authoring code for every source set: the family contract and the authoring kit, which the `generative-icons` CLI embeds. The build, verification and packaging scripts here are the legacy pipeline; the CLI reproduces their outputs and its parity tests still run them. Current counts come from `prototype/icons/catalog.json` and its set manifests.
 
 - Gallery: `prototype/icons/01/index.html`. Run `npm run dev` from the repository root and open `/icons/01/`.
 - New icon work: follow the [animated icon workflow](../../../.agents/skills/animated-icon-workflow/SKILL.md).
@@ -21,7 +21,7 @@ Shared authoring code for every source set: the family contract and the authorin
 
 ## Registration
 
-Register a built set with `gen-animated-icons library register SET-ID`; it adds the set's manifest to `prototype/icons/catalog.json` under a named category. The gallery resolves asset URLs from each manifest and renders every icon in order. Keep names unique.
+Register a built set with `generative-icons library register SET-ID`; it adds the set's manifest to `prototype/icons/catalog.json` under a named category. The gallery resolves asset URLs from each manifest and renders every icon in order. Keep names unique.
 
 Run `npm --prefix motion run test:library` after catalog, state or controller changes.
 

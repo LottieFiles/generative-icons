@@ -1,4 +1,4 @@
-EDUCATION — Generative Animated Icons by LottieFiles
+EDUCATION — Generative Icons by LottieFiles
 
 20 animated vector icons: Graduation cap, Chalkboard, Flashcards, Quiz, Certificate, Notebook, Pencil, Ruler, Lab flask, Microscope, Abacus, School bell, Course progress, Lecture, Library shelf, Language learning, Alphabet blocks, Homework, Exam grade, Geometry compass.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

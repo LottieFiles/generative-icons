@@ -1,4 +1,4 @@
-INFRASTRUCTURE & DEVICES — Generative Animated Icons by LottieFiles
+INFRASTRUCTURE & DEVICES — Generative Icons by LottieFiles
 
 10 animated vector icons: Server, Database, Processor, Memory chip, Hard drive, Ethernet, Router, Load balancer, Firewall, USB drive.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -4,7 +4,7 @@
      bool eval_has_exception;
      JSValue eval_exception;
      JSValue meta_obj; /* for import.meta */
-+    /* gen-animated-icons: js_free_module_def() has run, but values still name the
++    /* generative-icons: js_free_module_def() has run, but values still name the
 +       module, so its memory is freed with the last of them */
 +    bool freed;
  };
@@ -15,7 +15,7 @@
          break;
      case JS_TAG_MODULE:
 -        abort(); /* never freed here */
-+        /* gen-animated-icons: the last value naming a module that
++        /* generative-icons: the last value naming a module that
 +           js_free_module_def() has freed (the callbacks of a module promise that
 +           never settled, freed after the context) */
 +        {
@@ -31,7 +31,7 @@
      JS_FreeValue(ctx, m->resolving_funcs[0]);
      JS_FreeValue(ctx, m->resolving_funcs[1]);
      list_del(&m->link);
-+    /* gen-animated-icons: values may still name the module, as when its promise
++    /* generative-icons: values may still name the module, as when its promise
 +       never settled; the last of them frees it (in JS_FreeValueRT), where freeing it
 +       here left them pointing at freed memory */
 +    if (--m->header.ref_count > 0) {

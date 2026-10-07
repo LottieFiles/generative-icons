@@ -1,4 +1,4 @@
-TEXT & DOCUMENT EDITING — Generative Animated Icons by LottieFiles
+TEXT & DOCUMENT EDITING — Generative Icons by LottieFiles
 
 20 animated vector icons: Bold, Italic, Underline, Strikethrough, Heading, Paragraph, Text alignment, Bulleted list, Numbered list, Indent / outdent, Horizontal rule, Text color, Text highlight, Clear formatting, Spell check, Find and replace, Page break, Word wrap, Letter case, Line spacing.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

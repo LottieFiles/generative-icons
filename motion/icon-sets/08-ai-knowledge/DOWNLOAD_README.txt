@@ -1,4 +1,4 @@
-KNOWLEDGE AND RETRIEVAL — Generative Animated Icons by LottieFiles
+KNOWLEDGE AND RETRIEVAL — Generative Icons by LottieFiles
 
 20 animated vector icons: Pull the volume, Read the meaning, Attach the source, Place the token, Link the node, Document chat, Source grounding, Retrieve context, Vector store, Dataset, Classification, Clustering, Entity extraction, Fact check, Source rank, Index data, Deduplicate, Data cleaning, Context attach, Long-term memory.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

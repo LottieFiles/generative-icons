@@ -95,7 +95,7 @@ impl CallbackListener {
                 respond(
                     &mut stream,
                     "200 OK",
-                    "Signed in to gen-animated-icons. You can close this tab.",
+                    "Signed in to generative-icons. You can close this tab.",
                 );
                 Ok(Some(code))
             }
@@ -145,7 +145,7 @@ fn read_head(stream: &mut TcpStream, until: Instant) -> Option<String> {
 
 fn respond(stream: &mut TcpStream, status: &str, message: &str) {
     let body = format!(
-        "<!doctype html><meta charset=utf-8><title>gen-animated-icons</title><p style=\"font:16px system-ui;margin:3em\">{}</p>",
+        "<!doctype html><meta charset=utf-8><title>generative-icons</title><p style=\"font:16px system-ui;margin:3em\">{}</p>",
         message.replace('&', "&amp;").replace('<', "&lt;")
     );
     // The browser may already have gone; nothing to do about a failed write.

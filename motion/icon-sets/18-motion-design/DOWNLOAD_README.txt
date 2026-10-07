@@ -1,4 +1,4 @@
-MOTION DESIGN — Generative Animated Icons by LottieFiles
+MOTION DESIGN — Generative Icons by LottieFiles
 
 20 animated vector icons: Timeline, Add keyframe, Remove keyframe, Auto keyframe, Keyframe easing, Graph editor, Bezier handles, Motion path, Anchor point, Layer stack, Parent layers, Precompose, Trim layer, Split layer, Time stretch, Onion skin, Shape morph, Mask path, Track matte, Render queue.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

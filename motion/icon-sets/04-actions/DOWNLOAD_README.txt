@@ -1,4 +1,4 @@
-TEN EVERYDAY ACTIONS — Generative Animated Icons by LottieFiles
+TEN EVERYDAY ACTIONS — Generative Icons by LottieFiles
 
 10 animated vector icons: Download, Upload, Copy, Trash, Edit, Send, Bookmark, Refresh, Eye, Menu.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -53,7 +53,7 @@ typedef enum {
 
 #define CAPTURE_COUNT_MAX 255
 #define STACK_SIZE_MAX 255
-/* gen-animated-icons: execution steps (or compilation work units) between
+/* generative-icons: execution steps (or compilation work units) between
    lre_check_timeout() calls */
 #define INTERRUPT_COUNTER_INIT 10000
 
@@ -79,11 +79,11 @@ typedef struct {
     int has_named_captures; /* -1 = don't know, 0 = no, 1 = yes */
     void *opaque;
     DynBuf group_names;
-    /* gen-animated-icons: the name of every capture in the pattern ("" if none), as
+    /* generative-icons: the name of every capture in the pattern ("" if none), as
        re_parse_captures() finds them, scanned once for forward \k<name> */
     DynBuf capture_names;
     bool capture_names_scanned;
-    /* gen-animated-icons: work left before the next lre_check_timeout() call, and
+    /* generative-icons: work left before the next lre_check_timeout() call, and
        whether it stopped the compilation */
     int interrupt_counter;
     bool interrupted;
@@ -778,7 +778,7 @@ static int get_class_atom(REParseState *s, CharRange *cr,
     return c;
 }
 
-/* gen-animated-icons: lets the embedder stop a runaway compilation, as lre_exec()
+/* generative-icons: lets the embedder stop a runaway compilation, as lre_exec()
    does. `cost` is the work done since the last call, in about 256-byte units. Some
    loops are quadratic: each alternative moves the disjunction before it, each term
    of a lookbehind moves the terms before it, and each class atom is merged into the
@@ -876,7 +876,7 @@ static int re_parse_char_class(REParseState *s, const uint8_t **pp)
     for(;;) {
         if (*p == ']')
             break;
-        /* gen-animated-icons: merging an atom is linear in the class's size */
+        /* generative-icons: merging an atom is linear in the class's size */
         if (re_poll_timeout(s, 1 + ((size_t)cr->len >> 6)))
             goto fail;
         c1 = get_class_atom(s, cr1, &p, true);
@@ -1175,7 +1175,7 @@ static bool re_has_named_captures(REParseState *s)
     return s->has_named_captures;
 }
 
-/* gen-animated-icons: re_parse_captures(s, &dummy, capture_name) from one scan of the
+/* generative-icons: re_parse_captures(s, &dummy, capture_name) from one scan of the
    pattern, where calling it for each forward back reference was quadratic. Return the
    capture index, -1 if none or -2 if memory error. */
 static int re_find_capture(REParseState *s, const char *capture_name)
@@ -1435,7 +1435,7 @@ static int re_parse_term(REParseState *s, bool is_backward_dir)
                 c = find_group_name(s, s->u.tmp_buf);
                 if (c < 0) {
                     /* no capture name parsed before, try to look
-                       after (gen-animated-icons: from one scan) */
+                       after (generative-icons: from one scan) */
                     c = re_find_capture(s, s->u.tmp_buf);
                     if (c == -2)
                         return re_parse_out_of_memory(s);
@@ -1771,7 +1771,7 @@ static int re_parse_alternative(REParseState *s, bool is_backward_dir)
         ret = re_parse_term(s, is_backward_dir);
         if (ret)
             return ret;
-        /* gen-animated-icons: a term's bytecode, copies of its atom included */
+        /* generative-icons: a term's bytecode, copies of its atom included */
         if (re_poll_timeout(s, 1 + ((s->byte_code.size - term_start) >> 8) +
                             (is_backward_dir ? (s->byte_code.size - start) >> 8 : 0)))
             return -1;
@@ -1811,7 +1811,7 @@ static int re_parse_disjunction(REParseState *s, bool is_backward_dir)
         if (dbuf_insert(&s->byte_code, start, 5)) {
             return re_parse_out_of_memory(s);
         }
-        /* gen-animated-icons: the insertion moved the alternatives before it */
+        /* generative-icons: the insertion moved the alternatives before it */
         if (re_poll_timeout(s, 1 + ((size_t)len >> 8)))
             return -1;
         s->byte_code.buf[start] = REOP_split_next_first;
@@ -1928,7 +1928,7 @@ uint8_t *lre_compile(int *plen, char *error_msg, int error_msg_size,
         dbuf_free(&s->group_names);
         dbuf_free(&s->capture_names);
         js__pstrcpy(error_msg, error_msg_size, s->u.error_msg);
-        /* gen-animated-icons: the caller tells a timeout from a syntax error */
+        /* generative-icons: the caller tells a timeout from a syntax error */
         *plen = s->interrupted ? LRE_RET_TIMEOUT : 0;
         return NULL;
     }
@@ -2147,7 +2147,7 @@ static int push_state(REExecContext *s,
     return 0;
 }
 
-/* gen-animated-icons: lets the embedder stop a runaway execution (backported from
+/* generative-icons: lets the embedder stop a runaway execution (backported from
    QuickJS 2024-01-13). */
 static inline int lre_poll_timeout(REExecContext *s)
 {
@@ -2159,7 +2159,7 @@ static inline int lre_poll_timeout(REExecContext *s)
     return 0;
 }
 
-/* gen-animated-icons: lre_poll_timeout() for a step that does about `cost` steps'
+/* generative-icons: lre_poll_timeout() for a step that does about `cost` steps'
    work */
 static inline int lre_poll_timeout_cost(REExecContext *s, intptr_t cost)
 {
@@ -2429,7 +2429,7 @@ static intptr_t lre_exec_backtrack(REExecContext *s, uint8_t **capture,
                 cptr1_end = capture[2 * val + 1];
                 if (!cptr1_start || !cptr1_end)
                     break;
-                /* gen-animated-icons: the comparison is as long as the capture */
+                /* generative-icons: the comparison is as long as the capture */
                 if (lre_poll_timeout_cost(s, (cptr1_end - cptr1_start) >> 8))
                     return LRE_RET_TIMEOUT;
                 if (opcode == REOP_back_reference) {

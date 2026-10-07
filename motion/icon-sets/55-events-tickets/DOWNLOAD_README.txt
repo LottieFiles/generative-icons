@@ -1,4 +1,4 @@
-EVENTS & TICKETS — Generative Animated Icons by LottieFiles
+EVENTS & TICKETS — Generative Icons by LottieFiles
 
 20 animated vector icons: RSVP, Event invite, Venue, Seat map, Agenda, Event speaker, Event badge, Check-in, Add to calendar, Event reminder, Ticket scan, Ticket transfer, Waitlist, Sold out, Early bird, Event live, Event replay, Sponsor, Networking, Event map.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

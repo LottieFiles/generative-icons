@@ -1,4 +1,4 @@
-// V8-exact Math for QuickJS-NG (gen-animated-icons patch).
+// V8-exact Math for QuickJS-NG (generative-icons patch).
 //
 // The fdlibm functions come from V8's src/base/ieee754.cc (tag 14.6.202.34),
 // built with -ffp-contract=on like Node's official clang build. gai_pow keeps

@@ -1,4 +1,4 @@
-CONVERSATION AND REASONING — Generative Animated Icons by LottieFiles
+CONVERSATION AND REASONING — Generative Icons by LottieFiles
 
 20 animated vector icons: Assistant thinks, then replies, User types a prompt, A rule is added under the root, The window advances over the text, Tokens stream out of the pane, Autocomplete, Rewrite, Summarize, Translate, Brainstorm, Reasoning, Conversation branch, Prompt template, Tone control, Answer compare, Follow-up, Intent detection, Response length, Conversation memory, Structured output.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

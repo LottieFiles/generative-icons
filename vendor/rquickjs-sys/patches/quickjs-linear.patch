@@ -4,7 +4,7 @@
      int has_named_captures; /* -1 = don't know, 0 = no, 1 = yes */
      void *opaque;
      DynBuf group_names;
-+    /* gen-animated-icons: the name of every capture in the pattern ("" if none), as
++    /* generative-icons: the name of every capture in the pattern ("" if none), as
 +       re_parse_captures() finds them, scanned once for forward \k<name> */
 +    DynBuf capture_names;
 +    bool capture_names_scanned;
@@ -15,7 +15,7 @@
      return s->has_named_captures;
  }
  
-+/* gen-animated-icons: re_parse_captures(s, &dummy, capture_name) from one scan of the
++/* generative-icons: re_parse_captures(s, &dummy, capture_name) from one scan of the
 +   pattern, where calling it for each forward back reference was quadratic. Return the
 +   capture index, -1 if none or -2 if memory error. */
 +static int re_find_capture(REParseState *s, const char *capture_name)
@@ -95,7 +95,7 @@
                      /* no capture name parsed before, try to look
 -                       after (inefficient, but hopefully not common */
 -                    c = re_parse_captures(s, &dummy_res, s->u.tmp_buf);
-+                       after (gen-animated-icons: from one scan) */
++                       after (generative-icons: from one scan) */
 +                    c = re_find_capture(s, s->u.tmp_buf);
 +                    if (c == -2)
 +                        return re_parse_out_of_memory(s);
@@ -133,12 +133,12 @@
  }
  
 -static void sort_cc(int *buf, int len)
-+/* gen-animated-icons: sort_cc() sorts runs of combining marks longer than this by
++/* generative-icons: sort_cc() sorts runs of combining marks longer than this by
 +   counting, since insertion is quadratic in the run's length. Both sorts are stable,
 +   so the result is the same. */
 +#define SORT_CC_INSERTION_MAX 32
 +
-+/* gen-animated-icons: stable sort by combining class of the run of combining marks
++/* generative-icons: stable sort by combining class of the run of combining marks
 +   that starts at buf[start], in linear time. Return the end of the run, or -1 if
 +   memory error. */
 +static int sort_cc_run(int *buf, int start, int len,
@@ -174,7 +174,7 @@
 +    return end;
 +}
 +
-+/* return -1 if memory error (gen-animated-icons: was void) */
++/* return -1 if memory error (generative-icons: was void) */
 +static int sort_cc(int *buf, int len,
 +                   void *opaque, DynBufReallocFunc *realloc_func)
 +{
@@ -185,7 +185,7 @@
                  cc1 = unicode_get_cc(ch1);
                  if (cc1 == 0)
                      break;
-+                /* gen-animated-icons: a long run is sorted whole by counting;
++                /* generative-icons: a long run is sorted whole by counting;
 +                   buf[start..j) is already sorted stably, so the result is the
 +                   same */
 +                if (j - start >= SORT_CC_INSERTION_MAX) {
@@ -209,7 +209,7 @@
      to_nfd_rec(dbuf, (const int *)src, src_len, is_compat);
      if (dbuf_error(dbuf)) {
      fail:
-+        dbuf_free(dbuf); /* gen-animated-icons: was leaked */
++        dbuf_free(dbuf); /* generative-icons: was leaked */
          *pdst = NULL;
          return -1;
      }
@@ -229,7 +229,7 @@
      js_free(ctx, buf);
      if (out_len < 0)
 -        return JS_EXCEPTION;
-+        return JS_ThrowOutOfMemory(ctx); /* gen-animated-icons: js_realloc_rt does not throw */
++        return JS_ThrowOutOfMemory(ctx); /* generative-icons: js_realloc_rt does not throw */
      val = JS_NewUTF32String(ctx, out_buf, out_len);
      js_free(ctx, out_buf);
      return val;

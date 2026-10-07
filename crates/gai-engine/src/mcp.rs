@@ -210,7 +210,7 @@ impl McpClient {
             "params": {
                 "protocolVersion": PROTOCOL_VERSION,
                 "capabilities": {},
-                "clientInfo": {"name": "gen-animated-icons", "version": env!("CARGO_PKG_VERSION")},
+                "clientInfo": {"name": "generative-icons", "version": env!("CARGO_PKG_VERSION")},
             },
         });
         let Posted::Answer(response) = self.post(&body, None)? else {

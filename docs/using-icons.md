@@ -1,10 +1,10 @@
 # Use an icon file
 
-For app integration, `gen-animated-icons add` and the [npm packages](using-packages.md) are the easiest path. This page covers using the native files directly.
+For app integration, `generative-icons add` and the [npm packages](using-packages.md) are the easiest path. This page covers using the native files directly.
 
 ## Choose and download
 
-`gen-animated-icons search <meaning>` finds icons, `gen-animated-icons preview <id>` renders an icon's motions to PNG contact sheets, and `gen-animated-icons add <id>` installs its dotLottie file. In a checkout of the source repository, the native files live under `prototype/icons/NN/assets/` (one dotLottie file per icon and profile, plus one-action Lottie JSON files), and the local gallery (`npm run dev`) downloads the selected profile from each card.
+`generative-icons search <meaning>` finds icons, `generative-icons preview <id>` renders an icon's motions to PNG contact sheets, and `generative-icons add <id>` installs its dotLottie file. In a checkout of the source repository, the native files live under `prototype/icons/NN/assets/` (one dotLottie file per icon and profile, plus one-action Lottie JSON files), and the local gallery (`npm run dev`) downloads the selected profile from each card.
 
 A dotLottie file contains the icon's sibling actions and themes; its manifest selects the initial action. A loose JSON file holds a single action. For stateful controls, use the authored reverse or reset action instead of playing backwards.
 

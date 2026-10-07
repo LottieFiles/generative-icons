@@ -99,11 +99,11 @@ pub type Result<T, E = Error> = std::result::Result<T, E>;
 /// Why an x86_64 process cannot run the V8-exact Math, and what to do about it.
 fn unsupported_cpu(rosetta: bool) -> &'static str {
     if rosetta {
-        "this x86_64 build of gen-animated-icons runs under Rosetta, which lacks the FMA instructions its \
+        "this x86_64 build of generative-icons runs under Rosetta, which lacks the FMA instructions its \
          V8-exact Math needs. Use the arm64 build: reinstall with arm64 Node (`node -p process.arch` prints \
          arm64), or set GEN_ANIMATED_ICONS_BINARY to the darwin-arm64 binary"
     } else {
-        "this x86_64 CPU lacks FMA, which gen-animated-icons' V8-exact Math needs. Run it on an x86_64 CPU \
+        "this x86_64 CPU lacks FMA, which generative-icons' V8-exact Math needs. Run it on an x86_64 CPU \
          with FMA (Intel Haswell, AMD Piledriver or later) or on arm64"
     }
 }

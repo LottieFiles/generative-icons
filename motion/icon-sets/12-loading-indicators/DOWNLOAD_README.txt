@@ -1,4 +1,4 @@
-LOADING INDICATORS — Generative Animated Icons by LottieFiles
+LOADING INDICATORS — Generative Icons by LottieFiles
 
 20 animated vector icons: Comet ring, Counter arcs, Wave dots, Ripple, Corner relay, Infinity runner, Bead relay, Equalizer, Bead track, Planet orbit, Square snake, Sync arrows, Pinwheel, Bounce ball, Travel wave, Sweep hand, Helix, Atom, Morph ring, Stack cycle.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

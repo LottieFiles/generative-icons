@@ -44,7 +44,7 @@
 #include "cutils.h"
 #include "list.h"
 #include "quickjs.h"
-#include "gai_math.h" /* gen-animated-icons: V8-exact Math */
+#include "gai_math.h" /* generative-icons: V8-exact Math */
 
 #include "libregexp.h"
 #include "libbf.h"
@@ -73,7 +73,7 @@
 #define CONFIG_ATOMICS
 #endif
 
-/* gen-animated-icons: the flag JS_RequestInterrupt() sets from another thread. It is
+/* generative-icons: the flag JS_RequestInterrupt() sets from another thread. It is
    only a hint to call the interrupt handler, so relaxed ordering is enough. */
 #if defined(CONFIG_ATOMICS) && !defined(GCC_BUILTIN_ATOMICS)
 #define JS_INTERRUPT_FLAG _Atomic int
@@ -274,7 +274,7 @@ struct JSRuntime {
 
     JSInterruptHandler *interrupt_handler;
     void *interrupt_opaque;
-    /* gen-animated-icons: set by JS_RequestInterrupt(); the next poll calls the
+    /* generative-icons: set by JS_RequestInterrupt(); the next poll calls the
        interrupt handler */
     JS_INTERRUPT_FLAG interrupt_requested;
 
@@ -865,7 +865,7 @@ struct JSModuleDef {
     bool eval_has_exception;
     JSValue eval_exception;
     JSValue meta_obj; /* for import.meta */
-    /* gen-animated-icons: js_free_module_def() has run, but values still name the
+    /* generative-icons: js_free_module_def() has run, but values still name the
        module, so its memory is freed with the last of them */
     bool freed;
 };
@@ -1960,7 +1960,7 @@ void JS_SetGCThreshold(JSRuntime *rt, size_t gc_threshold)
 #define free(p) free_is_forbidden(p)
 #define realloc(p,s) realloc_is_forbidden(p,s)
 
-/* gen-animated-icons: see quickjs.h */
+/* generative-icons: see quickjs.h */
 void JS_RequestInterrupt(JSRuntime *rt)
 {
     js_set_interrupt_requested(rt, 1);
@@ -5697,7 +5697,7 @@ static void js_free_value_rt(JSRuntime *rt, JSValue v)
         }
         break;
     case JS_TAG_MODULE:
-        /* gen-animated-icons: the last value naming a module that
+        /* generative-icons: the last value naming a module that
            js_free_module_def() has freed (the callbacks of a module promise that
            never settled, freed after the context) */
         {
@@ -7087,7 +7087,7 @@ static no_inline __exception int __js_poll_interrupts(JSContext *ctx)
 {
     JSRuntime *rt = ctx->rt;
     ctx->interrupt_counter = JS_INTERRUPT_COUNTER_INIT;
-    /* gen-animated-icons: this answers any JS_RequestInterrupt() */
+    /* generative-icons: this answers any JS_RequestInterrupt() */
     js_set_interrupt_requested(rt, 0);
     if (rt->interrupt_handler) {
         if (rt->interrupt_handler(rt, rt->interrupt_opaque)) {
@@ -7102,7 +7102,7 @@ static no_inline __exception int __js_poll_interrupts(JSContext *ctx)
 
 static inline __exception int js_poll_interrupts(JSContext *ctx)
 {
-    /* gen-animated-icons: or at once when JS_RequestInterrupt() asked, since the
+    /* generative-icons: or at once when JS_RequestInterrupt() asked, since the
        counter does not see time spent in native code */
     if (unlikely(--ctx->interrupt_counter <= 0) ||
         unlikely(js_interrupt_requested(ctx->rt))) {
@@ -7112,7 +7112,7 @@ static inline __exception int js_poll_interrupts(JSContext *ctx)
     }
 }
 
-/* gen-animated-icons: polls after about `cost` interpreter steps of native work, so
+/* generative-icons: polls after about `cost` interpreter steps of native work, so
    builtins whose loop steps are expensive still stop at the interrupt handler. */
 static inline __exception int js_poll_interrupts_cost(JSContext *ctx, int64_t cost)
 {
@@ -7123,7 +7123,7 @@ static inline __exception int js_poll_interrupts_cost(JSContext *ctx, int64_t co
     return 0;
 }
 
-/* gen-animated-icons: the error __js_poll_interrupts throws, for native code that asked
+/* generative-icons: the error __js_poll_interrupts throws, for native code that asked
    the interrupt handler itself. */
 static void js_throw_interrupted(JSContext *ctx)
 {
@@ -8350,7 +8350,7 @@ static int JS_TryGetPropertyInt64(JSContext *ctx, JSValue obj, int64_t idx, JSVa
         if (js_get_fast_array_element(ctx, p, idx, pval))
             return true;
     }
-    /* gen-animated-icons: builtins loop up to an array-like's length here */
+    /* generative-icons: builtins loop up to an array-like's length here */
     if (js_poll_interrupts(ctx)) {
         *pval = JS_EXCEPTION;
         return -1;
@@ -8385,7 +8385,7 @@ JSValue JS_GetPropertyInt64(JSContext *ctx, JSValue obj, int64_t idx)
         if (js_get_fast_array_element(ctx, p, idx, &val))
             return val;
     }
-    /* gen-animated-icons: builtins loop up to an array-like's length here */
+    /* generative-icons: builtins loop up to an array-like's length here */
     if (js_poll_interrupts(ctx))
         return JS_EXCEPTION;
     prop = JS_NewAtomInt64(ctx, idx);
@@ -9193,7 +9193,7 @@ int JS_SetPropertyInt64(JSContext *ctx, JSValue this_obj,
     JSAtom prop;
     int res;
 
-    /* gen-animated-icons: builtins loop up to an array-like's length here */
+    /* generative-icons: builtins loop up to an array-like's length here */
     if (js_poll_interrupts(ctx)) {
         JS_FreeValue(ctx, val);
         return -1;
@@ -12173,7 +12173,7 @@ int JS_IsArray(JSContext *ctx, JSValue val)
     }
 }
 
-/* gen-animated-icons: Math.pow and the ** operator use V8's pow semantics. */
+/* generative-icons: Math.pow and the ** operator use V8's pow semantics. */
 static double js_math_pow(double a, double b)
 {
     return gai_pow(a, b);
@@ -19585,7 +19585,7 @@ static __exception int next_token(JSParseState *s)
         JS_ThrowStackOverflow(s->ctx);
         return -1;
     }
-    /* gen-animated-icons: parsing is quadratic in places (each declaration checks
+    /* generative-icons: parsing is quadratic in places (each declaration checks
        the scope's earlier ones), so it stops at the interrupt handler too */
     if (js_poll_interrupts(s->ctx))
         return -1;
@@ -26387,7 +26387,7 @@ static void js_free_module_def(JSContext *ctx, JSModuleDef *m)
     JS_FreeValue(ctx, m->resolving_funcs[0]);
     JS_FreeValue(ctx, m->resolving_funcs[1]);
     list_del(&m->link);
-    /* gen-animated-icons: values may still name the module, as when its promise
+    /* generative-icons: values may still name the module, as when its promise
        never settled; the last of them frees it (in JS_FreeValueRT), where freeing it
        here left them pointing at freed memory */
     if (--m->header.ref_count > 0) {
@@ -30688,7 +30688,7 @@ static __exception int resolve_variables(JSContext *ctx, JSFunctionDef *s)
     line_num = 0; /* avoid warning */
     col_num = 0;
     for (pos = 0; pos < bc_len; pos = pos_next) {
-        /* gen-animated-icons: resolving a name scans the function's variables and
+        /* generative-icons: resolving a name scans the function's variables and
            closures, so it stops at the interrupt handler too. `fail` copies the
            rest, this instruction included. */
         if (js_poll_interrupts(ctx))
@@ -39891,7 +39891,7 @@ static int js_array_cmp_generic(const void *a, const void *b, void *opaque) {
     if (psc->exception)
         return 0;
 
-    /* gen-animated-icons: a default-order sort calls no function that would poll */
+    /* generative-icons: a default-order sort calls no function that would poll */
     if (js_poll_interrupts(ctx))
         goto exception;
 
@@ -41862,7 +41862,7 @@ static int string_indexof_char(JSString *p, int c, int from)
     return -1;
 }
 
-/* gen-animated-icons: returns -2 (exception) when the interrupt handler stops it */
+/* generative-icons: returns -2 (exception) when the interrupt handler stops it */
 static int string_indexof(JSContext *ctx, JSString *p1, JSString *p2, int from)
 {
     /* assuming 0 <= from <= p1->len */
@@ -42021,7 +42021,7 @@ static JSValue js_string_indexOf(JSContext *ctx, JSValue this_val,
             }
             if (i == stop)
                 break;
-            /* gen-animated-icons: the search is O(len * v_len) */
+            /* generative-icons: the search is O(len * v_len) */
             if (js_poll_interrupts_cost(ctx, 1 + (v_len >> 8)))
                 goto fail;
         }
@@ -42090,7 +42090,7 @@ static JSValue js_string_includes(JSContext *ctx, JSValue this_val,
             }
             if (i == stop)
                 break;
-            /* gen-animated-icons: the search is O(len * v_len) */
+            /* generative-icons: the search is O(len * v_len) */
             if (js_poll_interrupts_cost(ctx, 1 + (v_len >> 8)))
                 goto fail;
         }
@@ -42980,7 +42980,7 @@ static JSValue js_string_normalize(JSContext *ctx, JSValue this_val,
                                 ctx->rt, (DynBufReallocFunc *)js_realloc_rt);
     js_free(ctx, buf);
     if (out_len < 0)
-        return JS_ThrowOutOfMemory(ctx); /* gen-animated-icons: js_realloc_rt does not throw */
+        return JS_ThrowOutOfMemory(ctx); /* generative-icons: js_realloc_rt does not throw */
     val = JS_NewUTF32String(ctx, out_buf, out_len);
     js_free(ctx, out_buf);
     return val;
@@ -43294,7 +43294,7 @@ static double js_math_round(double a)
 static JSValue js_math_hypot(JSContext *ctx, JSValue this_val,
                              int argc, JSValue *argv)
 {
-    /* gen-animated-icons: V8's MathHypot (src/builtins/math.tq): convert
+    /* generative-icons: V8's MathHypot (src/builtins/math.tq): convert
        every argument first, then Kahan-sum the squares normalized by the
        largest magnitude. The products must stay unfused, as in V8. */
 #if defined(__clang__)
@@ -43484,7 +43484,7 @@ static double js_math_fabs(double d) { return fabs(d); }
 static double js_math_floor(double d) { return floor(d); }
 static double js_math_ceil(double d) { return ceil(d); }
 static double js_math_sqrt(double d) { return sqrt(d); }
-/* gen-animated-icons: V8 fdlibm (gai_math.h) instead of the platform libm. */
+/* generative-icons: V8 fdlibm (gai_math.h) instead of the platform libm. */
 static double js_math_acos(double d) { return gai_acos(d); }
 static double js_math_asin(double d) { return gai_asin(d); }
 static double js_math_atan(double d) { return gai_atan(d); }
@@ -43695,7 +43695,7 @@ static JSValue js_compile_regexp(JSContext *ctx, JSValue pattern,
                                   sizeof(error_msg), str, len, re_flags, ctx);
     JS_FreeCString(ctx, str);
     if (!re_bytecode_buf) {
-        /* gen-animated-icons: the interrupt handler stopped the compilation */
+        /* generative-icons: the interrupt handler stopped the compilation */
         if (re_bytecode_len == LRE_RET_TIMEOUT)
             js_throw_interrupted(ctx);
         else
@@ -44062,7 +44062,7 @@ bool lre_check_stack_overflow(void *opaque, size_t alloca_size)
     return js_check_stack_overflow(ctx->rt, alloca_size);
 }
 
-/* gen-animated-icons: a runaway regexp execution stops at the interrupt handler
+/* generative-icons: a runaway regexp execution stops at the interrupt handler
    (backported from QuickJS 2024-01-13). */
 bool lre_check_timeout(void *opaque)
 {
@@ -44374,7 +44374,7 @@ static JSValue JS_RegExpDelete(JSContext *ctx, JSValue this_val, JSValue arg)
         if (last_index > str->len)
             break;
 
-        /* gen-animated-icons: each execution polls only past 10,000 steps, so many
+        /* generative-icons: each execution polls only past 10,000 steps, so many
            short ones never would */
         if (js_poll_interrupts(ctx))
             goto fail;

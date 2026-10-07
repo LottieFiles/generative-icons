@@ -1,12 +1,12 @@
 # Architecture
 
-This repository holds the editable icon source, the `gen-animated-icons` CLI, the local gallery and the npm packages. The website consumes the published packages.
+This repository holds the editable icon source, the `generative-icons` CLI, the local gallery and the npm packages. The website consumes the published packages.
 
 | Location | Responsibility |
 | --- | --- |
-| `crates/` | The `gen-animated-icons` Rust workspace: authoring runtime, builds, checks, rendering, packaging, the hosted-engine client and the CLI. See [crates/README.md](../crates/README.md). |
-| `crates/gen-animated-icons/assets/skill/` | The agent skill the CLI installs into apps (the one source for it) |
-| `npm/` | The `gen-animated-icons` npm wrapper and one binary package per platform |
+| `crates/` | The `generative-icons` Rust workspace: authoring runtime, builds, checks, rendering, packaging, the hosted-engine client and the CLI. See [crates/README.md](../crates/README.md). |
+| `crates/generative-icons/assets/skill/` | The agent skill the CLI installs into apps (the one source for it) |
+| `npm/` | The `generative-icons` npm wrapper and one binary package per platform |
 | `packages/icons/` | Generated per-icon descriptors, native assets, catalog and bundled docs |
 | `packages/runtime/` | Shared playback, paint, state, reduced motion and lifecycle API |
 | `packages/react/` | Client-side React adapter with controlled state |
@@ -26,7 +26,7 @@ This repository holds the editable icon source, the `gen-animated-icons` CLI, th
 
 Named vector geometry and motion (`definitions.mjs`, run in the CLI's embedded QuickJS) → sampled scenes → native Lottie from the hosted engine → themed, slot-enabled dotLottie files → package descriptors and assets.
 
-The gallery loads catalog manifests and plays the native files. The browser controller owns interaction timing; drawing choreography stays in authoring source. Intermediate `scenes/` and `native/` folders are ignored by Git; final assets are tracked. `gen-animated-icons library package --icon-library` regenerates the aggregate download.
+The gallery loads catalog manifests and plays the native files. The browser controller owns interaction timing; drawing choreography stays in authoring source. Intermediate `scenes/` and `native/` folders are ignored by Git; final assets are tracked. `generative-icons library package --icon-library` regenerates the aggregate download.
 
 The earlier JavaScript and Python pipeline (`motion/`, `scripts/`, each set's `build.mjs`, `verify.mjs` and `package.py`, and the browser `verify.html` pages) is legacy. The CLI reproduces its outputs byte for byte, and its parity tests still run it as a reference.
 

@@ -15,21 +15,21 @@ def public_links(text,source):
   except ValueError:return m.group(0)
   return '['+label+']('+base+rel.as_posix()+('#'+fragment if fragment else '')+')'
  return re.sub(r'\[([^\]]+)\]\(([^)]+)\)',replace,text)
-preamble='''# Generative Animated Icons — AI operating guide
+preamble='''# Generative Icons — AI operating guide
 
-Give this file to your coding agent to create or revise icons that match the Generative Animated Icons family by LottieFiles. It bundles the canonical workflow, rules and contract from the source repository into one file.
+Give this file to your coding agent to create or revise icons that match the Generative Icons family by LottieFiles. It bundles the canonical workflow, rules and contract from the source repository into one file.
 
 Repository: https://github.com/LottieFiles/gen-animated-icons
 
 ## Quickstart
 
-In an app, `npx gen-animated-icons init` installs the gen-animated-icons agent skill, which covers creating a missing icon in the app itself. This guide is the full family workflow used for the library's own sets; give it to your agent for deeper reference.
+In an app, `npx generative-icons init` installs the generative-icons agent skill, which covers creating a missing icon in the app itself. This guide is the full family workflow used for the library's own sets; give it to your agent for deeper reference.
 
-1. Search existing icons: `gen-animated-icons search "<meaning>"`, then `gen-animated-icons context "<meaning>"` for the reference packet.
+1. Search existing icons: `generative-icons search "<meaning>"`, then `generative-icons context "<meaning>"` for the reference packet.
 2. Fill in the task brief below and follow the workflow in the first source section.
-3. In an app: `gen-animated-icons create <id>`, then `check`, `build` and `preview`. In the library repository: `gen-animated-icons library new-set`, `preflight`, `build`, `verify`, `verify-visual` and `register`.
+3. In an app: `generative-icons create <id>`, then `check`, `build` and `preview`. In the library repository: `generative-icons library new-set`, `preflight`, `build`, `verify`, `verify-visual` and `register`.
 
-Building exports native Lottie on LottieFiles' hosted engine, so it needs a LottieFiles sign-in (`gen-animated-icons login`). The hosted engine is internal until launch.
+Building exports native Lottie on LottieFiles' hosted engine, so it needs a LottieFiles sign-in (`generative-icons login`). The hosted engine is internal until launch.
 
 ## Task brief
 
@@ -50,6 +50,6 @@ for p in files:
  (out/p.name).write_text(text)
 (out/'ai-operating-guide.md').write_text(''.join(parts))
 (out/'sources.json').write_text(json.dumps(manifest,indent=2)+'\n')
-# The app skill is crates/gen-animated-icons/assets/skill/, embedded in the CLI. skills/lottie-icons/
+# The app skill is crates/generative-icons/assets/skill/, embedded in the CLI. skills/lottie-icons/
 # is the retired lottie-icons skill, frozen byte for byte for init --migrate, so it is not regenerated.
 print('Updated AI guide from',len(files),'canonical sources')

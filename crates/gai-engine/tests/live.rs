@@ -1,4 +1,4 @@
-//! Live export on the hosted engine. Needs a prior `gen-animated-icons login` (or
+//! Live export on the hosted engine. Needs a prior `generative-icons login` (or
 //! `GAI_ENGINE_TOKEN`) and the gitignored scene and native oracles:
 //! `cargo test -p gai-engine --test live -- --ignored`.
 
@@ -14,7 +14,7 @@ fn live_exports_match_the_committed_natives_except_path_names() {
     let config = EngineConfig::from_env().unwrap();
     if status(&config).unwrap().is_none() {
         eprintln!(
-            "skipped: not signed in to {} (run `gen-animated-icons login`)",
+            "skipped: not signed in to {} (run `generative-icons login`)",
             config.url
         );
         return;

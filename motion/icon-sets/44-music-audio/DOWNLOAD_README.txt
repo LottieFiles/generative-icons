@@ -1,4 +1,4 @@
-MUSIC & AUDIO — Generative Animated Icons by LottieFiles
+MUSIC & AUDIO — Generative Icons by LottieFiles
 
 20 animated vector icons: Music note, Vinyl record, Cassette tape, Audio waveform, Loudspeaker, Radio, Metronome, Tuner, Piano keys, Guitar, Drum, Lyrics, Music album, Earbuds, Mute audio, Crossfade, Equalizer preset, Audio jack, Spatial audio, Tuning fork.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

@@ -1,4 +1,4 @@
-VECTOR EDITING & DESIGN — Generative Animated Icons by LottieFiles
+VECTOR EDITING & DESIGN — Generative Icons by LottieFiles
 
 20 animated vector icons: Boolean union, Boolean subtract, Boolean intersect, Boolean exclude, Outline stroke, Offset path, Join paths, Simplify path, Stroke dash, Auto layout, Component instance, Detach instance, Pin constraints, Artboard frame, Export slice, Vectorize image, Blend steps, Gradient stops, Convert to curves, Path direction.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

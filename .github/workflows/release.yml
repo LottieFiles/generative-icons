@@ -1,5 +1,5 @@
 name: Release
-# Manual only. Builds the gen-animated-icons binaries, drafts a GitHub release with them,
+# Manual only. Builds the generative-icons binaries, drafts a GitHub release with them,
 # and packs the npm packages as a workflow artifact. Every tarball and npm platform package
 # carries LICENSE, THIRD_PARTY_NOTICES.md and THIRD_PARTY_LICENSES.txt, the license texts of
 # everything its binary links. Nothing is published to npm, and the draft release stays a
@@ -46,9 +46,9 @@ jobs:
           import json, os, pathlib, re, tomllib
           version = tomllib.load(open('Cargo.toml', 'rb'))['workspace']['package']['version']
           errors = []
-          wrapper = json.loads(pathlib.Path('npm/gen-animated-icons/package.json').read_text())
+          wrapper = json.loads(pathlib.Path('npm/generative-icons/package.json').read_text())
           if wrapper['version'] != version:
-              errors.append(f"npm/gen-animated-icons is {wrapper['version']}")
+              errors.append(f"npm/generative-icons is {wrapper['version']}")
           for name, pin in wrapper.get('optionalDependencies', {}).items():
               if pin != version:
                   errors.append(f'the wrapper pins {name} at {pin}')
@@ -68,7 +68,7 @@ jobs:
               raise SystemExit(f'Invalid tag: {tag}')
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
               out.write(f'version={version}\ntag={tag}\n')
-          print(f'gen-animated-icons {version}, tag {tag}')
+          print(f'generative-icons {version}, tag {tag}')
           PY
 
   licenses:
@@ -152,9 +152,9 @@ jobs:
           path = "../../LICENSE"
           checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
 
-          [gen-animated-icons.clarify]
+          [generative-icons.clarify]
           license = "MIT"
-          [[gen-animated-icons.clarify.files]]
+          [[generative-icons.clarify.files]]
           path = "../../LICENSE"
           checksum = "d5b651179a0c8000cb7553c405c47038187dad6f54ba3b108b621779cd98fa2b"
 
@@ -252,7 +252,7 @@ jobs:
           for target in aarch64-apple-darwin x86_64-apple-darwin x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu; do
             log="$about/$target.log"
             if ! cargo about generate --locked --fail -c "$about/about.toml" \
-                -m crates/gen-animated-icons/Cargo.toml --target "$target" \
+                -m crates/generative-icons/Cargo.toml --target "$target" \
                 -o "$about/$target.txt" "$about/licenses.hbs" 2> "$log"; then
               cat "$log"
               exit 1
@@ -265,9 +265,9 @@ jobs:
               exit 1
             fi
             {
-              printf 'Third-party licenses: gen-animated-icons %s for %s\n\n' "$VERSION" "$target"
+              printf 'Third-party licenses: generative-icons %s for %s\n\n' "$VERSION" "$target"
               printf '%s\n' \
-                'The gen-animated-icons binary is MIT-licensed (LICENSE). It statically links the' \
+                'The generative-icons binary is MIT-licensed (LICENSE). It statically links the' \
                 'Rust crates listed below and the C and C++ code they compile, including QuickJS-NG,' \
                 "V8's ieee754.cc with fdlibm, and CORE-MATH (rquickjs-sys), and ThorVG with RapidJSON" \
                 'and JerryScript (dotlottie-rs). It also embeds svgpath (gai-js) and a subset of' \
@@ -336,13 +336,13 @@ jobs:
           restore-keys: |
             cargo-home-${{ runner.os }}-
       - name: Build
-        run: cargo build --release --locked -p gen-animated-icons --target "${{ matrix.target }}"
+        run: cargo build --release --locked -p generative-icons --target "${{ matrix.target }}"
       - name: Check the binary
         env:
           TARGET: ${{ matrix.target }}
           NATIVE: ${{ matrix.native }}
         run: |
-          bin="target/$TARGET/release/gen-animated-icons"
+          bin="target/$TARGET/release/generative-icons"
           file "$bin"
           if [ "$NATIVE" != "true" ]; then
             [ "$(lipo -archs "$bin")" = "x86_64" ]
@@ -373,11 +373,11 @@ jobs:
           TARGET: ${{ matrix.target }}
           VERSION: ${{ needs.version.outputs.version }}
         run: |
-          name="gen-animated-icons-$VERSION-$TARGET"
+          name="generative-icons-$VERSION-$TARGET"
           mkdir -p "dist/$name"
-          cp "target/$TARGET/release/gen-animated-icons" LICENSE THIRD_PARTY_NOTICES.md "dist/$name/"
+          cp "target/$TARGET/release/generative-icons" LICENSE THIRD_PARTY_NOTICES.md "dist/$name/"
           cp "licenses/THIRD_PARTY_LICENSES-$TARGET.txt" "dist/$name/THIRD_PARTY_LICENSES.txt"
-          chmod 755 "dist/$name/gen-animated-icons"
+          chmod 755 "dist/$name/generative-icons"
           cd dist || exit 1
           tar -czf "$name.tar.gz" "$name"
           shasum -a 256 "$name.tar.gz" > "$name.tar.gz.sha256"
@@ -416,8 +416,8 @@ jobs:
         run: |
           # A draft does not create the tag; publishing the release does, at this commit.
           gh release create "$TAG" --draft --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
-            --title "gen-animated-icons $VERSION" \
-            --notes "gen-animated-icons $VERSION. Binaries for macOS (arm64, x64) and Linux with glibc (arm64, x64), with SHA-256 checksums in SHA256SUMS. Each archive carries LICENSE, THIRD_PARTY_NOTICES.md and THIRD_PARTY_LICENSES.txt. See CHANGELOG.md." \
+            --title "generative-icons $VERSION" \
+            --notes "generative-icons $VERSION. Binaries for macOS (arm64, x64) and Linux with glibc (arm64, x64), with SHA-256 checksums in SHA256SUMS. Each archive carries LICENSE, THIRD_PARTY_NOTICES.md and THIRD_PARTY_LICENSES.txt. See CHANGELOG.md." \
             dist/*.tar.gz dist/*.sha256 dist/SHA256SUMS
 
   npm:
@@ -443,9 +443,9 @@ jobs:
         run: |
           # Each platform package gets its target's binary and license files from the tarball.
           fill() {
-            name="gen-animated-icons-$VERSION-$1"
+            name="generative-icons-$VERSION-$1"
             tar -xzf "dist/$name.tar.gz" -C dist
-            install -m 755 "dist/$name/gen-animated-icons" "npm/platforms/$2/bin/gen-animated-icons"
+            install -m 755 "dist/$name/generative-icons" "npm/platforms/$2/bin/generative-icons"
             for file in LICENSE THIRD_PARTY_NOTICES.md THIRD_PARTY_LICENSES.txt; do
               install -m 644 "dist/$name/$file" "npm/platforms/$2/$file"
             done
@@ -455,15 +455,15 @@ jobs:
           fill aarch64-unknown-linux-gnu linux-arm64-gnu
           fill x86_64-unknown-linux-gnu linux-x64-gnu
           # The wrapper holds only the Node shim.
-          cp LICENSE npm/gen-animated-icons/
+          cp LICENSE npm/generative-icons/
       - name: Pack
         run: |
           mkdir -p dist/npm
-          for dir in npm/platforms/* npm/gen-animated-icons; do
+          for dir in npm/platforms/* npm/generative-icons; do
             npm pack "./$dir" --pack-destination dist/npm
           done
-          for tgz in dist/npm/lottiefiles-gen-animated-icons-*.tgz; do
-            mode=$(tar -tvzf "$tgz" package/bin/gen-animated-icons | cut -c1-10)
+          for tgz in dist/npm/lottiefiles-generative-icons-*.tgz; do
+            mode=$(tar -tvzf "$tgz" package/bin/generative-icons | cut -c1-10)
             if [ "$mode" != "-rwxr-xr-x" ]; then echo "$tgz: the binary is $mode, not executable"; exit 1; fi
             for file in LICENSE THIRD_PARTY_NOTICES.md THIRD_PARTY_LICENSES.txt; do
               if ! tar -tzf "$tgz" "package/$file" > /dev/null; then echo "$tgz: $file is missing"; exit 1; fi
@@ -486,7 +486,7 @@ jobs:
       #   env:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       #   run: |
-      #     for tgz in dist/npm/lottiefiles-gen-animated-icons-*.tgz; do
+      #     for tgz in dist/npm/lottiefiles-generative-icons-*.tgz; do
       #       npm publish "$tgz" --access public --provenance
       #     done
-      #     npm publish dist/npm/gen-animated-icons-*.tgz --access public --provenance
+      #     npm publish dist/npm/generative-icons-*.tgz --access public --provenance

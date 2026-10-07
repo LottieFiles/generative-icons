@@ -1,12 +1,12 @@
 # @lottiefiles/generative-icons-react
 
-React and Next.js component for Generative Animated Icons.
+React and Next.js component for Generative Icons.
 
 ## Install
 
 ```sh
 npm install @lottiefiles/generative-icons-runtime @lottiefiles/generative-icons-react
-npx gen-animated-icons init && npx gen-animated-icons add heart
+npx generative-icons init && npx generative-icons add heart
 ```
 
 Requires React 18 or 19.
@@ -16,7 +16,7 @@ Requires React 18 or 19.
 ```jsx
 'use client';
 import { AnimatedIcon } from '@lottiefiles/generative-icons-react';
-import icon, { src } from './gen-animated-icons/heart.mjs';
+import icon, { src } from './generative-icons/heart.mjs';
 
 export function Favorite() {
   return <AnimatedIcon icon={icon} src={src} size={24} variant="outline" motion="strong" />;

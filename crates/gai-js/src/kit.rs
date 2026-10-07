@@ -1,4 +1,4 @@
-//! The authoring kit: the files a user project keeps in `gen-animated-icons/library/`, so its
+//! The authoring kit: the files a user project keeps in `generative-icons/library/`, so its
 //! set imports them (`../library/ai-authoring.mjs`) as library sets import
 //! `motion/icon-sets/library/`. The closure is `ai-authoring.mjs → {drawing.mjs,
 //! direction.mjs}`, `direction.mjs → drawing.mjs`, `drawing.mjs → svgpath` (embedded), plus

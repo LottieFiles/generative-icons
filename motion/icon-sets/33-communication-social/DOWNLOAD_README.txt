@@ -1,4 +1,4 @@
-COMMUNICATION & SOCIAL — Generative Animated Icons by LottieFiles
+COMMUNICATION & SOCIAL — Generative Icons by LottieFiles
 
 9 animated vector icons: Inbox, Address book, Voicemail, Transfer call, Dial pad, Emoji picker, Thumbs up / down, RSS feed, Announcement.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

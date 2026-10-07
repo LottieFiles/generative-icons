@@ -18,7 +18,7 @@ use crate::error::{Error, Result};
 use crate::http;
 
 /// The client name shown on the consent page.
-const CLIENT_NAME: &str = "gen-animated-icons";
+const CLIENT_NAME: &str = "generative-icons";
 /// Scope requested when the server advertises none.
 const DEFAULT_SCOPE: &str = "mcp:full";
 

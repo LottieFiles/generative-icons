@@ -1,4 +1,4 @@
-AUTOMOTIVE — Generative Animated Icons by LottieFiles
+AUTOMOTIVE — Generative Icons by LottieFiles
 
 20 animated vector icons: Car, Electric car, Fuel pump, Speedometer, Parking brake, Tire pressure, Engine, Seatbelt, Headlights, Wiper, Steering wheel, Car key, Car lock, Car battery, Gear shift, Car navigation, Car wash, Engine oil, Car window, Trunk.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

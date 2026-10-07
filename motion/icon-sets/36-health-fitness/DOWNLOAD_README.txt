@@ -1,4 +1,4 @@
-HEALTH & FITNESS — Generative Animated Icons by LottieFiles
+HEALTH & FITNESS — Generative Icons by LottieFiles
 
 20 animated vector icons: Heart rate, Step counter, Dumbbell, Running, Water intake, Sleep tracking, Calories, Stethoscope, Pill, Syringe, First aid kit, Bandage, Weight scale, Blood pressure, Yoga, Meditation, Nutrition, Jump rope, Hospital, DNA.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

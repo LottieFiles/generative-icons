@@ -1,4 +1,4 @@
-//! Foundations shared by every gen-animated-icons crate.
+//! Foundations shared by every generative-icons crate.
 //!
 //! The authoring pipeline this workspace replaces was written in JavaScript, and its
 //! committed outputs were produced by `JSON.stringify` and `Math.round`. These helpers

@@ -1,6 +1,6 @@
 # Authoring benchmarks
 
-Measured runs of AI agents authoring library icons with the `gen-animated-icons` CLI and the hosted engine. The raw data for each run sits beside this page.
+Measured runs of AI agents authoring library icons with the `generative-icons` CLI and the hosted engine. The raw data for each run sits beside this page.
 
 ## Category fill, 5 October 2026
 

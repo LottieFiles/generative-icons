@@ -1,4 +1,4 @@
-FOOD & DRINK — Generative Animated Icons by LottieFiles
+FOOD & DRINK — Generative Icons by LottieFiles
 
 20 animated vector icons: Coffee cup, Tea cup, Wine glass, Beer mug, Cocktail, Cooking pot, Frying pan, Kettle, Toaster, Blender, Chef hat, Cutlery, Pizza, Burger, Cake, Ice cream, Noodle bowl, Bread, Recipe book, Restaurant menu.
 Light and Strong motion. Outline (1.5 / 2 / 2.5 weights), Solid and Duotone styles. Light and dark themes.

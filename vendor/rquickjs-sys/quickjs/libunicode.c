@@ -875,12 +875,12 @@ static int unicode_get_cc(uint32_t c)
     }
 }
 
-/* gen-animated-icons: sort_cc() sorts runs of combining marks longer than this by
+/* generative-icons: sort_cc() sorts runs of combining marks longer than this by
    counting, since insertion is quadratic in the run's length. Both sorts are stable,
    so the result is the same. */
 #define SORT_CC_INSERTION_MAX 32
 
-/* gen-animated-icons: stable sort by combining class of the run of combining marks
+/* generative-icons: stable sort by combining class of the run of combining marks
    that starts at buf[start], in linear time. Return the end of the run, or -1 if
    memory error. */
 static int sort_cc_run(int *buf, int start, int len,
@@ -916,7 +916,7 @@ static int sort_cc_run(int *buf, int start, int len,
     return end;
 }
 
-/* return -1 if memory error (gen-animated-icons: was void) */
+/* return -1 if memory error (generative-icons: was void) */
 static int sort_cc(int *buf, int len,
                    void *opaque, DynBufReallocFunc *realloc_func)
 {
@@ -932,7 +932,7 @@ static int sort_cc(int *buf, int len,
                 cc1 = unicode_get_cc(ch1);
                 if (cc1 == 0)
                     break;
-                /* gen-animated-icons: a long run is sorted whole by counting;
+                /* generative-icons: a long run is sorted whole by counting;
                    buf[start..j) is already sorted stably, so the result is the
                    same */
                 if (j - start >= SORT_CC_INSERTION_MAX) {
@@ -1031,7 +1031,7 @@ int unicode_normalize(uint32_t **pdst, const uint32_t *src, int src_len,
     to_nfd_rec(dbuf, (const int *)src, src_len, is_compat);
     if (dbuf_error(dbuf)) {
     fail:
-        dbuf_free(dbuf); /* gen-animated-icons: was leaked */
+        dbuf_free(dbuf); /* generative-icons: was leaked */
         *pdst = NULL;
         return -1;
     }
