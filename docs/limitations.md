@@ -27,4 +27,10 @@ The checks cover source geometry, native output, paint, rendering and packaging,
 
 ## Formats
 
-Packages ship native dotLottie files and per-icon descriptors. Animated SVG, SMIL, PNG and other export formats are not yet available.
+Packages ship native dotLottie files and per-icon descriptors. `generative-icons export` and the runtime's `svg` module make an animated SVG (SMIL) of any icon on demand; see [Animated SVG](using-packages.md#animated-svg). In that SVG:
+
+- `prefers-reduced-motion` can't stop SMIL. Inline, pause it with `pauseAnimations()`; a looping `<img>` keeps looping.
+- A trimmed fill is drawn whole. `team-roles` and `lasso-select` are the only icons with one.
+- Hover, click, toggle and script triggers need an inline `<svg>`; an `<img>` or CSS background plays only `loop` and `load`.
+
+PNG, GIF, video and other formats are not available.

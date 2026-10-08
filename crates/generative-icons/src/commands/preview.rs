@@ -348,7 +348,7 @@ fn looks(args: &PreviewArgs) -> Result<Vec<Look>> {
 
 /// The `.lottie` to render and the icon record describing its motions:
 /// `(source name, bytes, icon)`.
-fn source(ctx: &Context, id: &str) -> Result<(&'static str, Vec<u8>, Value)> {
+pub(crate) fn source(ctx: &Context, id: &str) -> Result<(&'static str, Vec<u8>, Value)> {
     let root = ctx.cwd.as_path();
     if let Some(config) = Config::load(root, ctx.platform)? {
         if let Some(built) = Built::read(root, id)? {

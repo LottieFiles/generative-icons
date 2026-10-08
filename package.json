@@ -17,7 +17,7 @@
     "icons:new": "python3 scripts/icon-set.py new",
     "icons:register": "python3 scripts/icon-set.py register",
     "build:packages": "python3 scripts/build-packages.py",
-    "test:packages": "node --test tests/packages.test.mjs",
+    "test:packages": "node --test tests/packages.test.mjs tests/svg.test.mjs",
     "pack:release": "node scripts/pack-release.mjs",
     "test:consumers": "node scripts/test-consumers.mjs",
     "contribution:prepare": "python3 scripts/prepare-contribution.py"

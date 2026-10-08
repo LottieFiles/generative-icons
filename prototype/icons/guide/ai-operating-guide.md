@@ -575,6 +575,39 @@ Components that handle events in Next.js need `'use client'`. The adapter loads 
 
 Runtime color settings are applied at playback and are not baked into the file. Downloaded native files keep their authored themes and style slots.
 
+## Animated SVG
+
+Where a player isn't wanted (a static page, Markdown, email or a design tool), export an icon as an SVG that the browser animates by itself with SMIL: no player, script or WASM, and about 1 KB gzipped for a typical icon.
+
+```sh
+npx generative-icons export bell --out public/icons/bell.svg   # plays on hover
+npx generative-icons export menu --style solid --color '#008c76'   # prints the SVG
+```
+
+The same export in JavaScript, at build time or in the browser:
+
+```js
+import { dotLottieToSvg } from '@lottiefiles/generative-icons-runtime/svg';
+import icon, { src } from './generative-icons/bell.mjs';
+
+const svg = await dotLottieToSvg(icon, await (await fetch(src)).arrayBuffer(), { style: 'outline', weight: 2 });
+```
+
+`iconToSvg(icon, animations, options)` does the same from parsed Lottie JSON, keyed by animation name. Options are `motion`, `style`, `weight`, `color`, `trigger`, `state`, `size` and `id`.
+
+| Trigger | Plays | Works in |
+| --- | --- | --- |
+| `auto` (default) | `toggle` for stateful icons, `loop` for loaders, `hover` otherwise | as below |
+| `hover`, `click` | The action, then the rest pose, like the runtime's `play()` | Inline `<svg>` |
+| `toggle` | Stateful icons: each click plays the other direction | Inline `<svg>` |
+| `loop`, `load` | The whole timeline on repeat, or the action once | Inline `<svg>`, `<img>`, CSS backgrounds |
+| `js` | `svg.getElementById('<id>_m').beginElement()`. Stateful icons: `<id>_a` leaves the first state and `<id>_b` returns to it | Inline `<svg>` |
+
+- Color is `currentColor` unless you pass a hex value, so CSS `color` themes the icon. Any weight from 1 to 3 works.
+- The static attributes hold the rest pose, so renderers without SMIL show the icon at rest.
+- Element ids start with the icon id (`--id-prefix`, or the `id` option), with `-` written as `_`. Give each inline copy on a page its own.
+- SMIL ignores `prefers-reduced-motion`. In apps that need reduced motion or app-driven state, use the runtime's player.
+
 ## iOS and Android
 
 The same commands work in iOS and Android apps: `add` installs the `.lottie` file into the app's assets and a JSON descriptor into `generative-icons/descriptors/`. Play the files with dotLottie for iOS or Android; the installed skill's runtime reference has SwiftUI, Compose and Views examples. Native players show the 1.5, 2 and 2.5 weights; `add --bake-weight <w>` bakes any other weight into the file.

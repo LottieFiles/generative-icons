@@ -127,7 +127,7 @@ fn agents_search_and_preview_through_mcp() {
 
     let tools = session.request("tools/list", json!({}));
     let names: Vec<&str> = tools["tools"].as_array().unwrap().iter().map(|t| t["name"].as_str().unwrap()).collect();
-    assert_eq!(names, ["search", "add", "context", "create", "check", "draft", "build", "preview"]);
+    assert_eq!(names, ["search", "add", "context", "create", "check", "draft", "build", "preview", "export"]);
     let search_tool = &tools["tools"][0];
     assert_eq!(search_tool["inputSchema"]["required"], json!(["query"]));
     assert_eq!(search_tool["annotations"]["readOnlyHint"], true);
@@ -159,6 +159,13 @@ fn agents_search_and_preview_through_mcp() {
         assert_eq!(&png[..8], b"\x89PNG\r\n\x1a\n");
         assert_eq!(std::fs::read(dir.path().join(file["path"].as_str().unwrap())).unwrap(), png);
     }
+
+    let export = session
+        .request("tools/call", json!({"name": "export", "arguments": {"id": "heart", "style": "duotone", "weight": 2.5}}));
+    assert_eq!(export["isError"], false, "{export}");
+    let svg = &export["structuredContent"];
+    assert_eq!((svg["trigger"].as_str(), svg["style"].as_str()), (Some("hover"), Some("duotone")));
+    assert!(svg["svg"].as_str().unwrap().starts_with("<svg xmlns=\"http://www.w3.org/2000/svg\""), "{svg}");
 
     // With a progress token, each log line of the command arrives as progress.
     let tracked = session.request(
@@ -214,7 +221,7 @@ fn a_call_stuck_in_icon_code_leaves_the_server_answering() {
     session.send(json!({"jsonrpc": "2.0", "id": 900, "method": "tools/call", "params": {"name": "check", "arguments": {"ids": ["spin"]}}}));
     // The server is not running that code: other requests are answered meanwhile.
     let tools = session.request("tools/list", json!({}));
-    assert_eq!(tools["tools"].as_array().unwrap().len(), 8);
+    assert_eq!(tools["tools"].as_array().unwrap().len(), 9);
     let found = session.request("tools/call", json!({"name": "search", "arguments": {"query": "bell", "limit": 1}}));
     assert_eq!(found["isError"], false, "{found}");
     assert!(started.elapsed() < Duration::from_secs(60), "{:?}", started.elapsed());
@@ -320,7 +327,7 @@ fn lines_that_are_not_requests_are_answered_and_the_server_keeps_serving() {
     assert!(long["error"]["message"].as_str().unwrap().contains("longer than"), "{long}");
 
     let tools = session.request("tools/list", json!({}));
-    assert_eq!(tools["tools"].as_array().unwrap().len(), 8);
+    assert_eq!(tools["tools"].as_array().unwrap().len(), 9);
     assert!(
         session.stray.is_empty() && session.notifications.is_empty(),
         "{:?} {:?}",

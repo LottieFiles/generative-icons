@@ -28,6 +28,8 @@
     "dist/index.d.ts",
     "dist/controller.mjs",
     "dist/weight.mjs",
+    "dist/svg.mjs",
+    "dist/svg.d.ts",
     "README.md",
     "LICENSE"
   ],
@@ -36,7 +38,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs"
     },
-    "./controller": "./dist/controller.mjs"
+    "./controller": "./dist/controller.mjs",
+    "./svg": {
+      "types": "./dist/svg.d.ts",
+      "import": "./dist/svg.mjs"
+    }
   },
   "dependencies": {
     "@lottiefiles/dotlottie-web": "0.80.0"

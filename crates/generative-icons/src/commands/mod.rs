@@ -8,6 +8,7 @@ pub mod context;
 pub mod create;
 pub mod diff;
 pub mod doctor;
+pub mod export;
 pub mod info;
 pub mod init;
 pub mod library;

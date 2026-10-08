@@ -64,6 +64,7 @@ Library icons can be replaced by specs: `library adopt <set> <build>…` copies 
 | `gai-check` | Preflight, set verification (generic checks plus rule data in `rules/`), paint contract, geometry contracts, motion measurement |
 | `gai-render` | dotlottie-rs rendering, the visual checks that replace `verify.html`, review sheets |
 | `gai-engine` | Hosted Creator MCP client: OAuth sign-in, token storage, export, downloads, native normalization; `PlanRunner` for spec v2 (one call per icon, draft images, bundle split) |
+| `gai-svg` | Animated SVG (SMIL) export for `export`: a byte-identical port of `packages/runtime/src/svg.mjs`, held to it by golden files in `tests/golden/` |
 | `gai-spec` | Icon spec v2 (`gai-icon/2`): JSON validation with pointer diagnostics, the compiler to a plan (`gai-plan/1`), lints, and the engine script `assets/build-v2.js` |
 | `generative-icons` | The CLI: app commands, `library` maintainer commands, the `mcp` server, and the agent skill it installs (`assets/skill/`, the one source of that skill) |
 

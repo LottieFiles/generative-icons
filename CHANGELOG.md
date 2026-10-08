@@ -18,6 +18,7 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 - 136 new icons in 14 categories, so every category has at least 20: 1,141 icons in 58 sets.
 - Every spec icon's editable source ships in `@lottiefiles/generative-icons` as `specs/<id>.icon.json`, hashed in `release.json`. `create <id> --from <library-id>` starts from it, from a checkout, an installed package or the hosted library.
 - `library adopt` replaces a library icon with a spec v2 build and `library adopt --add` adds a new one to a set; `create <library-id> --replace` starts a reanimation from the icon's spec, or from its v1 drawing ported to a spec.
+- `generative-icons export <id>` writes an icon as an animated SVG that browsers play without a player (SMIL). Stateful icons toggle on click, loaders loop and the rest play on hover, or pick a trigger with `--trigger`. The MCP server serves it as `export`, and `@lottiefiles/generative-icons-runtime/svg` (`iconToSvg`, `dotLottieToSvg`) makes the same SVG in JavaScript.
 - The CLI says when it is waiting for macOS Keychain approval (after 3 s) and stops with an error after 120 s.
 - CI for the Rust workspace on macOS and Linux, and a manual release workflow that builds the binaries, drafts a GitHub release and packs the npm packages without publishing them.
 

@@ -1,5 +1,5 @@
 //! `mcp`: a stdio MCP server that gives agents this CLI's task-shaped commands:
-//! `search`, `add`, `create`, `context`, `check`, `draft`, `build` and `preview`.
+//! `search`, `add`, `create`, `context`, `check`, `draft`, `build`, `preview` and `export`.
 //!
 //! Each tool call runs the command in a child process of this binary with `--json`, so
 //! a renderer fault or a stuck engine call ends that call, not the server, and icon code
@@ -61,7 +61,8 @@ Look for an existing icon first: search, then add. To make a missing icon: conte
 create (a JSON spec, optionally from a close library icon's spec), edit the spec it names, check it offline, \
 draft (one engine call returns a review sheet as images, nothing stored), build, then preview and look at the images. \
 Revise and rebuild until the sheets look right. Never claim a visual review you did not do. \
-For what specs cannot express yet (continuous loaders), create with batch: true writes a JS batch instead.";
+For what specs cannot express yet (continuous loaders), create with batch: true writes a JS batch instead. \
+Where no player can run (static pages, Markdown, email), export returns an animated SVG that plays by itself.";
 
 /// The MCP settings entry that starts this server; `init` prints it for the user to add
 /// and never writes it.
@@ -711,6 +712,38 @@ fn tools() -> Vec<ToolSpec> {
                 Ok(command_line("preview", options, vec![id]))
             },
             images: true,
+        },
+        ToolSpec {
+            tool: tool(
+                "export",
+                "Export an icon as animated SVG",
+                "Export an icon as an animated SVG that browsers play with SMIL: no player, script or WASM. The trigger defaults to toggle for stateful icons, loop for loaders and hover otherwise; hover, click, toggle and js need the SVG inline, while an <img> plays only loop and load (and shows the rest pose otherwise). Color defaults to currentColor. Works for built local icons, installed icons and library icons. Returns {id, source, motion, style, weight, color, trigger, bytes, sha256, use} plus `svg`, or `path` when `out` is given.",
+                json!({
+                    "id": { "type": "string", "description": "Icon id" },
+                    "motion": { "type": "string", "enum": ["light", "strong"], "description": "Default light" },
+                    "style": { "type": "string", "enum": ["outline", "solid", "duotone"], "description": "Default outline" },
+                    "weight": { "type": "number", "minimum": 1, "maximum": 3, "description": "Outline weight, default 2" },
+                    "color": { "type": "string", "description": "currentColor (default) or a hex color such as #008c76" },
+                    "trigger": { "type": "string", "enum": ["auto", "hover", "click", "toggle", "loop", "load", "js"], "description": "Default auto" },
+                    "state": { "type": "string", "description": "Stateful icons: the state shown first (default: the end state)" },
+                    "size": { "type": "number", "minimum": 1, "maximum": 4096, "description": "Width in CSS pixels (default 32)" },
+                    "idPrefix": { "type": "string", "description": "Prefix for the SVG's element ids (default: the icon id); give each inline copy on a page its own" },
+                    "out": { "type": "string", "description": "Write the SVG to this file, relative to cwd, instead of returning it" }
+                }),
+                &["id"],
+                annotations(false, false, true, true),
+            ),
+            argv: |args| {
+                let id = string(args, "id")?.ok_or("id is required")?;
+                let mut options = Vec::new();
+                for (key, option) in [("motion", "--motion"), ("style", "--style"), ("color", "--color"), ("trigger", "--trigger"), ("state", "--state"), ("idPrefix", "--id-prefix"), ("out", "--out")] {
+                    push_value(&mut options, option, string(args, key)?);
+                }
+                push_value(&mut options, "--weight", number(args, "weight")?);
+                push_value(&mut options, "--size", number(args, "size")?);
+                Ok(command_line("export", options, vec![id]))
+            },
+            images: false,
         },
     ]
 }

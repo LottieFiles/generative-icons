@@ -1272,6 +1272,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "gai-svg"
+version = "0.1.0"
+dependencies = [
+ "gai-core",
+ "serde_json",
+ "thiserror",
+]
+
+[[package]]
 name = "generative-icons"
 version = "0.1.0"
 dependencies = [
@@ -1288,6 +1297,7 @@ dependencies = [
  "gai-package",
  "gai-render",
  "gai-spec",
+ "gai-svg",
  "indexmap",
  "miniz_oxide 0.8.9",
  "png",

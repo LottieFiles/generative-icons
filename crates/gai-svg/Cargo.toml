@@ -1,0 +1,12 @@
+[package]
+name = "gai-svg"
+description = "Animated SVG (SMIL) export of Generative Icons' Lottie animations"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+gai-core.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true

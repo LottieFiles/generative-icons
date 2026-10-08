@@ -24,6 +24,18 @@ button.addEventListener('click', () => handle.play());
 
 The handle exposes `play()`, `setState()`, `update()`, `stop()` and `destroy()`. Reduced motion follows the OS preference by default.
 
+## Animated SVG
+
+`@lottiefiles/generative-icons-runtime/svg` turns an icon into an SVG that browsers animate by themselves (SMIL): no player, script or WASM.
+
+```js
+import { dotLottieToSvg } from '@lottiefiles/generative-icons-runtime/svg';
+
+const svg = await dotLottieToSvg(icon, bytes, { style: 'outline', weight: 2, trigger: 'auto' });
+```
+
+`trigger: 'auto'` toggles stateful icons on click, loops loaders and plays the rest on hover. `npx generative-icons export <id>` writes the same SVG.
+
 Keep all `@lottiefiles/generative-icons*` packages on the same version.
 
 ## Docs

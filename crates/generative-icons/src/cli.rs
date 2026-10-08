@@ -94,6 +94,8 @@ pub enum Command {
     Build(BuildArgs),
     /// Render an icon's motions to contact sheets (PNG)
     Preview(PreviewArgs),
+    /// Export an icon as an animated SVG that plays without a player (SMIL)
+    Export(ExportArgs),
     /// Render a v2 icon's review sheet in one engine call, before any build (nothing stored)
     Draft(DraftArgs),
     /// Send local icons for review (or write the bundle with --dry-run)
@@ -384,6 +386,69 @@ pub struct PreviewArgs {
     /// Folder for the sheets [default: .generative-icons/previews/ID]
     #[arg(long, value_name = "DIR")]
     pub out: Option<PathBuf>,
+}
+
+/// Arguments of `export`.
+#[derive(Debug, Args)]
+pub struct ExportArgs {
+    /// Icon id: a built local icon, an installed icon or a library icon
+    #[arg(value_name = "ID")]
+    pub id: String,
+    /// Motion
+    #[arg(long, value_enum, default_value_t = ExportMotion::Light)]
+    pub motion: ExportMotion,
+    /// Style: outline, solid or duotone
+    #[arg(long, value_parser = parse_style, default_value = "outline")]
+    pub style: Style,
+    /// Outline weight from 1 to 3
+    #[arg(long, default_value_t = 2.0)]
+    pub weight: f64,
+    /// currentColor (follows CSS color) or a hex color such as #008c76
+    #[arg(long, default_value = "currentColor")]
+    pub color: String,
+    /// How it starts playing [default: toggle for stateful icons, loop for loaders, else hover]
+    #[arg(long, value_enum, default_value_t = SvgTrigger::Auto)]
+    pub trigger: SvgTrigger,
+    /// Stateful icons: the state shown first [default: the icon's end state, as the runtime]
+    #[arg(long, value_name = "STATE")]
+    pub state: Option<String>,
+    /// Width in CSS pixels [default: the icon's own width]
+    #[arg(long, value_name = "PX")]
+    pub size: Option<f64>,
+    /// Prefix for the SVG's element ids [default: the icon id]; give each inline copy on a page its own
+    #[arg(long, value_name = "PREFIX")]
+    pub id_prefix: Option<String>,
+    /// Write the SVG to this file instead of printing it
+    #[arg(long, value_name = "FILE")]
+    pub out: Option<PathBuf>,
+}
+
+/// Motions `export` writes.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
+pub enum ExportMotion {
+    /// Light
+    Light,
+    /// Strong
+    Strong,
+}
+
+/// How an exported SVG starts playing.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
+pub enum SvgTrigger {
+    /// Toggle for stateful icons, loop for loaders, hover otherwise
+    Auto,
+    /// Plays when the pointer enters (inline SVG)
+    Hover,
+    /// Plays on click (inline SVG)
+    Click,
+    /// Stateful icons: each click plays the other direction (inline SVG)
+    Toggle,
+    /// Repeats the whole timeline (also in <img>)
+    Loop,
+    /// Plays once when loaded (also in <img>)
+    Load,
+    /// Script calls beginElement() (inline SVG)
+    Js,
 }
 
 /// Most columns a preview sheet takes, from `--times` or `--frames`.

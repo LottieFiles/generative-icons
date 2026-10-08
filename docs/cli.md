@@ -39,9 +39,10 @@ Before the first release, build the binary from this repository ([development](d
 | `draft <id>` | Spec icons only: one hosted-engine call builds every motion and renders a labelled review sheet (`.generative-icons/drafts/<id>.png` and `<id>-24px.png`). Nothing is exported or stored. A spec with errors stops before the engine. |
 | `build [<id>…]` | Exports on the hosted engine, then packages, verifies, renders preview sheets and installs (`--no-install`, `--jobs 1-4`, `--all`). A spec v2 icon takes one engine call for all its motions. v1 and v2 icons build in separate runs. |
 | `preview <id>` | Renders a built, installed or library icon to PNG contact sheets (`--motion`, `--animation`, `--times`, `--frames`, `--styles`, `--weights`, `--themes`, `--cell`, `--out`) |
+| `export <id>` | Writes a built, installed or library icon as an animated SVG that browsers play without a player (SMIL): `--motion`, `--style`, `--weight`, `--color` (`currentColor` unless you pass a hex value), `--trigger auto\|hover\|click\|toggle\|loop\|load\|js` (`auto`: `toggle` for stateful icons, `loop` for loaders, `hover` otherwise), `--state` (a stateful icon's first state), `--size`, `--id-prefix`, and `--out <file>` (without it the SVG is printed, or returned as `svg` in JSON). `hover`, `click`, `toggle` and `js` need an inline `<svg>`; an `<img>` plays only `loop` and `load`. See [Animated SVG](using-packages.md#animated-svg). |
 | `submit <id…>` | Sends verified local icons for review (`--license MIT\|CC-BY-4.0`, `--message`). The bundle holds each icon's verified build snapshot, only the modules it imports, and its two review sheets (regenerated if they are missing or edited). Icons with untraceable imports are refused unless you pass `--include-untraced`. A spec v2 icon's bundle holds its spec and its verified build. `--dry-run --output bundle.zip` only writes the bundle. |
 | `login`, `logout`, `whoami` | Signs in to the hosted engine, signs out, and shows the account and whether the session is verified |
-| `mcp` | Serves `search`, `add`, `context`, `create`, `check`, `draft`, `build` and `preview` as MCP tools over stdio |
+| `mcp` | Serves `search`, `add`, `context`, `create`, `check`, `draft`, `build`, `preview` and `export` as MCP tools over stdio |
 
 ## Sign-in and the hosted engine
 

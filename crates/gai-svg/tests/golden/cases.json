@@ -1,0 +1,634 @@
+{
+ "note": "Golden SVGs shared by packages/runtime/src/svg.mjs (tests/svg.test.mjs) and gai-svg (tests/golden.rs). Inputs are prototype/icons/<set>/assets/<animation>.json. Regenerate with UPDATE_SVG_GOLDENS=1 node --test tests/svg.test.mjs.",
+ "cases": [
+  {
+   "file": "bell.svg",
+   "set": "01",
+   "why": "legacy set: one key per frame, hover",
+   "icon": {
+    "id": "bell",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "bell",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.56,
+      "rest": 37,
+      "continuous": false
+     },
+     {
+      "name": "bell-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.76,
+      "rest": 48,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {}
+  },
+  {
+   "file": "microphone-load.svg",
+   "set": "05",
+   "why": "plays once on load",
+   "icon": {
+    "id": "microphone",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "microphone",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.46,
+      "rest": 30,
+      "continuous": false
+     },
+     {
+      "name": "microphone-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.76,
+      "rest": 48,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {
+    "trigger": "load"
+   }
+  },
+  {
+   "file": "sun-strong.svg",
+   "set": "05",
+   "why": "strong motion",
+   "icon": {
+    "id": "sun",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "sun",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.44999999999999996,
+      "rest": 30,
+      "continuous": false
+     },
+     {
+      "name": "sun-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.715,
+      "rest": 46,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {
+    "motion": "strong"
+   }
+  },
+  {
+   "file": "disclaimer.svg",
+   "set": "59",
+   "why": "trim end with hold-to-zero instants",
+   "icon": {
+    "id": "disclaimer",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "disclaimer",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.37,
+      "rest": 25,
+      "continuous": false
+     },
+     {
+      "name": "disclaimer-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.52,
+      "rest": 34,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {}
+  },
+  {
+   "file": "achievement-duotone-2.5.svg",
+   "set": "54",
+   "why": "trim on morphing paths, tint, bold layers",
+   "icon": {
+    "id": "achievement",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "achievement",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.43,
+      "rest": 29,
+      "continuous": false
+     },
+     {
+      "name": "achievement-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.58,
+      "rest": 38,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {
+    "style": "duotone",
+    "weight": 2.5
+   }
+  },
+  {
+   "file": "edit-profile-strong-1.75.svg",
+   "set": "26",
+   "why": "overshooting trim (clamped) and an in-between weight",
+   "icon": {
+    "id": "edit-profile",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "edit-profile",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.52,
+      "rest": 34,
+      "continuous": false
+     },
+     {
+      "name": "edit-profile-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.72,
+      "rest": 46,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {
+    "motion": "strong",
+    "weight": 1.75
+   }
+  },
+  {
+   "file": "account-settings-strong-solid.svg",
+   "set": "26",
+   "why": "solid knockout through an inverted matte",
+   "icon": {
+    "id": "account-settings",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "account-settings",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.47,
+      "rest": 31,
+      "continuous": false
+     },
+     {
+      "name": "account-settings-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.66,
+      "rest": 43,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {
+    "style": "solid",
+    "motion": "strong"
+   }
+  },
+  {
+   "file": "archive-solid.svg",
+   "set": "25",
+   "why": "solid knockout through subtract masks",
+   "icon": {
+    "id": "archive",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "archive",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.38,
+      "rest": 26,
+      "continuous": false
+     },
+     {
+      "name": "archive-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.64,
+      "rest": 41,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {
+    "style": "solid"
+   }
+  },
+  {
+   "file": "calendar-sync-008c76-24-loop.svg",
+   "set": "34",
+   "why": "f32 key times, loop, hex colour, size",
+   "icon": {
+    "id": "calendar-sync",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "calendar-sync",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.4666666666666667,
+      "rest": 31,
+      "continuous": false
+     },
+     {
+      "name": "calendar-sync-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.62,
+      "rest": 40,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {
+    "trigger": "loop",
+    "color": "#008c76",
+    "size": 24
+   }
+  },
+  {
+   "file": "searching.svg",
+   "set": "41",
+   "why": "continuous loader: auto is loop",
+   "icon": {
+    "id": "searching",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "searching",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 2.4,
+      "rest": 0,
+      "continuous": true
+     },
+     {
+      "name": "searching-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 2.4,
+      "rest": 0,
+      "continuous": true
+     }
+    ]
+   },
+   "options": {}
+  },
+  {
+   "file": "sort-order.svg",
+   "set": "28",
+   "why": "stateful: auto is toggle, from the end state",
+   "icon": {
+    "id": "sort-order",
+    "stateful": true,
+    "startState": "ascending",
+    "endState": "descending",
+    "motions": [
+     {
+      "name": "sort-order",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.5,
+      "rest": 33,
+      "continuous": false,
+      "reverse": {
+       "name": "sort-order-reverse",
+       "motionId": "light",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.5,
+       "rest": 33,
+       "continuous": false
+      }
+     },
+     {
+      "name": "sort-order-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.6,
+      "rest": 39,
+      "continuous": false,
+      "reverse": {
+       "name": "sort-order-reverse-strong",
+       "motionId": "strong",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.6,
+       "rest": 39,
+       "continuous": false
+      }
+     }
+    ]
+   },
+   "options": {}
+  },
+  {
+   "file": "sort-order-sort-ascending-js.svg",
+   "set": "28",
+   "why": "stateful, script-driven, from the start state",
+   "icon": {
+    "id": "sort-order",
+    "stateful": true,
+    "startState": "ascending",
+    "endState": "descending",
+    "motions": [
+     {
+      "name": "sort-order",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.5,
+      "rest": 33,
+      "continuous": false,
+      "reverse": {
+       "name": "sort-order-reverse",
+       "motionId": "light",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.5,
+       "rest": 33,
+       "continuous": false
+      }
+     },
+     {
+      "name": "sort-order-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.6,
+      "rest": 39,
+      "continuous": false,
+      "reverse": {
+       "name": "sort-order-reverse-strong",
+       "motionId": "strong",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.6,
+       "rest": 39,
+       "continuous": false
+      }
+     }
+    ]
+   },
+   "options": {
+    "trigger": "js",
+    "state": "ascending",
+    "id": "sort"
+   }
+  },
+  {
+   "file": "play-pause.svg",
+   "set": "17",
+   "why": "collapsed round ends (hairpins)",
+   "icon": {
+    "id": "play-pause",
+    "stateful": true,
+    "startState": "Play",
+    "endState": "Pause",
+    "motions": [
+     {
+      "name": "play-pause",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.46,
+      "rest": 30,
+      "continuous": false,
+      "reverse": {
+       "name": "play-pause-reverse",
+       "motionId": "light",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.46,
+       "rest": 30,
+       "continuous": false
+      }
+     },
+     {
+      "name": "play-pause-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.5,
+      "rest": 33,
+      "continuous": false,
+      "reverse": {
+       "name": "play-pause-reverse-strong",
+       "motionId": "strong",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.5,
+       "rest": 33,
+       "continuous": false
+      }
+     }
+    ]
+   },
+   "options": {}
+  },
+  {
+   "file": "venue-toggle.svg",
+   "set": "55",
+   "why": "morph keys with different vertex counts",
+   "icon": {
+    "id": "venue",
+    "stateful": true,
+    "startState": "closed",
+    "endState": "open",
+    "motions": [
+     {
+      "name": "venue",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.5,
+      "rest": 33,
+      "continuous": false,
+      "reverse": {
+       "name": "venue-reverse",
+       "motionId": "light",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.45,
+       "rest": 30,
+       "continuous": false
+      }
+     },
+     {
+      "name": "venue-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.5,
+      "rest": 33,
+      "continuous": false,
+      "reverse": {
+       "name": "venue-reverse-strong",
+       "motionId": "strong",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.42,
+       "rest": 28,
+       "continuous": false
+      }
+     }
+    ]
+   },
+   "options": {
+    "trigger": "toggle"
+   }
+  },
+  {
+   "file": "image-generate-strong-outline.svg",
+   "set": "09",
+   "why": "hairpins in a stateful reset",
+   "icon": {
+    "id": "image-generate",
+    "stateful": true,
+    "startState": "prepared",
+    "endState": "result",
+    "motions": [
+     {
+      "name": "image-generate",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.66,
+      "rest": 43,
+      "reverse": {
+       "name": "image-generate-reset",
+       "motionId": "light",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.28,
+       "rest": 20
+      }
+     },
+     {
+      "name": "image-generate-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.7,
+      "rest": 45,
+      "reverse": {
+       "name": "image-generate-reset-strong",
+       "motionId": "strong",
+       "fps": 60,
+       "frames": 144,
+       "active": 0.3,
+       "rest": 21
+      }
+     }
+    ]
+   },
+   "options": {
+    "style": "outline",
+    "motion": "strong"
+   }
+  },
+  {
+   "file": "bell-bell-2-click.svg",
+   "set": "01",
+   "why": "click, custom id",
+   "icon": {
+    "id": "bell",
+    "stateful": false,
+    "startState": "rest",
+    "endState": "rest",
+    "motions": [
+     {
+      "name": "bell",
+      "motionId": "light",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.56,
+      "rest": 37,
+      "continuous": false
+     },
+     {
+      "name": "bell-strong",
+      "motionId": "strong",
+      "fps": 60,
+      "frames": 144,
+      "active": 0.76,
+      "rest": 48,
+      "continuous": false
+     }
+    ]
+   },
+   "options": {
+    "trigger": "click",
+    "id": "bell-2"
+   }
+  }
+ ]
+}
