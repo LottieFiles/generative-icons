@@ -794,7 +794,6 @@ fn prompt(
     contexts: &[PathBuf],
     packet_text: &str,
 ) -> Result<String> {
-    let labels = ["Project workflow and design rules", "Current polish acceptance rules", "Generation harness rules"];
     let mut sections = Vec::new();
     if let Some((file, text)) = brief {
         sections.push(section("User brief", file, text));
@@ -803,18 +802,31 @@ fn prompt(
         Some(root) => {
             let skill = root.join(".agents/skills/animated-icon-workflow");
             let files = [
-                skill.join("SKILL.md"),
-                skill.join("references/polish-review.md"),
-                skill.join("references/generation-harness.md"),
+                ("Project workflow and design rules", skill.join("SKILL.md")),
+                ("Current polish acceptance rules", skill.join("references/polish-review.md")),
+                ("Generation harness rules", skill.join("references/generation-harness.md")),
+                ("Motion principles", root.join("docs/motion-principles.md")),
+                ("Drawing principles", root.join("docs/design-principles.md")),
             ];
-            for (label, file) in labels.into_iter().zip(files) {
+            for (label, file) in files {
                 let (file, text) = read_text(&file)?;
                 sections.push(section(label, &file, &text));
             }
         }
         None => {
-            let embedded = ["SKILL.md", "references/review.md", "references/authoring.md"];
-            for (label, name) in labels.into_iter().zip(embedded) {
+            // In an app, the skill this binary ships: the family's direction (generated from the
+            // library's own docs), then the workflow and the spec format.
+            let embedded = [
+                ("Project workflow and design rules", "SKILL.md"),
+                ("Motion principles", "references/motion-principles.md"),
+                ("Drawing principles", "references/design-principles.md"),
+                ("Drawing and motion craft", "references/craft.md"),
+                ("Current polish acceptance rules", "references/polish-review.md"),
+                ("Motion system", "references/motion-system.md"),
+                ("Spec format", "references/authoring-v2.md"),
+                ("Reviewing previews", "references/review.md"),
+            ];
+            for (label, name) in embedded {
                 let text = SKILL_FILES.iter().find(|(path, _)| *path == name).map_or("", |(_, text)| *text);
                 sections.push(section(label, Path::new(name), text));
             }

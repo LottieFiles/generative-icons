@@ -19,11 +19,13 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 - Every spec icon's editable source ships in `@lottiefiles/generative-icons` as `specs/<id>.icon.json`, hashed in `release.json`. `create <id> --from <library-id>` starts from it, from a checkout, an installed package or the hosted library.
 - `library adopt` replaces a library icon with a spec v2 build and `library adopt --add` adds a new one to a set; `create <library-id> --replace` starts a reanimation from the icon's spec, or from its v1 drawing ported to a spec.
 - `generative-icons export <id>` writes an icon as an animated SVG that browsers play without a player (SMIL). Stateful icons toggle on click, loaders loop and the rest play on hover, or pick a trigger with `--trigger`. The MCP server serves it as `export`, and `@lottiefiles/generative-icons-runtime/svg` (`iconToSvg`, `dotLottieToSvg`) makes the same SVG in JavaScript.
+- The agent skill ships the family's whole direction, generated from the library's own docs: motion principles, the motion system, drawing principles, drawing and motion craft, and the polish review. Creating an icon starts by reading it and writing a brief (the event as cause → action → response → final state, the state policy, Light and Strong), the MCP instructions point to it, and `context --prompt` includes it in an app instead of the v1 authoring guide.
 - The CLI says when it is waiting for macOS Keychain approval (after 3 s) and stops with an error after 120 s.
 - CI for the Rust workspace on macOS and Linux, and a manual release workflow that builds the binaries, drafts a GitHub release and packs the npm packages without publishing them.
 
 ### Changed
 
+- MOTION.md allows the subtract masks and inverted alpha mattes that spec v2 Solid cut-outs export; it had listed masks and mattes as denied.
 - Documentation, the maintainer skill and the contribution flow use `generative-icons`. Creating icons no longer needs a clone of this repository.
 - Native export runs only on LottieFiles' hosted engine.
 - 414 library icons are reanimated with spec v2: each action now plays an event (something arrives, leaves, draws on or lands) instead of one move there and back. Each icon keeps its earlier drawing at rest, and its animation names are unchanged.

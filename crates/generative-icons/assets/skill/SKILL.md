@@ -28,6 +28,23 @@ Where the player can't run or isn't wanted (a static page, Markdown, email or a 
 
 ## 2. Create an icon when nothing fits
 
+An icon you make must match the library's drawing and motion quality. Before you brief, draw or animate, read the family's direction, the rules every library icon was made and reviewed by:
+
+- [motion-principles.md](references/motion-principles.md): events, not nudges; Light and Strong; material and mechanics; state and looping.
+- [design-principles.md](references/design-principles.md): construction, styles, geometry that survives motion, optical review.
+- [craft.md](references/craft.md): drawing the complete object and directing the motion before keyframing.
+- [polish-review.md](references/polish-review.md): what to decide before drawing, construction that fails in motion, and Strong acceptance.
+- [motion-system.md](references/motion-system.md): the motion system's principles, roles and decision procedure.
+
+Then brief each icon before you write its spec:
+
+- its meaning, and the event as **cause → action → response → final state**;
+- the state policy: a gesture that ends at rest, a state with a reverse that keeps its result, or a continuous indicator;
+- the driver, its followers and their lag, and any cue hidden at rest (sound, sparks, a trail) or mark that draws on;
+- Light (the event once, one beat) and Strong (what changes in the primary action), with travel in units, turns in degrees and times in seconds.
+
+A sway, wobble, bob, pulse, or a tilt or turn that comes back is a nudge, not an event; `check` warns `NUDGE` on one.
+
 ```sh
 generative-icons context "<meaning and motion>"    # contract, nearest references, their geometry and timing
 generative-icons create <id> --label "<Label>" --intent "<what the motion shows>" [--from <library-id>] [--neighbor <id>]
@@ -49,7 +66,7 @@ An icon is a spec: plain JSON shapes, roles, rigs and eased keys, with no SVG pa
 
 Iterate until the icon reads well:
 
-1. Open every sheet `draft` and `preview` write, and look at it. Check each style and weight, both themes, and Light against Strong in the same columns (the same elapsed times).
+1. Open every sheet `draft` and `preview` write, and look at it. Check each style and weight, both themes, and Light against Strong in the same columns (the same elapsed times). Judge the motion against your brief and the direction: is it the event, with the driver first and followers in order, and is Strong stronger in the primary action ([polish-review.md](references/polish-review.md))?
 2. Name each flaw you see, fix it in the spec, then rerun `check` and `draft`, and `build` and `preview` once the draft looks right.
 3. Stop when a round finds nothing new, or when the same flaw repeats twice; then report what remains.
 
@@ -76,7 +93,7 @@ To offer a finished icon to the library, the user runs `generative-icons submit 
 - `MODIFIED_FILE` means someone edited a managed file. Run `generative-icons diff`, show the user, and let them decide. Never delete or overwrite a file to get past it. An edited kit copy is fixed with `generative-icons init --update-kit`.
 - Colors are six-digit hex; resolve theme tokens first. Styles are `outline`, `solid` or `duotone`. Weight is 1 to 3 (outline only); iOS and Android players show 1.5, 2 or 2.5 unless `add --bake-weight <w>` bakes another.
 - Light and Strong are separate authored motions. Never fake Strong by changing speed.
-- Every action needs an event, not a nudge: animate what the object does for the user (a microphone takes sound, send leaves, a bell rings), show the cause briefly with parts hidden at rest (sound, sparks, wind, a trail), draw marks that mean something, and move in beats that get smaller with the parts in order.
+- Every action needs an event, not a nudge: animate what the object does for the user (a microphone takes sound, send leaves, a bell rings), show the cause briefly with parts hidden at rest (sound, sparks, wind, a trail), draw marks that mean something, and move in beats that get smaller with the parts in order. The full rules are in [motion-principles.md](references/motion-principles.md) and [design-principles.md](references/design-principles.md).
 - Decorative icons need no label; the control around them carries the accessible name. Respect reduced motion.
 - Report every check you did not run. Never claim you reviewed a preview you did not open.
 - Do not edit `AGENTS.md`, `CLAUDE.md`, MCP settings or global configuration unless the user asks.

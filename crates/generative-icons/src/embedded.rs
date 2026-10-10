@@ -5,10 +5,17 @@
 pub const SKILL_NAME: &str = "generative-icons";
 
 /// Skill files, relative to the skill folder, in breadth-first bytewise order.
-pub const SKILL_FILES: [(&str, &str); 5] = [
+/// craft, design-principles, motion-principles, motion-system and polish-review are the family's
+/// direction, generated from the canonical docs by `npm run docs:build`.
+pub const SKILL_FILES: [(&str, &str); 10] = [
     ("SKILL.md", include_str!("../assets/skill/SKILL.md")),
     ("references/authoring-v2.md", include_str!("../assets/skill/references/authoring-v2.md")),
     ("references/authoring.md", include_str!("../assets/skill/references/authoring.md")),
+    ("references/craft.md", include_str!("../assets/skill/references/craft.md")),
+    ("references/design-principles.md", include_str!("../assets/skill/references/design-principles.md")),
+    ("references/motion-principles.md", include_str!("../assets/skill/references/motion-principles.md")),
+    ("references/motion-system.md", include_str!("../assets/skill/references/motion-system.md")),
+    ("references/polish-review.md", include_str!("../assets/skill/references/polish-review.md")),
     ("references/review.md", include_str!("../assets/skill/references/review.md")),
     ("references/runtime.md", include_str!("../assets/skill/references/runtime.md")),
 ];
