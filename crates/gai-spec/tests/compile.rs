@@ -543,3 +543,47 @@ fn a_reverse_can_keep_the_name_apps_already_play() {
         assert_eq!(e.errors().next().unwrap().path, "/state/reverseName", "{bad}");
     }
 }
+
+#[test]
+fn a_whole_drawing_that_only_tilts_and_comes_back_is_a_nudge() {
+    let nudges = |extra: Value| -> Vec<(String, String)> {
+        let c = load(&spec(extra)).unwrap();
+        c.diagnostics.0.iter().filter(|d| d.code == "NUDGE").map(|d| (d.code.to_string(), d.path.clone())).collect()
+    };
+    let nudge = vec![("NUDGE".to_string(), "/motion".to_string())];
+    let parts = json!({"stem": {"shape": {"line": [[16, 26], [16, 10]]}}, "arm": {"shape": {"line": [[16, 18], [21, 15]]}}});
+    let plant = json!({"plant": {"pivot": [16, 27], "carries": ["stem", "arm"]}});
+    let sway = json!({
+        "light": [[0, 0], [0.18, -6, "out"], [0.5, 5, "inOut"], [0.78, -2, "inOut"], [1, 0, "inOut"]],
+        "strong": [[0, 0], [0.12, -11, "out"], [0.38, 9.5, "inOut"], [0.62, -6.5, "inOut"], [0.84, 4, "inOut"], [1.04, -1.6, "inOut"], [1.24, 0, "inOut"]]
+    });
+    // The whole plant leans, swings back past centre and settles: nothing happens.
+    assert_eq!(nudges(json!({"parts": parts, "rigs": plant, "motion": {"plant.rotate": sway}})), nudge);
+    // A rig that shares a part's name pivots that part, and the plant still carries it.
+    let arm_rig = json!({"plant": {"pivot": [16, 27], "carries": ["stem", "arm"]}, "arm": {"pivot": [16, 18]}});
+    let wave = json!({"light": [[0, 0], [0.3, 10], [0.6, 0]], "strong": [[0, 0], [0.3, 18], [0.7, 0]]});
+    assert_eq!(nudges(json!({"parts": parts, "rigs": arm_rig, "motion": {"plant.rotate": sway, "arm.rotate": wave}})), nudge);
+    // The library's own: a generated cactus that swayed.
+    let cactus = load(include_str!("fixtures/swaying-cactus.icon.json")).unwrap();
+    assert!(cactus.diagnostics.0.iter().any(|d| d.code == "NUDGE" && d.path == "/motion"));
+
+    // Not nudges: the swing lands (a hit) or holds, a big turn, the drawing travels, a cue
+    // appears, or a mark draws on.
+    let lands = json!({"light": [[0, 0], [0.12, -8], [0.3, 6], [0.46, 0]], "strong": [[0, 0], [0.08, 4], [0.2, -13, "hit"], {"settle": 0.6, "to": 0}]});
+    let holds = json!({"light": [[0, 0], [0.2, 8, "out"], [0.3, 8], [0.45, 0]], "strong": [[0, 0], [0.2, 14, "out"], [0.32, 14], [0.5, 0]]});
+    for turn in [lands, holds] {
+        assert!(nudges(json!({"parts": parts, "rigs": plant, "motion": {"plant.rotate": turn}})).is_empty());
+    }
+    // A steering wheel turned 36° and let go is the action itself, not a tilt.
+    let wheel = json!({"rim": {"shape": {"circle": [[16, 16], 9]}}, "spoke": {"shape": {"line": [[16, 16], [16, 7]]}}});
+    let steer = json!({"light": [[0, 0], [0.2, 36, "out"], [0.37, -6], [0.45, 2], [0.52, 0]], "strong": [[0, 0], [0.3, 92, "out"], [0.5, -14], [0.6, 5], [0.68, 0]]});
+    assert!(nudges(json!({"parts": wheel, "rigs": {"wheel": {"pivot": [16, 16], "carries": ["rim", "spoke"]}}, "motion": {"wheel.rotate": steer}})).is_empty());
+    let lift = json!({"light": [[0, 0], [0.2, -2, "out"], [0.4, 0, "hit"]], "strong": [[0, 0], [0.2, -3, "out"], [0.45, 0, "hit"]]});
+    assert!(nudges(json!({"parts": parts, "rigs": plant, "motion": {"plant.rotate": sway, "plant.y": lift}})).is_empty());
+    let with_spark = json!({"stem": {"shape": {"line": [[16, 26], [16, 10]]}}, "arm": {"shape": {"line": [[16, 18], [21, 15]]}}, "spark": {"shape": {"line": [[22, 10], [24.5, 7.5]]}, "hidden": true}});
+    let flash = json!({"light": [[0.1, 0], [0.15, 1], [0.3, 0]], "strong": [[0.1, 0], [0.15, 1], [0.35, 0]]});
+    let plant_and_spark = json!({"plant": {"pivot": [16, 27], "carries": ["stem", "arm", "spark"]}});
+    assert!(nudges(json!({"parts": with_spark, "rigs": plant_and_spark, "motion": {"plant.rotate": sway, "spark.opacity": flash}})).is_empty());
+    let redraw = json!({"light": [[0, 1], [0.1, 0.2], [0.4, 1]], "strong": [[0, 1], [0.1, 0], [0.45, 1]]});
+    assert!(nudges(json!({"parts": parts, "rigs": plant, "motion": {"plant.rotate": sway, "arm.draw": redraw}})).is_empty());
+}

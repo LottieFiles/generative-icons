@@ -833,8 +833,9 @@ fn install<'a>(root: &Path, config: &Config, icons: impl Iterator<Item = (&'a st
     batch.plan(root, &lock.expected())?.apply()
 }
 
-/// The starter spec `create` writes: a bell that swings on its hook, with a clapper
-/// that lags behind, valid, lint-clean and buildable as written. Compact, one entry per line,
+/// The starter spec `create` writes: a bell that rings, an event as the direction asks (the
+/// swing is the cause; the clapper trails it and ring arcs hidden at rest flick out and fade),
+/// valid, lint-clean and buildable as written. Compact, one entry per line,
 /// like the reference examples, so an agent edits it in place.
 pub fn starter(id: &str, label: &str, intent: &str) -> String {
     let s = |text: &str| serde_json::Value::String(text.to_string()).to_string();
@@ -845,12 +846,14 @@ pub fn starter(id: &str, label: &str, intent: &str) -> String {
   "id": {id},
   "label": {label},
   "intent": {intent},
-  "//": "A starter: replace the parts and keys (references/authoring-v2.md), then check, draft and build.",
+  "//": "A starter: a bell that rings. Replace the parts and keys with your icon's own event (references/motion-principles.md, references/authoring-v2.md), then check, draft and build.",
   "anchors": {{"hook": [16, 5]}},
   "parts": {{
     "bell":    {{"shape": {{"path": "M8 22 C8 14 10 8 16 8 C22 8 24 14 24 22 Z"}}, "role": "surface"}},
     "rim":     {{"shape": {{"line": [[7.5, 22.5], [24.5, 22.5]]}}}},
-    "clapper": {{"shape": {{"circle": [[16, 25.5], 2.1]}}, "role": "fill"}}
+    "clapper": {{"shape": {{"circle": [[16, 25.5], 2.1]}}, "role": "fill"}},
+    "ring-l":  {{"shape": {{"arc": [[16, 13], 11, 198, 232]}}, "hidden": true}},
+    "ring-r":  {{"mirror": {{"of": "ring-l"}}}}
   }},
   "rigs": {{
     "bell":    {{"pivot": "hook", "carries": ["rim", "clapper"]}},
@@ -861,7 +864,17 @@ pub fn starter(id: &str, label: &str, intent: &str) -> String {
       "light":  [[0, 0], [0.12, -8], [0.3, 6], [0.46, 0]],
       "strong": [[0, 0], [0.08, 4], [0.2, -13, "hit"], {{"settle": 0.6, "to": 0}}]
     }},
-    "clapper.rotate": {{"follow": "bell.rotate", "lag": 0.04, "scale": 0.6}}
+    "clapper.rotate": {{"follow": "bell.rotate", "lag": 0.04, "scale": 0.6}},
+    "ring-l.opacity": {{
+      "light":  [[0, 0], [0.1, 0], [0.13, 1, "out"], [0.22, 1], [0.32, 0, "in"]],
+      "strong": [[0, 0], [0.18, 0], [0.21, 1, "out"], [0.3, 1], [0.4, 0, "in"]]
+    }},
+    "ring-l.r": {{
+      "light":  [[0, 0], [0.1, 0], [0.32, 1.5, "out"], [0.34, 0, "step"]],
+      "strong": [[0, 0], [0.18, 0], [0.4, 2, "out"], [0.42, 0, "step"]]
+    }},
+    "ring-r.opacity": {{"follow": "ring-l.opacity"}},
+    "ring-r.r": {{"follow": "ring-l.r"}}
   }}
 }}
 "#,

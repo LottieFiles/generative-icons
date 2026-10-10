@@ -9,7 +9,7 @@ use crate::ease::{self, Handle};
 use crate::geom::{BBox, Contour, Geo, Pt};
 use crate::motion::{self, Which};
 use crate::plan::{KeyValue, Layer, PKey, Paint, Plan, Prop, Track};
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 /// Frames per motion: 0 to 144 at 60 fps.
 pub const FRAMES: usize = 145;
@@ -24,6 +24,9 @@ pub const SMALL_PX: f64 = 3.0;
 /// Parts hidden at rest are seen in motion, as a flick: under this many pixels at 24 px
 /// they read as a speck.
 pub const SPECK_PX: f64 = 2.0;
+/// Degrees under which a turn of the whole drawing is a tilt, not an action (`NUDGE`): the
+/// library's whole-drawing turns that stand alone go 36° and further (a steering wheel).
+pub const TILT_DEG: f64 = 20.0;
 
 /// `x' = a·x + c·y + e`, `y' = b·x + d·y + f`.
 #[derive(Debug, Clone, Copy)]
@@ -141,6 +144,7 @@ impl<'a> Frame<'a> {
 /// Every lint, in a stable order.
 pub fn lint(c: &Compiled) -> Diagnostics {
     let mut d = Diagnostics::default();
+    nudge(c, &mut d);
     light_strong(c, &mut d);
     canvas(c, &mut d);
     small(c, &mut d);
@@ -305,6 +309,72 @@ fn small(c: &Compiled, d: &mut Diagnostics) {
             d.push(
                 Diagnostic::warning("SMALL_AT_24", part_path(c, &layer.part), format!("{} is {:.1} px across at 24 px", layer.part, size))
                     .hint(format!("parts under {SMALL_PX} px read as noise at real size; make it bigger or merge it")),
+            );
+        }
+    }
+}
+
+/// The parts a track target moves: the part itself (a rig may share a part's name to give it
+/// a pivot), and every part a rig carries, through the rigs it carries.
+fn moved_by<'a>(c: &'a Compiled, name: &'a str) -> HashSet<&'a str> {
+    let mut out = HashSet::new();
+    let mut todo = vec![name];
+    let mut seen = HashSet::new();
+    while let Some(n) = todo.pop() {
+        if !seen.insert(n) {
+            continue;
+        }
+        if c.parts.iter().any(|p| p.name == n) {
+            out.insert(n);
+        }
+        if let Some(rig) = c.spec.rigs.iter().find(|r| r.name == n) {
+            todo.extend(rig.carries.iter().map(String::as_str));
+        }
+    }
+    out
+}
+
+/// `NUDGE`: a gesture in which nothing draws on, fades, morphs or appears, and the whole drawing
+/// tilts a few degrees and comes back without going anywhere, landing or holding: what the
+/// motion principles' "Events, not nudges" rules out ("the microphone that tilts a few degrees
+/// and comes back"). Measured on the library: none of its 550 specs, every one accepted as an
+/// event, warns; the swaying generated cactuses that prompted it do.
+fn nudge(c: &Compiled, d: &mut Diagnostics) {
+    use crate::spec::Prop as P;
+    if c.stateful() || c.parts.iter().any(|p| p.hidden) {
+        return;
+    }
+    let forward: Vec<_> = c.motions.iter().filter(|m| !m.reverse).collect();
+    // Draw, opacity, a morph driver or a shape track (r, grow, phase, amp): something happens.
+    let rigid = [P::X, P::Y, P::Rotate, P::Scale, P::Squash, P::Swing, P::Flip];
+    if forward.iter().flat_map(|m| &m.raw).any(|t| !t.target.prop.is_some_and(|p| rigid.contains(&p))) {
+        return;
+    }
+    let all: HashSet<&str> = c.parts.iter().map(|p| p.name.as_str()).collect();
+    let whole = |name: &str| moved_by(c, name) == all;
+    // The whole drawing travels (lifts, lands, slides in): an event, whatever else it does.
+    if forward.iter().flat_map(|m| &m.raw).any(|t| matches!(t.target.prop, Some(P::X | P::Y)) && whole(&t.target.name)) {
+        return;
+    }
+    let turns = |which: Which| -> Vec<&motion::Track> {
+        forward.iter().filter(|m| m.which == which).flat_map(|m| &m.raw).filter(|t| matches!(t.target.prop, Some(P::Rotate | P::Swing)) && whole(&t.target.name)).collect()
+    };
+    let (light, strong) = (turns(Which::Light), turns(Which::Strong));
+    // A contact lands the turn (a hit, or a bounce, which ends in one); a held key keeps it.
+    let contact = |t: &motion::Track| t.keys.iter().any(|k| k.ease == crate::spec::Ease::Hit) || t.keys.windows(2).any(|w| w[0].v == w[1].v && w[0].v != 0.0);
+    let peak = |t: &motion::Track| t.keys.iter().map(|k| k.v.abs()).fold(0.0, f64::max);
+    for main in light.iter().chain(&strong).take(1) {
+        let same = |t: &&&motion::Track| t.target == main.target;
+        let soft = !light.iter().chain(&strong).filter(same).any(|t| contact(t));
+        let deg = peak(main);
+        if deg < TILT_DEG && soft {
+            d.push(
+                Diagnostic::warning(
+                    "NUDGE",
+                    "/motion",
+                    format!("the whole drawing only tilts ({}, at most {}°) and comes back: nothing draws on, appears, lands or holds, so it reads as a nudge, not an event", main.target, round3(deg)),
+                )
+                .hint("find the event, what the object does for the user, and animate that: show its cause with a part hidden at rest and keyed by opacity (sparks, arcs, a trail), draw the marks that mean something (draw), let the driver hit, rebound and settle, and move the parts in sequence. See \"Events, not nudges\" in motion-principles.md"),
             );
         }
     }
