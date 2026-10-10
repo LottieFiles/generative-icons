@@ -5,7 +5,7 @@ Generic leak patterns live here. Maintainers can add private terms, one regular
 expression per line, to the ignored file .local/publication-blocklist.txt.
 """
 from pathlib import Path
-import hashlib,json,re,subprocess
+import hashlib,importlib.util,json,re,subprocess
 root=Path(__file__).resolve().parents[1]
 files=[*root.glob('*.md'),*(root/'docs').rglob('*.md'),*(root/'.agents').rglob('*.md'),*(root/'skills').rglob('*.md'),*root.glob('packages/*/README.md'),
  *root.glob('npm/**/README.md'),*root.glob('crates/README.md'),*(root/'crates/generative-icons/assets/skill').rglob('*.md')]
@@ -62,5 +62,10 @@ for p in public:
 for item in json.loads((root/'prototype/icons/guide/sources.json').read_text()):
  p=root/item['source']
  if hashlib.sha256(p.read_bytes()).hexdigest()!=item['sha256']:errors.append(f'Stale guide source: {item["source"]}')
+# The direction the CLI's skill ships is generated from the canonical docs.
+spec=importlib.util.spec_from_file_location('build_skill_direction',root/'scripts/build-skill-direction.py')
+direction=importlib.util.module_from_spec(spec);spec.loader.exec_module(direction)
+for p,text in direction.outputs().items():
+ if not p.is_file() or p.read_text()!=text:errors.append(f'Stale skill copy: {p.relative_to(root)} (run npm run docs:build)')
 assert not errors,'\n'.join(errors)
 print(f'PASS: {len(files)} maintained documents (relative links, retired names, generated source hashes); {scanned} publishable files scanned for leaks ({len(PRIVATE)} private terms)')

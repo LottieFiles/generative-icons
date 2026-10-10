@@ -57,7 +57,9 @@ const PARSE_ERROR: i64 = -32700;
 const INVALID_REQUEST: i64 = -32600;
 
 const INSTRUCTIONS: &str = "generative-icons finds, creates and builds animated icons (dotLottie) for the project in the working folder. \
-Look for an existing icon first: search, then add. To make a missing icon: context (read the contract and the nearest references), \
+Look for an existing icon first: search, then add. To make a missing icon, first read the family's direction in the generative-icons skill \
+that init installs (references/motion-principles.md, design-principles.md, craft.md, polish-review.md): every motion is an event \
+(cause, action, response, final state), never a nudge that sways or turns and comes back. Then: context (read the contract and the nearest references), \
 create (a JSON spec, optionally from a close library icon's spec), edit the spec it names, check it offline, \
 draft (one engine call returns a review sheet as images, nothing stored), build, then preview and look at the images. \
 Revise and rebuild until the sheets look right. Never claim a visual review you did not do. \

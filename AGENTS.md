@@ -7,7 +7,7 @@ Generative Icons: native Lottie icons with Light/Strong motion and editable sour
 | Path | What lives there |
 | --- | --- |
 | `crates/` | The CLI's Rust workspace; architecture, decisions and test notes in `crates/README.md` |
-| `crates/generative-icons/assets/skill/` | The agent skill the CLI installs into apps (the only copy to edit) |
+| `crates/generative-icons/assets/skill/` | The agent skill the CLI installs into apps (the only copy to edit, except the direction references generated from `docs/`, `MOTION.md` and the workflow skill) |
 | `motion/icon-sets/NN-name/` | Editable icon source (`definitions.mjs`, `batches/`), set rules and evidence |
 | `motion/icon-sets/library/` | Family contract, authoring kit and shared helpers |
 | `prototype/icons/catalog.json` | Registered sets, in gallery order |
@@ -54,7 +54,7 @@ Requirements, the test layout and the full library flow: [development](docs/deve
 ## Do not
 
 - Publish packages, push tags, publish releases, deploy or change repository visibility.
-- Hand-edit generated files: `prototype/icons/guide/` (run `npm run docs:build`), `prototype/icons/NN/assets/` (build the set), `packages/*/dist/` (run `generative-icons library packages`), or `skills/lottie-icons/` (frozen).
+- Hand-edit generated files: `prototype/icons/guide/` and the skill's direction references (`craft.md`, `design-principles.md`, `motion-principles.md`, `motion-system.md`, `polish-review.md`; run `npm run docs:build`), `prototype/icons/NN/assets/` (build the set), `packages/*/dist/` (run `generative-icons library packages`), or `skills/lottie-icons/` (frozen).
 - Commit `.local/`, credentials, machine-specific paths, model transcripts or planning notes.
 - Change global model or agent settings.
 

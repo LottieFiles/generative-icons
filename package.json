@@ -11,7 +11,7 @@
     "check:assets": "python3 scripts/audit-assets.py",
     "check:paint": "npm --prefix motion run verify:paint",
     "check:source": "npm --prefix motion run icons:preflight -- --all",
-    "docs:build": "python3 motion/icon-sets/library/build-guide.py",
+    "docs:build": "python3 motion/icon-sets/library/build-guide.py && python3 scripts/build-skill-direction.py",
     "package:icons": "python3 motion/icon-sets/library/package.py",
     "check:docs": "python3 scripts/check-docs.py",
     "icons:new": "python3 scripts/icon-set.py new",

@@ -66,8 +66,8 @@ vector:
     themes: [light, dark]
     required: [color.primary, style.outline.light, style.outline.regular, style.outline.bold, style.solid, style.tint, style.outline.width]
   features:
-    allow: [shape-layers, path-morph, markers, rounded-corners]
-    deny: [expressions, effects, masks, mattes, image-layers, text-layers, 3d, audio, precomps, gradients-animated, time-remap, motion-blur]
+    allow: [shape-layers, path-morph, markers, rounded-corners, subtract-masks, alpha-inverted-mattes]
+    deny: [expressions, effects, image-layers, text-layers, 3d, audio, precomps, gradients-animated, time-remap, motion-blur]
   assets:
     naming: "<name>.lottie"
     targets: [dotlottie]
@@ -122,7 +122,7 @@ The engine's Lottie export of the `definitions.mjs` sets writes motion as sample
 - **Markers:** `action` covers the icon's active motion, `rest` is one frame on the final pose, and `showcase` covers the whole timeline for the gallery preview loop. These are the only marker names allowed.
 - **Profiles:** each `.lottie` holds a Light animation (`<name>`) and a Strong one (`<name>-strong`), with `dark` and `light` themes.
 - **Slots:** `color.primary` plus the five style slots (`style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`) and the `style.outline.width` stroke-width token bound to every Regular outline stroke, which switch weight and style at runtime.
-- **Features:** shape layers and path animation only. No expressions, effects, masks, mattes, precomps, image or text layers.
+- **Features:** shape layers and path animation. Solid cut-outs (counters and knockouts) use subtract masks, and an inverted alpha matte when the cut-out moves, draws on or fades; the compiler adds both from the spec. No expressions, effects, precomps, image or text layers.
 - **Authoring:** don't hand-write Lottie JSON. Author the icon's source with the authoring kit, build it with `generative-icons` (which exports on LottieFiles' hosted engine) and run its verification (see [creating icons](docs/creating-icons.md)).
 
 ## Accessibility & Reduced Motion
