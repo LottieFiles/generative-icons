@@ -1,0 +1,179 @@
+{
+  "format": "gai-icon/2",
+  "id": "cactus",
+  "label": "Cactus",
+  "rigs": {
+    "cactus": {
+      "//": "the plant is stiff: it tips as one body about the soil line",
+      "pivot": [
+        16,
+        28
+      ],
+      "carries": [
+        "stem",
+        "arm-l",
+        "arm-r",
+        "spines"
+      ]
+    }
+  },
+  "motion": {
+    "cactus.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          -6,
+          "out"
+        ],
+        [
+          0.5,
+          5,
+          "inOut"
+        ],
+        [
+          0.78,
+          -2,
+          "inOut"
+        ],
+        [
+          1,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -11,
+          "out"
+        ],
+        [
+          0.38,
+          9.5,
+          "inOut"
+        ],
+        [
+          0.62,
+          -6.5,
+          "inOut"
+        ],
+        [
+          0.84,
+          4,
+          "inOut"
+        ],
+        [
+          1.04,
+          -1.6,
+          "inOut"
+        ],
+        [
+          1.24,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  },
+  "parts": {
+    "stem": {
+      "//": "rounded capsule body; solid fills the outline exactly so the arms stay clear of it",
+      "shape": {
+        "rect": [
+          12.8,
+          5.5,
+          6.4,
+          23
+        ],
+        "r": 3.2
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "arm-l": {
+      "shape": {
+        "path": "M12.8 18 C9 18 8.5 16 8.5 13.8 L8.5 11.5"
+      }
+    },
+    "arm-r": {
+      "shape": {
+        "path": "M19.2 15 C23 15 23.5 13 23.5 10.8 L23.5 8.8"
+      }
+    },
+    "spines": {
+      "//": "outward nubs starting on the silhouette, so they survive Solid without a knockout matte",
+      "shape": [
+        {
+          "line": [
+            [
+              12.8,
+              9.3
+            ],
+            [
+              10.4,
+              8.2
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              12.8,
+              23.8
+            ],
+            [
+              10.4,
+              22.7
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              19.2,
+              20
+            ],
+            [
+              21.6,
+              18.9
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              8.5,
+              13
+            ],
+            [
+              6.6,
+              12.2
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              23.5,
+              11
+            ],
+            [
+              25.2,
+              10.2
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "intent": "A spined desert cactus catches a breeze. Light: the whole plant leans once to the left, swings back past centre to the right and settles upright, rigid from base to arms. Strong: a gustier breeze with a much deeper first lean and two extra decaying swings before it comes to rest.",
+  "//": "A generated icon that sways and comes back: the nudge NUDGE warns about (tests/compile.rs)."
+}
