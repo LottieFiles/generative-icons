@@ -1,0 +1,99 @@
+name: CLI for Linux x64
+# Builds the release CLI for linux/amd64 from main and keeps it as an artifact, so the website's
+# container image can vendor the exact binary (scripts/vendor-cli.mjs in the web repository).
+# It publishes nothing: no tag, no release, no npm package.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: cli-linux-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: '0'
+  RUST_TOOLCHAIN: '1.93.1'
+  # ThorVG must not fuse a*b+c into FMAs (see .cargo/config.toml); an environment
+  # CXXFLAGS replaces the config's value, so it carries the flag itself.
+  CXXFLAGS: -ffp-contract=off
+jobs:
+  build:
+    name: Build generative-icons for linux/amd64
+    # The oldest supported Ubuntu keeps the glibc requirement low, as in release.yml.
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Install clang
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends clang libclang-dev
+          # vendor/rquickjs-sys builds V8's ieee754.cc, which must be compiled by clang.
+          echo "CC=clang" >> "$GITHUB_ENV"
+          echo "CXX=clang++" >> "$GITHUB_ENV"
+      - name: Install Rust ${{ env.RUST_TOOLCHAIN }}
+        run: |
+          rustup toolchain install "$RUST_TOOLCHAIN" --profile minimal
+          rustup default "$RUST_TOOLCHAIN"
+      - uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: cli-linux-${{ env.RUST_TOOLCHAIN }}-${{ hashFiles('Cargo.lock', '.cargo/config.toml', 'vendor/**/build.rs') }}
+          restore-keys: |
+            cli-linux-${{ env.RUST_TOOLCHAIN }}-
+      - name: Build
+        run: cargo build --release --locked -p generative-icons
+      - name: Check the binary
+        run: |
+          bin=target/release/generative-icons
+          file "$bin"
+          "$bin" --version
+          # doctor's binary, cpu, quickjs and renderer checks prove the V8-exact math and the
+          # browser-identical renderer; its app checks fail here, so read the report instead.
+          scratch=$(mktemp -d)
+          (cd "$scratch" && GEN_ANIMATED_ICONS_HOME="$scratch/home" GEN_ANIMATED_ICONS_CACHE_DIR="$scratch/cache" \
+            "$GITHUB_WORKSPACE/$bin" --offline doctor --json > report.json || true)
+          python3 - "$scratch/report.json" <<'PY'
+          import json, sys
+          checks = {c['id']: c for c in json.load(open(sys.argv[1]))['checks']}
+          for id in ['binary', 'cpu', 'quickjs', 'renderer']:
+              print(f"{id}: {checks[id]['status']}: {checks[id]['message']}")
+          if any(checks[id]['status'] != 'pass' for id in ['binary', 'cpu', 'quickjs', 'renderer']):
+              raise SystemExit('doctor found a broken binary')
+          PY
+          ldd "$bin"
+      - name: Package
+        run: |
+          mkdir -p dist
+          cp target/release/generative-icons dist/generative-icons
+          chmod 755 dist/generative-icons
+          python3 - <<'PY'
+          import hashlib, json, os, subprocess, datetime
+          data = open('dist/generative-icons', 'rb').read()
+          manifest = {
+              'commit': os.environ['GITHUB_SHA'],
+              'sha256': hashlib.sha256(data).hexdigest(),
+              'bytes': len(data),
+              'target': 'x86_64-unknown-linux-gnu',
+              'rustc': subprocess.run(['rustc', '--version'], capture_output=True, text=True, check=True).stdout.strip(),
+              'builtAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+          }
+          json.dump(manifest, open('dist/manifest.json', 'w'), indent=2)
+          print(json.dumps(manifest, indent=2))
+          PY
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: generative-icons-linux-x64
+          path: |
+            dist/generative-icons
+            dist/manifest.json
+          if-no-files-found: error
+          retention-days: 90
