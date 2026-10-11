@@ -34,7 +34,12 @@ pub fn run(repo: &Path, args: &LibraryAdoptArgs) -> Result<Report> {
     let set_dir = sets_dir(repo).join(&set);
     let paths = SetPaths::new(repo, &set).map_err(|e| CliError::new(ErrorCode::InvalidCatalog, e.to_string()))?;
     let set_json_path = paths.assets.join("set.json");
-    let mut record: Value = read_json(&set_json_path)?;
+    // A new set (`library new-set`) has no manifest until its first icons are added.
+    let first = args.add && !set_json_path.exists();
+    let mut record: Value = match first {
+        true => empty_set_record(&set_dir)?,
+        false => read_json(&set_json_path)?,
+    };
 
     // New icons take the library's next numbers, in the order given.
     let mut next_number = if args.add { library_numbers(repo)?.into_iter().max().unwrap_or(0) + 1 } else { 0 };
@@ -51,6 +56,9 @@ pub fn run(repo: &Path, args: &LibraryAdoptArgs) -> Result<Report> {
     }
 
     // Everything is checked; write.
+    if first {
+        std::fs::create_dir_all(&paths.assets).map_err(|e| CliError::io("create", &paths.assets, &e))?;
+    }
     let specs = set_dir.join(SPECS_DIR);
     std::fs::create_dir_all(&specs).map_err(|e| CliError::io("create", &specs, &e))?;
     let mut text = String::new();
@@ -81,6 +89,14 @@ pub fn run(repo: &Path, args: &LibraryAdoptArgs) -> Result<Report> {
     }
     let _ = writeln!(text, "Next: generative-icons library verify {set} && generative-icons library verify-visual {set}");
     Ok(Report::new(json!({"set": set, "adopted": adopted, "archives": package.archives.len()}), text))
+}
+
+/// The `set.json` of a set with no icons yet: the header `library build` writes for it,
+/// from its `set-config.json`, and no icons.
+fn empty_set_record(set_dir: &Path) -> Result<Value> {
+    let profile = gai_build::profile::Profile::library_set(set_dir)
+        .map_err(|e| CliError::new(ErrorCode::InvalidConfig, e.to_string()))?;
+    Ok(gai_build::set_json::assemble(&profile, Vec::new()))
 }
 
 /// Reads a build folder and checks it against the set: one spec, an icon of the set, the
@@ -375,6 +391,18 @@ mod tests {
         assert_eq!(added.actions, ["faq", "faq-strong"]);
         let Err(taken) = read_addition(repo.path(), &build("on-hold"), &record, &mut next) else { panic!("on-hold is taken") };
         assert_eq!(taken.code, ErrorCode::IdCollision);
+    }
+
+    #[test]
+    fn a_new_set_starts_its_manifest_from_its_config() {
+        let set = tempfile::Builder::new().prefix("70-faces").tempdir().unwrap();
+        std::fs::write(set.path().join("definitions.mjs"), "export const icons = [];\n").unwrap();
+        std::fs::write(set.path().join("set-config.json"), r#"{"id": "70-faces", "name": "Faces"}"#).unwrap();
+        let record = empty_set_record(set.path()).unwrap();
+        assert_eq!(
+            encode_set_json(&record),
+            "{\n  \"name\": \"Faces\",\n  \"id\": \"70-faces\",\n  \"category\": \"Faces\",\n  \"version\": \"1.0\",\n  \"defaultStyle\": \"outline\",\n  \"defaultMotion\": \"strong\",\n  \"runtime\": \"@lottiefiles/dotlottie-web@0.80.0\",\n  \"icons\": []\n}\n"
+        );
     }
 
     #[test]

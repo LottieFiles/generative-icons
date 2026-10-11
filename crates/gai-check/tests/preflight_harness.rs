@@ -319,6 +319,44 @@ fn legacy_sources_are_disclosed_not_imported() {
     assert!(matches!(error, Error::Legacy(_)));
 }
 
+/// A set made only of specs (`library adopt --add`) exports no definitions. It passes once
+/// its committed manifest lists icons, every one adopted from the set's `specs/`.
+#[test]
+fn spec_only_sets_pass_once_every_icon_is_an_adopted_spec() {
+    let repo = tempfile::Builder::new().prefix("preflight-spec-only-").tempdir().unwrap();
+    let library = repo.path().join("motion/icon-sets/library");
+    fs::create_dir_all(&library).unwrap();
+    for entry in fs::read_dir(root().join("motion/icon-sets/library")).unwrap() {
+        let path = entry.unwrap().path();
+        if path.is_file() {
+            fs::copy(&path, library.join(path.file_name().unwrap())).unwrap();
+        }
+    }
+    let assets = repo.path().join("prototype/icons/70/assets");
+    fs::create_dir_all(&assets).unwrap();
+    fs::write(repo.path().join("prototype/icons/catalog.json"), r#"{"sets": [], "categories": []}"#).unwrap();
+    let set = repo.path().join("motion/icon-sets/70-faces");
+    fs::create_dir_all(set.join("specs")).unwrap();
+    fs::write(set.join("definitions.mjs"), "export const icons = [];\n").unwrap();
+    let preflight = Preflight::open(repo.path()).unwrap();
+    let outcome = || {
+        let report = preflight.check_set(&set).unwrap().report;
+        (report.status, report.diagnostics.iter().map(|d| d.code.as_str()).collect::<Vec<_>>())
+    };
+    let empty = (Status::Fail, vec!["EMPTY_SET"]);
+    // No manifest yet.
+    assert_eq!(outcome(), empty);
+    let manifest = assets.join("set.json");
+    fs::write(&manifest, r#"{"id": "70-faces", "icons": [{"icon": "grin", "source": "gai-icon/2"}]}"#).unwrap();
+    // The manifest names a spec the set does not hold.
+    assert_eq!(outcome(), empty);
+    fs::write(set.join("specs/grin.icon.json"), "{}").unwrap();
+    assert_eq!(outcome(), (Status::Pass, vec![]));
+    // An icon built from definitions still needs them.
+    fs::write(&manifest, r#"{"id": "70-faces", "icons": [{"icon": "grin", "source": "gai-icon/2"}, {"icon": "frown"}]}"#).unwrap();
+    assert_eq!(outcome(), empty);
+}
+
 /// `new source sets cannot duplicate a public icon ID`, and the negative control.
 #[test]
 fn new_sets_cannot_duplicate_a_public_id() {
