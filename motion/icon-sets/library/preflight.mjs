@@ -125,11 +125,23 @@ export function checkDefinitions(icons) {
   return { status: diagnostics.some(d => d.severity === 'error') ? 'FAIL' : 'PASS', icons: icons.length, actions, samples, diagnostics };
 }
 
+// A set made only of specs (`library adopt --add`): its committed manifest lists icons, and
+// every one is adopted from the set's specs/<id>.icon.json.
+function specOnly(root) {
+  const manifest = path.join(projectRoot, 'prototype/icons', path.basename(root).split('-')[0], 'assets/set.json');
+  let icons;
+  try { icons = JSON.parse(fs.readFileSync(manifest, 'utf8')).icons; } catch { return false; }
+  const isFile = file => fs.statSync(file, { throwIfNoEntry: false })?.isFile() ?? false;
+  return Array.isArray(icons) && icons.length > 0 && icons.every(icon => icon?.source === 'gai-icon/2' && typeof icon.icon === 'string' && isFile(path.join(root, 'specs', `${icon.icon}.icon.json`)));
+}
+
 export async function checkSet(root) {
   const file = path.join(root, 'definitions.mjs');
   if (!fs.existsSync(file)) throw Error(`No separate definitions.mjs in ${root}; legacy inline builders require their existing checks`);
   const { icons } = await import(pathToFileURL(file).href);
-  const report = checkDefinitions(icons);
+  let report = checkDefinitions(icons);
+  // A spec-only set defines no icons; `build` and `library verify` check them instead.
+  if (report.diagnostics.some(d => d.code === 'EMPTY_SET') && specOnly(root)) report = { status: 'PASS', icons: 0, actions: 0, samples: 0, diagnostics: [] };
   // Existing names may be revised inside their own source set, but a new set
   // must not introduce a second card/download under an already public ID.
   const { icons: catalogIcons, inputs: catalogInputs } = loadCatalog();
