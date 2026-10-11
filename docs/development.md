@@ -65,6 +65,7 @@ generative-icons library package --icon-library   # refresh icon-library.zip and
 ```
 
 - Registration needs a built, nonempty manifest, a passing preflight and passing verification. Registering a missing manifest would stop the catalog checks from running.
+- A set can be made only of spec icons. Scaffold it with `new-set`, leave its `definitions.mjs` exporting no icons, build each icon in a project and add it with `library adopt NN --add <build>` ([below](#reanimate-a-library-icon-with-a-spec)). The first addition writes the set's `set.json` from its `set-config.json`. Preflight passes the set once every icon in its manifest is adopted from `specs/`, `library build` keeps them, and verification and registration run as for any set.
 - Sets 01 (Heart/Bell) and 02 (Search) are frozen: their assets are verified as they are and never rebuilt. Sets 03–06 build through built-in legacy profiles.
 - Builders replace a set's outputs. Build complete sets and confirm that unrelated asset hashes are unchanged. Do not rebuild only to preview existing files: `generative-icons preview <id>` renders any icon.
 - Intermediate `scenes/` and `native/` folders are rebuildable and ignored by Git; final assets under `prototype/icons/NN/assets/` are tracked.

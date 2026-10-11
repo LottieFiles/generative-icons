@@ -220,6 +220,11 @@ impl Preflight {
     /// Catalog collisions (`preflight.mjs:135-143`), then the input inventory.
     fn finish(&self, dir: &Path, screened: Screened, catalog: &Catalog) -> Result<SetReport> {
         let Screened { mut report, names } = screened;
+        // A set made only of specs (`library adopt --add`) defines no icons; `build` and
+        // `library verify` check them instead.
+        if report.diagnostics.iter().any(|d| d.code == Code::EmptySet) && self.spec_only(dir) {
+            report = Report::new(0, 0, 0, Vec::new());
+        }
         let set = paths::basename(dir);
         // "16-voice" → "16"; manifests are "prototype/icons/NN/assets/set.json".
         let number = set.split('-').next().unwrap_or_default();
@@ -242,6 +247,26 @@ impl Preflight {
         let mut inputs = inventory::sources(dir, &self.library_dir())?;
         inputs.extend(catalog.inputs.iter().cloned());
         Ok(SetReport { set, report, inputs })
+    }
+
+    /// Whether the set's committed manifest lists icons and every one is adopted from its
+    /// `specs/<id>.icon.json`.
+    fn spec_only(&self, dir: &Path) -> bool {
+        let set = paths::basename(dir);
+        let number = set.split('-').next().unwrap_or_default();
+        let manifest = paths::join(&self.root, format!("prototype/icons/{number}/assets/set.json"));
+        let Some(doc) = fs::read(&manifest).ok().and_then(|bytes| serde_json::from_slice::<serde_json::Value>(&bytes).ok())
+        else {
+            return false;
+        };
+        let icons = doc.get("icons").and_then(serde_json::Value::as_array).map_or(&[][..], Vec::as_slice);
+        !icons.is_empty()
+            && icons.iter().all(|icon| {
+                crate::verify::adopted::is_adopted(icon)
+                    && icon.get("icon").and_then(serde_json::Value::as_str).is_some_and(|id| {
+                        paths::join(dir, format!("{}/{id}.icon.json", crate::verify::adopted::SPECS_DIR)).is_file()
+                    })
+            })
     }
 }
 
