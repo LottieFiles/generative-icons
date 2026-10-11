@@ -1,0 +1,44 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "thumbs-up",
+  "label": "Thumbs up",
+  "intent": "Approval given: a fist with its thumb up jabs upward. Light: the hand dips and tips back a little to wind up, jabs about 2 units up with the thumb leading, stops with a hit and settles back down. Strong: a deeper wind-up tipped back, a higher jab that tilts the thumb forward, hits and rebounds, and two short sparks flash off the thumb tip at the hit.",
+  "parts": {
+    "hand": {
+      "//": "the thumb up on the left, three curled fingers stacked on the right; the wrist is the rounded lower-left corner",
+      "shape": {
+        "path": "M12 6.5 C13.4 6.5 14.5 7.6 14.5 9 L14.5 11.3 C14.5 12.6 15.2 13.5 16.5 13.5 L21.1 13.5 C23.9 13.5 23.9 17.6 21.1 17.6 C23.9 17.6 23.9 21.7 21.1 21.7 C23.5 21.7 23.3 26.1 20.6 26.1 L11.6 26.1 C9.8 26.1 8.4 24.7 8.4 22.9 L8.4 15.9 C8.4 14.3 9.5 13.3 9.5 11.9 L9.5 9 C9.5 7.6 10.6 6.5 12 6.5 Z"
+      },
+      "role": "surface",
+      "knockout": [{"part": "fingers", "gap": 0}]
+    },
+    "fingers": {
+      "//": "two finger lines from the knuckle creases inward",
+      "shape": [{"line": [[15.6, 17.599999999999998], [21.1, 17.599999999999998]]}, {"line": [[15.6, 21.7], [21.1, 21.7]]}]
+    },
+    "spark-l": {
+      "//": "hidden at rest: two short sparks flash out either side of the thumb tip (centre (12, 9)) at the top of Strong's jab; they ride with the hand",
+      "shape": {"line": [[6.83, 6.59], [5.29, 5.87]]},
+      "hidden": true
+    },
+    "spark-r": {"shape": {"line": [[17.17, 6.59], [18.71, 5.87]]}, "hidden": true}
+  },
+  "rigs": {
+    "hand": {"//": "tips about the wrist", "pivot": [12.6, 26.1], "carries": ["hand", "fingers", "spark-l", "spark-r"]}
+  },
+  "motion": {
+    "hand.y": {
+      "light": [[0, 0], [0.09, 0.6, "out"], [0.19, -1.7, "hit"], [0.26, -1.35], [0.31, -1.5], [0.47, 0, "inOut"]],
+      "strong": [[0, 0], [0.12, 1.2, "out"], [0.22, -2.2, "hit"], [0.29, -1.35], [0.35, -1.7], [0.43, -1.45], [0.6, 0, "inOut"]]
+    },
+    "hand.rotate": {
+      "light": [[0, 0], [0.09, -2, "out"], [0.19, 0, "hit"]],
+      "strong": [[0, 0], [0.12, -4, "out"], [0.22, 6, "hit"], [0.3, 2.5], [0.38, 4], [0.6, 0, "inOut"]]
+    },
+    "spark-l.opacity": {"strong": [[0, 0], [0.21, 0], [0.23, 1, "out"], [0.31, 1], [0.4, 0, "in"]]},
+    "spark-l.draw": {"strong": [[0, 1], [0.21, 0, "step"], [0.28, 1, "out"]]},
+    "spark-r.opacity": {"follow": "spark-l.opacity", "lag": 0.02},
+    "spark-r.draw": {"follow": "spark-l.draw", "lag": 0.02}
+  }
+}

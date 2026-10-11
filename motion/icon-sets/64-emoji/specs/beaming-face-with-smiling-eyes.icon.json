@@ -1,0 +1,187 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "beaming-face-with-smiling-eyes",
+  "label": "Beaming face with smiling eyes",
+  "intent": "The grin beams. Light: the wide grin spreads from its centre and a beat later the cheeks lift the whole face a little, then it relaxes. Strong: the face dips, pops up and lands with a short settle as the grin spreads further.",
+  "parts": {
+    "face": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            16
+          ],
+          11
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "mouth",
+          "gap": 0
+        },
+        {
+          "part": "eye-l",
+          "gap": 0
+        },
+        {
+          "part": "eye-r",
+          "gap": 0
+        }
+      ]
+    },
+    "mouth": {
+      "shape": {
+        "path": "M10 17.6 C12.6 18.4 19.4 18.4 22 17.6 C21.7 20.6 19.2 22.4 16 22.4 C12.8 22.4 10.3 20.6 10 17.6 Z"
+      },
+      "role": "surface",
+      "solid": "fill",
+      "//": "A wide, flat grin with a smiling top edge: a teeth line closed its counters at Bold and 24 px, so the grin's width and shape carry the beam."
+    },
+    "eye-l": {
+      "shape": {
+        "arc": [
+          [
+            12,
+            13.6
+          ],
+          2.2,
+          -150,
+          -30
+        ]
+      }
+    },
+    "eye-r": {
+      "mirror": {
+        "of": "eye-l"
+      }
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [
+        16,
+        27
+      ],
+      "carries": [
+        "face",
+        "eye-l",
+        "eye-r",
+        "mouth"
+      ]
+    },
+    "mouth": {
+      "//": "The grin is the face's one moving cut-out in Solid: it spreads about its own centre.",
+      "pivot": [
+        16,
+        19.8
+      ]
+    }
+  },
+  "motion": {
+    "mouth.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.14,
+          1.24,
+          "out"
+        ],
+        [
+          0.34,
+          1.2
+        ],
+        [
+          0.5,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0.95
+        ],
+        [
+          0.18,
+          1.3,
+          "out"
+        ],
+        [
+          0.38,
+          1.26
+        ],
+        [
+          0.56,
+          1,
+          "inOut"
+        ]
+      ]
+    },
+    "face.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.22,
+          -0.8,
+          "out"
+        ],
+        [
+          0.36,
+          -0.7
+        ],
+        [
+          0.52,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0.4,
+          "out"
+        ],
+        [
+          0.18,
+          -1.7,
+          "out"
+        ],
+        [
+          0.32,
+          0.4,
+          "hit"
+        ],
+        [
+          0.42,
+          -0.3,
+          "out"
+        ],
+        [
+          0.5,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  }
+}

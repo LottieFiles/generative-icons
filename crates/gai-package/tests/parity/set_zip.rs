@@ -71,13 +71,15 @@ fn package_set_matches_python() {
     let (mut identical, mut order_only, mut files, mut failures) =
         (Vec::new(), Vec::new(), 0, Vec::new());
     for set_id in &sets {
-        run(Command::new("python3").arg(
-            python
-                .path()
-                .join("motion/icon-sets")
-                .join(set_id)
-                .join("package.py"),
-        ));
+        // Sets scaffolded by `library new-set` have no package.py; theirs would only call
+        // the shared packager.
+        let set_dir = python.path().join("motion/icon-sets").join(set_id);
+        match set_dir.join("package.py").is_file() {
+            true => run(Command::new("python3").arg(set_dir.join("package.py"))),
+            false => run(Command::new("python3")
+                .arg(python.path().join("motion/icon-sets/library/package-set.py"))
+                .arg(&set_dir)),
+        };
         let report = package_set(&SetPaths::new(rust.path(), set_id).unwrap()).unwrap();
         let (py, rs) = (
             SetPaths::new(python.path(), set_id).unwrap(),

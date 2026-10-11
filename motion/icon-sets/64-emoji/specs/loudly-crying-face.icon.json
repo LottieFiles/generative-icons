@@ -1,0 +1,800 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "loudly-crying-face",
+  "label": "Loudly crying face",
+  "intent": "A sob with streaming tears. Light: the mouth opens wider in one wail while a bead runs down each tear stream to the jaw and drips off. Strong: the head shudders with two sob beats (a quick dip and recoil, decaying), the mouth wails wider on each, and two waves of tears run down and drip off the jaw.",
+  "parts": {
+    "face": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            16
+          ],
+          11
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "mouth",
+          "gap": 0
+        },
+        {
+          "part": "eye-l",
+          "gap": 0
+        },
+        {
+          "part": "eye-r",
+          "gap": 0
+        },
+        {
+          "part": "stream-l",
+          "gap": 0
+        },
+        {
+          "part": "stream-r",
+          "gap": 0
+        }
+      ]
+    },
+    "mouth": {
+      "shape": {
+        "morph": [
+          {
+            "path": "M12.7 21.4 C12.7 19.5 14.2 18 16 18 C17.8 18 19.3 19.5 19.3 21.4 C19.3 22.3 17.8 22.8 16 22.8 C14.2 22.8 12.7 22.3 12.7 21.4 Z"
+          },
+          {
+            "path": "M12.1 22.1 C12.1 19.6 13.9 17.7 16 17.7 C18.1 17.7 19.9 19.6 19.9 22.1 C19.9 23.5 18.1 24.1 16 24.1 C13.9 24.1 12.1 23.5 12.1 22.1 Z"
+          }
+        ],
+        "by": "wail"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "eye-l": {
+      "shape": {
+        "arc": [
+          [
+            12,
+            14.4
+          ],
+          2.3,
+          -155,
+          -45
+        ]
+      }
+    },
+    "eye-r": {
+      "mirror": {
+        "of": "eye-l"
+      }
+    },
+    "stream-l": {
+      "shape": {
+        "path": "M10.7 15.9 C10.6 17.6 10.3 19.1 9.7 20.5"
+      }
+    },
+    "stream-r": {
+      "mirror": {
+        "of": "stream-l"
+      }
+    },
+    "bead-l": {
+      "//": "a bead hidden at rest at the stream top; it runs down the stream to the jaw (not drawn in Solid, where it would sit on the filled face)",
+      "shape": {
+        "circle": [
+          [
+            10.7,
+            16.5
+          ],
+          1.65
+        ]
+      },
+      "weights": {
+        "light": {
+          "circle": [
+            [
+              10.7,
+              16.5
+            ],
+            1.5
+          ]
+        },
+        "bold": {
+          "circle": [
+            [
+              10.7,
+              16.5
+            ],
+            1.85
+          ]
+        }
+      },
+      "role": "fill",
+      "hidden": true,
+      "solid": "none"
+    },
+    "bead-r": {
+      "mirror": {
+        "of": "bead-l"
+      }
+    },
+    "fall-l": {
+      "//": "the drop that drips off the jaw, hidden at rest",
+      "shape": {
+        "path": "M9 22.7 C9.9 23.96 10.5 24.675 10.5 25.5 C10.5 26.328 9.828 27 9 27 C8.172 27 7.5 26.328 7.5 25.5 C7.5 24.675 8.1 23.96 9 22.7 Z"
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "fall-r": {
+      "mirror": {
+        "of": "fall-l"
+      }
+    },
+    "w2-bead-l": {
+      "//": "Strong's second wave",
+      "shape": {
+        "circle": [
+          [
+            10.7,
+            16.5
+          ],
+          1.65
+        ]
+      },
+      "weights": {
+        "light": {
+          "circle": [
+            [
+              10.7,
+              16.5
+            ],
+            1.5
+          ]
+        },
+        "bold": {
+          "circle": [
+            [
+              10.7,
+              16.5
+            ],
+            1.85
+          ]
+        }
+      },
+      "role": "fill",
+      "hidden": true,
+      "solid": "none"
+    },
+    "w2-bead-r": {
+      "mirror": {
+        "of": "w2-bead-l"
+      }
+    },
+    "w2-fall-l": {
+      "//": "Strong's second wave",
+      "shape": {
+        "path": "M9 22.7 C9.9 23.96 10.5 24.675 10.5 25.5 C10.5 26.328 9.828 27 9 27 C8.172 27 7.5 26.328 7.5 25.5 C7.5 24.675 8.1 23.96 9 22.7 Z"
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "w2-fall-r": {
+      "mirror": {
+        "of": "w2-fall-l"
+      }
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [
+        16,
+        27
+      ],
+      "carries": [
+        "face",
+        "mouth",
+        "eye-l",
+        "eye-r",
+        "stream-l",
+        "stream-r",
+        "bead-l",
+        "bead-r",
+        "fall-l",
+        "fall-r",
+        "w2-bead-l",
+        "w2-bead-r",
+        "w2-fall-l",
+        "w2-fall-r"
+      ]
+    }
+  },
+  "motion": {
+    "wail": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          0.75,
+          "out"
+        ],
+        [
+          0.38,
+          0.65
+        ],
+        [
+          0.56,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          0.85,
+          "out"
+        ],
+        [
+          0.2,
+          0.6
+        ],
+        [
+          0.3,
+          1,
+          "out"
+        ],
+        [
+          0.5,
+          0.9
+        ],
+        [
+          0.7,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "bead-l.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.24,
+          3.9,
+          "in"
+        ],
+        [
+          0.32,
+          6.8,
+          "pass"
+        ],
+        [
+          0.34,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.22,
+          3.9,
+          "in"
+        ],
+        [
+          0.3,
+          6.8,
+          "pass"
+        ],
+        [
+          0.32,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "bead-l.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.24,
+          -1.0,
+          "in"
+        ],
+        [
+          0.32,
+          -1.8,
+          "pass"
+        ],
+        [
+          0.34,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.22,
+          -1.0,
+          "in"
+        ],
+        [
+          0.3,
+          -1.8,
+          "pass"
+        ],
+        [
+          0.32,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "bead-l.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.1,
+          1
+        ],
+        [
+          0.3,
+          1
+        ],
+        [
+          0.33,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.08,
+          1
+        ],
+        [
+          0.27999999999999997,
+          1
+        ],
+        [
+          0.31,
+          0
+        ]
+      ]
+    },
+    "fall-l.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.29000000000000004,
+          0
+        ],
+        [
+          0.32,
+          1
+        ],
+        [
+          0.45,
+          1
+        ],
+        [
+          0.52,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.27,
+          0
+        ],
+        [
+          0.3,
+          1
+        ],
+        [
+          0.43,
+          1
+        ],
+        [
+          0.5,
+          0
+        ]
+      ]
+    },
+    "fall-l.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0
+        ],
+        [
+          0.39,
+          1.1,
+          "in"
+        ],
+        [
+          0.52,
+          3.5,
+          "pass"
+        ],
+        [
+          0.54,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.27999999999999997,
+          0
+        ],
+        [
+          0.37,
+          1.1,
+          "in"
+        ],
+        [
+          0.5,
+          3.5,
+          "pass"
+        ],
+        [
+          0.52,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "fall-l.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0
+        ],
+        [
+          0.52,
+          -0.5,
+          "out"
+        ],
+        [
+          0.54,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.27999999999999997,
+          0
+        ],
+        [
+          0.5,
+          -0.5,
+          "out"
+        ],
+        [
+          0.52,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "w2-bead-l.y": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.42,
+          3.9,
+          "in"
+        ],
+        [
+          0.5,
+          6.8,
+          "pass"
+        ],
+        [
+          0.52,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "w2-bead-l.x": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.42,
+          -1.0,
+          "in"
+        ],
+        [
+          0.5,
+          -1.8,
+          "pass"
+        ],
+        [
+          0.52,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "w2-bead-l.opacity": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.27999999999999997,
+          1
+        ],
+        [
+          0.48,
+          1
+        ],
+        [
+          0.51,
+          0
+        ]
+      ]
+    },
+    "w2-fall-l.opacity": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.47,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          0.63,
+          1
+        ],
+        [
+          0.7,
+          0
+        ]
+      ]
+    },
+    "w2-fall-l.y": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.48,
+          0
+        ],
+        [
+          0.5700000000000001,
+          1.1,
+          "in"
+        ],
+        [
+          0.7,
+          3.5,
+          "pass"
+        ],
+        [
+          0.72,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "w2-fall-l.x": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.48,
+          0
+        ],
+        [
+          0.7,
+          -0.5,
+          "out"
+        ],
+        [
+          0.72,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "bead-r.opacity": {
+      "follow": "bead-l.opacity"
+    },
+    "bead-r.y": {
+      "follow": "bead-l.y"
+    },
+    "bead-r.x": {
+      "follow": "bead-l.x",
+      "scale": -1
+    },
+    "fall-r.opacity": {
+      "follow": "fall-l.opacity"
+    },
+    "fall-r.y": {
+      "follow": "fall-l.y"
+    },
+    "fall-r.x": {
+      "follow": "fall-l.x",
+      "scale": -1
+    },
+    "w2-bead-r.opacity": {
+      "follow": "w2-bead-l.opacity"
+    },
+    "w2-bead-r.y": {
+      "follow": "w2-bead-l.y"
+    },
+    "w2-bead-r.x": {
+      "follow": "w2-bead-l.x",
+      "scale": -1
+    },
+    "w2-fall-r.opacity": {
+      "follow": "w2-fall-l.opacity"
+    },
+    "w2-fall-r.y": {
+      "follow": "w2-fall-l.y"
+    },
+    "w2-fall-r.x": {
+      "follow": "w2-fall-l.x",
+      "scale": -1
+    },
+    "face.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          -0.5,
+          "out"
+        ],
+        [
+          0.38,
+          -0.4
+        ],
+        [
+          0.56,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.07,
+          1.0,
+          "hit"
+        ],
+        [
+          0.17,
+          -0.6
+        ],
+        [
+          0.28,
+          0.7,
+          "hit"
+        ],
+        [
+          0.38,
+          -0.25
+        ],
+        [
+          0.5,
+          0
+        ]
+      ]
+    }
+  }
+}

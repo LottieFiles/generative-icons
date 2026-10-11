@@ -1,0 +1,455 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "grinning-squinting-face",
+  "label": "Grinning squinting face",
+  "intent": "A burst of laughter. Light: the squinting eyes squeeze shut harder as the face hops once and lands, the grin opening on the hop. Strong: three quick laugh hops, each smaller, the grin opening on each, the eyes squeezed tight throughout, and short laugh lines flicking out at the upper sides of the head as the first two land.",
+  "parts": {
+    "face": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            16
+          ],
+          11
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "mouth",
+          "gap": 0
+        },
+        {
+          "part": "eye-l",
+          "gap": 0
+        },
+        {
+          "part": "eye-r",
+          "gap": 0
+        }
+      ]
+    },
+    "mouth": {
+      "//": "The grin's Solid cut-out, still on the face (a mask); Outline and Duotone draw the opening grin.",
+      "shape": {
+        "path": "M10.5 17.5 L21.5 17.5 C21.5 20.6 19.04 23 16 23 C12.96 23 10.5 20.6 10.5 17.5 Z"
+      },
+      "role": "surface",
+      "outline": "none",
+      "tint": false,
+      "solid": "fill"
+    },
+    "grin": {
+      "shape": {
+        "path": "M10.5 17.5 L21.5 17.5 C21.5 20.6 19.04 23 16 23 C12.96 23 10.5 20.6 10.5 17.5 Z"
+      },
+      "role": "surface",
+      "solid": "none"
+    },
+    "eye-l": {
+      "shape": {
+        "polyline": [
+          [
+            10.8,
+            11.4
+          ],
+          [
+            13.5,
+            13.0
+          ],
+          [
+            10.8,
+            14.6
+          ]
+        ],
+        "r": 0.6
+      }
+    },
+    "eye-r": {
+      "mirror": {
+        "of": "eye-l"
+      }
+    },
+    "lines-l": {
+      "//": "Laugh lines, hidden at rest: a fan of two short strokes off the upper left of the head.",
+      "shape": [
+        {
+          "line": [
+            [
+              5.047,
+              7.442
+            ],
+            [
+              3.628,
+              6.334
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              7.83,
+              4.755
+            ],
+            [
+              6.772,
+              3.298
+            ]
+          ]
+        }
+      ],
+      "hidden": true
+    },
+    "lines-r": {
+      "mirror": {
+        "of": "lines-l"
+      }
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [
+        16,
+        27
+      ],
+      "carries": [
+        "face",
+        "mouth",
+        "grin"
+      ]
+    },
+    "grin": {
+      "//": "Opens downward from its top edge on each hop.",
+      "pivot": [
+        16,
+        17.5
+      ],
+      "squash": {
+        "base": 17.5,
+        "widen": 0.5
+      }
+    },
+    "eyes": {
+      "pivot": [
+        16,
+        13.0
+      ],
+      "carries": [
+        "eye-l",
+        "eye-r"
+      ],
+      "squash": {
+        "base": 13.0,
+        "widen": 0.5
+      }
+    },
+    "lines": {
+      "pivot": [
+        16,
+        16
+      ],
+      "carries": [
+        "lines-l",
+        "lines-r"
+      ]
+    }
+  },
+  "motion": {
+    "face.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -1.5,
+          "out"
+        ],
+        [
+          0.25,
+          0.3,
+          "hit"
+        ],
+        [
+          0.36,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0.3,
+          "out"
+        ],
+        [
+          0.17,
+          -1.6,
+          "out"
+        ],
+        [
+          0.27,
+          0.3,
+          "hit"
+        ],
+        [
+          0.35,
+          -1.0,
+          "out"
+        ],
+        [
+          0.43,
+          0.2,
+          "hit"
+        ],
+        [
+          0.49,
+          -0.45,
+          "out"
+        ],
+        [
+          0.55,
+          0.1,
+          "hit"
+        ],
+        [
+          0.63,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "eyes.y": {
+      "follow": "face.y"
+    },
+    "grin.squash": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.12,
+          1.12,
+          "out"
+        ],
+        [
+          0.25,
+          0.98,
+          "hit"
+        ],
+        [
+          0.36,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.06,
+          0.97,
+          "out"
+        ],
+        [
+          0.17,
+          1.14,
+          "out"
+        ],
+        [
+          0.27,
+          0.98,
+          "hit"
+        ],
+        [
+          0.35,
+          1.09,
+          "out"
+        ],
+        [
+          0.43,
+          0.99,
+          "hit"
+        ],
+        [
+          0.49,
+          1.05,
+          "out"
+        ],
+        [
+          0.55,
+          1,
+          "hit"
+        ]
+      ]
+    },
+    "eyes.squash": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          0.45,
+          "out"
+        ],
+        [
+          0.26,
+          0.5
+        ],
+        [
+          0.42,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.07,
+          0.4,
+          "out"
+        ],
+        [
+          0.27,
+          0.35,
+          "hit"
+        ],
+        [
+          0.43,
+          0.38,
+          "hit"
+        ],
+        [
+          0.55,
+          0.45
+        ],
+        [
+          0.66,
+          1,
+          "inOut"
+        ]
+      ]
+    },
+    "lines.scale": {
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.25,
+          0.92
+        ],
+        [
+          0.33,
+          1.04,
+          "out"
+        ],
+        [
+          0.41,
+          0.94,
+          "step"
+        ],
+        [
+          0.48,
+          1.02,
+          "out"
+        ],
+        [
+          0.5,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "lines-l.opacity": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0
+        ],
+        [
+          0.27,
+          1
+        ],
+        [
+          0.31,
+          1
+        ],
+        [
+          0.35,
+          0
+        ],
+        [
+          0.41,
+          0
+        ],
+        [
+          0.43,
+          1
+        ],
+        [
+          0.45,
+          1
+        ],
+        [
+          0.49,
+          0
+        ]
+      ]
+    },
+    "lines-l.draw": {
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.25,
+          0,
+          "step"
+        ],
+        [
+          0.3,
+          1,
+          "out"
+        ],
+        [
+          0.41,
+          0,
+          "step"
+        ],
+        [
+          0.45,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "lines-r.opacity": {
+      "follow": "lines-l.opacity"
+    },
+    "lines-r.draw": {
+      "follow": "lines-l.draw"
+    }
+  }
+}

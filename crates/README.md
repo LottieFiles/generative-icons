@@ -11,7 +11,7 @@ Every command is wired, and the whole catalog rebuilds byte for byte through the
 - **Checks:** 95 of 95 verification evidence files, the browser evidence of the 24 canonical sets (35–63, 1,428 actions) rendered natively, the 18 motion measurements of sets 22–39, and preflight reports identical to Node's.
 - **Packaging:** set zips identical to Python's (the six legacy zips differ only in entry order), `icon-library.zip` equal to `delivery.json`, the npm `dist` folders and tarballs identical.
 - **Spec icons:** 550 library icons are spec v2 (`motion/icon-sets/*/specs/`), reanimated or added since the snapshot. Every spec compiles, `library build` keeps their adopted assets, and `library verify` checks them against their specs.
-- **Apps:** all 1,141 icons install and uninstall on web and Android, legacy `lottie-icons.json` projects get the old CLI's exact bytes, and 2,282 ranked queries match `generation-context.mjs`.
+- **Apps:** all 1,161 icons install and uninstall on web and Android, legacy `lottie-icons.json` projects get the old CLI's exact bytes, and 2,322 ranked queries match `generation-context.mjs`.
 
 ## Commands
 
@@ -94,7 +94,7 @@ cargo test --workspace --release -- --ignored --skip live_   # whole-catalog par
   - `node` with `motion/node_modules` (`npm ci --prefix motion`), and `python3`, for the side-by-side runs against the legacy tools.
 - **Whole-catalog tests are `#[ignore]`.** Run them in release.
 - **Sign-in.** Tests never use the real sign-in: they use a temporary `GEN_ANIMATED_ICONS_HOME`, the fake keychain, or `GAI_ENGINE_TOKEN` with a wiremock engine. Never run `login` or `logout` against the default credentials home; an early test once deleted a real refresh token. The two live tests (`live_exports_match_the_committed_natives_except_path_names`, `live_build_through_the_hosted_engine`) need a prior `login` and are ignored by default.
-- **Catalog size is pinned.** Some oracle tests assert today's catalog (58 sets, 1,141 icons, 3,432 actions); registering a set or adding icons (`library adopt --add`) means updating them with the new committed outputs.
+- **Catalog size is pinned.** Some oracle tests assert today's catalog (59 sets, 1,161 icons, 3,472 actions); registering a set or adding icons (`library adopt --add`) means updating them with the new committed outputs.
 - **Tests that read the built packages skip without them.** CI has no `packages/icons/dist`, so a test that reads it starts with `require!(packages_dist(), "packages/icons/dist")`; run `npm run build:packages` locally to run it in full.
 
 ## CI

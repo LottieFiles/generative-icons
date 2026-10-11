@@ -36,7 +36,7 @@ fn library_mode_matches_the_generation_context_goldens() {
     for (query, golden) in [
         ("notification bell", "bfa75b501485aa7ec269846dcc21cf834d6d5ed8c17eb7a51c299fd0961e9e0c"),
         ("package return", "4317e61baae2facbd0a0c22a882dc7f477be3c444277dc04f3838e4ef0532863"),
-        ("heart", "c2c19c1d8eadd12ff35c5bf1606d66cdaa9a97be64accfeec5d56a4ca487c274"),
+        ("heart", "4da21ce8225c137fed3c4ea752d097de58b84e7bf245e4bfbe78013db76d8453"),
         ("loading spinner", "bf0dd7668d7de991eb67960c094f0c6f06e29e69b8cdf4ead98e173dd36c110e"),
         ("create a new icon for the payment", "e5f0a650d481e6d4f56dd3d247862e2ee5b1f23290084baf14e298d5f51a1998"),
         ("zzzz", "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"),
@@ -48,12 +48,12 @@ fn library_mode_matches_the_generation_context_goldens() {
     let mut packet =
         run(dir.path(), &["--library-root", &repo, "context", "notification feedback", "--neighbor", "bell"]).ok();
     let inputs = packet.as_object_mut().unwrap().remove("inputs").unwrap();
-    // catalog.json, 58 set.json files, their 58 search-terms.json, the contract, bell's two
+    // catalog.json, 59 set.json files, their 59 search-terms.json, the contract, bell's two
     // reference files and generation-context.mjs.
-    assert_eq!(inputs.as_array().unwrap().len(), 121);
+    assert_eq!(inputs.as_array().unwrap().len(), 123);
     assert_eq!(
         gai_core::sha256_hex(sorted_py_json(&packet)),
-        "b0069dcdaf7fb927d01502e6d5f5868fa744ba15cb09aa0193ec5c275f0b3062"
+        "b422aa86df4b5785e27a589d1011ff305643fe73f58ed50b63d3a2300c8e09f2"
     );
 
     // The prompt embeds the packet after the skill's rules.
@@ -191,7 +191,7 @@ fn text_output_lists_candidates_and_references() {
     assert_eq!(lines[0], "Context for \"notification feedback\" (Agent-selected neighbors)", "{packet}");
     for line in [
         "Contract: 32-unit grid, outline weights 1.5, 2, 2.5 (light, regular, bold; 1 to 3), 60 fps, 2.4 s timeline",
-        "Candidates (of 1141 library icons):",
+        "Candidates (of 1161 library icons):",
         "References:",
         "  bell                         Bell · Essentials, set 01-heart-bell",
         "    intent: The bell rings. Light: the bell swings out from its mount, the clapper trails it and strikes, a ring arc flicks out on each side and fades as it spreads, and the swing decays back to rest in smaller beats. Strong: a wider swing that rings twice, once at each end of the swing, and the clapper chases the bell through a longer decay. The mount never moves.",

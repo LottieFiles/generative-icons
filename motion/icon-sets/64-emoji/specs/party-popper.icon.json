@@ -1,0 +1,185 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "party-popper",
+  "label": "Party popper",
+  "intent": "The popper pops. Light: the cone kicks back about its base, a burst of confetti flies out of the mouth along arcs and fades, and the streamer shoots out again. Strong: the cone aims first, kicks back harder and rebounds, more confetti flies farther, and a second, smaller burst follows.",
+  "parts": {
+    "cone": {
+      "//": "held at the lower left, its mouth up and to the right",
+      "shape": {
+        "path": "M5.4 26.6 L18.128 21.509 C17.23 22.407 14.792 21.426 12.683 19.317 C10.574 17.208 9.593 14.77 10.491 13.872 Z"
+      },
+      "role": "surface",
+      "gap": {"mouth": 0.9}
+    },
+    "band": {
+      "//": "one stripe round the cone (Outline and Duotone; Solid keeps the plain cone)",
+      "shape": {"path": "M12.019 23.953 C11.551 24.42 10.284 23.909 9.187 22.813 C8.091 21.716 7.58 20.449 8.047 19.981"},
+      "solid": "none"
+    },
+    "mouth": {
+      "//": "the open end, an ellipse across the axis",
+      "shape": {
+        "path": "M18.128 21.509 C17.23 22.407 14.792 21.426 12.683 19.317 C10.574 17.208 9.593 14.77 10.491 13.872 C11.389 12.974 13.827 13.955 15.936 16.064 C18.045 18.173 19.026 20.611 18.128 21.509 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "streamer": {
+      "//": "a curly streamer out of the mouth; it shoots out again on the pop",
+      "shape": {"path": "M16.6 15.2 C18.6 13 16.4 11 18.4 9.2 C20 7.8 21.2 10.2 23.2 8.4 C24 7.7 24.4 6.8 24.6 6"}
+    },
+    "bit-a": {
+      "shape": {"line": [[8.48, 10.42], [9.92, 8.38]]},
+      "//": "confetti at rest; at the pop each one fades, is fired from the mouth and lands back where it rests"
+    },
+    "bit-b": {"shape": {"line": [[23.57, 16.58], [25.63, 15.82]]}},
+    "bit-c": {"shape": {"line": [[25.94, 10.0], [26.86, 12.0]]}},
+    "burst-1": {
+      "shape": {"line": [[14.47, 16.26], [15.85, 17.42]]},
+      "hidden": true,
+      "//": "hidden at rest: more confetti fired from the mouth, flying out along arcs past the rest bits and fading"
+    },
+    "burst-2": {"shape": {"line": [[14.38, 17.29], [15.94, 16.39]]}, "hidden": true},
+    "burst-3": {"shape": {"line": [[14.31, 16.53], [16.01, 17.15]]}, "hidden": true},
+    "burst-4": {"shape": {"line": [[14.85, 15.99], [15.47, 17.69]]}, "hidden": true},
+    "burst-5": {"shape": {"line": [[14.71, 17.62], [15.61, 16.06]]}, "hidden": true},
+    "burst-6": {
+      "shape": {"line": [[14.47, 17.42], [15.85, 16.26]]},
+      "hidden": true,
+      "//": "hidden at rest: Strong's second, smaller burst"
+    },
+    "burst-7": {"shape": {"line": [[14.38, 16.39], [15.94, 17.29]]}, "hidden": true}
+  },
+  "rigs": {
+    "popper": {"//": "kicks back about its base", "pivot": [5.4, 26.6], "carries": ["cone", "band", "mouth", "streamer"]},
+    "bit-a": {"pivot": [9.2, 9.4]},
+    "bit-b": {"pivot": [24.6, 16.2]},
+    "bit-c": {"pivot": [26.4, 11.0]},
+    "burst-1": {"pivot": [15.16, 16.84]},
+    "burst-2": {"pivot": [15.16, 16.84]},
+    "burst-3": {"pivot": [15.16, 16.84]},
+    "burst-4": {"pivot": [15.16, 16.84]},
+    "burst-5": {"pivot": [15.16, 16.84]},
+    "burst-6": {"pivot": [15.16, 16.84]},
+    "burst-7": {"pivot": [15.16, 16.84]}
+  },
+  "motion": {
+    "popper.rotate": {
+      "light": [[0, 0], [0.08, -7, "out"], [0.26, 0, "inOut"]],
+      "strong": [[0, 0], [0.1, 3, "out"], [0.18, -11, "out"], [0.3, 2, "inOut"], [0.37, -4, "out"], [0.5, 0, "inOut"]]
+    },
+    "popper.x": {
+      "light": [[0, 0], [0.08, -0.5, "out"], [0.26, 0, "inOut"]],
+      "strong": [[0, 0], [0.1, 0.3, "out"], [0.18, -0.8, "out"], [0.3, 0.15, "inOut"], [0.37, -0.35, "out"], [0.5, 0, "inOut"]]
+    },
+    "popper.y": {"follow": "popper.x", "scale": -1},
+    "streamer.draw": {
+      "light": [[0, 1], [0.07, 0, "step"], [0.3, 1, "out"]],
+      "strong": [[0, 1], [0.17, 0, "step"], [0.42, 1, "out"]]
+    },
+    "bit-a.x": {
+      "light": [[0, 0], [0.06, 0], [0.07, 5.96, "step"], [0.34, 0, "out"]],
+      "strong": [[0, 0], [0.16, 0], [0.17, 5.96, "step"], [0.39, -0.83, "out"], [0.48, 0, "inOut"]]
+    },
+    "bit-a.y": {
+      "light": [[0, 0], [0.06, 0], [0.07, 7.44, "step"], [0.205, -1.2, "out"], [0.34, 0, "inOut"]],
+      "strong": [[0, 0], [0.16, 0], [0.17, 7.44, "step"], [0.325, -1.6, "out"], [0.39, -1.52, "inOut"], [0.48, 0, "inOut"]]
+    },
+    "bit-a.rotate": {
+      "light": [[0, 0], [0.06, 0], [0.07, -140, "step"], [0.34, 0, "out"]],
+      "strong": [[0, 0], [0.16, 0], [0.17, -200, "step"], [0.39, 24.0, "out"], [0.48, 0, "inOut"]]
+    },
+    "bit-a.opacity": {
+      "light": [[0, 1], [0.025, 1], [0.06, 0, "in"], [0.07, 0], [0.1, 1, "out"]],
+      "strong": [[0, 1], [0.125, 1], [0.16, 0, "in"], [0.17, 0], [0.2, 1, "out"]]
+    },
+    "bit-b.x": {
+      "light": [[0, 0], [0.075, 0], [0.085, -9.44, "step"], [0.35500000000000004, 0, "out"]],
+      "strong": [[0, 0], [0.175, 0], [0.185, -9.44, "step"], [0.405, 1.32, "out"], [0.495, 0, "inOut"]]
+    },
+    "bit-b.y": {
+      "light": [[0, 0], [0.075, 0], [0.085, 0.64, "step"], [0.22, -1.2, "out"], [0.35500000000000004, 0, "inOut"]],
+      "strong": [[0, 0], [0.175, 0], [0.185, 0.64, "step"], [0.34, -1.6, "out"], [0.405, -0.57, "inOut"], [0.495, 0, "inOut"]]
+    },
+    "bit-b.rotate": {
+      "light": [[0, 0], [0.075, 0], [0.085, 140, "step"], [0.35500000000000004, 0, "out"]],
+      "strong": [[0, 0], [0.175, 0], [0.185, 200, "step"], [0.405, -24.0, "out"], [0.495, 0, "inOut"]]
+    },
+    "bit-b.opacity": {
+      "light": [[0, 1], [0.025, 1], [0.06, 0, "in"], [0.085, 0], [0.115, 1, "out"]],
+      "strong": [[0, 1], [0.125, 1], [0.16, 0, "in"], [0.185, 0], [0.215, 1, "out"]]
+    },
+    "bit-c.x": {
+      "light": [[0, 0], [0.09, 0], [0.1, -11.24, "step"], [0.37, 0, "out"]],
+      "strong": [[0, 0], [0.19, 0], [0.2, -11.24, "step"], [0.42, 1.57, "out"], [0.51, 0, "inOut"]]
+    },
+    "bit-c.y": {
+      "light": [[0, 0], [0.09, 0], [0.1, 5.84, "step"], [0.235, -1.2, "out"], [0.37, 0, "inOut"]],
+      "strong": [[0, 0], [0.19, 0], [0.2, 5.84, "step"], [0.355, -1.6, "out"], [0.42, -1.3, "inOut"], [0.51, 0, "inOut"]]
+    },
+    "bit-c.rotate": {
+      "light": [[0, 0], [0.09, 0], [0.1, -140, "step"], [0.37, 0, "out"]],
+      "strong": [[0, 0], [0.19, 0], [0.2, -200, "step"], [0.42, 24.0, "out"], [0.51, 0, "inOut"]]
+    },
+    "bit-c.opacity": {
+      "light": [[0, 1], [0.025, 1], [0.06, 0, "in"], [0.1, 0], [0.13, 1, "out"]],
+      "strong": [[0, 1], [0.125, 1], [0.16, 0, "in"], [0.2, 0], [0.23, 1, "out"]]
+    },
+    "burst-6.x": {"strong": [[0, 0], [0.36, 0], [0.6, 0.6, "out"], [0.62, 0, "step"]]},
+    "burst-6.y": {"strong": [[0, 0], [0.36, 0], [0.492, -7.0, "out"], [0.6, -6.2, "inOut"], [0.62, 0, "step"]]},
+    "burst-6.rotate": {"strong": [[0, 0], [0.36, 0], [0.6, 160, "out"], [0.62, 0, "step"]]},
+    "burst-6.opacity": {"strong": [[0, 0], [0.36, 0], [0.39, 1, "out"], [0.5, 1], [0.6, 0, "in"]]},
+    "burst-7.x": {"strong": [[0, 0], [0.375, 0], [0.615, 7.4, "out"], [0.635, 0, "step"]]},
+    "burst-7.y": {"strong": [[0, 0], [0.375, 0], [0.507, 2.6, "out"], [0.615, 3.4, "inOut"], [0.635, 0, "step"]]},
+    "burst-7.rotate": {"strong": [[0, 0], [0.375, 0], [0.615, 160, "out"], [0.635, 0, "step"]]},
+    "burst-7.opacity": {"strong": [[0, 0], [0.375, 0], [0.405, 1, "out"], [0.515, 1], [0.615, 0, "in"]]},
+    "burst-1.x": {
+      "light": [[0, 0], [0.07, 0], [0.42, -1.5, "out"], [0.44, 0, "step"]],
+      "strong": [[0, 0], [0.17, 0], [0.52, -1.88, "out"], [0.54, 0, "step"]]
+    },
+    "burst-1.y": {
+      "light": [[0, 0], [0.07, 0], [0.263, -10.0, "out"], [0.42, -9.1, "inOut"], [0.44, 0, "step"]],
+      "strong": [[0, 0], [0.17, 0], [0.363, -12.5, "out"], [0.52, -11.3, "inOut"], [0.54, 0, "step"]]
+    },
+    "burst-1.rotate": {
+      "light": [[0, 0], [0.07, 0], [0.42, -160, "out"], [0.44, 0, "step"]],
+      "strong": [[0, 0], [0.17, 0], [0.52, -220, "out"], [0.54, 0, "step"]]
+    },
+    "burst-1.opacity": {
+      "light": [[0, 0], [0.07, 0], [0.1, 1, "out"], [0.32, 1], [0.42, 0, "in"]],
+      "strong": [[0, 0], [0.17, 0], [0.2, 1, "out"], [0.42, 1], [0.52, 0, "in"]]
+    },
+    "burst-2.x": {
+      "light": [[0, 0], [0.08, 0], [0.43, 10.0, "out"], [0.45, 0, "step"]],
+      "strong": [[0, 0], [0.18000000000000002, 0], [0.53, 12.5, "out"], [0.55, 0, "step"]]
+    },
+    "burst-2.y": {
+      "light": [[0, 0], [0.08, 0], [0.273, 3.8, "out"], [0.43, 4.7, "inOut"], [0.45, 0, "step"]],
+      "strong": [[0, 0], [0.18000000000000002, 0], [0.373, 4.75, "out"], [0.53, 5.95, "inOut"], [0.55, 0, "step"]]
+    },
+    "burst-2.rotate": {
+      "light": [[0, 0], [0.08, 0], [0.43, 160, "out"], [0.45, 0, "step"]],
+      "strong": [[0, 0], [0.18000000000000002, 0], [0.53, 220, "out"], [0.55, 0, "step"]]
+    },
+    "burst-2.opacity": {
+      "light": [[0, 0], [0.08, 0], [0.11, 1, "out"], [0.33, 1], [0.43, 0, "in"]],
+      "strong": [[0, 0], [0.18000000000000002, 0], [0.21, 1, "out"], [0.43, 1], [0.53, 0, "in"]]
+    },
+    "burst-3.x": {"strong": [[0, 0], [0.19, 0], [0.54, -4.5, "out"], [0.56, 0, "step"]]},
+    "burst-3.y": {"strong": [[0, 0], [0.19, 0], [0.383, -10.5, "out"], [0.54, -9.3, "inOut"], [0.56, 0, "step"]]},
+    "burst-3.rotate": {"strong": [[0, 0], [0.19, 0], [0.54, -220, "out"], [0.56, 0, "step"]]},
+    "burst-3.opacity": {"strong": [[0, 0], [0.19, 0], [0.22, 1, "out"], [0.44, 1], [0.54, 0, "in"]]},
+    "burst-4.x": {"strong": [[0, 0], [0.2, 0], [0.55, 8.0, "out"], [0.57, 0, "step"]]},
+    "burst-4.y": {"strong": [[0, 0], [0.2, 0], [0.393, 7.75, "out"], [0.55, 8.95, "inOut"], [0.57, 0, "step"]]},
+    "burst-4.rotate": {"strong": [[0, 0], [0.2, 0], [0.55, 220, "out"], [0.57, 0, "step"]]},
+    "burst-4.opacity": {"strong": [[0, 0], [0.2, 0], [0.23, 1, "out"], [0.45, 1], [0.55, 0, "in"]]},
+    "burst-5.x": {"strong": [[0, 0], [0.21000000000000002, 0], [0.56, 5.0, "out"], [0.58, 0, "step"]]},
+    "burst-5.y": {
+      "strong": [[0, 0], [0.21000000000000002, 0], [0.403, -12.25, "out"], [0.56, -11.05, "inOut"], [0.58, 0, "step"]]
+    },
+    "burst-5.rotate": {"strong": [[0, 0], [0.21000000000000002, 0], [0.56, -220, "out"], [0.58, 0, "step"]]},
+    "burst-5.opacity": {"strong": [[0, 0], [0.21000000000000002, 0], [0.24, 1, "out"], [0.46, 1], [0.56, 0, "in"]]}
+  }
+}

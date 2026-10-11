@@ -31,7 +31,7 @@ fn icon_library_matches_delivery_proof() {
 fn asset_audit_matches_python() {
     let Some(repo) = repo() else { return };
     let audit = audit_assets(&repo).unwrap();
-    assert_eq!((audit.sets, audit.icons, audit.actions), (58, 1141, 3432));
+    assert_eq!((audit.sets, audit.icons, audit.actions), (59, 1161, 3472));
     if available("python3") {
         // audit-assets.py only reads the checkout.
         let printed = run(Command::new("python3").arg(repo.join("scripts/audit-assets.py")));

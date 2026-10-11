@@ -238,7 +238,7 @@ fn preflight() -> Preflight {
 fn elide_inputs(report: &CheckedReport, set: &Path, placeholder: &str) -> String {
     let mut json = report.to_json();
     assert_eq!(json["inputs"], expected_inputs(set));
-    assert_eq!(json["inputs"].as_array().unwrap().len(), 24 + 1 + 59);
+    assert_eq!(json["inputs"].as_array().unwrap().len(), 24 + 1 + 60);
     json["inputs"] = placeholder.into();
     to_js_json(&json)
 }
@@ -260,9 +260,9 @@ fn checked_build_blocks_the_builder_when_preflight_fails() {
     assert_eq!(listing, ["definitions.mjs"]);
     let name = set.path().file_name().unwrap().to_str().unwrap();
     assert_eq!(
-        elide_inputs(&report, set.path(), "84 entries"),
+        elide_inputs(&report, set.path(), "85 entries"),
         format!(
-            r#"{{"set":"{name}","status":"FAIL","icons":1,"actions":2,"samples":870,"diagnostics":[{{"severity":"error","code":"OUTLINE_WIDTH","icon":"test-arrow","part":"shaft","message":"Author the regular centerline at width 2; the builder creates weight presets"}}],"inputs":"84 entries","built":false}}"#
+            r#"{{"set":"{name}","status":"FAIL","icons":1,"actions":2,"samples":870,"diagnostics":[{{"severity":"error","code":"OUTLINE_WIDTH","icon":"test-arrow","part":"shaft","message":"Author the regular centerline at width 2; the builder creates weight presets"}}],"inputs":"85 entries","built":false}}"#
         )
     );
 }
@@ -286,8 +286,8 @@ fn checked_build_launches_only_after_clean_screening() {
     let prefix = format!(r#"{{"set":"{name}","status":"#);
     let screened = r#""icons":1,"actions":2,"samples":870,"diagnostics":[],"inputs":"#;
     assert_eq!(
-        elide_inputs(&report, set.path(), "84 entries"),
-        format!(r#"{prefix}"PASS",{screened}"84 entries","built":true,"buildExitCode":0}}"#)
+        elide_inputs(&report, set.path(), "85 entries"),
+        format!(r#"{prefix}"PASS",{screened}"85 entries","built":true,"buildExitCode":0}}"#)
     );
     for (outcome, tail) in [
         (LaunchOutcome { status: Some(3), error: None }, r#""built":false,"buildExitCode":3}"#),

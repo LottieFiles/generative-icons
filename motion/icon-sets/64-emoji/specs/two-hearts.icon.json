@@ -1,0 +1,48 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "two-hearts",
+  "label": "Two hearts",
+  "intent": "Two hearts flutter up together like love bubbles. Light: the large heart beats once, and 100 ms later the small heart rises, tipping as it goes, and lands back with a little tilt. Strong: the large heart dips and rises with a beat, then the small one floats up higher, swinging from side to side; each lands with a soft settle.",
+  "parts": {
+    "big": {
+      "//": "the larger heart, lower left, leaning toward the small one",
+      "shape": {
+        "path": "M 10.242 25.432 C 10.088 25.405 9.932 25.19 9.664 24.904 C 8.505 23.676 5.367 20.188 5.978 16.719 C 6.301 14.888 7.768 13.794 9.456 14.091 C 10.575 14.289 11.363 15.042 11.697 15.857 C 11.753 15.992 11.808 16.07 11.89 16.084 C 11.973 16.099 12.051 16.044 12.15 15.937 C 12.742 15.285 13.741 14.847 14.86 15.044 C 16.548 15.342 17.552 16.872 17.229 18.703 C 16.617 22.172 12.475 24.376 10.966 25.133 C 10.616 25.31 10.397 25.459 10.242 25.432 Z"
+      },
+      "role": "surface"
+    },
+    "small": {
+      "//": "the smaller heart, upper right, leaning back toward the big one",
+      "shape": {
+        "path": "M 23.777 14.519 C 23.666 14.546 23.498 14.449 23.233 14.337 C 22.092 13.861 18.954 12.463 18.331 9.961 C 18.001 8.64 18.656 7.471 19.874 7.167 C 20.681 6.966 21.433 7.235 21.899 7.681 C 21.976 7.755 22.036 7.79 22.096 7.775 C 22.155 7.761 22.191 7.701 22.225 7.6 C 22.427 6.987 22.965 6.397 23.772 6.195 C 24.99 5.892 26.117 6.617 26.446 7.937 C 27.07 10.44 24.956 13.147 24.172 14.103 C 23.991 14.326 23.888 14.491 23.777 14.519 Z"
+      },
+      "role": "surface"
+    }
+  },
+  "rigs": {
+    "big": {
+      "pivot": [11.2, 20.0]
+    },
+    "small": {
+      "pivot": [22.8, 10.6]
+    }
+  },
+  "motion": {
+    "big.scale": {
+      "light": [[0, 1], [0.1, 1.12, "out"], [0.22, 0.97, "inOut"], [0.32, 1]],
+      "strong": [[0, 1], [0.08, 0.94, "inOut"], [0.2, 1.1, "out"], [0.36, 1, "inOut"]]
+    },
+    "big.y": {
+      "strong": [[0, 0], [0.08, 0.5, "inOut"], [0.26, -1.8, "out"], [0.44, 0.35, "in"], [0.52, -0.15], [0.6, 0]]
+    },
+    "small.y": {
+      "light": [[0, 0], [0.1, 0], [0.3, -2.4, "out"], [0.46, 0.2, "in"], [0.54, 0]],
+      "strong": [[0, 0], [0.1, 0], [0.38, -3.1, "out"], [0.6, 0.3, "in"], [0.68, -0.1], [0.76, 0]]
+    },
+    "small.rotate": {
+      "light": [[0, 0], [0.1, 0], [0.3, -8, "inOut"], [0.46, 4, "inOut"], [0.56, 0]],
+      "strong": [[0, 0], [0.14, 0], [0.28, -12, "inOut"], [0.44, 10, "inOut"], [0.58, -5, "inOut"], [0.68, 2], [0.78, 0]]
+    }
+  }
+}

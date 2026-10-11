@@ -115,7 +115,7 @@ fn baked_weights_match_the_runtime_bridge() {
 const SEARCHES: [(&str, &str); 7] = [
     ("notification bell", "bfa75b501485aa7ec269846dcc21cf834d6d5ed8c17eb7a51c299fd0961e9e0c"),
     ("package return", "4317e61baae2facbd0a0c22a882dc7f477be3c444277dc04f3838e4ef0532863"),
-    ("heart", "c2c19c1d8eadd12ff35c5bf1606d66cdaa9a97be64accfeec5d56a4ca487c274"),
+    ("heart", "4da21ce8225c137fed3c4ea752d097de58b84e7bf245e4bfbe78013db76d8453"),
     ("loading spinner", "bf0dd7668d7de991eb67960c094f0c6f06e29e69b8cdf4ead98e173dd36c110e"),
     ("create a new icon for the payment", "e5f0a650d481e6d4f56dd3d247862e2ee5b1f23290084baf14e298d5f51a1998"),
     ("zzzz", "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"),

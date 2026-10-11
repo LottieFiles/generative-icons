@@ -1,0 +1,46 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "smiling-face-with-smiling-eyes",
+  "label": "Smiling face with smiling eyes",
+  "intent": "A warm smile spreads and the cheeks blush. Light: the smile widens from its centre and two blush marks fade in on the cheeks under the smiling eyes and out again as the smile settles. Strong: the face lifts and tips toward its right shoulder as the smile widens further, the blush lingers, and the head drops back with a small settle.",
+  "parts": {
+    "face": {
+      "shape": {"circle": [[16, 16], 11]},
+      "role": "surface",
+      "knockout": [{"part": "mouth", "gap": 0}, {"part": "eye-l", "gap": 0}, {"part": "eye-r", "gap": 0}]
+    },
+    "mouth": {"shape": {"path": "M10.5 18 C11.704 19.87 13.776 21 16 21 C18.224 21 20.296 19.87 21.5 18"}},
+    "eye-l": {"shape": {"arc": [[12, 14.2], 2.2, -150, -30]}},
+    "eye-r": {"mirror": {"of": "eye-l"}},
+    "blush-l": {
+      "//": "a filled oval on the outer cheek, under the eye and above the widened smile's corner; filled, so it keeps its clearance at Bold",
+      "shape": {"ellipse": [[8.6, 15.7], 1.4, 0.8]},
+      "role": "fill",
+      "hidden": true,
+      "solid": "none"
+    },
+    "blush-r": {"mirror": {"of": "blush-l"}}
+  },
+  "rigs": {
+    "face": {"pivot": [16, 27], "carries": ["face", "mouth", "eye-l", "eye-r", "blush-l", "blush-r"]},
+    "mouth": {"//": "above the corners' line, so the corners spread out and a little down, clear of the blush", "pivot": [16, 16.5]}
+  },
+  "motion": {
+    "mouth.scale": {
+      "light": [[0, 1], [0.16, 1.17, "out"], [0.3, 1.15], [0.46, 1, "inOut"]],
+      "strong": [[0, 1], [0.18, 1.26, "out"], [0.42, 1.23], [0.6, 1, "inOut"]]
+    },
+    "blush-l.opacity": {
+      "light": [[0, 0], [0.1, 0], [0.2, 1], [0.32, 1], [0.44, 0]],
+      "strong": [[0, 0], [0.12, 0], [0.22, 1], [0.48, 1], [0.6, 0]]
+    },
+    "blush-r.opacity": {"follow": "blush-l.opacity"},
+    "face.rotate": {
+      "strong": [[0, 0], [0.18, 6, "out"], [0.4, 5], [0.56, -1.2, "inOut"], [0.66, 0]]
+    },
+    "face.y": {
+      "strong": [[0, 0], [0.18, -1.2, "out"], [0.4, -1], [0.56, 0.3, "inOut"], [0.66, 0]]
+    }
+  }
+}

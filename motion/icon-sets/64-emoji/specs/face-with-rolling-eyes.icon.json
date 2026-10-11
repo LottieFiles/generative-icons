@@ -1,0 +1,272 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "face-with-rolling-eyes",
+  "label": "Face with rolling eyes",
+  "intent": "An eye roll. Light: the pupils roll one whole circuit round the inside of the eyes, from the top and back to it, as the head tips back a little. Strong: the pupils wind back first, then roll slower and further, overshooting the top and settling, while the head tips back further and the mouth slides to one side in a sigh.",
+  "parts": {
+    "face": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            16
+          ],
+          11
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "eye-l",
+          "gap": 0
+        },
+        {
+          "part": "eye-r",
+          "gap": 0
+        },
+        {
+          "part": "mouth",
+          "gap": 0
+        }
+      ]
+    },
+    "eye-l": {
+      "//": "the eye white: a ring in Outline, cut out of the face in Solid",
+      "shape": {
+        "circle": [
+          [
+            11.4,
+            14.6
+          ],
+          3.0
+        ]
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "eye-r": {
+      "mirror": {
+        "of": "eye-l"
+      }
+    },
+    "pupil-l": {
+      "//": "drawn over the eye white, so it shows inside the Solid cut-out and moves freely",
+      "shape": {
+        "circle": [
+          [
+            11.4,
+            12.9
+          ],
+          1.3
+        ]
+      },
+      "role": "fill"
+    },
+    "pupil-r": {
+      "mirror": {
+        "of": "pupil-l"
+      }
+    },
+    "mouth": {
+      "shape": {
+        "line": [
+          [
+            13.2,
+            21.9
+          ],
+          [
+            18.8,
+            21.3
+          ]
+        ]
+      }
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [
+        16,
+        27
+      ],
+      "carries": [
+        "face",
+        "eye-l",
+        "eye-r",
+        "pupil-l",
+        "pupil-r",
+        "mouth"
+      ]
+    },
+    "pupil-l": {
+      "pivot": [
+        11.4,
+        14.6
+      ]
+    },
+    "pupil-r": {
+      "pivot": [
+        20.6,
+        14.6
+      ]
+    }
+  },
+  "motion": {
+    "pupil-l.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.58,
+          360,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -24,
+          "out"
+        ],
+        [
+          0.72,
+          384,
+          "inOut"
+        ],
+        {
+          "settle": 0.9,
+          "to": 360
+        }
+      ]
+    },
+    "pupil-r.rotate": {
+      "follow": "pupil-l.rotate"
+    },
+    "face.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.3,
+          -5,
+          "out"
+        ],
+        [
+          0.62,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          1.5,
+          "out"
+        ],
+        [
+          0.42,
+          -9,
+          "out"
+        ],
+        [
+          0.66,
+          -8
+        ],
+        [
+          0.92,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "face.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0
+        ],
+        [
+          0.3,
+          -0.5,
+          "out"
+        ],
+        [
+          0.62,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.14,
+          0.3,
+          "out"
+        ],
+        [
+          0.42,
+          -1,
+          "out"
+        ],
+        [
+          0.66,
+          -0.9
+        ],
+        [
+          0.92,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "mouth.x": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          0
+        ],
+        [
+          0.66,
+          1.4,
+          "out"
+        ],
+        [
+          0.8,
+          1.3
+        ],
+        [
+          0.92,
+          0,
+          "inOut"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "pleading-face",
+  "label": "Pleading face",
+  "intent": "Puppy eyes. Light: the big eyes well up, swelling bigger as the brows lift, then settle. Strong: the eyes squeeze a little first, then swell bigger with the brows lifting higher, a tear wells at the lower lid of one eye and fades, and the face trembles before it settles.",
+  "parts": {
+    "face": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            16
+          ],
+          11
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "eye-l",
+          "gap": 0
+        },
+        {
+          "part": "eye-r",
+          "gap": 0
+        },
+        {
+          "part": "brow-l",
+          "gap": 0
+        },
+        {
+          "part": "brow-r",
+          "gap": 0
+        },
+        {
+          "part": "mouth",
+          "gap": 0
+        }
+      ]
+    },
+    "eye-l": {
+      "shape": {
+        "circle": [
+          [
+            12,
+            15.8
+          ],
+          2.6
+        ]
+      },
+      "role": "fill",
+      "holes": [
+        {
+          "circle": [
+            [
+              12.85,
+              14.9
+            ],
+            0.9
+          ]
+        }
+      ]
+    },
+    "eye-r": {
+      "mirror": {
+        "of": "eye-l"
+      }
+    },
+    "hl-l": {
+      "//": "Solid only: the eye's highlight, drawn inside its cut-out",
+      "shape": {
+        "circle": [
+          [
+            12.85,
+            14.9
+          ],
+          0.9
+        ]
+      },
+      "outline": "none",
+      "solid": "fill"
+    },
+    "hl-r": {
+      "mirror": {
+        "of": "hl-l"
+      }
+    },
+    "brow-l": {
+      "shape": {
+        "path": "M11 11.8 C11.8 11.2 12.9 10.7 14.1 10.5"
+      }
+    },
+    "brow-r": {
+      "mirror": {
+        "of": "brow-l"
+      }
+    },
+    "mouth": {
+      "shape": {
+        "path": "M13.4 22.4 C14.1 21.4 15.1 20.9 16 20.9 C16.9 20.9 17.9 21.4 18.6 22.4"
+      }
+    },
+    "tear": {
+      "//": "hidden at rest; wells at the lower lid of the right eye (Strong only, not drawn in Solid)",
+      "shape": {
+        "path": "M21.2 18.2 C22.04 19.37 22.6 20.03 22.6 20.8 C22.6 21.573 21.973 22.2 21.2 22.2 C20.427 22.2 19.8 21.573 19.8 20.8 C19.8 20.03 20.36 19.37 21.2 18.2 Z"
+      },
+      "role": "fill",
+      "hidden": true,
+      "solid": "none"
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [
+        16,
+        27
+      ],
+      "carries": [
+        "face",
+        "eyes",
+        "mouth",
+        "tear"
+      ]
+    },
+    "eyes": {
+      "//": "the eyes swell about the midpoint between them, which lifts and spreads the brows too",
+      "pivot": [
+        16,
+        15.8
+      ],
+      "carries": [
+        "eye-l",
+        "eye-r",
+        "hl-l",
+        "hl-r",
+        "brow-l",
+        "brow-r"
+      ]
+    },
+    "tear": {
+      "pivot": [
+        21.2,
+        18.4
+      ]
+    }
+  },
+  "motion": {
+    "eyes.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.16,
+          1.15,
+          "out"
+        ],
+        [
+          0.36,
+          1.13
+        ],
+        [
+          0.54,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          0.93,
+          "out"
+        ],
+        [
+          0.24,
+          1.23,
+          "out"
+        ],
+        [
+          0.5,
+          1.2
+        ],
+        [
+          0.72,
+          1,
+          "inOut"
+        ]
+      ]
+    },
+    "tear.opacity": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.28,
+          1
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          0.64,
+          0
+        ]
+      ]
+    },
+    "tear.scale": {
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.2,
+          0.55,
+          "step"
+        ],
+        [
+          0.36,
+          1,
+          "out"
+        ],
+        [
+          0.64,
+          1
+        ]
+      ]
+    },
+    "tear.y": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.36,
+          0
+        ],
+        [
+          0.64,
+          1.2,
+          "in"
+        ],
+        [
+          0.66,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "face.x": {
+      "//": "the frown cannot tremble alone: the eyes and brows hold the face's one moving-knockout rig, so the whole face quivers",
+      "strong": [
+        [
+          0,
+          0
+        ],
+        {
+          "wobble": 0.3,
+          "amp": 0.55,
+          "until": 0.66,
+          "swings": 5
+        }
+      ]
+    }
+  }
+}
