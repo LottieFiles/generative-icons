@@ -1,0 +1,127 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "face-blowing-a-kiss",
+  "label": "Face blowing a kiss",
+  "intent": "The kiss is blown. Light: the puckered lips push toward the heart, the heart leaves them and floats up and to the right, growing a little and fading, while a new heart fades in at the lips. Strong: the face draws back, then leans into the kiss as the lips push harder; the heart flies farther on an arc with a small turn, and the face settles back.",
+  "parts": {
+    "face": {
+      "//": "r 10, shifted left and down: the blown heart needs room on the right",
+      "shape": {
+        "circle": [
+          [14.8, 16.4],
+          10
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "mouth",
+          "gap": 0
+        },
+        {
+          "part": "eye-l",
+          "gap": 0
+        },
+        {
+          "part": "eye-r",
+          "gap": 0
+        }
+      ],
+      "gap": {
+        "heart": 1.1
+      }
+    },
+    "eye-l": {
+      "//": "the wink",
+      "shape": {
+        "arc": [
+          [11.16, 14.22],
+          2.0,
+          -150,
+          -30
+        ]
+      }
+    },
+    "eye-r": {
+      "shape": {
+        "circle": [
+          [18.44, 12.85],
+          1.3
+        ]
+      },
+      "role": "fill"
+    },
+    "mouth": {
+      "//": "puckered lips, a small 3",
+      "shape": {
+        "path": "M13.8 18.4 C15.5 17.7 16.9 19.9 14.9 20.3 C16.9 20.7 15.5 22.9 13.8 22.2"
+      }
+    },
+    "heart": {
+      "//": "the heart at the lips, on the rim; Solid draws it filled and the face is cut around it",
+      "shape": {
+        "path": "M 22.286 25.49 C 22.203 25.473 22.124 25.355 21.986 25.197 C 21.388 24.518 19.773 22.592 20.166 20.746 C 20.373 19.772 21.179 19.213 22.077 19.404 C 22.672 19.531 23.08 19.949 23.244 20.391 C 23.271 20.464 23.299 20.507 23.343 20.517 C 23.387 20.526 23.43 20.498 23.484 20.442 C 23.814 20.104 24.357 19.889 24.952 20.015 C 25.85 20.206 26.359 21.044 26.152 22.018 C 25.76 23.864 23.501 24.967 22.679 25.344 C 22.488 25.432 22.368 25.508 22.286 25.49 Z"
+      },
+      "role": "fill",
+      "solid": "fill"
+    },
+    "kiss": {
+      "//": "the blown heart: a copy hidden at rest that takes over from the heart and floats away",
+      "shape": {
+        "path": "M 22.286 25.49 C 22.203 25.473 22.124 25.355 21.986 25.197 C 21.388 24.518 19.773 22.592 20.166 20.746 C 20.373 19.772 21.179 19.213 22.077 19.404 C 22.672 19.531 23.08 19.949 23.244 20.391 C 23.271 20.464 23.299 20.507 23.343 20.517 C 23.387 20.526 23.43 20.498 23.484 20.442 C 23.814 20.104 24.357 19.889 24.952 20.015 C 25.85 20.206 26.359 21.044 26.152 22.018 C 25.76 23.864 23.501 24.967 22.679 25.344 C 22.488 25.432 22.368 25.508 22.286 25.49 Z"
+      },
+      "role": "fill",
+      "solid": "fill",
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [14.8, 26.4],
+      "carries": ["face", "eye-l", "eye-r", "mouth", "heart"]
+    },
+    "mouth": {
+      "pivot": [14.8, 20.3]
+    },
+    "kiss": {
+      "pivot": [22.9, 22.6]
+    }
+  },
+  "motion": {
+    "mouth.scale": {
+      "light": [[0, 1], [0.12, 1.28, "out"], [0.24, 1.25], [0.4, 1, "inOut"]],
+      "strong": [[0, 1], [0.12, 0.9, "inOut"], [0.26, 1.36, "out"], [0.4, 1.3], [0.56, 1, "inOut"]]
+    },
+    "mouth.x": {
+      "light": [[0, 0], [0.12, 0.4, "out"], [0.4, 0, "inOut"]],
+      "strong": [[0, 0], [0.12, -0.3, "inOut"], [0.26, 0.6, "out"], [0.56, 0, "inOut"]]
+    },
+    "heart.opacity": {
+      "light": [[0, 1], [0.12, 1], [0.14, 0], [0.3, 0], [0.48, 1]],
+      "strong": [[0, 1], [0.26, 1], [0.28, 0], [0.46, 0], [0.66, 1]]
+    },
+    "kiss.opacity": {
+      "light": [[0, 0], [0.11, 0], [0.13, 1], [0.32, 1], [0.6, 0]],
+      "strong": [[0, 0], [0.25, 0], [0.27, 1], [0.5, 1], [0.84, 0]]
+    },
+    "kiss.x": {
+      "light": [[0, 0], [0.13, 0], [0.58, 3.2, "out"], [0.6, 0, "step"]],
+      "strong": [[0, 0], [0.25, 0.4, "step"], [0.28, 0.4], [0.56, 3.4, "out"], [0.84, 2.4, "inOut"], [0.86, 0, "step"]]
+    },
+    "kiss.y": {
+      "light": [[0, 0], [0.13, 0], [0.58, -9, "inOut"], [0.6, 0, "step"]],
+      "strong": [[0, 0], [0.25, 1.0, "step"], [0.28, 1.0], [0.84, -14, "inOut"], [0.86, 0, "step"]]
+    },
+    "kiss.scale": {
+      "light": [[0, 1], [0.13, 1], [0.58, 1.2, "out"], [0.6, 1, "step"]],
+      "strong": [[0, 1], [0.28, 1], [0.84, 1.3, "out"], [0.86, 1, "step"]]
+    },
+    "kiss.rotate": {
+      "strong": [[0, 0], [0.25, 7, "step"], [0.28, 7], [0.56, -10, "inOut"], [0.84, 4, "inOut"], [0.86, 0, "step"]]
+    },
+    "face.rotate": {
+      "strong": [[0, 0], [0.12, -3, "inOut"], [0.26, 7, "out"], [0.46, 6], [0.64, -1.5, "inOut"], [0.76, 0.5], [0.86, 0]]
+    }
+  }
+}

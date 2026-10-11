@@ -1,0 +1,692 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "face-with-tears-of-joy",
+  "label": "Face with tears of joy",
+  "intent": "Laughing so hard that tears burst out. Light: one laugh kicks the head up and it lands, and a fresh tear spurts out of each eye-corner tear in a short arc outward and down, then fades. Strong: the head dips first, then two laugh beats (the second smaller) tip it back and forth, the grin opens wider on the first beat and the tears spurt farther.",
+  "parts": {
+    "face": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            16
+          ],
+          11
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "mouth",
+          "gap": 0
+        },
+        {
+          "part": "eye-l",
+          "gap": 0
+        },
+        {
+          "part": "eye-r",
+          "gap": 0
+        }
+      ],
+      "gap": {
+        "tears": 1.1
+      }
+    },
+    "mouth": {
+      "shape": {
+        "path": "M 10.72 17.5 L 21.28 17.5 C 21.28 20.6 18.918 23 16 23 C 13.082 23 10.72 20.6 10.72 17.5 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "eye-l": {
+      "shape": {
+        "arc": [
+          [
+            12,
+            13.6
+          ],
+          2.2,
+          -150,
+          -30
+        ]
+      }
+    },
+    "eye-r": {
+      "mirror": {
+        "of": "eye-l"
+      }
+    },
+    "tears": {
+      "shape": [
+        {
+          "path": "M 5.9 13.2 C 6.9 14.8 7.6 15.9 7.6 17 C 7.6 18.1 6.8 18.9 5.9 18.9 C 5 18.9 4.2 18.1 4.2 17 C 4.2 15.9 4.9 14.8 5.9 13.2 Z"
+        },
+        {
+          "path": "M 26.1 13.2 C 25.1 14.8 24.4 15.9 24.4 17 C 24.4 18.1 25.2 18.9 26.1 18.9 C 27 18.9 27.8 18.1 27.8 17 C 27.8 15.9 27.1 14.8 26.1 13.2 Z"
+        }
+      ],
+      "role": "surface",
+      "solid": "fill"
+    },
+    "spurt-l": {
+      "//": "A fresh tear, hidden at rest inside the left eye-corner tear: a filled droplet that wells up and spurts out to the lower corner.",
+      "shape": {
+        "path": "M 5.9 13.2 C 6.9 14.8 7.6 15.9 7.6 17 C 7.6 18.1 6.8 18.9 5.9 18.9 C 5 18.9 4.2 18.1 4.2 17 C 4.2 15.9 4.9 14.8 5.9 13.2 Z"
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "spurt-r": {
+      "mirror": {
+        "of": "spurt-l"
+      }
+    },
+    "spurt2-l": {
+      "//": "A second, smaller droplet for Strong's second laugh beat.",
+      "shape": {
+        "path": "M 5.9 13.2 C 6.9 14.8 7.6 15.9 7.6 17 C 7.6 18.1 6.8 18.9 5.9 18.9 C 5 18.9 4.2 18.1 4.2 17 C 4.2 15.9 4.9 14.8 5.9 13.2 Z"
+      },
+      "role": "fill",
+      "hidden": true
+    },
+    "spurt2-r": {
+      "mirror": {
+        "of": "spurt2-l"
+      }
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [
+        16,
+        20
+      ],
+      "carries": [
+        "face",
+        "mouth",
+        "eye-l",
+        "eye-r",
+        "tears",
+        "spurt-l",
+        "spurt-r",
+        "spurt2-l",
+        "spurt2-r"
+      ]
+    },
+    "mouth": {
+      "//": "The grin opens downward from its top edge, the face's one moving cut-out in Solid.",
+      "pivot": [
+        16,
+        17.5
+      ],
+      "squash": {
+        "base": 17.5,
+        "widen": 0.5
+      }
+    },
+    "spurt-l": {
+      "pivot": [
+        5.9,
+        17
+      ]
+    },
+    "spurt-r": {
+      "pivot": [
+        26.1,
+        17
+      ]
+    },
+    "spurt2-l": {
+      "pivot": [
+        5.9,
+        17
+      ]
+    },
+    "spurt2-r": {
+      "pivot": [
+        26.1,
+        17
+      ]
+    }
+  },
+  "motion": {
+    "face.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          -1.4,
+          "out"
+        ],
+        [
+          0.26,
+          0.4,
+          "hit"
+        ],
+        [
+          0.38,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          0.6
+        ],
+        [
+          0.22,
+          -1.8,
+          "out"
+        ],
+        [
+          0.34,
+          0.4,
+          "hit"
+        ],
+        [
+          0.44,
+          -0.9,
+          "out"
+        ],
+        [
+          0.54,
+          0.2,
+          "hit"
+        ],
+        [
+          0.64,
+          0
+        ]
+      ]
+    },
+    "face.rotate": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          2
+        ],
+        [
+          0.22,
+          -7,
+          "out"
+        ],
+        [
+          0.34,
+          1
+        ],
+        [
+          0.44,
+          4,
+          "out"
+        ],
+        [
+          0.54,
+          -1
+        ],
+        [
+          0.64,
+          0
+        ]
+      ]
+    },
+    "spurt-l.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.09,
+          1
+        ],
+        [
+          0.3,
+          1
+        ],
+        [
+          0.42,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.16,
+          0
+        ],
+        [
+          0.19,
+          1
+        ],
+        [
+          0.44,
+          1
+        ],
+        [
+          0.56,
+          0
+        ]
+      ]
+    },
+    "spurt-l.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.19,
+          -2.1,
+          "out"
+        ],
+        [
+          0.42,
+          -2.4
+        ],
+        [
+          0.44,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.19,
+          0
+        ],
+        [
+          0.29,
+          -2.5,
+          "out"
+        ],
+        [
+          0.56,
+          -2.8
+        ],
+        [
+          0.58,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "spurt-l.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.22,
+          6.2,
+          [
+            0.4,
+            0,
+            0.5,
+            1
+          ]
+        ],
+        [
+          0.42,
+          7.6,
+          "in"
+        ],
+        [
+          0.44,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.19,
+          0
+        ],
+        [
+          0.32,
+          7.4,
+          [
+            0.4,
+            0,
+            0.5,
+            1
+          ]
+        ],
+        [
+          0.56,
+          8.8,
+          "in"
+        ],
+        [
+          0.58,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "spurt-l.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0
+        ],
+        [
+          0.19,
+          30,
+          "out"
+        ],
+        [
+          0.42,
+          10
+        ],
+        [
+          0.44,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.19,
+          0
+        ],
+        [
+          0.29,
+          35,
+          "out"
+        ],
+        [
+          0.56,
+          10
+        ],
+        [
+          0.58,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "spurt-l.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.09,
+          1
+        ],
+        [
+          0.19,
+          0.9
+        ],
+        [
+          0.42,
+          0.8
+        ],
+        [
+          0.44,
+          1,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.19,
+          1
+        ],
+        [
+          0.29,
+          0.9
+        ],
+        [
+          0.56,
+          0.75
+        ],
+        [
+          0.58,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "spurt-r.opacity": {
+      "follow": "spurt-l.opacity"
+    },
+    "spurt-r.x": {
+      "follow": "spurt-l.x",
+      "scale": -1
+    },
+    "spurt-r.y": {
+      "follow": "spurt-l.y"
+    },
+    "spurt-r.rotate": {
+      "follow": "spurt-l.rotate",
+      "scale": -1
+    },
+    "spurt-r.scale": {
+      "follow": "spurt-l.scale"
+    },
+    "spurt2-l.opacity": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.4,
+          0
+        ],
+        [
+          0.43,
+          1
+        ],
+        [
+          0.6,
+          1
+        ],
+        [
+          0.7,
+          0
+        ]
+      ]
+    },
+    "spurt2-l.x": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.43,
+          0
+        ],
+        [
+          0.52,
+          -2.1,
+          "out"
+        ],
+        [
+          0.7,
+          -2.4
+        ],
+        [
+          0.72,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "spurt2-l.y": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.43,
+          0
+        ],
+        [
+          0.55,
+          6.4,
+          [
+            0.4,
+            0,
+            0.5,
+            1
+          ]
+        ],
+        [
+          0.7,
+          7.4,
+          "in"
+        ],
+        [
+          0.72,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "spurt2-l.rotate": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.43,
+          0
+        ],
+        [
+          0.52,
+          30,
+          "out"
+        ],
+        [
+          0.7,
+          10
+        ],
+        [
+          0.72,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "spurt2-l.scale": {
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.43,
+          1
+        ],
+        [
+          0.52,
+          0.75
+        ],
+        [
+          0.7,
+          0.65
+        ],
+        [
+          0.72,
+          1,
+          "step"
+        ]
+      ]
+    },
+    "spurt2-r.opacity": {
+      "follow": "spurt2-l.opacity"
+    },
+    "spurt2-r.y": {
+      "follow": "spurt2-l.y"
+    },
+    "spurt2-r.scale": {
+      "follow": "spurt2-l.scale"
+    },
+    "spurt2-r.x": {
+      "follow": "spurt2-l.x",
+      "scale": -1
+    },
+    "spurt2-r.rotate": {
+      "follow": "spurt2-l.rotate",
+      "scale": -1
+    },
+    "mouth.squash": {
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.22,
+          1.14,
+          "out"
+        ],
+        [
+          0.4,
+          1.1
+        ],
+        [
+          0.6,
+          1,
+          "inOut"
+        ]
+      ]
+    }
+  }
+}

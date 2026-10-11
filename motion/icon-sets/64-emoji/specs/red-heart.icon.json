@@ -1,0 +1,53 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "red-heart",
+  "label": "Red heart",
+  "intent": "The heart beats and sends love out. Light: one lub-dub about its centre: a squeeze, a swell, a smaller second swell, landing on rest, and three short rays flick out round the top on the first beat and fade. Strong: a deeper squeeze before a bigger beat, the rays flicking farther, then a second and a third, smaller, beat before it rests.",
+  "parts": {
+    "heart": {
+      "//": "the family heart contour, centre (16, 16.65)",
+      "shape": {
+        "path": "M16 26.5 C15.72 26.5 15.38 26.17 14.82 25.75 C12.4 23.95 5.8 18.79 5.8 12.5 C5.8 9.18 8.04 6.8 11.1 6.8 C13.13 6.8 14.75 7.88 15.59 9.21 C15.73 9.43 15.85 9.55 16 9.55 C16.15 9.55 16.27 9.43 16.41 9.21 C17.25 7.88 18.87 6.8 20.9 6.8 C23.96 6.8 26.2 9.18 26.2 12.5 C26.2 18.79 19.6 23.95 17.18 25.75 C16.62 26.17 16.28 26.5 16 26.5 Z"
+      },
+      "role": "surface"
+    },
+    "ray-c": {
+      "//": "hidden at rest: love sent out, above the cleft between the lobes",
+      "shape": {"line": [[16, 5.4], [16, 4.1]]},
+      "hidden": true
+    },
+    "ray-l": {
+      "//": "hidden at rest: off the upper-left lobe, radial from the heart's centre",
+      "shape": {"line": [[5.606, 6.256], [4.333, 4.983]]},
+      "hidden": true
+    },
+    "ray-r": {"mirror": {"of": "ray-l"}}
+  },
+  "rigs": {
+    "heart": {"//": "beats about its centre", "pivot": [16, 16.65]},
+    "ray-c": {"pivot": [16, 4.75]},
+    "ray-l": {"pivot": [4.97, 5.62]},
+    "ray-r": {"pivot": [27.03, 5.62]}
+  },
+  "motion": {
+    "heart.scale": {
+      "light": [[0, 1], [0.07, 0.92, "out"], [0.17, 1.09, "out"], [0.25, 0.98], [0.32, 1.04, "out"], [0.44, 1, "inOut"]],
+      "strong": [[0, 1], [0.1, 0.86, "out"], [0.22, 1.13, "out"], [0.31, 0.96], [0.39, 1.07, "out"], [0.47, 0.98], [0.54, 1.03, "out"], [0.66, 1, "inOut"]]
+    },
+    "ray-c.y": {
+      "light": [[0, 0], [0.2, 0], [0.21, -0.4, "step"], [0.42, -1.1, "out"], [0.45, 0, "step"]],
+      "strong": [[0, 0], [0.26, 0], [0.27, -0.5, "step"], [0.52, -1.4, "out"], [0.55, 0, "step"]]
+    },
+    "ray-l.x": {"follow": "ray-c.y", "lag": 0.02, "scale": 1.05},
+    "ray-l.y": {"follow": "ray-c.y", "lag": 0.02, "scale": 1.05},
+    "ray-r.x": {"follow": "ray-c.y", "lag": 0.02, "scale": -1.05},
+    "ray-r.y": {"follow": "ray-c.y", "lag": 0.02, "scale": 1.05},
+    "ray-c.opacity": {
+      "light": [[0, 0], [0.2, 0], [0.23, 1, "out"], [0.3, 1], [0.42, 0, "in"]],
+      "strong": [[0, 0], [0.26, 0], [0.29, 1, "out"], [0.4, 1], [0.52, 0, "in"]]
+    },
+    "ray-l.opacity": {"follow": "ray-c.opacity", "lag": 0.02},
+    "ray-r.opacity": {"follow": "ray-c.opacity", "lag": 0.02}
+  }
+}

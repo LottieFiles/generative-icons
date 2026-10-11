@@ -1,0 +1,338 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "person-facepalming",
+  "label": "Person facepalming",
+  "intent": "A facepalm. Light: the hand lifts off the face a little and slaps back with a hit, and the head nods back with the impact. Strong: the hand presses in, lifts further off, slaps back hard; the head recoils and rocks back, and two impact ticks flash off the back of the hand.",
+  "parts": {
+    "face": {
+      "//": "shrunk to r 10.3 and moved down so the fingers rise above the head; cut around the hand in every style",
+      "shape": {
+        "circle": [
+          [
+            15,
+            18.3
+          ],
+          10.3
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "eye",
+          "gap": 0
+        },
+        {
+          "part": "mouth",
+          "gap": 0
+        }
+      ],
+      "gap": {
+        "hand": 1.1,
+        "thumb": 2.4
+      }
+    },
+    "eye": {
+      "//": "the eye the hand leaves uncovered, squeezed shut",
+      "shape": {
+        "path": "M8 16.6 C8.7 15.7 9.9 15.7 10.6 16.6"
+      }
+    },
+    "mouth": {
+      "shape": {
+        "line": [
+          [
+            9.6,
+            23.8
+          ],
+          [
+            13.4,
+            23.8
+          ]
+        ]
+      }
+    },
+    "hand": {
+      "//": "a mitten over the eyes and forehead, fingers up and to the left; Solid fills it",
+      "shape": {
+        "path": "M16.039 22.051 C15.408 19.624 14.227 18.106 13.775 15.546 L12.838 10.228 C12.49 8.258 13.858 6.799 15.926 6.434 C17.994 6.069 19.778 6.973 20.125 8.943 L21.063 14.261 C21.514 16.821 20.923 18.652 21.161 21.149 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "fingers": {
+      "solid": "none",
+      "shape": [
+        {
+          "path": "M14.68 6.857 L15.236 10.008"
+        },
+        {
+          "path": "M17.241 6.405 L17.796 9.557"
+        }
+      ]
+    },
+    "thumb": {
+      "shape": {
+        "path": "M20.86 13.687 L23.688 10.142"
+      }
+    },
+    "ticks": {
+      "//": "impact ticks off the back of the hand, outside the face so Solid shows them; hidden at rest (Strong)",
+      "shape": [
+        {
+          "line": [
+            [
+              21.6,
+              5.6
+            ],
+            [
+              22.5,
+              3.9
+            ]
+          ]
+        },
+        {
+          "line": [
+            [
+              24.6,
+              7.6
+            ],
+            [
+              26.3,
+              6.8
+            ]
+          ]
+        }
+      ],
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [
+        15,
+        28.6
+      ],
+      "carries": [
+        "face",
+        "eye",
+        "mouth",
+        "hand"
+      ]
+    },
+    "hand": {
+      "//": "the hand lifts toward the viewer (it grows about the wrist, without turning) and slaps back, so it always covers the cut it rests in and never sweeps over the cut rim",
+      "pivot": [
+        18.6,
+        21.6
+      ],
+      "carries": [
+        "fingers",
+        "thumb"
+      ]
+    }
+  },
+  "motion": {
+    "hand.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.14,
+          1.12,
+          "out"
+        ],
+        [
+          0.24,
+          1,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.08,
+          0.96,
+          "out"
+        ],
+        [
+          0.26,
+          1.22,
+          "out"
+        ],
+        [
+          0.34,
+          1,
+          "hit"
+        ]
+      ]
+    },
+    "face.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.33,
+          -4,
+          "out"
+        ],
+        [
+          0.5,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.34,
+          0
+        ],
+        [
+          0.43,
+          -7,
+          "out"
+        ],
+        [
+          0.57,
+          2.5,
+          "inOut"
+        ],
+        [
+          0.72,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "face.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.24,
+          0
+        ],
+        [
+          0.31,
+          0.5,
+          "out"
+        ],
+        [
+          0.48,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.34,
+          0
+        ],
+        [
+          0.42,
+          0.5,
+          "out"
+        ],
+        [
+          0.56,
+          -0.3,
+          "inOut"
+        ],
+        [
+          0.7,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "ticks.opacity": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.33,
+          0
+        ],
+        [
+          0.36,
+          1
+        ],
+        [
+          0.46,
+          1
+        ],
+        [
+          0.54,
+          0
+        ]
+      ]
+    },
+    "ticks.x": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.34,
+          0
+        ],
+        [
+          0.52,
+          0.6,
+          "out"
+        ],
+        [
+          0.56,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "ticks.y": {
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.34,
+          0
+        ],
+        [
+          0.52,
+          -0.6,
+          "out"
+        ],
+        [
+          0.56,
+          0,
+          "step"
+        ]
+      ]
+    }
+  }
+}

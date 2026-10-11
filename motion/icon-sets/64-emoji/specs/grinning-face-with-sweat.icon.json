@@ -1,0 +1,428 @@
+{
+  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+  "format": "gai-icon/2",
+  "id": "grinning-face-with-sweat",
+  "label": "Grinning face with sweat",
+  "intent": "A nervous laugh: the sweat runs. Light: the sweat drop at the temple runs down the side of the face and drips off as a new bead forms in its place, while the face gives a small nervous chuckle. Strong: the face winces first, dipping and squashing, then the drop runs farther round to the cheek and drips off, with a second smaller chuckle.",
+  "parts": {
+    "face": {
+      "shape": {
+        "circle": [
+          [
+            16,
+            16
+          ],
+          11
+        ]
+      },
+      "role": "surface",
+      "knockout": [
+        {
+          "part": "mouth",
+          "gap": 0
+        },
+        {
+          "part": "eye-l",
+          "gap": 0
+        },
+        {
+          "part": "eye-r",
+          "gap": 0
+        }
+      ],
+      "gap": {
+        "sweat": 1.1
+      }
+    },
+    "mouth": {
+      "shape": {
+        "path": "M10.5 17.5 L21.5 17.5 C21.5 20.6 19.04 23 16 23 C12.96 23 10.5 20.6 10.5 17.5 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "eye-l": {
+      "shape": {
+        "arc": [
+          [
+            12,
+            13.6
+          ],
+          2.2,
+          -150,
+          -30
+        ]
+      }
+    },
+    "eye-r": {
+      "mirror": {
+        "of": "eye-l"
+      }
+    },
+    "sweat": {
+      "//": "The sweat drop on the rim at the upper right temple. It hands over to the running copy and forms again.",
+      "shape": {
+        "path": "M 23.36 4.025 C 24.36 5.625 25.06 6.725 25.06 7.825 C 25.06 8.925 24.26 9.725 23.36 9.725 C 22.46 9.725 21.66 8.925 21.66 7.825 C 21.66 6.725 22.36 5.625 23.36 4.025 Z"
+      },
+      "role": "surface",
+      "solid": "fill"
+    },
+    "run": {
+      "//": "Hidden at rest on top of the sweat drop: the drop that runs down the side of the face.",
+      "shape": {
+        "path": "M 23.36 4.025 C 24.36 5.625 25.06 6.725 25.06 7.825 C 25.06 8.925 24.26 9.725 23.36 9.725 C 22.46 9.725 21.66 8.925 21.66 7.825 C 21.66 6.725 22.36 5.625 23.36 4.025 Z"
+      },
+      "role": "surface",
+      "solid": "fill",
+      "hidden": true
+    }
+  },
+  "rigs": {
+    "face": {
+      "pivot": [
+        16,
+        27
+      ],
+      "carries": [
+        "face",
+        "mouth",
+        "eye-l",
+        "eye-r",
+        "sweat"
+      ],
+      "squash": {
+        "base": 27,
+        "widen": 0.5
+      }
+    },
+    "host": {
+      "//": "Rides the face's bob, not its squash.",
+      "pivot": [
+        16,
+        16
+      ],
+      "carries": [
+        "slide"
+      ]
+    },
+    "slide": {
+      "//": "Turns about the face's centre, so the drop runs along the rim; its y is the drip.",
+      "pivot": [
+        16,
+        16
+      ],
+      "carries": [
+        "run"
+      ]
+    },
+    "run": {
+      "//": "Turns back as the slide turns, so the drop stays upright.",
+      "pivot": [
+        23.36,
+        7.825
+      ]
+    }
+  },
+  "motion": {
+    "face.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.6,
+          "out"
+        ],
+        [
+          0.16,
+          0.15,
+          "hit"
+        ],
+        [
+          0.23,
+          -0.4,
+          "out"
+        ],
+        [
+          0.29,
+          0.05,
+          "hit"
+        ],
+        [
+          0.36,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.09,
+          0.7,
+          "out"
+        ],
+        [
+          0.18,
+          0,
+          "inOut"
+        ],
+        [
+          0.27,
+          -0.7,
+          "out"
+        ],
+        [
+          0.33,
+          0.15,
+          "hit"
+        ],
+        [
+          0.4,
+          -0.45,
+          "out"
+        ],
+        [
+          0.46,
+          0.05,
+          "hit"
+        ],
+        [
+          0.53,
+          -0.2,
+          "out"
+        ],
+        [
+          0.6,
+          0,
+          "inOut"
+        ]
+      ]
+    },
+    "face.squash": {
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.09,
+          0.92,
+          "out"
+        ],
+        [
+          0.18,
+          1,
+          "inOut"
+        ]
+      ]
+    },
+    "host.y": {
+      "follow": "face.y"
+    },
+    "run.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.04,
+          0
+        ],
+        [
+          0.05,
+          1
+        ],
+        [
+          0.42,
+          1
+        ],
+        [
+          0.52,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.17,
+          0
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          0.6,
+          1
+        ],
+        [
+          0.7,
+          0
+        ]
+      ]
+    },
+    "sweat.opacity": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.05,
+          1
+        ],
+        [
+          0.07,
+          0
+        ],
+        [
+          0.18,
+          0
+        ],
+        [
+          0.36,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.32,
+          0
+        ],
+        [
+          0.52,
+          1,
+          "inOut"
+        ]
+      ]
+    },
+    "slide.rotate": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.36,
+          58.0,
+          [
+            0.45,
+            0,
+            0.75,
+            0.6
+          ]
+        ],
+        [
+          0.52,
+          64.0
+        ],
+        [
+          0.54,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.19,
+          0
+        ],
+        [
+          0.5,
+          78.0,
+          [
+            0.45,
+            0,
+            0.75,
+            0.6
+          ]
+        ],
+        [
+          0.7,
+          84.0
+        ],
+        [
+          0.72,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "run.rotate": {
+      "follow": "slide.rotate",
+      "scale": -1
+    },
+    "slide.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.34,
+          0
+        ],
+        [
+          0.52,
+          3.6,
+          "in"
+        ],
+        [
+          0.54,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.48,
+          0
+        ],
+        [
+          0.7,
+          5.0,
+          "in"
+        ],
+        [
+          0.72,
+          0,
+          "step"
+        ]
+      ]
+    }
+  }
+}
