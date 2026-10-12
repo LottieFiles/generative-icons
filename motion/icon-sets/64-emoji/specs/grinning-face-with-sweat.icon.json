@@ -3,7 +3,7 @@
   "format": "gai-icon/2",
   "id": "grinning-face-with-sweat",
   "label": "Grinning face with sweat",
-  "intent": "A nervous laugh: the sweat runs. Light: the sweat drop at the temple runs down the side of the face and drips off as a new bead forms in its place, while the face gives a small nervous chuckle. Strong: the face winces first, dipping and squashing, then the drop runs farther round to the cheek and drips off, with a second smaller chuckle.",
+  "intent": "A nervous laugh: the sweat runs. Light: the sweat drop at the temple swells and slides a little way down the side of the face while the face gives a small nervous chuckle; a small droplet breaks off it and drips away, and the drop slips back up and settles. Strong: the face winces first, dipping and squashing, then the drop swells more and slides farther in two jerks, catching hard so the droplet flies off, with a second smaller chuckle.",
   "parts": {
     "face": {
       "shape": {
@@ -60,20 +60,25 @@
       }
     },
     "sweat": {
-      "//": "The sweat drop on the rim at the upper right temple. It hands over to the running copy and forms again.",
+      "//": "The sweat drop on the rim at the upper right temple. It swells, slides a little way down the rim and back.",
       "shape": {
         "path": "M 23.36 4.025 C 24.36 5.625 25.06 6.725 25.06 7.825 C 25.06 8.925 24.26 9.725 23.36 9.725 C 22.46 9.725 21.66 8.925 21.66 7.825 C 21.66 6.725 22.36 5.625 23.36 4.025 Z"
       },
       "role": "surface",
       "solid": "fill"
     },
-    "run": {
-      "//": "Hidden at rest on top of the sweat drop: the drop that runs down the side of the face.",
+    "droplet": {
+      "//": "Hidden at rest: the small droplet that breaks off the drop, flicks out and drips, drawn at the top of its arc, clear of the face.",
       "shape": {
-        "path": "M 23.36 4.025 C 24.36 5.625 25.06 6.725 25.06 7.825 C 25.06 8.925 24.26 9.725 23.36 9.725 C 22.46 9.725 21.66 8.925 21.66 7.825 C 21.66 6.725 22.36 5.625 23.36 4.025 Z"
+        "circle": [
+          [
+            28.9,
+            4.6
+          ],
+          1.35
+        ]
       },
-      "role": "surface",
-      "solid": "fill",
+      "role": "fill",
       "hidden": true
     }
   },
@@ -87,8 +92,7 @@
         "face",
         "mouth",
         "eye-l",
-        "eye-r",
-        "sweat"
+        "eye-r"
       ],
       "squash": {
         "base": 27,
@@ -106,20 +110,26 @@
       ]
     },
     "slide": {
-      "//": "Turns about the face's centre, so the drop runs along the rim; its y is the drip.",
+      "//": "Turns about the face's centre, so the drop runs along the rim; its x and y follow the face's squash at the drop.",
       "pivot": [
         16,
         16
       ],
       "carries": [
-        "run"
+        "sweat"
       ]
     },
-    "run": {
-      "//": "Turns back as the slide turns, so the drop stays upright.",
+    "sweat": {
+      "//": "The drop's centre: it swells about it, eases a little out from the rim as it slides, and turns back as the slide turns so it stays upright.",
       "pivot": [
         23.36,
         7.825
+      ]
+    },
+    "droplet": {
+      "pivot": [
+        28.9,
+        4.6
       ]
     }
   },
@@ -224,96 +234,38 @@
     "host.y": {
       "follow": "face.y"
     },
-    "run.opacity": {
-      "light": [
-        [
-          0,
-          0
-        ],
-        [
-          0.04,
-          0
-        ],
-        [
-          0.05,
-          1
-        ],
-        [
-          0.42,
-          1
-        ],
-        [
-          0.52,
-          0
-        ]
-      ],
+    "slide.x": {
       "strong": [
         [
           0,
           0
         ],
         [
-          0.17,
-          0
+          0.09,
+          0.29,
+          "out"
         ],
         [
           0.18,
-          1
-        ],
-        [
-          0.6,
-          1
-        ],
-        [
-          0.7,
-          0
+          0,
+          "inOut"
         ]
       ]
     },
-    "sweat.opacity": {
-      "light": [
-        [
-          0,
-          1
-        ],
-        [
-          0.05,
-          1
-        ],
-        [
-          0.07,
-          0
-        ],
-        [
-          0.18,
-          0
-        ],
-        [
-          0.36,
-          1,
-          "inOut"
-        ]
-      ],
+    "slide.y": {
       "strong": [
         [
           0,
-          1
+          0
+        ],
+        [
+          0.09,
+          1.54,
+          "out"
         ],
         [
           0.18,
-          1
-        ],
-        [
-          0.2,
-          0
-        ],
-        [
-          0.32,
-          0
-        ],
-        [
-          0.52,
-          1,
+          0,
           "inOut"
         ]
       ]
@@ -325,27 +277,23 @@
           0
         ],
         [
-          0.06,
+          0.1,
           0
         ],
         [
-          0.36,
-          58.0,
-          [
-            0.45,
-            0,
-            0.75,
-            0.6
-          ]
+          0.3,
+          10,
+          "inOut"
         ],
         [
-          0.52,
-          64.0
+          0.42,
+          -1.5,
+          "inOut"
         ],
         [
-          0.54,
+          0.5,
           0,
-          "step"
+          "inOut"
         ]
       ],
       "strong": [
@@ -354,51 +302,282 @@
           0
         ],
         [
-          0.19,
+          0.18,
           0
         ],
         [
-          0.5,
-          78.0,
-          [
-            0.45,
-            0,
-            0.75,
-            0.6
-          ]
+          0.3,
+          8,
+          "inOut"
+        ],
+        [
+          0.36,
+          8.5
+        ],
+        [
+          0.48,
+          18,
+          "hit"
+        ],
+        [
+          0.6,
+          -2,
+          "inOut"
         ],
         [
           0.7,
-          84.0
-        ],
-        [
-          0.72,
           0,
-          "step"
+          "inOut"
         ]
       ]
     },
-    "run.rotate": {
+    "sweat.x": {
+      "light": [
+        [
+          0,
+          0.0
+        ],
+        [
+          0.1,
+          0.0
+        ],
+        [
+          0.3,
+          0.401,
+          "inOut"
+        ],
+        [
+          0.42,
+          0.0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0.0
+        ],
+        [
+          0.18,
+          0.0
+        ],
+        [
+          0.3,
+          0.268,
+          "inOut"
+        ],
+        [
+          0.36,
+          0.301
+        ],
+        [
+          0.48,
+          0.669,
+          "hit"
+        ],
+        [
+          0.6,
+          0.0,
+          "inOut"
+        ]
+      ]
+    },
+    "sweat.y": {
+      "light": [
+        [
+          0,
+          -0.0
+        ],
+        [
+          0.1,
+          -0.0
+        ],
+        [
+          0.3,
+          -0.446,
+          "inOut"
+        ],
+        [
+          0.42,
+          -0.0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          -0.0
+        ],
+        [
+          0.18,
+          -0.0
+        ],
+        [
+          0.3,
+          -0.297,
+          "inOut"
+        ],
+        [
+          0.36,
+          -0.334
+        ],
+        [
+          0.48,
+          -0.743,
+          "hit"
+        ],
+        [
+          0.6,
+          -0.0,
+          "inOut"
+        ]
+      ]
+    },
+    "sweat.rotate": {
       "follow": "slide.rotate",
       "scale": -1
     },
-    "slide.y": {
+    "sweat.scale": {
+      "light": [
+        [
+          0,
+          1
+        ],
+        [
+          0.04,
+          1
+        ],
+        [
+          0.18,
+          1.24,
+          "out"
+        ],
+        [
+          0.28,
+          1.2
+        ],
+        [
+          0.32,
+          1.1,
+          "out"
+        ],
+        [
+          0.42,
+          0.96,
+          "inOut"
+        ],
+        [
+          0.5,
+          1,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          1
+        ],
+        [
+          0.09,
+          0.9,
+          "out"
+        ],
+        [
+          0.3,
+          1.2,
+          "out"
+        ],
+        [
+          0.46,
+          1.3,
+          "inOut"
+        ],
+        [
+          0.5,
+          1.12,
+          "out"
+        ],
+        [
+          0.62,
+          0.95,
+          "inOut"
+        ],
+        [
+          0.7,
+          1,
+          "inOut"
+        ]
+      ]
+    },
+    "droplet.opacity": {
       "light": [
         [
           0,
           0
         ],
         [
-          0.34,
+          0.28,
           0
         ],
         [
-          0.52,
-          3.6,
-          "in"
+          0.3,
+          1
         ],
         [
-          0.54,
+          0.48,
+          1
+        ],
+        [
+          0.56,
+          0
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.46,
+          0
+        ],
+        [
+          0.48,
+          1
+        ],
+        [
+          0.66,
+          1
+        ],
+        [
+          0.75,
+          0
+        ]
+      ]
+    },
+    "droplet.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.28,
+          -2.5,
+          "step"
+        ],
+        [
+          0.36,
+          -0.5,
+          "out"
+        ],
+        [
+          0.56,
+          0.1,
+          "inOut"
+        ],
+        [
+          0.57,
           0,
           "step"
         ]
@@ -409,16 +588,86 @@
           0
         ],
         [
-          0.48,
+          0.46,
+          -1.9,
+          "step"
+        ],
+        [
+          0.55,
+          0,
+          "out"
+        ],
+        [
+          0.75,
+          0.3,
+          "inOut"
+        ],
+        [
+          0.76,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "droplet.y": {
+      "light": [
+        [
+          0,
           0
         ],
         [
-          0.7,
-          5.0,
-          "in"
+          0.28,
+          4.0,
+          "step"
         ],
         [
-          0.72,
+          0.36,
+          1.8,
+          "out"
+        ],
+        [
+          0.56,
+          6.0,
+          [
+            0.5,
+            0,
+            0.8,
+            0.6
+          ]
+        ],
+        [
+          0.57,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.46,
+          5.3,
+          "step"
+        ],
+        [
+          0.55,
+          0,
+          "out"
+        ],
+        [
+          0.75,
+          6.6,
+          [
+            0.5,
+            0,
+            0.8,
+            0.6
+          ]
+        ],
+        [
+          0.76,
           0,
           "step"
         ]

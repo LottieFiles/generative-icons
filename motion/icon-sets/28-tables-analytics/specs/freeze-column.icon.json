@@ -3,33 +3,287 @@
   "format": "gai-icon/2",
   "id": "freeze-column",
   "label": "Freeze column",
-  "intent": "The sheet scrolls under a frozen column. Light: the scrolling column slides left and fades out under the frozen boundary while the next column slides in from the right in lockstep, overshoots a little and snaps into place. Strong: two flicks, one column each: the first stops short, the second lands with a bigger overshoot and a settle. The frozen column and the divider never move.",
+  "intent": "The sheet scrolls under a frozen column. Light: the scrolling column is flicked left toward the frozen boundary, trailing two speed lines, slows against it like a rubber band and snaps back quickly, overshooting a little before it settles. Strong: the column is pulled right first, then flicked further left with the speed lines, snaps back past rest and settles with one more small swing. The frozen column and the divider never move.",
   "parts": {
-    "frame":      {"shape": {"rect": [4, 6, 24, 20], "r": 2.4}, "role": "surface", "solid": "ring",
-                   "//": "v1 Solid is the frame ring plus the divider at 2.6, with both columns open"},
-    "divider":    {"shape": {"line": [[12, 6], [12, 26]]}},
-    "frozen-bar": {"shape": {"line": [[8, 10], [8, 22]]}},
-    "scroll-bar": {"shape": {"line": [[20, 10], [20, 22]]}},
-    "prev-bar":   {"//": "hidden at rest: a copy of the scrolling column that takes its place at frame 1 (same pixels) and scrolls away under the frozen boundary",
-                   "shape": {"line": [[20, 10], [20, 22]]}, "hidden": true}
+    "frame": {
+      "shape": {
+        "rect": [
+          4,
+          6,
+          24,
+          20
+        ],
+        "r": 2.4
+      },
+      "role": "surface",
+      "solid": "ring",
+      "//": "v1 Solid is the frame ring plus the divider at 2.6, with both columns open"
+    },
+    "divider": {
+      "shape": {
+        "line": [
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            26
+          ]
+        ]
+      }
+    },
+    "frozen-bar": {
+      "shape": {
+        "line": [
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            22
+          ]
+        ]
+      }
+    },
+    "scroll-bar": {
+      "shape": {
+        "line": [
+          [
+            20,
+            10
+          ],
+          [
+            20,
+            22
+          ]
+        ]
+      }
+    },
+    "streak-a": {
+      "//": "hidden at rest: speed lines in the space the scrolling column leaves; they draw toward it, drift after it and fade before it turns back",
+      "shape": {
+        "line": [
+          [
+            25.0,
+            13
+          ],
+          [
+            22.2,
+            13
+          ]
+        ]
+      },
+      "hidden": true
+    },
+    "streak-b": {
+      "shape": {
+        "line": [
+          [
+            25.0,
+            19
+          ],
+          [
+            22.2,
+            19
+          ]
+        ]
+      },
+      "hidden": true
+    }
   },
   "motion": {
-    "//": "Columns are 5 apart and move in lockstep: the leaving copy goes 0 to -5 while the scrolling column comes in from +5. Every hand-off happens with both at the same pixels.",
-    "scroll-bar.opacity": {
-      "light":  [[0, 1], [0.02, 0, "step"], [0.04, 0], [0.12, 1, "out"]],
-      "strong": [[0, 1], [0.02, 0, "step"], [0.04, 0], [0.11, 1, "out"], [0.26, 1], [0.27, 0, "step"], [0.29, 0], [0.36, 1, "out"]]
-    },
+    "//": "The column travels 3.6 (Light) or 4.4 (Strong) toward the divider and stops 1.1 clear of it at Bold; the snap back takes under half the time of the flick.",
     "scroll-bar.x": {
-      "light":  [[0, 0], [0.02, 5, "step"], [0.26, -0.7, "out"], [0.38, 0, "inOut"]],
-      "strong": [[0, 0], [0.02, 5, "step"], [0.21, 0, "out"], [0.26, 0], [0.27, 5, "step"], [0.47, -1.1, "out"], [0.57, 0.3, "inOut"], [0.65, 0, "inOut"]]
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.24,
+          -3.6,
+          "out"
+        ],
+        [
+          0.34,
+          0.6,
+          "inOut"
+        ],
+        [
+          0.44,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          0.7,
+          "out"
+        ],
+        [
+          0.3,
+          -4.4,
+          "out"
+        ],
+        [
+          0.38,
+          1.0,
+          "inOut"
+        ],
+        [
+          0.46,
+          -0.3,
+          "inOut"
+        ],
+        [
+          0.53,
+          0,
+          "inOut"
+        ]
+      ]
     },
-    "prev-bar.opacity": {
-      "light":  [[0, 0], [0.02, 1, "step"], [0.06, 1], [0.14, 0, "in"]],
-      "strong": [[0, 0], [0.02, 1, "step"], [0.06, 1], [0.13, 0, "in"], [0.26, 0], [0.27, 1, "step"], [0.31, 1], [0.38, 0, "in"]]
+    "streak-a.opacity": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.09,
+          1,
+          "out"
+        ],
+        [
+          0.16,
+          1
+        ],
+        [
+          0.23,
+          0,
+          "in"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          0
+        ],
+        [
+          0.15,
+          1,
+          "out"
+        ],
+        [
+          0.22,
+          1
+        ],
+        [
+          0.29,
+          0,
+          "in"
+        ]
+      ]
     },
-    "prev-bar.x": {
-      "light":  [[0, 0], [0.02, 0], [0.26, -5.7, "out"], [0.27, 0, "step"]],
-      "strong": [[0, 0], [0.02, 0], [0.21, -5, "out"], [0.22, 0, "step"], [0.27, 0], [0.47, -6.1, "out"], [0.48, 0, "step"]]
+    "streak-a.draw": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.15,
+          1,
+          "out"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          0
+        ],
+        [
+          0.2,
+          1,
+          "out"
+        ]
+      ]
+    },
+    "streak-a.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.06,
+          0
+        ],
+        [
+          0.24,
+          -1.5,
+          "out"
+        ],
+        [
+          0.25,
+          0,
+          "step"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          0
+        ],
+        [
+          0.3,
+          -2.0,
+          "out"
+        ],
+        [
+          0.31,
+          0,
+          "step"
+        ]
+      ]
+    },
+    "streak-b.opacity": {
+      "follow": "streak-a.opacity",
+      "lag": 0.03
+    },
+    "streak-b.draw": {
+      "follow": "streak-a.draw",
+      "lag": 0.03
+    },
+    "streak-b.x": {
+      "follow": "streak-a.x",
+      "lag": 0.03
     }
   }
 }

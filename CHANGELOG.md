@@ -23,6 +23,7 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 - `generative-icons export <id>` writes an icon as an animated SVG that browsers play without a player (SMIL). Stateful icons toggle on click, loaders loop and the rest play on hover, or pick a trigger with `--trigger`. The MCP server serves it as `export`, and `@lottiefiles/generative-icons-runtime/svg` (`iconToSvg`, `dotLottieToSvg`) makes the same SVG in JavaScript.
 - The agent skill ships the family's whole direction, generated from the library's own docs: motion principles, the motion system, drawing principles, drawing and motion craft, and the polish review. Creating an icon starts by reading it and writing a brief (the event as cause → action → response → final state, the state policy, Light and Strong), the MCP instructions point to it, and `context --prompt` includes it in an app instead of the v1 authoring guide.
 - `check` warns `NUDGE` when a gesture's whole drawing only tilts under 20° and comes back with nothing drawing on, appearing, landing or holding. None of the library's 550 specs warns. The starter spec `create` writes now rings: ring arcs hidden at rest flick out and fade as the bell swings.
+- `check` warns `DUPLICATE_DRAWING` when a part hidden at rest draws exactly the shape of a shown part that fades out: the subject swapped for a copy of itself. The family draws its subject once and transforms it, and a test keeps every library spec free of it.
 - The CLI says when it is waiting for macOS Keychain approval (after 3 s) and stops with an error after 120 s.
 - CI for the Rust workspace on macOS and Linux, and a manual release workflow that builds the binaries, drafts a GitHub release and packs the npm packages without publishing them.
 
@@ -32,6 +33,8 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 - Documentation, the maintainer skill and the contribution flow use `generative-icons`. Creating icons no longer needs a clone of this repository.
 - Native export runs only on LottieFiles' hosted engine.
 - 414 library icons are reanimated with spec v2: each action now plays an event (something arrives, leaves, draws on or lands) instead of one move there and back. Each icon keeps its earlier drawing at rest, and its animation names are unchanged.
+- 13 icons that swapped their subject for a cross-faded copy now move the one drawing they have, with cues hidden at rest for the cause: active-speaker, api-quota, export-video, face-blowing-a-kiss, freeze-column, gradient-step, grinning-face-with-sweat, insert-row, next-step, schedule-send, snowflake, thumbnail and trackpad. Their rest poses and animation names are unchanged.
+- The AI operating guide now bundles the family's direction (motion principles, the motion system, drawing principles, the polish review), the spec format and the preview review, and its workflow authors specs and adds them with `library adopt`.
 - **Breaking for apps that use state names:** 33 stateful icons' `startState` and `endState` are now kebab-case ids (`Voice A` → `voice-a`, `Sharing` → `sharing`), and `background-run`'s states are `prepared` → `result` (were `Foreground` → `Running behind`).
 
 ### Deprecated

@@ -1742,25 +1742,25 @@
       "startState": "rest",
       "endState": "rest",
       "heading": "Gradient step",
-      "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+      "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
       "label": "Gradient step",
-      "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+      "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
       "width": 32,
       "height": 32,
       "fps": 60,
       "frames": 144,
       "duration": 2.4,
-      "active": 0.49,
-      "rest": 32,
+      "active": 0.5,
+      "rest": 33,
       "keyPoses": [
         0,
-        0.098,
-        0.196,
-        0.294,
-        0.392,
-        0.49
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5
       ],
-      "layers": 24,
+      "layers": 19,
       "slots": [
         "color.primary",
         "style.outline.light",
@@ -1770,14 +1770,14 @@
         "style.tint",
         "style.outline.width"
       ],
-      "nativeSha256": "cd91c26de2dc6396c5c204f951d2a095aa58aa43899d95c886ab10daf6a641db",
-      "sourceSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
-      "planSha256": "6416be26d5d56ae302da816eb505f4f5df132dba407f75365a83d03fde3d5992",
+      "nativeSha256": "42ffaa149566161a3d683a62aa710fb00d4034fa518606fdb4dd009abd26ac09",
+      "sourceSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
+      "planSha256": "4c523d12b29d1b846e426f2378babbb2ba352ad35359987571990fbf03a27f08",
       "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
-      "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+      "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
       "constraints": [],
       "category": "Model training & fine-tuning",
-      "definitionsSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
+      "definitionsSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
       "primary": {
         "dark": "#00ddb3",
         "light": "#008c76"
@@ -1815,25 +1815,25 @@
           "startState": "rest",
           "endState": "rest",
           "heading": "Gradient step",
-          "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "label": "Gradient step",
-          "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.49,
-          "rest": 32,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.098,
-            0.196,
-            0.294,
-            0.392,
-            0.49
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 24,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1843,14 +1843,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "cd91c26de2dc6396c5c204f951d2a095aa58aa43899d95c886ab10daf6a641db",
-          "sourceSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
-          "planSha256": "6416be26d5d56ae302da816eb505f4f5df132dba407f75365a83d03fde3d5992",
+          "nativeSha256": "42ffaa149566161a3d683a62aa710fb00d4034fa518606fdb4dd009abd26ac09",
+          "sourceSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
+          "planSha256": "4c523d12b29d1b846e426f2378babbb2ba352ad35359987571990fbf03a27f08",
           "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
-          "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "constraints": [],
           "category": "Model training & fine-tuning",
-          "definitionsSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
+          "definitionsSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1872,8 +1872,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3753,
-          "sha256": "93ddcda9edadfcc38fde5c24adeb1395a92034fafceb71f0c23022cf77d86632"
+          "bytes": 3515,
+          "sha256": "b3a3d2ad5ff52efb53b85c8ce96235e5e7c30b02b23285e7b06a05b4416f52aa"
         },
         {
           "name": "gradient-step-strong",
@@ -1889,25 +1889,25 @@
           "startState": "rest",
           "endState": "rest",
           "heading": "Gradient step",
-          "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "label": "Gradient step",
-          "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.73,
-          "rest": 47,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.146,
-            0.292,
-            0.438,
-            0.584,
-            0.73
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 24,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1917,14 +1917,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "edad01245c76c09d927009a632a3ccbc1405a2db4be2b4c78a3e5f006984d39b",
-          "sourceSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
-          "planSha256": "6416be26d5d56ae302da816eb505f4f5df132dba407f75365a83d03fde3d5992",
+          "nativeSha256": "20307fa64d19e7ca19ddbbb329a02be5dda834339f25b36e27e4b71d63c66d0a",
+          "sourceSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
+          "planSha256": "4c523d12b29d1b846e426f2378babbb2ba352ad35359987571990fbf03a27f08",
           "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
-          "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "constraints": [],
           "category": "Model training & fine-tuning",
-          "definitionsSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
+          "definitionsSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -1946,8 +1946,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3755,
-          "sha256": "fe4d8a07fcf321d53743a47b8fcc94a26c491486229b4bb9b5d93543fffb561b"
+          "bytes": 3517,
+          "sha256": "d9aa0d0f4f3ad4589957deccb8f788753325843d7a15f7aa00078a50ad03daae"
         }
       ],
       "animations": [
@@ -1965,25 +1965,25 @@
           "startState": "rest",
           "endState": "rest",
           "heading": "Gradient step",
-          "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "label": "Gradient step",
-          "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.49,
-          "rest": 32,
+          "active": 0.5,
+          "rest": 33,
           "keyPoses": [
             0,
-            0.098,
-            0.196,
-            0.294,
-            0.392,
-            0.49
+            0.1,
+            0.2,
+            0.3,
+            0.4,
+            0.5
           ],
-          "layers": 24,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -1993,14 +1993,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "cd91c26de2dc6396c5c204f951d2a095aa58aa43899d95c886ab10daf6a641db",
-          "sourceSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
-          "planSha256": "6416be26d5d56ae302da816eb505f4f5df132dba407f75365a83d03fde3d5992",
+          "nativeSha256": "42ffaa149566161a3d683a62aa710fb00d4034fa518606fdb4dd009abd26ac09",
+          "sourceSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
+          "planSha256": "4c523d12b29d1b846e426f2378babbb2ba352ad35359987571990fbf03a27f08",
           "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
-          "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "constraints": [],
           "category": "Model training & fine-tuning",
-          "definitionsSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
+          "definitionsSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2022,8 +2022,8 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3753,
-          "sha256": "93ddcda9edadfcc38fde5c24adeb1395a92034fafceb71f0c23022cf77d86632"
+          "bytes": 3515,
+          "sha256": "b3a3d2ad5ff52efb53b85c8ce96235e5e7c30b02b23285e7b06a05b4416f52aa"
         },
         {
           "name": "gradient-step-strong",
@@ -2039,25 +2039,25 @@
           "startState": "rest",
           "endState": "rest",
           "heading": "Gradient step",
-          "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "description": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "label": "Gradient step",
-          "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "width": 32,
           "height": 32,
           "fps": 60,
           "frames": 144,
           "duration": 2.4,
-          "active": 0.73,
-          "rest": 47,
+          "active": 0.8,
+          "rest": 51,
           "keyPoses": [
             0,
-            0.146,
-            0.292,
-            0.438,
-            0.584,
-            0.73
+            0.16000000000000003,
+            0.32000000000000006,
+            0.48,
+            0.6400000000000001,
+            0.8
           ],
-          "layers": 24,
+          "layers": 19,
           "slots": [
             "color.primary",
             "style.outline.light",
@@ -2067,14 +2067,14 @@
             "style.tint",
             "style.outline.width"
           ],
-          "nativeSha256": "edad01245c76c09d927009a632a3ccbc1405a2db4be2b4c78a3e5f006984d39b",
-          "sourceSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
-          "planSha256": "6416be26d5d56ae302da816eb505f4f5df132dba407f75365a83d03fde3d5992",
+          "nativeSha256": "20307fa64d19e7ca19ddbbb329a02be5dda834339f25b36e27e4b71d63c66d0a",
+          "sourceSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
+          "planSha256": "4c523d12b29d1b846e426f2378babbb2ba352ad35359987571990fbf03a27f08",
           "scriptSha256": "9763402905a4d152708bf3c3baf981cb6bc93bb700999cfcaa9aa4ee1d5dd4d3",
-          "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+          "brief": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
           "constraints": [],
           "category": "Model training & fine-tuning",
-          "definitionsSha256": "9f93de0434da2ce21062804fdb695fd5152de33e5cdaa0ba9bc69d0ea178dc79",
+          "definitionsSha256": "42649e327f1c060e1a699d14f94298c95e6d611636a5747a0ff8300efcdce877",
           "primary": {
             "dark": "#00ddb3",
             "light": "#008c76"
@@ -2096,12 +2096,12 @@
             ],
             "units": "32-unit construction grid"
           },
-          "bytes": 3755,
-          "sha256": "fe4d8a07fcf321d53743a47b8fcc94a26c491486229b4bb9b5d93543fffb561b"
+          "bytes": 3517,
+          "sha256": "d9aa0d0f4f3ad4589957deccb8f788753325843d7a15f7aa00078a50ad03daae"
         }
       ],
-      "bytes": 3753,
-      "sha256": "93ddcda9edadfcc38fde5c24adeb1395a92034fafceb71f0c23022cf77d86632"
+      "bytes": 3515,
+      "sha256": "b3a3d2ad5ff52efb53b85c8ce96235e5e7c30b02b23285e7b06a05b4416f52aa"
     },
     {
       "name": "overfitting",

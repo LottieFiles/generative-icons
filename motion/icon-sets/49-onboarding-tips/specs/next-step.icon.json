@@ -1,348 +1,325 @@
 {
-  "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
-  "format": "gai-icon/2",
-  "id": "next-step",
-  "label": "Next step",
-  "intent": "The button is pressed and the flow advances one step. Light: the button dips under the press, the arrow speeds out to the right and fades, and the next arrow slides in from the left, overshoots a little and settles where the first one was. Strong: a deeper press, the arrow draws back before it leaves, and the next arrow arrives faster with a two-beat settle. The two arrows cross-fade, so the button is never empty.",
-  "parts": {
-    "button": {
-      "//": "v1 Solid is hollow: the ring at 2.6",
-      "shape": {
-        "circle": [
-          [
-            16,
-            16
-          ],
-          10.5
-        ]
-      },
-      "role": "surface",
-      "solid": "ring"
-    },
-    "stem": {
-      "shape": {
-        "line": [
-          [
-            11.5,
-            16
-          ],
-          [
-            19.5,
-            16
-          ]
-        ]
-      }
-    },
-    "barb": {
-      "shape": {
-        "polyline": [
-          [
-            15.5,
-            12
-          ],
-          [
-            19.5,
-            16
-          ],
-          [
-            15.5,
-            20
-          ]
-        ]
-      }
-    },
-    "stem2": {
-      "//": "hidden at rest: the next step's arrow, a copy that slides in from the left",
-      "shape": {
-        "line": [
-          [
-            11.5,
-            16
-          ],
-          [
-            19.5,
-            16
-          ]
-        ]
-      },
-      "hidden": true
-    },
-    "barb2": {
-      "shape": {
-        "polyline": [
-          [
-            15.5,
-            12
-          ],
-          [
-            19.5,
-            16
-          ],
-          [
-            15.5,
-            20
-          ]
-        ]
-      },
-      "hidden": true
-    }
+ "$schema": "https://gen-animated-icons.lottiefiles.com/schema/icon-v2.json",
+ "format": "gai-icon/2",
+ "id": "next-step",
+ "label": "Next step",
+ "intent": "The button is pressed and the flow advances one step. Light: the button dips under the press while the arrow draws back a little, then the arrow lunges right inside the button with two speed lines streaking out behind its barbs, and springs back to rest with a small overshoot. Strong: a deeper press and draw-back, a longer lunge, and a spring back that settles in two beats.",
+ "parts": {
+  "button": {
+   "//": "v1 Solid is hollow: the ring at 2.6",
+   "shape": {
+    "circle": [
+     [
+      16,
+      16
+     ],
+     10.5
+    ]
+   },
+   "role": "surface",
+   "solid": "ring"
   },
-  "rigs": {
-    "button": {
-      "pivot": [
-        16,
-        16
-      ],
-      "carries": [
-        "button"
-      ]
-    },
-    "arrow": {
-      "pivot": [
-        16,
-        16
-      ],
-      "carries": [
-        "stem",
-        "barb"
-      ]
-    },
-    "next": {
-      "pivot": [
-        16,
-        16
-      ],
-      "carries": [
-        "stem2",
-        "barb2"
-      ]
-    }
+  "trail-a": {
+   "//": "hidden at rest: speed lines behind the barbs while the arrow lunges, front end first",
+   "shape": {
+    "line": [
+     [
+      13.2,
+      12.6
+     ],
+     [
+      10.2,
+      12.6
+     ]
+    ]
+   },
+   "hidden": true
   },
-  "motion": {
-    "//": "Swap: when the next arrow has settled at exactly 0, the original steps back on and the copy steps off on the same key, so the ending is the rest drawing itself.",
-    "button.scale": {
-      "light": [
-        [
-          0,
-          1
-        ],
-        [
-          0.06,
-          0.94,
-          "out"
-        ],
-        [
-          0.16,
-          1.02
-        ],
-        [
-          0.24,
-          1
-        ]
-      ],
-      "strong": [
-        [
-          0,
-          1
-        ],
-        [
-          0.08,
-          0.9,
-          "out"
-        ],
-        [
-          0.2,
-          1.03
-        ],
-        [
-          0.3,
-          0.99
-        ],
-        [
-          0.36,
-          1
-        ]
-      ]
-    },
-    "arrow.x": {
-      "light": [
-        [
-          0,
-          0
-        ],
-        [
-          0.04,
-          0
-        ],
-        [
-          0.2,
-          4,
-          "in"
-        ],
-        [
-          0.22,
-          0,
-          "step"
-        ]
-      ],
-      "strong": [
-        [
-          0,
-          0
-        ],
-        [
-          0.08,
-          -1,
-          "out"
-        ],
-        [
-          0.24,
-          4.2,
-          "in"
-        ],
-        [
-          0.26,
-          0,
-          "step"
-        ]
-      ]
-    },
-    "stem.opacity": {
-      "light": [
-        [
-          0,
-          1
-        ],
-        [
-          0.14,
-          1
-        ],
-        [
-          0.2,
-          0,
-          "in"
-        ],
-        [
-          0.4,
-          1,
-          "step"
-        ]
-      ],
-      "strong": [
-        [
-          0,
-          1
-        ],
-        [
-          0.19,
-          1
-        ],
-        [
-          0.24,
-          0,
-          "in"
-        ],
-        [
-          0.58,
-          1,
-          "step"
-        ]
-      ]
-    },
-    "barb.opacity": {
-      "follow": "stem.opacity"
-    },
-    "next.x": {
-      "light": [
-        [
-          0,
-          0
-        ],
-        [
-          0.14,
-          -3.5,
-          "step"
-        ],
-        [
-          0.3,
-          0.5,
-          "out"
-        ],
-        [
-          0.38,
-          0,
-          "inOut"
-        ]
-      ],
-      "strong": [
-        [
-          0,
-          0
-        ],
-        [
-          0.19,
-          -3.5,
-          "step"
-        ],
-        [
-          0.36,
-          0.9,
-          "out"
-        ],
-        [
-          0.46,
-          -0.3
-        ],
-        [
-          0.56,
-          0
-        ]
-      ]
-    },
-    "stem2.opacity": {
-      "light": [
-        [
-          0,
-          0
-        ],
-        [
-          0.14,
-          0
-        ],
-        [
-          0.2,
-          1,
-          "out"
-        ],
-        [
-          0.4,
-          0,
-          "step"
-        ]
-      ],
-      "strong": [
-        [
-          0,
-          0
-        ],
-        [
-          0.19,
-          0
-        ],
-        [
-          0.25,
-          1,
-          "out"
-        ],
-        [
-          0.58,
-          0,
-          "step"
-        ]
-      ]
-    },
-    "barb2.opacity": {
-      "follow": "stem2.opacity"
-    }
+  "trail-b": {
+   "mirror": {
+    "of": "trail-a",
+    "y": 16
+   }
+  },
+  "stem": {
+   "shape": {
+    "line": [
+     [
+      11.5,
+      16
+     ],
+     [
+      19.5,
+      16
+     ]
+    ]
+   }
+  },
+  "barb": {
+   "shape": {
+    "polyline": [
+     [
+      15.5,
+      12
+     ],
+     [
+      19.5,
+      16
+     ],
+     [
+      15.5,
+      20
+     ]
+    ]
+   }
   }
+ },
+ "rigs": {
+  "button": {
+   "pivot": [
+    16,
+    16
+   ],
+   "carries": [
+    "button"
+   ]
+  },
+  "arrow": {
+   "pivot": [
+    16,
+    16
+   ],
+   "carries": [
+    "stem",
+    "barb"
+   ]
+  }
+ },
+ "motion": {
+  "//": "The arrow lunges right and springs back; the speed lines show the push and are gone before it settles.",
+  "button.scale": {
+   "light": [
+    [
+     0,
+     1
+    ],
+    [
+     0.06,
+     0.94,
+     "out"
+    ],
+    [
+     0.16,
+     1.02
+    ],
+    [
+     0.24,
+     1
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     1
+    ],
+    [
+     0.08,
+     0.9,
+     "out"
+    ],
+    [
+     0.2,
+     1.03
+    ],
+    [
+     0.3,
+     0.99
+    ],
+    [
+     0.36,
+     1
+    ]
+   ]
+  },
+  "arrow.x": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.06,
+     -0.5,
+     "out"
+    ],
+    [
+     0.16,
+     2.4,
+     "out"
+    ],
+    [
+     0.23,
+     -0.35
+    ],
+    [
+     0.3,
+     0
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.09,
+     -1.0,
+     "out"
+    ],
+    [
+     0.2,
+     3.2,
+     "out"
+    ],
+    [
+     0.27,
+     -0.6
+    ],
+    [
+     0.33,
+     0.2
+    ],
+    [
+     0.39,
+     0
+    ]
+   ]
+  },
+  "trail-a.opacity": {
+   "light": [
+    [
+     0,
+     0
+    ],
+    [
+     0.09,
+     0
+    ],
+    [
+     0.1,
+     1,
+     "step"
+    ],
+    [
+     0.15,
+     1
+    ],
+    [
+     0.185,
+     0,
+     "out"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     0
+    ],
+    [
+     0.125,
+     0
+    ],
+    [
+     0.135,
+     1,
+     "step"
+    ],
+    [
+     0.19,
+     1
+    ],
+    [
+     0.225,
+     0,
+     "out"
+    ]
+   ]
+  },
+  "trail-b.opacity": {
+   "light": {
+    "follow": "trail-a.opacity",
+    "lag": 0.015
+   },
+   "strong": {
+    "follow": "trail-a.opacity",
+    "lag": 0.02
+   }
+  },
+  "trail-a.draw": {
+   "light": [
+    [
+     0,
+     1
+    ],
+    [
+     0.09,
+     0,
+     "step"
+    ],
+    [
+     0.135,
+     1,
+     "out"
+    ]
+   ],
+   "strong": [
+    [
+     0,
+     1
+    ],
+    [
+     0.125,
+     0,
+     "step"
+    ],
+    [
+     0.17,
+     1,
+     "out"
+    ]
+   ]
+  },
+  "trail-b.draw": {
+   "light": {
+    "follow": "trail-a.draw",
+    "lag": 0.015
+   },
+   "strong": {
+    "follow": "trail-a.draw",
+    "lag": 0.02
+   }
+  }
+ },
+ "preview": {
+  "light": [
+   0,
+   0.06,
+   0.1,
+   0.13,
+   0.16,
+   0.2,
+   0.23,
+   0.3
+  ],
+  "strong": [
+   0,
+   0.09,
+   0.13,
+   0.17,
+   0.2,
+   0.24,
+   0.27,
+   0.33
+  ]
+ }
 }
