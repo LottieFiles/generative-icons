@@ -6,7 +6,11 @@
 
 ## Before launch
 
-The npm packages, the hosted library behind `search` and `add`, and the submission service behind `submit` go live at launch. Until then, build the CLI from the repository, build the packages in the checkout (`generative-icons library packages`) and pass `--library <checkout>`; `submit --dry-run` writes the bundle without sending it.
+The npm packages and the hosted library behind `search` and `add` go live at launch. Until then, build the CLI from the repository, build the packages in the checkout (`generative-icons library packages`) and pass `--library <checkout>`.
+
+## Submitting icons
+
+`submit` publishes spec icons (`<id>.icon.json`) only: the community builds each one again from its spec, and it can't run the JavaScript of a batch icon, so batch icons can only be bundled with `--dry-run`. A submission holds up to 5 icons and counts toward the daily limit shared with generations on the website.
 
 ## Platforms
 

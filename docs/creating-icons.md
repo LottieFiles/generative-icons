@@ -4,7 +4,7 @@ When the library has no icon for your meaning, your coding AI can create one in 
 
 **You need a LottieFiles sign-in to build.** Export runs on LottieFiles' hosted engine. Run `generative-icons login` once in your terminal; agents never sign in for you. Everything up to `build`, and `preview` of library icons, works without signing in.
 
-**Before launch:** the npm package behind `npx generative-icons`, the hosted library behind `search` and the submission service go live at launch, and the hosted engine is internal until then, so these steps don't work for every account yet. [Known limitations](limitations.md) has the details.
+**Before launch:** the npm package behind `npx generative-icons` and the hosted library behind `search` go live at launch, and the hosted engine is internal until then, so these steps don't work for every account yet. [Known limitations](limitations.md) has the details.
 
 ## 1. Set up the project
 
@@ -59,16 +59,16 @@ generative-icons preview return-box   # re-render the sheets after a change
 
 Review the silhouette, exposed surfaces, optical spacing and motion against the [drawing](design-principles.md) and [motion](motion-principles.md) principles. A passing check proves the file is valid, not that the icon is good.
 
-## 5. Use it, or offer it to the library
+## 5. Use it, or share it
 
-A built icon is installed like a library icon and stays in your project. To offer it to the library:
+A built icon is installed like a library icon and stays in your project. To share it in the [community](https://generativeicons.com/community/):
 
 ```sh
 generative-icons submit return-box --license MIT --dry-run --output return-box.zip   # inspect the bundle
-generative-icons submit return-box --license MIT                                     # send it for review
+generative-icons submit return-box --license MIT --wait                              # publish it
 ```
 
-`submit` accepts only verified builds of the current source, and every submission is reviewed. The submission service goes live at launch.
+`submit` accepts only verified builds of the current source, and needs your sign-in. The community builds the icon again from its spec, checks it the way it checks the icons it generates, and publishes it marked unreviewed until a maintainer reviews it. `--wait` prints its page when it is published, or why it was not. Submissions count toward the same daily limit as generating icons on the website. Batch icons can't be submitted, only bundled with `--dry-run`.
 
 ## Library sets
 

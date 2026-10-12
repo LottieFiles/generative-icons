@@ -299,6 +299,13 @@ pub fn logout(config: &EngineConfig) -> Result<LogoutOutcome> {
     })
 }
 
+/// A bearer token for the engine that lasts at least `secs` more seconds, refreshed (single-flight
+/// across processes) when the stored one would expire sooner. It is for a LottieFiles service that
+/// verifies the account with it, such as the community's submissions endpoint (`submit`).
+pub fn fresh_access_token(config: &EngineConfig, secs: u64) -> Result<String> {
+    Auth::new(config, http::client()?).access_token_valid_for(secs)
+}
+
 /// The stored session without touching the network; `None` when signed out.
 pub fn status(config: &EngineConfig) -> Result<Option<Status>> {
     if let Some(token) = &config.token_override {
@@ -498,10 +505,16 @@ impl Auth {
 
     /// A token valid for at least a minute.
     pub fn access_token(&self) -> Result<String> {
+        self.access_token_valid_for(MIN_VALIDITY)
+    }
+
+    /// A token valid for at least `secs` more seconds: the cached one when it lasts that
+    /// long, else a refreshed one (a fixed `GAI_ENGINE_TOKEN` is used as it is).
+    pub fn access_token_valid_for(&self, secs: u64) -> Result<String> {
         match &self.source {
             TokenSource::Fixed(token) => Ok(token.clone()),
             TokenSource::Stored(stored) => {
-                match stored.cached().filter(|s| s.valid_for(MIN_VALIDITY)) {
+                match stored.cached().filter(|s| s.valid_for(secs)) {
                     Some(session) => Ok(session.access_token),
                     None => stored.refresh(&self.engine, None),
                 }

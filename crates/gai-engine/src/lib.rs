@@ -34,7 +34,7 @@ mod store;
 
 pub use auth::{
     LoginInteraction, LoginMode, LoginOptions, LogoutOutcome, SessionCheck, SessionState, Status,
-    StdioInteraction, Whoami, check_session, login, logout, status, whoami,
+    StdioInteraction, Whoami, check_session, fresh_access_token, login, logout, status, whoami,
 };
 pub use config::{CredentialStoreKind, EngineConfig, LockWait, Notice, NoticeSink, RetryPolicy};
 pub use error::{Error, ErrorKind, Result};

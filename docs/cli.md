@@ -40,7 +40,7 @@ Before the first release, build the binary from this repository ([development](d
 | `build [<id>…]` | Exports on the hosted engine, then packages, verifies, renders preview sheets and installs (`--no-install`, `--jobs 1-4`, `--all`). A spec v2 icon takes one engine call for all its motions. v1 and v2 icons build in separate runs. |
 | `preview <id>` | Renders a built, installed or library icon to PNG contact sheets (`--motion`, `--animation`, `--times`, `--frames`, `--styles`, `--weights`, `--themes`, `--cell`, `--out`) |
 | `export <id>` | Writes a built, installed or library icon as an animated SVG that browsers play without a player (SMIL): `--motion`, `--style`, `--weight`, `--color` (`currentColor` unless you pass a hex value), `--trigger auto\|hover\|click\|toggle\|loop\|load\|js` (`auto`: `toggle` for stateful icons, `loop` for loaders, `hover` otherwise), `--state` (a stateful icon's first state), `--size`, `--id-prefix`, and `--out <file>` (without it the SVG is printed, or returned as `svg` in JSON). `hover`, `click`, `toggle` and `js` need an inline `<svg>`; an `<img>` plays only `loop` and `load`. See [Animated SVG](using-packages.md#animated-svg). |
-| `submit <id…>` | Sends verified local icons for review (`--license MIT\|CC-BY-4.0`, `--message`). The bundle holds each icon's verified build snapshot, only the modules it imports, and its two review sheets (regenerated if they are missing or edited). Icons with untraceable imports are refused unless you pass `--include-untraced`. A spec v2 icon's bundle holds its spec and its verified build. `--dry-run --output bundle.zip` only writes the bundle. |
+| `submit <id…>` | Publishes verified spec icons in the [community](https://generativeicons.com/community/) (`--license MIT\|CC-BY-4.0`, `--message`; needs a sign-in). The community builds each one again from its spec, checks it as it checks the icons it generates, and lists what passes as unreviewed until a maintainer reviews it. It answers with a link per icon; `--wait` follows them and prints each icon's page, or why it was not published. Up to 5 icons at a time, within the daily limit shared with generations on the website. The bundle holds each icon's spec, its verified build and its two review sheets (regenerated if they are missing or edited). Batch icons are bundled only (`--dry-run`): their bundle holds the verified build snapshot and only the modules it imports, and icons with untraceable imports are refused unless you pass `--include-untraced`. `--dry-run --output bundle.zip` only writes the bundle. |
 | `login`, `logout`, `whoami` | Signs in to the hosted engine, signs out, and shows the account and whether the session is verified |
 | `mcp` | Serves `search`, `add`, `context`, `create`, `check`, `draft`, `build`, `preview` and `export` as MCP tools over stdio |
 
@@ -77,7 +77,7 @@ The library is chosen in this order:
 2. A checkout of this repository, or `node_modules/@lottiefiles/generative-icons/dist`, in the app folder or above it.
 3. The hosted library at `generativeicons.lottiefiles.com`, cached for `--offline` use.
 
-The hosted library and the submission service go live at launch. Until then, pass `--library` with a checkout whose packages are built.
+The hosted library goes live at launch. Until then, pass `--library` with a checkout whose packages are built.
 
 ## Agents with MCP
 
