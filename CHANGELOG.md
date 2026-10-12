@@ -58,5 +58,5 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 - `@lottiefiles/generative-icons-cli`: `lottie-icons` command for project setup, search and safe asset installation, plus a consumer agent skill.
 - Editable icon source, family contract, AI operating guide and validation tooling for creating new icons.
 
-[Unreleased]: https://github.com/LottieFiles/gen-animated-icons/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/LottieFiles/gen-animated-icons/releases/tag/v0.1.0
+[Unreleased]: https://github.com/LottieFiles/generative-icons/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/LottieFiles/generative-icons/releases/tag/v0.1.0
