@@ -21,6 +21,8 @@ STATIC = (
     'icons/01/styles.css', 'icons/03/controller.mjs', 'icons/catalog.json',
     'icons/guide/index.html', 'icons/guide/guide.css', 'icons/guide/guide.js',
     'icons/guide/ai-operating-guide.md', 'icons/guide/SKILL.md',
+    'icons/guide/motion-principles.md', 'icons/guide/MOTION.md', 'icons/guide/design-principles.md',
+    'icons/guide/authoring-v2.md', 'icons/guide/review.md',
     'icons/guide/polish-review.md', 'icons/guide/generation-harness.md',
     'icons/guide/production.md',
     'icons/guide/family-contract.json', 'icons/guide/sources.json',

@@ -43,7 +43,7 @@ Then brief each icon before you write its spec:
 - the driver, its followers and their lag, and any cue hidden at rest (sound, sparks, a trail) or mark that draws on;
 - Light (the event once, one beat) and Strong (what changes in the primary action), with travel in units, turns in degrees and times in seconds.
 
-A sway, wobble, bob, pulse, or a tilt or turn that comes back is a nudge, not an event; `check` warns `NUDGE` on one.
+A sway, wobble, bob, pulse, or a tilt or turn that comes back is a nudge, not an event; `check` warns `NUDGE` on one. Draw the subject once and transform it: never swap it for a copy that fades in where it was (`check` warns `DUPLICATE_DRAWING`); parts hidden at rest are cues, never the subject again.
 
 ```sh
 generative-icons context "<meaning and motion>"    # contract, nearest references, their geometry and timing
@@ -93,7 +93,7 @@ To offer a finished icon to the library, the user runs `generative-icons submit 
 - `MODIFIED_FILE` means someone edited a managed file. Run `generative-icons diff`, show the user, and let them decide. Never delete or overwrite a file to get past it. An edited kit copy is fixed with `generative-icons init --update-kit`.
 - Colors are six-digit hex; resolve theme tokens first. Styles are `outline`, `solid` or `duotone`. Weight is 1 to 3 (outline only); iOS and Android players show 1.5, 2 or 2.5 unless `add --bake-weight <w>` bakes another.
 - Light and Strong are separate authored motions. Never fake Strong by changing speed.
-- Every action needs an event, not a nudge: animate what the object does for the user (a microphone takes sound, send leaves, a bell rings), show the cause briefly with parts hidden at rest (sound, sparks, wind, a trail), draw marks that mean something, and move in beats that get smaller with the parts in order. The full rules are in [motion-principles.md](references/motion-principles.md) and [design-principles.md](references/design-principles.md).
+- Every action needs an event, not a nudge: animate what the object does for the user (a microphone takes sound, send leaves, a bell rings), show the cause briefly with parts hidden at rest (sound, sparks, wind, a trail), draw marks that mean something, and move in beats that get smaller with the parts in order. The subject is drawn once: the motion moves, turns, scales or draws it and brings it back, never a copy swapped in. The full rules are in [motion-principles.md](references/motion-principles.md) and [design-principles.md](references/design-principles.md).
 - Decorative icons need no label; the control around them carries the accessible name. Respect reduced motion.
 - Report every check you did not run. Never claim you reviewed a preview you did not open.
 - Do not edit `AGENTS.md`, `CLAUDE.md`, MCP settings or global configuration unless the user asks.

@@ -96,6 +96,7 @@ Every icon is 32 × 32 at 60 fps on a fixed 2400 ms timeline. Each icon sets its
 - **P6: The rest pose is the reduced-motion pose.** Every asset has a `rest` marker showing the meaningful final state.
 - **P7: Readable at 24 px.** Light and Strong are compared at equal elapsed time and at 24 and 32 px before approval.
 - **P8: Every action has an event.** Animate what the object does for the user, not a generic nudge. Show the cause briefly (sound, sparks, wind, a trail: hidden at rest), draw marks that mean something, and move in decaying beats with parts in order. See [motion principles](docs/motion-principles.md#events-not-nudges).
+- **P9: The subject is drawn once.** The motion transforms the drawing the rest pose shows and brings it back; it is never swapped for a copy. Parts hidden at rest are cues, never the subject again. See [motion principles](docs/motion-principles.md#events-not-nudges).
 
 ## Durations
 

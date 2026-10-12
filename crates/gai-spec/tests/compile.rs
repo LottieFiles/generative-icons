@@ -587,3 +587,22 @@ fn a_whole_drawing_that_only_tilts_and_comes_back_is_a_nudge() {
     let redraw = json!({"light": [[0, 1], [0.1, 0.2], [0.4, 1]], "strong": [[0, 1], [0.1, 0], [0.45, 1]]});
     assert!(nudges(json!({"parts": parts, "rigs": plant, "motion": {"plant.rotate": sway, "arm.draw": redraw}})).is_empty());
 }
+
+#[test]
+fn a_subject_swapped_for_a_copy_of_itself_is_a_duplicate_drawing() {
+    let swaps = |parts: Value, motion: Value| -> Vec<String> {
+        let c = load(&spec(json!({"parts": parts, "motion": motion}))).unwrap();
+        c.diagnostics.0.iter().filter(|d| d.code == "DUPLICATE_DRAWING").map(|d| d.path.clone()).collect()
+    };
+    let arrow = json!({"path": "M10 16 L22 16"});
+    let parts = json!({"arrow": {"shape": arrow}, "next": {"shape": arrow, "hidden": true}});
+    let leaves = json!({"light": [[0, 1], [0.2, 0], [0.4, 1]], "strong": [[0, 1], [0.25, 0], [0.5, 1]]});
+    let arrives = json!({"light": [[0, 0], [0.15, 0], [0.3, 1], [0.38, 0]], "strong": [[0, 0], [0.2, 0], [0.35, 1], [0.45, 0]]});
+    // The arrow fades out as a hidden copy of it fades in where it was: a swap.
+    assert_eq!(swaps(parts.clone(), json!({"arrow.opacity": leaves, "next.opacity": arrives})), ["/parts/next"]);
+    // An echo of a part that stays (a trace, a ripple) is an effect, not a swap.
+    assert!(swaps(parts, json!({"next.opacity": arrives})).is_empty());
+    // A cue of another shape (a speed line) while the arrow fades is not a copy either.
+    let cue = json!({"arrow": {"shape": arrow}, "line": {"shape": {"path": "M6 13 L9 13"}, "hidden": true}});
+    assert!(swaps(cue, json!({"arrow.opacity": leaves, "line.opacity": arrives})).is_empty());
+}

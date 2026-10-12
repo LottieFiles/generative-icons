@@ -12,16 +12,16 @@ This skill is for library sets in this repository. In an app, the `generative-ic
 Run everything from the repository root with the `generative-icons` CLI (build it with `cargo build --release -p generative-icons`). Replace `SET-ID` with the set directory, for example `39-food-drink`.
 
 1. **Check tools:** `generative-icons doctor`. At the repository root its app checks fail because the repository is not an app; the cpu, quickjs, renderer, sign-in and engine checks are the ones that matter here.
-2. **Search:** `generative-icons context "<meaning>" --search`, then rerun without `--search` and with `--neighbor <id>` (up to four) to get the reference packet.
-3. **Brief:** per icon, write meaning, states, neighbors and a **cause → action → response → final state** plan for Light and Strong. Read [polish-review.md](references/polish-review.md) first.
-4. **Author:** new set: `generative-icons library new-set <slug> --name "Display name"`. Draw and animate in `motion/icon-sets/SET-ID/definitions.mjs` and its `batches/`.
-5. **Preflight (no sign-in needed):** `generative-icons library preflight SET-ID`
-6. **Build and verify:** `generative-icons library build SET-ID`, then `generative-icons library verify SET-ID` and `generative-icons library verify --paint`.
-7. **Inspect:** `generative-icons library verify-visual SET-ID` renders every action and writes review sheets; `generative-icons preview <id>` renders one icon's motions at chosen times. Review native playback in the local gallery (`npm run dev`, `/icons/01/`); see [production.md](references/production.md).
-8. **Register:** `generative-icons library register SET-ID` after the first complete build and verification.
-9. **Finish:** `npm test`, then open a pull request.
+2. **Read the direction:** [motion principles](../../../docs/motion-principles.md), [drawing principles](../../../docs/design-principles.md), the [motion system](../../../MOTION.md), [polish-review.md](references/polish-review.md) and the spec format, [authoring-v2.md](../../../crates/generative-icons/assets/skill/references/authoring-v2.md) (its "Motion that reads" and "What build's visual check fails" sections above all).
+3. **Search:** `generative-icons context "<meaning>" --search`, then rerun without `--search` and with `--neighbor <id>` (up to four) to get the reference packet.
+4. **Brief:** per icon, write meaning, states, neighbors and a **cause → action → response → final state** plan for Light and Strong: the event, the driver and its followers, the cues hidden at rest, and how the one drawing moves.
+5. **Author each icon as a spec** (`gai-icon/2`) in a scratch project with this checkout as its library (`--library <checkout>`): `generative-icons create <id>` for a new icon, `create <library-id> --replace` to reanimate one. Then `check`, `draft`, `build <id> --no-install` and `preview`, until the sheets read. Write a JS batch only for what specs cannot express yet (continuous loaders; see [production.md](references/production.md)).
+6. **Adopt:** `generative-icons library adopt SET-ID <build>` replaces an icon; `--add` adds a new one. A new set starts with `generative-icons library new-set <slug> --name "Display name"` and can be made of specs only. Give every new icon search terms in the set's `search-terms.json`.
+7. **Verify and inspect:** `generative-icons library verify SET-ID`, `generative-icons library verify-visual SET-ID` (it renders every action and writes review sheets) and `generative-icons library verify --paint`. Review native playback in the local gallery (`npm run dev`, `/icons/01/`).
+8. **Register** a new set: `generative-icons library register SET-ID` after its first complete verification.
+9. **Finish:** `generative-icons library packages`, `npm test` and `cargo test --workspace` (new icons change the pinned catalog counts; see [crates/README.md](../../../crates/README.md)), then open a pull request.
 
-**Building needs the user's LottieFiles sign-in.** Export runs on LottieFiles' hosted engine, which is internal until launch. On `NOT_LOGGED_IN` or `SESSION_EXPIRED`, ask the user to run `generative-icons login` in their terminal; never sign in yourself. Meanwhile complete steps 1–5 and report the native gates as not run.
+**Building needs the user's LottieFiles sign-in.** Export runs on LottieFiles' hosted engine, which is internal until launch. On `NOT_LOGGED_IN` or `SESSION_EXPIRED`, ask the user to run `generative-icons login` in their terminal; never sign in yourself. Meanwhile complete the source checks (`check` for specs, `library preflight` for JS batches) and report the native gates as not run.
 
 ## Scope and roles
 
@@ -32,7 +32,7 @@ Apply this workflow to the requested scope and complete the authorized work with
 ## Where things live
 
 - Gallery: `prototype/icons/01/index.html`, served by `npm run dev` on port 4189 at `/icons/01/`. All icons belong on that page; it starts each icon in **Strong** and Light stays selectable.
-- Sources: `motion/icon-sets/SET-ID/`. Catalog: `prototype/icons/catalog.json`; each set is registered in a named browse category.
+- Sources: `motion/icon-sets/SET-ID/`: `specs/<id>.icon.json` for spec icons, `definitions.mjs` and `batches/` for JS ones. Catalog: `prototype/icons/catalog.json`; each set is registered in a named browse category.
 - Rules: [polish-review.md](references/polish-review.md) (rejection criteria and per-icon record), [generation-harness.md](references/generation-harness.md) (reference retrieval and preflight), [production.md](references/production.md) (build and evidence), `docs/design-principles.md`, and `motion/icon-sets/library/motion-directions.json` for existing motion intent.
 
 ## 1. Establish the change
@@ -58,6 +58,9 @@ Apply this workflow to the requested scope and complete the authorized work with
 
 Write a short motion brief per icon: **cause → action → response → final state**. Review the fixed parts, driver, followers, pivots, and state policy before keyframing.
 
+- Find the event, not a nudge: what the object does for the user (a bell rings, send leaves, a download lands). Show its cause briefly with parts hidden at rest (sparks, arcs, speed lines, a trail), and draw marks that mean something.
+- Draw the subject once. The motion transforms the drawing the rest pose shows (moves, turns, scales, squashes or draws it) and brings it back without leaving the canvas. Never swap it for a copy that fades in where the first was; parts hidden at rest are cues, never the subject again, and no frame may jump.
+
 - Light is one clear, quiet action. **Strong must have a clearly stronger primary action at normal speed and at 24/32 px.** Give the main shape a larger useful travel range, a wider physical rotation, or a distinctly faster decisive stroke with visible preparation and response. A tiny follower, an extra pause, more keyframes or a longer timeline is insufficient. Do not obtain Strong by multiplying every transform.
 - Compare the two profiles directly, then temporarily ignore their labels. If they are difficult to distinguish, revise before delivery. Measure the main part in real seconds: travel, rotation and speed can expose a weak pair, but metrics do not replace native visual review. A full check draw or symmetric turn may use stronger timing without changing its meaningful endpoint. A tiny movement cannot become Strong merely by playing faster.
 - Reserve space for Strong when drawing the resting object. Redesign its proportions or opening if more travel would break a joint or close a counter. Check the swept Bold and Solid paint after increasing motion; preserve common endpoint states for profile switching. Direct true reverse actions too; preview resets can remain quiet where stronger motion would undo the meaning of a posted result.
@@ -74,7 +77,7 @@ A whole-library review must leave a per-icon ledger: first design proposal, desi
 
 ## 4. Author and review a complete cycle
 
-Read [references/production.md](references/production.md) for the current build and evidence procedure. Export only through `generative-icons library build`, which exports on the hosted engine. Do not claim one tool produced an asset when another did.
+Read [references/production.md](references/production.md) for the current build and evidence procedure. Export only through the CLI on the hosted engine: `build` for a spec, then `library adopt`; `library build` for a set's JS batches. Do not claim one tool produced an asset when another did.
 
 Integrate the reviewed design. If a check or render exposes a flaw, record the diagnostic or observed frame, revise the affected geometry or motion, and rerun the affected checks in the same agent session. Stop an unproductive loop when the same failure repeats without new evidence; change the approach or report the unresolved issue. Missing export or visual inspection tools leave those gates incomplete. Keep one writer per production file.
 

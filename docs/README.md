@@ -13,11 +13,11 @@
 - [Creating icons](creating-icons.md): the workflow for developers and coding agents, in your own project.
 - [Drawing principles](design-principles.md): proportions, strokes, surfaces and family consistency.
 - [Motion principles](motion-principles.md): semantic actions, Light/Strong and state behavior.
-- [Maintainer workflow skill](https://github.com/LottieFiles/gen-animated-icons/blob/main/.agents/skills/animated-icon-workflow/SKILL.md): detailed agent instructions and review criteria for library sets.
+- [Maintainer workflow skill](https://github.com/LottieFiles/generative-icons/blob/main/.agents/skills/animated-icon-workflow/SKILL.md): detailed agent instructions and review criteria for library sets.
 
 ## Contribute and maintain
 
-- [Contributing](https://github.com/LottieFiles/gen-animated-icons/blob/main/CONTRIBUTING.md): the pull request path.
+- [Contributing](https://github.com/LottieFiles/generative-icons/blob/main/CONTRIBUTING.md): the pull request path.
 - [Development](development.md): requirements, building and testing the CLI, library sets and package builds.
 - [Verification](verification.md): automated checks and rendered review.
 - [Architecture](architecture.md): repository layout and asset flow.

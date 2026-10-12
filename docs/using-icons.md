@@ -10,7 +10,7 @@ A dotLottie file contains the icon's sibling actions and themes; its manifest se
 
 ## Render
 
-Use any compatible Lottie or dotLottie player. The gallery's [app.js](https://github.com/LottieFiles/gen-animated-icons/blob/main/prototype/icons/01/app.js) is a working dotLottie Web integration, and the shared [controller](https://github.com/LottieFiles/gen-animated-icons/blob/main/prototype/icons/03/controller.mjs) handles interaction and state. The bundled player is pinned to dotLottie Web 0.80.0.
+Use any compatible Lottie or dotLottie player. The gallery's [app.js](https://github.com/LottieFiles/generative-icons/blob/main/prototype/icons/01/app.js) is a working dotLottie Web integration, and the shared [controller](https://github.com/LottieFiles/generative-icons/blob/main/prototype/icons/03/controller.mjs) handles interaction and state. The bundled player is pinned to dotLottie Web 0.80.0.
 
 Raw Lottie JSON support does not imply dotLottie theme or slot support.
 

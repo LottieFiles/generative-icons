@@ -32,6 +32,8 @@ Use these existing neighbors: [...].
 Preserve: [...]. Avoid: [...].
 Follow the generative-icons skill. Draw editable named parts with pivots,
 and write distinct Light and Strong motion briefs before keyframing.
+Make the motion an event (cause → action → response → final state), not a
+sway or a nudge. Draw the subject once and transform it; never swap in a copy.
 Run check and draft, then build and preview; open every sheet and fix what you see.
 Report any check you could not run.
 ```
@@ -70,4 +72,4 @@ generative-icons submit return-box --license MIT                                
 
 ## Library sets
 
-Icons for your app need none of this. Maintainers add whole sets to the library itself, in a checkout of the library repository, with `generative-icons library new-set`, `build`, `verify`, `verify-visual` and `register`; see [development](development.md#author-and-build-a-library-set). The family workflow for those sets is the [AI operating guide](../prototype/icons/guide/ai-operating-guide.md), which bundles the canonical rules in one file.
+Icons for your app need none of this. Maintainers add icons to the library itself from a checkout of the library repository: each icon is built as a spec in a project like yours and added with `generative-icons library adopt`, then the set passes `library verify` and `verify-visual`, and a new set is scaffolded with `library new-set` and registered with `library register`; see [development](development.md#author-and-build-a-library-set). The family workflow for those sets is the [AI operating guide](../prototype/icons/guide/ai-operating-guide.md), which bundles the canonical rules in one file.

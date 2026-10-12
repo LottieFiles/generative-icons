@@ -4,8 +4,11 @@ import hashlib,json,re
 root=Path(__file__).resolve().parents[3]
 skill=root/'.agents/skills/animated-icon-workflow'
 out=root/'prototype/icons/guide';out.mkdir(exist_ok=True)
-files=[skill/'SKILL.md',*[skill/'references'/n for n in ['polish-review.md','generation-harness.md','production.md']],root/'motion/icon-sets/library/family-contract.json',root/'docs/using-packages.md',root/'docs/package-contract.md',root/'docs/development.md']
-base='https://github.com/LottieFiles/gen-animated-icons/blob/main/'
+# The workflow, then the family's direction (what every library icon and the website's generator
+# follow), the spec format, the production references and the contract.
+spec=root/'crates/generative-icons/assets/skill/references'
+files=[skill/'SKILL.md',root/'docs/motion-principles.md',root/'MOTION.md',root/'docs/design-principles.md',skill/'references/polish-review.md',spec/'authoring-v2.md',spec/'review.md',*[skill/'references'/n for n in ['generation-harness.md','production.md']],root/'motion/icon-sets/library/family-contract.json',root/'docs/using-packages.md',root/'docs/package-contract.md',root/'docs/development.md']
+base='https://github.com/LottieFiles/generative-icons/blob/main/'
 def public_links(text,source):
  def replace(m):
   label,target=m.groups()
@@ -19,15 +22,16 @@ preamble='''# Generative Icons — AI operating guide
 
 Give this file to your coding agent to create or revise icons that match the Generative Icons family by LottieFiles. It bundles the canonical workflow, rules and contract from the source repository into one file.
 
-Repository: https://github.com/LottieFiles/gen-animated-icons
+Repository: https://github.com/LottieFiles/generative-icons
 
 ## Quickstart
 
 In an app, `npx generative-icons init` installs the generative-icons agent skill, which covers creating a missing icon in the app itself. This guide is the full family workflow used for the library's own sets; give it to your agent for deeper reference.
 
 1. Search existing icons: `generative-icons search "<meaning>"`, then `generative-icons context "<meaning>"` for the reference packet.
-2. Fill in the task brief below and follow the workflow in the first source section.
-3. In an app: `generative-icons create <id>`, then `check`, `build` and `preview`. In the library repository: `generative-icons library new-set`, `preflight`, `build`, `verify`, `verify-visual` and `register`.
+2. Read the direction: the motion principles (events, not nudges; draw the subject once), the motion system, the drawing principles and the polish review, then the spec format. They follow the workflow below.
+3. Fill in the task brief below and follow the workflow in the first source section.
+4. Write each icon as a spec: `generative-icons create <id>`, then `check`, `draft`, `build` and `preview`. In the library repository, build it in a scratch project and add it with `generative-icons library adopt SET-ID --add <build>` (`create <library-id> --replace` and `library adopt` reanimate one), then `library verify` and `verify-visual`; a new set starts with `library new-set` and ends with `register`.
 
 Building exports native Lottie on LottieFiles' hosted engine, so it needs a LottieFiles sign-in (`generative-icons login`). The hosted engine is internal until launch.
 

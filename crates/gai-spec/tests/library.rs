@@ -42,3 +42,25 @@ fn no_library_spec_is_a_nudge() {
     }
     assert!(nudges.is_empty(), "{nudges:#?}");
 }
+
+/// No library spec swaps its subject for a copy of itself (`DUPLICATE_DRAWING`): the family
+/// draws the subject once and transforms it, so a library icon that warns needs its motion
+/// redone on the drawing it has.
+#[test]
+fn no_library_spec_swaps_in_a_copy() {
+    let sets = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../motion/icon-sets");
+    let mut swaps = Vec::new();
+    for set in std::fs::read_dir(&sets).unwrap().flatten() {
+        let Ok(specs) = std::fs::read_dir(set.path().join("specs")) else { continue };
+        for spec in specs.flatten() {
+            let text = std::fs::read_to_string(spec.path()).unwrap();
+            if let Ok(c) = gai_spec::load(&text) {
+                for d in c.diagnostics.0.iter().filter(|d| d.code == "DUPLICATE_DRAWING") {
+                    swaps.push(format!("{}: {}", spec.file_name().to_string_lossy(), d.message));
+                }
+            }
+        }
+    }
+    swaps.sort();
+    assert!(swaps.is_empty(), "{swaps:#?}");
+}
