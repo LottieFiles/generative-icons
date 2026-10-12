@@ -29,10 +29,10 @@ Keep all `@lottiefiles/generative-icons*` packages on the same version.
 
 ## Docs
 
-- [Install and use the packages](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/using-packages.md)
-- [Package contract](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/package-contract.md)
-- [Create a missing icon](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/creating-icons.md)
+- [Install and use the packages](https://github.com/LottieFiles/generative-icons/blob/main/docs/using-packages.md)
+- [Package contract](https://github.com/LottieFiles/generative-icons/blob/main/docs/package-contract.md)
+- [Create a missing icon](https://github.com/LottieFiles/generative-icons/blob/main/docs/creating-icons.md)
 
 ## License
 
-MIT, for code and icon artwork. See [LICENSE](https://github.com/LottieFiles/gen-animated-icons/blob/main/LICENSE) and [third-party notices](https://github.com/LottieFiles/gen-animated-icons/blob/main/THIRD_PARTY_NOTICES.md).
+MIT, for code and icon artwork. See [LICENSE](https://github.com/LottieFiles/generative-icons/blob/main/LICENSE) and [third-party notices](https://github.com/LottieFiles/generative-icons/blob/main/THIRD_PARTY_NOTICES.md).

@@ -40,9 +40,9 @@ Keep all `@lottiefiles/generative-icons*` packages on the same version.
 
 ## Docs
 
-- [Install and use the packages](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/using-packages.md)
-- [Appearance and behavior options](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/using-packages.md#appearance-and-behavior)
+- [Install and use the packages](https://github.com/LottieFiles/generative-icons/blob/main/docs/using-packages.md)
+- [Appearance and behavior options](https://github.com/LottieFiles/generative-icons/blob/main/docs/using-packages.md#appearance-and-behavior)
 
 ## License
 
-MIT. See [LICENSE](https://github.com/LottieFiles/gen-animated-icons/blob/main/LICENSE).
+MIT. See [LICENSE](https://github.com/LottieFiles/generative-icons/blob/main/LICENSE).

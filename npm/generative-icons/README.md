@@ -12,4 +12,4 @@ When an icon is missing, your agent creates it in your project: `create`, then `
 
 This package is a small Node shim. npm installs the binary for your machine (macOS or Linux, arm64 or x64) as an optional dependency, so don't install with `--omit=optional`. Set `GEN_ANIMATED_ICONS_BINARY` to run another build of the binary.
 
-Docs: [the CLI reference](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/cli.md). License: MIT.
+Docs: [the CLI reference](https://github.com/LottieFiles/generative-icons/blob/main/docs/cli.md). License: MIT.

@@ -11,5 +11,5 @@ Stateful icons include explicit reverse or reset actions.
 The source/ folder holds the editable geometry and motion. Rebuilding native files needs the Engine exporter (see docs/development.md in the repository).
 
 Browse: run `npm run dev` in the repository and open /icons/01/#category-chat-messaging
-Docs and source: https://github.com/LottieFiles/gen-animated-icons
+Docs and source: https://github.com/LottieFiles/generative-icons
 License: MIT

@@ -29,8 +29,8 @@ Keep all `@lottiefiles/generative-icons*` packages on the same version.
 
 ## Docs
 
-- [Install and use the packages](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/using-packages.md#react-and-nextjs)
+- [Install and use the packages](https://github.com/LottieFiles/generative-icons/blob/main/docs/using-packages.md#react-and-nextjs)
 
 ## License
 
-MIT. See [LICENSE](https://github.com/LottieFiles/gen-animated-icons/blob/main/LICENSE).
+MIT. See [LICENSE](https://github.com/LottieFiles/generative-icons/blob/main/LICENSE).

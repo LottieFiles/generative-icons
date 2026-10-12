@@ -1261,7 +1261,7 @@ Each set's `search-terms.json` maps every icon id to the words and short phrases
 - Every library icon needs at least 3 terms, none of them its own label or id; a test checks the whole catalog.
 - Terms are lowercase letters, digits, single spaces and hyphens, 1 to 40 characters, at most 24 per icon.
 - Leave a term to the icon that is the better answer for it, and skip words that would match hundreds of icons (icon, button, outline) or describe the motion.
-- The website's search is judged on the queries in the website repository (`search/queries.json`, `npm run search:eval`); check a batch of new terms there.
+- Maintainers judge the website's search on the queries in the internal website repository (`search/queries.json`, `npm run search:eval`) and check each batch of new terms there before release.
 
 ## Local gallery
 

@@ -44,6 +44,8 @@ Full steps: [releasing](releasing.md).
 
 ## Website release
 
+The website repository is internal: only maintainers can see it. The site is built from the published packages, so changes to icons, guides and packages are made in this repository, and website problems are reported here as issues.
+
 1. PR in the website repository bumps the pinned package versions.
 2. Review the preview deployment: gallery, search, icon detail pages, downloads and docs.
 3. A maintainer approves and merges; the site deploys.
