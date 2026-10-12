@@ -145,6 +145,7 @@ impl<'a> Frame<'a> {
 pub fn lint(c: &Compiled) -> Diagnostics {
     let mut d = Diagnostics::default();
     nudge(c, &mut d);
+    duplicate_drawing(c, &mut d);
     light_strong(c, &mut d);
     canvas(c, &mut d);
     small(c, &mut d);
@@ -377,6 +378,33 @@ fn nudge(c: &Compiled, d: &mut Diagnostics) {
                 .hint("find the event, what the object does for the user, and animate that: show its cause with a part hidden at rest and keyed by opacity (sparks, arcs, a trail), draw the marks that mean something (draw), let the driver hit, rebound and settle, and move the parts in sequence. See \"Events, not nudges\" in motion-principles.md"),
             );
         }
+    }
+}
+
+/// Opacity at or under which a part has faded out (`DUPLICATE_DRAWING`).
+const FADED: f64 = 0.05;
+
+/// `DUPLICATE_DRAWING`: a part hidden at rest draws exactly the shape of a part shown at rest,
+/// which fades out while the copy takes over: the drawing swapped for a copy of itself. The
+/// family draws the subject once and transforms it; a copy that appears where the eye still
+/// sees the first reads as the object jumping back. A copy over a part that stays (a trace, an
+/// echo, a ripple) is an effect, not a swap, so the shown part must fade out.
+fn duplicate_drawing(c: &Compiled, d: &mut Diagnostics) {
+    let fades_out = |name: &str| {
+        c.motions.iter().filter(|m| !m.reverse).flat_map(|m| &m.raw).any(|t| {
+            t.target.name == name && t.target.prop == Some(crate::spec::Prop::Opacity) && t.keys.iter().any(|k| k.t > 0.0 && k.v <= FADED)
+        })
+    };
+    for copy in c.parts.iter().filter(|p| p.hidden) {
+        let Some(twin) = c.parts.iter().find(|p| !p.hidden && p.shapes == copy.shapes && fades_out(&p.name)) else { continue };
+        d.push(
+            Diagnostic::warning(
+                "DUPLICATE_DRAWING",
+                copy.path.clone(),
+                format!("{} is hidden at rest and draws exactly the shape of {}, which fades out: a copy swapped in for it", copy.name, twin.name),
+            )
+            .hint("draw the subject once: remove the copy and its tracks, and move, turn, scale or draw the original instead, bringing it back to rest. Parts hidden at rest are cues (sparks, speed lines, a ripple), never the subject again"),
+        );
     }
 }
 

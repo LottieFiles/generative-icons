@@ -33,6 +33,7 @@ A category can mix these policies. Select and verify the policy per icon; do not
 | Duotone paints an open tray, doorway or gap | Tint only real enclosed surfaces. Check the entire action: a surface may exist during motion and disappear at rest. A fully open icon must match Outline throughout. |
 | An arrow barb merges into a curve or leaves a dot | Check the complete painted head against the curve and stem, including the curve-to-outlet endpoint; a clear barb endpoint does not prove that the barb segment is clear. Give the head a clear approach. Coordinate head/body withdrawal and reveal; explicitly hide withdrawn zero-length round-cap paths. |
 | Parts drift, deform rigid hardware or jump topology | Share the physical driver and derive contacts from actual curves. Use native rigid transforms; use compatible cubic topology for flexible parts. A revealed route and its traveller use the same advancing path position. |
+| The subject leaves and a copy fades in where it was | Draw the subject once: transform the original (move, turn, scale, squash, draw) and bring it back without leaving the canvas. Show the cause with cues hidden at rest; a cue never has the subject's shape. `check` warns `DUPLICATE_DRAWING`. |
 
 Measure the full swept paint, including cubic extrema, caps and the widest supported stroke. A positive mathematical gap is insufficient if it reads as a sliver at 24 px. Reserve space for Strong in the resting drawing; adjust the construction or pivot when needed. Do not weaken a clearance test to fit a proposal. A justified renderer-specific tolerance must remain local and retain an independent check of the intended opening.
 
@@ -113,3 +114,12 @@ These were verified across Weather, Health & Fitness, Smart Home, Education and 
 - **Small closed marks close at Bold.** Ring pellets, polygon bolts and 3-wide hollow capsules close up. Use centreline strokes or filled marks, and keep hollow widths at least the Bold stroke plus 1.5. A Duotone surface narrower than about 3.4 renders like Outline.
 - **Write gap contracts only between parts that are meant to be separate.** A joint is not a gap. Measure insets between curves from sampled curve distance, not local slope.
 - **Followers end inside the active time.** Window exponential decays and staggered fades so the rest is exactly still. Hide scaled glyph strokes by about 35% scale, and bring multi-part marks in rigidly with a fade rather than scaling from zero.
+
+### Lessons from the Emoji set and website generation (October 2026)
+
+- **One construction for a family of similar objects.** Fix the shared parts first (Emoji: one face circle, dot and arc eyes, one grin and one smile) and build a calibration icon before briefing the rest; a set drawn from one kit reads as a family.
+- **Check clearances at Regular and Bold, not only Light.** The first emoji grin and tears touched at 2 and 2.5 though they cleared at 1.5; the fix moved the tears out and narrowed the grin. A teeth line inside a grin closes at Bold and 24 px.
+- **Solid faces and cards.** A filled surface can move only one group of its cut-outs. Parts that should read as their own filled shapes on its rim (tears, a hand, a heart) are filled and gap-cut, not knocked out. The authoring-v2 reference has the constructions.
+- **Sibling icons must not share one performance.** Five laughing faces each laugh differently (tears spurt, a roll, squeeze-hops, a spreading grin, running sweat); review the family together.
+- **Read it blind.** Ask a reviewer who has not been told the subject what the rest pose shows at 24 px and what happens in the frames. The website's gate rejects icons misread blind (a balloon read as a light bulb, a bee as a pretzel); a reviewer who can see the icon's name is not blind.
+- **Draw the subject once.** Thirteen library icons swapped their subject for a cross-faded copy; the copy reads as the object jumping back. They were reanimated to transform the drawing they have.

@@ -17,7 +17,7 @@ cargo build --release -p generative-icons
 target/release/generative-icons --version
 ```
 
-Put `target/release` on your `PATH`, or set `GEN_ANIMATED_ICONS_BINARY` to the binary so the npm shim runs it (`node npm/generative-icons/bin/generative-icons.js` in this checkout; `npx generative-icons` once the package is published at launch). The [CLI reference](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/cli.md) lists every command.
+Put `target/release` on your `PATH`, or set `GEN_ANIMATED_ICONS_BINARY` to the binary so the npm shim runs it (`node npm/generative-icons/bin/generative-icons.js` in this checkout; `npx generative-icons` once the package is published at launch). The [CLI reference](https://github.com/LottieFiles/generative-icons/blob/main/docs/cli.md) lists every command.
 
 ## Test
 
@@ -125,7 +125,7 @@ generative-icons library release --output dist/packages-vX.Y.Z
 npm run test:consumers -- dist/packages-vX.Y.Z   # install the tarballs into vanilla, React and Next.js fixtures
 ```
 
-`npm run build:packages` and `npm run pack:release` are the legacy equivalents. See the [package contract](package-contract.md) and the [release runbook](https://github.com/LottieFiles/gen-animated-icons/blob/main/docs/maintainers/releasing.md).
+`npm run build:packages` and `npm run pack:release` are the legacy equivalents. See the [package contract](package-contract.md) and the [release runbook](https://github.com/LottieFiles/generative-icons/blob/main/docs/maintainers/releasing.md).
 
 ## AI guide
 

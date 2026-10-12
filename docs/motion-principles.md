@@ -11,6 +11,7 @@ An icon that moves without anything happening reads as decoration: the microphon
 - **Draw the meaning.** Marks that mean done, created or blocked (a check, a slash, a plus) draw on instead of moving in.
 - **Rhythm, not a round trip.** Hit, rebound, settle: two or three beats, each smaller. The return is quicker and smaller than the action, never its mirror.
 - **Sequence the parts.** The driver moves first and followers 60–120 ms later; repeated parts arrive in order.
+- **Draw the subject once.** The motion transforms the object the rest pose shows (it moves, turns, scales, squashes or draws) and brings it back without leaving the canvas. Never swap it for a copy that fades in where the first was: the eye reads the object jumping back. Parts hidden at rest are cues, never the subject again, and no frame may jump.
 
 ## Light and Strong
 

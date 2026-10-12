@@ -27,7 +27,17 @@ The numeric contract is [family-contract.json](../../../../motion/icon-sets/libr
 
 ## Before native export
 
-Integrate the reviewed design into trusted local `definitions.mjs` sources. Then run:
+Write the reviewed design as a spec (`<id>.icon.json`) in a scratch project and screen it before any engine call:
+
+```bash
+generative-icons create picnic-basket --library <checkout>    # or: create <library-id> --replace
+generative-icons check picnic-basket                          # offline: structure, names, motion, lints
+generative-icons draft picnic-basket                          # one engine call: a review sheet
+generative-icons build picnic-basket --no-install             # export, verify, player sheets
+generative-icons library adopt 39-food-drink --add .generative-icons/build/picnic-basket
+```
+
+`check` errors stop `draft` and `build` before the engine; its warnings (`NUDGE`, `DUPLICATE_DRAWING`, `LIGHT_STRONG`, `CANVAS_MARGIN`, `SMALL_AT_24`, `SOLID_HIDDEN`) name a design problem to fix, not to silence. A set's JS batches (continuous loaders and the legacy sets) go into trusted local `definitions.mjs` sources instead:
 
 ```bash
 generative-icons library preflight 15-commerce-delivery

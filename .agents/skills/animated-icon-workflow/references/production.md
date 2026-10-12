@@ -14,6 +14,7 @@ Every set lives in `motion/icon-sets/NN-slug/` and has its own `README.md` with 
 | `03-essentials` to `06-tools` | `definitions.mjs` plus the matching `library/directed-*.mjs` helper | `library build` (built-in legacy profiles), then `library verify` |
 | `07` to `10` (AI) | Set `batches/` and `definitions.mjs` with the shared builder settings | `library build`, then `library verify` |
 | `11` onward | Set `batches/`, `definitions.mjs` and `set-config.json`; set-specific rules in `verify.rules.json` or `geometry-contract.json` where present | `library build`, then `library verify` |
+| Spec icons, in any set | `specs/<id>.icon.json` (`gai-icon/2`), built in a project and added with `library adopt` (`--add` for a new icon). `64-emoji` is made of specs only | `library build` keeps them as adopted; `library verify` checks them against their spec |
 
 The per-set `build.mjs`, `verify.mjs`, `verify-clearance.mjs` and `package.py` files, and the `build:*` and `verify:*` scripts in `motion/package.json`, are the legacy pipeline. The CLI reproduces their outputs byte for byte and its parity tests still run them; do not use them for new work.
 
@@ -27,7 +28,7 @@ Use `generative-icons library new-set <slug> --name "Display name"` to scaffold 
 
 Players and the CLI's renderer use the dotLottie core that dotLottie Web `0.80.0` ships. The project uses separate native stroke paints for Light/Regular/Bold, selected with opacity slots, because a scalar width override does not change rendered pixels in this player. Preserve the existing style contract unless a replacement is verified in the actual player.
 
-Slots: `color.primary`, `style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`. Themeable colors remain solids. Duotone tint uses 18% only where a real enclosed surface exists. Compare the full action when that surface can leave the final frame; an open icon must match Outline at every frame. Do not add invisible dummy surfaces to satisfy a style-difference test.
+Slots: `color.primary`, `style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`, plus the `style.outline.width` stroke-width token bound to every Regular outline stroke (players that ignore it show the Regular weight). Themeable colors remain solids. Duotone tint uses 18% only where a real enclosed surface exists. Compare the full action when that surface can leave the final frame; an open icon must match Outline at every frame. Do not add invisible dummy surfaces to satisfy a style-difference test.
 
 For filled Outline marks, the weight is in the geometry. The More options check measures the exported dot diameters for each preset; native raster comparisons still must pass. Stroke-based icons retain the constant-width checks.
 

@@ -41,7 +41,8 @@ Give every action an event, not a nudge that comes back:
 - A reading stops dead on its value: a gauge needle, a level, a score or a chart point never overshoots what it reads. Strong adds a step (a second click, a second milestone) instead of travel; `LIGHT_STRONG` may warn, and that is expected.
 - A turn of a shape that looks the same turned (a hexagon, a gear, a ring of dots) is invisible: give it a press, a pop or a cue around it instead.
 - A squash about a line reads as a turn or a flip (a key, a coin) at large sizes, and as a squeeze at 24 px: confirm it on the 24 px sheet.
-- A part that leaves and comes back (flies off, then a new one arrives) is two parts: cross-fade the leaving copy and the arriving one, so no frame is empty.
+- Draw the subject once and transform it: it moves, turns, scales, squashes or draws (`draw` off and back on), and comes back to rest without leaving the canvas. Never swap it for a copy: a part hidden at rest with the subject's shape that takes over as the subject fades reads as the object jumping back (`DUPLICATE_DRAWING`). Parts hidden at rest are cues (sparks, speed lines, a wake, a ripple, a smaller droplet), never the subject again. A send, launch or drip goes a short way with a cue and springs back; a result that differs from the rest pose is a state with a real reverse.
+- No frame may jump: never start the action by snapping away what the rest pose shows.
 - Transient parts must read when they show: a spark, drop or arc under 2 px at 24 px is a speck (`SMALL_AT_24`).
 - Icons that do the same thing get the same treatment: every arrow of a set, every lock, every selector.
 
@@ -93,6 +94,10 @@ Each part expands into the style layers the runtime switches: outline at 1.5 / 2
 - In Solid every part is one colour: a detail drawn inside a filled Solid body disappears unless it is knocked out (`SOLID_HIDDEN`), or the body's Solid is `"ring"`.
 - A surface's default Solid is filled with a 2.6 rim, so it reads a little bigger than its outline. `"solid": "fill"` fills the outline's shape exactly.
 - `"gap": {"other": d}`: cut this part wherever it comes within `d` of another part's shape at rest, in every style.
+- A knocked-out part is not drawn in Solid; only its hole is. A part that should read as its own filled shape on or over a surface (a tear on a face's rim, a hand over it, a badge on a card) is not a knockout: give it `"solid": "fill"` and cut the surface around it with `"gap": {"<part>": 1.1}`. The gap is cut at rest, so keep that part where it rests; animate a cue instead of moving it away.
+- One surface has one matte, so only one group of its knockouts can move. When two features of a filled surface must move on their own (a face's eyes and mouth), keep one as the moving knockout and split the other in two: a still Solid-only knockout (`"outline": "none"`) and a moving copy drawn only in Outline and Duotone (`"solid": "none"`). Solid then keeps that feature still; say so in the intent.
+- A cue that appears inside a filled Solid surface (blush, a sparkle, a laugh line) vanishes into the fill: give it `"solid": "none"`, place it outside the surface, or knock it out, and make sure Solid still reads the event through the other motion.
+- Small flying marks (droplets, confetti, embers) are filled (`"role": "fill"`): a hollow outlined drop under about 4 units blobs at Bold.
 
 ## Rigs
 
@@ -176,6 +181,7 @@ Timing is derived: the action ends at the motion's last key, and rest comes one 
 | `SMALL_AT_24`, `LIGHT_STRONG`, `TRAILING_HOLD`, `LIVE_ANCHOR` | warning | Under 3 px at 24 px (a part hidden at rest: under 2 px); Strong not stronger than Light; a last key that only stretches the action; an anchor resolved at rest |
 | `SOLID_HIDDEN`, `HOLE_OUTSIDE`, `MORPH_KNOCKOUT` | warning | A part drawn inside another part's Solid fill, which vanishes in Solid; a hole or knockout that misses its surface at rest; a morphing knockout cut at its rest shape |
 | `NUDGE` | warning | A gesture where nothing draws on, fades, morphs or appears, and the whole drawing tilts under 20° and comes back without travelling, a hit or a hold: a nudge, not an event. Find the event ("Motion that reads") |
+| `DUPLICATE_DRAWING` | warning | A part hidden at rest draws exactly the shape of a shown part that fades out: the subject swapped for a copy. Remove the copy and transform the original ("Motion that reads") |
 | `NOT_IMPLEMENTED` | error | A term of the format that cannot be built yet (below) |
 
 With MCP, the `draft` tool returns the same sheets as images. `draft` writes `.generative-icons/drafts/<id>.png` (rows: Light, then Strong in Regular, Bold, Solid and Duotone, then the reverses; columns: the beats of each motion) and `<id>-24px.png` (the real size, enlarged). The engine's renderer is not the player: `build` ends with dotlottie-rs sheets of every style and both themes in `.generative-icons/previews/<id>/`. Look at both. Solid cut-outs made by a matte (a knockout that moves, draws on or fades) are where they differ: the draft can leave a drawn-on cut-out out entirely or show a matte beside a mask as a different shape. Judge Solid cut-outs on the build's sheets; `build <id> --no-install` renders them without installing.
@@ -187,7 +193,7 @@ With MCP, the `draft` tool returns the same sheets as images. `draft` writes `.g
 | Failure | Cause | Avoid it |
 |---|---|---|
 | Clipped icon | Ink on the outermost pixel, in any frame | Keep paint 1.4 inside the canvas at Bold, overshoot included (`CANVAS_MARGIN` warns) |
-| Invisible main action | A frame with nothing drawn | Cross-fade a part that leaves and returns; never fade everything at once |
+| Invisible main action | A frame with nothing drawn | Keep the subject drawn: transform it rather than fading it out; never fade everything at once |
 | Loop or state boundary is incorrect | A gesture's last frame differs from its first, or a toggle ends where it started | End every track exactly on rest; whole turns step back (above). Light and Strong end on the same pixels |
 | Insufficient animation states | Too few distinct frames for the action's length (half its frames, 6 to 16) | Ease keys instead of `step`-only motion; a typing caret slides each stroke in 40–50 ms |
 | Hold is not still | Something moves after rest | No key after the action ends |
