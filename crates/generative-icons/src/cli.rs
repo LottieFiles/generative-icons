@@ -532,7 +532,11 @@ pub struct SubmitArgs {
     /// included
     #[arg(long)]
     pub include_untraced: bool,
-    /// Submissions endpoint [default: the LottieFiles review service]
+    /// Follow the icons until the community has built and reviewed them, and print where each
+    /// one is published (or why it is not)
+    #[arg(long)]
+    pub wait: bool,
+    /// Submissions endpoint [default: the Generative Icons community, generativeicons.com]
     #[arg(long, value_name = "URL", env = "GEN_ANIMATED_ICONS_SUBMIT_URL")]
     pub endpoint: Option<String>,
 }

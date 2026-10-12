@@ -409,6 +409,123 @@ fn submit_bundles_a_verified_v2_build() {
     run(&app, &["submit", "alarm-clock", "old", "--dry-run"]).fails(2, "USAGE");
 }
 
+/// A request the fake community received: method, path, the headers it checks, and the body.
+struct Received {
+    method: String,
+    path: String,
+    authorization: Option<String>,
+    sha256: Option<String>,
+    body: Vec<u8>,
+}
+
+/// A fake Generative Icons community on loopback: `POST /api/v1/submissions` answers as
+/// `answer` says (a status and JSON body, `{base}` replaced by its address), and
+/// `GET /api/v1/jobs/<id>` reports the job running once, then published.
+fn community(answer: (u16, &'static str)) -> (String, std::sync::Arc<std::sync::Mutex<Vec<Received>>>) {
+    use std::io::{BufRead, BufReader, Read, Write};
+    let listener = std::net::TcpListener::bind("127.0.0.1:0").unwrap();
+    let base = format!("http://{}", listener.local_addr().unwrap());
+    let received = std::sync::Arc::new(std::sync::Mutex::new(Vec::<Received>::new()));
+    let (log, origin) = (received.clone(), base.clone());
+    std::thread::spawn(move || {
+        let mut polls = 0;
+        for stream in listener.incoming().flatten() {
+            let mut reader = BufReader::new(stream.try_clone().unwrap());
+            let mut line = String::new();
+            reader.read_line(&mut line).unwrap();
+            let mut parts = line.split_whitespace();
+            let (method, path) = (parts.next().unwrap_or("").to_string(), parts.next().unwrap_or("").to_string());
+            let (mut authorization, mut sha256, mut length) = (None, None, 0);
+            loop {
+                let mut header = String::new();
+                if reader.read_line(&mut header).unwrap_or(0) <= 2 {
+                    break;
+                }
+                let (name, value) = header.split_once(':').unwrap();
+                let value = value.trim().to_string();
+                match name.to_ascii_lowercase().as_str() {
+                    "authorization" => authorization = Some(value),
+                    "x-bundle-sha256" => sha256 = Some(value),
+                    "content-length" => length = value.parse().unwrap(),
+                    _ => {}
+                }
+            }
+            let mut body = vec![0; length];
+            reader.read_exact(&mut body).unwrap();
+            let (status, reply) = match (method.as_str(), path.as_str()) {
+                ("POST", "/api/v1/submissions") => (answer.0, answer.1.replace("{base}", &origin)),
+                ("GET", "/api/v1/jobs/job-1") => {
+                    polls += 1;
+                    let job = match polls {
+                        1 => json!({ "id": "job-1", "status": "running", "step": "rendering" }),
+                        _ => json!({ "id": "job-1", "status": "built", "step": "done",
+                            "icon": { "id": "alarm-clock-x1", "page": format!("{origin}/community/alarm-clock-x1/") } }),
+                    };
+                    (200, json!({ "job": job }).to_string())
+                }
+                _ => (404, "{}".to_string()),
+            };
+            log.lock().unwrap().push(Received { method, path, authorization, sha256, body });
+            let mut stream = stream;
+            let _ = write!(
+                stream,
+                "HTTP/1.1 {status} OK\r\nContent-Type: application/json\r\nContent-Length: {}\r\nConnection: close\r\n\r\n{reply}",
+                reply.len()
+            );
+        }
+    });
+    (base, received)
+}
+
+#[test]
+fn submit_sends_a_spec_icon_to_the_community_and_follows_it() {
+    let (_dir, app) = app();
+    let bundle = fixtures().join("alarm-clock.bundle.json");
+    run(&app, &["build", "alarm-clock", "--from-bundle", bundle.to_str().unwrap()]).ok();
+    let accepted = r#"{"submissionId":"sub-1","status":"queued","reviewUrl":"{base}/?job=job-1",
+        "jobs":[{"id":"job-1","icon":"alarm-clock","status":"queued","url":"{base}/?job=job-1","api":"{base}/api/v1/jobs/job-1"}]}"#;
+    let (base, received) = community((202, accepted));
+    let endpoint = format!("{base}/api/v1/submissions");
+    let token = [("GAI_ENGINE_TOKEN", "signed-in-token")];
+
+    // Sent with the account's sign-in and the bundle's hash; the icon is followed until published
+    // (its steps show with --verbose).
+    let sent = run_with(&app, &["submit", "alarm-clock", "--endpoint", &endpoint, "--wait", "--verbose"], &token);
+    let report = sent.ok();
+    assert_eq!((report["submissionId"].as_str(), report["status"].as_str()), (Some("sub-1"), Some("queued")));
+    assert_eq!(report["reviewUrl"], format!("{base}/?job=job-1"));
+    assert_eq!(report["jobs"][0]["status"], "built");
+    assert_eq!(report["jobs"][0]["page"], format!("{base}/community/alarm-clock-x1/"));
+    assert!(sent.stderr.contains("alarm-clock: rendering"), "{sent:?}");
+    {
+        let log = received.lock().unwrap();
+        let post = &log[0];
+        assert_eq!((post.method.as_str(), post.path.as_str()), ("POST", "/api/v1/submissions"));
+        assert_eq!(post.authorization.as_deref(), Some("Bearer signed-in-token"));
+        assert_eq!(post.sha256.as_deref(), Some(sha256_of(&post.body).as_str()));
+        assert_eq!(report["sha256"].as_str(), post.sha256.as_deref());
+        let entries = generative_icons::weight::read_zip(&post.body).unwrap();
+        assert!(entries.iter().any(|e| e.name == "source/generative-icons/icons/alarm-clock.icon.json"));
+        assert_eq!(log.iter().filter(|r| r.path == "/api/v1/jobs/job-1").count(), 2);
+    }
+
+    // Without --wait, the links are the answer; the job is not followed.
+    let quick = run_with(&app, &["submit", "alarm-clock", "--endpoint", &endpoint, "--format", "text"], &token);
+    assert_eq!(quick.code, 0, "{quick:?}");
+    assert!(quick.stdout.contains(&format!("Submitted alarm-clock to the community: {base}/?job=job-1")), "{quick:?}");
+    assert_eq!(received.lock().unwrap().iter().filter(|r| r.path == "/api/v1/jobs/job-1").count(), 2);
+
+    // The community's refusals keep their message: an expired sign-in asks for a login.
+    let (base, _) = community((401, r#"{"error":{"code":"SIGN_IN_REQUIRED","message":"The LottieFiles sign-in sent can't be used: it has expired."}}"#));
+    let refused = run_with(&app, &["submit", "alarm-clock", "--endpoint", &format!("{base}/api/v1/submissions")], &token);
+    let error = refused.fails(4, "NOT_LOGGED_IN");
+    assert!(error["message"].as_str().unwrap().contains("it has expired"), "{error}");
+    let (base, _) = community((429, r#"{"error":{"code":"QUOTA","message":"That would go past your 10 icons for today (10 used). More tomorrow."}}"#));
+    let limited = run_with(&app, &["submit", "alarm-clock", "--endpoint", &format!("{base}/api/v1/submissions")], &token);
+    assert!(limited.error()["message"].as_str().unwrap().contains("10 icons for today"), "{limited:?}");
+    assert_eq!(limited.error()["code"], "RATE_LIMITED");
+}
+
 fn sha256_of(bytes: &[u8]) -> String {
     gai_core::sha256_hex(bytes)
 }

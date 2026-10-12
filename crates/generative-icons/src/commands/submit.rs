@@ -1,5 +1,12 @@
-//! `submit`: bundles local icons for review by the library maintainers and sends the
-//! bundle to the submissions endpoint, or with `--dry-run` only writes it.
+//! `submit`: bundles local icons and sends them to the Generative Icons community, or with
+//! `--dry-run` only writes the bundle.
+//!
+//! The community (generativeicons.com, `POST /api/v1/submissions`) takes spec icons
+//! (`<id>.icon.json`): it checks the signed-in account with the engine access token sent with
+//! the bundle, builds each icon again from its spec, reviews it as it reviews the icons it
+//! generates, and publishes what passes as a community icon, marked unreviewed until the
+//! maintainers review it. The answer names a job per icon; `--wait` follows them until each is
+//! published or says why not. v1 icons (batches) are bundled with `--dry-run` only.
 //!
 //! The bundle is a deterministic ZIP (stored entries, 1980-01-01 timestamps, names in
 //! bytewise order, mode 0644) holding the icon source, each icon's build (assets,
@@ -65,13 +72,19 @@ use std::io::Write as _;
 use std::path::{Path, PathBuf};
 use std::time::Duration;
 
-/// Where submissions go unless `--endpoint` says otherwise.
-pub const DEFAULT_ENDPOINT: &str = "https://generativeicons.lottiefiles.com/api/submissions";
+/// Where submissions go unless `--endpoint` says otherwise: the Generative Icons community.
+pub const DEFAULT_ENDPOINT: &str = "https://generativeicons.com/api/v1/submissions";
+/// How long the access token sent with a submission must still last: the community builds the
+/// icons with it when the account has no website sign-in, and starts at once.
+const TOKEN_VALIDITY_SECS: u64 = 240;
+/// How long `--wait` follows the icons, and how often it asks.
+const WAIT_LIMIT: Duration = Duration::from_secs(20 * 60);
+const POLL_EVERY: Duration = Duration::from_secs(3);
 /// Folder and file suffixes of source evidence that may be bundled.
 const EVIDENCE_SUFFIXES: [&str; 4] = [".md", ".json", ".png", ".webp"];
 /// Path components that never enter a bundle.
 const PRIVATE: [&str; 3] = [".local", "wip", "unreleased"];
-/// Largest submissions response read (it is `{submissionId, status, reviewUrl}`).
+/// Largest submissions or job response read (`{submissionId, status, reviewUrl, jobs}`, `{job}`).
 const MAX_RESPONSE: u64 = 1 << 20;
 
 /// What a submission bundles before its review sheets, checks and `submission.json`.
@@ -94,6 +107,14 @@ pub fn run(ctx: &Context, args: &SubmitArgs) -> Result<Report> {
     let mut warnings = Vec::new();
     let gathered = match spec_icons(root, &set, &ids)? {
         true => gather_v2(root, &set, &ids)?,
+        // The community builds icons from their specs; batches are only bundled.
+        false if !args.dry_run => {
+            return Err(CliError::usage(format!(
+                "The community takes spec icons (<id>.icon.json), and {} written as batches",
+                if ids.len() == 1 { format!("{} is", ids[0]) } else { "these are".into() }
+            ))
+            .with_hint("Bundle them with --dry-run --output bundle.zip to share the file instead"));
+        }
         false => gather(ctx, &set, &ids, args, &mut warnings)?,
     };
     finish(ctx, args, &ids, gathered, warnings)
@@ -267,7 +288,7 @@ fn finish(
     args: &SubmitArgs,
     ids: &[String],
     gathered: Gathered,
-    warnings: Vec<String>,
+    mut warnings: Vec<String>,
 ) -> Result<Report> {
     let root = ctx.cwd.as_path();
     let Gathered { mut files, builds, checks, format } = gathered;
@@ -344,13 +365,41 @@ fn finish(
             bundle.len()
         );
     } else {
-        let received = send(ctx, args, &bundle, &sha)?;
+        let mut received = send(ctx, args, &bundle, &sha)?;
+        let jobs: Vec<Value> = received.get("jobs").and_then(Value::as_array).cloned().unwrap_or_default();
         let _ = writeln!(
             text,
-            "Submitted {} for review: {}.",
+            "Submitted {} to the community: {}",
             ids.join(", "),
             received.get("reviewUrl").and_then(Value::as_str).unwrap_or("received")
         );
+        if jobs.len() > 1 {
+            for job in &jobs {
+                let _ = writeln!(text, "  {}: {}", str_of(job, "icon"), str_of(job, "url"));
+            }
+        }
+        if args.wait && !jobs.is_empty() {
+            let followed = follow(ctx, &jobs)?;
+            for job in &followed {
+                let icon = str_of(job, "icon");
+                match job.get("status").and_then(Value::as_str) {
+                    Some("built") => {
+                        let _ = writeln!(text, "{icon}: published at {} (unreviewed until a maintainer reviews it)", str_of(job, "page"));
+                    }
+                    Some(status @ ("queued" | "running")) => {
+                        let _ = writeln!(text, "{icon}: still {status} after {} minutes: {}", WAIT_LIMIT.as_secs() / 60, str_of(job, "url"));
+                        warnings.push(format!("{icon} was still {status} when --wait stopped following it"));
+                    }
+                    _ => {
+                        let _ = writeln!(text, "{icon}: not published: {} ({})", str_of(job, "message"), str_of(job, "url"));
+                        warnings.push(format!("{icon} was not published: {}", str_of(job, "message")));
+                    }
+                }
+            }
+            if let Value::Object(map) = &mut received {
+                map.insert("jobs".into(), Value::Array(followed));
+            }
+        }
         if let Value::Object(map) = &mut value {
             for (key, field) in received.as_object().into_iter().flatten() {
                 map.insert(key.clone(), field.clone());
@@ -373,6 +422,10 @@ fn send(ctx: &Context, args: &SubmitArgs, bundle: &[u8], sha: &str) -> Result<Va
     crate::library::require_secure_url(endpoint, "submissions")?;
     let config = engine::config(ctx)?;
     engine::require_session(&config)?;
+    // The community checks the account with it (and builds with it when the account has no
+    // website sign-in); it is sent only to this endpoint, over https unless it is loopback.
+    let token = gai_engine::fresh_access_token(&config, TOKEN_VALIDITY_SECS).map_err(engine::error)?;
+    let authorization = format!("Bearer {token}");
     let network = |detail: String| {
         CliError::new(ErrorCode::Network, format!("Cannot submit to {endpoint}: {detail}"))
             .with_hint("Retry later, or keep the bundle with --dry-run --output bundle.zip")
@@ -381,16 +434,122 @@ fn send(ctx: &Context, args: &SubmitArgs, bundle: &[u8], sha: &str) -> Result<Va
     // than loopback, nor from https to http.
     let body = gai_engine::Downloader::new(Duration::from_secs(120))
         .and_then(|client| {
-            client.post(endpoint, "application/zip", &[("X-Bundle-Sha256", sha)], bundle.to_vec(), MAX_RESPONSE)
+            client.post(
+                endpoint,
+                "application/zip",
+                &[("X-Bundle-Sha256", sha), ("Authorization", authorization.as_str())],
+                bundle.to_vec(),
+                MAX_RESPONSE,
+            )
         })
-        .map_err(|error| network(error.to_string()))?;
+        .map_err(|error| refused(endpoint, error).unwrap_or_else(|error| network(error.to_string())))?;
     let received: Value =
         serde_json::from_slice(&body).map_err(|error| network(format!("unexpected response: {error}")))?;
     let mut result = Map::new();
-    for key in ["submissionId", "status", "reviewUrl"] {
+    for key in ["submissionId", "status", "reviewUrl", "jobs"] {
         result.insert(key.into(), received.get(key).cloned().unwrap_or(Value::Null));
     }
     Ok(Value::Object(result))
+}
+
+/// The community's own refusal (`{error: {code, message}}`), as the CLI error it means; any other
+/// failure is given back.
+fn refused(endpoint: &str, error: gai_engine::Error) -> std::result::Result<CliError, gai_engine::Error> {
+    let gai_engine::Error::Http { status, body, .. } = &error else { return Err(error) };
+    let Some(answer) = serde_json::from_str::<Value>(body).ok() else { return Err(error) };
+    let code = answer.pointer("/error/code").and_then(Value::as_str).unwrap_or_default();
+    let message = answer.pointer("/error/message").and_then(Value::as_str).unwrap_or("refused").to_string();
+    let message = format!("The community refused the submission ({status}): {message}");
+    Ok(match (status, code) {
+        (401, _) => CliError::new(ErrorCode::NotLoggedIn, message).with_hint(engine::LOGIN_HINT),
+        (429, _) => CliError::new(ErrorCode::RateLimited, message).with_hint("Submit again tomorrow, or when the limit resets"),
+        _ => CliError::new(ErrorCode::Network, message).with_hint(format!("Nothing was published by {endpoint}")),
+    })
+}
+
+/// A text field of a JSON object, or "".
+fn str_of<'a>(value: &'a Value, key: &str) -> &'a str {
+    value.get(key).and_then(Value::as_str).unwrap_or_default()
+}
+
+/// Follows each submitted icon's job (`GET` its `api` URL) until it is published or stops, for at
+/// most WAIT_LIMIT. → `{ id, icon, url, status, page?, communityId?, message?, code?, quality?,
+/// diagnostics? }` per icon, in order. The steps show with `--verbose` as they change.
+fn follow(ctx: &Context, jobs: &[Value]) -> Result<Vec<Value>> {
+    let client = gai_engine::Downloader::new(Duration::from_secs(30)).map_err(engine::error)?;
+    let started = std::time::Instant::now();
+    let mut results: Vec<Value> = jobs
+        .iter()
+        .map(|job| json!({ "id": job["id"], "icon": job["icon"], "url": job["url"], "status": "queued" }))
+        .collect();
+    let mut seen: Vec<String> = vec![String::new(); jobs.len()];
+    loop {
+        let mut live = false;
+        for (i, job) in jobs.iter().enumerate() {
+            if !matches!(results[i]["status"].as_str(), Some("queued" | "running")) {
+                continue;
+            }
+            let Some(api) = job.get("api").and_then(Value::as_str) else {
+                results[i]["status"] = json!("unknown");
+                results[i]["message"] = json!("the community named no job to follow");
+                continue;
+            };
+            crate::library::require_secure_url(api, "job")?;
+            // A failed request is retried on the next round, until the time runs out.
+            let body = match client.get(api, MAX_RESPONSE) {
+                Ok(Some(body)) => body,
+                Ok(None) => {
+                    results[i]["status"] = json!("unknown");
+                    results[i]["message"] = json!("the community has no such job");
+                    continue;
+                }
+                Err(_) => {
+                    live = true;
+                    continue;
+                }
+            };
+            let Ok(answer) = serde_json::from_slice::<Value>(&body) else {
+                live = true;
+                continue;
+            };
+            let state = &answer["job"];
+            let status = state["status"].as_str().unwrap_or("running");
+            results[i]["status"] = json!(status);
+            match status {
+                "queued" | "running" => {
+                    live = true;
+                    let step = state["step"].as_str().unwrap_or("queued").to_string();
+                    if seen[i] != step {
+                        ctx.out.log(&format!("{}: {step}", str_of(job, "icon")));
+                        seen[i] = step;
+                    }
+                }
+                "built" if state["removed"] == true => {
+                    results[i]["status"] = json!("removed");
+                    results[i]["message"] = json!("published, then removed by a maintainer");
+                }
+                "built" => {
+                    results[i]["page"] = state["icon"]["page"].clone();
+                    results[i]["communityId"] = state["icon"]["id"].clone();
+                }
+                _ => {
+                    let message = state.pointer("/error/message").and_then(Value::as_str).unwrap_or(status);
+                    results[i]["message"] = json!(message);
+                    // What the reviewer saw (a `QUALITY` refusal), or the findings of the check
+                    // and build here, to fix the icon by.
+                    for key in ["code", "quality", "diagnostics"] {
+                        if let Some(field) = state["error"].get(key) {
+                            results[i][key] = field.clone();
+                        }
+                    }
+                }
+            }
+        }
+        if !live || started.elapsed() >= WAIT_LIMIT {
+            return Ok(results);
+        }
+        std::thread::sleep(POLL_EVERY);
+    }
 }
 
 /// Writes a new file; an existing one is `EXISTS`.

@@ -57,11 +57,11 @@ generative-icons preview mailbox                        # contact sheets the age
 
 **`draft` and `build` need a LottieFiles sign-in.** Native Lottie export runs on LottieFiles' hosted engine, so run `generative-icons login` once in your terminal. `draft` and `build` send the icon's spec (its shapes and motion) to the engine; your app's code stays on your machine. The hosted engine is internal until launch, so building may not work for your account yet. Searching, installing, `check` and `preview` need no sign-in.
 
-Icons you create stay in your project. To offer one to the library, `generative-icons submit <id>` sends the verified build for review. See [creating icons](docs/creating-icons.md).
+Icons you create stay in your project. To share one, `generative-icons submit <id>` publishes it in the [community](https://generativeicons.com/community/), where maintainers review it. See [creating icons](docs/creating-icons.md).
 
 ## Before launch
 
-The npm packages, the hosted library behind `search` and `add`, and the submission service go live at launch. Until then, build the CLI from this repository (see [development](docs/development.md)), build the packages in the checkout with `generative-icons library packages`, and point the CLI at it with `--library <checkout>`. Details: [known limitations](docs/limitations.md).
+The npm packages and the hosted library behind `search` and `add` go live at launch. Until then, build the CLI from this repository (see [development](docs/development.md)), build the packages in the checkout with `generative-icons library packages`, and point the CLI at it with `--library <checkout>`. Details: [known limitations](docs/limitations.md).
 
 ## Documentation
 

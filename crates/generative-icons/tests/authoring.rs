@@ -374,8 +374,8 @@ fn a_local_icon_builds_to_the_library_bytes() {
     }
 
     // An import the scan cannot trace makes the icon depend on every module its build
-    // loaded, another icon's batch included: a real submit refuses before sending anything,
-    // and --include-untraced bundles them all.
+    // loaded, another icon's batch included: the bundle is refused, and --include-untraced
+    // bundles them all. Batch icons are never sent: the community takes spec icons only.
     write(app, &batch_path, format!("{}const lazy = name => import(name);\n", read(app, &batch_path)));
     let report = build_with(&ctx(app, &repo), &args, &replay, None).unwrap();
     assert!(!report.failed, "{}", report.text);
@@ -387,10 +387,13 @@ fn a_local_icon_builds_to_the_library_bytes() {
     let endpoint = format!("http://{}/api/submissions", listener.local_addr().unwrap());
     let submit = ["submit", LOCAL, "--endpoint", &endpoint, "--library-root", &repo_arg];
     let refused = run_with(app, &submit, &[("GAI_ENGINE_TOKEN", "token")]);
-    let error = refused.fails(1, "CHECK_FAILED");
+    let error = refused.fails(2, "USAGE");
+    assert!(error["message"].as_str().unwrap().contains("The community takes spec icons"), "{error}");
+    assert!(listener.accept().is_err(), "the submission was sent");
+    let traced = ["submit", LOCAL, "--dry-run", "--output", "five.zip", "--library-root", &repo_arg];
+    let error = run(app, &traced).fails(1, "CHECK_FAILED");
     let message = error["message"].as_str().unwrap();
     assert!(message.contains("could not be traced") && message.ends_with("batches/zz-other.mjs"), "{error}");
-    assert!(listener.accept().is_err(), "the submission was sent");
     let untraced =
         ["submit", LOCAL, "--dry-run", "--include-untraced", "--output", "five.zip", "--library-root", &repo_arg];
     let included = run(app, &untraced);

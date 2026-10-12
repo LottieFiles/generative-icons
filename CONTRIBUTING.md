@@ -16,10 +16,10 @@ Create and build the icon in your project, then:
 
 ```sh
 generative-icons submit <id> --license MIT --dry-run --output bundle.zip   # inspect what would be sent
-generative-icons submit <id> --license MIT
+generative-icons submit <id> --license MIT --wait                          # publish it in the community
 ```
 
-Only verified builds of the current source are accepted, and every submission is reviewed before it joins the library. The submission service opens at launch.
+Only verified builds of the current source are accepted. The [community](https://generativeicons.com/community/) builds each icon again from its spec, checks it the way it checks the icons it generates, and publishes it as unreviewed until a maintainer reviews it. Spec icons (`<id>.icon.json`) can be submitted; icons written as batches can only be bundled with `--dry-run`.
 
 ## Add or revise a library set
 

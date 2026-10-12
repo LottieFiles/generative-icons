@@ -11,7 +11,7 @@ Every change lands through a pull request with at least one maintainer approval.
 
 ## Icon contribution
 
-Icons reach the library in two ways: a pull request that adds or revises a set in this repository, or a `generative-icons submit` from an app (the submission service opens at launch). Every one is reviewed.
+Icons reach the library in two ways: a pull request that adds or revises a set in this repository, or a `generative-icons submit` from an app. Every one is reviewed. A submitted icon is built again from its spec, checked like the icons generated on the website and published in the community marked unreviewed; maintainers review it at generativeicons.com/review/, where they approve or hide it.
 
 1. The contributor opens a PR from the template with the set's source, its build and its evidence, or a submission arrives.
 2. CI is green.
