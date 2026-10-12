@@ -3,14 +3,14 @@
   "format": "gai-icon/2",
   "id": "active-speaker",
   "label": "Active speaker",
-  "intent": "A participant speaks and is shown as the active speaker. Light: the head bobs once as the person says a word, and the voice arcs on both sides of the head ripple outward and fade while a fresh pair swells in behind them. Strong: two words, the second louder: the head bobs twice, the second deeper, and two ripples of voice arcs travel out, the second further. The shoulders never move.",
+  "intent": "A participant speaks and is shown as the active speaker. Light: the head bobs as the person says a word and the voice arcs on both sides push out with it, then snap back with a small rebound; as they snap back a wider, shorter ripple carries on outward and fades. Strong: two words, the second louder: the head bobs twice, the second deeper, the arcs push out twice, the second further, and each word sends a ripple out. The shoulders never move.",
   "parts": {
     "shoulders": {"shape": {"path": "M8 26.5 C8 22.7 11.4 20.5 16 20.5 C20.6 20.5 24 22.7 24 26.5"}},
     "head":      {"shape": {"circle": [[16, 11.5], 3.8]}, "role": "surface", "solid": "fill"},
-    "arc-r":     {"//": "the voice: one arc each side of the head at rest", "shape": {"arc": [[16, 11.5], 8.5, -34, 34]}},
+    "arc-r":     {"//": "the voice: one arc each side of the head; it pushes out with each word and snaps back", "shape": {"arc": [[16, 11.5], 8.5, -34, 34]}},
     "arc-l":     {"mirror": {"of": "arc-r"}},
-    "echo-r":    {"//": "hidden at rest: the next arc, swelling in behind the one that leaves; it hands back to arc-r at rest", "shape": {"arc": [[16, 11.5], 8.5, -34, 34]}, "hidden": true},
-    "echo-l":    {"mirror": {"of": "echo-r"}}
+    "ripple-r":  {"//": "hidden at rest: the sound leaving, a wider and shorter arc than the voice; at r 12.4 to 13.2 its Bold ink stays 1.4 inside the right edge", "shape": {"arc": [[16, 11.5], 12.4, -18, 18]}, "hidden": true},
+    "ripple-l":  {"mirror": {"of": "ripple-r"}}
   },
   "rigs": {
     "head": {"//": "the head bobs about the neck", "pivot": [16, 15.3], "carries": ["head"]}
@@ -21,24 +21,20 @@
       "strong": [[0, 0], [0.06, 0.7, "out"], [0.14, -0.2], [0.22, 0], [0.3, 0], [0.37, 1.2, "out"], [0.47, -0.4], [0.58, 0]]
     },
     "arc-r.r": {
-      "light":  [[0, 0], [0.04, 0], [0.26, 2.4, "out"], [0.27, 0, "step"]],
-      "strong": [[0, 0], [0.04, 0], [0.24, 2, "out"], [0.25, 0, "step"], [0.31, 0], [0.33, 0], [0.55, 2.6, "out"], [0.56, 0, "step"]]
-    },
-    "arc-r.opacity": {
-      "light":  [[0, 1], [0.08, 1], [0.26, 0, "in"], [0.36, 0], [0.37, 1, "step"]],
-      "strong": [[0, 1], [0.08, 1], [0.24, 0, "in"], [0.31, 0], [0.32, 1, "step"], [0.37, 1], [0.55, 0, "in"], [0.66, 0], [0.67, 1, "step"]]
-    },
-    "echo-r.r": {
-      "light":  [[0, 0], [0.12, 0], [0.13, -1.5, "step"], [0.36, 0, "out"]],
-      "strong": [[0, 0], [0.1, 0], [0.11, -1.5, "step"], [0.31, 0, "out"], [0.41, 0], [0.42, -1.5, "step"], [0.66, 0, "out"]]
-    },
-    "echo-r.opacity": {
-      "light":  [[0, 0], [0.13, 0], [0.3, 1, "out"], [0.36, 1], [0.37, 0, "step"]],
-      "strong": [[0, 0], [0.11, 0], [0.26, 1, "out"], [0.31, 1], [0.32, 0, "step"], [0.42, 0], [0.58, 1, "out"], [0.66, 1], [0.67, 0, "step"]]
+      "//": "the word pushes the voice out; the return is quicker, past rest and back",
+      "light":  [[0, 0], [0.03, 0], [0.15, 2, "out"], [0.21, -0.4], [0.29, 0]],
+      "strong": [[0, 0], [0.03, 0], [0.13, 1.4, "out"], [0.19, -0.3], [0.25, 0], [0.32, 0], [0.45, 2.6, "out"], [0.51, -0.55], [0.59, 0.15], [0.66, 0]]
     },
     "arc-l.r": {"follow": "arc-r.r"},
-    "arc-l.opacity": {"follow": "arc-r.opacity"},
-    "echo-l.r": {"follow": "echo-r.r"},
-    "echo-l.opacity": {"follow": "echo-r.opacity"}
+    "ripple-r.opacity": {
+      "light":  [[0, 0], [0.15, 0], [0.18, 1, "out"], [0.22, 1], [0.34, 0, "in"]],
+      "strong": [[0, 0], [0.13, 0], [0.16, 0.8, "out"], [0.19, 0.8], [0.29, 0, "in"], [0.45, 0], [0.48, 1, "out"], [0.52, 1], [0.66, 0, "in"]]
+    },
+    "ripple-r.r": {
+      "light":  [[0, 0], [0.15, 0], [0.34, 0.8, "out"], [0.35, 0, "step"]],
+      "strong": [[0, 0], [0.13, 0], [0.29, 0.6, "out"], [0.3, 0, "step"], [0.45, 0], [0.66, 0.9, "out"], [0.67, 0, "step"]]
+    },
+    "ripple-l.opacity": {"follow": "ripple-r.opacity"},
+    "ripple-l.r": {"follow": "ripple-r.r"}
   }
 }

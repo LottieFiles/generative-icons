@@ -3,10 +3,11 @@
   "format": "gai-icon/2",
   "id": "snowflake",
   "label": "Snowflake",
-  "intent": "Snow falls. Light: the flake drops away, tumbling, and fades while the next flake fades in above it and floats down into its place, swaying on the way, and lands softly with one small swing. Strong: the flake drops away tumbling harder, and the next one drifts down along a side-to-side path, is lifted once by the air and sways twice before it settles into place. Both flakes stay rigid.",
-  "preview": {"light": [0, 0.06, 0.12, 0.2, 0.26, 0.32, 0.4, 0.52], "strong": [0, 0.08, 0.14, 0.22, 0.32, 0.45, 0.56, 0.7]},
+  "cycle": 60,
+  "intent": "Snow falls. Light: the flake drops and drifts a little as it turns a sixth, while snow dots fall past it in the corners, faster than it; the air catches it, lifts it back into its place and it settles, a sixth turned (the same drawing). Strong: a gust: the flake lifts first, then drops further and drifts further as it turns two sixths, more snow falls past it, and it is caught and settles in two beats. The flake stays rigid.",
+  "preview": {"light": [0, 0.08, 0.14, 0.2, 0.26, 0.32, 0.38, 0.5], "strong": [0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.5, 0.66]},
   "parts": {
-    "flake-arms": {"//": "v1's three arms as one layer and its six branches as another, so a fade shows almost no overlaps",
+    "flake-arms": {"//": "v1's three arms as one layer and its six branches as another",
       "shape": [
         {"line": [[26.5, 16], [5.5, 16]]},
         {"line": [[21.25, 25.093], [10.75, 6.907]]},
@@ -18,57 +19,62 @@
         {"polyline": [[8.66, 18.155], [10.6, 16], [8.66, 13.845]]},
         {"polyline": [[10.463, 10.721], [13.3, 11.323], [14.196, 8.565]]},
         {"polyline": [[17.804, 8.565], [18.7, 11.323], [21.537, 10.721]]}]},
-    "next-arms": {"//": "hidden at rest: the next flake of the snowfall, the same drawing; it hands back to the flake at rest, where the two are identical",
-      "shape": [
-        {"line": [[26.5, 16], [5.5, 16]]},
-        {"line": [[21.25, 25.093], [10.75, 6.907]]},
-        {"line": [[10.75, 25.093], [21.25, 6.907]]}],
-      "hidden": true},
-    "next-branches": {"shape": [
-        {"polyline": [[23.34, 13.845], [21.4, 16], [23.34, 18.155]]},
-        {"polyline": [[21.537, 21.279], [18.7, 20.677], [17.804, 23.435]]},
-        {"polyline": [[14.196, 23.435], [13.3, 20.677], [10.463, 21.279]]},
-        {"polyline": [[8.66, 18.155], [10.6, 16], [8.66, 13.845]]},
-        {"polyline": [[10.463, 10.721], [13.3, 11.323], [14.196, 8.565]]},
-        {"polyline": [[17.804, 8.565], [18.7, 11.323], [21.537, 10.721]]}],
-      "hidden": true}
+    "dot-a": {"//": "hidden at rest: snow falling past, in the corners clear of the flake's reach (11.75 at Bold)", "shape": {"circle": [[5, 3.2], 1.4]}, "role": "fill", "hidden": true},
+    "dot-b": {"shape": {"circle": [[26.2, 3.4], 1.4]}, "role": "fill", "hidden": true},
+    "dot-c": {"shape": {"circle": [[3.9, 22.2], 1.4]}, "role": "fill", "hidden": true}
   },
   "rigs": {
-    "flake": {"//": "rigid, about its centre; the reach (11.75 at Bold) caps any shift at 2.8", "pivot": [16, 16], "carries": ["flake-arms", "flake-branches"]},
-    "next": {"pivot": [16, 16], "carries": ["next-arms", "next-branches"]}
+    "flake": {"//": "rigid, about its centre; a sixth turn ends on the same drawing", "pivot": [16, 16], "carries": ["flake-arms", "flake-branches"]}
   },
   "motion": {
-    "flake.y": {
-      "//": "falls 2.8 and fades out, then returns to rest unseen",
-      "light":  [[0, 0], [0.1667, 2.8, "in"], [0.18, 0, "step"]],
-      "strong": [[0, 0], [0.15, 2.8, "in"], [0.1667, 0, "step"]]
-    },
     "flake.rotate": {
-      "light":  [[0, 0], [0.1667, 16, "in"], [0.18, 0, "step"]],
-      "strong": [[0, 0], [0.15, 24, "in"], [0.1667, 0, "step"]]
+      "light":  [[0, 0], [0.04, 0], [0.34, 63, "inOut"], [0.44, 60]],
+      "strong": [[0, 0], [0.04, -4, "out"], [0.12, -4], [0.46, 124, "inOut"], [0.56, 118], [0.64, 120]]
     },
-    "next.y": {
-      "//": "starts 2.8 above and floats down (Strong: the air lifts it once on the way)",
-      "light":  [[0, 0], [0.12, -2.8, "step"], [0.1333, -2.8], [0.46, 0, "out"]],
-      "strong": [[0, 0], [0.1, -2.8, "step"], [0.1167, -2.8], [0.27, -0.9, "out"], [0.37, -1.3], [0.62, 0, "out"]]
+    "flake.y": {
+      "//": "it drops faster and faster, the air catches it and lifts it back, quicker",
+      "light":  [[0, 0], [0.04, 0], [0.24, 1.8, "in"], [0.34, -0.3], [0.44, 0]],
+      "strong": [[0, 0], [0.04, -0.5, "out"], [0.12, -0.5], [0.3, 2.4, "in"], [0.42, -0.45], [0.52, 0.15], [0.62, 0]]
     },
-    "next.x": {
-      "strong": [[0, 0], [0.1, -1.4, "step"], [0.1167, -1.4], [0.25, 1, "out"], [0.38, -0.5], [0.51, 0.2], [0.62, 0]]
+    "flake.x": {
+      "light":  [[0, 0], [0.04, 0], [0.24, 0.7], [0.44, 0]],
+      "strong": [[0, 0], [0.12, 0], [0.3, 1.3], [0.46, -0.2], [0.62, 0]]
     },
-    "next.rotate": {
-      "light":  [[0, 0], [0.12, -24, "step"], [0.1333, -24], [0.3, 8, "out"], [0.39, -3], [0.46, 0]],
-      "strong": [[0, 0], [0.1, -30, "step"], [0.1167, -30], [0.25, 12, "out"], [0.38, -6], [0.51, 2.5], [0.62, 0]]
+    "dot-a.opacity": {
+      "light":  [[0, 0], [0.06, 0], [0.1, 1, "out"], [0.22, 1], [0.3, 0, "in"]],
+      "strong": [[0, 0], [0.1, 0], [0.13, 1, "out"], [0.23, 1], [0.29, 0, "in"], [0.36, 0], [0.39, 1, "out"], [0.48, 1], [0.54, 0, "in"]]
     },
-    "flake-arms.opacity": {
-      "//": "the flakes overlap for two frames only, both faint, so the snowfall never leaves an empty frame; shown again in the frame the next flake, landed on the same pixels, is hidden",
-      "light":  [[0, 1], [0.05, 1], [0.1667, 0, "in"], [0.46, 0], [0.47, 1, "step"]],
-      "strong": [[0, 1], [0.0333, 1], [0.15, 0, "in"], [0.62, 0], [0.63, 1, "step"]]
+    "dot-a.y": {
+      "light":  [[0, 0], [0.06, 0], [0.3, 5.5, "in"], [0.31, 0, "step"]],
+      "strong": [[0, 0], [0.1, 0], [0.29, 6, "in"], [0.3, 0, "step"], [0.36, 0], [0.54, 6, "in"], [0.55, 0, "step"]]
     },
-    "flake-branches.opacity": {"follow": "flake-arms.opacity"},
-    "next-arms.opacity": {
-      "light":  [[0, 0], [0.1333, 0], [0.25, 1, "out"], [0.46, 1], [0.47, 0, "step"]],
-      "strong": [[0, 0], [0.1167, 0], [0.2333, 1, "out"], [0.62, 1], [0.63, 0, "step"]]
+    "dot-a.x": {
+      "light":  [[0, 0], [0.06, 0], [0.3, 0.8], [0.31, 0, "step"]],
+      "strong": [[0, 0], [0.1, 0], [0.29, 1.2], [0.3, 0, "step"], [0.36, 0], [0.54, 1.2], [0.55, 0, "step"]]
     },
-    "next-branches.opacity": {"follow": "next-arms.opacity"}
+    "dot-b.opacity": {
+      "light":  [[0, 0], [0.12, 0], [0.16, 1, "out"], [0.28, 1], [0.36, 0, "in"]],
+      "strong": [[0, 0], [0.16, 0], [0.19, 1, "out"], [0.3, 1], [0.36, 0, "in"], [0.42, 0], [0.45, 1, "out"], [0.54, 1], [0.6, 0, "in"]]
+    },
+    "dot-b.y": {
+      "light":  [[0, 0], [0.12, 0], [0.36, 4.5, "in"], [0.37, 0, "step"]],
+      "strong": [[0, 0], [0.16, 0], [0.36, 4.8, "in"], [0.37, 0, "step"], [0.42, 0], [0.6, 4.8, "in"], [0.61, 0, "step"]]
+    },
+    "dot-b.x": {
+      "light":  [[0, 0], [0.12, 0], [0.36, 0.6], [0.37, 0, "step"]],
+      "strong": [[0, 0], [0.16, 0], [0.36, 1], [0.37, 0, "step"], [0.42, 0], [0.6, 1], [0.61, 0, "step"]]
+    },
+    "dot-c.opacity": {
+      "light":  [[0, 0], [0.18, 0], [0.22, 1, "out"], [0.34, 1], [0.42, 0, "in"]],
+      "strong": [[0, 0], [0.22, 0], [0.25, 1, "out"], [0.36, 1], [0.44, 0, "in"]]
+    },
+    "dot-c.y": {
+      "light":  [[0, 0], [0.18, 0], [0.42, 4.6, "in"], [0.43, 0, "step"]],
+      "strong": [[0, 0], [0.22, 0], [0.44, 6, "in"], [0.45, 0, "step"]]
+    },
+    "dot-c.x": {
+      "light":  [[0, 0], [0.18, 0], [0.42, 0.6], [0.43, 0, "step"]],
+      "strong": [[0, 0], [0.22, 0], [0.44, 0.9], [0.45, 0, "step"]]
+    }
   }
 }

@@ -3,43 +3,328 @@
   "format": "gai-icon/2",
   "id": "gradient-step",
   "label": "Gradient step",
-  "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is back at the top for the next step, the lower block fading out as the top one fades in. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each. The stairs never move.",
+  "intent": "The parameter takes one step downhill. Light: the gradient vector thrusts along its direction and springs back, and the parameter block hops down one stair, landing on the next tread with a hit and a small rebound; then it is carried back up in one quick straight glide and set down on the top tread. Strong: the vector winds back and thrusts harder, and the block hops down two stairs, landing on each, before a quick glide carries it home while the vector ducks back out of its way. The stairs never move.",
   "parts": {
-    "vector-head": {"shape": {"polyline": [[19.8, 12.5], [24, 12.5], [24, 8.3]]}},
-    "vector":      {"shape": {"line": [[17, 5.5], [24, 12.5]]}},
-    "parameter":   {"shape": {"rect": [5, 4.5, 6, 5.5], "r": 1.2}, "role": "surface"},
-    "stairs":      {"shape": {"polyline": [[5, 10], [11, 10], [11, 17], [18, 17], [18, 24], [27, 24]]}},
-    "stepper": {
-      "//": "hidden at rest: the parameter while it hops; it swaps in on the parameter's exact pixels, so the swap is invisible",
-      "shape": {"rect": [5, 4.5, 6, 5.5], "r": 1.2}, "role": "surface", "hidden": true
+    "vector-head": {
+      "shape": {
+        "polyline": [
+          [
+            19.8,
+            12.5
+          ],
+          [
+            24,
+            12.5
+          ],
+          [
+            24,
+            8.3
+          ]
+        ]
+      }
+    },
+    "vector": {
+      "shape": {
+        "line": [
+          [
+            17,
+            5.5
+          ],
+          [
+            24,
+            12.5
+          ]
+        ]
+      }
+    },
+    "parameter": {
+      "shape": {
+        "rect": [
+          5,
+          4.5,
+          6,
+          5.5
+        ],
+        "r": 1.2
+      },
+      "role": "surface"
+    },
+    "stairs": {
+      "shape": {
+        "polyline": [
+          [
+            5,
+            10
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            11,
+            17
+          ],
+          [
+            18,
+            17
+          ],
+          [
+            18,
+            24
+          ],
+          [
+            27,
+            24
+          ]
+        ]
+      }
     }
   },
   "rigs": {
-    "arrow":   {"//": "the vector and its head thrust together along the diagonal", "pivot": [20.5, 9], "carries": ["vector", "vector-head"]},
-    "stepper": {"pivot": [8, 10]}
+    "arrow": {
+      "//": "the vector and its head thrust together along the diagonal",
+      "pivot": [
+        20.5,
+        9
+      ],
+      "carries": [
+        "vector",
+        "vector-head"
+      ]
+    },
+    "parameter": {
+      "pivot": [
+        8,
+        10
+      ]
+    }
   },
   "motion": {
+    "//": "Each landing sets the block against the next riser: (6, 7), then (13, 14). The way back is one straight glide in front of the stairs, in about half the time of the hops, lifting 0.4 over the top tread and setting down on it. In Strong the vector ducks back along its own line while the block passes under its head.",
     "arrow.x": {
-      "light":  [[0, 0], [0.08, 1.5, "out"], [0.2, 0, "inOut"]],
-      "strong": [[0, 0], [0.08, -0.8, "out"], [0.16, 2.2, "out"], [0.3, 0, "inOut"]]
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          1.5,
+          "out"
+        ],
+        [
+          0.2,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.8,
+          "out"
+        ],
+        [
+          0.16,
+          2.2,
+          "out"
+        ],
+        [
+          0.3,
+          0,
+          "inOut"
+        ],
+        [
+          0.36,
+          0
+        ],
+        [
+          0.42,
+          1.6,
+          "out"
+        ],
+        [
+          0.53,
+          0,
+          "inOut"
+        ],
+        [
+          0.62,
+          0
+        ],
+        [
+          0.68,
+          -2.0,
+          "out"
+        ],
+        [
+          0.79,
+          0,
+          "inOut"
+        ]
+      ]
     },
-    "arrow.y": {"follow": "arrow.x"},
-    "parameter.opacity": {
-      "light":  [[0, 1], [0.06, 1], [0.07, 0, "step"], [0.36, 0], [0.48, 1, "inOut"]],
-      "strong": [[0, 1], [0.11, 1], [0.12, 0, "step"], [0.6, 0], [0.72, 1, "inOut"]]
+    "arrow.y": {
+      "follow": "arrow.x"
     },
-    "stepper.opacity": {
-      "light":  [[0, 0], [0.06, 0], [0.07, 1, "step"], [0.36, 1], [0.48, 0, "inOut"]],
-      "strong": [[0, 0], [0.11, 0], [0.12, 1, "step"], [0.6, 1], [0.72, 0, "inOut"]]
+    "parameter.x": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.07,
+          0
+        ],
+        [
+          0.28,
+          6,
+          "inOut"
+        ],
+        [
+          0.36,
+          6
+        ],
+        [
+          0.46,
+          0,
+          "inOut"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          0
+        ],
+        [
+          0.3,
+          6,
+          "inOut"
+        ],
+        [
+          0.36,
+          6
+        ],
+        [
+          0.54,
+          13,
+          "inOut"
+        ],
+        [
+          0.62,
+          13
+        ],
+        [
+          0.76,
+          0,
+          "inOut"
+        ]
+      ]
     },
-    "stepper.x": {
-      "//": "each landing sets the block against the next riser: (6, 7), then (13, 14); it stays clear of the vector",
-      "light":  [[0, 0], [0.07, 0], [0.28, 6, "inOut"], [0.49, 0, "step"]],
-      "strong": [[0, 0], [0.12, 0], [0.3, 6, "inOut"], [0.36, 6], [0.54, 13, "inOut"], [0.73, 0, "step"]]
-    },
-    "stepper.y": {
-      "light":  [[0, 0], [0.07, 0], [0.14, -1.2, "out"], [0.28, 7, "hit"], [0.33, 6.6, "out"], [0.38, 7], [0.49, 0, "step"]],
-      "strong": [[0, 0], [0.12, 0], [0.19, -1.2, "out"], [0.3, 7, "hit"], [0.36, 7], [0.43, 5.8, "out"], [0.54, 14, "hit"], [0.59, 13.5, "out"], [0.64, 14], [0.73, 0, "step"]]
+    "parameter.y": {
+      "light": [
+        [
+          0,
+          0
+        ],
+        [
+          0.07,
+          0
+        ],
+        [
+          0.14,
+          -1.2,
+          "out"
+        ],
+        [
+          0.28,
+          7,
+          "hit"
+        ],
+        [
+          0.32,
+          6.6,
+          "out"
+        ],
+        [
+          0.36,
+          7,
+          "inOut"
+        ],
+        [
+          0.45,
+          -0.4,
+          "inOut"
+        ],
+        [
+          0.5,
+          0,
+          "hit"
+        ]
+      ],
+      "strong": [
+        [
+          0,
+          0
+        ],
+        [
+          0.12,
+          0
+        ],
+        [
+          0.19,
+          -1.2,
+          "out"
+        ],
+        [
+          0.3,
+          7,
+          "hit"
+        ],
+        [
+          0.36,
+          7
+        ],
+        [
+          0.43,
+          5.8,
+          "out"
+        ],
+        [
+          0.54,
+          14,
+          "hit"
+        ],
+        [
+          0.58,
+          13.5,
+          "out"
+        ],
+        [
+          0.62,
+          14,
+          "inOut"
+        ],
+        [
+          0.75,
+          -0.4,
+          "inOut"
+        ],
+        [
+          0.8,
+          0,
+          "hit"
+        ]
+      ]
     }
   }
 }
