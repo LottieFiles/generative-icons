@@ -488,15 +488,13 @@ fn parse_theme(value: &str) -> Result<Theme, String> {
     }
 }
 
-/// Licenses a submission can be offered under.
+/// Licenses a submission can be offered under: MIT only, since community icons are MIT
+/// licensed like the library (the community refuses any other).
 #[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
 pub enum License {
     /// The library's own license.
     #[value(name = "MIT")]
     Mit,
-    /// Creative Commons Attribution 4.0.
-    #[value(name = "CC-BY-4.0")]
-    CcBy4,
 }
 
 impl License {
@@ -504,7 +502,6 @@ impl License {
     pub fn as_str(self) -> &'static str {
         match self {
             Self::Mit => "MIT",
-            Self::CcBy4 => "CC-BY-4.0",
         }
     }
 }
@@ -524,7 +521,7 @@ pub struct SubmitArgs {
     /// A note for the reviewers
     #[arg(long)]
     pub message: Option<String>,
-    /// License offered for the icons
+    /// License of the icons: MIT, like the library and every community icon
     #[arg(long, value_enum, default_value_t = License::Mit)]
     pub license: License,
     /// Submit icons whose imports cannot be traced (an import of a computed name, or an
