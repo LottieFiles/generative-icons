@@ -27,10 +27,16 @@ use crate::normalize::{NativeLottie, normalize_native};
 
 /// The engine's maximum script run time.
 const SCRIPT_TIMEOUT_MS: u64 = 30_000;
-/// Default prefix of the v2 document ids: `<prefix>-1`, `<prefix>-2`, …
-pub const DOCUMENT_PREFIX: &str = "gen-animated-icons-v2";
+/// Default prefix of the v2 document ids: `<prefix>-1`, `<prefix>-2`, … (was
+/// `gen-animated-icons-v2` until engine 0.4.1 could no longer save those; see UNSAVABLE).
+pub const DOCUMENT_PREFIX: &str = "generative-icons-v2";
 /// Polls of `creator_download_file` while a file is still encoding (Lottie is ready at once).
 const MAX_ENCODING_POLLS: u32 = 10;
+/// The engine's error for a document it can no longer save: under engine 0.4.1, removing a
+/// composition 0.4.0 wrote fails it, so every run that clears such a document does, while the
+/// same script runs on a fresh document. The engine resets a document only with an interactive
+/// confirmation, so a run that meets it moves to a fresh document.
+const UNSAVABLE: &str = "snapshot serialization failed";
 
 /// What one script run returned.
 #[derive(Debug, Clone)]
@@ -94,8 +100,10 @@ impl PlanRunner {
     }
 
     fn run_on(&self, document: &str, code: &str, params: Value) -> Result<Run> {
-        let arguments = json!({"code": code, "documentId": document, "params": params, "timeoutMs": SCRIPT_TIMEOUT_MS});
+        let mut document = document.to_owned();
+        let mut arguments = json!({"code": code, "documentId": document, "params": params, "timeoutMs": SCRIPT_TIMEOUT_MS});
         let mut attempt = 1;
+        let mut moved = false;
         loop {
             let sent = SystemTime::now();
             let started = Instant::now();
@@ -103,6 +111,13 @@ impl PlanRunner {
                 Err(Error::Tool { retryable: true, .. }) if attempt < self.retry.attempts => {
                     thread::sleep(http::backoff(&self.retry, attempt, None));
                     attempt += 1;
+                }
+                // A document the engine can no longer save: run once more on a fresh one.
+                Err(Error::Tool { message, .. }) if !moved && message.contains(UNSAVABLE) => {
+                    let nonce = getrandom::u32().map_err(|e| Error::Io(std::io::Error::other(e.to_string())))?;
+                    document = format!("{document}-{nonce:08x}");
+                    arguments["documentId"] = json!(document);
+                    moved = true;
                 }
                 Err(error) => return Err(error),
                 Ok(output) => {
@@ -112,7 +127,7 @@ impl PlanRunner {
                         result: payload.get("result").cloned().unwrap_or(Value::Null),
                         revision: payload.get("revision").cloned().unwrap_or(Value::Null),
                         images: output.images,
-                        document: document.to_owned(),
+                        document,
                         round_trip,
                         sent,
                     });
@@ -144,9 +159,10 @@ impl PlanRunner {
             return Err(Error::InvalidExport(format!("the bundle export returned {stored}")));
         }
         let started = Instant::now();
-        let fetched = self.fetch(document.id(), &file);
+        // The script's document: the pool's, or the fresh one a run moved to.
+        let fetched = self.fetch(&run.document, &file);
         // The engine expires files by itself; a failed delete must not fail the export.
-        let _ = self.client.call_tool("creator_delete_file", json!({"file": file, "documentId": document.id()}));
+        let _ = self.client.call_tool("creator_delete_file", json!({"file": file, "documentId": run.document}));
         let download = started.elapsed();
         let hosted = fetched?;
         if let Some(reported) = stored.get("bytes").and_then(Value::as_u64).filter(|&n| n != hosted.len() as u64) {
@@ -158,7 +174,7 @@ impl PlanRunner {
             "engine": self.engine,
             "server": {"name": server.name, "version": server.version},
             "protocolVersion": server.protocol_version,
-            "documentId": document.id(),
+            "documentId": run.document,
             "documentRevision": run.revision,
         });
         let animations = animations_from_bundle(&hosted, motions, code, plan_sha256, origin)?;

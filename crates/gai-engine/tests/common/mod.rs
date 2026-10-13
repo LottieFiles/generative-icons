@@ -66,6 +66,9 @@ pub struct EngineState {
     pub document_overlaps: usize,
     pub deleted: Vec<String>,
     pub hosted_body: String,
+    /// Documents the engine can no longer save; with `all_unsavable`, every one.
+    pub unsavable: HashSet<String>,
+    pub all_unsavable: bool,
 }
 
 #[derive(Clone)]
@@ -270,6 +273,13 @@ impl Mcp {
             .to_owned();
         match name {
             // Spec v2: one plan script per icon; `file` stores the bundle, `sheet` attaches PNGs.
+            "creator_exec" if state.all_unsavable || state.unsavable.contains(&doc) => {
+                state.documents_used.insert(doc.clone());
+                (
+                    true,
+                    json!({"error": {"code": "internal_error", "message": "snapshot serialization failed: serialization failed: Serde Serialization Error", "retryable": false}}),
+                )
+            }
             "creator_exec" if args.pointer("/params/plan").is_some() => {
                 assert_eq!(args["timeoutMs"], 30000);
                 state.documents_used.insert(doc.clone());
