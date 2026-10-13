@@ -420,7 +420,8 @@ struct Received {
 
 /// A fake Generative Icons community on loopback: `POST /api/v1/submissions` answers as
 /// `answer` says (a status and JSON body, `{base}` replaced by its address), and
-/// `GET /api/v1/jobs/<id>` reports the job running once, then published.
+/// `GET /api/v1/jobs/job-1` reports the job running once, then published, and `job-2` refused by
+/// the reviewer.
 fn community(answer: (u16, &'static str)) -> (String, std::sync::Arc<std::sync::Mutex<Vec<Received>>>) {
     use std::io::{BufRead, BufReader, Read, Write};
     let listener = std::net::TcpListener::bind("127.0.0.1:0").unwrap();
@@ -462,6 +463,12 @@ fn community(answer: (u16, &'static str)) -> (String, std::sync::Arc<std::sync::
                             "icon": { "id": "alarm-clock-x1", "page": format!("{origin}/community/alarm-clock-x1/") } }),
                     };
                     (200, json!({ "job": job }).to_string())
+                }
+                ("GET", "/api/v1/jobs/job-2") => {
+                    let quality = json!({ "guess": "alarm clock", "clarity": 5, "kind": "nudge", "matches": "guess",
+                        "happens": "The alarm clock stays almost perfectly still." });
+                    let error = json!({ "code": "QUALITY", "message": "The reviewer couldn't read it clearly enough to publish.", "quality": quality });
+                    (200, json!({ "job": { "id": "job-2", "status": "failed", "step": "reviewing", "error": error } }).to_string())
                 }
                 _ => (404, "{}".to_string()),
             };
@@ -514,6 +521,19 @@ fn submit_sends_a_spec_icon_to_the_community_and_follows_it() {
     assert_eq!(quick.code, 0, "{quick:?}");
     assert!(quick.stdout.contains(&format!("Submitted alarm-clock to the community: {base}/?job=job-1")), "{quick:?}");
     assert_eq!(received.lock().unwrap().iter().filter(|r| r.path == "/api/v1/jobs/job-1").count(), 2);
+
+    // An icon the reviewer refused fails the run, with what the reviewer saw.
+    let refused = r#"{"submissionId":"sub-2","status":"queued","reviewUrl":"{base}/?job=job-2",
+        "jobs":[{"id":"job-2","icon":"alarm-clock","status":"queued","url":"{base}/?job=job-2","api":"{base}/api/v1/jobs/job-2"}]}"#;
+    let (base, _) = community((202, refused));
+    let args = ["submit", "alarm-clock", "--endpoint", &format!("{base}/api/v1/submissions"), "--wait", "--format", "text"];
+    let unpublished = run_with(&app, &args, &token);
+    assert_eq!(unpublished.code, 1, "{unpublished:?}");
+    assert!(unpublished.stdout.contains("alarm-clock: not published: The reviewer couldn't read it clearly enough to publish."), "{unpublished:?}");
+    assert!(
+        unpublished.stdout.contains("saw: alarm clock, clarity 5 of 5, motion too slight to read as an event. The alarm clock stays almost perfectly still."),
+        "{unpublished:?}"
+    );
 
     // The community's refusals keep their message: an expired sign-in asks for a login.
     let (base, _) = community((401, r#"{"error":{"code":"SIGN_IN_REQUIRED","message":"The LottieFiles sign-in sent can't be used: it has expired."}}"#));

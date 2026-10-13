@@ -288,7 +288,7 @@ fn finish(
     args: &SubmitArgs,
     ids: &[String],
     gathered: Gathered,
-    mut warnings: Vec<String>,
+    warnings: Vec<String>,
 ) -> Result<Report> {
     let root = ctx.cwd.as_path();
     let Gathered { mut files, builds, checks, format } = gathered;
@@ -353,6 +353,7 @@ fn finish(
     let output_text = output.as_ref().map(|path| super::preview::relative(root, path));
     let mut value = json!({ "ids": ids, "dryRun": args.dry_run, "bundle": output_text, "sha256": sha, "bytes": bundle.len(), "files": files.len(), "license": args.license.as_str(), "regenerated": regenerated });
     let mut text = String::new();
+    let mut unpublished = false;
     if !regenerated.is_empty() {
         let _ = writeln!(text, "Rendered review sheets again from the verified builds: {}", regenerated.join(", "));
     }
@@ -385,16 +386,23 @@ fn finish(
                 match job.get("status").and_then(Value::as_str) {
                     Some("built") => {
                         let _ = writeln!(text, "{icon}: published at {} (unreviewed until a maintainer reviews it)", str_of(job, "page"));
+                        continue;
                     }
                     Some(status @ ("queued" | "running")) => {
                         let _ = writeln!(text, "{icon}: still {status} after {} minutes: {}", WAIT_LIMIT.as_secs() / 60, str_of(job, "url"));
-                        warnings.push(format!("{icon} was still {status} when --wait stopped following it"));
                     }
                     _ => {
                         let _ = writeln!(text, "{icon}: not published: {} ({})", str_of(job, "message"), str_of(job, "url"));
-                        warnings.push(format!("{icon} was not published: {}", str_of(job, "message")));
+                        if let Some(seen) = reviewer_saw(&job["quality"]) {
+                            let _ = writeln!(text, "  The reviewer, not told what it is, saw: {seen}");
+                        }
+                        for finding in job["diagnostics"].as_array().into_iter().flatten() {
+                            let _ = writeln!(text, "  {}", finding.as_str().map_or_else(|| finding.to_string(), str::to_string));
+                        }
                     }
                 }
+                // Not published (yet): an agent waiting on it sees the run fail.
+                unpublished = true;
             }
             if let Value::Object(map) = &mut received {
                 map.insert("jobs".into(), Value::Array(followed));
@@ -409,7 +417,25 @@ fn finish(
     if let Some(path) = &output_text {
         let _ = writeln!(text, "Bundle: {path}");
     }
-    Ok(Report { warnings, ..Report::new(value, text) })
+    Ok(Report { warnings, failed: unpublished, ..Report::new(value, text) })
+}
+
+/// What the blind reviewer made of an icon it refused (`{guess, clarity, kind, happens}`), in
+/// a line: "alarm clock, clarity 5 of 5, motion too slight to read as an event. The alarm clock
+/// stays almost perfectly still."
+fn reviewer_saw(quality: &Value) -> Option<String> {
+    let guess = quality.get("guess").and_then(Value::as_str)?;
+    let mut seen = guess.to_string();
+    if let Some(clarity) = quality.get("clarity").and_then(Value::as_u64) {
+        let _ = write!(seen, ", clarity {clarity} of 5");
+    }
+    if quality.get("kind").and_then(Value::as_str) == Some("nudge") {
+        seen.push_str(", motion too slight to read as an event");
+    }
+    if let Some(happens) = quality.get("happens").and_then(Value::as_str) {
+        let _ = write!(seen, ". {happens}");
+    }
+    Some(seen)
 }
 
 /// POSTs the bundle; the response must be `{submissionId, status, reviewUrl}`.
