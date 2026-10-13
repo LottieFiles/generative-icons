@@ -63,6 +63,32 @@ fn a_bundle_export_is_one_call_one_file_split_per_motion() {
 }
 
 #[test]
+fn a_document_the_engine_can_no_longer_save_is_left_for_a_fresh_one() {
+    let engine = MockEngine::start(BUNDLE);
+    let home = tempfile::tempdir().unwrap();
+    let runner = PlanRunner::new(&signed_in(&engine, home.path()), "en-test-v2").unwrap();
+    engine.state.lock().unsavable.insert("en-test-v2-1".into());
+    // The export runs, downloads and deletes on the fresh document.
+    let motions = ["x".to_string(), "x-strong".to_string()];
+    let bundle = runner.export_bundle("// v2 script", json!({"plan": {"id": "x"}}), "x", &motions, "planhash").unwrap();
+    let fresh = bundle.run.document.clone();
+    assert!(fresh.starts_with("en-test-v2-1-") && fresh.len() == "en-test-v2-1-".len() + 8, "{fresh}");
+    assert_eq!(bundle.animations[0].provenance["documentId"], fresh);
+    let state = engine.state.lock();
+    assert_eq!(state.tool_calls, ["creator_exec", "creator_exec", "creator_download_file", "creator_delete_file"]);
+    assert!(state.files.keys().all(|(doc, _)| *doc == fresh));
+    drop(state);
+    // When the fresh one fails too, the error is reported; it moves only once.
+    let mut state = engine.state.lock();
+    state.all_unsavable = true;
+    state.tool_calls.clear();
+    drop(state);
+    let error = runner.draft("// v2 script", json!({"plan": {"id": "x"}, "sheet": {"rows": []}})).unwrap_err();
+    assert!(error.to_string().contains("snapshot serialization failed"), "{error}");
+    assert_eq!(engine.state.lock().tool_calls, ["creator_exec", "creator_exec"]);
+}
+
+#[test]
 fn a_bundle_missing_a_motion_fails() {
     let engine = MockEngine::start(BUNDLE);
     let home = tempfile::tempdir().unwrap();

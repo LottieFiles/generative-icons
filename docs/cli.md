@@ -99,7 +99,7 @@ The hosted library goes live at launch. Until then, pass `--library` with a chec
 | `GEN_ANIMATED_ICONS_CACHE_DIR` | Download cache (default: the OS cache folder's `generative-icons`) |
 | `GEN_ANIMATED_ICONS_SUBMIT_URL` | Same as `submit --endpoint` |
 | `GEN_ANIMATED_ICONS_BINARY` | Makes the npm shim run this binary instead |
-| `GEN_ANIMATED_ICONS_V2_DOCUMENTS` | Prefix of the engine documents spec v2 drafts and builds use (default `gen-animated-icons-v2`) |
+| `GEN_ANIMATED_ICONS_V2_DOCUMENTS` | Prefix of the engine documents spec v2 drafts and builds use (default `generative-icons-v2`) |
 
 ## Maintainer commands
 
