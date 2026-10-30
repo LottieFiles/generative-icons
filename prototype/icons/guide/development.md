@@ -50,7 +50,7 @@ npm run check:docs       # links, publication hygiene, retired names and guide h
 
 ## Author and build a library set
 
-New sets go through the CLI. Building exports on the hosted engine, so sign in first with `generative-icons login`; the hosted engine is internal until launch.
+New sets go through the CLI. Building exports on Creator MCP, LottieFiles' hosted engine, so sign in first with `generative-icons login`.
 
 ```sh
 generative-icons library new-set landscaping --name "Landscaping"

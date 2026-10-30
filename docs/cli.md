@@ -41,12 +41,12 @@ Before the first release, build the binary from this repository ([development](d
 | `preview <id>` | Renders a built, installed or library icon to PNG contact sheets (`--motion`, `--animation`, `--times`, `--frames`, `--styles`, `--weights`, `--themes`, `--cell`, `--out`) |
 | `export <id>` | Writes a built, installed or library icon as an animated SVG that browsers play without a player (SMIL): `--motion`, `--style`, `--weight`, `--color` (`currentColor` unless you pass a hex value), `--trigger auto\|hover\|click\|toggle\|loop\|load\|js` (`auto`: `toggle` for stateful icons, `loop` for loaders, `hover` otherwise), `--state` (a stateful icon's first state), `--size`, `--id-prefix`, and `--out <file>` (without it the SVG is printed, or returned as `svg` in JSON). `hover`, `click`, `toggle` and `js` need an inline `<svg>`; an `<img>` plays only `loop` and `load`. See [Animated SVG](using-packages.md#animated-svg). |
 | `submit <id…>` | Publishes verified spec icons in the [community](https://generativeicons.com/community/) (`--message`; needs a sign-in). Community icons are MIT licensed, like the library (`--license MIT`, the default). The community builds each one again from its spec, checks it as it checks the icons it generates, and lists what passes as unreviewed until a maintainer reviews it. It answers with a link per icon; `--wait` follows them and prints each icon's page, or why it was not published (what the reviewer saw, or what failed), and exits 1 when one was not. Up to 5 icons at a time, within the daily limit shared with generations on the website. The bundle holds each icon's spec, its verified build and its two review sheets (regenerated if they are missing or edited). Batch icons are bundled only (`--dry-run`): their bundle holds the verified build snapshot and only the modules it imports, and icons with untraceable imports are refused unless you pass `--include-untraced`. `--dry-run --output bundle.zip` only writes the bundle. |
-| `login`, `logout`, `whoami` | Signs in to the hosted engine, signs out, and shows the account and whether the session is verified |
+| `login`, `logout`, `whoami` | Signs in to Creator MCP, signs out, and shows the account and whether the session is verified |
 | `mcp` | Serves `search`, `add`, `context`, `create`, `check`, `draft`, `build`, `preview` and `export` as MCP tools over stdio |
 
 ## Sign-in and the hosted engine
 
-`build` exports native Lottie on LottieFiles' hosted engine, so it needs a LottieFiles sign-in. The hosted engine is internal until launch, so building may not work for your account yet. Every other app command works without signing in.
+`draft` and `build` run on [Creator MCP](https://lottiefiles.com/mcp), LottieFiles' hosted engine, at `https://creator-mcp.lottiefiles.com/mcp`, so they need a LottieFiles sign-in. Every other app command works without signing in.
 
 - `generative-icons login` opens the browser. `--no-browser` prints the sign-in address and reads the redirect address from stdin; that mode is automatic in CI and over SSH.
 - The refresh token is kept in the OS keychain, or in a `0600` credentials file where no keychain is available. The credentials folder is the OS config folder's `generative-icons` (override with `GEN_ANIMATED_ICONS_HOME`).
@@ -93,7 +93,7 @@ The hosted library goes live at launch. Until then, pass `--library` with a chec
 | --- | --- |
 | `GEN_ANIMATED_ICONS_LIBRARY` | Same as `--library` |
 | `GAI_LIBRARY_ROOT` | Same as `--library-root`: the checkout for maintainer commands |
-| `GEN_ANIMATED_ICONS_ENGINE_URL` | Same as `--engine-url`. Otherwise `GAI_ENGINE_URL`, then the config's `engine.url` (LottieFiles engines only), then the default engine. |
+| `GEN_ANIMATED_ICONS_ENGINE_URL` | Same as `--engine-url`. Otherwise `GAI_ENGINE_URL`, then the config's `engine.url` (LottieFiles engines only), then Creator MCP (`https://creator-mcp.lottiefiles.com/mcp`). |
 | `GAI_ENGINE_TOKEN` | A short-lived access token used instead of the stored sign-in, for automation. It is sent only to the `GAI_ENGINE_URL` engine or a LottieFiles engine. |
 | `GEN_ANIMATED_ICONS_HOME` | Folder for the credentials file and refresh lock |
 | `GEN_ANIMATED_ICONS_CACHE_DIR` | Download cache (default: the OS cache folder's `generative-icons`) |

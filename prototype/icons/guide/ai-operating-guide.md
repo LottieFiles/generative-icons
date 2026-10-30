@@ -13,7 +13,7 @@ In an app, `npx generative-icons init` installs the generative-icons agent skill
 3. Fill in the task brief below and follow the workflow in the first source section.
 4. Write each icon as a spec: `generative-icons create <id>`, then `check`, `draft`, `build` and `preview`. In the library repository, build it in a scratch project and add it with `generative-icons library adopt SET-ID --add <build>` (`create <library-id> --replace` and `library adopt` reanimate one), then `library verify` and `verify-visual`; a new set starts with `library new-set` and ends with `register`.
 
-Building exports native Lottie on LottieFiles' hosted engine, so it needs a LottieFiles sign-in (`generative-icons login`). The hosted engine is internal until launch.
+Building exports native Lottie on Creator MCP, LottieFiles' hosted engine, so it needs a LottieFiles sign-in (`generative-icons login`).
 
 ## Task brief
 
@@ -54,7 +54,7 @@ Run everything from the repository root with the `generative-icons` CLI (build i
 8. **Register** a new set: `generative-icons library register SET-ID` after its first complete verification.
 9. **Finish:** `generative-icons library packages`, `npm test` and `cargo test --workspace` (new icons change the pinned catalog counts; see [crates/README.md](https://github.com/LottieFiles/generative-icons/blob/main/crates/README.md)), then open a pull request.
 
-**Building needs the user's LottieFiles sign-in.** Export runs on LottieFiles' hosted engine, which is internal until launch. On `NOT_LOGGED_IN` or `SESSION_EXPIRED`, ask the user to run `generative-icons login` in their terminal; never sign in yourself. Meanwhile complete the source checks (`check` for specs, `library preflight` for JS batches) and report the native gates as not run.
+**Building needs the user's LottieFiles sign-in.** Export runs on Creator MCP, LottieFiles' hosted engine. On `NOT_LOGGED_IN` or `SESSION_EXPIRED`, ask the user to run `generative-icons login` in their terminal; never sign in yourself. Meanwhile complete the source checks (`check` for specs, `library preflight` for JS batches) and report the native gates as not run.
 
 ## Scope and roles
 
@@ -321,7 +321,7 @@ The engine's Lottie export of the `definitions.mjs` sets writes motion as sample
 - **Profiles:** each `.lottie` holds a Light animation (`<name>`) and a Strong one (`<name>-strong`), with `dark` and `light` themes.
 - **Slots:** `color.primary` plus the five style slots (`style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`) and the `style.outline.width` stroke-width token bound to every Regular outline stroke, which switch weight and style at runtime.
 - **Features:** shape layers and path animation. Solid cut-outs (counters and knockouts) use subtract masks, and an inverted alpha matte when the cut-out moves, draws on or fades; the compiler adds both from the spec. No expressions, effects, precomps, image or text layers.
-- **Authoring:** don't hand-write Lottie JSON. Author the icon's source with the authoring kit, build it with `generative-icons` (which exports on LottieFiles' hosted engine) and run its verification (see [creating icons](https://github.com/LottieFiles/generative-icons/blob/main/docs/creating-icons.md)).
+- **Authoring:** don't hand-write Lottie JSON. Author the icon's source with the authoring kit, build it with `generative-icons` (which exports on Creator MCP, LottieFiles' hosted engine) and run its verification (see [creating icons](https://github.com/LottieFiles/generative-icons/blob/main/docs/creating-icons.md)).
 
 ## Accessibility & Reduced Motion
 
@@ -517,7 +517,7 @@ These were verified across Weather, Health & Fitness, Smart Home, Education and 
 
 # Author an icon as a spec
 
-A v2 icon is one JSON file, `generative-icons/icons/<id>.icon.json`, with `"format": "gai-icon/2"`. It is data: shapes, roles, rigs and eased keys. Nothing in it is a function of time, so there is no pose math to write and no SVG to hand-build. The hosted engine builds every motion from it in one call: native shapes, rigs chained by layer parenting, eased keys, masks, mattes, trims and markers. `create` writes one by default. v1 JS batches (`create <id> --batch`, `batches/*.mjs`) keep working for what a spec cannot express yet (the last section); a command takes the spec path only when every icon it names has a spec.
+A v2 icon is one JSON file, `generative-icons/icons/<id>.icon.json`, with `"format": "gai-icon/2"`. It is data: shapes, roles, rigs and eased keys. Nothing in it is a function of time, so there is no pose math to write and no SVG to hand-build. Creator MCP, LottieFiles' hosted engine, builds every motion from it in one call: native shapes, rigs chained by layer parenting, eased keys, masks, mattes, trims and markers. `create` writes one by default. v1 JS batches (`create <id> --batch`, `batches/*.mjs`) keep working for what a spec cannot express yet (the last section); a command takes the spec path only when every icon it names has a spec.
 
 ```sh
 generative-icons create <id>            # a starter spec that checks clean
@@ -1201,7 +1201,7 @@ npm run check:docs       # links, publication hygiene, retired names and guide h
 
 ## Author and build a library set
 
-New sets go through the CLI. Building exports on the hosted engine, so sign in first with `generative-icons login`; the hosted engine is internal until launch.
+New sets go through the CLI. Building exports on Creator MCP, LottieFiles' hosted engine, so sign in first with `generative-icons login`.
 
 ```sh
 generative-icons library new-set landscaping --name "Landscaping"

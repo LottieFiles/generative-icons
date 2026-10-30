@@ -1,10 +1,10 @@
 # Create an icon
 
-When the library has no icon for your meaning, your coding AI can create one in your own project with the `generative-icons` CLI. You can also write it yourself; the rules and checks are the same either way. A new icon is a spec: a JSON file of shapes, roles, rigs and eased keys, which the hosted engine exports as native Lottie in one call. It is verified and installed beside the library icons you use.
+When the library has no icon for your meaning, your coding AI can create one in your own project with the `generative-icons` CLI. You can also write it yourself; the rules and checks are the same either way. A new icon is a spec: a JSON file of shapes, roles, rigs and eased keys, which Creator MCP, LottieFiles' hosted engine, exports as native Lottie in one call. It is verified and installed beside the library icons you use.
 
-**You need a LottieFiles sign-in to build.** Export runs on LottieFiles' hosted engine. Run `generative-icons login` once in your terminal; agents never sign in for you. Everything up to `build`, and `preview` of library icons, works without signing in.
+**You need a LottieFiles sign-in to build.** Export runs on [Creator MCP](https://lottiefiles.com/mcp), so run `generative-icons login` once in your terminal; agents never sign in for you. Everything up to `build`, and `preview` of library icons, works without signing in.
 
-**Before launch:** the npm package behind `npx generative-icons` and the hosted library behind `search` go live at launch, and the hosted engine is internal until then, so these steps don't work for every account yet. [Known limitations](limitations.md) has the details.
+**Before launch:** the npm package behind `npx generative-icons` and the hosted library behind `search` go live at launch. Until then, build the CLI from the repository and pass `--library` with a built checkout; [known limitations](limitations.md) has the details.
 
 ## 1. Set up the project
 
