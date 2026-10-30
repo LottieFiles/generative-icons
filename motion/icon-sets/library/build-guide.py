@@ -33,7 +33,7 @@ In an app, `npx generative-icons init` installs the generative-icons agent skill
 3. Fill in the task brief below and follow the workflow in the first source section.
 4. Write each icon as a spec: `generative-icons create <id>`, then `check`, `draft`, `build` and `preview`. In the library repository, build it in a scratch project and add it with `generative-icons library adopt SET-ID --add <build>` (`create <library-id> --replace` and `library adopt` reanimate one), then `library verify` and `verify-visual`; a new set starts with `library new-set` and ends with `register`.
 
-Building exports native Lottie on LottieFiles' hosted engine, so it needs a LottieFiles sign-in (`generative-icons login`). The hosted engine is internal until launch.
+Building exports native Lottie on Creator MCP, LottieFiles' hosted engine, so it needs a LottieFiles sign-in (`generative-icons login`).
 
 ## Task brief
 

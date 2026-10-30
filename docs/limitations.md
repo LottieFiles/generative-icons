@@ -2,7 +2,7 @@
 
 ## Creating icons needs a LottieFiles sign-in
 
-`generative-icons build` exports native Lottie on LottieFiles' hosted engine, so it needs a sign-in (`generative-icons login`). The hosted engine is internal until launch, so building may not work for your account yet. Sign-in uses the browser, or a pasted redirect address with `--no-browser`; there is no API key or device code for unattended machines yet. Searching, installing, checking and previewing need no sign-in, and existing icons, the packages and the local gallery work without one.
+`generative-icons draft` and `build` run on Creator MCP, LottieFiles' hosted engine, so they need a sign-in (`generative-icons login`). Sign-in uses the browser, or a pasted redirect address with `--no-browser`; there is no API key or device code for unattended machines yet. Searching, installing, checking and previewing need no sign-in, and existing icons, the packages and the local gallery work without one.
 
 ## Before launch
 

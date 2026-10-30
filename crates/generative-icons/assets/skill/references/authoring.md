@@ -11,7 +11,7 @@ An icon is a spec by default ([authoring-v2.md](authoring-v2.md)). For what a sp
 | `set-config.json` | The set's `id` and `name` (composition names use the name) |
 | `evidence/design-review.md` | Your design notes |
 
-`build` evaluates the definitions, samples each action at 60 fps, exports native Lottie on the hosted engine, packages the `.lottie`, verifies it and installs it. Its intermediates live in `.generative-icons/build/<id>/`, its review sheets in `.generative-icons/previews/<id>/` (where `preview` also writes, unless you pass `--out`), with a snapshot of every source module it was built from (listed in `sources.snapshot.json`).
+`build` evaluates the definitions, samples each action at 60 fps, exports native Lottie on Creator MCP (LottieFiles' hosted engine), packages the `.lottie`, verifies it and installs it. Its intermediates live in `.generative-icons/build/<id>/`, its review sheets in `.generative-icons/previews/<id>/` (where `preview` also writes, unless you pass `--out`), with a snapshot of every source module it was built from (listed in `sources.snapshot.json`).
 
 Import helpers by plain string specifiers (`import {nudge} from './shared/nudge.mjs'`). An `import()` of a computed name, or an escape such as `\x2f` in a specifier, hides which modules the icon depends on: its build then depends on every module the definitions load, other icons' batches included, so editing any of them makes it stale, and `submit` refuses it unless the user passes `--include-untraced`. `check` and `build` warn `UNTRACED_IMPORTS` before any export, naming the import as written, its file and line.
 

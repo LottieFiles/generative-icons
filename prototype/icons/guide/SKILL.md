@@ -21,7 +21,7 @@ Run everything from the repository root with the `generative-icons` CLI (build i
 8. **Register** a new set: `generative-icons library register SET-ID` after its first complete verification.
 9. **Finish:** `generative-icons library packages`, `npm test` and `cargo test --workspace` (new icons change the pinned catalog counts; see [crates/README.md](https://github.com/LottieFiles/generative-icons/blob/main/crates/README.md)), then open a pull request.
 
-**Building needs the user's LottieFiles sign-in.** Export runs on LottieFiles' hosted engine, which is internal until launch. On `NOT_LOGGED_IN` or `SESSION_EXPIRED`, ask the user to run `generative-icons login` in their terminal; never sign in yourself. Meanwhile complete the source checks (`check` for specs, `library preflight` for JS batches) and report the native gates as not run.
+**Building needs the user's LottieFiles sign-in.** Export runs on Creator MCP, LottieFiles' hosted engine. On `NOT_LOGGED_IN` or `SESSION_EXPIRED`, ask the user to run `generative-icons login` in their terminal; never sign in yourself. Meanwhile complete the source checks (`check` for specs, `library preflight` for JS batches) and report the native gates as not run.
 
 ## Scope and roles
 

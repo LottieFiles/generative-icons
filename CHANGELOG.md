@@ -8,7 +8,7 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 - `generative-icons`, one binary for macOS and Linux (arm64 and x64) that finds, installs, creates, checks, previews and submits icons in web, iOS and Android apps, run with `npx generative-icons`.
   - `init`, `info`, `search`, `add`, `diff`, `remove` and `doctor` set up an app and manage its icons; iOS (SwiftUI, UIKit) and Android (Compose, Views) apps get `.lottie` assets and JSON descriptors, and `add --bake-weight` bakes an outline weight into native files.
-  - `context`, `create`, `check`, `build` and `preview` let a coding agent create a missing icon in the app's own project with the family's authoring kit. `build` exports on LottieFiles' hosted engine and needs a LottieFiles sign-in (`login`, `logout`, `whoami`).
+  - `context`, `create`, `check`, `build` and `preview` let a coding agent create a missing icon in the app's own project with the family's authoring kit. `build` exports on Creator MCP, LottieFiles' hosted engine, and needs a LottieFiles sign-in (`login`, `logout`, `whoami`).
   - `submit` sends verified local icons for review; `--dry-run` writes the bundle.
   - `mcp` serves the same flow to coding agents as MCP tools.
   - `init` installs the `generative-icons` agent skill for Claude Code (`.claude/skills/`) and other agents (`.agents/skills/`), and `init --migrate` moves a `lottie-icons` project over, or one set up while the CLI was called `gen-animated-icons` (`gen-animated-icons.json`); that one keeps its icon paths.
@@ -31,7 +31,7 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 - MOTION.md allows the subtract masks and inverted alpha mattes that spec v2 Solid cut-outs export; it had listed masks and mattes as denied.
 - Documentation, the maintainer skill and the contribution flow use `generative-icons`. Creating icons no longer needs a clone of this repository.
-- Native export runs only on LottieFiles' hosted engine.
+- Native export runs only on Creator MCP, LottieFiles' hosted engine. The CLI uses its production server, `https://creator-mcp.lottiefiles.com/mcp`, by default. A sign-in made against the earlier development server doesn't carry over: run `generative-icons login` again. `--engine-url` or `GAI_ENGINE_URL` still choose another engine.
 - 414 library icons are reanimated with spec v2: each action now plays an event (something arrives, leaves, draws on or lands) instead of one move there and back. Each icon keeps its earlier drawing at rest, and its animation names are unchanged.
 - 13 icons that swapped their subject for a cross-faded copy now move the one drawing they have, with cues hidden at rest for the cause: active-speaker, api-quota, export-video, face-blowing-a-kiss, freeze-column, gradient-step, grinning-face-with-sweat, insert-row, next-step, schedule-send, snowflake, thumbnail and trackpad. Their rest poses and animation names are unchanged.
 - The AI operating guide now bundles the family's direction (motion principles, the motion system, drawing principles, the polish review), the spec format and the preview review, and its workflow authors specs and adds them with `library adopt`.

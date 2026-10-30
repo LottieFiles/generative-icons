@@ -21,7 +21,7 @@ fn sign_in_state_and_engine_settings() {
     let logout = run(app, &["logout"]).ok();
     assert_eq!(
         logout,
-        json!({"loggedOut": true, "engine": "https://creator.mcp.lottiefiles.dev/mcp", "wasSignedIn": false, "revoked": false})
+        json!({"loggedOut": true, "engine": "https://creator-mcp.lottiefiles.com/mcp", "wasSignedIn": false, "revoked": false})
     );
     run(app, &["whoami", "--engine-url", "http://engine.example/mcp"]).fails(3, "INVALID_CONFIG");
 
@@ -33,9 +33,9 @@ fn sign_in_state_and_engine_settings() {
         json!({"loggedIn": true, "session": "not-verified", "engine": "https://engine.example/mcp", "reason": "offline"})
     );
     // The flag may move it to another LottieFiles engine, but not to another origin.
-    let moved = [&env[..], &[("GEN_ANIMATED_ICONS_ENGINE_URL", "https://creator.mcp.lottiefiles.com/mcp")]].concat();
+    let moved = [&env[..], &[("GEN_ANIMATED_ICONS_ENGINE_URL", "https://creator.mcp.lottiefiles.dev/mcp")]].concat();
     let info = run_with(app, &["info", "--offline"], &moved).ok();
-    assert_eq!(info["auth"]["engine"], "https://creator.mcp.lottiefiles.com/mcp");
+    assert_eq!(info["auth"]["engine"], "https://creator.mcp.lottiefiles.dev/mcp");
     let elsewhere = run_with(app, &["whoami", "--engine-url", "https://other.example/mcp"], &env);
     let error = elsewhere.fails(3, "INVALID_CONFIG");
     assert!(error["message"].as_str().unwrap().contains("GAI_ENGINE_TOKEN"), "{error}");
@@ -46,15 +46,15 @@ fn sign_in_state_and_engine_settings() {
     run(app, &["init"]).ok();
     let original = read(app, "generative-icons.json");
     let with_engine = |url: &str| original.replacen("{\n", &format!("{{\n  \"engine\": {{\"url\": \"{url}\"}},\n"), 1);
-    write(app, "generative-icons.json", with_engine("https://creator.mcp.lottiefiles.com/mcp"));
+    write(app, "generative-icons.json", with_engine("https://creator.mcp.lottiefiles.dev/mcp"));
     let info = run(app, &["info", "--offline"]).ok();
     assert_eq!(
         info["auth"],
-        json!({"loggedIn": false, "session": "signed-out", "engine": "https://creator.mcp.lottiefiles.com/mcp"})
+        json!({"loggedIn": false, "session": "signed-out", "engine": "https://creator.mcp.lottiefiles.dev/mcp"})
     );
     let doctor = run(app, &["doctor", "--offline"]).ok();
     let auth = doctor["checks"].as_array().unwrap().iter().find(|c| c["id"] == "auth").unwrap().clone();
-    assert_eq!(auth["message"], "Not signed in to https://creator.mcp.lottiefiles.com/mcp");
+    assert_eq!(auth["message"], "Not signed in to https://creator.mcp.lottiefiles.dev/mcp");
     assert!(auth["hint"].as_str().unwrap().starts_with("Ask the user to run `generative-icons login`"), "{auth}");
 
     write(app, "generative-icons.json", with_engine("https://project.example/mcp"));

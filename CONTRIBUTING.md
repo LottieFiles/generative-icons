@@ -8,7 +8,7 @@ Thanks for helping grow Generative Icons. Code and library changes arrive as Git
 - **Something broken?** Open a [bug report](https://github.com/LottieFiles/generative-icons/issues/new?template=bug_report.yml) with the icon ID, motion profile, style and steps to reproduce, or the CLI command, its output and `generative-icons --version`.
 - Keep unrelated changes in separate pull requests.
 
-**Building icons needs a LottieFiles sign-in.** Native export runs on LottieFiles' hosted engine (`generative-icons login`). The hosted engine is internal until launch, so building may not work for your account yet. Authoring, the source checks and the test suites work without it.
+**Building icons needs a LottieFiles sign-in.** Native export runs on Creator MCP, LottieFiles' hosted engine; sign in once with `generative-icons login`. Authoring, the source checks and the test suites work without it.
 
 ## Offer an icon from your app
 

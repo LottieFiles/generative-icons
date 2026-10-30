@@ -126,7 +126,7 @@ The engine's Lottie export of the `definitions.mjs` sets writes motion as sample
 - **Profiles:** each `.lottie` holds a Light animation (`<name>`) and a Strong one (`<name>-strong`), with `dark` and `light` themes.
 - **Slots:** `color.primary` plus the five style slots (`style.outline.light`, `style.outline.regular`, `style.outline.bold`, `style.solid`, `style.tint`) and the `style.outline.width` stroke-width token bound to every Regular outline stroke, which switch weight and style at runtime.
 - **Features:** shape layers and path animation. Solid cut-outs (counters and knockouts) use subtract masks, and an inverted alpha matte when the cut-out moves, draws on or fades; the compiler adds both from the spec. No expressions, effects, precomps, image or text layers.
-- **Authoring:** don't hand-write Lottie JSON. Author the icon's source with the authoring kit, build it with `generative-icons` (which exports on LottieFiles' hosted engine) and run its verification (see [creating icons](https://github.com/LottieFiles/generative-icons/blob/main/docs/creating-icons.md)).
+- **Authoring:** don't hand-write Lottie JSON. Author the icon's source with the authoring kit, build it with `generative-icons` (which exports on Creator MCP, LottieFiles' hosted engine) and run its verification (see [creating icons](https://github.com/LottieFiles/generative-icons/blob/main/docs/creating-icons.md)).
 
 ## Accessibility & Reduced Motion
 

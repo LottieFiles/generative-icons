@@ -1,6 +1,6 @@
 # Author an icon as a spec
 
-A v2 icon is one JSON file, `generative-icons/icons/<id>.icon.json`, with `"format": "gai-icon/2"`. It is data: shapes, roles, rigs and eased keys. Nothing in it is a function of time, so there is no pose math to write and no SVG to hand-build. The hosted engine builds every motion from it in one call: native shapes, rigs chained by layer parenting, eased keys, masks, mattes, trims and markers. `create` writes one by default. v1 JS batches (`create <id> --batch`, `batches/*.mjs`) keep working for what a spec cannot express yet (the last section); a command takes the spec path only when every icon it names has a spec.
+A v2 icon is one JSON file, `generative-icons/icons/<id>.icon.json`, with `"format": "gai-icon/2"`. It is data: shapes, roles, rigs and eased keys. Nothing in it is a function of time, so there is no pose math to write and no SVG to hand-build. Creator MCP, LottieFiles' hosted engine, builds every motion from it in one call: native shapes, rigs chained by layer parenting, eased keys, masks, mattes, trims and markers. `create` writes one by default. v1 JS batches (`create <id> --batch`, `batches/*.mjs`) keep working for what a spec cannot express yet (the last section); a command takes the spec path only when every icon it names has a spec.
 
 ```sh
 generative-icons create <id>            # a starter spec that checks clean

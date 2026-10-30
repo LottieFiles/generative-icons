@@ -8,12 +8,14 @@ use url::Url;
 
 use crate::error::{Error, Result};
 
-/// The hosted engine used when nothing else is configured (dev; production is not live yet).
-pub const DEFAULT_ENGINE_URL: &str = "https://creator.mcp.lottiefiles.dev/mcp";
+/// The hosted engine used when nothing else is configured: Creator MCP, LottieFiles' production
+/// server.
+pub const DEFAULT_ENGINE_URL: &str = "https://creator-mcp.lottiefiles.com/mcp";
 /// Hosts of LottieFiles' engines (https on the default port), the only engines a project
-/// config may choose and the ones [`ENGINE_TOKEN_ENV`] may always go to.
+/// config may choose and the ones [`ENGINE_TOKEN_ENV`] may always go to: Creator MCP's
+/// production server and LottieFiles' development server.
 pub const LOTTIEFILES_ENGINE_HOSTS: [&str; 2] =
-    ["creator.mcp.lottiefiles.dev", "creator.mcp.lottiefiles.com"];
+    ["creator-mcp.lottiefiles.com", "creator.mcp.lottiefiles.dev"];
 /// Overrides the engine URL.
 pub const ENGINE_URL_ENV: &str = "GAI_ENGINE_URL";
 /// A bearer token used as-is instead of the stored sign-in (for CI). The engine has no API keys
@@ -284,7 +286,7 @@ mod tests {
 
     #[test]
     fn engine_url_must_be_https_or_loopback() {
-        assert!(EngineConfig::new("https://creator.mcp.lottiefiles.dev/mcp", "/tmp").is_ok());
+        assert!(EngineConfig::new("https://creator-mcp.lottiefiles.com/mcp", "/tmp").is_ok());
         assert!(EngineConfig::new("http://127.0.0.1:9000/mcp", "/tmp").is_ok());
         assert!(EngineConfig::new("http://example.com/mcp", "/tmp").is_err());
         assert!(EngineConfig::new("not a url", "/tmp").is_err());
@@ -319,16 +321,19 @@ mod tests {
     fn only_lottiefiles_engines_are_on_the_allowlist() {
         let lottiefiles = |raw: &str| is_lottiefiles_engine(&Url::parse(raw).unwrap());
         assert!(lottiefiles(DEFAULT_ENGINE_URL));
-        assert!(lottiefiles("https://creator.mcp.lottiefiles.com/mcp"));
-        assert!(lottiefiles("https://creator.mcp.lottiefiles.com:443/mcp"));
-        assert!(!lottiefiles("http://creator.mcp.lottiefiles.com/mcp"));
-        assert!(!lottiefiles("https://creator.mcp.lottiefiles.com:8443/mcp"));
+        assert!(lottiefiles("https://creator-mcp.lottiefiles.com/mcp"));
+        assert!(lottiefiles("https://creator-mcp.lottiefiles.com:443/mcp"));
+        assert!(lottiefiles("https://creator.mcp.lottiefiles.dev/mcp"));
+        assert!(!lottiefiles("http://creator-mcp.lottiefiles.com/mcp"));
+        assert!(!lottiefiles("https://creator-mcp.lottiefiles.com:8443/mcp"));
         assert!(!lottiefiles(
-            "https://creator.mcp.lottiefiles.com.evil.example/mcp"
+            "https://creator-mcp.lottiefiles.com.evil.example/mcp"
         ));
         assert!(!lottiefiles(
-            "https://evil.example/creator.mcp.lottiefiles.dev"
+            "https://evil.example/creator-mcp.lottiefiles.com"
         ));
+        // A host that never served the engine is not on the list.
+        assert!(!lottiefiles("https://creator.mcp.lottiefiles.com/mcp"));
     }
 
     #[test]
@@ -374,7 +379,7 @@ mod tests {
     #[test]
     fn origin_and_document_ids() {
         let mut config = EngineConfig::new(DEFAULT_ENGINE_URL, "/tmp").unwrap();
-        assert_eq!(config.origin(), "https://creator.mcp.lottiefiles.dev");
+        assert_eq!(config.origin(), "https://creator-mcp.lottiefiles.com");
         assert_eq!(config.document_ids().len(), DEFAULT_DOCUMENTS);
         config.documents = 9;
         assert_eq!(

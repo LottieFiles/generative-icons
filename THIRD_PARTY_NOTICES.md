@@ -20,6 +20,6 @@ npm dependencies are installed, not bundled. Exact versions are pinned in `packa
 
 Rust crates other than `rquickjs-sys` are fetched by Cargo, not vendored. Exact versions are pinned in `Cargo.lock`, and each crate carries its own license. The `generative-icons` binary links them statically, including rquickjs and rquickjs-core 0.9.0 (MIT) and dotlottie-rs with ThorVG (MIT).
 
-Native Lottie export runs as a service on LottieFiles' hosted engine. No engine code is part of this repository or the `generative-icons` binary.
+Native Lottie export runs as a service on Creator MCP, LottieFiles' hosted engine. No engine code is part of this repository or the `generative-icons` binary.
 
 LottieFiles names and logos identify the project. The MIT License does not grant trademark rights.
