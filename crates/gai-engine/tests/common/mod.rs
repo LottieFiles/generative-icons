@@ -176,9 +176,15 @@ impl Respond for Register {
         let mut state = self.0.lock();
         state.registrations.push(body.clone());
         let client_id = format!("client-{}", state.registrations.len());
+        // Issued now: the CLI registers again once a client is 29 days old, so a fixed date
+        // would expire the mock's clients as the calendar moves on.
+        let issued_at = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap()
+            .as_secs();
         ResponseTemplate::new(201).set_body_json(json!({
             "client_id": client_id,
-            "client_id_issued_at": 1_790_000_000u64,
+            "client_id_issued_at": issued_at,
             "redirect_uris": body["redirect_uris"],
             "token_endpoint_auth_method": "none",
         }))
