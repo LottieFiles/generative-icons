@@ -53,7 +53,7 @@ pub struct Global {
     /// Library checkout for maintainer commands and library-mode context
     #[arg(long, global = true, value_name = "DIR", env = "GAI_LIBRARY_ROOT")]
     pub library_root: Option<PathBuf>,
-    /// Hosted engine endpoint [default: GAI_ENGINE_URL, then the config's engine.url (LottieFiles engines only), else Creator MCP at https://creator-mcp.lottiefiles.com/mcp]
+    /// Hosted engine endpoint [default: GAI_ENGINE_URL, then the config's engine.url (LottieFiles engines only), else Creator MCP at https://creator.mcp.lottiefiles.com/mcp]
     #[arg(long, global = true, value_name = "URL", env = "GEN_ANIMATED_ICONS_ENGINE_URL")]
     pub engine_url: Option<String>,
     /// Use only local and cached data; never the network
@@ -763,7 +763,7 @@ mod tests {
         let help = Cli::command().render_long_help().to_string();
         let help = help.split_whitespace().collect::<Vec<_>>().join(" ");
         assert!(
-            help.contains("[default: GAI_ENGINE_URL, then the config's engine.url (LottieFiles engines only), else Creator MCP at https://creator-mcp.lottiefiles.com/mcp]"),
+            help.contains("[default: GAI_ENGINE_URL, then the config's engine.url (LottieFiles engines only), else Creator MCP at https://creator.mcp.lottiefiles.com/mcp]"),
             "{help}"
         );
     }

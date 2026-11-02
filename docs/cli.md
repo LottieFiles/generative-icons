@@ -46,7 +46,7 @@ Before the first release, build the binary from this repository ([development](d
 
 ## Sign-in and the hosted engine
 
-`draft` and `build` run on [Creator MCP](https://lottiefiles.com/mcp), LottieFiles' hosted engine, at `https://creator-mcp.lottiefiles.com/mcp`, so they need a LottieFiles sign-in. Every other app command works without signing in.
+`draft` and `build` run on [Creator MCP](https://lottiefiles.com/mcp), LottieFiles' hosted engine, at `https://creator.mcp.lottiefiles.com/mcp`, so they need a LottieFiles sign-in. Every other app command works without signing in.
 
 - `generative-icons login` opens the browser. `--no-browser` prints the sign-in address and reads the redirect address from stdin; that mode is automatic in CI and over SSH.
 - The refresh token is kept in the OS keychain, or in a `0600` credentials file where no keychain is available. The credentials folder is the OS config folder's `generative-icons` (override with `GEN_ANIMATED_ICONS_HOME`).
@@ -93,7 +93,7 @@ The hosted library goes live at launch. Until then, pass `--library` with a chec
 | --- | --- |
 | `GEN_ANIMATED_ICONS_LIBRARY` | Same as `--library` |
 | `GAI_LIBRARY_ROOT` | Same as `--library-root`: the checkout for maintainer commands |
-| `GEN_ANIMATED_ICONS_ENGINE_URL` | Same as `--engine-url`. Otherwise `GAI_ENGINE_URL`, then the config's `engine.url` (LottieFiles engines only), then Creator MCP (`https://creator-mcp.lottiefiles.com/mcp`). |
+| `GEN_ANIMATED_ICONS_ENGINE_URL` | Same as `--engine-url`. Otherwise `GAI_ENGINE_URL`, then the config's `engine.url` (LottieFiles engines only), then Creator MCP (`https://creator.mcp.lottiefiles.com/mcp`). |
 | `GAI_ENGINE_TOKEN` | A short-lived access token used instead of the stored sign-in, for automation. It is sent only to the `GAI_ENGINE_URL` engine or a LottieFiles engine. |
 | `GEN_ANIMATED_ICONS_HOME` | Folder for the credentials file and refresh lock |
 | `GEN_ANIMATED_ICONS_CACHE_DIR` | Download cache (default: the OS cache folder's `generative-icons`) |

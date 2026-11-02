@@ -55,7 +55,7 @@ generative-icons build mailbox                          # export, package, verif
 generative-icons preview mailbox                        # contact sheets the agent opens and reviews
 ```
 
-**`draft` and `build` need a LottieFiles sign-in.** Native Lottie export runs on [Creator MCP](https://lottiefiles.com/mcp), LottieFiles' hosted engine (`https://creator-mcp.lottiefiles.com/mcp`), so run `generative-icons login` once in your terminal. `draft` and `build` send the icon's spec (its shapes and motion) to the engine; your app's code stays on your machine. Searching, installing, `check` and `preview` need no sign-in.
+**`draft` and `build` need a LottieFiles sign-in.** Native Lottie export runs on [Creator MCP](https://lottiefiles.com/mcp), LottieFiles' hosted engine (`https://creator.mcp.lottiefiles.com/mcp`), so run `generative-icons login` once in your terminal. `draft` and `build` send the icon's spec (its shapes and motion) to the engine; your app's code stays on your machine. Searching, installing, `check` and `preview` need no sign-in.
 
 Icons you create stay in your project. To share one, `generative-icons submit <id>` publishes it in the [community](https://generativeicons.com/community/), where maintainers review it. See [creating icons](docs/creating-icons.md).
 
