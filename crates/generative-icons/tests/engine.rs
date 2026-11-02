@@ -21,7 +21,7 @@ fn sign_in_state_and_engine_settings() {
     let logout = run(app, &["logout"]).ok();
     assert_eq!(
         logout,
-        json!({"loggedOut": true, "engine": "https://creator-mcp.lottiefiles.com/mcp", "wasSignedIn": false, "revoked": false})
+        json!({"loggedOut": true, "engine": "https://creator.mcp.lottiefiles.com/mcp", "wasSignedIn": false, "revoked": false})
     );
     run(app, &["whoami", "--engine-url", "http://engine.example/mcp"]).fails(3, "INVALID_CONFIG");
 

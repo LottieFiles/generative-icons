@@ -519,7 +519,7 @@ mod tests {
 
     #[test]
     fn well_known_urls() {
-        let engine = Url::parse("https://creator-mcp.lottiefiles.com/mcp").unwrap();
+        let engine = Url::parse("https://creator.mcp.lottiefiles.com/mcp").unwrap();
         let urls: Vec<String> = protected_resource_urls(&engine)
             .iter()
             .map(Url::to_string)
@@ -527,11 +527,11 @@ mod tests {
         assert_eq!(
             urls,
             [
-                "https://creator-mcp.lottiefiles.com/.well-known/oauth-protected-resource/mcp",
-                "https://creator-mcp.lottiefiles.com/.well-known/oauth-protected-resource",
+                "https://creator.mcp.lottiefiles.com/.well-known/oauth-protected-resource/mcp",
+                "https://creator.mcp.lottiefiles.com/.well-known/oauth-protected-resource",
             ]
         );
-        let issuer = Url::parse("https://creator-mcp.lottiefiles.com").unwrap();
+        let issuer = Url::parse("https://creator.mcp.lottiefiles.com").unwrap();
         let urls: Vec<String> = authorization_server_urls(&issuer)
             .iter()
             .map(Url::to_string)
@@ -539,8 +539,8 @@ mod tests {
         assert_eq!(
             urls,
             [
-                "https://creator-mcp.lottiefiles.com/.well-known/oauth-authorization-server",
-                "https://creator-mcp.lottiefiles.com/.well-known/openid-configuration",
+                "https://creator.mcp.lottiefiles.com/.well-known/oauth-authorization-server",
+                "https://creator.mcp.lottiefiles.com/.well-known/openid-configuration",
             ]
         );
         let tenant = Url::parse("https://auth.example.com/tenant1").unwrap();
