@@ -13,7 +13,9 @@ fn fixtures() -> PathBuf {
     repo_root().join("crates/gai-spec/tests/fixtures")
 }
 
-/// A web app with the CLI set up and the alarm-clock spec in place.
+/// A web app with the CLI set up and the alarm-clock spec in place. It names no library, so
+/// `create` checks new ids against the hosted one when it can reach it: new test icons take
+/// ids the library doesn't have (`starter-bell`).
 fn app() -> (tempfile::TempDir, PathBuf) {
     let dir = tempfile::tempdir().unwrap();
     let app = dir.path().join("app");
@@ -28,13 +30,13 @@ fn app() -> (tempfile::TempDir, PathBuf) {
 #[test]
 fn create_spec_writes_a_starter_that_checks_clean() {
     let (_dir, app) = app();
-    let created = run(&app, &["create", "bell-ring", "--spec"]).ok();
-    assert_eq!(created["spec"], "generative-icons/icons/bell-ring.icon.json");
+    let created = run(&app, &["create", "starter-bell", "--spec"]).ok();
+    assert_eq!(created["spec"], "generative-icons/icons/starter-bell.icon.json");
     assert_eq!(created["format"], "gai-icon/2");
-    let checked = run(&app, &["check", "bell-ring"]).ok();
+    let checked = run(&app, &["check", "starter-bell"]).ok();
     assert_eq!(checked["status"], "PASS");
     assert_eq!(checked["icons"][0]["diagnostics"], json!([]));
-    run(&app, &["create", "bell-ring", "--spec"]).fails(3, "EXISTS");
+    run(&app, &["create", "starter-bell", "--spec"]).fails(3, "EXISTS");
 }
 
 #[test]
@@ -247,7 +249,7 @@ fn build_from_an_engine_bundle_meets_the_runtime_contract() {
 /// built from the bundle the hosted engine exported.
 fn built_app() -> (tempfile::TempDir, PathBuf) {
     let (dir, app) = app();
-    run(&app, &["create", "bell-ring", "--spec"]).ok();
+    run(&app, &["create", "starter-bell", "--spec"]).ok();
     let bundle = fixtures().join("alarm-clock.bundle.json");
     let built = run(&app, &["build", "alarm-clock", "--from-bundle", bundle.to_str().unwrap()]).ok();
     assert_eq!(built["status"], "PASS", "{built}");
@@ -266,11 +268,11 @@ fn local_builds(app: &Path) -> Vec<(String, String)> {
 #[test]
 fn info_calls_a_v2_build_current_until_its_spec_changes() {
     let (_dir, app) = built_app();
-    // The unbuilt bell-ring spec is listed too: work in progress a new session must find.
-    let builds = |alarm: &str| vec![("alarm-clock".to_string(), alarm.to_string()), ("bell-ring".to_string(), "not-built".to_string())];
+    // The unbuilt starter-bell spec is listed too: work in progress a new session must find.
+    let builds = |alarm: &str| vec![("alarm-clock".to_string(), alarm.to_string()), ("starter-bell".to_string(), "not-built".to_string())];
     assert_eq!(local_builds(&app), builds("current"));
     // Another spec is not this build's source.
-    write(&app, "generative-icons/icons/bell-ring.icon.json", read(&app, "generative-icons/icons/bell-ring.icon.json") + "\n");
+    write(&app, "generative-icons/icons/starter-bell.icon.json", read(&app, "generative-icons/icons/starter-bell.icon.json") + "\n");
     assert_eq!(local_builds(&app), builds("current"));
 
     let spec = read(&app, SPEC);
@@ -283,7 +285,7 @@ fn info_calls_a_v2_build_current_until_its_spec_changes() {
 #[test]
 fn check_without_ids_checks_every_spec_and_v2_build() {
     let (_dir, app) = app();
-    run(&app, &["create", "bell-ring", "--spec"]).ok();
+    run(&app, &["create", "starter-bell", "--spec"]).ok();
     let checked = run(&app, &["check"]).ok();
     assert_eq!(checked["status"], "PASS", "{checked}");
     let ids: Vec<&str> = checked["checks"].as_array().unwrap().iter().map(|c| c["id"].as_str().unwrap()).collect();
@@ -292,7 +294,7 @@ fn check_without_ids_checks_every_spec_and_v2_build() {
     assert_eq!(spec["status"], "PASS");
     assert_eq!(spec["icons"], json!([
         {"id": "alarm-clock", "status": "PASS", "spec": SPEC},
-        {"id": "bell-ring", "status": "PASS", "spec": "generative-icons/icons/bell-ring.icon.json"},
+        {"id": "starter-bell", "status": "PASS", "spec": "generative-icons/icons/starter-bell.icon.json"},
     ]));
     assert_eq!(checked["checks"][3]["status"], "SKIP");
     // --source is the spec check here.
@@ -330,7 +332,7 @@ fn check_without_ids_checks_every_spec_and_v2_build() {
 #[test]
 fn submit_bundles_a_verified_v2_build() {
     let (dir, app) = app();
-    run(&app, &["create", "bell-ring", "--spec"]).ok();
+    run(&app, &["create", "starter-bell", "--spec"]).ok();
     run(&app, &["submit", "alarm-clock", "--dry-run"]).fails(3, "UNKNOWN_ICON");
     let bundle = fixtures().join("alarm-clock.bundle.json");
     run(&app, &["build", "alarm-clock", "--from-bundle", bundle.to_str().unwrap()]).ok();
