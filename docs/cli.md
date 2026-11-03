@@ -67,7 +67,7 @@ Before the first release, build the binary from this repository ([development](d
 | `generative-icons/icons/` | Your local icons' source: `definitions.mjs`, `batches/`, `set-config.json`, `evidence/` | Yes |
 | `.claude/skills/generative-icons/`, `.agents/skills/generative-icons/` | The agent skill | Yes |
 
-Managed files are never overwritten once edited: commands stop with `MODIFIED_FILE`, and `diff` shows what changed. `init` never edits `AGENTS.md`, `CLAUDE.md` or MCP settings; it prints the MCP entry for you to add if you want it, plus `mcpLocal`, an entry that runs this binary by its absolute path (useful before the npm package is published).
+Managed files are never overwritten once edited: commands stop with `MODIFIED_FILE`, and `diff` shows what changed. `init` never edits `AGENTS.md`, `CLAUDE.md` or MCP settings; it prints the MCP entry for you to add if you want it, plus `mcpLocal`, an entry that runs this binary by its absolute path (useful when the CLI is not run through npx).
 
 ## Where icons come from
 
@@ -75,9 +75,7 @@ The library is chosen in this order:
 
 1. `--library <dir|url>` or `GEN_ANIMATED_ICONS_LIBRARY`: a package `dist` folder, a checkout of this repository (it reads `packages/icons/dist`), or an https URL.
 2. A checkout of this repository, or `node_modules/@lottiefiles/generative-icons/dist`, in the app folder or above it.
-3. The hosted library at `generativeicons.lottiefiles.com`, cached for `--offline` use.
-
-The hosted library goes live at launch. Until then, pass `--library` with a checkout whose packages are built.
+3. The hosted library at `https://generativeicons.com/library/v1/`, cached for `--offline` use.
 
 ## Agents with MCP
 

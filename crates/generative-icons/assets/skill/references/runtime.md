@@ -10,8 +10,6 @@ Install the runtime (and the React adapter for React or Next.js) with the projec
 npm install @lottiefiles/generative-icons-runtime @lottiefiles/generative-icons-react
 ```
 
-Until launch these packages are not on npm. Build them in a library checkout with `generative-icons library packages`, then install them from its `packages/runtime` and `packages/react` folders (`npm install <checkout>/packages/runtime <checkout>/packages/react`).
-
 `src/generative-icons/<id>.mjs` exports the descriptor (`default`) and `src`, the URL of the asset under `publicPath`. `settings.mjs` exports the project `defaults`; edit `generative-icons.json`, not this file, then rerun `add`.
 
 ```js

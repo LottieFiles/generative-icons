@@ -4,8 +4,17 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-03
+
+The first release. Changed, Deprecated and Removed compare it with the pre-release builds of this repository.
+
 ### Added
 
+- 1,161 animated icons in 59 sets, each with Light and Strong motion, Outline (three weights), Solid and Duotone styles, light and dark themes, and a recolorable primary slot.
+- `@lottiefiles/generative-icons`: per-icon descriptors, native dotLottie assets, catalog, schemas and docs.
+- `@lottiefiles/generative-icons-runtime`: playback, paint, state, reduced motion and lifecycle API.
+- `@lottiefiles/generative-icons-react`: `AnimatedIcon` component for React and Next.js.
+- Editable icon source, family contract, AI operating guide and validation tooling for creating new icons.
 - `generative-icons`, one binary for macOS and Linux (arm64 and x64) that finds, installs, creates, checks, previews and submits icons in web, iOS and Android apps, run with `npx generative-icons`.
   - `init`, `info`, `search`, `add`, `diff`, `remove` and `doctor` set up an app and manage its icons; iOS (SwiftUI, UIKit) and Android (Compose, Views) apps get `.lottie` assets and JSON descriptors, and `add --bake-weight` bakes an outline weight into native files.
   - `context`, `create`, `check`, `build` and `preview` let a coding agent create a missing icon in the app's own project with the family's authoring kit. `build` exports on Creator MCP, LottieFiles' hosted engine, and needs a LottieFiles sign-in (`login`, `logout`, `whoami`).
@@ -15,8 +24,7 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
   - `library` commands build, verify, measure, package, register and release the library's own sets. They reproduce the earlier JavaScript, Python and browser pipeline's outputs byte for byte, including the renderer checks that `verify.html` ran in a browser.
 - The `generative-icons` npm wrapper and one npm package per platform binary.
 - Spec v2 (`gai-icon/2`), the default format for new icons: plain JSON parts, rigs and eased keys, compiled to one hosted-engine call. `create` writes a spec (`--batch` writes a v1 JS batch instead), `check` validates, compiles and lints it offline, and `draft` renders a review sheet. Specs can rest a part translucent (`"opacity"`), draw a stroke only in Solid (`"outline": "none"`), change geometry with the weight (`"weights"`) and keep a custom reverse animation name (`state.reverseName`).
-- 136 new icons in 14 categories, so every category has at least 20: 1,141 icons in 58 sets.
-- Emoji, a new set of the 20 most-used emoji from Unicode's frequency ranking (😂 ❤️ 🤣 👍 😭 🙏 😘 🥰 😍 😊 🎉 😁 💕 🥺 😅 🔥 🤦 🤷 🙄 😆), each drawn on one shared face with its own event: tears spurt, the kiss flies off, the eyes roll. The library now has 1,161 icons in 59 sets.
+- Emoji, a set of the 20 most-used emoji from Unicode's frequency ranking (😂 ❤️ 🤣 👍 😭 🙏 😘 🥰 😍 😊 🎉 😁 💕 🥺 😅 🔥 🤦 🤷 🙄 😆), each drawn on one shared face with its own event: tears spurt, the kiss flies off, the eyes roll.
 - Every spec icon's editable source ships in `@lottiefiles/generative-icons` as `specs/<id>.icon.json`, hashed in `release.json`. `create <id> --from <library-id>` starts from it, from a checkout, an installed package or the hosted library.
 - `library adopt` replaces a library icon with a spec v2 build and `library adopt --add` adds a new one to a set; `create <library-id> --replace` starts a reanimation from the icon's spec, or from its v1 drawing ported to a spec.
 - A library set can be made only of spec icons: the first `library adopt --add` into a new set writes its `set.json` from `set-config.json`, and `library preflight` passes a set whose `definitions.mjs` exports no icons once every icon in its manifest is adopted from `specs/`.
@@ -46,17 +54,6 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 - The local Engine exporter setup: `CREATOR_MCP_BIN`, `ENGINE_MCP_ROOT`, `.env.example`, `motion/src/exporter-config.mjs`, `motion/src/doctor.mjs`, and the `setup`, `doctor` and `test:tooling` npm scripts. `motion/src/export.mjs` now stops with a pointer to `generative-icons library build`.
 - The optional Claude Code design adapter (`claude_design.py`); `generative-icons context --prompt` prints the design prompt it sent.
-
-## [0.1.0] - TBD
-
-### Added
-
-- 1,005 animated icons in 58 sets, each with Light and Strong motion, Outline (three weights), Solid and Duotone styles, light and dark themes, and a recolorable primary slot.
-- `@lottiefiles/generative-icons`: per-icon descriptors, native dotLottie assets, catalog, schemas and docs.
-- `@lottiefiles/generative-icons-runtime`: playback, paint, state, reduced motion and lifecycle API.
-- `@lottiefiles/generative-icons-react`: `AnimatedIcon` component for React and Next.js.
-- `@lottiefiles/generative-icons-cli`: `lottie-icons` command for project setup, search and safe asset installation, plus a consumer agent skill.
-- Editable icon source, family contract, AI operating guide and validation tooling for creating new icons.
 
 [Unreleased]: https://github.com/LottieFiles/generative-icons/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/LottieFiles/generative-icons/releases/tag/v0.1.0

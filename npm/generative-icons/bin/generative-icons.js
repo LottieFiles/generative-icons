@@ -29,9 +29,8 @@ function binaryPath() {
   }
 }
 
-// The intended launch address; the page must be live before the first publish (npm/README.md).
 function fail(message) {
-  console.error(`${message}\nOther ways to install: https://generativeicons.lottiefiles.com/install`);
+  console.error(`${message}\nOther ways to install: https://generativeicons.com/install`);
   process.exit(1);
 }
 

@@ -103,8 +103,8 @@ pub enum Command {
     /// Run an MCP server on stdio for coding agents
     ///
     /// Add it to an agent's MCP settings as {"command": "npx", "args": ["generative-icons",
-    /// "mcp"]}. Until the generative-icons npm package is published, use this binary's
-    /// absolute path as the command, with args ["mcp"]; `generative-icons init` prints both
+    /// "mcp"]}. To run this binary rather than the npm package, use its absolute path as
+    /// the command, with args ["mcp"]; `generative-icons init` prints both
     /// entries (`mcp` and `mcpLocal`).
     Mcp,
     /// Maintainer commands for the library checkout

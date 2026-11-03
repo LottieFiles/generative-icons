@@ -72,8 +72,8 @@ pub fn client_config() -> Value {
     json!({ "mcpServers": { "generative-icons": { "command": "npx", "args": ["generative-icons", "mcp"] } } })
 }
 
-/// The entry that starts this very binary by its absolute path, which works before the
-/// npm package is published; `None` when the executable's path cannot be told.
+/// The entry that starts this very binary by its absolute path, which works without the
+/// npm package; `None` when the executable's path cannot be told.
 pub fn local_client_config() -> Option<Value> {
     let exe = std::env::current_exe().ok()?;
     let exe = exe.canonicalize().unwrap_or(exe);
