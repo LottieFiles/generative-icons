@@ -12,7 +12,7 @@ use std::path::{Path, PathBuf};
 use std::time::Duration;
 
 /// Where the released library is published.
-pub const DEFAULT_LIBRARY_URL: &str = "https://generativeicons.lottiefiles.com/library/v1/";
+pub const DEFAULT_LIBRARY_URL: &str = "https://generativeicons.com/library/v1/";
 
 /// Largest response accepted (the 0.1.0 catalog is 2.1 MB).
 const MAX_BODY: u64 = 64 << 20;

@@ -57,33 +57,36 @@ Run the **Release** workflow (Actions → Release → Run workflow) on the merge
 - generates `THIRD_PARTY_LICENSES.txt` for each target with [cargo-about](https://github.com/EmbarkStudios/cargo-about): every crate the binary links, and the license texts of the crates and of the C and C++ code they compile (QuickJS-NG, V8's `ieee754.cc` with fdlibm, CORE-MATH, ThorVG with RapidJSON and JerryScript), plus the embedded svgpath and DejaVu Sans Mono;
 - builds the binary for `aarch64-apple-darwin`, `x86_64-apple-darwin`, `aarch64-unknown-linux-gnu` and `x86_64-unknown-linux-gnu`, and checks each native build with `doctor`;
 - creates a **draft** GitHub release for tag `vX.Y.Z` with one tarball per target (the binary, `LICENSE`, `THIRD_PARTY_NOTICES.md` and `THIRD_PARTY_LICENSES.txt`), a `.sha256` file for each and `SHA256SUMS`;
-- copies each binary and its three license files into its `npm/platforms/*` package, packs the wrapper and the four platform packages with `npm pack`, and uploads the tarballs as the `npm-packages` workflow artifact.
+- copies each binary and its three license files into its `npm/platforms/*` package, packs the wrapper and the four platform packages with `npm pack`, and uploads the tarballs as the `npm-packages` workflow artifact;
+- builds the web packages from the same commit (`npm run build:packages`, `npm run test:packages`), packs them with `npm run pack:release`, checks that `release.json` says a clean release of that commit at X.Y.Z, installs them in fresh Vite and Next apps (`npm run test:consumers`), and uploads the tarballs and `release.json` as the `web-packages` workflow artifact.
 
 The license step pins the license files of the workspace crates, the vendored `rquickjs-sys` and the pinned `dotlottie-rs` by SHA-256 in the workflow's inline `about.toml`. If it stops because a checksum no longer matches, a license file changed (for example after a renderer bump): review the new text, then update the checksum in `.github/workflows/release.yml`.
 
-Download the artifact and check a platform tarball (`tar -tvzf`): `package/bin/generative-icons` must be executable, and `package/LICENSE`, `package/THIRD_PARTY_NOTICES.md` and `package/THIRD_PARTY_LICENSES.txt` must be present. The workflow checks both, but look before you publish.
+Download both artifacts (`gh run download <run-id> -n npm-packages -n web-packages`) and check a platform tarball (`tar -tvzf`): `package/bin/generative-icons` must be executable, and `package/LICENSE`, `package/THIRD_PARTY_NOTICES.md` and `package/THIRD_PARTY_LICENSES.txt` must be present. The workflow checks both, but look before you publish.
 
 ## 4. Publish
 
 1. Review the draft release, then publish it. Publishing creates the tag `vX.Y.Z`.
-2. Publish the npm packages from the reviewed tarballs: the platform packages first, then the wrapper, then the web packages in dependency order. `--provenance` requires publishing from GitHub Actions with `id-token: write`.
+2. Publish the npm packages from the reviewed tarballs of both artifacts: the platform packages first (the wrapper pins them exactly), then the wrapper, then the web packages in dependency order. Leave `lottiefiles-generative-icons-cli-X.Y.Z.tgz` unpublished. `--provenance` requires publishing from GitHub Actions with `id-token: write`.
+
+   Many LottieFiles machines send the `@lottiefiles` scope to GitHub Packages (`@lottiefiles:registry=https://npm.pkg.github.com` in `~/.npmrc`). That setting wins over `publishConfig.registry` and over `--registry`, so every command names the scope's registry itself. Check the first one with `--dry-run`: it must say `Publishing to https://registry.npmjs.org/`.
 
    ```sh
-   npm publish lottiefiles-generative-icons-darwin-arm64-X.Y.Z.tgz --access public
-   npm publish lottiefiles-generative-icons-darwin-x64-X.Y.Z.tgz --access public
-   npm publish lottiefiles-generative-icons-linux-arm64-gnu-X.Y.Z.tgz --access public
-   npm publish lottiefiles-generative-icons-linux-x64-gnu-X.Y.Z.tgz --access public
-   npm publish generative-icons-X.Y.Z.tgz --access public
+   R=--@lottiefiles:registry=https://registry.npmjs.org/
+   npm publish lottiefiles-generative-icons-darwin-arm64-X.Y.Z.tgz --access public $R
+   npm publish lottiefiles-generative-icons-darwin-x64-X.Y.Z.tgz --access public $R
+   npm publish lottiefiles-generative-icons-linux-arm64-gnu-X.Y.Z.tgz --access public $R
+   npm publish lottiefiles-generative-icons-linux-x64-gnu-X.Y.Z.tgz --access public $R
+   npm publish generative-icons-X.Y.Z.tgz --access public $R
 
-   cd dist/packages-vX.Y.Z
-   npm publish lottiefiles-generative-icons-runtime-X.Y.Z.tgz --access public
-   npm publish lottiefiles-generative-icons-X.Y.Z.tgz         --access public
-   npm publish lottiefiles-generative-icons-react-X.Y.Z.tgz   --access public
+   npm publish lottiefiles-generative-icons-runtime-X.Y.Z.tgz --access public $R
+   npm publish lottiefiles-generative-icons-X.Y.Z.tgz         --access public $R
+   npm publish lottiefiles-generative-icons-react-X.Y.Z.tgz   --access public $R
    ```
 
    For a prerelease (`X.Y.Z-next.N`), add `--tag next` to every command so `latest` is untouched.
 
-3. Verify: `npm view generative-icons@X.Y.Z version`, then in a scratch app run `npx generative-icons@X.Y.Z init` and `add heart`.
+3. Verify: `npm view generative-icons@X.Y.Z version` and `npm view @lottiefiles/generative-icons-react@X.Y.Z version $R`, then in a scratch app run `npx generative-icons@X.Y.Z init` and `add heart` (without `--library`, so it reads the hosted library).
 
 ## 5. Update the website
 

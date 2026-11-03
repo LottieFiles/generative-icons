@@ -4,8 +4,6 @@ When the library has no icon for your meaning, your coding AI can create one in 
 
 **You need a LottieFiles sign-in to build.** Export runs on [Creator MCP](https://lottiefiles.com/mcp), so run `generative-icons login` once in your terminal; agents never sign in for you. Everything up to `build`, and `preview` of library icons, works without signing in.
 
-**Before launch:** the npm package behind `npx generative-icons` and the hosted library behind `search` go live at launch. Until then, build the CLI from the repository and pass `--library` with a built checkout; [known limitations](limitations.md) has the details.
-
 ## 1. Set up the project
 
 ```sh

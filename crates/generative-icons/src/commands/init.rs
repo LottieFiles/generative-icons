@@ -1,7 +1,7 @@
 //! `init`: writes the config, the agent skills, the kit copy, the state `.gitignore`
 //! and the lock in one batch. Never touches `AGENTS.md`, `CLAUDE.md` or MCP settings; the
 //! MCP settings entry is only printed: `mcp` through npx, and `mcpLocal` through this
-//! binary's absolute path, which works before the npm package is published.
+//! binary's absolute path, which works without the npm package.
 
 use super::{lock_project, text_list};
 use crate::Context;
@@ -219,7 +219,7 @@ pub fn run(ctx: &Context, args: &InitArgs) -> Result<Report> {
     if !value["mcpLocal"].is_null() {
         let _ = writeln!(
             text,
-            "Until the generative-icons npm package is published, point the entry at this binary instead:\n  {}",
+            "To run this binary rather than the npm package, point the entry at it instead:\n  {}",
             gai_core::to_js_json(&value["mcpLocal"])
         );
     }

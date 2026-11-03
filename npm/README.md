@@ -17,15 +17,9 @@ refuses to pack when they disagree.
 Set `GEN_ANIMATED_ICONS_BINARY` to run a local build through the shim. Binaries copied into
 `platforms/*/bin/` are ignored by Git.
 
-## Addresses before launch
+## Addresses
 
-The manifests, the package README and the shim use the intended launch addresses. None of
-them works yet:
-
-- the repository `github.com/LottieFiles/generative-icons` is private;
-- the site `generativeicons.lottiefiles.com` is not live, including the `/install` page
-  the shim names when it cannot run the binary;
-- none of these packages is on npm.
-
-Before the first publish, make the repository public, put the site and its `/install` page
-live, and check every address in this folder.
+The manifests, the package README and the shim name the site, `https://generativeicons.com`
+(the shim prints its `/install` page when it cannot run the binary), and the repository,
+`github.com/LottieFiles/generative-icons`. A published version keeps them for good, so check
+them before each release when either has moved.

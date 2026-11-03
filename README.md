@@ -59,10 +59,6 @@ generative-icons preview mailbox                        # contact sheets the age
 
 Icons you create stay in your project. To share one, `generative-icons submit <id>` publishes it in the [community](https://generativeicons.com/community/), where maintainers review it. See [creating icons](docs/creating-icons.md).
 
-## Before launch
-
-The npm packages and the hosted library behind `search` and `add` go live at launch. Until then, build the CLI from this repository (see [development](docs/development.md)), build the packages in the checkout with `generative-icons library packages`, and point the CLI at it with `--library <checkout>`. Details: [known limitations](docs/limitations.md).
-
 ## Documentation
 
 | Guide | For |

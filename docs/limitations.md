@@ -4,10 +4,6 @@
 
 `generative-icons draft` and `build` run on Creator MCP, LottieFiles' hosted engine, so they need a sign-in (`generative-icons login`). Sign-in uses the browser, or a pasted redirect address with `--no-browser`; there is no API key or device code for unattended machines yet. Searching, installing, checking and previewing need no sign-in, and existing icons, the packages and the local gallery work without one.
 
-## Before launch
-
-The npm packages and the hosted library behind `search` and `add` go live at launch. Until then, build the CLI from the repository, build the packages in the checkout (`generative-icons library packages`) and pass `--library <checkout>`.
-
 ## Submitting icons
 
 `submit` publishes spec icons (`<id>.icon.json`) only: the community builds each one again from its spec, and it can't run the JavaScript of a batch icon, so batch icons can only be bundled with `--dry-run`. A submission holds up to 5 icons and counts toward the daily limit shared with generations on the website.

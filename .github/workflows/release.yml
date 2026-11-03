@@ -1,6 +1,7 @@
 name: Release
 # Manual only. Builds the generative-icons binaries, drafts a GitHub release with them,
-# and packs the npm packages as a workflow artifact. Every tarball and npm platform package
+# and packs the npm packages as workflow artifacts: the CLI's (npm-packages) and the web
+# packages (web-packages). Every tarball and npm platform package
 # carries LICENSE, THIRD_PARTY_NOTICES.md and THIRD_PARTY_LICENSES.txt, the license texts of
 # everything its binary links. Nothing is published to npm, and the draft release stays a
 # draft until a maintainer publishes it (docs/maintainers/releasing.md).
@@ -61,6 +62,17 @@ jobs:
                   errors.append(f"{file.parent} is {package['version']}")
           if names != set(wrapper.get('optionalDependencies', {})):
               errors.append('the wrapper optionalDependencies do not match npm/platforms')
+          # The web packages share the version, and pin each other exactly.
+          web = {}
+          for folder in ['icons', 'runtime', 'react', 'cli']:
+              package = json.loads(pathlib.Path(f'packages/{folder}/package.json').read_text())
+              web[package['name']] = package
+              if package['version'] != version:
+                  errors.append(f"packages/{folder} is {package['version']}")
+          for package in web.values():
+              for name, pin in package.get('dependencies', {}).items():
+                  if name in web and pin != version:
+                      errors.append(f"{package['name']} pins {name} at {pin}")
           if errors:
               raise SystemExit(f'Versions disagree with the Cargo workspace ({version}): ' + '; '.join(errors))
           tag = os.environ.get('TAG_INPUT') or f'v{version}'
@@ -490,3 +502,55 @@ jobs:
       #       npm publish "$tgz" --access public --provenance
       #     done
       #     npm publish dist/npm/generative-icons-*.tgz --access public --provenance
+
+  packages:
+    name: Pack the web packages
+    needs: version
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - run: npm ci --prefix motion
+      - run: npm ci --ignore-scripts
+      - run: npm run build:packages
+      - run: npm run test:packages
+      - name: Pack
+        env:
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          # pack:release refuses a tree with uncommitted changes, so the packages are this commit.
+          npm run pack:release -- "dist/packages-v$VERSION"
+          python3 - "dist/packages-v$VERSION/release.json" <<'PY'
+          import json, os, sys
+          release = json.load(open(sys.argv[1]))
+          version, commit = os.environ['VERSION'], os.environ['GITHUB_SHA']
+          if release['status'] != 'release' or release['sourceDirty'] or release['sourceCommit'] != commit:
+              raise SystemExit(f"Not a clean release of {commit}: {release['status']}, {release['sourceCommit']}")
+          wrong = [p['file'] for p in release['packages'] if p['version'] != version]
+          if wrong:
+              raise SystemExit(f'Not at {version}: {wrong}')
+          for p in release['packages']:
+              print(f"{p['file']}  {p['sha256']}")
+          PY
+      - name: Install the packed packages in fresh Vite and Next apps
+        env:
+          VERSION: ${{ needs.version.outputs.version }}
+        run: npm run test:consumers -- "dist/packages-v$VERSION"
+      # Holds @lottiefiles/generative-icons, -runtime and -react, plus the retired packages/cli
+      # pack, which stays unpublished (docs/maintainers/releasing.md).
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: web-packages
+          path: |
+            dist/packages-v${{ needs.version.outputs.version }}/*.tgz
+            dist/packages-v${{ needs.version.outputs.version }}/release.json
+          if-no-files-found: error

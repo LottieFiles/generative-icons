@@ -92,7 +92,7 @@ fn web_init_writes_config_skills_kit_and_lock() {
     // AGENTS.md, CLAUDE.md and MCP settings are never written; the MCP entry is printed.
     assert!(!app.join("AGENTS.md").exists() && !app.join("CLAUDE.md").exists() && !app.join(".mcp.json").exists());
     assert_eq!(result["mcp"]["mcpServers"]["generative-icons"]["args"], json!(["generative-icons", "mcp"]));
-    // Before the npm package is published, the entry for this very binary works.
+    // The entry for this very binary works without the npm package.
     let exe = std::fs::canonicalize(env!("CARGO_BIN_EXE_generative-icons")).unwrap();
     let local = json!({"mcpServers": {"generative-icons": {"command": exe.to_str().unwrap(), "args": ["mcp"]}}});
     assert_eq!(result["mcpLocal"], local);
@@ -102,7 +102,7 @@ fn web_init_writes_config_skills_kit_and_lock() {
     let text = run(app, &["init", "--format", "text"]);
     assert!(
         text.stdout.contains(&format!(
-            "Until the generative-icons npm package is published, point the entry at this binary instead:\n  {}\n",
+            "To run this binary rather than the npm package, point the entry at it instead:\n  {}\n",
             gai_core::to_js_json(&local)
         )),
         "{}",
@@ -464,7 +464,7 @@ fn info_and_doctor_describe_the_setup() {
     let hosted = library_check(&report);
     assert_eq!(
         hosted["message"],
-        "Offline, and no catalog of https://generativeicons.lottiefiles.com/library/v1/ is cached"
+        "Offline, and no catalog of https://generativeicons.com/library/v1/ is cached"
     );
     assert!(hosted["hint"].as_str().unwrap().contains("--library <dir>"), "{hosted}");
     let local = library_check(&run(app, &["doctor", "--offline", "--library", &library]).ok());
