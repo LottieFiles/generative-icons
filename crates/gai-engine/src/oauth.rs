@@ -361,6 +361,33 @@ pub(crate) fn authorization_url(
     Ok(url.into())
 }
 
+/// Whether the authorization server still knows `client_id`. It answers a sign-in request for a
+/// client it doesn't know with a 400 on its own page, before anyone signs in, so the CLI would
+/// never hear of it and wait for a redirect that doesn't come: Creator MCP forgot every
+/// registration when it moved its store (3 Nov 2026). The client doesn't follow redirects, so a
+/// known client's answer (the consent page, or a redirect to it) is never followed. Any other
+/// answer, a failed request included, counts as known.
+pub(crate) fn client_known(
+    client: &Client,
+    server: &AuthServer,
+    client_id: &str,
+    redirect_uri: &str,
+) -> bool {
+    let url = Pkce::new().and_then(|pkce| {
+        authorization_url(
+            server,
+            client_id,
+            redirect_uri,
+            &pkce.challenge,
+            &random_token(8)?,
+        )
+    });
+    match url.map(|url| client.get(url).send()) {
+        Ok(Ok(response)) => !matches!(response.status().as_u16(), 400 | 401),
+        _ => true,
+    }
+}
+
 /// Exchanges an authorization code for tokens.
 pub(crate) fn exchange_code(
     client: &Client,

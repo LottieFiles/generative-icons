@@ -92,6 +92,30 @@ fn login_reuses_the_client_and_registers_again_when_it_expired() {
 }
 
 #[test]
+fn login_registers_again_before_the_browser_when_the_engine_forgot_the_client() {
+    let engine = MockEngine::start("{}");
+    let home = tempfile::tempdir().unwrap();
+    let config = engine.config(home.path());
+    let mut browser = FakeBrowser::new(engine.state.clone(), false);
+    login(&config, &options(LoginMode::Loopback), &mut browser).unwrap();
+    assert_eq!(engine.state.lock().authorize_checks, 0, "a new client isn't checked");
+
+    // The engine lost its registrations: its sign-in page would only show an error, so the
+    // CLI registers again before it shows the page.
+    engine
+        .state
+        .lock()
+        .forgotten_clients
+        .insert("client-1".into());
+    let again = login(&config, &options(LoginMode::Loopback), &mut browser).unwrap();
+    assert_eq!(again.client_id.as_deref(), Some("client-2"));
+    assert_eq!(engine.state.lock().registrations.len(), 2);
+    assert_eq!(engine.state.lock().authorize_checks, 1);
+    assert_eq!(browser.shown.len(), 2, "no sign-in page with the forgotten client");
+    assert!(browser.shown[1].contains("client_id=client-2"));
+}
+
+#[test]
 fn paste_mode_login() {
     let engine = MockEngine::start("{}");
     let home = tempfile::tempdir().unwrap();

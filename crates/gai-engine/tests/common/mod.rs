@@ -43,6 +43,11 @@ pub struct EngineState {
     pub registrations: Vec<Value>,
     pub challenge: Option<String>,
     pub invalid_clients: HashSet<String>,
+    /// Clients the engine forgot altogether: its sign-in page answers 400 for them, as
+    /// Creator MCP's does, and so does the token endpoint.
+    pub forgotten_clients: HashSet<String>,
+    /// Sign-in requests the CLI made itself (checking a client), not shown in a browser.
+    pub authorize_checks: usize,
     pub valid_refresh: HashSet<String>,
     pub valid_access: HashSet<String>,
     pub tokens_issued: usize,
@@ -119,6 +124,9 @@ impl MockEngine {
                     "token_endpoint_auth_methods_supported": ["none"],
                     "scopes_supported": ["mcp:full"],
                 }))),
+            Mock::given(method("GET"))
+                .and(path("/authorize"))
+                .respond_with(Authorize(state.clone())),
             Mock::given(method("POST"))
                 .and(path("/register"))
                 .respond_with(Register(state.clone())),
@@ -168,6 +176,25 @@ fn oauth_error(status: u16, error: &str) -> ResponseTemplate {
     ResponseTemplate::new(status).set_body_json(json!({"error": error}))
 }
 
+struct Authorize(Shared);
+
+impl Respond for Authorize {
+    fn respond(&self, request: &Request) -> ResponseTemplate {
+        let mut state = self.0.lock();
+        state.authorize_checks += 1;
+        let client = request
+            .url
+            .query_pairs()
+            .find(|(k, _)| k == "client_id")
+            .map(|(_, v)| v.into_owned())
+            .unwrap_or_default();
+        if state.forgotten_clients.contains(&client) {
+            return ResponseTemplate::new(400).set_body_string("unknown client_id");
+        }
+        ResponseTemplate::new(200).set_body_string("Authorize access")
+    }
+}
+
 struct Register(Shared);
 
 impl Respond for Register {
@@ -198,7 +225,7 @@ impl Respond for Token {
         let form = form(request);
         let mut state = self.0.lock();
         let client = form.get("client_id").cloned().unwrap_or_default();
-        if state.invalid_clients.contains(&client) {
+        if state.invalid_clients.contains(&client) || state.forgotten_clients.contains(&client) {
             return oauth_error(401, "invalid_client");
         }
         if form.get("resource").map(String::as_str) != Some(&format!("{}/mcp", state.base)) {

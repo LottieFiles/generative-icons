@@ -162,9 +162,9 @@ pub struct LogoutOutcome {
 /// Signs in through the browser and stores the session.
 ///
 /// Discovers the authorization server, reuses the registered client while it is younger than
-/// 29 days (else registers one), runs PKCE with a loopback redirect or a pasted redirect URL,
-/// and exchanges the code. A client the server no longer knows (`invalid_client`) is
-/// registered again once. The session it replaces is revoked (best effort), so a refresh
+/// 29 days and the server still knows it (else registers one), runs PKCE with a loopback
+/// redirect or a pasted redirect URL, and exchanges the code. A client the server stops knowing
+/// before the exchange (`invalid_client`) is registered again once. The session it replaces is revoked (best effort), so a refresh
 /// token that leaked earlier does not outlive the new sign-in.
 pub fn login(
     config: &EngineConfig,
@@ -184,7 +184,9 @@ pub fn login(
         .record()?
         .and_then(|record| record.client)
         .filter(|c| {
-            c.issuer == server.issuer && now().saturating_sub(c.registered_at) < CLIENT_MAX_AGE
+            c.issuer == server.issuer
+                && now().saturating_sub(c.registered_at) < CLIENT_MAX_AGE
+                && oauth::client_known(&client, &server, &c.client_id, &redirect_uri)
         });
     let mut registered_again = false;
     loop {
