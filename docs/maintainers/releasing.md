@@ -97,18 +97,19 @@ For a prerelease (`X.Y.Z-next.N`), add `--tag next` to every `npm publish` so `l
 
 ### Trusted publishing
 
-Each of the eight packages trusts one publisher on npm: GitHub Actions, repository `LottieFiles/generative-icons`, workflow `release.yml`, environment `npm`. The repository's `npm` environment asks a maintainer to approve each deployment and deploys only from `main`. A package new to the release is published by hand once (above), then trusted. Setting up trust needs write access to the package and 2FA on the npm account, and the first command asks for 2FA:
+Each of the eight packages trusts one publisher on npm: GitHub Actions, repository `LottieFiles/generative-icons`, workflow `release.yml`, environment `npm`. The repository's `npm` environment asks a maintainer to approve each deployment and deploys only from `main`. A package new to the release is published by hand once (above), then trusted. Setting up trust needs write access to the package and 2FA on the npm account, and the first command asks for 2FA. `npm trust` refuses the `--@lottiefiles:registry` flag, so the scope's registry comes from the environment instead:
 
 ```sh
 for package in generative-icons @lottiefiles/generative-icons @lottiefiles/generative-icons-runtime @lottiefiles/generative-icons-react \
     @lottiefiles/generative-icons-darwin-arm64 @lottiefiles/generative-icons-darwin-x64 \
     @lottiefiles/generative-icons-linux-arm64-gnu @lottiefiles/generative-icons-linux-x64-gnu; do
-  npm trust github "$package" --repo LottieFiles/generative-icons --file release.yml --env npm --allow-publish --yes $R
+  env 'npm_config_@lottiefiles:registry=https://registry.npmjs.org/' \
+    npm trust github "$package" --repo LottieFiles/generative-icons --file release.yml --env npm --allow-publish --yes
   sleep 2
 done
 ```
 
-`npm trust list <package> $R` shows a package's trusted publisher. If a run fails with "unable to authenticate", compare the trusted publisher with the workflow's file name and environment: they match case-sensitively.
+`env 'npm_config_@lottiefiles:registry=https://registry.npmjs.org/' npm trust list <package>` shows a package's trusted publisher. If a run fails with "unable to authenticate", compare the trusted publisher with the workflow's file name and environment: they match case-sensitively.
 
 ## 5. Update the website
 
