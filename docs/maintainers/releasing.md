@@ -75,7 +75,7 @@ Download both artifacts (`gh run download <run-id> -n npm-packages -n web-packag
 
 ### Publishing by hand
 
-When the workflow can't publish (a new package npm doesn't know yet, or a trusted publisher that changed), a maintainer in the `lottiefiles` npm org publishes the reviewed tarballs of both artifacts in the same order, then publishes the draft release.
+When the workflow can't publish (a new package npm doesn't know yet, or a trusted publisher that changed), a maintainer in the `lottiefiles` npm org publishes the reviewed tarballs of both artifacts in the same order.
 
 Many LottieFiles machines send the `@lottiefiles` scope to GitHub Packages (`@lottiefiles:registry=https://npm.pkg.github.com` in `~/.npmrc`). That setting wins over `publishConfig.registry` and over `--registry`, so every command names the scope's registry itself. Check the first one with `--dry-run`: it must say `Publishing to https://registry.npmjs.org/`.
 
@@ -90,8 +90,9 @@ npm publish generative-icons-X.Y.Z.tgz --access public $R
 npm publish lottiefiles-generative-icons-runtime-X.Y.Z.tgz --access public $R
 npm publish lottiefiles-generative-icons-X.Y.Z.tgz         --access public $R
 npm publish lottiefiles-generative-icons-react-X.Y.Z.tgz   --access public $R
-gh release edit vX.Y.Z --draft=false -R LottieFiles/generative-icons
 ```
+
+Then publish the run's draft release on GitHub: its address is in the log of the run's draft job. Delete any older draft with the same tag, so `vX.Y.Z` names one release.
 
 For a prerelease (`X.Y.Z-next.N`), add `--tag next` to every `npm publish` so `latest` is untouched.
 
