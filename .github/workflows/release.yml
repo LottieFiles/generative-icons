@@ -3,8 +3,10 @@ name: Release
 # and packs the npm packages as workflow artifacts: the CLI's (npm-packages) and the web
 # packages (web-packages). Every tarball and npm platform package
 # carries LICENSE, THIRD_PARTY_NOTICES.md and THIRD_PARTY_LICENSES.txt, the license texts of
-# everything its binary links. Nothing is published to npm, and the draft release stays a
-# draft until a maintainer publishes it (docs/maintainers/releasing.md).
+# everything its binary links. Run with `publish` checked, the publish job then waits for a
+# maintainer to approve the npm environment, publishes the packages to npm through trusted
+# publishing (no token; npm adds provenance) and publishes the draft release. Without it,
+# nothing is published (docs/maintainers/releasing.md).
 on:
   workflow_dispatch:
     inputs:
@@ -12,6 +14,11 @@ on:
         description: Release tag (default v<workspace version>)
         required: false
         type: string
+      publish:
+        description: Publish to npm and publish the GitHub release, once a maintainer approves the npm environment
+        required: false
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -487,21 +494,6 @@ jobs:
           name: npm-packages
           path: dist/npm/*.tgz
           if-no-files-found: error
-      # Publishing is deliberately manual (docs/maintainers/releasing.md). Never enable this
-      # without the maintainers' go. To automate it later: add a `publish` input, protect an
-      # `npm-publish` environment with required reviewers and an NPM_TOKEN secret, move this
-      # step into its own job with `environment: npm-publish` and `permissions: id-token:
-      # write`, and keep the platform packages ahead of the wrapper:
-      #
-      # - name: Publish to npm
-      #   if: ${{ inputs.publish == 'publish' }}
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #   run: |
-      #     for tgz in dist/npm/lottiefiles-generative-icons-*.tgz; do
-      #       npm publish "$tgz" --access public --provenance
-      #     done
-      #     npm publish dist/npm/generative-icons-*.tgz --access public --provenance
 
   packages:
     name: Pack the web packages
@@ -554,3 +546,66 @@ jobs:
             dist/packages-v${{ needs.version.outputs.version }}/*.tgz
             dist/packages-v${{ needs.version.outputs.version }}/release.json
           if-no-files-found: error
+
+  publish:
+    name: Publish to npm and the GitHub release
+    if: ${{ inputs.publish }}
+    needs: [version, draft, npm, packages]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # The npm environment waits for a maintainer's approval and deploys only from main. Each
+    # package on npm trusts this workflow file in this environment and nothing else
+    # (npm trust github), so publishing needs no token.
+    environment: npm
+    permissions:
+      contents: write # publish the draft release
+      id-token: write # npm trusted publishing (OIDC)
+    steps:
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - name: Use npm 11.19.0
+        # Trusted publishing needs npm 11.5.1 or later.
+        run: |
+          npm install -g npm@11.19.0
+          npm --version
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: npm-packages
+          path: dist/npm
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: web-packages
+          path: dist/web
+      - name: Publish to npm
+        env:
+          VERSION: ${{ needs.version.outputs.version }}
+        run: |
+          # The platform packages first (the wrapper pins them exactly), then the wrapper, then
+          # the web packages in dependency order. The retired packages/cli pack stays
+          # unpublished. A version already on npm is skipped, so a failed run can run again.
+          tag=latest
+          case "$VERSION" in *-*) tag=next ;; esac
+          publish() {
+            name=$(tar -xzOf "$1" package/package.json | jq -r .name)
+            if [ -n "$(npm view "$name@$VERSION" version 2> /dev/null)" ]; then
+              echo "$name@$VERSION is already on npm"
+            else
+              npm publish "$1" --access public --tag "$tag"
+            fi
+          }
+          for target in darwin-arm64 darwin-x64 linux-arm64-gnu linux-x64-gnu; do
+            publish "dist/npm/lottiefiles-generative-icons-$target-$VERSION.tgz"
+          done
+          publish "dist/npm/generative-icons-$VERSION.tgz"
+          for name in generative-icons-runtime generative-icons generative-icons-react; do
+            publish "dist/web/lottiefiles-$name-$VERSION.tgz"
+          done
+      - name: Publish the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.version.outputs.tag }}
+        # Publishing the draft creates the tag, at the commit this run built.
+        run: gh release edit "$TAG" --draft=false --repo "$GITHUB_REPOSITORY"

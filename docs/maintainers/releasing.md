@@ -1,6 +1,6 @@
 # Releasing
 
-Runbook for publishing the `generative-icons` CLI and the web packages `@lottiefiles/generative-icons`, `-runtime` and `-react`. They share one version. Approvals are described in [governance](governance.md). Nothing is published without an explicit go from the maintainers; no workflow publishes to npm.
+Runbook for publishing the `generative-icons` CLI and the web packages `@lottiefiles/generative-icons`, `-runtime` and `-react`. They share one version. Approvals are described in [governance](governance.md). Nothing is published without an explicit go from a maintainer: only the Release workflow publishes, when it is run with **Publish** checked, and only after a maintainer approves its `npm` environment.
 
 ## 1. Open a release PR
 
@@ -52,7 +52,7 @@ Then confirm:
 
 ## 3. Build the CLI release
 
-Run the **Release** workflow (Actions → Release → Run workflow) on the merged commit. It:
+Run the **Release** workflow (Actions → Release → Run workflow) on the merged commit. Check **Publish** to publish from this run once you approve it (step 4); leave it unchecked to only build. It:
 
 - generates `THIRD_PARTY_LICENSES.txt` for each target with [cargo-about](https://github.com/EmbarkStudios/cargo-about): every crate the binary links, and the license texts of the crates and of the C and C++ code they compile (QuickJS-NG, V8's `ieee754.cc` with fdlibm, CORE-MATH, ThorVG with RapidJSON and JerryScript), plus the embedded svgpath and DejaVu Sans Mono;
 - builds the binary for `aarch64-apple-darwin`, `x86_64-apple-darwin`, `aarch64-unknown-linux-gnu` and `x86_64-unknown-linux-gnu`, and checks each native build with `doctor`;
@@ -66,27 +66,49 @@ Download both artifacts (`gh run download <run-id> -n npm-packages -n web-packag
 
 ## 4. Publish
 
-1. Review the draft release, then publish it. Publishing creates the tag `vX.Y.Z`.
-2. Publish the npm packages from the reviewed tarballs of both artifacts: the platform packages first (the wrapper pins them exactly), then the wrapper, then the web packages in dependency order. Leave `lottiefiles-generative-icons-cli-X.Y.Z.tgz` unpublished. `--provenance` requires publishing from GitHub Actions with `id-token: write`.
+1. If the run has **Publish** checked, its publish job waits once the build, draft and pack jobs pass. Review the draft release and the artifacts (step 3). Then approve the job: open the run, choose **Review deployments**, select `npm` and approve. The job:
+   - publishes the eight packages to npm in order: the platform packages first (the wrapper pins them exactly), then the wrapper, then the web packages in dependency order. It leaves `lottiefiles-generative-icons-cli-X.Y.Z.tgz` unpublished and skips a version already on npm, so a failed run can run again. A prerelease (`X.Y.Z-next.N`) goes to the `next` tag, so `latest` is untouched;
+   - publishes the draft release, which creates the tag `vX.Y.Z`.
 
-   Many LottieFiles machines send the `@lottiefiles` scope to GitHub Packages (`@lottiefiles:registry=https://npm.pkg.github.com` in `~/.npmrc`). That setting wins over `publishConfig.registry` and over `--registry`, so every command names the scope's registry itself. Check the first one with `--dry-run`: it must say `Publishing to https://registry.npmjs.org/`.
+   It needs no token: each package trusts this workflow in the `npm` environment (see [Trusted publishing](#trusted-publishing)), and npm adds a provenance attestation to every version. If the run went without **Publish**, run it again with it checked: it rebuilds the same commit.
+2. Verify: `npm view generative-icons@X.Y.Z version` and `npm view @lottiefiles/generative-icons-react@X.Y.Z version $R` (with `R` as below), then in a scratch app run `npx generative-icons@X.Y.Z init` and `add heart` (without `--library`, so it reads the hosted library). Each package page on npmjs.com shows its provenance.
 
-   ```sh
-   R=--@lottiefiles:registry=https://registry.npmjs.org/
-   npm publish lottiefiles-generative-icons-darwin-arm64-X.Y.Z.tgz --access public $R
-   npm publish lottiefiles-generative-icons-darwin-x64-X.Y.Z.tgz --access public $R
-   npm publish lottiefiles-generative-icons-linux-arm64-gnu-X.Y.Z.tgz --access public $R
-   npm publish lottiefiles-generative-icons-linux-x64-gnu-X.Y.Z.tgz --access public $R
-   npm publish generative-icons-X.Y.Z.tgz --access public $R
+### Publishing by hand
 
-   npm publish lottiefiles-generative-icons-runtime-X.Y.Z.tgz --access public $R
-   npm publish lottiefiles-generative-icons-X.Y.Z.tgz         --access public $R
-   npm publish lottiefiles-generative-icons-react-X.Y.Z.tgz   --access public $R
-   ```
+When the workflow can't publish (a new package npm doesn't know yet, or a trusted publisher that changed), a maintainer in the `lottiefiles` npm org publishes the reviewed tarballs of both artifacts in the same order, then publishes the draft release.
 
-   For a prerelease (`X.Y.Z-next.N`), add `--tag next` to every command so `latest` is untouched.
+Many LottieFiles machines send the `@lottiefiles` scope to GitHub Packages (`@lottiefiles:registry=https://npm.pkg.github.com` in `~/.npmrc`). That setting wins over `publishConfig.registry` and over `--registry`, so every command names the scope's registry itself. Check the first one with `--dry-run`: it must say `Publishing to https://registry.npmjs.org/`.
 
-3. Verify: `npm view generative-icons@X.Y.Z version` and `npm view @lottiefiles/generative-icons-react@X.Y.Z version $R`, then in a scratch app run `npx generative-icons@X.Y.Z init` and `add heart` (without `--library`, so it reads the hosted library).
+```sh
+R=--@lottiefiles:registry=https://registry.npmjs.org/
+npm publish lottiefiles-generative-icons-darwin-arm64-X.Y.Z.tgz --access public $R
+npm publish lottiefiles-generative-icons-darwin-x64-X.Y.Z.tgz --access public $R
+npm publish lottiefiles-generative-icons-linux-arm64-gnu-X.Y.Z.tgz --access public $R
+npm publish lottiefiles-generative-icons-linux-x64-gnu-X.Y.Z.tgz --access public $R
+npm publish generative-icons-X.Y.Z.tgz --access public $R
+
+npm publish lottiefiles-generative-icons-runtime-X.Y.Z.tgz --access public $R
+npm publish lottiefiles-generative-icons-X.Y.Z.tgz         --access public $R
+npm publish lottiefiles-generative-icons-react-X.Y.Z.tgz   --access public $R
+gh release edit vX.Y.Z --draft=false -R LottieFiles/generative-icons
+```
+
+For a prerelease (`X.Y.Z-next.N`), add `--tag next` to every `npm publish` so `latest` is untouched.
+
+### Trusted publishing
+
+Each of the eight packages trusts one publisher on npm: GitHub Actions, repository `LottieFiles/generative-icons`, workflow `release.yml`, environment `npm`. The repository's `npm` environment asks a maintainer to approve each deployment and deploys only from `main`. A package new to the release is published by hand once (above), then trusted. Setting up trust needs write access to the package and 2FA on the npm account, and the first command asks for 2FA:
+
+```sh
+for package in generative-icons @lottiefiles/generative-icons @lottiefiles/generative-icons-runtime @lottiefiles/generative-icons-react \
+    @lottiefiles/generative-icons-darwin-arm64 @lottiefiles/generative-icons-darwin-x64 \
+    @lottiefiles/generative-icons-linux-arm64-gnu @lottiefiles/generative-icons-linux-x64-gnu; do
+  npm trust github "$package" --repo LottieFiles/generative-icons --file release.yml --env npm --allow-publish --yes $R
+  sleep 2
+done
+```
+
+`npm trust list <package> $R` shows a package's trusted publisher. If a run fails with "unable to authenticate", compare the trusted publisher with the workflow's file name and environment: they match case-sensitively.
 
 ## 5. Update the website
 

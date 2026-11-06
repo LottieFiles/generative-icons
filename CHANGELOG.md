@@ -4,6 +4,10 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 ## [Unreleased]
 
+### Changed
+
+- The Release workflow publishes a release when it runs with **Publish** checked and a maintainer approves its `npm` environment. It publishes to npm through trusted publishing from GitHub Actions, with no token and with provenance on every package, then publishes the GitHub release.
+
 ## [0.1.0] - 2026-11-03
 
 The first release. Changed, Deprecated and Removed compare it with the pre-release builds of this repository.

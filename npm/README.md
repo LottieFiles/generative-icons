@@ -7,7 +7,8 @@
   (`.github/workflows/release.yml`) copies that target's binary into `bin/`, adds the
   release tarball's `LICENSE`, `THIRD_PARTY_NOTICES.md` and `THIRD_PARTY_LICENSES.txt`
   (the license texts of everything the binary links, generated per target), and packs
-  every package; publishing stays a manual step (see `docs/maintainers/releasing.md`).
+  every package; run with **Publish** checked, it publishes them once a maintainer approves
+  (see `docs/maintainers/releasing.md`).
 
 npm installs only the platform package that matches the machine (`os`, `cpu`, `libc`), and
 nothing runs at install time. Every package in a release carries the same version as the

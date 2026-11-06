@@ -38,7 +38,7 @@ Icons reach the library in two ways: a pull request that adds or revises a set i
 
 1. Release PR bumps the package, CLI and npm wrapper versions and updates `CHANGELOG.md`.
 2. A maintainer approves and merges.
-3. A maintainer runs the preflight and the Release workflow on the merged commit, publishes the draft release (which tags `vX.Y.Z`) and publishes to npm.
+3. A maintainer runs the preflight, then the Release workflow on the merged commit with **Publish** checked, reviews the draft release and the packed packages, and approves the workflow's `npm` environment. The workflow publishes to npm and publishes the draft release, which tags `vX.Y.Z`.
 
 Full steps: [releasing](releasing.md).
 
