@@ -415,6 +415,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      release: ${{ steps.create.outputs.release }}
     steps:
       - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
@@ -428,16 +430,20 @@ jobs:
           cat ./*.sha256 > SHA256SUMS
           cat SHA256SUMS
       - name: Create the draft release
+        id: create
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ needs.version.outputs.tag }}
           VERSION: ${{ needs.version.outputs.version }}
         run: |
-          # A draft does not create the tag; publishing the release does, at this commit.
-          gh release create "$TAG" --draft --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+          # A draft does not create the tag; publishing the release does, at this commit. Its
+          # address names this draft alone (an earlier run's draft can have the same tag).
+          url=$(gh release create "$TAG" --draft --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
             --title "generative-icons $VERSION" \
             --notes "generative-icons $VERSION. Binaries for macOS (arm64, x64) and Linux with glibc (arm64, x64), with SHA-256 checksums in SHA256SUMS. Each archive carries LICENSE, THIRD_PARTY_NOTICES.md and THIRD_PARTY_LICENSES.txt. See CHANGELOG.md." \
-            dist/*.tar.gz dist/*.sha256 dist/SHA256SUMS
+            dist/*.tar.gz dist/*.sha256 dist/SHA256SUMS)
+          echo "$url"
+          echo "release=$url" >> "$GITHUB_OUTPUT"
 
   npm:
     name: Pack the npm packages
@@ -586,6 +592,7 @@ jobs:
           # The platform packages first (the wrapper pins them exactly), then the wrapper, then
           # the web packages in dependency order. The retired packages/cli pack stays
           # unpublished. A version already on npm is skipped, so a failed run can run again.
+          set -euo pipefail
           tag=latest
           case "$VERSION" in *-*) tag=next ;; esac
           publish() {
@@ -606,6 +613,11 @@ jobs:
       - name: Publish the GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ needs.version.outputs.tag }}
-        # Publishing the draft creates the tag, at the commit this run built.
-        run: gh release edit "$TAG" --draft=false --repo "$GITHUB_REPOSITORY"
+          RELEASE: ${{ needs.draft.outputs.release }}
+        # The draft this run made, found by its address: publishing it creates the tag, at the
+        # commit this run built. Drafts that earlier runs left are not touched.
+        run: |
+          set -euo pipefail
+          id=$(gh api "repos/$GITHUB_REPOSITORY/releases" --paginate --jq ".[] | select(.draft and .html_url == \"$RELEASE\") | .id")
+          if [ -z "$id" ]; then echo "No draft release at $RELEASE"; exit 1; fi
+          gh api -X PATCH "repos/$GITHUB_REPOSITORY/releases/$id" -F draft=false --jq .html_url

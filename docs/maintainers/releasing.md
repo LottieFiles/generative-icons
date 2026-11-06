@@ -68,9 +68,9 @@ Download both artifacts (`gh run download <run-id> -n npm-packages -n web-packag
 
 1. If the run has **Publish** checked, its publish job waits once the build, draft and pack jobs pass. Review the draft release and the artifacts (step 3). Then approve the job: open the run, choose **Review deployments**, select `npm` and approve. The job:
    - publishes the eight packages to npm in order: the platform packages first (the wrapper pins them exactly), then the wrapper, then the web packages in dependency order. It leaves `lottiefiles-generative-icons-cli-X.Y.Z.tgz` unpublished and skips a version already on npm, so a failed run can run again. A prerelease (`X.Y.Z-next.N`) goes to the `next` tag, so `latest` is untouched;
-   - publishes the draft release, which creates the tag `vX.Y.Z`.
+   - publishes the draft release this run made, which creates the tag `vX.Y.Z`.
 
-   It needs no token: each package trusts this workflow in the `npm` environment (see [Trusted publishing](#trusted-publishing)), and npm adds a provenance attestation to every version. If the run went without **Publish**, run it again with it checked: it rebuilds the same commit.
+   It needs no token: each package trusts this workflow in the `npm` environment (see [Trusted publishing](#trusted-publishing)), and npm adds a provenance attestation to every version. If the run went without **Publish**, run it again with it checked: it rebuilds the same commit and drafts a new release. Delete the earlier draft, which stays unpublished.
 2. Verify: `npm view generative-icons@X.Y.Z version` and `npm view @lottiefiles/generative-icons-react@X.Y.Z version $R` (with `R` as below), then in a scratch app run `npx generative-icons@X.Y.Z init` and `add heart` (without `--library`, so it reads the hosted library). Each package page on npmjs.com shows its provenance.
 
 ### Publishing by hand
