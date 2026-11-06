@@ -13,9 +13,8 @@ use crate::error::{Error, Result};
 pub const DEFAULT_ENGINE_URL: &str = "https://creator.mcp.lottiefiles.com/mcp";
 /// Hosts of LottieFiles' engines (https on the default port), the only engines a project
 /// config may choose and the ones [`ENGINE_TOKEN_ENV`] may always go to: Creator MCP's
-/// production server and LottieFiles' development server.
-pub const LOTTIEFILES_ENGINE_HOSTS: [&str; 2] =
-    ["creator.mcp.lottiefiles.com", "creator.mcp.lottiefiles.dev"];
+/// production server.
+pub const LOTTIEFILES_ENGINE_HOSTS: [&str; 1] = ["creator.mcp.lottiefiles.com"];
 /// Overrides the engine URL.
 pub const ENGINE_URL_ENV: &str = "GAI_ENGINE_URL";
 /// A bearer token used as-is instead of the stored sign-in (for CI). The engine has no API keys
@@ -323,7 +322,6 @@ mod tests {
         assert!(lottiefiles(DEFAULT_ENGINE_URL));
         assert!(lottiefiles("https://creator.mcp.lottiefiles.com/mcp"));
         assert!(lottiefiles("https://creator.mcp.lottiefiles.com:443/mcp"));
-        assert!(lottiefiles("https://creator.mcp.lottiefiles.dev/mcp"));
         assert!(!lottiefiles("http://creator.mcp.lottiefiles.com/mcp"));
         assert!(!lottiefiles("https://creator.mcp.lottiefiles.com:8443/mcp"));
         assert!(!lottiefiles(

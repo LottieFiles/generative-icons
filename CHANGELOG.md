@@ -6,6 +6,7 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 ### Changed
 
+- LottieFiles' development server is no longer one of the CLI's LottieFiles engines. A project's `engine.url` may name only Creator MCP's production server, and `GAI_ENGINE_TOKEN` goes only there or to the `GAI_ENGINE_URL` engine. `--engine-url` and `GAI_ENGINE_URL` still choose another engine.
 - The Release workflow publishes a release when it runs with **Publish** checked and a maintainer approves its `npm` environment. It publishes to npm through trusted publishing from GitHub Actions, with no token and with provenance on every package, then publishes the GitHub release.
 
 ## [0.1.0] - 2026-11-03
