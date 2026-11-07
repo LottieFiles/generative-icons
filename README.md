@@ -1,3 +1,5 @@
+![Generative Icons, with icons from the library playing their motion around the title](docs/assets/splash.svg)
+
 # Generative Icons
 
 **Animated icons. Ready to use. Built to extend.** By [LottieFiles](https://lottiefiles.com).
