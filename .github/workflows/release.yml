@@ -609,6 +609,11 @@ jobs:
           for name in generative-icons-runtime generative-icons generative-icons-react; do
             publish "dist/web/lottiefiles-$name-$VERSION.tgz"
           done
+      - name: Show what npm said about trusted publishing
+        # npm keeps the OIDC exchange out of its output. When publishing fails, its debug log
+        # says whether GitHub issued an id token and what the registry answered.
+        if: failure()
+        run: grep -h -i -E 'oidc|provenance|trust' ~/.npm/_logs/*-debug-0.log || echo 'No npm debug log mentions OIDC'
       - name: Publish the GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
