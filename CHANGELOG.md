@@ -4,6 +4,10 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 ## [Unreleased]
 
+### Added
+
+- A root `mcp.json` (Agent Plugins 1.1.0) adds the website's hosted MCP server, `https://generativeicons.com/mcp` (icon search and details, no sign-in), to the plugin, so plugin directories such as cursor.directory install it with the skill.
+
 ## [0.1.2] - 2026-11-09
 
 ### Changed

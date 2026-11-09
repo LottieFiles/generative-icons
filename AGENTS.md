@@ -7,7 +7,7 @@ Generative Icons: native Lottie icons with Light/Strong motion and editable sour
 | Path | What lives there |
 | --- | --- |
 | `crates/` | The CLI's Rust workspace; architecture, decisions and test notes in `crates/README.md` |
-| `skills/generative-icons/` | The agent skill: the CLI embeds it and installs it into apps, `npx skills add` installs it, and the root `plugin.json` makes the repository an Agent Plugin around it. The only copy to edit, except the direction references generated from `docs/`, `MOTION.md` and the workflow skill |
+| `skills/generative-icons/` | The agent skill: the CLI embeds it and installs it into apps, `npx skills add` installs it, and the root `plugin.json` makes the repository an Agent Plugin around it (with `mcp.json`, the website's hosted MCP server). The only copy to edit, except the direction references generated from `docs/`, `MOTION.md` and the workflow skill |
 | `motion/icon-sets/NN-name/` | Editable icon source (`definitions.mjs`, `batches/`), set rules and evidence |
 | `motion/icon-sets/library/` | Family contract, authoring kit and shared helpers |
 | `prototype/icons/catalog.json` | Registered sets, in gallery order |
