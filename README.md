@@ -45,7 +45,7 @@ iOS and Android apps play the installed `.lottie` files with dotLottie for iOS a
 
 ### The agent skill
 
-`init` installs the [`generative-icons` skill](crates/generative-icons/assets/skill/SKILL.md) into your app, at the CLI's version, so your coding agent can search, install, render and create icons for you. To install the skill on its own instead (for every project, or for an agent `init` doesn't set up), use the [skills CLI](https://skills.sh):
+`init` installs the [`generative-icons` skill](skills/generative-icons/SKILL.md) into your app, at the CLI's version, so your coding agent can search, install, render and create icons for you. To install the skill on its own instead (for every project, or for an agent `init` doesn't set up), use the [skills CLI](https://skills.sh):
 
 ```sh
 npx skills add LottieFiles/generative-icons --skill generative-icons
@@ -86,7 +86,8 @@ Icons you create stay in your project. To share one, `generative-icons submit <i
 ## Project layout
 
 ```text
-crates/            The generative-icons CLI (Rust workspace) and its embedded agent skill
+crates/            The generative-icons CLI (Rust workspace)
+skills/            The generative-icons agent skill the CLI embeds and installs
 npm/               npm wrapper and per-platform packages for the CLI binary
 packages/          Web npm packages: icons, runtime and react
 motion/            Editable icon source, family contract and the legacy JS/Python pipeline

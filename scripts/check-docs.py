@@ -8,7 +8,7 @@ from pathlib import Path
 import hashlib,importlib.util,json,re,subprocess
 root=Path(__file__).resolve().parents[1]
 files=[*root.glob('*.md'),*(root/'docs').rglob('*.md'),*(root/'.agents').rglob('*.md'),*root.glob('packages/*/README.md'),
- *root.glob('npm/**/README.md'),*root.glob('crates/README.md'),*(root/'crates/generative-icons/assets/skill').rglob('*.md')]
+ *root.glob('npm/**/README.md'),*root.glob('crates/README.md'),*(root/'skills').rglob('*.md')]
 errors=[]
 for p in files:
  text=p.read_text();plain=re.sub(r'```.*?```','',text,flags=re.S)

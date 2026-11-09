@@ -10,7 +10,7 @@
 | `@lottiefiles/generative-icons-runtime` | Runtime API and the shared controller |
 | `@lottiefiles/generative-icons-react` | React adapter |
 
-The binary embeds the authoring kit, the agent skill (`crates/generative-icons/assets/skill/`), the per-set rules and the export script. It contains no engine code: native export runs on LottieFiles' hosted engine. The GitHub release carries the same binaries as tarballs with SHA-256 checksums.
+The binary embeds the authoring kit, the agent skill (`skills/generative-icons/`), the per-set rules and the export script. It contains no engine code: native export runs on LottieFiles' hosted engine. The GitHub release carries the same binaries as tarballs with SHA-256 checksums.
 
 Each release tarball and npm platform package carries `LICENSE`, `THIRD_PARTY_NOTICES.md` and `THIRD_PARTY_LICENSES.txt`. The Release workflow generates the last one per target from `Cargo.lock`: the license texts of every crate the binary links statically and of the C and C++ code those crates compile.
 

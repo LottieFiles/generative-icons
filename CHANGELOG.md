@@ -8,6 +8,7 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 ### Changed
 
+- The agent skill moved to the standard `skills/generative-icons/`, and the CLI embeds it from there. A root `plugin.json` (an [Agent Plugins](https://agent-plugins.org/) 1.1.0 manifest) makes the repository a plugin around it, so plugin directories such as cursor.directory find it. `skills.sh.json` is gone: the skills CLI finds `skills/` by itself.
 - The Release workflow publishes to npm with `NPM_TOKEN`, a token kept as a secret of its `npm` environment, and with `--provenance`, so every version carries a provenance attestation again. npm's trusted publishing rejects this repository's OIDC subject ([npm/cli#9969](https://github.com/npm/cli/issues/9969)); npm still tries it first and falls back to the token.
 
 ## [0.1.1] - 2026-11-09

@@ -6,7 +6,7 @@ skill=root/'.agents/skills/animated-icon-workflow'
 out=root/'prototype/icons/guide';out.mkdir(exist_ok=True)
 # The workflow, then the family's direction (what every library icon and the website's generator
 # follow), the spec format, the production references and the contract.
-spec=root/'crates/generative-icons/assets/skill/references'
+spec=root/'skills/generative-icons/references'
 files=[skill/'SKILL.md',root/'docs/motion-principles.md',root/'MOTION.md',root/'docs/design-principles.md',skill/'references/polish-review.md',spec/'authoring-v2.md',spec/'review.md',*[skill/'references'/n for n in ['generation-harness.md','production.md']],root/'motion/icon-sets/library/family-contract.json',root/'docs/using-packages.md',root/'docs/package-contract.md',root/'docs/development.md']
 base='https://github.com/LottieFiles/generative-icons/blob/main/'
 def public_links(text,source):
@@ -54,5 +54,5 @@ for p in files:
  (out/p.name).write_text(text)
 (out/'ai-operating-guide.md').write_text(''.join(parts))
 (out/'sources.json').write_text(json.dumps(manifest,indent=2)+'\n')
-# The app skill is crates/generative-icons/assets/skill/, embedded in the CLI.
+# The app skill is skills/generative-icons/, embedded in the CLI.
 print('Updated AI guide from',len(files),'canonical sources')

@@ -8,16 +8,16 @@ pub const SKILL_NAME: &str = "generative-icons";
 /// craft, design-principles, motion-principles, motion-system and polish-review are the family's
 /// direction, generated from the canonical docs by `npm run docs:build`.
 pub const SKILL_FILES: [(&str, &str); 10] = [
-    ("SKILL.md", include_str!("../assets/skill/SKILL.md")),
-    ("references/authoring-v2.md", include_str!("../assets/skill/references/authoring-v2.md")),
-    ("references/authoring.md", include_str!("../assets/skill/references/authoring.md")),
-    ("references/craft.md", include_str!("../assets/skill/references/craft.md")),
-    ("references/design-principles.md", include_str!("../assets/skill/references/design-principles.md")),
-    ("references/motion-principles.md", include_str!("../assets/skill/references/motion-principles.md")),
-    ("references/motion-system.md", include_str!("../assets/skill/references/motion-system.md")),
-    ("references/polish-review.md", include_str!("../assets/skill/references/polish-review.md")),
-    ("references/review.md", include_str!("../assets/skill/references/review.md")),
-    ("references/runtime.md", include_str!("../assets/skill/references/runtime.md")),
+    ("SKILL.md", include_str!("../../../skills/generative-icons/SKILL.md")),
+    ("references/authoring-v2.md", include_str!("../../../skills/generative-icons/references/authoring-v2.md")),
+    ("references/authoring.md", include_str!("../../../skills/generative-icons/references/authoring.md")),
+    ("references/craft.md", include_str!("../../../skills/generative-icons/references/craft.md")),
+    ("references/design-principles.md", include_str!("../../../skills/generative-icons/references/design-principles.md")),
+    ("references/motion-principles.md", include_str!("../../../skills/generative-icons/references/motion-principles.md")),
+    ("references/motion-system.md", include_str!("../../../skills/generative-icons/references/motion-system.md")),
+    ("references/polish-review.md", include_str!("../../../skills/generative-icons/references/polish-review.md")),
+    ("references/review.md", include_str!("../../../skills/generative-icons/references/review.md")),
+    ("references/runtime.md", include_str!("../../../skills/generative-icons/references/runtime.md")),
 ];
 
 /// Contents of the managed `.generative-icons/.gitignore`: only the lock is committed.
@@ -51,8 +51,8 @@ mod tests {
     }
 
     #[test]
-    fn skill_list_matches_the_assets_folder() {
-        let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("assets/skill");
+    fn skill_list_matches_the_skill_folder() {
+        let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../skills/generative-icons");
         let listed: Vec<&str> = SKILL_FILES.iter().map(|(path, _)| *path).collect();
         assert_eq!(walk(&root), listed);
     }

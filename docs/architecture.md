@@ -5,7 +5,7 @@ This repository holds the editable icon source, the `generative-icons` CLI, the 
 | Location | Responsibility |
 | --- | --- |
 | `crates/` | The `generative-icons` Rust workspace: authoring runtime, builds, checks, rendering, packaging, the hosted-engine client and the CLI. See [crates/README.md](../crates/README.md). |
-| `crates/generative-icons/assets/skill/` | The agent skill the CLI installs into apps (the one source for it). `skills.sh.json` points `npx skills add` at it. |
+| `skills/generative-icons/` | The agent skill the CLI embeds and installs into apps (the one source for it). `npx skills add` and plugin directories find it there; `plugin.json` is the Agent Plugins manifest around it. |
 | `npm/` | The `generative-icons` npm wrapper and one binary package per platform |
 | `packages/icons/` | Generated per-icon descriptors, native assets, catalog and bundled docs |
 | `packages/runtime/` | Shared playback, paint, state, reduced motion and lifecycle API |

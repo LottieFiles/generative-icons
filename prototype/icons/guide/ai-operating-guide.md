@@ -47,7 +47,7 @@ This skill is for library sets in this repository. In an app, the `generative-ic
 Run everything from the repository root with the `generative-icons` CLI (build it with `cargo build --release -p generative-icons`). Replace `SET-ID` with the set directory, for example `39-food-drink`.
 
 1. **Check tools:** `generative-icons doctor`. At the repository root its app checks fail because the repository is not an app; the cpu, quickjs, renderer, sign-in and engine checks are the ones that matter here.
-2. **Read the direction:** [motion principles](https://github.com/LottieFiles/generative-icons/blob/main/docs/motion-principles.md), [drawing principles](https://github.com/LottieFiles/generative-icons/blob/main/docs/design-principles.md), the [motion system](https://github.com/LottieFiles/generative-icons/blob/main/MOTION.md), [polish-review.md](https://github.com/LottieFiles/generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) and the spec format, [authoring-v2.md](https://github.com/LottieFiles/generative-icons/blob/main/crates/generative-icons/assets/skill/references/authoring-v2.md) (its "Motion that reads" and "What build's visual check fails" sections above all).
+2. **Read the direction:** [motion principles](https://github.com/LottieFiles/generative-icons/blob/main/docs/motion-principles.md), [drawing principles](https://github.com/LottieFiles/generative-icons/blob/main/docs/design-principles.md), the [motion system](https://github.com/LottieFiles/generative-icons/blob/main/MOTION.md), [polish-review.md](https://github.com/LottieFiles/generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/polish-review.md) and the spec format, [authoring-v2.md](https://github.com/LottieFiles/generative-icons/blob/main/skills/generative-icons/references/authoring-v2.md) (its "Motion that reads" and "What build's visual check fails" sections above all).
 3. **Search:** `generative-icons context "<meaning>" --search`, then rerun without `--search` and with `--neighbor <id>` (up to four) to get the reference packet.
 4. **Brief:** per icon, write meaning, states, neighbors and a **cause → action → response → final state** plan for Light and Strong: the event, the driver and its followers, the cues hidden at rest, and how the one drawing moves.
 5. **Author each icon as a spec** (`gai-icon/2`) in a scratch project with this checkout as its library (`--library <checkout>`): `generative-icons create <id>` for a new icon, `create <library-id> --replace` to reanimate one. Then `check`, `draft`, `build <id> --no-install` and `preview`, until the sheets read. Write a JS batch only for what specs cannot express yet (continuous loaders; see [production.md](https://github.com/LottieFiles/generative-icons/blob/main/.agents/skills/animated-icon-workflow/references/production.md)).
@@ -515,7 +515,7 @@ These were verified across Weather, Health & Fitness, Smart Home, Education and 
 
 ---
 
-## Source: crates/generative-icons/assets/skill/references/authoring-v2.md
+## Source: skills/generative-icons/references/authoring-v2.md
 
 # Author an icon as a spec
 
@@ -726,7 +726,7 @@ Before rendering, `build`'s paint check fails an icon drawn only with fills (`pa
 
 ---
 
-## Source: crates/generative-icons/assets/skill/references/review.md
+## Source: skills/generative-icons/references/review.md
 
 # Review previews
 
@@ -1243,7 +1243,7 @@ generative-icons library verify-visual 14
 - Frozen sets 01 and 02 can adopt: they are still never rebuilt, so adopting only replaces the icon's assets and entry, and their legacy checks skip it.
 - A new icon joins a set the same way with `library adopt NN --add <build>`: `create <new-id>` (not a library id), build it, then add it, and give it search terms (below). It takes the set's category and the number after the library's last icon, and `library build` keeps it. New icons also change the catalog size that some tests pin (see [crates/README.md](https://github.com/LottieFiles/generative-icons/blob/main/crates/README.md)), so update those counts in the same commit.
 
-What the library-wide reanimation (Oct 2026, 412 icons) learned about porting, beyond [authoring-v2.md](https://github.com/LottieFiles/generative-icons/blob/main/crates/generative-icons/assets/skill/references/authoring-v2.md):
+What the library-wide reanimation (Oct 2026, 412 icons) learned about porting, beyond [authoring-v2.md](https://github.com/LottieFiles/generative-icons/blob/main/skills/generative-icons/references/authoring-v2.md):
 
 - Decide first: keep an icon whose motion already is its meaning, with rhythm in Strong, readable at 24 px (a dial indexing to its next stop, a refresh arrow's full turn, a toggle knob landing). Reanimate generic nudges, lifts and tilts, and moves under a pixel at 24 px.
 - Port the rest drawing exactly, vertex for vertex, and match the icon's Solid (`"solid": "fill"` or `"ring"`): the default Solid adds a rim the library drawing does not have.
