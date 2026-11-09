@@ -4,6 +4,8 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-09
+
 ### Changed
 
 - The `generative-icons` agent skill is shorter and follows the task in order: set up the project, use a library icon, render it on the web, iOS or Android, and create a missing icon only once the user agrees. JS batch details moved into its `authoring.md` reference.
@@ -67,5 +69,6 @@ The first release. Changed, Deprecated and Removed compare it with the pre-relea
 - The local Engine exporter setup: `CREATOR_MCP_BIN`, `ENGINE_MCP_ROOT`, `.env.example`, `motion/src/exporter-config.mjs`, `motion/src/doctor.mjs`, and the `setup`, `doctor` and `test:tooling` npm scripts. `motion/src/export.mjs` now stops with a pointer to `generative-icons library build`.
 - The optional Claude Code design adapter (`claude_design.py`); `generative-icons context --prompt` prints the design prompt it sent.
 
-[Unreleased]: https://github.com/LottieFiles/generative-icons/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/LottieFiles/generative-icons/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/LottieFiles/generative-icons/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/LottieFiles/generative-icons/releases/tag/v0.1.0
