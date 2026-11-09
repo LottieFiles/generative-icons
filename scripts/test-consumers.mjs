@@ -17,8 +17,6 @@ function run(command, args, cwd) {
     child.on('error', reject); child.on('exit', code => { fs.appendFileSync(path.join(cwd, 'verification.log'), output); code === 0 ? resolve(output) : reject(Error(`${command} failed in ${cwd}\n${output.slice(-8000)}`)); });
   });
 }
-// The published generative-icons CLI sets each app up and installs icons from the packed icons package.
-const cli = ['exec', '--yes', '--package=generative-icons@latest', '--@lottiefiles:registry=https://registry.npmjs.org/', '--', 'generative-icons'];
 function write(dir, file, value) { const target = path.join(dir, file); fs.mkdirSync(path.dirname(target), { recursive: true }); fs.writeFileSync(target, value); }
 async function fixture(kind) {
   const dir = path.join(runRoot, kind); fs.mkdirSync(dir);
@@ -26,8 +24,8 @@ async function fixture(kind) {
   const devDependencies = { typescript: '7.0.2', '@types/react': '19.3.0', '@types/react-dom': '19.3.0', '@types/node': '26.6.2', ...(kind === 'next' ? { next: '16.3.6' } : { vite: '8.3.1' }) };
   write(dir, 'package.json', JSON.stringify({ name: `icons-${kind}-fixture`, private: true, type: 'module', dependencies, devDependencies, scripts: { build: kind === 'next' ? 'next build --webpack' : 'tsc --noEmit && vite build', dev: kind === 'next' ? 'next dev --webpack' : 'vite --host 127.0.0.1' } }, null, 2));
   await run('npm', ['install', '--ignore-scripts', '--@lottiefiles:registry=https://registry.npmjs.org/'], dir);
-  await run('npm', [...cli, 'init', '--agents', 'none'], dir);
-  await run('npm', [...cli, 'add', 'menu', 'heart', '--library', path.join(dir, 'node_modules/@lottiefiles/generative-icons/dist')], dir);
+  await run(cli, ['init', '--agents', 'none'], dir);
+  await run(cli, ['add', 'menu', 'heart', '--library', path.join(dir, 'node_modules/@lottiefiles/generative-icons/dist')], dir);
   const tsconfig = { compilerOptions: { target: 'ES2022', lib: ['DOM', 'DOM.Iterable', 'ESNext'], module: 'ESNext', moduleResolution: 'Bundler', jsx: 'react-jsx', strict: true, skipLibCheck: false, noEmit: true, allowJs: true, esModuleInterop: true }, include: ['**/*.ts', '**/*.tsx'], exclude: ['node_modules'] };
   write(dir, 'tsconfig.json', JSON.stringify(tsconfig));
   const react = `'use client';\nimport React, {useState} from 'react';\nimport {AnimatedIcon} from '@lottiefiles/generative-icons-react';\nimport icon, {src} from '${kind === 'next' ? '..' : '.'}/generative-icons/menu.mjs';\nexport default function App(){const [state,setState]=useState<string>(icon.startState);const [color,setColor]=useState('#008c76');const [visible,setVisible]=useState(true);const [ready,setReady]=useState(false);return <main><h1>${kind} consumer</h1><button onClick={()=>setState(state===icon.startState?icon.endState:icon.startState)}>Toggle state</button><button onClick={()=>setColor('#d43155')}>Change color</button><button onClick={()=>setVisible(!visible)}>Mount or remove</button><p id="state">{state}</p><p id="ready">{String(ready)}</p>{visible&&<AnimatedIcon icon={icon} src={src} size={48} state={state} color={color} label="Menu state" onReady={()=>setReady(true)} onError={error=>{document.body.dataset.error=error.message}}/>}</main>};`;
@@ -42,6 +40,12 @@ async function fixture(kind) {
   console.log(`PASS ${kind}: packed install, CLI setup/add, type checks and production build (${dir})`);
   return { kind, directory: dir, status: 'build-pass-browser-review-separate' };
 }
+// The published generative-icons CLI sets each app up and installs icons from the packed icons package. It is
+// installed once, before the apps: parallel npx runs share one cache and can run its binary while another writes it.
+const cliRoot = path.join(runRoot, 'cli');
+write(cliRoot, 'package.json', JSON.stringify({ name: 'consumer-cli', private: true }));
+await run('npm', ['install', 'generative-icons@latest', '--@lottiefiles:registry=https://registry.npmjs.org/'], cliRoot);
+const cli = path.join(cliRoot, 'node_modules/.bin/generative-icons');
 const results = await Promise.allSettled(['vanilla', 'react', 'next'].map(fixture));
 fs.writeFileSync(path.join(runRoot, 'results.json'), JSON.stringify(results.map(result => result.status === 'fulfilled' ? result.value : { error: result.reason.message }), null, 2));
 for (const result of results) if (result.status === 'rejected') { console.error(result.reason.message); process.exitCode = 1; }
