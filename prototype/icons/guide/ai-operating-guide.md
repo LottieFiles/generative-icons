@@ -34,6 +34,8 @@ The sections below are copied from the maintained guides; their paths and hashes
 ---
 name: animated-icon-workflow
 description: Create consistent animated icons with a coding agent, editable vector source, native verification, and review for this project's native Lottie library. Use for new icons and drawing or motion revisions, including Light/Strong, strokes, and Duotone. Do not use for unrelated motion films or general interface work.
+metadata:
+  internal: true
 ---
 
 # Animated icon workflow

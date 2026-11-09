@@ -241,14 +241,14 @@ pub fn build_packages(repo: &Path, options: &BuildPackagesOptions) -> Result<Pac
             &mut stage,
             "cli",
             format!("skill/references/{name}"),
-            &repo.join("skills/lottie-icons/references").join(name),
+            &repo.join("packages/cli/skill/references").join(name),
         )?;
     }
     staged(
         &mut stage,
         "cli",
         "skill/SKILL.md".into(),
-        &repo.join("skills/lottie-icons/SKILL.md"),
+        &repo.join("packages/cli/skill/SKILL.md"),
     )?;
 
     let git = match &options.git {

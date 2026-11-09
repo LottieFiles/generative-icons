@@ -120,8 +120,8 @@ def build():
         for name in ['icon.schema.json', 'project.schema.json', 'release.schema.json']:
             copy(ROOT / 'schemas' / name, stage / 'icons/schemas' / name)
         for target in ['runtime.md', 'authoring.md']:
-            copy(ROOT / 'skills/lottie-icons/references' / target, stage / 'cli/skill/references' / target)
-        copy(ROOT / 'skills/lottie-icons/SKILL.md', stage / 'cli/skill/SKILL.md')
+            copy(ROOT / 'packages/cli/skill/references' / target, stage / 'cli/skill/references' / target)
+        copy(ROOT / 'packages/cli/skill/SKILL.md', stage / 'cli/skill/SKILL.md')
         revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
         dirty = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip())
         # A build from uncommitted sources is never a release; pack-release refuses it by default.

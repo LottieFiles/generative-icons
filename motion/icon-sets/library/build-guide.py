@@ -54,6 +54,6 @@ for p in files:
  (out/p.name).write_text(text)
 (out/'ai-operating-guide.md').write_text(''.join(parts))
 (out/'sources.json').write_text(json.dumps(manifest,indent=2)+'\n')
-# The app skill is crates/generative-icons/assets/skill/, embedded in the CLI. skills/lottie-icons/
+# The app skill is crates/generative-icons/assets/skill/, embedded in the CLI. packages/cli/skill/
 # is the retired lottie-icons skill, frozen byte for byte for init --migrate, so it is not regenerated.
 print('Updated AI guide from',len(files),'canonical sources')

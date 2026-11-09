@@ -5,12 +5,12 @@ This repository holds the editable icon source, the `generative-icons` CLI, the 
 | Location | Responsibility |
 | --- | --- |
 | `crates/` | The `generative-icons` Rust workspace: authoring runtime, builds, checks, rendering, packaging, the hosted-engine client and the CLI. See [crates/README.md](../crates/README.md). |
-| `crates/generative-icons/assets/skill/` | The agent skill the CLI installs into apps (the one source for it) |
+| `crates/generative-icons/assets/skill/` | The agent skill the CLI installs into apps (the one source for it). `skills.sh.json` points `npx skills add` at it. |
 | `npm/` | The `generative-icons` npm wrapper and one binary package per platform |
 | `packages/icons/` | Generated per-icon descriptors, native assets, catalog and bundled docs |
 | `packages/runtime/` | Shared playback, paint, state, reduced motion and lifecycle API |
 | `packages/react/` | Client-side React adapter with controlled state |
-| `packages/cli/` and `skills/lottie-icons/` | The retired `lottie-icons` command and its skill, kept frozen for migration and the legacy package build |
+| `packages/cli/` | The retired `lottie-icons` command and its skill (`skill/`), kept frozen for migration and the legacy package build |
 | `prototype/icons/catalog.json` | Ordered set manifests and browse categories |
 | `prototype/icons/01/` | Cumulative local gallery |
 | `prototype/icons/NN/assets/` | Distributed JSON, dotLottie and set metadata |
@@ -19,7 +19,7 @@ This repository holds the editable icon source, the `generative-icons` CLI, the 
 | `motion/icon-sets/NN-name/` | Editable definitions, set rules, verification records, and the legacy builder, packaging and set checks |
 | `motion/icon-sets/library/` | Family contract, authoring kit, context search and the legacy source screening |
 | `motion/src/` | The legacy Engine scene template |
-| `.agents/skills/animated-icon-workflow/` | Maintainer workflow and review rules for this repository |
+| `.agents/skills/animated-icon-workflow/` | Maintainer workflow and review rules for this repository (marked internal, so `npx skills add` doesn't offer it) |
 | `scripts/` | Local gallery, package builds and repository checks |
 
 ## Data flow

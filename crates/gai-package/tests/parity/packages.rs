@@ -93,7 +93,6 @@ fn package_inputs(repo: &Path) -> Vec<PathBuf> {
         "LICENSE",
         "docs",
         "schemas",
-        "skills/lottie-icons",
         "scripts/build-packages.py",
         "scripts/pack-release.mjs",
         "prototype/icons/catalog.json",

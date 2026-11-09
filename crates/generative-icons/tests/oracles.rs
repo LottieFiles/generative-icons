@@ -177,8 +177,8 @@ fn ranked_search_matches_generation_context() {
 
 #[test]
 fn migration_knows_the_released_legacy_skill() {
-    let skill = repo_root().join("skills/lottie-icons");
-    require!(skill.is_dir().then_some(()), "skills/lottie-icons");
+    let skill = repo_root().join("packages/cli/skill");
+    require!(skill.is_dir().then_some(()), "packages/cli/skill");
     for (relative, golden) in LEGACY_SKILL_FILES {
         assert_eq!(sha(&skill, relative), golden, "{relative}");
     }

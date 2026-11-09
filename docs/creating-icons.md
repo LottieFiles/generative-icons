@@ -10,7 +10,7 @@ When the library has no icon for your meaning, your coding AI can create one in 
 npx generative-icons init
 ```
 
-`init` installs the agent skill (`.claude/skills/generative-icons/` and `.agents/skills/generative-icons/`) and a read-only copy of the authoring kit in `generative-icons/library/` (for JS batches). Your icons' specs live in `generative-icons/icons/`. The commands below assume `generative-icons` is on your `PATH`; otherwise prefix them with `npx`.
+`init` installs the agent skill (`.claude/skills/generative-icons/` and `.agents/skills/generative-icons/`) and a read-only copy of the authoring kit in `generative-icons/library/` (for JS batches). If you installed the skill with `npx skills add LottieFiles/generative-icons --skill generative-icons`, run `init --agents none` so `init` leaves it alone. Your icons' specs live in `generative-icons/icons/`. The commands below assume `generative-icons` is on your `PATH`; otherwise prefix them with `npx`.
 
 ## 2. Search and choose references
 

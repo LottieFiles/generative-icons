@@ -43,9 +43,19 @@ iOS and Android apps play the installed `.lottie` files with dotLottie for iOS a
 
 `npx` runs the npm wrapper, which installs the prebuilt binary for your machine (macOS or Linux, arm64 or x64). Homebrew and a curl installer are planned.
 
+### The agent skill
+
+`init` installs the [`generative-icons` skill](crates/generative-icons/assets/skill/SKILL.md) into your app, at the CLI's version, so your coding agent can search, install, render and create icons for you. To install the skill on its own instead (for every project, or for an agent `init` doesn't set up), use the [skills CLI](https://skills.sh):
+
+```sh
+npx skills add LottieFiles/generative-icons --skill generative-icons
+```
+
+The skill only teaches your agent the workflow; the project still needs `npx generative-icons init`. After installing the skill this way, run `npx generative-icons init --agents none`, so `init` leaves your copy alone.
+
 ## Create a missing icon with your AI
 
-`init` installs a `generative-icons` skill for Claude Code (`.claude/skills/`) and other agents (`.agents/skills/`). Ask your agent for the icon you need; the skill walks it through this loop (prefix each command with `npx` unless the binary is on your `PATH`):
+`init` installs a `generative-icons` skill for Claude Code (`.claude/skills/`) and other agents (`.agents/skills/`), or install it with [the skills CLI](#the-agent-skill). Ask your agent for the icon you need; the skill walks it through this loop (prefix each command with `npx` unless the binary is on your `PATH`):
 
 ```sh
 generative-icons context "mailbox: a letter drops in"   # family rules and the nearest references
@@ -78,10 +88,10 @@ Icons you create stay in your project. To share one, `generative-icons submit <i
 ```text
 crates/            The generative-icons CLI (Rust workspace) and its embedded agent skill
 npm/               npm wrapper and per-platform packages for the CLI binary
-packages/          Web npm packages: icons, runtime, react (and the retired lottie-icons CLI)
+packages/          Web npm packages: icons, runtime, react (and the retired lottie-icons CLI and its skill)
 motion/            Editable icon source, family contract and the legacy JS/Python pipeline
 prototype/         Local gallery, native assets and bundled player
-.agents/skills/    Maintainer workflow and review rules for this repository
+.agents/skills/    Maintainer workflow and review rules for this repository (internal)
 docs/              Usage, design, development and maintainer guides
 scripts/           Gallery, package builds and repository checks
 ```

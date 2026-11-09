@@ -7,7 +7,7 @@ expression per line, to the ignored file .local/publication-blocklist.txt.
 from pathlib import Path
 import hashlib,importlib.util,json,re,subprocess
 root=Path(__file__).resolve().parents[1]
-files=[*root.glob('*.md'),*(root/'docs').rglob('*.md'),*(root/'.agents').rglob('*.md'),*(root/'skills').rglob('*.md'),*root.glob('packages/*/README.md'),
+files=[*root.glob('*.md'),*(root/'docs').rglob('*.md'),*(root/'.agents').rglob('*.md'),*root.glob('packages/*/README.md'),
  *root.glob('npm/**/README.md'),*root.glob('crates/README.md'),*(root/'crates/generative-icons/assets/skill').rglob('*.md')]
 errors=[]
 for p in files:
@@ -40,7 +40,7 @@ RETIRED=[('CREATOR_MCP_BIN',r'CREATOR_MCP_BIN'),('ENGINE_MCP_ROOT',r'ENGINE_MCP_
  ('lottie-generative-icons',r'LottieFiles/lottie-generative-icons'),
  ('Generative Animated Icons',r'Generative Animated Icons'),
  ('gen-animated-icons',r'npx gen-animated-icons\b|\bgen-animated-icons (?:init|info|search|add|diff|remove|create|check|draft|build|preview|login|logout|whoami|library|doctor|submit|context|mcp)\b')]
-EXEMPT=('skills/lottie-icons/','packages/cli/README.md','CHANGELOG.md')
+EXEMPT=('packages/cli/skill/','packages/cli/README.md','CHANGELOG.md')
 templates=[*(root/'.github').rglob('*.md'),*(root/'.github').rglob('*.yml'),*root.glob('prototype/icons/guide/*.md'),root/'prototype/icons/guide/index.html']
 retired=[(n,re.compile(p)) for n,p in RETIRED]
 for p in [*files,*templates]:

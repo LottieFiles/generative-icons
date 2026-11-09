@@ -117,7 +117,7 @@ cargo test --workspace --release -- --ignored --skip live_   # whole-catalog par
 - **Renderer is the one users run.** dotlottie-rs at `e112d3f`, the commit dotlottie-web 0.80.0 was built from. The player reloads for every paint change, because a second slot flush after a render crashes natively.
 - **Frozen sets.** 01 and 02 are never rebuilt (their assets are verified as they are). 03–06 build through built-in legacy profiles.
 - **Formats kept for now.** `set.json` and dotLottie manifests stay in Python `json.dumps` format, and the `.lottie` ZIP bytes stay exact (classic zlib level 9, fixed dates). Changing a format is a deliberate, separate step.
-- **One skill source.** The app skill is `generative-icons/assets/skill/`, embedded in the binary. `skills/lottie-icons/` is the retired skill, frozen byte for byte because `init --migrate` recognizes it by hash and the legacy package build copies it.
+- **One skill source.** The app skill is `generative-icons/assets/skill/`, embedded in the binary; the root `skills.sh.json` points the skills CLI (`npx skills add`) at it too. `packages/cli/skill/` is the retired `lottie-icons` skill, frozen byte for byte because `init --migrate` recognizes it by hash and the legacy package build copies it. It sits outside `skills/` so the skills CLI doesn't offer it.
 
 ## Known limits
 

@@ -6,6 +6,8 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 ### Changed
 
+- The `generative-icons` agent skill is shorter and follows the task in order: set up the project, use a library icon, render it on the web, iOS or Android, and create a missing icon only once the user agrees. JS batch details moved into its `authoring.md` reference.
+- `npx skills add LottieFiles/generative-icons --skill generative-icons` installs that skill on its own: a root `skills.sh.json` points the skills CLI at it, the retired `lottie-icons` skill moved, unchanged, from `skills/lottie-icons/` to `packages/cli/skill/`, and the maintainer workflow skill is marked internal, so `generative-icons` is the only skill the skills CLI offers. Run `init --agents none` in a project whose skill was installed that way.
 - LottieFiles' development server is no longer one of the CLI's LottieFiles engines. A project's `engine.url` may name only Creator MCP's production server, and `GAI_ENGINE_TOKEN` goes only there or to the `GAI_ENGINE_URL` engine. `--engine-url` and `GAI_ENGINE_URL` still choose another engine.
 - The Release workflow publishes a release when it runs with **Publish** checked and a maintainer approves its `npm` environment. It publishes to npm through trusted publishing from GitHub Actions, with no token and with provenance on every package, then publishes the GitHub release.
 
