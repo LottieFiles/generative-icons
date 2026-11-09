@@ -66,6 +66,8 @@ Download both artifacts (`gh run download <run-id> -n npm-packages -n web-packag
 
 ## 4. Publish
 
+**Publish by hand for now.** Trusted publishing from the workflow doesn't work for this repository yet. GitHub gives repositories created after 15 July 2026 an immutable OIDC subject (ours is `repo:LottieFiles@30947444/generative-icons@1375198936`), and npm's token exchange rejects it with "OIDC token exchange error - package not found" ([npm/cli#9969](https://github.com/npm/cli/issues/9969)). npm then falls back to setup-node's placeholder token, so the publish job fails with `E404` and publishes nothing. 0.1.1 was published by hand from the reviewed artifacts. Until npm fixes the bug, run the Release workflow without **Publish**, publish its artifacts by hand ([below](#publishing-by-hand)), then publish its draft release (`gh release edit vX.Y.Z --draft=false --latest`).
+
 1. If the run has **Publish** checked, its publish job waits once the build, draft and pack jobs pass. Review the draft release and the artifacts (step 3). Then approve the job: open the run, choose **Review deployments**, select `npm` and approve. The job:
    - publishes the eight packages to npm in order: the platform packages first (the wrapper pins them exactly), then the wrapper, then the web packages in dependency order. It skips a version already on npm, so a failed run can run again. A prerelease (`X.Y.Z-next.N`) goes to the `next` tag, so `latest` is untouched;
    - publishes the draft release this run made, which creates the tag `vX.Y.Z`.
@@ -110,7 +112,7 @@ for package in generative-icons @lottiefiles/generative-icons @lottiefiles/gener
 done
 ```
 
-`env 'npm_config_@lottiefiles:registry=https://registry.npmjs.org/' npm trust list <package>` shows a package's trusted publisher. If a run fails with "unable to authenticate", compare the trusted publisher with the workflow's file name and environment: they match case-sensitively.
+`env 'npm_config_@lottiefiles:registry=https://registry.npmjs.org/' npm trust list <package>` shows a package's trusted publisher. If a run fails with "unable to authenticate", compare the trusted publisher with the workflow's file name and environment: they match case-sensitively. If the job's "Show what npm said about trusted publishing" step reports "package not found" while the trusted publisher matches, it's npm/cli#9969 (above).
 
 ## 5. Update the website
 
