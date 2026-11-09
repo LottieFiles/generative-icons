@@ -4,6 +4,10 @@ All notable changes to the Generative Icons packages and the `generative-icons` 
 
 ## [Unreleased]
 
+### Changed
+
+- The Release workflow publishes to npm with `NPM_TOKEN`, a token kept as a secret of its `npm` environment, and with `--provenance`, so every version carries a provenance attestation again. npm's trusted publishing rejects this repository's OIDC subject ([npm/cli#9969](https://github.com/npm/cli/issues/9969)); npm still tries it first and falls back to the token.
+
 ## [0.1.1] - 2026-11-09
 
 ### Changed

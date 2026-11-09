@@ -4,8 +4,9 @@ name: Release
 # packages (web-packages). Every tarball and npm platform package
 # carries LICENSE, THIRD_PARTY_NOTICES.md and THIRD_PARTY_LICENSES.txt, the license texts of
 # everything its binary links. Run with `publish` checked, the publish job then waits for a
-# maintainer to approve the npm environment, publishes the packages to npm through trusted
-# publishing (no token; npm adds provenance) and publishes the draft release. Without it,
+# maintainer to approve the npm environment, publishes the packages to npm with provenance
+# (with the environment's NPM_TOKEN until npm accepts trusted publishing from this repository)
+# and publishes the draft release. Without it,
 # nothing is published (docs/maintainers/releasing.md).
 on:
   workflow_dispatch:
@@ -558,13 +559,13 @@ jobs:
     needs: [version, draft, npm, packages]
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    # The npm environment waits for a maintainer's approval and deploys only from main. Each
-    # package on npm trusts this workflow file in this environment and nothing else
-    # (npm trust github), so publishing needs no token.
+    # The npm environment waits for a maintainer's approval and deploys only from main, and only
+    # it holds NPM_TOKEN. Each package on npm also trusts this workflow file in this environment
+    # (npm trust github), for when npm accepts the repository's OIDC subject.
     environment: npm
     permissions:
       contents: write # publish the draft release
-      id-token: write # npm trusted publishing (OIDC)
+      id-token: write # provenance, and npm trusted publishing (OIDC)
     steps:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
@@ -587,6 +588,11 @@ jobs:
       - name: Publish to npm
         env:
           VERSION: ${{ needs.version.outputs.version }}
+          # npm rejects this repository's OIDC subject for trusted publishing (npm/cli#9969), so the
+          # job publishes with NPM_TOKEN, a secret of the npm environment: npm tries trusted
+          # publishing first and falls back to it. --provenance still signs each version with
+          # this run's GitHub identity. Delete the secret once npm accepts the subject.
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           # The platform packages first (the wrapper pins them exactly), then the wrapper, then
           # the web packages in dependency order. A version already on npm is skipped, so a
@@ -599,7 +605,7 @@ jobs:
             if [ -n "$(npm view "$name@$VERSION" version 2> /dev/null)" ]; then
               echo "$name@$VERSION is already on npm"
             else
-              npm publish "$1" --access public --tag "$tag"
+              npm publish "$1" --access public --tag "$tag" --provenance
             fi
           }
           for target in darwin-arm64 darwin-x64 linux-arm64-gnu linux-x64-gnu; do
