@@ -1,8 +1,7 @@
 //! Managed files: path validation, all-or-nothing batches that never overwrite user
 //! edits, and the per-project process lock.
 //!
-//! Ports `inside()` and `writeBatch()` from `packages/cli/src/project.mjs`: every
-//! change is validated before anything is written, identical content is skipped, new
+//! Every change is validated before anything is written, identical content is skipped, new
 //! files are created exclusively, and a failure rolls back in reverse order.
 
 use crate::error::{CliError, ErrorCode, Result};

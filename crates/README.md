@@ -1,6 +1,6 @@
 # generative-icons (Rust workspace)
 
-`generative-icons` is one binary that finds, creates, builds, checks and packages animated icons. It replaces the Node, Python and browser pipeline in `motion/`, `scripts/` and `prototype/icons/*/verify.html`, and the earlier npm command `lottie-icons` (`packages/cli`). User docs: [docs/cli.md](../docs/cli.md); contributor setup: [docs/development.md](../docs/development.md).
+`generative-icons` is one binary that finds, creates, builds, checks and packages animated icons. It replaces the Node, Python and browser pipeline in `motion/`, `scripts/` and `prototype/icons/*/verify.html`. User docs: [docs/cli.md](../docs/cli.md); contributor setup: [docs/development.md](../docs/development.md).
 
 ## Status
 
@@ -11,7 +11,7 @@ Every command is wired, and the whole catalog rebuilds byte for byte through the
 - **Checks:** 95 of 95 verification evidence files, the browser evidence of the 24 canonical sets (35–63, 1,428 actions) rendered natively, the 18 motion measurements of sets 22–39, and preflight reports identical to Node's.
 - **Packaging:** set zips identical to Python's (the six legacy zips differ only in entry order), `icon-library.zip` equal to `delivery.json`, the npm `dist` folders and tarballs identical.
 - **Spec icons:** 550 library icons are spec v2 (`motion/icon-sets/*/specs/`), reanimated or added since the snapshot. Every spec compiles, `library build` keeps their adopted assets, and `library verify` checks them against their specs.
-- **Apps:** all 1,161 icons install and uninstall on web and Android, legacy `lottie-icons.json` projects get the old CLI's exact bytes, and 2,322 ranked queries match `generation-context.mjs`.
+- **Apps:** all 1,161 icons install and uninstall on web and Android, installed modules match the earlier JavaScript CLI's bytes, and 2,322 ranked queries match `generation-context.mjs`.
 
 ## Commands
 
@@ -117,14 +117,14 @@ cargo test --workspace --release -- --ignored --skip live_   # whole-catalog par
 - **Renderer is the one users run.** dotlottie-rs at `e112d3f`, the commit dotlottie-web 0.80.0 was built from. The player reloads for every paint change, because a second slot flush after a render crashes natively.
 - **Frozen sets.** 01 and 02 are never rebuilt (their assets are verified as they are). 03–06 build through built-in legacy profiles.
 - **Formats kept for now.** `set.json` and dotLottie manifests stay in Python `json.dumps` format, and the `.lottie` ZIP bytes stay exact (classic zlib level 9, fixed dates). Changing a format is a deliberate, separate step.
-- **One skill source.** The app skill is `generative-icons/assets/skill/`, embedded in the binary; the root `skills.sh.json` points the skills CLI (`npx skills add`) at it too. `packages/cli/skill/` is the retired `lottie-icons` skill, frozen byte for byte because `init --migrate` recognizes it by hash and the legacy package build copies it. It sits outside `skills/` so the skills CLI doesn't offer it.
+- **One skill source.** The app skill is `generative-icons/assets/skill/`, embedded in the binary; the root `skills.sh.json` points the skills CLI (`npx skills add`) at it too. It is the only skill the skills CLI offers: the maintainer workflow skill is marked internal.
 
 ## Known limits
 
 - **Targets.** Parity was measured on aarch64-apple-darwin only. x86_64 and Linux are checked first by CI (the renderer probe and the math self-test run in the tests and in `doctor`). Windows is unsupported: CORE-MATH needs `__int128`, and the build passes GNU-style flags. Linux arm64 release builds need hosted arm64 runners, which a private repository must have enabled.
 - **Sign-in.** The engine has no device-code flow or API keys: `login --no-browser` pastes the redirect, and `GAI_ENGINE_TOKEN` only carries a short-lived access token.
 - **Legacy evidence.** Sets 01–20 wrote older browser-evidence schemas. The tests validate them on shared keys only, and running `verify-visual` on them would rewrite their evidence in the current schema. Motion measurement for sets 18–21 is not ported (their legacy scripts used other algorithms); their committed evidence carries forward.
-- **Not ported.** `ai-icons.zip` (`package-ai.py`), `merge-render-evidence.py`, filmstrip PNGs next to natives, the gallery server and site build, the docs build and check, and an exact `lottie-icons` compat mode (legacy projects already get the old file bytes). The asset audit is ported (`gai_package::audit_assets`) but has no command yet, so `npm run check:assets` stays.
+- **Not ported.** `ai-icons.zip` (`package-ai.py`), `merge-render-evidence.py`, filmstrip PNGs next to natives, the gallery server and site build, and the docs build and check. The asset audit is ported (`gai_package::audit_assets`) but has no command yet, so `npm run check:assets` stays.
 - **Outputs.** Stale outputs are never deleted (for example set 50's `do-not-disturb*` files), matching the old builders. Set zips still list the JS pipeline in `REBUILD.txt` and their source bundles, for parity with Python.
 - **Native weights.** Players ignore the `style.outline.width` slot; `add --bake-weight` rewrites the file instead. When dotlottie-rs ships ThorVG 1.1.2 or newer with stroke-width slots, flip `STROKE_WIDTH_SLOT_SUPPORTED` and re-baseline the evidence, probe hashes and renderer pin together.
 - **Contracts.** `schemas/project.schema.json` still describes only the original web config (weights 1.5, 2 and 2.5); the CLI accepts 1 to 3 and writes native configs.

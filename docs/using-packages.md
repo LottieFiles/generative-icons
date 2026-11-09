@@ -43,7 +43,6 @@ Commit `generative-icons.json`, the added files and `.generative-icons/lock.json
 - `init` reads the app's package metadata and creates `generative-icons.json`, the agent skill in `.claude/skills/generative-icons/` and `.agents/skills/generative-icons/`, and a copy of the authoring kit. It does not edit `AGENTS.md`, global agent settings or components.
 - `add` copies native files to `public/generative-icons/` and descriptors to `src/generative-icons/` (or `generative-icons/` without a `src` folder), and records their hashes in `.generative-icons/lock.json`.
 - `diff` reports local changes, `add` refuses to overwrite modified managed files, and `remove` uninstalls icons whose files are unedited.
-- A project set up before the rename (with `gen-animated-icons.json`) or by the earlier `lottie-icons` command moves over with `npx generative-icons init --migrate`; its icon files keep their paths.
 
 ## Vanilla JavaScript
 

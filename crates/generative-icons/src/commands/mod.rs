@@ -21,7 +21,6 @@ pub mod v2;
 pub mod verify_action;
 
 use crate::Context;
-use crate::config::Layout;
 use crate::error::Result;
 use crate::managed::ProcessLock;
 use std::fmt::Write;
@@ -35,16 +34,9 @@ fn unique(values: &[String]) -> Vec<&str> {
     seen.into_iter().collect()
 }
 
-/// Takes the project lock for a command that writes managed files. Projects in an older
-/// layout have no `.generative-icons/` folder, so they go unlocked.
-fn lock_project(ctx: &Context, layout: Layout) -> Result<Option<ProcessLock>> {
-    match layout {
-        Layout::Current => {
-            ProcessLock::acquire(&ctx.cwd, || ctx.out.log("waiting for another generative-icons run in this project"))
-                .map(Some)
-        }
-        Layout::Previous | Layout::Legacy => Ok(None),
-    }
+/// Takes the project lock for a command that writes managed files.
+fn lock_project(ctx: &Context) -> Result<ProcessLock> {
+    ProcessLock::acquire(&ctx.cwd, || ctx.out.log("waiting for another generative-icons run in this project"))
 }
 
 /// `Title:` followed by indented lines, or `Title: none`.

@@ -22,16 +22,6 @@ class Player {
   setScalarSlot(id, value) { this.slots[id] = value; }
   destroy() { this.destroyed++; }
 }
-function fixture(t) {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'icon-consumer-'));
-  fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({ name: 'consumer', private: true, dependencies: { react: '^19' } }));
-  fs.mkdirSync(path.join(dir, 'src')); fs.writeFileSync(path.join(dir, 'AGENTS.md'), 'Existing app instructions.\n');
-  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
-  return dir;
-}
-function cli(dir, ...args) { return spawnSync(process.execPath, [path.join(root, 'packages/cli/dist/cli.mjs'), ...args, '--cwd', dir], { encoding: 'utf8' }); }
-function run(dir, ...args) { const result = cli(dir, ...args); assert.equal(result.status, 0, result.stderr); return JSON.parse(result.stdout); }
-
 test('every catalog icon satisfies the runtime contract; controller is canonical', () => {
   for (const icon of catalog.icons) validateIcon(icon);
   assert.deepEqual(fs.readFileSync(path.join(root, 'packages/runtime/dist/controller.mjs')), fs.readFileSync(path.join(root, 'prototype/icons/03/controller.mjs')));
@@ -66,29 +56,6 @@ test('unsupported reverse leaves a gesture safe to change motion and play', asyn
   assert.equal(await handle.play(), true);
   assert.equal(player.activeAnimationId, icon.motions[1].name);
   handle.destroy();
-});
-test('init/add are repeatable, preserve app instructions and reject edits atomically', t => {
-  const dir = fixture(t);
-  assert.equal(run(dir, 'init').framework, 'react');
-  assert.deepEqual(run(dir, 'init').changed, []);
-  run(dir, 'add', 'heart'); assert.deepEqual(run(dir, 'add', 'heart').changed, []);
-  assert.equal(fs.readFileSync(path.join(dir, 'AGENTS.md'), 'utf8'), 'Existing app instructions.\n');
-  fs.appendFileSync(path.join(dir, 'src/lottie-icons/heart.mjs'), '// local edit\n');
-  const result = cli(dir, 'add', 'bell', 'heart');
-  assert.equal(result.status, 1); assert.match(result.stderr, /modified file/);
-  assert.equal(fs.existsSync(path.join(dir, 'public/lottie-icons/bell.lottie')), false);
-  assert.equal(run(dir, 'diff').find(item => item.file.endsWith('heart.mjs')).status, 'modified');
-});
-test('monorepo ambiguity, path traversal and symlinks fail before writing', t => {
-  const dir = fixture(t); run(dir, 'init');
-  const configPath = path.join(dir, 'lottie-icons.json'), config = JSON.parse(fs.readFileSync(configPath));
-  config.assets = '../escape'; fs.writeFileSync(configPath, JSON.stringify(config));
-  assert.match(cli(dir, 'add', 'heart').stderr, /relative path/);
-  config.assets = 'public/lottie-icons'; fs.writeFileSync(configPath, JSON.stringify(config));
-  fs.symlinkSync(os.tmpdir(), path.join(dir, 'public'));
-  assert.match(cli(dir, 'add', 'heart').stderr, /Symlinks/);
-  fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({ workspaces: ['apps/*'] }));
-  assert.match(cli(dir, 'init').stderr, /workspace root/);
 });
 test('per-icon entry loads no catalog and npm contents exclude injected WIP', () => {
   const code = fs.readFileSync(path.join(root, 'packages/icons/dist/icons/heart.mjs'), 'utf8');

@@ -71,7 +71,7 @@ jobs:
               errors.append('the wrapper optionalDependencies do not match npm/platforms')
           # The web packages share the version, and pin each other exactly.
           web = {}
-          for folder in ['icons', 'runtime', 'react', 'cli']:
+          for folder in ['icons', 'runtime', 'react']:
               package = json.loads(pathlib.Path(f'packages/{folder}/package.json').read_text())
               web[package['name']] = package
               if package['version'] != version:
@@ -543,8 +543,7 @@ jobs:
         env:
           VERSION: ${{ needs.version.outputs.version }}
         run: npm run test:consumers -- "dist/packages-v$VERSION"
-      # Holds @lottiefiles/generative-icons, -runtime and -react, plus the retired packages/cli
-      # pack, which stays unpublished (docs/maintainers/releasing.md).
+      # Holds @lottiefiles/generative-icons, -runtime and -react.
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: web-packages
@@ -590,8 +589,8 @@ jobs:
           VERSION: ${{ needs.version.outputs.version }}
         run: |
           # The platform packages first (the wrapper pins them exactly), then the wrapper, then
-          # the web packages in dependency order. The retired packages/cli pack stays
-          # unpublished. A version already on npm is skipped, so a failed run can run again.
+          # the web packages in dependency order. A version already on npm is skipped, so a
+          # failed run can run again.
           set -euo pipefail
           tag=latest
           case "$VERSION" in *-*) tag=next ;; esac

@@ -23,13 +23,6 @@ pub const SKILL_FILES: [(&str, &str); 10] = [
 /// Contents of the managed `.generative-icons/.gitignore`: only the lock is committed.
 pub const STATE_GITIGNORE: &str = "*\n!.gitignore\n!lock.json\n";
 
-/// sha256 of the skill files `lottie-icons init` installed, which `init --migrate` may delete.
-pub const LEGACY_SKILL_FILES: [(&str, &str); 3] = [
-    ("SKILL.md", "ae40873ca99474fa4a3b506b53786a33365431f6f94b751a6bfd54fdff462b7e"),
-    ("references/authoring.md", "107a985f61a01f5075204e4e7e135463059b25ea7426365bff9c903540e0a4ba"),
-    ("references/runtime.md", "aec0627215b7f955aa3fa58f3b18ccb203324c95c8977d2c695a6de1c936fc6d"),
-];
-
 #[cfg(test)]
 mod tests {
     use super::*;

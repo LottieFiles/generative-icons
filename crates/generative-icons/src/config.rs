@@ -1,9 +1,6 @@
-//! The project config: `generative-icons.json`, or an older `gen-animated-icons.json`
-//! (this CLI's earlier name) or `lottie-icons.json`.
+//! The project config: `generative-icons.json`.
 //!
-//! Validation of the shared keys ports `readConfig` (`packages/cli/src/project.mjs`),
-//! except that paths, colors and names must be JSON strings rather than values that
-//! merely stringify to a match. Unknown keys are kept and ignored.
+//! Paths, colors and names must be JSON strings. Unknown keys are kept and ignored.
 
 use crate::error::{CliError, ErrorCode, Result};
 use crate::managed::{inside, read_optional};
@@ -11,88 +8,22 @@ use crate::project::{Detection, Platform, detect};
 use serde_json::{Map, Value, json};
 use std::path::Path;
 
-/// Config file of projects set up by this CLI.
+/// Config file of a project.
 pub const CONFIG_FILE: &str = "generative-icons.json";
-/// Config file of projects set up by this CLI when it was called `gen-animated-icons`.
-pub const PREVIOUS_CONFIG_FILE: &str = "gen-animated-icons.json";
-/// Config file of projects set up by the `lottie-icons` CLI.
-pub const LEGACY_CONFIG_FILE: &str = "lottie-icons.json";
+/// Project-relative folder of the lock and the tool's state.
+pub const STATE_DIR: &str = ".generative-icons";
+/// Project-relative lock path.
+pub const LOCK_FILE: &str = ".generative-icons/lock.json";
+/// The tool named in generated file headers.
+pub const TOOL_NAME: &str = "generative-icons";
 /// Skill roots installed by default: Claude Code, then Codex and other agents.
 pub const DEFAULT_SKILL_ROOTS: [&str; 2] = [".claude/skills", ".agents/skills"];
 /// Default folder of a project's own icon source.
 pub const DEFAULT_LOCAL_SOURCE: &str = "generative-icons/icons";
-/// The same default in projects set up as `gen-animated-icons`; `init --migrate` writes it
-/// into their config so their icons and kit copy stay where they are.
-pub const PREVIOUS_LOCAL_SOURCE: &str = "gen-animated-icons/icons";
-
-/// Which generation of project files a project uses. Older layouts keep working with
-/// `add`, `info`, `diff` and `remove`; `init --migrate` moves them to the current one.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
-pub enum Layout {
-    /// `generative-icons.json` and `.generative-icons/lock.json`.
-    Current,
-    /// `gen-animated-icons.json` and `.gen-animated-icons/lock.json`: this CLI under its
-    /// earlier name.
-    Previous,
-    /// `lottie-icons.json` and `.lottie-icons/lock.json`.
-    Legacy,
-}
-
-impl Layout {
-    /// The layout whose config file exists in `root`; the newest one wins.
-    pub fn find(root: &Path) -> Option<Layout> {
-        [Layout::Current, Layout::Previous, Layout::Legacy]
-            .into_iter()
-            .find(|layout| root.join(layout.config_file()).is_file())
-    }
-
-    /// Whether this is the current layout (older ones need `init --migrate` for some commands).
-    pub fn is_current(self) -> bool {
-        self == Self::Current
-    }
-
-    /// Project-relative config path.
-    pub fn config_file(self) -> &'static str {
-        match self {
-            Self::Current => CONFIG_FILE,
-            Self::Previous => PREVIOUS_CONFIG_FILE,
-            Self::Legacy => LEGACY_CONFIG_FILE,
-        }
-    }
-
-    /// Project-relative folder of the lock and the tool's state.
-    pub fn state_dir(self) -> &'static str {
-        match self {
-            Self::Current => ".generative-icons",
-            Self::Previous => ".gen-animated-icons",
-            Self::Legacy => ".lottie-icons",
-        }
-    }
-
-    /// Project-relative lock path.
-    pub fn lock_file(self) -> &'static str {
-        match self {
-            Self::Current => ".generative-icons/lock.json",
-            Self::Previous => ".gen-animated-icons/lock.json",
-            Self::Legacy => ".lottie-icons/lock.json",
-        }
-    }
-
-    /// The tool named in generated file headers.
-    pub fn tool_name(self) -> &'static str {
-        match self {
-            Self::Current => "generative-icons",
-            Self::Previous => "gen-animated-icons",
-            Self::Legacy => "lottie-icons",
-        }
-    }
-}
 
 /// A validated project config.
 #[derive(Debug, Clone, PartialEq)]
 pub struct Config {
-    /// Which files the project uses.
-    pub layout: Layout,
     /// The config as written, unknown keys included.
     pub raw: Map<String, Value>,
     /// Declared, requested or detected platform.
@@ -117,10 +48,9 @@ impl Config {
     /// Loads and validates the project config. `None` when the project has none.
     /// `requested` (`--platform`) overrides a declared platform.
     pub fn load(root: &Path, requested: Option<Platform>) -> Result<Option<Config>> {
-        let Some(layout) = Layout::find(root) else { return Ok(None) };
-        let file = inside(root, layout.config_file())?;
+        let file = inside(root, CONFIG_FILE)?;
         let Some(bytes) = read_optional(&file)? else { return Ok(None) };
-        Self::parse(root, layout, &bytes, requested).map(Some)
+        Self::parse(root, &bytes, requested).map(Some)
     }
 
     /// Loads the config, failing with `PROJECT_NOT_FOUND` when there is none.
@@ -132,8 +62,8 @@ impl Config {
     }
 
     /// Validates config bytes.
-    pub fn parse(root: &Path, layout: Layout, bytes: &[u8], requested: Option<Platform>) -> Result<Config> {
-        let file = layout.config_file();
+    pub fn parse(root: &Path, bytes: &[u8], requested: Option<Platform>) -> Result<Config> {
+        let file = CONFIG_FILE;
         let invalid = |message: &str| CliError::new(ErrorCode::InvalidConfig, message).with_path(file);
         let value: Value =
             serde_json::from_slice(bytes).map_err(|error| invalid(&format!("Cannot parse {file}: {error}")))?;
@@ -153,11 +83,9 @@ impl Config {
                     .ok_or_else(|| invalid("platform must be web, ios or android"))?,
             ),
         };
-        let platform = match (requested, declared, layout) {
-            (Some(platform), _, _) | (None, Some(platform), _) => platform,
-            // The legacy CLI only set up JavaScript apps.
-            (None, None, Layout::Legacy) => Platform::Web,
-            (None, None, Layout::Current | Layout::Previous) => detect(root, None, None)?.platform,
+        let platform = match requested.or(declared) {
+            Some(platform) => platform,
+            None => detect(root, None, None)?.platform,
         };
 
         let public_path = match platform {
@@ -171,14 +99,10 @@ impl Config {
         let defaults = raw.get("defaults").cloned().unwrap_or(Value::Null);
         let weight = valid_defaults(&defaults).ok_or_else(|| invalid("Invalid project defaults"))?;
 
-        let default_source = match layout {
-            Layout::Previous => PREVIOUS_LOCAL_SOURCE,
-            Layout::Current | Layout::Legacy => DEFAULT_LOCAL_SOURCE,
-        };
         let local_source = match raw.get("local") {
-            None => default_source.to_string(),
+            None => DEFAULT_LOCAL_SOURCE.to_string(),
             Some(Value::Object(local)) => match local.get("source") {
-                None => default_source.to_string(),
+                None => DEFAULT_LOCAL_SOURCE.to_string(),
                 source => project_path(root, source)?,
             },
             Some(_) => return Err(invalid("local must be an object")),
@@ -191,7 +115,7 @@ impl Config {
             Some(_) => return Err(invalid("skills must be a list of project-relative folders")),
         };
 
-        Ok(Config { layout, raw, platform, assets, descriptors, public_path, defaults, weight, local_source, skills })
+        Ok(Config { raw, platform, assets, descriptors, public_path, defaults, weight, local_source, skills })
     }
 
     /// The config `init` writes for a detected project, in its documented key order.
@@ -266,7 +190,7 @@ mod tests {
 
     fn parse(json: &str) -> Result<Config> {
         let dir = tempfile::tempdir().unwrap();
-        Config::parse(dir.path(), Layout::Current, json.as_bytes(), None)
+        Config::parse(dir.path(), json.as_bytes(), None)
     }
 
     const WEB: &str = r##"{"schemaVersion":1,"platform":"web","assets":"public/i","descriptors":"src/i","publicPath":"/i","defaults":{"color":"#00AAbb","style":"solid","weight":1.75,"motion":"strong"},"extra":true}"##;

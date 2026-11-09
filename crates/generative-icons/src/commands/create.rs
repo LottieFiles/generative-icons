@@ -37,15 +37,11 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     }
     let root = ctx.cwd.as_path();
     let config = Config::require(root, ctx.platform)?;
-    if !config.layout.is_current() {
-        return Err(CliError::new(ErrorCode::InvalidConfig, format!("This project was set up by {}", config.layout.tool_name()))
-            .with_hint("Run generative-icons init --migrate first"));
-    }
     let id = args.id.as_str();
     if let Some(error) = new_id_error(id) {
         return Err(error);
     }
-    let _guard = lock_project(ctx, config.layout)?;
+    let _guard = lock_project(ctx)?;
     let set = LocalSet::of(&config);
     kit::verify(root, &set.kit)?;
     let batch_path = set.batch(id);
@@ -129,7 +125,7 @@ pub fn run(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     }
 
     // definitions.mjs is regenerated while it still holds what create last wrote.
-    let lock = Lock::load(root, config.layout)?;
+    let lock = Lock::load(root)?;
     let mut next = lock.clone();
     let definitions_path = set.file("definitions.mjs");
     let mut ids = set.batch_ids(root)?;

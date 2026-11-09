@@ -2,7 +2,6 @@
 //! missing. Exits 0 either way.
 
 use crate::Context;
-use crate::config::Layout;
 use crate::error::Result;
 use crate::lock::Lock;
 use crate::output::Report;
@@ -11,8 +10,7 @@ use std::fmt::Write;
 
 /// Runs `diff`.
 pub fn run(ctx: &Context) -> Result<Report> {
-    let layout = Layout::find(&ctx.cwd).unwrap_or(Layout::Current);
-    let status = Lock::load(&ctx.cwd, layout)?.status(&ctx.cwd)?;
+    let status = Lock::load(&ctx.cwd)?.status(&ctx.cwd)?;
     let value = Value::Array(status.iter().map(|s| s.to_json()).collect());
     let mut text = String::new();
     let unchanged = status.iter().filter(|s| s.status == "unchanged").count();

@@ -1,6 +1,6 @@
 //! Icon search: the ranked lexical search of `generation-context.mjs`, the same ranking
-//! with a wider vocabulary for the `search` command, and the legacy all-words substring
-//! filter of `lottie-icons search`.
+//! with a wider vocabulary for the `search` command, and the all-words substring filter
+//! (`search --match all-words`).
 //!
 //! [`ranked`] is pinned to `generation-context.mjs` (its [`ALIASES`] included), and so is
 //! `context`, which ranks with it. [`ranked_with_synonyms`] also expands [`SYNONYMS`], for

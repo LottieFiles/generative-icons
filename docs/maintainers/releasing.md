@@ -46,7 +46,7 @@ Every command must pass. Fix failures in a PR; never weaken a check to pass.
 Then confirm:
 
 - `packages/icons/dist/release.json` has `"sourceDirty": false` and `sourceCommit` equals `git rev-parse HEAD`. A dirty tree means the build does not match the tag; clean up and rebuild.
-- `dist/packages-vX.Y.Z/release.json` lists every tarball at version X.Y.Z. The pack also contains `packages/cli`, the retired `lottie-icons` command that `generative-icons` supersedes; leave it unpublished unless the maintainers decide otherwise.
+- `dist/packages-vX.Y.Z/release.json` lists every tarball at version X.Y.Z.
 - Tarball contents (`tar -tzf <file>.tgz`) contain nothing from `.local/` or other unreleased work (see [distribution](distribution.md)).
 - License and [third-party notices](https://github.com/LottieFiles/generative-icons/blob/main/THIRD_PARTY_NOTICES.md) cover the shipped files. For the CLI binaries, the Release workflow adds the generated `THIRD_PARTY_LICENSES.txt` (step 3).
 
@@ -67,7 +67,7 @@ Download both artifacts (`gh run download <run-id> -n npm-packages -n web-packag
 ## 4. Publish
 
 1. If the run has **Publish** checked, its publish job waits once the build, draft and pack jobs pass. Review the draft release and the artifacts (step 3). Then approve the job: open the run, choose **Review deployments**, select `npm` and approve. The job:
-   - publishes the eight packages to npm in order: the platform packages first (the wrapper pins them exactly), then the wrapper, then the web packages in dependency order. It leaves `lottiefiles-generative-icons-cli-X.Y.Z.tgz` unpublished and skips a version already on npm, so a failed run can run again. A prerelease (`X.Y.Z-next.N`) goes to the `next` tag, so `latest` is untouched;
+   - publishes the eight packages to npm in order: the platform packages first (the wrapper pins them exactly), then the wrapper, then the web packages in dependency order. It skips a version already on npm, so a failed run can run again. A prerelease (`X.Y.Z-next.N`) goes to the `next` tag, so `latest` is untouched;
    - publishes the draft release this run made, which creates the tag `vX.Y.Z`.
 
    It needs no token: each package trusts this workflow in the `npm` environment (see [Trusted publishing](#trusted-publishing)), and npm adds a provenance attestation to every version. If the run went without **Publish**, run it again with it checked: it rebuilds the same commit and drafts a new release. Delete the earlier draft, which stays unpublished.

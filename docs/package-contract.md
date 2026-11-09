@@ -18,5 +18,3 @@ The `@lottiefiles/generative-icons*` packages share one version and are released
 The runtime package ships the gallery's controller as its canonical implementation; the build copies that exact file and parity tests guard it. Apps should use the runtime package rather than copying the controller.
 
 The website consumes the published packages and validates the release hashes when importing the catalog, assets and documentation. No engine code is included in the packages or the CLI: native export runs on LottieFiles' hosted engine.
-
-Projects set up while this CLI was called `gen-animated-icons` (`gen-animated-icons.json` and `.gen-animated-icons/lock.json`) or by the earlier `lottie-icons` command (`lottie-icons.json` and `.lottie-icons/lock.json`) keep working with `generative-icons add`, `info`, `diff` and `remove`, which write the same bytes there; `generative-icons init --migrate` moves them to the current files.

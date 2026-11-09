@@ -121,9 +121,6 @@ pub struct InitArgs {
     /// Agents to install the skill for (claude, agents), or none
     #[arg(long, value_enum, value_delimiter = ',', value_name = "AGENTS")]
     pub agents: Option<Vec<Agent>>,
-    /// Move a lottie-icons project to generative-icons
-    #[arg(long)]
-    pub migrate: bool,
     /// Replace an edited kit copy in the local library folder
     #[arg(long)]
     pub update_kit: bool,

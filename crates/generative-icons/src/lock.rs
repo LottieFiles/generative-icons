@@ -20,7 +20,7 @@
 //! order and unknown keys survive. New keys are appended, except `libraryVersion` and
 //! `generator`, which keep their documented place after `schemaVersion`.
 
-use crate::config::Layout;
+use crate::config::LOCK_FILE;
 use crate::error::{CliError, ErrorCode, Result};
 use crate::managed::{inside, read_optional};
 use gai_core::sha256_hex;
@@ -46,16 +46,14 @@ pub struct Lock {
 
 impl Lock {
     /// Reads the project's lock, or starts an empty one.
-    pub fn load(root: &Path, layout: Layout) -> Result<Lock> {
-        let path = layout.lock_file();
+    pub fn load(root: &Path) -> Result<Lock> {
+        let path = LOCK_FILE;
         let file = inside(root, path)?;
         let invalid = |message: String| CliError::new(ErrorCode::InvalidConfig, message).with_path(path);
         let Some(bytes) = read_optional(&file)? else {
             let mut value = Map::new();
             value.insert("schemaVersion".into(), json!(1));
-            if layout == Layout::Current {
-                value.insert("generator".into(), json!(generator()));
-            }
+            value.insert("generator".into(), json!(generator()));
             value.insert("icons".into(), json!({}));
             value.insert("files".into(), json!({}));
             return Ok(Lock { path, value, disk_sha256: None });
@@ -120,19 +118,12 @@ impl Lock {
         }
     }
 
-    /// Records the library version and, in current projects, the generator.
-    pub fn stamp(&mut self, layout: Layout, library_version: Option<&str>) {
+    /// Records the library version and the generator.
+    pub fn stamp(&mut self, library_version: Option<&str>) {
         if let Some(version) = library_version {
             self.set("libraryVersion", json!(version), &["schemaVersion"]);
         }
-        if layout == Layout::Current {
-            self.set("generator", json!(generator()), &["schemaVersion", "libraryVersion"]);
-        }
-    }
-
-    /// The same content under `layout`'s lock path, which is written fresh (`init --migrate`).
-    pub fn moved_to(self, layout: Layout) -> Lock {
-        Lock { path: layout.lock_file(), disk_sha256: None, ..self }
+        self.set("generator", json!(generator()), &["schemaVersion", "libraryVersion"]);
     }
 
     /// Digests a managed write may replace: `files` plus the lock itself.
@@ -188,30 +179,29 @@ mod tests {
     #[test]
     fn fresh_locks_have_the_documented_shape() {
         let dir = tempfile::tempdir().unwrap();
-        let legacy = Lock::load(dir.path(), Layout::Legacy).unwrap();
-        assert_eq!(gai_core::to_js_json(&Value::Object(legacy.value)), r#"{"schemaVersion":1,"icons":{},"files":{}}"#);
-        let mut current = Lock::load(dir.path(), Layout::Current).unwrap();
-        current.stamp(Layout::Current, Some("0.1.0"));
-        let keys: Vec<&String> = current.value.keys().collect();
+        let mut lock = Lock::load(dir.path()).unwrap();
+        let keys: Vec<&String> = lock.value.keys().collect();
+        assert_eq!(keys, ["schemaVersion", "generator", "icons", "files"]);
+        lock.stamp(Some("0.1.0"));
+        let keys: Vec<&String> = lock.value.keys().collect();
         assert_eq!(keys, ["schemaVersion", "libraryVersion", "generator", "icons", "files"]);
-        // A migrated legacy lock gains `generator` after `libraryVersion`.
-        let mut migrated = Lock::load(dir.path(), Layout::Legacy).unwrap();
-        migrated.stamp(Layout::Legacy, Some("0.1.0"));
-        migrated.stamp(Layout::Current, None);
-        let keys: Vec<&String> = migrated.value.keys().collect();
+        // A lock written without `generator` gains it after `libraryVersion`.
+        lock.value.shift_remove("generator");
+        lock.stamp(None);
+        let keys: Vec<&String> = lock.value.keys().collect();
         assert_eq!(keys, ["schemaVersion", "libraryVersion", "generator", "icons", "files"]);
     }
 
     #[test]
     fn status_reports_each_file() {
         let dir = tempfile::tempdir().unwrap();
-        std::fs::create_dir(dir.path().join(".lottie-icons")).unwrap();
+        std::fs::create_dir(dir.path().join(".generative-icons")).unwrap();
         std::fs::write(dir.path().join("same"), "a").unwrap();
         std::fs::write(dir.path().join("edited"), "b").unwrap();
         let lock = json!({"schemaVersion": 1, "icons": {}, "files": {
             "same": sha256_hex("a"), "edited": sha256_hex("x"), "gone": sha256_hex("c") }});
-        std::fs::write(dir.path().join(".lottie-icons/lock.json"), lock.to_string()).unwrap();
-        let lock = Lock::load(dir.path(), Layout::Legacy).unwrap();
+        std::fs::write(dir.path().join(".generative-icons/lock.json"), lock.to_string()).unwrap();
+        let lock = Lock::load(dir.path()).unwrap();
         let status: Vec<(String, &str)> =
             lock.status(dir.path()).unwrap().into_iter().map(|s| (s.file, s.status)).collect();
         assert_eq!(status, [("same".into(), "unchanged"), ("edited".into(), "modified"), ("gone".into(), "missing")]);
@@ -223,7 +213,7 @@ mod tests {
         let dir = tempfile::tempdir().unwrap();
         std::fs::create_dir(dir.path().join(".generative-icons")).unwrap();
         std::fs::write(dir.path().join(".generative-icons/lock.json"), r#"{"schemaVersion":2}"#).unwrap();
-        let error = Lock::load(dir.path(), Layout::Current).unwrap_err();
+        let error = Lock::load(dir.path()).unwrap_err();
         assert_eq!((error.code, error.message.as_str()), (ErrorCode::InvalidConfig, "Unsupported icon lock"));
     }
 }

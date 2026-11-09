@@ -354,7 +354,7 @@ pub(crate) fn source(ctx: &Context, id: &str) -> Result<(&'static str, Vec<u8>, 
         if let Some(built) = Built::read(root, id)? {
             return Ok(("build", built.lottie, built.icon));
         }
-        let lock = Lock::load(root, config.layout)?;
+        let lock = Lock::load(root)?;
         if let Some(record) = lock.icon(id) {
             let asset = record.get("asset").and_then(Value::as_str);
             let source = record.get("source").and_then(Value::as_str);

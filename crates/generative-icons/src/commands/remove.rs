@@ -15,9 +15,9 @@ use std::fmt::Write;
 /// Runs `remove`.
 pub fn run(ctx: &Context, args: &RemoveArgs) -> Result<Report> {
     let root = ctx.cwd.as_path();
-    let config = Config::require(root, ctx.platform)?;
-    let _guard = lock_project(ctx, config.layout)?;
-    let lock = Lock::load(root, config.layout)?;
+    Config::require(root, ctx.platform)?;
+    let _guard = lock_project(ctx)?;
+    let lock = Lock::load(root)?;
     let ids = unique(&args.ids);
     let mut next = lock.clone();
     let mut batch = Batch::new();

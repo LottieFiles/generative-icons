@@ -15,7 +15,7 @@ use super::preview;
 use super::{lock_project, text_list};
 use crate::Context;
 use crate::cli::BuildArgs;
-use crate::config::{Config, Layout};
+use crate::config::Config;
 use crate::engine;
 use crate::error::{CliError, ErrorCode, Result};
 use crate::kit;
@@ -40,7 +40,6 @@ pub fn run(ctx: &Context, args: &BuildArgs) -> Result<Report> {
     engine::require_online(ctx, "build", "Drop --offline to build; generative-icons check runs the offline checks")?;
     // Spec v2 icons (`icons/<id>.icon.json`) take their own path; v1 is unchanged.
     if let Some(project) = Config::load(&ctx.cwd, ctx.platform).ok().flatten()
-        && project.layout == Layout::Current
         && let Some(ids) = super::v2::wants_build(&ctx.cwd, &LocalSet::of(&project), args)?
     {
         return super::v2::build(ctx, args, &ids);
@@ -64,11 +63,7 @@ pub fn build_with(
 ) -> Result<Report> {
     let root = ctx.cwd.as_path();
     let config = Config::require(root, ctx.platform)?;
-    if !config.layout.is_current() {
-        return Err(CliError::new(ErrorCode::InvalidConfig, format!("This project was set up by {}", config.layout.tool_name()))
-            .with_hint("Run generative-icons init --migrate first"));
-    }
-    let _guard = lock_project(ctx, config.layout)?;
+    let _guard = lock_project(ctx)?;
     let set = LocalSet::of(&config);
     set.require(root)?;
     // Builds record `kitSha256`, so they evaluate only the kit exactly as shipped.
@@ -307,7 +302,7 @@ pub fn build_error_in(error: BuildError, origin: Option<Origin<'_>>) -> CliError
 
 /// Installs every verified icon as `add` installs a local icon, in one batch.
 fn install<'a>(root: &Path, config: &Config, icons: impl Iterator<Item = &'a IconBuild>) -> Result<Vec<String>> {
-    let lock = Lock::load(root, config.layout)?;
+    let lock = Lock::load(root)?;
     let mut next = lock.clone();
     let mut batch = Batch::new();
     stage_settings(&mut batch, config);
@@ -320,7 +315,7 @@ fn install<'a>(root: &Path, config: &Config, icons: impl Iterator<Item = &'a Ico
         record.insert("build".into(), build_facts(&result.built));
         next.object_mut("icons").insert(result.id.clone(), Value::Object(record));
     }
-    next.stamp(config.layout, None);
+    next.stamp(None);
     let digests: Vec<(String, String)> =
         batch.writes().map(|(path, bytes)| (path.to_string(), sha256_hex(bytes))).collect();
     let files = next.object_mut("files");

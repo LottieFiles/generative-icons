@@ -4,7 +4,7 @@
 //! skipped checks, such as a session not verified offline, do not count.
 
 use crate::Context;
-use crate::config::{CONFIG_FILE, Config, Layout};
+use crate::config::{CONFIG_FILE, Config};
 use crate::embedded::{SKILL_FILES, SKILL_NAME};
 use crate::engine;
 use crate::error::{ErrorCode, Result};
@@ -102,16 +102,6 @@ pub fn run(ctx: &Context) -> Result<Report> {
             });
             checks.extend(["skills", "kit", "lock"].map(not_set_up));
         }
-        Ok(Some(config)) if !config.layout.is_current() => {
-            let message = match config.layout {
-                Layout::Legacy => "Set up by lottie-icons; skills and kit are not installed".to_string(),
-                layout => format!("Set up by {} (an earlier layout); its skills are not the current ones", layout.tool_name()),
-            };
-            checks.push(Check::new("project", Status::Fail, message).hint("Run generative-icons init --migrate"));
-            checks.push(not_set_up("skills"));
-            checks.push(not_set_up("kit"));
-            checks.push(lock_check(root, config.layout));
-        }
         Ok(Some(config)) => {
             let described = match detect(root, Some(config.platform), None) {
                 Ok(d) => format!("{} ({}, {})", d.platform.as_str(), d.framework, d.package_manager),
@@ -120,7 +110,7 @@ pub fn run(ctx: &Context) -> Result<Report> {
             checks.push(Check::new("project", Status::Pass, format!("{described}, configured by {CONFIG_FILE}")));
             checks.push(managed_check(root, &config, "skills"));
             checks.push(managed_check(root, &config, "kit"));
-            checks.push(lock_check(root, config.layout));
+            checks.push(lock_check(root));
         }
     }
 
@@ -321,7 +311,7 @@ fn managed_check(root: &std::path::Path, config: &Config, id: &'static str) -> C
     if expected.is_empty() {
         return Check::new(id, Status::Skip, "No skill folders configured");
     }
-    let lock = match Lock::load(root, config.layout) {
+    let lock = match Lock::load(root) {
         Ok(lock) => lock,
         Err(error) => return Check::new(id, Status::Fail, error.message),
     };
@@ -366,8 +356,8 @@ fn managed_check(root: &std::path::Path, config: &Config, id: &'static str) -> C
 }
 
 /// Lock integrity: parseable, with every managed file's state summarized.
-fn lock_check(root: &std::path::Path, layout: Layout) -> Check {
-    let status = Lock::load(root, layout).and_then(|lock| lock.status(root));
+fn lock_check(root: &std::path::Path) -> Check {
+    let status = Lock::load(root).and_then(|lock| lock.status(root));
     match status {
         Err(error) => Check::new("lock", Status::Fail, error.message),
         Ok(files) => {

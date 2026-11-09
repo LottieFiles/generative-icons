@@ -1,6 +1,6 @@
 //! The npm package contents (`scripts/build-packages.py`): per-icon descriptors and assets,
 //! the package `catalog.json`, docs, schemas, the CLI skill and `release.json`, written to
-//! `packages/<name>/dist` for `runtime`, `react`, `icons` and `cli`. Nothing is published.
+//! `packages/<name>/dist` for `runtime`, `react` and `icons`. Nothing is published.
 
 use crate::error::{PackageError, Result, invalid};
 use crate::io::{
@@ -17,7 +17,7 @@ use std::collections::{BTreeMap, HashSet};
 use std::path::{Path, PathBuf};
 
 /// The packages in build order.
-pub const PACKAGES: [&str; 4] = ["runtime", "react", "icons", "cli"];
+pub const PACKAGES: [&str; 3] = ["runtime", "react", "icons"];
 
 /// Public docs copied into the icons package.
 const DOCS: [&str; 9] = [
@@ -68,7 +68,7 @@ impl PackagesReport {
             "clean source tree, status release"
         };
         format!(
-            "Built {} icon descriptors/assets and four packages ({}; {state}). Nothing was published.",
+            "Built {} icon descriptors/assets and three packages ({}; {state}). Nothing was published.",
             self.icons, self.version
         )
     }
@@ -77,7 +77,7 @@ impl PackagesReport {
 /// Files staged per package, by path relative to its `dist`.
 type Stage = BTreeMap<&'static str, BTreeMap<String, Vec<u8>>>;
 
-/// Builds all four packages' `dist` folders from the catalog and the package sources.
+/// Builds all three packages' `dist` folders from the catalog and the package sources.
 pub fn build_packages(repo: &Path, options: &BuildPackagesOptions) -> Result<PackagesReport> {
     let package_json = read_json(&repo.join("packages/icons/package.json"))?;
     let version = field(&package_json, "version", "packages/icons/package.json")?.clone();
@@ -236,20 +236,6 @@ pub fn build_packages(repo: &Path, options: &BuildPackagesOptions) -> Result<Pac
             &repo.join("schemas").join(name),
         )?;
     }
-    for name in ["runtime.md", "authoring.md"] {
-        staged(
-            &mut stage,
-            "cli",
-            format!("skill/references/{name}"),
-            &repo.join("packages/cli/skill/references").join(name),
-        )?;
-    }
-    staged(
-        &mut stage,
-        "cli",
-        "skill/SKILL.md".into(),
-        &repo.join("packages/cli/skill/SKILL.md"),
-    )?;
 
     let git = match &options.git {
         Some(git) => git.clone(),

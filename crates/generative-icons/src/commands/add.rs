@@ -1,13 +1,12 @@
-//! `add`: installs library icons, and local icons this project built. Web output is
-//! byte-identical to `lottie-icons add` apart from the tool name in headers and the
-//! paths (exactly legacy in a legacy project); iOS and Android get the `.lottie` plus a
-//! JSON descriptor. A local icon installs its build's Strong `.lottie`, as the package
+//! `add`: installs library icons, and local icons this project built. Web apps get the
+//! `.lottie`, an ES module and its types; iOS and Android get the `.lottie` plus a JSON
+//! descriptor. A local icon installs its build's Strong `.lottie`, as the package
 //! ships each library icon's Strong archive.
 
 use super::{lock_project, text_list, unique};
 use crate::Context;
 use crate::cli::AddArgs;
-use crate::config::Config;
+use crate::config::{CONFIG_FILE, Config, TOOL_NAME};
 use crate::error::{CliError, ErrorCode, Result};
 use crate::js::json_file;
 use crate::kit;
@@ -35,8 +34,8 @@ pub fn run(ctx: &Context, args: &AddArgs) -> Result<Report> {
     if let Some(weight) = args.bake_weight {
         check_bake_weight(config.platform, weight)?;
     }
-    let _guard = lock_project(ctx, config.layout)?;
-    let lock = Lock::load(root, config.layout)?;
+    let _guard = lock_project(ctx)?;
+    let lock = Lock::load(root)?;
 
     // Requested ids, and the weight baked into each.
     let requested: Vec<(String, Option<f64>)> = if args.installed {
@@ -94,7 +93,7 @@ pub fn run(ctx: &Context, args: &AddArgs) -> Result<Report> {
         }
         next.object_mut("icons").insert(id.to_string(), Value::Object(record));
     }
-    next.stamp(config.layout, Some(&catalog.version));
+    next.stamp(Some(&catalog.version));
     let digests: Vec<(String, String)> =
         batch.writes().map(|(path, bytes)| (path.to_string(), sha256_hex(bytes))).collect();
     let files = next.object_mut("files");
@@ -136,7 +135,7 @@ pub(crate) fn stage_settings(batch: &mut Batch, config: &Config) {
     }
     let settings = format!(
         "// Shared project defaults. Edit {}, then run add to update.\nexport const defaults = {};\n",
-        config.layout.config_file(),
+        CONFIG_FILE,
         gai_core::to_js_json_pretty(&config.defaults, 2)
     );
     batch.write(format!("{}/settings.mjs", config.descriptors), settings);
@@ -153,7 +152,7 @@ pub(crate) fn stage_icon(
     descriptor: &Value,
     record: &mut Map<String, Value>,
 ) {
-    let tool = config.layout.tool_name();
+    let tool = TOOL_NAME;
     let asset = format!("{}/{id}.lottie", config.assets);
     record.insert("sha256".into(), json!(sha256_hex(&bytes)));
     batch.write(asset.clone(), bytes);

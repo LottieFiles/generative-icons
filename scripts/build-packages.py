@@ -8,7 +8,7 @@ import tempfile
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGES = ['runtime', 'react', 'icons', 'cli']
+PACKAGES = ['runtime', 'react', 'icons']
 
 
 def sha(data):
@@ -119,9 +119,6 @@ def build():
         copy(ROOT / 'prototype/icons/guide/ai-operating-guide.md', stage / 'icons/docs/ai-operating-guide.md')
         for name in ['icon.schema.json', 'project.schema.json', 'release.schema.json']:
             copy(ROOT / 'schemas' / name, stage / 'icons/schemas' / name)
-        for target in ['runtime.md', 'authoring.md']:
-            copy(ROOT / 'packages/cli/skill/references' / target, stage / 'cli/skill/references' / target)
-        copy(ROOT / 'packages/cli/skill/SKILL.md', stage / 'cli/skill/SKILL.md')
         revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
         dirty = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip())
         # A build from uncommitted sources is never a release; pack-release refuses it by default.
@@ -138,7 +135,7 @@ def build():
             copy(ROOT / 'LICENSE', target / 'LICENSE')
         # packages/icons/THIRD_PARTY_NOTICES.md is maintained per package: it lists only what the tarball bundles.
     state = 'uncommitted sources, status prerelease-dev' if dirty else 'clean source tree, status release'
-    print(f'Built {len(icons)} icon descriptors/assets and four packages ({version}; {state}). Nothing was published.')
+    print(f'Built {len(icons)} icon descriptors/assets and three packages ({version}; {state}). Nothing was published.')
 
 
 if __name__ == '__main__':

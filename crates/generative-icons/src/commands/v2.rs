@@ -367,9 +367,6 @@ pub fn wants_build(root: &Path, set: &LocalSet, args: &BuildArgs) -> Result<Opti
 pub fn build(ctx: &Context, args: &BuildArgs, ids: &[String]) -> Result<Report> {
     let root = ctx.cwd.as_path();
     let config = Config::require(root, ctx.platform)?;
-    if !config.layout.is_current() {
-        return Err(CliError::new(ErrorCode::InvalidConfig, format!("This project was set up by {}", config.layout.tool_name())).with_hint("Run generative-icons init --migrate first"));
-    }
     let set = LocalSet::of(&config);
     let meta = set_meta(root, &set)?;
     // Everything validates before the engine sees anything.
@@ -388,7 +385,7 @@ pub fn build(ctx: &Context, args: &BuildArgs, ids: &[String]) -> Result<Report> 
         let (id, l) = &loaded[0];
         return emit_call(ctx, id, file, gai_spec::build_params(l.compiled.as_ref().expect("checked"), &format!("{id}.json")));
     }
-    let _guard = lock_project(ctx, config.layout)?;
+    let _guard = lock_project(ctx)?;
     let (source, engine_url) = match &args.from_bundle {
         Some(file) => {
             let path = ctx.cwd.join(file);
@@ -809,7 +806,7 @@ fn count_keys(v: &Value) -> usize {
 
 /// Installs verified v2 builds as `add` installs a local icon, in one batch.
 fn install<'a>(root: &Path, config: &Config, icons: impl Iterator<Item = (&'a str, &'a Built)>) -> Result<Vec<String>> {
-    let lock = Lock::load(root, config.layout)?;
+    let lock = Lock::load(root)?;
     let mut next = lock.clone();
     let mut batch = Batch::new();
     stage_settings(&mut batch, config);
@@ -823,7 +820,7 @@ fn install<'a>(root: &Path, config: &Config, icons: impl Iterator<Item = (&'a st
         record.insert("build".into(), build_facts(built));
         next.object_mut("icons").insert(id.to_string(), Value::Object(record));
     }
-    next.stamp(config.layout, None);
+    next.stamp(None);
     let digests: Vec<(String, String)> = batch.writes().map(|(path, bytes)| (path.to_string(), sha256_hex(bytes))).collect();
     let files = next.object_mut("files");
     for (path, sha) in digests {
@@ -973,14 +970,11 @@ fn spec_from(source: &str, id: &str, label: &str, intent: Option<&str>) -> std::
 pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     let root = ctx.cwd.as_path();
     let config = Config::require(root, ctx.platform)?;
-    if !config.layout.is_current() {
-        return Err(CliError::new(ErrorCode::InvalidConfig, format!("This project was set up by {}", config.layout.tool_name())).with_hint("Run generative-icons init --migrate first"));
-    }
     let id = args.id.as_str();
     if let Some(error) = new_id_error(id) {
         return Err(error);
     }
-    let _guard = lock_project(ctx, config.layout)?;
+    let _guard = lock_project(ctx)?;
     let set = LocalSet::of(&config);
     let path = spec_file(&set, id);
     for existing in [path.clone(), set.batch(id)] {
@@ -1079,7 +1073,7 @@ pub fn create(ctx: &Context, args: &CreateArgs) -> Result<Report> {
     if !inside(root, &set_config)?.exists() {
         batch.write(set_config, initial_set_config());
     }
-    let lock = Lock::load(root, config.layout)?;
+    let lock = Lock::load(root)?;
     let changed = batch.plan(root, &lock.expected())?.apply()?;
     let saved = super::create::save_packet(root, id, packet, args, reference)?;
     let next = [format!("edit {path}"), format!("generative-icons check {id}"), format!("generative-icons draft {id}"), format!("generative-icons build {id}"), format!("generative-icons preview {id}")];

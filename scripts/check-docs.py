@@ -31,8 +31,7 @@ try:
 except (OSError,subprocess.CalledProcessError):
  public=files
 # Retired setup, local-exporter, CLI and repository names. Maintained docs, templates and the generated
-# AI guide point at generative-icons, its repository and the hosted engine. The retired lottie-icons skill and package README
-# are frozen, and the changelog keeps history, so they are exempt.
+# AI guide point at generative-icons, its repository and the hosted engine. The changelog keeps history, so it is exempt.
 RETIRED=[('CREATOR_MCP_BIN',r'CREATOR_MCP_BIN'),('ENGINE_MCP_ROOT',r'ENGINE_MCP_ROOT'),('Engine exporter',r'Engine exporter'),
  ('npm run ',r'npm run (?:setup|doctor|test:tooling)\b'),('generative-icons-cli',r'@lottiefiles/generative-icons-cli'),
  ('lottie-icons',r'npx lottie-icons\b|\blottie-icons (?:init|info|search|add|diff|author)\b'),
@@ -40,7 +39,7 @@ RETIRED=[('CREATOR_MCP_BIN',r'CREATOR_MCP_BIN'),('ENGINE_MCP_ROOT',r'ENGINE_MCP_
  ('lottie-generative-icons',r'LottieFiles/lottie-generative-icons'),
  ('Generative Animated Icons',r'Generative Animated Icons'),
  ('gen-animated-icons',r'npx gen-animated-icons\b|\bgen-animated-icons (?:init|info|search|add|diff|remove|create|check|draft|build|preview|login|logout|whoami|library|doctor|submit|context|mcp)\b')]
-EXEMPT=('packages/cli/skill/','packages/cli/README.md','CHANGELOG.md')
+EXEMPT=('CHANGELOG.md',)
 templates=[*(root/'.github').rglob('*.md'),*(root/'.github').rglob('*.yml'),*root.glob('prototype/icons/guide/*.md'),root/'prototype/icons/guide/index.html']
 retired=[(n,re.compile(p)) for n,p in RETIRED]
 for p in [*files,*templates]:

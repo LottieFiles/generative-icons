@@ -14,7 +14,7 @@ The binary embeds the authoring kit, the agent skill (`crates/generative-icons/a
 
 Each release tarball and npm platform package carries `LICENSE`, `THIRD_PARTY_NOTICES.md` and `THIRD_PARTY_LICENSES.txt`. The Release workflow generates the last one per target from `Cargo.lock`: the license texts of every crate the binary links statically and of the C and C++ code those crates compile.
 
-Each npm package's `files` list in its `package.json` is an explicit allowlist. `generative-icons library packages` builds the web packages only from sets registered in `prototype/icons/catalog.json`. `packages/cli`, the package of the retired `lottie-icons` command, is still built and packed with the web packages, but `generative-icons` supersedes it and it is not published.
+Each npm package's `files` list in its `package.json` is an explicit allowlist. `generative-icons library packages` builds the web packages only from sets registered in `prototype/icons/catalog.json`.
 
 ## What stays out
 

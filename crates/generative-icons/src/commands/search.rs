@@ -237,8 +237,10 @@ fn local_entries(ctx: &Context, required: bool, warnings: &mut Vec<String>) -> R
         true => Some(Config::require(&ctx.cwd, ctx.platform)?),
         false => Config::load(&ctx.cwd, ctx.platform)?,
     };
-    let Some(config) = config else { return Ok(Vec::new()) };
-    let lock = Lock::load(&ctx.cwd, config.layout)?;
+    if config.is_none() {
+        return Ok(Vec::new());
+    }
+    let lock = Lock::load(&ctx.cwd)?;
     let mut entries = Vec::new();
     for (id, record) in lock.icons() {
         if record.get("origin").and_then(Value::as_str) != Some("local") {

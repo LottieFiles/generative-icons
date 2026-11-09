@@ -24,7 +24,7 @@ fs.mkdirSync(path.dirname(output), { recursive: true });
 const stage = fs.mkdtempSync(path.join(path.dirname(output), '.pack-'));
 const packages = [];
 try {
-  for (const name of ['icons', 'runtime', 'react', 'cli']) {
+  for (const name of ['icons', 'runtime', 'react']) {
     const cwd = path.join(root, 'packages', name);
     const result = spawnSync('npm', ['pack', '--ignore-scripts', '--json', '--pack-destination', stage], { cwd, encoding: 'utf8' });
     if (result.status !== 0) throw Error(result.stderr);

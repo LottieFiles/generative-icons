@@ -100,7 +100,7 @@ pub fn run(ctx: &Context, args: &CheckArgs) -> Result<Report> {
     }
     let mut checks = Vec::new();
     if all || args.project {
-        checks.push(project(root, &config)?);
+        checks.push(project(root)?);
     }
     let set = LocalSet::of(&config);
     let mut warnings = Vec::new();
@@ -126,7 +126,7 @@ pub fn run(ctx: &Context, args: &CheckArgs) -> Result<Report> {
         }
     }
     if all || args.descriptors {
-        checks.push(descriptors(root, &config, &args.ids)?);
+        checks.push(descriptors(root, &args.ids)?);
     }
     if all || args.native {
         checks.push(native(root, &set, &args.ids, args.native)?);
@@ -225,17 +225,9 @@ pub fn spec_findings(results: &[(String, String, gai_spec::Diagnostics, bool)]) 
 }
 
 /// Config validity (already loaded) and the lock's file states.
-fn project(root: &Path, config: &Config) -> Result<Check> {
+fn project(root: &Path) -> Result<Check> {
     let mut diagnostics = Vec::new();
-    if !config.layout.is_current() {
-        diagnostics.push(finding(
-            "warning",
-            "LEGACY_PROJECT",
-            None,
-            &format!("Set up by {}; run generative-icons init --migrate", config.layout.tool_name()),
-        ));
-    }
-    for file in Lock::load(root, config.layout)?.status(root)? {
+    for file in Lock::load(root)?.status(root)? {
         if file.status != "unchanged" {
             let message = format!("{} is {}", file.file, file.status);
             diagnostics.push(finding("warning", "MANAGED_FILE", None, &message));
@@ -906,8 +898,8 @@ fn stack_frames(stack: &str) -> Vec<Frame> {
 }
 
 /// `validateIcon` on every installed descriptor (or the requested ones).
-fn descriptors(root: &Path, config: &Config, ids: &[String]) -> Result<Check> {
-    let lock = Lock::load(root, config.layout)?;
+fn descriptors(root: &Path, ids: &[String]) -> Result<Check> {
+    let lock = Lock::load(root)?;
     let mut diagnostics = Vec::new();
     let mut checked = 0;
     for (id, record) in lock.icons().filter(|(id, _)| ids.is_empty() || ids.iter().any(|i| i == id)) {

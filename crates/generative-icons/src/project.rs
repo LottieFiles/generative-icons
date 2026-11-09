@@ -1,8 +1,8 @@
 //! Project detection for web, iOS and Android app folders.
 //!
-//! Web detection ports `inspectProject` from `packages/cli/src/project.mjs` exactly,
-//! plus `bun.lockb` and `pnpm-workspace.yaml`. iOS and Android are detected from the
-//! Xcode and Gradle files at the folder root.
+//! Web detection reads `package.json` (dependencies, scripts and the package manager)
+//! and the lockfiles, including `bun.lockb` and `pnpm-workspace.yaml`. iOS and Android
+//! are detected from the Xcode and Gradle files at the folder root.
 
 use crate::error::{CliError, ErrorCode, Result};
 use crate::js::truthy;

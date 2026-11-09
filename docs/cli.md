@@ -26,7 +26,7 @@ Before the first release, build the binary from this repository ([development](d
 
 | Command | What it does |
 | --- | --- |
-| `init` | Detects the app, writes `generative-icons.json`, installs the agent skill (`--agents claude,agents` or `none`), copies the authoring kit and starts the lock. `--migrate` moves a project set up as `gen-animated-icons` (this CLI's earlier name: `gen-animated-icons.json`, `.gen-animated-icons/`) or by the earlier `lottie-icons` npm command; `--update-kit` replaces an edited kit copy. |
+| `init` | Detects the app, writes `generative-icons.json`, installs the agent skill (`--agents claude,agents` or `none`), copies the authoring kit and starts the lock. `--update-kit` replaces an edited kit copy. |
 | `info` | Platform, config, library version, managed files, local icons and their build state, and the sign-in |
 | `search <meaning…>` | Ranked library matches (`--limit`, `--local-only`, `--library-only`, `--match ranked\|all-words`). Common UI synonyms match too ("delete" finds `trash`), and weak description-only matches are dropped. |
 | `add <id…>` | Installs each icon's `.lottie` asset and descriptor. `--installed` re-adds every installed library icon (upgrade), `--dry-run` shows the changes, `--bake-weight <w>` bakes an outline weight from 1 to 3 into native files. |

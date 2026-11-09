@@ -6,7 +6,7 @@
 //! missing, and whether it is installed, so a new session finds work in progress.
 
 use crate::Context;
-use crate::config::{Config, Layout};
+use crate::config::{CONFIG_FILE, Config};
 use crate::error::Result;
 use crate::local_set::{LocalSet, build_dir, changed_source};
 use crate::lock::Lock;
@@ -29,8 +29,7 @@ pub fn run(ctx: &Context) -> Result<Report> {
             None
         }
     };
-    let layout = Layout::find(root);
-    let lock = layout.map(|layout| Lock::load(root, layout)).transpose()?;
+    let lock = root.join(CONFIG_FILE).is_file().then(|| Lock::load(root)).transpose()?;
     let files = match &lock {
         Some(lock) => lock.status(root)?,
         None => Vec::new(),
@@ -93,7 +92,7 @@ pub fn run(ctx: &Context) -> Result<Report> {
         None => writeln!(text, "Project: none detected"),
     };
     let _ = match &config {
-        Some(config) => writeln!(text, "Config: {}", config.layout.config_file()),
+        Some(_) => writeln!(text, "Config: {CONFIG_FILE}"),
         None => writeln!(text, "Config: none (run generative-icons init)"),
     };
     let _ = match (&value["libraryVersion"], &value["librarySource"]) {

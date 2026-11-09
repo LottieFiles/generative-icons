@@ -1022,7 +1022,6 @@ Commit `generative-icons.json`, the added files and `.generative-icons/lock.json
 - `init` reads the app's package metadata and creates `generative-icons.json`, the agent skill in `.claude/skills/generative-icons/` and `.agents/skills/generative-icons/`, and a copy of the authoring kit. It does not edit `AGENTS.md`, global agent settings or components.
 - `add` copies native files to `public/generative-icons/` and descriptors to `src/generative-icons/` (or `generative-icons/` without a `src` folder), and records their hashes in `.generative-icons/lock.json`.
 - `diff` reports local changes, `add` refuses to overwrite modified managed files, and `remove` uninstalls icons whose files are unedited.
-- A project set up before the rename (with `gen-animated-icons.json`) or by the earlier `lottie-icons` command moves over with `npx generative-icons init --migrate`; its icon files keep their paths.
 
 ## Vanilla JavaScript
 
@@ -1143,8 +1142,6 @@ The `@lottiefiles/generative-icons*` packages share one version and are released
 The runtime package ships the gallery's controller as its canonical implementation; the build copies that exact file and parity tests guard it. Apps should use the runtime package rather than copying the controller.
 
 The website consumes the published packages and validates the release hashes when importing the catalog, assets and documentation. No engine code is included in the packages or the CLI: native export runs on LottieFiles' hosted engine.
-
-Projects set up while this CLI was called `gen-animated-icons` (`gen-animated-icons.json` and `.gen-animated-icons/lock.json`) or by the earlier `lottie-icons` command (`lottie-icons.json` and `.lottie-icons/lock.json`) keep working with `generative-icons add`, `info`, `diff` and `remove`, which write the same bytes there; `generative-icons init --migrate` moves them to the current files.
 
 
 ---

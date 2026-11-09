@@ -88,7 +88,7 @@ Icons you create stay in your project. To share one, `generative-icons submit <i
 ```text
 crates/            The generative-icons CLI (Rust workspace) and its embedded agent skill
 npm/               npm wrapper and per-platform packages for the CLI binary
-packages/          Web npm packages: icons, runtime, react (and the retired lottie-icons CLI and its skill)
+packages/          Web npm packages: icons, runtime and react
 motion/            Editable icon source, family contract and the legacy JS/Python pipeline
 prototype/         Local gallery, native assets and bundled player
 .agents/skills/    Maintainer workflow and review rules for this repository (internal)

@@ -10,7 +10,6 @@ This repository holds the editable icon source, the `generative-icons` CLI, the 
 | `packages/icons/` | Generated per-icon descriptors, native assets, catalog and bundled docs |
 | `packages/runtime/` | Shared playback, paint, state, reduced motion and lifecycle API |
 | `packages/react/` | Client-side React adapter with controlled state |
-| `packages/cli/` | The retired `lottie-icons` command and its skill (`skill/`), kept frozen for migration and the legacy package build |
 | `prototype/icons/catalog.json` | Ordered set manifests and browse categories |
 | `prototype/icons/01/` | Cumulative local gallery |
 | `prototype/icons/NN/assets/` | Distributed JSON, dotLottie and set metadata |

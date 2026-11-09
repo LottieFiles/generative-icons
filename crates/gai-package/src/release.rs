@@ -11,7 +11,7 @@ use std::path::{Path, PathBuf};
 use std::process::Command;
 
 /// The packages in pack order.
-const PACK_ORDER: [&str; 4] = ["icons", "runtime", "react", "cli"];
+const PACK_ORDER: [&str; 3] = ["icons", "runtime", "react"];
 
 /// The commit and cleanliness of the source tree, as `release.json` records them.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -166,7 +166,7 @@ pub fn npm_pack(package_dir: &Path, destination: &Path) -> Result<NpmPack> {
     })
 }
 
-/// Packs `icons`, `runtime`, `react` and `cli` from their built `dist` folders into a new
+/// Packs `icons`, `runtime` and `react` from their built `dist` folders into a new
 /// output folder with a `release.json` (JS `JSON.stringify` format): the build's
 /// `packages/icons/dist/release.json` with `status` and `sourceDirty` updated in place and
 /// `packages` appended. Refuses dirty builds and trees unless `allow_dirty`. Never publishes.
